@@ -65,13 +65,15 @@ Overige vaste maten:
 - Kenmerkende houding blijft: Treecko houdt in de rug dezelfde gespreide armen als in de front.
 - Licht en selout als de front (licht linksboven), geen omlijning langs de snijlijn.
 
-### Icoon
-- **Geen verkleining maar een mini-ontwerp** (`3_icoon_vs_verkleining.png`): een kale verkleining wordt een vlek (Zigzagoon, Aipom, Sentret, en ook onze viscacha), het echte icoon niet. Wat Game Freak doet:
-  - **Kop groter** (chibi), lijf korter; de kop is het grootste vlak.
-  - **Eigen, eenvoudige pose**, vaak meer van opzij en naar links: Sentret staat op vier poten in plaats van op zijn staart, Aipom zit ineengedoken met de staarthand ernaast, Ninjask van opzij met één vleugel.
-  - **Grote delen ingekort of weggelaten** (Ninjask's vleugels, Aipom's lange staart, Gastly's gaswolk tot een paar stipjes), het **ene herkenningsteken blijft groot** (Sentrets oren en gestreepte staart, Taillow's rode gezicht, Seviper's rode staartmes).
-  - Dikke donkere omlijning (donkergrijs uit het icoonpalet, index 15 = 65,65,65), 2 tinten per kleur, nauwelijks details.
-- Kijkt meestal naar links, zoals de front.
+### Icoon (herzien 18 nov, na Jordi: "als je dat niet ziet was je studie nog niet goed genoeg")
+Eerste versie van deze paragraaf overdreef de vrije pose (op basis van een paar uitschieters). Gemeten over alle 385 GBA-iconen (`icoon_meet.py`) en bekeken op `5_icoon_vs_front.png` (front verkleind tot icoonhoogte | icoon frame 1 | frame 2):
+- **Pose = de pose van de front.** Het silhouet van de verkleinde front en het icoon overlappen mediaan 67% (IoU); bij 71% van de soorten ≥ 0,6, bij maar 4% duidelijk anders (< 0,45). Gespiegeld past zelden beter (16%). Treecko, Torchic, Taillow, Zigzagoon, Poochyena, Electrike, Spinda, Mightyena: zelfde houding.
+- **Alleen als de front-pose niet compact te maken is, krijgt het icoon een eigen pose**: lange/rechtopstaande figuren of figuren met ver uitstekende delen (Sentret op zijn staart, Furret, Aipom met de staarthand, Skitty, Plusle, Linoone, Gardevoir, Dragonair, Milotic). Dan wordt het figuurtje compacter en breder (breedte/hoogte front 1,00 → icoon 1,09).
+- **Het ontwerp blijft precies het ontwerp:** zelfde gezicht (oog als 1–2 px donker blokje, vaak met 1 lichte pixel), zelfde aftekeningen en kleurverdeling, niets erbij. Kleuren schuiven alleen naar het dichtstbijzijnde van het gedeelde icoonpalet (daardoor soms een tint anders: Mudkip lila-blauw, Raticate geler).
+- **Verhoudingen licht chibi:** kop iets groter dan bij verkleinen (Treecko, Torchic, Mudkip, Poochyena), dunne delen dikker (poten, staart minstens 2 px), kleine details weg.
+- **Tekenwijze:** dichte omlijning rondom (98–100% van de randpixels donker), **bovenkant index 15 (65,65,65), onderkant lichter grijs (98,98,90)** (gemeten: randhelderheid boven 65, onder 85); grote vlakke vlakken, 1 schaduwtint, hooguit 1–2 px hooglicht, 6–10 kleuren.
+- **Frame 2:** zelfde figuur, kleine handeling: kop of lijf 1 px omlaag (ingedrukt), soms bek open, poot of staart anders (Torchic, Mudkip, Zigzagoon). In de game wisselen de frames sneller bij volle HP (elke 6 tikken) en langzamer bij weinig HP (8/14/22); flauwgevallen = alleen frame 0. Het geselecteerde icoon in het party-menu springt daarnaast op en neer (dat doet de engine, `SpriteCB_BouncePartyMonIcon`).
+- **Wat Gemini r1 van de viscacha fout deed (en Claude miste):** eigen pose (zittend van opzij) terwijl onze front compact genoeg is om zijn pose te houden, en een ander ontwerp (gezicht, verhoudingen, vlekken). Toets bij een icoon dus eerst: is het silhouet de verkleinde front (of is er een reden om af te wijken), en is het gezicht/ontwerp het onze?
 
 ### Overworld
 - **HGSS-stijl, ander standpunt dan de front:** naar beneden = **recht van voren** (niet driekwart), naar boven = recht van achteren, opzij = **profiel**. Groot hoofd, kort lijf, zwarte omlijning, eigen palet (vaak iets donkerder en verzadigder dan de front).
@@ -107,11 +109,12 @@ Algemeen, zoals bij frame 2 (`frame2_studie/STUDIE.md` §12): **per soort klein 
 
 Uitzondering: **bol- en wolkvormen** (Dustly, Gengas, blobfish) kunnen misschien zonder Gemini: front 1,15× vergroten, spiegelen/verschuiven zodat het gezicht aan de rechterrand verdwijnt (Gastly-aanpak), maker maakt de achterkant. Eerst proberen op één soort.
 
-### B. Icoon (in batches, weinig werk per soort)
-1. **Onderlaag per script** (`icon_from_front.py`, nog te schrijven, staat al op de lijst in SPRITE_PLAN): front naar de doelhoogte uit §2, **kop ±1,3× vergroot**, gemapt op het best passende icoonpalet (0/1/2, anders 3–5), onderkant y 29, midden x 16.
-2. **Maker tekent het icoon met de hand** op het 32×32-raster, met de onderlaag en 2–3 echte GBA-iconen van dezelfde bouw ernaast: kop groot, één herkenningsteken groot, de rest ingekort, omlijning in index 15 van het icoonpalet, ±8 kleuren. Hier mag de pose vereenvoudigd worden (dat is wat Game Freak doet), maar alleen in overleg: welk kenmerk groot blijft is een ontwerpkeuze, dus per batch één vraag aan Jordi.
-3. **Frame 2 per script**: bovenkant 1 px omlaag (voeten op hun rij), daarna één klein verschil door de maker (poot, mond, oor).
-4. Jordi keurt **per vel van ±10 iconen**, op 1× naast echte iconen in een party-menu-mock (of screenshot), niet los.
+### B. Icoon (herzien 18 nov)
+Gemini werkte niet (r1: eigen pose en ander ontwerp; r2 met voorbeeld-icoon: verkleinde front op fijn raster). Daarom uit onze eigen front:
+1. **Onderlaag per script** (`icon_onderlaag.py`): front naar de doelhoogte uit §2, gemapt op het best passende icoonpalet, onderkant y 29, midden x 16.
+2. **Maker schoont op** naar de icoonregels uit §3 (pose en ontwerp van de front, kop iets groter, dunne delen ≥ 2 px, omlijning boven index 15 en onder lichter grijs, ±8 kleuren), naast echte Gen 3-iconen van dezelfde bouw. Alleen als de front-pose niet compact past een eigen pose, en dan alleen na vraag aan Jordi.
+3. **Frame 2:** zelfde figuur, 1 px ingedrukt + één kleine handeling (bek, poot of staart).
+4. Jordi keurt op 1× naast echte iconen.
 
 ### C. Overworld (pas als het nodig is)
 - Alleen voor soorten die in de wereld staan; anders uitstellen tot er een besluit over volgers is.

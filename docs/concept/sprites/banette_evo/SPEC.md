@@ -75,6 +75,10 @@ Jordi (17 nov): "We gaan niet stoppen, het is gewoon slechte prompting, we gaan 
 ## Jordi over r14 (18 nov), letterlijk
 "vrij netjes, niet erg dat de linkerarm niet zichtbaar is. Laten we naar het linker'oor' kijken. Deze heeft 2 rechte lijnen onder elkaar, kan dat iets smoother? Daarnaast hangt het belletje net iets te perfect boven het shuppet hoofd, kan daar iets van ruimte tussen zitten? Ook het schaduwwerk in het linkeroor mag net wat beter, is nu een effen vlak. Verder ben ik best tevreden!"
 
+## r15–r18 (18 nov)
+- r15: linkeroor gebogen + schaduw, linker-Shuppet 2 px lager. r16/r17: mutsrand over het kruis (Jordi: "hij mag de hand gewoon overlappen he, dit ziet er echt raar uit"). r18: pixels (8,24) en (9,25) die Jordi aanstipte ("geel aangestipte pixel moet niet zwart zijn").
+- **Eindversie = r18** (`af/shuppetto.png`), eindkeuring r18 PASS (`sprite/eindkeuring_r18/`).
+
 ## Open
 - Jordi (17 nov): "nog steeds teveel banette bedoel ik"; "hoofdvorm wel eindelijk goed" (r7). Prompt v10 (hoofd aanpassen) vervalt. Jordi: "ik hoef toch niet elke keer mn idee opnieuw te typen"; Claude vergeleek r7 zelf met deze SPEC -> v11.
 - Jordi (17 nov): "het ligt aan je prompt,want hij maakt telkens hetzelfde". Prompt v6 (`gemini/PROMPT_v6.md`).

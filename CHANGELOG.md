@@ -2136,3 +2136,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.519] - Shuppetto (Banette-evolutie): frontsprite af
 - Sprite naar het model (Gemini hoofd + armen, hoofd 1,8× langs Jordi's gele lijn) in 14 rondes: makers r1–r10, keurders per ronde, Dragonfly Cave-eindkeuring (r12), slotcontrole r14 PASS. Pixelreparaties r11–r14 door Claude uit de keuringen.
 - `docs/concept/sprites/banette_evo/af/shuppetto.png` (+ `_8x.png`, `_vel.png` naast het model); op het overzichtsvel. SPEC, CLAUDE.md (46 frontsprites) en een les in `GEMINI.md` bijgewerkt.
+
+### [v0.0.520] - Shuppetto: punten van Jordi verwerkt (r15–r18)
+- Linkeroor gebogen met schaduw, linker-Shuppet 2 px lager (ruimte onder de bel), mutsrand als bolle boog over het linkerkruis, losse pixels (7,24), (8,24), (9,25). Eindkeuring r18 PASS; `banette_evo/af/` en het overzichtsvel bijgewerkt. Les in `GEMINI.md` (screenshot van Jordi registreren).

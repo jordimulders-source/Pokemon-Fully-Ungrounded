@@ -46,3 +46,7 @@ Prompt r2 (hetzelfde gesprek, één bijsturing):
 
 ## Ronde 4 (18 nov)
 `gemini_r4.png` (prompt r4, zonder Raticate): staart goed, maar kop klein en oren uit elkaar, net als p2; lijf ronder en onderkant minder strak. Vergelijking: `vergelijking_r1_p2_r4.png` (front, r1, p2, r4). Voorstel Claude: p2 als basis.
+
+## Keuzes Jordi (18 nov)
+- A boven B: "a is beter dan b, b lijkt opgeblazen".
+- Oog v2 (front-oog): "ja het nieuwe oog is nu iets teveel in beeld" → vier varianten (`A/oogvarianten.png`); keuze: "v3_oog_4 is goed" (model-plek en -breedte, kern en tint van het front-oog). Basis voor verdere reparaties: `A/v3_oog_4.png`, oog bevroren.

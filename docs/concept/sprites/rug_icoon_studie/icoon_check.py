@@ -28,6 +28,10 @@ top=lum[f1[ey[ey<mid],ex[ey<mid]]].mean(); bot=lum[f1[ey[ey>=mid],ex[ey>=mid]]].
 chk('omlijning boven donkerder dan onder',top<bot,f'boven {top:.0f}, onder {bot:.0f}')
 r=(dk&m&~edge).sum()/m.sum(); chk('binnenlijnen/oppervlak 0.09-0.26 (in-game mediaan 0.16)',.09<=r<=.26,f'{r:.3f}')
 try:
+    import hoekig_meet as H
+    rr,tr=H.maat(f1); chk('niet hoekig: rechte randstukken <= 0.27 (in-game mediaan 0.12)',rr<=.27,f'{rr:.2f}'); chk('rond: trapjes >= 46 per 100 rand (in-game mediaan 55)',tr>=46,f'{tr:.1f}')
+except Exception as e: chk('hoekigheid',False,str(e))
+try:
     import vorm_meet as V
     nv=V.stats(f1,P)[1]; chk('kleurvlakken 10-42 (in-game mediaan 20, Gen 9 25)',10<=nv<=42,str(nv))
 except Exception as e: chk('kleurvlakken (scipy nodig)',False,str(e))

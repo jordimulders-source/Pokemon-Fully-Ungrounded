@@ -67,6 +67,13 @@ Gemeten over 385 Gen 1–3-iconen (p10–p90, mediaan):
 
 **Gevolg voor onze normen:** maatgevend is wat de speler ziet: de in-game set, met Gen 9 als ruimste grens. Het script gebruikt nu: kleuren 6–11, binnenlijnen 0,09–0,26, kleurvlakken 10–42.
 
+## 1d. Hoekig of rond (`hoekig_meet.py`; Jordi over v3: "hij is nog steeds erg hoekig he")
+| (p10 / mediaan / p90) | in-game 1–3 | Gen 9 | vanilla GBA | viscacha v3 |
+|---|---|---|---|---|
+| rechte randstukken (≥ 4 px recht) | 0,00 / 0,12 / 0,27 | 0,05 / 0,16 / 0,29 | 0,07 / 0,22 / 0,36 | **0,39** |
+| diagonale trapjes per 100 randpixels | 47 / 55 / 62 | 46 / 53 / 62 | 43 / 50 / 58 | **40** |
+Echte iconen hebben bijna geen rechte stukken van 4 px of langer: de omtrek loopt in schuine stapjes (1-1, 1-2, 2-1). Eis in het script: rechte stukken ≤ 0,27, trapjes ≥ 46.
+
 ## 2. Handmatig (±1 minuut, op 1× tussen 4 echte iconen op groen)
 - Dezelfde Pokémon: de herkenningstekens van de front staan erin (bij de viscacha: oren, gele wangpluk, getande staartpluk).
 - Geen uitschieter: niet duidelijk groter, platter of feller dan de buren.

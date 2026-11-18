@@ -71,3 +71,4 @@ Jordi: "nee niet het oog van drowzee" · "dan snap je niet wat ik bedoel" · "da
 Jordi (oogcrops `oog_drowzee_jordi.png`, `oog_viscacha_jordi.png`): "compleet verschillende ogen. Echt letterlijk 100% het tegenovergestelde. De viscacha heeft een zwart oog met een witte pixel erin, daar heb je dan het antwoord. Dus kleiner, maar hetzelfde idee".
 Jordi over v9: "wel beter maar nu heeft die een enorme buik".
 Jordi over onderlagen A/B/C: "A, maar in alle drie heb je de snorharen 2 pixellijnen gemaakt, plus de vorm is bij allemaal niet perfect, de oren zijn bij 2 weer wat beter, bij 1 het hoofd, maar ze zijn eigenlijk allemaal een blurry mess, maar ik denk als je wat poetswerk doet dat er iets goeds uit moet komen". → a2 = lijf 0,38, kop 0,50, oren 0,56; maker poetst.
+Jordi over b2: "1 oor vliegt ook" (oor los van de kop door de aparte oorfactor). Les: bij een eigen factor per onderdeel de aanhechting (oorbasis op de kop) vastzetten.

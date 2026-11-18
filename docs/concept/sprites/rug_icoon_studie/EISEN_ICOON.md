@@ -36,6 +36,7 @@ Gemeten over 385 Gen 1–3-iconen (p10–p90, mediaan):
 - Kleur laten verschuiven naar het icoonpalet (Wailord paars, Milotic rozer).
 
 - **Wel moet: vormen blijven vormen** (Jordi: "vormen probeert die nog wel wat van te maken he ipv vierkantjes" · "dus dat is nog een goede wel"): ronde delen rond, met schuine stapjes en curven zoals in de front; geen blokjes, rechte randen of rechthoekige vlakken waar het dier rond is.
+- **Alles iets boller/ronder** (Jordi: "ik merk dat alles een beetje bolliger/ronder is"; klopt met de gladdere, compactere omtrek, 0,44–0,91): kop, romp, dijen voller en ronder dan bij gewoon verkleinen.
 
 **Wat niet mag:**
 - Iets toevoegen dat niet in het ontwerp zit.

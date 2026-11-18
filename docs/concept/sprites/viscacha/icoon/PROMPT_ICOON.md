@@ -25,3 +25,6 @@ Jordi: "misschien een voorbeeld icoon erbij doen?"
 > Draw the party menu icon of MY creature in that style. Big head, short compact body, seen from the side, facing left, sitting or on all fours. Keep my creature recognizable: same colors, the two long upright ears, the yellow cheek tuft, a few whiskers, and the tail with the spiky jagged yellow tuft at the end. No dark patches on the back. Do not add anything new and do not copy Zigzagoon's shape, fur or colors.
 >
 > The whole creature fits in about 22×22 pixels inside a 32×32 canvas, feet near the bottom. Show it enlarged so every pixel is clearly visible as a square. Plain white background, no ground, no shadow, no effects, no text.
+
+## Ronde 2 (18 nov): afgekeurd
+`afgekeurd_r2.png` (met Zigzagoon-voorbeeld): geen chibi meer maar een verkleinde front op een fijner raster, losse staartpunt bovenin. Jordi: "dit lukt gemini dus niet". Les: ook bij iconen werkt een voorbeeldplaatje tegen; r1 (alleen de front, stijl in woorden) is de basis.

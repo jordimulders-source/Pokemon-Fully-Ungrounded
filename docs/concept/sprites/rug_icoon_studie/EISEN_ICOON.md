@@ -2,6 +2,8 @@
 
 Jordi: "eigenlijk moeten we een soort eisenlijst maken op basis van de al bestaande sprites, laten we eerlijk zijn, itt de battle sprites gaan mensen hier niet minutenlang naar kijken en analyseren" · eerder: iconen en overworld "moeten gewoon consistent zijn, maar hoeven eecht niet hoogstondig pixel art te gaan worden".
 
+**Jordi ziet pas een af-versie (18 nov):** "ik wil pas een versie zien als die echt af is, dus geen losse pixels, een icoon die net zo goed is als degene die al in de game zitten, daar heb je nu alle tools voor". Interne lus: maker → script → Claude op 8× naast echte iconen → verse keurder (streng, eis 0 eerst) → reparaties → pas dan Jordi. Alleen echte keuzes (zoals A/B/C) eerder.
+
 **Afspraak:** een icoon is af als het script alles OK geeft en de korte handmatige blik (punt 2) klopt. Geen keurrondes daarbovenop.
 
 ## 0. BELANGRIJKSTE EIS: hij lijkt op de echte Pokémon

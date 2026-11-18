@@ -15,3 +15,6 @@ Nieuw gesprek, alleen bijlage `../af/krassault_8x.png`.
 
 ## Daarna
 Raster terughalen (verwacht 16 px), exact 2× verkleinen naar 32×32 (Krassault-methode `../sprite3/half2.py`), in een icoonpalet zetten, opschonen tot `icoon_check.py` OK geeft; herkenningstekens afvinken.
+
+## Gemini r1 (18 nov)
+Gemini maakte geen pixel art maar een gladde chibi-illustratie (beeld kwam niet als bestand binnen). Jordi: "gemini begrijpt het niet vgm". Wel herkenbaar Krassault: hoge mantel met naden, boze gele ogen, kanonmond, twee kanontentakels met gele zuignappen, rupsbanden. Idee: als model gebruiken (zelf verkleinen naar ±22 px en in het icoonpalet zetten), want de vorm is het moeilijke deel en die klopt.

@@ -2098,3 +2098,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Jordi over r9: knots niet los van het been, bek slordig (1 pitje); r10: blad rechtsboven de knots omgedraaid naar het model, groene brug weg, verre achterbeen één tintstap onder de verre arm.
 - Bek: r11 varianten C/D/E (Jordi koos D: teju-opbouw, grijze bovenrij, pitjes als driehoek); r12 rechte lijn y30 weg in de bek, kaakonderrand met trapje (silhouet +1 px); r13 schaduw onderin de bek: F/G/H, G gekozen (ondertanden in de schaduw zoals het model). Buikpitjes onregelmatig (7).
 - Eindkeuring G: 7 px gerepareerd (r14). **Af:** `pitahaya_draak_fase3/af/pitahaya_draak_fase3.png`.
+
+### [v0.0.515] - Pitahaya-draak fase 3: definitief af
+- Jordi: "de stippen op de buik waren eerst beter, kopieer de buik van eerder en dan is die klaar". r15 = r14 met de buikpitjes van r10 terug (17 px gekopieerd, verder pixelgelijk). `pitahaya_draak_fase3/af/pitahaya_draak_fase3.png`.

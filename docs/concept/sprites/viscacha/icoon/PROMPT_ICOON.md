@@ -67,3 +67,4 @@ Jordi over v7/v7b: "nee daar ben ik het niet mee eens, hoofd en oog zijn echt ni
 Jordi: "de hoek is in v4 ook beter voor mijn gevoel, kijk hoe rattata en dedenne bijv echt diagonaal staan". v8: hoek v4, kop/oog pixel voor pixel uit echte in-game iconen omgekleurd.
 Krabbel Jordi op v8 (`krabbel_jordi_v8.png`): "ik heb even wat lijnen getekend terwijl ik naar het model links kijk, hoe ik de vormen daarin zie, zo zie je dat het oog bijv veel te laag staat en er nog steeds veel pixel blur is. Dit zijn slechts indicaties ... Staart is imo het enige wat perfect is en niks aan hoeft te veranderen."
 Jordi: "Links onder is een beetje de snuit en lusje onder de kin is de voorpoot die opgeheven is ja".
+Jordi: "nee niet het oog van drowzee" · "dan snap je niet wat ik bedoel" · "dat is een totaal ander oog". Drowzee was alleen een voorbeeld dat officiële iconen ook wat off mogen zijn. Oog komt uit onze front.

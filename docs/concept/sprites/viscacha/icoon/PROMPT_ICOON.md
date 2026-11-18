@@ -96,3 +96,4 @@ Jordi: "het rechteroor is ook net 1 maat te groot".
 Jordi: "de wangzakken zijn ook niet perfect, maar dat maakt me niet uit, bij zulke dingen gaat herkenbaarheid over detail".
 Jordi over a7: "rechtersnorharen missen nog, het hoofd is beter".
 Jordi: "en dan buikkleur/schaduw etc" → aandeel licht/midden/donker per onderdeel gemeten in de front en als doel aan de maker gegeven (romp 74% midden/15% donker, dij 46/53, bef 38% licht, kop 69/21, verre poten ±90% donker).
+Jordi: "ja behoud de snorharen links maar" · krabbel op a9 (`onderdelen/krabbel_jordi_a9.png`): "de armlijn moet nog iets langer. Probeer dit eens wat ik getekend heb. Geel gestipte pixel mag weg, zwart is paar pixels langere armlijn, met rood afgebakend wat de buik wordt en dus wat witter zoals in de sprite".

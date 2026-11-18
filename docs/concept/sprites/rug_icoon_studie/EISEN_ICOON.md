@@ -12,7 +12,7 @@ Jordi (18 nov): "het zou zonde zijn als je weer alles compleet anders gaat doen 
 2. Werkwijze: onderdelen van de front apart verkleinen met vaste factoren (`viscacha/icoon/onderdelen/bouw2.py`); feedback = factor aanpassen, varianten naast elkaar.
 3. Aanhechtingen vast: oren op de kop, poten aan het lijf; niets zweeft ("1 oor vliegt ook").
 4. Oog = opbouw van de front, kleiner: viscacha = zwart blok met 1 witte glanspixel in de bovenste rij + bruin ooglid; nooit andersom (wit met zwarte pupil), nooit het oog van een andere soort.
-5. Oog op de hoogte van de front (halverwege de kop), niet te laag.
+5. Oog op de plek van de front: viscacha = direct naast de wang (gele pluk), kleiner dan in de front ("het oog zit naast de wang maar kleiner"); plek berekenen met de transformatie, niet gokken.
 6. Geen pixelblur en geen losse pixels: elk cluster een bewuste vorm; zelf op 8× naast in-game iconen kijken.
 7. Snorharen 1 px dun; geen strook van 2 px.
 8. Rond waar het dier rond is, punten puntig; poten als stompjes 2–3 px; buik naar verhouding kleiner ("enorme buik").

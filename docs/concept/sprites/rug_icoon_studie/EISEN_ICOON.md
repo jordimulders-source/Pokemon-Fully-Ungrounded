@@ -118,6 +118,9 @@ Jordi over viscacha v4: "kijk het type ontwerp is uitstekend, dit is super consi
 - **Geen pixelblur ingezoomd** (viscacha v7, Jordi: "van een afstandje lijken ze ok, maar als je inzoomt wordt het pixelblur"): elk cluster is een bewuste vorm; ogen en kleine koppen pixel voor pixel overnemen uit een echt icoon en omkleuren (SPRITE_KERN-regel voor ogen), nooit de verkleiningsresten laten staan. Altijd zelf op 8× kijken vóór het naar Jordi gaat.
 - **Hoek: echt diagonaal** (Jordi: "kijk hoe rattata en dedenne bijv echt diagonaal staan"): driekwartstand, lijf schuin naar de kijker, kop naar voren-links.
 
+- **Herkenbaar = dezelfde gebaren, niet dezelfde verhoudingen** (Jordi over de viscacha-staart: "de staart is perfect omdat de manier waarop die krult onmiskenbaar dezelfde manier is, de verhouding is niet hetzelfde, maar hij is herkenbaar"): neem per onderdeel de lijn/het gebaar van de front over (hoe iets krult, buigt, waar het oog zit, hoe de oren staan); de maat mag chibi worden.
+- **Krabbel van Jordi als vormkaart** (viscacha v8): hij tekent de vormlijnen van de front over het icoon; die lijnen zijn de opdracht.
+
 ## Complexe ontwerpen
 Jordi: "we hebben namelijk ook een aantal complexe designs en die moeten we ook kunnen omzetten". De smokkelregels van §1e zijn daarvoor bedoeld (naar Gen 9: Kingambit, Skeledirge, Tinkaton, Spidops, Grafaiai). Na de viscacha de werkwijze testen op één complex ontwerp (voorstel: spooktrein fase 3 of Krassault).
 

@@ -32,3 +32,15 @@ Jordi: "misschien een voorbeeld icoon erbij doen?"
 ## Icoon uit onze front (maker, 18 nov)
 `maker/icon.png` (pal5, 28×21). Jordi: "hij is nu erg plat en wat aan de grote kant, het icoon" · "plat van kleur" → meer schaduw/binnenlijnen/detail zoals echte Gen 3-iconen, en kleiner.
 Jordi: "zigzagoon heeft een perspectief" · "de viscacha niet" → het icoon moet diepte krijgen zoals Zigzagoon (driekwart, verre delen kleiner/donkerder/hoger, nabije delen voor), zoals de front.
+
+## Optie 1: Gemini laat ons icoon bewerken (18 nov)
+Jordi: "2 gaat hem niet worden want dar ben ik niet goed genoeg in. WE kunnen optie 1 proberen ... het is nog puur testen allemaal".
+Nieuw gesprek. Bijlage 1: `bewerk_bijlage_v1_32x.png` (ons icoon v1, frame 1, 32× op wit, exact raster); bijlage 2: `../af/viscacha_8x.png` (front, voor de details).
+
+> Edit the first image. It is a 32×32 pixel party menu icon of my creature, shown enlarged (every pixel is a square). The second image is the full battle sprite of the same creature, only as a reference for its details.
+>
+> Keep exactly: the silhouette, pose, size, position on the canvas and the pixel grid; the same creature, colors and design. Do not redesign it, do not move or resize any part, do not change the pose.
+>
+> Only add what Gen 3 (Ruby/Sapphire/Emerald) party icons have and this one lacks: depth and shading. Make the far ear, far front leg and far hind leg darker, so they sit behind the body. Add a few dark inner lines where parts overlap, as in the battle sprite: thigh, between front leg and chest, inside of the ears, head against the body. Add one shadow tone on the lower right of each part and keep the upper left lighter. Give the eye one light pixel, close the tip of the nose, and give the light chest patch a rounded shape with a little shadow.
+>
+> Same pixel art style, flat colors, no gradients, no dithering, plain white background, no text.

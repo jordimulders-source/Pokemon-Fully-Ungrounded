@@ -119,6 +119,7 @@ Jordi over viscacha v4: "kijk het type ontwerp is uitstekend, dit is super consi
 - **Hoek: echt diagonaal** (Jordi: "kijk hoe rattata en dedenne bijv echt diagonaal staan"): driekwartstand, lijf schuin naar de kijker, kop naar voren-links.
 
 - **Herkenbaar = dezelfde gebaren, niet dezelfde verhoudingen** (Jordi over de viscacha-staart: "de staart is perfect omdat de manier waarop die krult onmiskenbaar dezelfde manier is, de verhouding is niet hetzelfde, maar hij is herkenbaar"): neem per onderdeel de lijn/het gebaar van de front over (hoe iets krult, buigt, waar het oog zit, hoe de oren staan); de maat mag chibi worden.
+- **Anatomie (Jordi):** "een nek wordt nog wel eens weggehaald, poten verkleind, een buik wordt naar verhouding kleiner, maar hij is ontzettend herkenbaar, wat de pokemon uniek maakt blijft telkens goed te zien".
 - **Krabbel van Jordi als vormkaart** (viscacha v8): hij tekent de vormlijnen van de front over het icoon; die lijnen zijn de opdracht.
 
 ## Complexe ontwerpen

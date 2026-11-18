@@ -84,3 +84,4 @@ Nieuw gesprek, alleen bijlage `../af/viscacha_8x.png`.
 > Change only the proportions, like a party menu icon of this Pokémon: the head bigger (about one and a half times), the body, legs and tail a bit shorter and more compact. Keep the same pixel size and the same pixel art style as the attached image.
 > Plain white background, no ground, no shadow, no effects, no text.
 Jordi (a2_af links, zones-proef rechts): "deze twee komen beide best aardig in de buurt, links is denk ik de beste, daar moeten de oren het oog en de details zoals snorharen en de wangzakken nog iets beter, evenals de voorpoten". Basis = icon_a2_af; alleen oren, oog, snorharen, wangzakken, voorpoten.
+Gemini-bewerking r1 (`gemini_bewerk_chibi_r1.png`, gehalveerd `onderdelen/g1.png`): Jordi "die oren zijn wel raichu nu" · "en vgm heeft die niet gedaan waar je om vroeg". Oren veranderd, pose staand, maat te groot na halveren (31×25), oog verloren. Stopregel: route gestopt.

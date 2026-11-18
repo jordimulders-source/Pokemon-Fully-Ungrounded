@@ -19,4 +19,4 @@ Nieuw gesprek, alleen bijlage `../af/viscacha_8x.png` (geen voorbeeld: bij rug e
 Eerst: is het ontwerp het onze (gezicht, oren, wangpluk, kleurverdeling) en staat elk aanzicht recht (voor/achter/opzij)? Pas daarna maat en techniek.
 
 ## Ronde 1 (18 nov): afgekeurd
-`afgekeurd_r1.png`: drie aanzichten, maar rechtop op twee poten met ronde buik; Jordi: "lijkt meer op een raichu" · "of pachirisu". Gemini glijdt naar bekende soorten (zie GEMINI.md, viscacha werd eerder ook Raichu).
+(beeld kwam niet als bestand binnen) Drie aanzichten, maar rechtop op twee poten met ronde buik; Jordi: "lijkt meer op een raichu" · "of pachirisu". Gemini glijdt naar bekende soorten (zie GEMINI.md, viscacha werd eerder ook Raichu).

@@ -92,3 +92,4 @@ Jordi over a6: "de snuit is nu juist weer te groot". (a6: snuit 5,0 binnen marge
 Jordi: "ik zou de linkerlijn van de snuit 1 pixellijn naar rechts halen".
 Jordi: "en de onderkant 1 pixellijn naar boven" (snuit).
 Jordi: "en ik zie witte pixels tussen snuit en lijf".
+Jordi: "het rechteroor is ook net 1 maat te groot".

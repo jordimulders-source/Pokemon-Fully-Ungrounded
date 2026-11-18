@@ -49,3 +49,4 @@ Bewerk r1 (`afgekeurd_bewerk_r1.png`): vorm veranderd (wangpluk weg, staartpluk 
 ## Bewerk r2 (nieuw gesprek, alleen bijlage `bewerk_bijlage_v1_32x.png`; één wijziging per prompt, zie GEMINI.md)
 > Edit this pixel art icon. Keep every outline pixel and every shape exactly where it is. Only add shading inside it: a darker shade of each color on the lower right part of each body part, and darken the legs and ear that are further away.
 Bewerk r2 (`bewerk_r2.png`): silhouet bleef staan (99,6%, alleen 4 snorhaarpixels weg), maar de schaduw is vlekkerig (tinten buiten het palet), het oog en de witte bef zijn verdwenen en de wangpluk is groter geel. Eerste keer dat de vorm hield; kwaliteit niet bruikbaar als icoon.
+Jordi over v3: "hij is nog steeds erg hoekig he"; over het blokje onder de kin (opgeheven voorpoot): "dit stuk kan ik ook niet verklaren? een arm? is te hoekig".

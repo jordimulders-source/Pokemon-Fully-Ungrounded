@@ -20,6 +20,7 @@ Jordi (18 nov): "het zou zonde zijn als je weer alles compleet anders gaat doen 
 10. Wat goed is blijft staan (viscacha: de staart van v8, pixel voor pixel; stijl van v4). "niet koppig doen, niet opnieuw tekenen" (Jordi): alleen poetsen en benoemde punten repareren.
 11. Hoek: echt diagonaal zoals Rattata/Dedenne.
 12. Jordi ziet pas een af-versie (alleen echte keuzes eerder).
+13. Schaduw en kleur (Jordi: "schaduw en kleur zijn ook belangrijk he, vergeet de lessen niet die we eerder vandaag hadden opgesteld"): niet "plat van kleur"; pal2 heeft maar 2 zandtinten, dus diepte = verre delen bruin, nabije licht, licht linksboven en schaduw rechtsonder per deel; detail met donkergrijze binnenlijnen (±15%) en ±20 kleurvlakken; omlijning boven index 15, onder 14; geel motief in goud (8) met geel (9) als licht; bef rond met lichte rand.
 
 ## 0. BELANGRIJKSTE EIS: hij lijkt op de echte Pokémon
 Jordi (18 nov): "dat is het belangrijkste van de hele eisenlijst, hij moet lijken op de echte pokemon". Alle andere eisen komen hierna. Het icoon is de front (onze goedgekeurde sprite) in het klein: kopvorm, gezicht, oren, kenmerken en kleurverdeling overgenomen, niet bedacht. Toets als eerste: leg het icoon naast de verkleinde front; vorm voor vorm moet het hetzelfde zijn, alleen eenvoudiger. Een icoon dat alle scriptpunten haalt maar niet op de front lijkt, is afgekeurd (viscacha v5).

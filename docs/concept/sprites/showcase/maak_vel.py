@@ -51,6 +51,7 @@ items=[
 ("vuurwerk_fase3/af/vuurwerkslang.png",'Vuurwerkslang',"fire/fairy"),
 ("mate/af/mate.png",'Mate-kalebas',"grass/water"),
 ("mate_fase2/af/mate2.png",'Mate-kano',"grass/water"),
+("banette_evo/af/shuppetto.png",'"Shuppetto"',"ghost/dark"),
 ]
 F="/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"; FR=F.replace("-Bold","")
 ft=ImageFont.truetype(F,36); fn=ImageFont.truetype(F,19); fy=ImageFont.truetype(FR,16)

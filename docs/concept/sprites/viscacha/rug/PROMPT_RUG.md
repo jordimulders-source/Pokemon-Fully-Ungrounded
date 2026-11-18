@@ -26,3 +26,6 @@ Prompt r2 (hetzelfde gesprek, één bijsturing):
 > 1. The tail: make it like in my front sprite. A shorter tail that rises upward from the rump in one curve and ends in a spiky, jagged yellow tuft like a small flame. The tail does not loop back down, and the yellow is only the jagged tuft at the end, not a band along the tail.
 > 2. The head: make the head bigger, the same size as in my front sprite, with the same long upright ears close together on top of the head. Both ears grow from the top of the head, not from the neck; the nearer ear (left) partly overlaps the far one.
 > Change nothing else.
+
+## Ronde 2 (18 nov): afgekeurd
+`afgekeurd_r2.png`: Gemini tekende het hele beeld opnieuw als zijaanzicht naar links (weer een front); het rugstandpunt is weg. Jordi: "gemini weer oliedom". Les bevestigd (GEMINI.md): bijsturen tekent alles opnieuw. Verder met r1.

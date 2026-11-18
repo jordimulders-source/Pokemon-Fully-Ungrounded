@@ -1,10 +1,11 @@
 """Icoon-onderlaag uit onderdelen van de front, met vaste factoren per groep (geen vrije vormen).
-python3 bouw.py naam s_lijf s_kop   -> onderdelen/<naam>.png (32x32, pal2, ruwe onderlaag)"""
+python3 bouw.py naam s_lijf s_kop [s_oren]   -> onderdelen/<naam>.png (32x32, pal2, ruwe onderlaag)"""
 import sys,numpy as np
 from PIL import Image
 sys.path.insert(0,'docs/concept/sprites/viscacha/icoon/onderdelen'); import delen as Dl
 D='docs/concept/sprites/viscacha/'
 naam,s_l,s_k=sys.argv[1],float(sys.argv[2]),float(sys.argv[3])
+s_o=float(sys.argv[4]) if len(sys.argv)>4 else s_k   # oren apart
 fr=np.array(Image.open(D+'af/viscacha.png'))[:64]; L=open(D+'af/normal.pal').read().split('\n'); FP=np.array([[int(v) for v in L[3+k].split()[:3]] for k in range(16)])
 rgb=FP[fr].astype(float); lab=np.load(D+'icoon/onderdelen/delen.npy')
 names=[d[0] for d in Dl.DELEN]
@@ -18,16 +19,16 @@ def doel(x,y,kop):
     if kop: return off+NEK*s_l+(np.array([x,y])-NEK)*s_k
     return off+np.array([x,y])*s_l
 out=np.zeros((40,48),np.uint8)
-def bron(X,Y,kop):
+def bron(X,Y,kop,s=None):
     off=np.array([12.0,8.0]); q=np.array([X,Y],float)-off
-    if kop: return NEK+(q-NEK*s_l)/s_k, 1/s_k
+    if kop: return NEK+(q-NEK*s_l)/s, 1/s
     return q/s_l, 1/s_l
 ORDE=['verre achterpoot','romp','dij en achtervoet','voorpoot','bef','opgeheven poot','verre oor','kop','elektrisch motief','nabije oor']
 for n in ORDE:
     ids=[i for i,m in enumerate(names) if m==n]; pm=np.isin(lab,ids); kop=n in KOP
     for Y in range(40):
         for X in range(48):
-            (sx,sy),k=bron(X,Y,kop)
+            (sx,sy),k=bron(X,Y,kop,(s_o if 'oor' in n else s_k))
             x0,y0=int(np.floor(sx)),int(np.floor(sy)); x1,y1=int(np.ceil(sx+k)),int(np.ceil(sy+k))
             if x1<=0 or y1<=0 or x0>=64 or y0>=64: continue
             x0,y0=max(0,x0),max(0,y0); x1,y1=min(64,x1),min(64,y1)

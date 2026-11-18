@@ -43,3 +43,6 @@ Prompt r2 (hetzelfde gesprek, één bijsturing):
 > Keep my creature exactly as it is: same colors, same art style and dark outline, same fur colors. The head is as big as in my image, with the same two long upright ears, close together on top of the head; both ears grow from the top of the head. The tail is like in my image: it rises upward from the rump in one curve and ends in a spiky, jagged yellow tuft like a small flame. Show its back and tail; the belly is not visible from behind. Do not add anything new and do not redesign it.
 >
 > Gen 3 pixel art, plain white background, no ground, no shadow, no effects, no text.
+
+## Ronde 4 (18 nov)
+`gemini_r4.png` (prompt r4, zonder Raticate): staart goed, maar kop klein en oren uit elkaar, net als p2; lijf ronder en onderkant minder strak. Vergelijking: `vergelijking_r1_p2_r4.png` (front, r1, p2, r4). Voorstel Claude: p2 als basis.

@@ -35,6 +35,8 @@ Gemeten over 385 Gen 1–3-iconen (p10–p90, mediaan):
 - Kleine details weglaten (vleugeladers van Ninjask, losse vachtplukjes, klauwtjes), doorkijkjes dichtmaken.
 - Kleur laten verschuiven naar het icoonpalet (Wailord paars, Milotic rozer).
 
+- **Wel moet: vormen blijven vormen** (Jordi: "vormen probeert die nog wel wat van te maken he ipv vierkantjes" · "dus dat is nog een goede wel"): ronde delen rond, met schuine stapjes en curven zoals in de front; geen blokjes, rechte randen of rechthoekige vlakken waar het dier rond is.
+
 **Wat niet mag:**
 - Iets toevoegen dat niet in het ontwerp zit.
 - Herkenningstekens laten vallen: die blijven, desnoods groter (Zangoose' rode litteken, Seviper's gele vlekken, Swellow's rode gezicht, Gardevoir's rode hoorn, Pikachu's rode wangen).

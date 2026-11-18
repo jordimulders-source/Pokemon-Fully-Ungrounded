@@ -64,3 +64,4 @@ Jordi over v6: "ik vind het hoofd qua vorm nog steeds niet kloppend, laten we ev
 > Plain white background, black outline, no ground, no shadow, no effects, no text.
 Gemini chibi r1 (`gemini_chibi_r1.png`): Jordi "als ik dit zo zie twijfel ik erover, maar misschien vertaalt het goed naar een icoon" · "de chibi lijkt namelijk meer op een dedenne, maar goed, laten we het uitproberen". Kale verkleining (`proef_vel.png`, pal2): silhouet leest, geel valt weg.
 Jordi over v7/v7b: "nee daar ben ik het niet mee eens, hoofd en oog zijn echt niet goed in beideversies, van een afstandje lijken ze ok, maar als je inzoomt wordt het pixelblur".
+Jordi: "de hoek is in v4 ook beter voor mijn gevoel, kijk hoe rattata en dedenne bijv echt diagonaal staan". v8: hoek v4, kop/oog pixel voor pixel uit echte in-game iconen omgekleurd.

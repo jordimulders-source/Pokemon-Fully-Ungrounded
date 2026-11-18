@@ -115,6 +115,9 @@ Jordi over viscacha v4: "kijk het type ontwerp is uitstekend, dit is super consi
 
 - **Puntige delen** (`12_puntige_koppen.png`: Inkay, Sharpedo, Kingdra, Seadra, Kabutops, Malamar; Jordi over Krassault: "het hoofd mag iets puntiger denk ik"): een punt blijft een punt, zo lang als in de front of langer. De randen lopen als rechte 45°-diagonaal (trapjes van 1-1) naar een tip van 1 px; niet afronden. De tip krijgt vaak een lichte pixel. Ronde delen rond, puntige delen puntig: het ronder maken (§1e) geldt niet voor punten.
 
+- **Geen pixelblur ingezoomd** (viscacha v7, Jordi: "van een afstandje lijken ze ok, maar als je inzoomt wordt het pixelblur"): elk cluster is een bewuste vorm; ogen en kleine koppen pixel voor pixel overnemen uit een echt icoon en omkleuren (SPRITE_KERN-regel voor ogen), nooit de verkleiningsresten laten staan. Altijd zelf op 8× kijken vóór het naar Jordi gaat.
+- **Hoek: echt diagonaal** (Jordi: "kijk hoe rattata en dedenne bijv echt diagonaal staan"): driekwartstand, lijf schuin naar de kijker, kop naar voren-links.
+
 ## Complexe ontwerpen
 Jordi: "we hebben namelijk ook een aantal complexe designs en die moeten we ook kunnen omzetten". De smokkelregels van §1e zijn daarvoor bedoeld (naar Gen 9: Kingambit, Skeledirge, Tinkaton, Spidops, Grafaiai). Na de viscacha de werkwijze testen op één complex ontwerp (voorstel: spooktrein fase 3 of Krassault).
 

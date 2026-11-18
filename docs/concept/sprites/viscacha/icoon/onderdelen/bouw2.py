@@ -63,7 +63,7 @@ for Y in range(H):
                 out[Y,X]=15; break
 # oog: front-oog rond (15,30) -> blokje 2 donker + witte pixel, ooglid erboven
 e=naar(15.5,30.5,'kop'); ex,ey=int(e[0]),int(e[1])
-for (x,y,v) in [(ex-1,ey-1,6),(ex,ey-1,6),(ex+1,ey-1,6),(ex-1,ey,15),(ex,ey,3),(ex+1,ey,15)]:
+for (x,y,v) in [(ex-1,ey-1,6),(ex,ey-1,6),(ex+1,ey-1,6),(ex-1,ey,15),(ex,ey,15),(ex+1,ey,3),(ex-1,ey+1,15),(ex,ey+1,15),(ex+1,ey+1,15)]:
     if 0<=y<H and 0<=x<W and m[y,x]: out[y,x]=v
 # staart uit v8
 v8=np.array(Image.open(D+'icoon/maker/icon_v8.png'))[:32]

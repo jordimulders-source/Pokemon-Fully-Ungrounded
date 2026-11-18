@@ -89,6 +89,15 @@ Alle 131 Gen 3-paren bekeken (`4_front_rug_gen3_deel1–3.png`, `front_rug_vel.p
 - Een paar zijn haast frontaal in plaats van van achteren (Kirlia, Seviper, Jirachi).
 Conclusie: Gen 3 is trouw aan het ontwerp, vrij in pose en uitsnede. Voor ons: kleuren en kenmerken van de front aanhouden; pose en uitsnede mogen afwijken als het als rug beter leest.
 
+### Icoon en overworld: vergelijkbaar en vertaalbaar? (Jordi, 18 nov)
+Gemeten over 385 soorten (Gen 1–3, GBA-icoon tegen overworld) en bekeken op `6_icoon_vs_overworld.png` (front, rug, icoon 2×, overworld voor 2×, achter 2×, opzij 2×):
+- **Maat: gelijk.** Overworld-hoogte (opzij) / icoon-hoogte mediaan 1,00 (0,83–1,20). Beide licht chibi, beide naar links.
+- **Aanzicht: anders.** Het icoon is de front-pose (driekwart); de overworld heeft drie rechte aanzichten. Voor viervoeters en vogels die in de front al bijna van opzij staan (Zigzagoon, Electrike, Mightyena, Taillow, Raticate) lijken icoon en overworld-opzij sterk op elkaar: daar is het icoon een goede onderlaag. Bij tweevoeters die naar de kijker staan (Treecko, Pikachu) lijkt het icoon meer op overworld-voor.
+- **Stijl: anders.** Overworld = HGSS: zwarte omlijning rondom, eigen palet (≤15 kleuren, dus dichter bij de front-kleuren dan het icoon), vaak verzadigder; het icoon = Gen 3-icoonstijl met gedeeld palet en grijze onderrand.
+- **Overworld-achter is niet de gevechtsrug:** recht van achteren, klein, tegenover de rug van linksachter en ingezoomd. De rugsprite helpt alleen voor wat er van achteren te zien is (kleur, staart, oren).
+- **Overworld-voor bestaat nergens anders**: recht van voren, het enige echt nieuwe aanzicht.
+- Silhouetoverlap (IoU) zegt hier weinig: op ±20 px zijn alle aanzichten ±0,69 gelijk, dus beoordelen op het oog.
+
 ## 4. Gevolgen voor onze nieuwe designs
 1. **De rug is een nieuw aanzicht**: dat staat niet in de front of het Gemini-model. Het is dus (net als de front) ontwerpwerk met een bron, geen afgeleide. Voor de rug is een model nodig.
 2. **Het icoon is een mini-ontwerp**: verkleinen kan alleen als onderlaag; de keuzes (welk kenmerk groot, welke pose) zijn ontwerp.
@@ -118,7 +127,7 @@ Gemini werkte niet (r1: eigen pose en ander ontwerp; r2 met voorbeeld-icoon: ver
 
 ### C. Overworld (pas als het nodig is)
 - Alleen voor soorten die in de wereld staan; anders uitstellen tot er een besluit over volgers is.
-- Drie aanzichten (voor/achter/opzij, elk 2 frames), 32×32, ±1,05× zo hoog als het icoon. Het icoon is de beste onderlaag voor "opzij"; "achter" volgt de rug, "voor" is een frontaal aanzicht dat nergens anders bestaat (Gemini of hand, naar HGSS-voorbeelden van dezelfde bouw).
+- Drie aanzichten (voor/achter/opzij, elk 2 frames), 32×32, ±1,05× zo hoog als het icoon. Het icoon is de beste onderlaag voor "opzij" bij soorten die in de front al bijna van opzij staan (zoals de viscacha), omgezet naar HGSS-stijl (zwarte omlijning, eigen palet, puur profiel); "achter" haalt alleen kenmerken uit de rug; "voor" bestaat nergens anders (Gemini werkte niet bij de viscacha: werd Raichu/Pachirisu).
 - Palet: front-palet donkerder/verzadigder als eigen `overworld_normal.pal`.
 
 ### Proef

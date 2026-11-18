@@ -31,3 +31,4 @@ Jordi: "misschien een voorbeeld icoon erbij doen?"
 
 ## Icoon uit onze front (maker, 18 nov)
 `maker/icon.png` (pal5, 28×21). Jordi: "hij is nu erg plat en wat aan de grote kant, het icoon" · "plat van kleur" → meer schaduw/binnenlijnen/detail zoals echte Gen 3-iconen, en kleiner.
+Jordi: "zigzagoon heeft een perspectief" · "de viscacha niet" → het icoon moet diepte krijgen zoals Zigzagoon (driekwart, verre delen kleiner/donkerder/hoger, nabije delen voor), zoals de front.

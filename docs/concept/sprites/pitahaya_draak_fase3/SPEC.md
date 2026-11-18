@@ -40,5 +40,5 @@
 
 ## Af (18 nov), ronde 14
 - `af/pitahaya_draak_fase3.png` (+ `_8x`) = r14 = r13 G + 7 px van de eindkeuring (schaduw achterin de bek, banding staartlus, knots rechtsonder donkerst, rafels lichtkant). Vergelijking `af/af_vs_r9_8x.png`; r9 in `af/oud_r9/`.
-- Open (niet door Jordi genoemd na r12): rechte lijn onder de kaak buiten de bek (zwart (13–16,30) + grijze buikrand (17–22,30)).
+- Kaak buiten de bek: Jordi (18 nov) "de kaak is nu goed door beter kleurgebruik" → geen open punt meer.
 - Jordi (18 nov): "de stippen op de buik waren eerst beter, kopieer de buik van eerder en dan is die klaar" → r15 = r14 + buikpitjes van r10A (17 px, `sprite_r15/maak_r15.py`). **Af.**

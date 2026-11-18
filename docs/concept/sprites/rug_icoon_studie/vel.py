@@ -42,7 +42,7 @@ for sp in args:
     if bk: parts.append(rgba(bk,P))
     if ic:
         k=IPI.get(os.path.basename(d.rstrip('/')))
-        I=rgba(ic,pal('graphics/pokemon/icon_palettes/pal%d.pal'%k) if k is not None else None)
+        I=rgba(ic,None if gba else (pal('graphics/pokemon/icon_palettes/pal%d.pal'%k) if k is not None else None))  # GBA-iconen: ingebed palet
         parts+= [I.crop((0,0,32,32)),I.crop((0,32,32,64))]
     if ow:
         O=rgba(ow,pal(owp) if owp else None); fs=O.size[1]

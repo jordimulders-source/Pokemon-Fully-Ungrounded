@@ -28,3 +28,6 @@ Jordi: "misschien een voorbeeld icoon erbij doen?"
 
 ## Ronde 2 (18 nov): afgekeurd
 `afgekeurd_r2.png` (met Zigzagoon-voorbeeld): geen chibi meer maar een verkleinde front op een fijner raster, losse staartpunt bovenin. Jordi: "dit lukt gemini dus niet". Les: ook bij iconen werkt een voorbeeldplaatje tegen; r1 (alleen de front, stijl in woorden) is de basis.
+
+## Icoon uit onze front (maker, 18 nov)
+`maker/icon.png` (pal5, 28×21). Jordi: "hij is nu erg plat en wat aan de grote kant, het icoon" · "plat van kleur" → meer schaduw/binnenlijnen/detail zoals echte Gen 3-iconen, en kleiner.

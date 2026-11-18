@@ -90,3 +90,4 @@ Jordi: "we gaan de goede kant op" · "rechteroor is wel een te rechte lijn" · "
 Jordi: "linkerwangzak mag ook iets korter en rechter meer een < vorm, gebruik daar ook wiskunde voor, voor hoe groot het geel is tov de rest van het hoofd". Gemeten in de front: wangpluk 3,8% van de kop (4×5), kraag 9,9% (9×10, chevron). Doel icoon (kop ±50 px, kenmerk ×1,5): wang ±3 px, kraag ±7–8 px in <-vorm.
 Jordi over a6: "de snuit is nu juist weer te groot". (a6: snuit 5,0 binnen marge 4,3–5,9; dus naar de ondergrens).
 Jordi: "ik zou de linkerlijn van de snuit 1 pixellijn naar rechts halen".
+Jordi: "en de onderkant 1 pixellijn naar boven" (snuit).

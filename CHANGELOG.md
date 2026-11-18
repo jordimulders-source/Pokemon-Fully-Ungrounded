@@ -2074,3 +2074,10 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - `docs/concept/sprites/mate_fase2/af/mate2.png` (+ `_8x`): kalebas-kano met boos yerba-ventje dat roeit met twee bombilla's, zilveren rand om het yerba-vak, gekerfde ogen, warm water achterin. Model: Gemini r6 + water en gezicht van r2.
 - Sprite r1–r9 in `mate_fase2/sprite/`: natief raster verkleind door schrappen (hals 2 kolommen, yerba-vak 2, naden in romp/water), achtersteven heel, rechterrand op één boog die achter het zeefje aansluit (Jordi koos B → zacht → A); keurder PASS en Dragonfly Cave-eindkeuring, 11 px reparaties.
 - Op het overzichtsvel (`showcase/frontsprites_af.png`). De mate-lijn is af. Lessen in `docs/lessen/GEMINI.md`.
+
+### [v0.0.511] - Studie rugsprites, iconen en overworldsprites
+- `docs/concept/sprites/rug_icoon_studie/STUDIE.md`: 962 soorten (Gen 1–9, in-game set) en 385 originele GBA-sprites gemeten. Rug ±1,16× zo breed als de front en even hoog, onderkant vlak afgesneden (`backPicYOffset` = lege rijen eronder), zelfde palet; icoon ±0,44× de fronthoogte, onderkant y 29, frame 2 meestal bovenkant 1 px lager; overworld ±0,43× (HGSS-stijl, voor/achter/opzij, 32×32, alleen in de ROM als de soort in de wereld staat; volgers staan uit). Tabel per fronthoogte, want kleine soorten krijgen relatief grote ruggen en iconen.
+- Bevindingen: de rug is een nieuw aanzicht (kop in profiel over de schouder, ingezoomd), het icoon een mini-ontwerp (grote kop, eigen eenvoudige pose, één kenmerk groot), geen verkleining.
+- Voorgestelde werkwijze (rug via Gemini-rugmodel + Jordi kiest + overnemen in het frontpalet; iconen in batches met script-onderlaag en handwerk; overworld pas als nodig) en open vragen (volgers, icoonpose, proef viscacha + Gengas).
+- Vellen `1_vel_ingame.png`, `2_vel_gba.png`, `3_icoon_vs_verkleining.png` en scripts `vel.py`, `naief.py`, `meet_*.py`.
+

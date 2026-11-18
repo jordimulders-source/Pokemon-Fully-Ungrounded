@@ -45,3 +45,9 @@ P['pachirisu']=dict(f=dict(kop=[15,26,33,40],oog=[27.5,34,2,2],oor=20,romp=[21,3
                     i=dict(kop=[5,16,17,26],oog=[12,20.5,1,2],oor=13,romp=[8,16],buik=28,vp=30,ap=N,staart=[14,8,27,24]),
                     pose='bijna frontaal, staart achter; icoon idem', frontaal=True)
 # minccino overgeslagen: frontaal, oorlobben en kop niet eenduidig te scheiden
+P['skwovet']=dict(f=dict(kop=[13,25,32,40],oog=[25,33,2,2],oor=22,romp=[17,38],buik=50,vp=52,ap=54,staart=[28,9,52,40]),
+                  i=dict(kop=[5,17,18,26],oog=[12.5,19.5,2,2],oor=13,romp=[9,22],buik=26,vp=28,ap=N,staart=[16,8,27,21]),
+                  pose='frontaal, staart achter; icoon idem', frontaal=True)
+P['yungoos']=dict(f=dict(kop=[2,25,23,41],oog=[9,35.5,3,2],oor=N,romp=[22,57],buik=46,vp=51,ap=51,staart=[50,34,63,45]),
+                  i=dict(kop=[4,17,14,25],oog=[10,22,1,1],oor=N,romp=[13,24],buik=25,vp=27,ap=28,staart=[21,14,29,21]),
+                  pose='zelfde lang profiel links; icoon staart omhoog')

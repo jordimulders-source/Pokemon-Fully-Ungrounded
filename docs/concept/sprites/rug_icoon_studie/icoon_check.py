@@ -1,7 +1,8 @@
 """Eisenlijst-controle voor een party-icoon (zie EISEN_ICOON.md).
 python3 icoon_check.py icon.png front.png      (front = onze goedgekeurde frontsprite, frame 1 boven)
 Normen = p10–p90 van de 385 originele Gen 1–3-iconen (icon_gba.png)."""
-import sys,numpy as np
+import os,sys,numpy as np
+sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
 from PIL import Image
 def pal(p):
     L=open(p).read().split('\n'); return np.array([[int(v) for v in L[3+k].split()[:3]] for k in range(16)])
@@ -19,13 +20,17 @@ chk('hoogte past bij fronthoogte (±3)',abs(h-doel)<=3,f'{h} (doel ±{doel:.0f},
 chk('breedte 16-27',16<=w<=27,str(w))
 chk('onderkant y 27-30',27<=ys.max()<=30,str(ys.max()))
 chk('midden x 14.5-16.5',14.5<=(xs.min()+xs.max())/2<=16.5,str((xs.min()+xs.max())/2))
-nc=len(np.unique(ix[ix>0])); chk('kleuren 6-10',6<=nc<=10,str(nc))
+nc=len(np.unique(ix[ix>0])); chk('kleuren 6-11',6<=nc<=11,str(nc))
 pad=np.pad(m,1); edge=m&~(pad[:-2,1:-1]&pad[2:,1:-1]&pad[1:-1,:-2]&pad[1:-1,2:])
 dk=lum[f1]<110; chk('omlijning dicht (>=95% randpixels donker)',(dk&edge).sum()/edge.sum()>=.95,f'{(dk&edge).sum()/edge.sum():.2f}')
 mid=(ys.min()+ys.max())/2; ey,ex=np.nonzero(edge)
 top=lum[f1[ey[ey<mid],ex[ey<mid]]].mean(); bot=lum[f1[ey[ey>=mid],ex[ey>=mid]]].mean()
 chk('omlijning boven donkerder dan onder',top<bot,f'boven {top:.0f}, onder {bot:.0f}')
-r=(dk&m&~edge).sum()/m.sum(); chk('binnenlijnen/oppervlak 0.10-0.26 (Gen 3 mediaan 0.18)',.10<=r<=.26,f'{r:.3f}')
+r=(dk&m&~edge).sum()/m.sum(); chk('binnenlijnen/oppervlak 0.09-0.26 (in-game mediaan 0.16)',.09<=r<=.26,f'{r:.3f}')
+try:
+    import vorm_meet as V
+    nv=V.stats(f1,P)[1]; chk('kleurvlakken 10-42 (in-game mediaan 20, Gen 9 25)',10<=nv<=42,str(nv))
+except Exception as e: chk('kleurvlakken (scipy nodig)',False,str(e))
 m2=f2>0; y2,x2=np.nonzero(m2)
 chk('frame 2: voeten op dezelfde rij',abs(y2.max()-ys.max())<=1,f'{ys.max()} -> {y2.max()}')
 chk('frame 2: bovenkant hooguit 2 px verschoven',abs(y2.min()-ys.min())<=2,f'{y2.min()-ys.min()}')

@@ -30,7 +30,8 @@ def pair(icon,front,ipal=None,fpal=None):
     ys,_=np.nonzero(ii>0); h=ys.max()-ys.min()+1
     a=stats(ii,IP); b=stats(shrink(fi,FP,h),FP); c=stats(fi,FP)
     return {'compact_ratio':a[0]/b[0],'vlakken_icoon':a[1],'vlakken_front64':c[1],'vlakken_ratio':a[1]/max(1,c[1]),'gaten_icoon':a[2],'gaten_front':c[2]}
-if len(sys.argv)>2:
+if __name__!='__main__': pass
+elif len(sys.argv)>2:
     print({k:round(float(v),2) for k,v in pair(sys.argv[1],sys.argv[2]).items()})
 else:
     G='graphics/pokemon'; R=[]

@@ -52,3 +52,4 @@ Bewerk r2 (`bewerk_r2.png`): silhouet bleef staan (99,6%, alleen 4 snorhaarpixel
 Jordi over v3: "hij is nog steeds erg hoekig he"; over het blokje onder de kin (opgeheven voorpoot): "dit stuk kan ik ook niet verklaren? een arm? is te hoekig".
 Jordi over v4: "kijk het type ontwerp is uitstekend, dit is super consistent met de andere sprites, alleen je herkent de viscacha niet goed meer terug."
 Jordi over v5: "v5 is echt verschrikkelijk". Handwerk-route gestopt na v5; v4 blijft de beste stijl.
+Jordi: "de oren zijn prima, maar de rest van het hoofd is volledig verknald, vergelijk het maar met het model qua vorm, totaal anders". Les: koppen nooit vrij opbouwen; de kopvorm komt uit de front (verkleind), alleen de maat mag chibi.

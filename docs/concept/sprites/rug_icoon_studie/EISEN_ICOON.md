@@ -108,6 +108,8 @@ Normen uit 942 overworldsprites (HGSS-stijl): 192×32 (6 frames: voor 2, achter 
 ## Herkenbaarheid eerst vastleggen
 Jordi over viscacha v4: "kijk het type ontwerp is uitstekend, dit is super consistent met de andere sprites, alleen je herkent de viscacha niet goed meer terug." Les: de stijlregels (§1e) maken elk knaagdier gelijk. Daarom vóór het icoon per soort de **herkenningstekens van de front** opschrijven (vorm én maat: "lange rechtopstaande oren dicht bij elkaar", niet alleen "oren") en die in het icoon minstens even groot houden als bij verkleinen, liever overdreven. Handmatige toets: zou je de soort op 1× tussen de buren aanwijzen?
 
+- **Kopvorm uit de front, niet bedenken** (viscacha v5, Jordi: "de rest van het hoofd is volledig verknald, vergelijk het maar met het model qua vorm, totaal anders"): de kop van het icoon is de kop van de front verkleind (eventueel met een grotere factor dan het lijf voor de chibi-maat), daarna alleen opgeschoond.
+
 ## Complexe ontwerpen
 Jordi: "we hebben namelijk ook een aantal complexe designs en die moeten we ook kunnen omzetten". De smokkelregels van §1e zijn daarvoor bedoeld (naar Gen 9: Kingambit, Skeledirge, Tinkaton, Spidops, Grafaiai). Na de viscacha de werkwijze testen op één complex ontwerp (voorstel: spooktrein fase 3 of Krassault).
 

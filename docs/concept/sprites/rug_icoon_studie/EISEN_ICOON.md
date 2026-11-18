@@ -4,6 +4,9 @@ Jordi: "eigenlijk moeten we een soort eisenlijst maken op basis van de al bestaa
 
 **Afspraak:** een icoon is af als het script alles OK geeft en de korte handmatige blik (punt 2) klopt. Geen keurrondes daarbovenop.
 
+## 0. BELANGRIJKSTE EIS: hij lijkt op de echte Pokémon
+Jordi (18 nov): "dat is het belangrijkste van de hele eisenlijst, hij moet lijken op de echte pokemon". Alle andere eisen komen hierna. Het icoon is de front (onze goedgekeurde sprite) in het klein: kopvorm, gezicht, oren, kenmerken en kleurverdeling overgenomen, niet bedacht. Toets als eerste: leg het icoon naast de verkleinde front; vorm voor vorm moet het hetzelfde zijn, alleen eenvoudiger. Een icoon dat alle scriptpunten haalt maar niet op de front lijkt, is afgekeurd (viscacha v5).
+
 ## 1. Automatisch (`icoon_check.py icon.png front.png`)
 Normen = p10–p90 van de 385 originele Gen 1–3-iconen.
 | Eis | Norm |

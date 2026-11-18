@@ -96,6 +96,7 @@ Gemeten over 385 soorten (Gen 1–3, GBA-icoon tegen overworld) en bekeken op `6
 - **Stijl: anders.** Overworld = HGSS: zwarte omlijning rondom, eigen palet (≤15 kleuren, dus dichter bij de front-kleuren dan het icoon), vaak verzadigder; het icoon = Gen 3-icoonstijl met gedeeld palet en grijze onderrand.
 - **Overworld-achter is niet de gevechtsrug:** recht van achteren, klein, tegenover de rug van linksachter en ingezoomd. De rugsprite helpt alleen voor wat er van achteren te zien is (kleur, staart, oren).
 - **Overworld-voor bestaat nergens anders**: recht van voren, het enige echt nieuwe aanzicht.
+- **Jordi (18 nov):** "voor het oog lijkt het icoon meer true aan de battle sprite dan de overworld sprite, ondanks het kleurgebruik, qua vorm, silhouet etc." → het icoon is de trouwe verkleining van de front; de overworld is een eigen HGSS-tekening in andere aanzichten.
 - Silhouetoverlap (IoU) zegt hier weinig: op ±20 px zijn alle aanzichten ±0,69 gelijk, dus beoordelen op het oog.
 
 ## 4. Gevolgen voor onze nieuwe designs
@@ -142,3 +143,9 @@ Voorstel: eerst **viscacha** (heeft al frame 2, viervoeter) en **Gengas** (bol, 
 1. "voorlopig nog niet, maar ik ga wel pokemon in de overworld plaatsen die diverse kanten op kunnen kijken." → volgers blijven uit; soorten die in de wereld geplaatst worden krijgen een overworldsprite met alle aanzichten (voor, achter, opzij).
 2. "ja geen probleem, volg vooral game freak daarin" → het icoon mag een eigen, vereenvoudigde pose hebben, zoals bij Game Freak.
 3. "kan je dat?" → iconen: ja, zelf (script-onderlaag + maker). Ruggen: Claude schrijft de Gemini-prompts (`viscacha/rug/PROMPT_RUG.md`, `gengas/rug/PROMPT_RUG.md`), Jordi plakt ze in Gemini en kiest.
+
+## 7. Externe hulpmiddelen (18 nov)
+Jordi: "Wat betreft de externe tools, alleen als ze gratis zijn wil ik dat doen".
+- **PixelLab** (pixel-art-AI, 4/8 kijkrichtingen, draaien van een figuur, API/MCP): alleen een gratis proef met een beperkt aantal generaties (bronnen noemen ±40, daarna een paar per dag); verder betaald. Bruikbaar als gratis test voor de overworld van één soort, niet voor de hele dex.
+- **Image-to-3D, gratis demo's op Hugging Face** (TRELLIS.2 van Microsoft, Hunyuan3D van Tencent, open gewichten): front → 3D-model → in Blender (gratis) renderen vanuit elk aanzicht als onderlaag. Gratis Spaces kunnen traag zijn of slapen. Een render blijft een onderlaag, nooit het eindresultaat.
+- Lokaal draaien kan hier niet (geen GPU in de container).

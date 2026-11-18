@@ -9,6 +9,8 @@ Samengevat uit alle spritelessen (5 nov, Jordi: "vat de lessen echt enorm samen 
 
 **Ontwerp uit Gemini?** Volg `SPRITE_WERKWIJZE.md` → "Gemini-model namaken" (meetgereedschap poedelmot) en `docs/lessen/GEMINI.md`; die vervangen stap 1–3 hieronder (Gemini-keuze van Jordi = bevroren ontwerp; sprite = trouwe vertaling; keurder toetst trouw + techniek, niet het ontwerp).
 
+**Namaken, niet scheppen (Jordi, 18 nov: "dat jij in namaken vele malen beter bent dan in from scratch poses/vormen etc creëren"):** ook voor rug, icoon en overworld eerst een model zoeken of laten maken (Gemini op spritegrootte, een bestaande sprite, een krabbel); zonder model gaat het in veel kleine rondes en verdwijnt het ontwerp (viscacha-icoon v1–v4 tegenover de rug in ±5 rondes).
+
 ## Volgorde (nooit overslaan)
 1. **Ontwerp met Jordi**: pose + kenmerken, letterlijk in `SPEC.md` van de Pokémon. Foto's van Jordi direct in `referenties/` (komt een foto niet als bestand binnen: punt voor punt beschrijven).
 2. **Bron voor de vorm** (Jordi, 5 nov: "blender model is geen vereiste, genoeg sprites zijn zonder blender ook gelukt"): kies wat werkt. **Foto in de juiste pose** (kolibrie-eindvorm, olinguito) of een **3D-poppetje/Blender-model** bij lastige 3/4-poses (kolibrie pre-evo, `docs/concept/sprites/kolibrie_pre/blender/kolibrie_pre.py`: één huid, geen losse bollen, eerst een rondom-vel). Nooit zelfgebouwde cirkels en driehoeken.

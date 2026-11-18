@@ -1,0 +1,85 @@
+# pitahaya3_r11_C.png t.o.v. ../sprite_r10/pitahaya3_r10_A.png: stap | x | y | r10A -> r11 (tekens .#drpPgGhHwWkqQs; q = grijs 155,154,159)
+# totaal 21 px
+2 buik weg | 20 | 31 | s -> W
+2 buik weg | 22 | 32 | s -> W
+2 buik weg | 20 | 33 | s -> W
+2 buik weg | 24 | 34 | s -> W
+2 buik weg | 24 | 36 | s -> W
+2 buik weg | 26 | 37 | s -> W
+2 buik weg | 28 | 38 | s -> W
+2 buik weg | 26 | 39 | s -> W
+2 buik weg | 28 | 40 | s -> W
+2 buik weg | 27 | 42 | s -> w
+2 buik pit | 21 | 31 | W -> s
+2 buik pit | 19 | 32 | W -> s
+2 buik pit | 22 | 33 | W -> s
+2 buik pit | 23 | 35 | W -> s
+2 buik pit | 25 | 38 | W -> s
+2 buik pit | 27 | 39 | W -> s
+2 buik pit | 28 | 41 | w -> s
+1 bek basis | 9 | 27 | s -> W
+1 bek basis | 9 | 29 | s -> W
+1 bek basis | 11 | 28 | s -> W
+1 bek basis | 11 | 29 | # -> W
+1C bek | 9 | 27 | W -> s
+1C bek | 10 | 29 | W -> s
+
+# pitahaya3_r11_D.png t.o.v. ../sprite_r10/pitahaya3_r10_A.png: stap | x | y | r10A -> r11 (tekens .#drpPgGhHwWkqQs; q = grijs 155,154,159)
+# totaal 25 px
+2 buik weg | 20 | 31 | s -> W
+2 buik weg | 22 | 32 | s -> W
+2 buik weg | 20 | 33 | s -> W
+2 buik weg | 24 | 34 | s -> W
+2 buik weg | 24 | 36 | s -> W
+2 buik weg | 26 | 37 | s -> W
+2 buik weg | 28 | 38 | s -> W
+2 buik weg | 26 | 39 | s -> W
+2 buik weg | 28 | 40 | s -> W
+2 buik weg | 27 | 42 | s -> w
+2 buik pit | 21 | 31 | W -> s
+2 buik pit | 19 | 32 | W -> s
+2 buik pit | 22 | 33 | W -> s
+2 buik pit | 23 | 35 | W -> s
+2 buik pit | 25 | 38 | W -> s
+2 buik pit | 27 | 39 | W -> s
+2 buik pit | 28 | 41 | w -> s
+1 bek basis | 9 | 27 | s -> W
+1 bek basis | 9 | 29 | s -> W
+1 bek basis | 11 | 28 | s -> W
+1 bek basis | 11 | 29 | # -> W
+1D bek | 8 | 26 | W -> w
+1D bek | 9 | 26 | W -> w
+1D bek | 10 | 26 | W -> w
+1D bek | 11 | 26 | W -> q
+1D bek | 11 | 27 | W -> w
+1D bek | 9 | 27 | W -> s
+1D bek | 11 | 28 | W -> s
+1D bek | 8 | 29 | W -> s
+
+# pitahaya3_r11_E.png t.o.v. ../sprite_r10/pitahaya3_r10_A.png: stap | x | y | r10A -> r11 (tekens .#drpPgGhHwWkqQs; q = grijs 155,154,159)
+# totaal 24 px
+2 buik weg | 20 | 31 | s -> W
+2 buik weg | 22 | 32 | s -> W
+2 buik weg | 20 | 33 | s -> W
+2 buik weg | 24 | 34 | s -> W
+2 buik weg | 24 | 36 | s -> W
+2 buik weg | 26 | 37 | s -> W
+2 buik weg | 28 | 38 | s -> W
+2 buik weg | 26 | 39 | s -> W
+2 buik weg | 28 | 40 | s -> W
+2 buik weg | 27 | 42 | s -> w
+2 buik pit | 21 | 31 | W -> s
+2 buik pit | 19 | 32 | W -> s
+2 buik pit | 22 | 33 | W -> s
+2 buik pit | 23 | 35 | W -> s
+2 buik pit | 25 | 38 | W -> s
+2 buik pit | 27 | 39 | W -> s
+2 buik pit | 28 | 41 | w -> s
+1 bek basis | 9 | 27 | s -> W
+1 bek basis | 9 | 29 | s -> W
+1 bek basis | 11 | 28 | s -> W
+1 bek basis | 11 | 29 | # -> W
+1E bek | 10 | 28 | W -> s
+1E bek | 11 | 26 | W -> q
+1E bek | 8 | 29 | W -> q
+

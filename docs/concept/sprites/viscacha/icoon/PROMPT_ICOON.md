@@ -76,3 +76,10 @@ Jordi: "en herinner de lessen van het oog" · "dat is een zwart oog met 1 witte 
 Jordi wijst a2 (ruwe onderlaag, kop 0,50 + oren 0,56, `onderdelen/a2.png`) aan: "en deze zit het dichtste bij, dus deze moet je fixen". Basis = a2, niet b2.
 Jordi over het oog: "dat oog kom op" · "dat kan niet" · "kijk naar die positie" · "nee helemaal niet, je bent weer aan het gissen" · "kijk nou eens naar de front" · "het oog zit naast de wang maar kleiner". → plek: direct naast de wang (de gele pluk achter het oog), zoals de front; kleiner: zwart met 1 witte glans, geen extra bruine rij. Berekende plek uit de transformatie (`oog_berekend.png`) bevestigt: glans (10,16), donker (11,16), naast de pluk.
 Krabbel Jordi over de kop van icon_a2_af (`onderdelen/krabbel_jordi_kop.png`): "kijk dan naar wat ik getekend heb".
+
+## Route "Gemini bewerkt de front naar chibi-verhoudingen, wij halveren exact" (18 nov)
+Jordi: "nee door een mens is out of the question, ik kan dat niet en het netwerk daarvoor heb ik niet". Nog niet geprobeerd: een BEWERKING (geen nieuwe tekening) van onze front op volle grootte, alleen de verhoudingen veranderen (zoals frame 2 bij de viscacha slaagde), en daarna exact 2× halveren met regels (Krassault-methode, `onderdelen/chibi2x.py`-regels). Stopregel: werkt de eerste poging niet voor het hoofd, dan stoppen met deze route.
+Nieuw gesprek, alleen bijlage `../af/viscacha_8x.png`.
+> Edit the attached image. Keep this exact same creature: identical art style, colors, outline, face, eye, ears, whiskers, yellow cheek tuft, yellow tuft behind the eye, tail and pose. Do not redraw the face and do not redesign anything.
+> Change only the proportions, like a party menu icon of this Pokémon: the head bigger (about one and a half times), the body, legs and tail a bit shorter and more compact. Keep the same pixel size and the same pixel art style as the attached image.
+> Plain white background, no ground, no shadow, no effects, no text.

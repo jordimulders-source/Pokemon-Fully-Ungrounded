@@ -94,6 +94,8 @@ Bekeken: 20 kleine viervoeters in de in-game set (`10_poseburen_viscacha.png`: R
 - **Herkenningsteken overdrijven** (Tinkaton's hamer, Kingambit's kroon, Dachsbun's staart).
 - **Frame 2** mag kop/staart duidelijk bewegen.
 
+- Jordi: "handige poses, dingen wegstoppen, zolang het maar consistent is en niet raar eruit ziet": een pose kiezen die makkelijk leest en lastige delen achter het lijf laten verdwijnen mag.
+
 **Nooit:** kenmerken toevoegen, een herkenningsteken laten vallen, het gezicht/de oogstijl veranderen, de omlijning openlaten.
 
 ## 2. Handmatig (±1 minuut, op 1× tussen 4 echte iconen op groen)

@@ -83,3 +83,4 @@ Nieuw gesprek, alleen bijlage `../af/viscacha_8x.png`.
 > Edit the attached image. Keep this exact same creature: identical art style, colors, outline, face, eye, ears, whiskers, yellow cheek tuft, yellow tuft behind the eye, tail and pose. Do not redraw the face and do not redesign anything.
 > Change only the proportions, like a party menu icon of this Pokémon: the head bigger (about one and a half times), the body, legs and tail a bit shorter and more compact. Keep the same pixel size and the same pixel art style as the attached image.
 > Plain white background, no ground, no shadow, no effects, no text.
+Jordi (a2_af links, zones-proef rechts): "deze twee komen beide best aardig in de buurt, links is denk ik de beste, daar moeten de oren het oog en de details zoals snorharen en de wangzakken nog iets beter, evenals de voorpoten". Basis = icon_a2_af; alleen oren, oog, snorharen, wangzakken, voorpoten.

@@ -53,3 +53,12 @@ Jordi over v3: "hij is nog steeds erg hoekig he"; over het blokje onder de kin (
 Jordi over v4: "kijk het type ontwerp is uitstekend, dit is super consistent met de andere sprites, alleen je herkent de viscacha niet goed meer terug."
 Jordi over v5: "v5 is echt verschrikkelijk". Handwerk-route gestopt na v5; v4 blijft de beste stijl.
 Jordi: "de oren zijn prima, maar de rest van het hoofd is volledig verknald, vergelijk het maar met het model qua vorm, totaal anders". Les: koppen nooit vrij opbouwen; de kopvorm komt uit de front (verkleind), alleen de maat mag chibi.
+
+## Stap terug (18 nov): chibi-model via Gemini
+Jordi over v6: "ik vind het hoofd qua vorm nog steeds niet kloppend, laten we even een stapje terug doen en kijken hoe we dit kunnen oplossen. Misschien moet ik ook van de viscacha een chibi vorm laten maken?" Krassault-chibi gaf een goed silhouet ("je haalt er echt krassault uit"). Nieuw gesprek, alleen bijlage `../af/viscacha_8x.png`.
+
+> This is a Pokémon battle sprite of my creature. Draw a chibi version of it, the way its tiny party menu icon would simplify it.
+>
+> Chibi means: the head bigger compared to the body, the body and legs shorter, small details left out, a compact rounded shape. Keep it clearly the same creature, especially the head: the same long head with the pointed snout, the same sleepy half-closed eye, the two long upright ears close together, the long whiskers, the yellow jagged cheek tuft and the big yellow jagged tuft behind the eye. Also the cream chest, the big round haunch and the long tail curving up with the jagged yellow tuft at the end. Same pose and same viewing angle as my sprite, facing left. Same colors. Do not add anything new. It is not Raichu, Pikachu or Eevee: do not make it look like them.
+>
+> Plain white background, black outline, no ground, no shadow, no effects, no text.

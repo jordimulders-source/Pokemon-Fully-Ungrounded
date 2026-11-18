@@ -78,6 +78,15 @@ Overige vaste maten:
 - Bijna iedereen 32×32 (942 van 962); alleen echt reusachtige soorten 64×64 (Wailord, Steelix, de grote legendaries).
 - Er is **geen GBA-overworldset**: ook voor Gen 1–3 komen ze uit HGSS. Onze Gen 3-fronts zullen dus in elk geval naast HGSS-achtige overworldsprites staan; dat is in de game al zo voor alle bestaande soorten.
 
+### Wijkt de rug af van het front-ontwerp? (Jordi, 18 nov: "In red en blue was dit overduidelijk wel, maar weet niet of dat in gen 3 ook zo is")
+Alle 131 Gen 3-paren bekeken (`4_front_rug_gen3_deel1–3.png`, `front_rug_vel.py`). In Gen 3 veel minder dan in Red/Blue, maar wel:
+- **Ontwerp (kleuren, kenmerken) klopt bijna altijd.** De rug laat soms iets zien dat van voren niet te zien is (Gulpins zwarte ruit, Kecleons zigzag, Swalots ruiten op de rug), maar dat hoort bij het ontwerp.
+- **Pose mag vrij:** Swampert en Marshtomp met armen omhoog, Slaking en Hariyama anders gedraaid, Swellow ineengedoken.
+- **Sterk ingezoomd/afgesneden:** soms is alleen een deel te zien (Lombre en Ludicolo: alleen het blad/de hoed; Wailord, Kyogre: een rug als heuvel; Blaziken: alleen kuif en schouder).
+- **Een handvol wijkt echt af** van de front in vorm of kleurverdeling: Anorith (plat zijaanzicht), Armaldo, Vibrava, Dusclops, Sealeo/Spheal (vereenvoudigd tot een bol).
+- Een paar zijn haast frontaal in plaats van van achteren (Kirlia, Seviper, Jirachi).
+Conclusie: Gen 3 is trouw aan het ontwerp, vrij in pose en uitsnede. Voor ons: kleuren en kenmerken van de front aanhouden; pose en uitsnede mogen afwijken als het als rug beter leest.
+
 ## 4. Gevolgen voor onze nieuwe designs
 1. **De rug is een nieuw aanzicht**: dat staat niet in de front of het Gemini-model. Het is dus (net als de front) ontwerpwerk met een bron, geen afgeleide. Voor de rug is een model nodig.
 2. **Het icoon is een mini-ontwerp**: verkleinen kan alleen als onderlaag; de keuzes (welk kenmerk groot, welke pose) zijn ontwerp.

@@ -21,7 +21,7 @@ for y in range(h):
         sel=mm&~dd
         col[y,x]=a[y0:y1,x0:x1][sel].mean(0) if sel.any() else a[y0:y1,x0:x1][mm].mean(0) if mm.any() else 255
 best=None
-for k in range(6):
+for k in ([int(sys.argv[2])] if len(sys.argv)>2 else range(6)):
     P=pal(k)[1:14]
     d=((col[...,None,:]-P[None,None])**2).sum(-1); e=np.sqrt(d.min(-1))[msk].mean()
     if best is None or e<best[0]: best=(e,k,d.argmin(-1)+1)

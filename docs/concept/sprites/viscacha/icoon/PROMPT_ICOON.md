@@ -51,3 +51,4 @@ Bewerk r1 (`afgekeurd_bewerk_r1.png`): vorm veranderd (wangpluk weg, staartpluk 
 Bewerk r2 (`bewerk_r2.png`): silhouet bleef staan (99,6%, alleen 4 snorhaarpixels weg), maar de schaduw is vlekkerig (tinten buiten het palet), het oog en de witte bef zijn verdwenen en de wangpluk is groter geel. Eerste keer dat de vorm hield; kwaliteit niet bruikbaar als icoon.
 Jordi over v3: "hij is nog steeds erg hoekig he"; over het blokje onder de kin (opgeheven voorpoot): "dit stuk kan ik ook niet verklaren? een arm? is te hoekig".
 Jordi over v4: "kijk het type ontwerp is uitstekend, dit is super consistent met de andere sprites, alleen je herkent de viscacha niet goed meer terug."
+Jordi over v5: "v5 is echt verschrikkelijk". Handwerk-route gestopt na v5; v4 blijft de beste stijl.

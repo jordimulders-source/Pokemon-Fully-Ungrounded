@@ -25,7 +25,7 @@ Jordi 3 nov: "het is elke keer opnieuw dat we instructies vastleggen die je elke
 | 5 | Claude 8× naast Taillow → verse keurder (blind eerst, PASS/FAIL met pixels) → reparaties via maker | Claude, keurder, maker | keurder GOED |
 | 6 | Jordi ziet alleen de sprite; zijn punten → kleine benoemde rondes | Jordi | "prima" |
 | 7 | `af/<naam>.png` + `normal.pal`; SPEC, CHANGELOG, Stand van zaken, lessen | Claude | gepusht |
-Frame 2, rug, icoon, shiny, naam, data: later, voor alle soorten samen. Rug/icoon/overworld: verhoudingen en voorgestelde werkwijze in `docs/concept/sprites/rug_icoon_studie/STUDIE.md` (rug = nieuw aanzicht met eigen model, icoon = mini-ontwerp, geen verkleining).
+Frame 2, rug, icoon, shiny, naam, data: later, voor alle soorten samen. Rug/icoon/overworld: verhoudingen en voorgestelde werkwijze in `docs/concept/sprites/rug_icoon_studie/STUDIE.md` (rug = nieuw aanzicht via Gemini-rugmodel, geslaagd bij de viscacha; icoon = verkleinde front, af volgens `rug_icoon_studie/EISEN_ICOON.md` + `icoon_check.py`).
 
 **Blender (optioneel, Jordi: "geen vereiste") in de cloud, eenmalig per container:**
 ```

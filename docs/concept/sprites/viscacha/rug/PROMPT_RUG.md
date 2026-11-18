@@ -50,3 +50,6 @@ Prompt r2 (hetzelfde gesprek, één bijsturing):
 ## Keuzes Jordi (18 nov)
 - A boven B: "a is beter dan b, b lijkt opgeblazen".
 - Oog v2 (front-oog): "ja het nieuwe oog is nu iets teveel in beeld" → vier varianten (`A/oogvarianten.png`); keuze: "v3_oog_4 is goed" (model-plek en -breedte, kern en tint van het front-oog). Basis voor verdere reparaties: `A/v3_oog_4.png`, oog bevroren.
+
+## Af (18 nov)
+`af/rug.png` (= `A/rug_v4.png`; backPicYOffset 13). Keurder PASS. Jordi: "backsprites lukken iig, dat is geslaagd".

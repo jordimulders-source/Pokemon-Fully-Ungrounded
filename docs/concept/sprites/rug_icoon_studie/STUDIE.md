@@ -149,3 +149,12 @@ Jordi: "Wat betreft de externe tools, alleen als ze gratis zijn wil ik dat doen"
 - **PixelLab** (pixel-art-AI, 4/8 kijkrichtingen, draaien van een figuur, API/MCP): alleen een gratis proef met een beperkt aantal generaties (bronnen noemen ±40, daarna een paar per dag); verder betaald. Bruikbaar als gratis test voor de overworld van één soort, niet voor de hele dex.
 - **Image-to-3D, gratis demo's op Hugging Face** (TRELLIS.2 van Microsoft, Hunyuan3D van Tencent, open gewichten): front → 3D-model → in Blender (gratis) renderen vanuit elk aanzicht als onderlaag. Gratis Spaces kunnen traag zijn of slapen. Een render blijft een onderlaag, nooit het eindresultaat.
 - Lokaal draaien kan hier niet (geen GPU in de container).
+
+## 8. Proef viscacha (18 nov)
+**Rug: geslaagd** (`viscacha/rug/af/rug.png`; Jordi: "backsprites lukken iig, dat is geslaagd"). Werkwijze die werkte:
+1. Gemini, nieuw gesprek, **alleen onze 8×-front als bijlage**; het standpunt in woorden ("seen from behind and slightly above on the left … head turned in profile over its shoulder … bottom cut off by a straight line"). Een echte rug als voorbeeld (Raticate) liep erin door (kleur, vacht, oren); bijsturen in hetzelfde gesprek tekende alles opnieuw als front.
+2. Jordi kiest uit een paar pogingen (hier zijn eigen poging zonder Raticate).
+3. Gemini tekende op een exact 16-px raster: kale 1-op-1-reductie naar 64×64 in het frontpalet.
+4. Varianten voor de echte keuzes (A model / B kop +21% → "b lijkt opgeblazen"; vier ogen → oog 4), daarna alleen technische reparaties: oog uit de front, selout aan de lichtkant (keurder: zwart → index 2), schaduwsikkel. ±5 rondes, 2 keuringen.
+**Icoon: moeizaam** (zie `viscacha/icoon/PROMPT_ICOON.md`): Gemini ontwerpt zelf (r1) of verkleint de front (r2 met voorbeeld); de verkleinde front + opschonen gaf de juiste pose maar was "plat van kleur", te groot en zonder perspectief.
+**Overworld:** Gemini maakte een Raichu/Pachirisu; nog open.

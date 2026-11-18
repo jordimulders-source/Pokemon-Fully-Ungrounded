@@ -74,6 +74,28 @@ Gemeten over 385 Gen 1–3-iconen (p10–p90, mediaan):
 | diagonale trapjes per 100 randpixels | 47 / 55 / 62 | 46 / 53 / 62 | 43 / 50 / 58 | **40** |
 Echte iconen hebben bijna geen rechte stukken van 4 px of langer: de omtrek loopt in schuine stapjes (1-1, 1-2, 2-1). Eis in het script: rechte stukken ≤ 0,27, trapjes ≥ 46.
 
+## 1e. Strengere ontwerpregels en smokkelruimte (Jordi: "kijk ook naar pokemon in vergelijkbare poses en ga nog strenger kijken naar design regels" · "en vooral ook waar je mag smokkelen" · "wederom kijk bij bijv gen 9 pokemon" · "met complexe ontwerpen")
+Bekeken: 20 kleine viervoeters in de in-game set (`10_poseburen_viscacha.png`: Raticate, Rattata, Eevee, Glameow, Purrloin, Meowth, Pachirisu, Minccino, Pawmi, Nickit, Rockruff, Litten, Persian, Electrike, Dachsbun, Yungoos, Bunnelby, Skwovet, Sandshrew, Zigzagoon) en complexe Gen 9-ontwerpen (`8_gen9_fanmade_iconen.png`, `11_gen9_complex_klein.png`).
+
+**Regels (streng; elk icoon hierop nalopen):**
+1. **Kop groot: ±40–50% van de figuur** bij kleine zoogdieren (Eevee, Rattata, Pachirisu, Minccino, Litten, Rockruff); het lijf is kort. Dit is de grootste chibi-stap, groter dan "iets groter".
+2. **Ogen groot en leesbaar:** 2–3 px hoog, donker met 1 lichte pixel; het gezicht kijkt naar de kijker (driekwart).
+3. **Poten zijn stompjes** van 2–3 px breed met een donkere teenlijn; meestal 2–3 zichtbaar, de verre donkerder. Een opgeheven poot is een rond wantje (Rockruff, Purrloin), geen blokje.
+4. **Staart groot en eenvoudig:** één heldere vorm in twee tonen, vaak omhoog achter het lijf (Pachirisu, Eevee, Glameow, Minccino); het herkenningsteken aan het eind (pluim) groot.
+5. **Omtrek rond:** schuine stapjes, geen lange rechte randen (§1d).
+6. **Elke kleurzone van het ontwerp blijft**, desnoods als vlakje van 2–4 px (Gen 9: Kingambit, Skeledirge, Grafaiai).
+
+**Smokkelruimte (mag, want staat al in de game):**
+- **Pose aanpassen** naar een compacte, dynamische houding (springend/lopend naar links) als de front-pose op 20 px niet leest (Persian, Litten, Raticate, Rockruff wijken af van hun front).
+- **Ledematen samenvoegen of weglaten** als ze niet lezen: Spidops' poten worden stompjes, Lokix' ledematen ingeklapt, Cyclizar's lijf klein achter een grote kop.
+- **Proporties chibi** (kop tot de helft), lijf en poten korter.
+- **Kleur flink laten verschuiven** naar het icoonpalet (Maschiff oranje, Mabosstiff roze, Greavard blauw).
+- **Groter** tot ±25–28 hoog bij brede of complexe ontwerpen.
+- **Herkenningsteken overdrijven** (Tinkaton's hamer, Kingambit's kroon, Dachsbun's staart).
+- **Frame 2** mag kop/staart duidelijk bewegen.
+
+**Nooit:** kenmerken toevoegen, een herkenningsteken laten vallen, het gezicht/de oogstijl veranderen, de omlijning openlaten.
+
 ## 2. Handmatig (±1 minuut, op 1× tussen 4 echte iconen op groen)
 - Dezelfde Pokémon: de herkenningstekens van de front staan erin (bij de viscacha: oren, gele wangpluk, getande staartpluk).
 - Geen uitschieter: niet duidelijk groter, platter of feller dan de buren.

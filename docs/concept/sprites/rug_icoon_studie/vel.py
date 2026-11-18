@@ -21,6 +21,12 @@ def find(d,names):
         if os.path.exists(os.path.join(d,n)): return os.path.join(d,n)
 args=sys.argv[2:]; gba='--set' in args
 if gba: i=args.index('--set'); args=args[:i]+args[i+2:]
+import re
+IPI={}
+for f in os.listdir('src/data/pokemon/species_info'):
+    for m in re.finditer(r'\[SPECIES_([A-Z0-9_]+)\]\s*=\s*\{(.*?)\n    \},',open('src/data/pokemon/species_info/'+f).read(),re.S):
+        v=re.search(r'iconPalIndex = (?:P_GBA_STYLE_SPECIES_ICONS \? (\d) : )?(\d)',m.group(2))
+        if v: IPI[m.group(1).lower()]=int(v.group(1) or v.group(2)) if gba else int(v.group(2))
 Z=3; BG=(232,232,224)
 rows=[]
 for sp in args:
@@ -35,7 +41,8 @@ for sp in args:
     if fr: parts.append(rgba(fr,P).crop((0,0,64,64)))
     if bk: parts.append(rgba(bk,P))
     if ic:
-        I=rgba(ic,pal('graphics/pokemon/icon_palettes/pal%d.pal'%0) if False else None)
+        k=IPI.get(os.path.basename(d.rstrip('/')))
+        I=rgba(ic,pal('graphics/pokemon/icon_palettes/pal%d.pal'%k) if k is not None else None)
         parts+= [I.crop((0,0,32,32)),I.crop((0,32,32,64))]
     if ow:
         O=rgba(ow,pal(owp) if owp else None); fs=O.size[1]

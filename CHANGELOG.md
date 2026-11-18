@@ -2081,3 +2081,8 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Voorgestelde werkwijze (rug via Gemini-rugmodel + Jordi kiest + overnemen in het frontpalet; iconen in batches met script-onderlaag en handwerk; overworld pas als nodig) en open vragen (volgers, icoonpose, proef viscacha + Gengas).
 - Vellen `1_vel_ingame.png`, `2_vel_gba.png`, `3_icoon_vs_verkleining.png` en scripts `vel.py`, `naief.py`, `meet_*.py`.
 
+### [v0.0.512] - Rug/icoon: antwoorden Jordi en voorbereiding proef
+- Antwoorden Jordi in `rug_icoon_studie/STUDIE.md` §6: volgers voorlopig niet, wel Pokémon in de overworld die alle kanten op kijken; iconen mogen een eigen pose hebben zoals bij Game Freak.
+- Gemini-rugprompts klaar: `viscacha/rug/PROMPT_RUG.md` (voorbeeld Raticate-rug) en `gengas/rug/PROMPT_RUG.md` (voorbeeld Gengar-rug); nog niet gebruikt.
+- `rug_icoon_studie/icon_onderlaag.py` (onderlaag voor iconen, nooit eindresultaat); `vel.py` toont iconen nu in hun echte icoonpalet. Correctie: icoonpaletten 3–5 worden door een paar tientallen soorten gebruikt.
+

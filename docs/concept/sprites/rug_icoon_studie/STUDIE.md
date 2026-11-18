@@ -27,7 +27,7 @@ Overworld-frames (uit `sAnimTable_Following`): 0–1 = naar beneden (naar de spe
 **Belangrijk voor ons:**
 - Overworldsprites komen alleen in de ROM voor soorten die als `OBJ_EVENT_GFX_SPECIES(...)` in een kaart/script staan (`ow_species_keep.py`). **Volgers (`OW_FOLLOWERS_ENABLED`) staan uit.** Zolang dat zo blijft, heeft een nieuwe Pokémon alleen een overworldsprite nodig als hij ergens zichtbaar in de wereld staat (statische encounter, NPC-Pokémon, legendary).
 - Rug en front delen het palet: een nieuwe kleur alleen voor de rug kan niet (gemeten: mediaan 0 extra indexen in de rug). Varianten/shiny gelden dus automatisch ook voor de rug.
-- Het icoon heeft géén eigen palet. Van de 6 icoonpaletten gebruiken de gewone soorten alleen 0, 1 en 2; 3–5 worden wel geladen maar alleen door 17 vormen gebruikt. Er kunnen er niet meer bij (OBJ-paletslots 0–5 zijn op schermen met iconen vol).
+- Het icoon heeft géén eigen palet. Van de 6 icoonpaletten gebruiken bijna alle soorten 0, 1 of 2 (±1300 van de ±1340 vermeldingen); 3–5 alleen een paar tientallen (o.a. de Bulbasaur-lijn in de in-game set). Er kunnen er niet meer bij (OBJ-paletslots 0–5 zijn op schermen met iconen vol).
 
 ## 2. Verhoudingen tot de front (gemeten)
 
@@ -116,3 +116,8 @@ Voorstel: eerst **viscacha** (heeft al frame 2, viervoeter) en **Gengas** (bol, 
 1. Volgers (Pokémon die achter je aan lopen): ooit aanzetten? Dan hebben alle ±445 soorten een overworldsprite in 3 aanzichten nodig; zo niet, alleen de paar die in de wereld staan.
 2. Iconen: mag de pose vereenvoudigd/anders zijn dan de front (zoals bij Game Freak), of moet het icoon dezelfde pose houden?
 3. Proef met viscacha en Gengas starten?
+
+**Antwoorden Jordi (18 nov):**
+1. "voorlopig nog niet, maar ik ga wel pokemon in de overworld plaatsen die diverse kanten op kunnen kijken." → volgers blijven uit; soorten die in de wereld geplaatst worden krijgen een overworldsprite met alle aanzichten (voor, achter, opzij).
+2. "ja geen probleem, volg vooral game freak daarin" → het icoon mag een eigen, vereenvoudigde pose hebben, zoals bij Game Freak.
+3. "kan je dat?" → iconen: ja, zelf (script-onderlaag + maker). Ruggen: Claude schrijft de Gemini-prompts (`viscacha/rug/PROMPT_RUG.md`, `gengas/rug/PROMPT_RUG.md`), Jordi plakt ze in Gemini en kiest.

@@ -6,6 +6,21 @@ Jordi: "eigenlijk moeten we een soort eisenlijst maken op basis van de al bestaa
 
 **Afspraak:** een icoon is af als het script alles OK geeft en de korte handmatige blik (punt 2) klopt. Geen keurrondes daarbovenop.
 
+## Lessen viscacha-icoon in één lijst (afvinken bij elk nieuw icoon en elke ronde)
+Jordi (18 nov): "het zou zonde zijn als je weer alles compleet anders gaat doen dan eerst, dus probeer die lessen mee te nemen".
+1. Lijkt op de front: vormen en gebaren uit de front, niets verzinnen (eis 0).
+2. Werkwijze: onderdelen van de front apart verkleinen met vaste factoren (`viscacha/icoon/onderdelen/bouw2.py`); feedback = factor aanpassen, varianten naast elkaar.
+3. Aanhechtingen vast: oren op de kop, poten aan het lijf; niets zweeft ("1 oor vliegt ook").
+4. Oog = opbouw van de front, kleiner: viscacha = zwart blok met 1 witte glanspixel in de bovenste rij + bruin ooglid; nooit andersom (wit met zwarte pupil), nooit het oog van een andere soort.
+5. Oog op de hoogte van de front (halverwege de kop), niet te laag.
+6. Geen pixelblur en geen losse pixels: elk cluster een bewuste vorm; zelf op 8× naast in-game iconen kijken.
+7. Snorharen 1 px dun; geen strook van 2 px.
+8. Rond waar het dier rond is, punten puntig; poten als stompjes 2–3 px; buik naar verhouding kleiner ("enorme buik").
+9. Herkenningstekens groot: lange oren dicht bij elkaar, snuit naar linksonder, elektrisch motief op wang en nek getand geel, opgeheven voorpoot, ronde dij, staart.
+10. Wat goed is blijft staan (viscacha: de staart van v8, pixel voor pixel; stijl van v4).
+11. Hoek: echt diagonaal zoals Rattata/Dedenne.
+12. Jordi ziet pas een af-versie (alleen echte keuzes eerder).
+
 ## 0. BELANGRIJKSTE EIS: hij lijkt op de echte Pokémon
 Jordi (18 nov): "dat is het belangrijkste van de hele eisenlijst, hij moet lijken op de echte pokemon". Alle andere eisen komen hierna. Het icoon is de front (onze goedgekeurde sprite) in het klein: kopvorm, gezicht, oren, kenmerken en kleurverdeling overgenomen, niet bedacht. Toets als eerste: leg het icoon naast de verkleinde front; vorm voor vorm moet het hetzelfde zijn, alleen eenvoudiger. Een icoon dat alle scriptpunten haalt maar niet op de front lijkt, is afgekeurd (viscacha v5).
 

@@ -29,3 +29,17 @@ Prompt r2 (hetzelfde gesprek, één bijsturing):
 
 ## Ronde 2 (18 nov): afgekeurd
 `afgekeurd_r2.png`: Gemini tekende het hele beeld opnieuw als zijaanzicht naar links (weer een front); het rugstandpunt is weg. Jordi: "gemini weer oliedom". Les bevestigd (GEMINI.md): bijsturen tekent alles opnieuw. Verder met r1.
+
+## Poging 2 en 3 van Jordi (18 nov)
+- `gemini_p2_zonder_raticate.png` (zonder Raticate-bijlage): staart goed (omhoog, getande gele pluk), standpunt goed; kop nog klein, oren uit elkaar (linkeroor achter op de kop).
+- `gemini_p3_met_raticate.png` (met Raticate): Raticate's bruin, vachttextuur en oren lopen erin.
+- Jordi: "Het lijkt dat de raticate sprite eerder in de weg zit dan helpt, misschien nog 1 nieuwe prompt waar je raticate helemaal weglaat?"
+
+## Prompt r4 (nieuw gesprek, alleen bijlage `../af/viscacha_8x.png`)
+> This is a Pokémon battle sprite of my creature, seen from the front. Draw its back sprite, the way Pokémon Ruby/Sapphire/Emerald draw the player's own Pokémon in battle.
+>
+> Viewpoint: seen from behind and slightly above on the left. The body faces away from the viewer, toward the upper right. The head is turned in profile over its shoulder at the right side, so we see one eye, the yellow cheek tuft and the whiskers. Zoomed in: the creature is a bit larger than in my image and the bottom is cut off by a straight horizontal line, with nothing below it.
+>
+> Keep my creature exactly as it is: same colors, same art style and dark outline, same fur colors. The head is as big as in my image, with the same two long upright ears, close together on top of the head; both ears grow from the top of the head. The tail is like in my image: it rises upward from the rump in one curve and ends in a spiky, jagged yellow tuft like a small flame. Show its back and tail; the belly is not visible from behind. Do not add anything new and do not redesign it.
+>
+> Gen 3 pixel art, plain white background, no ground, no shadow, no effects, no text.

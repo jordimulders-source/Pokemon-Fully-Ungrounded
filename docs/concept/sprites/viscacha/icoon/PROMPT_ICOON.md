@@ -69,3 +69,4 @@ Krabbel Jordi op v8 (`krabbel_jordi_v8.png`): "ik heb even wat lijnen getekend t
 Jordi: "Links onder is een beetje de snuit en lusje onder de kin is de voorpoot die opgeheven is ja".
 Jordi: "nee niet het oog van drowzee" · "dan snap je niet wat ik bedoel" · "dat is een totaal ander oog". Drowzee was alleen een voorbeeld dat officiële iconen ook wat off mogen zijn. Oog komt uit onze front.
 Jordi (oogcrops `oog_drowzee_jordi.png`, `oog_viscacha_jordi.png`): "compleet verschillende ogen. Echt letterlijk 100% het tegenovergestelde. De viscacha heeft een zwart oog met een witte pixel erin, daar heb je dan het antwoord. Dus kleiner, maar hetzelfde idee".
+Jordi over v9: "wel beter maar nu heeft die een enorme buik".

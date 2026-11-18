@@ -35,3 +35,4 @@
 - → r10: knots los van het been (rechtsboven duidelijk rafel óf been); bek in twee varianten (A: 1–2 pitjes erbij, B: andere kleur binnenkant).
 - Jordi (18 nov) over r10: "de binnenkant van de mond is niet verbeterd, 2 stipjes onder elkaar geeft niet het juiste effect. Doe de stipjes op de buik ook onregelmatiger" → r11: bek in 3 varianten, buikpitjes onregelmatig.
 - Jordi (18 nov) over r11: "d is het beste, maar deze rechte lijn die ik geel getekend heb aan sprites ziet er een beetje gek uit, in de mond kan dat onderdeel van het wit worden en buiten de mond kan die misschien iets minder rechtlijning worden" (screenshot `sprite_r11/jordi_feedback_D.png`; lijn = rij y30, x7–16)
+- Jordi (18 nov) over r12: "check bij de 5 pixels die ik gelijnd heb of de schaduwkleur nog klopt" (`sprite_r12/jordi_feedback_schaduw.png`; (8–10,30) grijs vlees, (8–9,31) ondertanden). Claude: grijs onderin vooraan is geen logische schaduw bij licht linksboven → r13 varianten.

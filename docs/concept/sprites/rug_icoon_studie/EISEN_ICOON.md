@@ -113,6 +113,8 @@ Jordi over viscacha v4: "kijk het type ontwerp is uitstekend, dit is super consi
 
 - **Kopvorm uit de front, niet bedenken** (viscacha v5, Jordi: "de rest van het hoofd is volledig verknald, vergelijk het maar met het model qua vorm, totaal anders"): de kop van het icoon is de kop van de front verkleind (eventueel met een grotere factor dan het lijf voor de chibi-maat), daarna alleen opgeschoond.
 
+- **Puntige delen** (`12_puntige_koppen.png`: Inkay, Sharpedo, Kingdra, Seadra, Kabutops, Malamar; Jordi over Krassault: "het hoofd mag iets puntiger denk ik"): een punt blijft een punt, zo lang als in de front of langer. De randen lopen als rechte 45°-diagonaal (trapjes van 1-1) naar een tip van 1 px; niet afronden. De tip krijgt vaak een lichte pixel. Ronde delen rond, puntige delen puntig: het ronder maken (§1e) geldt niet voor punten.
+
 ## Complexe ontwerpen
 Jordi: "we hebben namelijk ook een aantal complexe designs en die moeten we ook kunnen omzetten". De smokkelregels van §1e zijn daarvoor bedoeld (naar Gen 9: Kingambit, Skeledirge, Tinkaton, Spidops, Grafaiai). Na de viscacha de werkwijze testen op één complex ontwerp (voorstel: spooktrein fase 3 of Krassault).
 

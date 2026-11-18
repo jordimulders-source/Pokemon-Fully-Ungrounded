@@ -1,0 +1,46 @@
+# pitahaya3_r10_A.png t.o.v. ../sprite_r9/pitahaya3_r9.png: stap | x | y | r9 -> r10 (tekens .#drpPgGhHwWkqQs; q in B = grijs 155,154,159)
+# totaal 18 px
+1 schutblad | 26 | 51 | h -> g
+1 schutblad | 27 | 51 | h -> H
+1 schutblad | 28 | 51 | G -> g
+1 schutblad | 27 | 52 | h -> H
+1 schutblad | 28 | 52 | G -> g
+1 schutblad | 27 | 53 | G -> h
+1 schutblad | 27 | 54 | g -> r
+1 beenonderkant | 22 | 50 | h -> g
+1 beenonderkant | 22 | 51 | G -> r
+3 verre been | 24 | 46 | g -> G
+3 verre been | 25 | 46 | g -> G
+3 verre been | 24 | 47 | g -> G
+3 verre been | 25 | 47 | g -> G
+3 verre been | 24 | 48 | g -> G
+3 verre been | 25 | 48 | g -> G
+3 verre been | 23 | 49 | g -> G
+3 verre been | 24 | 49 | g -> G
+2A bek | 9 | 29 | W -> s
+
+# pitahaya3_r10_B.png t.o.v. ../sprite_r9/pitahaya3_r9.png: stap | x | y | r9 -> r10 (tekens .#drpPgGhHwWkqQs; q in B = grijs 155,154,159)
+# totaal 22 px
+1 schutblad | 26 | 51 | h -> g
+1 schutblad | 27 | 51 | h -> H
+1 schutblad | 28 | 51 | G -> g
+1 schutblad | 27 | 52 | h -> H
+1 schutblad | 28 | 52 | G -> g
+1 schutblad | 27 | 53 | G -> h
+1 schutblad | 27 | 54 | g -> r
+1 beenonderkant | 22 | 50 | h -> g
+1 beenonderkant | 22 | 51 | G -> r
+3 verre been | 24 | 46 | g -> G
+3 verre been | 25 | 46 | g -> G
+3 verre been | 24 | 47 | g -> G
+3 verre been | 25 | 47 | g -> G
+3 verre been | 24 | 48 | g -> G
+3 verre been | 25 | 48 | g -> G
+3 verre been | 23 | 49 | g -> G
+3 verre been | 24 | 49 | g -> G
+2B bek | 8 | 26 | W -> w
+2B bek | 9 | 26 | W -> w
+2B bek | 10 | 26 | W -> w
+2B bek | 11 | 26 | W -> q
+2B bek | 11 | 27 | W -> w
+

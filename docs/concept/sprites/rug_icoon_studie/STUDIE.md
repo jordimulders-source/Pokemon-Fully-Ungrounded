@@ -105,6 +105,9 @@ Gemeten over 385 soorten (Gen 1–3, GBA-icoon tegen overworld) en bekeken op `6
 3. **De overworld is (nog) niet nodig** behalve voor soorten die zichtbaar in de wereld staan. Gaan volgers ooit aan, dan voor alle soorten (3 aanzichten: voor, achter, opzij).
 4. Kleur: rug = palet van de front (komt gratis mee), icoon = beperkt tot een gedeeld palet (0/1/2, eventueel 3–5), overworld = eigen palet, af te leiden van de front.
 
+> **Prioriteit (Jordi, 18 nov):** "weet dat ik de iconen en de overworld sprites een stuk minder belangrijk vind dan de battle sprites, ze moeten gewoon consistent zijn, maar hoeven eecht niet hoogstondig pixel art te gaan worden". Lat voor icoon en overworld: consistent met echte Gen 3/HGSS, weinig rondes; de battle sprites (front, rug) krijgen de volle aandacht.
+> **Icoonpalet:** pal2/pal5 hebben maar twee zandtinten; Game Freak maakt detail met donkergrijze binnenlijnen, niet met extra tinten.
+
 ## 5. Voorgestelde werkwijze (nog niet getest; eerst een proef)
 
 Algemeen, zoals bij frame 2 (`frame2_studie/STUDIE.md` §12): **per soort klein beginnen, één proef, dan voor alle soorten samen** (SPRITE_KERN regel 6). Alles bouwt op de **goedgekeurde, bevroren front**; de makerregels van SPRITE_KERN gelden ("model overnemen, nooit hertekenen", één maker per sprite, Claude vergelijkt, verse keurder, pas dan Jordi).

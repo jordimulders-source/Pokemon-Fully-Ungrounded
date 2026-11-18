@@ -86,3 +86,4 @@ Nieuw gesprek, alleen bijlage `../af/viscacha_8x.png`.
 Jordi (a2_af links, zones-proef rechts): "deze twee komen beide best aardig in de buurt, links is denk ik de beste, daar moeten de oren het oog en de details zoals snorharen en de wangzakken nog iets beter, evenals de voorpoten". Basis = icon_a2_af; alleen oren, oog, snorharen, wangzakken, voorpoten.
 Gemini-bewerking r1 (`gemini_bewerk_chibi_r1.png`, gehalveerd `onderdelen/g1.png`): Jordi "die oren zijn wel raichu nu" · "en vgm heeft die niet gedaan waar je om vroeg". Oren veranderd, pose staand, maat te groot na halveren (31×25), oog verloren. Stopregel: route gestopt.
 Jordi over a4: "het oog is prima, eevee is vgm ook maar 4 of 5 pixels oog". Oog van a4 bevroren.
+Jordi: "we gaan de goede kant op" · "rechteroor is wel een te rechte lijn" · "en let op witte vakjes" · "maar er is echte progressie". → a5: rechteroor rond, witte vakjes weg.

@@ -2269,7 +2269,40 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Sprite (`nachtaap/sprite_r4/`): natief raster van r4 1-op-1 overgenomen (37×36, even groot als de oude sprite), palet van de oude sprite, Gen 3-volume; streep tussen de ogen smaller in twee tinten met crème rand om het linkeroog (Jordi's keuze om dat in de sprite-fase te doen). Keurder PASS, daarna Dragonfly Cave-eindronde (licht op armen/voet, kooilijnen romp, staartkrul, verre oog, wangschaduw) en Jordi's punten: oogrand onder het linkeroog, zonder hoekpixel. Jordi: "nice".
 - Overzichtsvel bijgewerkt; Nocticue in de opknapronde af.
 
-### [v0.0.543] - Moonkey opgepoetst: driekwart via Gemini
+### [v0.0.543] - Overzichtsvel: pitahaya-draak fase 3 erbij
+- `docs/concept/sprites/showcase/frontsprites_af.png` (+ `maak_vel.py`): pitahaya-draak fase 3 (`pitahaya_draak_fase3/af/`, Grass/Dragon) toegevoegd naast fase 1 en 2; daarmee staat de hele lijn op het vel.
+
+### [v0.0.544] - Opknapronde: Palpaca-prompt
+- `docs/concept/sprites/alpaca/gemini/PROMPT.md` + bijlage (huidige sprite 8×): Gemini-prompt v1 om Palpaca op te knappen. Design blijft, pose wordt een echte alpacagang (telgang: poten aan dezelfde kant tegelijk, anders dan het diagonale draven van een paard), driekwart hoek, gezicht dat bij die hoek klopt.
+- `OPKNAPRONDE_GEMINI.md`: tweede ronde met Jordi's woorden (netter maken, geen designwijziging; Palpaca; spooktrein fase 3).
+
+### [v0.0.545] - Palpaca opgepoetst: telgang en driekwart
+- Palpaca (alpaca, Fighting-starter fase 1) heeft een nieuwe frontsprite: `docs/concept/sprites/alpaca/af/palpaca.png` (+ `_8x`, `normal.pal`; oud in `af/oud_voor_gemini/`). Jordi: "palpaca heeft bijv nog steeds een beetje een gek aangezicht" · "de sprite moet zijn zoals een alpaca in het echt loopt" · "Het design moet zo blijven alleen de pose moet natuurlijker, de hoek moet natuurlijker, hij moet netter" · "hij moet een cute starter zijn".
+- Gemini (`alpaca/gemini/PROMPT.md`, 11 rondes): r4 gaf ontwerp, gezicht en geheven handschoen, maar een paardengang; vijf pogingen om de achterpoten om te wisselen mislukten; een foto van een lopende alpaca als bijlage (r10) gaf de telgang; achterpoten van r10 ruw in r4 geplakt en Gemini liet de naad gladmaken (r11 = model, `alpaca/model/model.png`).
+- Sprite (`alpaca/sprite/r1–r6`): verkleining van het model, daarna kleur/schaduw; Jordi's punten (snuit, oren, staartaanzet, oog, haardos, verre oog, schaduw achterpoot); kleuren en binnenlijnen uit het model i.p.v. de oude sprite (r4); Dragonfly Cave-eindronde met torso-perspectief en losse pixel weg (r5). r6 (rondere romp-omtrek) afgewezen: "r5 is beter".
+- Overzichtsvel bijgewerkt.
+
+### [v0.0.546] - Coathief opgepoetst: echte driekwart en Gen 3-kleur
+- Opknapronde via Gemini: Coathief stond bijna zijwaarts. Prompt met alleen de huidige sprite als bijlage (`coathief/gemini/PROMPT.md`); Gemini r1 gekozen als nieuw model ("eigenlijk is die heel goed he"; klauwen zoals Gemini ze tekende).
+- Sprite = Gemini's eigen pixelraster (natief pitch 8 → 2×2, 52×62, `coathief/sprite/reduce.py`), vorm bevroren. In de sprite: oog rood (oude kleuren), oren zwart (bivakmuts), kop koel antraciet, lijf warm roodbruin.
+- Rondes r1–r7: maker + vier keuringen (trouw/techniek, Dragonfly Cave/Gen 3, controle, lijfvolume). Na Jordi's opmerking "die is wel erg effen 2 kleuren" kreeg het lijf volume: ronde schouder en dij met sikkelschaduw, 4e hooglichttint, gekartelde vachtgrenzen. 15 kleuren.
+- `coathief/af/coathief.png` = r7; oude sprite in `coathief/af/oud_voor_gemini/`. Overzichtsvel bijgewerkt.
+- Lessen: opknappen met alleen de huidige sprite als bijlage (GEMINI.md); keurders toetsen eerst volume, dan regels (SPRITE_KERN.md).
+
+### [v0.0.547] - Llamauler opknappen: Gemini-prompt
+- Llamauler (lama fase 2) toegevoegd aan de opknapronde via Gemini. Jordi: "erg plat, niet helemaal goed in verhouding, niet goed aangekleed, handschoenen kunnen beter en de kop is net niet llama genoeg"; MMA-handschoenen blijven ("hij wisselt juist van vechtstijl").
+- Prompt v1 + bijlagen (oude sprite 8×, lamafoto voor de pose, MMA-handschoenen): `docs/concept/sprites/lama/fase2/gemini/`.
+
+### [v0.0.548] - Gemini: geen extra referentiefoto's
+- Llamauler prompt v2 (`docs/concept/sprites/lama/fase2/gemini/PROMPT.md`); ronde 1 en de les "opknappen = eerst de hele SPEC lezen" vastgelegd.
+- Jordi: "gemini heeft echt een prima referentie kader dus die andere fotos zijn niet nodig" → vaste regel in `docs/lessen/GEMINI.md`.
+
+### [v0.0.549] - Llamauler: nieuwe frontsprite (kandidaat na eindkeuring)
+- Gemini-rondes r1–r15 (`docs/concept/sprites/lama/fase2/gemini/PROMPT.md`): fluffy lama met droog ooglid, kleed en halsband (r4); telgang via een gespiegelde loopfoto (r12); handschoenen van r3; samengesteld model `gemini/poten/model_v3.png`.
+- Sprite (`docs/concept/sprites/lama/fase2/sprite/`): r3 met modeltonen (Palpaca-werkwijze), poten uit een Gemini-bewerking van de sprite op 16× (r15), poten rustig (r4b), consistente ramps en wolbogen (r5), kleed r4b + geleidelijke achterpoot (r6), Dragonfly Cave-eindkeuring (r7: 11 px + lichter hooglicht). Nog niet naar `af/`.
+- Les: opknappen = eerst de hele SPEC lezen (`docs/lessen/GEMINI.md`).
+
+### [v0.0.550] - Moonkey opgepoetst: driekwart via Gemini
 - Moonkey (nachtaap fase 2) heeft een nieuwe frontsprite: `docs/concept/sprites/nachtaap_evo/af/nachtaap_evo.png` (oud in `af/oud_voor_gemini/`, voor/na in `af/voor_na_8x.png`). Jordi: "ook prima model en design, maar iets betere pose." · "driekwart hoek en iets meer kloppend qua perspectief".
 - Gemini (`nachtaap_evo/gemini/PROMPT.md`): r1 met Persian als hoekvoorbeeld veranderde te veel aan het design ("zonder persian is het beter"); r2 zonder voorbeeld behield het design; r3 (verbeterprompt voeten in perspectief) gekozen.
 - Sprite (`nachtaap_evo/sprite_r3/`): natief raster van r3 1-op-1 (58×54), oud palet, ogen uit de oude sprite, maan uit de oude sprite op de nieuwe kopvorm; Jordi: "misschien kunnen we de bovenkant van de halve maan iets inkorten en aan de rechterkant is die niet helemaal lekker rond" · "de maan moet symmetrisch zijn" → symmetrisch rond de as tussen de ogen, 2 px korter (B). Gen 3-volume, keurder PASS (30 px wissels), Dragonfly Cave-eindkeuring (17 px). Jordi: "uitstekend".

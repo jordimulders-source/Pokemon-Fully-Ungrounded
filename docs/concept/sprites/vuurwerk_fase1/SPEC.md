@@ -19,4 +19,4 @@ Lijn: fase 1 (deze) → fase 2 (houdt de pijl vast, nog open) → fase 3 vuurwer
 3. Lijf verbinden: het vuur dat onderaan uit de open pijl komt en het golvende lijf vormen één doorlopende lijn (nu loopt het stompje uit de opening los achter het lijf naar een losse vlam onderaan).
 
 ## Formaat
-Fase 1: hoogte ±50 px (voorstel Claude; andere fase-1-sprites 37–49 px hoog, deze is smal en lang). 3/4 naar links zoals het model.
+Fase 1: 29×62 px (r2; op ±50 px las de kop niet). Oppervlak ±810 px, gelijk aan Charmander/Mudkip; zelfde vorm als Sentret (31×61). Jordi (19 nov): "als sentret ongeveer dezelfde vorm heeft, ga maar verder dan!" → pijl niet inkorten. 3/4 naar links zoals het model.

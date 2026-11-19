@@ -214,3 +214,6 @@ The attachment is the official concept art of a Pokémon. Draw its in-game front
 - Thin parts (head plumes, tail) become 1 px lines.
 - Plain white background, one single creature, no effects besides the lightning bolt.
 ```
+
+## Sprite v2 (19 nov)
+- r4, Jordi: "nice, model staat, je mag nu wel kleur en schaduw bijwerken nog in de keuring ronde" → vorm r4 bevroren; kleurronde in sprite_v2/kleur/.

@@ -2273,3 +2273,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.545] - Vuurwerklijn fase 2: r3 en nieuw voorstel
 - r3 bewaard (`vuurwerk_fase2/r3/`; Jordi: onderscheidt zich niet genoeg van fase 1). Voorstel om de verhouding om te draaien (wezen groter dan de pijl, rechtop S-lijf) in `IDEEEN.md`.
+
+### [v0.0.546] - Vuurwerklijn fase 2: vormschets en prompt v4
+- Jordi akkoord met de omgedraaide verhouding. Vormschets `vuurwerk_fase2/schets/vormschets_v4.png` (vuurlijf uit de achterkant van de pijl, één lus vóór de pijl langs, opgericht S-lijf met borst, pijl als bazooka) + `gemini/PROMPT_v4_schets.md`.

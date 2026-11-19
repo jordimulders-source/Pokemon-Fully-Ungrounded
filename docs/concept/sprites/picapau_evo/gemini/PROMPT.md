@@ -68,3 +68,34 @@ STYLE AND FORMAT
 AVOID
 - Not Raichu, Fearow, Pidgeot, Spearow, a kiwi or Woody Woodpecker. No plush toy, chibi or mascot look.
 ```
+
+## Ronde 2 (prompt v2) → `r2_prompt_v2.png`
+Jordi (19 nov): "schrap de fearow snavel, hij maakt er ook meteen een fearow hoofd van en dat wil ik niet, plus fearow pose, alle mentions naar fearow moeten eruit"
+→ Fearow vervalt overal (ook in AVOID). Snavel: de spechtensnavel uit bijlage 1, wat dunner (Jordi r1: "te dik, die mag wat dunner").
+
+## Prompt v3 (nieuw gesprek; bijlagen 1 en 2)
+```
+Redraw this Pokémon as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art), facing left in 3/4 view.
+
+ATTACHMENTS
+- Attachment 1 is the old, clumsy sprite of this Pokémon. Use it ONLY for the colors and the design idea. Do NOT trace its pose, head, body shape or tail.
+- Attachment 2 is the Gen 1 Raichu sprite. Copy its POSE and ATTITUDE onto the bird (not its body, ears or face): standing on the ground, the body leans forward and is hunched, the head is low and pushed forward, the legs are bent as if ready to pounce, tense and aggressive, filling the frame. The tail starts at the back of the body and swings in a big S-curve behind and under the body, ending in the lightning bolt at the bottom left. It is NOT flying.
+
+THE CREATURE
+- Electric/Flying, the evolution of a Pikachu-like woodpecker (like Raichu to Pikachu). Based on the chestnut woodpecker (Celeus elegans).
+- Colors: chestnut / orange-brown body, cream belly, small red cheek patch, grey beak and feet, wings chestnut with round cream spots.
+- Body: strong and imposing but NOT fat or round like a ball. A sleek bird body; the cream belly is an oval on the chest.
+- Wings half open. Exactly two wings, two legs, one tail.
+- Head: a round woodpecker head. No big feather crest on the head, only the thin black plumes described below.
+- Eye: a round black eye with one small white shine pixel, like its pre-evolution. No eyelid, no white sclera, no human-like eye, not sad.
+- Beak: the grey woodpecker chisel beak from attachment 1, but a bit thinner.
+- Head plumes: two or three thin black feather plumes that grow from the back of the crown, sweep backwards and droop down in a natural soft curve, each ending in a small curl. Like real crest feathers, not wires or antennas.
+- Tail: a REAL tail, not a ring or a loop around the body. A thin black tail that grows from the rump and swings in one S-curve, ending in a big yellow zigzag lightning bolt.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left, clean shading with large calm areas like official Gen 3 sprites, no noise.
+- Plain white background. No branch, ground, rock, shadow or base. No effects except the lightning bolt at the end of the tail. One single creature.
+
+AVOID
+- Not Raichu, Pidgeot, Spearow, a kiwi, a hoopoe or Woody Woodpecker. No plush toy, chibi or mascot look.
+```

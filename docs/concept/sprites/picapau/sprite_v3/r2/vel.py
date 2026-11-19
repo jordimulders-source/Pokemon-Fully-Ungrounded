@@ -4,7 +4,7 @@ def rgba(f):
     im=Image.open(f); im.save('/tmp/_t.png' if False else f) ; return Image.open(f).convert('RGBA')
 cur=Image.open('picapau.png').convert('RGBA'); prev=Image.open(sys.argv[1] if len(sys.argv)>1 else '../../af/picapau.png').convert('RGBA')
 # model 1x op dezelfde plek als de sprite: zelfde verschuiving als bouw.py
-o=np.load('r1.npy'); ys,xs=np.where(o>0); h=ys.max()-ys.min()+1; w=xs.max()-xs.min()+1; dx=(64-w)//2-xs.min(); dy=63-h-ys.min()
+o=np.load('r2.npy'); ys,xs=np.where(o>0); h=ys.max()-ys.min()+1; w=xs.max()-xs.min()+1; dx=(64-w)//2-xs.min(); dy=63-h-ys.min()
 m=np.asarray(Image.open('model_1x.png').convert('RGB')).copy(); m[(m.min(2)>=225)]=255; mod=Image.new('RGB',(64,64),(255,255,255))
 mod.paste(Image.fromarray(m),(dx,dy))
 mod=mod.convert('RGBA')
@@ -12,7 +12,7 @@ def on(im,bg,s):
     b=Image.new('RGBA',im.size,bg); b.alpha_composite(im); return b.convert('RGB').resize((im.width*s,im.height*s),0)
 W=3*512+40; H=512+40+ 16*12+40+80
 V=Image.new('RGB',(W,H),(200,200,200)); d=ImageDraw.Draw(V)
-for i,(im,t) in enumerate([(cur,'r1'),(prev,'vorige (af)'),(mod,'model verkleind')]):
+for i,(im,t) in enumerate([(cur,'r2'),(prev,'r1'),(mod,'model verkleind')]):
     V.paste(on(im,(255,255,255,255),8),(10+i*522,24)); d.text((10+i*522,6),t,fill=(0,0,0))
 # kop close-up: sprite x 17..42, y 2..27 (r1.npy-coords) -> canvas coords
 x0,y0,x1,y1=17+dx,2+dy,42+dx,27+dy

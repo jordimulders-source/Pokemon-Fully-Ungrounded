@@ -2320,3 +2320,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.556] - Skinguin: model en type
 - r5 (nieuw gesprek) afgekeurd ("nee dit is niks"). Model = r4 met de ski-voeten van r3 (schenen liggen in beide pixel-exact gelijk, dus naadloos vanaf y 700), gespiegeld naar links: `skinguin/model/model.png`. Bovenkant muts wordt bij het spritewerk gefixt.
 - Type: Ice/Water (Jordi).
+
+### [v0.0.557] - Skinguin: frontsprite r1 (A, B, B2)
+- `skinguin/sprite_r1/`: model verkleind (natief raster pitch 10,24, 75 → 61 px door rijen/kolommen te schrappen), muts-bovenlijn gebogen (Jordi: "de muts is netjes"), herbelicht. Keurder: vorm PASS; 2 losse pixels gerepareerd.
+- Varianten: A zoals het model; B (2 px opzij) gaf geen zichtbaar verschil (Jordi); B2: verre ski omlaag, tussenruimte gem. 4,4 → 2,4 px.

@@ -114,7 +114,7 @@ for x,ty in TOP.items():
     mutsn+=int((new!=s[:,x]).sum()); s[:,x]=new
 print('muts px',mutsn)
 # 4b handreparaties (elk naar het model)
-FIX=[(4,21,5,'muts: glansband volgt de nieuwe boog'),(4,22,5,'idem'),(4,23,5,'idem'),(31,15,1,'borstlijn: zwart zoals het model (lijnregel gaf hier grijs, brak de lijn)'),(35,20,1,'idem, modelzwart terug'),(36,19,1,'dij onder de buik ligt in de schaduw: modelzwart terug i.p.v. rode selout'),(37,19,1,'idem'),(38,20,1,'idem'),(39,20,1,'idem'),(53,7,9,'rode ruispixel midden in de ski (Gemini-artefact) -> geel van de buren')]
+FIX=[(4,21,5,'muts: glansband volgt de nieuwe boog'),(4,22,5,'idem'),(4,23,5,'idem'),(31,15,1,'borstlijn: zwart zoals het model (lijnregel gaf hier grijs, brak de lijn)'),(35,20,1,'idem, modelzwart terug'),(36,19,1,'dij onder de buik ligt in de schaduw: modelzwart terug i.p.v. rode selout'),(37,19,1,'idem'),(38,20,1,'idem'),(39,20,1,'idem'),(13,22,1,'keuring MOET 1: witte restpixel van de spleet muts/vleugel gesloten met lijnkleur'),(17,26,4,'keuring MOET 2: losse zwarte pixel in rood -> roodtint van de buren'),(12,17,8,'keuring KAN: punt van de wenkbrauwpluk zwart -> grijze lijn van wit, sluit diagonaal aan op (11,18)'),(54,48,11,'keuring KAN: los bruin pixel in nabije ski -> buurtint (lijn eindigt op (53,50))'),(53,7,9,'rode ruispixel midden in de ski (Gemini-artefact) -> geel van de buren')]
 for (y,x,v,why) in FIX: s[y,x]=v
 np.savetxt('A.txt',s,fmt='%d')
 def save(a,naam,ox=1,oy=None):

@@ -41,3 +41,7 @@ Verschil met r1: bijlage toont front én rug van ons ontwerp (`bijlage_r2_ontwer
 > The second image is only an example of the format (three views, size, outline style) using a different Pokémon, Eevee. Do NOT copy Eevee's shape, face, ears, colors or fur; only copy how the three views are laid out and how simple and small they are.
 
 Toetsen: eerst eis 0 (lijkt het op onze front: viervoeter, bolle rug, oren, slaperig oog, wangpluk, staart), dan of elk aanzicht recht is, dan maat en techniek.
+
+### Ronde 2 resultaat (variant A): `gemini_r2_A.png`
+Jordi: "stiekem best prima, op de ogen na" · "en geen snorharen, maar dat is niet erg".
+Claude: opzij lijkt het meest op onze front (bolle rug, krullende staart met pluim, oren, wangpluk). Voor: goed (viervoeter, oren, wangplukken, crème borst, staartpluim boven de kop). Achter: middenlijn splitst de rug in twee billen en de staart hangt recht omlaag, terwijl hij voor en opzij omhoog krult. Ogen: dichte streepjes met een wenkbrauw, niet ons oog (donkere amandel met glanspixel en zwaar bovenlid). Maat: Gemini-pixel ±5 px, figuren ±39 px hoog, dus ±1,9× te groot (doel ±21 px): verkleinen hoort bij de werkwijze.

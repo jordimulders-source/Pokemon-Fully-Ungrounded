@@ -1,6 +1,8 @@
 # Werkwijze overworldsprite (compact, verplicht)
 
-Bewezen op de viscacha (19 nov): `docs/concept/sprites/viscacha/overworld/gemini_route/af/overworld.png`. Test met twee routes naast elkaar: **Gemini-route** (A) tegen **eigen route** zonder Gemini (B, uit front/rug/icoon + meetregels). Jordi: "Gemini is echt zeer goed" · "en de eigen route echt heel matig" · "dit is no contest". Dus: altijd via Gemini. Naslag: `docs/concept/sprites/rug_icoon_studie/overworld/` (meetstudie) en `viscacha/overworld/PROMPT_OW.md` (prompts en rondes).
+Bewezen op de viscacha (19 nov): `docs/concept/sprites/viscacha/overworld/gemini_route/af/overworld.png`. Test met twee routes naast elkaar: **Gemini-route** (A) tegen **eigen route** zonder Gemini (B, uit front/rug/icoon + meetregels). Jordi: "Gemini is echt zeer goed" · "en de eigen route echt heel matig" · "dit is no contest". Dus: altijd via Gemini.
+
+**Oordeel Jordi (19 nov), letterlijk:** "alles is in de eigen route slechter, behalve misschien de staart positie, maar de staart vorm klopt ook niet. Plus gemini is wel consistent met andere sprites. Zijaanzicht is goed, hoofd naar verhouding, rug naar verohuding, aan de voorkant is die herkenbaar, met alle belangrijke elementen, terwijl eigen route het hoofd verschrikkelijk is, en de ogen wederom gewoon niet goed zijn, met te dikke heupen. Gemini geef ik een 9 tot 9,5 en de eigen route hooguit een 4". Naslag: `docs/concept/sprites/rug_icoon_studie/overworld/` (meetstudie) en `viscacha/overworld/PROMPT_OW.md` (prompts en rondes).
 
 ## Wanneer
 Alleen voor soorten die in de wereld staan (`OBJ_EVENT_GFX_SPECIES`); volgers blijven uit (Jordi). Drie aanzichten (voor, achter, opzij naar links), elk stil + lopen.
@@ -24,5 +26,5 @@ Alleen voor soorten die in de wereld staan (`OBJ_EVENT_GFX_SPECIES`); volgers bl
 - Oog 1×2 px (groter front-oog: 2×2), ogen voor ±5 px uit elkaar; oren opzij 3 px boven de kop; poten 2–3 px.
 - Voor/achter ±98% symmetrisch; 9–15 kleuren; binnenlijnen in elk frame.
 
-## Wat niet werkte (eigen route B)
-Zonder model, uit front/icoon/rug + rekenregels: rechtopstaande kat (r1), daarna hoekig en stijf (r2). Rekenregels alleen zijn geen ontwerp: een nieuw aanzicht (recht van voren/achteren) heeft een model nodig. Gemini r1 zonder bouw in woorden faalde ook.
+## Wat niet werkte (eigen route B, cijfer hooguit 4)
+Jordi: kop "verschrikkelijk", ogen "wederom gewoon niet goed", heupen te dik, staartvorm klopt niet (staartpositie misschien beter). Zonder model, uit front/icoon/rug + rekenregels: rechtopstaande kat (r1), daarna hoekig en stijf (r2). Rekenregels alleen zijn geen ontwerp: een nieuw aanzicht (recht van voren/achteren) heeft een model nodig. Gemini r1 zonder bouw in woorden faalde ook.

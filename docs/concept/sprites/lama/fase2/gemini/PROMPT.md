@@ -41,3 +41,7 @@ STYLE AND FORMAT
 AVOID
 - Not a horse, deer, sheep or camel. Not standing on two legs. No plush toy, chibi or mascot look, no oversized sparkly eyes. No bodybuilder muscles.
 ```
+
+## Ronde 1 (prompt v1) → `r1/r1_prompt_v1.png`
+Jordi (19 nov): "dit is niet bepaald een vooruitgang. Hij is wel heel erg buff, minder llama dan voorheen, de kleding is niet mooi en hij heeft nu echt vingers in de handschoenen, dat is ook niet de bedoeling" · "en totaal niet fluffy"
+Fout van Claude: prompt v1 was geschreven zonder de hele SPEC te lezen en ging tegen eerdere besluiten van Jordi in: lijf fluffy à la Mareep/Flaaffy en jonger, fase 3 = de buffe (2 nov); zwaar droog ooglid (Numel/Slakoth, "dat ooglid is ook een mooie toevoeging", 3 nov; v1 verbood het); pose F (lijf bijna zijaanzicht, kop driekwart, foto 8; v1 vroeg lijf 3/4 naar foto 1); kaarsrechte hals; halsband met pompons. "Open fingers" + "not thin sticks/compact" gaven vingers en spierbundels.

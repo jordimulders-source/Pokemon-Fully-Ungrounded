@@ -111,3 +111,6 @@ Prompt v3 met de poten als stap-voor-stap-beschrijving in beeldtermen (welke poo
 
 ## Ronde 7 (prompt v4) → `r7_prompt_v4.png`
 Jordi: "ok dit gaat hem niet worden, kan je niet het achterste stuk knippen en vragen of die die poten kan omwisselen?" → `bijlage_achterstuk.png` (uitsnede r4, handschoen weggewist); prompt v5: alleen de twee achterpoten omwisselen in deze uitsnede. Claude plakt het resultaat terug in r4.
+
+## Ronde 8 (prompt v5, uitsnede) → `r8_achterstuk.png`
+Jordi: "dit mislukt ook, het moet echt om de positie gaan, maak dat duidelijk" → prompt v6: posities omwisselen (lichte nabije poot naar voren onder de buik, donkere verre poot naar achteren), kleur/diepte per poot blijft.

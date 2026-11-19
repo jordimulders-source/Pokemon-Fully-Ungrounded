@@ -50,3 +50,14 @@ AVOID
 - Not Taillow, Starly, Pidgey, Natu or Fletchling. Not a sparrow or a chick from a hen.
 - No plush toy, chibi, Neopets or mascot look; no oversized sparkly eyes.
 ```
+
+## Ronde 1 (Jordi, 19 nov, letterlijk): `r1_beter.png`
+"beter, maar de kleuren zijn niet meer hetzelfde en hij kijkt niet genoeg diagonaal naar boven zoals in de foto"
+
+## Bijsturing r1 → r2 (zelfde gesprek; werkt hooguit 1–2 keer)
+
+```
+Better! Keep this design, pose, body shape, wings, beak shape, speckles and feet exactly as they are. Change only two things:
+1. COLORS: the colors drifted to plain grey. Use the exact colors of attachment 2 (the old sprite): lilac / grey-violet plumage (main tone #9686C8, light #BAB0E0, shadow #6C5A9C), pale lavender-white belly (#E0DCF4), darker blue-violet folded wings (#605AAA and #3E3480), orange feet (#E29628), dark outline (#140E1E). Clearly violet, not grey.
+2. HEAD ANGLE: like the fledgling in attachment 1, the head is tilted so the bird looks diagonally UP: the beak points diagonally up to the upper left (about 30 degrees above horizontal), not straight forward. The body stays the same round ball.
+```

@@ -1,0 +1,18 @@
+1 vleugelpunten x46-63 y2-29        46
+# staartkoord 2 = (27,51),(29,51): pootpixels van punt 7 binnen de koordbox, niet het koord. selout 6 = (62,3),(62,4),(62,10),(56,25) vleugelpunten rechts/onder -> zwart; (14,7),(9,11) verre vleugel rechts/onder -> zwart.
+2 kuif x17-47 y0-10                 23
+3 verre vleugel x8-14 y0-12         15
+4 buik x11-31 y23-44               114
+5 bliksem x0-8 y29-36                8
+6 achterhoofd x27-29 y9-20          12
+7 rechterpoot x25-30 y45-52         11
+8 bliksem->koord x8-12 y47-50        3
+-- bevroren --
+oog x19-22 y11-14                    0
+wang x21-24 y15-16                   0
+snavel x9-17 y13-17                  0
+staartkoord x9-38 y51-63             2
+stippen (creme in vleugel)           0
+selout 15 r2 gewijzigd               6 (van 69)
+totaal 232
+buiten de zones: []

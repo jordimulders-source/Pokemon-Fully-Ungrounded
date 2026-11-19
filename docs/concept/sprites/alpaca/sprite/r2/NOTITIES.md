@@ -1,47 +1,51 @@
-# Palpaca r1 (19 nov): model overgenomen, niet hertekend
+# Palpaca r2 (19 nov): benoemde reparaties op r1, allemaal naar het model
 
-## Bestanden
-- `palpaca.png`: 64×64, geïndexeerd, index 0 transparant, 14 kleuren gebruikt (+ transparant; index 11 magenta niet gebruikt).
-- `normal.pal`: ongewijzigd het oude palet (`../../ronde17/variant_kop/normal.pal`).
-- `onderlaag.png`: kale reductie (33×48) in modelkleuren (per vak de dichtstbijzijnde natieve modelkleur).
-- `vel.png`: r1 8× | model op dezelfde schaal 8× | oude sprite 8× | 1× op licht/donker + 2× | close-ups kop en poten 12× naast het model.
-- `scripts/alles.sh` draait alles opnieuw: `natief.py` → `zones.py` → `bouw.py` → `maak.py` → `reparatie.py` → `meet.py` → `vel.py`.
+Zelfde keten als r1 (`scripts/alles.sh`). Vel: r2 8× | r1 8× | model 8×, 1× op licht/donker (+ oude sprite en r1 op 1×), close-ups kop en poten 12× naast het model.
 
-## Werkwijze
-1. **Natief raster** (`natief.py`, uit `steenmozaiek/sprite/natief2.py`): adaptieve celgrenzen op randsterkte, pitch ±8 → 130×132 natief; figuur 76×112 natieve px.
-2. **Zones op het natieve raster** (`zones.py`, alleen classificatie, niets getekend): achtergrond (wit, verbonden met de rand + grote ingesloten witte gaten tussen de poten), lijn K (donker of ≥30 onder de lokale mediaan), wol W, verre achterpoot D (taupe), handschoen G, kwastje T, oorbinnenkant P, kraag/manchet C, oog E.
-3. **Reductie** (`bouw.py`): oppervlakgewogen, schaal 2,333 (112 natief → 48 px hoog), 33 px breed. Silhouet = vakken met ≥ 45 % figuur (staartpluim ≥ 40 %, houdt de ronde top van het model). Modellijnen (componenten ≥ 8 natief) als dunne lijn via niet-maximum-onderdrukking op de lijnfractie (lijnkaart-les).
-4. **Palet** (`maak.py`): wol op toon (2 ≥ 237, 3 ≥ 198, anders 4; toonkaart licht gladgestreken binnen de wol), verre poot 4/5/6, handschoen 7/8/9/10, kwastje 8/9/10, kraag/manchet dichtstbijzijnde van 11–14.
-5. **Technisch opschonen** (`maak.py`): tintvlakjes < 3 px in de wol samengevoegd; buitenlijn = randpixels van het silhouet (lichtkant links/boven selout 6, handschoen 10; schaduwkant 1); binnenlijnen: donkere modellijn 5, lichte krullijn 4, tussen onderdelen (raakt poot/handschoen/kraag) 1; losse 1-px lijnpuntjes → 4.
-6. **Reparaties** (`reparatie.py`, bovenlaag, elke pixel met reden en modelplek): oog (glans linksboven, lichtere onderkant 15, verre oog op de wangrand), neusgat en mondlijn, roze binnenoor links, kraagvolgorde teal-roze-teal-geel-teal-roze, manchetten (roze band + onderste rij teal/geel), afgeschuinde glansband op de rug.
+## Opdracht (Claude) en Jordi's correctie
+1. Kop/gezicht. **Jordi:** "dat de kop hoekig leest moet je oplossen met kleurgebruik en schaduwen". Het silhouet van de kop is dus NIET aangepast.
+2. Verre achterpoot neutraal grijsbeige in plaats van paarsroze.
+3. Bobbelige krulrand op rug, bil en staartpluim waar het model die heeft.
+4. Hals lichter en neutraler.
+
+## Wat er veranderd is
+- **Oog**: model natief x 46–50, y 30–37 = 2,1 × 3,4 spritepx → nu 2×4 (was 2×3). Glans linksboven (natief 47,30–33), lichtere onderkant in 6 (natief 47–49,36), onderrand dicht. Verre oog op de wangrand blijft.
+- **Kuif (alleen tinten)**: de krullijn van het model (natief 32–36,28 → 38–42,30 → 43–46,29–26 → 47–51,25–28) staat er nu als twee boogjes in 5. Het boogje direct boven het oog is 4, zodat het oog vrij blijft. De modelschaduw onder de kuif (toon 193–211) is 4 en volgt de boogjes (1 px erboven) in plaats van een rechte band. Het hooglicht linksboven op de kuif blijft.
+- **Ronde kop via schaduw**: sikkel in 4 langs de rechterrand. Die is 1 px van rij 10 tot 13 en groeit naar 2–3 px van rij 14 tot 18 (model 190–213). Zachte wanglijn in 4 rechts van het oog (natief 52–55,29–44, doorlopend in het model) maakt het gezicht rond; onderaan gaat hij op in de sikkel.
+- **Snuit**: neusgat (2,15), mondlijn (2,17)(3,17), kin (4,18) en opkrul (5,17), naar het model (natief 33–39,42–44).
+- **Verre achterpoot**: paletindex 11 = 172,154,134 (basis; model 154,138,114 iets warmer zoals de rest van het palet). Index 15 = 124,108,94 (schaduw waar de poot achter het lijf verdwijnt; model 125,110,91). Het oude 15 (paars, alleen in het oog) is vervangen door 6 in het oog. Kraag en manchetten gebruiken alleen 12/13/14 (magenta 11 werd al niet gebruikt).
+- **Hals**: gemeten 184–195 onder de kin → 3; alleen de kinschaduw (167–179) is 4.
+- **Krulbultjes**: vakken met 28–45 % model en ≤ 2 figuurburen op de wolrand. Overgenomen: rugkrul (19,23)(20,23), staartpluim (24,20)(26,19)(29,20), bil (28,31). Niet aan de kop (Jordi). Niet de rechte hals- en kaakrand, niet de poten. Borst en voorkant van het lijf hebben in het model geen bultje dat meetelt. Knie (0,35) liet ik weg: dat werd een los 1-px stekeltje. Een bultje aan de bovenkant krijgt selout 6.
 
 ## Afwijking van de onderlaag (`meet.py`)
-Silhouet: **0 px** anders dan de onderlaag. Kleurafwijking t.o.v. de onderlaag op het oude palet (stap A):
+Silhouet t.o.v. de r2-onderlaag: **0 px**. De onderlaag bevat nu de 6 bultjes.
 
 | zone | px | opschonen | reparatie | totaal |
 |---|---|---|---|---|
-| kop + gezicht | 242 | 61 | 8 | 65 |
-| hals + lijf | 278 | 38 | 5 | 43 |
-| handschoenen + manchetten | 84 | 32 | 8 | 40 |
+| kop + gezicht | 242 | 71 | 26 | 80 |
+| hals + lijf | 281 | 38 | 5 | 43 |
+| handschoenen + manchetten | 84 | 32 | 6 | 38 |
 | poten (licht) | 102 | 20 | 0 | 20 |
-| staart | 59 | 12 | 1 | 13 |
+| staart | 62 | 17 | 1 | 18 |
 | oren + kwastjes | 27 | 10 | 0 | 10 |
-| verre achterpoot | 42 | 9 | 0 | 9 |
+| verre achterpoot | 42 | 8 | 0 | 8 |
 | kraag | 9 | 3 | 4 | 7 |
-| **totaal** | **843** | **185** | **26** | **207** |
+| **totaal** | **849** | **199** | **42** | **224** |
 
-"Opschonen" is vrijwel geheel buitenlijn (randpixel → lijnkleur) en binnenlijnkleur; de reparaties zijn de 26 pixels hierboven, alle naar het model.
+## r2 t.o.v. r1 (zelfde plek op 64×64)
+87 px anders, waarvan 6 silhouet (de krulbultjes):
+- kop + gezicht 32
+- verre achterpoot 34 (kleur)
+- hals + lijf 15 (hals lichter + rugkrul + bil)
+- staart 6 (pluimbultjes)
+- kraag, manchetten, poten, oren: 0
 
 ## Afmetingen
-Wezen 33 × 48 px (oortop t/m hoeven), op 64×64 op x 16–48, y 14–61 (onderaan, gecentreerd).
-
-## Pootstand (de kern) uit het model
-Nabije voorpoot geheven met handschoen (links, rij 32–42), verre voorpoot staand met handschoen (midden, rij 36–47), nabije achterpoot licht en naar voren onder de buik (kol 17–22), verre achterpoot donker (5/6) en naar achteren (kol 26–32). Allemaal rechtstreeks uit de reductie, geen pixel aan de poten verschoven.
+Wezen 33 × 48 px, op x 16–48, y 14–61. 15 kleuren + transparant.
 
 ## Zwakke punten die nog over zijn
-- **Wol** leest vlak: de krullen van het model worden op 2,3× kleiner grotendeels één tint 3 met een paar 4-krullijnen; het model heeft meer zachte krulvormen op borst en lijf.
-- **Pony/fringe-lijn** boven het oog is een mengsel van 4 en 5 (model heeft daar donkere en lichte lijnstukjes); leest iets vlekkerig op 8×, op 1× niet.
-- **Hals** heeft een grote vlak in schaduwtint 4 (model: hals in de schaduw onder de kin); door het rozige 4 van het oude palet oogt dat warmer/donkerder dan het grijsbeige van het model.
-- **Staartpluim**: linksboven een getrapte schuine rand; de bultjes van de pluim vallen weg bij deze schaal.
-- **Gezicht** is trouw maar klein: oog 2×3 (zoals het model op deze schaal), mond 2 px. Of dit "cute" genoeg leest is de vraag voor de keurder/Jordi; groter maken = afwijken van het model.
-- Selout aan de lichtkant is index 6, die donkerder is dan 5 (overgenomen van de oude sprite).
+- Het oog is 2 kolommen breed (zoals het model op deze schaal). Op 12× leest het als een staand ovaal of een gleuf, op 1×/2× als een rond kraaloog. Breder dan 2 = groter dan het model.
+- De kop blijft van buiten hoekig (rechte rechterrand, platte kruin): dat is het modelsilhouet op 2,3×. De ronding komt nu alleen uit sikkel, kuifboogjes en hooglicht.
+- De kuifboogjes zijn op 1× klein. Op 8× lezen ze als twee krullen boven het oog, op 1× vooral als een donkere wenkbrauwlijn.
+- De wol op het lijf is nog grotendeels één tint (krullen van het model vallen weg). De rugkrul (19–20,23) is een klein nokje.
+- De verre achterpoot gebruikt 6 nergens meer. Zijn omlijning is 1 (zwart), ook aan de lichtkant.

@@ -28,3 +28,16 @@ for r,v in sorted(t.items()): print('%-26s %5d %8d %10d %8d'%(r,*v))
 tot=np.array(list(t.values())).sum(0); print('%-26s %5d %8d %10d %8d'%('TOTAAL',*tot))
 im=Image.open('../palpaca.png'); a=np.array(im); print('kleuren gebruikt (excl. 0):',len(set(a[a>0].ravel())),'| formaat',im.size,im.mode)
 ys,xs=np.nonzero(a); print('wezen: %d breed x %d hoog, x %d-%d, y %d-%d'%(xs.max()-xs.min()+1,ys.max()-ys.min()+1,xs.min(),xs.max(),ys.min(),ys.max()))
+# r2: verschil met r1 per zone (zelfde 64x64-plek)
+import os
+if os.path.exists('../../r1/palpaca.png'):
+    r1=np.array(Image.open('../../r1/palpaca.png')); r2=np.array(Image.open('../palpaca.png'))
+    oy,ox=np.load('plaats.npy'); d=(r1!=r2)
+    t2=defaultdict(int); sil=0
+    for y,x in zip(*np.nonzero(d)):
+        if (r1[y,x]>0)!=(r2[y,x]>0): sil+=1
+        yy,xx=y-oy,x-ox
+        r=regio(yy,xx) if 0<=yy<H and 0<=xx<W and zone[yy,xx]!='.' else 'buiten zone r2 (silhouet)'
+        t2[r]+=1
+    print('\nr2 t.o.v. r1: %d px anders, waarvan %d silhouet'%(d.sum(),sil))
+    for r,v in sorted(t2.items()): print('  %-26s %4d'%(r,v))

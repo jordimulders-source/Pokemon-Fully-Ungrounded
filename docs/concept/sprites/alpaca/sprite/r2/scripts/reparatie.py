@@ -3,13 +3,27 @@
 import numpy as np; from PIL import Image
 B=np.load('stapB.npy'); R=B.copy()
 rep=[
- # oog (model: zwart ovaal, witte glans boven, onderin grijsbruin) en verre oog op de wangrand
- (8,12,2,'oog','glans boven (model natief 47,31-32)'),(9,12,1,'oog',''),(8,13,1,'oog',''),(9,13,1,'oog',''),
- (8,14,15,'oog','lichtere onderkant van het oog (model 98-128)'),(9,14,1,'oog',''),
- (9,15,3,'oog','losse ooglaagpixel: model is hier wol'),
- (2,12,1,'oog','verre oog op de wangrand (model natief 32-34,30-33)'),
- # neus en mond (model: neusgat natief 32-34,38-39; mondlijn 33-38,42-44)
- (2,15,5,'mond','neusgat'),(3,17,5,'mond','mondlijn'),
+ # r2 oog: model natief x 46-50, y 30-37 = 2,1 x 3,4 spritepx -> 2x4 (rij 12-15), glans linksboven (natief 47,30-33),
+ # lichtere onderkant (natief 47-49,36) in 6, onderrand dicht; verre oog op de wangrand (natief 32-34,30-33)
+ (8,12,2,'oog','glans'),(9,12,1,'oog',''),(8,13,1,'oog',''),(9,13,1,'oog',''),
+ (8,14,6,'oog','lichtere onderkant'),(9,14,6,'oog',''),(8,15,1,'oog','onderrand'),(9,15,1,'oog',''),
+ (2,12,1,'oog','verre oog'),
+ # r2 kuif/pony: krullijn van het model (natief 32-36,28 -> 38-42,30 -> 43-46,29-26 -> 47-49,28 -> 50-51,25-28) als twee boogjes;
+ # boogje boven het oog in 4 zodat het oog vrij blijft
+(3,11,5,'kuif','boog 1'),(4,11,5,'kuif',''),(5,12,5,'kuif',''),(6,12,5,'kuif',''),
+ (7,12,3,'kuif',''),
+ # r2 kopschaduw (Jordi: hoekige kop oplossen met kleur en schaduw): schaduw onder de kuif volgt de boogjes (1 px boven de krullijn)
+ # i.p.v. een rechte band, en een sikkel langs de rechterrand die van 1 px (boven) naar 2 px (onder) groeit
+ (5,10,3,'kopschaduw','band -> boogje'),(6,10,3,'kopschaduw',''),(5,11,4,'kopschaduw',''),(6,11,4,'kopschaduw',''),
+ (12,16,4,'kopschaduw','sikkel wordt onderaan breder (model 190-193) en neemt de wanglijn op'),(12,17,4,'kopschaduw',''),(11,18,4,'kopschaduw',''),
+ (14,10,4,'kopschaduw','sikkel rechts'),(14,11,4,'kopschaduw',''),(15,12,4,'kopschaduw',''),(15,13,4,'kopschaduw',''),
+ (7,11,5,'kuif','boog 1 loopt op'),(8,10,5,'kuif',''),(8,11,4,'kuif','boog 2 (licht, boven het oog)'),(9,11,4,'kuif',''),(9,10,3,'kuif',''),
+ (10,10,5,'kuif','boog 2 rechts'),(10,11,5,'kuif',''),
+ # r2 wanglijn rechts van het oog (natief 52-55, 29-44, doorlopend): zachte lijn in 4 die het gezicht rond maakt
+ (11,11,4,'wang',''),(11,12,4,'wang',''),(11,13,4,'wang',''),(11,14,4,'wang',''),(11,15,4,'wang',''),(11,16,4,'wang',''),(10,17,4,'wang',''),(10,18,4,'wang',''),
+ (10,12,3,'wang','wol tussen oog en wanglijn'),(10,13,3,'wang',''),(10,14,3,'wang',''),
+ # neus en mond (model: neusgat natief 32-35,38-40; mond 33-35,42-43 -> kin 37-38,44 -> opkrul 39,43)
+ (2,15,5,'mond','neusgat'),(2,17,5,'mond','mondlijn'),(3,17,5,'mond',''),(5,17,5,'mond','opkrul'),(4,17,3,'mond',''),
  # roze oorbinnenkant linkeroor (model: roze binnenoor natief 32-34, 6-14; reductie gaf wol-schaduw)
  (3,2,14,'oor',''),(3,3,14,'oor',''),
  # kraag (model l->r: teal, roze, teal, geel, teal, roze)

@@ -30,12 +30,12 @@ def zmean(arr,z):
 tone={z:zmean(Lum,z) for z in zl}
 rgbz={z:np.stack([zmean(N[...,c],z) for c in range(3)],2) for z in zl}
 # r2: krulbultjes van het model op de wolrand (vakken met 28-45 % figuur, uitstulping met <= 2 figuurburen, op de wolrand;
-# rechte randen (hals rechts, kaak) en pootranden niet): kuif (12,3), kop rechts (17,5), rugkrul (19-20,23), staartpluim (24,20)(26,19)(29,20), bil (28,31), knie (0,35)
-BULT={(12,3),(17,5),(19,23),(20,23),(24,20),(26,19),(29,20),(28,31),(0,35)}
+# rechte randen (hals rechts, kaak) en pootranden niet). NIET aan de kop (Jordi 19 nov: hoekige kop oplossen met kleur en schaduw): rugkrul (19-20,23), staartpluim (24,20)(26,19)(29,20), bil (28,31) (knie 0,35 weggelaten: los 1-px puntje, leest als stekel)
+BULT={(19,23),(20,23),(24,20),(26,19),(29,20),(28,31)}
 zone=np.full((TH,TW),'.',dtype='<U1'); T=np.zeros((TH,TW)); C=np.zeros((TH,TW,3))
 for y in range(TH):
   for x in range(TW):
-    bult=(x,y) in BULT and fg[y,x]>=0.28
+    bult=(x,y) in BULT and fg[y,x]>=0.27
     if fg[y,x]<(0.40 if (x>=22 and y<=22) else 0.45) and not bult: continue  # staartpluim: 0.40 houdt de ronde bovenkant van het model (vak 25,20 = 0.42)
     if bult: zone[y,x]='W'; T[y,x]=tone['W'][y,x] if fr['W'][y,x]>0 else 220; C[y,x]=rgbz['W'][y,x]; continue
     if fr['E'][y,x]>=0.3: z='E'
@@ -45,7 +45,7 @@ for y in range(TH):
         if fr['C'][y,x]>=0.25: z='C'
     zone[y,x]=z; T[y,x]=tone[z][y,x]; C[y,x]=rgbz[z][y,x]
 np.save('zone_t.npy',zone); np.save('tone_t.npy',T); np.save('rgb_t.npy',C)
-np.save('fg_t.npy',fg)
+np.save('fg_t.npy',fg); np.save('bult.npy',np.array(sorted(BULT)))
 mc=np.unique(N[fgn].astype(int),axis=0)
 ond=np.zeros((TH,TW,4),'uint8')
 for y in range(TH):

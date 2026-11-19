@@ -2281,3 +2281,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Gemini (`alpaca/gemini/PROMPT.md`, 11 rondes): r4 gaf ontwerp, gezicht en geheven handschoen, maar een paardengang; vijf pogingen om de achterpoten om te wisselen mislukten; een foto van een lopende alpaca als bijlage (r10) gaf de telgang; achterpoten van r10 ruw in r4 geplakt en Gemini liet de naad gladmaken (r11 = model, `alpaca/model/model.png`).
 - Sprite (`alpaca/sprite/r1–r6`): verkleining van het model, daarna kleur/schaduw; Jordi's punten (snuit, oren, staartaanzet, oog, haardos, verre oog, schaduw achterpoot); kleuren en binnenlijnen uit het model i.p.v. de oude sprite (r4); Dragonfly Cave-eindronde met torso-perspectief en losse pixel weg (r5). r6 (rondere romp-omtrek) afgewezen: "r5 is beter".
 - Overzichtsvel bijgewerkt.
+
+### [v0.0.546] - Idee: Skinguin (Delibird-evolutie)
+- `IDEEEN.md` → Delibird-evolutie: Skinguin, een pinguïn met ski's als voeten, rood/wit, een ski-/kerstmuts als hoofdvorm, en een pose alsof hij razendsnel van een piste afvliegt (Jordi, 19 nov). Achtergrond rockhopper, voorstel macaronipinguïn en open vragen erbij.

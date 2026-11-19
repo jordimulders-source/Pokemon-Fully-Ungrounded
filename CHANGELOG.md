@@ -2219,3 +2219,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Vuurwerk fase 1 r1 (Gemini A/B) opgeslagen in `docs/concept/sprites/vuurwerk_fase1/r1/`; Jordi: Charmander-kop, lijf niet zichtbaar uit de pijl, armen geen extra ronde. Prompt v2 (vuursalamander/wimpergekko, zonder bijlage (Jordi), vlam uit mondstuk = lijf, armen een volle ronde om de huls).
 - Vuurwerk fase 1 r2 opgeslagen (`r2/`); Jordi: kleuren prima, armen krullen niet, komt niet uit de pijl. Prompt v3: lijf recht omhoog, de armen zijn de krullen, één vlam uit het mondstuk = het wezen.
 - Vuurwerk fase 1 r3 opgeslagen (`r3/`); Jordi: "het wordt er niet beter op", "flinke stap achteruit".
+- Vuurwerk fase 1: vormschets (`schets/vormschets.png`, script ernaast) als bijlage + prompt v4 (v2 als basis, opbouw uit de schets, alleen de armen krullen).

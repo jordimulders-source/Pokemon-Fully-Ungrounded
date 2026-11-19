@@ -104,3 +104,7 @@ Gangfix: in r4 is de voorste achterpoot de verre (donker, achter het lijf) en de
 
 ## Ronde 6 (gangfix, nieuw gesprek) → `r6_gangfix.png`
 Jordi: "hij snapt het niet" (Gemini maakte de voorste achterpoot juist donkerder). → Claude wisselt per script in het model: voorste achterpoot krijgt de lijftint (nabij), achterste de oude donkere tint (ver): `../model/r4_gang_wissel.png`, vergelijking `../model/gang_voor_na.png`.
+Jordi: "ik zie geen verschil, je doet hetzelfde als gemini" (diepte zit in overlap/aanhechting, niet in kleur) · "maak nog een keer een nieuwe prompt en zeg duidelijk wat er moet gebeuren" → prompt v4.
+
+## Prompt v4 (nieuw gesprek, geen bijlage)
+Prompt v3 met de poten als stap-voor-stap-beschrijving in beeldtermen (welke poot waar in het plaatje, wat overlapt, waar de dij zit), plus "diagonaal = fout".

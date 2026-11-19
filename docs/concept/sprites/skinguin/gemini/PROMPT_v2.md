@@ -1,6 +1,6 @@
 # Skinguin – Gemini-startprompt v2 (19 nov), voor een NIEUW gesprek
 
-Feedback op r1 (`r1.png`), Jordi: "hij moet echt rood wit zijn zoals delibird, de ski's en snavel als uitzondering, die zijn delibird geel, de wenkbrauwen wit. De muts moet onderdeel van het lichaam zijn, het lichaam dat rood is met een witte buik. Daarnaast is die niet voorover genoeg geleund"
+Feedback op r1 (`r1.png`), Jordi: "hij moet echt rood wit zijn zoals delibird, de ski's en snavel als uitzondering, die zijn delibird geel, de wenkbrauwen wit. De muts moet onderdeel van het lichaam zijn, het lichaam dat rood is met een witte buik. Daarnaast is die niet voorover genoeg geleund" · "en de pinguin mag wat groter"
 
 ```
 Design a new Pokémon: SKINGUIN, the evolution of DELIBIRD.
@@ -23,6 +23,7 @@ All the speed comes from the pose itself.
 
 VIEW
 Three-quarter view facing left, like every Gen 3 front sprite: the far wing and far ski-shaped foot are on the left (narrower, partly hidden), the near ones on the right.
+The penguin is big: it fills most of the 64×64 frame.
 Compact: the whole Pokémon fits inside a square, limbs close to the body.
 
 DO NOT

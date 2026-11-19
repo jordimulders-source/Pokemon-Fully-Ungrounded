@@ -2305,3 +2305,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.552] - Skinguin: Gemini r1 en prompt v2
 - r1 (`skinguin/gemini/r1.png`): zwart-witte pinguïn met losse muts en losse ski's. Jordi: rood/wit zoals Delibird, snavel en ski's Delibird-geel, wenkbrauwen wit, muts onderdeel van het rode lijf met witte buik, verder voorover leunen. Nieuwe startprompt `PROMPT_v2.md` (nieuw gesprek).
+- Prompt v2: "de pinguin mag wat groter" (Jordi).

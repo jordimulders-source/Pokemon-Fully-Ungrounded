@@ -1,0 +1,1 @@
+# r6 = r5 + oogrand onder het verre oog (Jordi: "de onderkant van het linkeroog valt qua kleur een beetje weg nog" · "is niet echt belijnd"): (19,34), (18,35), (19,35) 6→9, zoals de ring onder het nabije oog. 3 px per frame.

@@ -1,20 +1,25 @@
 {
- "1 vleugellijn uit model": {
-  "M": 87,
-  "W": 16,
-  "K": 19,
-  "D": 2
+ "1 pen: e\u00e9n toon per pen (modelgemiddelde)": {
+  "M": 331,
+  "W": 86,
+  "K": 18,
+  "D": 18
  },
- "1 lichte streep uit model": {
-  "W": 55
+ "1 pengrens -> lijn (donkerste vleugeltint)": {
+  "W": 65,
+  "M": 209,
+  "K": 31,
+  "D": 17
  },
- "1 streep 1 px per pen": {
-  "W": 2
+ "1 streep: \u00e9\u00e9n per pen op de modelplek": {
+  "M": 2,
+  "W": 58
  },
  "2 vlakken: cluster <4 px -> buurtint": {
-  "M": 19,
-  "W": 5,
-  "K": 11,
+  "M": 11,
+  "K": 14,
+  "W": 1,
+  "D": 1,
   "T": 7
  },
  "3 contour: inkeping dicht": {
@@ -22,7 +27,7 @@
  },
  "4 buitenlijn": {
   "K": 87,
-  "M": 128,
+  "M": 126,
   ".": 2,
   "W": 4,
   "C": 4,

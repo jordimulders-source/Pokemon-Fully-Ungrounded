@@ -22,7 +22,7 @@ def boxmean(a,m,r):
             sm+=P[r+dy:r+dy+H,r+dx:r+dx+W]; c+=Q[r+dy:r+dy+H,r+dx:r+dx+W]
     return sm/np.maximum(c,1e-6)
 PAL=[(152,208,160),(30,18,32),(50,30,48),(90,62,82),(128,98,118),(178,148,170),(100,52,32),(152,82,44),
-     (52,62,144),(98,116,214),(208,52,76),(122,82,112),(142,98,128),(165,122,152),(88,84,106),(134,130,152)]
+     (52,62,144),(98,116,214),(208,52,76),(122,82,112),(142,98,128),(165,122,152),(70,66,90),(134,130,152)]
 GRP={1:'K',2:'M',3:'M',4:'M',5:'M',6:'C',7:'C',8:'F',9:'F',10:'E',11:'P',12:'P',13:'P',14:'T',15:'T'}
 # --- stap A = r1-onderlaag in paletkleuren (zelfde regel als r1) ---
 A=np.load('../r1/stapA_r1.npy') if os.path.exists('../r1/stapA_r1.npy') else None
@@ -61,27 +61,62 @@ def zet(y,x,v,regel):
         log.setdefault(regel,{}); z=str(Z[y,x]); log[regel][z]=log[regel].get(z,0)+1; S[y,x]=v
 N4=((-1,0),(1,0),(0,-1),(0,1)); N8=[(i,j) for i in (-1,0,1) for j in (-1,0,1) if i or j]
 def ok(y,x): return 0<=y<TH and 0<=x<TW
-# --- 1. vleugellijnen en strepen uit de lijnkaart (natief), alleen in vleugel/staart ---
-yyn,xxn=np.mgrid[:H,:W]; VLEUGEL=(xxn>=int(os.environ.get('VX',92)))|(yyn<60)
-fl=red(LIJN&VLEUGEL); fs=red(STREEP&VLEUGEL)
-TL=float(os.environ.get('TL',0.13)); TS=float(os.environ.get('TS',0.16))
+# --- 1. pennen uit het model (pennen.py): elke spritecel krijgt de pen met het grootste aandeel; pengrenzen = 1 px lijn
+#        in de donkerste vleugeltint; per pen één toon (modelgemiddelde van de pen) en hooguit één lichte streep op de modelplek ---
+PEN=np.load('pen_nat.npy'); npen=PEN.max()
+yyn,xxn=np.mgrid[:H,:W]; VLEUGEL=((xxn>=92)|(yyn<60))
+fs=red(STREEP&VLEUGEL)
+aand=np.stack([red(PEN==i) for i in range(npen+1)])   # aandeel per pen per cel (0 = geen pen)
+P=np.zeros((TH,TW),int)
+for y in range(TH):
+  for x in range(TW):
+    if Z[y,x] in ('M','W','K','D') and aand[1:,y,x].sum()>=0.18:
+        P[y,x]=1+int(np.argmax(aand[1:,y,x]))
+# cellen tussen de pennen (scheidingslijnen in het model) naar de dichtstbijzijnde pen laten groeien, alleen binnen het vleugelgebied
+vg=red(VLEUGEL&np.isin(Zn,['M','W','K','D']))
+for _ in range(4):
+    Q=P.copy()
+    for y in range(TH):
+      for x in range(TW):
+        if not P[y,x] and Z[y,x] in ('M','W','K','D') and vg[y,x]>=0.5:
+            nb=[P[y+d,x+e] for d,e in N4 if ok(y+d,x+e) and P[y+d,x+e]]
+            if nb: Q[y,x]=max(set(nb),key=nb.count)
+    P=Q
+# pentoon: helderheid van de pen in het model (lijnen/strepen niet meegeteld)
+PCT=float(os.environ.get('PCT',70))
+pl={i:np.percentile(Ln[(PEN==i)&~STREEP],PCT) if ((PEN==i)&~STREEP).any() else 80 for i in range(1,npen+1)}
 vast=np.zeros((TH,TW),bool)
 for y in range(TH):
   for x in range(TW):
-    if Z[y,x] in ('M','W','K','D') and fl[y,x]>=TL:
-        f=S[y,x]; zet(y,x,1 if f<=2 else max(2,f-2) if f>=4 else 2,'1 vleugellijn uit model'); vast[y,x]=True
+    if P[y,x]:
+        v=kies('D' if Z[y,x]=='D' else 'M',pl[P[y,x]])
+        zet(y,x,v,'1 pen: eén toon per pen (modelgemiddelde)')
 for y in range(TH):
   for x in range(TW):
-    if Z[y,x] in ('M','W') and not vast[y,x] and fs[y,x]>=TS and fs[y,x]>fl[y,x]:
-        zet(y,x,5,'1 lichte streep uit model'); vast[y,x]=True
-# lijnen dunner: lijnpixel met lijnburen links én rechts óf boven én onder van een 2-dik blok -> houd de sterkste
-# strepen: per pen hooguit één streep -> streeppixel die naast (4-buur) een sterkere streeppixel ligt dwars op de pen valt weg
-for y in range(TH):
-  for x in range(TW):
-    if S[y,x]==5 and vast[y,x]:
-        for dy,dx in N4:
-            if ok(y+dy,x+dx) and S[y+dy,x+dx]==5 and fs[y+dy,x+dx]>fs[y,x] and ok(y-dy,x-dx) and S[y-dy,x-dx]!=5 and dy!=0:
-                zet(y,x,B[y,x] if B[y,x]!=5 else 4,'1 streep 1 px per pen'); vast[y,x]=False; break
+    p=P[y,x]
+    if not p: continue
+    grens=False
+    for d,e in ((0,1),(1,0)):
+        if ok(y+d,x+e) and P[y+d,x+e] and P[y+d,x+e]!=p: grens=True
+    if grens:
+        f=S[y,x]; zet(y,x,1 if f<=2 else 2,'1 pengrens -> lijn (donkerste vleugeltint)'); vast[y,x]=True
+TSTR=float(os.environ.get('TS',0.30))
+for i in range(1,npen+1):
+    m=(P==i)&~vast&(fs>=TSTR)
+    if not m.any(): continue
+    # grootste verbonden streep per pen houden
+    seen=np.zeros_like(m); best=[]
+    for y0,x0 in zip(*np.where(m)):
+        if seen[y0,x0]: continue
+        st=[(y0,x0)];c=[];seen[y0,x0]=1
+        while st:
+            a_,b_=st.pop();c.append((a_,b_))
+            for d,e in N8:
+                q,r=a_+d,b_+e
+                if ok(q,r) and m[q,r] and not seen[q,r]: seen[q,r]=1;st.append((q,r))
+        if sum(fs[q,r] for q,r in c)>sum(fs[q,r] for q,r in best): best=c
+    for q,r in best:
+        if S[q,r]<5: zet(q,r,min(5,S[q,r]+2) if S[q,r]>=3 else 4,'1 streep: één per pen op de modelplek'); vast[q,r]=True
 # --- 2. vlakken: clusters < 4 px (niet de vaste lijnen/strepen) nemen de buurtint van dezelfde groep ---
 def clusters():
     seen=np.zeros_like(S,bool); out=[]

@@ -19,7 +19,7 @@ fr={z:red(Z==z) for z in zl}; fg=red(fgn)
 den={z:np.maximum(Wy@(Z==z).astype(float)@Wx.T,1e-6) for z in zl}
 rgb={z:np.stack([(Wy@(N[...,c]*(Z==z))@Wx.T)/den[z] for c in range(3)],2) for z in zl}
 import os
-DREMPEL={'E':0.22,'K':0.34,'C':float(os.environ.get('DC',0.35)),'F':0.30,'S':0.30,'W':float(os.environ.get('DW',0.22))}
+DREMPEL={'E':0.22,'K':0.34,'C':float(os.environ.get('DC',0.5)),'F':0.30,'S':0.30,'W':float(os.environ.get('DW',0.22))}
 zone=np.full((TH,TW),'.',dtype='<U1'); col=np.zeros((TH,TW,3))
 for y in range(TH):
   for x in range(TW):

@@ -1,0 +1,16 @@
+variant a: 15 px gewijzigd t.o.v. r1/frame2.png, buiten zone x41-52 y8-23: 0
+(47,10) 12 -> 4  hoek rechtsboven, overgang naar schaduwkant: 4
+(48,10) 12 -> 4  hoek: 4
+(48,11) 12 -> 4  rechterkant: 4
+(49,11) 12 -> 4  buitenste hoekpixel: 4
+(47,12) 14 -> 13  1 px binnen de lijn naast 11: e -> d, zachte schaduw (frame 1 heeft d-banden in deze vleugel)
+(48,12) 4 -> 11  tegen de donkere staart: een tint donkerder, 11 (basis A)
+(47,13) 14 -> 13  idem
+(48,13) 13 -> 11  tegen de staart: 11
+(47,14) 12 -> 4  staart wijkt: 4
+(46,15) 12 -> 4  rechterkant (schaduwkant): 4
+(46,16) 12 -> 4  rechterkant: 4
+(46,17) 13 -> 4  rechterkant: 4
+(45,18) 14 -> 12  binnenste van het dubbele stuk: c (lijn dunner)
+(46,18) 14 -> 4  buitenste van het dubbele stuk: 4
+(45,19) 14 -> 4  onderloop: 4

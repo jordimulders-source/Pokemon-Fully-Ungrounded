@@ -30,3 +30,4 @@ Fase 1: 29×62 px (r2; op ±50 px las de kop niet). Oppervlak ±810 px, gelijk a
 
 ## Jordi over r7 (19 nov)
 "je mag de handen best aanpassen, maar ze moeten dynamisch blijven en niet 2 symmetrische vormen. Kijk naar het model. Het gezicht is idd wat hoekig en het mist wat karakter, mond is niet echt zichtbaar en het rechteroog is een beetje een zwarte blur met een witte punt erop. Het idee voor de ogen vooral zwart laten is goed en het perspectief ook wel, maar weet het niet helemaal. Misschien moeten we nog met iets duidelijk maken (met schaduw) dat de krullende vlam onder de rechte arm splitst, dus naar de arm, maar ook nog een keer rondkrult naar de linkerarm. Als je naar de krullen op het hoofd van een afstandje lijkt zijn ze prima, maar hoe langer je kijkt hoe gekker de vorm eigenlijk is".
+- Jordi over r8 (19 nov): "ogen beter, tussen de krullen moet ruimte zitten, zie het model".

@@ -2270,3 +2270,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.544] - Vuurwerklijn fase 2: prompt v3
 - r2 bewaard (los salamandertje met pootjes op de pijl; oorzaak: kop los van het eind van de vlam gevraagd). v3: ruwe collage `vuurwerk_fase2/schets/collage_v3.png` (gekantelde fase 1 r7 + kop van r1 op het eind van de vlam) met `gemini/PROMPT_v3_collage.md`.
+
+### [v0.0.545] - Vuurwerklijn fase 2: r3 en nieuw voorstel
+- r3 bewaard (`vuurwerk_fase2/r3/`; Jordi: onderscheidt zich niet genoeg van fase 1). Voorstel om de verhouding om te draaien (wezen groter dan de pijl, rechtop S-lijf) in `IDEEEN.md`.

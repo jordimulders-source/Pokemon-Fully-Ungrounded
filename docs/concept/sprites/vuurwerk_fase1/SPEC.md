@@ -15,7 +15,7 @@ Lijn: fase 1 (deze) → fase 2 (houdt de pijl vast, nog open) → fase 3 vuurwer
 
 ## Toegestane afwijkingen van het model (van Jordi; als laatste, als bovenlaag)
 1. Losse sterretjes rondom weg.
-2. Rechterarm: één lijn uitgummen (welke lijn: wordt nog met Jordi bevestigd).
+2. Rechterarm: één lijn uitgummen. Jordi tekende hem in `referenties/rechterarm_jordi_lijn.png` (witte lijn; uitsnede van het model ±x 400–680, y 200–480): "als je dat stuk waar ik de lijn teken gewoon een doorlopend stuk maakt, gaat er prima uit zien denk ik". Dat is de donkere scheidingslijn tussen de rechterarm en het golvende lijf, rechts naast de pijl onder het rechterhandje (model ±x 570–610, y 330–375).
 3. Lijf verbinden: het vuur dat onderaan uit de open pijl komt en het golvende lijf vormen één doorlopende lijn (nu loopt het stompje uit de opening los achter het lijf naar een losse vlam onderaan).
 
 ## Formaat

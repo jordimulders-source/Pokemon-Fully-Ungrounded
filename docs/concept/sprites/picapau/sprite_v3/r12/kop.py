@@ -4,9 +4,9 @@
 import numpy as np; from PIL import Image, ImageDraw
 src=Image.open('../r11/picapau.png'); R11=np.array(src); PAL=src.getpalette(); V,H=13,2
 S={ # verschuiving per rij 23..38
- 'A':dict(zip(range(23,39),[0,1,1,1,1, 1,1,1,1,1, 1,1,0,0,0,0])),
- 'B':dict(zip(range(23,39),[1,2,2,2,2, 2,2,2,2,2, 2,2,1,1,1,0])),
- 'C':dict(zip(range(23,39),[2,3,3,3,3, 3,3,3,3,3, 3,3,2,2,2,1]))}
+ 'A':dict(zip(range(23,39),[0,1,1,1,1, 1,1,1,1,1, 1,0,0,-1,0,0])),
+ 'B':dict(zip(range(23,39),[1,2,2,2,2, 2,2,2,2,2, 2,1,1,0,0,0])),
+ 'C':dict(zip(range(23,39),[2,3,3,3,3, 3,3,3,3,3, 3,2,2,1,1,1]))}   # rij 28-32 = snavel: overal max (snavel blijft heel)
 TOP={'A':(23,20),'B':(22,19),'C':(21,18)}   # (start rij 21, start rij 22)
 XA=23
 def maak(k):
@@ -14,7 +14,9 @@ def maak(k):
     for y,s in S[k].items():
         if s==0: continue
         row=R11[y].copy(); L=np.where(row[:XA]>0)[0].min()
-        new=row.copy(); new[L-s:XA-s]=row[L:XA]; new[XA-s:XA]=row[XA-1]
+        new=row.copy()
+        if s>0: new[L-s:XA-s]=row[L:XA]; new[XA-s:XA]=row[XA-1]
+        else: t=-s; new[L+t:XA]=row[L:XA-t]; new[L:L+t]=0
         a[y]=new
     x21,x22=TOP[k]
     for x in range(x21,24): a[21,x]=V

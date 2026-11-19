@@ -4,6 +4,7 @@ Nieuw gesprek, **alleen bijlage `../schets/lijnschets_v6.png`** (`schets/maak_li
 
 ## Jordi over r5 (`../r5/gemini_v5.png`)
 "dit werkt ook niet"; "hij volgt je schets te letterlijk".
+Jordi over de eerste lijnschets: "maar je schets mist wel het krullen nu he" → lijnschets krult nu anderhalve slag om de pijl.
 (Claude: kop werd een crème schedel met lange snuit, armen klompjes, extra losse vlamsliert rechts; de opbouw uit de achterkant van de pijl kwam wel goed.)
 
 ## Prompt
@@ -11,13 +12,13 @@ Nieuw gesprek, **alleen bijlage `../schets/lijnschets_v6.png`** (`schets/maak_li
 ```
 Design an original Pokémon as an official Gen 3 pixel-art front sprite (Ruby/Sapphire/Emerald style).
 
-The attached image is only a GESTURE LINE: the grey line shows the path of the body, the circle shows where the head goes, the two small rings show where the hands hold the rocket. Design the creature yourself along that line; do not copy the lines.
+The attached image is only a GESTURE LINE: the grey line shows the path of the body (light grey = behind the rocket), the circle shows where the head goes, the two small rings show where the hands hold the rocket. Design the creature yourself along that line; do not copy the lines.
 
 WHAT IT IS
 A confident young fire salamander made entirely of fire, that comes out of a firework rocket and holds that rocket like a bazooka. The creature is clearly BIGGER than the rocket.
 
 HOW IT IS BUILT
-- Fire comes out of the open back end of the rocket. That fire IS the creature's body: it curls down in one loop, passes in front of the rocket and rises up into an upright body, like a rearing cobra.
+- Fire comes out of the open back end of the rocket. That fire IS the creature's body: it makes a short bend, then WINDS AROUND THE ROCKET one and a half times, like a snake coiled around a branch (you see it pass in front of the rocket twice), and then rises up into an upright body, like a rearing cobra.
 - Two short arms hold the rocket, pointing diagonally forward and up.
 - No legs, no feet, no second tail, no extra loose flames: the one flame from the rocket is the whole body.
 

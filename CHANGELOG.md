@@ -2285,3 +2285,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.549] - Vuurwerklijn fase 2: lijnschets en prompt v6
 - Jordi: Gemini volgt de vormschets te letterlijk (r5: schedelkop, klompjes als armen). Nu een lijnschets (`vuurwerk_fase2/schets/lijnschets_v6.png`: alleen de looplijn van het lijf, de pijl, plek van kop en handen) + `gemini/PROMPT_v6_lijn.md` (kop expliciet levend, geen schedel).
+
+### [v0.0.550] - Vuurwerklijn fase 2: krul terug in de lijnschets
+- Jordi: "maar je schets mist wel het krullen nu he". Lijnschets v6 (`maak_lijnschets.py`): het lijf krult nu anderhalve slag om de pijl (achterkant lichtgrijs) voordat het zich opricht; prompt v6 aangepast.

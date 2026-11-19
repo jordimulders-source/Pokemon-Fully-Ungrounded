@@ -2259,9 +2259,25 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Op het overzichtsvel (`showcase/frontsprites_af.png`, werknaam "Vuurwerk-axolotl", naam open). Alle uitspraken van Jordi in `vuurwerk_fase1/SPEC.md`.
 - Lessen in `docs/lessen/GEMINI.md`: lange armen om een voorwerp tekent Gemini niet; asset voor asset met bijlagen werkt; "leest niet" is geen tekenopdracht; Gemini voegt goed iets toe aan een eigen sprite maar poetst slecht op.
 
-### [v0.0.541] - Overzichtsvel: pitahaya-draak fase 3 erbij
+### [v0.0.541] - Nocticue opknappen: Gemini-prompt
+- Nocticue (nachtaap fase 1) in de opknapronde via Gemini. Jordi: "ik ben echt fan van het design, dus het is puur de pose. De cuteness moet niet weg" · "ook de positie van zijn armen" · "dus puur de hoek".
+- Prompt v1 + bijlage (huidige sprite 8×) in `docs/concept/sprites/nachtaap/gemini/`; alleen de hoek (lijf en armen) naar driekwart links, design/kleuren/schattigheid bevroren.
+
+### [v0.0.542] - Nocticue opgepoetst: driekwart via Gemini
+- Nocticue (nachtaap fase 1) heeft een nieuwe frontsprite: `docs/concept/sprites/nachtaap/af/nachtaap.png` (oud in `af/oud_voor_gemini/`, voor/na in `af/voor_na_8x.png`). Jordi: "ik ben echt fan van het design, dus het is puur de pose. De cuteness moet niet weg" · "dus puur de hoek".
+- Gemini: 6 rondes (`nachtaap/gemini/PROMPT.md`); r4 gekozen, met Teddiursa als hoekvoorbeeld. r5 (molliger lijf) en r6 (streep tussen de ogen) mislukten.
+- Sprite (`nachtaap/sprite_r4/`): natief raster van r4 1-op-1 overgenomen (37×36, even groot als de oude sprite), palet van de oude sprite, Gen 3-volume; streep tussen de ogen smaller in twee tinten met crème rand om het linkeroog (Jordi's keuze om dat in de sprite-fase te doen). Keurder PASS, daarna Dragonfly Cave-eindronde (licht op armen/voet, kooilijnen romp, staartkrul, verre oog, wangschaduw) en Jordi's punten: oogrand onder het linkeroog, zonder hoekpixel. Jordi: "nice".
+- Overzichtsvel bijgewerkt; Nocticue in de opknapronde af.
+
+### [v0.0.543] - Overzichtsvel: pitahaya-draak fase 3 erbij
 - `docs/concept/sprites/showcase/frontsprites_af.png` (+ `maak_vel.py`): pitahaya-draak fase 3 (`pitahaya_draak_fase3/af/`, Grass/Dragon) toegevoegd naast fase 1 en 2; daarmee staat de hele lijn op het vel.
 
-### [v0.0.542] - Opknapronde: Palpaca-prompt
+### [v0.0.544] - Opknapronde: Palpaca-prompt
 - `docs/concept/sprites/alpaca/gemini/PROMPT.md` + bijlage (huidige sprite 8×): Gemini-prompt v1 om Palpaca op te knappen. Design blijft, pose wordt een echte alpacagang (telgang: poten aan dezelfde kant tegelijk, anders dan het diagonale draven van een paard), driekwart hoek, gezicht dat bij die hoek klopt.
 - `OPKNAPRONDE_GEMINI.md`: tweede ronde met Jordi's woorden (netter maken, geen designwijziging; Palpaca; spooktrein fase 3).
+
+### [v0.0.545] - Palpaca opgepoetst: telgang en driekwart
+- Palpaca (alpaca, Fighting-starter fase 1) heeft een nieuwe frontsprite: `docs/concept/sprites/alpaca/af/palpaca.png` (+ `_8x`, `normal.pal`; oud in `af/oud_voor_gemini/`). Jordi: "palpaca heeft bijv nog steeds een beetje een gek aangezicht" · "de sprite moet zijn zoals een alpaca in het echt loopt" · "Het design moet zo blijven alleen de pose moet natuurlijker, de hoek moet natuurlijker, hij moet netter" · "hij moet een cute starter zijn".
+- Gemini (`alpaca/gemini/PROMPT.md`, 11 rondes): r4 gaf ontwerp, gezicht en geheven handschoen, maar een paardengang; vijf pogingen om de achterpoten om te wisselen mislukten; een foto van een lopende alpaca als bijlage (r10) gaf de telgang; achterpoten van r10 ruw in r4 geplakt en Gemini liet de naad gladmaken (r11 = model, `alpaca/model/model.png`).
+- Sprite (`alpaca/sprite/r1–r6`): verkleining van het model, daarna kleur/schaduw; Jordi's punten (snuit, oren, staartaanzet, oog, haardos, verre oog, schaduw achterpoot); kleuren en binnenlijnen uit het model i.p.v. de oude sprite (r4); Dragonfly Cave-eindronde met torso-perspectief en losse pixel weg (r5). r6 (rondere romp-omtrek) afgewezen: "r5 is beter".
+- Overzichtsvel bijgewerkt.

@@ -10,7 +10,7 @@ items=[
 ("olinguito_v2/af/olinguito.png",'"Bandolingo"',"dark"),
 ("coathief/af/coathief.png",'"Coathief"',"dark"),
 ("wasbeer/af/wasbeer.png",'"Vigiloot"',"dark"),
-("nachtaap/ronde12/variant_spiraal/anim_front.png",'"Nocticue"',"psychic"),
+("nachtaap/af/nachtaap.png",'"Nocticue"',"psychic"),
 ("nachtaap_evo/af/nachtaap_evo.png",'"Moonkey"',"psychic"),
 ("nachtaap_fase3/af/nachtaap_fase3.png",'"Curiqui"',"psychic/cosmic"),
 ("cuyby/ronde4/anim_front.png",'"Cuyby"',"normal"),

@@ -109,3 +109,7 @@ Jordi (19 nov): "beter?" Vergelijking: `staart_r3_r4_r5_foto.png`.
 Jordi: "ja alleen de vleugels/staart moeten pikachu kleuren krijgen, de rest mag je volledig hetzelfde palet aanhouden als picapau, dat was al een erg goed design" · "dus de vleugels moeten juist niet terug naar het origineel" · keuze: **vleugel bruin, staart roodbruin** (vleugels in Pikachu's bruin 156 82 0 / 98 49 8; staart roodbruin met Pikachu's 123 41 8 als schaduw; stippen crème van Picapau).
 - Palet: alles verder = `../af/normal.pal` (Picapau). Vervangt de regel hierboven "sprite met de kleuren van Pikachu".
 - Verre oog: max. 1–2 px zwart boven de snavel.
+
+## Sprite v3 (19 nov)
+- r5 oog: Jordi "A, maar alleen de rechtse pixel behouden" → r6.
+- r6, Jordi: "ok paar puntjes, we zijn er bijna: de kleur van het lichaam moet hetzelfde zijn als de originele picapau, niet als het model · Het hoofd mag iets ronder aan de linkerkant. Er zit ook 1 bruine pixel die er niet hoort naast de onderkant van de snavel, net boven de wang. · De gele stekel net onder het rechteroor, mag iets diagonaler gelijnd worden naar onderen, naar de bovenkant. 1 pixel is voldoende denk ik. · Het oog is nu een beetje een ei vorm, mag volledig rond. · De afwerking van de snavel is een beetje gek, met een paar pixels naar links, kan dat uiteinde iets scherper? · De rest is allemaal goed en mag je precies zo behouden (op dalijk een kleur en schaduwronde na)" → r7.

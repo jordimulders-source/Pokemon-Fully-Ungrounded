@@ -102,7 +102,7 @@ Bovenaan gehouden zodat de stand in één oogopslag te zien is. Details in de se
     - Pose (Jordi, 19 nov): "snelheid komt uit de houding, vleugels strak naar achteren, skis schuin naar voren, idd ook de muts/hoofd die naar achter gaat."
     - Soort (Jordi, 19 nov): "We kunnen er ook een hybride van maken, dus koningspinguin met een kenmerk van de macaroni". Welk kenmerk: open.
     - Kuif (Jordi, 19 nov; antwoord op de opties kuif/snavel/rode ogen): "de kuif doen we dan delibird stijl".
-    - L-vorm (Jordi, 19 nov): "die rechtop pose is ook mooi, alleen gaat hij in onze pose wel in een soort l-vorm bergafwaarts dan". Of dit een bezwaar is of een beschrijving: nog niet beantwoord.
+    - L-vorm (Jordi, 19 nov): "die rechtop pose is ook mooi, alleen gaat hij in onze pose wel in een soort l-vorm bergafwaarts dan". Jordi: "nee ik beschrijf met l vorm de pose" (geen bezwaar).
     - Open: welke pinguïnsoort; blijven de gele kuifveren zichtbaar of gaan ze op in de muts; wat er met de zak/staart gebeurt.
 - **Heliamphora-regional form van de Bellsprout-lijn** (Jordi, 9 nov: "gaan we sowieso doen"); de bekerplant van de tepuis (staat rechtop, met een klein lepelvormig dekseltje). Eerder: Victreebel-regional form verkennen: "van die hangende planten waar vliegen in kruipen en opgegeten worden bijv". (hangende bekerplanten zijn *Nepenthes*, Zuidoost-Azië).
 - **Octillery-evolutie:** zie `POKEMON.md` (Krassault; de tank-Octillery valt af, Jordi 10 nov).

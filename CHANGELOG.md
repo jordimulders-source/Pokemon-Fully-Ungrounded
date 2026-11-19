@@ -2293,3 +2293,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.549] - Skinguin: kuif
 - `IDEEEN.md` → Skinguin: kuif "delibird stijl" en Jordi's opmerking over de L-vorm.
+- L-vorm is een beschrijving van de pose, geen bezwaar (Jordi).

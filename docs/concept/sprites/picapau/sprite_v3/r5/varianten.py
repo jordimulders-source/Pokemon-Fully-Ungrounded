@@ -16,7 +16,7 @@ tiles=[]
 for k in 'ABCD':
     a=np.load('var_%s.npy'%k); sp=png(a,'picapau_oog_%s.png'%k)
     kop=img(a[12:26,16:32],12)
-    t=Image.new('RGB',(kop.width+140,kop.height+30),(210,210,210)); d=ImageDraw.Draw(t)
+    t=Image.new('RGB',(kop.width+140,max(kop.height,70+128)+30),(210,210,210)); d=ImageDraw.Draw(t)
     t.paste(kop,(0,24)); t.paste(on(sp,1),(kop.width+8,24)); t.paste(on(sp,2),(kop.width+8,24+70)); d.text((4,4),k,fill=(0,0,0))
     tiles.append(t)
 V=Image.new('RGB',(sum(t.width+10 for t in tiles),tiles[0].height),(160,160,160)); x=0

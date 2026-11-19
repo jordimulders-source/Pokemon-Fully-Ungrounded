@@ -131,3 +131,4 @@ Jordi: "ja alleen de vleugels/staart moeten pikachu kleuren krijgen, de rest mag
 - Jordi: "lieg niet" · "je hebt 2 pixels toegevoegd ipv 4" → ook (15,30) en (15,35); r17 = r13 + 4 px (15,30/31/34/35).
 - Jordi: "dit kan toch niet allemaal wangkleur zijn" · "nee ook niet allemaal zwart" · "kijk naar het fucking model" → r17 rand x15 rij 30–35 zoals het model: boven bruine selout met geel ernaast, onder donkerrood met rood ernaast (verre wang), 13 px t.o.v. r13.
 - Jordi: "waarom heb je nu de snavel aangepast?" → Claude had (17,30),(17,31) ongevraagd donkergrijs gemaakt; teruggezet.
+- Jordi: "HUH" → ook (16,30–32) was de zwarte snavelrand en was geel geworden; terug. r17 = r13 + 7 px: (15,30),(15,31) bruine selout, (15,34),(15,35) donkerrood, (16,33–35) rood. Snavel = r13.

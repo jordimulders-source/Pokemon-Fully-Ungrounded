@@ -1,7 +1,7 @@
 # controle: losse donkere lijnpixels (1) zonder buur aan de rand/lijn, kleine tintvlakjes (<3 px) per kleur, kleurtelling
 import sys, numpy as np
 from collections import Counter
-a = np.load(sys.argv[1] if len(sys.argv) > 1 else 'lama_idx.npy'); H, W = a.shape
+a = np.load(sys.argv[1] if len(sys.argv) > 1 else 'stap4.npy'); H, W = a.shape
 def g(x, y): return a[y, x] if 0 <= x < W and 0 <= y < H else 0
 N8 = [(dx, dy) for dx in (-1, 0, 1) for dy in (-1, 0, 1) if dx or dy]
 los = [(x, y) for y in range(H) for x in range(W) if a[y, x] == 1 and not any(g(x + dx, y + dy) in (0, 1, 2, 3, 9) for dx, dy in N8)]

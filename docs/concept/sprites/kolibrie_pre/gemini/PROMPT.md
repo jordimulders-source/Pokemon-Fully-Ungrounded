@@ -64,3 +64,44 @@ Better! Keep this design, pose, body shape, wings, beak shape, speckles and feet
 
 ## Ronde 2 (Jordi, 19 nov, letterlijk): `r2_goed.png`
 "ok dat is ook goed, is de pose driekwart genoeg denk je?"
+
+## Ronde 3 (Jordi, 19 nov, letterlijk): `r3_zelfde.png` (na bijsturing kopdraai)
+"dit is precies hetzelfde toch? dus nieuw gesprek lijkt me"
+
+## Prompt v2 (nieuw gesprek)
+Bijlagen: `bijlage1_foto5_uitvlieger.png`, `bijlage2_huidige_sprite_8x.png`, `bijlage3_kophoek_taillow_starly.png` (alleen voor de kophoek). r2 niet als bijlage (Gemini kopieert een bijlage + "keep" letterlijk); in plaats daarvan staan de r2-correcties (kleurcodes, kop omhoog) in de tekst.
+
+```
+Design a Pokémon as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art), drawn fresh as a Game Freak artist would.
+
+THE CREATURE
+- A baby hummingbird Pokémon: a hummingbird chick, a fledgling that has just left the nest. It must read clearly as a hummingbird chick, not as a sparrow, finch or generic songbird.
+- Attachment 1 is a photo of a real hummingbird fledgling sitting in a hand. Use it for the anatomy: a small hunched round ball of a bird, head sunk into the body, no neck, wings folded along the sides.
+- Beak: a long, thin, straight hummingbird beak, CLOSED. Dark beak.
+- Wings: long folded hummingbird wings lying along the sides, their tips sticking out behind/below the body and crossing over the short tail.
+- Down: fluffy downy plumage with a speckled throat and chest, but ONLY in a way that still reads in a 64x64 sprite: a few clear fluffy tufts in the outline and a few clear speckle pixels, no fine texture or noise.
+- Exactly one head, two folded wings, one short tail, two tiny feet.
+
+POSE AND VIEW (most important)
+- Body in 3/4 view facing left: belly towards the viewer, near wing along the side.
+- The HEAD is turned MORE towards the viewer than the body, exactly like the heads of Taillow and Starly in attachment 3: we see the face partly from the front, the eye sits on the front-side of the head, and a hint of the far side of the face is visible. NOT a flat side-profile head.
+- The bird looks diagonally UP: the beak points diagonally up to the upper left, about 30 degrees above horizontal.
+- The far foot is placed a bit higher and further back than the near foot.
+- Compact, fits in a square.
+
+COLORS (keep these exactly)
+- Attachment 2 is the old sprite of this Pokémon. Use it ONLY for the colors. Do NOT trace it or copy its shape or pose.
+- Lilac / grey-violet plumage (main tone #9686C8, light #BAB0E0, shadow #6C5A9C), pale lavender-white belly (#E0DCF4), darker blue-violet folded wings (#605AAA and #3E3480), orange feet (#E29628), dark outline (#140E1E), a small yellow mouth corner at the base of the beak. Clearly violet, not grey.
+- Eye: a clear, defined black eye with a white highlight (like Starly's eye), no colored iris.
+- No teal, green or blue-green anywhere. Gentle and friendly, not mysterious or dark.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left, clean shading like official Game Freak Gen 3 sprites, large calm shading areas, no noise.
+- Plain white background. No hand, no branch, no nest, no ground, rock, shadow or base.
+- No sparkles, motion lines, text or effects. One single creature, no extra views.
+
+AVOID
+- Attachment 3 is ONLY for the head angle: do not copy Taillow's or Starly's design, colors, crest or beak.
+- Not Taillow, Starly, Pidgey, Natu or Fletchling. Not a sparrow or a chick from a hen.
+- No plush toy, chibi, Neopets or mascot look; no oversized sparkly eyes.
+```

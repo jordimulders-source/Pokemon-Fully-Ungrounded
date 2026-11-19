@@ -122,3 +122,4 @@ Jordi: "ja alleen de vleugels/staart moeten pikachu kleuren krijgen, de rest mag
 - r11, Jordi: "het hoofd links moet ronder" → r12: 3 varianten A/B/C (maker).
 - Jordi: "hoe vaak moet ik dat zeggen" · "hij is nu nog platter" (r11 linkerrand werd een verticale wand x16). r12-opdracht gecorrigeerd: bolle boog boven én onder de snavel, geen rechte stukken > 2 rijen.
 - Jordi: "is 1 rechte lijn" · "die moet meer uitbollen naar links" → r12 varianten: uitbollen 1/2/3 px naar links, snavel schuift mee.
+- Jordi: "GAST" · "maak er gewoon een cirkel van" · "zoals het model" · "kijk naar de vorm van het model en neem die over" → r13 (Claude): linkeromtrek van de kop = kale modelreductie (r1/kaal_11.npy) rij 22–26 (22,19,18,17,17) + verre wang rij 32–33 op x15; 11 px t.o.v. r11. C/D vervallen.

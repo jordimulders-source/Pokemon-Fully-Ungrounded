@@ -2211,7 +2211,30 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - CLAUDE.md, toon: Jordi "je hoeft de serieuzere toon niet zo te benadrukken, ungrounded is gewoon humor alom en fully ungrounded wordt gewoon net als normale pokemon games".
 - IDEEEN.md, kreten: geen bestaande kreten vervormen; latere generaties gebruiken soms geluiden die op echte dieren lijken (komt later).
 
-### [v0.0.534] - Vuurwerklijn: vuurpijl als rode draad
+### [v0.0.534] - Picapau opgeknapt via Gemini
+- Opknapronde gestart (`docs/concept/sprites/OPKNAPRONDE_GEMINI.md`): Picapau, Picaraio, Soulibri, Moonkey en Hummlet opnieuw via Gemini, omdat ze nog "een beetje in 2D" staan.
+- **Picapau af (v3):** Gemini-model in driekwart (5 rondes, `picapau/gemini/`), sprite v3 door maker + keurders (vorm r17 na Jordi's punten: stekels, kop rond naar het model, verre oog 1 px, rand onder de snavel volgens zijn tekening), kleur- en schaduwronde met keurder-PASS. Palet van Picapau, vleugels in Pikachu-bruin, staartschaduw Pikachu-roodbruin. `picapau/af/` (oude versie in `af/oud_v2/`), overzichtsvel bijgewerkt.
+- Lessen in `docs/lessen/GEMINI.md`: "geen issue" betekent terugzetten; diepte (kam achter de kop) is een kleur-/schaduwvraag; "ronder" = geen rechte stukken; een krabbel van Jordi meten, niet schatten.
+
+### [v0.0.535] - Picaraio opgeknapt via Gemini
+- **Picaraio af (v2):** Gemini-model in 9 rondes (`picapau_evo/gemini/`; Fearow-verwijzingen geschrapt, pose = vliegend en achteroverleunend zoals het origineel, illustratie r7 als ontwerp, r9 als gepixeld model), sprite v2 door makers + keurders (4 vormrondes, kleurronde met bliksem naar Raichu, eindkeuring GOED), laatste losse pixels onder poten en staart door Jordi aangewezen. `picapau_evo/af/` (oude versie in `af/oud_v1/`), overzichtsvel bijgewerkt.
+
+### [v0.0.536] - Hummlet: opknapronde via Gemini gestart
+- Jordi: "hummlet is net niet genoeg een hummingbird chick". Keuzes: alles mag beter ("maar wat wel goed vertaalt naar een sprite"), snavel langer en dun en dicht, kleuren blijven, pose als bolletje zoals foto 5.
+- Gemini-prompt v1 + bijlagen in `docs/concept/sprites/kolibrie_pre/gemini/`; SPEC en `OPKNAPRONDE_GEMINI.md` bijgewerkt.
+
+### [v0.0.537] - Hummlet opnieuw via Gemini: frontsprite af
+- Gemini r5 gekozen (kolibriekuiken als bolletje zoals foto 5, kop schuin omhoog, lange dichte snavel); Jordi: "ja echt veel beter, ga maar bouwen" · "op alle fronten".
+- Sprite (maker + keurder, 3 rondes): model overgenomen op 40 px breed, kleurpalet van de oude sprite ("dat was het enige aan de originele sprite dat ik zeer goed vond"), perspectief via licht en schaduw. Keurder GOED + Dragonfly Cave-eindkeuring. Jordi: "Akkoord".
+- `kolibrie_pre/af/` vervangen (oud in `af/oud_voor_gemini/`), overzichtsvel bijgewerkt, les in `GEMINI.md`.
+- Soulibri: Gemini-prompt v1 voor de opknapronde klaargezet (`kolibrie/gemini/PROMPT.md`).
+
+### [v0.0.538] - Soulibri opnieuw via Gemini: frame 1 en 2 af
+- Jordi: "mag nog wat meer een typische kolibrie pose, maar behoud de kleuren en design". Gemini r1 bijna goed; snavel met eigen pixels +2 verlengd ("+2 is perfect"); te breed voor 64×64 → staart via bijsturing laten krullen (r4, 63×53).
+- Gemini r3 (andere pose) wordt frame 2 ("niet erg overigens, want we hebben nu een frame 2"); op dezelfde schaal gebracht (×0,76), Jordi's eigen vleugellijn (21 px) subtiel afgewerkt (variant a: "nee A, want bij B is een stuk staart verdwenen").
+- `kolibrie/af/`: frame 1, frame 2, `anim_front.png`, palet en `soulibri_uit_de_bal.gif` (bal → groeien volgens sAffineAnim_Battler_Emerge → frame 2 + ANIM_V_SLIDE). Oud in `af/oud_voor_gemini/`. Jordi: "uitstekend, frame 1 en 2 zijn klaar".
+
+### [v0.0.539] - Vuurwerklijn: vuurpijl als rode draad
 - IDEEEN.md → Vuurwerk: Jordi's oplossing (19 nov): de vuurpijl komt in elke fase terug, wat eruit komt verschilt per fase; fase 3 = de vuurwerkslang; fase 1 = rechtopstaande vuurpijl met vuur uit de onderkant dat eromheen krult (wat precies nog open); fase 2 nog open.
 - IDEEEN.md → Vuurwerk: idee fase 2 (Jordi, open): de Pokémon houdt zelf de vuurpijl vast, als een wapen of zoiets.
 - IDEEEN.md → Vuurwerk: besloten dat het wezen in alle drie de fases uit de pijl komt; vijf voorstellen voor het krullende vuur van fase 1 (open). Fase 2: komt uit de pijl én houdt hem vast. Fase 1 moet cute zijn. Fase 1: armpjes die zich aan de pijl vastklampen, gezichtje erbovenuit; dier open. Krullen als motief in alle drie de fases. Fase 1: armen krullen eerst om de pijl, daaronder pas de handen. Dier: salamander/gekko; alleen het bovenlijf zichtbaar. "De rest komt niet uit de vuurpijl." Alleen een bovenlijf; salamander én gekko proberen.
@@ -2230,7 +2253,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Vuurwerk fase 1 r8 opgeslagen (axolotl; Jordi: "dat vind ik prima"); prompt v9: punt van de pijl terug, kop opzij.
 - Vuurwerk fase 1 r9 opgeslagen (Jordi: "geweldige pose"); prompt v10: handen uit de golvende krul, staart sluit aan op het vuur uit de pijl. Sterretjes rondom mogen weg (Jordi; Claude wist ze zelf).
 
-### [v0.0.535] - Vuurwerklijn fase 1: frontsprite af
+### [v0.0.540] - Vuurwerklijn fase 1: frontsprite af
 - `docs/concept/sprites/vuurwerk_fase1/af/vuurwerk_fase1.png` (+ `_8x.png`): vuuraxolotl (Fire/Fairy) waarvan het vuurlijf uit de onderkant van een rechtopstaande vuurpijl komt en eromheen krult; handjes pakken de pijl onder de punt, kop opzij. Model = Gemini r10 (stap voor stap via bijlagen opgebouwd), sprieten uit Gemini r11, 29×62 px (vorm als Sentret).
 - Rondes r1–r15 in `sprite/`: krullen op de kop weg (r10 B), sprieten/kieuwen erbij, vlamtongetjes en kleurverloop (B), palet van fase 3 als motief en strepen doorgetrokken tot onder de punt (r14, Jordi: "r14 is top"), eindkeuring Dragonfly Cave verwerkt (r15).
 - Op het overzichtsvel (`showcase/frontsprites_af.png`, werknaam "Vuurwerk-axolotl", naam open). Alle uitspraken van Jordi in `vuurwerk_fase1/SPEC.md`.

@@ -2291,3 +2291,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.551] - Vuurwerklijn fase 2: prompt v6 zonder "bazooka"
 - Gemini weigerde v6 twee keer ("unsafe images"). "bazooka" vervangen door "party cannon"; les in `GEMINI.md`.
+
+### [v0.0.552] - Vuurwerklijn fase 2: r6 bewaard
+- `vuurwerk_fase2/r6/gemini_v6.png` (Jordi: "ik vind het niet mooi"; Gemini nam de grijze schetslijnen letterlijk over).

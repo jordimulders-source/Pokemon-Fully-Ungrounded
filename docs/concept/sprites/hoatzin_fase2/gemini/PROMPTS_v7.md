@@ -39,3 +39,12 @@ Keep this sprite exactly as it is. Make only these two changes:
 2. The purple belly: shift its color one shade toward the colors of the rest of the body, so it clashes less.
 Everything else stays pixel for pixel the same.
 ```
+
+Jordi: "en ik ben nu weer bang dat de kuif teveel wegvalt, dus die weer meer bruin?" Prompt met 3 wijzigingen:
+```
+Keep this sprite exactly as it is. Make only these three changes:
+1. The acid drop comes from the SIDE of the mouth (the corner where the upper and lower beak meet), running a little over the edge of the beak before it hangs down as one drop.
+2. The purple belly: shift its color one shade toward the colors of the rest of the body, so it clashes less.
+3. The thin crest strands on the head: make them rufous orange-brown again (like a real hoatzin's crest), so they stand out against the wings behind them. Keep their shape.
+Everything else stays pixel for pixel the same.
+```

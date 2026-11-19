@@ -2266,3 +2266,8 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.542] - Gemini: geen extra referentiefoto's
 - Llamauler prompt v2 (`docs/concept/sprites/lama/fase2/gemini/PROMPT.md`); ronde 1 en de les "opknappen = eerst de hele SPEC lezen" vastgelegd.
 - Jordi: "gemini heeft echt een prima referentie kader dus die andere fotos zijn niet nodig" → vaste regel in `docs/lessen/GEMINI.md`.
+
+### [v0.0.543] - Llamauler: nieuwe frontsprite (kandidaat na eindkeuring)
+- Gemini-rondes r1–r15 (`docs/concept/sprites/lama/fase2/gemini/PROMPT.md`): fluffy lama met droog ooglid, kleed en halsband (r4); telgang via een gespiegelde loopfoto (r12); handschoenen van r3; samengesteld model `gemini/poten/model_v3.png`.
+- Sprite (`docs/concept/sprites/lama/fase2/sprite/`): r3 met modeltonen (Palpaca-werkwijze), poten uit een Gemini-bewerking van de sprite op 16× (r15), poten rustig (r4b), consistente ramps en wolbogen (r5), kleed r4b + geleidelijke achterpoot (r6), Dragonfly Cave-eindkeuring (r7: 11 px + lichter hooglicht). Nog niet naar `af/`.
+- Les: opknappen = eerst de hele SPEC lezen (`docs/lessen/GEMINI.md`).

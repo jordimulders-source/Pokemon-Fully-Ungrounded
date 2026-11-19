@@ -1,6 +1,8 @@
 # Picapau (Electric/Flying, middelste/hoofdvorm): SPEC
 
-**AF (5 nov): frontsprite `af/picapau.png` (+ `normal.pal`, `vel.png`)** = sprite v2 r7; eindkeuring GOED (`sprite_v2/kleur_r7/EINDKEURING.md`), geen reparaties. Smaakvragen (tenen steviger omlijnen, kuifstelen breder): Jordi "nee prima zo" → blijft zoals het is. Nog te doen (later voor alle soorten): frame 2, rug, icoon, shiny, naam/data.
+**AF v3 (19 nov): frontsprite `af/picapau.png` (+ `normal.pal`, `vel.png` oud|nieuw) = `sprite_v3/kleur/r2`: opgeknapt via Gemini (r5, driekwart), vorm r17 na Jordi's punten, kleur/schaduw met keurder-PASS; Jordi: "nee ik vind het wel prima zo". Oude versie: `af/oud_v2/`. Geschiedenis: `gemini/PROMPT.md`.**
+
+**Eerder AF (5 nov): frontsprite `af/picapau.png` (+ `normal.pal`, `vel.png`)** = sprite v2 r7; eindkeuring GOED (`sprite_v2/kleur_r7/EINDKEURING.md`), geen reparaties. Smaakvragen (tenen steviger omlijnen, kuifstelen breder): Jordi "nee prima zo" → blijft zoals het is. Nog te doen (later voor alle soorten): frame 2, rug, icoon, shiny, naam/data.
 
 Bron: *Celeus flavus* (cream-colored woodpecker), Amazone. Concept: `docs/concept/IDEEEN.md` (Roomkleurige specht). Convergente soort van Pikachu via kleur en tekening (niet via vorm).
 

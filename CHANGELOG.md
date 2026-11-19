@@ -2210,3 +2210,8 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - `docs/lessen/OVERWORLD_WERKWIJZE.md`: Gemini is leidend; nog niet getest wanneer Gemini de fout in gaat; volgorde eerst front, rug en icoon, dan samen naar Gemini; promptsjabloon van de viscacha (ronde 2).
 - CLAUDE.md, toon: Jordi "je hoeft de serieuzere toon niet zo te benadrukken, ungrounded is gewoon humor alom en fully ungrounded wordt gewoon net als normale pokemon games".
 - IDEEEN.md, kreten: geen bestaande kreten vervormen; latere generaties gebruiken soms geluiden die op echte dieren lijken (komt later).
+
+### [v0.0.534] - Picapau opgeknapt via Gemini
+- Opknapronde gestart (`docs/concept/sprites/OPKNAPRONDE_GEMINI.md`): Picapau, Picaraio, Soulibri, Moonkey en Hummlet opnieuw via Gemini, omdat ze nog "een beetje in 2D" staan.
+- **Picapau af (v3):** Gemini-model in driekwart (5 rondes, `picapau/gemini/`), sprite v3 door maker + keurders (vorm r17 na Jordi's punten: stekels, kop rond naar het model, verre oog 1 px, rand onder de snavel volgens zijn tekening), kleur- en schaduwronde met keurder-PASS. Palet van Picapau, vleugels in Pikachu-bruin, staartschaduw Pikachu-roodbruin. `picapau/af/` (oude versie in `af/oud_v2/`), overzichtsvel bijgewerkt.
+- Lessen in `docs/lessen/GEMINI.md`: "geen issue" betekent terugzetten; diepte (kam achter de kop) is een kleur-/schaduwvraag; "ronder" = geen rechte stukken; een krabbel van Jordi meten, niet schatten.

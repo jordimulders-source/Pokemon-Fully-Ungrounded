@@ -113,3 +113,7 @@ STYLE AND FORMAT
 AVOID
 - No smile, no new expression, no profile view, no new pose, no Teddiursa features, no plush toy or mascot look.
 ```
+
+### Ronde 4 (prompt v4) → `r4_prompt_v4.png`, vergelijking `vergelijk_r4.png` (huidig · r4 · Teddiursa)
+Jordi (19 nov): "wat vind je?"
+Claude: eerste echte driekwart (klopt met Teddiursa: verre oog links smal aan de rand, nabije oog rechts groot en rond); staart goed; gezicht neutraal. Wel: lijf smaller en minder mollig dan het origineel (knieën/handen kleiner), de figuur is kleiner in het vlak. Fout van Claude in v1–r3: nabij/ver omgedraaid (bij driekwart naar links is het verre oog het linker); dat zat in de verbeterprompt r3 en verklaart waarschijnlijk ronde 3.

@@ -218,3 +218,4 @@ The attachment is the official concept art of a Pokémon. Draw its in-game front
 ## Sprite v2 (19 nov)
 - r4, Jordi: "nice, model staat, je mag nu wel kleur en schaduw bijwerken nog in de keuring ronde" → vorm r4 bevroren; kleurronde in sprite_v2/kleur/.
 - Jordi: "vooral de staartdonderschok" (kleurronde).
+- Jordi: "er staan opeens een paar gekke pixels boven het oog, haal die eens weg" · "zwarte pixels" → kleur r3: (20,8),(21,8),(19,9) zwart → lichtbruin.

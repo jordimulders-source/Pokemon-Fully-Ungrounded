@@ -20,3 +20,19 @@ if __name__=='__main__':
     img=Image.new('RGB',(sum(b.width for b in B)+40,B[0].height),(255,255,255)); x=0
     for b in B: img.paste(b,(x,0)); x+=b.width+20
     img.save(sys.argv[1])
+def detail(sp,k,Z=26):
+    """frame k bijgesneden, Z-voudig, met index per pixel en coordinaten"""
+    ix=frame(sp,k); P=pal(sp); a=rgba(ix,P)
+    ys,xs=np.nonzero(ix); x0,x1,y0,y1=xs.min(),xs.max()+1,ys.min(),ys.max()+1
+    c=a[y0:y1,x0:x1]; H,W=c.shape[:2]; M=24
+    img=Image.new('RGB',(W*Z+M,H*Z+M),(255,255,255)); bg=Image.new('RGB',(W*Z,H*Z),(150,210,180))
+    im=Image.fromarray(c).resize((W*Z,H*Z),Image.NEAREST); bg.paste(im,(0,0),im); img.paste(bg,(M,M)); d=ImageDraw.Draw(img)
+    for i in range(W+1): d.line([(M+i*Z,M),(M+i*Z,M+H*Z)],fill=(90,90,90))
+    for j in range(H+1): d.line([(M,M+j*Z),(M+W*Z,M+j*Z)],fill=(90,90,90))
+    for i in range(W): d.text((M+i*Z+6,6),str(x0+i),fill=(200,0,0))
+    for j in range(H): d.text((2,M+j*Z+8),str(y0+j),fill=(200,0,0))
+    for j in range(H):
+        for i in range(W):
+            v=ix[y0+j,x0+i]
+            if v: L=sum(P[v]); d.text((M+i*Z+9,M+j*Z+8),'%x'%v,fill=(255,255,255) if L<380 else (0,0,0))
+    return img

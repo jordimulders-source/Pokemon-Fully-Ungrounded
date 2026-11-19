@@ -2282,15 +2282,22 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Sprite (`alpaca/sprite/r1–r6`): verkleining van het model, daarna kleur/schaduw; Jordi's punten (snuit, oren, staartaanzet, oog, haardos, verre oog, schaduw achterpoot); kleuren en binnenlijnen uit het model i.p.v. de oude sprite (r4); Dragonfly Cave-eindronde met torso-perspectief en losse pixel weg (r5). r6 (rondere romp-omtrek) afgewezen: "r5 is beter".
 - Overzichtsvel bijgewerkt.
 
-### [v0.0.546] - Llamauler opknappen: Gemini-prompt
+### [v0.0.546] - Coathief opgepoetst: echte driekwart en Gen 3-kleur
+- Opknapronde via Gemini: Coathief stond bijna zijwaarts. Prompt met alleen de huidige sprite als bijlage (`coathief/gemini/PROMPT.md`); Gemini r1 gekozen als nieuw model ("eigenlijk is die heel goed he"; klauwen zoals Gemini ze tekende).
+- Sprite = Gemini's eigen pixelraster (natief pitch 8 → 2×2, 52×62, `coathief/sprite/reduce.py`), vorm bevroren. In de sprite: oog rood (oude kleuren), oren zwart (bivakmuts), kop koel antraciet, lijf warm roodbruin.
+- Rondes r1–r7: maker + vier keuringen (trouw/techniek, Dragonfly Cave/Gen 3, controle, lijfvolume). Na Jordi's opmerking "die is wel erg effen 2 kleuren" kreeg het lijf volume: ronde schouder en dij met sikkelschaduw, 4e hooglichttint, gekartelde vachtgrenzen. 15 kleuren.
+- `coathief/af/coathief.png` = r7; oude sprite in `coathief/af/oud_voor_gemini/`. Overzichtsvel bijgewerkt.
+- Lessen: opknappen met alleen de huidige sprite als bijlage (GEMINI.md); keurders toetsen eerst volume, dan regels (SPRITE_KERN.md).
+
+### [v0.0.547] - Llamauler opknappen: Gemini-prompt
 - Llamauler (lama fase 2) toegevoegd aan de opknapronde via Gemini. Jordi: "erg plat, niet helemaal goed in verhouding, niet goed aangekleed, handschoenen kunnen beter en de kop is net niet llama genoeg"; MMA-handschoenen blijven ("hij wisselt juist van vechtstijl").
 - Prompt v1 + bijlagen (oude sprite 8×, lamafoto voor de pose, MMA-handschoenen): `docs/concept/sprites/lama/fase2/gemini/`.
 
-### [v0.0.547] - Gemini: geen extra referentiefoto's
+### [v0.0.548] - Gemini: geen extra referentiefoto's
 - Llamauler prompt v2 (`docs/concept/sprites/lama/fase2/gemini/PROMPT.md`); ronde 1 en de les "opknappen = eerst de hele SPEC lezen" vastgelegd.
 - Jordi: "gemini heeft echt een prima referentie kader dus die andere fotos zijn niet nodig" → vaste regel in `docs/lessen/GEMINI.md`.
 
-### [v0.0.548] - Llamauler: nieuwe frontsprite (kandidaat na eindkeuring)
+### [v0.0.549] - Llamauler: nieuwe frontsprite (kandidaat na eindkeuring)
 - Gemini-rondes r1–r15 (`docs/concept/sprites/lama/fase2/gemini/PROMPT.md`): fluffy lama met droog ooglid, kleed en halsband (r4); telgang via een gespiegelde loopfoto (r12); handschoenen van r3; samengesteld model `gemini/poten/model_v3.png`.
 - Sprite (`docs/concept/sprites/lama/fase2/sprite/`): r3 met modeltonen (Palpaca-werkwijze), poten uit een Gemini-bewerking van de sprite op 16× (r15), poten rustig (r4b), consistente ramps en wolbogen (r5), kleed r4b + geleidelijke achterpoot (r6), Dragonfly Cave-eindkeuring (r7: 11 px + lichter hooglicht). Nog niet naar `af/`.
 - Les: opknappen = eerst de hele SPEC lezen (`docs/lessen/GEMINI.md`).

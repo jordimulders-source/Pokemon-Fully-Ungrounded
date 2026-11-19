@@ -77,3 +77,13 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Basis en stijl: de goedgekeurde ol
 - Ter info uit de laatste keuring (geen opdracht): staande klauwen lezen als liggende nagels (volgt de onderlaag); hangende klauwen 4–5 rijen (olinguito ±6); staart 11–14 rijen recht omhoog; verre poten nauwelijks donkerder dan nabije.
 - Open: A/B-test kleine kleurreparaties (zie boven), frame 2, rug, icoon, shiny, data.
 - **Kosten (gemeten uit de sessielogs):** hoofdsessie ±0,40M output + 0,75M nieuwe input; maker (13 rondes) ±0,57M + 3,6M; 5 keurders ±0,4M + 1,0M. Duurste deel: 6 voorpootrondes zonder pixelraster.
+
+## Opknapronde via Gemini (19 nov)
+- Jordi: "we gaan coathief fixen, hoeft niet veel gefixed te worden, paar kleine dingetjes" · "nee het is de pose vooral, die is zijwaarts" · "en een wat nettere afwerking" · "het design concept is prima". Pose: zelfde als in oktober, nu echt driekwart. Bijlage: "alleen de sprite die we nu hebben".
+- Gemini r1 (`gemini/r1_prompt_v1.png`): "beter, maar hij heeft het hoofd iets teveel aangepast" · "de vorm ben ik wel tevreden mee overigens" · "lijkt meer op een echte coati" · "maar het is de kleur van het oog" · "maar dat kunnen we fixen" · "eigenlijk is die heel goed he".
+- Klauwen: "klauwen laten zoals ze zijn, maak de sprite maar. De klauwen zijn juist goed nagemaakt. Je mag dit als nieuwe model hanteren, maar wat gemini nog niet heeft gedaan is goed kleurgebruik/schaduwen etc. Daar mag je meteen mee gaan werkren ipv wachten op mijn akkoord".
+- **Nieuw model = r1 (bevroren vorm).** In de sprite: oog rood zoals de oude sprite (`8c2418`/`b04a2c`); oren zwart (Claude stelde voor, Jordi oktober: "De oren mogen trouwens ook weer zwart worden, bivakmuts idee"); kleur/schaduw naar Gen 3; donkerder tonen dan Linoone/Furret.
+- Onderlaag: `sprite/natief.png` (pitch 8, 104×124) → `sprite/reduce.py` (2×2, fase 1,1 = Gemini's eigen pixels) → `sprite/onderlaag_rgb.png` (52×62, 1262 px). Oude versie blijft in `af/` tot de nieuwe af is.
+- Sprite r3 (`sprite/r3/`): "zeer goed, alleen schaduw/kleur/belijning kan nog beter, doe dragonflycave/gen 3 keuring".
+- Over r5: "ik twijfel nog een beetje over het bruine lichaam, die is wel erg effen 2 kleuren, past dat bij alle keuringen en andere gen 3 sprites?" → voorstel (lijf volume: schouder/dij rond, 4e lichte tint, gekartelde vachtgrenzen): "ja doe maar".
+- **Af (19 nov): `af/coathief.png` = sprite r7** (Jordi: "akkoord, zet hem maar in af"). Vorm = Gemini r1 (alpha-diff 0 met de onderlaag op 2 hakpixels na), oog rood, oren zwart, 15 kleuren, lijf met volume (schouder/dij, 4e hooglichttint). Keuringen: `sprite/r2/KEURING.md`, `r3/KEURING_DFC.md`, `r4/KEURING.md`, `r6/KEURING.md`. Oude sprite: `af/oud_voor_gemini/`.

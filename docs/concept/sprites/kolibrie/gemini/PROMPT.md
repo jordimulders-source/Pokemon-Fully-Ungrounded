@@ -60,3 +60,8 @@ Almost perfect. Keep everything exactly as it is: pose, head, crest, eye, body, 
 
 ## Snavel zelf verlengen in r1 (Claude, 19 nov)
 `verleng_snavel.py`: r1 blijft pixelgelijk; de snavelpunt schuift langs de eigen trapperiode van de snavel (16,16 px = 1 modelpixel diagonaal) en het gat wordt gevuld met kopieën van één plak van dezelfde snavel. Niets getekend. Varianten +2/+4/+6 modelpixels: `r1_snavel_k2.png`, `k4`, `k6`; overzicht `snavel_varianten.png` (r1 | k2 | k4 | k6). Jordi kiest.
+
+## Keuze (Jordi, 19 nov, letterlijk)
+"+2 is perfect. Dan is de sprite al zo goed als af toch? Gemini heeft het een keer in de goede artstijl gedaan"
+→ bevroren als `../referenties/gemini_gekozen_r1_snavel_k2.png`.
+Claude gemeten: Gemini-raster = precies 16 px per spritepixel (1:1 naar 64×64). r1 zelf was 64 px breed (snavelpunt x=0 tot racketpunt x=63); met +2 snavel is hij 66 px breed, 49 hoog: 2 px te breed voor 64×64. Kleuren: ±190 net verschillende tinten (JPEG-ruis + vleugelverloop) → naar ≤16.

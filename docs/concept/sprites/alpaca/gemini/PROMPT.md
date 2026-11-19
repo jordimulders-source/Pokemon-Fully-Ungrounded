@@ -54,3 +54,33 @@ AVOID
 
 ## Ronde 1 (prompt v1) → `r1_prompt_v1.png`
 Claude: netter (neus/mond, langere nek, pluimstaart), maar de oude sprite is overgetrokken: zijaanzicht, oog nog op de 3/4-plek bij een profielsnuit, handschoenen naast elkaar, geen telgang. Volgende: prompt v2 in een nieuw gesprek zonder bijlage, gang per poot beschreven ("a bit determined" bij de ogen is Claudes toevoeging, voorgelegd).
+Jordi (19 nov) over "a bit determined": "nee hij moet een cute starter zijn" → weggehaald; "cute starter Pokémon" in de beschrijving.
+
+## Prompt v2 (nieuw gesprek, geen bijlage)
+```
+Draw an official Gen 3 Pokémon front sprite (Ruby/Sapphire/Emerald style pixel art) of this Pokémon.
+
+THE CREATURE
+- A cute starter Pokémon: a young Fighting-type alpaca, fluffy and huggable, but a fighter.
+- Cream-white fluffy wool body, a fluffy tail held up.
+- Head: woolly cream topknot, two upright pointed ears with pink insides and a small red wool tassel on each ear. Short snout with a small nose and mouth. Dark eyes.
+- A woven collar in Andean colors (pink, teal, yellow) around the neck.
+- The two front feet are wrapped in big red woolly boxing gloves with a colorful woven cuff (pink, teal, yellow). The hind legs are normal cream legs with soft padded feet, no hooves.
+
+POSE: WALKING LIKE A REAL ALPACA
+- Caught mid-step. Alpacas walk with a PACING gait, unlike a horse: the front and hind leg on the SAME side move together.
+- Near front leg (glove) reaches forward and is lifted off the ground; the near hind leg also steps forward at the same moment.
+- Far front leg (glove) and far hind leg are both planted further back.
+- All four legs visible. Neck almost upright, head high and level, ears up.
+
+ANGLE
+- A real 3/4 view facing front-left: the body is turned about 40 degrees towards the viewer, so we see the woolly chest from the front and the near side of the body. The far legs show partly behind the near legs.
+- The head is turned about 60 degrees towards the viewer: the snout points front-left, both eyes visible (the far one partly), the face reads as one consistent 3/4 head.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left, clean shading with large calm areas like official Gen 3 sprites, no noise.
+- Plain white background. No ground, shadow or base. No effects. One single creature.
+
+AVOID
+- Not a horse, not a lamb, not a llama. No side view. No plush toy look, no oversized sparkly eyes.
+```

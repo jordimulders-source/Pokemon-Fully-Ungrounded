@@ -8,7 +8,7 @@ f=lambda v,o:(o+F*v)*5.12-0.42
 def to64(a,path):
     c=np.zeros((64,64),'uint8'); c[OY:OY+a.shape[0],OX:OX+a.shape[1]]=a; save(c,path)
     return Image.open(path).convert('RGBA')   # opnieuw geopend: index 0 transparant
-A=np.load('sprite_A.npy'); R3=np.load('../r7/sprite_A.npy')
+A=np.load('sprite_A.npy'); R3=np.load('../r8/sprite_A.npy')
 PAL5=PAL.copy()   # r7 had hetzelfde palet
 iA=to64(A,'sprite.png')
 def rgb(a,r0,r1,c0,c1,Z,bg=(255,255,255),P=None):
@@ -24,12 +24,11 @@ def rgb3(a,r0,r1,c0,c1,Z):
     x=PAL3[a[r0:r1,c0:c1]].astype('uint8'); x[a[r0:r1,c0:c1]==0]=255
     return Image.fromarray(x).resize(((c1-c0)*Z,(r1-r0)*Z),Image.NEAREST)
 row1=[rgb(A,0,H,0,W,8),rgb(R3,0,H,0,W,8,P=PAL5),modbox(0,H,0,W,8),mod(0,H,0,W,8)]
-caps1=['r8 8x','r7 8x','model verkleind (box) 8x','model 8x']
+caps1=['r9 8x','r8 8x','model verkleind (box) 8x','model 8x']
 row2=[rgb(A,3,23,12,30,12),mod(3,23,12,30,12),rgb(R3,3,23,12,30,12,P=PAL5),rgb(A,12,22,0,18,12),mod(12,22,0,18,12),rgb(R3,12,22,0,18,12,P=PAL5)]
-caps2=['kop r8 12x','model','r7','handjes r8 12x','model','r7']
-V2=np.load('sprite_V2.npy')
-row3=[rgb(A,22,34,3,19,12),mod(22,34,3,19,12),rgb(R3,22,34,3,19,12,P=PAL5),rgb(V2,3,23,12,30,12)]
-caps3=['splitsing r8 12x','model','r7','kop variant V2 (oog 3x3) 12x']
+caps2=['kop r9 12x','model','r8','handjes r9 12x','model','r8']
+row3=[rgb(A,22,34,3,19,12),mod(22,34,3,19,12),rgb(R3,22,34,3,19,12,P=PAL5)]
+caps3=['splitsing r9 12x','model','r8']
 def onbg(im,col,Z):
     bg=Image.new('RGBA',im.size,col+(255,)); bg.alpha_composite(im); return bg.convert('RGB').resize((64*Z,64*Z),Image.NEAREST)
 row4=[onbg(iA,(255,255,255),1),onbg(iA,(40,40,48),1),M.resize((64,64),Image.LANCZOS),onbg(iA,(248,248,240),2),onbg(iA,(40,40,48),2)]

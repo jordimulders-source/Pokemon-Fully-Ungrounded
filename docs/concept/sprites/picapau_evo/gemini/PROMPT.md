@@ -73,6 +73,8 @@ AVOID
 Jordi (19 nov): "schrap de fearow snavel, hij maakt er ook meteen een fearow hoofd van en dat wil ik niet, plus fearow pose, alle mentions naar fearow moeten eruit"
 → Fearow vervalt overal (ook in AVOID). Snavel: de spechtensnavel uit bijlage 1, wat dunner (Jordi r1: "te dik, die mag wat dunner").
 
+Jordi (19 nov): "de krullen zijn wel eindelijk goed" (r2) → kuifregel in v3 beschrijft de krullen van r2 (r2 zelf niet als bijlage: dan komt de Fearow-kop mee).
+
 ## Prompt v3 (nieuw gesprek; bijlagen 1 en 2)
 ```
 Redraw this Pokémon as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art), facing left in 3/4 view.
@@ -89,7 +91,7 @@ THE CREATURE
 - Head: a round woodpecker head. No big feather crest on the head, only the thin black plumes described below.
 - Eye: a round black eye with one small white shine pixel, like its pre-evolution. No eyelid, no white sclera, no human-like eye, not sad.
 - Beak: the grey woodpecker chisel beak from attachment 1, but a bit thinner.
-- Head plumes: two or three thin black feather plumes that grow from the back of the crown, sweep backwards and droop down in a natural soft curve, each ending in a small curl. Like real crest feathers, not wires or antennas.
+- Head plumes: two thin black strands that start at the forehead, run back over the top of the head in one long smooth arch, and hang down behind the head, each ending in a small curl. Thin like hairs, close to the head.
 - Tail: a REAL tail, not a ring or a loop around the body. A thin black tail that grows from the rump and swings in one S-curve, ending in a big yellow zigzag lightning bolt.
 
 STYLE AND FORMAT

@@ -30,7 +30,7 @@ import copy
 V=load('voor.txt'); A=load('achter.txt'); O=load('opzij.txt')
 f0=place(V,31); f2=place(A,31); f4=place(O,31)
 f1=lift(copy.deepcopy(f0), 0, 15)
-f3=lift(copy.deepcopy(f2), 0, 14)
+f3=lift(copy.deepcopy(f2), 0, 15)
 f5=copy.deepcopy(f4)
 exec(open('loop_opzij.py').read()) if __import__('os').path.exists('loop_opzij.py') else None
 frames=[f0,f1,f2,f3,f4,f5]

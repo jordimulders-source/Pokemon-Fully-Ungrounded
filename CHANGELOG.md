@@ -2290,3 +2290,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.548] - Skinguin: pose en hybride
 - `IDEEEN.md` → Skinguin: pose (vleugels strak naar achter, ski's schuin naar voren, muts/hoofd naar achter) en het idee van een hybride koningspinguïn met een macaroni-kenmerk.
+
+### [v0.0.549] - Skinguin: kuif
+- `IDEEEN.md` → Skinguin: kuif "delibird stijl" en Jordi's opmerking over de L-vorm.

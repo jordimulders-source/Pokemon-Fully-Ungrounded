@@ -310,3 +310,15 @@ STYLE AND FORMAT
 AVOID
 - Not a horse, deer, sheep, camel or alpaca. Not muscular. No plush toy, chibi or mascot look.
 ```
+
+## Ronde 11 (prompt v7) → `r11/r11_v7.png`
+Jordi (19 nov): "je prompt is niet goed, hij moet de llama nabouwen, niet ons design"
+
+## Prompt v8 (nieuw gesprek; enige bijlage `foto/lama_loop_gespiegeld_uitsnede.png`)
+```
+Redraw the llama in this photo as pixel art in the style of an official Gen 3 Pokémon front sprite (Ruby/Sapphire/Emerald).
+
+Copy THIS llama exactly: the same animal, the same pose, the same colors and the same wool. Most important: every leg in exactly the same position and angle as in the photo (which leg is forward, which is back, which is near and which is far). Do not change, straighten or re-arrange the legs. Do not add anything.
+
+64x64 pixels, max 16 colors, 1 px dark outline, clean Gen 3 shading. Plain white background: no water, reflection, mountains, shadow or ground. One single llama.
+```

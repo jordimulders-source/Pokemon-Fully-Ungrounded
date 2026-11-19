@@ -56,3 +56,26 @@ Same 64x64 Gen 3 sprite style, white background, nothing else changed.
 ## Ronde 2 (verbeterprompt r2) → `r2_verbeter.png`
 Jordi (19 nov): "wat vind je hiervan, ik heb het gevoel dat het perspectief van het hoofd niet meer klopt" · "en hoort de snavel zo hoog?"
 Claude: lijf niet gedraaid (vleugel nog volledig opzij), alleen een verre wang erbij geplakt; nabije oog op de profielplek, snavel aan de rand van de kop op ooghoogte; derde kuifpunt links erbij. Ter vergelijking het B1-model gedraaid: `hoek3d/vel.png` (B1 = 30°, 45°, 60°; render met `python3.11` + pip `bpy`, `scikit-image`, apt `libegl1`).
+
+Jordi (19 nov): "de render lijkt me genoeg, hoort het vogeltje waarop we picapau gebaseerd hebben zo'n hoge snavel te hebben? Als we de render gebruiken moeten we wel GEmini vertellen dat het boller en minder statisch mag, omdat dit heel erg met rondjes en rechte symbolen gemaakt is als je snapt wat ik bedoel"
+Snavel echte vogel (foto 3): bovenrand snavel op ooghoogte, rode vlek eronder/erachter; het model heeft hem iets lager.
+
+## Prompt v2 (nieuw gesprek, enige bijlage: `bijlage_render45.png` of `bijlage_render60.png`)
+```
+Draw this Pokémon as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art).
+
+ATTACHMENT
+- The attachment is a rough 3D blockout of the Pokémon, built from simple spheres, cones and straight shapes. Use it for the DESIGN and the VIEWING ANGLE: keep exactly this 3/4 angle and all the features (two crest spikes with black tips, the ragged crest at the back of the head, round eye, red cheek, grey chisel beak, closed spotted wings, stiff tail, short grey legs). Do not add or remove anything (no extra crest spikes).
+- Do NOT copy its stiff geometric look. Draw it like a real Game Freak artist: rounder, softer and more organic, with smooth flowing shapes, a plump round body and a lively, natural posture (like a bird that is alert and proud, chest out), not a static statue. Same angle, same features, just alive.
+- The colors in the render are wrong because of the lighting. Use these colors: bright Pikachu yellow body and head, dark brown wings with round cream spots, reddish-brown tail, grey beak and legs, black crest tips, red cheek.
+
+THE CREATURE
+- Electric/Flying woodpecker, based on the cream-colored woodpecker (Celeus flavus), with Pikachu colors and markings. The belly is clearly round and full, like Pikachu.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left, clean shading with large calm areas like official Gen 3 sprites, no noise.
+- Plain white background. No branch, ground, rock, shadow or base. No electricity, sparkles or effects. One single creature.
+
+AVOID
+- Not Pikipek, Pikachu, Woody Woodpecker or Chatot. No plush toy, chibi or mascot look, no oversized sparkly eyes.
+```

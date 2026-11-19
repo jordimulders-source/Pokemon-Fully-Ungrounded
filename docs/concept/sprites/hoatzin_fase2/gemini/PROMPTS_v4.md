@@ -16,3 +16,5 @@ Style: 64x64, max 16 colors, 3/4 view facing left, compact composition, clean da
 No effects: no gas, smoke, glow or stink lines; no ground, shadow or branch.
 AVOID: crow, parrot, cockatoo, turkey, chicken, hair instead of feathers, a white ring around the eye, cute plush look.
 ```
+
+Uitslag v4 r1 (`v4_r1.png`), Jordi: "nu komen we ergens, dit lijkt ergens op, nu nog beter maken".

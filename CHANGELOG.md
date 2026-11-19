@@ -2258,3 +2258,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Rondes r1–r15 in `sprite/`: krullen op de kop weg (r10 B), sprieten/kieuwen erbij, vlamtongetjes en kleurverloop (B), palet van fase 3 als motief en strepen doorgetrokken tot onder de punt (r14, Jordi: "r14 is top"), eindkeuring Dragonfly Cave verwerkt (r15).
 - Op het overzichtsvel (`showcase/frontsprites_af.png`, werknaam "Vuurwerk-axolotl", naam open). Alle uitspraken van Jordi in `vuurwerk_fase1/SPEC.md`.
 - Lessen in `docs/lessen/GEMINI.md`: lange armen om een voorwerp tekent Gemini niet; asset voor asset met bijlagen werkt; "leest niet" is geen tekenopdracht; Gemini voegt goed iets toe aan een eigen sprite maar poetst slecht op.
+
+### [v0.0.541] - Nocticue opknappen: Gemini-prompt
+- Nocticue (nachtaap fase 1) in de opknapronde via Gemini. Jordi: "ik ben echt fan van het design, dus het is puur de pose. De cuteness moet niet weg" · "ook de positie van zijn armen" · "dus puur de hoek".
+- Prompt v1 + bijlage (huidige sprite 8×) in `docs/concept/sprites/nachtaap/gemini/`; alleen de hoek (lijf en armen) naar driekwart links, design/kleuren/schattigheid bevroren.

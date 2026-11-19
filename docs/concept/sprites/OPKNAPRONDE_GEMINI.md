@@ -17,4 +17,5 @@ Bestaande, goedgekeurde designs die nog "een beetje 2D" staan opnieuw via Gemini
 | Picaraio | `picapau_evo/gemini/` | **af** (19 nov, `picapau_evo/af/`) |
 | Soulibri | `kolibrie/gemini/`, `kolibrie/sprite/` | **af** (19 nov, Jordi: "uitstekend, frame 1 en 2 zijn klaar"; frame 1 + frame 2 + uit-de-bal-gif in `kolibrie/af/`) |
 | Moonkey | `nachtaap_evo/` | – |
+| Nocticue | `nachtaap/gemini/` | prompt v1 klaar (19 nov); Jordi: "puur de pose ... ook de positie van zijn armen ... dus puur de hoek", cuteness blijft |
 | Hummlet | `kolibrie_pre/gemini/`, `kolibrie_pre/sprite/` | **af** (19 nov, Jordi: "Akkoord"; sprite r3 met oog a, oog b bewaard als `af/kolibrie_pre_oogB.png`) |

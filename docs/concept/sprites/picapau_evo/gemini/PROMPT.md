@@ -162,3 +162,32 @@ Same 64x64 Gen 3 sprite, white background.
 ```
 
 Jordi (19 nov): "en het vleugelpatroon is verdwenen" → punt 3 in r6.
+
+## Ronde 6 (verbeterprompt r6): afgedreven
+Jordi (19 nov): "hij snapt het weer niet" (gespiegeld naar rechts, staart weg, vleugel nog crème, kuif weg).
+→ nieuw gesprek. Pose = die van het origineel (Jordi: "vliegende achteroverleunende pose zoals het origineel"), dus de Raichu-bijlage vervalt.
+
+## Prompt v5 (nieuw gesprek; alleen bijlage 1)
+```
+Redraw this Pokémon as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art), facing LEFT in 3/4 view.
+
+ATTACHMENT
+- The attachment is the current sprite. It is the BASE: keep its pose (flying, leaning backwards, chest forward and up, the near wing raised and spread, legs hanging), its size (big and imposing, filling most of the frame), its colors, its red cheek and its overall look. It should look like the same Pokémon, only better drawn. Only the points under "WHAT CHANGES" are different.
+
+WHAT CHANGES (only this)
+1. Body: slim it a little. Strong and imposing, but not a round ball.
+2. Wing: the near wing big and powerful, with long clear flight feathers. Chestnut / orange-brown with round cream spots, like the attachment. Not cream, no stripes.
+3. Head: a nicer round bird head, same size and colors, a round black eye with one white shine pixel, the red cheek below and behind the eye. No extra ears or tufts.
+4. Beak: the same grey woodpecker beak, a bit thinner.
+5. Head plumes: two thin black strands that start at the forehead, run back over the top of the head in one long smooth arch and hang down behind the head, each ending in a small curl. Thin like hairs.
+6. Tail: a real tail, not a loop: a thin black tail that grows from the rump and swings in one curve below the body, ending in ONE big yellow zigzag lightning bolt. No other lightning bolts.
+
+Exactly two wings, two legs, one tail.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left, clean shading with large calm areas like official Gen 3 sprites, no noise.
+- Plain white background. No ground, shadow or base. No effects except the one lightning bolt. One single creature.
+
+AVOID
+- Not Pidgeot, Spearow or a sparrow. No plush toy, chibi or mascot look.
+```

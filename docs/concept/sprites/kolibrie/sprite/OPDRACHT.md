@@ -26,3 +26,7 @@ Bij een model (Gemini of ander) is de sprite de **verkleining van het model zelf
 ## Jordi over sprite r1 (19 nov, letterlijk)
 "frame 2 moet alleen nog klein beetje scheiding tussen de rechtervleugel en de staart, qua belijning/schaduw/kleur. Verder uitstekend"
 → reparaties 1–3 van Claude (kop, kuif, vleugelvlekken frame 2) vervallen; r2 = r1 + alleen die scheiding.
+
+## Jordi over de vleugellijn (19 nov, letterlijk)
+- Na het rastervel: "voor zover ik het kan zien zijn de pixels waar ik zwart in heb getekend de buitenlijn van de vleugel." (screenshot `r2/jordi_lijn_vleugel.png`, geregistreerd → 21 px, `r4/jordi_lijn.py`)
+- Over r4 A/B: "ja de lijn is correct, alleen je moet het wat netter afwerken, dat kan niet allemaal door 1 kleur vervangen worden, volg dragonflycave regels etc" → maker in `r5/`.

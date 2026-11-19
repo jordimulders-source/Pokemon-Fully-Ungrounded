@@ -104,3 +104,8 @@ Good, the angle and pose are perfect now, keep them exactly. Change only the tai
 
 ## Ronde 5 (verbeterprompt r5) → `r5_verbeter.png`
 Jordi (19 nov): "beter?" Vergelijking: `staart_r3_r4_r5_foto.png`.
+
+## Gekozen: r5 (19 nov) → sprite
+Jordi: "ja alleen de vleugels/staart moeten pikachu kleuren krijgen, de rest mag je volledig hetzelfde palet aanhouden als picapau, dat was al een erg goed design" · "dus de vleugels moeten juist niet terug naar het origineel" · keuze: **vleugel bruin, staart roodbruin** (vleugels in Pikachu's bruin 156 82 0 / 98 49 8; staart roodbruin met Pikachu's 123 41 8 als schaduw; stippen crème van Picapau).
+- Palet: alles verder = `../af/normal.pal` (Picapau). Vervangt de regel hierboven "sprite met de kleuren van Pikachu".
+- Verre oog: max. 1–2 px zwart boven de snavel.

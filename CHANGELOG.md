@@ -2195,3 +2195,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.530] - Viscacha-icoon frame 2 af
 - Frame 2 opnieuw opgebouwd uit frame 1: alles 1 px omlaag, één pootrij minder (voeten blijven), pluimpunt zwiept 1 px; geen pixels verloren. Vergeleken met 15 in-game buren (`rug_icoon_studie/26_frame2_8x.gif`); Jordi: "alle sprites doen hetzelfde!". Icoon `viscacha/icoon/af/icon.png` + `icon_anim.gif` is af.
 
+### [v0.0.531] - Werkwijze iconen vastgelegd
+- Nieuw: `docs/lessen/ICOON_WERKWIJZE.md`, compacte, verplichte stappen voor een party-icoon (kenmerken → onderdelen-methode → meetstudie-regels → poetsen → script + 8× → krabbels pixel voor pixel → frame 2 door schuiven). Verwijzing in CLAUDE.md.
+

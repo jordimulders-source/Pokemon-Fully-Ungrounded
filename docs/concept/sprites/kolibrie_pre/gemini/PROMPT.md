@@ -109,3 +109,6 @@ AVOID
 ## Ronde 4 (Jordi, 19 nov, letterlijk): `r4_beter.png` (prompt v2, nieuw gesprek)
 "beter hem alleen iets te dik misschien? Klopt die met de foto?"
 Claude naast foto 5: de verhouding breedte/hoogte is ongeveer gelijk aan de foto (±1,15 tegen ±1,2), maar de borst/buik bolt in r4 verder naar voren en onderen uit, en de kop is groter en ronder dan op de foto, waar de kop klein en ingezakt is. Ook anders dan de foto: daar zijn de vleugels smal en lang en steken de punten omhoog boven de rug uit; in r4 is de vleugel een brede plaat met een klein staartje.
+
+## Ronde 5: `r5_slanker.png` (bijsturing "slightly slimmer", zelfde gesprek; Jordi stuurde hem zonder commentaar)
+Claude: massa ±13% minder dan r4, vooral de bolling van de borst links-voor is weg; kop, snavel, oog, vleugel, staart en pootjes gelijk.

@@ -127,3 +127,6 @@ Change only the body: make it chubbier and rounder, like in attachment 1. A wide
 
 Same pose, same angle, same colors, same 64x64 Gen 3 sprite style, white background, nothing else changed.
 ```
+
+### Ronde 5 (verbeterprompt r5) → `r5_verbeter.png`
+Jordi (19 nov): "daar was ik al bang voor haha, gemini overdrijft altijd". Lijf veel te breed en plat, armen gespreid. Terugvallen op ronde 4.

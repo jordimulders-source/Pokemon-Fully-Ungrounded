@@ -12,5 +12,5 @@ d=((b[:,:,None,:]-P[None,None])**2).sum(3); K=d.argmin(2)
 K[b.min(2)>=232]=0
 np.save('klassen.npy',K)
 H,W=K.shape; img=P[K].astype('uint8'); img[K==0]=(255,255,255)
-Image.fromarray(img).resize((W*5,H*5),0).save('_klassen5x.png')
+Image.fromarray(img).resize((W*5,H*5),0).save('_tmp/klassen5x.png')
 print(np.bincount(K.ravel(),minlength=14))

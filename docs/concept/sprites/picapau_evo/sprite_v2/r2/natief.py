@@ -9,4 +9,4 @@ for j,y in enumerate(xs):
         y0,y1=int(y-1),int(y+2); x0,x1=int(x-1),int(x+2)
         out[j,i]=np.median(a[max(0,y0):y1,max(0,x0):x1].reshape(-1,3),axis=0)
 Image.fromarray(out).save('natief.png'); print(n)
-Image.fromarray(out).resize((n*5,n*5),0).save('_natief5x.png')
+Image.fromarray(out).resize((n*5,n*5),0).save('_tmp/natief5x.png')

@@ -50,7 +50,7 @@ ring('bliksem',bz)
 #    van het model (zwarte kolom x21 rij 48-50 links; donkere kolom x28 rechts): drie tenen per poot met klauwtjes.
 #    Verre poot (links, achter: zelfde kant als de verre vleugel) een tint donkerder (G/h), nabije poot g/G/h.
 F={}
-F.update({(20,45):1,(21,45):11,(22,45):1,
+F.update({(22,44):11,(28,45):11,(20,45):1,(21,45):11,(22,45):1,
  (19,46):1,(20,46):10,(21,46):11,(22,46):1,
  (18,47):1,(19,47):11,(20,47):10,(21,47):10,(22,47):11,(23,47):1,
  (18,48):1,(19,48):11,(20,48):10,(21,48):1,(22,48):11,(23,48):1,
@@ -78,39 +78,63 @@ for y in range(1,H-1):
         same=[n for n in nb if G.get(n)==G[v]]
         if same: lst.append((x,y,max(set(same),key=same.count)))
 zet('losse tint',lst)
-# 7 selout: buitenlijn aan de lichtkant naast bruin of creme (buik) -> donkerbruine selout, schaduwkant zwart. Lichtkant gemeten met de
-#   randnormaal over 5x5 (achtergrond boven+links > onder+rechts), zodat trappen niet om en om zwart/selout worden.
-#   Niet op kuif/koord (lucht-zone). Daarna: losse selout/zwart in een randketen gelijk aan zijn twee randburen.
-lst=[]; E={}
+# 7 selout (r2, coordinator: lijfrand 71% zwart te zwaar): buitenlijn aan de lichtkant (randnormaal over 5x5: achtergrond
+#   boven+links > onder+rechts) wordt gekleurde selout in de donkerste tint van het vlak ernaast: bruin (kop, lijf,
+#   vleugelvoorrand) -> 15, buik (creme) -> 7; schaduwkant zwart. Kuif, staartkoord, bliksem en poten blijven zwart.
+#   Bij een twijfelachtige normaal (trapje) beslist de 4-burenregel. Een losse afwijker in de randketen gaat alleen om als de normaal twijfelachtig is (|boven-onder| <= 2).
+pz=np.zeros((H,W),bool); pz[43:54,17:31]=True
+E={}; M={}
 for y in range(H):
     for x in range(W):
         v=o[y,x]
-        if v not in (1,15) or z[y,x] or bz[y,x]: continue
-        if not any((0<=a<H and 0<=b<W and o[a,b]==0) for a,b in ((y-1,x),(y+1,x),(y,x-1),(y,x+1))): continue
-        br=any(o[a,b] in (2,3,4,5,6,7) for a in range(max(0,y-1),min(H,y+2)) for b in range(max(0,x-1),min(W,x+2)))
-        if not br: continue
+        if v not in (1,15,7) or z[y,x] or bz[y,x] or pz[y,x]: continue
+        # randpixel: raakt achtergrond (ook diagonaal, zodat de dubbele trapjes van de reductie mee kleuren)
+        if not any((not (0<=a<H and 0<=b<W)) or o[a,b]==0 for a in (y-1,y,y+1) for b in (x-1,x,x+1)): continue
+        nb=[int(o[a,b]) for a in range(max(0,y-1),min(H,y+2)) for b in range(max(0,x-1),min(W,x+2))]
+        nbr=sum(n in (2,3,4) for n in nb); ncr=sum(n in (5,6) for n in nb)
+        if v==7 and ncr==0 and nbr==0: continue
+        if nbr==0 and ncr==0: continue
         y0,y1,x0,x1=max(0,y-2),min(H,y+3),max(0,x-2),min(W,x+3)
         w=o[y0:y1,x0:x1]==0; yy,xx=np.mgrid[y0:y1,x0:x1]
         up=(w&(yy<y)).sum()+(w&(xx<x)).sum(); dn=(w&(yy>y)).sum()+(w&(xx>x)).sum()
-        E[(y,x)]=15 if up>dn else 1
-for _ in range(2):   # losse selout tussen zwart (of andersom) in de randketen gelijkmaken
-    F=dict(E)
-    for (y,x),v in E.items():
-        nb=[E[(y+a,x+b)] for a in (-1,0,1) for b in (-1,0,1) if (a or b) and (y+a,x+b) in E]
-        if len(nb)>=2 and all(n!=v for n in nb): F[(y,x)]=nb[0]
-    E=F
-for (y,x),want in E.items():
-    if want!=o[y,x]: lst.append((x,y,want))
-zet('selout',lst)
+        sel=15 if nbr>=ncr else 7
+        lit=up>dn
+        if up==dn:   # trapje: 4-burenregel (achtergrond boven/links en niet onder/rechts)
+            b4=[(not(0<=a<H and 0<=b<W)) or o[a,b]==0 for a,b in ((y-1,x),(y+1,x),(y,x-1),(y,x+1))]
+            lit=(b4[0] or b4[2]) and not (b4[1] or b4[3])
+        E[(y,x)]=sel if lit else 1; M[(y,x)]=abs(int(up)-int(dn))
+F=dict(E)
+for (y,x),v in E.items():
+    nb=[E[(y+a,x+b)] for a in (-1,0,1) for b in (-1,0,1) if (a or b) and (y+a,x+b) in E]
+    if M[(y,x)]<=2 and len(nb)>=2 and all(n!=v for n in nb) and len(set(nb))==1: F[(y,x)]=nb[0]
+zet('selout',[(x,y,v) for (y,x),v in F.items()])
+# 7b vleugelvoorrand (rij 8-19, x 33-49): de reductie gaf hier dubbele trapjes (lijn 2 px dik). Buitenste trappixel
+#    (raakt achtergrond recht) -> selout 15, binnenste (raakt achtergrond alleen schuin) -> middenbruin van de vleugel.
+lst=[]
+for y in range(8,20):
+    for x in range(33,50):
+        v=o[y,x]
+        if v not in (1,15): continue
+        b4=any(o[a,b]==0 for a,b in ((y-1,x),(y+1,x),(y,x-1),(y,x+1)))
+        b8=any(o[a,b]==0 for a in (y-1,y,y+1) for b in (x-1,x,x+1))
+        br=any(o[a,b] in (2,3,4) for a in (y-1,y,y+1) for b in (x-1,x,x+1))
+        if b4 and br: lst.append((x,y,15))
+        elif b8 and br: lst.append((x,y,3))
+zet('vleugelvoorrand',lst)
+# 7c losse afwijkers in de rand: eenzame zwarte pixel tussen selout -> die selout; eenzame selout tussen zwart -> zwart
 lst=[]
 for y in range(H):
     for x in range(W):
         v=o[y,x]
-        if v not in (1,15) or z[y,x] or bz[y,x]: continue
-        nb=[o[a,b] for a in range(max(0,y-1),min(H,y+2)) for b in range(max(0,x-1),min(W,x+2)) if (a,b)!=(y,x)]
-        if v==15 and 15 not in nb and 1 in nb: lst.append((x,y,1))
-        if v==1 and 1 not in nb and 15 in nb and 0 in nb: lst.append((x,y,15))
-zet('selout',lst)
+        if v not in (1,7,15) or bz[y,x] or pz[y,x]: continue
+        nb=[int(o[a,b]) for a in range(max(0,y-1),min(H,y+2)) for b in range(max(0,x-1),min(W,x+2)) if (a,b)!=(y,x)]
+        if 0 not in nb: continue
+        if z[y,x] and not any(2<=n<=8 for n in nb): continue   # echte lucht-lijn (kuif/koord): blijft zwart
+        if v==1 and 1 not in nb:
+            s_=[n for n in nb if n in (7,15)]
+            if s_: lst.append((x,y,max(set(s_),key=s_.count)))
+        if v in (7,15) and v not in nb and 1 in nb and not any(n in (7,15) for n in nb): lst.append((x,y,1))
+zet('rand los',lst)
 np.save('r2.npy',o)
 tot=0
 for zn,l in R.items():

@@ -1,7 +1,7 @@
-# r1.npy -> picaraio.png (indexed 64x64, index 0 transparant) + normal.pal + picaraio_8x.png. Codes = paletindex.
+# r2.npy -> picaraio.png (indexed 64x64, index 0 transparant) + normal.pal + picaraio_8x.png. Codes = paletindex.
 # Gen 3-palet: modelkleuren met meer contrast (licht linksboven); vorm komt uit het model.
 import sys; import numpy as np; from PIL import Image
-f=sys.argv[1] if len(sys.argv)>1 else 'r1.npy'
+f=sys.argv[1] if len(sys.argv)>1 else 'r2.npy'
 PAL=[(152,208,160),(24,20,16),(226,150,96),(192,110,60),(142,74,42),(250,242,214),(230,210,166),(196,170,124),
      (232,82,74),(204,196,192),(142,132,130),(78,70,70),(252,226,96),(212,170,52),(255,255,255),(98,48,26)]
 o=np.load(f); ys,xs=np.where(o>0); h=ys.max()-ys.min()+1; w=xs.max()-xs.min()+1

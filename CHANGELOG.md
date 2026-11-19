@@ -2316,3 +2316,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.555] - Skinguin: Gemini r4
 - r4 (`skinguin/gemini/r4.png`). Jordi: "lichaamspose is nu goed, alleen bovenste lijn muts niet zo, poten zijn alleen verknald helaas".- Nieuw Gemini-gesprek (Jordi): `PROMPT_r5_nieuw_gesprek.md` met r4 + r3 als bijlage; poten van r3, muts zonder lange rechte bovenlijn.
+
+### [v0.0.556] - Skinguin: model en type
+- r5 (nieuw gesprek) afgekeurd ("nee dit is niks"). Model = r4 met de ski-voeten van r3 (schenen liggen in beide pixel-exact gelijk, dus naadloos vanaf y 700), gespiegeld naar links: `skinguin/model/model.png`. Bovenkant muts wordt bij het spritewerk gefixt.
+- Type: Ice/Water (Jordi).

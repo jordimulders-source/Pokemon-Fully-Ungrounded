@@ -2262,3 +2262,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.541] - Hoatzin-lijn: besluit en eerste prompts
 - Besloten (Jordi): 2 fases, Poison/Dark; fase 1 kuiken met overdreven klauwen en smerige look, fase 2 volgroeid, eng en geniepig. In `POKEMON.md` (Hoatzin-lijn).
 - Twee Gemini-prompts voor fase 2 (krop als gistzak / krop als chicha-kruik): `docs/concept/sprites/hoatzin_fase2/gemini/PROMPTS_v1.md`.
+
+### [v0.0.542] - Hoatzin fase 2: prompt v2
+- Jordi keurde v1 A en B af ("beide geen pokemon"); nieuwe prompt met blauw gezicht, alert vogeloog, grotere lelijkere kuif, lijf in Poison-kleuren, kleine buikbult: `docs/concept/sprites/hoatzin_fase2/gemini/PROMPTS_v2.md`. Les in `GEMINI.md`.

@@ -2220,3 +2220,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Vuurwerk fase 1 r2 opgeslagen (`r2/`); Jordi: kleuren prima, armen krullen niet, komt niet uit de pijl. Prompt v3: lijf recht omhoog, de armen zijn de krullen, één vlam uit het mondstuk = het wezen.
 - Vuurwerk fase 1 r3 opgeslagen (`r3/`); Jordi: "het wordt er niet beter op", "flinke stap achteruit".
 - Vuurwerk fase 1: vormschets (`schets/vormschets.png`, script ernaast) als bijlage + prompt v4 (v2 als basis, opbouw uit de schets, alleen de armen krullen).
+- Vuurwerk fase 1 r4 (met vormschets) opgeslagen (`r4/`); Jordi: hoofd te hoog, armen nog steeds niet goed.

@@ -45,3 +45,12 @@ AVOID
 - Do not change the colors or add new features. Not Ho-Oh, Fearow, Xatu or Ninjask with things added.
 - No plush toy, chibi, Neopets or mascot look; no big eyes.
 ```
+
+## Ronde 1 (Jordi, 19 nov, letterlijk): `r1_bijna.png` (prompt v1)
+"wacht ik ben gelijk verder gegaan en deze is al bijna helemaal prima, alleen de snavel is nu te kort"
+
+## Bijsturing r1 → r2 (zelfde gesprek)
+
+```
+Almost perfect. Keep everything exactly as it is: pose, head, crest, eye, body, colors, wings and tail. Change only one thing: the beak is too short. Make the beak a long, thin, straight hummingbird beak, clearly longer than the head, as long as in attachment 1, pointing in the same direction as now.
+```

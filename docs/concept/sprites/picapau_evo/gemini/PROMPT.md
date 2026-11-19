@@ -133,3 +133,16 @@ STYLE AND FORMAT
 AVOID
 - Not Raichu, Pidgeot or Spearow. No plush toy, chibi or mascot look.
 ```
+
+## Ronde 4 (prompt v4) → `r4_prompt_v4.png`
+Jordi (19 nov): "hij is prima, alleen te dik, daardoor wordt zijn vleugel ook zo wimpy. En ik wil meer een vliegende achteroverleunende pose zoals het origineel."
+
+### Verbeterprompt r5 (in hetzelfde gesprek)
+```
+Good, keep the head, beak, eye, cheek, head plumes, colors, the tail with the lightning bolt and the style exactly as they are. Change only two things:
+
+1. Body: a bit less fat. Slimmer belly and chest, so the body is less of a ball. Still a strong bird.
+2. Pose: a flying pose leaning backwards, like attachment 1: the body tilted back, chest forward and up, head up, in the air, legs hanging below the body. The near wing is raised high and spread wide, big and powerful with clear long flight feathers (not a small wimpy wing). The far wing is partly visible behind the body. Exactly two wings, two legs, one tail.
+
+Same 64x64 Gen 3 sprite, white background, nothing else changed.
+```

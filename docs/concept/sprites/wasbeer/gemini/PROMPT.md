@@ -121,3 +121,5 @@ FORMAT
 ### Ronde 4 (prompt v4) → `r4_prompt_v4.png`
 Jordi (19 nov): "ik weet niet of ik hem beter vind, ik neig ernaar dat die slechter is geworden"
 Claude: beter: borsthand leest als poot, riem weg, riem van de buidel duidelijk, dij los van de buik. Slechter (ontwerp gebroken): koel grijs i.p.v. warm grijsbruin, reikende hand donker i.p.v. crème, staartringen grijs/zwart i.p.v. crème, buidel kleiner en dichtgeknoopt (zakmond weg), dijen grote platte bollen, borstklauwen klein, kop nog plat. Les GEMINI.md: te veel eisen tegelijk = fouten wisselen.
+Jordi (19 nov): "wat misschien betekent dat het ontwerp gewoon prima is" · "jazeker, ik denk dat het gewoon een puike sprite was, ik kan ook niet direct benoemen wat beter moest"
+**Afgesloten: `../af/wasbeer.png` blijft.**

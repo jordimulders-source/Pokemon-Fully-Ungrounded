@@ -22,7 +22,7 @@ Bestaande, goedgekeurde designs die nog "een beetje 2D" staan opnieuw via Gemini
 | Picaraio | `picapau_evo/gemini/` | **af** (19 nov, `picapau_evo/af/`) |
 | Soulibri | `kolibrie/gemini/`, `kolibrie/sprite/` | **af** (19 nov, Jordi: "uitstekend, frame 1 en 2 zijn klaar"; frame 1 + frame 2 + uit-de-bal-gif in `kolibrie/af/`) |
 | Moonkey | `nachtaap_evo/` | – |
-| Vigiloot | `wasbeer/gemini/` | prompt v1 klaar (19 nov; Jordi: "puur afwerking", design en pose blijven) |
+| Vigiloot | `wasbeer/gemini/` | **blijft zoals hij was** (19 nov; 4 Gemini-rondes kopieerden of verslechterden hem; Jordi: "ik denk dat het gewoon een puike sprite was, ik kan ook niet direct benoemen wat beter moest") |
 | Nocticue | `nachtaap/gemini/`, `nachtaap/sprite_r4/` | **af** (19 nov, `nachtaap/af/`; Gemini r4 als model, driekwart, streep tussen de ogen smaller in de sprite; Jordi: "nice") |
 | Hummlet | `kolibrie_pre/gemini/`, `kolibrie_pre/sprite/` | **af** (19 nov, Jordi: "Akkoord"; sprite r3 met oog a, oog b bewaard als `af/kolibrie_pre_oogB.png`) |
 | Palpaca | `alpaca/gemini/`, `alpaca/sprite/` | **af** (19 nov, `alpaca/af/`; model = Gemini r4 + achterpoten uit r10 (foto als posebron), telgang; sprite r5; Jordi: "r5 is beter") |

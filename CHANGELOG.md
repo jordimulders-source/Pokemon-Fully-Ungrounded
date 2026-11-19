@@ -2186,3 +2186,9 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Jordi: iconen en overworld "minder belangrijk ... moeten gewoon consistent zijn"; les in SPRITE_KERN: "namaken, niet scheppen".
 - **Volgende proef:** Krassault-icoon via een Gemini chibi-model op 64×64 (`octillery_evo/icoon/PROMPT_ICOON.md`).
 
+### [v0.0.529] - Viscacha-icoon frame 1 af; meetstudie en eisenlijst iconen
+- `docs/concept/sprites/viscacha/icoon/af/icon.png` (frame 1 af, pal2; frame 2 nog nalopen). Na Gemini-pogingen, verkleinen en handwerk werkte: onderdelen-methode (front per onderdeel verkleind, `icoon/onderdelen/bouw.py`), poetsen per zone, rekenregels uit de meetstudie, en Jordi's krabbels pixel voor pixel. Verloop en citaten in `icoon/PROMPT_ICOON.md`.
+- Meetstudie front → icoon op 31 soorten (`rug_icoon_studie/verhoudingen/STUDIE_VERHOUDINGEN.md`): kop ×1,25, lijf ×0,95, oog verschuift niet binnen de kop, minimummaten voor kleine delen.
+- Eisenlijst (`EISEN_ICOON.md`) uitgebreid: eis 0 lijkt op de front, rekenen niet schatten, onmisbare kenmerken per soort, kleine details, snorharen/1-px-details, overlap (Dragapult laat de Dreepy's weg), gekleurde vlekken zonder binnenlijn, lijnkleur binnen het lijf, "witter" ≠ wit, de 6 gedeelde icoonpaletten (geen aanpassingen: Jordi). Vellen 10–24 en scripts (`icoon_check.py` 17 eisen, `gelijkenis.py`, `hoekig_meet.py`, `vorm_meet.py`, `front_icoon_8x.py`).
+- Krassault-icoon: Gemini-chibi als vormmodel geprobeerd (silhouet goed, rupsbanden anders); nog niet verder.
+

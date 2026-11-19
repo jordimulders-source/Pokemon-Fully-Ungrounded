@@ -6,7 +6,10 @@ Jordi: "eigenlijk moeten we een soort eisenlijst maken op basis van de al bestaa
 
 **Afspraak:** een icoon is af als het script alles OK geeft en de korte handmatige blik (punt 2) klopt. Geen keurrondes daarbovenop.
 
-## Stand 18 nov: iconen geparkeerd
+## Stand 19 nov: viscacha-icoon frame 1 AF
+`viscacha/icoon/af/icon.png` (a13). Route die werkte: onderdelen-methode (`onderdelen/bouw.py`, a2) → maker poetst zones → meetstudie-regels (kop, snuit, oog) → Jordi's krabbels pixel voor pixel. Paletten niet aanpassen (Jordi: "ik wil niet met de paletten gaan klooien"): kleuren die niet in het gedeelde icoonpalet staan, worden de dichtstbijzijnde (zoals Wailord paars, Sinistcha's kom grijs).
+
+## Stand 18 nov: iconen geparkeerd (achterhaald)
 Jordi: "want het is nog steeds compleet giswerk waar ik van alles moet verbeteren" · "dus we zijn al uren geen stap verder". Na ±12 rondes (Gemini, verkleinen, handwerk, chibi-model, onderdelen-methode) geen icoon dat af is. Wat werkte: onderdelen-methode voor lijf/verhoudingen/plaatsing (a2), de eisenlijst als maat. Wat niet werkte: kleine kenmerken in de kop (oog, kraag, wang) laten ontstaan door verkleinen of door makers; dat is herontwerpen in het klein, en dat kunnen wij niet zonder Jordi's krabbel. Iconen staan stil tot de fase voor alle soorten; dan eerst een nieuwe aanpak voor het gezicht bedenken, niet dezelfde rondes herhalen. Jordi: "iconen zijn minder belangrijk maar ze moeten wel herkenbaar zijn" (de ondergrens blijft eis 0).
 
 ## Voorstel na overleg met een agent (18 nov): vormpunten

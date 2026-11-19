@@ -34,3 +34,6 @@ STYLE AND FORMAT
 AVOID
 - Not a raccoon, red panda, Zigzagoon, Linoone or Furret. No plush toy, chibi or mascot look.
 ```
+
+## Ronde 1 (prompt v1) → `r1_prompt_v1.png`
+Jordi (19 nov): "beter, maar hij heeft het hoofd iets teveel aangepast" · "de vorm ben ik wel tevreden mee overigens". Vergelijking oud/r1: `vergelijk_r1.png`.

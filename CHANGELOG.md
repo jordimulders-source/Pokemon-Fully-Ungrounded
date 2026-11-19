@@ -2268,3 +2268,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.543] - Hoatzin fase 2: prompt v2 met Poison-paars
 - Jordi: "met poison kleur bedoel ik dat typische poison paars"; verwerkt in `PROMPTS_v2.md`.
+
+### [v0.0.544] - Hoatzin fase 2: prompt v3
+- v2 afgekeurd ("lijkt niet eens op een hoatzin"); v3 met hoatzin-silhouet terug (lange nek, lange brede staart, kleurindeling) in Poison-paars, kuif van veren: `PROMPTS_v3.md`. Les in `GEMINI.md`.

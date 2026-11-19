@@ -2225,3 +2225,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Vuurwerk fase 1 r5 (prompt v5) opgeslagen (`r5/`); Jordi: "geen idee wat dit is". Wel: "de designs vind ik echt prima, mooi kleur gebruik, prima gezicht, alleen dezelfde 2 dingen gaan telkens fout".
 - Vuurwerk fase 1: Jordi: "ze krullen nog nergens echt goed", samenstellen vervalt; nieuwe opbouw van Jordi (vuur maakt het dier, 2 armen 2 keer om de pijl, handen pakken hem bovenin, hoofd daar vlak bij) → prompt v6.
 - Vuurwerk fase 1 r6 opgeslagen; Jordi: lukt niet. Prompt v7: alleen pijl + vuur dat onderuit komt en omhoog om de pijl krult (asset voor asset).
+- Vuurwerk fase 1 r7 (alleen pijl + vuur) opgeslagen: eerste keer dat het vuur echt om de pijl krult.

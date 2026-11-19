@@ -2315,4 +2315,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - r3 (`skinguin/gemini/r3.png`): langer lijf, twee ski-poten met tenen. Jordi: "ik vind deze echt tof, alleen hij gaat nog niet snel genoeg, ski's iets dichter bij elkaar en iets meer voorover leunend". Bijstuurprompt `PROMPT_r4_bijsturen.md`.
 
 ### [v0.0.555] - Skinguin: Gemini r4
-- r4 (`skinguin/gemini/r4.png`). Jordi: "lichaamspose is nu goed, alleen bovenste lijn muts niet zo, poten zijn alleen verknald helaas".
+- r4 (`skinguin/gemini/r4.png`). Jordi: "lichaamspose is nu goed, alleen bovenste lijn muts niet zo, poten zijn alleen verknald helaas".- Nieuw Gemini-gesprek (Jordi): `PROMPT_r5_nieuw_gesprek.md` met r4 + r3 als bijlage; poten van r3, muts zonder lange rechte bovenlijn.

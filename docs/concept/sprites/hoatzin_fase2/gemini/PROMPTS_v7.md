@@ -59,3 +59,11 @@ Ronde B (daarna, 1 wijziging):
 ```
 Keep this sprite exactly as it is. Change only the acid: remove the green line along the beak. Instead, one single small acid drop sits at the corner of the mouth (where the beak meets the blue face) and hangs down from there. Everything else stays pixel for pixel the same.
 ```
+
+Jordi: "al zou ik de kuif wat bruiner willen en de buik iets lichter, zodat het opvalt". Ronde C (na A en B):
+```
+Keep this sprite exactly as it is. Change only two colors:
+1. The thin crest strands on the head: a bit more brown (less orange).
+2. The belly: a bit lighter, so it stands out from the rest of the body.
+Everything else stays pixel for pixel the same.
+```

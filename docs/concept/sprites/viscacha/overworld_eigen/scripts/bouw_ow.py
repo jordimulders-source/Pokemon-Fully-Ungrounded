@@ -20,7 +20,7 @@ f4=np.roll(blk.lees(B+'opzij.blk'),1,axis=1)
 f1=f0.copy(); zet(f1,27,10,'26652'); zet(f1,28,10,'22222'); zet(f1,29,10,'.....')
 zet(f1,8,11,'..'); zet(f1,9,11,'11')   # gebaar: linkeroor zakt 1 px
 # achter-lopen: linkerachtervoet 1 px op, rechterachtervoet blijft staan
-f3=f2.copy(); zet(f3,27,9,'65'); zet(f3,28,8,'2222'); zet(f3,29,8,'....')
+f3=f2.copy(); zet(f3,27,10,'65'); zet(f3,28,9,'2222'); zet(f3,29,9,'....')
 zet(f3,10,11,'..'); zet(f3,11,11,'11')   # gebaar: linkeroor zakt 1 px
 # opzij-lopen (raster al 1 px geschoven, dus x+1): voorpoot 1 px naar achteren
 f5=f4.copy()

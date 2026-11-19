@@ -2262,3 +2262,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.541] - Llamauler opknappen: Gemini-prompt
 - Llamauler (lama fase 2) toegevoegd aan de opknapronde via Gemini. Jordi: "erg plat, niet helemaal goed in verhouding, niet goed aangekleed, handschoenen kunnen beter en de kop is net niet llama genoeg"; MMA-handschoenen blijven ("hij wisselt juist van vechtstijl").
 - Prompt v1 + bijlagen (oude sprite 8×, lamafoto voor de pose, MMA-handschoenen): `docs/concept/sprites/lama/fase2/gemini/`.
+
+### [v0.0.542] - Gemini: geen extra referentiefoto's
+- Llamauler prompt v2 (`docs/concept/sprites/lama/fase2/gemini/PROMPT.md`); ronde 1 en de les "opknappen = eerst de hele SPEC lezen" vastgelegd.
+- Jordi: "gemini heeft echt een prima referentie kader dus die andere fotos zijn niet nodig" → vaste regel in `docs/lessen/GEMINI.md`.

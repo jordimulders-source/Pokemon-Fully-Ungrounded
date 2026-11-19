@@ -80,3 +80,5 @@ STYLE AND FORMAT
 AVOID
 - Not a horse, deer, sheep, camel or alpaca. Not muscular, no bodybuilder look. Not standing on two legs. No plush toy, chibi or mascot look.
 ```
+
+Jordi (19 nov, letterlijk): "gemini heeft echt een prima referentie kader dus die andere fotos zijn niet nodig, noteer dat ook vanaf nu in de documenten, ik ga deze prompt gebruiken" → vastgelegd in `docs/lessen/GEMINI.md` (bovenaan).

@@ -117,3 +117,7 @@ FORMAT
 - Pixel art only: a 64x64 sprite on a visible pixel grid, enlarged with hard square pixels, exactly like the attachment. Not an illustration, no smooth line art, no anti-aliasing, no gradients. Max 16 colors, 1 px dark outline, light from the top left.
 - Plain white background, no ground, no shadow, no effects.
 ```
+
+### Ronde 4 (prompt v4) → `r4_prompt_v4.png`
+Jordi (19 nov): "ik weet niet of ik hem beter vind, ik neig ernaar dat die slechter is geworden"
+Claude: beter: borsthand leest als poot, riem weg, riem van de buidel duidelijk, dij los van de buik. Slechter (ontwerp gebroken): koel grijs i.p.v. warm grijsbruin, reikende hand donker i.p.v. crème, staartringen grijs/zwart i.p.v. crème, buidel kleiner en dichtgeknoopt (zakmond weg), dijen grote platte bollen, borstklauwen klein, kop nog plat. Les GEMINI.md: te veel eisen tegelijk = fouten wisselen.

@@ -110,7 +110,7 @@ FV = [
  ('F5', [(19.5,17.5),(22.4,13.0),(24.0,11.2)]),
 ]
 lobes = np.zeros((64,64), bool)
-for nm, pts in FV: lobes |= capsule(pts, 1.75, 1.45)
+for nm, pts in FV: lobes |= capsule(pts, 1.9, 0.55)   # puntige pennen (model)
 regio = (YY <= 13) & (XX <= 25)
 weg2 = regio & fill & ~lobes & rand9
 bij2 = regio & lobes & ~fill
@@ -126,4 +126,7 @@ TAIL = [
 
 oudkuif = np.isin(R9, [6,7]) & (YY < 20) & ~lobes
 fill[oudkuif] = False; fill2[oudkuif] = False; verre &= fill; vleugel &= fill
+# buik: ronde bovenkant (ellips), geleidelijke overgang naar de borst
+buik_ell = ((PX-24.5)/9.0)**2 + ((PY-44.5)/8.0)**2 <= 1
+buikfill = (buikfill & ((YY >= 41) | buik_ell)) | (buik_ell & fill & ~vleugel & ~staart & (YY >= 36))
 lijf = fill & ~vleugel & ~staart & ~buikfill & ~verre

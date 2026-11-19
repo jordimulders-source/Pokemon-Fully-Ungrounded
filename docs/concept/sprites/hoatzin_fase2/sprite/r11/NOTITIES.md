@@ -1,34 +1,27 @@
-# Hoatzin fase 2, r10 (19 nov), maker: Gen 3-kleurronde per onderdeel, opnieuw vanaf r9
+# Hoatzin fase 2, r11 (19 nov), maker: reparaties op r10 naar het model + Jordi's punten
 
-`sh alles.sh` bouwt alles opnieuw. `vel.png` = r10 | r9 | model | Archeops | Braviary (8x) + 1x/2x licht/donker, onderaan kop 12x r10 | model | r9.
-Geometrie afgelezen op het model met `modelgrid.py` (spritecoördinaten); `modelcel.py` = gemiddelde modelkleur per spritecel.
+`sh alles.sh` bouwt alles (modelcel → bouw → kop → kuif → poten → ontdam → check → vel). `vel.png` = r11 | r10 | model | Archeops | Braviary (8x) + 1x/2x, kop 12x r11 | model | r10.
+Werkwijze en studie: zie `../r10/NOTITIES.md`.
 
-## Studie (8x: Archeops, Braviary, Talonflame, Honchkrow, Mandibuzz, Staraptor, Toucannon, Decidueye, Pidgeot, Skarmory)
-- **Pennen**: Braviary houdt de vleugel vlak (1 middentint) en scheidt pennen met korte donkere streepjes vanaf de achterrand + inkepingen in de zwarte buitenlijn; Talonflame/Pidgeot: per pen lichte bovenrand, midden, donkere scheiding. Belangrijker dan per-pen-detail: **grote licht/donker-indeling** (handpennen licht, dekveren donker, verre vleugel donkerder).
-- **Kuif**: Staraptor/Pidgeot/Archeops: weinig grote plukken, punt taps, lichte bovenkant, basis versmelt met de kop als één massa; omlijnd.
-- **Poten**: schenen 2-3 tinten met licht links, tenen met lichte bovenrij en donkere onderrij, zwarte klauwpunt; verre poot donkerder.
-- **Les uit deze ronde**: 6 plukken of 8 pennen die elk licht/midden/donker krijgen geven tijgerstrepen; licht alleen op het buitenste deel van een pen (Braviary) en de kruin als massa houdt het rustig.
+| reparatie | wat (gemeten op het model, `modelgrid.py` 40x) |
+|---|---|
+| 1 kop | blauwe vlek 7x7 (x10-16, y19-25, model 9.9-16.1 × 19.5-25.3), 9 vlak + 8 rand rechtsonder; oog 4x4 rond (x11-14, y20-23, model 11-14 × 20.5-23.5): zwarte ring, 3 px rode iris, zwarte pupil |
+| 2 snavel | x5-11, y21-27 (model 6.4-11.5 × 20.7-27.5), rug licht F, midden E, bekspleet en onderrand donker, haakpunt linksonder |
+| 3 verre vleugel | 5 puntige pennen (taps 1.9 → 0.55) op de modelpunten, een stap donkerder |
+| 4 poten | schenen 4 px vulling, tenen 3 rijen, klauwen 2 px zwart; nabij F/E/2, ver E/2 (donkerder); omlijning 1 schaduwkant, 2 lichtkant |
+| 5 nekband | lichte streepjes uit het model als 2 doorlopende 1-px-lijnen (M4) in de donkere band, 2 donkere lijnen in de lichte hals |
+| Jordi: plukken 1 px smaller | losse plukken nu 1 px (punt 7, basis 6), K5/K6 2 rijen; plekken, richting, lengte gelijk |
+| Jordi: plukken sluiten aan op de kop | geen donkere rand meer tussen kruin en kop (rand alleen over de verre vleugel), kruin onderaan 6 op de kop; gaten van de oude r9-kuif gedicht |
+| Jordi: bovenkant buik geleidelijker | buik met ronde bovenkant (ellips), geen rechte bovengrens meer |
+| Jordi: nek onderscheiden van vleugel | nek lichter (L5/M4), voorrand en arm van de vleugel een niveau donkerder (M4/D3/D2), D2-binnenlijn waar de vleugel over de nek valt |
 
-## Wat r10 doet (per onderdeel)
-| onderdeel | hoe | bron vorm |
-|---|---|---|
-| nabije vleugel | 8 handpennen P1-P8, 4 dekveren C1-C4, voorrand I1-I3 en arm A1-A3 als middellijnen (`geom.py`, Voronoi); per pen licht bovenrand / midden / donkere 1-px scheiding; niveau per pen uit de modelhelderheid (handpennen licht L5/M4/D3, dekveren donker D3/D2/zwart, arm midden); zwarte scheiding pas op de buitenste helft | pentoppen en inkepingen uit pencapsules op het model |
-| verre vleugel achter de kop | 5 lobben F1-F5 met ronde top, een stap donkerder (M4/D3/D2) | lobben uit het model |
-| staart | 3 veren, D3 bovenrand / D2 / zwarte scheiding (buitenste helft) | r9-silhouet |
-| kuif (`kuif.py`, met de hand) | 6 plukken (punten 6,9 · 11,10 · 16,10 · 23,7 · 26,12 · 29,19 uit het model), lichte kant 7, midden 6, schaduw 2; kruin als één massa met 2 plukgrenzen; hele haardos omlijnd (1 schaduwkant, 2 lichtkant, 2 over de verre vleugel) | model (kopm) |
-| kop (`kop.py`, met de hand) | rond blauw gezicht 7x7 rond het oog (9 vlak, 8 rand rechtsonder); oog 5x5 rond (Sharpedo-vorm), zwarte ring, rode iris, zwarte pupil, glanspixel; snavel 3 grijstinten + omlijning | model |
-| nek/lijf | modeltoon (lichte voorhals, donkere nekband) + licht linksboven, D2-lijn waar de vleugel over het lijf valt | model |
-| buik | variant D, hooglicht-ovaal linksboven, sikkel onder/rechts | r9 |
-| poten (`poten.py`, met de hand) | schenen 3 px (nabij F/E/2, ver E/2), tenen licht boven / donker onder, zwarte klauwen | model (legs.png) |
+## Script-check (`check.py`, na `ontdam.py`)
+dambord 0 (was 21 in r10; 33 px opgelost door één mauve-pixel per blok gelijk te maken of een 1-px-pluk een trapje te geven), om-en-om op de buitenrand 0, zwarte binnenklonten 0.
 
-Palet (15 + transparant): lijn, mauve 4 (lum 46/81/125/163), bruin 2 (75/115, donker = mauve 2), blauw 2, rood, buik D 3, grijs 2.
+## Afwijking t.o.v. r10
+486 px anders, silhouet 76 px (snavel, puntige pennen, poten). Kop/snavel 49, kuif + verre vleugel 133, poten 111, nek + buik 171.
 
-## Afwijking t.o.v. r9 (kleur per pixel)
-1868 px anders (bijna alles herkleurd); silhouet 232 px anders: pentoppen en inkepingen van de waaier, ronde lobben van de verre vleugel, kuifplukken en poten, allemaal naar het model.
-Per zone anders/totaal: vleugel 739/781, verre vleugel 214/214, staart 170/170, lijf 201/232, buik 65/146, kop+kuif 512/868, poten 200/585.
-
-## Eerlijk oordeel / zwakke punten
-- Beter dan r9: scherp (geen vlakgemiddelde meer), oog rond, gezicht als blauwe vlek rond het oog, kuif als omlijnde bruine plukken, waaier met echte pennen en donkere dekveren, poten met klauwen.
-- Nog zwak: het gebied tussen nek en vleugel (x 20-27, y 20-30) is een groot donker D2-vlak (in het model zwart met lichte streepjes; streepjes weggelaten tegen korrel). Snavel kleiner dan in het model (gezicht valt over de basis). De kuif blijft druk door 6 plukken; minder plukken zou van het model afwijken.
-- Oogring zwart (oog A) gekozen i.p.v. donkerblauw: donkerblauw verdween tegen het blauwe gezicht.
-- 1-px-diagonalen (penranden, plukranden) tellen als losse pixels in `vlek.py` (352 vs r9 343); geen dambord of om-en-om gevonden op het oog bekeken, niet per script getoetst.
+## Zwakke punten (eerlijk)
+- Oog: in 4x4 is de iris maar 3 px rood (L-vorm rond de pupil); geen glans meer. Leest als rood oog met zwarte pupil, maar klein.
+- Verre vleugel + dunne plukken boven op de kop blijven druk (veel donkere randen rond 1-px-plukken).
+- Verre poot heeft 2 grijstinten (E/2); een derde (paars D3) vloekte.

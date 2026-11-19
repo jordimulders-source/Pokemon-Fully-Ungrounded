@@ -9,22 +9,24 @@ def r(y, x0, s):
     for i, c in enumerate(s):
         if c != '.': F[(x0+i, y)] = int(c)
 #            x
-# losse plukken (boven, over de verre vleugel): lichtkant 7, midden 6
+# losse plukken (boven, over de verre vleugel), r11 1 px smaller dan r10 (Jordi): punt 7, naar de basis 6
 r(7,  23, "7")
-r(8,  22, "76")
-r(9,   6, "7");   r(9, 21, "76")
-r(10,  6, "76");  r(10, 11, "7");   r(10, 16, "7");   r(10, 20, "76")
-r(11,  7, "76");  r(11, 10, "76");  r(11, 15, "76");  r(11, 19, "76")
-r(12,  7, "76");  r(12, 10, "76");  r(12, 14, "76");  r(12, 18, "76");  r(12, 24, "777")
-r(13,  8, "7276"); r(13, 14, "76"); r(13, 17, "762"); r(13, 21, "777666")
-# kruin: één massa, lichte rand links, twee plukgrenzen (lijn A en C) die naar rechtsboven lopen, sikkel onderaan
-r(14,  8, "767662766662766622")
-r(15,  8, "7666627666626222")
+r(8,  22, "7")
+r(9,   6, "7");   r(9, 21, "7")
+r(10,  6, "7");   r(10, 11, "7");   r(10, 16, "7");   r(10, 20, "7")
+r(11,  7, "7");   r(11, 10, "7");   r(11, 15, "7");   r(11, 19, "6")
+r(12,  7, "6");   r(12, 10, "6");   r(12, 14, "6");   r(12, 18, "6");   r(12, 24, "777")
+r(13,  8, "6");   r(13, 10, "6");   r(13, 14, "6");   r(13, 17, "76"); r(13, 21, "777")
+# kruin: één massa die op de kop aansluit (geen donkere band eronder), lichte rand links, twee plukgrenzen
+r(14,  8, "767662766662766")
+r(15,  8, "7666627666626")
 r(16,  8, "766627666627677777")
 r(17,  8, "76662766627666666677")
-r(18,  8, "666666666262222222667")
-r(19,  8, "6622");  r(19, 15, "2222");  r(19, 28, "66")
-r(20,  8, "222")
+r(18,  8, "666666666266")
+r(18, 26, "667")
+r(19,  8, "6666");  r(19, 15, "6666");  r(19, 28, "6")
+r(20,  8, "666")
+P = np.load('part.npy')
 def zet(a, part=None):
     kz = np.zeros(a.shape, bool)
     for (x, y), c in F.items(): a[y, x] = c; kz[y, x] = True
@@ -36,8 +38,23 @@ def zet(a, part=None):
             v = a[yy, xx]
             if v == 0:
                 a[yy, xx] = 1 if (dx > 0 or dy > 0) else 2
-            elif v in (3, 4, 5):          # verre vleugel / nek: donkere rand rond de haardos
+            elif v in (3, 4, 5) and P[yy, xx] == 0 and yy < 16:   # alleen over de verre vleugel: donkere rand
                 a[yy, xx] = 2
+    # gaten waar de oude r9-kuif zat (niet verbonden met de achtergrond) dichten met de nektint, en
+    # de buitenlijn rond zulke gaten weghalen (geen losse zwarte stukjes tussen kuif en kop)
+    bg = np.zeros(a.shape, bool); st = [(0, 0)]; bg[0, 0] = True
+    while st:
+        y, x = st.pop()
+        for dy, dx in ((1,0),(-1,0),(0,1),(0,-1)):
+            yy, xx = y+dy, x+dx
+            if 0 <= yy < 64 and 0 <= xx < 64 and not bg[yy, xx] and a[yy, xx] == 0: bg[yy, xx] = True; st.append((yy, xx))
+    for y in range(6, 22):
+        for x in range(15, 28):
+            if a[y, x] == 0 and not bg[y, x]: a[y, x] = 3
+    for y in range(6, 22):
+        for x in range(15, 28):
+            if a[y, x] == 1 and not kz[y, x] and not any(bg[y+dy, x+dx] for dy, dx in ((1,0),(-1,0),(0,1),(0,-1))):
+                a[y, x] = 3 if y >= 16 else 2
     return a
 if __name__ == '__main__':
     from PIL import Image; from geom import PAL

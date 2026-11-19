@@ -4,16 +4,16 @@ import numpy as np; from PIL import Image
 from geom import PAL
 a = np.load('basis.npy')
 X0, Y0 = 5, 19
-KOP = [  # x5..x17
+KOP = [  # x5..x17; oog 4x4 (x11-14, y20-23) in een blauwe vlek 7x7, snavel x5-11 (model kop40)
  "......9999...",  # 19
- ".....991119..",  # 20
- "..111915AA19.",  # 21
- ".1FFE91A1A18.",  # 22
- ".1FEE91AAA18.",  # 23
- ".1FEE9911198.",  # 24
- ".1E11188888..",  # 25
- ".1E2E21......",  # 26
- "  1111.......",  # 27
+ "......91199..",  # 20
+ "..1FF91AA199.",  # 21
+ ".1FFE91A1198.",  # 22
+ ".1FEE9911998.",  # 23
+ "1FEEEE999998.",  # 24
+ "1EE222288888.",  # 25
+ "1E22EE21.....",  # 26
+ " 111111......",  # 27
 ]
 H = '0123456789ABCDEF'
 for j, row in enumerate(KOP):

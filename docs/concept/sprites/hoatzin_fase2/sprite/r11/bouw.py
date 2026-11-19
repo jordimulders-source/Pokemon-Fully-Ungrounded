@@ -81,11 +81,18 @@ Z = {nm: part == ORDER.index(nm) for nm in ORDER}
 Hh = blur(Z['lijf'] | Z['buik'] | Z['vleugel'], 2.2)
 gx = np.gradient(Hh, axis=1); gy = np.gradient(Hh, axis=0); lam = (gx*0.7 + gy*0.7)
 MC = np.load('modelcel.npy').mean(2); MCs = blur(MC, 0.7)
-out[Z['lijf']] = M4
-out[Z['lijf'] & (lam > 0.07)] = L5
-out[Z['lijf'] & (lam < -0.06)] = D3
-out[Z['lijf'] & (MCs < 78)] = D3
-out[Z['lijf'] & (MCs < 52)] = D2
+# nek: lichter mauve dan de vleugel (Jordi: nek moet zich onderscheiden), donkere nekband achter de kop
+out[Z['lijf']] = L5
+out[Z['lijf'] & (lam < 0.0)] = M4
+out[Z['lijf'] & (MCs < 70)] = D3
+out[Z['lijf'] & (MCs < 40)] = D2
+# streepjes uit het model als enkele doorlopende lijnen: licht in de donkere nekband, donker in de lichte hals
+def lijn(pts, kleur, alleen):
+    d, t, _, _ = segdist(PX, PY, pts); m = (d < 0.5) & Z['lijf'] & np.isin(out, alleen); out[m] = kleur
+lijn([(17.5,24.5),(20.0,29.0),(22.5,33.5)], M4, [D2, D3])
+lijn([(20.5,23.0),(23.0,27.5),(24.8,31.0)], M4, [D2, D3])
+lijn([(14.5,27.5),(16.5,31.5),(18.5,35.0)], M4, [M4, L5])
+lijn([(17.0,30.0),(19.5,34.5),(21.0,37.0)], M4, [L5])
 # buik
 Hb = blur(Z['buik'] | Z['lijf'], 1.8); gx = np.gradient(Hb, axis=1); gy = np.gradient(Hb, axis=0); lb = gx*0.7+gy*0.7
 out[Z['buik']] = BU12
@@ -104,7 +111,7 @@ own_t = kleur_pennen(Z['staart'], TAIL, [(0,0,0,0.0)]*len(TAIL))
 own_w = kleur_pennen(Z['vleugel'], PENS, [p[2] for p in PENS])
 # niveau per pen (gemiddelde modelhelderheid per pen, zie NOTITIES): 2 licht, 1 midden, 0 donker
 NIV = {'P1':2,'P2':2,'P3':2,'P4':2,'P5':2,'P6':2,'P7':2,'P8':1,'C1':0,'C2':0,'C3':0,'C4':0,
-       'I1':2,'I2':2,'I3':2,'A1':2,'A2':1,'A3':1}
+       'I1':1,'I2':2,'I3':2,'A1':1,'A2':1,'A3':1}
 LV = np.zeros((64,64), int)
 for i, p in enumerate(PENS):
     LV[Z['vleugel'] & (own_w == i)] = NIV[p[0]]

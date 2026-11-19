@@ -32,3 +32,9 @@ STYLE AND FORMAT
 AVOID
 - No new pose, no smile, no Aipom or Ambipom look, no Persian features, no plush toy or mascot look.
 ```
+
+## Rondes
+Jordi (19 nov, vóór r1): "ja de poten en de rugpositie zijn niet geweldig".
+### Ronde 1 (prompt v1) → `r1_prompt_v1.png`
+Jordi: "nee er is teveel aan het design gezeten nu".
+Claude: maan werd een kleine C i.p.v. de grote sikkel over de ogen, ogen hoekig, kop kleiner, lijf lang en dun (geen groot bol lijf), poten lang. Wel: verre poten achter/hoger, lijf in driekwart.

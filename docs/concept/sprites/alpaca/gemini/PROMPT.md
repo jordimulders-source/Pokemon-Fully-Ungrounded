@@ -94,3 +94,6 @@ Jordi: "dit gaat fout". Claude: drie handschoenen (geheven poot erbij getekend i
 
 ## Prompt v3 (nieuw gesprek, geen bijlage)
 Prompt v2 met: hoek 45°/70° en "no side view, no profile body"; precies vier poten, twee handschoenen, elke poot benoemd; nabije handschoen geheven tot borsthoogte, de verre handschoen op de grond.
+
+## Ronde 4 (prompt v3) → `r4_prompt_v3.png`
+Jordi (19 nov): "Prima denk ik maar het is nu geen sprite meer". Claude: illustratie i.p.v. pixelart; mogelijk model (sprite dan zelf bouwen: reductie + oud palet, zoals Hummlet). Nabije voorpoot geheven + verre achterpoot naar voren = diagonaal (paardengang), voorgelegd.

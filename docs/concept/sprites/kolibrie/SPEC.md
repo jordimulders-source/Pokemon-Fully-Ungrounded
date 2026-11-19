@@ -1,5 +1,7 @@
 # Kolibrie (Ghost/Flying, eindvorm): SPEC
 
+**OPKNAPRONDE AF (19 nov): frame 1 én frame 2 via Gemini** (Jordi: "uitstekend, frame 1 en 2 zijn klaar"). `af/kolibrie.png` (frame 1, Gemini r4 met snavel +2), `af/kolibrie_frame2.png` (Gemini r3, ×0,76, vleugellijn van Jordi, variant a), `af/anim_front.png`, `af/normal.pal`, `af/soulibri_uit_de_bal.gif` (ANIM_V_SLIDE, frame 2 één keer lang). Oud: `af/oud_voor_gemini/`. Rondes en citaten: `gemini/PROMPT.md`, `sprite/OPDRACHT.md`.
+
 **Bevroren (Jordi, 24 okt "ja prima"):** het silhouet `silhouet/silhouet_v6_1x.png` (script `silhouet/silhouet_v6.py`). De omtrek komt uit Jordi's foto van een drinkende kolibrie: kop links, snavel schuin omlaag, vleugels als V omhoog, staart naar rechts, 3/4. De sprite volgt dit silhouet; afwijkingen alleen ±1 px voor omlijning/anti-kartel, en altijd melden.
 
 ## Onderdelen

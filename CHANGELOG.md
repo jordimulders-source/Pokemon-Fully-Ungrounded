@@ -2225,3 +2225,8 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Sprite (maker + keurder, 3 rondes): model overgenomen op 40 px breed, kleurpalet van de oude sprite ("dat was het enige aan de originele sprite dat ik zeer goed vond"), perspectief via licht en schaduw. Keurder GOED + Dragonfly Cave-eindkeuring. Jordi: "Akkoord".
 - `kolibrie_pre/af/` vervangen (oud in `af/oud_voor_gemini/`), overzichtsvel bijgewerkt, les in `GEMINI.md`.
 - Soulibri: Gemini-prompt v1 voor de opknapronde klaargezet (`kolibrie/gemini/PROMPT.md`).
+
+### [v0.0.537] - Soulibri opnieuw via Gemini: frame 1 en 2 af
+- Jordi: "mag nog wat meer een typische kolibrie pose, maar behoud de kleuren en design". Gemini r1 bijna goed; snavel met eigen pixels +2 verlengd ("+2 is perfect"); te breed voor 64×64 → staart via bijsturing laten krullen (r4, 63×53).
+- Gemini r3 (andere pose) wordt frame 2 ("niet erg overigens, want we hebben nu een frame 2"); op dezelfde schaal gebracht (×0,76), Jordi's eigen vleugellijn (21 px) subtiel afgewerkt (variant a: "nee A, want bij B is een stuk staart verdwenen").
+- `kolibrie/af/`: frame 1, frame 2, `anim_front.png`, palet en `soulibri_uit_de_bal.gif` (bal → groeien volgens sAffineAnim_Battler_Emerge → frame 2 + ANIM_V_SLIDE). Oud in `af/oud_voor_gemini/`. Jordi: "uitstekend, frame 1 en 2 zijn klaar".

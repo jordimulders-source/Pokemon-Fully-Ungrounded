@@ -15,6 +15,6 @@ Bestaande, goedgekeurde designs die nog "een beetje 2D" staan opnieuw via Gemini
 |---|---|---|
 | Picapau | `picapau/gemini/` | **af** (19 nov, `picapau/af/`) |
 | Picaraio | `picapau_evo/gemini/` | r9 (model), sprite v2 loopt |
-| Soulibri | `kolibrie/gemini/`, `kolibrie/sprite/` | Gemini r4 gekozen (frame 1), r3 = frame 2; maker bouwt beide frames |
+| Soulibri | `kolibrie/gemini/`, `kolibrie/sprite/` | **af** (19 nov, Jordi: "uitstekend, frame 1 en 2 zijn klaar"; frame 1 + frame 2 + uit-de-bal-gif in `kolibrie/af/`) |
 | Moonkey | `nachtaap_evo/` | – |
 | Hummlet | `kolibrie_pre/gemini/`, `kolibrie_pre/sprite/` | **af** (19 nov, Jordi: "Akkoord"; sprite r3 met oog a, oog b bewaard als `af/kolibrie_pre_oogB.png`) |

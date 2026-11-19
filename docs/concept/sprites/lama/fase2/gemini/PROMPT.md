@@ -325,7 +325,7 @@ Copy THIS llama exactly: the same animal, the same pose, the same colors and the
 
 ## Ronde 12 (prompt v8, alleen de foto) → `r12/r12_lama_foto.png`
 Jordi (19 nov): "dan gaat die focussen op de poten" · "eindelijk"
-Plakwerk `poten/r4_poten_r12.png` (`poten/plak.py`): r4 met de vier poten van r12 (×0,93, verschoven (12, 250), omgekleurd naar karamel op luminantie); r4-handschoenen en achterpoten weggehaald (voor vanaf y 865, achter vanaf y 812).
+Plakwerk v1 (`poten/plak.py`), Jordi: "je moet het even wat beter plakken hoor" · "dat het tenminste aansluit" → v2 `poten/r4_poten_r12.png` (`poten/plak2.py`: per poot uitgeknipt zonder buikhaar, per poot aangesloten onder de wol, nabij licht/ver donker, nabije achterpoot ×1,38 gerekt, gaatjes gedicht). Eerder: r4 met de vier poten van r12 (×0,93, verschoven (12, 250), omgekleurd naar karamel op luminantie); r4-handschoenen en achterpoten weggehaald (voor vanaf y 865, achter vanaf y 812).
 
 ## Prompt r13 (nieuw gesprek; bijlage `poten/r4_poten_r12.png`)
 ```

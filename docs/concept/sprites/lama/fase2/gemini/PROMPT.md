@@ -189,3 +189,7 @@ Redraw the picture as one clean, consistent sprite: smooth the seams where the w
 KEEP the gloves exactly as they are in shape, size, position and direction: both are closed red MMA gloves with a black wrist strap, pointing forward to the left, with small toenails at the bottom front; the far glove is slightly darker. Do not turn, open or move them.
 Keep EVERYTHING else exactly as it is: pose, head, ears, eye, mouth, wool, neck, collar, pompoms, back cloth, back legs, colors.
 ```
+
+## Ronde 7 (prompt r7, naad) → `r7/r7_naad.png`, vergelijking `r7/plak_vs_r7.png`
+Jordi (19 nov): "vgm is dit hetzelfde? Staan de poten zoals ze horen te staan bij een lama?"
+Claude: bijna identiek aan het plakwerk (alleen polsband voor rood, hoekje glad). Gang: nabije voor vóór + nabije achter achter, verre voor achter + verre achter vóór = diagonaal (draf), geen telgang (lama/alpaca, SPEC 24 okt). Opties aan Jordi: zo laten en in de spritefase repareren / nog één Gemini-poging met poten in woorden / foto als bij Palpaca.

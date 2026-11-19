@@ -17,4 +17,4 @@ Bestaande, goedgekeurde designs die nog "een beetje 2D" staan opnieuw via Gemini
 | Picaraio | `picapau_evo/gemini/` | r9 (model), sprite v2 loopt |
 | Soulibri | `kolibrie/` | – |
 | Moonkey | `nachtaap_evo/` | – |
-| Hummlet | `kolibrie_pre/` | – |
+| Hummlet | `kolibrie_pre/` | aparte sessie (19 nov) |

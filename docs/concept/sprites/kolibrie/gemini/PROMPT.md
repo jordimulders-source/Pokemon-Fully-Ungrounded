@@ -81,3 +81,13 @@ Change the pose just slightly so the whole creature fits inside a 64x64 square w
 
 Plain white background, max 16 colors, no effects, one single creature.
 ```
+
+## Ronde 3 (Jordi, 19 nov, letterlijk): `r3_frame2_kandidaat.png` (prompt v2)
+"ok dit is een hele andere pose, niet erg overigens, want we hebben nu een frame 2, maar dit is niet de frame 1 pose die ik bedoelde"
+→ bewaard als kandidaat voor frame 2 (frame 2 is een latere fase).
+
+## Bijsturing r3 → r4 (zelfde gesprek; voorstel Claude: alleen de staartslierten)
+
+```
+That pose is too different. Go back to the attached sprite and keep it exactly: same head, crest, eye, beak, body, wings, colors and the same overall pose. Change only the three long tail streamers: let them curve a little more downward, so the tail tips end 3 pixels further to the left (closer under the body). Same pixel size, same pixel art, do not shrink anything.
+```

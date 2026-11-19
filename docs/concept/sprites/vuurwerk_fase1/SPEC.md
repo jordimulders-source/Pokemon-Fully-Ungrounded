@@ -37,3 +37,4 @@ Fase 1: 29×62 px (r2; op ±50 px las de kop niet). Oppervlak ±810 px, gelijk a
 - Jordi over Gemini r12 (handen, 19 nov): "dit lukt niet helemaal he, niet echt sprite achtig meer"; "plus dingen overlappen elkaar nu" → niet gebruikt. Sprite r11 = r10 B + alleen de sprieten uit Gemini r11 (`sprite/r11/sprieten.py`).
 - Jordi (19 nov): "doe maar 2 [maker-ronde alleen handen], daarnaast moeten we misschien kijken naar kleur etc, want de axolotl is nu niet duidelijk meer een vlam waar fase 3 dat wel is, kan jij dat of wil je dat bij gemini neerleggen?" → Claude/maker (Gemini poetst slecht), met fase 3 (`../vuurwerk_fase3/af/vuurwerkslang.png`) als voorbeeld.
 - Jordi (19 nov): "je zou de gills misschien iets meer als vlam eruit kunnen laten zien". "die lenen zich daar goed voor".
+- Jordi over r12 (19 nov): "B gaat de goede kant op ja, je ziet er veel meer vlammen in nu, kan je nog iets meer met het hoofd doen qua vlam vorm? Als extra optie naast B".

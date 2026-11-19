@@ -14,3 +14,4 @@ P = {
  'k':(11,(176,132,24)),  # geel donker
  'e':(12,(160,114,68)),  # oor binnen / verre delen
 }
+P['B']=(13,(80,44,24))   # bovenrand: donkere vachttint (helderheid ~52)

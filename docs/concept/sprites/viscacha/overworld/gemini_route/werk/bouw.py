@@ -27,7 +27,14 @@ def shift(fr, y0,y1,x0,x1,dx):
             if old[y][x]!='.': fr[y][x+dx]=old[y][x]
     return fr
 import copy
-V=load('voor.txt'); A=load('achter.txt'); O=load('opzij.txt')
+def boven(g):
+    g=[list(r) for r in g]; h=len(g)
+    for y in range(h):
+        for x in range(len(g[0])):
+            if g[y][x]=='o' and (y==0 or g[y-1][x]=='.') and y < h-3:
+                g[y][x]='B'
+    return [''.join(r) for r in g]
+V=boven(load('voor.txt')); A=boven(load('achter.txt')); O=boven(load('opzij.txt'))
 f0=place(V,31); f2=place(A,31); f4=place(O,31)
 f1=lift(copy.deepcopy(f0), 0, 15)
 f3=lift(copy.deepcopy(f2), 0, 15)

@@ -21,3 +21,12 @@ Alles draaien vanuit de repo-root.
 - Symmetrische aanzichten: alleen de linkerhelft tekenen en spiegelen.
 - Kop breder dan de oorbasis, anders een kat; half dicht oog (lid + 1 rij) leest als slaperig.
 - Gele details niet laten samenvloeien (wangpluk + pluim werd in de achterkant één gele band: wangpluk daar weggelaten).
+
+## Ronde 2 (na de coördinator: "rechtopstaande kat, blokkig")
+Ronde-1-bronnen staan in `../werk/ronde1_bron/`. `bouw_ow.py` centreert nu elk aanzicht zelf (midden x15-16, onderkant y29) en `spiegel.py` kent `Z y x pixels` voor asymmetrische delen (de staart) na het spiegelen.
+1. **Oren** overal ronde schelpen: 2 px dop, 4–5 px breed, donkere binnenkant (d), 4–5 rijen boven de kop, dicht bij elkaar. Van achteren: bruine achterkant.
+2. **Voor gehurkt**: kop 13 breed met bolle wangen, daaronder bolle heupen links en rechts (tot 17 breed), korte voorpootstompjes (3 px) en hielen, kleine crème borst zonder harde kinlijn (anders leek het een open mond). Staartpluim rechts achter de kop (de staart krult in de front achter het lijf omhoog), steel verdwijnt achter de wang.
+3. **Achter**: peervorm met ronde achterkop en bolle heupen. De staart loopt vanuit de stuit schuin over de linkerheup (bruine band met een donkere lijn eronder), buiten het lijf verder omhoog, met de gekartelde pluim naast de kop. Geen geel vlak meer onder de nek.
+4. **Opzij**: rug als één boog van nek tot stuit, kruin en snuit ronder en spitser (voorhoofd loopt schuin af), achterpoot gehurkt met bolle dij (binnenlijn) en lange voet naar voren, staart in S: uit de heup naar rechts, omhoog, pluim bovenaan terug naar links.
+5. **Binnenlijnen**: dij over lijf, kop over lijf (achterkant), staart over heup, ooglid, mond. 27–29 lijnpixels per stilframe.
+Les: een uitlijnfout of te korte oren zie je pas op 8× via `toon.py` met een nieuwe bestandsnaam (de viewer toonde een oude versie van een overschreven png).

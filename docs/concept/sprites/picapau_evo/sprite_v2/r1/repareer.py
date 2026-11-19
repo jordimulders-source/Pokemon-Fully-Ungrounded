@@ -38,6 +38,38 @@ ring('bliksem',bz)
 pz=np.zeros((H,W),bool); pz[44:54,17:31]=True
 zet('poten',[(x,y,cel(x,y,zw=0.33)) for y,x in zip(*np.where(pz)) if cel(x,y,zw=0.33) in (0,1,9,10,11)])
 ring('poten',pz)
+# 6 ruis: donkere modellijnstipjes (h) los in bruin -> donkerbruin (binnenlijn in een donkere tint van het vlak)
+zet('ruis',[(31,23,4),(46,27,4),(13,11,1)])
+# losse tintpixels (<3 px-regel): eenzame tint binnen een kleurgroep -> meest voorkomende buurtint van dezelfde groep
+G={2:'b',3:'b',4:'b',5:'c',6:'c',7:'c',12:'y',13:'y'}
+lst=[]
+for y in range(1,H-1):
+    for x in range(1,W-1):
+        v=o[y,x]
+        if v not in G: continue
+        nb=[o[a,b] for a in range(y-1,y+2) for b in range(x-1,x+2) if (a,b)!=(y,x)]
+        if v in nb: continue
+        same=[n for n in nb if G.get(n)==G[v]]
+        if same: lst.append((x,y,max(set(same),key=same.count)))
+zet('losse tint',lst)
+# 7 selout: buitenlijn aan de lichtkant naast bruin -> donkerbruine selout, schaduwkant zwart. Lichtkant gemeten met de
+#   randnormaal over 5x5 (achtergrond boven+links > onder+rechts), zodat trappen niet om en om zwart/selout worden.
+#   Niet op kuif/koord (lucht-zone). Daarna: losse selout/zwart in een randketen gelijk aan zijn twee randburen.
+lst=[]; E={}
+for y in range(H):
+    for x in range(W):
+        v=o[y,x]
+        if v not in (1,15) or z[y,x]: continue
+        if not any((0<=a<H and 0<=b<W and o[a,b]==0) for a,b in ((y-1,x),(y+1,x),(y,x-1),(y,x+1))): continue
+        br=any(o[a,b] in (2,3,4) for a in range(max(0,y-1),min(H,y+2)) for b in range(max(0,x-1),min(W,x+2)))
+        if not br: continue
+        y0,y1,x0,x1=max(0,y-2),min(H,y+3),max(0,x-2),min(W,x+3)
+        w=o[y0:y1,x0:x1]==0; yy,xx=np.mgrid[y0:y1,x0:x1]
+        up=(w&(yy<y)).sum()+(w&(xx<x)).sum(); dn=(w&(yy>y)).sum()+(w&(xx>x)).sum()
+        E[(y,x)]=15 if up>dn else 1
+for (y,x),want in E.items():
+    if want!=o[y,x]: lst.append((x,y,want))
+zet('selout',lst)
 np.save('r1.npy',o)
 tot=0
 for zn,l in R.items():

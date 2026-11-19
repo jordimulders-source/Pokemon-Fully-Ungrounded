@@ -1,0 +1,24 @@
+"""Linkerhelft (x0-15, kolom 15 = midden) spiegelen naar rechts (x' = 30 - x) -> symmetrisch aanzicht.
+Invoer: regels 'y aaaaaaaa bbbbbbbb' (16 kolommen). Rechts: licht valt linksboven, dus 7 -> 6 en 6 -> 5 in de
+buitenste kolommen (afstand tot midden >= 4) en 7 -> 6 elders; daarna optionele correcties 'R y x c'.
+Gebruik: spiegel.py in.half uit.txt"""
+import sys,os,numpy as np
+sys.path.insert(0,os.path.dirname(__file__)); from ow_pal import totext
+def maak(p):
+    a=np.zeros((32,32),np.uint8); fix=[]
+    for l in open(p):
+        if not l.strip() or l.startswith('#'): continue
+        if l.startswith('R'): _,y,x,c=l.split(); fix.append((int(y),int(x),int(c,16))); continue
+        y,*b=l.split(); r=''.join(b); assert len(r)==16,(y,len(r)); y=int(y)
+        for x,c in enumerate(r):
+            if c=='.': continue
+            v=int(c,16); a[y,x]=v
+            if x<15:
+                m=v
+                if v==7: m=6
+                elif v==6 and 15-x>=4: m=5
+                a[y,30-x]=m
+    for y,x,c in fix: a[y,x]=c
+    return a
+if __name__=='__main__':
+    a=maak(sys.argv[1]); open(sys.argv[2],'w').write(totext(a)+'\n')

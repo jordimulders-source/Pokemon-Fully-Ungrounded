@@ -2214,4 +2214,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.534] - Vuurwerklijn: vuurpijl als rode draad
 - IDEEEN.md → Vuurwerk: Jordi's oplossing (19 nov): de vuurpijl komt in elke fase terug, wat eruit komt verschilt per fase; fase 3 = de vuurwerkslang; fase 1 = rechtopstaande vuurpijl met vuur uit de onderkant dat eromheen krult (wat precies nog open); fase 2 nog open.
 - IDEEEN.md → Vuurwerk: idee fase 2 (Jordi, open): de Pokémon houdt zelf de vuurpijl vast, als een wapen of zoiets.
-- IDEEEN.md → Vuurwerk: besloten dat het wezen in alle drie de fases uit de pijl komt; vijf voorstellen voor het krullende vuur van fase 1 (open).
+- IDEEEN.md → Vuurwerk: besloten dat het wezen in alle drie de fases uit de pijl komt; vijf voorstellen voor het krullende vuur van fase 1 (open). Fase 2: komt uit de pijl én houdt hem vast.

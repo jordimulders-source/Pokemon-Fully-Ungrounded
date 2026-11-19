@@ -2300,3 +2300,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.554] - Vuurwerklijn fase 2: r7 (koppen) bewaard
 - `vuurwerk_fase2/r7/gemini_koppen.png` (Jordi: "ik vind ze eigenlijk alle 4 lelijk").
+
+### [v0.0.555] - Vuurwerklijn fase 2: kopprompt vuursalamander
+- `vuurwerk_fase2/gemini/PROMPT_v8_vuursalamander.md`: vier koppen naar de echte vuursalamander (foto als bijlage; brede platte kop, korte ronde snuit, grote bolle zwarte ogen, klierbulten, glanzende huid), fase 1 alleen voor kleur en stijl.

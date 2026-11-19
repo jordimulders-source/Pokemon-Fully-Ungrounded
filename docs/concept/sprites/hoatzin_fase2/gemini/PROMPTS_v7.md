@@ -87,3 +87,8 @@ Stap 2 (bijlage: resultaat met een groene stip/streep van Jordi):
 ```
 Keep this sprite exactly as it is. I drew a rough green mark where an acid drop should be. Turn ONLY that mark into one small, clean pixel-art acid drop in exactly that spot and that size. Everything else stays pixel for pixel the same.
 ```
+
+Uitslag v7 r5 (`v7_r5.webp`, stap 1 slijm weg), Jordi: "dit is niet de juiste bek?" Gemini tekende een nieuwe snavel (lichtgrijs, langer, recht, zonder donkere omlijning) en het plaatje werd zachter. Opnieuw vanaf v7_r4, nieuw gesprek:
+```
+Keep this sprite exactly as it is. Change only one thing: remove the green acid line and drop, so the beak is clean. The beak itself must stay exactly the same: short, thick, dark grey, slightly hooked, with its dark outline. Do not redraw or recolor anything else; keep the pixels as sharp as they are.
+```

@@ -2210,3 +2210,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - `docs/lessen/OVERWORLD_WERKWIJZE.md`: Gemini is leidend; nog niet getest wanneer Gemini de fout in gaat; volgorde eerst front, rug en icoon, dan samen naar Gemini; promptsjabloon van de viscacha (ronde 2).
 - CLAUDE.md, toon: Jordi "je hoeft de serieuzere toon niet zo te benadrukken, ungrounded is gewoon humor alom en fully ungrounded wordt gewoon net als normale pokemon games".
 - IDEEEN.md, kreten: geen bestaande kreten vervormen; latere generaties gebruiken soms geluiden die op echte dieren lijken (komt later).
+
+### [v0.0.534] - Vuurwerklijn: vuurpijl als rode draad
+- IDEEEN.md → Vuurwerk: Jordi's oplossing (19 nov): de vuurpijl komt in elke fase terug, wat eruit komt verschilt per fase; fase 3 = de vuurwerkslang; fase 1 = rechtopstaande vuurpijl met vuur uit de onderkant dat eromheen krult (wat precies nog open); fase 2 nog open.

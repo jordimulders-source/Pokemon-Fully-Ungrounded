@@ -2229,3 +2229,9 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Vuurwerk fase 1 prompt v8: r7 als bijlage + kop (r5) met zichtbare handjes bovenin, korte bocht onderaan; Jordi: de sliert mag het lijf zijn "zolang de handen maar zichtbaar eruit komen".
 - Vuurwerk fase 1 r8 opgeslagen (axolotl; Jordi: "dat vind ik prima"); prompt v9: punt van de pijl terug, kop opzij.
 - Vuurwerk fase 1 r9 opgeslagen (Jordi: "geweldige pose"); prompt v10: handen uit de golvende krul, staart sluit aan op het vuur uit de pijl. Sterretjes rondom mogen weg (Jordi; Claude wist ze zelf).
+
+### [v0.0.535] - Vuurwerklijn fase 1: frontsprite af
+- `docs/concept/sprites/vuurwerk_fase1/af/vuurwerk_fase1.png` (+ `_8x.png`): vuuraxolotl (Fire/Fairy) waarvan het vuurlijf uit de onderkant van een rechtopstaande vuurpijl komt en eromheen krult; handjes pakken de pijl onder de punt, kop opzij. Model = Gemini r10 (stap voor stap via bijlagen opgebouwd), sprieten uit Gemini r11, 29×62 px (vorm als Sentret).
+- Rondes r1–r15 in `sprite/`: krullen op de kop weg (r10 B), sprieten/kieuwen erbij, vlamtongetjes en kleurverloop (B), palet van fase 3 als motief en strepen doorgetrokken tot onder de punt (r14, Jordi: "r14 is top"), eindkeuring Dragonfly Cave verwerkt (r15).
+- Op het overzichtsvel (`showcase/frontsprites_af.png`, werknaam "Vuurwerk-axolotl", naam open). Alle uitspraken van Jordi in `vuurwerk_fase1/SPEC.md`.
+- Lessen in `docs/lessen/GEMINI.md`: lange armen om een voorwerp tekent Gemini niet; asset voor asset met bijlagen werkt; "leest niet" is geen tekenopdracht; Gemini voegt goed iets toe aan een eigen sprite maar poetst slecht op.

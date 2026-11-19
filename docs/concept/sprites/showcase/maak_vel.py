@@ -48,6 +48,7 @@ items=[
 ("spooktrein_fase3/af/spooktrein.png",'Spooktrein fase 3',"steel/ghost"),
 ("pitahaya_draak/af/pitahaya_draak.png",'Pitahaya-draak fase 1',"grass/dragon"),
 ("pitahaya_draak_fase2/af/pitahaya_draak_fase2.png",'Pitahaya-draak fase 2',"grass/dragon"),
+("vuurwerk_fase1/af/vuurwerk_fase1.png",'Vuurwerk-axolotl',"fire/fairy"),
 ("vuurwerk_fase3/af/vuurwerkslang.png",'Vuurwerkslang',"fire/fairy"),
 ("mate/af/mate.png",'Mate-kalebas',"grass/water"),
 ("mate_fase2/af/mate2.png",'Mate-kano',"grass/water"),

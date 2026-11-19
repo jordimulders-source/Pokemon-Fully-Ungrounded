@@ -1,0 +1,46 @@
+# r5: benoemde reparaties coordinator (handjes, kop, onderste pijlstuk). Posities gemeten in het model (lum.py, rgb.py, dom.py; F=2.4 ox=76.6 oy=14.6).
+# '?' = laten staan.
+# --- 1 HANDJES: elk handje een omlijnd roze vormpje (vingers l, handrug m), 3 vingers met 2 donkere spleten d (2 px vanaf de toppen),
+#     toppen tegen de huls met d-omlijning. Model: linkerhand rij 14 (bovenlijn 7b274b/814e55 op kol 4-5) t/m rij 20 (onderlijn kol 4-6),
+#     toppen tot kol 6, toplijn kol 7; spleten model (17,6) 98486f en (18,5) 7a1d49 (hier op rij 16 en 18, 1 px verschoven zodat de vingers niet als strepen lezen);
+#     rechterhand gespiegeld: bovenlijn (14,13) 7f2b3e, toppen kol 12 met lijn kol 11 (model b76979/ce7a8c/991c72), spleten model (16,11-12) en (18,13) 892251.
+B('handjes L',14,0,"""???#dd#kk
+??dlllldk
+??dmlddkk
+?dmmllldk
+?dmslddkk
+dlmmllldl
+?dlmd#dl""","linkerhand rij 14-20 kol 0-8")
+B('handjes R',14,10,"""kkddddb
+kdlllmd
+kkddlmd
+kdlllmd
+llddlmsd
+Mdlllmsd
+?pd#dd""","rechterhand rij 14-20 kol 10-17")
+B('huls',13,7,"""bb""","schaduwband onder de kegel doorlopend b (model 68/63 lum, e499a1/d2948a in kegelschaduw); was l k")
+P('huls',"18,8=k 18,9=l","huls tussen de handjes: k licht vlak; roze streep begint rij 18 kol 9 (model eaa1a1/f29bb8)")
+# --- 2 KOP: ver oog rond binnen de kop, gezicht crème rustig, k alleen als schaduwsikkel onderaan/rechts
+B('kop oog',10,15,"""kwE
+kEE""","ver oog 2x2 (model zwart kol 15.6-17.7, rij 9.9-12.0; glans native op (10.9,16.4) = linksboven in het oog); "
+ "(10,15)(11,15) huid k i.p.v. lijn d: model heeft daar de kegelrand half over het oog; 2 px afwijking zodat het oog binnen de kop ligt (coordinator)")
+P('kop',"9,16=c 9,17=c 12,16=c 12,17=c 12,24=c 13,16=c 13,17=c 13,18=c 13,19=c 14,18=c 14,19=c 14,20=c 14,21=c",
+  "gezicht crème rustig: model lum 87/84 (9,16-17), 76/89 (12,16-17), 82-91 (13,16-19), 81-88 (14,18-21); was losse tan vlekjes")
+P('kop',"14,17=k 13,15=k","schaduwsikkel linksonder langs de mond/arm (model 74/79)")
+P('kop',"19,23=b","kinlijn doorlopend b (model 45); was los k-pixel")
+# --- 3 ONDERSTE PIJLSTUK (rij 33-39): zelfde buis als het bovenste stuk: randen # kol 5 en kol 13, banden diagonaal 3 px,
+#     schaduwkant kol 11-12 (Y->b, l->t, M->p). Model: rechterrand op x 13.0 rij 32-37, linkerrand x 5.9, geel (34,9-11)(35,7-9)(36,6-8)(37,6),
+#     roze daaronder, magenta (37,12)(38,11-12)(39,10-12).
+B('pijl onder',33,5,"""?????####
+???#YYbb#
+??#YYYtt#
+?#YYlltt#
+#YYllltp#
+#YlllMpp#
+#lllMMpp#""","onderste pijlstuk als schone buis; (33,13)(34,13)(35,13) nieuwe randpixels op de modelrand x 13.0 (was kol 12, inconsistent met het bovenste stuk)")
+P('kop',"9,18=c","voorhoofd crème sluit aan op het gezicht (model 77)")
+P('handjes L',"18,3=m","geen los schaduwpixel in de pols")
+P('huls',"18,8=l","roze streep rij 18 kol 8-11 doorlopend (model cd8d81/eaa1a1)")
+P("kop","14,17=c","geen los tan-pixel in het gezicht (sikkel begint rij 15)")
+P("huls","18,7=l","spleetpixel toont de roze hulsstreep i.p.v. los k-pixel (model be6e6e)")
+P('handjes',"16,5=l 18,5=l 16,13=l 18,13=l 14,15=b","spleten 1 px aan de vingertop + inham (variant B; met 2 px las het handje als een 'E'); hoek rechtsboven rechterhand rond (b = gezichtsrand)")

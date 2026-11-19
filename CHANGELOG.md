@@ -2310,3 +2310,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.553] - Skinguin: Gemini r2
 - r2 (`skinguin/gemini/r2.png`): rood/wit, muts-hoofd, voorover. Jordi: "beter", lichaam iets langer (nu Delibird-formaat), poten echt ski's met uiteinden als tenen, "Verder ben ik wel tevreden". Bijstuurprompt `PROMPT_r3_bijsturen.md`.
 - Bijstuurprompt: twee ski-voeten, r2 lijkt er maar één te hebben (Jordi).
+
+### [v0.0.554] - Skinguin: Gemini r3
+- r3 (`skinguin/gemini/r3.png`): langer lijf, twee ski-poten met tenen. Jordi: "ik vind deze echt tof, alleen hij gaat nog niet snel genoeg, ski's iets dichter bij elkaar en iets meer voorover leunend". Bijstuurprompt `PROMPT_r4_bijsturen.md`.

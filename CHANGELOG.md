@@ -2286,3 +2286,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - `v5_r1_kuifbruin.png`: v5 r1 met de door Jordi geel omcirkelde haartjes weg en alleen de kuif in bruintinten (paletswap; licht/donker behouden), verder niets veranderd.
 - Paletswap van de kuif door Claude afgekeurd ("prutswerk"); `v5_r1_kuifbruin.png` verwijderd, les in `GEMINI.md`; de bewerking gaat naar Gemini.
 - v5 r4 bewaard (bruine kuif, door Jordi via Gemini); kleuren in bespreking.
+
+### [v0.0.547] - Hoatzin fase 2: prompt v6
+- Jordi koos echte hoatzinkleuren met alleen de buik Poison-paars; `PROMPTS_v6.md`.

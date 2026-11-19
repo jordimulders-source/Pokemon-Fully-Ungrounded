@@ -39,3 +39,4 @@ Fase 1: 29×62 px (r2; op ±50 px las de kop niet). Oppervlak ±810 px, gelijk a
 - Jordi (19 nov): "je zou de gills misschien iets meer als vlam eruit kunnen laten zien". "die lenen zich daar goed voor".
 - Jordi over r12 (19 nov): "B gaat de goede kant op ja, je ziet er veel meer vlammen in nu, kan je nog iets meer met het hoofd doen qua vlam vorm? Als extra optie naast B".
 - Jordi over r13 (19 nov): "C maakt de kop niet meer als vlam, houd B aan en ga naar de kleur en schaduwronde. Probeer de kleuren van fase 3 een beetje aan te houden ook als motief. En trek het vuurpijl patroon nog wat verder door naar boven, want daar stopt die op een gegeven moment".
+- Jordi over r14 (19 nov): "r14 is top, ga maar naar de eindkeuring, dragonflycave, goed kijken naar schaduwen, kleuren, vooral bovenste stuk vuurpijl moet nog net even wat beter afgewerkt worden, sluit nog niet perfect aan, plus helemaal bovenin is het nog beige, maar dat is detailwerk".

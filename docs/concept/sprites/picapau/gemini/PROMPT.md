@@ -79,3 +79,11 @@ STYLE AND FORMAT
 AVOID
 - Not Pikipek, Pikachu, Woody Woodpecker or Chatot. No plush toy, chibi or mascot look, no oversized sparkly eyes.
 ```
+
+## Ronde 3 (prompt v2) → `r3_prompt_v2.png`
+Jordi (19 nov): "prima, alleen nog steeds zou ik hem iets meer naar rechts willen draaien"
+
+### Verbeterprompt r4 (in hetzelfde gesprek)
+```
+Good, keep everything exactly as it is (design, shapes, colors, style). Change only the angle: rotate the whole bird about 20 degrees further to the right, around its vertical axis, so it turns more towards the viewer. We see more of the yellow chest and belly from the front, the beak points more towards the viewer and to the left, the near eye and cheek move a bit towards the middle of the face, and the far side of the head and the far wing start to show on the left. Do not add anything. Same 64x64 Gen 3 sprite, white background.
+```

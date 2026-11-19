@@ -130,3 +130,18 @@ Same pose, same angle, same colors, same 64x64 Gen 3 sprite style, white backgro
 
 ### Ronde 5 (verbeterprompt r5) → `r5_verbeter.png`
 Jordi (19 nov): "daar was ik al bang voor haha, gemini overdrijft altijd". Lijf veel te breed en plat, armen gespreid. Terugvallen op ronde 4.
+
+### Na ronde 4: kleur tussen de ogen
+Jordi (19 nov): "ik vind ronde 4 eigenlijk wel goed, flinke vooruitgang, ik twijfel alleen nog een beetje over het kleurgebruik tussen de twee ogen in" · "we kunnen het altijd 1 keer proberen, schrijf een korte prompt en dan doe ik de afbeelding van r4 erbij, lukt het niet, dan doen we het in de sprite fase".
+Claude: streep te breed en te donker, verre oog zonder crème rand, rechte onderkant.
+
+### Prompt r6 (bijlage: `r4_prompt_v4.png`)
+```
+Copy this sprite exactly, pixel for pixel. Change only one small thing: the violet stripe between the eyes.
+
+- Make the stripe narrower: about half its current width, 2-3 pixels, in two violet tones (lighter left half, slightly darker right half).
+- The stripe follows the curve of the head and fades softly into the cream face disc above the muzzle, no straight horizontal bottom edge.
+- The freed space becomes cream face disc, so the left eye also gets a thin cream rim on its inner side, like the right eye.
+
+Everything else stays exactly the same: angle, pose, eyes, mouth, ears, body, tail, colors, size, style. Small change only, do not exaggerate.
+```

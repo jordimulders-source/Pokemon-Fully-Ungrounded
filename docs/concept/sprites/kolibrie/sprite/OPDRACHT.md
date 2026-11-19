@@ -30,3 +30,5 @@ Bij een model (Gemini of ander) is de sprite de **verkleining van het model zelf
 ## Jordi over de vleugellijn (19 nov, letterlijk)
 - Na het rastervel: "voor zover ik het kan zien zijn de pixels waar ik zwart in heb getekend de buitenlijn van de vleugel." (screenshot `r2/jordi_lijn_vleugel.png`, geregistreerd → 21 px, `r4/jordi_lijn.py`)
 - Over r4 A/B: "ja de lijn is correct, alleen je moet het wat netter afwerken, dat kan niet allemaal door 1 kleur vervangen worden, volg dragonflycave regels etc" → maker in `r5/`.
+- Keuze r5 (Jordi, 19 nov, letterlijk): "nee A, want bij B is een stuk staart verdwenen" → frame 2 = `r5/frame2_a.png`.
+- Uit-de-bal-gifs: `r5/gif/` (A Beautifly-ritme + ANIM_V_SLIDE, B frame 2 lang + V_SLIDE, C zonder engine; groeien uit de bal is een benadering).

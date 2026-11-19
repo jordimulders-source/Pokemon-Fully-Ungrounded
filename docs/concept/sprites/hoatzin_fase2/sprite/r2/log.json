@@ -1,0 +1,44 @@
+{
+ "1 vleugellijn uit model": {
+  "M": 87,
+  "W": 16,
+  "K": 19,
+  "D": 2
+ },
+ "1 lichte streep uit model": {
+  "W": 55
+ },
+ "1 streep 1 px per pen": {
+  "W": 2
+ },
+ "2 vlakken: cluster <4 px -> buurtint": {
+  "M": 19,
+  "W": 5,
+  "K": 11,
+  "T": 7
+ },
+ "3 contour: inkeping dicht": {
+  ".": 3
+ },
+ "4 buitenlijn": {
+  "K": 87,
+  "M": 128,
+  ".": 2,
+  "W": 4,
+  "C": 4,
+  "S": 2,
+  "P": 13,
+  "T": 21,
+  "D": 10
+ },
+ "4 rand om-en-om": {
+  "M": 1
+ },
+ "5 oog": {
+  "E": 2,
+  "F": 3
+ },
+ "5 oog glans": {
+  "E": 1
+ }
+}

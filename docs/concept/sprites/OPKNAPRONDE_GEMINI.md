@@ -13,7 +13,7 @@ Bestaande, goedgekeurde designs die nog "een beetje 2D" staan opnieuw via Gemini
 ## Volgorde en stand
 | soort | map | stand |
 |---|---|---|
-| Picapau | `picapau/gemini/` | r5 gekozen, sprite v3 loopt |
+| Picapau | `picapau/gemini/` | **af** (19 nov, `picapau/af/`) |
 | Picaraio | `picapau_evo/gemini/` | r9 (model), sprite v2 loopt |
 | Soulibri | `kolibrie/` | – |
 | Moonkey | `nachtaap_evo/` | – |

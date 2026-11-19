@@ -126,3 +126,4 @@ Jordi: "ja alleen de vleugels/staart moeten pikachu kleuren krijgen, de rest mag
 - r13, Jordi: "vanaf de snavel is die nog steeds te recht, maak dat stuk ook net wat ronder" · "naar onderen vanaf de snavel" → r14 (Claude): kin onder de snavel bolt uit, omtrek rij 33–38 = 15,14,14,15,16,17 (12 px).
 - r14, Jordi: "NEEEEE" → r14 vervalt; terug naar r13, Jordi tekent zelf op raster_kop.png.
 - Jordi: "dat is toch geen cirkel meer" → r15 (Claude, vanaf r13): onder de snavel buigt de kop als cirkel terug naar de hals (omtrek rij 32–37 = 16,17,18,18,19,19); verre wang (rood) valt daardoor weg; 15 px.
+- Jordi: "neeeee" (r15) · "jezus man hoe moeilijk kan didt zijn" → r16 (Claude, vanaf r13): linkerhelft van de kop op een echte cirkel (middelpunt oog 26,29, straal 10): bovenlinks een koepel tot aan het linkeroor, onder de snavel terug naar de hals; ±34 px.

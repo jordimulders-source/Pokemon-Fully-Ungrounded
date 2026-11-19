@@ -322,3 +322,21 @@ Copy THIS llama exactly: the same animal, the same pose, the same colors and the
 
 64x64 pixels, max 16 colors, 1 px dark outline, clean Gen 3 shading. Plain white background: no water, reflection, mountains, shadow or ground. One single llama.
 ```
+
+## Ronde 12 (prompt v8, alleen de foto) → `r12/r12_lama_foto.png`
+Jordi (19 nov): "dan gaat die focussen op de poten" · "eindelijk"
+Plakwerk `poten/r4_poten_r12.png` (`poten/plak.py`): r4 met de vier poten van r12 (×0,93, verschoven (12, 250), omgekleurd naar karamel op luminantie); r4-handschoenen en achterpoten weggehaald (voor vanaf y 865, achter vanaf y 812).
+
+## Prompt r13 (nieuw gesprek; bijlage `poten/r4_poten_r12.png`)
+```
+This is a Pokémon design, drawn as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art). The four legs were roughly pasted in from another drawing, so the seams don't match and the legs look rough.
+
+KEEP the position, angle and order of all four legs EXACTLY as they are in this picture. Do not move, straighten or re-arrange any leg. This walking pose is correct.
+
+Clean it up into one consistent sprite:
+- Connect the legs smoothly to the woolly body, in the same caramel colors, outline and shading as the rest of the body. Remove the loose hairs between the legs.
+- The two legs on the far side are slightly darker than the two near legs.
+- Put red MMA gloves with a black wrist strap on BOTH front feet (the two left-most legs): closed, pointing forward to the left in the walking direction, only two small toenails peeking out. No fingers, no thumb, no open palm. The back feet are normal hooves.
+
+Keep EVERYTHING else exactly as it is: head, ears, eye, mouth, wool, neck, collar, pompoms, back cloth, tail, colors, style. Plain white background.
+```

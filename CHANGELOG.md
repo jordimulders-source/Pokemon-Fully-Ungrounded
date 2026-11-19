@@ -2223,3 +2223,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Vuurwerk fase 1 r4 (met vormschets) opgeslagen (`r4/`); Jordi: hoofd te hoog, armen nog steeds niet goed, komt nog steeds niet uit de vuurpijl.
 - Vuurwerk fase 1 prompt v5: opnieuw opgebouwd vanuit het beeld (geest uit een wonderlamp, lamp = vuurpijl), armen als kapperspaalstreep, kop vlak boven de punt, korter; analyse waarom v1–v4 misgingen in het bestand.
 - Vuurwerk fase 1 r5 (prompt v5) opgeslagen (`r5/`); Jordi: "geen idee wat dit is". Wel: "de designs vind ik echt prima, mooi kleur gebruik, prima gezicht, alleen dezelfde 2 dingen gaan telkens fout".
+- Vuurwerk fase 1: Jordi: "ze krullen nog nergens echt goed", samenstellen vervalt; nieuwe opbouw van Jordi (vuur maakt het dier, 2 armen 2 keer om de pijl, handen pakken hem bovenin, hoofd daar vlak bij) → prompt v6.

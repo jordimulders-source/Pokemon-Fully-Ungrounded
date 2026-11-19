@@ -2284,3 +2284,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.546] - Idee: Skinguin (Delibird-evolutie)
 - `IDEEEN.md` → Delibird-evolutie: Skinguin, een pinguïn met ski's als voeten, rood/wit, een ski-/kerstmuts als hoofdvorm, en een pose alsof hij razendsnel van een piste afvliegt (Jordi, 19 nov). Achtergrond rockhopper, voorstel macaronipinguïn en open vragen erbij.
+
+### [v0.0.547] - Skinguin: koningspinguïn-argument
+- `IDEEEN.md` → Skinguin: Jordi's argument voor de koningspinguïn ("s-kinguin") erbij.

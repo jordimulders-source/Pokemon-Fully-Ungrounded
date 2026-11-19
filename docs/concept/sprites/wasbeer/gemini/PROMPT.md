@@ -88,3 +88,7 @@ FORMAT
 - Pixel art only: a 64x64 sprite on a visible pixel grid, enlarged with hard square pixels, exactly like the attachment. Not an illustration, no smooth line art, no anti-aliasing, no gradients. Max 16 colors.
 - Plain white background, no ground, no shadow, no effects.
 ```
+
+### Ronde 3 (prompt v3) → `r3_prompt_v3.png`
+Jordi (19 nov): "ik zie wederom geen verschil?"
+Claude: Gemini kan een bestaande pixelsprite niet oppoetsen; met de sprite als bijlage kopieert hij hem (r2, r3) of maakt hij een tekening (r1). Voorstel: Gemini stoppen, poetsronde in de sprite zelf (zoals Picapau: alleen pixels aanpassen, niets hertekenen).

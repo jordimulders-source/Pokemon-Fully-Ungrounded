@@ -118,3 +118,6 @@ Jordi: "dit mislukt ook, het moet echt om de positie gaan, maak dat duidelijk" �
 ## Ronde 9 (prompt v6, uitsnede) → `r9_achterstuk.png`
 Jordi: "hij snapt het niet, andere suggestie nog?" Gemini kan de achterpoten niet omwisselen (5 pogingen). Voorstel Claude: gang repareren in de spritefase met de eigen modelpixels (poten verschuiven op 64 px, varianten ter keuze), of een schets van Jordi als bijlage.
 Jordi: "misschien toch een bronafbeelding nog proberen?" → prompt v7: foto van een lopende alpaca (telgang) als enige bijlage, design in woorden (Claude kan zelf geen foto's ophalen: Wikimedia geblokkeerd).
+
+## Ronde 10 (prompt v7, foto als bijlage) → `r10_foto.png`
+Jordi: "het hele ontwerp is nu anders, MAAR, de achterpoten zijn eindelijk goed" → model = r4 (ontwerp, gezicht, voorpoten) + achterpoten van r10. Knippen/plakken op 1024 px gaf ruwe naden (proef weggegooid; les GEMINI.md: zelf knippen blijft ruw); samenvoegen gebeurt op spriteformaat door de maker.

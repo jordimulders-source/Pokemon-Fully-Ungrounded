@@ -82,3 +82,38 @@ AVOID
 ```
 
 Jordi (19 nov, letterlijk): "gemini heeft echt een prima referentie kader dus die andere fotos zijn niet nodig, noteer dat ook vanaf nu in de documenten, ik ga deze prompt gebruiken" → vastgelegd in `docs/lessen/GEMINI.md` (bovenaan).
+
+## Ronde 2 (prompt v2) → `r2/r2_prompt_v2.png`
+Jordi (19 nov): "de handschoenen zijn prima, ga je in een sprite toch amper zien. Halsband is even de vraag of het anders naar een sprite te vertalen is. Verhouding, oren en mondlijn akkoord" + "A, maak maar een nieuwe prompt" (A = akkoord met Claudes kritiek: lijf grote wolk op dunne gladde stokpoten met vrij kleine kop (schaapkant), oren recht i.p.v. banaan, glimlachje). Halsband: kleuren zijn die van de goedgekeurde sprite; vertalen in de spritefase.
+
+## Prompt v3 (nieuw gesprek; alleen `bijlage1_oude_sprite_8x.png`, geen andere foto's)
+```
+Draw a Pokémon as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art), facing left.
+
+ATTACHMENT
+- The attachment is the old sprite of this Pokémon. KEEP its pose (body almost in side view facing left, head turned 3/4 towards the viewer, all four legs on the ground in a walking step, tail up), its colors and its clothing pieces. Redraw everything else better; do not trace its drawing.
+
+THE CREATURE
+- A young Fighting-type llama Pokémon, the middle stage of a starter line (like Charmeleon or Monferno): the evolution of a small fluffy alpaca, not yet fully grown. Its final evolution is the big muscular one; this one is young and FLUFFY, not muscular.
+- It stands on all four legs. It is an animal, not a humanoid. It must read as a LLAMA, not a sheep.
+- Fur: caramel, fluffy and woolly, like Mareep and Flaaffy: the body and the neck are soft rounded masses of wool, with a few big smooth wool bumps in the outline. Not smooth short fur, not muscles.
+- Proportions: the body is NOT a huge wool cloud sitting on thin bare stick legs. The wool follows the llama body shape, and the wool continues a little down onto the upper legs. The head is bigger than you would expect: about one third of the total height.
+- Neck: long and dead straight, upright, also woolly.
+- Head: a real llama head: long face, rounded muzzle with a split lip, small nostrils.
+- Ears: long BANANA-SHAPED ears: they curve outwards from the head and then the tips curve inwards towards each other, like a pair of bananas. Not straight upright ears.
+- Mouth: closed and neutral, a straight line. No smile, no smirk.
+- Eye: one dark brown eye high on the side of the head with a heavy, flat, half-closed upper eyelid pressing on it: a dry, unimpressed, "watching the world go by" look, like Numel or Slakoth. No big round cute eyes, no sparkles.
+
+CLOTHING (draw these well, as real woven Andean fabric)
+- Red wool tassels in both ears.
+- A narrow woven aguayo band around the base of the neck (three colored stripes) with five small wool pompoms hanging from it.
+- A woven aguayo cloth lying on the back, with a fold and a hem, hanging down a bit on the side.
+- Red MMA gloves with a black wrist strap on the FRONT feet only. The glove covers the hoof like a mitten; only the two small toenails of the llama hoof peek out at the front. NO fingers, no hand. The back feet are normal hooves.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left, clean shading with large calm areas like official Gen 3 sprites, no noise.
+- Plain white background. No ground, rock, shadow or base. No effects. One single creature.
+
+AVOID
+- Not a horse, deer, sheep, camel or alpaca. Not muscular, no bodybuilder look. Not standing on two legs. No plush toy, chibi or mascot look.
+```

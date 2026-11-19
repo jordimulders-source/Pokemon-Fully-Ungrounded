@@ -1,0 +1,47 @@
+# r4: kleur/waarde-ronde op de vormen en plekken van het model (silhouet r3 blijft). Kleur mag richting Gen 3 afwijken.
+# Lint (lijf/krullen): d lichtrand-selout, l lichtrand, m basis, s schaduw, # schaduwrand. Huls: # randen links en rechts,
+# diagonale banden l/t (roze, t = schaduwkant), M/p (magenta), Y/b (geel); schaduwkant = kol 11-12. Handjes: alleen l/m/d.
+B('pijl+handjes',14,0,"""...##d#kkkkkkddbbk
+..dlmddkkkkdddlmdl
+..dlmlldkkdllmmmdl
+.dmmmddkkkkddmmsdl
+.dmmmlldkdllmdmmsd
+dlmddddllMMpddmmsd
+.dlmm#llMMMpp#lmsd
+.dlms#MMMMpbb#lmms
+..dlm#MMMYYbb#lmms
+..dms#MMYYYbt#lmms
+...ds#MYYYltt#lms#
+....##YYYlltt#lms#
+.....#YYlllddlmms#
+.....#Yllddllmmms#
+.....#lldllmmmms#.
+.....#ldlmmmmmms##
+.....#dlmmmmmms##.
+.....dlmmmmmss#...
+...ddlmmmmms##....
+...dlmmmms###.....
+..dlmmms#YYb#.....
+..dlmms#YYYb#.....
+.dlmms#YYlltt#....
+.dlms#Ylllltp##...
+..dlm#llllMpp#m#..
+..dms#lllMMpp#ms#.
+...#s#bkkkkkb#ms#.
+....##b#lld#b#ms#.
+.....###lld##dms#.
+........dld#dmss#.
+........dldmsssp#.
+........ddmsssp#..
+.......dmsssp##...
+......dmsssp#.....
+......dmssp#......
+.....dmsspl#......
+.....dmss#l#......
+.....dms###.......""","rij 14-51 kol 0-17, vormen en randen gemeten in het model (cov/median): hulsranden kol 5 en 13 (model 5e0732/8d8687/963157), "
+ "streepbanden uit de modelkleuren per pixel (magenta c7238c-d3239a, geel f3e373, roze ec90ad, mauve b4637a = schaduwkant kol 11-12), "
+ "krul-bovenrand (26,11-12)(27,9-10)(28,8)(29,7)(30,6)(31,5) en onderrand (32,12)(33,10-11)(34,8)(35,7)(36,6) (model 5f073a/881f5e/9c0038/ba1748/c56d61), "
+ "lichtrand l langs de bovenrand, schaduw s langs de onderrand, glitter weg; handjes: vingers l (16,5-6)(18,5-6) links, (16,11-12)(18,10-11) rechts, spleten d (model); "
+ "scheiding hand/mond: lijn d (15,16)(16,16)(17,16)(18,17)(19,17) (model 96244b/941b3f/832a37); onderste lint s/p met m-lichtrand")
+P('handjes',"18,9=k","geen losse lijnpixel op de huls (model tkb 67)")
+P('kegel',"3,10=m","ruis: los schaduwvlakje in de kegelpunt -> basistint")

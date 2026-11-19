@@ -120,3 +120,4 @@ Jordi: "ja alleen de vleugels/staart moeten pikachu kleuren krijgen, de rest mag
 - Jordi over r9 A/B: "A en B allebei waardeloos slecht bedoel ik dus" · "stop daar maar mee" → r9 vervalt; r10 alleen kleur/schaduw op vorm r8b.
 - r10, Jordi: "A is goed, goed idee, alleen de bovenste stekel moet nu weer terug naar de eerdere vorm. Kijk naar het model, hij staat eerder naar boven dan naar beneden gericht. Dan moet het hoofd aan de linkerkant nog steeds ronder, dan is de vorm klaar" → r11 (maker).
 - r11, Jordi: "het hoofd links moet ronder" → r12: 3 varianten A/B/C (maker).
+- Jordi: "hoe vaak moet ik dat zeggen" · "hij is nu nog platter" (r11 linkerrand werd een verticale wand x16). r12-opdracht gecorrigeerd: bolle boog boven én onder de snavel, geen rechte stukken > 2 rijen.

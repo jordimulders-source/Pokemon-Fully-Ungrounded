@@ -2210,3 +2210,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - `docs/lessen/OVERWORLD_WERKWIJZE.md`: Gemini is leidend; nog niet getest wanneer Gemini de fout in gaat; volgorde eerst front, rug en icoon, dan samen naar Gemini; promptsjabloon van de viscacha (ronde 2).
 - CLAUDE.md, toon: Jordi "je hoeft de serieuzere toon niet zo te benadrukken, ungrounded is gewoon humor alom en fully ungrounded wordt gewoon net als normale pokemon games".
 - IDEEEN.md, kreten: geen bestaande kreten vervormen; latere generaties gebruiken soms geluiden die op echte dieren lijken (komt later).
+
+### [v0.0.534] - Hummlet: opknapronde via Gemini gestart
+- Jordi: "hummlet is net niet genoeg een hummingbird chick". Keuzes: alles mag beter ("maar wat wel goed vertaalt naar een sprite"), snavel langer en dun en dicht, kleuren blijven, pose als bolletje zoals foto 5.
+- Gemini-prompt v1 + bijlagen in `docs/concept/sprites/kolibrie_pre/gemini/`; SPEC en `OPKNAPRONDE_GEMINI.md` bijgewerkt.

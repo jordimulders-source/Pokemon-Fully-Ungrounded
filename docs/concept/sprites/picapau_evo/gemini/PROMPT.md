@@ -220,3 +220,4 @@ The attachment is the official concept art of a Pokémon. Draw its in-game front
 - Jordi: "vooral de staartdonderschok" (kleurronde).
 - Jordi: "er staan opeens een paar gekke pixels boven het oog, haal die eens weg" · "zwarte pixels" → kleur r3: (20,8),(21,8),(19,9) zwart → lichtbruin.
 - Jordi: "zijn nog paar kleine dingetjes die hij kan fixen" · "ik zie onder de poot en staart nog wel losse pixels namelijk" → kleur r4: 5 losse zwarte pixels weg (20,52),(27,52),(29,52),(34,52),(30,53).
+- Jordi: "nee nu heb je teveel weggehaald" · "4 en 5 moeten weg. Maar 2 pixels links en 1 omhoog van 4 zit er ook nog 1 die weg moet, de rest blijven" → kleur r4 = r3 zonder (34,52),(30,53),(32,51); klauwtjes terug.

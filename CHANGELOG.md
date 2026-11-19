@@ -2218,3 +2218,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Gemini-prompt fase 1 vuurwerklijn: `docs/concept/sprites/vuurwerk_fase1/gemini/PROMPT.md` (A salamander, B gekko; besluiten letterlijk, lezing Claude apart).
 - Vuurwerk fase 1 r1 (Gemini A/B) opgeslagen in `docs/concept/sprites/vuurwerk_fase1/r1/`; Jordi: Charmander-kop, lijf niet zichtbaar uit de pijl, armen geen extra ronde. Prompt v2 (vuursalamander/wimpergekko, zonder bijlage (Jordi), vlam uit mondstuk = lijf, armen een volle ronde om de huls).
 - Vuurwerk fase 1 r2 opgeslagen (`r2/`); Jordi: kleuren prima, armen krullen niet, komt niet uit de pijl. Prompt v3: lijf recht omhoog, de armen zijn de krullen, één vlam uit het mondstuk = het wezen.
+- Vuurwerk fase 1 r3 opgeslagen (`r3/`); Jordi: "het wordt er niet beter op".

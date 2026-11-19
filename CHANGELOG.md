@@ -2302,3 +2302,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Prompt bijgewerkt: snavel en wenkbrauwen in de vorm van de macaronipinguïn, in Delibirds artstijl (Jordi).
 - Prompt: hij staat niet op ski's, zijn voeten hebben een skivorm (Jordi).
 - Prompt zonder bijlagen (Jordi).
+
+### [v0.0.552] - Skinguin: Gemini r1 en prompt v2
+- r1 (`skinguin/gemini/r1.png`): zwart-witte pinguïn met losse muts en losse ski's. Jordi: rood/wit zoals Delibird, snavel en ski's Delibird-geel, wenkbrauwen wit, muts onderdeel van het rode lijf met witte buik, verder voorover leunen. Nieuwe startprompt `PROMPT_v2.md` (nieuw gesprek).

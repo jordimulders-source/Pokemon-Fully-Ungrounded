@@ -105,7 +105,7 @@ Bovenaan gehouden zodat de stand in één oogopslag te zien is. Details in de se
     - L-vorm (Jordi, 19 nov): "die rechtop pose is ook mooi, alleen gaat hij in onze pose wel in een soort l-vorm bergafwaarts dan". Jordi: "nee ik beschrijf met l vorm de pose" (geen bezwaar).
     - Zak (Jordi, 19 nov): "de zak verdwijnt".
     - Macaroni-kenmerk (Jordi, 19 nov): "macaroni pinguin de aerodynamische snavel en de wenkbrauwen, in dezelfde artstijl als delibird, maar dan de vorm van de macaroni pinguin".
-    - Gemini-startprompt: `docs/concept/sprites/skinguin/gemini/PROMPT.md`.
+    - Gemini-startprompt: `docs/concept/sprites/skinguin/gemini/PROMPT.md`; v2 na r1 (Jordi: "hij moet echt rood wit zijn zoals delibird, de ski's en snavel als uitzondering, die zijn delibird geel, de wenkbrauwen wit. De muts moet onderdeel van het lichaam zijn, het lichaam dat rood is met een witte buik. Daarnaast is die niet voorover genoeg geleund").
     - Open: welke pinguïnsoort; blijven de gele kuifveren zichtbaar of gaan ze op in de muts.
 - **Heliamphora-regional form van de Bellsprout-lijn** (Jordi, 9 nov: "gaan we sowieso doen"); de bekerplant van de tepuis (staat rechtop, met een klein lepelvormig dekseltje). Eerder: Victreebel-regional form verkennen: "van die hangende planten waar vliegen in kruipen en opgegeten worden bijv". (hangende bekerplanten zijn *Nepenthes*, Zuidoost-Azië).
 - **Octillery-evolutie:** zie `POKEMON.md` (Krassault; de tank-Octillery valt af, Jordi 10 nov).

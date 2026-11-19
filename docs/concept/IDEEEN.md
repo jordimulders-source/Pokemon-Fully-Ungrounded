@@ -103,7 +103,9 @@ Bovenaan gehouden zodat de stand in één oogopslag te zien is. Details in de se
     - Soort (Jordi, 19 nov): "We kunnen er ook een hybride van maken, dus koningspinguin met een kenmerk van de macaroni". Welk kenmerk: open.
     - Kuif (Jordi, 19 nov; antwoord op de opties kuif/snavel/rode ogen): "de kuif doen we dan delibird stijl".
     - L-vorm (Jordi, 19 nov): "die rechtop pose is ook mooi, alleen gaat hij in onze pose wel in een soort l-vorm bergafwaarts dan". Jordi: "nee ik beschrijf met l vorm de pose" (geen bezwaar).
-    - Open: welke pinguïnsoort; blijven de gele kuifveren zichtbaar of gaan ze op in de muts; wat er met de zak/staart gebeurt.
+    - Zak (Jordi, 19 nov): "de zak verdwijnt".
+    - Gemini-startprompt: `docs/concept/sprites/skinguin/gemini/PROMPT.md`.
+    - Open: welke pinguïnsoort; blijven de gele kuifveren zichtbaar of gaan ze op in de muts.
 - **Heliamphora-regional form van de Bellsprout-lijn** (Jordi, 9 nov: "gaan we sowieso doen"); de bekerplant van de tepuis (staat rechtop, met een klein lepelvormig dekseltje). Eerder: Victreebel-regional form verkennen: "van die hangende planten waar vliegen in kruipen en opgegeten worden bijv". (hangende bekerplanten zijn *Nepenthes*, Zuidoost-Azië).
 - **Octillery-evolutie:** zie `POKEMON.md` (Krassault; de tank-Octillery valt af, Jordi 10 nov).
 - **Kecleon-evolutie: een leguaan** (Jordi, 9 nov: "dan hebben we bij deze onze Kecleon evolutie"); evolueert zodra Kecleon op de Galápagos-locatie in de game is (plaatsgebonden, zoals Nosepass en Magneton). Kecleon is in de repo Grass. Er bestaat nog geen leguaan-Pokémon. **Keccles evolueert ook op die locatie** (Jordi, 9 nov: de Galápagos komt relatief laat in het verhaal). Welke leguaan (zee-, land- of roze leguaan) en type: later (Jordi, 9 nov). Eerder: Kecleon-evolutie: past in het verhaal als Keccles late game evolueert.

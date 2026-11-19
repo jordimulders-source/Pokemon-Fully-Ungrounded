@@ -128,3 +128,4 @@ Jordi: "ja alleen de vleugels/staart moeten pikachu kleuren krijgen, de rest mag
 - Jordi: "dat is toch geen cirkel meer" → r15 (Claude, vanaf r13): onder de snavel buigt de kop als cirkel terug naar de hals (omtrek rij 32–37 = 16,17,18,18,19,19); verre wang (rood) valt daardoor weg; 15 px.
 - Jordi: "neeeee" (r15) · "jezus man hoe moeilijk kan didt zijn" → r16 (Claude, vanaf r13): linkerhelft van de kop op een echte cirkel (middelpunt oog 26,29, straal 10): bovenlinks een koepel tot aan het linkeroor, onder de snavel terug naar de hals; ±34 px.
 - Jordi tekende de rand op r13/raster_kop.png (`r13/jordi_rand.png`): "als dit de nieuwe rand is ben je er vgm" → r17 = r13 + (15,31) en (15,34) donkerrood: rand x15 van rij 31 t/m 34 (2 px). r14–r16 vervallen.
+- Jordi: "lieg niet" · "je hebt 2 pixels toegevoegd ipv 4" → ook (15,30) en (15,35); r17 = r13 + 4 px (15,30/31/34/35).

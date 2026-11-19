@@ -2287,3 +2287,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.547] - Skinguin: koningspinguïn-argument
 - `IDEEEN.md` → Skinguin: Jordi's argument voor de koningspinguïn ("s-kinguin") erbij.
+
+### [v0.0.548] - Skinguin: pose en hybride
+- `IDEEEN.md` → Skinguin: pose (vleugels strak naar achter, ski's schuin naar voren, muts/hoofd naar achter) en het idee van een hybride koningspinguïn met een macaroni-kenmerk.

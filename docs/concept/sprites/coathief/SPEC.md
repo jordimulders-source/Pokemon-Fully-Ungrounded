@@ -77,3 +77,10 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Basis en stijl: de goedgekeurde ol
 - Ter info uit de laatste keuring (geen opdracht): staande klauwen lezen als liggende nagels (volgt de onderlaag); hangende klauwen 4–5 rijen (olinguito ±6); staart 11–14 rijen recht omhoog; verre poten nauwelijks donkerder dan nabije.
 - Open: A/B-test kleine kleurreparaties (zie boven), frame 2, rug, icoon, shiny, data.
 - **Kosten (gemeten uit de sessielogs):** hoofdsessie ±0,40M output + 0,75M nieuwe input; maker (13 rondes) ±0,57M + 3,6M; 5 keurders ±0,4M + 1,0M. Duurste deel: 6 voorpootrondes zonder pixelraster.
+
+## Opknapronde via Gemini (19 nov)
+- Jordi: "we gaan coathief fixen, hoeft niet veel gefixed te worden, paar kleine dingetjes" · "nee het is de pose vooral, die is zijwaarts" · "en een wat nettere afwerking" · "het design concept is prima". Pose: zelfde als in oktober, nu echt driekwart. Bijlage: "alleen de sprite die we nu hebben".
+- Gemini r1 (`gemini/r1_prompt_v1.png`): "beter, maar hij heeft het hoofd iets teveel aangepast" · "de vorm ben ik wel tevreden mee overigens" · "lijkt meer op een echte coati" · "maar het is de kleur van het oog" · "maar dat kunnen we fixen" · "eigenlijk is die heel goed he".
+- Klauwen: "klauwen laten zoals ze zijn, maak de sprite maar. De klauwen zijn juist goed nagemaakt. Je mag dit als nieuwe model hanteren, maar wat gemini nog niet heeft gedaan is goed kleurgebruik/schaduwen etc. Daar mag je meteen mee gaan werkren ipv wachten op mijn akkoord".
+- **Nieuw model = r1 (bevroren vorm).** In de sprite: oog rood zoals de oude sprite (`8c2418`/`b04a2c`); oren zwart (Claude stelde voor, Jordi oktober: "De oren mogen trouwens ook weer zwart worden, bivakmuts idee"); kleur/schaduw naar Gen 3; donkerder tonen dan Linoone/Furret.
+- Onderlaag: `sprite/natief.png` (pitch 8, 104×124) → `sprite/reduce.py` (2×2, fase 1,1 = Gemini's eigen pixels) → `sprite/onderlaag_rgb.png` (52×62, 1262 px). Oude versie blijft in `af/` tot de nieuwe af is.

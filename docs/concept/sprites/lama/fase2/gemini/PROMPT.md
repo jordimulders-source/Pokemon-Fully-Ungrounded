@@ -280,3 +280,33 @@ STYLE AND FORMAT
 AVOID
 - Not a horse, deer, sheep, camel or alpaca. Not muscular, no bodybuilder look. Not standing on two legs. No plush toy, chibi or mascot look.
 ```
+
+## Ronde 10 (prompt v6) → `r10/r10_v6.png`
+Jordi (19 nov): "lukt weer niet, ander idee, deze lama heeft de juiste pose toch, maar dan gespiegeld? We vragen gewoon aan gemini om daar een pokemon sprite van te maken, in exact dezelfde pose. Moet jij alleen even de foto spiegelen. Dan knippen/plakken en nog een laatste ronde"
+Foto: `foto/lama_loop_origineel.png` (Jordi), gespiegeld `foto/lama_loop_gespiegeld.png`; bijlage = `foto/lama_loop_gespiegeld_uitsnede.png` (zonder watermerkregel onderaan).
+
+## Prompt v7 (nieuw gesprek; enige bijlage `foto/lama_loop_gespiegeld_uitsnede.png`)
+```
+Turn the llama in this photo into a Pokémon, drawn as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art).
+
+POSE: copy the pose of the photo EXACTLY: facing left, walking, every leg in exactly the same position and angle as in the photo (which leg is forward, which is back, which is near and which is far). Do not change, straighten or re-arrange the legs. Ignore the background, water, reflection and the colors of the photo.
+
+THE CREATURE
+- A young Fighting-type llama Pokémon, the middle stage of a starter line: young and FLUFFY, not muscular. An animal on four legs, a LLAMA, not a sheep.
+- Fur: caramel, fluffy and woolly like Mareep and Flaaffy: soft rounded wool masses on the body and the neck, a few big smooth wool bumps in the outline; the wool continues a little down onto the upper legs.
+- Head about one third of the total height; long upright woolly neck.
+- Llama head: long face, rounded muzzle with a split lip, long banana-shaped ears, one dark brown eye with a heavy, flat, half-closed upper eyelid (a dry, unimpressed look). Mouth closed, a flat line.
+
+CLOTHING
+- Red wool tassels in both ears.
+- A narrow woven aguayo band around the base of the neck (red, yellow, green stripes) with five small colored wool pompoms.
+- A red woven aguayo cloth with a colorful pattern lying on the back, with small tassels on the lower edge.
+- Red MMA gloves with a black wrist strap on BOTH front feet: closed, pointing forward to the left, the far one slightly darker, only two small toenails peeking out. No fingers, no thumb. The back feet are normal hooves.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left, clean shading with large calm areas like official Gen 3 sprites, no noise.
+- Plain white background. No ground, water, reflection, shadow or base. No effects. One single creature.
+
+AVOID
+- Not a horse, deer, sheep, camel or alpaca. Not muscular. No plush toy, chibi or mascot look.
+```

@@ -20,3 +20,24 @@ Eerst: is het ontwerp het onze (gezicht, oren, wangpluk, kleurverdeling) en staa
 
 ## Ronde 1 (18 nov): afgekeurd
 (beeld kwam niet als bestand binnen) Drie aanzichten, maar rechtop op twee poten met ronde buik; Jordi: "lijkt meer op een raichu" · "of pachirisu". Gemini glijdt naar bekende soorten (zie GEMINI.md, viscacha werd eerder ook Raichu).
+
+## Ronde 2 (19 nov)
+Jordi: "doe toch een prompt voor de zekerheid met een afbeelding, het kost niks om het te proberen". Claude bouwt intussen de eigen route (onderdelen uit front/icoon/rug); Gemini is de vergelijking.
+Verschil met r1: bijlage toont front én rug van ons ontwerp (`bijlage_r2_ontwerp.png`), de bouw staat in woorden (viervoeter, gehurkt, lang lijf), en wat niet mag lijken staat erbij (r1 werd een rechtopstaande Raichu/Pachirisu).
+
+**Variant A** (nieuw gesprek, alleen `bijlage_r2_ontwerp.png`):
+> The image shows the battle sprites (front and back) of my own Pokémon, a mountain viscacha (a South American rodent related to chinchillas). Draw its overworld sprite in the style of Pokémon HeartGold/SoulSilver walking Pokémon: three views of the SAME creature, each in its own 32×32 pixel square, side by side on one baseline:
+> 1. facing down toward the viewer: straight front view, both eyes visible, symmetrical;
+> 2. facing up away from the viewer: straight back view, we see the back of the head, both ears, the back and the tail;
+> 3. facing left: side view.
+>
+> Body plan (keep it): a FOUR-LEGGED rodent, crouched low with a long body and a round arched back, standing on all fours, NOT upright on two legs. Long tail that curls upward with a jagged yellow tuft at the tip. Two rounded upright ears close together. Heavy-lidded, half-closed sleepy dark eye. A yellow lightning-shaped tuft on each cheek, thin whiskers, sandy ochre fur, cream chest. Copy the colors from the image.
+>
+> AVOID: Raichu, Pikachu, Pachirisu, Dedenne, rabbits, standing on two legs, a round belly facing the viewer, round red cheeks, big shiny anime eyes, any electricity or effects.
+>
+> Chibi proportions like HGSS walking sprites: head a bit larger, body compact, each view about 21 pixels tall. Black outline, flat colors with one shade. Show it enlarged so every pixel is a clear square. Plain white background, no ground, no shadow, no text.
+
+**Variant B** (alleen als A het aanzicht/de maat niet snapt; nieuw gesprek, bijlagen `bijlage_r2_ontwerp.png` + `bijlage_r2_layoutvoorbeeld_eevee.png`): zelfde prompt, met na de eerste alinea:
+> The second image is only an example of the format (three views, size, outline style) using a different Pokémon, Eevee. Do NOT copy Eevee's shape, face, ears, colors or fur; only copy how the three views are laid out and how simple and small they are.
+
+Toetsen: eerst eis 0 (lijkt het op onze front: viervoeter, bolle rug, oren, slaperig oog, wangpluk, staart), dan of elk aanzicht recht is, dan maat en techniek.

@@ -193,3 +193,41 @@ Keep EVERYTHING else exactly as it is: pose, head, ears, eye, mouth, wool, neck,
 ## Ronde 7 (prompt r7, naad) → `r7/r7_naad.png`, vergelijking `r7/plak_vs_r7.png`
 Jordi (19 nov): "vgm is dit hetzelfde? Staan de poten zoals ze horen te staan bij een lama?"
 Claude: bijna identiek aan het plakwerk (alleen polsband voor rood, hoekje glad). Gang: nabije voor vóór + nabije achter achter, verre voor achter + verre achter vóór = diagonaal (draf), geen telgang (lama/alpaca, SPEC 24 okt). Opties aan Jordi: zo laten en in de spritefase repareren / nog één Gemini-poging met poten in woorden / foto als bij Palpaca.
+
+## Prompt v5: telgang met foto (nieuw gesprek; enige bijlage: foto van een lopende lama in telgang, door Jordi)
+Jordi (19 nov): "bij palpaca lukte het ook, dus we gaan het proberen, prompt aub" (uitzondering op de regel zonder extra foto's, door Jordi zelf gekozen; zoals Palpaca prompt v7 → r10). Tekst = v4 + gang en handschoenrichting; de beste delen worden daarna in r4 geplakt (zoals Palpaca r10 → r11).
+```
+Draw a Pokémon as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art), facing left.
+
+ATTACHMENT
+- The attachment is a photo of a real llama walking. Use it ONLY for the walking gait: llamas PACE, the two legs on the same side move together. Ignore its colors, wool and background.
+
+POSE AND LEGS
+- Body almost in side view facing left, head turned 3/4 towards the viewer, tail up, all four feet on the ground, walking.
+- PACING GAIT: the near front leg and the near hind leg (the two legs on the side facing us, drawn lighter) both step FORWARD together. The far front leg and the far hind leg (the two legs on the other side, drawn darker, partly behind the body) are both BACK together.
+- Not a trot: the near front leg and the far hind leg must NOT be forward together.
+
+THE CREATURE
+- A young Fighting-type llama Pokémon, the middle stage of a starter line (like Charmeleon or Monferno): the evolution of a small fluffy alpaca, not yet fully grown. Its final evolution is the big muscular one; this one is young and FLUFFY, not muscular.
+- It stands on all four legs. It is an animal, not a humanoid. It must read as a LLAMA, not a sheep.
+- Fur: caramel, fluffy and woolly, like Mareep and Flaaffy: the body and the neck are soft rounded masses of wool, with a few big smooth wool bumps in the outline. Not smooth short fur, not muscles.
+- Proportions: the body is NOT a huge wool cloud sitting on thin bare stick legs. The wool follows the llama body shape, and the wool continues a little down onto the upper legs. The head is bigger than you would expect: about one third of the total height.
+- Neck: long and upright, but WOOLLY: its front and back outline have soft wool bumps, like the body. It must NOT be a smooth tube drawn with two straight parallel lines.
+- Head: a real llama head: long face, rounded muzzle with a split lip, small nostrils.
+- Ears: long BANANA-SHAPED ears, clearly curved, not straight. Each ear bends like a banana: the base leans outwards and the tip curves back inwards, so the two ear tips point towards each other.
+- Mouth: closed and relaxed, a short almost flat line. Not smiling and not frowning.
+- Eye: one dark brown eye high on the side of the head with a heavy, flat, half-closed upper eyelid pressing on it: a dry, unimpressed, "watching the world go by" look, like Numel or Slakoth. No big round cute eyes, no sparkles.
+
+CLOTHING (draw these well, as real woven Andean fabric)
+- Red wool tassels in both ears.
+- A narrow woven aguayo band around the base of the neck (three colored stripes: red, yellow, green) with five small colored wool pompoms hanging from it.
+- A woven aguayo cloth lying on the back: RED with a clearly visible colorful woven pattern of stripes and small geometric motifs, with a fold, a hem and small tassels on the lower edge, hanging down a bit on the side.
+- Red MMA gloves with a black wrist strap on BOTH front feet. BOTH gloves are closed and point forward to the LEFT, in the walking direction; the far glove is slightly darker. The glove covers the hoof like a mitten; only two small toenails peek out at the front. NO fingers, no thumb, no open palm. The back feet are normal hooves.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left, clean shading with large calm areas like official Gen 3 sprites, no noise.
+- Plain white background. No ground, rock, shadow or base. No effects. One single creature.
+
+AVOID
+- Not a horse, deer, sheep, camel or alpaca. Not muscular, no bodybuilder look. Not standing on two legs. No plush toy, chibi or mascot look.
+```

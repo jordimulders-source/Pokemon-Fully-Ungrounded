@@ -7,10 +7,11 @@
 - Over r10: "het hele ontwerp is nu anders, MAAR, de achterpoten zijn eindelijk goed"
 
 ## Model
+- **Bevroren (19 nov): `model/model.png` = Gemini r11** (r4 + achterpoten r10, naad gladgemaakt; Jordi: "hier kunnen we mee vooruit denk ik?"). De regels hieronder zijn de opbouw.
 - `gemini/r4_prompt_v3.png`: ontwerp, gezicht, kop, nek, kraag, lijf, staart, beide voorpoten met handschoenen (Jordi: "Prima denk ik").
 - `gemini/r10_foto.png`: alleen de twee achterpoten (telgang: nabije achterpoot naar voren onder de buik, licht; verre achterpoot naar achteren, donkerder).
 - Palet: oud palet van Palpaca (`ronde17/variant_kop/normal.pal`), tenzij Jordi anders zegt.
 - Grootte: ±48 px hoog zoals de huidige sprite.
 
 ## Stand
-Gemini-rondes r1–r10 in `gemini/PROMPT.md`. Volgende: spritefase (maker), achterpoten van r10 op spriteformaat aan het r4-lijf.
+Gemini-rondes r1–r10 in `gemini/PROMPT.md`. Spritefase: opdracht `sprite/OPDRACHT.md`, rondes in `sprite/rN/`.

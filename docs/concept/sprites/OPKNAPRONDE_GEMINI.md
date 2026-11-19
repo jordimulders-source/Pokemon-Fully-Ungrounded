@@ -15,6 +15,10 @@ Bestaande, goedgekeurde designs die nog "een beetje 2D" staan opnieuw via Gemini
 - **Palpaca:** "palpaca heeft bijv nog steeds een beetje een gek aangezicht, daar gaat het mij vooral om" · "Belangrijk hierin is dat de sprite moet zijn zoals een alpaca in het echt loopt, dat is anders dan een paard doet toch? Het design moet zo blijven alleen de pose moet natuurlijker, de hoek moet natuurlijker, hij moet netter"
 - Spooktrein fase 3: "toch nog wel een slordige sprite, die zou ondanks dat die nieuw is wel een opknapbeurt kunnen gebruiken denk ik"
 
+## Coathief (19 nov)
+- Jordi: "we gaan coathief fixen, hoeft niet veel gefixed te worden, paar kleine dingetjes" · "nee het is de pose vooral, die is zijwaarts" · "en een wat nettere afwerking" · "het design concept is prima"
+- Pose (antwoord 19 nov): zelfde pose als in oktober (naar je toe lopen, confrontatie, één voorpoot opgetild), nu echt driekwart.
+
 ## Volgorde en stand
 | soort | map | stand |
 |---|---|---|
@@ -26,3 +30,4 @@ Bestaande, goedgekeurde designs die nog "een beetje 2D" staan opnieuw via Gemini
 | Hummlet | `kolibrie_pre/gemini/`, `kolibrie_pre/sprite/` | **af** (19 nov, Jordi: "Akkoord"; sprite r3 met oog a, oog b bewaard als `af/kolibrie_pre_oogB.png`) |
 | Palpaca | `alpaca/gemini/`, `alpaca/sprite/` | **af** (19 nov, `alpaca/af/`; model = Gemini r4 + achterpoten uit r10 (foto als posebron), telgang; sprite r5; Jordi: "r5 is beter") |
 | Spooktrein fase 3 | – | kandidaat (Jordi: "slordige sprite"); groen bevroren of niet: nog open |
+| Coathief | `coathief/gemini/` | loopt (pose zijwaarts, nettere afwerking) |

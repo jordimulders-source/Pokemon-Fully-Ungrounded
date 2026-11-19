@@ -90,3 +90,8 @@ Good, keep everything exactly as it is (design, shapes, colors, style). Change o
 
 Jordi (19 nov): "ik heb niet gezegd dat de kleur van de vleugels anders moest, maar prima. Als je de sprite gaat bouwen wil ik dat je de kleuren van pikachu daarvoor gebruikt"
 → **Sprite bouwen met de kleuren van Pikachu** (`graphics/pokemon/pikachu/normal.pal`: geel 255 246 164 / 246 230 82 / 246 189 32 / 222 148 0, bruin 156 82 0 / 98 49 8, rood 230 148 131 / 230 90 65 / 197 32 24 / 123 41 8, grijs 123 123 139 / 64 64 72 / 41 41 41, zwart, wit). Gemini-kleuren niet overnemen.
+
+## Ronde 4 (verbeterprompt r4) → `r4_verbeter.png`
+Jordi (19 nov): "nee geen issue betekent dat je dat kan aanpassen. Anyways de hoek en pose vind ik prima. In de sprite betekent dat dat er 1 of 2 pixels max aan zwart oog boven de snavel uit komt. Ik heb het gevoel dat de staart nu wel veranderd is, past dit bij de vogel waarop die geinspireerd is?"
+- Hoek en pose: goed. Sprite-eis: verre oog max. 1–2 px zwart boven de snavel.
+- Staart (Claude, foto 1): echte specht = stijve, puntige, donkere steunstaart schuin omlaag in het verlengde van het lijf; de roodbruine kleur zit in de lange slagpennen. r4 = korte, horizontale waaier van losse veren (zangvogelstaart); r1–r3 en het model = stijve punt omlaag, past beter.

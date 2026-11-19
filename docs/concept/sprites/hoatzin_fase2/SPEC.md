@@ -17,3 +17,6 @@
 ## Kleur in de spritefase
 - Buik een tint paarser: richting #8E6280 (licht #A57A98, schaduw #7A5270); nu ±#946869. Moet opvallen en niet vloeken.
 - Blauw gezicht en rood oog met zwart puntje blijven.
+
+## Sprite r5 (19 nov)
+- Jordi: "D is het mooiste, maar de hele sprite is nog erg blurry" → buik D (#4C2860 / #7C4498 / #B47CD6).

@@ -55,6 +55,7 @@ Bovenaan gehouden zodat de stand in één oogopslag te zien is. Details in de se
   - **Gemini v14** (`sprites/vuurwerk/r11/gemini_v14_beste.png`), Jordi (16 nov): "dit vind ik de beste tot nu toe, het is nog steeds geen vuurwerkhoofd, maar wel dynamisch. Hoe de kleur geleidelijk verandert is ook vet".
   - **Jordi (16 nov):** "lukt het om hier een sprite van te maken?"; "wat ik dan aanraad is dat we om het hoofd heen dan vuurwerk spikkels doen" (in de spritefase, naar `referentie_vuurwerk_pixelart.png`). Meting Claude: Gemini-raster ±10,24 px (100×100), het dier ±69×72 natieve pixels → ±10% kleiner voor 64×64 (rijen/kolommen schrappen zoals bij Gengas).
   - **Lijn, Jordi (19 nov):** "De vuurpijl blijft heel de lijn terugkomen, maar wat er uit die vuurpijl komt dat verandert telkens per fase. Fase 3 hebben we dus al. Fase 1, staat de vuurpijl rechtop en komt er aan de onderkant vuur uit dat eromheen krult (nog even bedenken wat) en fase 2 weet ik nog niet, maar zo hoeven we ons ook niet aan de slang vast te houden". Fase 3 = de vuurwerkslang (`sprites/vuurwerk_fase3/af/`). Open: wat het krullende vuur van fase 1 wordt; fase 2 helemaal; of sterretje → wondertol hiermee vervalt.
+  - **Idee fase 2, Jordi (19 nov, open):** "misschien leuk om fase 2 dan zelf de vuurpijl ook vast te laten houden als een wapen oid".
 - **Pachamama Ground/Fairy.**
 - **Tiwanaku-vorm van Golett/Golurk** (type: nog niets bedacht, Jordi 8 nov).
 - **Iets met mate:** een vorm van Poltchageist/Sinistcha óf een originele Pokémon (Jordi, 8 nov: weet het nog niet zeker).

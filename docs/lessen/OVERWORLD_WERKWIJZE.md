@@ -4,6 +4,9 @@ Bewezen op de viscacha (19 nov): `docs/concept/sprites/viscacha/overworld/gemini
 
 **Oordeel Jordi (19 nov), letterlijk:** "alles is in de eigen route slechter, behalve misschien de staart positie, maar de staart vorm klopt ook niet. Plus gemini is wel consistent met andere sprites. Zijaanzicht is goed, hoofd naar verhouding, rug naar verohuding, aan de voorkant is die herkenbaar, met alle belangrijke elementen, terwijl eigen route het hoofd verschrikkelijk is, en de ogen wederom gewoon niet goed zijn, met te dikke heupen. Gemini geef ik een 9 tot 9,5 en de eigen route hooguit een 4". Naslag: `docs/concept/sprites/rug_icoon_studie/overworld/` (meetstudie) en `viscacha/overworld/PROMPT_OW.md` (prompts en rondes).
 
+## Lat (Jordi, 19 nov)
+"ik vind hem ook gewoon af, de overworld sprites hoeven allemaal niet perfect te zijn, ze moeten herkenbaar zijn en consistent". Dus weinig rondes: zodra hij herkenbaar is en consistent met de bestaande overworldsprites, is hij af.
+
 ## Wanneer
 Alleen voor soorten die in de wereld staan (`OBJ_EVENT_GFX_SPECIES`); volgers blijven uit (Jordi). Drie aanzichten (voor, achter, opzij naar links), elk stil + lopen.
 

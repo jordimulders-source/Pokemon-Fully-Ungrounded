@@ -2204,3 +2204,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Test twee routes naast elkaar: Gemini-model (ronde 2, front + rug als bijlage) tegen een eigen methode zonder Gemini. Jordi: "dit is no contest", "Gemini is echt zeer goed", "en de eigen route echt heel matig".
 - Viscacha-overworld (Gemini-route, 3 rondes + keuring): `docs/concept/sprites/viscacha/overworld/gemini_route/af/overworld.png` (+ pal, 8x, loop.gif). Eigen route bewaard in `viscacha/overworld_eigen/`.
 - Werkwijze vastgelegd in `docs/lessen/OVERWORLD_WERKWIJZE.md`.
+- Viscacha-overworld goedgekeurd als af (Jordi: "de overworld sprites hoeven allemaal niet perfect te zijn, ze moeten herkenbaar zijn en consistent").

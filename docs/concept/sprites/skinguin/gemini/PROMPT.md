@@ -2,12 +2,13 @@
 
 Besluiten (Jordi, 19 nov; citaten in `docs/concept/IDEEEN.md` → Delibird-evolutie → Skinguin):
 Delibird-evolutie · voeten zijn ski's · rood/wit · ski-/kerstmuts als hoofdvorm, geen accessoire ·
-koningspinguïn met een macaroni-kenmerk (hybride) · kuif "delibird stijl" · pose: L-vorm bergafwaarts,
+koningspinguïn met snavel en wenkbrauwen van de macaroni (hybride) · kuif "delibird stijl" · pose: L-vorm bergafwaarts,
 vleugels strak naar achteren, ski's schuin naar voren, muts/hoofd naar achter · "de zak verdwijnt".
 
 Bijlagen:
 1. `bijlage_delibird.png` (Delibird, Gen 3-frontsprite)
 2. Een foto van een koningspinguïn (zelf erbij zoeken, liefst van opzij of driekwart)
+3. Eventueel een foto van een macaronipinguïn (kop, voor snavel en wenkbrauwen)
 
 ---
 
@@ -17,8 +18,9 @@ Draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style): pixel a
 
 WHAT IT IS
 A king penguin that races downhill on skis. Its feet ARE the skis: long, flat, rigid feet that grow out of its legs as one body part. It does not wear skis, they are its anatomy.
-Anatomy: a king penguin (see attached photo): tall, upright, streamlined body, long neck, long slim beak.
-It is a Delibird evolution (attached sprite is DELIBIRD): it keeps Delibird's red-and-white color scheme and its head crest is done in Delibird's style (the white spiky feather tufts on Delibird's head).
+Anatomy: a king penguin (see attached photo): tall, upright, streamlined body, long neck.
+Two features come from the MACARONI PENGUIN instead: its aerodynamic beak and its eyebrows (the plumes above the eyes). They have the shape of the macaroni penguin's, drawn in the same art style as Delibird.
+It is a Delibird evolution (attached sprite is DELIBIRD): it keeps Delibird's red-and-white color scheme and Delibird's art style.
 Its head is shaped like a ski cap / Santa hat: the hat is not an accessory, it is the actual shape of its head (red and white).
 It has NO sack and no sack-shaped tail.
 

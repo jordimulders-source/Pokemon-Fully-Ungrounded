@@ -2297,3 +2297,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.550] - Skinguin: Gemini-startprompt
 - Zak verdwijnt (Jordi). Startprompt r1 in `docs/concept/sprites/skinguin/gemini/PROMPT.md` met de Delibird-sprite als bijlage (`bijlage_delibird.png`); foto van een koningspinguïn zoekt Jordi erbij.
+
+### [v0.0.551] - Skinguin: snavel en wenkbrauwen van de macaroni
+- Prompt bijgewerkt: snavel en wenkbrauwen in de vorm van de macaronipinguïn, in Delibirds artstijl (Jordi).

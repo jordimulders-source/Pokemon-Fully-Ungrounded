@@ -17,3 +17,11 @@ Style: 64x64, max 16 colors, 3/4 view facing left, clean dark outline, white bac
 No effects: no gas, smoke, glow or stink lines; no ground, shadow or branch.
 AVOID: crow, parrot, cockatoo, turkey, chicken, hair instead of feathers, a white ring around the eye, cute plush look, extra wings.
 ```
+
+Uitslag v5 r1 (`v5_r1.webp`), Jordi: "pose is nu goed, maar de haren kloppen nog niet he". Kuif = dunne bruine haartjes over een donkerpaarse veerwaaier (twee kuiven door elkaar).
+
+## v5 bijsturen: alleen de kuif (zelfde gesprek, of nieuw gesprek met v5_r1 + kopportret als bijlage)
+```
+Keep this sprite exactly as it is (pose, wings, body, colors, face, tail): change ONLY the crest.
+Remove both the dark purple feather fan behind the head and the thin brown hairs. Replace them with ONE crest like the real hoatzin in the attached head photo: about 12 to 15 separate, stiff, spiky FEATHERS growing from the top of the head and radiating up and backward in a messy fan. Each feather is a thin shaft that widens slightly to a pointed tip. Color: rufous orange-brown with darker brown tips, like the real hoatzin. Make it bigger, more ragged and uglier than the real one: uneven lengths, some bent or sticking out sideways. Not hair, not strands, not a mohawk.
+```

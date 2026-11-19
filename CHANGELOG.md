@@ -2288,3 +2288,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.550] - Vuurwerklijn fase 2: krul terug in de lijnschets
 - Jordi: "maar je schets mist wel het krullen nu he". Lijnschets v6 (`maak_lijnschets.py`): het lijf krult nu anderhalve slag om de pijl (achterkant lichtgrijs) voordat het zich opricht; prompt v6 aangepast.
+
+### [v0.0.551] - Vuurwerklijn fase 2: prompt v6 zonder "bazooka"
+- Gemini weigerde v6 twee keer ("unsafe images"). "bazooka" vervangen door "party cannon"; les in `GEMINI.md`.

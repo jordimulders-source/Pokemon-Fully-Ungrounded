@@ -1,0 +1,16 @@
+# Coathief r6 palet (r5 + hooglicht bruin)
+0 152 208 160 transparant
+1 16 15 16 omlijning
+2 32 33 36 zwart_schaduw
+3 56 58 62 zwart_midden
+4 88 92 98 zwart_licht
+5 92 44 28 bruin_schaduw_selout
+6 142 82 38 bruin_midden
+7 188 124 62 bruin_licht
+8 176 150 112 creme_schaduw
+9 214 192 152 creme_midden
+10 244 236 218 creme_licht
+11 140 36 24 oog_donker
+12 176 74 44 oog_licht
+13 120 96 68 creme_omlijning
+14 224 166 100 bruin_hooglicht

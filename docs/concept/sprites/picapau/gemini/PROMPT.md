@@ -133,3 +133,4 @@ Jordi: "ja alleen de vleugels/staart moeten pikachu kleuren krijgen, de rest mag
 - Jordi: "waarom heb je nu de snavel aangepast?" → Claude had (17,30),(17,31) ongevraagd donkergrijs gemaakt; teruggezet.
 - Jordi: "HUH" → ook (16,30–32) was de zwarte snavelrand en was geel geworden; terug. r17 = r13 + 7 px: (15,30),(15,31) bruine selout, (15,34),(15,35) donkerrood, (16,33–35) rood. Snavel = r13.
 - r17, Jordi: "juist, eindelijk. Nu naar de kleur en schaduw ronde en dan is die klaar" → vorm r17 bevroren; kleur-/schaduwronde (verse maker) in sprite_v3/kleur/.
+- Jordi: "de buitenste lijn aan de bovenkant van het hoofd moet nog afgemaakt worden" → (20,23),(21,23) lichtgeel op de rand → selout (open rand dicht), in r17 en kleur/r1.

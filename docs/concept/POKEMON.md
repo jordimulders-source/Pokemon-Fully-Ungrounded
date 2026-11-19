@@ -141,6 +141,10 @@ Alleen de keuzes; details, citaten en open vragen in `IDEEEN.md` (overzicht bove
 - **Neigingen:** regionale Spheal/Sealeo met een nieuwe eindvorm (niet Walrein; zeeleeuw).
 - **Geschrapt:** Darwins vliegend hert, Torkoal-schildpad, Sharpedo-hamerhaai (liever een nieuwe haaienlijn), lavacactus-Cacnea, Dudunsparce.
 
+## Hoatzin-lijn (besloten 19 nov)
+- Jordi: "2 fases, poison/dark. Fase 1 doen we een kuiken en gaan we iets meer overdrijven met die klauwen en die smerige look. fase 2 wordt een volgroeide hoatzin die er eng en geniepig uit ziet". Geen Archeops-variant. Open: hoe de stank door eigen fermentatie te tonen (ideeën: opgezwollen krop als gistzak/-kruik, eeltkussen op de borst, blad in de bek; moves Belch, Stockpile; ability Stench of eigen). Prompts: `sprites/hoatzin_fase2/gemini/PROMPTS_v1.md`.
+- Referentie kuiken: echte foto's van een klimmend, nat kuiken (Reddit r/Dinosaurs, 2022; een "opgepoetste" AI-versie ervan circuleert, die niet gebruiken).
+
 ## Convergente soorten (besloten)
 - **Dustly → Hauntflare → Gengas** (Jordi, 13–15 nov; namen definitief): Cosmic-convergente lijn van de Gastly-lijn, op de levensloop van een ster: Bok-globule → protoster met jets (de losse knopen = Haunters handen) → bruine dwerg. Cosmic/Poison voor de hele lijn (Jordi, 15 nov: "cosmic/poison is goed"). Gengas eerst (Jordi: "de meest complexe van de drie"); `sprites/gengas/SPEC.md`. **Gengas: frontsprite af** (15 nov, `sprites/gengas/af/gengas.png`); **Dustly: frontsprite af** (15 nov, `sprites/dustly/af/dustly.png`: Bok-globule als losse stofwolk naar Gemini-model r6, Gastly-ogen en -mond, kleur A mauve-roze met pruimschaduw en roze-oranje lichtrand, belijning/schaduw naar Gastly Gen 3: lijn alleen om de dichte kern); **Hauntflare: frontsprite af** (15 nov, `sprites/hauntflare/af/hauntflare.png`: protoster-bol met losse stofring, vlammenkuif en -staart als jets, losse vuurhanden, Haunter-ogen en -grijns met tanden, gloeiende kern in de mond): bol gas met banden, gasoren, vier losse manen als handen/voeten, Gengars ogen en grijns (125%). Details: `IDEEEN.md` (Convergente soorten).
 

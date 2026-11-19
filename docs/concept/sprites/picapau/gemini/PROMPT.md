@@ -40,3 +40,15 @@ AVOID
 ## Ronde 1 (prompt v1) → `r1_prompt_v1.png`
 Jordi (19 nov): "ziet er goed uit, behalve dat de vleugelkleur veranderd is, maar dat is geen issue, ik twijfel wel of hij weer niet hetzelfde eruit gaat zien, want het oog links zal wegvallen, hoe dan andere sprites dat? Moeten we misschien voor een leukere pose gaan?"
 Studie `studie_vogels_gen3.png`: profielkop met één oog is gewoon in Gen 3 (Taillow, Swellow, Spearow, Chatot, Pikipek); de diepte zit dan in het lijf. Kop naar de kijker met twee ogen: Pidgey, Starly, Torchic, Hoothoot.
+Jordi (19 nov): "nee prima, laten we hem nog een beetje naar de kijker draaien, kan met een korte verbeterprompt wel toch? Praat tegen Gemini in graden"
+
+### Verbeterprompt r2 (in hetzelfde gesprek)
+```
+Good, keep everything exactly as it is (design, colors, crest, wings closed, tail, legs, style). Change only the angle:
+
+- Right now the bird is almost in side view: about 10-15 degrees from a pure profile. Rotate the whole bird about 30 degrees more towards the viewer, so the body is at about 45 degrees (a true 3/4 view, facing front-left). We see more of the round yellow chest and belly from the front.
+- Turn the head a bit further than the body, to about 60 degrees, so it looks more at the viewer: both eyes and both red cheeks are visible, the far ones partly. The beak points front-left, slightly up.
+- The far wing and the tail may peek out behind the body.
+
+Same 64x64 Gen 3 sprite style, white background, nothing else changed.
+```

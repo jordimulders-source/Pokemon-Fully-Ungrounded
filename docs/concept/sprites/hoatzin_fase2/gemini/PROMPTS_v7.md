@@ -103,3 +103,6 @@ Keep the design exactly the same: same pose, wings, crest, blue face, red eye, b
 Only one color change: the belly becomes one shade more purple: main color #8E6280, highlight #A57A98, shadow #7A5270.
 No acid, no effects, nothing added.
 ```
+
+Uitslag hertekenen (`v8_r1.png`: vleugelstrepen weg, alles één mauve), Jordi: "dit is nog slechter he? Misschien met de vorige maar gaan bouwen en tijdens het spriten aan de kleur werken".
+**Model bevroren: `../MODEL.png` (= v7_r4_snavel.png).** Buikkleur (richting #8E6280) en eventueel de zuurdruppel in de spritefase.

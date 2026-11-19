@@ -142,7 +142,7 @@ Alleen de keuzes; details, citaten en open vragen in `IDEEEN.md` (overzicht bove
 - **Geschrapt:** Darwins vliegend hert, Torkoal-schildpad, Sharpedo-hamerhaai (liever een nieuwe haaienlijn), lavacactus-Cacnea, Dudunsparce.
 
 ## Hoatzin-lijn (besloten 19 nov)
-- Jordi: "2 fases, poison/dark. Fase 1 doen we een kuiken en gaan we iets meer overdrijven met die klauwen en die smerige look. fase 2 wordt een volgroeide hoatzin die er eng en geniepig uit ziet". Geen Archeops-variant. Open: hoe de stank door eigen fermentatie te tonen (ideeën: opgezwollen krop als gistzak/-kruik, eeltkussen op de borst, blad in de bek; moves Belch, Stockpile; ability Stench of eigen). Prompts: `sprites/hoatzin_fase2/gemini/PROMPTS_v1.md`.
+- Jordi: "2 fases, poison/dark. Fase 1 doen we een kuiken en gaan we iets meer overdrijven met die klauwen en die smerige look. fase 2 wordt een volgroeide hoatzin die er eng en geniepig uit ziet". Geen Archeops-variant. Open: hoe de stank door eigen fermentatie te tonen (ideeën: opgezwollen krop als gistzak/-kruik, eeltkussen op de borst, blad in de bek; moves Belch, Stockpile; ability Stench of eigen). Prompts: `sprites/hoatzin_fase2/gemini/PROMPTS_v1.md` t/m `v7`. **Fase 2 model bevroren (19 nov): `sprites/hoatzin_fase2/MODEL.png`** (open pose naar Cornell-foto, blauw gezicht, rood oog, bruine kuif, pruimbruine vleugels, buik een tint paarser maken in de spritefase; zuurdruppel nog open).
 - Referentie kuiken: echte foto's van een klimmend, nat kuiken (Reddit r/Dinosaurs, 2022; een "opgepoetste" AI-versie ervan circuleert, die niet gebruiken).
 
 ## Convergente soorten (besloten)

@@ -95,3 +95,11 @@ Keep this sprite exactly as it is. Change only one thing: remove the green acid 
 
 v7 r6 (`v7_r6.webp`): Gemini tekende een roofvogelsnavel; Jordi: "hij is het kwijt", "heb je de snavel nog van voor het slijm? plak die erop".
 `v7_r4_snavel.png`: v7_r4 met de snavel van v6_r1 pixel voor pixel erop geplakt (alleen grijze snavel/omlijning/witte achtergrond in het snavelvak; slijm daarmee weg; rest onaangeroerd). Jordi: de resolutie wordt per Gemini-ronde slechter.
+
+Jordi: "nee we doen gewoon een prompt waar hij deze opnieuw tekent en netter maakt en de buik weer een tint paarser maakt, geef een kleurcode mee". Buik nu ±#946869 (licht #A77881, schaduw #82595B); een tint paarser: #8E6280 (licht #A57A98, schaduw #7A5270). Bijlage: v7_r4_snavel.png.
+```
+Attached: a Pokémon sprite. Redraw it as a clean, sharp official Gen 3 front sprite (Ruby/Sapphire/Emerald style): crisp pixels, clean dark outlines, flat color areas with simple shading, no blur or soft edges, max 16 colors, white background.
+Keep the design exactly the same: same pose, wings, crest, blue face, red eye, beak, body, tail, feet and all colors.
+Only one color change: the belly becomes one shade more purple: main color #8E6280, highlight #A57A98, shadow #7A5270.
+No acid, no effects, nothing added.
+```

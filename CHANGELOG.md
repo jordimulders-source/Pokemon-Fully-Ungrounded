@@ -2198,3 +2198,9 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.531] - Werkwijze iconen vastgelegd
 - Nieuw: `docs/lessen/ICOON_WERKWIJZE.md`, compacte, verplichte stappen voor een party-icoon (kenmerken → onderdelen-methode → meetstudie-regels → poetsen → script + 8× → krabbels pixel voor pixel → frame 2 door schuiven). Verwijzing in CLAUDE.md.
 
+
+### [v0.0.532] - Overworldsprite viscacha en werkwijze overworld
+- Meetstudie overworldsprites (`docs/concept/sprites/rug_icoon_studie/overworld/`): maat per aanzicht, loopframes en kleur over 775 sprites; handmeting kop/oog/oren/poten/staart bij 15 viervoeters (`meting_onderdelen/RESULTAAT.md`).
+- Test twee routes naast elkaar: Gemini-model (ronde 2, front + rug als bijlage) tegen een eigen methode zonder Gemini. Jordi: "dit is no contest", "Gemini is echt zeer goed", "en de eigen route echt heel matig".
+- Viscacha-overworld (Gemini-route, 3 rondes + keuring): `docs/concept/sprites/viscacha/overworld/gemini_route/af/overworld.png` (+ pal, 8x, loop.gif). Eigen route bewaard in `viscacha/overworld_eigen/`.
+- Werkwijze vastgelegd in `docs/lessen/OVERWORLD_WERKWIJZE.md`.

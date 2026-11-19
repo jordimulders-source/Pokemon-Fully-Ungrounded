@@ -161,3 +161,7 @@ Jordi: "Wat betreft de externe tools, alleen als ze gratis zijn wil ik dat doen"
 4. Varianten voor de echte keuzes (A model / B kop +21% → "b lijkt opgeblazen"; vier ogen → oog 4), daarna alleen technische reparaties: oog uit de front, selout aan de lichtkant (keurder: zwart → index 2), schaduwsikkel. ±5 rondes, 2 keuringen.
 **Icoon: moeizaam** (zie `viscacha/icoon/PROMPT_ICOON.md`): Gemini ontwerpt zelf (r1) of verkleint de front (r2 met voorbeeld); de verkleinde front + opschonen gaf de juiste pose maar was "plat van kleur", te groot en zonder perspectief.
 **Overworld:** Gemini maakte een Raichu/Pachirisu; nog open.
+
+## 9. Proef overworld viscacha (19 nov)
+Meetstudie in `overworld/` (`ow_meet.py`, `ow_kleur.py`, `loop_vel.py`; handmeting onderdelen in `overworld/meting_onderdelen/RESULTAAT.md`). Correcties op §3: opzij is altijd een echt profiel; het overworldpalet is níet donkerder/verzadigder dan de front (hoofdvlak dL 0, dS 0), alleen eigen kleuren; omlijning onder zwart, boven een donkere vachttint; lopen = alleen voeten, geen op-en-neer (88%).
+Twee routes naast elkaar: A Gemini (front + rug als bijlage, bouw in woorden) en B eigen methode (front/icoon/rug + rekenregels). Jordi: "dit is no contest" · "Gemini is echt zeer goed" · "en de eigen route echt heel matig". Werkwijze: `docs/lessen/OVERWORLD_WERKWIJZE.md`.

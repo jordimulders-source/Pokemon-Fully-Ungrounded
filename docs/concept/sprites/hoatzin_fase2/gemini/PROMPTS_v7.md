@@ -76,3 +76,14 @@ Attached: a Pokémon sprite. Keep it exactly as it is (pose, shapes, outlines, f
 3. Colors: the thin crest strands a bit more brown (less orange); the belly a bit lighter, so it stands out from the rest of the body.
 Everything else stays pixel for pixel the same. Official Gen 3 front sprite pixel art, white background.
 ```
+
+Uitslag v7 r4 (`v7_r4.webp`; vleugel en kuif opgelost), Jordi: "het slijm snapt die niet".
+Voorstel: eerst slijm weg, dan Jordi zet zelf een groene stip waar de druppel moet komen en Gemini maakt er een druppel van.
+Stap 1:
+```
+Keep this sprite exactly as it is. Change only one thing: remove all the green acid, so the beak is clean. Everything else stays pixel for pixel the same.
+```
+Stap 2 (bijlage: resultaat met een groene stip/streep van Jordi):
+```
+Keep this sprite exactly as it is. I drew a rough green mark where an acid drop should be. Turn ONLY that mark into one small, clean pixel-art acid drop in exactly that spot and that size. Everything else stays pixel for pixel the same.
+```

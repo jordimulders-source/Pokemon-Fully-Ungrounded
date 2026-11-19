@@ -45,3 +45,38 @@ AVOID
 ## Ronde 1 (prompt v1) → `r1/r1_prompt_v1.png`
 Jordi (19 nov): "dit is niet bepaald een vooruitgang. Hij is wel heel erg buff, minder llama dan voorheen, de kleding is niet mooi en hij heeft nu echt vingers in de handschoenen, dat is ook niet de bedoeling" · "en totaal niet fluffy"
 Fout van Claude: prompt v1 was geschreven zonder de hele SPEC te lezen en ging tegen eerdere besluiten van Jordi in: lijf fluffy à la Mareep/Flaaffy en jonger, fase 3 = de buffe (2 nov); zwaar droog ooglid (Numel/Slakoth, "dat ooglid is ook een mooie toevoeging", 3 nov; v1 verbood het); pose F (lijf bijna zijaanzicht, kop driekwart, foto 8; v1 vroeg lijf 3/4 naar foto 1); kaarsrechte hals; halsband met pompons. "Open fingers" + "not thin sticks/compact" gaven vingers en spierbundels.
+
+## Jordi (19 nov, na r1, letterlijk)
+"het ging me puur om hoe gemini het tekende. De pose is prima, ik vond niet dat het volume en de schaduw ontbraken, daar heb ik niks over gezegd" → pose F en de kledingstukken van het bevroren ontwerp blijven; geen instructie over volume/schaduw.
+
+## Prompt v2 (nieuw gesprek; bijlagen: `bijlage1_oude_sprite_8x.png`, `bijlage2_v2_lama_foto8.png`, `bijlage3_mma_handschoenen.png`)
+Bevroren besluiten uit `../../SPEC.md` erin: fluffy/jonger à la Mareep/Flaaffy (2 nov), kaarsrechte hals, droog zwaar ooglid Numel/Slakoth (3 nov), pose F (foto 8), halsband 3 strepen + 5 pompons, aguayo-lap op de rug, MMA met de twee teennagels.
+```
+Draw a Pokémon as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art), facing left.
+
+ATTACHMENTS
+- Attachment 1 is the old sprite of this Pokémon. KEEP its pose (body almost in side view facing left, head turned 3/4 towards the viewer, all four legs on the ground in a walking step, tail up), its colors and its clothing pieces. Redraw everything else better; do not trace its drawing.
+- Attachment 2 is a real llama in the same pose. Use it for the llama anatomy and the llama head. Ignore its brown and white colors.
+- Attachment 3 shows the gloves: red MMA gloves with a black wrist strap. Ignore the logos and text.
+
+THE CREATURE
+- A young Fighting-type llama Pokémon, the middle stage of a starter line (like Charmeleon or Monferno): the evolution of a small fluffy alpaca, not yet fully grown. Its final evolution is the big muscular one; this one is young and FLUFFY, not muscular.
+- It stands on all four legs. It is an animal, not a humanoid.
+- Fur: caramel, very fluffy and woolly, like Mareep and Flaaffy: the body and the neck are soft rounded masses of wool, with a few big smooth wool bumps in the outline. Not smooth short fur, not muscles.
+- Neck: long and dead straight, upright, also woolly.
+- Head: clearly a LLAMA head as in attachment 2: long face, rounded muzzle with a split lip, small nostrils, long BANANA-SHAPED ears that curve inwards at the tips.
+- Eye: one dark brown eye high on the side of the head with a heavy, flat, half-closed upper eyelid pressing on it: a dry, unimpressed, "watching the world go by" look, like Numel or Slakoth. No smile, no big round cute eyes, no sparkles.
+
+CLOTHING (draw these well, as real woven Andean fabric)
+- Red wool tassels in both ears.
+- A narrow woven aguayo band around the base of the neck (three colored stripes) with five small wool pompoms hanging from it.
+- A woven aguayo cloth lying on the back, with a fold and a hem, hanging down a bit on the side.
+- Red MMA gloves with a black wrist strap on the FRONT feet only. The glove covers the hoof like a mitten; only the two small toenails of the llama hoof peek out at the front. NO fingers, no hand, no toes like a hand. The back feet are normal hooves.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left, clean shading with large calm areas like official Gen 3 sprites, no noise.
+- Plain white background. No ground, rock, shadow or base. No effects. One single creature.
+
+AVOID
+- Not a horse, deer, sheep, camel or alpaca. Not muscular, no bodybuilder look. Not standing on two legs. No plush toy, chibi or mascot look.
+```

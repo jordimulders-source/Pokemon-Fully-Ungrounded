@@ -66,3 +66,25 @@ AVOID
 ### Ronde 2 (prompt v2) → `r2_prompt_v2.png`, vergelijking `vergelijk_huidig_r1_r2.png` (huidig · r1 · r2)
 Jordi (19 nov): "hij erandert niet echt iets he? Kan je eens kijken hoe we dit in andere gesprekken deden?"
 Claude: r2 trekt de oude sprite over (les GEMINI.md: bijlage + "keep" = kopie). In de andere gesprekken (Palpaca r4, Nocticue r4, Hummlet) was de Gemini-uitkomst vaak een gladde tekening; die werd het **model** en de sprite bouwde Claude zelf (reductie + oud palet). De pixelvraag aan Gemini was dus niet nodig: r1 is zo'n model. Verschillen r1 t.o.v. de huidige sprite: boze blik (wenkbrauwen schuin), kop rechter op, borsthand een poot met vingers zonder koevoetklauwen, buidel dichtgeknoopt (geen zakmond), koeler grijs. Voorgelegd aan Jordi.
+Jordi (19 nov): "nee ik wil gewoon kleine sprite verbeteringen, gewoon dat die gepolijst wordt, tot nu toe zie ik niks wat we nieuw moeten maken, dus 1 nieuwe prompt"
+
+## Prompt v3 (nieuw gesprek, alleen bijlage 1)
+Gemini als pixelartist die een cleanup-pass doet op de sprite zelf; alleen algemene spritetechniek benoemd, geen ontwerppunten.
+```
+You are a professional Game Freak pixel artist. Attachment 1 is a work-in-progress Pokémon front sprite (64x64 pixel art, shown enlarged). Do a POLISH PASS on this exact sprite, the final cleanup an artist does before a sprite ships in Pokémon Ruby/Sapphire/Emerald.
+
+WHAT STAYS (do not change)
+- Same creature, design, pose, 3/4 angle, proportions, silhouette, colors and expression. Every body part stays where it is and keeps its size. Nothing added, nothing removed, nothing redrawn as a new design.
+
+WHAT THE POLISH PASS FIXES (pixel technique only)
+- Outline: one clean, continuous 1 px dark outline all around the creature, with no gaps, no double pixels and no stray pixels. Inner lines where parts overlap (arm over body, hand over chest, tail behind leg).
+- Curves: jagged, stair-stepped or blocky edges become smooth pixel curves with even steps, like official sprites.
+- Shading: one consistent light source from the top left, 2-3 tones per color area, clean shaded shapes that show volume (round head, body, legs, tail rings, sack). Remove noise, random dark spots and single loose pixels.
+- Readability: every part reads clearly at 1x: the face (mask, eyebrows, eyes, nose, muzzle), the ears, both hands with their claws, the sack, the tail rings and the feet.
+
+The result must look like the same sprite, but clearly cleaner and more finished. Do not return the attachment unchanged.
+
+FORMAT
+- Pixel art only: a 64x64 sprite on a visible pixel grid, enlarged with hard square pixels, exactly like the attachment. Not an illustration, no smooth line art, no anti-aliasing, no gradients. Max 16 colors.
+- Plain white background, no ground, no shadow, no effects.
+```

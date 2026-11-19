@@ -114,3 +114,6 @@ Jordi: "ok dit gaat hem niet worden, kan je niet het achterste stuk knippen en v
 
 ## Ronde 8 (prompt v5, uitsnede) → `r8_achterstuk.png`
 Jordi: "dit mislukt ook, het moet echt om de positie gaan, maak dat duidelijk" → prompt v6: posities omwisselen (lichte nabije poot naar voren onder de buik, donkere verre poot naar achteren), kleur/diepte per poot blijft.
+
+## Ronde 9 (prompt v6, uitsnede) → `r9_achterstuk.png`
+Jordi: "hij snapt het niet, andere suggestie nog?" Gemini kan de achterpoten niet omwisselen (5 pogingen). Voorstel Claude: gang repareren in de spritefase met de eigen modelpixels (poten verschuiven op 64 px, varianten ter keuze), of een schets van Jordi als bijlage.

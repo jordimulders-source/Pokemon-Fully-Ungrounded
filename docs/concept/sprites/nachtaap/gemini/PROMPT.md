@@ -39,4 +39,35 @@ AVOID
 ```
 
 ## Rondes
-(volgt)
+### Ronde 1 (prompt v1) → `r1_prompt_v1.png`
+Jordi (19 nov): "hij heeft de hele pose aangepast".
+Claude: Gemini heeft een nieuwe pose bedacht (nabije arm reikt naar voren, ander zitten) en de kop staat nog bijna recht van voren. Les: "rotate the body and the arms" las Gemini als "nieuwe pose". In v2 eerst de huidige pose in woorden vastleggen en de draai als een beeldje op een draaischijf beschrijven. Nieuw gesprek.
+
+## Prompt v2 (nieuw gesprek, alleen bijlage 1)
+```
+Redraw this exact Pokémon sprite from a different camera angle, as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art).
+
+Think of attachment 1 as a small figurine on a turntable. Do NOT change its pose. Only turn the turntable about 30-40 degrees, so we see the same figurine in a 3/4 view facing left. Nothing moves relative to the body: no limb is lifted, stretched, bent differently or moved.
+
+THE POSE (keep exactly)
+- Sitting upright, compact and round.
+- Both arms hang straight down along the sides of the body, close to the body. Both hands rest on the ground next to the feet. No arm reaches out.
+- Knees up together in front of the belly, small cream feet on the ground.
+- Head upright on top of the body, looking straight at the viewer.
+- Thin violet tail rises from behind the hip and ends in a small spiral curl.
+
+WHAT CHANGES WITH THE ROTATION
+- Body, head, arms and legs all turn together by the same 30-40 degrees towards the front-left.
+- We now see the left side of the body a bit more: the near arm (viewer's left) is fully visible along the side, the far arm (viewer's right) is partly hidden behind the belly.
+- The face disc and eyes shift a little to the left on the head; the far eye is a bit narrower than the near eye; the near ear is smaller, the far ear sticks out more.
+- The tail curl peeks out behind the body on the right.
+
+KEEP (design is final)
+- Same creature, same proportions (very big round head, small body), same colors, same features, same cute and slightly mysterious expression, same big pink-magenta eyes.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left, clean Gen 3 shading. Plain white background, no ground, no shadow, no effects.
+
+AVOID
+- No new pose, no reaching or waving arm, no plush toy or mascot look, no oversized sparkly anime eyes.
+```

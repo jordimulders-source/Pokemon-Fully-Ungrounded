@@ -84,3 +84,13 @@ STYLE AND FORMAT
 AVOID
 - Not a horse, not a lamb, not a llama. No side view. No plush toy look, no oversized sparkly eyes.
 ```
+
+## Ronde 2 (prompt v2) → afbeelding niet ontvangen
+Jordi (19 nov): "mijn mening is dat het gezicht beter is, maar dat de hoek nog steeds iets teveel zijaanzicht is, en misschien geinig om een van de voorpoten iets meer te heffen"
+Verbeterprompt r3 (zelfde gesprek): 20-25° verder draaien + nabije handschoen heffen tot borsthoogte.
+
+## Ronde 3 (verbeterprompt) → `r3_verbeter.png`
+Jordi: "dit gaat fout". Claude: drie handschoenen (geheven poot erbij getekend i.p.v. verplaatst, zoals awki's derde vleugel) en niet gedraaid. → Prompt v3: nieuw gesprek, poten geteld.
+
+## Prompt v3 (nieuw gesprek, geen bijlage)
+Prompt v2 met: hoek 45°/70° en "no side view, no profile body"; precies vier poten, twee handschoenen, elke poot benoemd; nabije handschoen geheven tot borsthoogte, de verre handschoen op de grond.

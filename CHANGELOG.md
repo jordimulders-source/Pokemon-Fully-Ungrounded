@@ -2211,11 +2211,16 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - CLAUDE.md, toon: Jordi "je hoeft de serieuzere toon niet zo te benadrukken, ungrounded is gewoon humor alom en fully ungrounded wordt gewoon net als normale pokemon games".
 - IDEEEN.md, kreten: geen bestaande kreten vervormen; latere generaties gebruiken soms geluiden die op echte dieren lijken (komt later).
 
-### [v0.0.534] - Hummlet: opknapronde via Gemini gestart
+### [v0.0.534] - Picapau opgeknapt via Gemini
+- Opknapronde gestart (`docs/concept/sprites/OPKNAPRONDE_GEMINI.md`): Picapau, Picaraio, Soulibri, Moonkey en Hummlet opnieuw via Gemini, omdat ze nog "een beetje in 2D" staan.
+- **Picapau af (v3):** Gemini-model in driekwart (5 rondes, `picapau/gemini/`), sprite v3 door maker + keurders (vorm r17 na Jordi's punten: stekels, kop rond naar het model, verre oog 1 px, rand onder de snavel volgens zijn tekening), kleur- en schaduwronde met keurder-PASS. Palet van Picapau, vleugels in Pikachu-bruin, staartschaduw Pikachu-roodbruin. `picapau/af/` (oude versie in `af/oud_v2/`), overzichtsvel bijgewerkt.
+- Lessen in `docs/lessen/GEMINI.md`: "geen issue" betekent terugzetten; diepte (kam achter de kop) is een kleur-/schaduwvraag; "ronder" = geen rechte stukken; een krabbel van Jordi meten, niet schatten.
+
+### [v0.0.535] - Hummlet: opknapronde via Gemini gestart
 - Jordi: "hummlet is net niet genoeg een hummingbird chick". Keuzes: alles mag beter ("maar wat wel goed vertaalt naar een sprite"), snavel langer en dun en dicht, kleuren blijven, pose als bolletje zoals foto 5.
 - Gemini-prompt v1 + bijlagen in `docs/concept/sprites/kolibrie_pre/gemini/`; SPEC en `OPKNAPRONDE_GEMINI.md` bijgewerkt.
 
-### [v0.0.535] - Hummlet opnieuw via Gemini: frontsprite af
+### [v0.0.536] - Hummlet opnieuw via Gemini: frontsprite af
 - Gemini r5 gekozen (kolibriekuiken als bolletje zoals foto 5, kop schuin omhoog, lange dichte snavel); Jordi: "ja echt veel beter, ga maar bouwen" · "op alle fronten".
 - Sprite (maker + keurder, 3 rondes): model overgenomen op 40 px breed, kleurpalet van de oude sprite ("dat was het enige aan de originele sprite dat ik zeer goed vond"), perspectief via licht en schaduw. Keurder GOED + Dragonfly Cave-eindkeuring. Jordi: "Akkoord".
 - `kolibrie_pre/af/` vervangen (oud in `af/oud_voor_gemini/`), overzichtsvel bijgewerkt, les in `GEMINI.md`.

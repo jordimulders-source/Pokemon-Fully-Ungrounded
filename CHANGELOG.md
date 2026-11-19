@@ -2276,3 +2276,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.546] - Vuurwerklijn fase 2: vormschets en prompt v4
 - Jordi akkoord met de omgedraaide verhouding. Vormschets `vuurwerk_fase2/schets/vormschets_v4.png` (vuurlijf uit de achterkant van de pijl, één lus vóór de pijl langs, opgericht S-lijf met borst, pijl als bazooka) + `gemini/PROMPT_v4_schets.md`.
+
+### [v0.0.547] - Vuurwerklijn fase 2: kop onderscheidend van fase 1
+- Vormschets v5 (`vuurwerk_fase2/schets/vormschets_v5.png`, script `maak_vormschets.py`) en `gemini/PROMPT_v5_kop.md`: langere, plattere kop met iets spitsere snuit, halfgeloken oog, kieuwen weg en één vlammenkam naar achteren, klierbulten achter de ogen (Jordi: "ja verwerk 1 t/m 4 maar"). v4 vervalt.

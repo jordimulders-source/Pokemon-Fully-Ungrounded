@@ -2306,3 +2306,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.556] - Vuurwerklijn fase 2: kop gekozen, prompt lijf
 - r8 bewaard; Jordi: "alleen 3 is bruikbaar" → `vuurwerk_fase2/bijlage/kop3.png`. Prompt v9 (`gemini/PROMPT_v9_lijf.md`): kop 3 + gekantelde pijl met krullend vuur als bijlagen; het vuur wordt na de krul een dik, opgericht lijf onder de kop, handjes houden de pijl.
+
+### [v0.0.557] - Vuurwerklijn fase 2: kopprompt naar de vorm van de echte vuursalamander
+- Jordi: kop 3 is "eigenlijk geen vuursalamander"; keuze "Alleen de vorm". `vuurwerk_fase2/gemini/PROMPT_v10_kop_vorm.md`: Jordi's foto als enige bijlage; platte, brede kop, ogen bovenop als koepels, klierbulten, geen kieuwen, één vlammenkam achterop; kleuren van de lijn.

@@ -2265,3 +2265,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.542] - Hoatzin fase 2: prompt v2
 - Jordi keurde v1 A en B af ("beide geen pokemon"); nieuwe prompt met blauw gezicht, alert vogeloog, grotere lelijkere kuif, lijf in Poison-kleuren, kleine buikbult: `docs/concept/sprites/hoatzin_fase2/gemini/PROMPTS_v2.md`. Les in `GEMINI.md`.
+
+### [v0.0.543] - Hoatzin fase 2: prompt v2 met Poison-paars
+- Jordi: "met poison kleur bedoel ik dat typische poison paars"; verwerkt in `PROMPTS_v2.md`.

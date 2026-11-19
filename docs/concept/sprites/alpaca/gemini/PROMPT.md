@@ -97,3 +97,7 @@ Prompt v2 met: hoek 45°/70° en "no side view, no profile body"; precies vier p
 
 ## Ronde 4 (prompt v3) → `r4_prompt_v3.png`
 Jordi (19 nov): "Prima denk ik maar het is nu geen sprite meer". Claude: illustratie i.p.v. pixelart; mogelijk model (sprite dan zelf bouwen: reductie + oud palet, zoals Hummlet). Nabije voorpoot geheven + verre achterpoot naar voren = diagonaal (paardengang), voorgelegd.
+
+## Ronde 5 (pixelart-verzoek, zelfde gesprek) → `r5_pixel_verzoek.png`
+Jordi: "vrijwel hetzelfde" (Gemini voegde alleen krullen op het lijf toe). Gang: "ja dat moet wel aangepast worden, anders is het geen alpaca". → r4 blijft het model; sprite bouwt Claude zelf.
+Gangfix: in r4 is de voorste achterpoot de verre (donker, achter het lijf) en de achterste de nabije. Prompt v4: nieuw gesprek, r4 als bijlage, alleen de diepte van de achterpoten omwisselen (geen poot verplaatsen). Lukt dat niet: Claude wisselt het zelf in de sprite (licht/donker + omlijning).

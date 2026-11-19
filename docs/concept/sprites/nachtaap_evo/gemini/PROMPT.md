@@ -38,3 +38,20 @@ Jordi (19 nov, vóór r1): "ja de poten en de rugpositie zijn niet geweldig".
 ### Ronde 1 (prompt v1) → `r1_prompt_v1.png`
 Jordi: "nee er is teveel aan het design gezeten nu".
 Claude: maan werd een kleine C i.p.v. de grote sikkel over de ogen, ogen hoekig, kop kleiner, lijf lang en dun (geen groot bol lijf), poten lang. Wel: verre poten achter/hoger, lijf in driekwart.
+Jordi: "zonder persian is het beter".
+
+## Prompt v2 (nieuw gesprek, alleen bijlage 1)
+```
+Redraw this exact Pokémon as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art), in a better 3/4 view.
+
+The DESIGN is final: keep it exactly as in the attachment. Same head (shape, size, the big white crescent moon with points down covering the upper half of the face and falling over the eyes, the big round red eyes with dark rings, the small neutral mouth, the small round ears), same big round body, same proportions between head and body, same pale-blue wedges on the back, same cream fingertips, same tail with the spiral, same colors.
+
+Change ONLY the angle and the perspective:
+- Now the body is almost a side view, the head a flat front view, and the four feet stand on one straight line. Turn the whole creature into one consistent 3/4 view facing left.
+- The legs and the back must follow that same perspective: the near front leg and near hind leg in front and lower, the far front leg and far hind leg higher and partly hidden behind the body. The back is one round, consistent shape in 3/4, rising behind the head as now.
+- The head still faces the viewer and the eyes stare straight at us.
+
+Same 64x64 Gen 3 style, max 16 colors, 1 px dark outline, light from top left. Plain white background, no ground, no shadow, no effects.
+
+AVOID: no new design, no smaller moon, no square eyes, no thin or long body, no long legs, no smile, no Aipom look.
+```

@@ -2,6 +2,7 @@
 
 Uitslag v2 (paarse papegaai/kraai met haardos, korte nek, kleine staart). Jordi: "vreselijk, dit lijkt niet eens op een hoatzin".
 Oorzaak (Claude): v2 liet de hoatzin-anatomie weg en vroeg "AVOID realistic bird anatomy" → generieke vogel; "spikes" werd haar.
+Jordi daarna (19 nov): "de hele vorm klopt niet, de haren op de kop kloppen niet, het oog is niet rood met een zwart puntje, het lichaam is net een kraai" → oog aangepast.
 v3: hoatzin-silhouet terug (foto meesturen), maar als Pokémon vereenvoudigd; kuif expliciet van veren.
 
 ```
@@ -14,7 +15,7 @@ Hoatzin silhouette (keep these proportions, simplified):
 - the hoatzin's color layout: pale throat/chest, darker wings and back with a light wing edge, pale tip on the tail
 
 Changes from the real bird:
-- Keep the bare BLUE face skin and the typical alert bird eye (round, wide open, watchful, red iris). NOT narrowed, NOT scheming.
+- Keep the bare BLUE face skin and the typical alert hoatzin eye: a solid RED eye with a small black pupil, NO white of the eye, round and watchful. NOT narrowed, NOT scheming.
 - Crest: much bigger and uglier than the real one: a tall, ragged, messy crest of stiff, broken FEATHERS (not hair), sticking up and out unevenly.
 - Body colors: the typical Poison-type purple, following the hoatzin's color layout (only the face stays blue).
 - The belly bulges a little where it ferments leaves: a rounded paunch, not a giant sac or jar.

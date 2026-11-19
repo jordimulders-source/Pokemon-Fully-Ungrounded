@@ -2324,3 +2324,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.557] - Skinguin: frontsprite r1 (A, B, B2)
 - `skinguin/sprite_r1/`: model verkleind (natief raster pitch 10,24, 75 → 61 px door rijen/kolommen te schrappen), muts-bovenlijn gebogen (Jordi: "de muts is netjes"), herbelicht. Keurder: vorm PASS; 2 losse pixels gerepareerd.
 - Varianten: A zoals het model; B (2 px opzij) gaf geen zichtbaar verschil (Jordi); B2: verre ski omlaag, tussenruimte gem. 4,4 → 2,4 px.
+
+### [v0.0.558] - Skinguin af
+- Jordi koos A ("b is alleen de achterkant die dichterbij is ... maar ik vind A wel prima"). `docs/concept/sprites/skinguin/af/skinguin.png` (+ `_8x`, `normal.pal`); op het overzichtsvel.

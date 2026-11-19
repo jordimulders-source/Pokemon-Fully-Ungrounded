@@ -91,3 +91,7 @@ Plain white background, max 16 colors, no effects, one single creature.
 ```
 That pose is too different. Go back to the attached sprite and keep it exactly: same head, crest, eye, beak, body, wings, colors and the same overall pose. Change only the three long tail streamers: let them curve a little more downward, so the tail tips end 3 pixels further to the left (closer under the body). Same pixel size, same pixel art, do not shrink anything.
 ```
+
+## Ronde 4 (Jordi, 19 nov, letterlijk): `r4_staart.png` (bijsturing staart)
+"beter?"
+Claude gemeten: raster 15,5 px per spritepixel → 63×53 px, past in 64×64. Kop, kuif, oog, snavel (+2 bewaard), lijf en vleugels gelijk aan r1-k2; alleen de staart is anders: twee slierten krullen onder het lijf terug naar links, één wijst naar rechts. Vergelijking op dezelfde schaal: `r1k2_vs_r4.png`.

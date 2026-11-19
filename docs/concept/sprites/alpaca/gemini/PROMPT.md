@@ -121,3 +121,4 @@ Jordi: "misschien toch een bronafbeelding nog proberen?" → prompt v7: foto van
 
 ## Ronde 10 (prompt v7, foto als bijlage) → `r10_foto.png`
 Jordi: "het hele ontwerp is nu anders, MAAR, de achterpoten zijn eindelijk goed" → model = r4 (ontwerp, gezicht, voorpoten) + achterpoten van r10. Knippen/plakken op 1024 px gaf ruwe naden (proef weggegooid; les GEMINI.md: zelf knippen blijft ruw); samenvoegen gebeurt op spriteformaat door de maker.
+Jordi: "je kan ze ruw knippen en plakken en kunnen we nog een laatste gemini ronde proberen" → `../model/r4_r10_ruw.png` (r10 ×0,95 verschoven (40,−25), vanaf y 660 en x 525 over r4 geplakt); prompt v8: alleen de naad gladmaken, pootposities blijven.

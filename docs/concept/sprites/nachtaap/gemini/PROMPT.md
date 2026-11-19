@@ -87,3 +87,29 @@ Better, the pose is good now. Keep the body, arms, legs, colors and face express
 
 Same 64x64 Gen 3 sprite style, white background, nothing else changed.
 ```
+
+### Ronde 3 (verbeterprompt r3) → `r3_verbeter.png`
+Jordi (19 nov): "wat doet gemini nou".
+Claude: Gemini drijft af (zoals in GEMINI.md staat): kop bijna in profiel, gezichtsschijf aan de verkeerde kant, het verre oog werd een mondvorm. Staart is wel weer dun met een kleine krul. Volgende: nieuw gesprek met drie bijlagen; een echte Gen 3-sprite in driekwart (Teddiursa: zittend, grote kop, naar links) laat de hoek zien in plaats van graden.
+
+## Prompt v4 (nieuw gesprek; bijlagen 1, 2 en 3)
+Bijlagen: `bijlage1_huidige_sprite_8x.png` (design en gezicht), `bijlage2_pose_r2.png` (pose), `bijlage3_hoek_teddiursa_8x.png` (alleen de hoek).
+```
+Draw an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art) of the Pokémon in attachment 1.
+
+THREE ATTACHMENTS, EACH FOR ONE THING
+- Attachment 1 = the DESIGN and the FACE. Same creature, colors, proportions, face disc, stripe, ears, muzzle and the same calm, slightly mysterious expression (not smiling). This is final.
+- Attachment 2 = the POSE. Keep this pose: sitting upright, both arms hanging down along the body, hands on the ground next to the feet, knees together in front. Ignore its head angle and its tail.
+- Attachment 3 = ONLY the CAMERA ANGLE. This is an official Gen 3 sprite (Teddiursa) seen in a classic 3/4 view facing left: the body turned about 30 degrees, the head turned about 30 degrees with the face clearly in the front-left part of the head, both eyes visible, the far eye a bit closer to the edge. Use exactly this angle for head and body. Do not take anything else from it: no bear, no ears, no crescent, no colors.
+
+DETAILS
+- Both eyes are big and round (no flat or angular top), pink-magenta with dark pupils; the far eye slightly narrower.
+- Thin violet tail, 2-3 pixels wide: it starts behind the hip on the right, rises next to the body and ends in a small spiral curl at about ear height, a little away from the head.
+- Exactly two arms and two legs.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left, clean Gen 3 shading. Plain white background, no ground, no shadow, no effects.
+
+AVOID
+- No smile, no new expression, no profile view, no new pose, no Teddiursa features, no plush toy or mascot look.
+```

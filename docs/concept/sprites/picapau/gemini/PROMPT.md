@@ -52,3 +52,7 @@ Good, keep everything exactly as it is (design, colors, crest, wings closed, tai
 
 Same 64x64 Gen 3 sprite style, white background, nothing else changed.
 ```
+
+## Ronde 2 (verbeterprompt r2) → `r2_verbeter.png`
+Jordi (19 nov): "wat vind je hiervan, ik heb het gevoel dat het perspectief van het hoofd niet meer klopt" · "en hoort de snavel zo hoog?"
+Claude: lijf niet gedraaid (vleugel nog volledig opzij), alleen een verre wang erbij geplakt; nabije oog op de profielplek, snavel aan de rand van de kop op ooghoogte; derde kuifpunt links erbij. Ter vergelijking het B1-model gedraaid: `hoek3d/vel.png` (B1 = 30°, 45°, 60°; render met `python3.11` + pip `bpy`, `scikit-image`, apt `libegl1`).

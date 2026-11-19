@@ -1,0 +1,48 @@
+{
+ "B1 binnenlijn->donkere tint (model <55% zwart)": {
+  "K": 87
+ },
+ "B2 losse zwarte pixel": {
+  "K": 7
+ },
+ "B3 ontkorrelen": {
+  "M": 40,
+  "K": 3,
+  "W": 13,
+  "C": 2,
+  "S": 1,
+  "T": 3,
+  "D": 1
+ },
+ "B5 clusterfilter <3 px": {
+  "M": 94,
+  "W": 13,
+  "K": 14,
+  "S": 5,
+  "P": 9,
+  "D": 5,
+  "T": 9
+ },
+ "B4 buitenlijn": {
+  "M": 116,
+  "W": 7,
+  "C": 4,
+  "S": 1,
+  "P": 13,
+  "T": 21,
+  "D": 10
+ },
+ "B6 rand: los zwart tussen selout -> selout": {
+  "M": 4,
+  "K": 1
+ },
+ "C oog pupil (donkerste modelpixel)": {
+  "E": 1
+ },
+ "C2 oog: modelringrand buiten 3x3 -> blauw": {
+  "E": 1
+ },
+ "C2 oog 3x3 rond de pupil (model)": {
+  "F": 3
+ }
+}

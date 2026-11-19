@@ -11,3 +11,5 @@ Recolor sprite (1). Keep every shape, outline and pixel position exactly the sam
 - ONLY the belly (the rounded paunch) is the typical Poison-type purple.
 Official Gen 3 front sprite pixel art, max 16 colors, white background, no other changes.
 ```
+
+Uitslag v6 r1 (`v6_r1.webp`), Jordi: "dit vloekt behoorlijk, hij heeft wel de cornell foto nagedaan. Vleugels misschien zo behouden, buik een tint lichter en de rest van het lichaam wat meer poison kleuren?"

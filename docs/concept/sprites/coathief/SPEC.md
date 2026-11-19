@@ -84,3 +84,4 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Basis en stijl: de goedgekeurde ol
 - Klauwen: "klauwen laten zoals ze zijn, maak de sprite maar. De klauwen zijn juist goed nagemaakt. Je mag dit als nieuwe model hanteren, maar wat gemini nog niet heeft gedaan is goed kleurgebruik/schaduwen etc. Daar mag je meteen mee gaan werkren ipv wachten op mijn akkoord".
 - **Nieuw model = r1 (bevroren vorm).** In de sprite: oog rood zoals de oude sprite (`8c2418`/`b04a2c`); oren zwart (Claude stelde voor, Jordi oktober: "De oren mogen trouwens ook weer zwart worden, bivakmuts idee"); kleur/schaduw naar Gen 3; donkerder tonen dan Linoone/Furret.
 - Onderlaag: `sprite/natief.png` (pitch 8, 104×124) → `sprite/reduce.py` (2×2, fase 1,1 = Gemini's eigen pixels) → `sprite/onderlaag_rgb.png` (52×62, 1262 px). Oude versie blijft in `af/` tot de nieuwe af is.
+- Sprite r3 (`sprite/r3/`): "zeer goed, alleen schaduw/kleur/belijning kan nog beter, doe dragonflycave/gen 3 keuring".

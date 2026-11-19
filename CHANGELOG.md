@@ -2275,3 +2275,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.545] - Hoatzin fase 2: prompt v4
 - v3 afgekeurd; Jordi: "Dit dier is zo bijzonder dat die niet eens heel veel hoeft af te wijken". v4 = echte hoatzin als Gen 3-sprite met alleen zijn wijzigingen (`PROMPTS_v4.md`). Les in `GEMINI.md`.
+
+### [v0.0.546] - Hoatzin fase 2: prompt v5
+- Op v4 r1: open pose naar Cornell-foto (vleugels hoog gespreid) en bruine kuif (Jordi); `PROMPTS_v5.md`.

@@ -16,3 +16,6 @@ The attached image is a small fire axolotl Pokémon whose wavy flame body winds 
 
 Gen 3 sprite, 64x64, plain white background.
 ```
+
+## Daarna
+Jordi: "en de sterretjes mogen weg". De losse sterretjes rondom haalt Claude zelf weg (alleen pixels wissen), zodat Gemini maar 2 wijzigingen krijgt.

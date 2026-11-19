@@ -2228,4 +2228,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Vuurwerk fase 1 r7 (alleen pijl + vuur) opgeslagen: eerste keer dat het vuur echt om de pijl krult.
 - Vuurwerk fase 1 prompt v8: r7 als bijlage + kop (r5) met zichtbare handjes bovenin, korte bocht onderaan; Jordi: de sliert mag het lijf zijn "zolang de handen maar zichtbaar eruit komen".
 - Vuurwerk fase 1 r8 opgeslagen (axolotl; Jordi: "dat vind ik prima"); prompt v9: punt van de pijl terug, kop opzij.
-- Vuurwerk fase 1 r9 opgeslagen (Jordi: "geweldige pose"); prompt v10: handen uit de golvende krul, staart sluit aan op het vuur uit de pijl.
+- Vuurwerk fase 1 r9 opgeslagen (Jordi: "geweldige pose"); prompt v10: handen uit de golvende krul, staart sluit aan op het vuur uit de pijl. Sterretjes rondom mogen weg (Jordi; Claude wist ze zelf).

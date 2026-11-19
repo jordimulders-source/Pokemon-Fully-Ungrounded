@@ -51,3 +51,6 @@ STYLE AND FORMAT
 AVOID
 - Not a horse, not a lamb, not a llama. No plush toy, chibi or mascot look, no oversized sparkly eyes.
 ```
+
+## Ronde 1 (prompt v1) → `r1_prompt_v1.png`
+Claude: netter (neus/mond, langere nek, pluimstaart), maar de oude sprite is overgetrokken: zijaanzicht, oog nog op de 3/4-plek bij een profielsnuit, handschoenen naast elkaar, geen telgang. Volgende: prompt v2 in een nieuw gesprek zonder bijlage, gang per poot beschreven ("a bit determined" bij de ogen is Claudes toevoeging, voorgelegd).

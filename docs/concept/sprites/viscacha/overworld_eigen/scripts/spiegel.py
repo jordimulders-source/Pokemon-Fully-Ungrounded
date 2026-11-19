@@ -1,5 +1,5 @@
 """Linkerhelft (x0-15, kolom 15 = midden) spiegelen naar rechts (x' = 30 - x) -> symmetrisch aanzicht.
-Invoer: regels 'y aaaaaaaa bbbbbbbb' (16 kolommen). Rechts: licht valt linksboven, dus 7 -> 6 en 6 -> 5 in de
+Invoer: regels 'y aaaaaaaa bbbbbbbb' (16 kolommen). Rechts: licht valt linksboven, dus 7/6 -> 5 in de
 buitenste kolommen (afstand tot midden >= 4) en 7 -> 6 elders; daarna optionele correcties 'R y x c'.
 Gebruik: spiegel.py in.half uit.txt"""
 import sys,os,numpy as np
@@ -15,8 +15,8 @@ def maak(p):
             v=int(c,16); a[y,x]=v
             if x<15:
                 m=v
-                if v==7: m=6
-                elif v==6 and 15-x>=4: m=5
+                if 15-x>=4 and v in (6,7): m=5   # buitenste kolommen rechts = schaduwkant
+                elif v==7: m=6
                 a[y,30-x]=m
     for y,x,c in fix: a[y,x]=c
     return a

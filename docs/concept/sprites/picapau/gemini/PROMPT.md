@@ -95,3 +95,9 @@ Jordi (19 nov): "ik heb niet gezegd dat de kleur van de vleugels anders moest, m
 Jordi (19 nov): "nee geen issue betekent dat je dat kan aanpassen. Anyways de hoek en pose vind ik prima. In de sprite betekent dat dat er 1 of 2 pixels max aan zwart oog boven de snavel uit komt. Ik heb het gevoel dat de staart nu wel veranderd is, past dit bij de vogel waarop die geinspireerd is?"
 - Hoek en pose: goed. Sprite-eis: verre oog max. 1–2 px zwart boven de snavel.
 - Staart (Claude, foto 1): echte specht = stijve, puntige, donkere steunstaart schuin omlaag in het verlengde van het lijf; de roodbruine kleur zit in de lange slagpennen. r4 = korte, horizontale waaier van losse veren (zangvogelstaart); r1–r3 en het model = stijve punt omlaag, past beter.
+Jordi (19 nov): "laten we 1 keer gemini proberen nog"
+
+### Verbeterprompt r5 (in hetzelfde gesprek)
+```
+Good, the angle and pose are perfect now, keep them exactly. Change only the tail: it became a short, horizontal fan of separate feathers, like a songbird. Put back the tail of the earlier versions: one stiff, pointed woodpecker tail that points diagonally DOWN and back, continuing the line of the body, like the tail a woodpecker leans on against a tree trunk. Same length and color as before. Nothing else changes. Same 64x64 Gen 3 sprite, white background.
+```

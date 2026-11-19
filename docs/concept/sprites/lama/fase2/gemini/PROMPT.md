@@ -177,3 +177,15 @@ Only one spot needs cleaning: the far front glove (the red glove on the right, b
 
 ## Ronde 6 → `r6/r6_plak_opgeschoond.png`
 Jordi (19 nov): "hij verandert niks" (bekende les: Gemini wijzigt een eigen bijlage amper).
+
+## Plakwerk 2 (Jordi: "komt ook door jouw matige knip en plak werk" · "doe de hele poten" · "r3 is de enige met goede handschoenen" · "beide voorpoten" · "en dan kunnen we een gemini ronde doen" · "dit lukte net bij palpaca ook")
+`handschoen/r4_voorpoten_r3.png`: r4, beide voorpoten vanaf de bovenkant van de polsband vervangen door die van r3 (per poot verticaal uitgelijnd op de polsband). Werkwijze zoals Palpaca r10 → r11 (ruw plakken, Gemini maakt de naad glad).
+
+## Prompt r7 (nieuw gesprek; bijlage `handschoen/r4_voorpoten_r3.png`)
+```
+This is a finished Pokémon design, drawn as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art). The two front feet with their red gloves were roughly pasted in from another drawing, so they are blockier than the rest and the seams don't match.
+
+Redraw the picture as one clean, consistent sprite: smooth the seams where the woolly front legs meet the gloves, and draw both gloves in the same clean style, outline and shading as the rest of the body.
+KEEP the gloves exactly as they are in shape, size, position and direction: both are closed red MMA gloves with a black wrist strap, pointing forward to the left, with small toenails at the bottom front; the far glove is slightly darker. Do not turn, open or move them.
+Keep EVERYTHING else exactly as it is: pose, head, ears, eye, mouth, wool, neck, collar, pompoms, back cloth, back legs, colors.
+```

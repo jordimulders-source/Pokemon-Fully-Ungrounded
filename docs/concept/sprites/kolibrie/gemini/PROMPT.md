@@ -54,3 +54,9 @@ AVOID
 ```
 Almost perfect. Keep everything exactly as it is: pose, head, crest, eye, body, colors, wings and tail. Change only one thing: the beak is too short. Make the beak a long, thin, straight hummingbird beak, clearly longer than the head, as long as in attachment 1, pointing in the same direction as now.
 ```
+
+## Ronde 2 (Jordi, 19 nov, letterlijk): `r2_te_veel.png` (na bijsturing snavel)
+"haha dit is weer too much" (snavel horizontaal en veel te lang; kuif en kop ook veranderd)
+
+## Snavel zelf verlengen in r1 (Claude, 19 nov)
+`verleng_snavel.py`: r1 blijft pixelgelijk; de snavelpunt schuift langs de eigen trapperiode van de snavel (16,16 px = 1 modelpixel diagonaal) en het gat wordt gevuld met kopieën van één plak van dezelfde snavel. Niets getekend. Varianten +2/+4/+6 modelpixels: `r1_snavel_k2.png`, `k4`, `k6`; overzicht `snavel_varianten.png` (r1 | k2 | k4 | k6). Jordi kiest.

@@ -36,3 +36,7 @@ STYLE AND FORMAT
 AVOID
 - Not Pikipek, Pikachu, Woody Woodpecker or Chatot. No plush toy, chibi or mascot look, no oversized sparkly eyes.
 ```
+
+## Ronde 1 (prompt v1) → `r1_prompt_v1.png`
+Jordi (19 nov): "ziet er goed uit, behalve dat de vleugelkleur veranderd is, maar dat is geen issue, ik twijfel wel of hij weer niet hetzelfde eruit gaat zien, want het oog links zal wegvallen, hoe dan andere sprites dat? Moeten we misschien voor een leukere pose gaan?"
+Studie `studie_vogels_gen3.png`: profielkop met één oog is gewoon in Gen 3 (Taillow, Swellow, Spearow, Chatot, Pikipek); de diepte zit dan in het lijf. Kop naar de kijker met twee ogen: Pidgey, Starly, Torchic, Hoothoot.

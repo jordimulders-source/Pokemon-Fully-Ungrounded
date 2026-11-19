@@ -2292,3 +2292,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.548] - Hoatzin fase 2: prompt v7
 - Zuur dat uit de bek druipt (zoals Gloom), warme paarstinten bij het roestbruin, Dark/Poison-uitstraling zonder vloeken, blauw gezicht en rood oog blijven (Jordi); `PROMPTS_v7.md`.
+- v7 r1 bewaard; bijsturing: 1 druppel zuur, achterste vleugel dezelfde kleur als de voorste (Jordi).

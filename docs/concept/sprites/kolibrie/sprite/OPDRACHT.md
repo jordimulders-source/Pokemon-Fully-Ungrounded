@@ -22,3 +22,7 @@ Bij een model (Gemini of ander) is de sprite de **verkleining van het model zelf
 4. **Lever** in `sprite/r1/`: `frame1.png`, `frame2.png` (elk 64×64, P, index 0 transparant, opslaan met `transparency=0`), `anim_front.png` (64×128, frame 1 boven, frame 2 onder), `normal.pal` (JASC), `onderlaag_f1.png`/`onderlaag_f2.png` (kale reductie), scripts, `NOTITIES.md` (per frame en zone: px afwijkend van de onderlaag, schaalbesluit frame 2 met metingen, zwakke punten), `vel.png` (frame 1 en 2 op 8× naast hun model op dezelfde schaal, oude sprite, Crobat/Ninjask/Beautifly 8×, beide frames op 1× licht/donker, een gif `anim.gif` die afwisselt).
 - Lees eerst `docs/lessen/SPRITE_KERN.md`, `docs/lessen/GEMINI.md` (natief raster, sneeuwbolslak/Krassault/Abra), `docs/lessen/SPRITE_WERKWIJZE.md` → "Gemini-model namaken", en `docs/concept/sprites/frame2_studie/STUDIE.md` §12.
 - Zelfgenoemd zwak punt = eerst zelf repareren. Geen git (doet Claude).
+
+## Jordi over sprite r1 (19 nov, letterlijk)
+"frame 2 moet alleen nog klein beetje scheiding tussen de rechtervleugel en de staart, qua belijning/schaduw/kleur. Verder uitstekend"
+→ reparaties 1–3 van Claude (kop, kuif, vleugelvlekken frame 2) vervallen; r2 = r1 + alleen die scheiding.

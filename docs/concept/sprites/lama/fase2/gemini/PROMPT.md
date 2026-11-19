@@ -163,3 +163,14 @@ Jordi (19 nov): "die handschoen is omgekeerd"
 This is very good. Keep EVERYTHING exactly as it is: pose, head, ears, eye, wool, neck, clothing, colors, style.
 Change only ONE thing: the far front glove (the one further back, behind the near front leg). It is drawn the wrong way around, reversed. Turn it around so it faces forward to the left, exactly like the near front glove: same shape and direction, red, black wrist strap, only two small toenails peeking out at the bottom front. Nothing else changes.
 ```
+
+## Ronde 5 (verbeterprompt r5) → `r5/r5_verbeter.png`
+Jordi (19 nov): "hetzelfde issue" (handschoen nog omgekeerd). Claude begon het gat zelf op te vullen; Jordi: "niet doen" · "copy paste egwoon van een van de andere ontwerpen" · "en dan doen we nog 1 gemini ronde".
+Plakwerk: `handschoen/r4_met_handschoen_r3.png` = r4 met de achterste handschoen van r3 (dx −7, dy +10, onder de wolrand van r4).
+
+## Prompt r6 (nieuw gesprek; bijlage `handschoen/r4_met_handschoen_r3.png`)
+```
+This is a finished Pokémon design, drawn as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art). Keep EVERYTHING exactly as it is: pose, head, ears, eye, mouth, wool, neck, collar, pompoms, back cloth, near front glove, back legs, colors, style.
+
+Only one spot needs cleaning: the far front glove (the red glove on the right, behind the near front leg) was pasted in from another drawing, so it is blockier and its edges don't match. Redraw ONLY that glove in the same clean style as the near front glove: a closed red MMA glove with a black wrist strap, pointing forward to the left, the same direction as the near glove, slightly darker because it is further away, with two small toenails peeking out at the bottom front. No open palm, no thumb, no fingers. Nothing else changes.
+```

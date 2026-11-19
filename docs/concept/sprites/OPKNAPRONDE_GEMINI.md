@@ -8,6 +8,7 @@ Bestaande, goedgekeurde designs die nog "een beetje 2D" staan opnieuw via Gemini
 - **Picaraio:** "mag iets meer de gen 1 Raichu pose, en de krullen bovenop het hoofd mogen iets natuurlijker naar beneden golven. Kleuren en staart verder prima, hoofd is een beetje knullig, snavel mag iets meer fearow achtig."
 - **Moonkey:** "ook prima model en design, maar iets betere pose."
 - **Soulibri:** "mag nog wat meer een typische kolibrie pose, maar behoud de kleuren en design"
+- **Llamauler:** "llamauler is idd erg plat, niet helemaal goed in verhouding, niet goed aangekleed, handschoenen kunnen beter en de kop is net niet llama genoeg"; handschoenen: "ja de handschoenen behouden, hij wisselt juist van vechtstijl en dat vind ik prima". Rest in `lama/fase2/gemini/PROMPT.md`.
 - **Hummlet:** "net niet genoeg een hummingbird chick". Antwoorden (19 nov): wat mist: "wat betreft vraag 1 alles, maar wat wel goed vertaalt naar een sprite"; snavel "Langer en dun, dicht"; kleuren "Ja, kleuren blijven"; pose "Bolletje zoals foto 5".
 
 ## Tweede ronde (19 nov)
@@ -26,3 +27,4 @@ Bestaande, goedgekeurde designs die nog "een beetje 2D" staan opnieuw via Gemini
 | Hummlet | `kolibrie_pre/gemini/`, `kolibrie_pre/sprite/` | **af** (19 nov, Jordi: "Akkoord"; sprite r3 met oog a, oog b bewaard als `af/kolibrie_pre_oogB.png`) |
 | Palpaca | `alpaca/gemini/`, `alpaca/sprite/` | **af** (19 nov, `alpaca/af/`; model = Gemini r4 + achterpoten uit r10 (foto als posebron), telgang; sprite r5; Jordi: "r5 is beter") |
 | Spooktrein fase 3 | – | kandidaat (Jordi: "slordige sprite"); groen bevroren of niet: nog open |
+| Llamauler | `lama/fase2/gemini/`, `lama/fase2/sprite/` | kandidaat na eindkeuring (19 nov, `lama/fase2/sprite/r7/`; model v3 = Gemini r4 + poten r3/r12; nog niet naar `af/`) |

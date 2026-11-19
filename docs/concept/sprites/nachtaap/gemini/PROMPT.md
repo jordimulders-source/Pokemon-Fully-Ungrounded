@@ -41,7 +41,7 @@ AVOID
 ## Rondes
 ### Ronde 1 (prompt v1) → `r1_prompt_v1.png`
 Jordi (19 nov): "hij heeft de hele pose aangepast".
-Claude: Gemini heeft een nieuwe pose bedacht (nabije arm reikt naar voren, ander zitten) en de kop staat nog bijna recht van voren. Les: "rotate the body and the arms" las Gemini als "nieuwe pose". In v2 eerst de huidige pose in woorden vastleggen en de draai als een beeldje op een draaischijf beschrijven. Nieuw gesprek.
+Claude: Gemini heeft een nieuwe pose bedacht (nabije arm reikt naar voren, ander zitten) en de kop staat nog bijna recht van voren. Jordi: "en hij moet niet glimlachen" · "het gelaat was goed" (het gezicht van de huidige sprite blijft). Les: "rotate the body and the arms" las Gemini als "nieuwe pose". In v2 eerst de huidige pose in woorden vastleggen en de draai als een beeldje op een draaischijf beschrijven. Nieuw gesprek.
 
 ## Prompt v2 (nieuw gesprek, alleen bijlage 1)
 ```
@@ -63,11 +63,12 @@ WHAT CHANGES WITH THE ROTATION
 - The tail curl peeks out behind the body on the right.
 
 KEEP (design is final)
-- Same creature, same proportions (very big round head, small body), same colors, same features, same cute and slightly mysterious expression, same big pink-magenta eyes.
+- Same creature, same proportions (very big round head, small body), same colors, same features, same big pink-magenta eyes.
+- The face stays exactly as in attachment 1: same calm, slightly mysterious expression. NOT smiling: the mouth is a tiny neutral mark under the small cream muzzle, as in the attachment.
 
 STYLE AND FORMAT
 - 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left, clean Gen 3 shading. Plain white background, no ground, no shadow, no effects.
 
 AVOID
-- No new pose, no reaching or waving arm, no plush toy or mascot look, no oversized sparkly anime eyes.
+- No new pose, no reaching or waving arm, no smile, no new facial expression, no plush toy or mascot look, no oversized sparkly anime eyes.
 ```

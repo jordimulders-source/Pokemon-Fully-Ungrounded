@@ -2267,3 +2267,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.543] - Vuurwerklijn fase 2: prompt v2
 - r1 bewaard (`vuurwerk_fase2/r1/`); zelfde probleem als bij fase 1 (geen krul, komt niet uit de pijl). v2 hergebruikt fase 1 r7 (pijl + krullend vuur), 50° gekanteld (`vuurwerk_fase2/bijlage/r7_gekanteld.png`), met alleen kop en handen erbij (`gemini/PROMPT_v2_bijlage.md`).
+
+### [v0.0.544] - Vuurwerklijn fase 2: prompt v3
+- r2 bewaard (los salamandertje met pootjes op de pijl; oorzaak: kop los van het eind van de vlam gevraagd). v3: ruwe collage `vuurwerk_fase2/schets/collage_v3.png` (gekantelde fase 1 r7 + kop van r1 op het eind van de vlam) met `gemini/PROMPT_v3_collage.md`.

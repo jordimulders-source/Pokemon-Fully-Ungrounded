@@ -85,3 +85,4 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Basis en stijl: de goedgekeurde ol
 - **Nieuw model = r1 (bevroren vorm).** In de sprite: oog rood zoals de oude sprite (`8c2418`/`b04a2c`); oren zwart (Claude stelde voor, Jordi oktober: "De oren mogen trouwens ook weer zwart worden, bivakmuts idee"); kleur/schaduw naar Gen 3; donkerder tonen dan Linoone/Furret.
 - Onderlaag: `sprite/natief.png` (pitch 8, 104×124) → `sprite/reduce.py` (2×2, fase 1,1 = Gemini's eigen pixels) → `sprite/onderlaag_rgb.png` (52×62, 1262 px). Oude versie blijft in `af/` tot de nieuwe af is.
 - Sprite r3 (`sprite/r3/`): "zeer goed, alleen schaduw/kleur/belijning kan nog beter, doe dragonflycave/gen 3 keuring".
+- Over r5: "ik twijfel nog een beetje over het bruine lichaam, die is wel erg effen 2 kleuren, past dat bij alle keuringen en andere gen 3 sprites?" → voorstel (lijf volume: schouder/dij rond, 4e lichte tint, gekartelde vachtgrenzen): "ja doe maar".

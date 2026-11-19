@@ -39,3 +39,11 @@ Redraw sprite (1) exactly as it is (pose, wings, body, colors, blue face, red ey
 Remove the dark purple feather fan behind the head and the thin brown hairs. Replace them with the crest of the real hoatzin in photo (2): copy its shape, size, number of feathers and colors as closely as possible (rufous orange feathers with dark tips, fanning up and back from the top of the head). Do NOT exaggerate it: not bigger, not denser, not a big bush. Clear pixel-art feathers, not single-pixel hairs.
 Style stays: official Gen 3 front sprite, 64x64, max 16 colors, white background, no effects.
 ```
+
+Uitslag v5 r3 (`v5_r3.webp`: kuif als brede potloodveren met rode band, vleugelpunten ook oranje), Jordi: "dit gaat fout".
+Plan (Claude): kuif als los asset laten tekenen en zelf op v5_r1 plakken (les mate-kano / vuurwerk asset voor asset). Assetprompt (nieuw gesprek; bijlagen: v5_r1 + kopportret):
+```
+Attached: (1) a Pokémon sprite, (2) a photo of a real hoatzin's head.
+Draw ONLY the head of sprite (1), at exactly the same pixel size, angle and colors (blue face, red eye with black pupil, grey beak, purple neck feathers), on a white background. Give it the crest of the real hoatzin in photo (2): about 12 to 15 thin, stiff feathers that fan up and back from the top of the head, each 2 pixels wide, rufous orange with dark brown tips, uneven lengths, spaced apart so you can see between them. Same size as in the photo, not exaggerated: not a bush, not a fan of broad feathers, no red band, no hair.
+Style: official Gen 3 front sprite pixel art, max 16 colors, clean dark outline, no effects.
+```

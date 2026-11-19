@@ -2258,3 +2258,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Rondes r1–r15 in `sprite/`: krullen op de kop weg (r10 B), sprieten/kieuwen erbij, vlamtongetjes en kleurverloop (B), palet van fase 3 als motief en strepen doorgetrokken tot onder de punt (r14, Jordi: "r14 is top"), eindkeuring Dragonfly Cave verwerkt (r15).
 - Op het overzichtsvel (`showcase/frontsprites_af.png`, werknaam "Vuurwerk-axolotl", naam open). Alle uitspraken van Jordi in `vuurwerk_fase1/SPEC.md`.
 - Lessen in `docs/lessen/GEMINI.md`: lange armen om een voorwerp tekent Gemini niet; asset voor asset met bijlagen werkt; "leest niet" is geen tekenopdracht; Gemini voegt goed iets toe aan een eigen sprite maar poetst slecht op.
+
+### [v0.0.541] - Overzichtsvel: pitahaya-draak fase 3 erbij
+- `docs/concept/sprites/showcase/frontsprites_af.png` (+ `maak_vel.py`): pitahaya-draak fase 3 (`pitahaya_draak_fase3/af/`, Grass/Dragon) toegevoegd naast fase 1 en 2; daarmee staat de hele lijn op het vel.

@@ -2279,3 +2279,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.546] - Hoatzin fase 2: prompt v5
 - Op v4 r1: open pose naar Cornell-foto (vleugels hoog gespreid) en bruine kuif (Jordi); `PROMPTS_v5.md`.
 - v5 r1 bewaard (pose goed volgens Jordi); bijstuurprompt alleen voor de kuif in `PROMPTS_v5.md`.
+- Kuifreferentie (illustratie, Jordi: "moeten meer zo") en bijstuurprompt v2 in `PROMPTS_v5.md`.

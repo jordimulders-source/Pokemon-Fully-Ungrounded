@@ -25,3 +25,9 @@ Uitslag v5 r1 (`v5_r1.webp`), Jordi: "pose is nu goed, maar de haren kloppen nog
 Keep this sprite exactly as it is (pose, wings, body, colors, face, tail): change ONLY the crest.
 Remove both the dark purple feather fan behind the head and the thin brown hairs. Replace them with ONE crest like the real hoatzin in the attached head photo: about 12 to 15 separate, stiff, spiky FEATHERS growing from the top of the head and radiating up and backward in a messy fan. Each feather is a thin shaft that widens slightly to a pointed tip. Color: rufous orange-brown with darker brown tips, like the real hoatzin. Make it bigger, more ragged and uglier than the real one: uneven lengths, some bent or sticking out sideways. Not hair, not strands, not a mohawk.
 ```
+
+Jordi (19 nov) met een illustratie van een hoatzin (`ref_kuif_illustratie.png`): "moeten meer zo" (de kuif). Bijstuurprompt v2:
+```
+Keep this sprite exactly as it is (pose, wings, body, colors, face, tail): change ONLY the crest.
+Remove both the dark purple feather fan behind the head and the thin brown hairs. Replace them with ONE crest copied from the attached illustration: a fan of many thin, stiff, spiky feathers that grows from the top of the head and spreads upward and backward, rufous orange at the base with dark brown tips. Draw it as clear pixel-art spikes (not single-pixel hairs), a bit bigger, more ragged and uglier than in the illustration. Not hair, not a mohawk, not a separate feather fan behind it.
+```

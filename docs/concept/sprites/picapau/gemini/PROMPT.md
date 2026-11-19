@@ -87,3 +87,6 @@ Jordi (19 nov): "prima, alleen nog steeds zou ik hem iets meer naar rechts wille
 ```
 Good, keep everything exactly as it is (design, shapes, colors, style). Change only the angle: rotate the whole bird about 20 degrees further to the right, around its vertical axis, so it turns more towards the viewer. We see more of the yellow chest and belly from the front, the beak points more towards the viewer and to the left, the near eye and cheek move a bit towards the middle of the face, and the far side of the head and the far wing start to show on the left. Do not add anything. Same 64x64 Gen 3 sprite, white background.
 ```
+
+Jordi (19 nov): "ik heb niet gezegd dat de kleur van de vleugels anders moest, maar prima. Als je de sprite gaat bouwen wil ik dat je de kleuren van pikachu daarvoor gebruikt"
+→ **Sprite bouwen met de kleuren van Pikachu** (`graphics/pokemon/pikachu/normal.pal`: geel 255 246 164 / 246 230 82 / 246 189 32 / 222 148 0, bruin 156 82 0 / 98 49 8, rood 230 148 131 / 230 90 65 / 197 32 24 / 123 41 8, grijs 123 123 139 / 64 64 72 / 41 41 41, zwart, wit). Gemini-kleuren niet overnemen.

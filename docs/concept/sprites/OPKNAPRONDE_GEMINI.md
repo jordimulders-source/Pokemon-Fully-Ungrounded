@@ -30,4 +30,4 @@ Bestaande, goedgekeurde designs die nog "een beetje 2D" staan opnieuw via Gemini
 | Hummlet | `kolibrie_pre/gemini/`, `kolibrie_pre/sprite/` | **af** (19 nov, Jordi: "Akkoord"; sprite r3 met oog a, oog b bewaard als `af/kolibrie_pre_oogB.png`) |
 | Palpaca | `alpaca/gemini/`, `alpaca/sprite/` | **af** (19 nov, `alpaca/af/`; model = Gemini r4 + achterpoten uit r10 (foto als posebron), telgang; sprite r5; Jordi: "r5 is beter") |
 | Spooktrein fase 3 | – | kandidaat (Jordi: "slordige sprite"); groen bevroren of niet: nog open |
-| Coathief | `coathief/gemini/` | loopt (pose zijwaarts, nettere afwerking) |
+| Coathief | `coathief/gemini/`, `coathief/sprite/` | **af** (19 nov, `coathief/af/`; Gemini r1 als model, oog rood, oren zwart, lijf met volume; sprite r7) |

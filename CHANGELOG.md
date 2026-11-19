@@ -2281,3 +2281,10 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Gemini (`alpaca/gemini/PROMPT.md`, 11 rondes): r4 gaf ontwerp, gezicht en geheven handschoen, maar een paardengang; vijf pogingen om de achterpoten om te wisselen mislukten; een foto van een lopende alpaca als bijlage (r10) gaf de telgang; achterpoten van r10 ruw in r4 geplakt en Gemini liet de naad gladmaken (r11 = model, `alpaca/model/model.png`).
 - Sprite (`alpaca/sprite/r1–r6`): verkleining van het model, daarna kleur/schaduw; Jordi's punten (snuit, oren, staartaanzet, oog, haardos, verre oog, schaduw achterpoot); kleuren en binnenlijnen uit het model i.p.v. de oude sprite (r4); Dragonfly Cave-eindronde met torso-perspectief en losse pixel weg (r5). r6 (rondere romp-omtrek) afgewezen: "r5 is beter".
 - Overzichtsvel bijgewerkt.
+
+### [v0.0.546] - Coathief opgepoetst: echte driekwart en Gen 3-kleur
+- Opknapronde via Gemini: Coathief stond bijna zijwaarts. Prompt met alleen de huidige sprite als bijlage (`coathief/gemini/PROMPT.md`); Gemini r1 gekozen als nieuw model ("eigenlijk is die heel goed he"; klauwen zoals Gemini ze tekende).
+- Sprite = Gemini's eigen pixelraster (natief pitch 8 → 2×2, 52×62, `coathief/sprite/reduce.py`), vorm bevroren. In de sprite: oog rood (oude kleuren), oren zwart (bivakmuts), kop koel antraciet, lijf warm roodbruin.
+- Rondes r1–r7: maker + vier keuringen (trouw/techniek, Dragonfly Cave/Gen 3, controle, lijfvolume). Na Jordi's opmerking "die is wel erg effen 2 kleuren" kreeg het lijf volume: ronde schouder en dij met sikkelschaduw, 4e hooglichttint, gekartelde vachtgrenzen. 15 kleuren.
+- `coathief/af/coathief.png` = r7; oude sprite in `coathief/af/oud_voor_gemini/`. Overzichtsvel bijgewerkt.
+- Lessen: opknappen met alleen de huidige sprite als bijlage (GEMINI.md); keurders toetsen eerst volume, dan regels (SPRITE_KERN.md).

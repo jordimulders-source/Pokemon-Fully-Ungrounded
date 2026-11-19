@@ -2264,3 +2264,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.542] - Vuurwerklijn fase 2: eerste Gemini-prompt
 - `docs/concept/sprites/vuurwerk_fase2/gemini/PROMPT.md`: vuursalamander van vuur die uit de achterkant van de vuurpijl komt, er één keer omheen krult en hem als bazooka schuin naar voren richt (lancering, zelfvertrouwen, geen poten). Bijlagen: fase 1 en fase 3, met de waarschuwing dat Gemini ze niet mag overtrekken. Keuzes van Claude apart gemarkeerd. Jordi's woorden in `IDEEEN.md`.
+
+### [v0.0.543] - Vuurwerklijn fase 2: prompt v2
+- r1 bewaard (`vuurwerk_fase2/r1/`); zelfde probleem als bij fase 1 (geen krul, komt niet uit de pijl). v2 hergebruikt fase 1 r7 (pijl + krullend vuur), 50° gekanteld (`vuurwerk_fase2/bijlage/r7_gekanteld.png`), met alleen kop en handen erbij (`gemini/PROMPT_v2_bijlage.md`).

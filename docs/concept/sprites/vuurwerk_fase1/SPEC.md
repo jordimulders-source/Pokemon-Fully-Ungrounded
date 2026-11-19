@@ -26,3 +26,4 @@ Fase 1: 29×62 px (r2; op ±50 px las de kop niet). Oppervlak ±810 px, gelijk a
 → Verbinding onderaan: variant A. B vervalt.
 - Jordi (19 nov, bij r3): "moet ook nog een onderscheid tussen hand en mond".
 - Jordi (19 nov): "r5 maakt de handen wel minder mooi dan r4 he" → handjes terug naar r4 (r6).
+- Jordi (19 nov) over de handjes in r5: "hij hertekent ze gewoon". (Oorzaak: Claude gaf in de r5-opdracht een tekenopdracht: "maak elk handje één omlijnd rondachtig vormpje".)

@@ -4,7 +4,7 @@ OUT=os.path.abspath(sys.argv[1]); R0=os.path.abspath(os.path.join(os.path.dirnam
 os.chdir(R0+"docs/concept/sprites")
 S=3; C=6
 items=[
-("alpaca/ronde17/variant_kop/anim_front.png",'"Palpaca"',"fight"),
+("alpaca/af/palpaca.png",'"Palpaca"',"fight"),
 ("lama/fase2/af/lama.png",'"Llamauler"',"fight"),
 ("lama/fase3/af/lama3.png",'"Cholucha"',"fight"),
 ("olinguito_v2/af/olinguito.png",'"Bandolingo"',"dark"),

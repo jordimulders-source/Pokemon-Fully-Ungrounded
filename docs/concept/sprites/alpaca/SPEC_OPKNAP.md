@@ -15,3 +15,6 @@
 
 ## Stand
 Gemini-rondes r1–r10 in `gemini/PROMPT.md`. Spritefase: opdracht `sprite/OPDRACHT.md`, rondes in `sprite/rN/`.
+
+## Af (19 nov)
+`af/palpaca.png` = `sprite/r5/` (Jordi: "r5 is beter, commit maar"). r6 (rondere romp-omtrek, 9 randpixels) afgewezen.

@@ -24,4 +24,5 @@ Bestaande, goedgekeurde designs die nog "een beetje 2D" staan opnieuw via Gemini
 | Moonkey | `nachtaap_evo/` | – |
 | Nocticue | `nachtaap/gemini/`, `nachtaap/sprite_r4/` | **af** (19 nov, `nachtaap/af/`; Gemini r4 als model, driekwart, streep tussen de ogen smaller in de sprite; Jordi: "nice") |
 | Hummlet | `kolibrie_pre/gemini/`, `kolibrie_pre/sprite/` | **af** (19 nov, Jordi: "Akkoord"; sprite r3 met oog a, oog b bewaard als `af/kolibrie_pre_oogB.png`) |
-| Palpaca | `alpaca/gemini/` | prompt v1 klaar |
+| Palpaca | `alpaca/gemini/`, `alpaca/sprite/` | **af** (19 nov, `alpaca/af/`; model = Gemini r4 + achterpoten uit r10 (foto als posebron), telgang; sprite r5; Jordi: "r5 is beter") |
+| Spooktrein fase 3 | – | kandidaat (Jordi: "slordige sprite"); groen bevroren of niet: nog open |

@@ -3,9 +3,10 @@ import numpy as np; from PIL import Image, ImageDraw
 def rgba(f):
     im=Image.open(f); im.save('_tmp/tmp.png',transparency=0); return Image.open('_tmp/tmp.png').convert('RGBA')
 cur=rgba('picaraio.png'); prev=rgba('../r2/picaraio.png')
-mi=Image.open('../../gemini/r9_prompt_v6.png').convert('RGB'); S=15.36
+mi0=Image.open('../../gemini/r9_prompt_v6.png').convert('RGB'); S=15.36
+mi=Image.new('RGB',(1024,1060),(255,255,255)); mi.paste(mi0,(0,11))  # 11 px witte rand boven: png-rij y -> modelrij S*y+0.76
 # png (x,y) -> model: x0=4*5.12+S*x, y0=S*y-10.24
-m=mi.crop((int(20.48),int(-10.24),int(20.48+64*S),int(-10.24+64*S))).resize((64,64),Image.BOX).convert('RGBA')
+m=mi.crop((int(20.48),1,int(20.48+64*S),int(1+64*S))).resize((64,64),Image.BOX).convert('RGBA')
 def on(im,bg,s):
     b=Image.new('RGBA',im.size,bg); b.alpha_composite(im); return b.convert('RGB').resize((im.width*s,im.height*s),0)
 W=3*522+10; H=24+512+30+20*12+30
@@ -14,7 +15,7 @@ for i,(im,t) in enumerate([(cur,'r3'),(prev,'r2'),(m,'model r9 verkleind (opperv
     V.paste(on(im,(255,255,255,255),8),(10+i*522,20)); d.text((10+i*522,4),t,fill=(0,0,0))
 x0,y0,x1,y1=6,0,34,20
 kc=on(cur.crop((x0,y0,x1,y1)),(255,255,255,255),12)
-km=mi.crop((int(20.48+S*x0),0,int(20.48+S*x1),int(-10.24+S*y1))).resize(kc.size,Image.LANCZOS)
+km=mi.crop((int(20.48+S*x0),int(1+S*y0),int(20.48+S*x1),int(1+S*y1))).resize(kc.size,Image.LANCZOS)
 yk=20+512+26; V.paste(kc,(10,yk)); V.paste(km,(20+kc.width,yk)); d.text((10,yk-14),'kop 12x r3  |  model',fill=(0,0,0))
 a=np.array(Image.open('../r2/picaraio.png')); b=np.array(Image.open('picaraio.png'))
 g=np.array(on(cur,(255,255,255,255),1)).astype(int); g=(g*0.35+165).astype('uint8'); g[a!=b]=(230,30,30)

@@ -92,3 +92,28 @@ FORMAT
 ### Ronde 3 (prompt v3) → `r3_prompt_v3.png`
 Jordi (19 nov): "ik zie wederom geen verschil?"
 Claude: Gemini kan een bestaande pixelsprite niet oppoetsen; met de sprite als bijlage kopieert hij hem (r2, r3) of maakt hij een tekening (r1). Voorstel: Gemini stoppen, poetsronde in de sprite zelf (zoals Picapau: alleen pixels aanpassen, niets hertekenen).
+Jordi (19 nov): "we moeten denk ik specifieker zijn, wat zou jij nog willen verbeteren aan deze sprite?" → Claude noemde 9 punten; Jordi: "doe allemaal maar" · "ik bedoel een prompt he" · "prompt, niet maken aub" (Claude was ten onrechte een maker gestart; gestopt).
+
+## Prompt v4 (nieuw gesprek, alleen bijlage 1)
+De 9 punten van Claude, letterlijk als lijst; de rest blijft.
+```
+You are a professional Game Freak pixel artist. Attachment 1 is a Pokémon front sprite (64x64 pixel art, shown enlarged). Fix the 9 specific problems below in this sprite. Everything else stays exactly as it is.
+
+KEEP (do not change)
+- Same creature, design, pose, 3/4 angle, proportions, colors and face (black mask, red eyes with pupil, white eyebrow arcs, white muzzle, round nose). Same claws with the crowbar notch, same red-brown sack. Nothing added, nothing removed.
+
+FIX THESE 9 PROBLEMS
+1. The hand in front of the chest: now a cream block with black stripes at the bottom and a dark grey blob next to it; it reads like a skull or teeth. Make it read clearly as a paw seen from the front with two big cream claws pointing down, crowbar tips with a notch, like the hand reaching down on the left.
+2. Under that hand a light brown horizontal bar runs across the belly and reads like a belt. Remove the bar; the belly below the hand is plain fur.
+3. Hips and thighs: the near leg and the belly are one flat grey area, so you cannot see where the leg starts. Give the thigh a clear rounded shape with a shadow line where it meets the belly. The far leg in front needs volume too. The dark lower legs get light and shadow instead of one flat tone.
+4. Chest and neck have noise: loose blocks of different greys. Make them calm areas with a clear light side (top left) and shadow side, like official Gen 3 sprites.
+5. The left edge of the neck and chest is a straight vertical line from the muzzle to the arm. Make it a natural curve of the throat and chest.
+6. The pale stripe left of the sack is a loose line without shape. Make it a clear strap of the sack, or remove it if it is not a strap.
+7. The sack is shaded in horizontal stripes. Shade it as one round, full bag: light top left, shadow bottom right, with its opening.
+8. The tail: the cream rings are rectangular blocks with hard steps, so the tail looks stiff. Make the rings follow the round, bending tail, each ring a curved band, so the tail looks soft and flexible. Keep the hook at the end with air in the bend.
+9. The top of the head between the ears is rather flat. Make it gently rounded.
+
+FORMAT
+- Pixel art only: a 64x64 sprite on a visible pixel grid, enlarged with hard square pixels, exactly like the attachment. Not an illustration, no smooth line art, no anti-aliasing, no gradients. Max 16 colors, 1 px dark outline, light from the top left.
+- Plain white background, no ground, no shadow, no effects.
+```

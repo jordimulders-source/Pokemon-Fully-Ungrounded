@@ -2282,3 +2282,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.548] - Vuurwerklijn fase 2: r5 bewaard
 - `vuurwerk_fase2/r5/gemini_v5.png` (Jordi: "dit werkt ook niet").
+
+### [v0.0.549] - Vuurwerklijn fase 2: lijnschets en prompt v6
+- Jordi: Gemini volgt de vormschets te letterlijk (r5: schedelkop, klompjes als armen). Nu een lijnschets (`vuurwerk_fase2/schets/lijnschets_v6.png`: alleen de looplijn van het lijf, de pijl, plek van kop en handen) + `gemini/PROMPT_v6_lijn.md` (kop expliciet levend, geen schedel).

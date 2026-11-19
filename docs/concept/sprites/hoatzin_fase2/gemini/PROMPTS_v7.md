@@ -92,3 +92,6 @@ Uitslag v7 r5 (`v7_r5.webp`, stap 1 slijm weg), Jordi: "dit is niet de juiste be
 ```
 Keep this sprite exactly as it is. Change only one thing: remove the green acid line and drop, so the beak is clean. The beak itself must stay exactly the same: short, thick, dark grey, slightly hooked, with its dark outline. Do not redraw or recolor anything else; keep the pixels as sharp as they are.
 ```
+
+v7 r6 (`v7_r6.webp`): Gemini tekende een roofvogelsnavel; Jordi: "hij is het kwijt", "heb je de snavel nog van voor het slijm? plak die erop".
+`v7_r4_snavel.png`: v7_r4 met de snavel van v6_r1 pixel voor pixel erop geplakt (alleen grijze snavel/omlijning/witte achtergrond in het snavelvak; slijm daarmee weg; rest onaangeroerd). Jordi: de resolutie wordt per Gemini-ronde slechter.

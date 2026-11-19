@@ -2296,3 +2296,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - v7 r2 bewaard; bijsturing: druppel uit de mondhoek over de rand, buik een tint richting de rest van het lijf (Jordi).
 - v7 r3 bewaard (kuif en buik goed; vleugeltop en slijm fout); bijsturing in twee rondes van 1 wijziging.
 - v7 r4 bewaard (vleugel en kuif goed, slijm nog fout); voorstel slijm via een eigen markering van Jordi.
+- `v7_r4_snavel.png`: snavel van v6 r1 op v7 r4 geplakt (slijm weg), op verzoek van Jordi.

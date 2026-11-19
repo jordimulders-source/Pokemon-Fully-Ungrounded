@@ -72,3 +72,18 @@ STYLE AND FORMAT
 AVOID
 - No new pose, no reaching or waving arm, no smile, no new facial expression, no plush toy or mascot look, no oversized sparkly anime eyes.
 ```
+
+### Ronde 2 (prompt v2) → `r2_prompt_v2.png`
+Jordi (19 nov): "iets beter maar nog niet perfect, hij kijkt niet echt driekwart he. De pose is wel goed, staart nog niet. Het rechteroog mag ronder, dat was een van de dingen die in de originele sprite niet perfect zijn".
+Claude: de kop staat tussen recht en profiel in zonder dat het klopt (snuit en streep schuiven naar links, maar het rechteroog is het grootste); de staart is dik geworden met een grote krul naast de kop.
+
+### Verbeterprompt r3 (in hetzelfde gesprek)
+```
+Better, the pose is good now. Keep the body, arms, legs, colors and face expression exactly as they are. Fix only these three things:
+
+1. ANGLE: it does not read as a real 3/4 view yet. Turn the head and body together about 35-40 degrees from the front, towards the left. Then the face disc, the stripe and the muzzle sit in the left half of the head, the near (left) eye is fully visible, the far (right) eye is a bit narrower because it turns away, and more of the round back of the head shows on the right.
+2. RIGHT EYE: make it rounder. Both eyes are round shapes, no flat or angular top.
+3. TAIL: back to a thin tail (2-3 pixels wide), as in the first attachment: it starts behind the hip on the right, rises next to the body and ends in a small spiral curl at about ear height, a little away from the head. Not thick, no big curl.
+
+Same 64x64 Gen 3 sprite style, white background, nothing else changed.
+```

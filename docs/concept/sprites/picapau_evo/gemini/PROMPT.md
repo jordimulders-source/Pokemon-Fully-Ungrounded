@@ -191,3 +191,12 @@ STYLE AND FORMAT
 AVOID
 - Not Pidgeot, Spearow or a sparrow. No plush toy, chibi or mascot look.
 ```
+
+## Ronde 7 (prompt v5) → `r7_prompt_v5_illustratie.png`
+Jordi (19 nov): "uitstekend, maar het is geen sprite"
+
+### Verbeterprompt r8 (in hetzelfde gesprek)
+```
+Excellent, this is exactly the design. Now convert THIS image into pixel art: an official Gen 3 front sprite (Ruby/Sapphire/Emerald), 64x64 pixels, max 16 colors, 1 px dark outline, light from top left, clean Game Freak shading.
+Do not change anything about the design: same pose, same angle, same proportions, same head, beak, eye, cheek, head plumes, wings with spots, legs, tail and lightning bolt, same colors. Only the drawing style changes, from illustration to sprite. White background.
+```

@@ -31,3 +31,11 @@ Keep this sprite exactly as it is. Make only these changes:
 2. Both wings (the front wing and the back wing behind the head) get the same color: the current rusty brown shifted one shade toward purple, a plum brown / purple-brown, with the same pale streaks.
 Everything else stays pixel for pixel the same, including the crest, face, body, belly, tail and feet.
 ```
+
+Uitslag v7 r2 (`v7_r2.webp`, bruinpaarse vleugels, 1 druppel), Jordi: "de druppel moet wel aan de zijkant van de mond komen, dus een beetje eroverheen lopen. De buik vind ik nog een beetje vloeken, kan die misschien 1 tint meer richting de rest van het lichaam?"
+```
+Keep this sprite exactly as it is. Make only these two changes:
+1. The acid drop comes from the SIDE of the mouth (the corner where the upper and lower beak meet), running a little over the edge of the beak before it hangs down as one drop.
+2. The purple belly: shift its color one shade toward the colors of the rest of the body, so it clashes less.
+Everything else stays pixel for pixel the same.
+```

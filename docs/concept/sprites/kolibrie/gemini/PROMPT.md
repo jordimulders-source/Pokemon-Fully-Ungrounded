@@ -65,3 +65,19 @@ Almost perfect. Keep everything exactly as it is: pose, head, crest, eye, body, 
 "+2 is perfect. Dan is de sprite al zo goed als af toch? Gemini heeft het een keer in de goede artstijl gedaan"
 → bevroren als `../referenties/gemini_gekozen_r1_snavel_k2.png`.
 Claude gemeten: Gemini-raster = precies 16 px per spritepixel (1:1 naar 64×64). r1 zelf was 64 px breed (snavelpunt x=0 tot racketpunt x=63); met +2 snavel is hij 66 px breed, 49 hoog: 2 px te breed voor 64×64. Kleuren: ±190 net verschillende tinten (JPEG-ruis + vleugelverloop) → naar ≤16.
+
+## Jordi (19 nov, letterlijk), over de 2 px te breed
+"we laten gemini de pose net iets anders maken"
+
+## Prompt v2 (nieuw gesprek; bijlage: alleen `bijlage3_gekozen_r1_snavel_k2.png`)
+Les: Gemini haalt geen exacte maat (sneeuwbolslak); daarom de beperking in verhoudingen beschrijven, niet alleen in pixels. Bijlage + "keep" = Gemini kopieert bijna letterlijk; dat is hier gewenst, behalve de kleine posewijziging.
+
+```
+This is a finished official Gen 3 front sprite of my Pokémon. I love it: keep its design, colors, art style, head, crest, eye, beak length, body, wings and tail exactly as they are.
+
+Only one problem: it is slightly too wide. From the beak tip to the tip of the tail it is 66 pixels, but a Gen 3 front sprite must fit inside 64x64 pixels.
+
+Change the pose just slightly so the whole creature fits inside a 64x64 square with a little room to spare, for example by angling the body or tail a little more. Keep the beak exactly this long. Do not shrink the creature and do not redraw it in another style: same pixel size, same pixel art.
+
+Plain white background, max 16 colors, no effects, one single creature.
+```

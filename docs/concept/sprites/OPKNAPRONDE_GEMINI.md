@@ -8,13 +8,13 @@ Bestaande, goedgekeurde designs die nog "een beetje 2D" staan opnieuw via Gemini
 - **Picaraio:** "mag iets meer de gen 1 Raichu pose, en de krullen bovenop het hoofd mogen iets natuurlijker naar beneden golven. Kleuren en staart verder prima, hoofd is een beetje knullig, snavel mag iets meer fearow achtig."
 - **Moonkey:** "ook prima model en design, maar iets betere pose."
 - **Soulibri:** "mag nog wat meer een typische kolibrie pose, maar behoud de kleuren en design"
-- **Hummlet:** "net niet genoeg een hummingbird chick". Antwoorden (19 nov): wat mist: "wat betreft vraag 1 alles, maar wat wel goed vertaalt naar een sprite"; snavel "Langer en dun, dicht"; kleuren "Ja, kleuren blijven"; pose "Bolletje zoals foto 5".
+- **Hummlet:** "net niet genoeg een hummingbird chick" (nog geen opdracht; eerst vragen).
 
 ## Volgorde en stand
 | soort | map | stand |
 |---|---|---|
 | Picapau | `picapau/gemini/` | **af** (19 nov, `picapau/af/`) |
-| Picaraio | `picapau_evo/gemini/` | r9 (model), sprite v2 loopt |
-| Soulibri | `kolibrie/gemini/` | prompt v1 klaar (19 nov), Jordi gaat vanavond verder |
+| Picaraio | `picapau_evo/gemini/` | **af** (19 nov, `picapau_evo/af/`) |
+| Soulibri | `kolibrie/` | – |
 | Moonkey | `nachtaap_evo/` | – |
-| Hummlet | `kolibrie_pre/gemini/`, `kolibrie_pre/sprite/` | **af** (19 nov, Jordi: "Akkoord"; sprite r3 met oog a, oog b bewaard als `af/kolibrie_pre_oogB.png`) |
+| Hummlet | `kolibrie_pre/` | aparte sessie (19 nov) |

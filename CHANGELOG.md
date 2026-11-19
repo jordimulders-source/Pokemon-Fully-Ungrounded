@@ -2216,12 +2216,5 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - **Picapau af (v3):** Gemini-model in driekwart (5 rondes, `picapau/gemini/`), sprite v3 door maker + keurders (vorm r17 na Jordi's punten: stekels, kop rond naar het model, verre oog 1 px, rand onder de snavel volgens zijn tekening), kleur- en schaduwronde met keurder-PASS. Palet van Picapau, vleugels in Pikachu-bruin, staartschaduw Pikachu-roodbruin. `picapau/af/` (oude versie in `af/oud_v2/`), overzichtsvel bijgewerkt.
 - Lessen in `docs/lessen/GEMINI.md`: "geen issue" betekent terugzetten; diepte (kam achter de kop) is een kleur-/schaduwvraag; "ronder" = geen rechte stukken; een krabbel van Jordi meten, niet schatten.
 
-### [v0.0.535] - Hummlet: opknapronde via Gemini gestart
-- Jordi: "hummlet is net niet genoeg een hummingbird chick". Keuzes: alles mag beter ("maar wat wel goed vertaalt naar een sprite"), snavel langer en dun en dicht, kleuren blijven, pose als bolletje zoals foto 5.
-- Gemini-prompt v1 + bijlagen in `docs/concept/sprites/kolibrie_pre/gemini/`; SPEC en `OPKNAPRONDE_GEMINI.md` bijgewerkt.
-
-### [v0.0.536] - Hummlet opnieuw via Gemini: frontsprite af
-- Gemini r5 gekozen (kolibriekuiken als bolletje zoals foto 5, kop schuin omhoog, lange dichte snavel); Jordi: "ja echt veel beter, ga maar bouwen" · "op alle fronten".
-- Sprite (maker + keurder, 3 rondes): model overgenomen op 40 px breed, kleurpalet van de oude sprite ("dat was het enige aan de originele sprite dat ik zeer goed vond"), perspectief via licht en schaduw. Keurder GOED + Dragonfly Cave-eindkeuring. Jordi: "Akkoord".
-- `kolibrie_pre/af/` vervangen (oud in `af/oud_voor_gemini/`), overzichtsvel bijgewerkt, les in `GEMINI.md`.
-- Soulibri: Gemini-prompt v1 voor de opknapronde klaargezet (`kolibrie/gemini/PROMPT.md`).
+### [v0.0.535] - Picaraio opgeknapt via Gemini
+- **Picaraio af (v2):** Gemini-model in 9 rondes (`picapau_evo/gemini/`; Fearow-verwijzingen geschrapt, pose = vliegend en achteroverleunend zoals het origineel, illustratie r7 als ontwerp, r9 als gepixeld model), sprite v2 door makers + keurders (4 vormrondes, kleurronde met bliksem naar Raichu, eindkeuring GOED), laatste losse pixels onder poten en staart door Jordi aangewezen. `picapau_evo/af/` (oude versie in `af/oud_v1/`), overzichtsvel bijgewerkt.

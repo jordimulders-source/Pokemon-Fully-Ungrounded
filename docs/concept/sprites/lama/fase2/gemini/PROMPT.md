@@ -231,3 +231,6 @@ STYLE AND FORMAT
 AVOID
 - Not a horse, deer, sheep, camel or alpaca. Not muscular, no bodybuilder look. Not standing on two legs. No plush toy, chibi or mascot look.
 ```
+
+## Ronde 8 → `r8/r8.png`
+Bijna gelijk aan r7 (kleed, halsband identiek); oren nu gekruld, achterste handschoen weer open, gang ongewijzigd. Jordi: "hoe deden we dit net bij alpaca?" → uitleg: Palpaca r10 kwam uit een NIEUW gesprek met alleen de foto (geen eerdere ronde), ontwerp volledig in woorden.

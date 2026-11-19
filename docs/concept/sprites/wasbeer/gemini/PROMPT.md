@@ -32,3 +32,33 @@ AVOID
 ```
 
 ## Rondes
+### Ronde 1 (prompt v1) → `r1_prompt_v1.png`
+Jordi (19 nov): "hij maakt er geen sprite van, moet je even beter benadrukken". (Gemini gaf een gladde illustratie met lijnwerk.)
+
+## Prompt v2 (nieuw gesprek, alleen bijlage 1)
+Zelfde als v1, maar met een openingsblok dat pixel art eist en een AVOID-regel tegen illustratie.
+```
+OUTPUT MUST BE PIXEL ART: a 64x64 pixel game sprite, drawn on a visible pixel grid, enlarged with hard square pixels (nearest neighbour). NOT an illustration, NOT a drawing, NOT anime/cartoon art, NOT vector art, no smooth lines, no anti-aliasing, no gradients. Exactly like the attachment: a Game Boy Advance sprite from Pokémon Ruby/Sapphire/Emerald.
+
+Redraw this Pokémon as a clean, polished official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art), in the same pixel resolution as the attachment.
+
+ATTACHMENT
+- Attachment 1 is the current sprite. The DESIGN and the POSE are final: same creature, same proportions, same colors, same features, same 3/4 view facing left, same sneaking pose. Do not add, remove or reinterpret anything.
+- What it needs is only finishing: it was made from a rough 3D render and still has small inconsistencies and messy pixel work. Redraw it the way a Game Freak pixel artist would finish the sprite: clean pixel shapes, clear volume, consistent shading.
+
+THE CREATURE (keep all of this)
+- Dark-type raccoon (crab-eating raccoon), the final form of a starter line. Warm grey-brown fur.
+- Black mask over the eyes in two lobes with a bridge over the nose, white eyebrow arcs above it, white muzzle, round dark nose. Red eyes with a pupil. Small round ears with light inner fur.
+- Sneaking forward on two legs, body leaning forward: near leg far back on its toes, far leg planted in front. Dark lower legs and feet.
+- Cream hands with two big claws each, the claw tips shaped like a crowbar with a notch. One hand in front of the chest, the other reaching down-forward on the left.
+- A red-brown sack on its back as a thief's bag, with its opening.
+- A ringed tail (dark brown and cream rings) that curves up behind the body and ends in a hook, with air inside the bend.
+
+STYLE AND FORMAT
+- 64x64 pixels, max 16 colors, 1 px dark outline, light from top left, clean pixel shading with large calm areas like official Gen 3 sprites, no dithering noise, no random spots.
+- Plain white background. No ground, rock, shadow or base. No effects. One single creature.
+
+AVOID
+- No illustration, no smooth line art, no high resolution, no anime or cartoon rendering: pixel art only.
+- No new pose, no new expression, no standing fully upright, no clothes or Robin Hood costume. Not Zangoose, Sneasel, Weavile, Thievul or Obstagoon. No plush toy or mascot look.
+```

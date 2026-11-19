@@ -2261,3 +2261,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.541] - Overzichtsvel: pitahaya-draak fase 3 erbij
 - `docs/concept/sprites/showcase/frontsprites_af.png` (+ `maak_vel.py`): pitahaya-draak fase 3 (`pitahaya_draak_fase3/af/`, Grass/Dragon) toegevoegd naast fase 1 en 2; daarmee staat de hele lijn op het vel.
+
+### [v0.0.542] - Opknapronde: Palpaca-prompt
+- `docs/concept/sprites/alpaca/gemini/PROMPT.md` + bijlage (huidige sprite 8×): Gemini-prompt v1 om Palpaca op te knappen. Design blijft, pose wordt een echte alpacagang (telgang: poten aan dezelfde kant tegelijk, anders dan het diagonale draven van een paard), driekwart hoek, gezicht dat bij die hoek klopt.
+- `OPKNAPRONDE_GEMINI.md`: tweede ronde met Jordi's woorden (netter maken, geen designwijziging; Palpaca; spooktrein fase 3).

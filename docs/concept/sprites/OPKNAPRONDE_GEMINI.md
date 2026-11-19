@@ -10,6 +10,11 @@ Bestaande, goedgekeurde designs die nog "een beetje 2D" staan opnieuw via Gemini
 - **Soulibri:** "mag nog wat meer een typische kolibrie pose, maar behoud de kleuren en design"
 - **Hummlet:** "net niet genoeg een hummingbird chick". Antwoorden (19 nov): wat mist: "wat betreft vraag 1 alles, maar wat wel goed vertaalt naar een sprite"; snavel "Langer en dun, dicht"; kleuren "Ja, kleuren blijven"; pose "Bolletje zoals foto 5".
 
+## Tweede ronde (19 nov)
+- Jordi: "het gaat niet zo zeer om design aanpassen, maar het gaat echt om het netter maken, betere pose, oppoetsen etc" · "Oud is niet per se fout he, het gaat om kleine AI foutjes, inconsistenties etc"
+- **Palpaca:** "palpaca heeft bijv nog steeds een beetje een gek aangezicht, daar gaat het mij vooral om" · "Belangrijk hierin is dat de sprite moet zijn zoals een alpaca in het echt loopt, dat is anders dan een paard doet toch? Het design moet zo blijven alleen de pose moet natuurlijker, de hoek moet natuurlijker, hij moet netter"
+- Spooktrein fase 3: "toch nog wel een slordige sprite, die zou ondanks dat die nieuw is wel een opknapbeurt kunnen gebruiken denk ik"
+
 ## Volgorde en stand
 | soort | map | stand |
 |---|---|---|
@@ -18,3 +23,4 @@ Bestaande, goedgekeurde designs die nog "een beetje 2D" staan opnieuw via Gemini
 | Soulibri | `kolibrie/gemini/`, `kolibrie/sprite/` | **af** (19 nov, Jordi: "uitstekend, frame 1 en 2 zijn klaar"; frame 1 + frame 2 + uit-de-bal-gif in `kolibrie/af/`) |
 | Moonkey | `nachtaap_evo/` | – |
 | Hummlet | `kolibrie_pre/gemini/`, `kolibrie_pre/sprite/` | **af** (19 nov, Jordi: "Akkoord"; sprite r3 met oog a, oog b bewaard als `af/kolibrie_pre_oogB.png`) |
+| Palpaca | `alpaca/gemini/` | prompt v1 klaar |

@@ -41,7 +41,7 @@ AVOID
 ## Rondes
 ### Ronde 1 (prompt v1) → `r1_prompt_v1.png`
 Jordi (19 nov): "hij heeft de hele pose aangepast".
-Claude: Gemini heeft een nieuwe pose bedacht (nabije arm reikt naar voren, ander zitten) en de kop staat nog bijna recht van voren. Jordi: "en hij moet niet glimlachen" · "het gelaat was goed" (het gezicht van de huidige sprite blijft). Les: "rotate the body and the arms" las Gemini als "nieuwe pose". In v2 eerst de huidige pose in woorden vastleggen en de draai als een beeldje op een draaischijf beschrijven. Nieuw gesprek.
+Claude: Gemini heeft een nieuwe pose bedacht (nabije arm reikt naar voren, ander zitten) en de kop staat nog bijna recht van voren. Jordi: "en hij moet niet glimlachen" · "het gelaat was goed" · "eigenlijk was alles prima, behalve de hoek en wat details in het spritewerk" (het gezicht van de huidige sprite blijft). Les: "rotate the body and the arms" las Gemini als "nieuwe pose". In v2 eerst de huidige pose in woorden vastleggen en de draai als een beeldje op een draaischijf beschrijven. Nieuw gesprek.
 
 ## Prompt v2 (nieuw gesprek, alleen bijlage 1)
 ```

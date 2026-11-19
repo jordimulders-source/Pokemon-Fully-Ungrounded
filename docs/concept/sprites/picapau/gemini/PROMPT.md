@@ -101,3 +101,6 @@ Jordi (19 nov): "laten we 1 keer gemini proberen nog"
 ```
 Good, the angle and pose are perfect now, keep them exactly. Change only the tail: it became a short, horizontal fan of separate feathers, like a songbird. Put back the tail of the earlier versions: one stiff, pointed woodpecker tail that points diagonally DOWN and back, continuing the line of the body, like the tail a woodpecker leans on against a tree trunk. Same length and color as before. Nothing else changes. Same 64x64 Gen 3 sprite, white background.
 ```
+
+## Ronde 5 (verbeterprompt r5) → `r5_verbeter.png`
+Jordi (19 nov): "beter?" Vergelijking: `staart_r3_r4_r5_foto.png`.

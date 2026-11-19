@@ -2192,3 +2192,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Eisenlijst (`EISEN_ICOON.md`) uitgebreid: eis 0 lijkt op de front, rekenen niet schatten, onmisbare kenmerken per soort, kleine details, snorharen/1-px-details, overlap (Dragapult laat de Dreepy's weg), gekleurde vlekken zonder binnenlijn, lijnkleur binnen het lijf, "witter" ≠ wit, de 6 gedeelde icoonpaletten (geen aanpassingen: Jordi). Vellen 10–24 en scripts (`icoon_check.py` 17 eisen, `gelijkenis.py`, `hoekig_meet.py`, `vorm_meet.py`, `front_icoon_8x.py`).
 - Krassault-icoon: Gemini-chibi als vormmodel geprobeerd (silhouet goed, rupsbanden anders); nog niet verder.
 
+### [v0.0.530] - Viscacha-icoon frame 2 af
+- Frame 2 opnieuw opgebouwd uit frame 1: alles 1 px omlaag, één pootrij minder (voeten blijven), pluimpunt zwiept 1 px; geen pixels verloren. Vergeleken met 15 in-game buren (`rug_icoon_studie/26_frame2_8x.gif`); Jordi: "alle sprites doen hetzelfde!". Icoon `viscacha/icoon/af/icon.png` + `icon_anim.gif` is af.
+

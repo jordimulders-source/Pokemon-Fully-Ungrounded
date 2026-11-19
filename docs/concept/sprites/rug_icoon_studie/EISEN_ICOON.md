@@ -6,7 +6,8 @@ Jordi: "eigenlijk moeten we een soort eisenlijst maken op basis van de al bestaa
 
 **Afspraak:** een icoon is af als het script alles OK geeft en de korte handmatige blik (punt 2) klopt. Geen keurrondes daarbovenop.
 
-## Stand 19 nov: viscacha-icoon frame 1 AF
+## Stand 19 nov: viscacha-icoon AF (frame 1 en 2)
+Frame 2 (`26_frame2_8x.gif`, 15 buren gemeten): bovenkant 1 px omlaag, voeten blijven (13/15), de poten vangen het op (één pootrij minder), plus een kleine beweging (pluim/oren); niets mag verdwijnen. Jordi: "alle sprites doen hetzelfde!". Vergelijk altijd op gelijke maat (8×) als Jordi moet beoordelen.
 `viscacha/icoon/af/icon.png` (a13). Route die werkte: onderdelen-methode (`onderdelen/bouw.py`, a2) → maker poetst zones → meetstudie-regels (kop, snuit, oog) → Jordi's krabbels pixel voor pixel. Paletten niet aanpassen (Jordi: "ik wil niet met de paletten gaan klooien"): kleuren die niet in het gedeelde icoonpalet staan, worden de dichtstbijzijnde (zoals Wailord paars, Sinistcha's kom grijs).
 
 ## Stand 18 nov: iconen geparkeerd (achterhaald)

@@ -55,3 +55,17 @@ Same 64x64 Gen 3 style, max 16 colors, 1 px dark outline, light from top left. P
 
 AVOID: no new design, no smaller moon, no square eyes, no thin or long body, no long legs, no smile, no Aipom look.
 ```
+
+### Ronde 2 (prompt v2) → `r2_prompt_v2.png`, vergelijking `vergelijk_r2.png` (huidig | r2)
+Jordi (19 nov): "wat vind jij?"
+Claude: design bleef (kop, ogen, lijf, wiggen, staart); poten iets beter gespreid, maar de voeten staan nog bijna op één lijn en het lijf is nog bijna profiel, dus het perspectief is maar een beetje beter. De maan verliest zijn sikkelpunten (onderrand recht, leest als een witte kap).
+
+### Verbeterprompt r3 (in hetzelfde gesprek)
+```
+Good, the design is right. Keep head, eyes, body, wedges, tail and colors exactly as they are. Fix only these two things:
+
+1. PERSPECTIVE OF THE FEET: the four feet still stand almost on one line. In a 3/4 view the far legs stand further back: put the far front foot and the far hind foot clearly higher in the image (about 4-6 pixels higher than the near feet) and partly behind the body. The near front foot is the lowest and most to the front.
+2. MOON: keep the big white crescent, but make its lower edge curve so the two points clearly point down at the sides of the eyes, like a crescent moon. Same size.
+
+Nothing else changed.
+```

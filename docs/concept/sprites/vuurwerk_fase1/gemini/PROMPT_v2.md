@@ -1,12 +1,12 @@
 # Gemini-prompt: vuurwerklijn fase 1, v2 (19 nov)
 
-Nieuw gesprek per variant. Bijlage: alleen een **echte foto** van de diersoort (geen sprite, geen Pokémon).
+Nieuw gesprek per variant, geen bijlage (Jordi, 19 nov: "nee bijlagen zijn niet nodig, gemini heeft een groot referentiekader").
 
 ## Jordi over r1 (`../r1/gemini_A_salamander.png`, `../r1/gemini_B_gekko.png`; namen in volgorde zoals gestuurd)
 "Hij wil heel graag Charmander maken. Ze zijn allebei sowieso nog niet goed, het lichaam komt niet zichtbaar uit de pijl. De armen krullen niet een extra ronde om de pijl en het hoofd is gewoon charmander bij beiden, of ik nu salamander of gecko doe".
 
 ## Wat Claude verandert (keuzes, niet besproken; schrappen mag)
-1. **Charmander:** "Not Charmander" eruit (een Pokémon noemen = Gemini kopieert hem, GEMINI.md) en ook "baby", "cute smile" en "big head, large shining eyes" (samen = Charmander). In plaats daarvan een soort met een eigen kop + foto als bijlage:
+1. **Charmander:** "Not Charmander" eruit (een Pokémon noemen = Gemini kopieert hem, GEMINI.md) en ook "baby", "cute smile" en "big head, large shining eyes" (samen = Charmander). In plaats daarvan een soort met een eigen kop:
    - A: **vuursalamander** (*Salamandra salamandra*): platte brede kop, kleine zwarte bolle ogen bovenop de kop, dikke klieren (parotoïden) achter de ogen, geen wangen.
    - B: **wimpergekko** (*Correlophus ciliatus*): stekelige kammetjes boven de ogen die als wimpers doorlopen naar achter op de kop, grote ogen zonder oogleden met verticale pupil. De kammetjes kunnen als vlammetjes.
    - Cute via houding en verhouding (klein, klampt zich vast), niet via een cartoonkop.
@@ -16,7 +16,7 @@ Nieuw gesprek per variant. Bijlage: alleen een **echte foto** van de diersoort (
 ## Prompt (A; voor B zie onder)
 
 ```
-Design an original Pokémon and draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style). The attached photo shows the real animal to use for the head and hands.
+Design an original Pokémon and draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style).
 
 CONCEPT
 - Fire/Fairy type, small first stage of an evolution line. Endearing because it is tiny and clings to its rocket.
@@ -25,7 +25,7 @@ CONCEPT
 - The creature is ONLY AN UPPER BODY made of fire: head, neck, chest and two arms. Below the chest the body gets narrower and narrower until it is just the flame jet entering the nozzle. NO belly, NO sitting body, NO hind legs, NO tail.
 - The body curls up around the rocket so the head peeks out above the rocket, next to the tip.
 - THE ARMS: each arm is long and ribbon-like and WRAPS ONE FULL TURN AROUND THE ROCKET CASING (you see the arm pass in front of the rocket, disappear behind it and come back). Only BELOW that coil do the small hands appear, gripping the casing.
-- HEAD: the head of a FIRE SALAMANDER (Salamandra salamandra), as in the photo: flat, broad, rounded snout, small black bulging eyes on top of the head, thick swollen glands behind the eyes, no cheeks. Calm, curious expression with a closed mouth line. It is a salamander head made of fire, not a cartoon dinosaur.
+- HEAD: the head of a FIRE SALAMANDER (Salamandra salamandra): flat, broad, rounded snout, small black bulging eyes on top of the head, thick swollen glands behind the eyes, no cheeks. Calm, curious expression with a closed mouth line. It is a salamander head made of fire, not a cartoon dinosaur.
 - Made of fire: flame edges and flame streaks, not smooth skin. Only the eyes and mouth are drawn into the flame.
 - FIREWORK COLORS, NOT CAMPFIRE COLORS: vivid, saturated, glittering. Gold-white at the head, hot pink in the middle, magenta at the nozzle. Glitter specks and a few small four-pointed twinkling stars. No orange.
 - No firecrackers. NO firework explosions or burst shapes anywhere.
@@ -41,5 +41,4 @@ AVOID
 ```
 
 ### Variant B (wimpergekko)
-- HEAD-regel vervangen door: `- HEAD: the head of a CRESTED GECKO (Correlophus ciliatus), as in the photo: triangular head, large lidless eyes with vertical slit pupils, a row of small spiky crests above each eye like eyelashes that continue back along the sides of the head; here those crests are little flame points. Calm, curious expression with a closed mouth line. It is a gecko head made of fire, not a cartoon dinosaur.`
-- Bijlage: foto van een wimpergekko (kop van voren/schuin).
+- HEAD-regel vervangen door: `- HEAD: the head of a CRESTED GECKO (Correlophus ciliatus): triangular head, large lidless eyes with vertical slit pupils, a row of small spiky crests above each eye like eyelashes that continue back along the sides of the head; here those crests are little flame points. Calm, curious expression with a closed mouth line. It is a gecko head made of fire, not a cartoon dinosaur.`

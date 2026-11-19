@@ -62,3 +62,7 @@ AVOID
 - No illustration, no smooth line art, no high resolution, no anime or cartoon rendering: pixel art only.
 - No new pose, no new expression, no standing fully upright, no clothes or Robin Hood costume. Not Zangoose, Sneasel, Weavile, Thievul or Obstagoon. No plush toy or mascot look.
 ```
+
+### Ronde 2 (prompt v2) → `r2_prompt_v2.png`, vergelijking `vergelijk_huidig_r1_r2.png` (huidig · r1 · r2)
+Jordi (19 nov): "hij erandert niet echt iets he? Kan je eens kijken hoe we dit in andere gesprekken deden?"
+Claude: r2 trekt de oude sprite over (les GEMINI.md: bijlage + "keep" = kopie). In de andere gesprekken (Palpaca r4, Nocticue r4, Hummlet) was de Gemini-uitkomst vaak een gladde tekening; die werd het **model** en de sprite bouwde Claude zelf (reductie + oud palet). De pixelvraag aan Gemini was dus niet nodig: r1 is zo'n model. Verschillen r1 t.o.v. de huidige sprite: boze blik (wenkbrauwen schuin), kop rechter op, borsthand een poot met vingers zonder koevoetklauwen, buidel dichtgeknoopt (geen zakmond), koeler grijs. Voorgelegd aan Jordi.

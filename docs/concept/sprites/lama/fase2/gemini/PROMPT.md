@@ -174,3 +174,6 @@ This is a finished Pokémon design, drawn as an official Gen 3 front sprite (Rub
 
 Only one spot needs cleaning: the far front glove (the red glove on the right, behind the near front leg) was pasted in from another drawing, so it is blockier and its edges don't match. Redraw ONLY that glove in the same clean style as the near front glove: a closed red MMA glove with a black wrist strap, pointing forward to the left, the same direction as the near glove, slightly darker because it is further away, with two small toenails peeking out at the bottom front. No open palm, no thumb, no fingers. Nothing else changes.
 ```
+
+## Ronde 6 → `r6/r6_plak_opgeschoond.png`
+Jordi (19 nov): "hij verandert niks" (bekende les: Gemini wijzigt een eigen bijlage amper).

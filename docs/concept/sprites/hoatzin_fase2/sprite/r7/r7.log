@@ -1,0 +1,40 @@
+buiklicht model-ellips midden [20.22 40.57]
+varianten verschillen buiten kuifzone: 0
+strepen in waaier: 6 pengrenzen: 3 20 px
+{
+ "B6 oude streep in waaier weg (wordt modelschacht)": 19,
+ "B6 schacht uit het model (1 px per rij)": 31,
+ "B5 pengrens uit de modelgroef (1 px, 3 aan beide kanten)": 20,
+ "B7 onderkant: modellijn 1 px, rest vlak": 21,
+ "C buiklicht = ellips van de modellichtvlek, zelfde aantal px": 4,
+ "A2 gezicht: vlak 9, rand 8 onder/rechts (vorm = modelblauw)": 9,
+ "A1 oog uit Latios": 11,
+ "A4 snavel: e vlak, f waar het model licht is (>= 95, de rug)": 8
+}
+{
+ "A": {
+  "log": {
+   "kuif achtergrond = vleugel (modeltoon)": 107,
+   "massa donkerbruin": 51,
+   "streng 1 px licht (donker op de rand)": 56
+  },
+  "anders_dan_r6": 205
+ },
+ "B": {
+  "log": {
+   "kuif achtergrond = vleugel (modeltoon)": 107,
+   "massa donkerbruin": 51,
+   "streng 2 px: licht": 38,
+   "streng 2 px: donkere rand (schaduwkant)": 28
+  },
+  "anders_dan_r6": 213
+ },
+ "C": {
+  "log": {
+   "kuif achtergrond = vleugel (modeltoon)": 107,
+   "massa licht (bruin model >= 50%)": 94,
+   "streng 1 px donkerbruin (zoals het model)": 56
+  },
+  "anders_dan_r6": 170
+ }
+}

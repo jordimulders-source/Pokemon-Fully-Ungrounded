@@ -2262,3 +2262,9 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.541] - Nocticue opknappen: Gemini-prompt
 - Nocticue (nachtaap fase 1) in de opknapronde via Gemini. Jordi: "ik ben echt fan van het design, dus het is puur de pose. De cuteness moet niet weg" · "ook de positie van zijn armen" · "dus puur de hoek".
 - Prompt v1 + bijlage (huidige sprite 8×) in `docs/concept/sprites/nachtaap/gemini/`; alleen de hoek (lijf en armen) naar driekwart links, design/kleuren/schattigheid bevroren.
+
+### [v0.0.542] - Nocticue opgepoetst: driekwart via Gemini
+- Nocticue (nachtaap fase 1) heeft een nieuwe frontsprite: `docs/concept/sprites/nachtaap/af/nachtaap.png` (oud in `af/oud_voor_gemini/`, voor/na in `af/voor_na_8x.png`). Jordi: "ik ben echt fan van het design, dus het is puur de pose. De cuteness moet niet weg" · "dus puur de hoek".
+- Gemini: 6 rondes (`nachtaap/gemini/PROMPT.md`); r4 gekozen, met Teddiursa als hoekvoorbeeld. r5 (molliger lijf) en r6 (streep tussen de ogen) mislukten.
+- Sprite (`nachtaap/sprite_r4/`): natief raster van r4 1-op-1 overgenomen (37×36, even groot als de oude sprite), palet van de oude sprite, Gen 3-volume; streep tussen de ogen smaller in twee tinten met crème rand om het linkeroog (Jordi's keuze om dat in de sprite-fase te doen). Keurder PASS, daarna Dragonfly Cave-eindronde (licht op armen/voet, kooilijnen romp, staartkrul, verre oog, wangschaduw) en Jordi's punten: oogrand onder het linkeroog, zonder hoekpixel. Jordi: "nice".
+- Overzichtsvel bijgewerkt; Nocticue in de opknapronde af.

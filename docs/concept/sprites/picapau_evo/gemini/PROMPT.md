@@ -101,3 +101,35 @@ STYLE AND FORMAT
 AVOID
 - Not Raichu, Pidgeot, Spearow, a kiwi, a hoopoe or Woody Woodpecker. No plush toy, chibi or mascot look.
 ```
+
+## Ronde 3 (prompt v3) (plaatje niet als bestand ontvangen)
+Beschrijving Claude: kleiner, slank lijf, vleugel half open, kop met een extra oortje/tuft links, krullen boven de kop, staart als grote boog naar de bliksem linksonder, wang weg.
+Jordi (19 nov): "ik vind hem nu teveel van het origineel afwijken, te klein ogend"
+Oorzaak (Claude): v2/v3 zeiden "old, clumsy sprite, ONLY for colors" en "NOT fat ... sleek"; dat duwde hem van het origineel weg (origineel: "imposant, groot, opgeblazen").
+
+## Prompt v4 (nieuw gesprek; bijlagen 1 en 2)
+```
+Redraw this Pokémon as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art), facing left in 3/4 view.
+
+ATTACHMENTS
+- Attachment 1 is the current sprite. It is the BASE: keep its size, its big imposing puffed-up body, its proportions, its colors, its wings with round cream spots, its red cheek and its overall look. It should look like the same Pokémon, only better drawn. Only the few points under "WHAT CHANGES" are different.
+- Attachment 2 is the Gen 1 Raichu sprite: inspiration for the pose only (leaning forward, tense, tail swinging in a big curve under the body, filling the frame). Do not copy Raichu's body, ears or face.
+
+WHAT CHANGES (only this, and only a little)
+1. Pose: a bit more like the Gen 1 Raichu pose: leaning a bit more forward and tense. Still standing, not flying.
+2. Head: the head looks a bit clumsy. Make it a nicer round bird head, still the same size and colors, with a round black eye with one white shine pixel and the red cheek below and behind the eye. No extra ears or tufts.
+3. Beak: the same grey woodpecker beak, but a bit thinner.
+4. Head plumes: two thin black strands that start at the forehead, run back over the top of the head in one long smooth arch and hang down behind the head, each ending in a small curl. Thin like hairs, close to the head.
+5. Tail: a real tail, not a loop: the thin black tail grows from the rump and swings in a curve under the body, ending in the big yellow zigzag lightning bolt.
+
+KEEP
+- Big and imposing; the sprite fills most of the 64x64 frame, like a final evolution. Not smaller or slimmer than attachment 1.
+- Exactly two wings, two legs, one tail.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left, clean shading with large calm areas like official Gen 3 sprites, no noise.
+- Plain white background. No ground, shadow or base. No effects except the lightning bolt. One single creature.
+
+AVOID
+- Not Raichu, Pidgeot or Spearow. No plush toy, chibi or mascot look.
+```

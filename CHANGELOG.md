@@ -2300,3 +2300,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.551] - Skinguin: snavel en wenkbrauwen van de macaroni
 - Prompt bijgewerkt: snavel en wenkbrauwen in de vorm van de macaronipinguïn, in Delibirds artstijl (Jordi).
+- Prompt: hij staat niet op ski's, zijn voeten hebben een skivorm (Jordi).

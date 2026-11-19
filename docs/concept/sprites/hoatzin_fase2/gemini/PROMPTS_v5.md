@@ -31,3 +31,11 @@ Jordi (19 nov) met een illustratie van een hoatzin (`ref_kuif_illustratie.png`):
 Keep this sprite exactly as it is (pose, wings, body, colors, face, tail): change ONLY the crest.
 Remove both the dark purple feather fan behind the head and the thin brown hairs. Replace them with ONE crest copied from the attached illustration: a fan of many thin, stiff, spiky feathers that grows from the top of the head and spreads upward and backward, rufous orange at the base with dark brown tips. Draw it as clear pixel-art spikes (not single-pixel hairs), a bit bigger, more ragged and uglier than in the illustration. Not hair, not a mohawk, not a separate feather fan behind it.
 ```
+
+Uitslag v5 r2 (`v5_r2.webp`, kuif als grote oranje bos), Jordi: "te overdreven, ik zal het nog een keer doen met een bronfoto, in nieuw gesprek". Prompt nieuw gesprek (bijlagen: v5_r1 + bronfoto van Jordi):
+```
+Attached: (1) a Pokémon sprite, (2) a photo of a real hoatzin.
+Redraw sprite (1) exactly as it is (pose, wings, body, colors, blue face, red eye, tail, feet, size): change ONLY the crest.
+Remove the dark purple feather fan behind the head and the thin brown hairs. Replace them with the crest of the real hoatzin in photo (2): copy its shape, size, number of feathers and colors as closely as possible (rufous orange feathers with dark tips, fanning up and back from the top of the head). Do NOT exaggerate it: not bigger, not denser, not a big bush. Clear pixel-art feathers, not single-pixel hairs.
+Style stays: official Gen 3 front sprite, 64x64, max 16 colors, white background, no effects.
+```

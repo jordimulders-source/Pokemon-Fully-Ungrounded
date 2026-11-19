@@ -125,75 +125,81 @@ def achter(y,x):
     if t<=0: return 3
     return 2 if t<63 else 3 if t<94 else 4
 massa=kz&(K[0]>=float(os.environ.get('MK',0.55)))&(yy>=14)&(xx<=17)&~rand
-# ---- kuif r8: plukken met volume, tonen uit het model (bruine modelpixels per cel, kuifkaart.py) ----
+# ---- kuif r8: plukken als taps toelopende vormen (plaats/richting/kromming uit het model, middellijnen T1-T7 gemeten
+#      op het 1024-model, zie r7), elk met licht (linksboven), middentint, donkere schaduwkant en omlijning ----
 KL=np.load('kuif_L.npy')
-PAL[6]=tuple(int(v) for v in os.environ.get('P6','132,72,40').split(','))    # bruin midden
-PAL[7]=tuple(int(v) for v in os.environ.get('P7','192,122,66').split(','))   # bruin licht; donker = 2 (schaduw, zoals het lijf), lijn = 1
-M0=kz&((K[0]>=0.30)|(rand&np.isin(S0,[6,7])))
-def glad(v,m):
-    o=np.zeros_like(v)
-    for y,x in zip(*np.where(m)):
-        w=[v[y+d,x+e] for d in (-1,0,1) for e in (-1,0,1) if ok(y+d,x+e) and m[y+d,x+e] and v[y+d,x+e]>0]
-        o[y,x]=(2*v[y,x]+sum(w))/(2+len(w)) if v[y,x]>0 else (np.mean(w) if w else 0)
-    return o
-LB=float(os.environ.get('LB',1.2))
-TK=glad(KL,M0)-LB*((xx-12)+(yy-14))      # modeltoon + licht linksboven
-vals=TK[M0&~rand]
-c=np.percentile(vals,[20,50,85])
-for _ in range(50):
-    k=np.argmin(abs(vals[:,None]-c[None]),1); c=np.array([vals[k==i].mean() for i in range(3)])
-t1,t2=(c[0]+c[1])/2,(c[1]+c[2])/2
-print('kuif tonen centra',c.round(1))
-def toon(y,x): return 7 if TK[y,x]>=t2 else 6 if TK[y,x]>=t1 else 2
-def specks(S2,m,cols,minn=3):
-    for it in range(3):
-        seen=np.zeros((64,64),bool); n=0
-        for y,x in zip(*np.where(m)):
-            t=S2[y,x]
-            if seen[y,x] or t not in cols: continue
-            st=[(y,x)];cc=[];seen[y,x]=1
-            while st:
-                a_,b_=st.pop();cc.append((a_,b_))
-                for d,e in N4:
-                    q,r=a_+d,b_+e
-                    if ok(q,r) and m[q,r] and not seen[q,r] and S2[q,r]==t: seen[q,r]=1;st.append((q,r))
-            if len(cc)<minn:
-                nb=[S2[a_+d,b_+e] for a_,b_ in cc for d,e in N4 if ok(a_+d,b_+e) and m[a_+d,b_+e] and S2[a_+d,b_+e] in cols and S2[a_+d,b_+e]!=t]
-                if nb:
-                    for q in cc: S2[q]=max(set(nb),key=nb.count); n+=1
-        if not n: break
+PAL[6]=tuple(int(v) for v in os.environ.get('P6','132,72,46').split(','))    # bruin midden
+PAL[7]=tuple(int(v) for v in os.environ.get('P7','192,122,72').split(','))   # bruin licht; donker = 2 (gedeeld), lijn = 1
+PLUK={  # naam: (middellijn basis -> punt, halve breedte basis, halve breedte punt)
+ 'T1':([(10.0,16.5),(6.1,8.7)],1.5,0.45),
+ 'T2':([(11.4,16.5),(11.2,6.3)],1.5,0.45),
+ 'T3':([(12.6,16.0),(14.9,10.1)],1.3,0.45),
+ 'T4':([(13.2,16.2),(18.0,11.4),(23.2,7.4)],1.6,0.45),
+ 'T5':([(14.5,15.2),(23.4,12.6),(26.8,12.2)],1.4,0.45),
+ 'T6':([(15.0,16.6),(24.0,15.6),(25.8,16.4),(30.1,19.2)],1.5,0.45),
+ 'T7':([(15.0,18.2),(26.7,21.8)],1.5,0.45),
+}
+def pluk(pl,w0,w1):
+    P_=np.array(pl,float); seg=np.diff(P_,axis=0); L_=np.r_[0,np.cumsum(np.hypot(*seg.T))]; tot=L_[-1]
+    d=np.full((64,64),9.0); n=np.zeros((64,64)); tt=np.zeros((64,64))
+    for y in range(64):
+      for x in range(64):
+        p=np.array([x+0.5,y+0.5]); best=None
+        for i,(a_,v) in enumerate(zip(P_[:-1],seg)):
+            l2=v@v; t=np.clip((p-a_)@v/l2,0,1); q=a_+t*v; dd=np.hypot(*(p-q))
+            if best is None or dd<best[0]:
+                nrm=np.array([v[1],-v[0]])/np.sqrt(l2)          # normaal
+                if nrm[0]+nrm[1]>0: nrm=-nrm                      # naar linksboven (lichtkant)
+                best=(dd,(p-q)@nrm,(L_[i]+t*np.sqrt(l2))/tot)
+        d[y,x],n[y,x],tt[y,x]=best
+    hw=w0+(w1-w0)*tt
+    return (d<=hw)&(tt<1.0+1e-6), n/np.maximum(hw,0.3), tt
+WB=float(os.environ.get('WB',0.8))
+PLUK={k:(v[0],v[1]+WB,v[2]+0.05) for k,v in PLUK.items()}
+PL={k:pluk(*v) for k,v in PLUK.items()}
+basis=kz&(K[0]>=0.55)&(yy>=14)&(xx<=16)&(yy<=19)
+TK=np.where(KL>0,KL,50.0); TMED=float(np.median(KL[(K[0]>=0.3)&kz]))
 def bouw(var):
     S2=BASIS.copy()
-    for y,x in zip(*np.where(kz&~rand)): S2[y,x]=achter(y,x)          # vleugel erachter
-    if var=='K1':   # hele haardos omlijnd: masker gesloten (1 px gaten dicht), buitenrand = lijn
-        H=M0.copy()
-        for y,x in zip(*np.where(kz&~M0)):
-            if sum(M0[y+d,x+e] for d,e in N4 if ok(y+d,x+e))>=3: H[y,x]=True
-        for y,x in zip(*np.where(H)): S2[y,x]=toon(y,x) if M0[y,x] else 2
-        specks(S2,H&~rand,(2,6,7))
-        for y,x in zip(*np.where(H)):
-            nbs=[(d,e) for d,e in N4 if not ok(y+d,x+e) or not H[y+d,x+e]]
-            if nbs: S2[y,x]=1 if any(d==1 or e==1 for d,e in nbs) else 2   # zwart schaduwkant, donkere selout lichtkant
-    if var=='K2':   # plukken: model-tonen, schaduwkant van elke pluk donker, buitenrand tegen de achtergrond zwart/selout
-        for y,x in zip(*np.where(M0)): S2[y,x]=toon(y,x)
-        specks(S2,M0&~rand,(2,6,7))
-        for y,x in zip(*np.where(M0)):
-            if rand[y,x]:
-                S2[y,x]=1 if any(not ok(y+d,x+e) or not fg[y+d,x+e] for d,e in ((1,0),(0,1))) else 2
-            elif any(ok(y+d,x+e) and not M0[y+d,x+e] for d,e in ((1,0),(0,1))) and S2[y,x]!=7: S2[y,x]=2
+    for y,x in zip(*np.where(kz&~rand)): S2[y,x]=achter(y,x)          # vleugel erachter (rustig vlak)
+    namen=['T7','T6','T5','T4','T3','T2','T1'] if var!='P2' else ['T7','T6','T4','T2','T1']
+    eig=np.zeros((64,64),int); nn=np.zeros((64,64))
+    m_all=basis.copy()
+    for y,x in zip(*np.where(basis)): nn[y,x]=0.35-((xx[y,x]-12)+(yy[y,x]-15))*0.12; eig[y,x]=99
+    for k,naam in enumerate(namen):
+        m,nv,tv=PL[naam]; m=m&kz
+        if var=='P2': m=pluk(PLUK[naam][0],PLUK[naam][1]+0.4,0.6)[0]&kz; nv=pluk(PLUK[naam][0],PLUK[naam][1]+0.4,0.6)[1]
+        for y,x in zip(*np.where(m)): eig[y,x]=k+1; nn[y,x]=nv[y,x]
+        m_all|=m
+    # tonen: lichtkant licht, midden/schaduwkant midden, modeltoon schuift mee (donker model -> 1 stap donkerder)
+    for y,x in zip(*np.where(m_all)):
+        s_=nn[y,x]+(TK[y,x]-TMED)/float(os.environ.get('TM',120))
+        S2[y,x]=7 if s_>float(os.environ.get('S1',-0.2)) else 6 if s_>float(os.environ.get('S2',-0.75)) else 2
+    # randen per pluk: schaduwkant (onder/rechts grenst aan iets anders) donker 2, buitenrand tegen achtergrond 1
+    for y,x in zip(*np.where(m_all)):
+        if rand[y,x]:
+            S2[y,x]=1 if any(not ok(y+d,x+e) or not fg[y+d,x+e] for d,e in ((1,0),(0,1))) else 6; continue
+        if any(ok(y+d,x+e) and not m_all[y+d,x+e] for d,e in ((1,0),(0,1))) and var!='K1': S2[y,x]=2
+    if var=='K1':   # hele haardos als één geheel omlijnd: zwart aan de schaduwkant, donkere selout (2) aan de lichtkant
+        for y,x in zip(*np.where(m_all)):
+            buiten=[(d,e) for d,e in N4 if not ok(y+d,x+e) or not m_all[y+d,x+e]]
+            if buiten: S2[y,x]=1 if any(d==1 or e==1 for d,e in buiten) else 2
+        # binnen: tussen de plukken schaduw (donker) waar een pluk over een andere valt
+        for y,x in zip(*np.where(m_all)):
+            if S2[y,x] in (6,7) and any(ok(y+d,x+e) and m_all[y+d,x+e] and eig[y+d,x+e]!=eig[y,x] and eig[y+d,x+e]<eig[y,x] for d,e in ((1,0),(0,1))): S2[y,x]=2
     return S2
 out={}
-for kv in ('K1','K2'):
+VARS=os.environ.get('VARS','K1,P1,P2').split(',')
+for kv in VARS:
     S2k=bouw(kv)
     for ov,ring in (('A',1),('B',8)):
         S2=S2k.copy(); zet_oog(S2,ring)
         assert ((S2!=0)==fg).all()
         im=Image.fromarray(S2.astype('uint8'),'P'); flat=[v for c_ in PAL for v in c_]; im.putpalette(flat+[0]*(768-len(flat)))
         im.save('kop_%s_oog%s.png'%(kv,ov),transparency=0)
-R7=np.array(Image.open('r7.png'))
-for f in ('kop_K1_oogA.png','kop_K2_oogB.png'):
-    a_=np.array(Image.open(f)); kopz=kz|face|snavel
-    print(f,'buiten kopzone anders dan r7 B:',int(((a_!=R7)&~kopz).sum()))
+R7=np.array(Image.open('r7.png')); kopz=kz|face|snavel
+for kv in VARS:
+    a_=np.array(Image.open('kop_%s_oogA.png'%kv))
+    print(kv,'buiten kopzone anders dan r7 B:',int(((a_!=R7)&~kopz).sum()),' in kopzone:',int(((a_!=R7)&kopz).sum()))
 with open('normal.pal','w') as f: f.write('JASC-PAL\n0100\n16\n'+''.join('%d %d %d\n'%tuple(c_) for c_ in PAL))
-print(json.dumps(log,indent=1,ensure_ascii=False))
 np.save('kuifzone.npy',kz)

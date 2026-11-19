@@ -25,3 +25,4 @@ Fase 1: 29×62 px (r2; op ±50 px las de kop niet). Oppervlak ±810 px, gelijk a
 "de krullen op het hoofd lijken nog teveel onderdeel van het hoofd, in het model is dat anders, kan je met een scheidslijn/schaduw/kleur misschien oplossen. Verder is die erg blurry, je ziet de handen/vingers niet goed, A gaat wel de betere kant op, dus b is niet meer nodig".
 → Verbinding onderaan: variant A. B vervalt.
 - Jordi (19 nov, bij r3): "moet ook nog een onderscheid tussen hand en mond".
+- Jordi (19 nov): "r5 maakt de handen wel minder mooi dan r4 he" → handjes terug naar r4 (r6).

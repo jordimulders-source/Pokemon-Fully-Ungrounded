@@ -2312,3 +2312,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.558] - Vuurwerklijn fase 2: kopprompt v11
 - r9 bewaard (twee vellen platte salamanderkoppen met een vlammetje bovenop; dat vlammetje kwam uit v10). `gemini/PROMPT_v11_kop_vlam.md`: geen kam meer, de achterkant van de kop en de nek lossen op in vlammen; vier duidelijk verschillende varianten.
+
+### [v0.0.559] - Vuurwerklijn fase 2: kopprompt v12
+- Jordi koos vel 1 van r9. `gemini/PROMPT_v12_kop_bijlage.md` met `bijlage/kop_r9a.png`: vlammetje bovenop weg, achterkant van de kop lost op in vlammen; vier benoemde, verschillende vlamvormen (Gemini gaf 4× dezelfde kop). v11 vervalt.

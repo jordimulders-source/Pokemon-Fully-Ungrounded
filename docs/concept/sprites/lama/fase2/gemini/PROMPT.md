@@ -340,3 +340,7 @@ Clean it up into one consistent sprite:
 
 Keep EVERYTHING else exactly as it is: head, ears, eye, mouth, wool, neck, collar, pompoms, back cloth, tail, colors, style. Plain white background.
 ```
+
+## Model met handschoenen (19 nov)
+Jordi: "pardon waarom gebruik je niet het model met handschoenen?" · "ik vroeg nog of je die er eerst op kon plakken" · "ja van r3" · "maar die zie ik helemaal niet terug". Fout Claude: stap "eerst de handschoenen op het model plakken" overgeslagen (maker plakte ze op spriteformaat); maker r1/r2 gestopt.
+`poten/model_handschoenen_r3.png` (`poten/handschoen_r3.py`): plakwerk v2 + beide handschoenen van r3 (1:1, polsband tegen de wol). Naar Jordi; daarna = bron voor de sprite.

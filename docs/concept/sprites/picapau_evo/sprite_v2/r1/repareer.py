@@ -26,8 +26,9 @@ zet('kuif',[(x,y,1 if (y,x) in S else 0) for y,x in zip(*np.where(kz))]+[(x,y,1)
 #    krul = ruitje rond 1 gat op (45,4), haakje = J met het gat op (40,8)
 zet('krul',[(44,5,0),(46,5,0),(45,6,0),(45,5,1),(46,4,1),(45,3,1),(44,4,1),(45,4,0)])
 zet('haakje',[(40,8,0),(41,9,0),(39,7,1),(39,8,1),(40,9,1),(41,8,1)])
-# 2 oog: glans wit linksboven (model: wit op x19 r11, bij de kale reductie achtergrond -> gat), oog rond naar het model
-zet('oog',[(19,11,14),(20,11,1),(19,10,3),(21,13,5)])
+# 2 oog: het modeloog beslaat x 19.0-22.0, y 10.4-13.7; glans op (19.8, 11.25) -> cel (20,11) (in de kale reductie
+#   achtergrond = gat); oog rond: hoek linksboven bruin (model m#3), rechtsonder creme (model #C3); iris onderin donker (model h/d)
+zet('oog',[(20,11,14),(19,11,1),(19,10,3),(21,13,5),(20,12,11)])
 # 3 snavel: celregel-model (bovenlijn d 24-26% als donkerbruine binnenlijn, punt grijs, onderlijn gesloten)
 zet('snavel',[(14,12,4),(15,12,4),(12,14,9),(10,15,9),(9,16,0),(10,16,1),(16,16,10)])
 # 4 bliksem: celregel op het model (>=50% wit = leeg, >=30% zwart = lijn), daarna buitenlijn
@@ -67,8 +68,23 @@ for y in range(H):
         w=o[y0:y1,x0:x1]==0; yy,xx=np.mgrid[y0:y1,x0:x1]
         up=(w&(yy<y)).sum()+(w&(xx<x)).sum(); dn=(w&(yy>y)).sum()+(w&(xx>x)).sum()
         E[(y,x)]=15 if up>dn else 1
+for _ in range(2):   # losse selout tussen zwart (of andersom) in de randketen gelijkmaken
+    F=dict(E)
+    for (y,x),v in E.items():
+        nb=[E[(y+a,x+b)] for a in (-1,0,1) for b in (-1,0,1) if (a or b) and (y+a,x+b) in E]
+        if len(nb)>=2 and all(n!=v for n in nb): F[(y,x)]=nb[0]
+    E=F
 for (y,x),want in E.items():
     if want!=o[y,x]: lst.append((x,y,want))
+zet('selout',lst)
+lst=[]
+for y in range(H):
+    for x in range(W):
+        v=o[y,x]
+        if v not in (1,15) or z[y,x]: continue
+        nb=[o[a,b] for a in range(max(0,y-1),min(H,y+2)) for b in range(max(0,x-1),min(W,x+2)) if (a,b)!=(y,x)]
+        if v==15 and 15 not in nb and 1 in nb: lst.append((x,y,1))
+        if v==1 and 1 not in nb and 15 in nb and 0 in nb: lst.append((x,y,15))
 zet('selout',lst)
 np.save('r1.npy',o)
 tot=0

@@ -2261,3 +2261,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.541] - Vuurwerklijn fase 2: brainstorm
 - `docs/concept/IDEEEN.md` → Vuurwerk: Jordi's twijfel (2 of 3 fases) letterlijk en zes open voorstellen voor wat fase 2 toevoegt (levensloop van de pijl, pijl kantelt per fase, wie draagt wie, axolotl → vuursalamander, krullen tellen, karakterboog).
+
+### [v0.0.542] - Vuurwerklijn fase 2: eerste Gemini-prompt
+- `docs/concept/sprites/vuurwerk_fase2/gemini/PROMPT.md`: vuursalamander van vuur die uit de achterkant van de vuurpijl komt, er één keer omheen krult en hem als bazooka schuin naar voren richt (lancering, zelfvertrouwen, geen poten). Bijlagen: fase 1 en fase 3, met de waarschuwing dat Gemini ze niet mag overtrekken. Keuzes van Claude apart gemarkeerd. Jordi's woorden in `IDEEEN.md`.

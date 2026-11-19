@@ -53,16 +53,16 @@ for y in range(1,H-1):
         same=[n for n in nb if G.get(n)==G[v]]
         if same: lst.append((x,y,max(set(same),key=same.count)))
 zet('losse tint',lst)
-# 7 selout: buitenlijn aan de lichtkant naast bruin -> donkerbruine selout, schaduwkant zwart. Lichtkant gemeten met de
+# 7 selout: buitenlijn aan de lichtkant naast bruin of creme (buik) -> donkerbruine selout, schaduwkant zwart. Lichtkant gemeten met de
 #   randnormaal over 5x5 (achtergrond boven+links > onder+rechts), zodat trappen niet om en om zwart/selout worden.
 #   Niet op kuif/koord (lucht-zone). Daarna: losse selout/zwart in een randketen gelijk aan zijn twee randburen.
 lst=[]; E={}
 for y in range(H):
     for x in range(W):
         v=o[y,x]
-        if v not in (1,15) or z[y,x]: continue
+        if v not in (1,15) or z[y,x] or bz[y,x]: continue
         if not any((0<=a<H and 0<=b<W and o[a,b]==0) for a,b in ((y-1,x),(y+1,x),(y,x-1),(y,x+1))): continue
-        br=any(o[a,b] in (2,3,4) for a in range(max(0,y-1),min(H,y+2)) for b in range(max(0,x-1),min(W,x+2)))
+        br=any(o[a,b] in (2,3,4,5,6,7) for a in range(max(0,y-1),min(H,y+2)) for b in range(max(0,x-1),min(W,x+2)))
         if not br: continue
         y0,y1,x0,x1=max(0,y-2),min(H,y+3),max(0,x-2),min(W,x+3)
         w=o[y0:y1,x0:x1]==0; yy,xx=np.mgrid[y0:y1,x0:x1]
@@ -81,7 +81,7 @@ lst=[]
 for y in range(H):
     for x in range(W):
         v=o[y,x]
-        if v not in (1,15) or z[y,x]: continue
+        if v not in (1,15) or z[y,x] or bz[y,x]: continue
         nb=[o[a,b] for a in range(max(0,y-1),min(H,y+2)) for b in range(max(0,x-1),min(W,x+2)) if (a,b)!=(y,x)]
         if v==15 and 15 not in nb and 1 in nb: lst.append((x,y,1))
         if v==1 and 1 not in nb and 15 in nb and 0 in nb: lst.append((x,y,15))

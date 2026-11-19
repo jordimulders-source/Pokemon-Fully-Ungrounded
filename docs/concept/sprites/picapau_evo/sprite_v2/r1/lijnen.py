@@ -50,5 +50,5 @@ while ch:
         N,S_,W,E=P[y,x+1],P[y+2,x+1],P[y+1,x],P[y+1,x+2]
         if sum(P[y:y+3,x:x+3].ravel())-1==2 and ((N and E) or (N and W) or (S_ and E) or (S_ and W)):
             L[y,x]=0; ch=True; P=np.pad(L,1)
-np.save('_m.npy',m); np.save('lucht.npy',zone); np.save('lijn.npy',L)
+np.save('lucht.npy',zone); np.save('lijn.npy',L)
 print('zone',zone.sum(),'middenlijncellen',m.sum(),'lijn',L.sum())

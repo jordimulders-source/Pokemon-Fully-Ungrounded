@@ -1,7 +1,7 @@
-# Kale 3x-reductie van de klassenkaart (geen tekenen): per 3x3-blok achtergrond bij >=5 bg, zwart bij >=3 zwart,
+# Kale 3x-reductie van de klassenkaart (geen tekenen): per 3x3-blok achtergrond bij >=5 bg, zwart bij >=2 zwart (1-px modellijnen blijven heel),
 # anders meerderheidsgroep en daarbinnen meerderheidstoon. Uitvoer kaal.npy (64 breed)
 import sys; import numpy as np
-ZT=int(sys.argv[3]) if len(sys.argv)>3 else 3
+ZT=int(sys.argv[3]) if len(sys.argv)>3 else 2
 K=np.load('klassen.npy'); OY,OX=int(sys.argv[1]) if len(sys.argv)>1 else 1,int(sys.argv[2]) if len(sys.argv)>2 else 4
 GRP={1:'z',2:'b',3:'b',4:'b',5:'c',6:'c',7:'c',8:'r',9:'g',10:'g',11:'g',12:'y',13:'y',14:'w'}
 H,W=K.shape; h=(H-OY)//3; w=min(64,(W-OX)//3); o=np.zeros((h,w),int)

@@ -2315,3 +2315,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.559] - Vuurwerklijn fase 2: kopprompt v12
 - Jordi koos vel 1 van r9. `gemini/PROMPT_v12_kop_bijlage.md` met `bijlage/kop_r9a.png`: vlammetje bovenop weg, achterkant van de kop lost op in vlammen; vier benoemde, verschillende vlamvormen (Gemini gaf 4× dezelfde kop). v11 vervalt.
+
+### [v0.0.560] - Vuurwerklijn fase 2: hele sprite met de r9-kop
+- Jordi wil eerst de hele sprite zien om te beslissen of hij voor deze Pokémon gaat. `gemini/PROMPT_v13_heel.md`: kop van r9 vel 1 + gekantelde pijl met krullend vuur als bijlagen (opbouw van v9).

@@ -1,7 +1,7 @@
-# Meting: per spritepixel aandeel van elke modelklasse (natief_q) bij F=2.4, ox=76, oy=14 (zelfde als reduce4).
+# Meting: per spritepixel aandeel van elke modelklasse (natief_q) bij F=2.4, ox=76.6, oy=14.6 (zelfde als reduce4).
 import sys, numpy as np
 from txt import CH
-q=np.load('natief_q.npy'); F,OX,OY=2.4,76.0,14.0
+q=np.load('natief_q.npy'); F,OX,OY=2.4,76.6,14.6
 def cov(j,i):
     x0,x1=OX+i*F,OX+(i+1)*F; y0,y1=OY+j*F,OY+(j+1)*F; w=np.zeros(16); 
     for yy in range(int(np.floor(y0)),int(np.ceil(y1))):

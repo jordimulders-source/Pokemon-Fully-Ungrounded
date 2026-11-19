@@ -20,3 +20,7 @@ Lijn: fase 1 (deze) → fase 2 (houdt de pijl vast, nog open) → fase 3 vuurwer
 
 ## Formaat
 Fase 1: 29×62 px (r2; op ±50 px las de kop niet). Oppervlak ±810 px, gelijk aan Charmander/Mudkip; zelfde vorm als Sentret (31×61). Jordi (19 nov): "als sentret ongeveer dezelfde vorm heeft, ga maar verder dan!" → pijl niet inkorten. 3/4 naar links zoals het model.
+
+## Jordi over r2 (19 nov)
+"de krullen op het hoofd lijken nog teveel onderdeel van het hoofd, in het model is dat anders, kan je met een scheidslijn/schaduw/kleur misschien oplossen. Verder is die erg blurry, je ziet de handen/vingers niet goed, A gaat wel de betere kant op, dus b is niet meer nodig".
+→ Verbinding onderaan: variant A. B vervalt.

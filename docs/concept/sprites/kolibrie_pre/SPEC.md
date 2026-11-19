@@ -2,7 +2,9 @@
 
 **AF (5 nov): frontsprite `af/kolibrie_pre.png` (+ `normal.pal`, `vel.png`)** = kleur r10 + de 8 px uit de allerlaatste keuring (`blender/A/kleur_r10/EINDKEURING.md`: banding onderbuik 7 px, pootje 1 px; door Claude mechanisch toegepast, oude waarden gecontroleerd, alpha-diff 0; keurder: "Na die 8 pixels is hij GOED"). Nog te doen: frame 2, rug, icoon, shiny, naam/data (y-offset instellen: staat 4–6 px hoog). Open opties van de keurder (niet uitgevoerd): oog (23,20) 5→1, snavel (14,16) → 0, paletdubbelingen samenvoegen.
 
-## Opknapronde via Gemini (19 nov) — begin hier
+## Opknapronde via Gemini (19 nov) — AF
+**Jordi (19 nov): "Akkoord, commit en push naar main"** → `af/kolibrie_pre.png` = `sprite/r3/hummlet.png` (oog a, advies keurder; Starly-oog als `af/kolibrie_pre_oogB.png`); keuring `sprite/r2/KEURING.md`. Oude sprite in `af/oud_voor_gemini/`. Kopje "AF (5 nov)" hieronder is daarmee historie.
+
 Jordi: "hummlet is net niet genoeg een hummingbird chick, maar heb ik toen maar opgegeven zodat we resultaat konden boeken." Het model en design van de lijn blijven; Hummlet moet duidelijker een kolibriekuiken worden.
 Antwoorden van Jordi op de vragen van Claude (19 nov): wat mist er: "wat betreft vraag 1 alles, maar wat wel goed vertaalt naar een sprite" (snavel, verhoudingen, vleugels, dons/veren); snavel: "Langer en dun, dicht" (vervangt het korte open bekje); kleuren: "Ja, kleuren blijven"; pose: "Bolletje zoals foto 5".
 Prompt + bijlagen + rondes: `gemini/PROMPT.md`. **Gekozen (19 nov): Gemini r5** (`referenties/gemini_gekozen_r5.png`), Jordi: "ja, ik denk dat we perspectief toch vooral creëren door slim kleur en schaduwgebruik" · "ja echt veel beter, ga maar bouwen" · "op alle fronten" · "de kleur van het model mag afwijken omdat je het kleurpalet van het origineel mag gebruiken, dat was het enige aan de originele sprite dat ik zeer goed vond. Ik ben het eens met je dat die klein moet blijven, 40px breed mag je proberen". Sprite: `sprite/` (opdracht `sprite/OPDRACHT.md`). De oude af-sprite (`af/`) blijft staan tot er een nieuwe gekozen is.

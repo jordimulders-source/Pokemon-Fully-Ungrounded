@@ -2214,3 +2214,9 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.534] - Hummlet: opknapronde via Gemini gestart
 - Jordi: "hummlet is net niet genoeg een hummingbird chick". Keuzes: alles mag beter ("maar wat wel goed vertaalt naar een sprite"), snavel langer en dun en dicht, kleuren blijven, pose als bolletje zoals foto 5.
 - Gemini-prompt v1 + bijlagen in `docs/concept/sprites/kolibrie_pre/gemini/`; SPEC en `OPKNAPRONDE_GEMINI.md` bijgewerkt.
+
+### [v0.0.535] - Hummlet opnieuw via Gemini: frontsprite af
+- Gemini r5 gekozen (kolibriekuiken als bolletje zoals foto 5, kop schuin omhoog, lange dichte snavel); Jordi: "ja echt veel beter, ga maar bouwen" · "op alle fronten".
+- Sprite (maker + keurder, 3 rondes): model overgenomen op 40 px breed, kleurpalet van de oude sprite ("dat was het enige aan de originele sprite dat ik zeer goed vond"), perspectief via licht en schaduw. Keurder GOED + Dragonfly Cave-eindkeuring. Jordi: "Akkoord".
+- `kolibrie_pre/af/` vervangen (oud in `af/oud_voor_gemini/`), overzichtsvel bijgewerkt, les in `GEMINI.md`.
+- Soulibri: Gemini-prompt v1 voor de opknapronde klaargezet (`kolibrie/gemini/PROMPT.md`).

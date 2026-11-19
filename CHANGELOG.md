@@ -2318,3 +2318,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.560] - Vuurwerklijn fase 2: hele sprite met de r9-kop
 - Jordi wil eerst de hele sprite zien om te beslissen of hij voor deze Pokémon gaat. `gemini/PROMPT_v13_heel.md`: kop van r9 vel 1 + gekantelde pijl met krullend vuur als bijlagen (opbouw van v9).
+
+### [v0.0.561] - Vuurwerklijn fase 2: r10 bewaard
+- `vuurwerk_fase2/r10/gemini_v13.png` (Jordi: "dit ziet er niet uit").

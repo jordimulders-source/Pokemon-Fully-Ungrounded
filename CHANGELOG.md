@@ -2327,3 +2327,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.558] - Skinguin af
 - Jordi koos A ("b is alleen de achterkant die dichterbij is ... maar ik vind A wel prima"). `docs/concept/sprites/skinguin/af/skinguin.png` (+ `_8x`, `normal.pal`); op het overzichtsvel.
+
+### [v0.0.559] - Skinguin: Dragonfly Cave-eindkeuring
+- Jordi: "misschien schaduw/belijning/kleur check nog 1 keer". Eindkeuring: schaduw en belijning PASS; rood te weinig contrast. Palet rood index 3 → (168,32,48), index 4 → (224,64,56); 12 zwarte binnenlijnen in lichte staartveren → donkerrood; los grijs pixel weg; geel strookje onder linkerski, teennaden en pompon-schaduw. 24 px, vorm/muts/gezicht onaangeroerd. `af/` en overzichtsvel bijgewerkt.

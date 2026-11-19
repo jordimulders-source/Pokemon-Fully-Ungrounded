@@ -17,10 +17,18 @@ def run(o):
         for x in range(11,32):
             if not B(x,y) or (x,y) in sel: continue
             def uit(dx,dy): return not B(x+dx,y+dy)
-            if uit(1,1) and (uit(0,1) or uit(1,0)) and y>=30: t=7
-            elif any(uit(dx,dy) for dx,dy in [(3,1),(2,2),(1,3),(0,3),(3,0),(2,3),(3,2)]): t=6
+            if uit(1,1) and uit(0,1) and y>=39: t=7
+            elif any(uit(dx,dy) for dx,dy in [(3,1),(2,2),(3,0),(2,3),(3,2),(1,2)]): t=6
             else: t=5
             out[y,x]=t
+    for y in range(23,45):                                           # losse tintpixel (alle buikburen anders) -> meerderheid
+        for x in range(11,32):
+            if out[y,x] in (5,6,7) and (x,y) not in sel:
+                nb=[out[y+dy,x+dx] for dx,dy in ((1,0),(-1,0),(0,1),(0,-1)) if out[y+dy,x+dx] in (5,6,7)]
+                if len(nb)>=3 and out[y,x] not in nb: out[y,x]=max(set(nb),key=nb.count)
+    for x in (25,26,27): out[41,x]=6                                # C-tong in de onderste sikkel dicht
+    for x in range(21,31): out[43,x]=7                               # donkerste rand onderaan: 1 rij k boven de zwarte buitenlijn
+    out[42,30]=7
     return out
 if __name__=='__main__':
     o=np.load('_tmp/s3.npy'); n=run(o); np.save('_tmp/s4.npy',n); print('buik px',(n!=o).sum())

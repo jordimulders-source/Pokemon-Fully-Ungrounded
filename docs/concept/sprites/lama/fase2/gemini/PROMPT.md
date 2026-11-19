@@ -158,7 +158,8 @@ AVOID
 Jordi (19 nov): "op de achterste handschoen na vind ik dit het beste ontwerp" (verre voorhandschoen: open voorkant waar de hoef als een duim uitsteekt).
 
 ### Verbeterprompt r5 (in hetzelfde gesprek als r4)
+Jordi (19 nov): "die handschoen is omgekeerd"
 ```
 This is very good. Keep EVERYTHING exactly as it is: pose, head, ears, eye, wool, neck, clothing, colors, style.
-Change only ONE thing: the far front glove (the one further back, behind the near front leg). It now has an open front where the hoof sticks out like a thumb. Make it a closed red MMA glove exactly like the near front glove: same shape, red, black wrist strap, only two small toenails peeking out at the bottom front. Nothing else changes.
+Change only ONE thing: the far front glove (the one further back, behind the near front leg). It is drawn the wrong way around, reversed. Turn it around so it faces forward to the left, exactly like the near front glove: same shape and direction, red, black wrist strap, only two small toenails peeking out at the bottom front. Nothing else changes.
 ```

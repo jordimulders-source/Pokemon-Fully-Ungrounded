@@ -2294,3 +2294,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Zuur dat uit de bek druipt (zoals Gloom), warme paarstinten bij het roestbruin, Dark/Poison-uitstraling zonder vloeken, blauw gezicht en rood oog blijven (Jordi); `PROMPTS_v7.md`.
 - v7 r1 bewaard; bijsturing: 1 druppel zuur, achterste vleugel dezelfde kleur als de voorste (Jordi).
 - v7 r2 bewaard; bijsturing: druppel uit de mondhoek over de rand, buik een tint richting de rest van het lijf (Jordi).
+- v7 r3 bewaard (kuif en buik goed; vleugeltop en slijm fout); bijsturing in twee rondes van 1 wijziging.

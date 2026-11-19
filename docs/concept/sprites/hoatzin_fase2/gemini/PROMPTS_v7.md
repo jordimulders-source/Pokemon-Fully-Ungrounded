@@ -48,3 +48,14 @@ Keep this sprite exactly as it is. Make only these three changes:
 3. The thin crest strands on the head: make them rufous orange-brown again (like a real hoatzin's crest), so they stand out against the wings behind them. Keep their shape.
 Everything else stays pixel for pixel the same.
 ```
+
+Uitslag v7 r3 (`v7_r3.webp`), Jordi: "de kuif en buik zijn goed, maar de top van de vleugel is nu verknald en het slijm gaat helemaal fout". (Achterste vleugeltoppen werden kuifbruin; slijm loopt als groene lijn langs de snavel.)
+Ronde A (1 wijziging; bijlagen: v7_r3 + v7_r2 als voorbeeld van de vleugel):
+```
+Attached: (1) the current sprite, (2) an earlier version.
+Keep sprite (1) exactly as it is. Change only one thing: the tops of the back wing behind the head have become orange-brown by mistake. Give those wing feathers the same plum-brown color as the rest of the wings, like in image (2). The thin orange crest strands in front of them stay orange. Everything else stays pixel for pixel the same.
+```
+Ronde B (daarna, 1 wijziging):
+```
+Keep this sprite exactly as it is. Change only the acid: remove the green line along the beak. Instead, one single small acid drop sits at the corner of the mouth (where the beak meets the blue face) and hangs down from there. Everything else stays pixel for pixel the same.
+```

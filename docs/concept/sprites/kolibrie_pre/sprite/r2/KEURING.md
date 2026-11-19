@@ -66,3 +66,45 @@ Het gaat om kleine, puur scriptbare reparaties. Silhouet, pose en kleur zijn goe
 
 ## Oogadvies (advies, geen besluit)
 **Oog a.** Het model heeft een donker, rond oog met een witte glans linksboven. Oog a geeft precies dat: een zwarte rand, een donkere leisteen-iris en een glans op (31,30). Op 1× leest het als een donker kuikenoog. Oog b (Starly) staat hier als een zwart kader rond een witte/lichte kolom (7 boven 5). Op 8× leest het als een hol "0" of een staroog, op 1× lichter en wat schrikkerig. Het past niet bij het donkere modeloog. Eventueel bij oog a als MAG: (32,31) 14→1 voor een donkerder pupil, maar het werkt nu al.
+
+## Controle r3 + eindkeuring
+Gekeurd: `../r3/hummlet.png` en `../r3/hummlet_oogB.png`.
+
+### 1. Zijn de MOET-punten goed uitgevoerd?
+Ja, voor beide versies.
+- Ik heb r2 plus mijn MOET-lijst per script vergeleken met r3: **0 px afwijkend**.
+- r2 en r3 verschillen in precies 19 px. Dat klopt: 6 van de 25 opgegeven waarden stonden al zo, bijv. (47,45) en (48,45) waren al 4.
+- Palet en modus (P) zijn ongewijzigd.
+- Buiten de lijst is niets veranderd. Er is niets nieuws kapot.
+
+### 2. Eindkeuring (Dragonfly Cave)
+Vergeleken op 1× (licht en donker) en op 10× naast Taillow, Swablu, Wingull, Natu en Starly.
+
+- **Snavel op 1×:** leest nu als een naald met een dikkere voet die in de kop overgaat, zoals de wig in het model. De "wenkbrauw" is weg en het geel van de mondhoek zit aan het eind van de snavel. Op een donkere achtergrond valt de zwarte punt weg, net als bij de snavel van Wingull. Dat is normaal.
+- **Staart:** leest nu als twee veren zoals in het model:
+  - boven een lila veer (rij 44 licht 5, rij 45 basis 4);
+  - eronder een blauwe veer (A aan de wortel, daarna 8).
+  
+  Op 1× is het een klein lipje met een lichte bovenkant en een blauwe onderkant. Dat is geen ruis meer. De ingesneden punt uit het model ontbreekt nog (MAG).
+- **Lijnen en curven:** omlijning 1 px. Zwart en selout wisselen niet meer om en om; de selout zit aan de lichtkant links en boven. Er staan geen lichte kleuren op de buitenrand, alleen snavel 14 (een dun deel, pseudo-omlijning). Ik zie geen spijkertjes in de curven.
+- **Donkere pixels:** het aandeel zeer donker is 0,19. Dat valt binnen de band van 0,10–0,25.
+- **Kleur:**
+  - 3 tinten per groep plus omlijning (lila 3/4/5 met glans 6, borst 6/5/4, blauw 8/A, poot 9/D).
+  - Stappen van ±40.
+  - Licht linksboven en een sikkel onder de buik en achter de kop.
+  - Geen pillow shading.
+- **Oog a:** glans linksboven, donkere iris en volledig omlijnd. Het leest op 1× als kraaloog.
+- **Formaat:** 681 px en 40×35. Klein, rond de maat van Natu: past bij een vroege fase 1/baby, zoals Jordi vroeg ("klein").
+- **Pootjes:** klein, omlijnd, in de plaatsing van het model en verre kant donkerder. Goed.
+
+### Oordeel r3: GOED
+Er zijn geen MOET-pixels meer. Mijn advies blijft oog a (`hummlet.png`).
+
+### MAG (optioneel, niet blokkerend)
+- **Staartpunt ingesneden, zoals in het model:**
+  - (50,46) 8→1
+  - (51,46) 1→0
+  - (51,47) 1→0
+- **Reflectie in oog a** (de Dragonfly-regel "glans + gekleurde reflectie"): (32,31) 14→4. Eerst op 1× bekijken; het oog werkt nu ook zonder.
+- **Spikkels:** (24,44) 4→6 en (23,34) 6→5.
+- **Linkerrand van de borst:** x21 rij 38–43 en x22 rij 31–37 zijn lange verticale stukken. Het model is daar ook vrij recht, dus alleen als Jordi de bol ronder wil.

@@ -1,6 +1,6 @@
 # r1.npy -> picapau.png (indexed, index 0 transparant) + normal.pal
 import numpy as np; from PIL import Image
-o=np.load('r3.npy')
+o=np.load('r4.npy')
 PAL=[(152,208,160),(24,20,16),(250,236,150),(238,206,86),(210,164,52),(232,82,58),(178,42,34),(200,130,72),(186,96,44),(123,41,8),
      (150,140,116),(64,64,72),(156,82,0),(98,49,8),(240,232,184),(255,255,255)]
 MAP={16:15,17:13}; idx=np.vectorize(lambda v:MAP.get(v,v))(o)

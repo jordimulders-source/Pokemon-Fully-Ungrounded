@@ -152,10 +152,13 @@ Jordi (19 nov): "ok prima, alleen de pose is niet achteroverleunend en er is een
 
 ### Verbeterprompt r6 (in hetzelfde gesprek)
 ```
-Good. Change only these two things, keep everything else exactly:
+Good. Change only these three things, keep everything else exactly:
 
 1. Remove the extra small lightning bolt next to the tail. There is only ONE lightning bolt: the big one at the end of the tail.
-2. Lean the whole bird backwards: tilt the body about 30 degrees back, so the head and shoulders are further to the right and higher, and the chest and belly face up and to the left, like a bird braking in the air just before landing. The legs hang forward under the belly. Wings, head, tail and colors stay as they are. Exactly two wings, two legs, one tail.
+2. Lean the whole bird backwards: tilt the body about 30 degrees back, so the head and shoulders are further to the right and higher, and the chest and belly face up and to the left, like a bird braking in the air just before landing. The legs hang forward under the belly. Head, tail and colors stay as they are. Exactly two wings, two legs, one tail.
+3. The wing pattern is gone. Bring it back as in the previous version: the wings are chestnut / orange-brown (not cream) with round cream spots on them.
 
 Same 64x64 Gen 3 sprite, white background.
 ```
+
+Jordi (19 nov): "en het vleugelpatroon is verdwenen" → punt 3 in r6.

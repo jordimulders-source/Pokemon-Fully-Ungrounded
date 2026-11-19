@@ -105,3 +105,7 @@ AVOID
 - Not Taillow, Starly, Pidgey, Natu or Fletchling. Not a sparrow or a chick from a hen.
 - No plush toy, chibi, Neopets or mascot look; no oversized sparkly eyes.
 ```
+
+## Ronde 4 (Jordi, 19 nov, letterlijk): `r4_beter.png` (prompt v2, nieuw gesprek)
+"beter hem alleen iets te dik misschien? Klopt die met de foto?"
+Claude naast foto 5: de verhouding breedte/hoogte is ongeveer gelijk aan de foto (±1,15 tegen ±1,2), maar de borst/buik bolt in r4 verder naar voren en onderen uit, en de kop is groter en ronder dan op de foto, waar de kop klein en ingezakt is. Ook anders dan de foto: daar zijn de vleugels smal en lang en steken de punten omhoog boven de rug uit; in r4 is de vleugel een brede plaat met een klein staartje.

@@ -200,3 +200,17 @@ Jordi (19 nov): "uitstekend, maar het is geen sprite"
 Excellent, this is exactly the design. Now convert THIS image into pixel art: an official Gen 3 front sprite (Ruby/Sapphire/Emerald), 64x64 pixels, max 16 colors, 1 px dark outline, light from top left, clean Game Freak shading.
 Do not change anything about the design: same pose, same angle, same proportions, same head, beak, eye, cheek, head plumes, wings with spots, legs, tail and lightning bolt, same colors. Only the drawing style changes, from illustration to sprite. White background.
 ```
+
+## Ronde 8 → `r8_fijn_gepixeld.png`
+Gemini pixelde alleen fijn over de illustratie (geen 64×64-raster). Jordi (19 nov): "hij snapt het niet? Met deze afbeelding nog een nieuw gesprek proberen?"
+
+## Prompt v6 (nieuw gesprek; enige bijlage: `bijlage_ontwerp_r7.png`)
+```
+The attachment is the official concept art of a Pokémon. Draw its in-game front sprite, exactly as Game Freak would for Pokémon Ruby/Sapphire/Emerald.
+
+- The design is final: same pose, angle, proportions, head, beak, eye, red cheek, the two thin black head plumes with a curl, wings with cream spots, legs, the thin black tail and the lightning bolt, same colors. Do not add, remove or change anything.
+- Real low-resolution pixel art: the whole sprite is a 64x64 pixel grid. Show it enlarged with big, clearly visible square pixels (each sprite pixel is one big block), not a smooth or finely pixelated illustration.
+- Max 16 colors, 1 px dark outline, light from top left, flat Gen 3 shading with 2-3 tones per color, no gradients, no anti-aliasing, no noise.
+- Thin parts (head plumes, tail) become 1 px lines.
+- Plain white background, one single creature, no effects besides the lightning bolt.
+```

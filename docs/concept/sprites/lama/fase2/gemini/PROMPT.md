@@ -344,3 +344,20 @@ Keep EVERYTHING else exactly as it is: head, ears, eye, mouth, wool, neck, colla
 ## Model met handschoenen (19 nov)
 Jordi: "pardon waarom gebruik je niet het model met handschoenen?" · "ik vroeg nog of je die er eerst op kon plakken" · "ja van r3" · "maar die zie ik helemaal niet terug". Fout Claude: stap "eerst de handschoenen op het model plakken" overgeslagen (maker plakte ze op spriteformaat); maker r1/r2 gestopt.
 `poten/model_handschoenen_r3.png` (`poten/handschoen_r3.py`): plakwerk v2 + beide handschoenen van r3 (1:1, polsband tegen de wol). Naar Jordi; daarna = bron voor de sprite.
+
+## Sprite r3 → Jordi (19 nov)
+"de poten zijn nog niet mooi" · "en de kuif heeft een rechte lijn, evenals de rug is ook een volledig rechte lijn, ik zie heel veel overdreven recehte lijnen" · "alles behalve de achterste voorpoot moet aan gewerkt worden. De nabije voorpoot heb je precies het verkeerrd geknipte model nagedaan en de achterpoten zijn te dun, we kunnen een tussendoor ronde bij gemini doen als je wil?" → maker r4 gestopt; Gemini-tussenronde op model v3.
+
+## Prompt r14 (nieuw gesprek; bijlage `poten/model_v3.png`)
+```
+This is a Pokémon design, drawn as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art). The legs were pasted together from different drawings and need to be redrawn cleanly.
+
+KEEP the position, angle and order of all four legs EXACTLY as they are: this walking pose (the two legs on the same side move together) is correct. Do not move, swap or re-arrange any leg. Keep both red gloves as they are.
+
+Fix only these three things:
+1. The near front leg (left-most, with the bright red glove): its top is cut off with a straight horizontal line under the wool. Redraw it as one natural leg: the woolly upper leg tapers smoothly down into the lower leg and into the wrist strap of the glove, the same way the far front leg does. Same thickness as the far front leg.
+2. Both hind legs are too thin. Make them as thick as the front legs, with a woolly thigh at the top that grows out of the body wool, a clear hock, tapering down to a normal hoof. The near hind leg (under the belly) is light caramel, the far hind leg (at the back) is darker.
+3. Smooth all seams where the legs meet the body wool, in the same style, outline and shading as the rest.
+
+Keep EVERYTHING else exactly as it is: head, ears, eye, mouth, wool, neck, collar, pompoms, back cloth, tail, colors, style. Plain white background.
+```

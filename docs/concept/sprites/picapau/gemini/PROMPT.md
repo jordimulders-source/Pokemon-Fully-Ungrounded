@@ -129,3 +129,4 @@ Jordi: "ja alleen de vleugels/staart moeten pikachu kleuren krijgen, de rest mag
 - Jordi: "neeeee" (r15) · "jezus man hoe moeilijk kan didt zijn" → r16 (Claude, vanaf r13): linkerhelft van de kop op een echte cirkel (middelpunt oog 26,29, straal 10): bovenlinks een koepel tot aan het linkeroor, onder de snavel terug naar de hals; ±34 px.
 - Jordi tekende de rand op r13/raster_kop.png (`r13/jordi_rand.png`): "als dit de nieuwe rand is ben je er vgm" → r17 = r13 + (15,31) en (15,34) donkerrood: rand x15 van rij 31 t/m 34 (2 px). r14–r16 vervallen.
 - Jordi: "lieg niet" · "je hebt 2 pixels toegevoegd ipv 4" → ook (15,30) en (15,35); r17 = r13 + 4 px (15,30/31/34/35).
+- Jordi: "dit kan toch niet allemaal wangkleur zijn" · "nee ook niet allemaal zwart" · "kijk naar het fucking model" → r17 rand x15 rij 30–35 zoals het model: boven bruine selout met geel ernaast, onder donkerrood met rood ernaast (verre wang), 13 px t.o.v. r13.

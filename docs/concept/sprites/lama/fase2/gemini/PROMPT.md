@@ -250,8 +250,8 @@ POSE AND LEGS (most important part of this picture)
 - Body almost in side view facing left, head turned 3/4 towards the viewer, tail up, all four feet on the ground, walking.
 - Llamas walk with a PACING GAIT: the two legs on the SAME side move together. Read the legs from left to right in the picture, it must be exactly this order:
   1. leftmost: the NEAR front leg (light, with a red glove), stepping forward.
-  2. second: the NEAR hind leg (light caramel, a bare hoof), stepping FORWARD under the middle of the belly, close behind the front legs.
-  3. third: the FAR front leg (darker, with a darker red glove), placed back, partly hidden behind the near legs.
+  2. second: the FAR front leg (darker, with a darker red glove), placed a bit back, partly hidden behind the near front leg.
+  3. third: the NEAR hind leg (light caramel, a bare hoof), stepping FORWARD under the belly.
   4. rightmost: the FAR hind leg (darker, a bare hoof), placed BACK under the tail, at the very rear of the body.
 - The darker far hind leg must be the rearmost leg in the picture. It must NOT stand forward under the belly. The light near hind leg must NOT be at the back.
 - Not a trot: the near front leg and the far hind leg must NOT be forward together.

@@ -2324,3 +2324,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.562] - Vuurwerklijn fase 2: laatste poging, meeliften
 - r10 bewaard; cobra kwam uit Claudes woordkeus (les in `GEMINI.md`). `gemini/PROMPT_v14_meeliften.md`: vuursalamander die op de vliegende pijl zit en meelift, ontstaan uit het vuur dat eromheen krult; bijlagen gekantelde pijl + kop van r9.
+
+### [v0.0.563] - Vuurwerklijn fase 2: r11 bewaard
+- `vuurwerk_fase2/r11/gemini_v14.png` (Jordi: "belachelijk slecht"); dit was de laatste afgesproken poging.

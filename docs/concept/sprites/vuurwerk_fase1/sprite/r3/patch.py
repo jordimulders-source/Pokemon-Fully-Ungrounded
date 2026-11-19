@@ -55,5 +55,18 @@ for y in range(H):
         ch.append((y,x,new))
 for y,x,v in ch:
     LOG.append(('buitenlijn',y,x,CH[a[y,x]],v)); a[y,x]=I[v]
+# r3: handreparaties uit het model (patches_r3.txt), NA de buitenlijnpass zodat ze definitief zijn
+R3=[]
+def B(zone,r0,c0,rows,why):
+    for j,row in enumerate(rows.split()):
+        for i,ch in enumerate(row):
+            if ch!='?': R3.append((zone,r0+j,c0+i,ch,why))
+def P(zone,spec,why):
+    for t in spec.split():
+        rc,v=t.split('='); r,c=map(int,rc.split(',')); R3.append((zone,r,c,v,why))
+exec(open('patches_r3.txt').read())
+for z,r,c,v,w in R3:
+    if a[r,c]!=I[v]: LOG.append(('r3 '+z,r,c,CH[a[r,c]],v))
+    a[r,c]=I[v]
 np.save('basis.npy',a); json.dump(LOG,open('log_patch.json','w'),default=int)
 if __name__=='__main__': dump(a)

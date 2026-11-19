@@ -4,12 +4,12 @@ from txt import CH
 k=np.load('kaal.npy'); s0=np.load('schoon0.npy'); b=np.load('basis.npy')
 plog=json.load(open('log_patch.json')); hand={(r,c) for z,r,c,o,n in plog if z not in ('ontkorrel2','buitenlijn')}
 auto={(r,c) for z,r,c,o,n in plog if z=='ontkorrel2'}; lijn={(r,c) for z,r,c,o,n in plog if z=='buitenlijn'}
-ZONES=[('kegel',0,13,0,15),('kop',3,22,13,30),('handjes+top pijl',12,19,0,13),('linkerarm',17,32,0,5),('pijl+lijf midden',19,40,5,20),('lus links',30,40,0,5),('ring+stomp',39,46,4,17),('onderkant',46,62,0,17)]
+ZONES=[('kop',3,22,15,30),('kegel',0,13,0,15),('kop',3,22,13,30),('handjes+top pijl',12,19,0,13),('linkerarm',17,32,0,5),('pijl+lijf midden',19,40,5,20),('lus links',30,40,0,5),('ring+stomp',39,46,4,17),('onderkant',46,62,0,17)]
 def zone(r,c):
     for z,r0,r1,c0,c1 in ZONES:
         if r0<=r<r1 and c0<=c<c1: return z
     return 'overig'
-for v in 'AB':
+for v in 'A':
     f=np.load(f'sprite_{v}.npy'); tab={}
     for r,c in zip(*np.where(f!=k)):
         r,c=int(r),int(c)

@@ -34,3 +34,4 @@ Fase 1: 29×62 px (r2; op ±50 px las de kop niet). Oppervlak ±810 px, gelijk a
 - Jordi (19 nov): "hoeft maar 1 pixel te zijn golvend he de ruimte".
 - Jordi over r9 (19 nov): "de krullen hebben teveel rechte lijnen, kijk of je dat kan oplossen, anders doen we ze gewoon weg".
 - Jordi over r10 (19 nov): "laat de krullen maar weg, maar hij lijkt dan wat kaal. Misschien kunnen we in plaats daarvan de sprieten die de axolotl op de zijkant van het hoofd heeft toevoegen? Laten we gemini dat maken, maak een prompt met deze sprite als bron" → basis r10 B; prompt `gemini/PROMPT_v11_sprieten.md`.
+- Jordi over Gemini r12 (handen, 19 nov): "dit lukt niet helemaal he, niet echt sprite achtig meer"; "plus dingen overlappen elkaar nu" → niet gebruikt. Sprite r11 = r10 B + alleen de sprieten uit Gemini r11 (`sprite/r11/sprieten.py`).

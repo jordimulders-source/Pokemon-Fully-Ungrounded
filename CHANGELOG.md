@@ -2294,3 +2294,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.552] - Vuurwerklijn fase 2: r6 bewaard
 - `vuurwerk_fase2/r6/gemini_v6.png` (Jordi: "ik vind het niet mooi"; Gemini nam de grijze schetslijnen letterlijk over).
+
+### [v0.0.553] - Vuurwerklijn fase 2: eerst de kop
+- Jordi: er is nog geen goede kop. Prompt v7 (`vuurwerk_fase2/gemini/PROMPT_v7_kop.md`): alleen de kop, vier varianten op één vel, met fase 1 en 3 als bijlagen (kop moet ertussenin zitten); lijf en pijl daarna stap voor stap.

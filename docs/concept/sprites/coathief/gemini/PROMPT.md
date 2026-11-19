@@ -36,4 +36,5 @@ AVOID
 ```
 
 ## Ronde 1 (prompt v1) → `r1_prompt_v1.png`
-Jordi (19 nov): "beter, maar hij heeft het hoofd iets teveel aangepast" · "de vorm ben ik wel tevreden mee overigens". Vergelijking oud/r1: `vergelijk_r1.png`.
+Jordi (19 nov): "beter, maar hij heeft het hoofd iets teveel aangepast" · "de vorm ben ik wel tevreden mee overigens" · "lijkt meer op een echte coati" · "maar het is de kleur van het oog"
+- Oog huidige sprite: rood (`8c2418` donker, `b04a2c` licht); r1: bruin/zalmroze iris met wit glansje.. Vergelijking oud/r1: `vergelijk_r1.png`.

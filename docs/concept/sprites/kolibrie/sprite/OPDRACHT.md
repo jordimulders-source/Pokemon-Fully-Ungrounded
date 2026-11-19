@@ -32,3 +32,4 @@ Bij een model (Gemini of ander) is de sprite de **verkleining van het model zelf
 - Over r4 A/B: "ja de lijn is correct, alleen je moet het wat netter afwerken, dat kan niet allemaal door 1 kleur vervangen worden, volg dragonflycave regels etc" → maker in `r5/`.
 - Keuze r5 (Jordi, 19 nov, letterlijk): "nee A, want bij B is een stuk staart verdwenen" → frame 2 = `r5/frame2_a.png`.
 - Uit-de-bal-gifs: `r5/gif/` (A Beautifly-ritme + ANIM_V_SLIDE, B frame 2 lang + V_SLIDE, C zonder engine; groeien uit de bal is een benadering).
+- Jordi (19 nov, letterlijk): "zijn er sendout animaties met gewoon 2 frames achter elkaar zonder beweging verder?" → nee (geen ANIM_NONE; wel toe te voegen of ANIM_GLOW_PURPLE) · "nee doe maar gewoon als de standaard, maak de animatie hoe die uit de poke ball komt" → `r5/gif/soulibri_uit_de_bal.gif` (`sendout.py`).

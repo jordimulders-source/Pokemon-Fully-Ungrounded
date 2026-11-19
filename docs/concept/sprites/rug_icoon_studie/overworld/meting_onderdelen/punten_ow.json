@@ -1,0 +1,1703 @@
+{
+ "_afspraken": "Pixelindexen in het 32x32-frame (x = kolom, y = rij, inclusief). v = frame 0 (recht van voren), a = frame 2 (recht van achteren), z = frame 4 (opzij, naar links). kop = [x0,y0,x1,y1] zonder oren (bij z: x0 = snuitkant, x1 = achterkant kop; y0 = kopboven tussen/voor de oren, y1 = kin). ogen = lijst [x,y,b,h] (midden en maat; leeg = niet zichtbaar). oor = kader [x0,y0,x1,y1] van één oor (oorlengte = kop_y0 - oor_y0; <= 0 = zijwaarts/hangend oor). lijf = kader zonder kop/poten/staart (None = achter kop/staart verborgen). poot = [y_boven, y_onder, aantal zichtbare poten] van het zichtbare stuk poot. staart = kader. figuurkader en omlijningskleur rekent analyse_ow.py zelf uit de pixels. Front- en icoonpunten komen uit ../../verhoudingen/data/punten.json (minccino staat daar niet in: alleen OW-maten).",
+ "rattata": {
+  "v": {
+   "kop": [
+    11,
+    18,
+    22,
+    29
+   ],
+   "ogen": [
+    [
+     14.5,
+     25.5,
+     2,
+     2
+    ],
+    [
+     18.5,
+     25.5,
+     2,
+     2
+    ]
+   ],
+   "oor": [
+    11,
+    19,
+    14,
+    22
+   ],
+   "lijf": null,
+   "poot": [
+    27,
+    29,
+    2
+   ],
+   "staart": [
+    13,
+    11,
+    18,
+    17
+   ],
+   "staartplek": "boven de kop",
+   "oogbouw": "rood 1 px + lichtgrijs en wit, geen zwart"
+  },
+  "a": {
+   "kop": [
+    10,
+    17,
+    21,
+    21
+   ],
+   "ogen": [],
+   "oor": [
+    10,
+    16,
+    12,
+    18
+   ],
+   "lijf": [
+    10,
+    22,
+    21,
+    27
+   ],
+   "poot": [
+    28,
+    29,
+    2
+   ],
+   "staart": [
+    14,
+    21,
+    18,
+    27
+   ],
+   "staartplek": "over de rug, midden"
+  },
+  "z": {
+   "kop": [
+    6,
+    20,
+    14,
+    28
+   ],
+   "ogen": [
+    [
+     9.5,
+     25.5,
+     2,
+     2
+    ]
+   ],
+   "oor": [
+    11,
+    18,
+    15,
+    23
+   ],
+   "lijf": [
+    14,
+    22,
+    22,
+    27
+   ],
+   "poot": [
+    27,
+    29,
+    2
+   ],
+   "staart": [
+    20,
+    17,
+    24,
+    25
+   ],
+   "staartplek": "rechtop achter",
+   "aanzicht": "profiel",
+   "lijfstand": "horizontaal"
+  }
+ },
+ "raticate": {
+  "v": {
+   "kop": [
+    10,
+    14,
+    21,
+    28
+   ],
+   "ogen": [
+    [
+     12.5,
+     24.5,
+     2,
+     2
+    ],
+    [
+     18.5,
+     24.5,
+     2,
+     2
+    ]
+   ],
+   "oor": [
+    8,
+    18,
+    11,
+    22
+   ],
+   "lijf": null,
+   "poot": [
+    27,
+    29,
+    2
+   ],
+   "staart": [
+    14,
+    9,
+    17,
+    13
+   ],
+   "staartplek": "boven de kop",
+   "oogbouw": "zwart 1 px + wit + lichtgrijs"
+  },
+  "a": {
+   "kop": [
+    9,
+    13,
+    22,
+    20
+   ],
+   "ogen": [],
+   "oor": [
+    9,
+    13,
+    12,
+    15
+   ],
+   "lijf": [
+    9,
+    21,
+    22,
+    28
+   ],
+   "poot": [
+    28,
+    29,
+    2
+   ],
+   "staart": [
+    12,
+    22,
+    16,
+    27
+   ],
+   "staartplek": "over de rug, midden"
+  },
+  "z": {
+   "kop": [
+    7,
+    19,
+    16,
+    28
+   ],
+   "ogen": [
+    [
+     11.5,
+     24.5,
+     2,
+     2
+    ]
+   ],
+   "oor": [
+    11,
+    17,
+    15,
+    19
+   ],
+   "lijf": [
+    16,
+    18,
+    24,
+    28
+   ],
+   "poot": [
+    28,
+    29,
+    2
+   ],
+   "staart": [
+    24,
+    18,
+    29,
+    22
+   ],
+   "staartplek": "horizontaal achter",
+   "aanzicht": "profiel",
+   "lijfstand": "horizontaal"
+  }
+ },
+ "sentret": {
+  "v": {
+   "kop": [
+    9,
+    19,
+    20,
+    28
+   ],
+   "ogen": [
+    [
+     13,
+     24.5,
+     1,
+     2
+    ],
+    [
+     17,
+     24.5,
+     1,
+     2
+    ]
+   ],
+   "oor": [
+    11,
+    17,
+    14,
+    21
+   ],
+   "lijf": null,
+   "poot": [
+    28,
+    29,
+    2
+   ],
+   "staart": [
+    10,
+    13,
+    19,
+    18
+   ],
+   "staartplek": "boven de kop",
+   "oogbouw": "wit boven zwart"
+  },
+  "a": {
+   "kop": [
+    10,
+    18,
+    19,
+    21
+   ],
+   "ogen": [],
+   "oor": [
+    11,
+    13,
+    14,
+    18
+   ],
+   "lijf": [
+    9,
+    22,
+    21,
+    28
+   ],
+   "poot": [
+    28,
+    29,
+    2
+   ],
+   "staart": [
+    11,
+    21,
+    18,
+    28
+   ],
+   "staartplek": "over de rug, midden"
+  },
+  "z": {
+   "kop": [
+    9,
+    20,
+    16,
+    27
+   ],
+   "ogen": [
+    [
+     11,
+     24.5,
+     1,
+     2
+    ]
+   ],
+   "oor": [
+    11,
+    15,
+    14,
+    21
+   ],
+   "lijf": [
+    14,
+    20,
+    21,
+    28
+   ],
+   "poot": [
+    28,
+    29,
+    2
+   ],
+   "staart": [
+    21,
+    21,
+    28,
+    25
+   ],
+   "staartplek": "horizontaal achter",
+   "aanzicht": "profiel",
+   "lijfstand": "zittend/rond"
+  }
+ },
+ "zigzagoon": {
+  "v": {
+   "kop": [
+    7,
+    18,
+    24,
+    29
+   ],
+   "ogen": [
+    [
+     12,
+     24,
+     1,
+     1
+    ],
+    [
+     18,
+     24,
+     1,
+     1
+    ]
+   ],
+   "oor": [
+    8,
+    17,
+    10,
+    19
+   ],
+   "lijf": null,
+   "poot": null,
+   "staart": [
+    11,
+    9,
+    19,
+    17
+   ],
+   "staartplek": "boven de kop",
+   "oogbouw": "witte glanspixel in zwart masker"
+  },
+  "a": {
+   "kop": [
+    7,
+    13,
+    24,
+    20
+   ],
+   "ogen": [],
+   "oor": [
+    9,
+    13,
+    10,
+    15
+   ],
+   "lijf": null,
+   "poot": null,
+   "staart": [
+    9,
+    21,
+    23,
+    28
+   ],
+   "staartplek": "onderaan over de rug (naar de kijker)"
+  },
+  "z": {
+   "kop": [
+    7,
+    19,
+    14,
+    27
+   ],
+   "ogen": [
+    [
+     10,
+     25,
+     1,
+     1
+    ]
+   ],
+   "oor": [
+    10,
+    16,
+    13,
+    18
+   ],
+   "lijf": [
+    13,
+    18,
+    24,
+    27
+   ],
+   "poot": [
+    28,
+    29,
+    2
+   ],
+   "staart": [
+    24,
+    15,
+    30,
+    26
+   ],
+   "staartplek": "rechtop achter",
+   "aanzicht": "profiel",
+   "lijfstand": "horizontaal"
+  }
+ },
+ "eevee": {
+  "v": {
+   "kop": [
+    9,
+    15,
+    21,
+    25
+   ],
+   "ogen": [
+    [
+     12.5,
+     22,
+     2,
+     3
+    ],
+    [
+     17.5,
+     22,
+     2,
+     3
+    ]
+   ],
+   "oor": [
+    7,
+    15,
+    11,
+    18
+   ],
+   "lijf": [
+    9,
+    23,
+    21,
+    28
+   ],
+   "poot": null,
+   "staart": null,
+   "staartplek": null,
+   "oogbouw": "donker blok + witte glans boven + roodbruin onder"
+  },
+  "a": {
+   "kop": [
+    9,
+    15,
+    21,
+    20
+   ],
+   "ogen": [],
+   "oor": [
+    7,
+    14,
+    11,
+    17
+   ],
+   "lijf": null,
+   "poot": null,
+   "staart": [
+    10,
+    21,
+    20,
+    28
+   ],
+   "staartplek": "over de rug, rechtop"
+  },
+  "z": {
+   "kop": [
+    9,
+    17,
+    19,
+    24
+   ],
+   "ogen": [
+    [
+     12.5,
+     22,
+     2,
+     3
+    ]
+   ],
+   "oor": [
+    16,
+    14,
+    21,
+    18
+   ],
+   "lijf": [
+    14,
+    23,
+    22,
+    28
+   ],
+   "poot": [
+    28,
+    29,
+    2
+   ],
+   "staart": [
+    19,
+    21,
+    26,
+    24
+   ],
+   "staartplek": "schuin omhoog achter",
+   "aanzicht": "profiel",
+   "lijfstand": "horizontaal"
+  }
+ },
+ "pikachu": {
+  "v": {
+   "kop": [
+    9,
+    15,
+    22,
+    22
+   ],
+   "ogen": [
+    [
+     13,
+     20.5,
+     1,
+     2
+    ],
+    [
+     18,
+     20.5,
+     1,
+     2
+    ]
+   ],
+   "oor": [
+    8,
+    12,
+    12,
+    16
+   ],
+   "lijf": [
+    10,
+    23,
+    21,
+    28
+   ],
+   "poot": [
+    28,
+    29,
+    2
+   ],
+   "staart": [
+    8,
+    20,
+    11,
+    24
+   ],
+   "staartplek": "zijkant links (alleen de voet)",
+   "oogbouw": "wit boven zwart"
+  },
+  "a": {
+   "kop": [
+    10,
+    15,
+    20,
+    21
+   ],
+   "ogen": [],
+   "oor": [
+    9,
+    14,
+    12,
+    17
+   ],
+   "lijf": [
+    10,
+    22,
+    20,
+    28
+   ],
+   "poot": null,
+   "staart": [
+    18,
+    20,
+    23,
+    27
+   ],
+   "staartplek": "zijkant rechts naast het lijf"
+  },
+  "z": {
+   "kop": [
+    8,
+    17,
+    18,
+    24
+   ],
+   "ogen": [
+    [
+     11,
+     21.5,
+     1,
+     2
+    ]
+   ],
+   "oor": [
+    14,
+    13,
+    21,
+    16
+   ],
+   "lijf": [
+    12,
+    23,
+    20,
+    28
+   ],
+   "poot": [
+    28,
+    29,
+    1
+   ],
+   "staart": [
+    20,
+    20,
+    24,
+    24
+   ],
+   "staartplek": "achter, schuin omhoog",
+   "aanzicht": "profiel",
+   "lijfstand": "rechtop"
+  }
+ },
+ "pachirisu": {
+  "v": {
+   "kop": [
+    10,
+    16,
+    20,
+    23
+   ],
+   "ogen": [
+    [
+     13,
+     22.5,
+     1,
+     2
+    ],
+    [
+     17,
+     22.5,
+     1,
+     2
+    ]
+   ],
+   "oor": [
+    10,
+    16,
+    12,
+    19
+   ],
+   "lijf": [
+    11,
+    24,
+    19,
+    28
+   ],
+   "poot": null,
+   "staart": null,
+   "staartplek": null,
+   "oogbouw": "donkergrijs boven zwart, geen wit",
+   "kuif": [
+    14,
+    12,
+    16,
+    15
+   ]
+  },
+  "a": {
+   "kop": [
+    10,
+    16,
+    20,
+    21
+   ],
+   "ogen": [],
+   "oor": [
+    11,
+    15,
+    12,
+    18
+   ],
+   "lijf": null,
+   "poot": null,
+   "staart": [
+    12,
+    21,
+    18,
+    27
+   ],
+   "staartplek": "over de rug, midden"
+  },
+  "z": {
+   "kop": [
+    7,
+    18,
+    15,
+    26
+   ],
+   "ogen": [
+    [
+     10,
+     21.5,
+     1,
+     2
+    ]
+   ],
+   "oor": [
+    11,
+    14,
+    14,
+    17
+   ],
+   "lijf": [
+    13,
+    22,
+    19,
+    27
+   ],
+   "poot": [
+    27,
+    28,
+    1
+   ],
+   "staart": [
+    15,
+    14,
+    24,
+    24
+   ],
+   "staartplek": "boven/achter, rechtop",
+   "aanzicht": "profiel",
+   "lijfstand": "horizontaal"
+  }
+ },
+ "dedenne": {
+  "v": {
+   "kop": [
+    10,
+    20,
+    20,
+    28
+   ],
+   "ogen": [
+    [
+     13,
+     24.5,
+     1,
+     2
+    ],
+    [
+     17,
+     24.5,
+     1,
+     2
+    ]
+   ],
+   "oor": [
+    9,
+    17,
+    13,
+    21
+   ],
+   "lijf": null,
+   "poot": [
+    29,
+    30,
+    1
+   ],
+   "staart": [
+    13,
+    14,
+    16,
+    19
+   ],
+   "staartplek": "boven de kop (antenne)",
+   "oogbouw": "wit boven zwart"
+  },
+  "a": {
+   "kop": [
+    10,
+    20,
+    20,
+    29
+   ],
+   "ogen": [],
+   "oor": [
+    9,
+    17,
+    13,
+    20
+   ],
+   "lijf": null,
+   "poot": [
+    29,
+    30,
+    1
+   ],
+   "staart": [
+    13,
+    20,
+    19,
+    28
+   ],
+   "staartplek": "over de rug"
+  },
+  "z": {
+   "kop": [
+    9,
+    18,
+    19,
+    28
+   ],
+   "ogen": [
+    [
+     12,
+     23.5,
+     1,
+     2
+    ]
+   ],
+   "oor": [
+    12,
+    15,
+    18,
+    20
+   ],
+   "lijf": null,
+   "poot": [
+    28,
+    29,
+    1
+   ],
+   "staart": [
+    20,
+    18,
+    25,
+    27
+   ],
+   "staartplek": "achter, rechtop",
+   "aanzicht": "profiel",
+   "lijfstand": "alleen kop"
+  }
+ },
+ "skwovet": {
+  "v": {
+   "kop": [
+    10,
+    16,
+    21,
+    26
+   ],
+   "ogen": [
+    [
+     13.5,
+     20.5,
+     2,
+     2
+    ],
+    [
+     17.5,
+     20.5,
+     2,
+     2
+    ]
+   ],
+   "oor": [
+    10,
+    14,
+    13,
+    16
+   ],
+   "lijf": [
+    10,
+    27,
+    21,
+    30
+   ],
+   "poot": [
+    30,
+    31,
+    2
+   ],
+   "staart": [
+    18,
+    9,
+    28,
+    20
+   ],
+   "staartplek": "zijkant rechts, boven",
+   "oogbouw": "zwart 3 px + witte glans 1 px"
+  },
+  "a": {
+   "kop": [
+    10,
+    16,
+    21,
+    23
+   ],
+   "ogen": [],
+   "oor": [
+    18,
+    15,
+    20,
+    16
+   ],
+   "lijf": [
+    10,
+    24,
+    21,
+    30
+   ],
+   "poot": [
+    30,
+    31,
+    2
+   ],
+   "staart": [
+    5,
+    10,
+    15,
+    21
+   ],
+   "staartplek": "zijkant links, boven"
+  },
+  "z": {
+   "kop": [
+    4,
+    17,
+    13,
+    27
+   ],
+   "ogen": [
+    [
+     8.5,
+     20.5,
+     2,
+     2
+    ]
+   ],
+   "oor": [
+    10,
+    14,
+    13,
+    17
+   ],
+   "lijf": [
+    13,
+    20,
+    19,
+    27
+   ],
+   "poot": [
+    28,
+    31,
+    1
+   ],
+   "staart": [
+    16,
+    13,
+    27,
+    24
+   ],
+   "staartplek": "boven/achter",
+   "aanzicht": "profiel",
+   "lijfstand": "rechtop"
+  }
+ },
+ "minccino": {
+  "v": {
+   "kop": [
+    6,
+    14,
+    25,
+    22
+   ],
+   "ogen": [],
+   "oor": [
+    6,
+    11,
+    12,
+    16
+   ],
+   "lijf": [
+    11,
+    23,
+    19,
+    28
+   ],
+   "poot": null,
+   "staart": null,
+   "staartplek": null,
+   "oogbouw": "niet te bepalen: rood (ad4c4b) bij x9-10/x21-22 is de binnenkant van de oren (front heeft ook rode oorbinnenkant); oog niet los te lezen"
+  },
+  "a": {
+   "kop": [
+    6,
+    14,
+    25,
+    22
+   ],
+   "ogen": [],
+   "oor": [
+    6,
+    11,
+    12,
+    16
+   ],
+   "lijf": [
+    10,
+    23,
+    19,
+    28
+   ],
+   "poot": null,
+   "staart": null,
+   "staartplek": null
+  },
+  "z": {
+   "kop": [
+    6,
+    13,
+    19,
+    22
+   ],
+   "ogen": [],
+   "oor": [
+    13,
+    10,
+    16,
+    13
+   ],
+   "lijf": [
+    7,
+    21,
+    16,
+    28
+   ],
+   "poot": [
+    28,
+    29,
+    1
+   ],
+   "staart": [
+    18,
+    16,
+    23,
+    27
+   ],
+   "staartplek": "achter, rechtop",
+   "aanzicht": "profiel (oog niet te bepalen)",
+   "lijfstand": "rechtop",
+   "oogbouw": "niet te bepalen: rood (ad4c4b) bij x9-10/x21-22 is de binnenkant van de oren (front heeft ook rode oorbinnenkant); oog niet los te lezen"
+  }
+ },
+ "buneary": {
+  "v": {
+   "kop": [
+    10,
+    16,
+    20,
+    23
+   ],
+   "ogen": [
+    [
+     12,
+     21.5,
+     1,
+     2
+    ],
+    [
+     18,
+     21.5,
+     1,
+     2
+    ]
+   ],
+   "oor": [
+    8,
+    12,
+    13,
+    16
+   ],
+   "lijf": [
+    11,
+    25,
+    19,
+    28
+   ],
+   "poot": [
+    28,
+    29,
+    1
+   ],
+   "staart": null,
+   "staartplek": null,
+   "oogbouw": "wit boven zwart"
+  },
+  "a": {
+   "kop": [
+    9,
+    16,
+    20,
+    24
+   ],
+   "ogen": [],
+   "oor": [
+    17,
+    12,
+    22,
+    17
+   ],
+   "lijf": [
+    11,
+    25,
+    19,
+    28
+   ],
+   "poot": [
+    29,
+    29,
+    1
+   ],
+   "staart": null,
+   "staartplek": null
+  },
+  "z": {
+   "kop": [
+    10,
+    17,
+    17,
+    23
+   ],
+   "ogen": [
+    [
+     14,
+     21.5,
+     1,
+     2
+    ]
+   ],
+   "oor": [
+    11,
+    10,
+    15,
+    16
+   ],
+   "lijf": [
+    11,
+    24,
+    17,
+    28
+   ],
+   "poot": [
+    28,
+    29,
+    1
+   ],
+   "staart": null,
+   "staartplek": null,
+   "aanzicht": "profiel",
+   "lijfstand": "rechtop"
+  }
+ },
+ "rockruff": {
+  "v": {
+   "kop": [
+    9,
+    15,
+    22,
+    27
+   ],
+   "ogen": [
+    [
+     12.5,
+     22,
+     2,
+     3
+    ],
+    [
+     18.5,
+     22,
+     2,
+     3
+    ]
+   ],
+   "oor": [
+    9,
+    15,
+    12,
+    18
+   ],
+   "lijf": [
+    14,
+    28,
+    20,
+    30
+   ],
+   "poot": [
+    28,
+    30,
+    1
+   ],
+   "staart": null,
+   "staartplek": null,
+   "oogbouw": "blauw 2 px + wit + zwart",
+   "kraag": [
+    11,
+    9,
+    19,
+    15
+   ]
+  },
+  "a": {
+   "kop": [
+    9,
+    13,
+    22,
+    19
+   ],
+   "ogen": [],
+   "oor": [
+    10,
+    12,
+    13,
+    15
+   ],
+   "lijf": [
+    10,
+    24,
+    21,
+    27
+   ],
+   "poot": [
+    28,
+    30,
+    1
+   ],
+   "staart": null,
+   "staartplek": null,
+   "kraag": [
+    11,
+    16,
+    21,
+    24
+   ]
+  },
+  "z": {
+   "kop": [
+    7,
+    18,
+    15,
+    27
+   ],
+   "ogen": [
+    [
+     10.5,
+     25,
+     2,
+     3
+    ]
+   ],
+   "oor": [
+    10,
+    16,
+    13,
+    18
+   ],
+   "lijf": [
+    13,
+    22,
+    23,
+    29
+   ],
+   "poot": [
+    29,
+    31,
+    2
+   ],
+   "staart": null,
+   "staartplek": null,
+   "kraag": [
+    17,
+    18,
+    25,
+    25
+   ],
+   "aanzicht": "profiel",
+   "lijfstand": "horizontaal"
+  }
+ },
+ "electrike": {
+  "v": {
+   "kop": [
+    8,
+    15,
+    22,
+    26
+   ],
+   "ogen": [
+    [
+     12,
+     23.5,
+     1,
+     2
+    ],
+    [
+     18,
+     23.5,
+     1,
+     2
+    ]
+   ],
+   "oor": [
+    10,
+    14,
+    12,
+    18
+   ],
+   "lijf": null,
+   "poot": [
+    27,
+    29,
+    2
+   ],
+   "staart": [
+    13,
+    10,
+    17,
+    14
+   ],
+   "staartplek": "boven de kop",
+   "oogbouw": "wit 1×2, bruin/zwart omrand"
+  },
+  "a": {
+   "kop": [
+    8,
+    14,
+    22,
+    21
+   ],
+   "ogen": [],
+   "oor": null,
+   "lijf": [
+    10,
+    22,
+    20,
+    27
+   ],
+   "poot": [
+    28,
+    29,
+    2
+   ],
+   "staart": [
+    12,
+    21,
+    18,
+    26
+   ],
+   "staartplek": "over de rug, midden"
+  },
+  "z": {
+   "kop": [
+    7,
+    19,
+    14,
+    25
+   ],
+   "ogen": [
+    [
+     11,
+     23.5,
+     1,
+     2
+    ]
+   ],
+   "oor": [
+    11,
+    18,
+    13,
+    19
+   ],
+   "lijf": [
+    13,
+    17,
+    24,
+    27
+   ],
+   "poot": [
+    27,
+    29,
+    2
+   ],
+   "staart": [
+    24,
+    19,
+    29,
+    23
+   ],
+   "staartplek": "horizontaal achter",
+   "aanzicht": "profiel",
+   "lijfstand": "horizontaal"
+  }
+ },
+ "yungoos": {
+  "v": {
+   "kop": [
+    8,
+    19,
+    22,
+    29
+   ],
+   "ogen": [
+    [
+     12,
+     25.5,
+     1,
+     2
+    ],
+    [
+     18,
+     25.5,
+     1,
+     2
+    ]
+   ],
+   "oor": [
+    9,
+    21,
+    11,
+    23
+   ],
+   "lijf": null,
+   "poot": [
+    29,
+    30,
+    2
+   ],
+   "staart": [
+    12,
+    11,
+    18,
+    18
+   ],
+   "staartplek": "boven de kop",
+   "oogbouw": "wit boven zwart"
+  },
+  "a": {
+   "kop": [
+    8,
+    13,
+    22,
+    22
+   ],
+   "ogen": [],
+   "oor": null,
+   "lijf": [
+    8,
+    23,
+    22,
+    30
+   ],
+   "poot": null,
+   "staart": [
+    12,
+    21,
+    18,
+    28
+   ],
+   "staartplek": "over de rug, midden"
+  },
+  "z": {
+   "kop": [
+    4,
+    20,
+    12,
+    28
+   ],
+   "ogen": [
+    [
+     7,
+     26.5,
+     1,
+     2
+    ]
+   ],
+   "oor": [
+    10,
+    18,
+    12,
+    20
+   ],
+   "lijf": [
+    11,
+    21,
+    21,
+    29
+   ],
+   "poot": [
+    29,
+    31,
+    2
+   ],
+   "staart": [
+    21,
+    24,
+    26,
+    28
+   ],
+   "staartplek": "horizontaal achter",
+   "aanzicht": "profiel",
+   "lijfstand": "horizontaal"
+  }
+ },
+ "nickit": {
+  "v": {
+   "kop": [
+    9,
+    16,
+    21,
+    23
+   ],
+   "ogen": [
+    [
+     12.5,
+     21.5,
+     2,
+     2
+    ],
+    [
+     17.5,
+     21.5,
+     2,
+     2
+    ]
+   ],
+   "oor": [
+    10,
+    11,
+    12,
+    15
+   ],
+   "lijf": [
+    10,
+    24,
+    20,
+    28
+   ],
+   "poot": [
+    28,
+    30,
+    2
+   ],
+   "staart": null,
+   "staartplek": null,
+   "oogbouw": "geel + witte glans + grijs, zwart omrand"
+  },
+  "a": {
+   "kop": [
+    9,
+    16,
+    21,
+    22
+   ],
+   "ogen": [],
+   "oor": [
+    10,
+    11,
+    12,
+    15
+   ],
+   "lijf": [
+    11,
+    23,
+    21,
+    28
+   ],
+   "poot": [
+    29,
+    30,
+    2
+   ],
+   "staart": [
+    16,
+    24,
+    23,
+    30
+   ],
+   "staartplek": "rechts onder het lijf"
+  },
+  "z": {
+   "kop": [
+    5,
+    16,
+    15,
+    23
+   ],
+   "ogen": [
+    [
+     10.5,
+     20.5,
+     2,
+     2
+    ]
+   ],
+   "oor": [
+    11,
+    13,
+    17,
+    15
+   ],
+   "lijf": [
+    10,
+    22,
+    18,
+    28
+   ],
+   "poot": [
+    28,
+    30,
+    2
+   ],
+   "staart": [
+    18,
+    22,
+    26,
+    29
+   ],
+   "staartplek": "horizontaal achter",
+   "aanzicht": "profiel",
+   "lijfstand": "horizontaal"
+  }
+ }
+}

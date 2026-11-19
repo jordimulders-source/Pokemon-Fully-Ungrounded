@@ -117,3 +117,13 @@ AVOID
 ### Ronde 4 (prompt v4) → `r4_prompt_v4.png`, vergelijking `vergelijk_r4.png` (huidig · r4 · Teddiursa)
 Jordi (19 nov): "wat vind je?"
 Claude: eerste echte driekwart (klopt met Teddiursa: verre oog links smal aan de rand, nabije oog rechts groot en rond); staart goed; gezicht neutraal. Wel: lijf smaller en minder mollig dan het origineel (knieën/handen kleiner), de figuur is kleiner in het vlak. Fout van Claude in v1–r3: nabij/ver omgedraaid (bij driekwart naar links is het verre oog het linker); dat zat in de verbeterprompt r3 en verklaart waarschijnlijk ronde 3.
+Jordi (19 nov): "laten we 1 verbeterprompt proberen, dus b" (molliger lijf).
+
+### Verbeterprompt r5 (in hetzelfde gesprek als r4)
+```
+Very good, the angle, head, face, eyes and tail are right now. Keep all of that exactly as it is.
+
+Change only the body: make it chubbier and rounder, like in attachment 1. A wider, softer round belly, bigger round knees in front, and bigger hands resting on the ground. The body sits a little wider under the head, but the head stays the same size and stays the biggest part.
+
+Same pose, same angle, same colors, same 64x64 Gen 3 sprite style, white background, nothing else changed.
+```

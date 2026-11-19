@@ -1,4 +1,4 @@
-# Reparaties op schoon.npy, elk benoemd en gemeten op het model -> r1.npy. Telt per zone de afwijking van de kale reductie.
+# Reparaties op schoon.npy, elk benoemd en gemeten op het model -> r2.npy (ronde 2: reparaties van de coordinator op r1). Telt per zone de afwijking van de kale reductie.
 # codes: 1 zwart, 2/3/4 bruin l/m/d, 5/6/7 creme l/m/d, 8 wang, 9/10/11 grijs l/m/d, 12/13 geel l/d, 14 wit, 15 selout bruin
 import numpy as np
 from celregel import cel
@@ -22,10 +22,11 @@ def ring(zone,mask):
 z=np.load('lucht.npy'); kz=np.zeros_like(z); kz[0:11,12:49]=True; kz&=z
 S=pp(cells(U)|cells(KL))
 zet('kuif',[(x,y,1 if (y,x) in S else 0) for y,x in zip(*np.where(kz))]+[(x,y,1) for y,x in S])
-# 1b krul en haakje leesbaar (model: spiraal ±2,6 px rond (45,4.6); haakje onderaan bij (41,9) met de punt omhoog):
-#    krul = ruitje rond 1 gat op (45,4), haakje = J met het gat op (40,8)
-zet('krul',[(44,5,0),(46,5,0),(45,6,0),(45,5,1),(46,4,1),(45,3,1),(44,4,1),(45,4,0)])
-zet('haakje',[(40,8,0),(41,9,0),(39,7,1),(39,8,1),(40,9,1),(41,8,1)])
+# 1b krul als spiraaltje (model: U loopt over rij 6,8 naar x45, gaat rechts omhoog (46,5), over de top (45,3.9), links
+#    omlaag (44.3,4.5) en eindigt binnenin (45,5)). Op 64 px te klein (2x2,6 px): vergroot tot 4x4 (x43-46, rij 3-6),
+#    ring met het binnenste eind als 1 px vanaf linksboven naar binnen, gat L-vormig. Haakje: J met gat (8,41) zoals het model.
+zet('krul',[(43,6,1),(44,6,1),(45,6,1),(46,5,1),(46,4,1),(45,3,1),(44,3,1),(43,4,1),(43,5,1),(44,4,1),(45,4,0),(44,5,0),(45,5,0),(46,6,0),(46,3,0),(43,3,0)])
+zet('haakje',[(39,7,1),(40,8,1),(40,9,1),(41,9,1),(42,8,1),(41,8,0),(39,8,0),(42,9,0)])
 # 2 oog: het modeloog beslaat x 19.0-22.0, y 10.4-13.7; glans op (19.8, 11.25) -> cel (20,11) (in de kale reductie
 #   achtergrond = gat); oog rond: hoek linksboven bruin (model m#3), rechtsonder creme (model #C3); iris onderin donker (model h/d)
 zet('oog',[(20,11,14),(19,11,1),(19,10,3),(21,13,5),(20,12,11)])
@@ -86,7 +87,7 @@ for y in range(H):
         if v==15 and 15 not in nb and 1 in nb: lst.append((x,y,1))
         if v==1 and 1 not in nb and 15 in nb and 0 in nb: lst.append((x,y,15))
 zet('selout',lst)
-np.save('r1.npy',o)
+np.save('r2.npy',o)
 tot=0
 for zn,l in R.items():
     print('%-10s %3d px'%(zn,len(l))); tot+=len(l)

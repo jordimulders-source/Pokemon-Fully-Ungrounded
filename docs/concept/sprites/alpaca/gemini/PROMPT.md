@@ -101,3 +101,6 @@ Jordi (19 nov): "Prima denk ik maar het is nu geen sprite meer". Claude: illustr
 ## Ronde 5 (pixelart-verzoek, zelfde gesprek) → `r5_pixel_verzoek.png`
 Jordi: "vrijwel hetzelfde" (Gemini voegde alleen krullen op het lijf toe). Gang: "ja dat moet wel aangepast worden, anders is het geen alpaca". → r4 blijft het model; sprite bouwt Claude zelf.
 Gangfix: in r4 is de voorste achterpoot de verre (donker, achter het lijf) en de achterste de nabije. Prompt v4: nieuw gesprek, r4 als bijlage, alleen de diepte van de achterpoten omwisselen (geen poot verplaatsen). Lukt dat niet: Claude wisselt het zelf in de sprite (licht/donker + omlijning).
+
+## Ronde 6 (gangfix, nieuw gesprek) → `r6_gangfix.png`
+Jordi: "hij snapt het niet" (Gemini maakte de voorste achterpoot juist donkerder). → Claude wisselt per script in het model: voorste achterpoot krijgt de lijftint (nabij), achterste de oude donkere tint (ver): `../model/r4_gang_wissel.png`, vergelijking `../model/gang_voor_na.png`.

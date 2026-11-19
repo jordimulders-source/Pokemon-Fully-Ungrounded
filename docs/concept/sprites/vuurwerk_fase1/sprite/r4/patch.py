@@ -65,6 +65,7 @@ def P(zone,spec,why):
     for t in spec.split():
         rc,v=t.split('='); r,c=map(int,rc.split(',')); R3.append((zone,r,c,v,why))
 exec(open('patches_r3.txt').read())
+exec(open('patches_r4.txt').read())
 for z,r,c,v,w in R3:
     if a[r,c]!=I[v]: LOG.append(('r3 '+z,r,c,CH[a[r,c]],v))
     a[r,c]=I[v]

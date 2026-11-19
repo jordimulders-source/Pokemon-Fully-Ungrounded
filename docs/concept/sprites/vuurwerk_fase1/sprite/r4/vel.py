@@ -1,4 +1,4 @@
-# vel.png r3: r3 A 8x | r2 A 8x | model verkleind 8x | model 8x; close-ups 12x kop, handjes, pijl naast het model; 1x en 2x licht/donker.
+# vel.png r4: r4 8x | r3 8x (r3-palet) | model verkleind 8x | model 8x; close-ups 12x kop, handjes, pijl naast het model; 1x en 2x licht/donker.
 import numpy as np; from PIL import Image, ImageDraw
 from reduce2 import PAL, save
 OY,OX=1,17
@@ -8,7 +8,7 @@ f=lambda v,o:(o+F*v)*5.12-0.42
 def to64(a,path):
     c=np.zeros((64,64),'uint8'); c[OY:OY+a.shape[0],OX:OX+a.shape[1]]=a; save(c,path)
     return Image.open(path).convert('RGBA')   # opnieuw geopend: index 0 transparant
-A=np.load('sprite_A.npy'); R2=np.load('../r2/sprite_A.npy')
+A=np.load('sprite_A.npy'); R3=np.load('../r3/sprite_A.npy')
 iA=to64(A,'sprite.png')
 def rgb(a,r0,r1,c0,c1,Z,bg=(255,255,255)):
     x=PAL[a[r0:r1,c0:c1]].astype('uint8'); x[a[r0:r1,c0:c1]==0]=bg
@@ -18,8 +18,12 @@ def mod(r0,r1,c0,c1,Z):
 def modbox(r0,r1,c0,c1,Z):
     return M.crop((round(f(c0,MX)),round(f(r0,MY)),round(f(c1,MX)),round(f(r1,MY)))).resize((c1-c0,r1-r0),Image.BOX).resize(((c1-c0)*Z,(r1-r0)*Z),Image.NEAREST)
 H,W=A.shape
-row1=[rgb(A,0,H,0,W,8),rgb(R2,0,H,0,W,8),modbox(0,H,0,W,8),mod(0,H,0,W,8)]
-caps1=['r3 A 8x','r2 A 8x','model verkleind (box) 8x','model 8x']
+PAL3=PAL.copy(); PAL3[6]=[0xf0,0x76,0xa8]; PAL3[11]=[0xdc,0xa6,0x95]   # r3 had l=f076a8, t=dca695
+def rgb3(a,r0,r1,c0,c1,Z):
+    x=PAL3[a[r0:r1,c0:c1]].astype('uint8'); x[a[r0:r1,c0:c1]==0]=255
+    return Image.fromarray(x).resize(((c1-c0)*Z,(r1-r0)*Z),Image.NEAREST)
+row1=[rgb(A,0,H,0,W,8),rgb3(R3,0,H,0,W,8),modbox(0,H,0,W,8),mod(0,H,0,W,8)]
+caps1=['r4 8x','r3 8x','model verkleind (box) 8x','model 8x']
 row2=[rgb(A,3,23,12,30,12),mod(3,23,12,30,12),rgb(A,11,21,0,16,12),mod(11,21,0,16,12)]
 caps2=['kop 12x','model','handjes 12x','model']
 row3=[rgb(A,18,42,0,18,12),mod(18,42,0,18,12)]

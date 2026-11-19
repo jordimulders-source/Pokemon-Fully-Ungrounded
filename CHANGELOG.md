@@ -2289,3 +2289,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.547] - Hoatzin fase 2: prompt v6
 - Jordi koos echte hoatzinkleuren met alleen de buik Poison-paars; `PROMPTS_v6.md`.
+
+### [v0.0.548] - Hoatzin fase 2: prompt v7
+- Zuur dat uit de bek druipt (zoals Gloom), warme paarstinten bij het roestbruin, Dark/Poison-uitstraling zonder vloeken, blauw gezicht en rood oog blijven (Jordi); `PROMPTS_v7.md`.

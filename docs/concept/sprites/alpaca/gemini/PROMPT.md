@@ -108,3 +108,6 @@ Jordi: "ik zie geen verschil, je doet hetzelfde als gemini" (diepte zit in overl
 
 ## Prompt v4 (nieuw gesprek, geen bijlage)
 Prompt v3 met de poten als stap-voor-stap-beschrijving in beeldtermen (welke poot waar in het plaatje, wat overlapt, waar de dij zit), plus "diagonaal = fout".
+
+## Ronde 7 (prompt v4) → `r7_prompt_v4.png`
+Jordi: "ok dit gaat hem niet worden, kan je niet het achterste stuk knippen en vragen of die die poten kan omwisselen?" → `bijlage_achterstuk.png` (uitsnede r4, handschoen weggewist); prompt v5: alleen de twee achterpoten omwisselen in deze uitsnede. Claude plakt het resultaat terug in r4.

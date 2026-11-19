@@ -23,3 +23,11 @@ Keep this sprite exactly as it is. Make only these two changes:
 2. The back wing (the dark purple feathers behind the head) gets exactly the same rusty brown colors and pale streaks as the front wing.
 Everything else stays pixel for pixel the same, including the crest, face, body, belly, tail and feet.
 ```
+
+Jordi daarna: "of misschien de vleugels 1 tint meer richting paars, bruinpaars weet niet of dat bestaat". Variant bijsturing:
+```
+Keep this sprite exactly as it is. Make only these changes:
+1. The acid at the beak: make it just ONE single drop hanging from the tip of the beak.
+2. Both wings (the front wing and the back wing behind the head) get the same color: the current rusty brown shifted one shade toward purple, a plum brown / purple-brown, with the same pale streaks.
+Everything else stays pixel for pixel the same, including the crest, face, body, belly, tail and feet.
+```

@@ -5,7 +5,7 @@
 # Anders: gemiddelde van de dekkende pixels -> dichtstbijzijnde vlakkleur.
 import sys; from PIL import Image; import numpy as np
 H=lambda s: np.array([int(s[i:i+2],16) for i in (0,2,4)])
-PALHEX=['000000','4a0f25','240b10','821b48','be307a','ec3175','f294b8','c2b48e','d0269a','9a2662','f8e080','b8668a','f7e2d9','e6cdac','b6895e','ffffff']
+PALHEX=['000000','4a0f25','240b10','821b48','a02262','ec3175','f294b8','fff8ea','d0269a','9a2662','f8e080','b8668a','f7e2d9','e6cdac','b6895e','ffffff']
 PAL=np.array([H(h) for h in PALHEX])
 n=np.asarray(Image.open('natief.png')).astype(int)
 lum=(0.3*n[...,0]+0.59*n[...,1]+0.11*n[...,2])

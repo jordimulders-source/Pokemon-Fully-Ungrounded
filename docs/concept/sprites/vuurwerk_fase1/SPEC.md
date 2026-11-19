@@ -1,6 +1,6 @@
 # Vuurwerklijn fase 1 (Fire/Fairy): vuuraxolotl om de vuurpijl
 
-Lijn: fase 1 (deze) → fase 2 (houdt de pijl vast, nog open) → fase 3 vuurwerkslang (`../vuurwerk_fase3/af/`). Naam open. Ontwerpgeschiedenis en alle citaten: `docs/concept/IDEEEN.md` → Vuurwerk; prompts `gemini/`, rondes `r1/`–`r10/`.
+Lijn (2 fases, Jordi 19 nov): fase 1 (deze) → vuurwerkslang (`../vuurwerk_fase3/af/`; map heet nog `fase3`). De middenfase is na 11 Gemini-rondes geschrapt (`../vuurwerk_fase2/`, naslag). Naam open. Ontwerpgeschiedenis en alle citaten: `docs/concept/IDEEEN.md` → Vuurwerk; prompts `gemini/`, rondes `r1/`–`r10/`.
 
 ## Model (bevroren)
 `referenties/model.png` = Gemini r10 (`r10/gemini_axolotl.png`).

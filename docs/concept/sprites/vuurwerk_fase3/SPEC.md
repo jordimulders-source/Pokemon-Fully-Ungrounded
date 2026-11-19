@@ -1,5 +1,5 @@
 # Vuurwerkslang, fase 3 van de vuurwerklijn (SPEC)
-Fire/Fairy. Lijn: sterretje → wondertol → vuurpijl (deze). Naam open. Hele ontwerpgeschiedenis en citaten: `docs/concept/IDEEEN.md` (Vuurwerk) en `docs/concept/sprites/vuurwerk/` (prompts v1–v14, rondes r1–r11).
+Fire/Fairy. Lijn (2 fases, Jordi 19 nov): vuuraxolotl (`../vuurwerk_fase1/af/`) → vuurwerkslang (deze; map heet nog `fase3`). Naam open. Hele ontwerpgeschiedenis en citaten: `docs/concept/IDEEEN.md` (Vuurwerk) en `docs/concept/sprites/vuurwerk/` (prompts v1–v14, rondes r1–r11).
 
 ## Model (bevroren ontwerp)
 `referenties/model_v14.png` (Gemini v14). Jordi, 16 nov: "dit vind ik de beste tot nu toe, het is nog steeds geen vuurwerkhoofd, maar wel dynamisch. Hoe de kleur geleidelijk verandert is ook vet".

@@ -2327,3 +2327,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.563] - Vuurwerklijn fase 2: r11 bewaard
 - `vuurwerk_fase2/r11/gemini_v14.png` (Jordi: "belachelijk slecht"); dit was de laatste afgesproken poging.
+
+### [v0.0.564] - Vuurwerklijn: 2 fases
+- Jordi (19 nov): "ik denk dat we niet iets gaan bereiken wat ik leuker vind dan de andere twee sprites, dus hij wordt 2 fases". Lijn = vuuraxolotl (`vuurwerk_fase1/af/`) → vuurwerkslang (`vuurwerk_fase3/af/`); mapnamen blijven. De middenfase (11 Gemini-rondes, prompts v1–v14, schetsen) blijft als naslag in `vuurwerk_fase2/`. SPEC's, `IDEEEN.md` en Stand van zaken bijgewerkt.

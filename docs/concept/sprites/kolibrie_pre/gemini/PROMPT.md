@@ -112,3 +112,7 @@ Claude naast foto 5: de verhouding breedte/hoogte is ongeveer gelijk aan de foto
 
 ## Ronde 5: `r5_slanker.png` (bijsturing "slightly slimmer", zelfde gesprek; Jordi stuurde hem zonder commentaar)
 Claude: massa ±13% minder dan r4, vooral de bolling van de borst links-voor is weg; kop, snavel, oog, vleugel, staart en pootjes gelijk.
+
+## Keuze (Jordi, 19 nov, letterlijk)
+"ja, ik denk dat we perspectief toch vooral creëren door slim kleur en schaduwgebruik, zet deze eens naast het origineel?"
+→ r5 gekozen en bevroren als `../referenties/gemini_gekozen_r5.png`. Vergelijking met de oude sprite: `naast_origineel.png`.

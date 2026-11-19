@@ -620,3 +620,6 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - **Jordi:** "Daarnaast zit ik erover na te denken om de ruimte en diepe zee beide als mysterieuze areas toe te voegen, mogelijk met eigen legendaries. Dat zijn twee van de grootste mysteries in ons bestaan en tof om daar iets mee te doen."
 
 - **Cosmic-badgekleur (Jordi, 13 nov):** "nee alle kleuren van vlakken zijn effen, dus nachtblauw is prima." Badge = nachtblauw zonder sterretjes (`sprites/showcase/types/cosmic.png`).
+
+## Kreten (Jordi, 19 nov)
+- "Ik wil liever geen bestaande kreten vervormen, maar dat komt op een ander moment. Latere generatie kreten gebruiken soms geluiden die op echte dieren lijken."

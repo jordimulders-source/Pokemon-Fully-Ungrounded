@@ -4,6 +4,26 @@ Bewezen op de viscacha (19 nov): `docs/concept/sprites/viscacha/overworld/gemini
 
 **Oordeel Jordi (19 nov), letterlijk:** "alles is in de eigen route slechter, behalve misschien de staart positie, maar de staart vorm klopt ook niet. Plus gemini is wel consistent met andere sprites. Zijaanzicht is goed, hoofd naar verhouding, rug naar verohuding, aan de voorkant is die herkenbaar, met alle belangrijke elementen, terwijl eigen route het hoofd verschrikkelijk is, en de ogen wederom gewoon niet goed zijn, met te dikke heupen. Gemini geef ik een 9 tot 9,5 en de eigen route hooguit een 4". Naslag: `docs/concept/sprites/rug_icoon_studie/overworld/` (meetstudie) en `viscacha/overworld/PROMPT_OW.md` (prompts en rondes).
 
+## Gemini is leidend (Jordi, 19 nov)
+- Overworldsprites maken we via Gemini; Gemini is leidend.
+- **Nog niet getest:** wanneer Gemini de fout in gaat (bij welke bouw of welk ontwerp hij afglijdt). Getest is alleen de viscacha. Jordi: in de praktijk zal dat wel goedkomen. Gaat het mis: eerst de prompt aanscherpen (bouw in woorden, AVOID-regel), zoals van r1 naar r2.
+- **Volgorde (Jordi):** eerst front, rug en icoon maken, zodat we die tezamen kunnen doorsturen naar Gemini voor de overworld. (In de viscacha-proef gingen alleen front + rug mee; het icoon bleef weg om het gedeelde icoonpalet.)
+
+## Zo is er geprompt (viscacha, ronde 2, het resultaat dat Jordi 9–9,5 gaf)
+Nieuw gesprek, alleen de bijlage met onze sprites op 8× naast elkaar (geen voorbeeldsoort). Sjabloon (vul <…> in):
+> The image shows the battle sprites (front and back) of my own Pokémon, <echte diersoort + korte omschrijving>. Draw its overworld sprite in the style of Pokémon HeartGold/SoulSilver walking Pokémon: three views of the SAME creature, each in its own 32×32 pixel square, side by side on one baseline:
+> 1. facing down toward the viewer: straight front view, both eyes visible, symmetrical;
+> 2. facing up away from the viewer: straight back view, we see the back of the head, <oren/kenmerken van achteren>, the back and the tail;
+> 3. facing left: side view.
+>
+> Body plan (keep it): <bouw in hoofdletters waar het misging, bv. a FOUR-LEGGED rodent, crouched low with a long body and a round arched back, standing on all fours, NOT upright on two legs>. <alle kenmerken: staart, oren, oog, wangen, vacht/kleuren>. Copy the colors from the image.
+>
+> AVOID: <soorten waar hij naartoe glijdt>, <houdingen/kenmerken die niet mogen>, any electricity or effects.
+>
+> Chibi proportions like HGSS walking sprites: head a bit larger, body compact, each view about <0,43 × fronthoogte> pixels tall. Black outline, flat colors with one shade. Show it enlarged so every pixel is a clear square. Plain white background, no ground, no shadow, no text.
+
+Wat het verschil maakte met r1 (Raichu): beide battle-sprites als bijlage in plaats van alleen de front, de bouw expliciet in woorden, en een AVOID-regel. Volledige tekst en rondes: `docs/concept/sprites/viscacha/overworld/PROMPT_OW.md`.
+
 ## Lat (Jordi, 19 nov)
 "ik vind hem ook gewoon af, de overworld sprites hoeven allemaal niet perfect te zijn, ze moeten herkenbaar zijn en consistent". Dus weinig rondes: zodra hij herkenbaar is en consistent met de bestaande overworldsprites, is hij af.
 

@@ -2205,3 +2205,8 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Viscacha-overworld (Gemini-route, 3 rondes + keuring): `docs/concept/sprites/viscacha/overworld/gemini_route/af/overworld.png` (+ pal, 8x, loop.gif). Eigen route bewaard in `viscacha/overworld_eigen/`.
 - Werkwijze vastgelegd in `docs/lessen/OVERWORLD_WERKWIJZE.md`.
 - Viscacha-overworld goedgekeurd als af (Jordi: "de overworld sprites hoeven allemaal niet perfect te zijn, ze moeten herkenbaar zijn en consistent").
+
+### [v0.0.533] - Werkwijze overworld aangevuld; toon en kreten
+- `docs/lessen/OVERWORLD_WERKWIJZE.md`: Gemini is leidend; nog niet getest wanneer Gemini de fout in gaat; volgorde eerst front, rug en icoon, dan samen naar Gemini; promptsjabloon van de viscacha (ronde 2).
+- CLAUDE.md, toon: Jordi "je hoeft de serieuzere toon niet zo te benadrukken, ungrounded is gewoon humor alom en fully ungrounded wordt gewoon net als normale pokemon games".
+- IDEEEN.md, kreten: geen bestaande kreten vervormen; latere generaties gebruiken soms geluiden die op echte dieren lijken (komt later).

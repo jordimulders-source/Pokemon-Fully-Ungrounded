@@ -69,3 +69,7 @@ Good, the design is right. Keep head, eyes, body, wedges, tail and colors exactl
 
 Nothing else changed.
 ```
+
+### Ronde 3 (verbeterprompt r3) → `r3_verbeter.png`, vergelijking `vergelijk_r3.png` (huidig | r2 | r3)
+Jordi (19 nov): "negeer de maanvorm, die fixen we zelf, hoe is de lichaamspose?"
+Claude: lichaamspose r3 is de beste van de drie: achterpoot hoger en verder weg geeft eindelijk diepte, nabije voorpoot laagst vooraan, verre voorpoot piept ertussen. Zwak: achterpoot leest wat als blok (geen dij), voet zweeft licht. Let op: door de maan zijn de ogen half afgedekt en kijken ze boos; ogen uit r2/oude sprite halen.

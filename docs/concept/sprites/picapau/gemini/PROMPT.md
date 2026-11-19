@@ -124,3 +124,4 @@ Jordi: "ja alleen de vleugels/staart moeten pikachu kleuren krijgen, de rest mag
 - Jordi: "is 1 rechte lijn" · "die moet meer uitbollen naar links" → r12 varianten: uitbollen 1/2/3 px naar links, snavel schuift mee.
 - Jordi: "GAST" · "maak er gewoon een cirkel van" · "zoals het model" · "kijk naar de vorm van het model en neem die over" → r13 (Claude): linkeromtrek van de kop = kale modelreductie (r1/kaal_11.npy) rij 22–26 (22,19,18,17,17) + verre wang rij 32–33 op x15; 11 px t.o.v. r11. C/D vervallen.
 - r13, Jordi: "vanaf de snavel is die nog steeds te recht, maak dat stuk ook net wat ronder" · "naar onderen vanaf de snavel" → r14 (Claude): kin onder de snavel bolt uit, omtrek rij 33–38 = 15,14,14,15,16,17 (12 px).
+- r14, Jordi: "NEEEEE" → r14 vervalt; terug naar r13, Jordi tekent zelf op raster_kop.png.

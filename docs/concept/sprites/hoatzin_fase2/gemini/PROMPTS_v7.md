@@ -67,3 +67,12 @@ Keep this sprite exactly as it is. Change only two colors:
 2. The belly: a bit lighter, so it stands out from the rest of the body.
 Everything else stays pixel for pixel the same.
 ```
+
+Jordi: "dit werkt niet, zet de 3 dingen samen in een prompt, zonder extra referentiemateriaal en ik start een nieuw gesprek". Bijlage alleen v7_r3:
+```
+Attached: a Pokémon sprite. Keep it exactly as it is (pose, shapes, outlines, face, eye, tail, feet). Make only these changes:
+1. Back wing: the tops of the wing feathers behind the head are orange-brown by mistake. Give them the same plum-brown color as the rest of the wings. The thin crest strands in front of them stay separate.
+2. Acid: remove the green line along the beak. Instead, one single small acid drop sits at the corner of the mouth (where the beak meets the blue face) and hangs down from there.
+3. Colors: the thin crest strands a bit more brown (less orange); the belly a bit lighter, so it stands out from the rest of the body.
+Everything else stays pixel for pixel the same. Official Gen 3 front sprite pixel art, white background.
+```

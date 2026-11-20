@@ -1,0 +1,14 @@
+{"uitleg": "s4, keurder op s3. kleur = paletindex (0 = eruit, 1 = lijn, 5/6 creme, 13 grijs midden, 15 grijs licht). Alleen binnen de bestaande vorm; 0 alleen waar het model daar geen vorm heeft.",
+ "regels": [
+  {"wat": "onderkaak licht grijs (model: grijze onderkaak rij 34-35, x4-8)", "kleur": 15, "px": [[4,34],[5,34],[6,34],[7,34],[8,34]]},
+  {"wat": "onderkaak onderkant grijs midden (schaduwkant van de kaak)", "kleur": 13, "px": [[5,35],[6,35],[7,35],[8,35]]},
+  {"wat": "kaak loopt in model tot x8, x9 is kin: rij 34 x9 creme schaduw", "kleur": 6, "px": [[9,34]]},
+  {"wat": "onder de kaak rij 35 x9-10: ondercontour", "kleur": 1, "px": [[9,35],[10,35]]},
+  {"wat": "(4,36) geen snavel in het model (lucht)", "kleur": 0, "px": [[4,36]]},
+  {"wat": "(8,36) kinpluk in het model is creme, geen grijs", "kleur": 6, "px": [[8,36]]},
+  {"wat": "linkerpoot achterteen rij 56 x25-29 pootgrijs, x30 midden; rij 57 blijft onderlijn", "kleur": 15, "px": [[25,56],[26,56],[27,56],[28,56],[29,56]]},
+  {"wat": "einde achterteen", "kleur": 13, "px": [[30,56]]},
+  {"wat": "bovenrand nek: doorlopende creme-selout rij 32 x13-21", "kleur": 6, "px": [[13,32],[14,32],[15,32],[16,32],[17,32],[18,32],[19,32],[20,32],[21,32]]},
+  {"wat": "(19,31) los creme pixel boven de nekrand: model heeft daar lucht", "kleur": 0, "px": [[19,31]]},
+  {"wat": "pootgrijs in de creme staartpunt -> creme schaduw", "kleur": 6, "px": [[48,49],[51,50],[52,50]]}
+ ]}

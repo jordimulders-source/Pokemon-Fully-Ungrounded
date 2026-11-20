@@ -52,3 +52,4 @@ Lijn (besloten 20 nov): **vlieg → mug, 2 fases** (reguliere vlieg; fruitvlieg 
 - Jordi (20 nov) over sprite r8: "de poot mag iets hoger uit het lichaam komen, de rest is prima" → r9: alleen aanzet nieuwe poot hoger; rest (ook r9-restanten) bevroren
 - Jordi (20 nov): "je laat het als zwevend voetje staan, maar kleurt en schaduwt het zodanig dat het echt als twee losse poten zien"
 - Jordi (20 nov) over r10, krabbel `sprite_r10/krabbel_jordi_r10.png` (horizontale kabel onder het achterlijf omcirkeld): "nu valt dit stuk me op, is dit biologisch kloppend? Het zwevend voetje moet donkerder qua schaduw" → r11: voetje donkerder (index 8 vrijgemaakt als diepe koperschaduw)
+- Jordi (20 nov): "A" → r12: horizontale kabel onder het achterlijf weg; achterpoot komt onder de voorkant van het achterlijf vandaan

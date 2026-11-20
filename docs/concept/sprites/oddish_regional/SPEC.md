@@ -55,3 +55,4 @@ Jordi: "we hadden het nog erover dat het gezicht het ALLERBELANGRIJKSTE is".
 "de ogen dus maar net zichtbaar" = net onder de kroon uit, zoals Vileplume in de game (Jordi koos).
 Op r9: "r3 was voor de voorste anemonen het beste, daarna eigenlijk alleen nog maar slechter geworden".
 Op r10: "wat er bij de voorste 2 foutgaat is niet zo zeer de vorm van de anemonen, maar meer de ronde vorm erom heen die er niet goed bij past, daarnaast zijn de cirkels erin ook nog niet goed. De linkerpoot mag nog iets meer een knievorm hebben, ogen moeten we een andere kleur geven zodat het niet samenvoegt met de anemonen". Keuzes: omtrek voorste 2 = zoals het model; mondjes voorste 2 = zoals het model; ogen = "een kleur die goed contrast geeft".
+Op r11: "veel beter, het rondje in het midden van de anemoon moet alleen consistenter, ogen van b zijn goed alleen moet je nog met kleurtinten werken, zoals bij de oorspronkelijke vileplume wss met tinten rood gewerkt is".

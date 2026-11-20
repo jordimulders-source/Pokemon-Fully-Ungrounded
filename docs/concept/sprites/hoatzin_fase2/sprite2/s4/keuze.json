@@ -34,5 +34,7 @@
  ],
  "masker_uit_reden": "linker voorteen: alpha 0,35-0,43 (onder de normale 0,45), model is daar slanker",
  "kuif": "as",
- "pen_rand": 2
+ "pen_rand": 2,
+ "penlijn_tint": 0,
+ "cluster_min": 6
 }

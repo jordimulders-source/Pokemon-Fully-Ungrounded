@@ -1,9 +1,9 @@
 # palet.py: spritepalet = modeltinten, alleen helderheid uit elkaar getrokken (±30-40 stappen)
 PAL = [(255, 255, 255),   # 0 transparant
        (16, 14, 24),      # 1 lijn
-       (106, 106, 144),   # 2 vleugel licht (penrand)
-       (70, 70, 104),     # 3 vleugel midden (vlak)
-       (40, 38, 62),      # 4 vleugel schaduw
+       (100, 100, 140),   # 2 vleugel licht (penrand)
+       (62, 62, 96),      # 3 vleugel midden (vlak)
+       (36, 34, 58),      # 4 vleugel schaduw
        (244, 236, 212),   # 5 creme licht
        (190, 180, 156),   # 6 creme schaduw
        (184, 136, 188),   # 7 krop licht

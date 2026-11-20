@@ -121,6 +121,8 @@ lijn |= pad
 S = T.copy(); S[lijn & mask] = 1
 # penranden: de pixel boven elke penlijn krijgt de lichte tint (nabij 2, ver 3), zoals de lichte penrand in het model
 penrand = np.zeros((64, 64), bool)
+_pd = np.pad(~mask, 1, constant_values=True)
+rand_ = mask & (_pd[:-2, 1:-1] | _pd[2:, 1:-1] | _pd[1:-1, :-2] | _pd[1:-1, 2:])
 def vrij(y, x): return 0 <= y < 64 and 0 <= x < 64 and mask[y, x] and Z[y, x] == 'vleugel' and not lijn[y, x]
 for j, i in zip(*np.where(pad)):
     n = 1 if (ver[j, i] or steil[j, i]) else CFG.get('pen_rand', 1)
@@ -129,8 +131,8 @@ for j, i in zip(*np.where(pad)):
         y, x = j + d * dy, i + d * dx
         if not vrij(y, x): break
         S[y, x] = 2; penrand[y, x] = True
-    y, x = j - dy, i - dx                                    # schaduwkant: 1 px donkerste tint
-    if vrij(y, x) and not penrand[y, x] and not pad[y, x]: S[y, x] = 4
+    if CFG.get('penlijn_tint') and Z[j, i] == 'vleugel' and not rand_[j, i]:
+        S[j, i] = CFG['penlijn_tint']                         # binnenlijn in de donkerste vlaktint (GEMINI 152)
 # kuif: KUIF = 'regel' (hoofdtint, schaduw onder/rechts), 'model' (modeltinten licht/donker), 'as' (skelet = licht)
 KM = CFG.get('kuif', 'regel')
 AS = np.load('kuifas.npy') > 0
@@ -232,6 +234,19 @@ for c in range(1, n2 + 1):
     if m.sum() >= 4 and yy.min() < 31: continue
     if ((yy >= 31) & (yy <= 32) & (xx >= 33) & (xx <= 39)).all(): continue
     S[m] = 3
+# vlekjes < CL px in vulkleuren (niet lijn, oog, penrand, klauw) -> buurtint uit dezelfde zone (GEMINI 77/115)
+CL = CFG.get('cluster_min', 4)
+for _ in range(2):
+    for v in np.unique(S[mask]):
+        if v in (0, 1, 14): continue
+        labc, nc = nd.label(S == v)
+        for c in range(1, nc + 1):
+            m = labc == c
+            if m.sum() >= CL or (m & penrand).any(): continue
+            if ((Z == 'grijs') & m).any() and v in (5, 6): continue
+            ring = nd.binary_dilation(m) & ~m & mask
+            kand = [S[p] for p in zip(*np.where(ring)) if S[p] > 1 and S[p] != 14 and Z[p] == Z[m][0]]
+            if kand: S[m] = np.bincount(kand).argmax()
 # s4: afwerking per keurder (alleen kleur/lijn binnen de bestaande vorm, of eruit waar het model geen vorm heeft)
 AF = json.load(open('afwerking.json'))
 for r in AF['regels']:

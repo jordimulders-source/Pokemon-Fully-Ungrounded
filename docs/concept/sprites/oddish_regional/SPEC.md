@@ -49,3 +49,4 @@
 "best al een aardige start, het moet wat netter afgewerkt worden. Je mag qua gelaat afwerken van het model, het zou leuk zijn als we de ogen wel goed kunnen zien. Linkerpoot is te recht en de anemonen zijn niet allemaal even netjes"
 "de krater mag wat netter rond"
 Op r4: "nu neemt wel de definitie af idd". Linkerpoot = links op het scherm, moet "schuiner" (hele poot schuiner, meer naar buiten; Jordi koos uit opties).
+Op r7: "Het gezicht is nog steeds niet zichtbaar, de poot misschien toch maar het model na maken met de knik erin. De voorste twee anemonen zijn nu veel te simpel. In de meest linkse zijn de achterste 3 in elk geval bijna goed, alleen de cirkel in het midden is wat slordig". Verduidelijkt (keuzes): cirkel = alle mondjes; voorste twee = zoals de achterste 3.

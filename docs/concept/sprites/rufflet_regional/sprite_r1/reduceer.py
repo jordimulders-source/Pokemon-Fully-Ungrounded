@@ -6,6 +6,8 @@ cand=a.min(2)>=244; bg=np.zeros((H,W),bool); st=[(y,x) for y in range(H) for x i
 while st:
     y,x=st.pop()
     if 0<=y<H and 0<=x<W and cand[y,x] and not bg[y,x]: bg[y,x]=1; st+=[(y+1,x),(y-1,x),(y,x+1),(y,x-1)]
+# ingesloten achtergrond tussen de poten (pure wit >=246, y73-83 x48-56; lijf is creme 242,242,234)
+enc=(a.min(2)>=246)&~bg; enc[:70]=0; enc[85:]=0; bg|=enc
 np.save("bg.npy",bg)
 lum=a@[0.299,0.587,0.114]; dark=(lum<70)&~bg
 # modelpalet: kmeans op de figuurpixels

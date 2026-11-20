@@ -1,6 +1,6 @@
 # vel.py txt uit.png : sprite 8x | kale reductie 8x | model op dezelfde schaal, + 1x op licht en donker
 import sys,numpy as np; from PIL import Image; from pal import *
-g=lees(sys.argv[1]); k=lees('kaal.txt'); S=8
+g=lees(sys.argv[1]); k=lees(sys.argv[3] if len(sys.argv)>3 else 'kaal.txt'); S=8
 def im(t,bg=(255,255,255)): return Image.fromarray(rgb(t,bg))
 h,w=g.shape
 m=Image.open('../gemini/r1.png').convert('RGB')

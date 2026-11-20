@@ -12,6 +12,7 @@
 - r1 (`gemini/r1.png`), Jordi: "eigenlijk al wel tof, alleen ik herken braviary nog niet echt erin, de pose is niet helemaal driekwart en we zien de kuif zo niet goed, plus de klauwnagels zijn alleen van staal". Op de vraag wat dat laatste betekent: hele klauw staal (niet alleen de nagels).
 
 - Na r1, Jordi: "weet je wat ik kijk en zie dat die niet eens heel ver van braviary afwijkt, maar misschien dat we rufflet dan hetzelfde houden en dat we hier gewoon een andere vorm van maken in dezelfde lijn" · op de vraag hoe: splitevolutie · "Harpiary ofzo (betere naam bedenken)".
+- r2 (`gemini/r2.png`, prompt v2), Jordi: "De klauwen zijn goed, de kuif is nog niet iconisch genoeg, ik vind hem ook iets te buff".
 
 ## Regionale Rufflet
 - 20 nov: "Rufflet wordt juist regionaal" · "Perrserker idee": de regionale Rufflet evolueert in de harpij.
@@ -20,4 +21,4 @@
 
 ## Open
 - Kleur: Gemini-prompt r1 vraagt harpij-kleuren (voorstel Claude); Jordi beslist bij het model.
-- Naam: werknaam Harpiary (Jordi: "betere naam bedenken").
+- Naam: gepauzeerd (Jordi, 20 nov: "pauzeer de naam, ik dacht dat het grappig was om het te laten lijken op braviary"); werknaam Harpiary.

@@ -34,6 +34,6 @@ Wat in de conceptdocumenten staat, is **besloten** door Jordi. Losse ideeën sta
 ## Nieuw type: Cosmic (besloten, Jordi 12 nov: "we gaan het doen")
 - 19e type voor al het buitenaardse (ruimte, sterren, maan, meteorieten, aliens); haalt soorten weg bij Psychic. Uitwerking (soorten, moves, code) in een later gesprek.
 - **Matchups:** super effective tegen Steel, Electric, Fairy, Cosmic; not very effective tegen Bug, Rock, Ice. Resist Steel, Fire, Water; immuun voor Fairy; zwak voor Poison, Rock, Psychic, Cosmic. Fairy mag een flinke nerf (Jordi).
-- **Kandidaten (Jordi):** Elgyem-lijn, Lunatone & Solrock, Baltoy-lijn, Minior, Deoxys, Clefairy-lijn; Cosmic Power wordt een Cosmic-move. Meer kandidaten en de discussie: `IDEEEN.md` (Nieuw type: Cosmic).
+- **Kandidaten (Jordi):** Elgyem-lijn, Lunatone & Solrock, Baltoy-lijn, Minior, Deoxys, Clefairy-lijn; Cosmic Power wordt een Cosmic-move. Nominatielijst soorten en moves: `COSMIC.md`. Meer kandidaten en de discussie: `IDEEEN.md` (Nieuw type: Cosmic).
 - **Techniek:** eigen typenummer (niet `TYPE_MYSTERY`, dat is de codemarkering voor "geen type"); tabel in `src/data/types_info.h`.
 - Typetabel als afbeelding: `typetabel_cosmic.png`.

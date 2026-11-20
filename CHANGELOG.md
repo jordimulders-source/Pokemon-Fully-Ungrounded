@@ -2378,3 +2378,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.570] - Regionale Rufflet: SPEC en Gemini-startprompt
 - `docs/concept/sprites/rufflet_regional/` (SPEC met Jordi's besluiten en de beschrijving van zijn inspiratiefoto; `gemini/PROMPT.md` r1 voor een nieuw gesprek).
+
+### [v0.0.571] - Cosmic: nominatielijst soorten en moves
+- `docs/concept/COSMIC.md`: Jordi's kandidaten + extra voorstellen (soorten en moves) met het huidige repo-type, voorstel en een kolom voor Jordi's keuze.

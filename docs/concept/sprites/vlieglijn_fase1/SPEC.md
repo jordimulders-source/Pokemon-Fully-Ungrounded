@@ -50,3 +50,4 @@ Lijn (besloten 20 nov): **vlieg → mug, 2 fases** (reguliere vlieg; fruitvlieg 
 - Jordi (20 nov), krabbel `sprite_r7/krabbel_jordi.png`: "geel mag weg en rood is ruwweg waar we een poot missen"
 - Jordi (20 nov): "met geel bedoel ik dus dat stukje naast de voorpoot he"
 - Jordi (20 nov) over sprite r8: "de poot mag iets hoger uit het lichaam komen, de rest is prima" → r9: alleen aanzet nieuwe poot hoger; rest (ook r9-restanten) bevroren
+- Jordi (20 nov): "je laat het als zwevend voetje staan, maar kleurt en schaduwt het zodanig dat het echt als twee losse poten zien"

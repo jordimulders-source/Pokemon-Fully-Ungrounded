@@ -40,3 +40,4 @@ Lijn (besloten 20 nov): **vlieg → mug, 2 fases** (reguliere vlieg; fruitvlieg 
 - Sprite r1–r2 op 42 px: ronde kop en gebogen kabels gaan verloren. Maatvergelijking `maat/maten.png`. Jordi (20 nov): "50px akkoord. Omdat het maar 2 fases is kan die ook prima op lvl 30 pas evolueren ofzo" → sprite ±50 px breed; evolutie rond lv 30 (data later)
 - Jordi (20 nov) over sprite r4: "de achterste poten kloppen niet"
 - Jordi (20 nov): "staan allebei naar rechts"
+- Jordi (20 nov) over sprite r5: "de poten staan niet goed, maar dit lijkt me een ideaal moment voor een gemini ronde" → `gemini/PROMPT_r9_poten.md`

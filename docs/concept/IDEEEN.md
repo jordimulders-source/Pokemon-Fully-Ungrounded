@@ -570,6 +570,7 @@ Overig:
 - **Baltoy/Claydol: Andes-vorm** (zie het huaco-retratovoorstel in `DEX_NOMINATIES.md` §5).
 - **Ruïne- of zelfs tempel-Pokémon:** een levende tempel, enorm, mogelijk een Snorlax-idee: geen legendary, wel een static encounter (idee uit een gesprek met een maat).
 - **Vlieg → mug-lijn:** "denk ik nog wel een goede" (mug was al Poison/Electric).
+  - Jordi (20 nov): "misschien kunnen we fruitvlieg -> huisvlieg -> mug"; "Waar ze voorkomen is niet belangrijk, we gaan aan het design werken". Map: `sprites/vlieglijn_fase1/`.
 - **Early game Bug** die op hoogte kan leven: nog nodig.
 - **Ghost-types:** wereldwijde mythes en cryptids; hoe vet het design zou zijn is daarbij belangrijk.
 - **Cacnea/Maractus:** Jordi neigt naar een Noord-Andes-variant.

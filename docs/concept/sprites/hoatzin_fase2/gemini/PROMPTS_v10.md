@@ -15,3 +15,5 @@ Change:
 3/4 view facing left.
 AVOID: realistic feathers, hair-like crest, feather stripes or texture, fully spread wings, long thin neck, small head, cute or smiling look, gradients, shine, effects, background.
 ```
+
+Uitslag v10 r1 (`v10_r1.png`, kijkt naar rechts), Jordi: "deze is al wat beter, ik twijfel nog over de lichaams kleur, die vertaalde eerder niet heel lekker naar de sprite, voor de rest vind ik hem wel goed, misschien de haren nog net iets langer, paar cm".

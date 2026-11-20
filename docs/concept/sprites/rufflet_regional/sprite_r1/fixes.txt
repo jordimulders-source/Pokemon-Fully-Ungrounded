@@ -1,0 +1,86 @@
+# handreparaties: "y x letters" vanaf x naar rechts, '_' = niet aanraken. Elke regel = afwijking van de kale reductie (na ruis/lijn), met reden.
+# KUIF: toppunt was zwart lijnstreepje -> grijze donstop zoals het model (gekleurde selout aan de lichtkant)
+0 20 u
+# rechterrand kop: toppen van het model (sy9.5 en sy12.5 -> sx23), recht stuk van 8 rijen breken
+12 23 K
+12 22 w
+# OOG (model natief x41-46,y26-33): lid K boven, glans W linksboven (witte kolom x42), iris n, onderste helft lichter c; K-ring links en onder
+11 12 KKK
+12 11 KWnK
+13 11 KnnK
+14 12 K
+# VERRE VLEUGEL: witte voorrandstreep doorgetrokken (model W op (29,2)), veerscheidingen L2/L3 op de modelplekken (natief D-cellen)
+29 2 W
+31 5 n
+33 3 n
+34 3 n
+35 3 n
+31 7 n
+# NABIJE VLEUGEL: witte rand binnen de zwarte lijn doorlopend (model W-rand)
+30 20 W
+# KLAUWEN (model: grijze klauwen met zwarte rand; reductie gaf zwarte klodders)
+40 7 n
+41 7 n
+41 9 n
+42 16 n
+42 20 n
+43 20 n
+42 25 n
+43 25 n
+# KOP: losse W-pixel in de wangschaduw (model 240 tussen 209) -> w; donsplukje rechts: v-sikkel onder het plukje doorlopend
+14 15 w
+8 22 v
+# NABIJE VLEUGEL: zwarte binnenrand tussen lijf en vleugel dicht (gat op rij 27), witte rand doorlopend (26,18)->(34,23)
+27 17 KW
+28 19 W
+# onderkant ovaal: sikkelschaduw a (model ab/aa), daaronder de lichte slagpennen c (model cc/cb), losse c/b-spikkels weg
+31 24 aa
+32 25 cc
+33 24 cc
+# staartpuntje (model lichtgrijze punt) i.p.v. losse lijfkleur
+28 30 c
+# BUIK: losse v-spikkels (model donsstreepjes) -> w; sikkelschaduw v rechtsonder langs de rand (volume, Gen 3)
+32 12 ww
+33 14 w
+29 17 v
+30 18 v
+31 18 v
+32 18 vv
+33 19 vv
+34 19 vvv
+35 20 vvv
+# POTEN: verre poot bovenaan geel-donker i.p.v. grijs (model DD/dd); hooglicht als streep bovenop de tenen (modelplek)
+36 13 d
+39 9 y
+39 11 yy
+40 7 n
+42 9 n
+43 16 n
+# NEK: blokje v onder de kin -> sikkel (onderste 2 px terug naar w, model donsstreepjes)
+19 16 ww
+# BORST: de V-veertjes als één nette w-lijn op de modelplek (links (23,10)->(24,11), punt (24,12-13), rechts (23,14)->(21,16)); losse w ernaast -> W
+21 16 w
+22 13 W_w
+23 10 w__W_W
+24 11 www
+25 12 W
+# NABIJE VLEUGEL volume (Gen 3, voorstel binnen 'kleur mag afwijken'): licht c linksboven in het ovaal, sikkel a langs de rechterrand binnen de K
+20 19 cc
+21 19 ccc
+22 19 cc
+23 19 c
+20 23 a
+21 24 a
+22 24 aa
+23 25 aa
+24 26 aa
+25 26 aa
+26 27 a
+27 27 aa
+28 26 aa
+30 25 aa
+# afwerking: lichte voorrand ovaal doorlopend (c), lijfrand bij de vleugel in de sikkel, geen a/K om en om op de buitenrand verre vleugel
+20 18 c
+21 18 c
+28 17 v
+36 0 K

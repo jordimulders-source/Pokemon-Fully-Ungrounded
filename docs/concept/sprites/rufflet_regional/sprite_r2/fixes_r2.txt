@@ -1,0 +1,26 @@
+# r2 op r1 ("y x letters", '.' = transparant, '_' = niet aanraken). Modelplekken gemeten op het 1024-model (raster x=194+20.48sx, y=50.7+20.48sy).
+# 1 KUIF bovenop: donsbult links van de grote piek (model sx16.5-17.5, sy1.5) 2 px + inkeping op (1,18); vulling eronder W
+1 16 uu
+2 16 WW
+# rechter piek bovenop (model sx21-22.5, sy2.5-3.1): vulling v + zwarte punt
+3 21 vK
+# donsrand rechts: plukjes op sy7 (bestond), sy9-9.7 (sx23.2) en sy12.7 (bestond, r1); inkeping op rij 8
+8 22 K.
+9 22 vK
+# 2 OVAAL: licht c volgt de linkerboven-rand (breed linksboven, smal naar rechts en omlaag), geen eiland
+19 19 cccb
+20 18 ccccb
+21 18 cccbbb
+22 18 cccb
+23 18 ccb
+24 18 cb
+# 3 ONDERKANT NABIJE VLEUGEL: sikkel a loopt door langs de rechteronderkant (c/b-spikkels weg), lijn tussen de slagpennen 2 px, losse c in de witte pen weg
+29 27 aa
+30 28 a
+31 26 a
+35 25 n
+36 28 W
+# 4 VERRE VLEUGEL: geen drie 1px-banden (a | c | W) langs de voorrand: c-band tussen selout en witte streep wordt W (lichte rand 2 px, smal uitlopend)
+25 5 W
+26 4 W
+27 3 W

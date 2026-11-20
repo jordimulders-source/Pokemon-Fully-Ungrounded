@@ -16,7 +16,7 @@
 - r3 (`gemini/r3.png`, prompt v3), Jordi: "hij is te compact, te stocky. Ik zal bij de volgende een bronfoto erbij doen, de kuif is wederom niet goed".
 - r4 (`gemini/r4.png`, prompt v4 + bronfoto), Jordi: "ok nu komen we ergens, alleen is die nu iets te realistisch en iets te weinig pokemon. De klauwen mogen volledig van steel, de strepen op de poten gaan niet goed vertalen naar een sprite dus daar moeten we iets mee, en de veren mogen iets meer een harpy look krijgen, dat die meer een pokemon wordt, misschien iets meer nog, dat het een meer overdreven feature wordt".
   Op vragen: "de veren" = de kuif · strepen: een paar dikke banden (voorstel Claude, gekozen) · aanpak: nieuwe startprompt.
-- r5 (`gemini/r5.png`, prompt v5), Jordi: "ik zou graag 2 veren erbij willen op de kop, hij heeft alleen de kleuren van de klauwen veranderd maar ze lijken nog niet echt van staal. De strepen zijn beter".
+- r5 (`gemini/r5.png`, prompt v5), Jordi: "ik zou graag 2 veren erbij willen op de kop, hij heeft alleen de kleuren van de klauwen veranderd maar ze lijken nog niet echt van staal. De strepen zijn beter" · "de nieuwe veer positie is ook goed".
 
 ## Regionale Rufflet
 - 20 nov: "Rufflet wordt juist regionaal" · "Perrserker idee": de regionale Rufflet evolueert in de harpij.

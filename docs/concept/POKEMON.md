@@ -157,6 +157,7 @@ Alleen de keuzes; details, citaten en open vragen in `IDEEEN.md` (overzicht bove
   Ook: "het lichaam blijft te vederig, te complex" · "de kuif is verknald".
   En: "het plaagmasker is teveel erop geplakt".
   Daarna: "we moeten opnieuw beginnen" (r1–r4 afgesloten).
+  Nieuw gesprek met Hoatedo als enige bijlage (r5): "nu maakt ie hem dus na".
 
 ## Convergente soorten (besloten)
 - **Dustly → Hauntflare → Gengas** (Jordi, 13–15 nov; namen definitief): Cosmic-convergente lijn van de Gastly-lijn, op de levensloop van een ster: Bok-globule → protoster met jets (de losse knopen = Haunters handen) → bruine dwerg. Cosmic/Poison voor de hele lijn (Jordi, 15 nov: "cosmic/poison is goed"). Gengas eerst (Jordi: "de meest complexe van de drie"); `sprites/gengas/SPEC.md`. **Gengas: frontsprite af** (15 nov, `sprites/gengas/af/gengas.png`); **Dustly: frontsprite af** (15 nov, `sprites/dustly/af/dustly.png`: Bok-globule als losse stofwolk naar Gemini-model r6, Gastly-ogen en -mond, kleur A mauve-roze met pruimschaduw en roze-oranje lichtrand, belijning/schaduw naar Gastly Gen 3: lijn alleen om de dichte kern); **Hauntflare: frontsprite af** (15 nov, `sprites/hauntflare/af/hauntflare.png`: protoster-bol met losse stofring, vlammenkuif en -staart als jets, losse vuurhanden, Haunter-ogen en -grijns met tanden, gloeiende kern in de mond): bol gas met banden, gasoren, vier losse manen als handen/voeten, Gengars ogen en grijns (125%). Details: `IDEEEN.md` (Convergente soorten).

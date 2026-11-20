@@ -2390,3 +2390,9 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.573] - Onderwater-Oddish-lijn weer open
 - Jordi (20 nov): onderwateridee blijft; Vileplume = heetwaterbron omringd door zeeplanten/anemonen, Oddish anemonen/kelp/"wat dan ook", Gloom "iets van een bol"; geen partners in de sprite. Referenties: andermans regionale Vileplumes en de anemoon-fan-art in `docs/concept/sprites/oddish_regional/referenties/`.
+
+### [v0.0.574] - Onderwater-Oddish: kelp-lijn en Oddish-frontsprite af
+- Lijn (Jordi, 20 nov): Oddish = Galápagos-kelp (Water/Grass, turquoise, kelp-hechtvoetjes) → Gloom = gezonken, dieprood gelatineus lijf met lavabrok, verschroeide kelp en gloeiend kwijl (Water/Fire) → Vileplume = levende heetwaterbron met vijf anemonen, wit lijf op steltpoten (Water/Fire). Modellen bevroren in `docs/concept/sprites/oddish_regional/referenties/`.
+- Oddish-frontsprite af: model verkleind (maker), 7 px keurderreparaties, gezicht 1-op-1 van de game-Oddish met schaduwlijn boven de mond (Jordi), kelp subtiel amber met golvende rand (Jordi: "Akkoord, maar houd het subtiel"); r6 (middelste blad) verworpen; Dragonfly Cave-eindkeuring PASS. `oddish_regional/af/`, op het overzichtsvel.
+- Sessieprompts voor de Gloom- en Vileplume-sprites: `oddish_regional/SESSIE_PROMPTS_gloom_vileplume.md`.
+

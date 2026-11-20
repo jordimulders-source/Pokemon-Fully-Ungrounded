@@ -50,3 +50,4 @@
 - r4b: gezicht 1-op-1 van de Oddish uit de game + schaduwlijn 4 px boven de mond (Jordi). r5: kelp subtiel naar olijfbruin/amber (tint +6°, verzadiging ×0,85) en 10 px golvende rand (Jordi: "Akkoord, maar houd het subtiel"); hechtvoetjes kleuren mee (zelfde indices).
 - r6: ook het middelste blad subtiel golvend, 4 px (Jordi: "kan je het middelste blad ook nog doen?"; over r5: "het is goed gelukt namelijk").
 - r6 verworpen (Jordi: "dit is wat minder gelukt, stuur r5 maar naar de eindkeuring"). r5 naar de Dragonfly Cave-eindkeuring.
+- **Af (20 nov):** r5 → `af/oddish_regional.png` (eindkeuring PASS; optionele opschoning (34,23) en (29,26) 6→7 niet gedaan).

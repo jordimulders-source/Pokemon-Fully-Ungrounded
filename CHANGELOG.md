@@ -2368,3 +2368,11 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.568] - Spooktrein fase 3: opknappen geparkeerd
 - Koeienvanger-prompt gaf de hele trein zonder geest (`gemini/opknap/r2_koeienvanger.png`). Jordi: "laat maar zitten voor nu, hier moeten we iets anders voor bedenken". Geparkeerd in `OPKNAPRONDE_GEMINI.md`; les in `GEMINI.md`.
+
+### [v0.0.569] - Ontwerpenlijst bijgewerkt
+- Jordi (20 nov): "lopende lijnen zijn allemaal af" (vuurwerk fase 1–3, spooktrein fase 1–3, koningstiran-lijn met namen Kiskiddo → Princadee → Sunperor). Bestanden van vuurwerk fase 2 en spooktrein fase 1 staan nog niet in de repo.
+- Geschrapt: regionale vogel die eindigt als condor ("We hebben een regionale vogel en hanan pacha wordt de enige condor"), Lanturn-evolutie.
+- Af genoteerd: één pinguïn (Skinguin), Rotom-boombox (DJ Rotom).
+- Nieuw: een Steel/Cosmic-lijn waarin één Pokémon een satelliet is.
+- `TODO.md`: nieuwe sectie Ontwerpen met alles wat nog open staat.
+

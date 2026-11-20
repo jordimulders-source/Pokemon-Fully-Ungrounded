@@ -2382,3 +2382,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Vlieg: r4 bewaard; prompt r5 (grijze kop, twee LED-oogschermen zonder mond, grijs achterlijf met zwarte vlekken, lichtere vleugels).
 - Vlieg: Bug/Electric, robotischer; r5 bewaard, prompt r6.
 - Vlieg: prompt r7 (mechanischer achterlijf, scherpere vleugels, kabelpoten naar Xurkitree).
+- Vlieg: r7 bewaard ("nu begint het op een pokemon te lijken"); prompt r8 (boller achterlijf).

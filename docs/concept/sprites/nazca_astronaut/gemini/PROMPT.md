@@ -1,6 +1,6 @@
 # Nazca-astronaut – Gemini-startprompt r3 (nieuw gesprek)
 
-Bijlagen: (1) `silhouet/silhouet_r1.png` (silhouet overgetrokken van de geoglief: luchtfoto + hanger in `referenties/`), (2) Sigilyph-sprite (`bijlage/sigilyph.png`).
+Bijlagen: (1) `silhouet/silhouet_r2.png` (r2: langer, Jordi "hij is toch langer?"; silhouet overgetrokken van de geoglief: luchtfoto + hanger in `referenties/`), (2) Sigilyph-sprite (`bijlage/sigilyph.png`).
 Jordi: "sigilyph is in bijna niks een vogel behalve dat de nazca lijnen het silhouet zijn"; Gemini volgt het silhouet niet, "zelfs met foto". Daarom het silhouet als vlak.
 
 ---

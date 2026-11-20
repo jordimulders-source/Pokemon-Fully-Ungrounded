@@ -20,3 +20,6 @@
 
 ## Rondes
 - Prompt r1: `gemini/PROMPT.md`.
+- r1 (`gemini/r1.png`) afgekeurd, Jordi: "niet gelukt, hoofd is nog hetzelfde, vorm heel raar, vleugels niet groot genoeg"; "en niet uniek genoeg de vleugels".
+- Keuzes na r1 (Jordi, 20 nov): hoofd "1, 2 en 4" = **langere snuit, hoorntjes, oogring houden** (niet: snorharen/baard); houding **diagonaal**; vleugels "gewoon zoals dunsparce, maar iets groter, ze moeten vrij bizar zijn, niet typisch dragon".
+- Prompt r2 (nieuw gesprek, geen bijlage): `gemini/PROMPT_r2.md`. Dunsparce minder bij naam (r1 kopieerde hem). Voorstel Claude: diagonaal = kop linksboven, boorstaart rechtsonder.

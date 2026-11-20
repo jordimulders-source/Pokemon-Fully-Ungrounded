@@ -2431,3 +2431,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.582] - Dundragoon: keuzes en Gemini-startprompt
 - Jordi: "dit design is nog niet heel goed gelukt, maar daar kan gemini bij helpen"; "Dundragoon wordt Dragon/Normal". Keuzes: oude testsprite niet als bijlage; grote vleugels blijven; staart loopt over in de boor; Dunsparce-lijf, groter; twee korte poten; gezicht "Lijkt op Dunsparce maar meer dragon vorm".
 - Nieuw: `docs/concept/sprites/dundragoon/SPEC.md` (citaten + keuzes) en `gemini/PROMPT.md` (r1).
+
+### [v0.0.583] - Dundragoon: Gemini r1 afgekeurd, prompt r2
+- r1 (`dundragoon/gemini/r1.png`) afgekeurd: "niet gelukt, hoofd is nog hetzelfde, vorm heel raar, vleugels niet groot genoeg"; "en niet uniek genoeg de vleugels".
+- Keuzes: langere snuit, hoorntjes, oogring houden; diagonaal; vleugels "gewoon zoals dunsparce, maar iets groter, ze moeten vrij bizar zijn, niet typisch dragon". Prompt r2 in `gemini/PROMPT_r2.md`.

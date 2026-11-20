@@ -2375,3 +2375,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Sprite: r1–r3 waren te veel getekend (801/1380 px afwijking van de kale reductie, Jordi: "Je gaat me toch niet vertellen dat ze opnieuw getekend zijn he?"); r4 opnieuw vanaf de kale reductie, daarna alleen pixel fixes. Jordi's keuzes: oog c, kuif B, snavel V2 met subtielere mond (naar Pidgeot), pootstrepen. Eindkeuring Dragonfly Cave: 4 pixelfixes.
 - Af: `docs/concept/sprites/harpij_braviary/af/harpij.png` (+ `_8x.png`, `normal.pal`, `harpij.txt`); op het overzichtsvel.
 - Les in `docs/lessen/GEMINI.md`: afwijkingsgetal van de maker is een stopsignaal.
+
+### [v0.0.570] - Regionale Rufflet: SPEC en Gemini-startprompt
+- `docs/concept/sprites/rufflet_regional/` (SPEC met Jordi's besluiten en de beschrijving van zijn inspiratiefoto; `gemini/PROMPT.md` r1 voor een nieuw gesprek).

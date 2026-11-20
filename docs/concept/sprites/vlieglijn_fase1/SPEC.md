@@ -17,3 +17,5 @@ Nog niet gekozen (Gemini r1: `gemini/PROMPT.md`).
 - r2 (`gemini/r2.png`), Jordi: "ik denk niet dat we een fruitvlieg en huisvlieg voldoende van elkaar kunnen gaan onderscheiden"
 - Jordi (20 nov): "correct, dus we doen 2 fases, ook de horzel maken we niet onderscheidend genoeg. Met een reguliere vlieg komen we met wat meer zwart ook weg in het ontwerp. De elektriciteitskabels als poten wil ik graag wel behouden, dat is tof"
 - Jordi (20 nov): "en we kunnen misschien ook een elektrisch apparaat motief in de vlieg ogen verwerken"
+- Jordi (20 nov) over LED-ogen: "ja led lampjes zijn tof"; patroon: "B zou ik wel tof vinden denk ik" (B = de brandende lampjes vormen een expressie, zoals robotogen op een scherm)
+- Keuzes (20 nov): expressie **blij** (^ ^), lampjes **paars**, lijf **amber + zwart** → `gemini/PROMPT_r3_vlieg.md`

@@ -138,10 +138,19 @@ GEZ=[(36,24),(37,24),(37,25),(38,32),(38,33),(39,26),(40,26),(40,27),(41,28),(41
 for y,x in GEZ: assert vo[y,x] in (7,8,14), (y,x,vo[y,x])
 P=np.array(PAL[1:],float)
 def dichtst(rgb): return 1+int(np.argmin(((P-np.array(rgb,float))**2).sum(1)))
-DX,DY=int(opt('gx',-1)),int(opt('gy',-3))                     # Vileplume (36,24) -> ons (33,23)
+# Alleen de afstand verandert ("ver genoeg uit elkaar"): linkeroog 1 px naar links t.o.v. de mond, rechteroog
+# 0 px -> ogen 9 px uit elkaar i.p.v. 8 (ons lijf is smaller dan dat van Vileplume, mond blijft op de U-plek).
+DX,DY=int(opt('gx',-1)),int(opt('gy',-4))                     # Vileplume-mond -> ons (U-plek, x25-30)
+EXTRA={(36,24):-int(opt('oogl',1)),(37,24):-int(opt('oogl',1)),(37,25):-int(opt('oogl',1)),(38,32):int(opt('oogr',0)),(38,33):int(opt('oogr',0))}
+# Jordi: "de ogen dus maar net zichtbaar" = net onder de kroon uit, zoals bij Vileplume in de game: elk oog direct
+# onder de zwarte kroonrand (linkeroog onder y31, rechteroog onder y30 waar onze kroonrand hoger ligt)
+HOOG={(38,32):-3,(38,33):-3}   # mond blijft 3 rijen onder het linkeroog, zoals in de game
 KLEUR={}
 for y,x in GEZ:
-    k=dichtst(vpal[vo[y,x]]); KLEUR[int(vo[y,x])]=k; o[y+DY,x+DX]=k
+    k=dichtst(vpal[vo[y,x]]); KLEUR[int(vo[y,x])]=k; o[y+DY+HOOG.get((y,x),0),x+DX+EXTRA.get((y,x),0)]=k
+GEZICHT=[(y+DY+HOOG.get((y,x),0),x+DX+EXTRA.get((y,x),0)) for y,x in GEZ]
+print('gezicht (y,x):',GEZICHT)
+kr=np.asarray(Image.open('r7/vileplume_r7.png')).astype(int); KR=np.zeros((64,64),bool); KR[10:18,24:40]=True
 print('gezicht: Vileplume-kleur -> onze index', {k:(tuple(vpal[k]),v,PAL[v]) for k,v in KLEUR.items()})
 opslaan(o,PAL,'%s/vileplume_%s.png'%(RONDE,RONDE))
 d=o!=kr

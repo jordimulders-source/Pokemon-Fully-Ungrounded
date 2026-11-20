@@ -10,6 +10,7 @@ Regionale Braviary-vorm gebaseerd op de harpij-arend (Amazone). Regionale Ruffle
 
 ## Regionale Rufflet
 - 20 nov: "Rufflet wordt puur flying".
+- 20 nov: "beetje deze inspiratie voor rufflet", met een foto van een harpij-kuiken (kwam niet als bestand binnen; beschrijving Claude): staand jong in een nest van takjes, kop naar links in profiel; witte donzige kop met een rommelige, rechtopstaande witte donskuif achterop; zwarte haaksnavel, licht open, roze tong; donker oog, dicht bij de snavel; wit donzig lijf (borst en buik), vleugels half gespreid en hangend, grijs met witte randen, rechtervleugel met een zwarte vlek onderaan; dikke gele poten met grote zwarte klauwen.
 
 ## Open
 - Kleur: Gemini-prompt r1 vraagt harpij-kleuren (voorstel Claude); Jordi beslist bij het model.

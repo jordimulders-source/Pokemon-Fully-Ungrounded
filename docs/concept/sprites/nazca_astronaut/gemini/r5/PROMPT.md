@@ -20,3 +20,5 @@ Expression: neutral, empty stare, no mouth.
 Official Gen 3 front sprite (Ruby/Sapphire/Emerald style): pixel art, 64×64, max 16 colors, dark selout outline, plain white background.
 No ground, no shadow, no glow, no effects.
 ```
+
+Uitkomst r5 (20 nov): silhouet exact gehouden, patroon erop geschilderd; Jordi: "vreselijk". Mijn overgetrokken silhouet (gelijke buizen, rechthoek) is zelf levenloos; letterlijk vasthouden geeft altijd een stokpop.

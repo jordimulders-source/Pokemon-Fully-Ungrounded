@@ -2427,3 +2427,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.586] - Nazca-astronaut: r4 bewaard, prompt r5
 - r4 (Sigilyph-onderdelen goed, silhouet losgelaten; Jordi: "hij moet het silhouet niet aanpassen") in `gemini/r4/`. r5: r3 als vormbijlage ("keep exact shape") + Sigilyph voor de stijl.
+
+### [v0.0.587] - Nazca-astronaut: r5 afgekeurd
+- r5 (silhouet exact, patroon erop; Jordi: "vreselijk") in `gemini/r5/`. Les in `GEMINI.md`.

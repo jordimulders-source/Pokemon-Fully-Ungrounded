@@ -2433,3 +2433,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.588] - Nazca-astronaut: Jordi's inkleuring, prompt r6
 - Jordi definieert de inkleuring (zwarte kop, wit-blauwe ogen, gele armen/benen met blauw-rood-blauwe strepen, zigzagromp); r6 = r5 hergekleurd.
+
+### [v0.0.589] - Nazca-astronaut: r6 bewaard, prompt r7 (driekwart sprite)
+- r6 (kleuren redelijk, geen sprite, lichaam "vreselijk") in `gemini/r6/`; r7 vraagt op Jordi's verzoek een driekwart sprite in dezelfde pose.

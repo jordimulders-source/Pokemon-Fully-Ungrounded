@@ -2412,3 +2412,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.581] - Nazca-astronaut: prompt r3 (Sigilyph-aanpak)
 - Jordi: Sigilyph is vooral het Nazca-silhouet. r3: astronaut-silhouet op dezelfde manier ingevuld, Sigilyph-sprite als bijlage (`gemini/bijlage/sigilyph.png`).
+
+### [v0.0.582] - Nazca-astronaut: silhouet van de geoglief + prompt r3
+- Jordi's referenties in `referenties/`; silhouet overgetrokken (`silhouet/maak.py`, `silhouet_r1.png`); prompt r3 = silhouet + Sigilyph als bijlagen.

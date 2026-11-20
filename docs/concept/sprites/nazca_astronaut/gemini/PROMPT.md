@@ -1,20 +1,19 @@
 # Nazca-astronaut – Gemini-startprompt r3 (nieuw gesprek)
 
-Bijlage: `bijlage/sigilyph.png` (Sigilyph, Gen 5-sprite uit de repo, 8×).
-Jordi: "sigilyph is in bijna niks een vogel behalve dat de nazca lijnen het silhouet zijn". Dus: Sigilyph = het silhouet van de Nazca-vogel, ingevuld als ornamenteel wezen. r3 doet hetzelfde met het silhouet van de astronaut-geoglief.
-Voorstellen Claude (niet van Jordi): Sigilyph als bijlage met naam (bewust, het moet een tegenhanger zijn); frontaal; staand op de benen van de geoglief.
+Bijlagen: (1) `silhouet/silhouet_r1.png` (silhouet overgetrokken van de geoglief: luchtfoto + hanger in `referenties/`), (2) Sigilyph-sprite (`bijlage/sigilyph.png`).
+Jordi: "sigilyph is in bijna niks een vogel behalve dat de nazca lijnen het silhouet zijn"; Gemini volgt het silhouet niet, "zelfs met foto". Daarom het silhouet als vlak.
 
 ---
 
 ```
-The attached sprite is SIGILYPH. Its design is the silhouette of a Nazca bird geoglyph, filled in as an ornamental creature: a black body with colorful patterns, eye-like spots, ornament-like limbs and tips. It is barely a bird, only the silhouette comes from the Nazca lines.
-Design its counterpart in exactly the same way, but from the silhouette of the Nazca geoglyph "El Astronauta" (the Owlman): a big round head with two big round eyes, one arm raised up, one arm pointing down, and two legs with feet.
-They are a pair like Lunatone and Solrock: clearly made the same way, but contrasting. Type: Cosmic/Normal. It is not Sigilyph: a different silhouette, different colors (not black with yellow, red, blue and green), but the same design approach.
-Expression: completely neutral, an empty stare, like Lunatone and Solrock. Not happy, not angry. No mouth.
-Draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style): pixel art, 64×64, max 16 colors, dark selout outline, plain white background. Facing the viewer like Sigilyph.
+Attachment 1 is a SILHOUETTE: the exact outline of the Nazca geoglyph "El Astronauta". Attachment 2 is the Pokémon SIGILYPH.
+Sigilyph's design is the silhouette of a Nazca bird geoglyph, filled in as an ornamental creature. It is barely a bird; only the silhouette comes from the Nazca lines.
+Design its counterpart the same way: FILL IN ATTACHMENT 1 EXACTLY. Keep its outline, proportions and pose: the big round head with the two round eyes, the arm raised next to the head, the other arm hanging down and out, the long narrow body, the two legs with round feet. Do not change the silhouette.
+They are a pair like Lunatone and Solrock: made the same way, but contrasting. Type: Cosmic/Normal. Different colors than Sigilyph (not black with yellow, red, blue and green).
+Expression: completely neutral, an empty stare, like Lunatone and Solrock. No mouth.
+Draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style): pixel art, 64×64, max 16 colors, dark selout outline, plain white background.
 
 DO NOT
-Not a stick figure, not made of tubes, not a robot.
-Not cute, not a mascot, not chibi, not an owl.
+Not a stick figure made of tubes, not a robot, not cute, not chibi, not an owl.
 No ground, no shadow, no glow, no effects.
 ```

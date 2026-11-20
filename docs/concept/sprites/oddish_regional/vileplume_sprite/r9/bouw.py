@@ -122,17 +122,30 @@ for i in range(5):
     for dy,rij in enumerate(ST):
         for dx,k in enumerate(rij):
             if k: o[Y0_+dy,X0_+dx]=k
-# ---- 4. gelaat: B standaard, varianten uit r8 (lijf/poten identiek) ----
-r8B=np.asarray(Image.open('r8/vileplume_r8_gelaatB.png')).astype(int)
-assert (o[32:]==r8B[32:]).all()
-kr=np.asarray(Image.open('r7/vileplume_r7.png')).astype(int)
-KR=np.zeros((64,64),bool); KR[10:18,24:40]=True
-for v in 'ABCDE':
-    g=np.asarray(Image.open('r8/vileplume_r8_gelaat%s.png'%v)).astype(int); ov=o.copy(); ov[32:]=g[32:]
-    opslaan(ov,PAL,'%s/vileplume_%s_gelaat%s.png'%(RONDE,RONDE,v))
+# ---- 4. gelaat. Jordi: "neem gewoon de vileplume mond en ogen over en doe ze ver genoeg uit elkaar".
+# Ogen en mond pixel voor pixel uit graphics/pokemon/vileplume/anim_front.png (bovenste 64x64), Vileplumes eigen
+# kleuren omgezet naar de dichtstbijzijnde kleur van ons palet; geplaatst op de plek van de U uit het model
+# (linkeroog linksboven op y33, de lichte rij y32 blijft tussen kroonrand en oog), onderlinge afstanden als Vileplume
+# (ogen 8 px uit elkaar, net als in de game).
+r8A=np.asarray(Image.open('r8/vileplume_r8_gelaatA.png')).astype(int)
+assert (o[32:]==np.asarray(Image.open('r8/vileplume_r8_gelaatB.png')).astype(int)[32:]).all()
+o[32:]=r8A[32:]
+for X in range(25,30): o[33,X]=10                           # U uit het model weg
+for X in range(26,29): o[34,X]=10
+vp=Image.open('../../../../../graphics/pokemon/vileplume/anim_front.png'); vo=np.asarray(vp)[:64].astype(int)
+vpal=np.array(vp.getpalette()[:48]).reshape(-1,3)
+GEZ=[(36,24),(37,24),(37,25),(38,32),(38,33),(39,26),(40,26),(40,27),(41,28),(41,29),(41,30),(40,31)]   # ogen (7/8) en mond (14)
+for y,x in GEZ: assert vo[y,x] in (7,8,14), (y,x,vo[y,x])
+P=np.array(PAL[1:],float)
+def dichtst(rgb): return 1+int(np.argmin(((P-np.array(rgb,float))**2).sum(1)))
+DX,DY=int(opt('gx',-1)),int(opt('gy',-3))                     # Vileplume (36,24) -> ons (33,23)
+KLEUR={}
+for y,x in GEZ:
+    k=dichtst(vpal[vo[y,x]]); KLEUR[int(vo[y,x])]=k; o[y+DY,x+DX]=k
+print('gezicht: Vileplume-kleur -> onze index', {k:(tuple(vpal[k]),v,PAL[v]) for k,v in KLEUR.items()})
 opslaan(o,PAL,'%s/vileplume_%s.png'%(RONDE,RONDE))
 d=o!=kr
 print('mond',MV,'modus',MODUS,'lijnen',{AN[i][0]:[round(t) for t in LIJNEN[i]] for i in LIJNEN})
-print('t.o.v. r7: VL/VR-binnen %d px, mondjes achter %d px, krater %d px, lijf/poten %d px'%((d&(BIN[0]|BIN[1])).sum(),(d&~(BIN[0]|BIN[1])&(np.arange(64)[:,None]<32)).sum(),(d&KR&(kr>=11)).sum(),d[32:].sum()))
+print('t.o.v. r7: VL/VR-binnen %d px, mondjes achter %d px, krater %d px, gelaat %d px, linkerpoot %d px'%((d&(BIN[0]|BIN[1])).sum(),(d&~(BIN[0]|BIN[1])&(np.arange(64)[:,None]<32)).sum(),(d&KR&(kr>=11)).sum(),d[32:41].sum(),d[41:].sum()))
 ch='.K0123abcdeGuomy'
 for y in range(0,32): print('%2d '%y+''.join(ch[v] for v in o[y]))

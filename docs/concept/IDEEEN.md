@@ -93,7 +93,7 @@ Bovenaan gehouden zodat de stand in één oogopslag te zien is. Details in de se
   - **Fase 1 frontsprite af** (16 nov): `sprites/blobfish/af/blobfish.png` (winegum, oog v4, lichtronde B).
   - Gemini-prompts: `sprites/blobfish/gemini/PROMPT.md` (fase 1), `sprites/blobfish_fase2/gemini/PROMPT.md` (fase 2). Evolutiemethode nog open.
 - **Kricketune-evolutie die echt een dirigent wordt.**
-- **Hoatzin-Pokémon** (Jordi neigt momenteel juist niet naar een Archeops-variant).
+- ~~**Hoatzin-Pokémon**~~ (geschrapt 20 nov: vertaalt niet mooi naar design/sprite, genoeg vogels).
 - **Galápagos-regional forms.**
 - **Delibird-evolutie** (Jordi, 9 nov: "Delibird gaan we een evo geven dan"); Delibird-familie moet terug in de dex; ontgimmicken (haakje: de beta-cadeauvogel Gifuto #225).
   - **Skinguin** (Jordi, 19 nov): "een pinguin met voeten als ski's"; "De voeten zijn ski's. Ik dacht licht aan een Delibird evolutie, maar weet niet of dat echt past". Rood/wit houden; "een soort van skimuts/santa muts vast te maken aan zijn hoofd, dus geen accessoire, maar echt zijn hoofdvorm". Pose: "alsof die echt razendsnel van een piste afvliegt".
@@ -322,10 +322,10 @@ La Paz (start), Cuzco, Rio de Janeiro, Lima, San Pedro de Atacama, Mendoza, Buen
 ## Ideeën Jordi (23 okt): regional form en nieuwe Pokémon
 - **Sandaconda krijgt een regional form** (Silicobra-lijn zit al in de dex). Haakjes (Claude): de zoutvlakte van Uyuni (Salt/Rock: een zoutkorst in plaats van zand), of de echte anaconda van het Pantanal (Water/Ground: modder in plaats van zand).
 - **Opties voor nieuwe Pokémon** (Jordi; door Claude gesorteerd op hoe ze in de regio passen, zie de immersie-regel):
-  - **Echt Zuid-Amerikaans:** hoatzin, manenwolf, mata-mata (Amazone-schildpad die eruitziet als een hoopje bladeren), Amazone-zeekoe (manatee), kaaiman, (reuzen)otter, opossum (Zuid-Amerika heeft tientallen soorten), harpij-arend, gier (koningsgier: felgekleurde kop), blauwvoetgent, Galápagos-leguaan, roodlippige vleermuisvis (Galápagos-endemisch, 'loopt' op zijn vinnen), hamerhaai (scholen bij de Galápagos), orka (stranden zichzelf bij Península Valdés om zeeleeuwen te pakken), nieuwe uilsoort (bijv. de holenuil die op de pampa in de grond woont), zeekomkommer (Galápagos, bekend van illegale visserij: systeem-thema).
+  - **Echt Zuid-Amerikaans:** ~~hoatzin~~ (geschrapt 20 nov), manenwolf, mata-mata (Amazone-schildpad die eruitziet als een hoopje bladeren), Amazone-zeekoe (manatee), kaaiman, (reuzen)otter, opossum (Zuid-Amerika heeft tientallen soorten), harpij-arend, gier (koningsgier: felgekleurde kop), blauwvoetgent, Galápagos-leguaan, roodlippige vleermuisvis (Galápagos-endemisch, 'loopt' op zijn vinnen), hamerhaai (scholen bij de Galápagos), orka (stranden zichzelf bij Península Valdés om zeeleeuwen te pakken), nieuwe uilsoort (bijv. de holenuil die op de pampa in de grond woont), zeekomkommer (Galápagos, bekend van illegale visserij: systeem-thema).
   - **Wereldwijd in zee, past aan de kust/diepzee:** spinkrab (of de Patagonische koningskrab, *centolla*), garnaal met de harde klap (pistoolgarnaal of bidsprinkhaankreeft; staat ook in FAKEMON_PITCH #95), blauwe zeeslak (*Glaucus*), siphonophore (kolonie van diertjes die samen één wezen vormen), blobfish.
   - **Niet uit Zuid-Amerika** (immersie: alleen met een verhaal, bijv. ingevoerd, ontsnapt, of als grap): komodovaraan, schoenbekooievaar, pangolin, colugo, dropbear (Australische grap; kan als droge NPC-humor).
-- Overlap met `FAKEMON_PITCH.md`: hoatzin (#3), manenwolf (#9), harpij (#12), blauwvoetgent (#17), zeeleguaan (#18), bidsprinkhaankreeft (#95).
+- Overlap met `FAKEMON_PITCH.md`: ~~hoatzin (#3)~~ (geschrapt), manenwolf (#9), harpij (#12), blauwvoetgent (#17), zeeleguaan (#18), bidsprinkhaankreeft (#95).
 
 ## Ideeën Jordi (29 okt): nieuwe lijst, uitgewerkt door Claude
 Types en dex-status gecontroleerd in de repo (`species_info/`, `DEX_IN_ROM.md`). "Uit de dex" = de familie staat uit (categorie C) en moet weer aan (één regel in `species_enabled.h`) als de vorm er komt. **Nog niets besloten, behalve waar dat staat.**
@@ -347,7 +347,7 @@ Types en dex-status gecontroleerd in de repo (`species_info/`, `DEX_IN_ROM.md`).
   - Regional **Braviary** (Rufflet-lijn zit in de dex, Normal/Flying): Flying/Fighting (stond al op de lijst); Hisui-Braviary is een voorbeeld dat Braviary een vorm kan krijgen. Goedkoop, Braviary is al een adelaar.
   - Nieuwe lijn (FAKEMON_PITCH #12, Flying/Fighting): meer eigen, maar er komen al twee condors (vogellijn + legendary).
   - Advies Claude: Braviary-vorm (minder werk, geen derde grote roofvogellijn).
-- **Hoatzin als Archen/Archeops (Poison/Flying):** stond al op de lijst. Repo: Archeops = Rock/Flying (Defeatist); **Archen-lijn uit de dex**. Lore-haakje: het **levende fossiel van de tepuis**. *The Lost World* van Conan Doyle speelt op de Roraima-tepui; daar heeft Archen het overleefd in plaats van uit te sterven. Hoatzinkuikens hebben echte klauwtjes aan hun vleugels, en de vogel stinkt door bladeren die in zijn krop gisten: Poison (ability Stench in plaats van Defeatist?). Het fossiel elders in de regio is dan zijn voorouder.
+- ~~**Hoatzin als Archen/Archeops (Poison/Flying):**~~ (geschrapt 20 nov: vertaalt niet mooi naar design/sprite, genoeg vogels) stond al op de lijst. Repo: Archeops = Rock/Flying (Defeatist); **Archen-lijn uit de dex**. Lore-haakje: het **levende fossiel van de tepuis**. *The Lost World* van Conan Doyle speelt op de Roraima-tepui; daar heeft Archen het overleefd in plaats van uit te sterven. Hoatzinkuikens hebben echte klauwtjes aan hun vleugels, en de vogel stinkt door bladeren die in zijn krop gisten: Poison (ability Stench in plaats van Defeatist?). Het fossiel elders in de regio is dan zijn voorouder.
 - **Oricorio, drie nieuwe dansen:** repo-vormen: Baile Fire, Pom-Pom Electric, Pa'u Psychic, Sensu Ghost. Grass, Dark en Water zijn dus allemaal nieuw.
   - **Samba (Grass):** Rio, de stad van het Grass-gym (Tijuca); groene en gele carnavalsveren.
   - **Tango (Dark):** geen "evil". Dark is in Pokémon nacht en list, niet slecht. Tango ontstond 's nachts in de *arrabales* van Buenos Aires, melancholiek, met de *compadrito* met mes en hoed. Sensu is ook al Ghost.
@@ -412,7 +412,7 @@ Jordi: Salar de Uyuni-variant van Silicobra, misschien ook van Sandaconda of een
   - **Bergcaracara**: waarschijnlijk de *coraquenque*, de vogel waarvan de veren in de kroon van de Sapa Inca zaten.
   - **Incastern** (Humboldtkust): grijze stern met een witte krulsnor; heet echt naar de Inca's.
   - **Kuifkardinaal** (*Paroaria coronata*, pampa): rode kuif, ook "coronata" in de naam.
-  - Al vergeven: harpij (Braviary-vorm), hoatzin (pitch #3), pauw (carnaval: veren op de rug, niet op de kop; geen overlap met de kroon).
+  - Al vergeven: harpij (Braviary-vorm), ~~hoatzin (pitch #3)~~ (geschrapt 20 nov, plek weer vrij), pauw (carnaval: veren op de rug, niet op de kop; geen overlap met de kroon).
 - **Lijnvoorstellen (Claude):**
   - **A. "De verborgen kroon" (één familie, klopt biologisch):** kiskadie (gewone stadsvogel, kroon onzichtbaar) → koningstiran (kroon klapt open) → *Sapa*-vorm (draagt hem altijd). Van gewone burger naar koning: past bij de serieuzere toon (wie mag een kroon dragen?).
   - **B. Inca-rangen:** fase 1 gewoon; fase 2 een *orejón* (Inca-adel, genoemd naar hun grote gouden oorschijven: de vogel krijgt gouden "oorschijven"); fase 3 de Sapa Inca met de mascaypacha. Te combineren met A.

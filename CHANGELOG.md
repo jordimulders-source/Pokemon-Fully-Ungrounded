@@ -2423,3 +2423,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - s11 en s12 op basis van s10 (silhouet en oog bevroren, palet 15 + transparant), alleen kleur/schaduw/belijning, per onderdeel naar bestaande sprites: kuif naar Spearow/Pidgeot (licht per lob, donkere streng, bruine selout boven), snavel naar Murkrow (twee kaken, lichte rug, grijze haakpunt), masker naar Mandibuzz (3 tinten), poten naar Dodrio/Skarmory (scheen selout-licht-zwart over de hele lengte, klauwen ingesloten, verre poot grijs i.p.v. navy), verre vleugel naar Pidgeot/Fearow/Honchkrow (lichte veertoppen, 2 veerscheidingen, donkere onderzone), staartruis weg, navy-tinten verder uit elkaar.
 - Stil gekeurd: Claude + 2 verse keurders (s11 krappe PASS → s12 PASS). Notities in `sprite2/s11/` en `sprite2/s12/NOTITIES.md`.
 - Merge-conflictmarkeringen in CHANGELOG.md en GEMINI.md opgeruimd (beide kanten bewaard).
+
+### [v0.0.570] - Hoatzin-lijn geschrapt
+- Jordi: "we schrappen hem ... het vertaalt niet mooi naar een design of een sprite. En we hebben toch al genoeg vogel achtige pokemon. We hebben het geprobeerd, maar het is niet gelukt".
+- Uit de conceptdocumenten gehaald of doorgestreept (POKEMON.md, IDEEEN.md, FAKEMON_PITCH.md, DEX_NOMINATIES.md, DEX_IN_ROM.md, Stand van zaken in CLAUDE.md). Al het werk (2 ontwerpen, sprite r1–r25 en s1–s12, Gemini-opknap r1–r5, RETRO.md) als naslag in `docs/concept/sprites/geschrapt/hoatzin_fase2/`; de lessen blijven in GEMINI.md.

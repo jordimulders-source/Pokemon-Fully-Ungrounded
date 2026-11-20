@@ -312,7 +312,7 @@ Als de regel 'alle Pokémon zijn te krijgen' uit Ungrounded blijft, kunnen deze 
 | Darumaka → Darmanitan | Fire | Daruma (Japan) |
 | Yamask (Galar) → Runerigus | Ground/Ghost | Galar-vorm |
 | Tirtouga → Carracosta | Water/Rock | Fossiel |
-| Archen → Archeops | Rock/Flying | Fossiel; wel kandidaat voor een levende hoatzin-vorm (sectie 5) |
+| Archen → Archeops | Rock/Flying | Fossiel; hoatzin-vorm geschrapt (20 nov) |
 | Zorua (Hisui) → Zoroark (Hisui) | Normal/Ghost | Hisui-vorm |
 | Emolga | Electric/Flying | Vliegende eekhoorn (Azië) |
 | Axew → Fraxure → Haxorus | Dragon | Dragon genoeg |
@@ -553,7 +553,7 @@ Bestaande lijnen die een Zuid-Amerikaanse vorm kunnen krijgen: een andere habita
 |  | Diglett → Dugtrio | Ground/Normal: knager met grote tanden in plaats van een mol; roept 'tuc-tuc' onder de grond | tuco-tuco (Ctenomys) van de altiplano, pampa en Patagonië | ALT, PAT (vroege Ground voor gym 1) |
 |  | Chewtle → Drednaw | Water/Grass: plat, blad-achtig schild, zuigt prooi op | matamata-schildpad (Amazone) | AMA |
 |  | Drowzee → Hypno | Water/Psychic: zwemmende tapir, droomt in de rivier | laaglandtapir (de baku-mythe van Drowzee is al op de tapir gebaseerd) | AMA, PAN |
-|  | Archen → Archeops (levende vorm) | Poison/Flying: geen fossiel maar een stinkende jungle-vogel met klauwtjes aan de vleugels | hoatzin (de 'stinkvogel', kuikens hebben klauwen) | AMA |
+|  | Archen → Archeops (levende vorm) | Poison/Flying: geen fossiel maar een stinkende jungle-vogel met klauwtjes aan de vleugels | hoatzin (de 'stinkvogel', kuikens hebben klauwen) | AMA | **Geschrapt 20 nov.**
 |  | Basculin | Water/Rock: gepantserde reuzenvis die naar adem hapt aan het oppervlak | paiche/arapaima, een van de grootste zoetwatervissen | AMA |
 |  | Caterpie → Metapod → Butterfree | Bug/Psychic: Butterfree met glimmend blauwe vleugels die de vijand verblinden | morphovlinder | AMA |
 |  | Baltoy → Claydol | Ground/Fire: gebakken aardewerk met portretgezichten | huaco retrato (Moche-aardewerk, Peru) | ATA, STAD (graven) |

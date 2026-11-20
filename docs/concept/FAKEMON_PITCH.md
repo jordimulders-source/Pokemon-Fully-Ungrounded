@@ -5,7 +5,7 @@ Op verzoek van Jordi (22 okt): 100 nieuwe Pokémon-lijnen, kort gepitcht. Deel A
 ## A. Zuid-Amerika: dieren
 1. **Arapaima** (Water/Rock): reusachtige oervis met pantserschubben die naar lucht moet happen; Amazonereus die eruitziet als een levend fossiel.
 2. **Reuzenotter** (Water/Fighting): de "rivierwolf", jaagt in luidruchtige familiebendes; drie stadia van pup tot krijsende bendeleider.
-3. **Hoatzin** (Poison/Flying): de 'stinkvogel' met een punkkuif; jongen hebben klauwen aan hun vleugels, een echte dinosaurusvogel.
+3. ~~**Hoatzin** (Poison/Flying): de 'stinkvogel' met een punkkuif; jongen hebben klauwen aan hun vleugels, een echte dinosaurusvogel.~~ (geschrapt 20 nov: vertaalt niet mooi naar design/sprite, genoeg vogels)
 4. **Glaskikker** (Water/Psychic): doorzichtige buik waarin je zijn hartje ziet kloppen; "ziet" alles omdat niets voor hem verborgen is.
 5. **Pijlgifkikker** (Poison): piepklein en felgekleurd, en hoe feller, hoe giftiger; perfect voor de kleurvarianten.
 6. **Hoornkikker** (Ground/Dark): de 'Pacman-kikker', een ingegraven bek met pootjes die alles opeet wat langskomt.

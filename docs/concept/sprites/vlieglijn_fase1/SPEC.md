@@ -36,3 +36,4 @@ Lijn (besloten 20 nov): **vlieg → mug, 2 fases** (reguliere vlieg; fruitvlieg 
 - r7 (`gemini/r7.png`), Jordi: "kijjk nu begint het op een pokemon te lijken. Het achterlichaam is alleen nog iets teveel bij en te weinig vlieg met dat scherpe uiteinde, hoort dat? Als dat nog boller kan dan zijn we er wel denk ik, wat vind jij?" → `gemini/PROMPT_r8.md`
 - r8 (`gemini/r8.png`), Jordi: "Ogen zijn beter, stippen minder mooi dan strepen, lichaamsvorm wel goed, kan je die twee op elkaar plakken en hebben we dan een model? Ik tel wel maar 4 poten, maar gemini gaat dat niet meer beter doen"; "Gemini kan namelijk niet tellen" → `model/model.png`
 - Jordi (20 nov): "akkoord, A, begin maar met de sprite" → model bevroren; zes poten via optie A: twee extra verre poten, half verstopt achter de nabije (rest zoals het model)
+- Jordi (20 nov) over sprite r1: "linkerkant hoofd en oog mag wat ronder"

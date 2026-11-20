@@ -30,3 +30,6 @@
 - Jordi: "maar ik vind het onderwater idee wel tof"; over de fan-art: "dit is de tofste tot nu toe, maar dit kunnen wij beter".
 - Jordi: "ik vond opzich het idee van vileplume niet zo verkeerd met een heetwaterbron die omringd wordt door zeeplanten/anemonen of iets in die richting, oddish heeft dan iets van anemonen, of kelp, of wat dan ook. Gloom moet idd iets van een bol hebben."
 - Jordi: "we doen geen partners in de sprite".
+- Kelp bij de Galápagos: *Eisenia galapagensis* (endemisch; diepe kelpbossen 12–60+ m, ontdekt 2007, Graham et al.). Bronnen Galápagos Rift ±2500 m; anemonen leven rond de bronnen (NOAA 2011, Tempus Fugit).
+- **Besloten (Jordi, 20 nov):** Oddish = kelp ("oddish kelp klinkt goed"). Gloom = **G2, minerale bol** (de bron in wording: mineraalheuvel waar heet water het koude zeewater raakt): "Ik vind G2 wel tof trouwens, met wat slap hangende zijbladen misschien". Vileplume = heetwaterbron omringd door anemonen.
+- Jordi over wier → dier: "Alsof dat in pokemon nooit gebeurt." (Klopt: evoluties wisselen vaker van "soort".)

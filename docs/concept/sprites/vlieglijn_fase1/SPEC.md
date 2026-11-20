@@ -13,3 +13,4 @@ Nog niet gekozen (Gemini r1: `gemini/PROMPT.md`).
 ## Rondes
 - r1 (`gemini/r1.png`), Jordi: "dit is net beedrill, al lijkt die stiekem best veel op een ingezoomde fruitvlieg haha"
 - Jordi over r1 (20 nov, met Beedrill en een fruitvliegfoto erbij): "op zich gaat het al best wel richting een pokemon ontwerp, maar het mist nog iets. De kleuren iets anders. WE hebben hier beedrill en een fruitvlieg en het lijkt bijna ongelukkig veel op elkaar, dus ik moet ook even nadenken"
+- Jordi (20 nov) na r1: "vleugels plat naar achteren en amber kleur, laten we de ogen paars maken. En we doen nog een feature waardoor het meer op een pokemon lijkt, de poten komen schokken vanaf, dus die maken we iets meer zoals stroomkabels" → `gemini/PROMPT_r2_nieuw_gesprek.md`

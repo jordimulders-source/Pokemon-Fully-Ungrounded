@@ -2451,3 +2451,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.594] - Nazca-astronaut: sprite r1 (maker)
 - `sprite_r1/`: model verkleind (natief raster 100×100 → 2/3), spleet tussen de benen tussen r9 en r10 (bewerking op het model, diff 0 erbuiten), crème ledematen, kop met bolschaduw; varianten A (blauwe zigzag), A_geel, B1/B2 (wit-rode zigzag, armstrepen rood/blauw/rood). Nog niet gekeurd.
+
+### [v0.0.595] - Nazca-astronaut: sprite r2 (spleetvarianten)
+- `sprite_r2/`: spleet 1, 2 en 3 rijen hoger dan r1 (rij 34/33/32), bewerking op het model, diff 0 erbuiten.

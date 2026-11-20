@@ -2362,3 +2362,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.566] - Spooktrein fase 3 opknappen: Gemini-prompt
 - Jordi: "het hele model hetzelfde blijven, maar de afwerking mag wat mooier en minder slordig". Prompt + bijlage (huidige sprite 8×): `docs/concept/sprites/spooktrein_fase3/gemini/opknap/`.
+
+### [v0.0.567] - Spooktrein fase 3: koeienvanger los via Gemini
+- Opknap-r1 (hele sprite) gaf hetzelfde probleem ("de koeienvanger blijft lelijk"). Jordi koos: alleen de koeienvanger opnieuw ("heel lelijk afgewerkt, willekeurige lijnen etc"). Prompt + uitsnede: `spooktrein_fase3/gemini/opknap/PROMPT_koeienvanger.md`.

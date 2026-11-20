@@ -2427,3 +2427,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.581] - Dundragoon: oude testsprite uit Ungrounded erbij
 - Jordi: "Laten we Dundragoon doen, vis de Dundragoon vroege sprite erbij uit de ungrounded repo". Gevonden in `projectgrounded`, commit `c5cc51c42` (20 okt, "Testsprites Dundragoon en vuurvlieg-Venomoth (niet in de game)"): `tools/grounded/fakemon/dundragoon.png`, `_zoom.png` en `dundragoon.py`.
 - Gekopieerd naar `docs/concept/sprites/dundragoon/ungrounded/` als naslag (buizen-/ellipsen-methode, dus ontwerpschets, geen basis voor pixels). Type en verdere richting nog open.
+
+### [v0.0.582] - Dundragoon: keuzes en Gemini-startprompt
+- Jordi: "dit design is nog niet heel goed gelukt, maar daar kan gemini bij helpen"; "Dundragoon wordt Dragon/Normal". Keuzes: oude testsprite niet als bijlage; grote vleugels blijven; staart loopt over in de boor; Dunsparce-lijf, groter; twee korte poten; gezicht "Lijkt op Dunsparce maar meer dragon vorm".
+- Nieuw: `docs/concept/sprites/dundragoon/SPEC.md` (citaten + keuzes) en `gemini/PROMPT.md` (r1).

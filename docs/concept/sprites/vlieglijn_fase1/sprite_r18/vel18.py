@@ -15,10 +15,12 @@ r1=rij([lab(big(r18),'r18 (8x)'),lab(big(r17),'r17')])
 k=np.array(Image.open('sprite_r17/krabbel_jordi_r17.png').convert('RGB')).astype(int)
 red=(k[:,:,0]>180)&(k[:,:,1]<80)&(k[:,:,2]<80); ys,xs=np.nonzero(red); S=15.25
 gb=(22,32,54,48); Z=12
-ov=zoom(r17,gb,Z,False); d=ImageDraw.Draw(ov)
-for x,y in zip(xs,ys):
-    X=(x/S+22-gb[0])*Z; Y=(y/S+37-gb[1])*Z; d.rectangle([X-1,Y-1,X+1,Y+1],fill=(255,0,0))
-r2=rij([lab(ov,'r17 + krabbellijn Jordi (12x)'),lab(zoom(r18,gb,Z,False),'r18 (12x)')])
+def over(m):
+    ov=zoom(m,gb,Z,False); d=ImageDraw.Draw(ov)
+    for x,y in zip(xs,ys):
+        X=(x/S+22-gb[0])*Z; Y=(y/S+37-gb[1])*Z; d.point((X,Y),fill=(255,0,0))
+    return ov
+r2=rij([lab(over(r17),'r17 + krabbellijn Jordi (12x)'),lab(over(r18),'r18 + krabbellijn (12x)'),lab(zoom(r18,gb,Z,False),'r18 zonder lijn')])
 def een(im,col,s=1):
     a=rgba(im); bg=Image.new('RGBA',a.size,col+(255,)); bg.alpha_composite(a); return bg.convert('RGB').resize((64*s,64*s),Image.NEAREST)
 t=[]
@@ -32,5 +34,5 @@ for r in rows: vel.paste(r,(0,y)); y+=r.height+20
 vel.save('sprite_r18/vel.png')
 a=r18.load(); b=r17.load()
 dd=[(x,y) for x in range(64) for y in range(64) if a[x,y]!=b[x,y]]
-print('diff',len(dd),sorted(dd)); print('buiten x35-45 y39-45:',[p for p in dd if not (35<=p[0]<=45 and 39<=p[1]<=45)])
+print('diff',len(dd),sorted(dd)); print('buiten zones (achterlijf x35-45 y39-45, borststuk x30-34 y37-40):',[p for p in dd if not ((35<=p[0]<=45 and 39<=p[1]<=45) or (30<=p[0]<=34 and 37<=p[1]<=40))])
 print('pal gelijk',r18.getpalette()[:48]==r17.getpalette()[:48],r18.info.get('transparency'))

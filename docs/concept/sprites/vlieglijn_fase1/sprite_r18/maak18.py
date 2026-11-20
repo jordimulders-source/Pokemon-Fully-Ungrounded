@@ -17,3 +17,13 @@ for (x,y) in gebied:
     b[x,y]=(4 if schaduw else 5) if licht else (2 if schaduw else 3)
 im.save('sprite_r18/vlieg_r18.png',transparency=0)
 onbg(im).resize((512,512),Image.NEAREST).save('sprite_r18/vlieg_r18_8x.png')
+# --- deel 2 (zelfde ronde): borststukdeel van Jordi's lijn (rij 40, x26-34) + achterpoot-aanzet
+# rand stijgt naar de taille: trap 2-2-2-3 omlaag, dan 2-1-1 omhoog (x30-31@39, x32@38, x33@37)
+b[33,37]=3; b[32,38]=3; b[33,38]=1
+b[30,39]=3; b[31,39]=3; b[32,39]=1
+# heupkopje van de nieuwe poot (bestaand grijs vlakje) loopt omhoog tot onder de rand, rond: geen zwart blok bij de taille
+b[33,39]=5; b[32,40]=4; b[33,40]=4
+# achterpoot: bovenste kabelpixel in kabeldonker, los van de lichte streep erboven
+b[39,40]=3
+im.save('sprite_r18/vlieg_r18.png',transparency=0)
+onbg(im).resize((512,512),Image.NEAREST).save('sprite_r18/vlieg_r18_8x.png')

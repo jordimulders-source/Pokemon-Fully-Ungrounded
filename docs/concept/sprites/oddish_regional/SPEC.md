@@ -19,3 +19,4 @@
 - Jordi (20 nov): "misschien de referenties weglaten" → prompt v5 zonder bijlagen.
 - **v5** (`r5/gemini_v5.png`, zonder bijlagen), Jordi (20 nov): "dit is al wat beter toch".
 - Test (20 nov): v5 kaal verkleind tot Oddish-hoogte (35 px), naast de Oddish uit de game: `r5/test_verkleind_naast_oddish.png`. De pluimen blijven als losse puntige plukken leesbaar; draadjes worden rafelranden.
+- **Gloom B + Vileplume A** (`gloom_vileplume_r1/`), Jordi (20 nov): "Ik vind ze namelijk niet uniek genoeg, zijn net pallette swaps". (Claude: de prompt hield de vorm van de top 1-op-1 aan; bij Gloom/Vileplume ís de top het silhouet.)

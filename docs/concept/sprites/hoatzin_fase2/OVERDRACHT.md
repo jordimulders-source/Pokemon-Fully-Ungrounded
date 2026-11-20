@@ -13,3 +13,10 @@
 ## Stand 20 nov (vervolgsessie)
 - s12 = nieuwe kandidaat (`sprite2/s12/`, aan Jordi getoond): hoofd, poten en verre vleugel opnieuw ingekleurd naar bestaande sprites; 2 verse keurders, s12 PASS.
 - Open (keurder): onderste donkere blok van de verre vleugel (x20–29, y21–28) nog vrij vlak; crème klauw (18,57) kan als vlekje lezen; nabije voet heeft door de vorm één voorteen.
+- Gemini-opknap (20 nov), bijlagen en resultaten in `gemini/opknap_r1–r5`:
+  - r1: s12 als bijlage; Gemini tekende een geblokte achtergrond.
+  - r2: driekwart pose, poten beter; volgens Jordi wijken oog, mond en kuif te veel af.
+  - r3: kop teruggezet met alleen een tekstomschrijving; het masker werd crème.
+  - r4: plakversie (`gemini/plak/`) met "pixel for pixel"; Gemini liet de vreemde kop staan en de vleugel kreeg gaten.
+  - r5: de kop werd een illustratie, geen pixelwerk.
+- Jordi: "ik begin een beetje moe te worden van dit ontwerp".

@@ -27,3 +27,14 @@ AVOID: realistic feathers, hair-like crest, feather stripes or texture, spread w
 ```
 
 Open keuzes voor Jordi: pose (rustig/gevouwen, studie-advies, of weer gespreid zoals eerder gekozen); nekkleur (licht zoals de echte vogel om de kop los te zetten, of mee in pruim).
+
+Uitslag v9 r1 (`v9_r1.png`), Jordi: "Hij is wat blij, maar ik denk dat dit wel een makkelijker design begint te worden, hij mag nog wat lelijker".
+Bijsturen (zelfde gesprek):
+```
+Good direction, keep the design, simple shapes, colors and pose. Make it less cheerful and uglier, without making the eye sneaky (keep the alert round red eye):
+- crest tufts more ragged, uneven and scruffy, like a bad punk haircut;
+- a slightly hunched posture with the head pushed a bit forward and down;
+- the swollen purple crop heavier and sagging a little;
+- scruffy, uneven feather edges on the neck and back, as simple big shapes (no texture).
+Keep everything else the same.
+```

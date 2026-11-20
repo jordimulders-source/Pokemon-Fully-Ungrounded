@@ -2302,3 +2302,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.549] - Hoatzin fase 2: eerste ontwerp gestopt, retro
 - 25 spriterondes (r1–r25) op het eerste Gemini-model; Jordi: "misschien klopt het hele ontwerp wel niet" → opnieuw from scratch, vereenvoudigd (B). Retro: `docs/concept/sprites/hoatzin_fase2/RETRO.md`.
+- Studie complexe ontwerpen (`STUDIE_ONTWERP.md`) en nieuwe prompt from scratch (`gemini/PROMPTS_v9.md`).

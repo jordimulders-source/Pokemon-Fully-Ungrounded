@@ -2399,3 +2399,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.575] - Onderwater-Gloom: frontsprite r3
 - Jordi over r2: "best netjes al, in het hoofd mag je wat meer kleurtinten/schaduw gebruiken voor de lava, voor de rest is het alleen afwerking". r3 (`gloom_sprite/r3/gloom_r3.png` + `_8x`): kieren per pixel op de modelgloed getint (dieprood randen, oranje, geel op de kruisingen), schaduwkant van de brok één tint donkerder met nieuwe tint sintel (150,40,32); 16 kleuren incl. transparant. Afwerking: mondring rechts bordeaux i.p.v. zwart, los vlekje in het linkervinnetje weg (34 px t.o.v. r2).
 - Jordi over r3: "ja fenomenaal werk wat betreft die lava" (lava bevroren). Eindkeuring: PASS, geen moeten.
+
+### [v0.0.576] - Onderwater-Gloom: frontsprite r4 (volume lijf)
+- Jordi: "ja graag wat meer bolling, schaduw, tinten etc, doe dat in een eindkeuring". Eindkeurder (studie Ditto/Gulpin/Grimer/Gloom op 8×) zette 133 tintwissels binnen lijf en vinnen: lichte bolling linksboven, schaduwsikkel rechts die naar onder breder wordt, diepe sikkel tegen de rand en onder de rechtervin, eigen lobben met hooglichtje in de voet; lijf-licht (index 8) (198,108,116) → (204,116,120). Diff 0 in lavabrok, gloed, ogen, kelp, zwart en silhouet (`gloom_sprite/r4/bewijs.py`). `gloom_sprite/r4/gloom_r4.png` + `_8x`.

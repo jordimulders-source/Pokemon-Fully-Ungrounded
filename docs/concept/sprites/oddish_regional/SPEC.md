@@ -48,3 +48,4 @@
 ## Spritefase Gloom (`gloom_sprite/`)
 - r2 naar Jordi (20 nov): "best netjes al, in het hoofd mag je wat meer kleurtinten/schaduw gebruiken voor de lava, voor de rest is het alleen afwerking".
 - r3 (lava: donkere randen, felle kruisingen, schaduwkant een tint donkerder), Jordi (20 nov): "ja fenomenaal werk wat betreft die lava" → lava in de brok bevroren.
+- r3 → Jordi: "ja graag wat meer bolling, schaduw, tinten etc, doe dat in een eindkeuring" → r4. Jordi vroeg ook of dit een duidelijke Water/Fire is: "Dat kunnen we wel wijsmaken toch, dat die onderwater leeft" (Claude: dieprood = diepzeekleur, vinnen, kelp, lavabrok = pillow lava).

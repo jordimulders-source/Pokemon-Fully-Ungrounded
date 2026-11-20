@@ -2356,3 +2356,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.564] - Skinguin: Dragonfly Cave-eindkeuring
 - Jordi: "misschien schaduw/belijning/kleur check nog 1 keer". Eindkeuring: schaduw en belijning PASS; rood te weinig contrast. Palet rood index 3 → (168,32,48), index 4 → (224,64,56); 12 zwarte binnenlijnen in lichte staartveren → donkerrood; los grijs pixel weg; geel strookje onder linkerski, teennaden en pompon-schaduw. 24 px, vorm/muts/gezicht onaangeroerd. `af/` en overzichtsvel bijgewerkt.
+
+### [v0.0.565] - Overzichtsvel: blobfish fase 2 erbij
+- Blobfish fase 2 ("pudding", Water) staat nu op het overzichtsvel, naast fase 1 (Jordi: "die is helemaal af").

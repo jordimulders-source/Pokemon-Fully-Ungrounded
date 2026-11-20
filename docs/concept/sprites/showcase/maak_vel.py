@@ -42,6 +42,7 @@ items=[
 ("steenmozaiek/af/steenjaguar.png",'Steenjaguar',"rock"),
 ("dustly/af/dustly.png",'"Dustly"',"cosmic/poison"),
 ("blobfish/af/blobfish.png",'Blobfish (winegum)',"water"),
+("blobfish_fase2/af/blobfish_fase2.png",'Blobfish (pudding)',"water"),
 ("hauntflare/af/hauntflare.png",'"Hauntflare"',"cosmic/poison"),
 ("gengas/af/gengas.png",'"Gengas"',"cosmic/poison"),
 ("spooktrein_fase2/af/spooktrein_fase2.png",'Spooktrein fase 2',"steel/ghost"),

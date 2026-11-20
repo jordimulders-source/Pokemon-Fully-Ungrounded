@@ -2442,3 +2442,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.591] - Nazca-astronaut: r8 eerste sprite, r9 benen-spleet
 - r8 (prompt in woorden, geen bijlage) = eerste echte sprite; r9: spleet tussen de benen hoog in het lichaam (Jordi).
+
+### [v0.0.592] - Nazca-astronaut: r9/r10 bewaard, prompt r11 (handpositie)
+- Spleet tussen de benen: r9 te hoog, r10 te laag; wordt in de spritefase tussen beide gezet. r11: opgeheven hand naast de kop (geoglief).

@@ -31,3 +31,10 @@
 - "linkerpoot is helemaal niet gelukt" · "nek is nog steeds niet voldoende los van de vleugel" · "de rest klopt qua vorm" → vorm van r17 (pixelblad) bevroren, behalve linkerpoot.
 - Op r18: "nek is nog niet goed doorgetrokken, de lijn, het begin en einde staat er, maar de rest niet, de 2 poten zitten aan elkaar vast en de rechts heeft opeens rare zwarte uiteinden" · "kan dit ook op een manier dat ik niet elke keer hele minimale veranderingen moet keuren" · "ja en ook kleuren, schaduw, belijning. Hij moet echt op het model lijken, de onderdelen van het lichaam moeten ook niet in elkaar overgaan"
 - "alleen de kleuren die we besproken hebben mogen afwijken" (= buik D, kuif wat bruiner; rest modelkleuren)
+
+## ONTWERP 2 (from scratch, 20 nov) — vervangt het eerste model
+- Jordi: "Ik denk dat B gaat helpen, laten we helemaal from scratch beginnen" (vereenvoudigen; zie RETRO.md en STUDIE_ONTWERP.md).
+- Op v9 r1: "Hij is wat blij ... hij mag nog wat lelijker" · "en de pose is wat neutraal". Op v10 r1: "deze is al wat beter, ik twijfel nog over de lichaams kleur ... misschien de haren nog net iets langer, paar cm". Kleur: "ik neig wel naar 3" (bijna zwart blauw-paars lijf, crème nek).
+- **Model bevroren: `MODEL.png` = `gemini/v10_r2.png` gespiegeld** (Jordi: "ik denk dat we deze moeten gaan bouwen. Het design lijkt me een stuk simplistischer nu, de haren kunnen we kijken in de sprite hoe ze eruit zien, spiegel de afbeelding en ga van start"). Oud model: `MODEL_v1_oud.png`, oude rondes `sprite/r1–r25`.
+- Kenmerken: dreighouding met half opgeheven vleugels, voorovergebogen, snavel open (sissend), rafelige rode-bruine punkkuif, blauw kaal gezicht, rood oog met zwart puntje, grijze haaksnavel, crème nek, paarse hangende krop, bijna zwart blauw-paarse vleugels/rug/staart met crème staartpunt, grijze poten met lichte klauwen.
+- Kuif: lengte beoordelen in de sprite.

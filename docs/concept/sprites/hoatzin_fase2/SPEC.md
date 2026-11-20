@@ -41,3 +41,4 @@
 - Kop groter in de sprite? Jordi: "nee een hoatzin heeft ook een en kleine kop, laten we kijken hoe ver we komen" → kopmaat volgens het model.
 - Oog (Jordi): "je kan voor het oog desnoods 1 zwarte pixel doen omringd door óf 4 óf 6 rode pixels, omringd door een cirkel aan blauw" · "maar ga eerst maar niks opnieuw tekenen" → s1 alleen het model overnemen; oogvarianten pas als het nodig is.
 - Jordi: "en neem het model over" · "elke keer als de maker gaat tekenen gaat het fout en kost het meerdere rondes".
+- Op s1: "je hebt precies genoeg ruimte voor mijn oog idee, zonder dat je iets anders hoeft te veranderen" · over snavel/kuif/pennen: "Hij wil ze toch niet gaan tekenen he?" → nee: alleen de reductie-instellingen verbeteren.

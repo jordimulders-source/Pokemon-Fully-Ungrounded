@@ -37,3 +37,4 @@ Lijn (besloten 20 nov): **vlieg → mug, 2 fases** (reguliere vlieg; fruitvlieg 
 - r8 (`gemini/r8.png`), Jordi: "Ogen zijn beter, stippen minder mooi dan strepen, lichaamsvorm wel goed, kan je die twee op elkaar plakken en hebben we dan een model? Ik tel wel maar 4 poten, maar gemini gaat dat niet meer beter doen"; "Gemini kan namelijk niet tellen" → `model/model.png`
 - Jordi (20 nov): "akkoord, A, begin maar met de sprite" → model bevroren; zes poten via optie A: twee extra verre poten, half verstopt achter de nabije (rest zoals het model)
 - Jordi (20 nov) over sprite r1: "linkerkant hoofd en oog mag wat ronder"
+- Sprite r1–r2 op 42 px: ronde kop en gebogen kabels gaan verloren. Maatvergelijking `maat/maten.png`. Jordi (20 nov): "50px akkoord. Omdat het maar 2 fases is kan die ook prima op lvl 30 pas evolueren ofzo" → sprite ±50 px breed; evolutie rond lv 30 (data later)

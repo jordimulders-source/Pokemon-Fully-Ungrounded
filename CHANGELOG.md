@@ -2390,3 +2390,8 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.573] - Onderwater-Oddish-lijn weer open
 - Jordi (20 nov): onderwateridee blijft; Vileplume = heetwaterbron omringd door zeeplanten/anemonen, Oddish anemonen/kelp/"wat dan ook", Gloom "iets van een bol"; geen partners in de sprite. Referenties: andermans regionale Vileplumes en de anemoon-fan-art in `docs/concept/sprites/oddish_regional/referenties/`.
+
+### [v0.0.574] - Onderwater-Gloom: frontsprite kandidaat
+- Frontsprite van de regionale Gloom (Water/Fire) naar het bevroren Gemini-model `referenties/gemini_gekozen_gloom.png`: `docs/concept/sprites/oddish_regional/gloom_sprite/r2/gloom_r2.png` (+ `gloom_r2_8x.png`). Natief raster van het model teruggehaald (pitch 6,83 px, 149×149), oppervlakgewogen verkleind ×0,412 tot 43×42 px (1177 px), onderkant op y52 zoals de Gloom in de game; 15 kleuren incl. transparant.
+- Gloeiende delen (kieren, kwijl/mond, kelppunten) in een eigen fel oranje-geel uit het model (204,74,40 / 244,124,48 / 252,184,80); gloed en dunne mondlijnen winnen in de reductie, dus op de gemeten modelplekken.
+- r1 maker (161 px afwijkend van de kale reductie: buitenlijn, ontkorrelen, gloed, 5 px hooglicht); keurder BIJNA → r2 = 13 pixelwissels (selout aan de lichtkant links, hooglicht van de kelpschaduw af, kelpspleet rechts, vinnetje links iets lichter). Wacht op Jordi.

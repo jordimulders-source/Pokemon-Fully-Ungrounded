@@ -9,3 +9,7 @@
 ## Stand 20 nov (einde sessie)
 - s10 = basis (Jordi: "eindelijk wat vooruitgang"). Aanpak die werkte: tinten per vorm overnemen van bestaande sprites (studie in `sprite2/s10/NOTITIES.md`).
 - Volgende: "Vooral hoofd en poten moeten nog beter" (Jordi). Verre vleugel leest nog vlak.
+
+## Stand 20 nov (vervolgsessie)
+- s12 = nieuwe kandidaat (`sprite2/s12/`, aan Jordi getoond): hoofd, poten en verre vleugel opnieuw ingekleurd naar bestaande sprites; 2 verse keurders, s12 PASS.
+- Open (keurder): onderste donkere blok van de verre vleugel (x20–29, y21–28) nog vrij vlak; crème klauw (18,57) kan als vlekje lezen; nabije voet heeft door de vorm één voorteen.

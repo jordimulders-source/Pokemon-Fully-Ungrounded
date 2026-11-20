@@ -2259,7 +2259,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Op het overzichtsvel (`showcase/frontsprites_af.png`, werknaam "Vuurwerk-axolotl", naam open). Alle uitspraken van Jordi in `vuurwerk_fase1/SPEC.md`.
 - Lessen in `docs/lessen/GEMINI.md`: lange armen om een voorwerp tekent Gemini niet; asset voor asset met bijlagen werkt; "leest niet" is geen tekenopdracht; Gemini voegt goed iets toe aan een eigen sprite maar poetst slecht op.
 
-<<<<<<< HEAD
 ### [v0.0.541] - Nocticue opknappen: Gemini-prompt
 - Nocticue (nachtaap fase 1) in de opknapronde via Gemini. Jordi: "ik ben echt fan van het design, dus het is puur de pose. De cuteness moet niet weg" · "ook de positie van zijn armen" · "dus puur de hoek".
 - Prompt v1 + bijlage (huidige sprite 8×) in `docs/concept/sprites/nachtaap/gemini/`; alleen de hoek (lijf en armen) naar driekwart links, design/kleuren/schattigheid bevroren.
@@ -2369,7 +2368,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.568] - Spooktrein fase 3: opknappen geparkeerd
 - Koeienvanger-prompt gaf de hele trein zonder geest (`gemini/opknap/r2_koeienvanger.png`). Jordi: "laat maar zitten voor nu, hier moeten we iets anders voor bedenken". Geparkeerd in `OPKNAPRONDE_GEMINI.md`; les in `GEMINI.md`.
-=======
 ### [v0.0.541] - Hoatzin-lijn: besluit en eerste prompts
 - Besloten (Jordi): 2 fases, Poison/Dark; fase 1 kuiken met overdreven klauwen en smerige look, fase 2 volgroeid, eng en geniepig. In `POKEMON.md` (Hoatzin-lijn).
 - Twee Gemini-prompts voor fase 2 (krop als gistzak / krop als chicha-kruik): `docs/concept/sprites/hoatzin_fase2/gemini/PROMPTS_v1.md`.
@@ -2420,4 +2418,8 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.551] - Hoatzin fase 2: ontwerp 2 sprite s1–s9, overdracht
 - Sprite ontwerp 2 in `sprite2/s1–s9` (s10 in de maak): vorm en oog bevroren; open: tinten/schaduw/contrast per onderdeel, poten afwerken. Overdracht `hoatzin_fase2/OVERDRACHT.md`, retro aangevuld.
->>>>>>> origin/claude/trusting-einstein-okyj3z
+
+### [v0.0.569] - Hoatzin fase 2: ontwerp 2 sprite s11–s12
+- s11 en s12 op basis van s10 (silhouet en oog bevroren, palet 15 + transparant), alleen kleur/schaduw/belijning, per onderdeel naar bestaande sprites: kuif naar Spearow/Pidgeot (licht per lob, donkere streng, bruine selout boven), snavel naar Murkrow (twee kaken, lichte rug, grijze haakpunt), masker naar Mandibuzz (3 tinten), poten naar Dodrio/Skarmory (scheen selout-licht-zwart over de hele lengte, klauwen ingesloten, verre poot grijs i.p.v. navy), verre vleugel naar Pidgeot/Fearow/Honchkrow (lichte veertoppen, 2 veerscheidingen, donkere onderzone), staartruis weg, navy-tinten verder uit elkaar.
+- Stil gekeurd: Claude + 2 verse keurders (s11 krappe PASS → s12 PASS). Notities in `sprite2/s11/` en `sprite2/s12/NOTITIES.md`.
+- Merge-conflictmarkeringen in CHANGELOG.md en GEMINI.md opgeruimd (beide kanten bewaard).

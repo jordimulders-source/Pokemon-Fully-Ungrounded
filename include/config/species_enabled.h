@@ -396,7 +396,7 @@
 #define P_FAMILY_WIMPOD                  P_GEN_7_POKEMON
 #define P_FAMILY_SANDYGAST               P_GEN_7_POKEMON
 #define P_FAMILY_PYUKUMUKU               FALSE // FU: niet in de dex (was P_GEN_7_POKEMON)
-#define P_FAMILY_MINIOR                  FALSE // FU: niet in de dex (was P_GEN_7_POKEMON)
+#define P_FAMILY_MINIOR                  P_GEN_7_POKEMON // FU: in de dex (Jordi 20 nov, Cosmic)
 #define P_FAMILY_KOMALA                  FALSE // FU: niet in de dex (was P_GEN_7_POKEMON)
 #define P_FAMILY_TURTONATOR              P_GEN_7_POKEMON
 #define P_FAMILY_TOGEDEMARU              FALSE // FU: niet in de dex (was P_GEN_7_POKEMON)
@@ -547,7 +547,7 @@
 #define P_FAMILY_GROUDON                 FALSE // gen 3
 #define P_FAMILY_RAYQUAZA                FALSE // gen 3
 #define P_FAMILY_JIRACHI                 FALSE // gen 3
-#define P_FAMILY_DEOXYS                  FALSE // gen 3
+#define P_FAMILY_DEOXYS                  TRUE // gen 3; FU: in de dex (Jordi 20 nov, Cosmic)
 #define P_FAMILY_UXIE                    FALSE // gen 4
 #define P_FAMILY_MESPRIT                 FALSE // gen 4
 #define P_FAMILY_AZELF                   FALSE // gen 4

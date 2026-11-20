@@ -63,3 +63,4 @@ Lijn (besloten 20 nov): **vlieg → mug, 2 fases** (reguliere vlieg; fruitvlieg 
 - Jordi (20 nov) over r17, krabbel `sprite_r17/krabbel_jordi_r17.png`: "de pixels in deze lijn lezen op een afstand als een rechte lijn, dat is waar eerst de buis zat, die moeten consistenter met de rest van de sprite"
 - Jordi (20 nov) over r18: "1 issue nog, de linkerpoten zitten iets te ver naar voren nog" (borststuk hoger: niet beantwoord, dus niet gedaan)
 - Jordi (20 nov), `sprite_r19/krabbel_jordi_r19.png`: "p2, de rood gestipte pixel weg en dan naar de schaduw/kleurtinten/belijning/dragonflycave etc eindkeuring"
+- Jordi (20 nov) na eindkeuring r21: "tussen de 2 vleugels moet nog wel een duidelijker verschil zitten" (keuze lichter zwart en blauwe reflectie nog open)

@@ -2365,3 +2365,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.567] - Spooktrein fase 3: koeienvanger los via Gemini
 - Opknap-r1 (hele sprite) gaf hetzelfde probleem ("de koeienvanger blijft lelijk"). Jordi koos: alleen de koeienvanger opnieuw ("heel lelijk afgewerkt, willekeurige lijnen etc"). Prompt + uitsnede: `spooktrein_fase3/gemini/opknap/PROMPT_koeienvanger.md`.
+
+### [v0.0.568] - Spooktrein fase 3: opknappen geparkeerd
+- Koeienvanger-prompt gaf de hele trein zonder geest (`gemini/opknap/r2_koeienvanger.png`). Jordi: "laat maar zitten voor nu, hier moeten we iets anders voor bedenken". Geparkeerd in `OPKNAPRONDE_GEMINI.md`; les in `GEMINI.md`.

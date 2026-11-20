@@ -30,6 +30,6 @@ Bestaande, goedgekeurde designs die nog "een beetje 2D" staan opnieuw via Gemini
 | Nocticue | `nachtaap/gemini/`, `nachtaap/sprite_r4/` | **af** (19 nov, `nachtaap/af/`; Gemini r4 als model, driekwart, streep tussen de ogen smaller in de sprite; Jordi: "nice") |
 | Hummlet | `kolibrie_pre/gemini/`, `kolibrie_pre/sprite/` | **af** (19 nov, Jordi: "Akkoord"; sprite r3 met oog a, oog b bewaard als `af/kolibrie_pre_oogB.png`) |
 | Palpaca | `alpaca/gemini/`, `alpaca/sprite/` | **af** (19 nov, `alpaca/af/`; model = Gemini r4 + achterpoten uit r10 (foto als posebron), telgang; sprite r5; Jordi: "r5 is beter") |
-| Spooktrein fase 3 | – | kandidaat (Jordi: "slordige sprite"); groen bevroren of niet: nog open |
+| Spooktrein fase 3 | – | geparkeerd (20 nov): opknap-r1 (hele sprite) kopieerde de lelijke koeienvanger; r2 (alleen koeienvanger) gaf de hele trein zonder geest. Jordi: "laat maar zitten voor nu, hier moeten we iets anders voor bedenken". `spooktrein_fase3/gemini/opknap/` |
 | Coathief | `coathief/gemini/`, `coathief/sprite/` | **af** (19 nov, `coathief/af/`; Gemini r1 als model, oog rood, oren zwart, lijf met volume; sprite r7) |
 | Llamauler | `lama/fase2/gemini/`, `lama/fase2/sprite/` | kandidaat na eindkeuring (19 nov, `lama/fase2/sprite/r7/`; model v3 = Gemini r4 + poten r3/r12; nog niet naar `af/`) |

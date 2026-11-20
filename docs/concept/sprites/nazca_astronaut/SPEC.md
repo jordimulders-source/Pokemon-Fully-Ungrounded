@@ -7,6 +7,8 @@ Nieuwe Pokémon naast Sigilyph (Cosmic/Flying).
 - 20 nov: volgende ontwerp na de Cosmic-ronde.
 - 20 nov: "cosmic/normal. Hij wordt een counterpart van Sigilyph, dus de manier waarop Sigilyph ontworpen is mag lijken op het astronaut ontwerp. Dus het is een echt wezen".
 - 20 nov: "misschien vergelijkbare motieven, maar dan andere kleuren".
+- 20 nov, r1 en r2: "vreselijk" / "vreselijk weer"; over r1 ook "veel te blij ook"; "heb er nog bronnen bij gedaan dus dat doet ook niks".
+- 20 nov: "sigilyph is in bijna niks een vogel behalve dat de nazca lijnen het silhouet zijn".
 - 20 nov: "dit wordt echt de lunatone van de solrock die sigilyph dan is".
 
 ## Achtergrond (Claude)

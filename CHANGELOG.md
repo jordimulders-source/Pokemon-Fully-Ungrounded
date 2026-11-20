@@ -2409,3 +2409,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.580] - Nazca-astronaut: r2 afgekeurd
 - r2 (stokfiguur-robot; Jordi: "vreselijk weer") in `gemini/r2/`; eerst richting bepalen met Jordi. Les in `GEMINI.md`.
+
+### [v0.0.581] - Nazca-astronaut: prompt r3 (Sigilyph-aanpak)
+- Jordi: Sigilyph is vooral het Nazca-silhouet. r3: astronaut-silhouet op dezelfde manier ingevuld, Sigilyph-sprite als bijlage (`gemini/bijlage/sigilyph.png`).

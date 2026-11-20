@@ -31,3 +31,5 @@ Not an owl or bird: no beak, no feathers.
 No fingers or hands with fingers; no human in a space suit, no helmet, no robot.
 No ground, no lines on the ground, no shadow, no glow, no stars, no effects.
 ```
+
+Uitkomst r2 (20 nov): Jordi: "vreselijk weer". Stokfiguur-robot: "line segments / stiff limbs / geometric" gaf een lappenpop van buizen zonder leven en zonder Sigilyph-gevoel. Volgende stap: eerst richting met Jordi bespreken (GEMINI.md: nieuw idee = eerst overleggen).

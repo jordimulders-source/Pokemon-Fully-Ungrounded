@@ -45,3 +45,4 @@ Lijn (besloten 20 nov): **vlieg → mug, 2 fases** (reguliere vlieg; fruitvlieg 
 - Jordi (20 nov): "nog 1 keer prompten om te kijken of het gemini lukt, met de versie die we net kregen" → `gemini/PROMPT_r10_verre_middenpoot.md`
 - Gemini r10 (`gemini/r10.png`), Jordi: "nee dit gaat fout, kijk maar of jij het kan oplossen" → poten uit r9 in de sprite overnemen, verre middenpoot zelf oplossen (optie A: achter de nabije middenpoot, omlaag)
 - Jordi (20 nov) na de vondst dat r9 alleen een extra donkere poot toevoegde: "ja 1 extra achterpoot is dus toch gewoon achterpoten gefixed?" → r9-poot wordt de verre achterpoot (sprite r7)
+- Jordi (20 nov): "we missen alleen 1 duidelijke middelste poot"

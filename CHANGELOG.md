@@ -2406,15 +2406,20 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.576] - Onderwater-Oddish-lijn weer open
 - Jordi (20 nov): onderwateridee blijft; Vileplume = heetwaterbron omringd door zeeplanten/anemonen, Oddish anemonen/kelp/"wat dan ook", Gloom "iets van een bol"; geen partners in de sprite. Referenties: andermans regionale Vileplumes en de anemoon-fan-art in `docs/concept/sprites/oddish_regional/referenties/`.
 
-### [v0.0.577] - Onderwater-Gloom: frontsprite kandidaat
+### [v0.0.577] - Onderwater-Oddish: kelp-lijn en Oddish-frontsprite af
+- Lijn (Jordi, 20 nov): Oddish = Galápagos-kelp (Water/Grass, turquoise, kelp-hechtvoetjes) → Gloom = gezonken, dieprood gelatineus lijf met lavabrok, verschroeide kelp en gloeiend kwijl (Water/Fire) → Vileplume = levende heetwaterbron met vijf anemonen, wit lijf op steltpoten (Water/Fire). Modellen bevroren in `docs/concept/sprites/oddish_regional/referenties/`.
+- Oddish-frontsprite af: model verkleind (maker), 7 px keurderreparaties, gezicht 1-op-1 van de game-Oddish met schaduwlijn boven de mond (Jordi), kelp subtiel amber met golvende rand (Jordi: "Akkoord, maar houd het subtiel"); r6 (middelste blad) verworpen; Dragonfly Cave-eindkeuring PASS. `oddish_regional/af/`, op het overzichtsvel.
+- Sessieprompts voor de Gloom- en Vileplume-sprites: `oddish_regional/SESSIE_PROMPTS_gloom_vileplume.md`.
+
+### [v0.0.578] - Onderwater-Gloom: frontsprite kandidaat
 - Frontsprite van de regionale Gloom (Water/Fire) naar het bevroren Gemini-model `referenties/gemini_gekozen_gloom.png`: `docs/concept/sprites/oddish_regional/gloom_sprite/r2/gloom_r2.png` (+ `gloom_r2_8x.png`). Natief raster van het model teruggehaald (pitch 6,83 px, 149×149), oppervlakgewogen verkleind ×0,412 tot 43×42 px (1177 px), onderkant op y52 zoals de Gloom in de game; 15 kleuren incl. transparant.
 - Gloeiende delen (kieren, kwijl/mond, kelppunten) in een eigen fel oranje-geel uit het model (204,74,40 / 244,124,48 / 252,184,80); gloed en dunne mondlijnen winnen in de reductie, dus op de gemeten modelplekken.
 - r1 maker (161 px afwijkend van de kale reductie: buitenlijn, ontkorrelen, gloed, 5 px hooglicht); keurder BIJNA → r2 = 13 pixelwissels (selout aan de lichtkant links, hooglicht van de kelpschaduw af, kelpspleet rechts, vinnetje links iets lichter). Wacht op Jordi.
 
-### [v0.0.578] - Onderwater-Gloom: frontsprite r3
+### [v0.0.579] - Onderwater-Gloom: frontsprite r3
 - Jordi over r2: "best netjes al, in het hoofd mag je wat meer kleurtinten/schaduw gebruiken voor de lava, voor de rest is het alleen afwerking". r3 (`gloom_sprite/r3/gloom_r3.png` + `_8x`): kieren per pixel op de modelgloed getint (dieprood randen, oranje, geel op de kruisingen), schaduwkant van de brok één tint donkerder met nieuwe tint sintel (150,40,32); 16 kleuren incl. transparant. Afwerking: mondring rechts bordeaux i.p.v. zwart, los vlekje in het linkervinnetje weg (34 px t.o.v. r2).
 - Jordi over r3: "ja fenomenaal werk wat betreft die lava" (lava bevroren). Eindkeuring: PASS, geen moeten.
 
-### [v0.0.579] - Onderwater-Gloom: frontsprite r4 (volume lijf)
+### [v0.0.580] - Onderwater-Gloom: frontsprite r4 (volume lijf)
 - Jordi: "ja graag wat meer bolling, schaduw, tinten etc, doe dat in een eindkeuring". Eindkeurder (studie Ditto/Gulpin/Grimer/Gloom op 8×) zette 133 tintwissels binnen lijf en vinnen: lichte bolling linksboven, schaduwsikkel rechts die naar onder breder wordt, diepe sikkel tegen de rand en onder de rechtervin, eigen lobben met hooglichtje in de voet; lijf-licht (index 8) (198,108,116) → (204,116,120). Diff 0 in lavabrok, gloed, ogen, kelp, zwart en silhouet (`gloom_sprite/r4/bewijs.py`). `gloom_sprite/r4/gloom_r4.png` + `_8x`.
 - Jordi: "commit en push naar main" → frontsprite af: `docs/concept/sprites/oddish_regional/gloom_sprite/af/gloom.png` (+ `gloom_8x.png`).

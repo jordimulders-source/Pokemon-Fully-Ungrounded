@@ -45,6 +45,13 @@
 - Vileplume: `referenties/gemini_gekozen_vileplume.png` (= `kelp_r2/vileplume.png`). **Toegestane afwijking (Jordi, optie A):** in de spritefase de vele dunne tentakels per anemoon klonteren tot ±8–10 dikke tentakels op de modelplekken (anders rode ruis op 64×64).
 - Spritefase: Jordi "begin maar met oddish". Grootte: als de Oddish in de game (±33×35 px, voeten op dezelfde hoogte).
 
+## Sprite
+- r1–r2 maker (model verkleind, 94 px technisch opgeschoond); keurder FAIL met 7 px reparaties (ogen 1×2, mond 2×2, drukke waaiervoet en zwart 19% door meting goedgekeurd); r3 = r2 + die 7 px (Claude). `oddish_sprite/r3/oddish_r3.png`.
+- r4b: gezicht 1-op-1 van de Oddish uit de game + schaduwlijn 4 px boven de mond (Jordi). r5: kelp subtiel naar olijfbruin/amber (tint +6°, verzadiging ×0,85) en 10 px golvende rand (Jordi: "Akkoord, maar houd het subtiel"); hechtvoetjes kleuren mee (zelfde indices).
+- r6: ook het middelste blad subtiel golvend, 4 px (Jordi: "kan je het middelste blad ook nog doen?"; over r5: "het is goed gelukt namelijk").
+- r6 verworpen (Jordi: "dit is wat minder gelukt, stuur r5 maar naar de eindkeuring"). r5 naar de Dragonfly Cave-eindkeuring.
+- **Af (20 nov):** r5 → `af/oddish_regional.png` (eindkeuring PASS; optionele opschoning (34,23) en (29,26) 6→7 niet gedaan).
+
 ## Spritefase Gloom (`gloom_sprite/`)
 - r2 naar Jordi (20 nov): "best netjes al, in het hoofd mag je wat meer kleurtinten/schaduw gebruiken voor de lava, voor de rest is het alleen afwerking".
 - r3 (lava: donkere randen, felle kruisingen, schaduwkant een tint donkerder), Jordi (20 nov): "ja fenomenaal werk wat betreft die lava" → lava in de brok bevroren.

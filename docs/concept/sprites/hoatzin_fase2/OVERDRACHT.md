@@ -5,3 +5,7 @@
 - Harde regels: NIETS tekenen; alleen kleur/lijn binnen de vorm; palet 15 + transparant; geen tussenrondes naar Jordi, eerst stil keuren.
 - Oude reeks/model: `sprite/r1–r25`, `MODEL_v1_oud.png`, lessen in RETRO.md, STUDIE_ONTWERP.md, docs/lessen/GEMINI.md onderaan.
 - Fase 1 (kuiken) nog niet begonnen.
+
+## Stand 20 nov (einde sessie)
+- s10 = basis (Jordi: "eindelijk wat vooruitgang"). Aanpak die werkte: tinten per vorm overnemen van bestaande sprites (studie in `sprite2/s10/NOTITIES.md`).
+- Volgende: "Vooral hoofd en poten moeten nog beter" (Jordi). Verre vleugel leest nog vlak.

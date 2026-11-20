@@ -51,3 +51,4 @@
 - "buik mag ook de zwarte lijn omheen zachter worden".
 - Op s9: "ja hij is nog blurry, de buik is nu wel beter. De poten zijn nog niet netjes afgemaakt. De hele sprite mist gewoon schaduw/tinten/contrast. Het is heel veel 2 kleuren per stuk. Alleen de buik heeft er 3 en ziet er daarom al wat beter uit".
 - "lichaam/vleugel lijkt ook bijna willekeurig te zijn".
+- Op s10: "eindelijk wat vooruitgang, maak maar prompt voor nieuw gesprek. Vooral hoofd en poten moeten nog beter".

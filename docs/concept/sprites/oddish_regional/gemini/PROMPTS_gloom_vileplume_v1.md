@@ -8,7 +8,7 @@ Design a regional form of the Pokémon Gloom and draw it as an official Gen 3 fr
 
 CONCEPT
 - Gloom from the deep-sea hydrothermal vents near the Galápagos. Type: Water/Fire. It evolves from an Oddish whose leaves are red giant tube worm plumes.
-- Body, face and pose exactly as Oddish-line Gloom's Gen 3 front sprite: the round body, the short arms held out, the short legs, the squinting closed eyes and the wide open drooling mouth.
+- Body, face and pose exactly as Gloom's Gen 3 front sprite: the round body, the short arms held out, the short legs, the squinting closed eyes and the wide open drooling mouth.
 - Body color: white / cream.
 - On top, instead of Gloom's brown bud and drooping leaves: it is based on the Pompeii worm (Alvinella pompejana), which lives in tubes on the walls of vent chimneys at 80 °C. The bud becomes a cluster of short pale grey tubes covered in a shaggy grey-white fleece (bacteria), with small red feathery gill plumes sticking out; the drooping side parts are limp grey fleecy worm tails hanging down left and right.
 - The drool is dark, sulfurous vent water. A faint orange glow between the tubes shows the heat.

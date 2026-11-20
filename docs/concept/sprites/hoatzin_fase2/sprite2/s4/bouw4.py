@@ -57,9 +57,11 @@ ver = np.zeros((64, 64), bool)
 for j, i in zip(*np.where(mask)):
     x, y = cmodel(i, j)
     if Z[j, i] == 'vleugel' and x < CFG['ver_x'] and y < CFG['ver_y']: ver[j, i] = True
-STAP = {2: 3, 3: 4, 4: 4}
-for j, i in zip(*np.where(ver)):
-    if T[j, i] in STAP: T[j, i] = STAP[T[j, i]]
+# s4 (keurder): geen donkerder verre vleugel meer; in beide vleugels (boven het lijf) is het vlak de middentint 3,
+# de donkerste tint 4 komt alleen als schaduw onder de penlijnen
+for j, i in zip(*np.where(mask & (Z == 'vleugel'))):
+    x, y = cmodel(i, j)
+    if y < CFG['ver_y'] and T[j, i] == 4: T[j, i] = 3
 # modus binnen de zone (3x3, alleen dezelfde zone en zelfde deel), twee keer
 deel = np.where(ver, 1, 0) + np.where(Z == 'vleugel', 2, 0)
 for _ in range(CFG.get('modus', 2)):
@@ -105,21 +107,30 @@ for j, i in zip(*np.where(mask)):
                 lijn[j, i] = True
 # geprojecteerde modellijnen
 sk = np.load('skelet.npz'); lab = sk['lab']
-pad = np.zeros((64, 64), bool)
+pad = np.zeros((64, 64), bool); steil = np.zeros((64, 64), bool)
 for p in CFG['paden']:
     ys, xs = np.where(lab == p)
+    cel = np.zeros((64, 64), bool)
     for x, y in zip(xs, ys):
         i, j = mcel(x, y)
-        if 0 <= i < 64 and 0 <= j < 64 and mask[j, i]: pad[j, i] = True
+        if 0 <= i < 64 and 0 <= j < 64 and mask[j, i]: cel[j, i] = True
+    pad |= cel
+    if np.ptp(ys) > np.ptp(xs): steil |= cel          # steil pad: lichte kant links, schaduw rechts
 pad = skeletonize(pad)
 lijn |= pad
 S = T.copy(); S[lijn & mask] = 1
 # penranden: de pixel boven elke penlijn krijgt de lichte tint (nabij 2, ver 3), zoals de lichte penrand in het model
+penrand = np.zeros((64, 64), bool)
+def vrij(y, x): return 0 <= y < 64 and 0 <= x < 64 and mask[y, x] and Z[y, x] == 'vleugel' and not lijn[y, x]
 for j, i in zip(*np.where(pad)):
-    for dj in range(1, CFG.get('pen_rand', 1) + 1):
-        y = j - dj
-        if y >= 0 and mask[y, i] and Z[y, i] == 'vleugel' and not lijn[y, i]:
-            S[y, i] = 3 if ver[y, i] else 2
+    n = 1 if (ver[j, i] or steil[j, i]) else CFG.get('pen_rand', 1)
+    dy, dx = (0, -1) if steil[j, i] else (-1, 0)
+    for d in range(1, n + 1):
+        y, x = j + d * dy, i + d * dx
+        if not vrij(y, x): break
+        S[y, x] = 2; penrand[y, x] = True
+    y, x = j - dy, i - dx                                    # schaduwkant: 1 px donkerste tint
+    if vrij(y, x) and not penrand[y, x] and not pad[y, x]: S[y, x] = 4
 # kuif: KUIF = 'regel' (hoofdtint, schaduw onder/rechts), 'model' (modeltinten licht/donker), 'as' (skelet = licht)
 KM = CFG.get('kuif', 'regel')
 AS = np.load('kuifas.npy') > 0
@@ -211,6 +222,20 @@ def los_weg(S):
 S = los_weg(S)
 S = techniek(S)
 S = los_weg(S)
+S = techniek(S)
+# s4: lichte vlekken op het lijf (vanaf y31 alle, daarboven < 4 px) -> vlaktint 3, behalve het lichte vlak y31-32 x33-39
+lab2, n2 = nd.label((S == 2) & (Z == 'vleugel'))
+for c in range(1, n2 + 1):
+    m = lab2 == c
+    yy, xx = np.where(m)
+    if (m & penrand).any() or yy.min() < 24: continue
+    if m.sum() >= 4 and yy.min() < 31: continue
+    if ((yy >= 31) & (yy <= 32) & (xx >= 33) & (xx <= 39)).all(): continue
+    S[m] = 3
+# s4: afwerking per keurder (alleen kleur/lijn binnen de bestaande vorm, of eruit waar het model geen vorm heeft)
+AF = json.load(open('afwerking.json'))
+for r in AF['regels']:
+    for x, y in r['px']: S[y, x] = r['kleur']
 S = techniek(S)
 np.save('hoatzin.npy', S)
 im = Image.fromarray(S.astype(np.uint8), 'P'); pal = []

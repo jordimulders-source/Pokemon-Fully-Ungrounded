@@ -7,7 +7,8 @@ Regionale vorm van Rufflet; evolueert in de harpij-arend (Steel/Flying, `../harp
 - 20 nov: "Rufflet wordt puur flying" · "Rufflet wordt juist regionaal" · "Perrserker idee".
 - 20 nov: "beetje deze inspiratie voor rufflet", met een foto van een harpij-kuiken (kwam niet als bestand binnen; beschrijving Claude): staand jong in een nest van takjes, kop naar links in profiel; witte donzige kop met een rommelige, rechtopstaande witte donskuif achterop; zwarte haaksnavel, licht open, roze tong; donker oog, dicht bij de snavel; wit donzig lijf (borst en buik), vleugels half gespreid en hangend, grijs met witte randen, rechtervleugel met een zwarte vlek onderaan; dikke gele poten met grote zwarte klauwen.
 
+- 20 nov, op de vraag of hij aan Rufflet moet herinneren: "ja het is een regional form dus dat staat buiten kijf lijkt me".
+
 ## Open
 - Pose (voorstel Claude in prompt v1: staand zoals op de foto, vleugels half gespreid en hangend).
-- Moet hij nog aan Rufflet herinneren (zoals Galar-Meowth aan Meowth)? Niet besloten; prompt v1 noemt Rufflet alleen als basissoort.
 - Naam.

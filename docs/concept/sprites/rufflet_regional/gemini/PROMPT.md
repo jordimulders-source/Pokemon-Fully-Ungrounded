@@ -1,12 +1,13 @@
 # Regionale Rufflet – Gemini-startprompt (r1, nieuw gesprek)
 
 Bijlage: Jordi's inspiratiefoto van het harpijkuiken (die van 20 nov). Besluiten: `../SPEC.md`.
-Voorstellen Claude (niet van Jordi): pose zoals op de foto; staalloos (Steel komt pas bij de evolutie); kuif als zachte versie van de dubbele kuif van de evolutie.
+Jordi: regional form moet aan Rufflet herinneren ("dat staat buiten kijf"). Voorstellen Claude (niet van Jordi): pose zoals op de foto; staalloos (Steel komt pas bij de evolutie); kuif als zachte versie van de dubbele kuif van de evolutie.
 
 ---
 
 ```
 Design a new regional form of the Pokémon RUFFLET, based on a HARPY EAGLE CHICK from the Amazon rainforest. Its type is pure Flying. It evolves into a Steel/Flying harpy eagle Pokémon, so it is the baby version of that bird.
+It is a regional form: it must still clearly be RUFFLET, the way Galarian Meowth is still clearly Meowth. Keep Rufflet recognizable, but as a harpy eagle chick.
 The attached photo is a real harpy eagle chick: use it as the source for its look.
 Draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style): pixel art, 64×64, max 16 colors, dark selout outline, plain white background.
 

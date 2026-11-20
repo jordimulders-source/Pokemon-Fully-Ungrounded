@@ -12,3 +12,4 @@
 
 ## Rondes
 - **v1** (`r1/gemini_v1.png`), Jordi (20 nov): "ik vind het 'blad' iets te smal denk ik".
+- Jordi (20 nov), met de Gen 3-Oddish ernaast: "o en ik zie waarom, ogen en mond kloppen ook niet". Verschil (Claude): Oddish heeft kleine stipogen en een klein open mondje, en de kroon is veel groter dan het lijf; v1 heeft grote ogen, een lach, een groot lijf en een smalle pluim.

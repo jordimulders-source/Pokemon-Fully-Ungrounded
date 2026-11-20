@@ -2402,3 +2402,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.576] - Onderwater-Gloom: frontsprite r4 (volume lijf)
 - Jordi: "ja graag wat meer bolling, schaduw, tinten etc, doe dat in een eindkeuring". Eindkeurder (studie Ditto/Gulpin/Grimer/Gloom op 8×) zette 133 tintwissels binnen lijf en vinnen: lichte bolling linksboven, schaduwsikkel rechts die naar onder breder wordt, diepe sikkel tegen de rand en onder de rechtervin, eigen lobben met hooglichtje in de voet; lijf-licht (index 8) (198,108,116) → (204,116,120). Diff 0 in lavabrok, gloed, ogen, kelp, zwart en silhouet (`gloom_sprite/r4/bewijs.py`). `gloom_sprite/r4/gloom_r4.png` + `_8x`.
+- Jordi: "commit en push naar main" → frontsprite af: `docs/concept/sprites/oddish_regional/gloom_sprite/af/gloom.png` (+ `gloom_8x.png`).

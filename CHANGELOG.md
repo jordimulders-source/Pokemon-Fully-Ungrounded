@@ -2368,3 +2368,10 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.568] - Spooktrein fase 3: opknappen geparkeerd
 - Koeienvanger-prompt gaf de hele trein zonder geest (`gemini/opknap/r2_koeienvanger.png`). Jordi: "laat maar zitten voor nu, hier moeten we iets anders voor bedenken". Geparkeerd in `OPKNAPRONDE_GEMINI.md`; les in `GEMINI.md`.
+
+### [v0.0.569] - Harpij-arend: frontsprite af
+- Nieuwe soort volgens het Perrserker-idee: **regionale Rufflet (puur Flying, harpijkuiken) evolueert in de harpij-arend** (Steel/Flying); gewone Rufflet blijft Braviary. Steel zit in klauwen en snavel. Naam gepauzeerd (werknaam Harpiary). Alles in `docs/concept/sprites/harpij_braviary/SPEC.md`.
+- Model: Gemini r6 (9 rondes, bronfoto van Jordi) + kuifveren door Claude getekend op het natieve raster (variant D + middelste veer J, `plak/`).
+- Sprite: r1–r3 waren te veel getekend (801/1380 px afwijking van de kale reductie, Jordi: "Je gaat me toch niet vertellen dat ze opnieuw getekend zijn he?"); r4 opnieuw vanaf de kale reductie, daarna alleen pixel fixes. Jordi's keuzes: oog c, kuif B, snavel V2 met subtielere mond (naar Pidgeot), pootstrepen. Eindkeuring Dragonfly Cave: 4 pixelfixes.
+- Af: `docs/concept/sprites/harpij_braviary/af/harpij.png` (+ `_8x.png`, `normal.pal`, `harpij.txt`); op het overzichtsvel.
+- Les in `docs/lessen/GEMINI.md`: afwijkingsgetal van de maker is een stopsignaal.

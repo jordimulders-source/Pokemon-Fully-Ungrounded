@@ -2259,6 +2259,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Op het overzichtsvel (`showcase/frontsprites_af.png`, werknaam "Vuurwerk-axolotl", naam open). Alle uitspraken van Jordi in `vuurwerk_fase1/SPEC.md`.
 - Lessen in `docs/lessen/GEMINI.md`: lange armen om een voorwerp tekent Gemini niet; asset voor asset met bijlagen werkt; "leest niet" is geen tekenopdracht; Gemini voegt goed iets toe aan een eigen sprite maar poetst slecht op.
 
+<<<<<<< HEAD
 ### [v0.0.541] - Nocticue opknappen: Gemini-prompt
 - Nocticue (nachtaap fase 1) in de opknapronde via Gemini. Jordi: "ik ben echt fan van het design, dus het is puur de pose. De cuteness moet niet weg" · "ook de positie van zijn armen" · "dus puur de hoek".
 - Prompt v1 + bijlage (huidige sprite 8×) in `docs/concept/sprites/nachtaap/gemini/`; alleen de hoek (lijf en armen) naar driekwart links, design/kleuren/schattigheid bevroren.
@@ -2368,3 +2369,55 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.568] - Spooktrein fase 3: opknappen geparkeerd
 - Koeienvanger-prompt gaf de hele trein zonder geest (`gemini/opknap/r2_koeienvanger.png`). Jordi: "laat maar zitten voor nu, hier moeten we iets anders voor bedenken". Geparkeerd in `OPKNAPRONDE_GEMINI.md`; les in `GEMINI.md`.
+=======
+### [v0.0.541] - Hoatzin-lijn: besluit en eerste prompts
+- Besloten (Jordi): 2 fases, Poison/Dark; fase 1 kuiken met overdreven klauwen en smerige look, fase 2 volgroeid, eng en geniepig. In `POKEMON.md` (Hoatzin-lijn).
+- Twee Gemini-prompts voor fase 2 (krop als gistzak / krop als chicha-kruik): `docs/concept/sprites/hoatzin_fase2/gemini/PROMPTS_v1.md`.
+
+### [v0.0.542] - Hoatzin fase 2: prompt v2
+- Jordi keurde v1 A en B af ("beide geen pokemon"); nieuwe prompt met blauw gezicht, alert vogeloog, grotere lelijkere kuif, lijf in Poison-kleuren, kleine buikbult: `docs/concept/sprites/hoatzin_fase2/gemini/PROMPTS_v2.md`. Les in `GEMINI.md`.
+
+### [v0.0.543] - Hoatzin fase 2: prompt v2 met Poison-paars
+- Jordi: "met poison kleur bedoel ik dat typische poison paars"; verwerkt in `PROMPTS_v2.md`.
+
+### [v0.0.544] - Hoatzin fase 2: prompt v3
+- v2 afgekeurd ("lijkt niet eens op een hoatzin"); v3 met hoatzin-silhouet terug (lange nek, lange brede staart, kleurindeling) in Poison-paars, kuif van veren: `PROMPTS_v3.md`. Les in `GEMINI.md`.
+- Oog in v3: rood met zwart puntje, geen oogwit (Jordi).
+
+### [v0.0.545] - Hoatzin fase 2: prompt v4
+- v3 afgekeurd; Jordi: "Dit dier is zo bijzonder dat die niet eens heel veel hoeft af te wijken". v4 = echte hoatzin als Gen 3-sprite met alleen zijn wijzigingen (`PROMPTS_v4.md`). Les in `GEMINI.md`.
+
+### [v0.0.546] - Hoatzin fase 2: prompt v5
+- Op v4 r1: open pose naar Cornell-foto (vleugels hoog gespreid) en bruine kuif (Jordi); `PROMPTS_v5.md`.
+- v5 r1 bewaard (pose goed volgens Jordi); bijstuurprompt alleen voor de kuif in `PROMPTS_v5.md`.
+- Kuifreferentie (illustratie, Jordi: "moeten meer zo") en bijstuurprompt v2 in `PROMPTS_v5.md`.
+- v5 r2 bewaard (kuif te overdreven, Jordi); prompt voor nieuw gesprek met bronfoto in `PROMPTS_v5.md`.
+- v5 r3 bewaard (kuif fout); plan: kuif als los asset en Claude plakt hem op v5 r1; assetprompt in `PROMPTS_v5.md`.
+- Les in `GEMINI.md`: bewerken is niet hertekenen (Jordi).
+- `v5_r1_kuifbruin.png`: v5 r1 met de door Jordi geel omcirkelde haartjes weg en alleen de kuif in bruintinten (paletswap; licht/donker behouden), verder niets veranderd.
+- Paletswap van de kuif door Claude afgekeurd ("prutswerk"); `v5_r1_kuifbruin.png` verwijderd, les in `GEMINI.md`; de bewerking gaat naar Gemini.
+- v5 r4 bewaard (bruine kuif, door Jordi via Gemini); kleuren in bespreking.
+
+### [v0.0.547] - Hoatzin fase 2: prompt v6
+- Jordi koos echte hoatzinkleuren met alleen de buik Poison-paars; `PROMPTS_v6.md`.
+
+### [v0.0.548] - Hoatzin fase 2: prompt v7
+- Zuur dat uit de bek druipt (zoals Gloom), warme paarstinten bij het roestbruin, Dark/Poison-uitstraling zonder vloeken, blauw gezicht en rood oog blijven (Jordi); `PROMPTS_v7.md`.
+- v7 r1 bewaard; bijsturing: 1 druppel zuur, achterste vleugel dezelfde kleur als de voorste (Jordi).
+- v7 r2 bewaard; bijsturing: druppel uit de mondhoek over de rand, buik een tint richting de rest van het lijf (Jordi).
+- v7 r3 bewaard (kuif en buik goed; vleugeltop en slijm fout); bijsturing in twee rondes van 1 wijziging.
+- v7 r4 bewaard (vleugel en kuif goed, slijm nog fout); voorstel slijm via een eigen markering van Jordi.
+- `v7_r4_snavel.png`: snavel van v6 r1 op v7 r4 geplakt (slijm weg), op verzoek van Jordi.
+- Prompt: v7_r4_snavel netjes opnieuw laten tekenen, buik #8E6280 (Jordi).
+- Fase 2 model bevroren: `docs/concept/sprites/hoatzin_fase2/MODEL.png` (v7 r4 met snavel van v6 r1); kleur van de buik in de spritefase (Jordi).
+
+### [v0.0.549] - Hoatzin fase 2: eerste ontwerp gestopt, retro
+- 25 spriterondes (r1–r25) op het eerste Gemini-model; Jordi: "misschien klopt het hele ontwerp wel niet" → opnieuw from scratch, vereenvoudigd (B). Retro: `docs/concept/sprites/hoatzin_fase2/RETRO.md`.
+- Studie complexe ontwerpen (`STUDIE_ONTWERP.md`) en nieuwe prompt from scratch (`gemini/PROMPTS_v9.md`).
+
+### [v0.0.550] - Hoatzin fase 2: ontwerp 2 bevroren
+- From scratch vereenvoudigd ontwerp (v10 r2, gespiegeld) als `MODEL.png`; oud model `MODEL_v1_oud.png`. SPEC bijgewerkt.
+
+### [v0.0.551] - Hoatzin fase 2: ontwerp 2 sprite s1–s9, overdracht
+- Sprite ontwerp 2 in `sprite2/s1–s9` (s10 in de maak): vorm en oog bevroren; open: tinten/schaduw/contrast per onderdeel, poten afwerken. Overdracht `hoatzin_fase2/OVERDRACHT.md`, retro aangevuld.
+>>>>>>> origin/claude/trusting-einstein-okyj3z

@@ -1,0 +1,8 @@
+toonkaart k-means centra [ 41.9  84.1 104.3] drempels 63.0 94.2
+{
+ "2 mauve vulling uit toonkaart": 329,
+ "3 2px-lijn -> 1 px (lichtste modelcel naar vlaktint)": 1,
+ "4 vlekje < 6 px -> buurtint": 28
+}
+palet L: [185, 23, 42, 82, 125, 177, 64, 113, 68, 121, 101, 57, 94, 151, 69, 133]
+px anders dan r5: 340

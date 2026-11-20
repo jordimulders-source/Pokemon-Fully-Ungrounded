@@ -1,0 +1,20 @@
+1 pen: eén toon per pen (modelgemiddelde) {'K': 26, 'M': 164, 'W': 45, 'D': 12} 247
+1 pengrens -> lijn (donkerste vleugeltint) {'M': 127, 'W': 63, 'D': 5} 195
+1 pengrens in donkere pen (model < 38) {'M': 17, 'K': 28, 'D': 8} 53
+1 losse zwarte pengrens weg {'M': 3, 'K': 3} 6
+1 streep: één doorlopende lijn per pen (gefit op de modelstreep) {'K': 1, 'M': 22, 'W': 43} 66
+1c voorrand vleugel (modelband) {'W': 29, 'M': 9} 38
+1d nek: lichte modeltint tussen de strepen {'M': 23, 'W': 3, 'K': 3} 29
+1d nek: donkere modelstreep {'K': 20, 'M': 2} 22
+1e buik: toon uit modelmeting {'P': 16} 16
+1f kuif: streng/tussenruimte uit model {'C': 28} 28
+1f kuif: losse lichte spikkel -> donkerbruin {'C': 3} 3
+1g snavel uit modelmeting {'S': 9, 'K': 8} 17
+2 vlakken: cluster <4 px -> buurtint {'K': 26, 'M': 132, 'W': 14, 'P': 2, 'T': 7, 'D': 15} 196
+3 contour: inkeping dicht {'.': 3} 3
+4 buitenlijn {'K': 80, 'M': 127, '.': 2, 'W': 4, 'C': 3, 'P': 13, 'T': 21, 'D': 10} 260
+4 rand om-en-om {'M': 1} 1
+4b rand achter gezicht {'C': 3, 'M': 2, 'W': 1} 6
+5 oog {'E': 2, 'F': 3} 5
+5 oog glans {'E': 1} 1
+silhouet-diff t.o.v. onderlaag: 3 kleuren 16

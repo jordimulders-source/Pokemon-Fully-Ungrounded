@@ -1,0 +1,69 @@
+{
+ "1 pen: e\u00e9n toon per pen (modelgemiddelde)": {
+  "M": 331,
+  "W": 86,
+  "K": 20,
+  "D": 18
+ },
+ "1 pengrens -> lijn (donkerste vleugeltint)": {
+  "W": 65,
+  "M": 209,
+  "K": 31,
+  "D": 17
+ },
+ "1 streep: \u00e9\u00e9n doorlopende lijn per pen (gefit op de modelstreep)": {
+  "K": 1,
+  "M": 23,
+  "W": 42
+ },
+ "1c voorrand vleugel (modelband)": {
+  "W": 28,
+  "M": 8
+ },
+ "1d nek: lichte modeltint tussen de strepen": {
+  "M": 23,
+  "W": 3,
+  "K": 3
+ },
+ "1d nek: donkere modelstreep": {
+  "K": 20,
+  "M": 2
+ },
+ "1e buik: Gen 3-schaduw": {
+  "P": 79
+ },
+ "1f kuif: streng/tussenruimte uit model": {
+  "C": 28
+ },
+ "2 vlakken: cluster <4 px -> buurtint": {
+  "M": 11,
+  "K": 14,
+  "W": 2,
+  "D": 1,
+  "T": 7
+ },
+ "3 contour: inkeping dicht": {
+  ".": 3
+ },
+ "4 buitenlijn": {
+  "K": 87,
+  "M": 126,
+  ".": 2,
+  "W": 4,
+  "C": 3,
+  "S": 2,
+  "P": 13,
+  "T": 21,
+  "D": 10
+ },
+ "4 rand om-en-om": {
+  "M": 1
+ },
+ "5 oog": {
+  "E": 2,
+  "F": 3
+ },
+ "5 oog glans": {
+  "E": 1
+ }
+}

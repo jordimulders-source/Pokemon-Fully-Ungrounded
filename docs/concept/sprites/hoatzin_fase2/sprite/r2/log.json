@@ -1,0 +1,49 @@
+{
+ "1 pen: e\u00e9n toon per pen (modelgemiddelde)": {
+  "M": 331,
+  "W": 86,
+  "K": 18,
+  "D": 18
+ },
+ "1 pengrens -> lijn (donkerste vleugeltint)": {
+  "W": 65,
+  "M": 209,
+  "K": 31,
+  "D": 17
+ },
+ "1 streep: \u00e9\u00e9n per pen op de modelplek": {
+  "M": 2,
+  "W": 58
+ },
+ "2 vlakken: cluster <4 px -> buurtint": {
+  "M": 11,
+  "K": 14,
+  "W": 1,
+  "D": 1,
+  "T": 7
+ },
+ "3 contour: inkeping dicht": {
+  ".": 3
+ },
+ "4 buitenlijn": {
+  "K": 87,
+  "M": 126,
+  ".": 2,
+  "W": 4,
+  "C": 4,
+  "S": 2,
+  "P": 13,
+  "T": 21,
+  "D": 10
+ },
+ "4 rand om-en-om": {
+  "M": 1
+ },
+ "5 oog": {
+  "E": 2,
+  "F": 3
+ },
+ "5 oog glans": {
+  "E": 1
+ }
+}

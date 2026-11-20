@@ -23,6 +23,14 @@
 - r9 (`gemini/r9.webp`, hoofdtooi), Jordi: "ben bang dat dit hem ook niet is, hij heeft de verkeerde stijl veren erop geplakt".
 - Jordi daarna: "kan jij eens kijken of jij het kan, je kan alleen de veren niet copy pasten, je moet ze precies in dezelfde stijl maken maar een andere vorm" · "maak een paar varianten". Claude tekende op r6 (natief raster ±99 px, `plak/`) 1 veer per kant: varianten A–D.
 - Jordi: "ik vind D het beste gelukt, al best mooi" · "Kan je misschien nog de veer die Gemini er neer heeft gezet ook nog in lijn met de rest maken? Dan is die niet symmetrisch maar dat is irl ook niet". Varianten D+E/F/G (`plak/varianten_midden.png`).
+- Jordi: "houd de bodem van de veer hetzelfde, alleen de top, zodat die niet volledig recht is" → varianten H/I/J. Jordi: "vind ze allemaal nog niet mooi, maar dat fixen we in de sprite wel, ga maar met D+J verder en bouwen".
+
+## Model
+`model/model_natief.png` (natief raster van r6, 99×99, met Claude's veren: D + middelste veer J). `model/model_10x.png` = 10× vergroot. Bevroren, behalve:
+
+## Toegestane afwijkingen van het model (alleen deze)
+1. Kuifveren: Jordi vindt de getekende veren (middelste veer, en volgens Claude ook de 2 lage veren van D) "nog niet mooi, maar dat fixen we in de sprite wel" → in de sprite met Jordi verbeteren. Voorstel Claude: de getekende veren krijgen een lichte en donkere kant zoals de Gemini-veren.
+2. Kleur, schaduw en volume naar Gen 3 (SPRITE_KERN: kleur mag altijd afwijken).
 
 ## Regionale Rufflet
 - 20 nov: "Rufflet wordt juist regionaal" · "Perrserker idee": de regionale Rufflet evolueert in de harpij.

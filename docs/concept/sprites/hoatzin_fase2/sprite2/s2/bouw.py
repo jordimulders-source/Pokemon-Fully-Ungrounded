@@ -50,7 +50,7 @@ sterk = (L >= 0.2) & mask & (Z == 'vleugel')
 lab, n = nd.label(sterk, structure=np.ones((3, 3)))
 for c in range(1, n + 1):
     m = lab == c; yy, xx = np.where(m)
-    if m.sum() >= PENMIN and max(yy.ptp(), xx.ptp()) + 1 >= PENMIN: lijn |= m
+    if m.sum() >= PENMIN and max(np.ptp(yy), np.ptp(xx)) + 1 >= PENMIN: lijn |= m
 S0 = S.copy()
 S[lijn] = 1
 

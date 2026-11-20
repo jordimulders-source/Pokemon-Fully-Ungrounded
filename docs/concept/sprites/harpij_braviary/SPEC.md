@@ -8,6 +8,9 @@ Regionale Braviary-vorm gebaseerd op de harpij-arend (Amazone). Regionale Ruffle
 - 20 nov (meerkeuze): eerst Braviary, daarna Rufflet · type Steel/Flying, besloten · Steel-gevoel zit in de **klauwen** · daarna: "klauwen en snavel allebei" · pose: **zittend, kuif op** (voorstel Claude: rechtop, kuif opgezet, klauwen zichtbaar, geen ondergrond).
 - 20 nov: "de kuif maken wij iets stilistischer dan irl" · "want daar zitten de veren een beetje verspreid".
 
+## Gemini-rondes
+- r1 (`gemini/r1.png`), Jordi: "eigenlijk al wel tof, alleen ik herken braviary nog niet echt erin, de pose is niet helemaal driekwart en we zien de kuif zo niet goed, plus de klauwnagels zijn alleen van staal". Op de vraag wat dat laatste betekent: hele klauw staal (niet alleen de nagels).
+
 ## Regionale Rufflet
 - 20 nov: "Rufflet wordt puur flying".
 - 20 nov: "beetje deze inspiratie voor rufflet", met een foto van een harpij-kuiken (kwam niet als bestand binnen; beschrijving Claude): staand jong in een nest van takjes, kop naar links in profiel; witte donzige kop met een rommelige, rechtopstaande witte donskuif achterop; zwarte haaksnavel, licht open, roze tong; donker oog, dicht bij de snavel; wit donzig lijf (borst en buik), vleugels half gespreid en hangend, grijs met witte randen, rechtervleugel met een zwarte vlek onderaan; dikke gele poten met grote zwarte klauwen.

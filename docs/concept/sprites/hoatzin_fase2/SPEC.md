@@ -25,4 +25,4 @@
 - "eigenlijk is niks beter geworden"
 - "ok er gaat namelijk echt flink wat fout, omdat je niet goed naar het model kijkt, wat heel raar is want die kan je ook gewoon op een raster zetten. De poten zijn opnieuw getekend, altijd een belachelijk slechte keuze, de kuif is helemaal niet mooi, de nek gaat nog steeds niet goed over, de vleugels hebben een andere vorm, bovenste stuk past niet eens in het raster. Ik heb een aantal lijnen gezet ter indicatie, het is een indicatie, maar je moet echt nog even beter naar het model kijken en meten hoe het daar precies is gegaan. Misschien met kleurcodes een pixelblad maken en zo proberen te verbeteren, niks opnieuw tekenen"
 - "enige wat echt goed is, is snavel, staart en buik"
-- Daarna: "ook ook wel" (gelezen als: oog ook wel goed; bevestigen bij Jordi)
+- Daarna: "ook ook wel" → bevestigd: "oog is prima"

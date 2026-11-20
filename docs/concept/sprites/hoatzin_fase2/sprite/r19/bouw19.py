@@ -37,7 +37,7 @@ for y in (59,60,61): zet(29,y,1,'teen lijn'); zet(30,y,14,'teen'); zet(31,y,1,'t
 zet(29,62,1,'teen lijn'); zet(30,62,14,'teen'); zet(29,63,1,'klauw'); zet(30,63,0,'weg (model achtergrond 4/9, klauw 1 px)')
 im=Image.fromarray(out.astype('uint8'),'P'); im.putpalette(im18.getpalette()); im.save('hoatzin.png',transparency=0)
 im.resize((512,512),Image.NEAREST).save('hoatzin_8x.png'); open('normal.pal','w').write(open('../r18/normal.pal').read())
-np.save('r19.npy',out)
+np.save('r19.npy',out); np.save('vorm.npy',out)   # vorm + lijnposities; kleur19.py kleurt hierop
 from collections import Counter
 d=out!=r18; al=(out>0)!=(r18>0)
 NEK=np.zeros((64,64),bool); NEK[22:42,14:38]=True; POOT=np.zeros((64,64),bool); POOT[50:64,14:42]=True

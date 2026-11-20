@@ -11,6 +11,7 @@ Nieuwe Pokémon naast Sigilyph (Cosmic/Flying).
 - 20 nov: "sigilyph is in bijna niks een vogel behalve dat de nazca lijnen het silhouet zijn".
 - 20 nov (na r3): "zoals ik al zei een sigilyph counter part, dus in ontwerp heel vergelijkbaar, maar dan andere kleuren en een lichte afwijking".
 - 20 nov (na r4): "hij moet het silhouet niet aanpassen"; "het is puur de inkleuring".
+- 20 nov (na r5, inkleuring): "Hoofd wordt 1 effen zwarte kleur. De ogen witte cirkels met een blauwe cirkel erin. de armen worden geel met aan het uiteinde een blauw/rood/blauw streep, drie strepen totaal. hetzelfde voor de benen. Dan het lichaam wordt als enige een sigilyph zigzagpatroon".
 - 20 nov (lore): "sigilyphs zijn guardians of an ancient city en deze astronauten waren compagnons, misschien wel de bewoners".
 - 20 nov: "dit wordt echt de lunatone van de solrock die sigilyph dan is".
 

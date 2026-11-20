@@ -2430,3 +2430,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.587] - Nazca-astronaut: r5 afgekeurd
 - r5 (silhouet exact, patroon erop; Jordi: "vreselijk") in `gemini/r5/`. Les in `GEMINI.md`.
+
+### [v0.0.588] - Nazca-astronaut: Jordi's inkleuring, prompt r6
+- Jordi definieert de inkleuring (zwarte kop, wit-blauwe ogen, gele armen/benen met blauw-rood-blauwe strepen, zigzagromp); r6 = r5 hergekleurd.

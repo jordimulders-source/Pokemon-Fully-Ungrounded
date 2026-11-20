@@ -17,3 +17,5 @@ DO NOT
 Not a stick figure made of tubes, not a robot, not cute, not chibi, not an owl.
 No ground, no shadow, no glow, no effects.
 ```
+
+Uitkomst r3 (20 nov): silhouet exact gevolgd, maar letterlijk ingekleurd (sterrenstof-pak); Sigilyph-bijlage genegeerd. Jordi: "hij snapt het niet". Conclusie: er ontbreekt een ontwerpstap (wat wordt elk deel), die Gemini niet zelf zet.

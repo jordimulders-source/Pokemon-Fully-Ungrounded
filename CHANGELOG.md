@@ -2415,3 +2415,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.582] - Nazca-astronaut: silhouet van de geoglief + prompt r3
 - Jordi's referenties in `referenties/`; silhouet overgetrokken (`silhouet/maak.py`, `silhouet_r1.png`); prompt r3 = silhouet + Sigilyph als bijlagen.
+
+### [v0.0.583] - Nazca-astronaut: r3 afgekeurd
+- r3 (silhouet gevolgd, maar letterlijk ingekleurd) in `gemini/r3/`; volgende stap: per onderdeel het ontwerp bepalen met Jordi. Les in `GEMINI.md`.

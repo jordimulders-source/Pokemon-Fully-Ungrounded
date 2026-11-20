@@ -29,3 +29,4 @@ Nog niet gekozen (Gemini r1: `gemini/PROMPT.md`).
 - r5 (`gemini/r5.png`), Jordi: "wat vind je ervan"
 - Jordi (20 nov) na de ontwerpanalyse van r5: "ja het klopt wel wat je zegt. Laten we er een bug/electric van maken, misschien dat we wel nog iets meer de robotische kant op moeten en dan het ontwerp iets gladder/mechanischer konnen maken om hem uniek te maken. Ik zie ook dat gemini de poten neit goed heeft geteld" → `gemini/PROMPT_r6.md`
 - r6 (`gemini/r6.png`), Jordi: "laten we het achterlijf ook iets mechanischer maken en de vleugels misschien ook wel, ietsje scherper. De kabelpoten zijn eigenlijk nog niet echt mooi he, misschien moeten we dat iets meer in vorm doen, hoe doet xurkitree dat?"
+- Jordi (20 nov) over het kabelvoorstel naar Xurkitree (ronde kabel met glans, ringen bij de knieën, voeten = twee koperdraadjes, geel lijntje weg): "ja zo, schrijf r7 maar" → `gemini/PROMPT_r7.md`

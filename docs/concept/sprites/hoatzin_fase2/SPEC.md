@@ -45,3 +45,4 @@
 - Op s2: "oog B, 6 rood, ga nu bouwen totdat er een goede versie staat, niet meer blurry".
 - "vleugelpennen kan je evt met 1 pixel ipv halve pixel doen en dan minder".
 - Snavel: "hoef je de binnenkant van de mond niet te laten zien, hoe die er nu uit ziet is prima, alleen nog mooier afwerken".
+- Poten: "vorm ook prima, alleen netter afwerken. Alleen de teen van de linkse poot is iets te bol".

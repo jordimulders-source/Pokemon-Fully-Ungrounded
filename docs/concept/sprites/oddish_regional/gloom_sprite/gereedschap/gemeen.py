@@ -8,7 +8,8 @@ PAL=[(152,208,160),(16,12,12),
      (44,42,44),(74,72,74),(116,114,110),
      (88,28,40),(128,48,64),(166,76,88),(198,108,116),
      (204,74,40),(244,124,48),(252,184,80),
-     (78,62,40),(116,100,70),(160,148,110)]
+     (78,62,40),(116,100,70),(160,148,110),
+     (150,40,32)]   # 15 sintel (r3)
 STEEN={2,3,4}; LIJF={5,6,7,8}; GLOED={9,10,11}; KELP={12,13,14}
 def overlap(X,Y,W=149,H=149):
     ua=(X-X0)/S+U0; ub=ua+1/S; va=(Y-Y0)/S+V0; vb=va+1/S
@@ -42,7 +43,7 @@ def label(mask,acht=True):
                 yy,xx=cy+dy,cx+dx
                 if 0<=yy<mask.shape[0] and 0<=xx<mask.shape[1] and mask[yy,xx] and not lab[yy,xx]: lab[yy,xx]=n; st.append((yy,xx))
     return lab,n
-CH='.K012abcdGOYxoq'
+CH='.K012abcdGOYxoqs'
 def toon(o,y0=8,y1=56,x0=4,x1=60):
     print('   '+''.join(str(x%10) for x in range(x0,x1)))
     for y in range(y0,y1): print('%2d '%y+''.join(CH[v] for v in o[y,x0:x1]))

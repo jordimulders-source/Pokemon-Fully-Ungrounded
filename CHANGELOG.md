@@ -2418,3 +2418,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.583] - Nazca-astronaut: r3 afgekeurd
 - r3 (silhouet gevolgd, maar letterlijk ingekleurd) in `gemini/r3/`; volgende stap: per onderdeel het ontwerp bepalen met Jordi. Les in `GEMINI.md`.
+
+### [v0.0.584] - Nazca-astronaut: prompt r4 (Sigilyph als basis)
+- Jordi: "in ontwerp heel vergelijkbaar, maar dan andere kleuren en een lichte afwijking". r4: Sigilyph's onderdelen herschikt in het astronaut-silhouet.

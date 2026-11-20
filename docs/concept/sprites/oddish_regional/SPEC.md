@@ -53,3 +53,4 @@ Op r7: "Het gezicht is nog steeds niet zichtbaar, de poot misschien toch maar he
 Gezicht (Jordi, op r8-varianten): "neem gewoon de vileplume mond en ogen over en doe ze ver genoeg uit elkaar".
 Jordi: "we hadden het nog erover dat het gezicht het ALLERBELANGRIJKSTE is".
 "de ogen dus maar net zichtbaar" = net onder de kroon uit, zoals Vileplume in de game (Jordi koos).
+Op r9: "r3 was voor de voorste anemonen het beste, daarna eigenlijk alleen nog maar slechter geworden".

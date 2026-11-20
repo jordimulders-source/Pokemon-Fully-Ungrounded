@@ -7,7 +7,7 @@ Attached are two drafts of the same regional form of Oddish (official Gen 3 fron
 
 FROM IMAGE 1 (keep exactly)
 - The white/cream body, the two feet, the walking pose (three-quarter view facing left), the tiny red dot eyes and the small open red mouth.
-- The size, number and placement of the five shapes in the crown: they fan out from one point on top of the head, as wide and as large as in image 1.
+- The size, number and placement of the shapes in the crown: they fan out from one point on top of the head, as wide and as large as in image 1.
 
 FROM IMAGE 2
 - The texture of the red plume: each shape in the crown must NOT be a leaf. It is a giant tube worm (Riftia) plume: a dense bundle of many thin red filaments, like a feather duster or a brush, with ragged, frayed tips. No leaf outline, no central leaf vein, no smooth leaf edges.

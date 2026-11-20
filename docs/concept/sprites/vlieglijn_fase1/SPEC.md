@@ -41,3 +41,4 @@ Lijn (besloten 20 nov): **vlieg → mug, 2 fases** (reguliere vlieg; fruitvlieg 
 - Jordi (20 nov) over sprite r4: "de achterste poten kloppen niet"
 - Jordi (20 nov): "staan allebei naar rechts"
 - Jordi (20 nov) over sprite r5: "de poten staan niet goed, maar dit lijkt me een ideaal moment voor een gemini ronde" → `gemini/PROMPT_r9_poten.md`
+- Gemini r9 (`gemini/r9.png`), Jordi: "ok de achterpoten zijn gefixed, maar de achterste middelste poot twijfel ik nog over?"

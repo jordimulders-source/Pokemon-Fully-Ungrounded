@@ -16,3 +16,4 @@
 - **v2** (`r2/gemini_v2.png`, bijlage Oddish uit de game), Jordi (20 nov): "nu heeft die de bladeren alleen anders gekleurd". (Claude: lijf, gezicht en kroonvorm kloppen nu; de pluimen zijn rode bladeren, de draadjes-/borsteltextuur van v1 is weg.)
 - **v3** (`r3/gemini_v3.png`, bijlagen v2 + v1), Jordi (20 nov): "komt dit meer in de buurt?"
 - **v4** (`r4/gemini_v4.png`, bijlagen v2 + v3), Jordi (20 nov): "niet zo goed he". (Claude: gladde zalmroze knoppen met klauwtjes aan de punt, garnaal/ui; draadstructuur weg.)
+- Jordi (20 nov): "misschien de referenties weglaten" → prompt v5 zonder bijlagen.

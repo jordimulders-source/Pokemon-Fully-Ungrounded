@@ -39,3 +39,4 @@
 - Kenmerken: dreighouding met half opgeheven vleugels, voorovergebogen, snavel open (sissend), rafelige rode-bruine punkkuif, blauw kaal gezicht, rood oog met zwart puntje, grijze haaksnavel, crème nek, paarse hangende krop, bijna zwart blauw-paarse vleugels/rug/staart met crème staartpunt, grijze poten met lichte klauwen.
 - Kuif: lengte beoordelen in de sprite.
 - Kop groter in de sprite? Jordi: "nee een hoatzin heeft ook een en kleine kop, laten we kijken hoe ver we komen" → kopmaat volgens het model.
+- Oog (Jordi): "je kan voor het oog desnoods 1 zwarte pixel doen omringd door óf 4 óf 6 rode pixels, omringd door een cirkel aan blauw" · "maar ga eerst maar niks opnieuw tekenen" → s1 alleen het model overnemen; oogvarianten pas als het nodig is.

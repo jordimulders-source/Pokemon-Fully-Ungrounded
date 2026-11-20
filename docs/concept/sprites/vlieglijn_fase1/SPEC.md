@@ -23,3 +23,4 @@ Nog niet gekozen (Gemini r1: `gemini/PROMPT.md`).
 - Jordi (20 nov): "en de poten moeten wat groter denk ik, om het naar een sprite te vertalen"
 - Jordi (20 nov): vleugels "mea culpa, behoud maar zo"; "Poten moeten ietsje dikker, anders worden het 1 pixel lijnen. Strepen alleen op het achterlijf, daarvoor maar zwart doen dan?" → kop/borststuk zwart, achterlijf zwart-geel gestreept; voelsprieten kort zoals een echte huisvlieg (niet gewijzigd) → `gemini/PROMPT_r4.md`
 - r4 (`gemini/r4.png`), Jordi: "beter, hij hoort alleen geen mond te hebben en het oog idee werkt nu niet, je wilde de led lampjes zwart maken? Dan moeten we misschien het hoofd een andere kleur geven?"
+- Jordi (20 nov): "de kabels vloeken nu wel met het achterlichaam, dus misschien moeten we het achterlichaam ook aanpassen"

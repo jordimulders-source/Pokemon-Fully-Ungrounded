@@ -2403,3 +2403,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.578] - Nazca-astronaut: paar met Sigilyph zoals Lunatone/Solrock
 - Prompt r1: vergelijkbare motieven, andere kleuren dan Sigilyph; een paar zoals Lunatone en Solrock (Jordi).
+
+### [v0.0.579] - Nazca-astronaut: r1 afgekeurd, prompt r2
+- r1 (Jordi: "vreselijk", lijkt niet op de Nazca-lijnen of op een counterpart van Sigilyph) in `gemini/r1/`; nieuwe startprompt r2 (geoglief als bouwplan, Sigilyph-bouw, frontaal, niet cute). Les in `docs/lessen/GEMINI.md`.

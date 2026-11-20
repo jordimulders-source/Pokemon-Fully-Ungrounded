@@ -651,4 +651,5 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - **Jordi:** "ik zit te denken aan een soort schoonmaak middelen lijn met zeep, fairy/water"; geen Zuid-Amerikaanse inspiratie. Twijfel of een zeepbel een echte laatste fase is → volgorde "zeepbel naar zeep naar stapel zeepschuim", gekoppeld aan een dier.
 - **Fases (Jordi):** fase 1 "een klein visje in een roze zeepbel (clownfish?)"; fase 2 "een vis misschien in de vorm van een zeepje of waar een zeepje onderdeel van het lichaam is"; fase 3 "een kleurrijke kempvis waar de vinnen gemaakt zijn van zeepschuim/zeepsop".
 - **Clownfish → kempvis (Jordi):** "exeggcute evolved toch ook gewoon in exeggutor"; een andere vissoort in fase 1 is dus geen probleem.
-- **Open:** vorm fase 2, namen.
+- **Fase 2 (Jordi):** "ik zie de discusvis wel zitten, maar dan echt als een zeepje, zoals de winegum blobfish." "Misschien dan klein beetje schuim laten komen uit de mond of kieuwen (voorkeur voor 2e, maar weet niet of dat goed vertaalt)." Over het cirkels-en-driehoekenrisico: "nonsens, dat is alleen als je blender gebruikt, dat doen we niet meer."
+- **Open:** schuim uit kieuwen of mond, namen.

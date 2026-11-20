@@ -20,3 +20,4 @@ Voorstel Claude: exacte 2×-reductie van het natieve raster (±33×45 px), past 
 - Over r2, Jordi: "oog vertaalt ook nog niet helemaal, kijk naar rufflets oorspronkelijke oog ook".
 - Over r3 A/B/C: "vergroot het masker en probeer het rufflet oog zoveel mogelijk na te maken, rekening ermee houdend dat de hoek anders is".
 - Over r4: "A is goed" (`sprite_r4/rufflet_r4A`) · "ik twijfel nog of we de veer moeten toevoegen nog voor wat extra rufflet herkenbaarheid" → varianten met Rufflets kuifveer in r5.
+- Over r5: "v3 is het beste alleen de veer moet nog iets netter afgemaakt worden links" (`sprite_r5/rufflet_r5V3`).

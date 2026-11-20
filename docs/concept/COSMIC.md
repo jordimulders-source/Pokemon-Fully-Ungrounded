@@ -12,13 +12,11 @@ Matchups en het besluit om het type te maken staan in `CONCEPT.md` (Nieuw type: 
 - Jordi: "bij status moves maakt het niet uit wat voor type het is, want zit geen STAB op."
 - **Jordi (20 nov): "we moeten ook cosmic moves gaan ontwerpen."**
 
+- **20 nov, tweede ronde (Jordi):** Minior per vorm: meteoorvorm Rock/Cosmic, kernvorm Flying/Cosmic ("derde optie uitstekend idee"). Elgyem-lijn puur Cosmic. Deoxys Psychic/Cosmic. Clefairy-lijn Fairy/Cosmic. Comet Punch wordt Cosmic. Nieuwe Cosmic-moves ontwerpen: later.
+
 ## Open: soorten
 | Vraag | Opties | Jordi |
 |---|---|---|
-| Minior | Rock/Cosmic (zelfde als Lunatone en Solrock) · Flying/Cosmic (Jordi's twijfel; dan zelfde als Sigilyph) · per vorm: meteoorvorm Rock/Cosmic, kernvorm Flying/Cosmic (Minior wisselt al van vorm bij Shields Down) | |
-| Elgyem-lijn | Cosmic · Psychic/Cosmic | |
-| Deoxys | Cosmic · Psychic/Cosmic | |
-| Clefairy-lijn | Cosmic · Fairy/Cosmic | |
 | Inkay → Malamar | Psychic houden: in de canon is hij niet buitenaards, alleen zijn uiterlijk doet eraan denken | |
 
 **Psychic houden of niet (Elgyem-lijn, Deoxys), berekend op de typetabel:**
@@ -50,10 +48,10 @@ Matchups en het besluit om het type te maken staan in `CONCEPT.md` (Nieuw type: 
 - Fysiek alleen Meteor Mash (90, Steel → Cosmic): geen fysieke beginmove en geen sterke fysieke move.
 - Special loopt wel op: Swift 60 → Laser Beam 75 → Moonblast 95 → Meteor Beam 120 → Implosion 200.
 
-## Nieuwe Cosmic-moves (ideeën Claude, om uit te kiezen en aan te passen)
+## Nieuwe Cosmic-moves (ideeën Claude; ontwerpen komt later, Jordi 20 nov)
 | Idee | Rol | Voorstel |
 |---|---|---|
-| Comet Punch (bestaat al, Normal 25 ×2–5) | fysiek, vroeg | omzetten naar Cosmic (komeet); meteen een vroege fysieke move zonder nieuw werk |
+| Comet Punch (bestaat al, Normal 25 ×2–5) | fysiek, vroeg | **besloten (Jordi 20 nov): wordt Cosmic** |
 | Stardust | special, vroeg | 40 kracht, 100%; misschien kans op accuracy omlaag (glinsterend stof) |
 | Shooting Star | fysiek, priority | 40 kracht, +1 priority (vallende ster, de Mach Punch van Cosmic) |
 | Black Hole | special, middel | 80 kracht, het doelwit kan niet wisselen (zwaartekracht trekt) |

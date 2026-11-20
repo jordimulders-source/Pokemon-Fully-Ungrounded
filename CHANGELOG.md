@@ -2439,3 +2439,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.590] - Nazca-astronaut: r7 bewaard, startprompt r8 zonder bijlage
 - r7 (kopie van r6, plat) in `gemini/r7/`; r8: vastgelegd ontwerp in woorden, nieuw gesprek zonder bijlage.
+
+### [v0.0.591] - Nazca-astronaut: r8 eerste sprite, r9 benen-spleet
+- r8 (prompt in woorden, geen bijlage) = eerste echte sprite; r9: spleet tussen de benen hoog in het lichaam (Jordi).

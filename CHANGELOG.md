@@ -2359,3 +2359,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.565] - Overzichtsvel: blobfish fase 2 erbij
 - Blobfish fase 2 ("pudding", Water) staat nu op het overzichtsvel, naast fase 1 (Jordi: "die is helemaal af").
+
+### [v0.0.566] - Spooktrein fase 3 opknappen: Gemini-prompt
+- Jordi: "het hele model hetzelfde blijven, maar de afwerking mag wat mooier en minder slordig". Prompt + bijlage (huidige sprite 8×): `docs/concept/sprites/spooktrein_fase3/gemini/opknap/`.

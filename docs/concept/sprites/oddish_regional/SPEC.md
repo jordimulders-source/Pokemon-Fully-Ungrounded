@@ -44,3 +44,6 @@
 - Gloom: `referenties/gemini_gekozen_gloom.png` (= `kelp_r3/gloom.png`).
 - Vileplume: `referenties/gemini_gekozen_vileplume.png` (= `kelp_r2/vileplume.png`). **Toegestane afwijking (Jordi, optie A):** in de spritefase de vele dunne tentakels per anemoon klonteren tot ±8–10 dikke tentakels op de modelplekken (anders rode ruis op 64×64).
 - Spritefase: Jordi "begin maar met oddish". Grootte: als de Oddish in de game (±33×35 px, voeten op dezelfde hoogte).
+
+## Vileplume-sprite: feedback Jordi (20 nov, op r3)
+"best al een aardige start, het moet wat netter afgewerkt worden. Je mag qua gelaat afwerken van het model, het zou leuk zijn als we de ogen wel goed kunnen zien. Linkerpoot is te recht en de anemonen zijn niet allemaal even netjes"

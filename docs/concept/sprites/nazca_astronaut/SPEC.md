@@ -20,6 +20,7 @@ Nieuwe Pokémon naast Sigilyph (Cosmic/Flying).
 - 20 nov: ledematen "A" + "creme" (Claude's optie A: wit/crème, de kleur van de Nazca-lijnen, licht zand op donkere grond). Handen en voeten gaan mee (zijn deel van de ledematen; Claude, te controleren bij Jordi).
 - 20 nov: "de kop is in het model heel effen zwart, daar mag je veel meer met schaduw en tint spelen".
 - 20 nov, spleet: "nog hoger dan 32, maar wel schuin aanlijnen"; "dat het einde een soort ^ is maar dan dunner"; gekozen r3-rij 28: "3 is correct en is misschien de enige keer dat het niet uitmaakt dat er lange rechte lijnen in een sprite zijn" ("gezien de nazca lijn"). Silhouet bevroren (`sprite_r3/astro_A_rij28.png`).
+- 20 nov, patronen: "Ok nu moeten we meer aan het patroon gaan werken. Alles behalve de onderarmen en de benen onder de knie moeten bedekt worden met patronen"; "Kijk hiervoor naar sigilyph". (Kop: open of die meedoet; eerder "1 effen zwarte kleur".)
 - 20 nov (lore): "sigilyphs zijn guardians of an ancient city en deze astronauten waren compagnons, misschien wel de bewoners".
 - 20 nov: "dit wordt echt de lunatone van de solrock die sigilyph dan is".
 

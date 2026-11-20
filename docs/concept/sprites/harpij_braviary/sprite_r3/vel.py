@@ -16,7 +16,7 @@ mod=Image.fromarray(mm,'RGBA')
 def op(im,bg,s):
     b=Image.new('RGBA',im.size,bg); b.alpha_composite(im); return b.convert('RGB').resize((im.size[0]*s,im.size[1]*s),Image.NEAREST)
 G=16; BG=(232,232,232,255)
-boxes=[('kop',(15,8,37,30))]
+boxes=[('kop',(15,8,37,30)),('kuif',(13,3,43,18))]
 hs=[ (b[3]-b[1])*12 for _,b in boxes]
 V=Image.new('RGB',(3*512+4*G, 512+3*G+20+sum(hs)+len(hs)*(G+14)+80+120),(255,255,255)); d=ImageDraw.Draw(V)
 for i,(t,im) in enumerate((('r3',r2),('r2',r1),('model verkleind x0,66',mod))):
@@ -34,6 +34,6 @@ for t,b in boxes:
 eb=(19,15,29,23)
 pg=Image.open('../../../../../graphics/pokemon/pidgeot/anim_front_gba.png').convert('RGBA').crop((0,0,64,64))
 d.text((G,y),'oog 12x: r3 | r1 | r2 | model | Pidgeot (Gen 3)',fill=(0,0,0)); y+=14; x=G
-for im,b in ((r2,eb),(r1o,eb),(r1,eb),(mod,eb),(pg,(19,20,29,28))):
+for im,b in ((r2,eb),(r1o,eb),(r1,eb),(mod,eb),(pg,(7,20,20,29))):
     c=op(im.crop(b),BG,12); V.paste(c,(x,y)); x+=c.size[0]+G
 V.save('vel.png'); print(V.size)

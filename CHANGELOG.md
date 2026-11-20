@@ -2376,3 +2376,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Nieuw: een Steel/Cosmic-lijn waarin één Pokémon een satelliet is.
 - `TODO.md`: nieuwe sectie Ontwerpen met alles wat nog open staat.
 
+### [v0.0.570] - Rock/Water-idee terug, twee ideeën geschrapt
+- Rock/Water-lijn fontein ↔ gargoyle (Jordi, 16 nov) stond alleen op branch `ccr-02976dbb-9o96jp` (v0.0.433); nu in `IDEEEN.md` en `TODO.md`.
+- Geschrapt (Jordi, 20 nov): brandweerhond-Growlithe ("niet zo'n goed idee"), opossum (verwerkt in Abra; ook opossum-Kangaskhan).
+

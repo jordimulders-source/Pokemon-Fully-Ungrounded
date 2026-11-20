@@ -2306,3 +2306,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.550] - Hoatzin fase 2: ontwerp 2 bevroren
 - From scratch vereenvoudigd ontwerp (v10 r2, gespiegeld) als `MODEL.png`; oud model `MODEL_v1_oud.png`. SPEC bijgewerkt.
+
+### [v0.0.551] - Hoatzin fase 2: ontwerp 2 sprite s1–s9, overdracht
+- Sprite ontwerp 2 in `sprite2/s1–s9` (s10 in de maak): vorm en oog bevroren; open: tinten/schaduw/contrast per onderdeel, poten afwerken. Overdracht `hoatzin_fase2/OVERDRACHT.md`, retro aangevuld.

@@ -14,3 +14,10 @@ Jordi (20 nov): "ik heb sowieso niet het gevoel dat we een mooie sprite aan het 
 - Blauw gezicht + rood oog met zwart puntje (Latios/Sharpedo-vorm), haaksnavel, paarse gistbuik (variant D), donkere staart: Jordi keurde deze goed.
 - Pixelblad (gehele 3×-verkleining, modus per blok) gaf de juiste vorm; Jordi: "de rest klopt qua vorm".
 - Jordi's lijnen op een raster naast het model (r16) waren de duidelijkste feedback.
+
+## Ontwerp 2, sprite s1–s9 (20 nov): waarom het weer vastliep
+- Het ontwerp zelf werkt (Jordi: "een stuk simplistischer"); de vorm via kale reductie was snel goed (s2–s5).
+- Daarna kostte "niet blurry" 5 rondes: makers en keurders werkten in kleine pixelreparaties en regels, terwijl Jordi steeds hetzelfde zag: te weinig tinten per onderdeel (meestal 2, alleen de buik 3), te weinig schaduw/contrast, tinten die willekeurig lijken in plaats van de vorm te volgen.
+- Een keurder gaf PASS (s8) waar Jordi het blurry vond: de keuring keek naar regels, niet naar "ziet het eruit als een echte Gen 3-sprite".
+- Palet (15 kleuren) dwong tot samenvoegen; daardoor kreeg de snavel de nekkleur. Budget per kleurgroep vooraf uitrekenen.
+- Beter voor de volgende sessie: eerst per onderdeel een bestaande sprite kiezen als voorbeeld (honchkrow-vleugel, staraptor-borst, skarmory-poten, pidgeot-kuif) en de tintverdeling daarvan overnemen op de bevroren vorm, in één ronde; dan pas keuren, en Jordi's oog als maatstaf.

@@ -21,3 +21,4 @@ Nog niet gekozen (Gemini r1: `gemini/PROMPT.md`).
 - Keuzes (20 nov): expressie **blij** (^ ^), lampjes **paars**, lijf **amber + zwart** → `gemini/PROMPT_r3_vlieg.md`
 - r3 (`gemini/r3.png`), Jordi: "ok dit is een begin, ik vind het lichaam wat te harig, dat vertaalt sws niet goed naar een sprite, de posities van de vleugels zijn nog niet zo goed. Het oog heeft die niet perfect gedaan zoals je vroeg, denk dat de oogstrepen ook dikker mogen, zijn zn voelsprieten normaal ook niet groter? Daarnaast mag het zwart geel gestreept, amber gaat weg"
 - Jordi (20 nov): "en de poten moeten wat groter denk ik, om het naar een sprite te vertalen"
+- Jordi (20 nov): vleugels "mea culpa, behoud maar zo"; "Poten moeten ietsje dikker, anders worden het 1 pixel lijnen. Strepen alleen op het achterlijf, daarvoor maar zwart doen dan?" → kop/borststuk zwart, achterlijf zwart-geel gestreept; voelsprieten kort zoals een echte huisvlieg (niet gewijzigd) → `gemini/PROMPT_r4.md`

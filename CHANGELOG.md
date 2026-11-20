@@ -2378,3 +2378,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Vlieglijn wordt 2 fases: vlieg → mug (fruitvlieg en horzel vervallen); poten als stroomkabels blijven.
 - Vlieg: prompt r3 (LED-ogen met blije paarse expressie, amber + zwart, stroomkabelpoten).
 - Vlieg r3 bewaard met Jordi's feedback.
+- Vlieg: prompt r4 (glad lijf, zwart + zwart-geel achterlijf, dikkere poten, ^ ^-ogen).

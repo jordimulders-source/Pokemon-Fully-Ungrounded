@@ -2400,3 +2400,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.577] - Nazca-astronaut: besluiten en Gemini-startprompt r1
 - Jordi: Cosmic/Normal, counterpart van Sigilyph, echt wezen. SPEC bijgewerkt (met Sigilyph-ontwerptaal); `gemini/PROMPT.md` r1 voor een nieuw gesprek zonder bijlage.
+
+### [v0.0.578] - Nazca-astronaut: paar met Sigilyph zoals Lunatone/Solrock
+- Prompt r1: vergelijkbare motieven, andere kleuren dan Sigilyph; een paar zoals Lunatone en Solrock (Jordi).

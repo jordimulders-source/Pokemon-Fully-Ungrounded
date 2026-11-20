@@ -7,6 +7,7 @@ Nieuwe Pokémon naast Sigilyph (Cosmic/Flying).
 - 20 nov: volgende ontwerp na de Cosmic-ronde.
 - 20 nov: "cosmic/normal. Hij wordt een counterpart van Sigilyph, dus de manier waarop Sigilyph ontworpen is mag lijken op het astronaut ontwerp. Dus het is een echt wezen".
 - 20 nov: "misschien vergelijkbare motieven, maar dan andere kleuren".
+- 20 nov: "dit wordt echt de lunatone van de solrock die sigilyph dan is".
 
 ## Achtergrond (Claude)
 - *El Astronauta* / de uilman: geoglief van ±30 m op een heuvelhelling bij Nazca (de meeste figuren liggen op de vlakte). Ronde kop met twee grote ronde ogen, een arm omhoog en een arm omlaag, en voeten. Hij is herkenbaar aan het ruimtepak-achtige silhouet. De naam "astronaut" komt uit de alien-theorieën; archeologen zien er eerder een mens of een uil in.

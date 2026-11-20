@@ -1,13 +1,13 @@
 # Nazca-astronaut – Gemini-startprompt (r1, nieuw gesprek, geen bijlage)
 
-Besluiten: `../SPEC.md`. Jordi: "misschien vergelijkbare motieven, maar dan andere kleuren" (20 nov). Cosmic/Normal, counterpart van Sigilyph, "de manier waarop Sigilyph ontworpen is mag lijken op het astronaut ontwerp", "een echt wezen".
+Besluiten: `../SPEC.md`. Jordi: "misschien vergelijkbare motieven, maar dan andere kleuren" (20 nov); "dit wordt echt de lunatone van de solrock die sigilyph dan is" (20 nov). Cosmic/Normal, counterpart van Sigilyph, "de manier waarop Sigilyph ontworpen is mag lijken op het astronaut ontwerp", "een echt wezen".
 Voorstellen Claude (niet van Jordi): pose van de geoglief (een arm omhoog, een arm omlaag); Sigilyph's motieven in woorden; staand in plaats van zwevend; geen bijlage (GEMINI.md: geen extra referenties).
 
 ---
 
 ```
 Design a new Pokémon based on "El Astronauta" (also called the Owlman), the Nazca geoglyph on a hillside in Peru: a figure with a big round head with two huge round eyes, one arm raised and one arm pointing down, and short legs with feet.
-Its type is Cosmic/Normal. It is the counterpart of the Pokémon SIGILYPH (which is based on the Nazca bird geoglyphs): use the same design language as Sigilyph, but it must be its own creature, not Sigilyph.
+Its type is Cosmic/Normal. It is the counterpart of the Pokémon SIGILYPH (which is based on the Nazca bird geoglyphs): use the same design language as Sigilyph, but it must be its own creature, not Sigilyph. The two are a pair the way LUNATONE and SOLROCK are a pair: clearly made for each other, but contrasting.
 It is a real living creature, not a flat line drawing on the ground.
 Draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style): pixel art, 64×64, max 16 colors, dark selout outline, plain white background.
 

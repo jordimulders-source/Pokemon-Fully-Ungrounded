@@ -1,11 +1,23 @@
-# Nazca-astronaut – Gemini-prompt r7 (bijlage r6)
+# Nazca-astronaut – Gemini-startprompt r8 (NIEUW gesprek, GEEN bijlage)
 
-Bijlage: `r6/r6.png`. Jordi (20 nov): "vraag of die hier een driekwart sprite van kan maken in deze pose". Lichaam ("vreselijk") en "kleuren nog niet helemaal" bewust nog niet in deze ronde (max. 1–2 wijzigingen per bijlageronde).
+r6/r7: platte bijlage wordt gekopieerd, nooit een sprite. Nu het ontwerp vastligt (Jordi's inkleuring + pose), opnieuw in woorden zonder bijlage.
+Niet van Jordi: driekwart naar links (Jordi vroeg driekwart in r7); kleur handen/voeten niet genoemd en dus niet gespecificeerd.
 
 ---
 
 ```
-Make a three-quarter view sprite of the attached character, in this same pose.
-It must be a real official Gen 3 front sprite (Ruby/Sapphire/Emerald style): pixel art, 64×64, max 16 colors, Gen 3 shading with light and dark tones, dark selout outline, plain white background. Three-quarter view facing left, like every Gen 3 front sprite.
-Keep the same character: same pose, same colors and markings.
+Draw a new Pokémon as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style): pixel art, 64×64, max 16 colors, Gen 3 shading with light and dark tones, dark selout outline, plain white background. Three-quarter view facing left.
+It is based on the Nazca geoglyph "El Astronauta" and is the counterpart of SIGILYPH. Type Cosmic/Normal.
+
+SHAPE (the geoglyph): a big round head; a long, narrow body; one arm raised with the hand next to the head; the other arm hanging down and out; two long legs with rounded feet. 2 arms, 2 legs.
+
+COLORS AND MARKINGS (exactly this):
+- HEAD: one flat solid black color.
+- EYES: white circles with a blue circle inside.
+- ARMS: yellow, with stripes at the end of each arm: blue, red, blue (three stripes in total).
+- LEGS: the same as the arms: yellow, with blue, red, blue stripes at the end.
+- BODY: the only part with a pattern: Sigilyph's zigzag pattern.
+No mouth, neutral empty stare. Nothing else: no other patterns, no stars.
+
+DO NOT: no ground, no shadow, no glow, no effects; not cute, not a robot.
 ```

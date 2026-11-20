@@ -2436,3 +2436,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.589] - Nazca-astronaut: r6 bewaard, prompt r7 (driekwart sprite)
 - r6 (kleuren redelijk, geen sprite, lichaam "vreselijk") in `gemini/r6/`; r7 vraagt op Jordi's verzoek een driekwart sprite in dezelfde pose.
+
+### [v0.0.590] - Nazca-astronaut: r7 bewaard, startprompt r8 zonder bijlage
+- r7 (kopie van r6, plat) in `gemini/r7/`; r8: vastgelegd ontwerp in woorden, nieuw gesprek zonder bijlage.

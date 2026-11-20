@@ -25,3 +25,4 @@ Nog niet gekozen (Gemini r1: `gemini/PROMPT.md`).
 - r4 (`gemini/r4.png`), Jordi: "beter, hij hoort alleen geen mond te hebben en het oog idee werkt nu niet, je wilde de led lampjes zwart maken? Dan moeten we misschien het hoofd een andere kleur geven?"
 - Jordi (20 nov): "de kabels vloeken nu wel met het achterlichaam, dus misschien moeten we het achterlichaam ook aanpassen"
 - Jordi (20 nov): "kop wordt grijs dan"
+- Jordi (20 nov) "akkoord": achterlijf grijs met een paar grote zwarte vlekken (donkere middenlijn + 2–3 vlekken per kant, vereenvoudigd huisvliegpatroon; exacte vlekken zet de maker), vleugels lichter (bijna wit, koel blauw) → `gemini/PROMPT_r5.md`

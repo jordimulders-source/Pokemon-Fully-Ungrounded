@@ -60,3 +60,4 @@ Lijn (besloten 20 nov): **vlieg → mug, 2 fases** (reguliere vlieg; fruitvlieg 
 - Jordi (20 nov): "ringen a, zwart vak is weg maar je hebt de vorm van het rechteroog veranderd"
 - Jordi (20 nov) over r15: "kleurgebruik in rechteroog moet beter, schaduw, etc, hoe je het led effect creeert" · "Aansluiting van de poten is niks verbeterd"
 - Jordi (20 nov) over r16: "p1 ok, maar het zijn nog steeds akllemaal rechte lijnen, die mogen iets schuiner. Oog o2"
+- Jordi (20 nov) over r17, krabbel `sprite_r17/krabbel_jordi_r17.png`: "de pixels in deze lijn lezen op een afstand als een rechte lijn, dat is waar eerst de buis zat, die moeten consistenter met de rest van de sprite"

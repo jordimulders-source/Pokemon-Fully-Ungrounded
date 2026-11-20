@@ -1,5 +1,6 @@
 # Gemini-prompts kelp → minerale bol → bron met anemonen, v1 (20 nov)
 Besluiten Jordi: Oddish = kelp, Water/Grass, lijf basaltgrijs/zwart ("oddish moet wel een andere kleur anders verschilt die niet genoeg"); Gloom = G2 minerale bol "met wat slap hangende zijbladen misschien", Water/Fire; Vileplume = heetwaterbron omringd door anemonen, Water/Fire; geen partners.
+Fire bij Gloom (Jordi, 20 nov: "1, 2 en 3 kan allemaal samen denk ik toch"): gloeiende kieren, verschroeide kelp, gloeiend kwijl.
 Keuzes Claude (niet besproken): basaltgrijs ook voor Gloom en Vileplume; kelp olijf/goudbruin (Eisenia); Fire als oranje gloed, geen vlammen/rook.
 Elk in een nieuw gesprek, geen bijlagen.
 
@@ -32,9 +33,9 @@ CONCEPT
 - Gloom from the deep-sea hydrothermal vents near the Galápagos. Type: Water/Fire. It evolves from an Oddish with five olive-brown kelp blades on its head, after sinking into the dark deep sea.
 - Body, face and pose of Gloom's Gen 3 front sprite: the round body, the short arms held out, the short legs, the squinting closed eyes and the wide open drooling mouth.
 - Body color: dark basalt grey.
-- On top: a young hydrothermal vent forming. A big lumpy, irregular mound of mineral crust grows on the head, built from stacked rough layers of black and dark grey sulfide with patches of pale yellow sulfur and rusty orange crust. It is uneven and knobbly, like a rock that grew, not a smooth or segmented bud. Hot orange light shows in a few small openings at the top.
-- A few wilted kelp blades, faded to a dull brown, hang limply down from under the mound on the left and right, like dying leaves in the dark.
-- The drool is dark, sulfurous vent water.
+- On top: a young hydrothermal vent forming. A big lumpy, irregular mound of mineral crust grows on the head, built from stacked rough layers of black and dark grey sulfide with patches of pale yellow sulfur and rusty orange crust. It is uneven and knobbly, like a rock that grew, not a smooth or segmented bud. Jagged cracks run through the crust and glow orange-red from the heat inside, like cooling lava.
+- A few wilted kelp blades, faded to a dull brown, hang limply down from under the mound on the left and right. Their tips are scorched black by the heat, with a thin glowing orange edge, like burning paper.
+- The drool is glowing orange-hot vent water, and the inside of the open mouth glows like a furnace.
 
 POSE
 - Three-quarter view facing left, the classic Gloom pose.

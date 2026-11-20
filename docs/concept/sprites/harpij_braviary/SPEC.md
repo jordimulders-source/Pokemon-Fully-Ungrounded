@@ -20,6 +20,7 @@
 - r6 (`gemini/r6.png`, bijsturen), Jordi: "klauwen zijn goed, maar hij voegt maar 1 veer toe en aan de verkeerde kant, ik wilde lager 2 veren erbij, laten we dat in een nieuw gesprek proberen". Op vragen: aan elke kant 1 veer erbij (lager) · bijlage r6 (met de r6-extra veer links weer weg).
 - r7 (`gemini/r7.png`, nieuw gesprek met r6), Jordi: "dit gaat fout. Vraag maar alleen om extra veren". (Gemini haalde 2 veren weg en zette de nieuwe veren als oren opzij van de kop.)
 - r8 (`gemini/r8.png`, nieuw gesprek met r6), Jordi: "Gemini snapt er helemaal geen bal van, ik heb nog 1 suggestie, laten we vragen of die van de veren een soort hoofdtooi kan maken, misschien dat die het dan wel doet".
+- r9 (`gemini/r9.webp`, hoofdtooi), Jordi: "ben bang dat dit hem ook niet is, hij heeft de verkeerde stijl veren erop geplakt".
 
 ## Regionale Rufflet
 - 20 nov: "Rufflet wordt juist regionaal" · "Perrserker idee": de regionale Rufflet evolueert in de harpij.

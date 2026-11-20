@@ -2385,3 +2385,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Besloten (Jordi, 20 nov): reuzenkokerworm; Oddish Water, Gloom en Vileplume Water/Fire; Oddish-lichamen en gelaat blijven, "niet veel uitmaakt wat je er bovenop zet"; Oddish wit als de koker met de rode pluim bovenop. `docs/concept/sprites/oddish_regional/SPEC.md`.
 - Gemini-prompt fase 1: `docs/concept/sprites/oddish_regional/gemini/PROMPT_v1_fase1.md`.
 
+### [v0.0.572] - Onderwater-Oddish-lijn geschrapt
+- Gemini-rondes (20 nov): kokerworm-Oddish lukte (v5, kolonie r1); Gloom/Vileplume werden palette swaps (schoorsteen) of kwasten/taarten (kolonie). Jordi: "ja hier doen we een streep doorheen" (de hele lijn). Doorgestreept in `IDEEEN.md`, `POKEMON.md`, `TODO.md`; naslag `docs/concept/sprites/oddish_regional/`. Les in `GEMINI.md`.
+

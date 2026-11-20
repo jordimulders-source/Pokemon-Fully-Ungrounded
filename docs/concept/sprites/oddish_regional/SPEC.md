@@ -1,4 +1,6 @@
-# Onderwater-Oddish-lijn (Galápagos, regional form)
+# Onderwater-Oddish-lijn (Galápagos, regional form) — GESCHRAPT
+
+**Geschrapt (Jordi, 20 nov):** "ja hier doen we een streep doorheen": de hele lijn, ook de kokerworm-Oddish. Bestanden blijven als naslag.
 
 ## Besloten (Jordi letterlijk)
 - 9 nov: "Dit gaan we stelen, maar dan wel in een andere vorm en water/fire" (aanleiding: anemoon-Oddish-fan-art van iemand anders; ons ontwerp moet eigen zijn). Geen Bellossom-tak.

@@ -2299,3 +2299,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - `v7_r4_snavel.png`: snavel van v6 r1 op v7 r4 geplakt (slijm weg), op verzoek van Jordi.
 - Prompt: v7_r4_snavel netjes opnieuw laten tekenen, buik #8E6280 (Jordi).
 - Fase 2 model bevroren: `docs/concept/sprites/hoatzin_fase2/MODEL.png` (v7 r4 met snavel van v6 r1); kleur van de buik in de spritefase (Jordi).
+
+### [v0.0.549] - Hoatzin fase 2: eerste ontwerp gestopt, retro
+- 25 spriterondes (r1–r25) op het eerste Gemini-model; Jordi: "misschien klopt het hele ontwerp wel niet" → opnieuw from scratch, vereenvoudigd (B). Retro: `docs/concept/sprites/hoatzin_fase2/RETRO.md`.

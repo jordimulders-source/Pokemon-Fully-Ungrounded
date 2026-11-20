@@ -2,8 +2,8 @@
 # kuifplukken: polylijnen (x,y) van uiteinde naar basis bij de kop
 PLUK={
  'A':[(7,11),(9,15)],                           # buitenste streng links, dun tegen de lucht
- 'B':[(12,9),(12,15),(11,17)],                  # staande streng in de linker kwab
- 'C':[(15,12),(14,15),(14,17)],                 # streng in de middelste kwab
+ 'B':[(12,9),(12,15),(11,17),(11,19)],                  # staande streng in de linker kwab
+ 'C':[(15,12),(14,15),(13,19)],                 # streng in de middelste kwab
  'D':[(22,10),(16,16)],                         # lange diagonaal (tip (23,10) valt buiten het silhouet)
  'E':[(24,14),(20,16),(18,17)],                 # vlakke streng naar rechts
  'F':[(28,19),(24,17),(21,18)],
@@ -29,3 +29,5 @@ def xy(p):
     t=math.radians(p[0]); return (int(math.floor(C[0]+p[1]*math.cos(t))),int(math.floor(C[1]+p[1]*math.sin(t))))
 def hoek(x,y):
     return math.degrees(math.atan2(y+.5-C[1],x+.5-C[0])), math.hypot(x+.5-C[0],y+.5-C[1])
+# dekverenband langs de voorrand (r22): lichte strepen schuin omhoog, afgelezen op het model (22x-uitsnede x22-40, y12-42)
+BAND=[[(25,37),(30,25),(32,19)],[(28,37),(33,27)]]

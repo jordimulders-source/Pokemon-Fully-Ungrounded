@@ -38,3 +38,4 @@
 - **Model bevroren: `MODEL.png` = `gemini/v10_r2.png` gespiegeld** (Jordi: "ik denk dat we deze moeten gaan bouwen. Het design lijkt me een stuk simplistischer nu, de haren kunnen we kijken in de sprite hoe ze eruit zien, spiegel de afbeelding en ga van start"). Oud model: `MODEL_v1_oud.png`, oude rondes `sprite/r1–r25`.
 - Kenmerken: dreighouding met half opgeheven vleugels, voorovergebogen, snavel open (sissend), rafelige rode-bruine punkkuif, blauw kaal gezicht, rood oog met zwart puntje, grijze haaksnavel, crème nek, paarse hangende krop, bijna zwart blauw-paarse vleugels/rug/staart met crème staartpunt, grijze poten met lichte klauwen.
 - Kuif: lengte beoordelen in de sprite.
+- Kop groter in de sprite? Jordi: "nee een hoatzin heeft ook een en kleine kop, laten we kijken hoe ver we komen" → kopmaat volgens het model.

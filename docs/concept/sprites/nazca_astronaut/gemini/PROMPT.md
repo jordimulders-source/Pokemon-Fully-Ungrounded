@@ -2,12 +2,14 @@
 
 Bijlagen: (1) Sigilyph-sprite (`bijlage/sigilyph.png`), (2) silhouet (`silhouet/silhouet_r2.png`).
 Jordi (na r3): "een sigilyph counter part, dus in ontwerp heel vergelijkbaar, maar dan andere kleuren en een lichte afwijking". Daarom: Sigilyph als basis (Gemini kopieert bijlagen, hier is dat gewenst), onderdelen herschikt in het astronaut-silhouet.
+Lore (Jordi, 20 nov): "sigilyphs zijn guardians of an ancient city en deze astronauten waren compagnons, misschien wel de bewoners" (in de prompt).
 Per onderdeel (Claude, letterlijk van Sigilyph overgezet, niets nieuws): kop met kuif en oog → ronde kop met twee ogen in dezelfde stijl; ronde romp met zigzagband en oogvlekken → zelfde romp, langer; vleugels met veerpunten → de twee armen; drietandhanden → handen; staartveren → benen; zweeft. Kleuren: niet opgegeven door Jordi, alleen "andere".
 
 ---
 
 ```
 Attachment 1 is the Pokémon SIGILYPH. Attachment 2 is the silhouette of the Nazca geoglyph "El Astronauta".
+Lore: Sigilyph are the guardians of an ancient city; these astronauts were their companions, maybe even the inhabitants of that city.
 Make a counterpart of Sigilyph: a Pokémon that is VERY SIMILAR to Sigilyph in design, built from the same kinds of parts in the same style, but rearranged into the astronaut's silhouette, and with different colors.
 
 Take Sigilyph's parts and rearrange them:

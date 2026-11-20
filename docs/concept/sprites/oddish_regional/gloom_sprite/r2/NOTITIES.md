@@ -1,0 +1,2 @@
+# Gloom-regional r2 (kandidaat voor Jordi)
+r1 + 13 pixelwissels uit de keuring (`wissels.py`, oude waarden gecontroleerd): selout i.p.v. zwart aan de lichtkant links (16,30–33 en 16,37); hooglicht van de donkere kelpschaduw af naar het lichtste modelpunt; khaki-pixel uit de kelpspleet rechts; kelp rechts twee tinten naar de modelmeting; linkervinnetje 1 px lichter. Kelppunten blijven fel oranje aan de rand (model heeft daar een gloedrand; keurder: liever zo laten).

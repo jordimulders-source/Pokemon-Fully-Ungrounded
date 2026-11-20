@@ -3,6 +3,7 @@
 Fase 3 (stoomtrein, Steel/Ghost) wordt in een andere sessie gemaakt: `../spooktrein_fase3/`. Typing van de lijn (Jordi, 15 nov): puur Steel → Steel/Ghost → Steel/Ghost.
 
 ## Fase 1 (Steel)
+- **Af** (Jordi, 20 nov: "lopende lijnen zijn allemaal af"). Bestanden staan nog niet in de repo.
 - Jordi: "Fase 1 is een kleine schroothoop met treinspullen, en dan 1 van deze geroeste stalen spullen heeft dan ogen, zodat het wel een pokemon is."
 
 - Jordi (16 nov): "nee in fase 1 zat er nog geen geest, het is gewoon een hoop met metaal dat sentient is, zoals andere steel pokemon ook sentient kunnen zijn, maar het is wel een zwakke pokemon"

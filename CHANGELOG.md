@@ -2374,3 +2374,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Fruitvlieg Gemini r1 bewaard; Jordi: "dit is net beedrill".
 - Fruitvlieg r1: Jordi denkt na over richting en kleuren.
 - Fruitvlieg: prompt r2 (plat naar achteren gevouwen vleugels, amber, paarse ogen, poten als stroomkabels).
+- Fruitvlieg r2 bewaard; Jordi twijfelt of fruitvlieg en huisvlieg genoeg verschillen.

@@ -2460,3 +2460,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.597] - Nazca-astronaut: sprite r4 (kopglans, varianten op bevroren silhouet)
 - `sprite_r4/`: gebogen kopglans (naar Gastly), spleet rij 28 in A, B1, B2; alpha-diff 0 t.o.v. r3-rij28.
+
+### [v0.0.598] - Nazca-astronaut: zigzagpatroon r5–r8, keurder PASS
+- Patroon (Jordi: alles behalve onderarmen/onderbenen, naar Sigilyph, zigzag) in r5–r8; keurder r6 BIJNA → reparaties r7/r8 → herkeuring r8: P1 (zwart/groen/wit) en P2 (zwart/rood/wit) PASS op netheid en zigzag. `sprite_r8/nazca_r8_8x.png`.

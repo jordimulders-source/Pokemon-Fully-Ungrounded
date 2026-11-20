@@ -1,6 +1,6 @@
 # Harpij – Gemini-startprompt v4 (20 nov, nieuw gesprek, bijlage: bronfoto van Jordi)
 
-v3 + Jordi over r3: "te compact, te stocky", kuif "wederom niet goed", bronfoto erbij. "Compact"-regel geschrapt.
+v3 + Jordi over r3: "te compact, te stocky", kuif "wederom niet goed", bronfoto erbij (`../referenties/bronfoto_jordi_kuif.webp`). "Compact"-regel geschrapt.
 
 ---
 

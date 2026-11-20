@@ -2372,3 +2372,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.569] - Vlieglijn: start fruitvlieg
 - Nieuwe lijn fruitvlieg → huisvlieg → mug (Jordi, 20 nov); mug blijft Poison/Electric, typen fase 1–2 open. SPEC en Gemini-startprompt fase 1 in `docs/concept/sprites/vlieglijn_fase1/`.
 - Fruitvlieg Gemini r1 bewaard; Jordi: "dit is net beedrill".
+- Fruitvlieg r1: Jordi denkt na over richting en kleuren.

@@ -36,3 +36,4 @@
 - **Besloten (Jordi, 20 nov):** Oddish Water/Grass, Gloom en Vileplume Water/Fire; Oddish lijf basaltgrijs/zwart ("oddish moet wel een andere kleur anders verschilt die niet genoeg"). Prompts: `gemini/PROMPTS_kelp_bron_v1.md`.
 - **Kelp r1** (`kelp_r1/`), Jordi (20 nov): "wat vind je ervan?"
 - **Besloten (Jordi, 20 nov: "prima"):** per diepte aanpassen. Oddish zeegroen/turquoise met lichte buik, voetjes = kelp-hechtorgaan; Gloom dieprood/bordeaux, gelatineus lijf, vinnetjes i.p.v. armen; Vileplume wit/parelmoer, steltpoten (driepootvis), anemonen rood/oranje. Prompts `gemini/PROMPTS_kelp_bron_v2.md`.
+- **Kelp r3** (`kelp_r3/`): Gloom goed (lavabrok, kwijl); Vileplume-tentakels werden handjes. Jordi: "akkoord" met Vileplume v4 (`gemini/PROMPT_kelp_bron_v4_vileplume.md`).

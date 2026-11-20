@@ -56,6 +56,7 @@ items=[
 ("mate_fase2/af/mate2.png",'Mate-kano',"grass/water"),
 ("banette_evo/af/shuppetto.png",'"Shuppetto"',"ghost/dark"),
 ("skinguin/af/skinguin.png",'"Skinguin"',"ice/water"),
+("rufflet_regional/af/rufflet.png",'Rufflet (regionaal)',"flying"),
 ("harpij_braviary/af/harpij.png",'Harpij-arend',"steel/flying"),
 ]
 F="/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"; FR=F.replace("-Bold","")

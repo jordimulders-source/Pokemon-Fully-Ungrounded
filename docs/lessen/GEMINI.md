@@ -191,3 +191,4 @@ Wanneer Jordi een ontwerp in Gemini laat maken en kiest, gelden deze regels **in
 
 
 - **Afwijkingsgetal van de maker is een stopsignaal** (harpij r1, 20 nov): r1 week in 801/1380 px af van de kale reductie ("staalglans en volumeschaduw van mij"); Claude liet dat keuren i.p.v. af te keuren, 2 rondes pixel fixes later zag Jordi de rechte lijnen ("Je gaat me toch niet vertellen dat ze opnieuw getekend zijn he?"). Meer dan ±25 % afwijking buiten lijn/ruis = terug naar de kale reductie, vóór keuring.
+- **Bestaande map niet overschrijven** (Rufflet, 20 nov): `mkdir -p` + `cat >` op `SPEC.md` overschreef een SPEC van een eerdere sessie; eerst `ls`/`git log` op de map, dan aanvullen. **Oog dat niet leest:** Jordi wees naar het oog van de originele soort (regional form); pixel voor pixel overnemen + masker groter maakte het in 2 rondes goed.

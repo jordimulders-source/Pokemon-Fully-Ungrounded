@@ -2378,3 +2378,8 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.570] - Regionale Rufflet: SPEC en Gemini-startprompt
 - `docs/concept/sprites/rufflet_regional/` (SPEC met Jordi's besluiten en de beschrijving van zijn inspiratiefoto; `gemini/PROMPT.md` r1 voor een nieuw gesprek).
+
+### [v0.0.571] - Regionale Rufflet: frontsprite af
+- Fase 1 van de harpij-lijn (puur Flying, harpijkuiken), naar Gemini r1 ("Ik vind deze heel tof, pose goed, lijkt op rufflet"). Exacte 2×-reductie van het natieve raster (33×46).
+- Jordi's keuzes: groter grijs masker met Rufflets oog pixel voor pixel (r4A), Rufflets rode kuifveer korter (V3) met linkerrand opgeschoond en 2 bovenste rode pixels wit. Keurder BIJNA → PASS; eindkeuring Dragonfly Cave: 11 pixelfixes; verre (linker)vleugel één tint donkerder ("luister naar de gidsen").
+- Af: `docs/concept/sprites/rufflet_regional/af/rufflet.png` (+ `_8x.png`, `normal.pal`); op het overzichtsvel. Rufflets originele sprite als referentie in `referenties/`. Naam open.

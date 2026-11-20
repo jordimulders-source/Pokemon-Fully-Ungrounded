@@ -9,3 +9,6 @@ Lijn: fruitvlieg → huisvlieg → mug. Mug = Poison/Electric (Jordi, 22 okt). T
 
 ## Model
 Nog niet gekozen (Gemini r1: `gemini/PROMPT.md`).
+
+## Rondes
+- r1 (`gemini/r1.png`), Jordi: "dit is net beedrill, al lijkt die stiekem best veel op een ingezoomde fruitvlieg haha"

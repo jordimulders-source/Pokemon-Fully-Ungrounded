@@ -8,6 +8,8 @@ K = np.load('../s5/onderlaag.npy')
 BL = (2, 3, 4)
 def herkleur(B, uit):
     M = np.isin(B, BL)
+    M[49:, :] = False                                   # poten: eigen afwerking
+    M[:, :15] = False                                   # gezicht/snavel
     for x, y in uit: M[y, x] = False
     T = B.copy()
     for y, x in zip(*np.where(M)):

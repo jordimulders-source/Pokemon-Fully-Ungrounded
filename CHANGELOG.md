@@ -2377,3 +2377,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Fruitvlieg r2 bewaard; Jordi twijfelt of fruitvlieg en huisvlieg genoeg verschillen.
 - Vlieglijn wordt 2 fases: vlieg → mug (fruitvlieg en horzel vervallen); poten als stroomkabels blijven.
 - Vlieg: prompt r3 (LED-ogen met blije paarse expressie, amber + zwart, stroomkabelpoten).
+- Vlieg r3 bewaard met Jordi's feedback.

@@ -2388,3 +2388,5 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.572] - Onderwater-Oddish-lijn geschrapt
 - Gemini-rondes (20 nov): kokerworm-Oddish lukte (v5, kolonie r1); Gloom/Vileplume werden palette swaps (schoorsteen) of kwasten/taarten (kolonie). Jordi: "ja hier doen we een streep doorheen" (de hele lijn). Doorgestreept in `IDEEEN.md`, `POKEMON.md`, `TODO.md`; naslag `docs/concept/sprites/oddish_regional/`. Les in `GEMINI.md`.
 
+### [v0.0.573] - Onderwater-Oddish-lijn weer open
+- Jordi (20 nov): onderwateridee blijft; Vileplume = heetwaterbron omringd door zeeplanten/anemonen, Oddish anemonen/kelp/"wat dan ook", Gloom "iets van een bol"; geen partners in de sprite. Referenties: andermans regionale Vileplumes en de anemoon-fan-art in `docs/concept/sprites/oddish_regional/referenties/`.

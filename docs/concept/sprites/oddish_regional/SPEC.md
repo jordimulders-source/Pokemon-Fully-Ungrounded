@@ -1,6 +1,6 @@
-# Onderwater-Oddish-lijn (Galápagos, regional form) — GESCHRAPT
+# Onderwater-Oddish-lijn (Galápagos, regional form) — opnieuw (20 nov)
 
-**Geschrapt (Jordi, 20 nov):** "ja hier doen we een streep doorheen": de hele lijn, ook de kokerworm-Oddish. Bestanden blijven als naslag.
+**Kokerworm-richting geschrapt (Jordi, 20 nov):** "ja hier doen we een streep doorheen": de hele lijn, ook de kokerworm-Oddish. Bestanden blijven als naslag.
 
 ## Besloten (Jordi letterlijk)
 - 9 nov: "Dit gaan we stelen, maar dan wel in een andere vorm en water/fire" (aanleiding: anemoon-Oddish-fan-art van iemand anders; ons ontwerp moet eigen zijn). Geen Bellossom-tak.
@@ -25,3 +25,8 @@
 - Jordi (20 nov): "ik dacht dat we echt een inspiratiebron hadden die het stuk op het hoofd veranderen". Terug naar het idee van 9 nov (één kokerworm-inspiratie, kolonie groeit); prompts `gemini/PROMPTS_lijn_kolonie_v1.md`. Jordi: "doe prompts voor alle 3 en dan besluit ik of we ermee doorgaan".
 - **Kolonie r1** (`kolonie_r1/`), Jordi (20 nov): "Klopt dit met je idee?"
 - **Kolonie r2** (`kolonie_r2/`), Jordi (20 nov): "deze zijn allebei niks he".
+
+## Nieuwe richting (20 nov)
+- Jordi: "maar ik vind het onderwater idee wel tof"; over de fan-art: "dit is de tofste tot nu toe, maar dit kunnen wij beter".
+- Jordi: "ik vond opzich het idee van vileplume niet zo verkeerd met een heetwaterbron die omringd wordt door zeeplanten/anemonen of iets in die richting, oddish heeft dan iets van anemonen, of kelp, of wat dan ook. Gloom moet idd iets van een bol hebben."
+- Jordi: "we doen geen partners in de sprite".

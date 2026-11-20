@@ -13,6 +13,8 @@ Nieuwe Pokémon naast Sigilyph (Cosmic/Flying).
 - 20 nov (na r4): "hij moet het silhouet niet aanpassen"; "het is puur de inkleuring".
 - 20 nov (na r5, inkleuring): "Hoofd wordt 1 effen zwarte kleur. De ogen witte cirkels met een blauwe cirkel erin. de armen worden geel met aan het uiteinde een blauw/rood/blauw streep, drie strepen totaal. hetzelfde voor de benen. Dan het lichaam wordt als enige een sigilyph zigzagpatroon".
 - 20 nov (r8, eerste echte sprite): "ah kijk beter, de pose klopt nog niet helemaal en de humor in de nazca lijn is dat de ruimte tussen de benen best hoog tot in het lichaam oploopt, laten we dat nog wijzigen".
+- 20 nov (r11): "ok dit wordt het model. Het enige wat je aanpast aan het silhouet is de ruimte tussen de benen." Model: `model/model.png`. Spleet: tussen r9 (te hoog) en r10 (te laag).
+- 20 nov (lore, kleuren): "De lore is dat Sigilyph de protectors waren van deze pokemon. Is het dan logisch dat ze dezelfde kleuren hadden of moeten we deze juist wat anders maken" (open).
 - 20 nov (lore): "sigilyphs zijn guardians of an ancient city en deze astronauten waren compagnons, misschien wel de bewoners".
 - 20 nov: "dit wordt echt de lunatone van de solrock die sigilyph dan is".
 

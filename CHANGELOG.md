@@ -2445,3 +2445,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.592] - Nazca-astronaut: r9/r10 bewaard, prompt r11 (handpositie)
 - Spleet tussen de benen: r9 te hoog, r10 te laag; wordt in de spritefase tussen beide gezet. r11: opgeheven hand naast de kop (geoglief).
+
+### [v0.0.593] - Nazca-astronaut: model gekozen (r11)
+- `model/model.png` = Gemini r11; alleen de spleet tussen de benen wordt nog aangepast (tussen r9 en r10). Kleuren: brainstorm open.

@@ -17,3 +17,4 @@
 - **v3** (`r3/gemini_v3.png`, bijlagen v2 + v1), Jordi (20 nov): "komt dit meer in de buurt?"
 - **v4** (`r4/gemini_v4.png`, bijlagen v2 + v3), Jordi (20 nov): "niet zo goed he". (Claude: gladde zalmroze knoppen met klauwtjes aan de punt, garnaal/ui; draadstructuur weg.)
 - Jordi (20 nov): "misschien de referenties weglaten" → prompt v5 zonder bijlagen.
+- **v5** (`r5/gemini_v5.png`, zonder bijlagen), Jordi (20 nov): "dit is al wat beter toch".

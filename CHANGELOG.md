@@ -2380,3 +2380,8 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Rock/Water-lijn fontein ↔ gargoyle (Jordi, 16 nov) stond alleen op branch `ccr-02976dbb-9o96jp` (v0.0.433); nu in `IDEEEN.md` en `TODO.md`.
 - Geschrapt (Jordi, 20 nov): brandweerhond-Growlithe ("niet zo'n goed idee"), opossum (verwerkt in Abra; ook opossum-Kangaskhan).
 - Ook overgenomen van die branch: fontein/gargoyle-prompts geschrapt en "uitwerking nog niet forceren"; vicuña/guanaco alleen met een leuk idee (Jordi, 16 nov).
+
+### [v0.0.571] - Onderwater-Oddish-lijn: start
+- Besloten (Jordi, 20 nov): reuzenkokerworm; Oddish Water, Gloom en Vileplume Water/Fire; Oddish-lichamen en gelaat blijven, "niet veel uitmaakt wat je er bovenop zet"; Oddish wit als de koker met de rode pluim bovenop. `docs/concept/sprites/oddish_regional/SPEC.md`.
+- Gemini-prompt fase 1: `docs/concept/sprites/oddish_regional/gemini/PROMPT_v1_fase1.md`.
+

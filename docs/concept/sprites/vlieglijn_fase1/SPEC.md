@@ -8,7 +8,10 @@ Lijn (besloten 20 nov): **vlieg → mug, 2 fases** (reguliere vlieg; fruitvlieg 
 - 20 nov: "Waar ze voorkomen is niet belangrijk, we gaan aan het design werken"
 
 ## Model
-Nog niet gekozen (Gemini r1: `gemini/PROMPT.md`).
+`model/model.png` (20 nov): r8 (ogen, bolle achterlijfvorm, rest) met strepen zoals r7 op het achterlijf (`model/plak.py`: gebogen banden met de r7-tinten). Bevroren ontwerp zodra Jordi het goedkeurt.
+
+## Toegestane afwijkingen van het model
+1. Zes poten in de sprite (Gemini tekende er 4; Jordi: "Gemini kan namelijk niet tellen"). Hoe de extra poten erbij komen: nog met Jordi afstemmen.
 
 ## Rondes
 - r1 (`gemini/r1.png`), Jordi: "dit is net beedrill, al lijkt die stiekem best veel op een ingezoomde fruitvlieg haha"
@@ -31,3 +34,4 @@ Nog niet gekozen (Gemini r1: `gemini/PROMPT.md`).
 - r6 (`gemini/r6.png`), Jordi: "laten we het achterlijf ook iets mechanischer maken en de vleugels misschien ook wel, ietsje scherper. De kabelpoten zijn eigenlijk nog niet echt mooi he, misschien moeten we dat iets meer in vorm doen, hoe doet xurkitree dat?"
 - Jordi (20 nov) over het kabelvoorstel naar Xurkitree (ronde kabel met glans, ringen bij de knieën, voeten = twee koperdraadjes, geel lijntje weg): "ja zo, schrijf r7 maar" → `gemini/PROMPT_r7.md`
 - r7 (`gemini/r7.png`), Jordi: "kijjk nu begint het op een pokemon te lijken. Het achterlichaam is alleen nog iets teveel bij en te weinig vlieg met dat scherpe uiteinde, hoort dat? Als dat nog boller kan dan zijn we er wel denk ik, wat vind jij?" → `gemini/PROMPT_r8.md`
+- r8 (`gemini/r8.png`), Jordi: "Ogen zijn beter, stippen minder mooi dan strepen, lichaamsvorm wel goed, kan je die twee op elkaar plakken en hebben we dan een model? Ik tel wel maar 4 poten, maar gemini gaat dat niet meer beter doen"; "Gemini kan namelijk niet tellen" → `model/model.png`

@@ -2383,3 +2383,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Vlieg: Bug/Electric, robotischer; r5 bewaard, prompt r6.
 - Vlieg: prompt r7 (mechanischer achterlijf, scherpere vleugels, kabelpoten naar Xurkitree).
 - Vlieg: r7 bewaard ("nu begint het op een pokemon te lijken"); prompt r8 (boller achterlijf).
+- Vlieg: model samengesteld (r8 + strepen van r7) in `vlieglijn_fase1/model/`.

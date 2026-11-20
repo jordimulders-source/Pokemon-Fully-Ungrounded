@@ -35,9 +35,54 @@
 # SNAVEL (staal): tinten per pixel uit het model (rug licht u, lijf t, bek-/onderlijn s), buitenlijn K, selout s links
 14 4 sttu
 15 3 suttts
-16 2 suttttts
-17 1 sutttttts
+16 2 sutttts
+17 1 suttttts
 18 1 sustttsss
 19 1 KtsstssK
 20 2 KKKKK
 21 3 K
+# DIJEN: wit met donkere banden op de modelplekken (licht r41, band r42-43, licht r44, band r45, licht r46-47); tinten uit het model (>=215 W, 165-215 i, 120-165 h, 45-120 a, <45 K)
+42 9 Kaaahiiiihhhiha
+43 10 Kaaaaiiihaaaaaah
+44 11 hiiihaahiiiiiha
+45 11 KaaaaaKKKaaaaaa
+46 12 hhhiiKKKKhhhiih
+47 12 Kahhh..KKhWWWa
+# LOOPBENEN: lichtstreep in het midden (model: linkerkolommen licht, rechts donker)
+49 12 susK
+50 12 susK
+51 12 susK
+52 11 susK
+50 21 sutK
+51 21 sutK
+52 21 sutK
+54 19 stuusK
+# VOETEN (staal): tinten per pixel uit het model (>=165 u, 95-165 t, 45-95 s, <45 K); tenen met schubbandjes, klauwen staal met K-punt
+54 5 ststututssssK
+55 5 sstuttssKKKKK
+56 5 KttsKK
+56 16 stttsttKsttK
+57 16 stKKtsK.KstK
+58 20 tsK
+58 26 sK
+59 20 sK
+# KOP: lichtste modeltonen (3x3-gemiddelde >=190) = bolling van de wang achter het oog -> i; losse pixels daarvan weggelaten
+14 15 iii
+15 14 iiii
+16 14 iiii
+17 14 iiiii
+18 13 iiiiii
+19 15 ii
+# RUIS: losse pixels in vleugel, staart en dij naar de omringende tint
+24 25 b
+29 18 b
+50 33 a
+51 34 a
+42 13 a
+44 15 i
+# STAART: modelwaarden 37-43 (net onder de lijngrens) gaven een rechte zwarte balk van 7 px -> donkerste vleugeltint a; buitenlijn blijft K
+53 29 aaaaaa
+# LINKERVLEUGELRAND: model buigt hier naar buiten (natief x=28 tegen 29 erboven/eronder; dekking kolom 2 = 0,38) -> 3 px erbij als bolling, selout a
+29 2 ab
+30 2 ab
+31 2 ab

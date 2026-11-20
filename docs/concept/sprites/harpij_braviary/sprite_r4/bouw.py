@@ -38,8 +38,10 @@ schrijf('stap_lijn.txt',g)
 # 3. bevroren uit r3: twee meest rechtse kuifveren; oog variant b
 r3=lees('../sprite_r3/harpij_r3b.txt')
 VEER=[(y,x) for y in range(6,9) for x in range(21,28)]+[(9,x) for x in range(20,28)]+[(10,x) for x in range(22,28)]+[(y,x) for y in range(11,14) for x in range(21,28)]+[(12,20)]
-OOG=[(14,8)]+[(y,x) for y in range(14,17) for x in range(9,13)]
-for p in VEER+OOG: g[p]=r3[p]
+OOG=[(14,x) for x in range(8,13)]+[(y,x) for y in range(15,17) for x in range(9,13)]+[(17,x) for x in range(9,12)]
+r3c=lees('../sprite_r3/harpij_r3c.txt')  # oog c (Jordi: "oog c")
+for p in VEER: g[p]=r3[p]
+for p in OOG: g[p]=r3c[p]
 np.save('veer_mask.npy',np.array(VEER)); np.save('oog_mask.npy',np.array(OOG))
 schrijf('stap_r3.txt',g)
 # 4. handreparaties: regels "y x letters  # reden" (letters vanaf x naar rechts)

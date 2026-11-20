@@ -1,78 +1,63 @@
-# Cosmic: nominaties (soorten en moves)
+# Cosmic: soorten en moves
 
-Stand 20 nov. Matchups en besluit: `CONCEPT.md` (Nieuw type: Cosmic). Huidige types komen uit de repo (`src/data/pokemon/species_info/`, `src/data/moves_info.h`).
-Kolom **Jordi**: ja / nee / anders. Aanvullen mag onderaan elke tabel.
+Matchups en het besluit om het type te maken staan in `CONCEPT.md` (Nieuw type: Cosmic). De huidige types komen uit de repo (`src/data/pokemon/species_info/`, `src/data/moves_info.h`).
 
-## Al besloten
-- Curiqui (fase 3 nachtaap-lijn): Psychic/Cosmic.
-- Dustly → Hauntflare → Gengas: Cosmic/Poison.
-- Sneeuwbolslak-lijn fase 3 (ijskomeet): Ice/Cosmic.
-- Cosmic Power wordt een Cosmic-move.
+## Besloten
+**Soorten**
+- Curiqui (fase 3 nachtaap-lijn): Psychic/Cosmic. Dustly → Hauntflare → Gengas: Cosmic/Poison. IJskomeet (fase 3 sneeuwbolslak): Ice/Cosmic.
+- **20 nov (Jordi):** Lunatone en Solrock (Rock/Psychic → Rock/Cosmic), Clefairy-lijn ("akkoord"; Cosmic of Fairy/Cosmic nog open), Elgyem → Beheeyem (Cosmic; Psychic houden nog open), Staryu → Starmie (Water / Water/Cosmic), Sigilyph (Cosmic/Flying), Baltoy → Claydol (Ground/Cosmic; "wordt wel sterk gesuggereerd dat die buitenaards zijn"), Beldum-lijn (Steel/Cosmic).
+- **Deoxys** komt officieel in de dex (Jordi, 20 nov). **Minior** ook (Jordi: "vgm al eerder aangegeven dat die erin moest"). Beide staan sinds 20 nov aan in `include/config/species_enabled.h`.
 
-## Soorten
+**Moves (Jordi's lijst, 20 nov):** Swift, Moonblast, Meteor Mash, Meteor Beam, Implosion, Laser Beam, Gravity, Lunar Dance, Moonlight, Lunar Blessing, Trick Room, Cosmic Power. Photon Geyser, Prismatic Laser, Hyperspace Hole en Doom Desire: vraag of het legendary-signatures zijn (antwoord hieronder).
+- Jordi: "bij status moves maakt het niet uit wat voor type het is, want zit geen STAB op."
+- **Jordi (20 nov): "we moeten ook cosmic moves gaan ontwerpen."**
 
-### Jordi's kandidaten (10 nov)
-| Soort | Nu (repo) | Voorstel | Opmerking | Jordi |
-|---|---|---|---|---|
-| Elgyem → Beheeyem | Psychic | Cosmic | Roswell-alien, het schoolvoorbeeld | |
-| Lunatone | Rock/Psychic | Rock/Cosmic | maanmeteoriet | |
-| Solrock | Rock/Psychic | Rock/Cosmic | zonnemeteoriet | |
-| Baltoy → Claydol | Ground/Psychic | Ground/Cosmic | oude kleibeelden; ruimtelink zwakker dan de rest | |
-| Cleffa → Clefairy → Clefable | Fairy | Cosmic of Fairy/Cosmic | komt van de maan (Mt. Moon). Let op: Cosmic is immuun voor Fairy, dus Fairy/Cosmic botst een beetje met de tabel; puur Cosmic is ook een Fairy-nerf | |
-| Minior | Rock/Flying (staat uit) | Rock/Cosmic | eerst besluiten of hij in de dex komt | |
-| Deoxys | Psychic (niet in de dex) | Cosmic | alleen als hij in de dex komt (nu: alleen Mew, Mewtwo, Zarude) | |
+## Open: soorten
+| Vraag | Opties | Jordi |
+|---|---|---|
+| Minior | Rock/Cosmic (zelfde als Lunatone en Solrock) · Flying/Cosmic (Jordi's twijfel; dan zelfde als Sigilyph) · per vorm: meteoorvorm Rock/Cosmic, kernvorm Flying/Cosmic (Minior wisselt al van vorm bij Shields Down) | |
+| Elgyem-lijn | Cosmic · Psychic/Cosmic | |
+| Deoxys | Cosmic · Psychic/Cosmic | |
+| Clefairy-lijn | Cosmic · Fairy/Cosmic | |
+| Inkay → Malamar | Psychic houden: in de canon is hij niet buitenaards, alleen zijn uiterlijk doet eraan denken | |
 
-### Extra voorstellen (Claude), in de dex
-| Soort | Nu (repo) | Voorstel | Waarom | Jordi |
-|---|---|---|---|---|
-| Staryu → Starmie | Water / Water/Electric | Water / Water/Cosmic | zeester met een "kern"; dex: Starmie zendt signalen naar de nachthemel. Brug ruimte–diepe zee | |
-| Beldum → Metang → Metagross | Steel/Psychic | Steel/Cosmic | meteorietachtig metaalwezen, ster-kruis op de kop | |
-| Sigilyph | Psychic/Flying | Cosmic/Flying | Nazca-lijnen; past bij de Nazca-astronaut | |
-| Inkay → Malamar | Dark/Psychic | Dark/Cosmic | ontwerp leunt op buitenaardse inktvis/hersenspoeling | |
-| Natu → Xatu | Psychic/Flying | Psychic/Cosmic of Cosmic/Flying | staart hele dag naar de zon; Inca-zonverering | |
-| Bronzor → Bronzong | Steel/Psychic | Steel/Cosmic | twijfel: brons-spiegel, ruimtelink zwak | |
+**Psychic houden of niet (Elgyem-lijn, Deoxys), berekend op de typetabel:**
+- Puur Cosmic is zwak voor Poison, Rock, Psychic en Cosmic, resisteert Steel, Fire en Water en is immuun voor Fairy.
+- Psychic/Cosmic is zwak voor Bug, Ghost, Dark, Poison, Rock en Cosmic (6 zwaktes), resisteert Fighting, Steel, Fire en Water en is immuun voor Fairy. Psychic doet neutraal.
+- Voor Psychic houden:
+  - Beheeyem leest en wist herinneringen en Deoxys is in de canon sterk psychisch; dat blijft kloppen.
+  - Psychic dekt aanvallend Poison, de zwakte van Cosmic.
+  - Psychic- en Cosmic-STAB samen raken veel types hard: Fighting, Poison, Steel, Electric, Fairy en Cosmic.
+- Tegen Psychic houden:
+  - Jordi wilde juist soorten weghalen bij Psychic.
+  - Psychic/Cosmic heeft 6 zwaktes; puur Cosmic heeft er 4.
+  - Curiqui is al Psychic/Cosmic. Ook de Baltoy-lijn, Lunatone en Solrock verliezen Psychic.
+  - Deoxys: maken we hem puur Cosmic, dan kan Psycho Boost (zijn signature, 140) mee naar Cosmic.
 
-### Twijfelgevallen (alleen ter overweging)
-| Soort | Nu (repo) | Idee | Jordi |
-|---|---|---|---|
-| Espeon / Umbreon | Psychic / Dark | zon en maan; Eevee-lijn aanraken is gevoelig | |
-| Larvesta → Volcarona | Bug/Fire | "vervangt de zon" in de lore | |
-| Magnemite → Magnezone | Electric/Steel | UFO-vorm | |
-| Unown | Normal | tekens uit een andere dimensie | |
+**Meer opties (alleen ter overweging):**
+- In de dex: Natu → Xatu (kijkt de hele dag naar de zon), Bronzor-lijn (zwak), Espeon/Umbreon (zon en maan), Volcarona ("vervangt de zon"), Magnezone (UFO-vorm), Unown.
+- Niet in de dex: Jirachi, Cosmog-lijn/Necrozma, Celesteela (Ultra Beast in de vorm van een raket), Orbeetle (UFO-kever). Elk van deze moet eerst in de dex komen.
 
-### Nieuwe soorten met Cosmic (ideeën die al bestaan)
-- Nazca-astronaut (naast Sigilyph), typing open.
-- Legendary van het ruimtegebied (Jordi 12 nov: ruimte en diepe zee als mysterieuze gebieden).
+## Open: moves
+- **Signatures:** ja. Photon Geyser en Prismatic Laser zijn van Necrozma, Hyperspace Hole van Hoopa en Doom Desire van Jirachi. Geen van die soorten zit in de dex, dus niemand leert ze tenzij we ze uitdelen, bijvoorbeeld aan Deoxys of een eigen ruimte-legendary.
+- **Psycho Boost** (Deoxys, Psychic 140) mist nog op de lijst; alleen omzetten als Deoxys puur Cosmic wordt.
+- **Implosion** (eigen move uit Grounded, Dark 200, "collapses into a black hole"; gebruiker valt flauw) leren nu Voltorb, Electrode (ook Hisui), Lunatone, Solrock, Dusknoir, Drifblim, Deoxys, Minior, Cosmoem, Necrozma en Darkrai. Wordt hij Cosmic, dan verliezen Voltorb, Electrode, Dusknoir en Drifblim hun Dark-nuke. Zij houden hem gewoon, maar zonder STAB.
+- **Laser Beam** (eigen move, Psychic 75, gaat door Protect, schermen en boosts heen).
+- **Status:** Jordi heeft gelijk dat het type daar bijna niets uitmaakt. Uitzonderingen: Protean/Libero (de gebruiker krijgt het type van de move) en de kleur en animatie in het menu.
 
-## Moves
+**Gaten in de aanvallende moves:**
+- Geen zwakke beginmove (±40); Swift (60) is de zwakste.
+- Fysiek alleen Meteor Mash (90, Steel → Cosmic): geen fysieke beginmove en geen sterke fysieke move.
+- Special loopt wel op: Swift 60 → Laser Beam 75 → Moonblast 95 → Meteor Beam 120 → Implosion 200.
 
-Wat Cosmic nodig heeft: een zwakke beginmove, een middelsterke STAB, een sterke special, een fysieke aanval en een paar statusmoves. Voorstel per move:
-
-### Aanvallen
-| Move | Nu (repo) | Kracht/soort | Waarom Cosmic | Jordi |
-|---|---|---|---|---|
-| Swift | Normal | 60 special | sterren; kan de vroege Cosmic-move zijn | |
-| Moonblast | Fairy | 95 special | maan; meteen een Fairy-nerf | |
-| Meteor Mash | Steel | 90 fysiek | meteoor; fysieke STAB | |
-| Meteor Beam | Rock | 120 special | meteoor | |
-| Photon Geyser | Psychic | 100 special | lichtzuil uit de ruimte (Necrozma) | |
-| Prismatic Laser | Psychic | 160 special | idem | |
-| Doom Desire | Steel | 140 special | Jirachi, komeet-wens | |
-| Hyperspace Hole | Psychic | 80 special | ruimte-gat | |
-| Signal Beam | Bug | 75 special | radiosignaal (SETI); haalt iets weg bij Bug | |
-| Moongeist Beam / Sunsteel Strike | Ghost / Steel | 100 | Lunala/Solgaleo; hun soorten zitten niet in de dex | |
-| Draco Meteor | Dragon | 130 special | twijfel: is de Dragon-signatuur | |
-| Aurora Beam | Ice | 65 special | twijfel: poollicht is atmosfeer, geen ruimte | |
-
-### Statusmoves
-| Move | Nu (repo) | Waarom Cosmic | Jordi |
-|---|---|---|---|
-| Cosmic Power | Psychic | al besloten | ✔ |
-| Gravity | Psychic | zwaartekracht | |
-| Moonlight | Fairy | maan; nog een Fairy-nerf | |
-| Morning Sun | Normal | zon | |
-| Lunar Dance / Lunar Blessing | Psychic | maan (Cresselia) | |
-| Trick Room / Wonder Room / Magic Room | Psychic | ruimte-tijd vervormen; twijfel, raakt Psychic flink | |
-
-### Gat
-- Er is geen echte zwakke beginmove (±40 kracht) zoals Confusion voor Psychic. Opties: Swift Cosmic maken en als vroege move gebruiken, of later een nieuwe move ontwerpen.
+## Nieuwe Cosmic-moves (ideeën Claude, om uit te kiezen en aan te passen)
+| Idee | Rol | Voorstel |
+|---|---|---|
+| Comet Punch (bestaat al, Normal 25 ×2–5) | fysiek, vroeg | omzetten naar Cosmic (komeet); meteen een vroege fysieke move zonder nieuw werk |
+| Stardust | special, vroeg | 40 kracht, 100%; misschien kans op accuracy omlaag (glinsterend stof) |
+| Shooting Star | fysiek, priority | 40 kracht, +1 priority (vallende ster, de Mach Punch van Cosmic) |
+| Black Hole | special, middel | 80 kracht, het doelwit kan niet wisselen (zwaartekracht trekt) |
+| Solar Wind | special, sterk | 90 kracht, blaast hazards weg aan de kant van de tegenstander |
+| Supernova | fysiek, sterk | 120 kracht met terugslag (de fysieke tegenhanger van Meteor Beam) |
+| Eclipse | status | verlaagt de accuracy van iedereen op het veld (zon/maan, Inti en Mama Killa) |
+| Mayu | status | de "rivier" van de Melkweg uit de Inca-sterrenkunde; idee: geneest een beetje per beurt voor het hele team. Koppeling met de lore van de Gastly-lijn (Mayu, `IDEEEN.md`) |

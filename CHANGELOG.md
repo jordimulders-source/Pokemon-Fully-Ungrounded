@@ -2381,3 +2381,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.571] - Cosmic: nominatielijst soorten en moves
 - `docs/concept/COSMIC.md`: Jordi's kandidaten + extra voorstellen (soorten en moves) met het huidige repo-type, voorstel en een kolom voor Jordi's keuze.
+
+### [v0.0.572] - Cosmic: besluiten Jordi, Minior en Deoxys in de dex
+- `docs/concept/COSMIC.md` bijgewerkt: besloten soorten (Lunatone, Solrock, Clefairy-lijn, Elgyem-lijn, Staryu-lijn, Sigilyph, Baltoy-lijn, Beldum-lijn), Jordi's moveslijst, open vragen (Minior-typing, Psychic houden bij Elgyem/Deoxys, Inkay), signatures en gaten, ideeën voor nieuwe Cosmic-moves.
+- Minior en Deoxys in de dex (`include/config/species_enabled.h`).

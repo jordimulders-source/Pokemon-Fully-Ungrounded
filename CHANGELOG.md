@@ -2379,4 +2379,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.570] - Rock/Water-idee terug, twee ideeën geschrapt
 - Rock/Water-lijn fontein ↔ gargoyle (Jordi, 16 nov) stond alleen op branch `ccr-02976dbb-9o96jp` (v0.0.433); nu in `IDEEEN.md` en `TODO.md`.
 - Geschrapt (Jordi, 20 nov): brandweerhond-Growlithe ("niet zo'n goed idee"), opossum (verwerkt in Abra; ook opossum-Kangaskhan).
-
+- Ook overgenomen van die branch: fontein/gargoyle-prompts geschrapt en "uitwerking nog niet forceren"; vicuña/guanaco alleen met een leuk idee (Jordi, 16 nov).

@@ -13,6 +13,7 @@
 
 - Na r1, Jordi: "weet je wat ik kijk en zie dat die niet eens heel ver van braviary afwijkt, maar misschien dat we rufflet dan hetzelfde houden en dat we hier gewoon een andere vorm van maken in dezelfde lijn" · op de vraag hoe: splitevolutie · "Harpiary ofzo (betere naam bedenken)".
 - r2 (`gemini/r2.png`, prompt v2), Jordi: "De klauwen zijn goed, de kuif is nog niet iconisch genoeg, ik vind hem ook iets te buff".
+- r3 (`gemini/r3.png`, prompt v3), Jordi: "hij is te compact, te stocky. Ik zal bij de volgende een bronfoto erbij doen, de kuif is wederom niet goed".
 
 ## Regionale Rufflet
 - 20 nov: "Rufflet wordt juist regionaal" · "Perrserker idee": de regionale Rufflet evolueert in de harpij.

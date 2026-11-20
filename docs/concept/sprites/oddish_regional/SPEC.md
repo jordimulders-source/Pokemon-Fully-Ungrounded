@@ -58,3 +58,4 @@ Op r10: "wat er bij de voorste 2 foutgaat is niet zo zeer de vorm van de anemone
 Op r11: "veel beter, het rondje in het midden van de anemoon moet alleen consistenter, ogen van b zijn goed alleen moet je nog met kleurtinten werken, zoals bij de oorspronkelijke vileplume wss met tinten rood gewerkt is".
 Na r11: "wat betreft de voorste anemonen die in de achterste overlopen, kan je ook fixen met kleurtinten, ik vind juist dat de achterste niet voldoende overlapt met de meest linkse, daar zit een gaatje tussen".
 Over het gaatje: "nu is dat in het model zelf ook niet mooi gelukt" (afwijken van het model mag hier om het gaatje te dichten).
+Voorstel Jordi: "dus ik stel voor dat je die achterste in zijn geheel een beetje naar links schuift" (achterste = middelste bovenaan, T, tegen het gaatje met de linker anemoon L).

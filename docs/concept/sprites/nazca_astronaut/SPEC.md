@@ -18,6 +18,7 @@ Nieuwe Pokémon naast Sigilyph (Cosmic/Flying).
 - 20 nov, kleuren besloten: "akkoord" op het voorstel van Claude: gedeelde blauw-rood-blauwe streep (embleem van de stad, Sigilyphs veerpunten) en omgekeerde verhouding (Sigilyph overwegend zwart, de astronaut overwegend geel met zwarte kop; Nazca: donkere grond tegenover lichte lijn). Zigzag op de romp: "misschien is wit en rood wel tof" (nog te vergelijken met blauw); "en dan worden de lijnen op de armen dan ook rood/blauw/rood" (benen: niet genoemd, vragen).
 - 20 nov, correctie op Claude's "omgekeerde verhouding": "nee de gele armen zijn hetzelfde als de gele ledematen van sigilyph. Ik wil de zwarte kop wel behouden". (Claude zat fout: Sigilyph heeft ook gele ledematen, dus de kleuren zijn nu grotendeels gelijk.)
 - 20 nov: ledematen "A" + "creme" (Claude's optie A: wit/crème, de kleur van de Nazca-lijnen, licht zand op donkere grond). Handen en voeten gaan mee (zijn deel van de ledematen; Claude, te controleren bij Jordi).
+- 20 nov: "de kop is in het model heel effen zwart, daar mag je veel meer met schaduw en tint spelen".
 - 20 nov (lore): "sigilyphs zijn guardians of an ancient city en deze astronauten waren compagnons, misschien wel de bewoners".
 - 20 nov: "dit wordt echt de lunatone van de solrock die sigilyph dan is".
 

@@ -31,9 +31,9 @@ Matchups en het besluit om het type te maken staan in `CONCEPT.md` (Nieuw type: 
   - Curiqui is al Psychic/Cosmic. Ook de Baltoy-lijn, Lunatone en Solrock verliezen Psychic.
   - Deoxys: maken we hem puur Cosmic, dan kan Psycho Boost (zijn signature, 140) mee naar Cosmic.
 
-**Meer opties (alleen ter overweging):**
-- In de dex: Natu → Xatu (kijkt de hele dag naar de zon), Espeon/Umbreon (zon en maan), Volcarona ("vervangt de zon"), Magnezone (UFO-vorm), Unown.
-- Niet in de dex: Jirachi, Cosmog-lijn/Necrozma, Celesteela (Ultra Beast in de vorm van een raket), Orbeetle (UFO-kever). Elk van deze moet eerst in de dex komen.
+**Extra opties afgewezen (Jordi, 20 nov):** "nee niet doen" voor Natu/Xatu, Espeon/Umbreon, Volcarona, Magnezone, Unown, Celesteela en Orbeetle. Cosmog en Jirachi "alleen als we die gaan toevoegen, maar nog niet van plan".
+
+**Baltoy → Claydol blijft Ground/Cosmic (Jordi, 20 nov: "ik neig naar wel doen"):** niet bevestigd buitenaards (oude kleipop, op aarde gemaakt), maar de Ultra Moon-dex zegt dat zijn makers hem naar iets vormden "dat uit de lucht neerdaalde", en het ontwerp komt van de Jōmon-dogū die in alien-theorieën als "ruimtemannetjes" gelden.
 
 ## Open: moves
 - **Signatures:** ja. Photon Geyser en Prismatic Laser zijn van Necrozma, Hyperspace Hole van Hoopa en Doom Desire van Jirachi. Geen van die soorten zit in de dex, dus niemand leert ze tenzij we ze uitdelen, bijvoorbeeld aan Deoxys of een eigen ruimte-legendary.

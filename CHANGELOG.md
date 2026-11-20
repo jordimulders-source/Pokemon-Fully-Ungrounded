@@ -2391,3 +2391,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.574] - Cosmic: Inkay-lijn en Bronzor-lijn blijven zoals ze zijn
 - Jordi: Inkay/Malamar is niet buitenaards, niet veranderen; Bronzor/Bronzong ook niet. In `docs/concept/COSMIC.md`.
+
+### [v0.0.575] - Cosmic: extra opties afgewezen, Claydol blijft
+- Natu/Xatu, Espeon/Umbreon, Volcarona, Magnezone, Unown, Celesteela, Orbeetle niet; Cosmog en Jirachi alleen als ze ooit in de dex komen (niet gepland). Baltoy/Claydol blijft Ground/Cosmic (Ultra Moon-dex: gemaakt naar iets "dat uit de lucht neerdaalde"). In `docs/concept/COSMIC.md`.

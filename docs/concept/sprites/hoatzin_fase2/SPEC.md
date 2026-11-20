@@ -44,3 +44,4 @@
 - Op s1: "je hebt precies genoeg ruimte voor mijn oog idee, zonder dat je iets anders hoeft te veranderen" · over snavel/kuif/pennen: "Hij wil ze toch niet gaan tekenen he?" → nee: alleen de reductie-instellingen verbeteren.
 - Op s2: "oog B, 6 rood, ga nu bouwen totdat er een goede versie staat, niet meer blurry".
 - "vleugelpennen kan je evt met 1 pixel ipv halve pixel doen en dan minder".
+- Snavel: "hoef je de binnenkant van de mond niet te laten zien, hoe die er nu uit ziet is prima, alleen nog mooier afwerken".

@@ -14,6 +14,13 @@ def klas(a):
     c[fig&(R>G+60)&(R>B+50)&(L>=45)]='R'
     c[fig&(a.min(2)>=150)&(L>=180)]='W'
     c[fig&(c=='.')]='?'
+    # wit binnen de figuur (ogen) is niet met de buitenkant verbonden -> W
+    bg=(c=='.'); H,W=bg.shape; seen=np.zeros_like(bg); st=[(0,0)]
+    while st:
+        y,x=st.pop()
+        if 0<=y<H and 0<=x<W and bg[y,x] and not seen[y,x]:
+            seen[y,x]=True; st+= [(y+1,x),(y-1,x),(y,x+1),(y,x-1)]
+    c[bg&~seen]='W'
     return c
 if __name__=='__main__':
     import sys

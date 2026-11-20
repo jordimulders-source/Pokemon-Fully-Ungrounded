@@ -2448,3 +2448,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.593] - Nazca-astronaut: model gekozen (r11)
 - `model/model.png` = Gemini r11; alleen de spleet tussen de benen wordt nog aangepast (tussen r9 en r10). Kleuren: brainstorm open.
+
+### [v0.0.594] - Nazca-astronaut: sprite r1 (maker)
+- `sprite_r1/`: model verkleind (natief raster 100×100 → 2/3), spleet tussen de benen tussen r9 en r10 (bewerking op het model, diff 0 erbuiten), crème ledematen, kop met bolschaduw; varianten A (blauwe zigzag), A_geel, B1/B2 (wit-rode zigzag, armstrepen rood/blauw/rood). Nog niet gekeurd.

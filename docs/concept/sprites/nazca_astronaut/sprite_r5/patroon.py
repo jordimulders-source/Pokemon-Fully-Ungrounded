@@ -55,13 +55,13 @@ zet(27,13,"_WC_CWk")
 # groene band aan de rechterkant van de romp (Sigilyph rij 27-31 rechts)
 # dijen: groene band met witte zigzag (Sigilyph rij 28-31), knieband wit zigzag op donkergroen (Sigilyph rij 38-41)
 for i0 in (12,18):
-    zet(31,i0,"HHH")
+    zet(31,i0,"HHH")  # wordt hieronder door de band-lus niet overschreven
     zet(38,i0,"W_W"); zet(39,i0,"HWH"); zet(40,i0,"HHH"); zet(41,i0,"HHH")
-# groene band bovenaan de dijen met kleine witte zigzag (wit om en om per rij, zelfde ritme op beide dijen)
+# groene band bovenaan de dijen: groen, witte lijn, donkergroene onderrand (dambord van r5-proef vervalt)
 for j in (28,29,30):
     for i in list(range(13,15))+list(range(18,22)):
         if zone[j,i] and o[j,i] in 'zZx':
-            o[j,i]='W' if (j in (29,30) and (i+j)%2==0) else 'G'
+            o[j,i]='W' if j==30 else 'G'
 
 # ellebogen: witte band op de overgang naar de onderarm (zoals Sigilyphs witte lijn op een overgang)
 zet(20,2,"WWWW"); zet(30,24,"WW")

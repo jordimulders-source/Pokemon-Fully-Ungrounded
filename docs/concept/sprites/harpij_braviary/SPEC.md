@@ -29,7 +29,7 @@
 `model/model_natief.png` (natief raster van r6, 99×99, met Claude's veren: D + middelste veer J). `model/model_10x.png` = 10× vergroot. Bevroren, behalve:
 
 ## Toegestane afwijkingen van het model (alleen deze)
-1. Kuifveren: Jordi vindt de getekende veren (middelste veer, en volgens Claude ook de 2 lage veren van D) "nog niet mooi, maar dat fixen we in de sprite wel" → in de sprite met Jordi verbeteren. Voorstel Claude: de getekende veren krijgen een lichte en donkere kant zoals de Gemini-veren.
+1. Middelste kuifveer: Jordi vindt de varianten H/I/J "allemaal nog niet mooi, maar dat fixen we in de sprite wel" → in de sprite met Jordi verbeteren. Voorstel Claude: de getekende veren krijgen een lichte en donkere kant zoals de Gemini-veren.
 2. Kleur, schaduw en volume naar Gen 3 (SPRITE_KERN: kleur mag altijd afwijken).
 
 ## Regionale Rufflet

@@ -30,3 +30,4 @@
 ## Op r17 (20 nov), Jordi letterlijk
 - "linkerpoot is helemaal niet gelukt" · "nek is nog steeds niet voldoende los van de vleugel" · "de rest klopt qua vorm" → vorm van r17 (pixelblad) bevroren, behalve linkerpoot.
 - Op r18: "nek is nog niet goed doorgetrokken, de lijn, het begin en einde staat er, maar de rest niet, de 2 poten zitten aan elkaar vast en de rechts heeft opeens rare zwarte uiteinden" · "kan dit ook op een manier dat ik niet elke keer hele minimale veranderingen moet keuren" · "ja en ook kleuren, schaduw, belijning. Hij moet echt op het model lijken, de onderdelen van het lichaam moeten ook niet in elkaar overgaan"
+- "alleen de kleuren die we besproken hebben mogen afwijken" (= buik D, kuif wat bruiner; rest modelkleuren)

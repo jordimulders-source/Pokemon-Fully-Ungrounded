@@ -101,22 +101,29 @@ def punten(pad,stap=0.05):
         for t in np.linspace(0,1,n,endpoint=False): P.append((sx(a+(c-a)*t),sy(b+(d-b)*t),c-a,d-b))
     a,b=pad[-1]; P.append((sx(a),sy(b),0,1)); return P
 def band(pad):
-    # 2 px brede kabel: steil -> per spriterij de twee cellen rond het midden (links = glans), vlak -> per kolom (boven = glans)
-    cel={}
+    # 2 px brede kabel langs het modelpad: steil (per spriterij gemiddelde x) -> [glans][kabel] links-rechts;
+    # vlak (|dx|>2,5|dy|, alleen poot 4 onder het achterlijf) -> per kolom gemiddelde y -> [glans] boven [kabel]
+    rij={}; kol={}
     for x,y,dx,dy in punten(pad):
-        if abs(dy)>=abs(dx):
-            j=int(np.floor(y)); i=int(np.floor(x-0.5)); cel[(i,j)]='g'; cel.setdefault((i+1,j),'k')
-            if cel.get((i+1,j))=='g': pass
-        else:
-            i=int(np.floor(x)); j=int(np.floor(y-0.5)); cel[(i,j)]='g'; cel.setdefault((i,j+1),'k')
-    # een cel die zowel glans als kabel kreeg: glans wint alleen als hij aan de lichtkant ligt
-    for (i,j),t in list(cel.items()):
-        if t=='g' and (cel.get((i-1,j)) =='g' and cel.get((i+1,j)) is not None): cel[(i,j)]='k'
+        if abs(dx)>2.5*abs(dy): kol.setdefault(int(np.floor(x)),[]).append(y)
+        else: rij.setdefault(int(np.floor(y)),[]).append(x)
+    cel={}
+    for i,ys in kol.items():
+        j=int(np.floor(np.mean(ys)-0.5)); cel[(i,j)]='g'; cel[(i,j+1)]='k'
+    for j,xs in rij.items():
+        i=int(np.floor(np.mean(xs)-0.5))
+        if (i,j) not in cel: cel[(i,j)]='g'
+        if (i+1,j) not in cel: cel[(i+1,j)]='k'
     return cel
 leg_px={}
+E,F=14,15
+VOET={'p1':[(5,33,E),(4,33,E),(3,33,F),(5,34,E),(4,35,F)],        # model: prong naar links + prong omlaag
+      'p2':[(12,30,E),(11,31,F),(10,31,F),(12,31,F),(12,32,F)],
+      'p3':[(22,36,E),(23,36,E),(24,37,F),(22,37,E),(22,38,F)],   # model: prong naar rechtsonder + prong omlaag
+      'p4':[(35,35,E),(36,35,E),(37,36,F),(35,36,E),(36,37,F)]}
 def teken(naam,dx=0,dy=0,extra=False):
     pad,rg,voet,ver=POTEN[naam]; ver=ver or extra; z='extra' if extra else 'poot'
-    G,Kc=(8,1) if ver else (9,7)
+    G,Kc=(7,1) if ver else (8,7)
     def zet(i,j,v):
         i+=dx; j+=dy
         if not(0<=i<W and 0<=j<H): return
@@ -135,14 +142,21 @@ def teken(naam,dx=0,dy=0,extra=False):
         L,R=xs[0],xs[-1]
         for i in range(L-1,R+1): zet(i,j,11 if (ver or k==1) else 10)
         zet(R+1,j,1)
-    # koperklauwtjes: twee korte prongs vast aan het kabeleinde, schaduwkant donker
-    for pr in voet:
-        P=punten(pr,0.1); seen=[]
-        for x,y,_,_ in P:
-            c=(int(np.floor(x)),int(np.floor(y)))
-            if c not in seen: seen.append(c)
-        for n,(i,j) in enumerate(seen): zet(i,j,15 if (ver or n==len(seen)-1) else 14)
+    # koperklauwtjes: wortel onder het kabeleinde + twee prongs van 2 px in de richting van de modelprongs, punt donker
+    for i,j,v in VOET[naam]: zet(i,j,15 if extra else v)
 for n in ('p2','p1','p3','p4'): teken(n)
 # toegestane afwijking (optie A): kopie van p3 en p4 langs hun nieuwe pad, (+2,-2), schaduwtint, alleen in lege ruimte
-teken('p3',2,-2,True); teken('p4',2,-2,True)
+teken('p3',3,-2,True); teken('p4',2,-2,True)
+# ---------- KOP ronder (Jordi 20 nov: "linkerkant hoofd en oog mag wat ronder"; ronding uit het model: linkerrand rij 12-14 op kol. 1, rij 15 op kol. 2)
+put(1,14,1,'kop2'); put(2,14,2,'kop2'); put(2,15,1,'kop2'); put(3,15,2,'kop2')
+# grijze rand achter de kop (model: boog van rij 9 tot de kin) + zwarte lijn die kop en borststuk scheidt
+put(15,9,1,'kop2')
+for y in range(10,16): put(16,y,1,'kop2')
+put(15,16,1,'kop2'); put(13,16,4,'kop2')
+put(14,15,4,'kop2'); put(15,15,1,'kop2')   # model: rand loopt via (14,15),(13,16) naar de kin
+# kop rond bovenaan (model: rechterkoepel ook op rij 9 grijs, vizierlijn op rij 10; koepelrand donkergrijs) en kinkerf zwart (model rij 17)
+for x in range(10,14): put(x,9,5,'kop2'); put(x,10,1,'kop2')
+put(8,7,4,'kop2'); put(13,7,4,'kop2'); put(9,17,1,'kop2'); put(10,17,1,'kop2')
+# ---------- BORSTSTUK: een subtiel hooglicht linksboven (Gen 3-volume), op de donkergrijze modelplek
+put(17,9,4,'borst'); put(18,9,4,'borst')
 np.savetxt('vlieg_r2.txt',o,fmt='%2d'); np.save('zone.npy',zone.astype(str)); print('px',(o>0).sum())

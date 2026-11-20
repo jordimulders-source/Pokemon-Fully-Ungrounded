@@ -23,3 +23,4 @@ Voorstel Claude: exacte 2×-reductie van het natieve raster (±33×45 px), past 
 - Over r5: "v3 is het beste alleen de veer moet nog iets netter afgemaakt worden links" (`sprite_r5/rufflet_r5V3`).
 - Over r6: "misschien deze 2 pixels nog wit maken" (bovenste rode pixels van de veer, (26,22) en (28,23)) → r7.
 - r8: keurreparaties (keurder BIJNA → PASS); r9 = r8 + 2 px dubbele lijn bij de linkervleugel weg (keurpoetspunt). Kandidaat voor Jordi.
+- r10 = r9 + 11 px uit de eindkeuring (Dragonfly Cave, BIJNA; alleen 1-pixelreparaties: open randen, losse pixels, selout kruin, binnenlijn lijf/vleugel taps).

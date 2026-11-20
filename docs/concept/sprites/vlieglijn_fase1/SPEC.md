@@ -47,3 +47,4 @@ Lijn (besloten 20 nov): **vlieg → mug, 2 fases** (reguliere vlieg; fruitvlieg 
 - Jordi (20 nov) na de vondst dat r9 alleen een extra donkere poot toevoegde: "ja 1 extra achterpoot is dus toch gewoon achterpoten gefixed?" → r9-poot wordt de verre achterpoot (sprite r7)
 - Jordi (20 nov): "we missen alleen 1 duidelijke middelste poot"
 - Jordi (20 nov) over r7: "lol mijn instructies waren fout, we missen aan de voorkant een poot, die kan netjes tussen de twee poten in en mag de achterpoot overlappen waar dat nodig is" · "dus ik bedoel voor rechts" · "moment"
+- Jordi (20 nov), krabbel `sprite_r7/krabbel_jordi.png`: "geel mag weg en rood is ruwweg waar we een poot missen"

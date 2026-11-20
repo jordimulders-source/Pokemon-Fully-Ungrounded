@@ -2394,3 +2394,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.575] - Cosmic: extra opties afgewezen, Claydol blijft
 - Natu/Xatu, Espeon/Umbreon, Volcarona, Magnezone, Unown, Celesteela, Orbeetle niet; Cosmog en Jirachi alleen als ze ooit in de dex komen (niet gepland). Baltoy/Claydol blijft Ground/Cosmic (Ultra Moon-dex: gemaakt naar iets "dat uit de lucht neerdaalde"). In `docs/concept/COSMIC.md`.
+
+### [v0.0.576] - Nazca-astronaut: SPEC gestart
+- `docs/concept/sprites/nazca_astronaut/SPEC.md`: Jordi's citaat, achtergrond van de geoglief en de open vragen.

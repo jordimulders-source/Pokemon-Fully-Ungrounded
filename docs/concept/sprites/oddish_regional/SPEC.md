@@ -9,3 +9,6 @@
 
 ## Open
 - Wat er bij Gloom en Vileplume bovenop komt, en kleuren van fase 2–3.
+
+## Rondes
+- **v1** (`r1/gemini_v1.png`), Jordi (20 nov): "ik vind het 'blad' iets te smal denk ik".

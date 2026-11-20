@@ -21,3 +21,4 @@
 - Test (20 nov): v5 kaal verkleind tot Oddish-hoogte (35 px), naast de Oddish uit de game: `r5/test_verkleind_naast_oddish.png`. De pluimen blijven als losse puntige plukken leesbaar; draadjes worden rafelranden.
 - **Gloom B + Vileplume A** (`gloom_vileplume_r1/`), Jordi (20 nov): "Ik vind ze namelijk niet uniek genoeg, zijn net pallette swaps". (Claude: de prompt hield de vorm van de top 1-op-1 aan; bij Gloom/Vileplume ís de top het silhouet.)
 - Jordi (20 nov): "ik dacht dat we echt een inspiratiebron hadden die het stuk op het hoofd veranderen". Terug naar het idee van 9 nov (één kokerworm-inspiratie, kolonie groeit); prompts `gemini/PROMPTS_lijn_kolonie_v1.md`. Jordi: "doe prompts voor alle 3 en dan besluit ik of we ermee doorgaan".
+- **Kolonie r1** (`kolonie_r1/`), Jordi (20 nov): "Klopt dit met je idee?"

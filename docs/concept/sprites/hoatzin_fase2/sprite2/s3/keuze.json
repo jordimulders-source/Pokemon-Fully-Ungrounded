@@ -1,0 +1,36 @@
+{
+ "paden": [
+  11,
+  25,
+  47,
+  83,
+  115,
+  9,
+  10,
+  13,
+  242,
+  251,
+  61,
+  164
+ ],
+ "ver_x": 478,
+ "ver_y": 470,
+ "modus": 2,
+ "masker_uit": [
+  [
+   19,
+   55
+  ],
+  [
+   20,
+   55
+  ],
+  [
+   21,
+   55
+  ]
+ ],
+ "masker_uit_reden": "linker voorteen: alpha 0,35-0,43 (onder de normale 0,45), model is daar slanker",
+ "kuif": "as",
+ "pen_rand": 2
+}

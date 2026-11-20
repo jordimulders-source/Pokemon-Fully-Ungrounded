@@ -15,5 +15,5 @@ for j in range(64):
         t = tel.setdefault(z, {}); t[soort] = t.get(soort, 0) + 1
 tot = sum(sum(t.values()) for t in tel.values())
 for z, t in sorted(tel.items()): print('%-8s' % z, t, sum(t.values()))
-hand = int((np.load('auto.npy') != S).sum())
-print('totaal', tot, 'van', int((S > 0).sum()), 'pixels; met de hand gezet:', hand, '(oog, Jordi)')
+S2 = np.array(__import__('PIL.Image', fromlist=['Image']).open('../s2/hoatzin.png'))
+print('totaal', tot, 'van', int((S > 0).sum()), 'pixels; anders dan s2:', int((S != S2).sum()), '; handpixels: 0 (oog B = s2, 6 px Jordi)')

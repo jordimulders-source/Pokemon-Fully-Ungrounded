@@ -48,3 +48,4 @@
 ## Sprite
 - r1–r2 maker (model verkleind, 94 px technisch opgeschoond); keurder FAIL met 7 px reparaties (ogen 1×2, mond 2×2, drukke waaiervoet en zwart 19% door meting goedgekeurd); r3 = r2 + die 7 px (Claude). `oddish_sprite/r3/oddish_r3.png`.
 - r4b: gezicht 1-op-1 van de Oddish uit de game + schaduwlijn 4 px boven de mond (Jordi). r5: kelp subtiel naar olijfbruin/amber (tint +6°, verzadiging ×0,85) en 10 px golvende rand (Jordi: "Akkoord, maar houd het subtiel"); hechtvoetjes kleuren mee (zelfde indices).
+- r6: ook het middelste blad subtiel golvend, 4 px (Jordi: "kan je het middelste blad ook nog doen?"; over r5: "het is goed gelukt namelijk").

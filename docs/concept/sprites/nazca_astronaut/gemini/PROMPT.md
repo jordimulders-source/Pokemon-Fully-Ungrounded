@@ -1,31 +1,22 @@
-# Nazca-astronaut – Gemini-prompt r4 (nieuw gesprek)
+# Nazca-astronaut – Gemini-prompt r5 (nieuw gesprek)
 
-Bijlagen: (1) Sigilyph-sprite (`bijlage/sigilyph.png`), (2) silhouet (`silhouet/silhouet_r2.png`).
-Jordi (na r3): "een sigilyph counter part, dus in ontwerp heel vergelijkbaar, maar dan andere kleuren en een lichte afwijking". Daarom: Sigilyph als basis (Gemini kopieert bijlagen, hier is dat gewenst), onderdelen herschikt in het astronaut-silhouet.
-Lore (Jordi, 20 nov): "sigilyphs zijn guardians of an ancient city en deze astronauten waren compagnons, misschien wel de bewoners" (in de prompt).
-Per onderdeel (Claude, letterlijk van Sigilyph overgezet, niets nieuws): kop met kuif en oog → ronde kop met twee ogen in dezelfde stijl; ronde romp met zigzagband en oogvlekken → zelfde romp, langer; vleugels met veerpunten → de twee armen; drietandhanden → handen; staartveren → benen; zweeft. Kleuren: niet opgegeven door Jordi, alleen "andere".
+Bijlagen: (1) `r3/r3.png` (volgde het silhouet exact), (2) Sigilyph (`bijlage/sigilyph.png`).
+Jordi na r4: "hij moet het silhouet niet aanpassen". Aanpak (GEMINI.md, blobfish): vorige versie met de goede vorm als bijlage + "keep its exact shape, change only ...". r3 heeft het silhouet; Sigilyph levert de stijl van de onderdelen.
 
 ---
 
 ```
-Attachment 1 is the Pokémon SIGILYPH. Attachment 2 is the silhouette of the Nazca geoglyph "El Astronauta".
-Lore: Sigilyph are the guardians of an ancient city; these astronauts were their companions, maybe even the inhabitants of that city.
-Make a counterpart of Sigilyph: a Pokémon that is VERY SIMILAR to Sigilyph in design, built from the same kinds of parts in the same style, but rearranged into the astronaut's silhouette, and with different colors.
-
-Take Sigilyph's parts and rearrange them:
-- Sigilyph's head with its big eye → a big round head with TWO eyes drawn in the same style as Sigilyph's eye.
-- Sigilyph's round body with the zigzag band and eye-like spots → the same kind of body, but longer and narrower.
-- Sigilyph's wings with their feather tips → the two ARMS: one arm raised up next to the head, one arm hanging down and out.
-- Sigilyph's dark three-pronged hands → the hands at the ends of the arms.
-- Sigilyph's tail feathers → the two LEGS, ending in rounded feet.
-- It floats, like Sigilyph.
-Only the silhouette changes; the style of every part stays Sigilyph's.
-
-COLORS: a different color scheme than Sigilyph (not black with yellow, red, blue and green), as different as Lunatone is from Solrock.
-Expression: neutral, an empty stare. No mouth.
-Draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style): pixel art, 64×64, max 16 colors, dark selout outline, plain white background, facing the viewer like Sigilyph.
-
-DO NOT
-No stars or galaxy pattern on the body. Not a stick figure, not a robot, not cute.
+Attachment 1 has the CORRECT SHAPE. Attachment 2 is the Pokémon SIGILYPH.
+Redraw attachment 1 with EXACTLY THE SAME SILHOUETTE: same outline, same proportions, same pose, same position of every limb. Do not change the silhouette at all: the round head, the long narrow body, the arm raised next to the head, the other arm hanging down and out, the two long legs with rounded feet.
+Change ONLY what is inside the outline, so that it becomes a counterpart of Sigilyph, very similar in design:
+- the body gets Sigilyph's zigzag band and eye-like spots;
+- the arms get Sigilyph's feather-tip pattern, as markings on the arms, the arms keep their shape;
+- the two eyes are drawn in the style of Sigilyph's eye;
+- the hands and feet keep their round shape.
+Exactly 2 arms and 2 legs, nothing else attached to the body.
+COLORS: different from Sigilyph (not black with yellow, red, blue and green), and no stars or galaxy pattern.
+Lore: Sigilyph are the guardians of an ancient city; these astronauts were their companions, maybe even its inhabitants.
+Expression: neutral, empty stare, no mouth.
+Official Gen 3 front sprite (Ruby/Sapphire/Emerald style): pixel art, 64×64, max 16 colors, dark selout outline, plain white background.
 No ground, no shadow, no glow, no effects.
 ```

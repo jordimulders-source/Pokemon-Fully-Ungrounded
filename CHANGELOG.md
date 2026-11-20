@@ -2424,3 +2424,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.585] - Nazca-astronaut: lore
 - Jordi: Sigilyph = bewakers van een oude stad, de astronauten hun compagnons, misschien de bewoners. In SPEC, IDEEEN en prompt r4.
+
+### [v0.0.586] - Nazca-astronaut: r4 bewaard, prompt r5
+- r4 (Sigilyph-onderdelen goed, silhouet losgelaten; Jordi: "hij moet het silhouet niet aanpassen") in `gemini/r4/`. r5: r3 als vormbijlage ("keep exact shape") + Sigilyph voor de stijl.

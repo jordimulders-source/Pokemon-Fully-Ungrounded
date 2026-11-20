@@ -28,3 +28,4 @@ Nog niet gekozen (Gemini r1: `gemini/PROMPT.md`).
 - Jordi (20 nov) "akkoord": achterlijf grijs met een paar grote zwarte vlekken (donkere middenlijn + 2–3 vlekken per kant, vereenvoudigd huisvliegpatroon; exacte vlekken zet de maker), vleugels lichter (bijna wit, koel blauw) → `gemini/PROMPT_r5.md`
 - r5 (`gemini/r5.png`), Jordi: "wat vind je ervan"
 - Jordi (20 nov) na de ontwerpanalyse van r5: "ja het klopt wel wat je zegt. Laten we er een bug/electric van maken, misschien dat we wel nog iets meer de robotische kant op moeten en dan het ontwerp iets gladder/mechanischer konnen maken om hem uniek te maken. Ik zie ook dat gemini de poten neit goed heeft geteld" → `gemini/PROMPT_r6.md`
+- r6 (`gemini/r6.png`), Jordi: "laten we het achterlijf ook iets mechanischer maken en de vleugels misschien ook wel, ietsje scherper. De kabelpoten zijn eigenlijk nog niet echt mooi he, misschien moeten we dat iets meer in vorm doen, hoe doet xurkitree dat?"

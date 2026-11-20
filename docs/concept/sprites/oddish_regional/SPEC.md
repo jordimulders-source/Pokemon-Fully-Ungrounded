@@ -18,3 +18,4 @@
 - **v4** (`r4/gemini_v4.png`, bijlagen v2 + v3), Jordi (20 nov): "niet zo goed he". (Claude: gladde zalmroze knoppen met klauwtjes aan de punt, garnaal/ui; draadstructuur weg.)
 - Jordi (20 nov): "misschien de referenties weglaten" → prompt v5 zonder bijlagen.
 - **v5** (`r5/gemini_v5.png`, zonder bijlagen), Jordi (20 nov): "dit is al wat beter toch".
+- Test (20 nov): v5 kaal verkleind tot Oddish-hoogte (35 px), naast de Oddish uit de game: `r5/test_verkleind_naast_oddish.png`. De pluimen blijven als losse puntige plukken leesbaar; draadjes worden rafelranden.

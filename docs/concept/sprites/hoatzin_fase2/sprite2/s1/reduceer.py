@@ -1,7 +1,7 @@
 # reduceer.py: kale reductie van MODEL.png naar 64x64 (oppervlakgewogen).
 # Per modelpixel een klasse (dichtstbijzijnde modeltint). Per spritepixel:
 #   alpha = aandeel figuur; klasse = dominante tint van de VLAKpixels (zwarte lijnen en de
-#   anti-aliasrand van 3 px naar de achtergrond tellen niet mee); per tint het aandeel van de cel.
+#   anti-aliasrand van 3 px naar de achtergrond en mengtinten tellen niet mee); per tint het aandeel van de cel.
 # Uit: onderlaag.npy (klassekaart, 0 = geen), frac.npy (64x64xK aandeel per klasse), alpha.npy,
 #      onderlaag.png (alpha >= 0.45, kale reductie), onderlaag_8x.png
 import numpy as np
@@ -29,6 +29,7 @@ print('schaal', round(s, 3), 'hoogte', HOOG, 'bbox', X0, X1, Y0, Y1)
 T = np.array(MODELTINT, float)
 d = ((a[:, :, None, :] - T[None, None]) ** 2).sum(-1)
 kl = d.argmin(-1)
+zuiver = d.min(-1) < 28 ** 2          # geen mengtint (anti-alias tussen twee vlakken)
 kl[a.max(2) <= 22] = 0
 kl[~fig] = -1
 np.save('modelklas.npy', kl)
@@ -47,8 +48,10 @@ for j in range(64):
         if not f.any(): continue
         k = kl[ya:yb, xa:xb]
         frac[j, i] = np.bincount(k[f], minlength=K) / f.size
-        kk = k[kern[ya:yb, xa:xb]]
-        kk = kk[kk > 0]
+        z = zuiver[ya:yb, xa:xb]
+        kk = k[kern[ya:yb, xa:xb] & z]; kk = kk[kk > 0]
+        if kk.size == 0:
+            kk = k[f & z]; kk = kk[kk > 0]
         if kk.size == 0:
             kk = k[f]; kk = kk[kk > 0]
         klas[j, i] = np.bincount(kk, minlength=K).argmax() if kk.size else 0

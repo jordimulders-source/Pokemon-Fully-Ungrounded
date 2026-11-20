@@ -17,8 +17,12 @@ MODELTINT = [
     (206, 126, 114),   # 13 oog licht (rood)
     (146, 144, 138),   # 14 grijs licht
     (90, 90, 86),      # 15 grijs donker
+    (36, 6, 8),        # 16 pupil (donkerrood-zwart)
+    (108, 36, 36),     # 17 iris donker
+    (148, 64, 64),     # 18 iris midden (B = G, kuif heeft B < G)
+    (184, 98, 94),     # 19 iris licht
 ]
 NAMEN = ['lijn', 'vl_l', 'vl_m', 'vl_s', 'cr_l', 'cr_s', 'kr_l', 'kr_m', 'kr_s', 'ku_l', 'ku_d',
-         'blauw', 'rood', 'rood_l', 'gr_l', 'gr_d']
+         'blauw', 'rood', 'rood_l', 'gr_l', 'gr_d', 'pupil', 'iris_d', 'iris_m', 'iris_l']
 ZONE = {0: 'lijn', 1: 'vleugel', 2: 'vleugel', 3: 'vleugel', 4: 'creme', 5: 'creme', 6: 'krop', 7: 'krop',
-        8: 'krop', 9: 'kuif', 10: 'kuif', 11: 'blauw', 12: 'oog', 13: 'oog', 14: 'grijs', 15: 'grijs'}
+        8: 'krop', 9: 'kuif', 10: 'kuif', 11: 'blauw', 12: 'oog', 13: 'oog', 14: 'grijs', 15: 'grijs', 16: 'oog', 17: 'oog', 18: 'oog', 19: 'oog'}

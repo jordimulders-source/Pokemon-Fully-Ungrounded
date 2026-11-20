@@ -58,3 +58,4 @@ Lijn (besloten 20 nov): **vlieg → mug, 2 fases** (reguliere vlieg; fruitvlieg 
   - Meting Claude (r13): kop x8–23, borststuk x21–33, achterlijf vanaf x35. Aanzet voorpoten x19–23 (onder de achterkant van de kop), middenpoot x28–31, nieuwe poot x33–36, achterpoot x39–42. Voeten op x9–13, 17–20, 32–37, 40–45, 47–52: gat tussen verre voorvoet en middenvoet 15 px, de andere ±7 px. Voorpoten 2–3 px naar achteren = aanzet onder de voorkant van het borststuk, gat ±12 px.
 - Jordi (20 nov) over r14: "L2, maar het rechter oog is nu te hoekig, niet meer mooi rond. Plus waar de poten op het lichaam aansluiten mag iets smoother, minder rechte lijnen" (ringen A/B en welk zwart vak: nog open)
 - Jordi (20 nov): "ringen a, zwart vak is weg maar je hebt de vorm van het rechteroog veranderd"
+- Jordi (20 nov) over r15: "kleurgebruik in rechteroog moet beter, schaduw, etc, hoe je het led effect creeert" · "Aansluiting van de poten is niks verbeterd"

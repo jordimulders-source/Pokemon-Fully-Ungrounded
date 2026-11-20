@@ -14,10 +14,9 @@ Matchups en het besluit om het type te maken staan in `CONCEPT.md` (Nieuw type: 
 
 - **20 nov, tweede ronde (Jordi):** Minior per vorm: meteoorvorm Rock/Cosmic, kernvorm Flying/Cosmic ("derde optie uitstekend idee"). Elgyem-lijn puur Cosmic. Deoxys Psychic/Cosmic. Clefairy-lijn Fairy/Cosmic. Comet Punch wordt Cosmic. Nieuwe Cosmic-moves ontwerpen: later.
 
+- **Niet Cosmic (Jordi, 20 nov):** Inkay → Malamar ("hij is niet buitenaards, dus niet veranderen") en Bronzor → Bronzong ("evenals").
+
 ## Open: soorten
-| Vraag | Opties | Jordi |
-|---|---|---|
-| Inkay → Malamar | Psychic houden: in de canon is hij niet buitenaards, alleen zijn uiterlijk doet eraan denken | |
 
 **Psychic houden of niet (Elgyem-lijn, Deoxys), berekend op de typetabel:**
 - Puur Cosmic is zwak voor Poison, Rock, Psychic en Cosmic, resisteert Steel, Fire en Water en is immuun voor Fairy.
@@ -33,7 +32,7 @@ Matchups en het besluit om het type te maken staan in `CONCEPT.md` (Nieuw type: 
   - Deoxys: maken we hem puur Cosmic, dan kan Psycho Boost (zijn signature, 140) mee naar Cosmic.
 
 **Meer opties (alleen ter overweging):**
-- In de dex: Natu → Xatu (kijkt de hele dag naar de zon), Bronzor-lijn (zwak), Espeon/Umbreon (zon en maan), Volcarona ("vervangt de zon"), Magnezone (UFO-vorm), Unown.
+- In de dex: Natu → Xatu (kijkt de hele dag naar de zon), Espeon/Umbreon (zon en maan), Volcarona ("vervangt de zon"), Magnezone (UFO-vorm), Unown.
 - Niet in de dex: Jirachi, Cosmog-lijn/Necrozma, Celesteela (Ultra Beast in de vorm van een raket), Orbeetle (UFO-kever). Elk van deze moet eerst in de dex komen.
 
 ## Open: moves

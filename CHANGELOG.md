@@ -2388,3 +2388,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.573] - Cosmic: tweede ronde besluiten
 - Minior: meteoorvorm Rock/Cosmic, kernvorm Flying/Cosmic. Elgyem-lijn puur Cosmic, Deoxys Psychic/Cosmic, Clefairy-lijn Fairy/Cosmic, Comet Punch wordt Cosmic. Nieuwe Cosmic-moves ontwerpen: later. Alles in `docs/concept/COSMIC.md`.
+
+### [v0.0.574] - Cosmic: Inkay-lijn en Bronzor-lijn blijven zoals ze zijn
+- Jordi: Inkay/Malamar is niet buitenaards, niet veranderen; Bronzor/Bronzong ook niet. In `docs/concept/COSMIC.md`.

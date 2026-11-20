@@ -105,7 +105,7 @@ for _ in range(3):
             if {p, q} <= {2, 3, 4}: B[y + 1, x + 1] = q
             elif q == 1 and p in (2, 3, 4): B[y + 1, x] = 4            # diagonale stap van een penlijn: een lijnpixel in de donkerste tint
             elif p == 1 and q in (2, 3, 4): B[y + 1, x + 1] = 4
-            elif 1 not in (p, q) and 14 not in (p, q): B[y + 1, x + 1] = q
+            elif {p, q} <= {5, 6, 7, 8}: B[y + 1, x + 1] = q
             elif p == 12 and q == 1: B[y, x] = 13
 im = Image.fromarray(B.astype(np.uint8), 'P'); im.putpalette([c for p in PAL for c in p]); im.save('hoatzin.png', transparency=0)
 im.convert('RGB').resize((512, 512), Image.NEAREST).save('hoatzin_8x.png')

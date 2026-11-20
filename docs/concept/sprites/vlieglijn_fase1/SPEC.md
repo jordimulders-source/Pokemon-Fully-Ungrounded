@@ -26,3 +26,4 @@ Nog niet gekozen (Gemini r1: `gemini/PROMPT.md`).
 - Jordi (20 nov): "de kabels vloeken nu wel met het achterlichaam, dus misschien moeten we het achterlichaam ook aanpassen"
 - Jordi (20 nov): "kop wordt grijs dan"
 - Jordi (20 nov) "akkoord": achterlijf grijs met een paar grote zwarte vlekken (donkere middenlijn + 2–3 vlekken per kant, vereenvoudigd huisvliegpatroon; exacte vlekken zet de maker), vleugels lichter (bijna wit, koel blauw) → `gemini/PROMPT_r5.md`
+- r5 (`gemini/r5.png`), Jordi: "wat vind je ervan"

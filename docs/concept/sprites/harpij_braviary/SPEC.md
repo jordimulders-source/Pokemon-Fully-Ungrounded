@@ -27,7 +27,7 @@
 - Sprite: Jordi "ga maar met D+J verder en bouwen" · over ronde 2: "doe puur pixel fixes en teken niks opnieuw" · "het oog is een beetje onafgemaakt" · "r1 is beter dan r2 qua oog, maar mist een paar pixels aan de onderkant denk ik" · "en is teveel een vierkant" · "de veren op het hoofd mogen wat poetswerk nog, behalve de meest rechtse twee, die zijn erg goed al" · "qua vorm" (die twee bevroren).
 - Over r3: "juist we gaan de goede kant op. Het strepen patroon bij de poten is verdwenen, maar ik zie daar wel nog teveel rechte lijnen, ook de poten zelf zijn teveel rechte lijnen. Je gaat me toch niet vertellen dat ze opnieuw getekend zijn he? rechte lijnen bij het hoofd, de nek, rechts van de vleugel" · "kuif moet nog steeds netter". Oorzaak: r1-maker week 801/1380 px af van de kale reductie. r4 = verse maker vanaf de kale reductie (alleen 2 rechtse kuifveren en het oog uit r3). Jordi: "oog c" (`sprite_r3/harpij_r3c`).
 - Over r5: "het hoofd mist contrast" · "de kuif is minder mooi" (dan r4; r5 liet de donkere banden vallen) · "de kuif kan juist wel wat zwarte lijnen gebruiken".
-- Over r6: "het strepenpatroon bij de poten is nu toch weer terug, prima".
+- Over r6: "het strepenpatroon bij de poten is nu toch weer terug, prima" · kuif: "B is beter ja".
 
 ## Model
 `model/model_natief.png` (natief raster van r6, 99×99, met Claude's veren: D + middelste veer J). `model/model_10x.png` = 10× vergroot. Bevroren, behalve:

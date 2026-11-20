@@ -1,6 +1,7 @@
 # Nazca-astronaut – Gemini-startprompt r2 (nieuw gesprek, geen bijlage)
 
 r1 (`r1/`): Jordi: "vreselijk. Lijkt totaal niet op de nazca lijnen, plus het lijkt niet op een counterpart van sigilyph". Oorzaak (Claude): "small humanoid", "owl-like", "waving", "short body" en driekwart gaven een schattige mascotte (chibi uil-kind met snavel en vingers).
+Jordi over r1 ook: "veel te blij ook" → r2 vraagt een neutrale, uitdrukkingsloze blik (zoals Lunatone/Solrock; Jordi gaf die als voorbeeld bij de ijskomeet).
 r2 (voorstellen Claude, niet van Jordi): de geoglief letterlijk als bouwplan (cirkelkop, cirkelogen, geen mond, stijve lijnledematen); Sigilyph's bouw (stijf, frontaal, symmetrisch, zwevend, totem) in woorden; frontaal zoals Lunatone/Solrock/Claydol in Gen 3; kleuren nog open, alleen "niet die van Sigilyph".
 Werkt dit niet: r3 met Sigilyph's sprite als bijlage ("this is SIGILYPH, the counterpart").
 
@@ -13,6 +14,7 @@ Draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style): pixel a
 
 BUILD IT FROM THE GEOGLYPH
 The geoglyph is made of simple thick lines: a big perfectly round head; two big round eyes drawn as circles inside the head; NO mouth, no beak, no nose; a simple straight body; one arm raised up, one arm pointing down, both bent at sharp angles like lines; two straight legs with simple feet.
+EXPRESSION: completely neutral and expressionless, an empty stare from the two round eyes, like Lunatone and Solrock. Not happy, not angry, not sad.
 Keep that look: geometric, flat-feeling shapes, stiff straight limbs made of line segments, not soft round flesh.
 
 BUILD IT LIKE SIGILYPH

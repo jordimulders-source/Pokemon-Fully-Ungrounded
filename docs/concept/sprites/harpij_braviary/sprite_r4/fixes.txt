@@ -1,0 +1,43 @@
+# KUIF (rijen 0-13, links van de bevroren r3-veren): silhouet = reductie; tinten per pixel uit het modelgemiddelde
+# (>=93 c, 76-92 b, <76 a, scheidingslijnen <45 K); selout a aan de lichtkant (boven/links), K rechts; banden = donkere modelbanden
+0 8 aK
+0 14 aK
+1 7 acK
+1 13 acK
+1 21 acK
+2 7 acK
+2 12 abcK
+2 19 abccK
+3 7 acbK
+3 12 abcK
+3 18 aaabcK
+4 6 ababK
+4 12 aaK
+4 17 acaaaK
+5 5 acKbcK
+5 12 acK
+5 16 accbaK
+6 5 abKcbaK
+6 12 abKK
+6 16 bccbaK
+7 5 aaabcaK
+7 12 cbK
+7 15 abcbbK
+8 1 aaaaKbbbghgh
+8 15 bbbbaa
+9 0 abbcbaKgh
+9 14 gggabb
+10 0 Kbabba
+10 17 gbbba
+11 1 Kabc
+11 17 hgbK
+12 4 g
+# SNAVEL (staal): tinten per pixel uit het model (rug licht u, lijf t, bek-/onderlijn s), buitenlijn K, selout s links
+14 4 sttu
+15 3 suttts
+16 2 suttttts
+17 1 sutttttts
+18 1 sustttsss
+19 1 KtsstssK
+20 2 KKKKK
+21 3 K

@@ -2385,3 +2385,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Vlieg: r7 bewaard ("nu begint het op een pokemon te lijken"); prompt r8 (boller achterlijf).
 - Vlieg: model samengesteld (r8 + strepen van r7) in `vlieglijn_fase1/model/`.
 - Vlieg: sprite r3–r5 (50 px, maker + keurder); poten blijven fout → Gemini-ronde r9 voor de poten (prompt + bijlage).
+- Vlieg: sprite r6–r10 (poten via Gemini r9 + krabbel Jordi, eindkeuring r9 + reparaties) → kandidaat `vlieglijn_fase1/sprite_r10/`.

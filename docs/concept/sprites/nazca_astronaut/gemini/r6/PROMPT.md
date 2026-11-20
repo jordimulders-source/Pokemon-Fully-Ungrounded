@@ -18,3 +18,5 @@ New coloring:
 Nothing else: no other patterns, no stars, no extra details, no new shapes.
 Make it a real SPRITE: an official Gen 3 front sprite (Ruby/Sapphire/Emerald), pixel art on a 64×64 grid, max 16 colors, with Gen 3 shading (a light and a dark tone per color) and a dark selout outline, plain white background. Not a flat vector drawing.
 ```
+
+Uitkomst r6 (20 nov): Jordi: "het is nog steeds geen sprite, de kleuren kloppen wel redelijk, nog niet helemaal, lichaam wel vreselijk". Recolor-opdracht op een platte bijlage blijft plat.

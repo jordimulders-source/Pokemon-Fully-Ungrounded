@@ -17,3 +17,10 @@ AVOID: realistic feathers, hair-like crest, feather stripes or texture, fully sp
 ```
 
 Uitslag v10 r1 (`v10_r1.png`, kijkt naar rechts), Jordi: "deze is al wat beter, ik twijfel nog over de lichaams kleur, die vertaalde eerder niet heel lekker naar de sprite, voor de rest vind ik hem wel goed, misschien de haren nog net iets langer, paar cm".
+
+Kleuroptie 3 gekozen (Jordi: "ik neig wel naar 3": bijna zwart blauw-paars lijf + crème nek). Bijsturen (zelfde gesprek als v10 r1):
+```
+Keep this design and pose exactly. Only two changes:
+1. Body colors: wings, back and tail become an almost-black blue-purple (saturated, not grey, with 2–3 cel-shading tones); the neck and upper chest become a pale cream color, clearly separate from the dark wings. Keep the purple swollen crop, rust brown crest, blue face, red eye, grey beak and feet, pale tail tip.
+2. Make the crest tufts a little longer.
+```

@@ -34,3 +34,4 @@
 - **Besloten (Jordi, 20 nov):** Oddish = kelp ("oddish kelp klinkt goed"). Gloom = **G2, minerale bol** (de bron in wording: mineraalheuvel waar heet water het koude zeewater raakt): "Ik vind G2 wel tof trouwens, met wat slap hangende zijbladen misschien". Vileplume = heetwaterbron omringd door anemonen.
 - Jordi over wier → dier: "Alsof dat in pokemon nooit gebeurt." (Klopt: evoluties wisselen vaker van "soort".)
 - **Besloten (Jordi, 20 nov):** Oddish Water/Grass, Gloom en Vileplume Water/Fire; Oddish lijf basaltgrijs/zwart ("oddish moet wel een andere kleur anders verschilt die niet genoeg"). Prompts: `gemini/PROMPTS_kelp_bron_v1.md`.
+- **Kelp r1** (`kelp_r1/`), Jordi (20 nov): "wat vind je ervan?"

@@ -2397,3 +2397,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.576] - Nazca-astronaut: SPEC gestart
 - `docs/concept/sprites/nazca_astronaut/SPEC.md`: Jordi's citaat, achtergrond van de geoglief en de open vragen.
+
+### [v0.0.577] - Nazca-astronaut: besluiten en Gemini-startprompt r1
+- Jordi: Cosmic/Normal, counterpart van Sigilyph, echt wezen. SPEC bijgewerkt (met Sigilyph-ontwerptaal); `gemini/PROMPT.md` r1 voor een nieuw gesprek zonder bijlage.

@@ -44,3 +44,7 @@
 - Gloom: `referenties/gemini_gekozen_gloom.png` (= `kelp_r3/gloom.png`).
 - Vileplume: `referenties/gemini_gekozen_vileplume.png` (= `kelp_r2/vileplume.png`). **Toegestane afwijking (Jordi, optie A):** in de spritefase de vele dunne tentakels per anemoon klonteren tot ±8–10 dikke tentakels op de modelplekken (anders rode ruis op 64×64).
 - Spritefase: Jordi "begin maar met oddish". Grootte: als de Oddish in de game (±33×35 px, voeten op dezelfde hoogte).
+
+## Spritefase Gloom (`gloom_sprite/`)
+- r2 naar Jordi (20 nov): "best netjes al, in het hoofd mag je wat meer kleurtinten/schaduw gebruiken voor de lava, voor de rest is het alleen afwerking".
+- r3 (lava: donkere randen, felle kruisingen, schaduwkant een tint donkerder), Jordi (20 nov): "ja fenomenaal werk wat betreft die lava" → lava in de brok bevroren.

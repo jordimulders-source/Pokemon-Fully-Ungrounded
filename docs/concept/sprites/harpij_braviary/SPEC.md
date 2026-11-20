@@ -5,7 +5,8 @@ Regionale Braviary-vorm gebaseerd op de harpij-arend (Amazone). Regionale Ruffle
 ## Jordi letterlijk
 - 9 nov: "We gaan voor een eigen braviary vorm"; Rufflet gaat mee: "klinkt goed".
 - 9 nov: "steel/flying tof".
-- 20 nov (meerkeuze): eerst Braviary, daarna Rufflet · type Steel/Flying, besloten · Steel-gevoel zit in de **klauwen** · pose: **zittend, kuif op** (voorstel Claude: rechtop, kuif opgezet, klauwen zichtbaar, geen ondergrond).
+- 20 nov (meerkeuze): eerst Braviary, daarna Rufflet · type Steel/Flying, besloten · Steel-gevoel zit in de **klauwen** · daarna: "klauwen en snavel allebei" · pose: **zittend, kuif op** (voorstel Claude: rechtop, kuif opgezet, klauwen zichtbaar, geen ondergrond).
+- 20 nov: "de kuif maken wij iets stilistischer dan irl" · "want daar zitten de veren een beetje verspreid".
 
 ## Open
 - Kleur: Gemini-prompt r1 vraagt harpij-kleuren (voorstel Claude); Jordi beslist bij het model.

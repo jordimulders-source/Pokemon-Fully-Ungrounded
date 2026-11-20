@@ -24,7 +24,7 @@
 - Jordi daarna: "kan jij eens kijken of jij het kan, je kan alleen de veren niet copy pasten, je moet ze precies in dezelfde stijl maken maar een andere vorm" · "maak een paar varianten". Claude tekende op r6 (natief raster ±99 px, `plak/`) 1 veer per kant: varianten A–D.
 - Jordi: "ik vind D het beste gelukt, al best mooi" · "Kan je misschien nog de veer die Gemini er neer heeft gezet ook nog in lijn met de rest maken? Dan is die niet symmetrisch maar dat is irl ook niet". Varianten D+E/F/G (`plak/varianten_midden.png`).
 - Jordi: "houd de bodem van de veer hetzelfde, alleen de top, zodat die niet volledig recht is" → varianten H/I/J. Jordi: "vind ze allemaal nog niet mooi, maar dat fixen we in de sprite wel, ga maar met D+J verder en bouwen".
-- Sprite: Jordi "ga maar met D+J verder en bouwen" · over ronde 2: "doe puur pixel fixes en teken niks opnieuw" · "het oog is een beetje onafgemaakt" · "r1 is beter dan r2 qua oog, maar mist een paar pixels aan de onderkant denk ik" · "en is teveel een vierkant" · "de veren op het hoofd mogen wat poetswerk nog, behalve de meest rechtse twee, die zijn erg goed al" (die twee bevroren).
+- Sprite: Jordi "ga maar met D+J verder en bouwen" · over ronde 2: "doe puur pixel fixes en teken niks opnieuw" · "het oog is een beetje onafgemaakt" · "r1 is beter dan r2 qua oog, maar mist een paar pixels aan de onderkant denk ik" · "en is teveel een vierkant" · "de veren op het hoofd mogen wat poetswerk nog, behalve de meest rechtse twee, die zijn erg goed al" · "qua vorm" (die twee bevroren).
 
 ## Model
 `model/model_natief.png` (natief raster van r6, 99×99, met Claude's veren: D + middelste veer J). `model/model_10x.png` = 10× vergroot. Bevroren, behalve:

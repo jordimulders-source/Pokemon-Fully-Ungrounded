@@ -1,7 +1,7 @@
 # Nazca-astronaut – Gemini-startprompt (r1, nieuw gesprek, geen bijlage)
 
-Besluiten: `../SPEC.md`. Jordi: Cosmic/Normal, counterpart van Sigilyph, "de manier waarop Sigilyph ontworpen is mag lijken op het astronaut ontwerp", "een echt wezen".
-Voorstellen Claude (niet van Jordi): pose van de geoglief (een arm omhoog, een arm omlaag); Sigilyph's ontwerptaal en palet in woorden; staand in plaats van zwevend; geen bijlage (GEMINI.md: geen extra referenties).
+Besluiten: `../SPEC.md`. Jordi: "misschien vergelijkbare motieven, maar dan andere kleuren" (20 nov). Cosmic/Normal, counterpart van Sigilyph, "de manier waarop Sigilyph ontworpen is mag lijken op het astronaut ontwerp", "een echt wezen".
+Voorstellen Claude (niet van Jordi): pose van de geoglief (een arm omhoog, een arm omlaag); Sigilyph's motieven in woorden; staand in plaats van zwevend; geen bijlage (GEMINI.md: geen extra referenties).
 
 ---
 
@@ -14,8 +14,9 @@ Draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style): pixel a
 WHAT IT IS
 A small humanoid figure with the silhouette of the geoglyph: a very big round head (owl-like) with two huge round eyes, a short body, two arms and two short legs with feet. 2 arms in total, 2 legs in total.
 
-DESIGN LANGUAGE (like Sigilyph)
-Black as the main body color, with bright accents in yellow, red, blue and green; geometric, ancient-looking patterns (zigzag bands, eye-like spots) on the body; stylized and symmetrical-feeling, like a Nazca/Paracas artwork that came to life.
+DESIGN LANGUAGE (like Sigilyph, but other colors)
+Similar motifs to Sigilyph: geometric, ancient-looking patterns (zigzag bands, eye-like spots) on the body; stylized and symmetrical-feeling, like a Nazca artwork that came to life.
+Use a DIFFERENT color scheme than Sigilyph: not Sigilyph's black body with yellow, red, blue and green.
 
 POSE
 The pose of the geoglyph: one arm raised high (like waving or pointing at the sky), the other arm pointing down at the ground. It stands on its feet.

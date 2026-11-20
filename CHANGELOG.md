@@ -2427,3 +2427,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.570] - Hoatzin-lijn geschrapt
 - Jordi: "we schrappen hem ... het vertaalt niet mooi naar een design of een sprite. En we hebben toch al genoeg vogel achtige pokemon. We hebben het geprobeerd, maar het is niet gelukt".
 - Uit de conceptdocumenten gehaald of doorgestreept (POKEMON.md, IDEEEN.md, FAKEMON_PITCH.md, DEX_NOMINATIES.md, DEX_IN_ROM.md, Stand van zaken in CLAUDE.md). Al het werk (2 ontwerpen, sprite r1–r25 en s1–s12, Gemini-opknap r1–r5, RETRO.md) als naslag in `docs/concept/sprites/geschrapt/hoatzin_fase2/`; de lessen blijven in GEMINI.md.
+
+### [v0.0.571] - Hoatzin-lijn definitief geschrapt
+- Kort heropend met ontwerp 3 (plaagdoktermasker als kop, Poison/Dark, Hoatedo van @lukekravdraws als inspiratie): Gemini r1–r10. Jordi: "we schrappen hem definitief, het lukt mij niet om een goed verwoord idee te bedenken voor deze pokemon ... door naar de volgende".
+- Werk in `docs/concept/sprites/geschrapt/hoatzin_v3/`; besluiten en citaten in POKEMON.md (sectie Hoatzin-lijn). Les in GEMINI.md: andermans ontwerp als enige bijlage = Gemini maakt het na.

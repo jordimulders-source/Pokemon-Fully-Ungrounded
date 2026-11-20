@@ -143,12 +143,13 @@ Alleen de keuzes; details, citaten en open vragen in `IDEEEN.md` (overzicht bove
 - **Neigingen:** regionale Spheal/Sealeo met een nieuwe eindvorm (niet Walrein; zeeleeuw).
 - **Geschrapt:** Darwins vliegend hert, Torkoal-schildpad, Sharpedo-hamerhaai (liever een nieuwe haaienlijn), lavacactus-Cacnea, Dudunsparce.
 
-## Hoatzin-lijn: GESCHRAPT (20 nov), daarna weer open (20 nov)
+## Hoatzin-lijn: DEFINITIEF GESCHRAPT (20 nov)
+- Jordi (na ontwerp 3, r10): "wederom te klein en ik ben niet tevreden, we schrappen hem definitief, het lukt mij niet om een goed verwoord idee te bedenken voor deze pokemon, daarom dat de resultaten ook niet lukken, is niet erg, we sluiten dit gesprek af en door naar de volgende". Alle werk in `sprites/geschrapt/` (hoatzin_fase2, hoatzin_v3).
 - Jordi: "we schrappen hem ... het vertaalt niet mooi naar een design of een sprite. En we hebben toch al genoeg vogel achtige pokemon. We hebben het geprobeerd, maar het is niet gelukt". Werk als naslag in `sprites/geschrapt/hoatzin_fase2/`.
 - Daarna, na Hoatedo (fakemon van @lukekravdraws, `ontwerp/referenties/hoatzin_hoatedo_lukekravdraws.png`): "wacht, ik denk ik google nog 1 keer of andere mensen het wel gelukt is. Dit is een geniaal idee. We zouden er wat meer zo'n type design van kunnen maken, dan verwerken we er een plaagdokter masker in ook". Hoatedo is werk van een ander: alleen als inspiratie voor het type design, niet namaken.
 - Jordi over Hoatedo: "de scherpe vormen, het oog zonder mond en de veren naar achteren maken de hoatzin dus al herkenbaar zat".
 - Besloten (Jordi, 20 nov): Poison/Dark en 2 fases blijven ("1 ja"); het plaagdoktermasker is de kop zelf ("2 kop zelf"); Hoatedo niet als bijlage aan Gemini ("3 nee").
-- Ontwerp 3 (plaagdoktermasker), Gemini in `sprites/hoatzin_v3/gemini/`. Op r1: "ok dit is een begin, maar het is niet pokemon genoeg, de kleuren zijn wederom niet de kleuren die mooi gaan vertalen en hij moet wat smoother en wat langer".
+- Ontwerp 3 (plaagdoktermasker), Gemini in `sprites/geschrapt/hoatzin_v3/gemini/`. Op r1: "ok dit is een begin, maar het is niet pokemon genoeg, de kleuren zijn wederom niet de kleuren die mooi gaan vertalen en hij moet wat smoother en wat langer".
   Ook: "en het oog moet echt rood" · "je herkent hem nog niet als poison".
   Op r2: "hij moet nog meer de hoatedo kant op".
   Over Hoatedo: "die heeft heel natuurlijk paarse poison vlekken" · "en het oog moet rond zijn".

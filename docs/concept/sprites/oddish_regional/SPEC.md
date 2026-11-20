@@ -38,3 +38,9 @@
 - **Besloten (Jordi, 20 nov: "prima"):** per diepte aanpassen. Oddish zeegroen/turquoise met lichte buik, voetjes = kelp-hechtorgaan; Gloom dieprood/bordeaux, gelatineus lijf, vinnetjes i.p.v. armen; Vileplume wit/parelmoer, steltpoten (driepootvis), anemonen rood/oranje. Prompts `gemini/PROMPTS_kelp_bron_v2.md`.
 - **Kelp r3** (`kelp_r3/`): Gloom goed (lavabrok, kwijl); Vileplume-tentakels werden handjes. Jordi: "akkoord" met Vileplume v4 (`gemini/PROMPT_kelp_bron_v4_vileplume.md`).
 - **Vileplume v4** (`kelp_r4/`), Jordi (20 nov): "hij blijft hetzelfde doen" (weer handjes, bijna gelijk aan r3).
+
+## Bevroren modellen (Jordi, 20 nov: "A akkoord")
+- Oddish: `referenties/gemini_gekozen_oddish.png` (= `kelp_r2/oddish.png`).
+- Gloom: `referenties/gemini_gekozen_gloom.png` (= `kelp_r3/gloom.png`).
+- Vileplume: `referenties/gemini_gekozen_vileplume.png` (= `kelp_r2/vileplume.png`). **Toegestane afwijking (Jordi, optie A):** in de spritefase de vele dunne tentakels per anemoon klonteren tot ±8–10 dikke tentakels op de modelplekken (anders rode ruis op 64×64).
+- Spritefase: Jordi "begin maar met oddish". Grootte: als de Oddish in de game (±33×35 px, voeten op dezelfde hoogte).

@@ -21,6 +21,8 @@
 - r7 (`gemini/r7.png`, nieuw gesprek met r6), Jordi: "dit gaat fout. Vraag maar alleen om extra veren". (Gemini haalde 2 veren weg en zette de nieuwe veren als oren opzij van de kop.)
 - r8 (`gemini/r8.png`, nieuw gesprek met r6), Jordi: "Gemini snapt er helemaal geen bal van, ik heb nog 1 suggestie, laten we vragen of die van de veren een soort hoofdtooi kan maken, misschien dat die het dan wel doet".
 - r9 (`gemini/r9.webp`, hoofdtooi), Jordi: "ben bang dat dit hem ook niet is, hij heeft de verkeerde stijl veren erop geplakt".
+- Jordi daarna: "kan jij eens kijken of jij het kan, je kan alleen de veren niet copy pasten, je moet ze precies in dezelfde stijl maken maar een andere vorm" · "maak een paar varianten". Claude tekende op r6 (natief raster ±99 px, `plak/`) 1 veer per kant: varianten A–D.
+- Jordi: "ik vind D het beste gelukt, al best mooi" · "Kan je misschien nog de veer die Gemini er neer heeft gezet ook nog in lijn met de rest maken? Dan is die niet symmetrisch maar dat is irl ook niet". Varianten D+E/F/G (`plak/varianten_midden.png`).
 
 ## Regionale Rufflet
 - 20 nov: "Rufflet wordt juist regionaal" · "Perrserker idee": de regionale Rufflet evolueert in de harpij.

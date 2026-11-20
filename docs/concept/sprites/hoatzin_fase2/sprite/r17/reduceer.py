@@ -19,9 +19,10 @@ for it in range(40):
 lab=np.full(bg.shape,-1); d=((a[:,:,None,:]-C[None,None])**2).sum(3); lab=d.argmin(2); lab[bg]=-1
 L=a@[.299,.587,.114]
 R,G,B=a[...,0],a[...,1],a[...,2]
-dark=(~bg)&(L<62)
-brown=(~bg)&(R>G+25)&(R>B+25)&(L<150)&(L>=62)          # kuifstrengen (oranjebruin)
-light=(~bg)&(L>=165)&(R>B-10)                           # lichte vleugelstrepen (roze-wit)
+brown=(~bg)&(R>G+20)&(R>B+28)&(L>=40)&(L<150)          # kuifstrengen (bruin)
+DL=float(sys.argv[6]) if len(sys.argv)>6 else 55
+dark=(~bg)&(L<DL)&~brown
+light=(~bg)&(L>=140)&(R>B-10)                           # lichte vleugelstrepen (roze-wit)
 NR,NC=61,49
 out=np.zeros((NR,NC,3)); win=np.full((NR,NC),-1); why=np.zeros((NR,NC),'U6')
 cnt={k:np.zeros((NR,NC),int) for k in ('dark','brown','light')}
@@ -38,16 +39,17 @@ for r in range(NR):
         for k,m in masks.items(): cnt[k][r,c]=m[ys,xs].sum()
 pref=['dark','brown','light']
 promo=np.zeros((NR,NC),'U6')
+TH={'dark':int(sys.argv[4]) if len(sys.argv)>4 else 2,'brown':3,'light':2}
 for r in range(NR):
     for c in range(NC):
         ys,xs=blk(r,c)
         wl=win[r,c]
+        ok=[]
         for k in pref:
-            m=masks[k][ys,xs]
-            if cnt[k][r,c]>=3:
-                # al winnend?
-                if wl>=0 and m.ravel()[lab[ys,xs].ravel()==wl].mean()>0.5 if wl>=0 and (lab[ys,xs]==wl).any() else False: break
-                promo[r,c]=k; break
+            if cnt[k][r,c]>=TH[k]:
+                if wl>=0 and masks[k][ys,xs].ravel()[lab[ys,xs].ravel()==wl].mean()>0.5: ok=[]; break   # lijn wint al via de modus
+                ok.append(k)
+        if ok: promo[r,c]=max(ok,key=lambda k:cnt[k][r,c])
 # niet dikker dan 1 px: lijn over de blokgrens -> alleen het blok met de meeste lijnpixels
 drop=np.zeros((NR,NC),bool)
 for r in range(NR):
@@ -72,6 +74,22 @@ for r in range(NR):
             m=masks[k][ys,xs].ravel(); out[r,c]=px[m].mean(0); why[r,c]=k
         elif win[r,c]>=0:
             out[r,c]=px[lb==win[r,c]].mean(0)
+            sel=lb==win[r,c]
+            for kk,tag in (('light','mlight'),('dark','mdark'),('brown','mbrown')):
+                if masks[kk][ys,xs].ravel()[sel].mean()>0.5: why[r,c]=tag   # modus is zelf een lijn-/streepkleur: eigen kleur houden
         else: why[r,c]='bg'
-np.save(OUT,{'rgb':out.round().astype(int),'why':why,'bg':why=='bg'},allow_pickle=True)
+# gladde toonkaart van de VULLING (les pitahaya fase 1): modelhelderheid zonder lijn-/streeppixels, genormaliseerd vervaagd (straal SIG natief)
+from PIL import ImageFilter
+SIG=float(sys.argv[5]) if len(sys.argv)>5 else 2.0
+w=((~bg)&~dark&~light&~brown).astype(float)
+gk=np.exp(-np.arange(-6,7)**2/(2*SIG**2)); gk/=gk.sum()
+def bl(z):
+    z=np.apply_along_axis(lambda v: np.convolve(v,gk,'same'),0,z); return np.apply_along_axis(lambda v: np.convolve(v,gk,'same'),1,z)
+TL=bl(L*w)/np.maximum(bl(w),1e-3)
+toon=np.zeros((NR,NC))
+for r in range(NR):
+    for c in range(NC):
+        ys,xs=blk(r,c); f=~bg[ys,xs]
+        toon[r,c]=TL[ys,xs][f].mean() if f.any() else 0
+np.save(OUT,{'rgb':out.round().astype(int),'why':why,'bg':why=='bg','toon':toon},allow_pickle=True)
 print('fase',PY,PX,'figuurcellen',(why!='bg').sum(),{k:(why==k).sum() for k in pref})

@@ -20,3 +20,8 @@
 
 ## Sprite r5 (19 nov)
 - Jordi: "D is het mooiste, maar de hele sprite is nog erg blurry" → buik D (#4C2860 / #7C4498 / #B47CD6).
+
+## Op r16 (20 nov), Jordi letterlijk (aantekeningen: `sprite/r16/jordi_aantekeningen.webp`)
+- "eigenlijk is niks beter geworden"
+- "ok er gaat namelijk echt flink wat fout, omdat je niet goed naar het model kijkt, wat heel raar is want die kan je ook gewoon op een raster zetten. De poten zijn opnieuw getekend, altijd een belachelijk slechte keuze, de kuif is helemaal niet mooi, de nek gaat nog steeds niet goed over, de vleugels hebben een andere vorm, bovenste stuk past niet eens in het raster. Ik heb een aantal lijnen gezet ter indicatie, het is een indicatie, maar je moet echt nog even beter naar het model kijken en meten hoe het daar precies is gegaan. Misschien met kleurcodes een pixelblad maken en zo proberen te verbeteren, niks opnieuw tekenen"
+- "enige wat echt goed is, is snavel, staart en buik"

@@ -1,4 +1,4 @@
-# vel.py SPRITE.png UIT.png [VORIGE.png]  (Swablu: close-ups kop/voelsprieten en staartje op 12x naast het model): sprite 8x | (vorige 8x) | model op schaal 8x / close-ups 12x (sprite | model) / 1x licht+donker + model 1x
+# vel.py SPRITE.png UIT.png [VORIGE.png]  (Altaria: close-ups kop/kuif en linkervleugel op 12x naast het model): sprite 8x | (vorige 8x) | model op schaal 8x / close-ups 12x (sprite | model) / 1x licht+donker + model 1x
 import sys, numpy as np; from PIL import Image, ImageDraw
 sys.path.insert(0,'gereedschap'); from gemeen import *
 def rgb_from(im,bg=(255,255,255)):
@@ -16,7 +16,7 @@ def mcrop(x0,y0,x1,y1,z):
 panelen=[s.resize((512,512),Image.NEAREST)]
 if len(sys.argv)>3: panelen.append(rgb_from(Image.open(sys.argv[3])).resize((512,512),Image.NEAREST))
 panelen.append(m.resize((512,512),Image.NEAREST))
-zones=[('kop+voelsprieten',18,14,40,34),('staartje+wolk rechts',32,32,54,50)]
+zones=[('kop+kuif',22,8,46,32),('vleugel links',3,14,27,38)]
 z=12; rows=[]
 for n,x0,y0,x1,y1 in zones:
     a=s.crop((x0,y0,x1,y1)).resize(((x1-x0)*z,(y1-y0)*z),Image.NEAREST); b=mcrop(x0,y0,x1,y1,z)
@@ -39,4 +39,5 @@ for p in paren:
 for i,bg in enumerate([(255,255,255),(248,248,232),(40,48,56),(24,24,24)]):
     v.paste(rgb_from(sp,bg),(i*72,y+8))
 v.paste(m,(4*72,y+8))
+v=v.crop((0,0,v.width,y+80))
 v.save(sys.argv[2]); print(sys.argv[2],v.size)

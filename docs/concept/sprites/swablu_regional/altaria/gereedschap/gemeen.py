@@ -1,23 +1,24 @@
-# Gedeelde hulpjes Swablu (onweerswolk): schaal, overlap natief->sprite, palet, model op spriteschaal, opslaan, labels.
+# Gedeelde hulpjes Altaria (onweerswolk): schaal, overlap natief->sprite, palet, model op spriteschaal, opslaan, labels.
 import numpy as np; from PIL import Image
-# natief figuur x74-163, y24-104 (90x81). Schaal 34/81: hoogte 34 (y16-49, onderkant als de game-Swablu op y49), x vanaf 13.
-S=34/81; U0,V0=74,24; X0,Y0=13,16
+# natief raster 199x199 (pitch 5,12 = 1024/200), figuur x15-188, y14-174 (174x161). Schaal 1/3 (gehele 3x3-blokken):
+# sprite x3-61, y9-62; onderkant op y62 zoals de game-Altaria (x4-61, y0-62, 1778 px). Blokfase (u≡1, v≡2 mod 3) = minste spreiding binnen de blokken.
+S=1/3; U0,V0=13,14; X0,Y0=3,9
 MODEL='altaria_model.png'; NATIEF='gereedschap/natief.png'
-PX,PHX,PY,PHY=4.267,3.25,4.270,3.00     # rasterpitch/fase uit natief.py
-# 0 transp | 1 zwart | 2-7 wolk (selout, donker, midden, licht, lichter, wit) | 8-10 vogel (donker, midden, licht) | 11-13 geel (oker, geel, licht) | 14-15 wit (snavel, glans)
-# Alle kleuren = k-means-centra van de modelpixels per klasse (gereedschap/klassen.py).
-PAL=[(152,208,160),(13,17,24),
-     (56,70,84),(74,87,103),(109,121,137),(138,151,167),(156,169,184),(194,202,214),
-     (72,93,111),(107,130,150),(137,159,175),
-     (188,166,61),(221,199,90),(252,242,162),
-     (211,216,225),(250,251,253)]
-WOLK={2,3,4,5,6,7}; VOGEL={8,9,10}; GEEL={11,12,13}; WIT={14,15}
-def overlap(X,Y,W=239,H=130):
-    ua=(X-X0)/S+U0; ub=ua+1/S; va=(Y-Y0)/S+V0; vb=va+1/S
-    for v in range(int(np.floor(va)),int(np.ceil(vb))):
-        for u in range(int(np.floor(ua)),int(np.ceil(ub))):
-            w=max(0,min(ub,u+1)-max(ua,u))*max(0,min(vb,v+1)-max(va,v))*S*S
-            if w>1e-9 and 0<=u<W and 0<=v<H: yield u,v,w
+PX,PHX,PY,PHY=5.12,4.10,5.12,4.10     # rasterpitch/fase uit natief.py
+# 0 transp | 1 zwart | 2-5 wolk (donker, midden, licht, hooglicht) | 6-8 violet (donker, midden, licht) | 9 lavendelwit (kuiflicht, oogglans) | 10 static
+# Kleuren = k-means-centra van de modelpixels per klasse (bouw.py rekent ze na).
+PAL=[(152,208,160),(6,12,28),
+     (28,50,81),(50,83,116),(89,139,170),(144,202,221),
+     (56,61,139),(94,98,207),(141,145,237),
+     (236,240,251),(188,224,237)]
+WOLK={2,3,4,5}; VIOLET={6,7,8}
+def blok(X,Y):
+    u=U0+3*(X-X0); v=V0+3*(Y-Y0); return u,v
+def overlap(X,Y,W=199,H=199):
+    u,v=blok(X,Y)
+    for vv in range(v,v+3):
+        for uu in range(u,u+3):
+            if 0<=uu<W and 0<=vv<H: yield uu,vv,1/9
 def model_op_schaal(bg=(255,255,255)):
     a=np.asarray(Image.open(NATIEF).convert('RGB')).astype(float); out=np.full((64,64,3),255.)
     for Y in range(64):
@@ -44,7 +45,7 @@ def label(mask,acht=True):
                 yy,xx=cy+dy,cx+dx
                 if 0<=yy<mask.shape[0] and 0<=xx<mask.shape[1] and mask[yy,xx] and not lab[yy,xx]: lab[yy,xx]=n; st.append((yy,xx))
     return lab,n
-CH='.K012345abcoyYwW'
-def toon(o,y0=12,y1=52,x0=8,x1=56):
+CH='.K0123abcWs'
+def toon(o,y0=8,y1=64,x0=0,x1=64):
     print('   '+''.join(str(x%10) for x in range(x0,x1)))
     for y in range(y0,y1): print('%2d '%y+''.join(CH[v] for v in o[y,x0:x1]))

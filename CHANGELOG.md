@@ -2568,3 +2568,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.619] - Onweerswolk-Altaria: gezicht naar echte Altaria
 - Jordi over r9: wolken goed, gezicht niet (linksonder valt weg, linkeroog slecht zichtbaar, rechte rechterkant); gezicht mag van het model afwijken, baseren op de echte Altaria. r10: alleen de kop.
+
+### [v0.0.620] - Onweerswolk-Altaria: frontsprite r10 (kop naar echte Altaria)
+- Kop pixel voor pixel van de Gen 3-Altaria (rijen Y16-17, kolommen X28/X34 geschrapt), omgekleurd naar ons violet/teal; diff met r9 85 px alleen in de kop, alpha -11/+1 in de kopzone (`altaria/sprite_r10/NOTITIES.md`).

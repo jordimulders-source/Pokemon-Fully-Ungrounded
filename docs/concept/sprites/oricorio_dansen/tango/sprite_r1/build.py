@@ -58,6 +58,12 @@ for p in snavel: nieuw.setdefault('snavel_pompom',set()).add(p)
 for p in oog: nieuw.setdefault('oog_pompom',set()).add(p)
 for p in oud_oog: nieuw.setdefault('kop_achter_oud_oog',set()).add(p)
 np.save('na_kop.npy',o)
+# 2b. wit (217) buiten het oog = lichte rand/glans in het model tussen strengen -> D5
+n=0
+for y in range(H):
+    for x in range(W):
+        if o[y,x]==I['W'] and (y,x) not in set(oog): o[y,x]=I['D5']; n+=1
+log['2b_wit_buiten_oog']=n
 # 3. losse brokjes (componenten < 4 px die nergens aan vastzitten) -> transparant
 n=0
 for pts in comps(o>0):
@@ -89,6 +95,15 @@ for pts in comps(o==I['O']):
     c=Counter(v for v in nbv if v in D)
     if c: o[a,b]=c.most_common(1)[0][0]; n+=1
 log['5_losse_omlijning']=n
+# 5b. losse binnenlijnpixels D1 (1 px, geen O/D1 in de 8-buurt) -> buurtint
+n=0
+for pts in comps(o==I['D1']):
+    if len(pts)>1: continue
+    a,b=pts[0]
+    if any(o[a+dy,b+dx] in (I['O'],) for dy in (-1,0,1) for dx in (-1,0,1) if (dy or dx) and 0<=a+dy<H and 0<=b+dx<W): continue
+    c=Counter(o[yy,xx] for yy,xx in nb4(o,a,b) if yy is not None and o[yy,xx] in D[1:])
+    if c: o[a,b]=c.most_common(1)[0][0]; n+=1
+log['5b_losse_D1']=n
 # 6. buitenrand dicht: vulpixel met transparante 4-buur -> omlijning
 n=0
 for y in range(H):
@@ -105,14 +120,59 @@ BAILE={48:{30:'b',31:'e',32:'3'},49:{30:'b',31:'d',32:'3'},50:{30:'b',31:'d',32:
        58:{24:'b',25:'b',26:'d',27:'d',28:'e',29:'d',30:'e',31:'3'},59:{23:'b',24:'d',25:'e',26:'d',27:'d',28:'b',29:'d',30:'3'},
        60:{23:'3',24:'3',25:'1',26:'d',27:'3',28:'6',29:'d',30:'3'},61:{25:'3',26:'3',28:'3',29:'3'}}
 BM={'b':'K3','d':'K1','e':'K2','3':'O','6':'O','1':'K3'}
+POOT=set()
 def plak(rows,dy,dx,zone):
     for r in rows:
-        for c,v in BAILE[r].items(): zet(r+dy,c+dx,I[BM[v]],zone)
+        for c,v in BAILE[r].items(): zet(r+dy,c+dx,I[BM[v]],zone); POOT.add((r+dy,c+dx))
 # 7a. standbeen: Baile-staak + knik + voet, onderkant voet op de modelvoet (rij 57), staak op de modelstaak (kol 26-27)
 plak(range(48,62),-4,-4,'standbeen_baile')
 # 7b. gestrekt been: Baile-voet (rij 57-61) op de modelvoet linksonder; staak = NIEUW, schuin van de split (rij 33, kol 25) naar de voet
 plak(range(57,62),-4,-20,'gestrekt_voet_baile')
 for r in range(33,53):
     xc=int(round(25-(r-33)*17/19))
-    zet(r,xc-1,I['K3'],'gestrekt_staak_nieuw'); zet(r,xc,I['K1'],'gestrekt_staak_nieuw'); zet(r,xc+1,I['O'],'gestrekt_staak_nieuw')
+    for dx,v in ((-1,'K3'),(0,'K1'),(1,'O')): zet(r,xc+dx,I[v],'gestrekt_staak_nieuw'); POOT.add((r,xc+dx))
 np.save('na_poten.npy',o)
+# 8a. kop onder de snavel: bij Pom-Pom loopt de wang onder de snavel door (Pom-Pom rij 23-25, kol 27-29); het gat dat de langere modelsnavel achterliet -> kopvulling
+for p in [(12,17),(12,18),(13,16),(13,17),(14,15),(14,16),(12,19),(13,18),(14,17)]:
+    zet(p[0],p[1],I['D4'],'kop_onder_snavel_pompom')
+# 8b. restanten van de oude beenomlijning (rij >= 44, omlijning zonder jurk-buur, niet van de nieuwe poten) -> transparant
+n=0
+for it in range(2):
+    for y in range(44,H):
+        for x in range(W):
+            if o[y,x]==I['O'] and been[y,x] and (y,x) not in POOT and not any(yy is not None and o[yy,xx] in D for yy,xx in nb4(o,y,x)) \
+               and not any(0<=y+dy<H and 0<=x+dx<W and o[y+dy,x+dx] in D for dy in (-1,0,1) for dx in (-1,0,1)):
+                o[y,x]=0; n+=1
+log['8b_oude_beenomlijning']=n
+# 8c. buitenrand opnieuw dicht (na kop en poten)
+n=0
+for y in range(H):
+    for x in range(W):
+        if o[y,x] in D and any(yy is None or o[yy,xx]==0 for yy,xx in nb4(o,y,x)):
+            o[y,x]=I['O']; n+=1
+log['8c_buitenrand_dicht']=n
+np.save('na_poten.npy',o)
+# 9. selout: omlijning aan de lichtkant (transparant boven of links, niet onder of rechts) -> één tint donkerder dan de vulling (min. D1)
+n=0
+for y in range(H):
+    for x in range(W):
+        if o[y,x]!=I['O'] or (y,x) in POOT or (y,x) in VAST: continue
+        up=y==0 or o[y-1,x]==0; lf=x==0 or o[y,x-1]==0; dn=y==H-1 or o[y+1,x]==0; rt=x==W-1 or o[y,x+1]==0
+        if not (up or lf) or dn or rt: continue
+        inn=[o[y+1,x]] if up else []
+        if lf: inn.append(o[y,x+1])
+        inn=[v for v in inn if v in D]
+        if not inn: continue
+        v=I['D2'] if min(inn)>=I['D3'] else I['D1']; o[y,x]=v; n+=1
+log['9_selout']=n
+np.save('tango_kls.npy',o)
+tot=sum(len(v) for v in nieuw.values()); log['nieuw_per_zone']={k:len(v) for k,v in nieuw.items()}
+basis=np.load('basis.npy'); log['afwijkend_van_onderlaag_totaal']=int((basis!=o).sum()); log['dekkend']=int((o>0).sum())
+print(json.dumps(log))
+# maskers voor de roodvarianten (rood.py)
+sp=np.zeros_like(o,bool)
+for p in nieuw.get('split_binnenkant',()): sp[p]=True
+np.save('split_mask.npy',sp)
+kn=np.zeros_like(o,bool)
+for p in [(6,28),(7,29),(8,29),(9,29),(10,29),(11,29),(12,29),(13,29)]: kn[p]=True   # binnenlijn kop|knot (modellijn, O/D1)
+np.save('knot_mask.npy',kn)

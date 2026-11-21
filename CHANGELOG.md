@@ -2435,3 +2435,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.584] - Onweerswolk-Swablu: voelsprieten
 - Jordi: "bij swablu kan je de voelsprieten in gele vonkvorm maken" (`IDEEEN.md`).
+
+### [v0.0.585] - Onweerswolk-Swablu-lijn: Gemini-prompts r1
+- Jordi: "en shelf cloud akkoord", "maak maar prompts". Prompts Swablu en Altaria in `docs/concept/sprites/swablu_regional/gemini/PROMPTS.md`; Jordi's bijlage in `referenties/`.

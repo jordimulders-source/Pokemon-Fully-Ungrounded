@@ -16,7 +16,7 @@ NO OVERLAP: headdress on top, one wing on each side, body in the middle: these p
 Few, big, simple shapes: it must read clearly at 64×64.
 
 POSE
-Samba no pé: the typical samba step, hips swung to one side, standing on the toes of one foot with that knee bent. The other leg is lifted FORWARD with the knee bent, clearly visible IN FRONT of the body, not hidden behind it. The wings are NOT spread symmetrically like a flying bird: the near wing is raised high above the head, the far wing is held out low to the side. Chin up, proud and joyful.
+Samba no pé: the typical samba step, hips swung to one side, standing on the toes of one foot with that knee bent. The other leg is lifted FORWARD with the knee bent, clearly visible IN FRONT of the body, not hidden behind it. The wings are NOT spread symmetrically like a flying bird: the near wing is raised high to the side, next to the headdress (not in front of it), the far wing is held out low to the side. Chin up, proud and joyful.
 
 Draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style): pixel art, 64×64, max 16 colors, dark selout outline, plain white background. Three-quarter view facing left, like every Gen 3 front sprite: far wing and far leg on the left, near ones on the right. 2 wings and 2 legs in total. Compact, fits in a square.
 DO NOT

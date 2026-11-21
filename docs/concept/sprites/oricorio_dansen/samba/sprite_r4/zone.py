@@ -3,7 +3,7 @@
 import numpy as np, sys, json; from PIL import Image, ImageDraw
 from palet import pal
 o=np.load(sys.argv[1]); fam=np.load(sys.argv[2]) if sys.argv[2]!='-' else None
-y0,y1,x0,x1=map(int,sys.argv[3:7]); z=16; F,OY,OX=2.9,0,0.97; pl=json.load(open('plaats.json'))
+y0,y1,x0,x1=map(int,sys.argv[3:7]); z=int(sys.argv[9]) if len(sys.argv)>9 else 16; F,OY,OX=2.9,0,0.97; pl=json.load(open('plaats.json'))
 P=pal(sys.argv[8] if len(sys.argv)>8 else 'model')
 h,w=y1-y0,x1-x0; im=Image.new('RGB',(2*w*z+70,h*z+20),'white'); d=ImageDraw.Draw(im)
 for y in range(h):

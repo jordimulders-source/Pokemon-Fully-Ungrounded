@@ -134,6 +134,8 @@ for Y,X in zip(*np.where(o>0)):
     if dun and not dik: uit.append((Y,X,10 if k==11 else k))   # 1 px dunne takjes: midden/donker violet (geen licht op de rand, niet weggevallen)
     elif (bR or bD) and (fig[Y-1,X] or fig[Y,X-1]): uit.append((Y,X,8))
 for Y,X,n in uit: o[Y,X]=n
+for Y,X in zip(*np.where(o==11)):                    # geen licht op de buitenrand van de kuif: lichtviolet aan de rand -> midden, licht blijft binnenin
+    if kuif(X,Y) and any(not fig[Y+dy,X+dx] for dy,dx in N4): o[Y,X]=10
 stap('kuif omlijnd',v,o)
 def zet(lijst,naam):
     v=o.copy()
@@ -149,6 +151,6 @@ if OOG=='C': zet([(22,20,1),(22,21,1),(27,20,13),(28,20,1),(27,21,1),(28,21,1)],
 #        snavel (Swablu-snavel als voorbeeld: licht boven, donkere onderrand, geen zwart): Y22 hooglicht (model 3/s), Y23 licht teal (model 2/3,
 #        mondlijn natief rij 58 valt onderin), Y24 = mondlijn/onderrand in navy (model K op rij 59 en 61) i.p.v. selout+navy door elkaar
 #        kop x1,3-model: snavel natief x65-85 (X20-26), rij 53-55 hooglicht (Y22), 56-58 licht met mondlijn onderin (Y23), 59-61 zwarte lijnen (Y24)
-zet([(X,22,7) for X in range(21,27)]+[(X,23,6) for X in range(21,27)]+[(X,24,2) for X in range(21,27)],'snavel')
+zet([(X,22,7) for X in range(21,27)]+[(21,23,3)]+[(X,23,6) for X in range(22,27)]+[(X,24,2) for X in range(22,27)],'snavel')   # (21,24) is achtergrond in het silhouet
 if __name__=='__main__':
     G.opslaan(o,UIT+'/altaria_r2.png'); print(tel); toon(o)

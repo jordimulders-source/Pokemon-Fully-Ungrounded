@@ -2476,3 +2476,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.597] - Onweerswolk-Swablu: frontsprite r6 (oog, mond)
 - Jordi over r5: oog met subtiele lichtere tint rond het zwart; mondlijn "te hard en 1 pixel te veel naar links ... net teveel 2 lijnen". r6: 12 px (oog 3, mondlijn 5 zachter en 1 px naar rechts, onderrand 4 als schaduw), elders diff 0 (`sprite_r6/NOTITIES.md`).
+
+### [v0.0.598] - Onweerswolk-Altaria: frontsprite r2 (kop x1,3)
+- Op het kop x1,3-model; zachtere lijnen (zwart alleen pupillen), 4 wolktinten, kleine vlakjes/naden/static-stukjes samengevoegd ("iets minder detail is niet erg"), static lichtblauw (`altaria/sprite_r2/NOTITIES.md`). Keuring loopt; nog niet aan Jordi getoond.

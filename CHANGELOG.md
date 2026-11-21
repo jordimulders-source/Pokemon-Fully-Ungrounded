@@ -2453,3 +2453,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.590] - Onweerswolk-Swablu: frontsprite r2 (minder blurry)
 - Jordi over r1: "swablu is nog wat blurry". Oorzaak: gemiddelde modeltint per pixel gaf middentinten; r2 laat de modelband per pixel winnen (meerderheid), palet in stappen ±30–40, 20 px naden op modelplekken, 3 px hooglicht kop, vonken feller. Silhouet gelijk aan r1 (`sprite_r2/NOTITIES.md`).
+
+### [v0.0.591] - Onweerswolk-Swablu: frontsprite r3 (kleur, lijn, schaduw)
+- Jordi over r2: "hoofd is nog steeds blurry, evenals de belijning van de bovenste donkere wolk en de voelsprieten, maar je hoeft alleen nog maar kleur, belijning, schaduw te fixen". r3: 59 px (kop 29, wolklijnen 15, sprieten 6, vonken 9), silhouet gelijk (`sprite_r3/NOTITIES.md`).

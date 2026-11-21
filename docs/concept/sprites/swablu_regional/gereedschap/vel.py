@@ -17,6 +17,8 @@ panelen=[s.resize((512,512),Image.NEAREST)]
 if len(sys.argv)>3: panelen.append(rgb_from(Image.open(sys.argv[3])).resize((512,512),Image.NEAREST))
 panelen.append(m.resize((512,512),Image.NEAREST))
 zones=[('kop+voelsprieten',18,14,40,34),('staartje+wolk rechts',32,32,54,50)]
+import os
+if os.environ.get('ZONES')=='kop': zones=[('kop',17,22,39,40),('sprieten',22,14,42,26)]
 z=12; rows=[]
 for n,x0,y0,x1,y1 in zones:
     a=s.crop((x0,y0,x1,y1)).resize(((x1-x0)*z,(y1-y0)*z),Image.NEAREST); b=mcrop(x0,y0,x1,y1,z)

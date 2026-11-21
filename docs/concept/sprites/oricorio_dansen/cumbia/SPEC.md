@@ -13,3 +13,4 @@ Model: `model/gemini_r2.png` (Gemini r2, 21 nov). Prompt: `../gemini/PROMPT_cumb
 - Oog: het model-oog is volgens Jordi niet goed. Voorstel Claude (niet tegengesproken): het oog pixel voor pixel overnemen van de Gen 3-Oricorio (`graphics/pokemon/oricorio/*/anim_front.png`, bovenste 64 rijen; Baile/Pa'u/Sensu: zwart ovaal, wit glimpje, dikke ooglidlijn, geen wit eromheen).
 - Vleugel-"vingertjes": blijven zoals het model (Jordi: "alleen" kleur en oog).
 - Formaat: als de bestaande Oricorio-sprites (bbox ±50×50–60 px binnen 64×64).
+- 21 nov: "al heel netjes"; "ja pom pom oog voor cumbia"; kleur: "midden kleur is goed, anders wordt het teveel ijs" (= B_midden).

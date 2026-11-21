@@ -73,3 +73,17 @@ Style: official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 
 
 AVOID: plush toy / Neopets look, cotton-candy cloud, rock-like or slab-like cloud, yellow electricity, lightning bolts flying around it, looking like Zekrom or a generic thunder dragon.
 ```
+
+## Altaria r2 → r3 (21 nov)
+- r2: `altaria_r2.webp`. Jordi: "we kunnen misschien nog een extra prompt doen daarvoor. de kuifveren kunnen we wat schokkeriger maken. Contrast lichaam tov wolk en iets meer static".
+- Prompt r3 (nieuw gesprek, r2 als bijlage; max. 2–3 wijzigingen volgens GEMINI.md):
+```
+The attached image is my regional form of ALTARIA (Electric/Dragon), sitting inside a thundercloud. Keep everything exactly the same: pose, the cloud shape, the anvil-like cloud wings, the dark shelf cloud at the bottom, the colors of the cloud, the face and the sprite style.
+
+Change only these three things:
+1. The crest feathers on its head: make them more shock-like, jagged like electric sparks.
+2. More contrast between the body and the cloud: make the head and neck a lighter, brighter indigo so they clearly stand out against the dark navy cloud.
+3. A bit more static: a few more thin, jagged, light blue-white crackling lines on and in the cloud. Still no big lightning bolts, no glow.
+
+Official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 colors, white background, no ground, no shadow.
+```

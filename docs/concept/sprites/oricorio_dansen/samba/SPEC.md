@@ -14,3 +14,4 @@ Model: `model/gemini_r6.png` (Gemini r6, 21 nov). Prompt: `../gemini/PROMPT_samb
 - r2 (21 nov): "2 is er flink achteruit op gegaan, omdat er weer eens dingen opnieuw getekend zijn ziet de hele sprite er niet meer uit, verder werken met r1 en die verder oppoetsen zonder opnieuw te tekenen". r2 verworpen; r3 = r1 oppoetsen.
 - 21 nov: "oppoetsen doe je met belijning, kleur en schaduw".
 - 21 nov: "niet met een blur tekenen".
+- r3 (21 nov): "Samba is nog steeds r1 de beste, dus daar moeten we even opnieuw gaan overleggen".

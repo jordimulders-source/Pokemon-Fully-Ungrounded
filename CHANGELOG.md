@@ -2470,3 +2470,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.595] - Onweerswolk-Swablu: frontsprite r5 (mondlijn)
 - 5 px mondlijn op de modelplek in de donkerste selout, diff buiten de snavel 0 (`sprite_r5/NOTITIES.md`).
+
+### [v0.0.596] - Onweerswolk-Altaria: grotere kop goedgekeurd
+- Jordi: "altaria grotere hoofd/nek lijkt goed te passen, werk verder, laat pas zien als het echt een goede nette versie is". Model met kop x1,3 bevroren.

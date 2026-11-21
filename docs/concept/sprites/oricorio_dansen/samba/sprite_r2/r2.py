@@ -24,6 +24,12 @@ for y in range(H):
         elif v in LICHT and ((x<=18 and y<=37) or (x>=35 and y<=35)): Z[y,x]='W'
         elif v in LINE: Z[y,x]='-'
         else: Z[y,x]='F'
+# kuif uit het model: in het kuifvak (rij 12-21, x 23-32) is de kuif het lichte deel van het model (helderheid >= 125) of geel; de rest is waaier
+S=np.load('model64.npy'); ML=S@[.299,.587,.114]; MY=(S[...,0]>150)&(S[...,0]-S[...,2]>60)
+for y in range(12,22):
+    for x in range(23,33):
+        if P[y,x] or o[y,x]==0: continue
+        Z[y,x]='C' if (ML[y,x]>=125 or MY[y,x]) else 'F'
 # lijnpixels krijgen de zone van de meerderheid van hun vulburen (lijnen tussen twee zones -> later grens)
 def nb8(y,x):
     for dy in(-1,0,1):
@@ -49,7 +55,7 @@ log['zones']={k:int((Z==k).sum()) for k in 'WCF'}
 # --- 2. tinten per zone: vleugel G1/G2/G3, kuif G1/G2 + geel, waaier G4/G5 (+ geel). Eerst de r1-tint naar de zonereeks, dan modusfilter 3x3 (grote vlakken)
 def naar(z,v,y,x):
     if z=='W': return v if v in LICHT else I['G3']
-    if z=='C': return v if v in (I['G1'],I['G2'],I['Y1']) else (I['Y1'] if v in GEELS else I['G2'])
+    if z=='C': return I['Y1'] if MY[y,x] else (I['G1'] if ML[y,x]>=150 else I['G2'])   # kuif: tinten en gele bogen uit het model
     if z=='F':
         if v in GEELS: return I['Y1'] if v==I['Y1'] else I['Y2']
         return v if v in DONKER else (I['G4'] if v in LICHT else I['G5'])
@@ -57,6 +63,7 @@ fil=np.zeros((H,W),int)
 for y in range(H):
     for x in range(W):
         if Z[y,x] in ('W','C','F'): fil[y,x]=naar(Z[y,x],o[y,x] if o[y,x] not in LINE else -1,y,x)
+        if Z[y,x]=='C': lin_c=True
 for it in range(2):
     f2=fil.copy()
     for y in range(H):
@@ -64,13 +71,13 @@ for it in range(2):
             if not fil[y,x]: continue
             c=Counter(fil[yy,xx] for yy,xx in nb8(y,x) if Z[yy,xx]==Z[y,x] and fil[yy,xx])
             c[fil[y,x]]+=2
-            f2[y,x]=c.most_common(1)[0][0]
+            if Z[y,x]!='C': f2[y,x]=c.most_common(1)[0][0]
     fil=f2
 # --- 3. binnenlijnen: r1-lijnen binnen dezelfde zone (veerscheidingen) als donkergroene lijn L; fragmenten < 4 px weg
 lin=np.zeros((H,W),bool)
 for y in range(H):
     for x in range(W):
-        if Z[y,x] in ('W','F','C') and r1[y,x] in LINE: lin[y,x]=True
+        if Z[y,x] in ('W','F') and r1[y,x] in LINE: lin[y,x]=True   # kuif: geen binnenlijnen (r1 had daar ruis)
 def comps(mask):
     seen=np.zeros(mask.shape,bool); out=[]
     for y in range(H):
@@ -157,6 +164,35 @@ for it in range(4):
         if c: out[y,x]=c.most_common(1)[0][0]
 out[out==-2]=I['G5']
 log['7_lijnen_verdund']=len(weg)
+# --- 8. waaierveren: per veer (samenhangend waaiervlak tussen lijnen) één groene tint (meerderheid G4/G5) = grote vlakken;
+#     gekozen veren geel (Jordi: "misschien een aantal veren wat meer geel maken"): Y1 met Y2 aan de schaduwkant (lijn onder/rechts)
+fm=(Z=='F')&(out>0)&~np.isin(out,list(LINE))&~P
+flab=np.zeros((H,W),int); k=0
+for y in range(H):
+    for x in range(W):
+        if fm[y,x] and not flab[y,x]:
+            k+=1; st=[(y,x)]; flab[y,x]=k
+            while st:
+                a,b=st.pop()
+                for yy,xx in nb4(a,b):
+                    if 0<=yy<H and 0<=xx<W and fm[yy,xx] and not flab[yy,xx]: flab[yy,xx]=k; st.append((yy,xx))
+np.save('flab.npy',flab)
+GEELVAK={'A':[(39,44),(41,40),(17,39),(16,40)],   # A: de onderste waaierveren (waar het model al geel heeft): rechtsonder + linksonder
+         'B':[(16,21),(18,36),(25,52)],                # B: om en om bovenin/rechts: veer links achter de kuif, veer rechts achter de kop, veer rechts
+         '0':[]}
+geel=set(flab[y,x] for y,x in GEELVAK[GEEL] if flab[y,x])
+log['8_gele_veren']=sorted(int(g) for g in geel)
+for c in range(1,k+1):
+    pts=list(zip(*np.where(flab==c)))
+    if c in geel:
+        for y,x in pts:
+            sh=any(out[a,b] in LINE or out[a,b]==0 for a,b in ((y+1,x),(y,x+1)))
+            out[y,x]=I['Y2'] if sh else I['Y1']
+    else:
+        cnt=Counter(out[y,x] for y,x in pts if out[y,x] in DONKER)
+        t=cnt.most_common(1)[0][0] if cnt else I['G5']
+        for y,x in pts:
+            if out[y,x] in DONKER or out[y,x] in LICHT: out[y,x]=t
 np.save('r2_kls.npy',out)
 log['diff_in_P']=int(((out!=r1)&P).sum())
 print(json.dumps(log))

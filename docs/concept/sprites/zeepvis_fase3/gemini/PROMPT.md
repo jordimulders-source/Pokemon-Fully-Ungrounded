@@ -23,3 +23,6 @@ STYLE AND FORMAT
 AVOID
 - Not Milotic, Feebas, Goldeen, Alomomola or Finizen. No plush toy, chibi or mascot look, no oversized sparkly eyes, no human features.
 ```
+
+## Ronde 1 (prompt v1) → `r1_prompt_v1.png`
+- Jordi: "De bel op zijn hoofd is bijna een beetje tumor achtig wel".

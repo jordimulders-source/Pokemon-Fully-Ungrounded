@@ -1,4 +1,4 @@
-# Oricorio Samba – Gemini-startprompt (r6, nieuw gesprek, zonder bijlagen)
+# Oricorio Samba – Gemini-startprompt (r7, nieuw gesprek, zonder bijlagen)
 
 Jordi 21 nov: nieuwe prompts zonder bijlagen. r3 (`../samba/model/gemini_r3.png`): "hij mist de pauw achtige tooi" → r4: alleen de tooi gewijzigd. r4: "Ik snap niet waarom die zon slaperig oog blijft behouden, deze moet echt dezelfde blije look hebben als de electric oricorio, de vorm van het lichaam is ook niet echt oricorio" → r5: oog = Pom-Pom-oog, lijf rechtop als een persoon. r5 goed op oog/lijf; r6 (Jordi: "doe nog maar 1 samba prompt"): lange puntige bladveren, waaier kleiner en donkerder dan het lijf. Oordeel r2: `../STUDIE.md`.
 
@@ -8,7 +8,11 @@ It is a new dance style of the Pokémon ORICORIO (the dancing bird from Alola, l
 THE EYE: exactly the happy eye of Pom-Pom Oricorio (the yellow Electric cheerleader style): a big, round, WIDE OPEN solid black eye with one white shine dot, just above the base of the beak. NO eyelid, NO line over the eye, NO white around it. A happy, cheerful, wide-awake look. NOT sleepy, NOT half-closed, NOT cool.
 
 WHAT IT IS
-A samba carnival dancer made of feathers: green and yellow carnival feathers, MAINLY GREEN (the Grass type color); yellow only as accent. Behind it a PEACOCK-LIKE fan of long plumes, fanned open in a half circle behind the body like a peacock's display and a carnival backpiece, only a little wider and taller than the bird, so the bird stays big in the image. The plumes are LONG, NARROW and POINTED leaf-feathers (like palm leaflets or long peacock feathers), not round or broad leaves, because it is Grass type. The fan is a darker green than the bird's body, so the body stands out in front of it. On the head a separate, clearly visible feathered headdress crest. The head and face stay free and clearly visible, not buried in the plumes. Few, big feather shapes, not many small ones. The body has smooth, plain feathers (no sparkle or speckle pattern).
+A samba carnival dancer made of feathers: MAINLY GREEN (the Grass type color), with yellow as accent.
+THE FAN: behind it a PEACOCK-LIKE fan, fanned open in a half circle behind the body like a carnival backpiece, only a little wider and taller than the bird. The fan has only SEVEN big feathers: long, pointed leaf-shaped plumes with smooth, clean edges (no jagged or serrated edges, no small extra feathers in between). Every second plume is yellow, the others are a darker green than the bird's body, so the fan reads as clear green-yellow stripes.
+THE CREST: on top of the head a small, separate crest of three short green feathers with one yellow curl, standing in front of the fan with a clear outline, lighter than the fan behind it.
+THE WINGS: two wings in total, one on each side, raised and spread. Each wing is one simple wing shape in a single green family (the same green as the body), clearly different in shape and color from the fan plumes behind it, so a wing never looks like two wings on top of each other.
+The head and face stay free and clearly visible. The body has smooth, plain feathers (no sparkle or speckle pattern). Few, big, simple shapes everywhere: it must read clearly at 64×64.
 
 POSE
 Samba step: standing on the toes of one foot, the other foot lifted, wings raised and spread, the backpiece fanned open behind it.
@@ -17,3 +21,5 @@ Draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style): pixel a
 DO NOT
 No ground, no shadow, no stage, no glow, no music notes, no effects. No human body parts (no arms, hands, fingers, hair): only feathers. No plush/Neopets look.
 ```
+
+r7 (21 nov, Jordi: "misschien nog een gemini prompt ook"): sprite r1–r3 bleven druk/gekarteld omdat het model ±16 dunne veren heeft; r7: 7 grote gladde veren, om en om geel, kuif los en lichter, vleugels één vorm in lijfgroen.

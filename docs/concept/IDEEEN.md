@@ -647,3 +647,18 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 
 ## Kreten (Jordi, 19 nov)
 - "Ik wil liever geen bestaande kreten vervormen, maar dat komt op een ander moment. Latere generatie kreten gebruiken soms geluiden die op echte dieren lijken."
+
+## Onweerswolk-Swablu-lijn (Jordi, 21 nov)
+- **Jordi (21 nov):** "We gaan iets doen dat niet bepaald origineel is, maar wel leuk. Onweerswolk regional forms van de Swablu lijn". Eerder (9 nov) stond dit als "nimbus" bij de voorstellen; toen: "nog niet tevreden over deze specifieke link en uitvoering".
+- Repo nu: Swablu Normal/Flying, Altaria Dragon/Flying. Voorstel van 9 nov (Claude): Electric/Flying.
+- **Voorstellen Claude (21 nov, open):**
+  - *Zuid-Amerikaanse link:* de **Catatumbo-bliksem** (Maracaibomeer, Venezuela): de plek met de meeste bliksem ter wereld, bijna elke nacht onweer boven de monding van de rivier. Of **Illapa** (MYTHOLOGIE.md), al gereserveerd als mogelijke Electric-E4-mythe.
+  - *Vorm:* Swablu = een klein donker regenwolkje als vleugels; Altaria = een **cumulonimbus**, de wolk zelf (aambeeldtop) als vleugels/kuif.
+  - *Vogel als anatomie:* gewone Swablu/Altaria-anatomie houden (de vorm is een regional form, geen nieuw dier), of een echte vogel uit het gebied (bijv. een zwaluw/gierzwaluw die vlak voor onweer laag vliegt).
+- **Jordi (21 nov, besluiten):** "Altaria Electric/Dragon is wel cool. Zuid Amerikaanse link hoeft niet. Ik wil het een beetje zoals de Alolan forms doen, dus dat ze wel anders zijn, maar toch vergelijkbaar, bijv Alolan Grimer, Geodude lijn, Diglett en Dugtrio zijn allemaal herkenbaar." "het is vooral de vorm van de wolken die ik anders wil, laten we nog even brainstormen hoe, lijkt me leuk om Swablu een beetje in een vergelijkbare pose als bijlage te hebben, maar dan niet slapend, altaria moet echt in een woeste donderwolk zitten met statische schokken, tof om die schokken dan niet geel maar meer blauw te doen, een beetje zoals irl." "Het lijf kunnen we een andere kleur geven ook". Bijlage: officiële art van een slapende Swablu die in een grote witte wolk zit (lichtblauwe schaduw eronder).
+- Open: type Swablu; wolkvormen; lijfkleur.
+- **Voorstel Claude (21 nov):** Swablu = cumulus congestus (bloemkooltorentjes die omhoog bollen, vlakke grijze basis), zit erin zoals in de bijlage maar wakker. Altaria = cumulonimbus: aambeeldtop als vleugels + óf mammatus (hangende bulten onderaan) óf een shelf cloud (donkere rollende rand onderaan), niet allebei. Schokken: kleine vonkjes in en op de wolk, geen losse schichten. Kleur A: lijf dieper (Altaria indigo/nachtblauw, Swablu grijsblauw), wolk leigrijs met lichtere top. B: lijf lichtblauw, alleen wolk donker.
+- **Jordi (21 nov):** "je ideeën voor wolken zijn beter dan ik had kunnen bedenken. Klopt wat betreft lightning, dus het moet echt static zijn, kleine vonkjes idd in en op de wolk. Ik zie A zitten, Swablu Electric/Flying, nieuwsgierig is een goede blik voor Swablu, hij is zich van geen kwaad bewust".
+- **Besloten:** Swablu Electric/Flying, Altaria Electric/Dragon; kleur A; Swablu kijkt nieuwsgierig; schokken = static, kleine vonkjes in en op de wolk. Open: mammatus of shelf cloud bij Altaria; vonkjes ook bij Swablu.
+- **Jordi (21 nov):** "bij swablu kan je de voelsprieten in gele vonkvorm maken". Open: mammatus of shelf cloud (voorstel Claude: mammatus).
+- **Jordi (21 nov):** "en shelf cloud akkoord" → Altaria krijgt een shelf cloud (geen mammatus). "maak maar prompts": `docs/concept/sprites/swablu_regional/gemini/PROMPTS.md`.

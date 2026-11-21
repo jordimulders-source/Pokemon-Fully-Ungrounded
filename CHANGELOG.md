@@ -2460,5 +2460,88 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.584] - Merge naar main
 - Branch `claude/peaceful-cori-756ovj` (vlieglijn, overzichtsvel in drie categorieën, werknamen 21 nov, Llamauler r7) samengevoegd met `main`; eigen changelogsecties hernummerd naar 581–583. Regionale Vileplume (`oddish_regional/vileplume_sprite/af/`, van `claude/great-maxwell-bgon7h`) staat daarmee ook in main.
 
-### [v0.0.585] - Werknaam Hexpress
+<<<<<<< HEAD
+=======
+### [v0.0.585] - Regionale Vileplume (onderwater-Oddish-lijn, Water/Fire): frontsprite af
+- Naar het bevroren Gemini-model (`referenties/gemini_gekozen_vileplume.png`): wit lijfje op twee steltpoten, vijf rode anemonen rond een gloeiende krater. 19 rondes in `docs/concept/sprites/oddish_regional/vileplume_sprite/` (r1–r19), af in `vileplume_sprite/af/vileplume_regional.png` (+ 8×).
+- Afwijkingen van het model op Jordi's woord: tentakels geklonterd (optie A); gezicht = ogen en mond van de Vileplume uit de game, ogen net onder de kroon, geel met tinten, lachmondje; middelste anemoon bovenaan naar links (gaatje dicht); voorste twee anemonen uit r3 met modelomtrek; mondjes alle vijf gelijk; poten per rij uit het natieve model.
+- Keuring poten (r18 FAIL nipt → r19), eindkeuring r19 PASS (`r19/EINDKEURING.md`; 3 optionele pixelreparaties niet uitgevoerd om goedgekeurde delen niet te raken). Figuur x2–60, y1–62, 16 kleuren.
+
+### [v0.0.586] - Regionale Vileplume: pootreparatie uit de eindkeuring
+- Jordi: "poten na, de rest voor". In `af/vileplume_regional.png` is de linkerrand van beide poten nu gelijk (licht tot halverwege, donker eronder; 6 px). Arm- en inkepingsreparaties niet uitgevoerd.
+### [v0.0.587] - Onweerswolk-Swablu-lijn: idee vastgelegd
+- Jordi: "Onweerswolk regional forms van de Swablu lijn". Idee en open voorstellen in `docs/concept/IDEEEN.md` → "Onweerswolk-Swablu-lijn".
+
+### [v0.0.588] - Onweerswolk-Swablu-lijn: eerste besluiten
+- Jordi: Altaria Electric/Dragon, geen Zuid-Amerikaanse link, Alola-aanpak (anders maar herkenbaar), Swablu in een pose zoals zijn bijlage maar wakker, Altaria in een woeste donderwolk met blauwe statische schokken. Citaten in `IDEEEN.md`.
+
+### [v0.0.589] - Onweerswolk-Swablu-lijn: wolken, kleur en type
+- Jordi koos: Swablu Electric/Flying, lijfkleur A (dieper blauw, leigrijze wolk), nieuwsgierige Swablu, static vonkjes in en op de wolk. Wolkvoorstellen (cumulus congestus / cumulonimbus met aambeeld) in `IDEEEN.md`.
+
+### [v0.0.590] - Onweerswolk-Swablu: voelsprieten
+- Jordi: "bij swablu kan je de voelsprieten in gele vonkvorm maken" (`IDEEEN.md`).
+
+### [v0.0.591] - Onweerswolk-Swablu-lijn: Gemini-prompts r1
+- Jordi: "en shelf cloud akkoord", "maak maar prompts". Prompts Swablu en Altaria in `docs/concept/sprites/swablu_regional/gemini/PROMPTS.md`; Jordi's bijlage in `referenties/`.
+
+### [v0.0.592] - Onweerswolk-Swablu-lijn: Gemini r1, Altaria-prompt r2
+- Swablu r1: Jordi "ziet er al goed uit". Altaria r1 nog niet: moet in de wolk zitten, kleur en static richting fan art. Rondes, referentie en prompt r2 in `docs/concept/sprites/swablu_regional/`.
+
+### [v0.0.593] - Onweerswolk-Swablu: frontsprite r1
+- Jordi over Swablu Gemini r1: "ik vind bij swablu de issues geen issue, ga maar bouwen". Model bevroren (`swablu_regional/model/`), SPEC. Maker r1: natief raster (cel 4,27 px) → reductie 0,42×, figuur 38×34 (864 px, game-Swablu 785 px), 113 px technisch opgeschoond t.o.v. de kale reductie, niets bijgetekend (`sprite_r1/NOTITIES.md`).
+
+### [v0.0.594] - Altaria: Gemini r3 en combinatie A
+- Jordi koos A: wolk en static van r2, kop/hals/kuif van r3 erin geplakt (zelfde raster, elders pixelgelijk; `swablu_regional/gemini/plak_r2r3.py` → `altaria_A_r2wolk_r3kop.png`).
+
+### [v0.0.595] - Onweerswolk-Altaria: model bevroren
+- Jordi: "ja, dit is het model voor Altaria". Model + SPEC in `swablu_regional/altaria/`.
+
+### [v0.0.596] - Onweerswolk-Swablu: frontsprite r2 (minder blurry)
+- Jordi over r1: "swablu is nog wat blurry". Oorzaak: gemiddelde modeltint per pixel gaf middentinten; r2 laat de modelband per pixel winnen (meerderheid), palet in stappen ±30–40, 20 px naden op modelplekken, 3 px hooglicht kop, vonken feller. Silhouet gelijk aan r1 (`sprite_r2/NOTITIES.md`).
+
+### [v0.0.597] - Onweerswolk-Swablu: frontsprite r3 (kleur, lijn, schaduw)
+- Jordi over r2: "hoofd is nog steeds blurry, evenals de belijning van de bovenste donkere wolk en de voelsprieten, maar je hoeft alleen nog maar kleur, belijning, schaduw te fixen". r3: 59 px (kop 29, wolklijnen 15, sprieten 6, vonken 9), silhouet gelijk (`sprite_r3/NOTITIES.md`).
+
+### [v0.0.598] - Onweerswolk-Altaria: frontsprite r1
+- 1/3-reductie van het model (natief raster 5,12 px), 1820 px (game-Altaria 1778), 277 px technisch opgeschoond (`altaria/sprite_r1/NOTITIES.md`). Claude: lijnen te hard/zwart (Jordi-feedback Swablu r3 geldt ook hier), gezicht leest slecht, static te fel → r2.
+
+### [v0.0.599] - Onweerswolk-Swablu r4; Altaria kopmeting
+- Jordi over Swablu r3: "nee de lijnen zijn veel te hard nu ... De belijning moet juist zachter en niet zwart. Kijk desnoods naar de snavel van de echte swablu". r4: zwart → gekleurde selout (75 px; zwart alleen oog en buitenkant onderwolk), snavel belijnd als de echte Swablu (open bovenkant), tussentinten (`sprite_r4/NOTITIES.md`).
+- Altaria: Jordi vroeg de kop te meten. r1-kop ±10×8 px (zonder kuif), game-Altaria ±13×11 px bij gelijke figuuroppervlakte (1820 vs 1778 px): lineair ±0,75×, oppervlak ±de helft.
+
+### [v0.0.600] - Onweerswolk-Altaria: kop x1,3 in het model (optie A)
+- Jordi: "A zou misschien wel moeten lukken, omdat we Altaria's hoofd in de wolk kunnen verstoppen, extra overlap over de wolk heen is ook niet erg, kijk dan wel of de voelsprieten nog wel goed in verhouding zijn". Kop + kuif x1,3 op het natieve raster, anker op de kin (`altaria/model_kop/kop13.py` → `natief_kop13.png`); wolk, hals en static pixelgelijk. Kop op spriteformaat ±13x10 (game ±13x11). Kuif: ±2,3x kopbreedte (game-Altaria ±2,7x), verhouding blijft.
+- Swablu: Jordi over r4 "de mond van swablu is nog niet herkenbaar genoeg, de mondlijn, verder vind ik hem wel goed" → r5 alleen mondlijn.
+
+### [v0.0.601] - Onweerswolk-Swablu: frontsprite r5 (mondlijn)
+- 5 px mondlijn op de modelplek in de donkerste selout, diff buiten de snavel 0 (`sprite_r5/NOTITIES.md`).
+
+### [v0.0.602] - Onweerswolk-Altaria: grotere kop goedgekeurd
+- Jordi: "altaria grotere hoofd/nek lijkt goed te passen, werk verder, laat pas zien als het echt een goede nette versie is". Model met kop x1,3 bevroren.
+
+### [v0.0.603] - Onweerswolk-Swablu: frontsprite r6 (oog, mond)
+- Jordi over r5: oog met subtiele lichtere tint rond het zwart; mondlijn "te hard en 1 pixel te veel naar links ... net teveel 2 lijnen". r6: 12 px (oog 3, mondlijn 5 zachter en 1 px naar rechts, onderrand 4 als schaduw), elders diff 0 (`sprite_r6/NOTITIES.md`).
+
+### [v0.0.604] - Onweerswolk-Altaria: frontsprite r2 (kop x1,3)
+- Op het kop x1,3-model; zachtere lijnen (zwart alleen pupillen), 4 wolktinten, kleine vlakjes/naden/static-stukjes samengevoegd ("iets minder detail is niet erg"), static lichtblauw (`altaria/sprite_r2/NOTITIES.md`). Keuring loopt; nog niet aan Jordi getoond.
+
+### [v0.0.605] - Onweerswolk-Swablu: r7 oog
+- Jordi: "oog wil ik 2 pixels linksboven en linksonder de witte pixel. de pixel rechts van het zwart van het oog mag weg". Halotint op (27,27) en (27,29); variant A haalt (30,29) weg, B (29,27) (`sprite_r7/`).
+
+### [v0.0.606] - Swablu r8 naar eindkeuring; Altaria-kop x1,5
+- Swablu: Jordi "middenlinks van de witte pixel moet een andere kleur zijn dan linksboven en linksonder, kijk naar hoe de originele swablu dat doet, daarna mag die naar eindkeuring". Echte Swablu: middenlinks donkere lijntint, diagonaal middentint → (27,28) selout, (27,27)/(27,29) vogel donker; variant A (r7A) als basis (`sprite_r8/`). Eindkeuring loopt.
+- Altaria: keuring r2 FAIL (`altaria/sprite_r2/KEURING.md`); verre oog past niet → volgens Jordi's regel kop nog te klein: model kop x1,5 en 10 natieve px in de wolk gezakt (`model_kop/natief_kop15_dy10.png`, `vergelijk_kop15.png`). Verse maker r3.
+
+### [v0.0.607] - Onweerswolk-Swablu: eindkeuring + r9
+- Eindkeuring r8: bijna PASS, 3 MOETEN (10 px in de onderwolk; `sprite_r8/EINDKEURING.md`). Toegepast in r9 (`sprite_r9/bouw.py`), verder diff 0 → PASS. Wacht op Jordi.
+
+### [v0.0.608] - Onweerswolk-Swablu: frontsprite af
+- Jordi: "ja zet maar in af, commit en push naar main". `docs/concept/sprites/swablu_regional/af/swablu.png` (+ `swablu_8x.png`) = r9. Lessen in `docs/lessen/GEMINI.md`; Stand van zaken bijgewerkt.
+
+### [v0.0.609] - Merge naar main
+- Main (vlieglijn, regionale Vileplume, overzichtsvel) samengevoegd met de onweerswolk-Swablu-lijn; onze changelogsecties hernummerd naar v0.0.587–608.
+>>>>>>> 74d5587868a23f3d483af908ec5cd6a95b1c0083
+
+### [v0.0.610] - Werknaam Hexpress
 - Spooktrein fase 3 heet **Hexpress** (Jordi, 21 nov: "Hexpress is geniaal"; hex + express); op het vel, in POKEMON.md en CLAUDE.md.
+- Regionale Swablu (onweerswolk, Electric/Flying, `swablu_regional/af/`) op het overzichtsvel (Regional forms).

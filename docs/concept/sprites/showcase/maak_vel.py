@@ -67,6 +67,7 @@ SECTIES=[
 ("oddish_regional/af/oddish_regional.png",'Oddish (regional)',"water/grass"),
 ("oddish_regional/gloom_sprite/af/gloom.png",'Gloom (regional)',"water/fire"),
 ("oddish_regional/vileplume_sprite/af/vileplume_regional.png",'Vileplume (regional)',"water/fire"),
+("swablu_regional/af/swablu.png",'Swablu (regional)',"electric/flying"),
 ("dj_rotom/af/dj_rotom.png",'"DJ Rotom"',"electric/steel"),
 ]),
 ]

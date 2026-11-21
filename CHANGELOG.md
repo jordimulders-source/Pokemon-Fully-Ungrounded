@@ -2482,3 +2482,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.599] - Onweerswolk-Swablu: r7 oog
 - Jordi: "oog wil ik 2 pixels linksboven en linksonder de witte pixel. de pixel rechts van het zwart van het oog mag weg". Halotint op (27,27) en (27,29); variant A haalt (30,29) weg, B (29,27) (`sprite_r7/`).
+
+### [v0.0.600] - Swablu r8 naar eindkeuring; Altaria-kop x1,5
+- Swablu: Jordi "middenlinks van de witte pixel moet een andere kleur zijn dan linksboven en linksonder, kijk naar hoe de originele swablu dat doet, daarna mag die naar eindkeuring". Echte Swablu: middenlinks donkere lijntint, diagonaal middentint → (27,28) selout, (27,27)/(27,29) vogel donker; variant A (r7A) als basis (`sprite_r8/`). Eindkeuring loopt.
+- Altaria: keuring r2 FAIL (`altaria/sprite_r2/KEURING.md`); verre oog past niet → volgens Jordi's regel kop nog te klein: model kop x1,5 en 10 natieve px in de wolk gezakt (`model_kop/natief_kop15_dy10.png`, `vergelijk_kop15.png`). Verse maker r3.

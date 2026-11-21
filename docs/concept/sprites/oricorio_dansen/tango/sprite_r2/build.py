@@ -133,11 +133,15 @@ for y in sorted({p[0] for p in spl}):
     xs=sorted(x for yy,x in spl if yy==y)
     SPLEET.add((y,xs[-1]))
     for x in xs[:-1]: zet(y,x,I['D2'],'r2_split_dicht_jurk')
-# 7r2b. franjezoom links: blok rij 43-50, kol 28-38 (franje rechts, r1 na opschonen) 20 kolommen naar links gekopieerd (kol 8-18)
+# 7r2b. franjezoom links: blok rij 43-50, kol 28-38 (franje rechts, r1 na opschonen) 18 kolommen naar links gekopieerd (kol 10-20)
 blok=o[43:51,28:39].copy()
 for r in range(8):
     for c in range(11):
-        zet(43+r,8+c,blok[r,c],'r2_franje_kopie_rechts')
+        zet(43+r,10+c,blok[r,c],'r2_franje_kopie_rechts')
+# 7r2c. rok valt over de dij: het gat tussen zoom, gekopieerde franje en middenstrengen (waar in r1 de dij zat) -> jurktint D2; omlijning volgt in 8c
+for y,xs in ((42,range(17,21)),(43,range(17,21)),(44,range(18,22))):
+    for x in xs:
+        if o[y,x] in (0,I['O']): zet(y,x,I['D2'],'r2_rok_over_dij')
 # 7a. standbeen: Baile-staak + knik + voet (zoals r1)
 plak(range(48,62),-4,-4,'standbeen_baile')
 # 7b. gestrekt been: Baile-voet (zoals r1); staak alleen het stuk onder de franje (vanaf de eerste rij waaronder alles vrij is), Baile-staakpatroon b d 3
@@ -151,6 +155,11 @@ np.save('na_poten.npy',o)
 # 8a. kop onder de snavel: bij Pom-Pom loopt de wang onder de snavel door (Pom-Pom rij 23-25, kol 27-29); het gat dat de langere modelsnavel achterliet -> kopvulling
 for p in [(12,17),(12,18),(13,16),(13,17),(14,15),(14,16),(12,19),(13,18),(14,17)]:
     zet(p[0],p[1],I['D4'],'kop_onder_snavel_pompom')
+# 8a2. r2: bovenrand kop ronder (Jordi: "de bovenste lijn van het hoofd bij tango" ... "dat mag wat ronder").
+#      r1: rij 3 kol 20-26 recht (7 px). Nieuw: boog 2-1-1-2-4 (kol 17 / 18 / 19 / 20-21 / 22-25), top één rij hoger; knot ongewijzigd.
+for x in range(22,26):
+    zet(3,x,o[4,x],'r2_kop_boog')      # vulling = de kopvulling eronder (rij 4)
+    zet(2,x,I['O'],'r2_kop_boog')      # nieuwe omlijning (wordt selout in stap 9)
 # 8b. restanten van de oude beenomlijning (rij >= 44, omlijning zonder jurk-buur, niet van de nieuwe poten) -> transparant
 n=0
 for it in range(2):

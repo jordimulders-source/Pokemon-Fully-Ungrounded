@@ -193,3 +193,9 @@ Wanneer Jordi een ontwerp in Gemini laat maken en kiest, gelden deze regels **in
 - **Regional form met de top als silhouet** (onderwater-Oddish, 20 nov): bij Oddish werkt "lijf en gezicht houden, alleen de top vervangen"; bij Gloom/Vileplume is de top het silhouet, dus 1-op-1 vervangen = palette swap (Jordi) en een staafvormig dier (kokerworm) vermenigvuldigen gaf kwasten/potten/taarten. Vóór de prompts per fase checken of de inspiratie één grote vorm oplevert. Gemini houdt het Oddish-gezicht pas aan als je het in woorden beschrijft (stipogen, klein open mondje).
 - **Vergelijkingen neemt Gemini letterlijk** (onderwater-Vileplume r3, 20 nov): "tentacles like fat fingers" gaf vijf zwaaiende handjes. Beschrijf de vorm zelf (kort, rond, stralend), geen lichaamsdeel of voorwerp als vergelijking.
 - **Nieuw gesprek garandeert geen nieuw beeld** (onderwater-Vileplume r4, 20 nov): met een licht aangepaste prompt kwam in een nieuw gesprek bijna pixel voor pixel dezelfde afbeelding terug (handjes). Na twee gelijke uitkomsten stoppen en het beste eerdere model kiezen; detail fixen in de spritefase (met Jordis akkoord).
+
+**Regionale Vileplume (21 nov, 19 rondes):**
+- Bevries wat Jordi goedkeurt en verander per ronde alleen zijn genoemde punten (assert op de rest); een maker die de kroon telkens opnieuw per script opbouwde ging steeds achteruit (r4, r8, r9).
+- Veel dunne radiale tentakels op 64 px: bij twijfel terug naar de vroegste ronde die Jordi het best vond (hier r3 voor de voorste anemonen) en die als blok terugzetten.
+- Gezicht mag afwijken: neem het gezicht van een bestaande Gen 3-sprite over en verzin geen varianten; kleur met contrast tegen de omgeving, met licht/donker-tinten zoals het origineel.
+- Dunne ledematen: bouw per spriterij uit het natieve raster [randtint | licht | randtint]; de geblurde verkleining mengt de randen met wit en wordt flets. Daarna een objectieve keurder in plaats van Jordi per stap.

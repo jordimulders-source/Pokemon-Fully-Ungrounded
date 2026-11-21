@@ -2390,3 +2390,8 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.573] - Onderwater-Oddish-lijn weer open
 - Jordi (20 nov): onderwateridee blijft; Vileplume = heetwaterbron omringd door zeeplanten/anemonen, Oddish anemonen/kelp/"wat dan ook", Gloom "iets van een bol"; geen partners in de sprite. Referenties: andermans regionale Vileplumes en de anemoon-fan-art in `docs/concept/sprites/oddish_regional/referenties/`.
+
+### [v0.0.574] - Regionale Vileplume (onderwater-Oddish-lijn, Water/Fire): frontsprite af
+- Naar het bevroren Gemini-model (`referenties/gemini_gekozen_vileplume.png`): wit lijfje op twee steltpoten, vijf rode anemonen rond een gloeiende krater. 19 rondes in `docs/concept/sprites/oddish_regional/vileplume_sprite/` (r1–r19), af in `vileplume_sprite/af/vileplume_regional.png` (+ 8×).
+- Afwijkingen van het model op Jordi's woord: tentakels geklonterd (optie A); gezicht = ogen en mond van de Vileplume uit de game, ogen net onder de kroon, geel met tinten, lachmondje; middelste anemoon bovenaan naar links (gaatje dicht); voorste twee anemonen uit r3 met modelomtrek; mondjes alle vijf gelijk; poten per rij uit het natieve model.
+- Keuring poten (r18 FAIL nipt → r19), eindkeuring r19 PASS (`r19/EINDKEURING.md`; 3 optionele pixelreparaties niet uitgevoerd om goedgekeurde delen niet te raken). Figuur x2–60, y1–62, 16 kleuren.

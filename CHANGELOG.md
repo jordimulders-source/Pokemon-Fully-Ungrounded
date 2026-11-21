@@ -2397,3 +2397,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Ontbrekende designs van andere branches op het vel gezet (sectie Regional forms / convergent, nu 14): regionale Rufflet en "Harpiary" (`claude/fervent-dijkstra-lvtc7o`), regionale Oddish en Gloom (idem) en Vileplume (`claude/great-maxwell-bgon7h`); hun `af/`-mappen zijn naar deze branch gehaald.
 - Spooktrein fase 1 (`spooktrein_fase1/af/`, van `claude/cool-lovelace-5vjif4`, Steel; Jordi 21 nov: "die is allang goedgekeurd") op het vel en in de stand van zaken.
 - Werknaam: spooktrein fase 2 heet **Wagogogon** (Jordi, 21 nov); op het vel, in POKEMON.md en CLAUDE.md.
+- Llamauler: opgeknapte sprite r7 (19 nov) naar `lama/fase2/af/` (Jordi, 21 nov: "r7 akkoord, zet maar op het vel"); oude in `af/oud_voor_gemini/`; op het vel.

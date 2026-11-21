@@ -2454,3 +2454,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.590] - Oricorio tango: prompt r6
 - Jordi stelde een nieuw Gemini-ontwerp voor ("hoef je minder te gokken"). r6: dunne Oricorio-pootjes die onder de jurk uitkomen, geen split, onregelmatige rode franjezoom.
+
+### [v0.0.591] - Oricorio tango: prompt r7
+- r6 beter qua lengte en pootjes, maar de pose leest minder als tango. r7 verandert alleen de vleugels: nabije vleugel hoog op schouderhoogte (tango-omhelzing), verre vleugel laag naar achteren.

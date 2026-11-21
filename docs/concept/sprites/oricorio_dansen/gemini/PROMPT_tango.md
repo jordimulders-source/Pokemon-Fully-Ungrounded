@@ -1,6 +1,6 @@
-# Oricorio Tango – Gemini-startprompt (r6, nieuw gesprek, zonder bijlagen)
+# Oricorio Tango – Gemini-startprompt (r7, nieuw gesprek, zonder bijlagen)
 
-Jordi 21 nov: nieuwe prompts zonder bijlagen. Oordeel r2: `../STUDIE.md`. r3 (`../tango/model/gemini_r3.png`): "blijft wel erg kraai", "tango moet wat gracieuzer" → r4: geen woorden "hat"/"knife" meer (Gemini tekende ze letterlijk), slank, sierlijke pose. r4: kraai met pompadour; Jordi: "voor tango wil ik veel meer naar een gracieuze vrouwelijke look, met een typische jurk en haarstijl die daarbij past" → r5: tangojurk (strak, lang, hoge split, franjezoom), strakke lage knot, lijf en oog van samba r5. r6 (Jordi 21 nov: "moet ik anders gemini vragen om een nieuw ontwerp? misschien makkelijker, hoef je minder te gokken"): dunne Oricorio-pootjes onder de jurk, geen split, lange onregelmatige rode franjezoom (Jordi koos rood in de franje).
+Jordi 21 nov: nieuwe prompts zonder bijlagen. Oordeel r2: `../STUDIE.md`. r3 (`../tango/model/gemini_r3.png`): "blijft wel erg kraai", "tango moet wat gracieuzer" → r4: geen woorden "hat"/"knife" meer (Gemini tekende ze letterlijk), slank, sierlijke pose. r4: kraai met pompadour; Jordi: "voor tango wil ik veel meer naar een gracieuze vrouwelijke look, met een typische jurk en haarstijl die daarbij past" → r5: tangojurk (strak, lang, hoge split, franjezoom), strakke lage knot, lijf en oog van samba r5. r6 (Jordi 21 nov: "moet ik anders gemini vragen om een nieuw ontwerp? misschien makkelijker, hoef je minder te gokken"): dunne Oricorio-pootjes onder de jurk, geen split, lange onregelmatige rode franjezoom (Jordi koos rood in de franje). r6: lengte en pootjes beter; pose (vleugel gevouwen voor de borst) minder tango → r7 (Jordi: "nog een gemini ronde"): alleen de vleugelpose.
 
 ```
 Design a new form of the Pokémon ORICORIO: TANGO STYLE, from the night streets of old Buenos Aires. Its type is Dark/Flying. Dark here means night and mystery, not evil.
@@ -15,7 +15,7 @@ THE HAIR: the head feathers form the typical tango hairstyle: smooth and glossy,
 It holds nothing, carries nothing.
 
 POSE
-Graceful and proud, clearly dancing the tango: standing tall on the toes, chin raised, one wing raised elegantly as if resting on a dance partner's shoulder, the other wing low along the body. The dress swings to one side.
+Graceful and proud, clearly dancing the tango: standing tall on the toes, chin raised. The near wing is lifted HIGH and held out to the side at shoulder height, as if resting on an invisible dance partner's shoulder (like in a tango embrace); it is NOT folded in front of the chest. The far wing is stretched out low and backwards, elegant. The dress swings to one side.
 THE LEGS: Oricorio legs, NOT human legs: two very thin, stick-like pink bird legs with small bird feet and toes. Only the lower part of the legs is visible, coming out from under the fringe; the dress covers the rest. One foot is pointed out to the side on its toes, the other stands. No thighs, no knees showing, no slit.
 
 Draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style): pixel art, 64×64, max 16 colors, dark selout outline, plain white background. Three-quarter view facing left, like every Gen 3 front sprite: far wing and far leg on the left, near ones on the right. 2 wings and 2 legs in total. Compact, fits in a square.

@@ -19,3 +19,4 @@ Model: `model/gemini_r10.png` (Gemini r10, 21 nov; vervangt r6). Prompt: `../gem
 - r10: "ga maar met dit model werken. Je mag op detailniveau er wat van afwijken als de sprite daardoor mooier wordt".
 - sprite r4: "Samba is helemaal niet slecht, maar moet een betere afwerking, zit hem vooral in dat rechte lijnen minder recht moeten, de linkervleugel een paar onnodige en te donkere lijnen hebben, poten wat meer als een echte oricorio mogen en verder kleurgebruik, tinten etc".
 - sprite r5: "Ik vind de veren veel netter, alleen de groengele linksonderin is erg afgekapt en lijkt niet op het model. De linkerpoot is nog wat gek, die mag nog wat beter, en rechterpoot mag in zijn geheel 1 pixel naar links denk ik".
+- sprite r6: "de meest linkse groengele veer in de tooi, die moet nog beter, je hebt nu de vleugel wel netter gemaakt ook, wat goed is. Linkerpoot is wat beter, maar nog steeds lijkt die een beetje gebroken, kijk goed naar het model daarvoor".

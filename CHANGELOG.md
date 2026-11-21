@@ -2653,3 +2653,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.626] - Idee: regionale Sableye met evolutie (zeebodem, gezonken schatten)
 - Jordi (21 nov): regionale Sableye met een evolutie, een niet-Water-type dat op de oceaanbodem leeft en gezonken schatten vindt; in Pokémon ontbreken niet-Water-types die in het water leven, waardoor waterroutes monotoon zijn. Genoteerd in IDEEEN.md; typing open.
+
+### [v0.0.627] - Regionale Sableye: Jordi denkt aan Ghost/Rock
+- Jordi (21 nov, nog niet besloten): regionale Sableye mogelijk Ghost/Rock, en de gewone Sableye dan terug naar Ghost/Dark. Genoteerd in IDEEEN.md.

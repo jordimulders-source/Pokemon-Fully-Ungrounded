@@ -652,6 +652,7 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - Repo: Sableye is hier Rock/Ghost (in de dex). Typing van de regionale vorm en de evolutie: open.
 - Niet-Water-soorten die al in het water leven (repo-types, in de dex): Galar-Corsola/Cursola (Ghost), Inkay/Malamar (Dark/Psychic), Dragalge (Poison/Dragon), Dhelmise (Ghost/Grass), Pincurchin (Electric), Stunfisk (Ground/Electric).
 - Raakt aan "Ruimte en diepe zee als mysterieuze gebieden" (12 nov).
+- **Jordi (21 nov, denkt nog na):** "ja moet nog nadenken want ik vind dan wederom ghost/rock het meest logische, misschien dat we dan de reguliere sableye gewoon weer ghost/dark maken". (Rock/Ghost komt uit de Ungrounded-revisie v0.2.1: grotbewoner die edelstenen eet; origineel is Dark/Ghost.)
 
 ## Kreten (Jordi, 19 nov)
 - "Ik wil liever geen bestaande kreten vervormen, maar dat komt op een ander moment. Latere generatie kreten gebruiken soms geluiden die op echte dieren lijken."

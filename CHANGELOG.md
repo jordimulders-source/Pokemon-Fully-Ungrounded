@@ -2538,3 +2538,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.609] - Merge naar main
 - Main (vlieglijn, regionale Vileplume, overzichtsvel) samengevoegd met de onweerswolk-Swablu-lijn; onze changelogsecties hernummerd naar v0.0.587–608.
+
+### [v0.0.610] - Onweerswolk-Altaria: frontsprite r3
+- Op het kop x1,5-model (`altaria/sprite_r3/`): beide ogen lezen op 1x, geen zwart/navy in de lijnen, ronde kappen per bol. Claude: static te fel, kuif rommelig, vleugeltoppen te licht/vlak → r4. Nog niet aan Jordi getoond.

@@ -8,4 +8,8 @@ MODEL={'_':(152,208,160),'O':(16,22,20),'L':(33,82,50),
 KM={0:'O',1:'O',2:'L',3:'L',4:'G5',5:'K3',6:'Y2',7:'G4',8:'G3',9:'G2',10:'K2',11:'G1',12:'G1',13:'K1',14:'Y1',15:'K0'}
 FILL=['G1','G2','G3','G4','G5','K3','K2','K1','K0','Y2','Y1']
 I={n:i for i,n in enumerate(NAMEN)}
-def pal(d=MODEL): return [d[n] for n in NAMEN]
+# SPRITE: kleur mag van het model afwijken (Jordi 17 nov). Groenen gespreid naar Gen 3-stappen (helderheid ±178/146/119/97/75, lijn 52);
+# volgorde en verhouding van het model blijven: lijf (G1) duidelijk lichter dan de waaier (G4/G5), zoals gemeten (model 172 vs 89-120).
+SPRITE=dict(MODEL); SPRITE.update({'G1':(124,204,132),'G2':(92,172,104),'G3':(68,144,84),'G4':(52,118,70),'G5':(36,92,58),'L':(24,64,40),'O':(16,20,24),
+ 'Y2':(168,150,52)})
+def pal(d=SPRITE): return [d[n] for n in NAMEN]

@@ -15,3 +15,5 @@ Kenmerken per dans zijn voorstellen van Claude (behalve type, stad en "groene en
 De prompts staan in `gemini/PROMPT_samba.md`, `PROMPT_tango.md`, `PROMPT_cumbia.md`.
 
 **Hoofdkleur = de kleur die je het meest met het type associeert** (Jordi, 21 nov: "samba wordt vooral groen"): samba vooral groen, tango vooral zwart, cumbia vooral blauw; andere kleuren alleen als accent.
+
+**r1 (21 nov):** alle drie "wel ok", maar Oricorio niet genoeg herkenbaar door 3× hetzelfde verkeerde oog (Jordi). Oorzaak: "half-closed sleepy eye" in de prompt gaf een spleetoog met wit. Echt Oricorio-oog (`koppen.png`): groot zwart ovaal met één wit glimpje, net boven de snavelbasis, géén wit eromheen, dikke donkere ooglidlijn erover (Pom-Pom zonder lid, wijd open). r2: alleen het oog gewijzigd + `koppen.png` als tweede bijlage.

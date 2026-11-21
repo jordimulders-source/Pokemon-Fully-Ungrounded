@@ -1,13 +1,14 @@
-# Oricorio Tango – Gemini-startprompt (r1, nieuw gesprek)
+# Oricorio Tango – Gemini-startprompt (r2, nieuw gesprek)
 
-Bijlage: `../bestaande_vormen.png`. Studie en wat van Jordi is: `../STUDIE.md`.
+Bijlagen: `../bestaande_vormen.png` en `../koppen.png` (r2: oog beschreven, r1 gaf 3× een spleetoog met wit). Studie en wat van Jordi is: `../STUDIE.md`.
 
 ```
 Design a new form of the Pokémon ORICORIO: TANGO STYLE, from the night streets of old Buenos Aires. Its type is Dark/Flying. Dark here means night and cunning, not evil.
-It is a new dance style of ORICORIO. The attached image shows the 4 existing Oricorio styles (Baile, Pom-Pom, Pa'u, Sensu): keep exactly the same small songbird body, short neck, pink beak, thin pink legs with toes and the half-closed sleepy eye. Only the plumage changes: the feathers themselves ARE the dance costume (like Baile's feathers are a flamenco dress), not clothing worn over the bird. Do not copy one of the 4 existing styles.
+It is a new dance style of ORICORIO. The attached image shows the 4 existing Oricorio styles (Baile, Pom-Pom, Pa'u, Sensu): keep exactly the same small songbird body, short neck, pink beak, thin pink legs with toes and the same Oricorio eye.
+THE EYE (most important, this is what makes it Oricorio): a big, solid black oval eye with one small white shine dot, sitting just above the base of the beak. NO white around the eye, it is not a narrow slit and not a sleepy, droopy eye. Over the top of the black eye lies a thick dark eyelid line (like Baile, Pa'u and Sensu in the attached image), which gives a calm, cool look. The second attached image is a close-up of the 4 existing heads: copy that eye. Only the plumage changes: the feathers themselves ARE the dance costume (like Baile's feathers are a flamenco dress), not clothing worn over the bird. Do not copy one of the 4 existing styles.
 
 WHAT IT IS
-A tango dancer made of feathers, like the compadrito of old Buenos Aires with his knife and hat. The crest is shaped like the brim of a tilted hat. MAINLY BLACK feathers (the Dark type color), deep red only as accent, sleek and close to the body. One long, sharp, blade-like feather at the tail (the knife). Calm, cool expression with the half-closed eye.
+A tango dancer made of feathers, like the compadrito of old Buenos Aires with his knife and hat. The crest is shaped like the brim of a tilted hat. MAINLY BLACK feathers (the Dark type color), deep red only as accent, sleek and close to the body. One long, sharp, blade-like feather at the tail (the knife).
 
 POSE
 A tango pose: body leaning forward, head turned sharply to the side, one leg stretched out with the toe pointed, wings held back close to the body.

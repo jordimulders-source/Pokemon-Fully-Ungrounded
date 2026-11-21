@@ -2430,3 +2430,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.582] - Oricorio-dansen: hoofdkleur = typekleur
 - Jordi: hoofdkleur is de kleur die je het meest met het type associeert. Prompts aangescherpt: samba vooral groen, tango vooral zwart, cumbia vooral blauw (rest als accent).
+
+### [v0.0.583] - Oricorio-dansen: prompts r2 (oog)
+- r1 (samba, tango, cumbia) gaf 3× een spleetoog met wit; Oricorio niet herkenbaar genoeg. Prompts r2 beschrijven het echte oog (zwart ovaal, wit glimpje, dikke ooglidlijn, geen wit eromheen) met `oricorio_dansen/koppen.png` als tweede bijlage. Les in GEMINI.md.

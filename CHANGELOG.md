@@ -2455,3 +2455,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.589] - Dundragoon: Gemini-model gekozen (r7)
 - Jordi bij r6: "beetje chubby" (verwerkt in prompt r7). Bij r7: "dit is hem"; "de drill is nog niet zo mooi, maar dat kunnen we in de sprite met kleurgebruik oplossen". Bevroren model: `docs/concept/sprites/dundragoon/referenties/gemini_gekozen_r7.png`. Volgende stap: frontsprite.
+
+### [v0.0.590] - Dundragoon: frontsprite r1–r3 (kandidaat)
+- Maker: r1 kale reductie van het model (61×61, silhouet = model) + opschoning; r2 gebogen rughooglicht, oogring middenblauw met donkere buitenrand, boor per winding schaduw → midden → licht (kleur, met toestemming Jordi).
+- Verse keurder: PASS, geen MOET; Claude zette 4 KAN-punten (8 px: vleugelrand, lobrand, vlekje in de boor, blauwe wangstrook) → r3 (`dundragoon/sprite_r3/`).

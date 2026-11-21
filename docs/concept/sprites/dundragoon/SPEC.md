@@ -37,3 +37,4 @@
 - Jordi bij r7: "de drill is nog niet zo mooi, maar dat kunnen we in de sprite met kleurgebruik oplossen" (= toestemming voor kleurwerk aan de boor in de spritefase; vorm blijft het model).
 - Jordi bij r7: "het silhouet klopt".
 - Jordi (21 nov): "ik zie vier poten en ik vind dat er goed uit zien, dus dit model is leidend" (vier poten, keuze "twee korte" vervalt).
+- Frontsprite: r1 (maker, kale reductie + opschoning), r2 (lijfhooglicht gebogen, oogring rustig, boor per winding), keurder PASS zonder MOET; r3 = r2 + KAN-punten 1–4 (8 px, `sprite_r3/NOTITIES.md`). Naar Jordi: `sprite_r3/naast_model.png`.

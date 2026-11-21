@@ -160,6 +160,18 @@ for r,d in POM.items():
     for c,v in d.items(): o[r+DY,c+DX]=I[v]; n5+=1
 log['5_oog_model_gewist']=len(OOGZONE); log['5_oog_pompom']=n5
 np.save('voor_selout.npy',o)
+# 5b. tweede ontkorrelronde na verdunnen/snavel: groene vulklusters < 3 px -> meest voorkomende groene buur (oogzone uit)
+n=0
+for it in range(3):
+    for k in GREEN:
+        for pts in comps(o==k):
+            if len(pts)>=3 or any(14<=a<=20 and 20<=b<=29 for a,b in pts): continue
+            c=Counter(o[yy,xx] for a,b in pts for yy,xx in nb4(a,b) if yy is not None and o[yy,xx] in GREEN)
+            c.pop(k,None)
+            if c:
+                v=c.most_common(1)[0][0]
+                for a,b in pts: o[a,b]=v; n+=1
+log['5b_ontkorrelen_2']=n
 # 6. selout: buitenrandpixel (lijn) met transparant boven/links en niet onder/rechts -> gekleurde selout (groen L, geel Y2, roze K3);
 #    donkergroene modellijn (L) op de buitenrand aan de schaduwkant (transparant onder/rechts) -> zwart
 SEL={**{g:I['L'] for g in GREEN},I['Y1']:I['Y2'],I['Y2']:I['Y2'],I['W']:I['L']}

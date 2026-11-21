@@ -2467,3 +2467,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.594] - Onweerswolk-Altaria: kop x1,3 in het model (optie A)
 - Jordi: "A zou misschien wel moeten lukken, omdat we Altaria's hoofd in de wolk kunnen verstoppen, extra overlap over de wolk heen is ook niet erg, kijk dan wel of de voelsprieten nog wel goed in verhouding zijn". Kop + kuif x1,3 op het natieve raster, anker op de kin (`altaria/model_kop/kop13.py` → `natief_kop13.png`); wolk, hals en static pixelgelijk. Kop op spriteformaat ±13x10 (game ±13x11). Kuif: ±2,3x kopbreedte (game-Altaria ±2,7x), verhouding blijft.
 - Swablu: Jordi over r4 "de mond van swablu is nog niet herkenbaar genoeg, de mondlijn, verder vind ik hem wel goed" → r5 alleen mondlijn.
+
+### [v0.0.595] - Onweerswolk-Swablu: frontsprite r5 (mondlijn)
+- 5 px mondlijn op de modelplek in de donkerste selout, diff buiten de snavel 0 (`sprite_r5/NOTITIES.md`).

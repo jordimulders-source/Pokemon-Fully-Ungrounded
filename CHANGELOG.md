@@ -2447,3 +2447,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.588] - Altaria: Gemini r3 en combinatie A
 - Jordi koos A: wolk en static van r2, kop/hals/kuif van r3 erin geplakt (zelfde raster, elders pixelgelijk; `swablu_regional/gemini/plak_r2r3.py` → `altaria_A_r2wolk_r3kop.png`).
+
+### [v0.0.589] - Onweerswolk-Altaria: model bevroren
+- Jordi: "ja, dit is het model voor Altaria". Model + SPEC in `swablu_regional/altaria/`.

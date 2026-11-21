@@ -51,3 +51,35 @@ for Y,X in zip(*np.where(np.isin(o,list(WOLK|VOGEL)))):
     h=f>=FD[Y,X-1] and f>=FD[Y,X+1]; vv=f>=FD[Y-1,X] and f>=FD[Y+1,X]
     if h or vv: o[Y,X]=1 if FK[Y,X]>=0.5*f else 2
 stap('naden tussen bollen',v)
+# --- 3. buitenlijn (zelfde regel als r1): achtergrond rechts/onder -> zwart (staat al); lichtkant -> selout: lichte bol -> wolk midden, onderwolk/vleugel -> wolk diep, vogel -> vogel donker ---
+v=o.copy(); fg=o>0
+for Y,X in zip(*np.where(fg)):
+    k=o[Y,X]
+    if k==1 or k in GEEL|WIT: continue
+    bL=not fg[Y,X-1]; bR=not fg[Y,X+1]; bU=not fg[Y-1,X]; bD=not fg[Y+1,X]
+    if not(bL or bR or bU or bD): continue
+    if bR or bD: n=1
+    elif k in VOGEL: n=7
+    else: n=4 if any(o[Y+dy,X+dx] in (5,6) for dy,dx in N4) else 2
+    o[Y,X]=n
+stap('buitenlijn',v)
+# --- 4. ontkorrelen: tintvlekjes < 3 px in wolk/vogel -> meest voorkomende buurtint van dezelfde groep (randpixels en naden blijven) ---
+def ontkorrel():
+    fg=o>0
+    for k in (3,4,5,6,8,9):
+        lab,n=label(o==k,acht=False)
+        for i in range(1,n+1):
+            m=lab==i
+            if m.sum()>=3: continue
+            ys,xs=np.where(m)
+            if any(not fg[y+dy,x+dx] for y,x in zip(ys,xs) for dy,dx in N4): continue
+            grp=WOLK if k in WOLK else VOGEL
+            buur=[o[y+dy,x+dx] for y,x in zip(ys,xs) for dy,dx in N4 if o[y+dy,x+dx] in grp and o[y+dy,x+dx]!=k]
+            if buur: o[m]=max(set(buur),key=buur.count)
+v=o.copy(); ontkorrel(); ontkorrel(); stap('ontkorrelen',v)
+# --- 5. voelsprieten bevroren: de r1-reparaties (sprieten per gemeten pixel) blijven; stap 1-4 mochten daar niets veranderen ---
+SPR=(slice(0,24),slice(23,42)); v=o.copy(); o[SPR]=start[SPR]; stap('sprieten terug naar r1',v)
+def zet(lijst,naam):
+    v=o.copy()
+    for X,Y,k in lijst: o[Y,X]=k
+    stap(naam,v)

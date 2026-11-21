@@ -14,3 +14,5 @@ Model: `model/gemini_r5.png` (Gemini r5, 21 nov). Prompt: `../gemini/PROMPT_tang
   2. Rood accent (donkerrood) in de sprite. Plek niet door Jordi gekozen: maker levert varianten.
 - Oog: het model heeft al het blije, open oog; overnemen zoals het is (Pom-Pom-achtig).
 - Formaat: als de bestaande Oricorio-sprites.
+- r1: "het linkerbeen ... als een lange streep, ... de jurk daar wat meer overheen te laten vallen, zodat je alleen de onderkant van de poot ziet zoals bij de rechterpoot"; kop: "de bovenste lijn van het hoofd" "mag wat ronder".
+- r2: "tango kleur 2" (= variant B, rood in de franjezoom); "De linkerpoot zit nu niet meer vast aan de rest, die moet in de jurk verdwijnen"; "de franje aan de bovenkant niet 1 rechte lijn".

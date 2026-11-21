@@ -16,6 +16,7 @@ FROZEN=BODY.copy(); FROZEN[47:,:37]=True
 KUIF=np.zeros((H,W),bool); KUIF[15:22,24:34]=True; KUIF[14,24:26]=True
 YY,XX=np.mgrid[0:H,0:W]
 FAN=(XX>=20)&(XX<=40)&(YY<=22)&~KUIF | (XX>=33)&(XX<=40)&(YY<=30)&~BODY
+FAN&=~FROZEN
 WL=(XX<20)&~FROZEN&~FAN
 WR=(XX>=33)&~FROZEN&~FAN
 # onderste veren (donker 6/7 in r1) = dezelfde vleugel: per kant
@@ -115,3 +116,21 @@ def s7():
                     v=cnt.most_common(1)[0][0]
                     for a,b in pts: o[a,b]=v
 step('S7_tintklusters_1_2px',s7)
+# S8: "een aantal veren wat meer geel": hele bestaande veren (hun vulpixels, binnen hun lijnen) naar de gele reeks,
+#     met dezelfde licht-donkerverdeling (lichtste tint -> 15 als de veer licht 3 had, anders 13; daarna 13/12)
+def veer(sy,sx,box):
+    y0,y1,x0,x1=box; st=[(sy,sx)]; seen={(sy,sx)}
+    while st:
+        a,b=st.pop()
+        for c,d in((a-1,b),(a+1,b),(a,b-1),(a,b+1)):
+            if y0<=c<=y1 and x0<=d<=x1 and (c,d) not in seen and o[c,d] in FILL and not LIJN[c,d]: seen.add((c,d)); st.append((c,d))
+    return sorted(seen)
+VEREN={'A':[('rechts_onder_geelband_verlengd',(39,45),(39,39,40,60)),('links_onder_onder_geel',(41,14),(40,42,10,18)),('links_onder_klein',(37,13),(36,38,10,16))],
+       'B':[('linksboven_2e_vinger',(17,9),(13,23,8,13)),('rechtsboven_waaierveer',(18,48),(14,24,46,51)),('rechts_lange_veer',(32,53),(30,34,50,58))]}
+def geel(opt):
+    sets=[veer(*s,b) for _,s,b in VEREN[opt]]
+    for p in sets:
+        t=sorted(set(int(o[a,c]) for a,c in p)); ramp=[15,13,12] if 3 in t else [13,12,12]
+        m={v:ramp[min(i,2)] for i,v in enumerate(t)}
+        for a,c in p: o[a,c]=m[int(o[a,c])]
+BASIS=o.copy()

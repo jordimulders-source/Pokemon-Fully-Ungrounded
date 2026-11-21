@@ -33,7 +33,7 @@ log['0_rood_in_poot']=n
 # 1. ontkorrelen: vulklusters < 3 px nemen de meest voorkomende buurvulkleur aan (omlijning, accenten R/G/Y en bloem bevroren)
 n=0
 for it in range(3):
-    for k in [I[c] for c in ('B1','B2','B3','N','M','L1','L2','P','K1','K2')]:
+    for k in [I[c] for c in ('B1','B2','B3','N','M','L1','L2','P')]:   # roze (snavel, poten, vingertjes) = modeldetail, bevroren
         for pts in comps(o==k):
             if len(pts)>=3 or any(in_bloem(a,b) for a,b in pts): continue
             if k in (I['K1'],I['K2']) and any(a>=56 for a,b in pts): continue   # poten: model-lijnpatroon K|k houden
@@ -73,7 +73,7 @@ for r,d in PAU.items():
     for c,v in d.items():
         y,x=r+DY,c+DX; o[y,x]=I['P'] if v=='W' else I[v]; oog.append((y,x,v))
 log['4_oog_modeloog_gewist']=len(OOGZONE); log['4_oog_pau_pixels']=len(oog)
-np.save('stap4.npy',o)
+
 # 5. selout: omlijning aan de lichtkant (transparant boven/links, niet onder/rechts) -> donkere tint van de vulgroep
 SEL={'b':I['B3'],'s':I['N'],'k':I['K2']}
 n=0
@@ -91,10 +91,19 @@ for y in range(H):
         if all(v==s for v in inn if v is not None): continue
         o[y,x]=s; n+=1
 log['5_selout']=n
+# 5b. lichtroze (K1) op de buitenrand van poten/snavel: lichtkant -> K2 (selout), schaduwkant -> zwart
+n=0
+for y in range(H):
+    for x in range(W):
+        if o[y,x]!=I['K1']: continue
+        up=y==0 or o[y-1,x]==0; lf=x==0 or o[y,x-1]==0; dn=y==H-1 or o[y+1,x]==0; rt=x==W-1 or o[y,x+1]==0
+        if dn or rt: o[y,x]=I['O']; n+=1
+        elif up or lf: o[y,x]=I['K2']; n+=1
+log['5b_roze_buitenrand']=n
 # 6. plaatsen in 64x64: onderkant op rij 61, horizontaal gecentreerd
 ys,xs=np.where(o>0); crop=o[ys.min():ys.max()+1,xs.min():xs.max()+1]; h,w=crop.shape
 full=np.zeros((64,64),int); y0=62-h; x0=(64-w)//2; full[y0:y0+h,x0:x0+w]=crop
-np.save('cumbia_kls.npy',full); json.dump({'y0':int(y0-ys.min()),'x0':int(x0-xs.min())},open('plaatsing.json','w'))
+np.save('cumbia_kls.npy',full)
 diff=(o!=basis); log['totaal_afwijkend_van_onderlaag']=int(diff.sum()); log['bbox']=[w,h,int(y0),int(x0)]
 print(json.dumps(log))
 np.save('afwijk.npy',diff)

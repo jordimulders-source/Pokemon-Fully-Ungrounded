@@ -2553,3 +2553,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.614] - Onweerswolk-Altaria: frontsprite r6
 - MOET 6b: bollen in lijf en rechtervleugel per bol ingekleurd (393 px), rechte naden weg (`altaria/sprite_r6/NOTITIES.md`). Claude: lijf leest als lichte stippen op een donkere vlakte → r7 met de modellijnen tussen de bollen als selout-bogen (zoals de Swablu).
+
+### [v0.0.615] - Onweerswolk-Altaria: frontsprite r7
+- Modellijnen tussen de bollen als selout-bogen (289 px); bollen lezen nu als hoekige kasseien (`altaria/sprite_r7/NOTITIES.md`). Na 7 rondes vastgelopen op de wolkbollen: vergelijking r4-r7 + model voor Jordi (`altaria/vergelijk_r4_r7.png`).

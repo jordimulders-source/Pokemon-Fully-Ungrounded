@@ -29,3 +29,4 @@ Lijn: **vlieg → mug, 2 fases** (Jordi, 20 nov). Mug = **Poison/Electric** (Jor
 - Sprite r2 (maker, 21 nov): keurdersreparaties, 10 px t.o.v. r1; verre oog variant B (3 px, schuine band) → leest \ /; MAG 1 en 3 niet gedaan (model spreekt ze tegen).
 - Jordi (21 nov) over r2: "rechterarm en linkerpoot vallen een beetje samen, dat moet met kleurgebruik en schaduw opgelost worden" (lezing Claude, ter controle: de poot van het borststuk met het gele gewricht bij (35,36) en het linker Λ-been met de gele knie bij (24,45), die elkaar midden onder het lijf kruisen).
 - Jordi (21 nov) over r2: "en hij is nog wat blurry"
+- Jordi (21 nov): "maar je hoeft niks aan te passen verder behalve kleur, schaduw en belijning" · "de vorm is perfect" → silhouet/vorm van r2 bevroren (alpha-diff 0).

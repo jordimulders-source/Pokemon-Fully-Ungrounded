@@ -2444,4 +2444,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - r3 (`dundragoon/gemini/r3.png`): "staart, vleugels, hoofd goed, maar wil geen slang"; lijf wordt Dunsparce-romp, dik; "al mag de drill naar verhouding nog wat groter". Prompt r4 (`gemini/PROMPT_r4.md`, nieuw gesprek, alleen tekst).
 
 ### [v0.0.586] - Dundragoon: Gemini r4, bijsturen r5
-- r4 (`dundragoon/gemini/r4.png`): "hij is te horizontaal en net wat te lang". Bijstuurprompt r5 (`gemini/PROMPT_r5_bijsturen.md`): schuiner en korter, de rest houden.
+- r4 (`dundragoon/gemini/r4.png`): "hij is te horizontaal en net wat te lang"; "hij mag in een soort vliegpose wel". Bijstuurprompt r5 (`gemini/PROMPT_r5_bijsturen.md`): schuiner en korter, de rest houden.

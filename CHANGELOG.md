@@ -2469,3 +2469,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.595] - Oricorio samba: prompt r10 (laatste)
 - r9 al beter (Jordi). r10: tooi met ±9 grote pluimen en 5 brede gele binnenveren, effen borstband, opgetild been zichtbaar vóór het lijf, vleugels asymmetrisch (nabije hoog, verre laag).
+
+### [v0.0.596] - Oricorio tango: frontsprite af
+- Oricorio Tango (Dark/Flying) af in `docs/concept/sprites/oricorio_dansen/tango/af/` (r9 op Gemini-model r7): sierlijke danseres met strakke knot, V-hals en rode franjezoom; Pom-Pom-oog en -snavel, Baile-voeten; kleur afgestemd op de game (Jordi: "het model is qua kleur niet leidend"); eindkeuring PASS na rondes op schaduw/tinten (vleugelbelichting, jurkplooi, torsovolume, open randen). Op het overzichtsvel.
+- Samba: model Gemini r10 (tooi op het hoofd en zijvleugels zoals een sambadanseres, geen overlap); sprite r4 gemaakt, afwerking volgt.

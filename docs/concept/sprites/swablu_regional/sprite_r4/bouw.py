@@ -45,7 +45,7 @@ for Y,X in zip(*np.where(start==1)):
     bD=not fg[Y+1,X]; bR=not fg[Y,X+1]
     if Y>=38 and (bD or bR): continue
     if (X,Y) in SPRIET: v.append((X,Y,SEL)); continue
-    m=materiaal(Y,X)
+    m='vogel' if any(start[Y+dy,X+dx] in (7,8,9) for dy,dx in N4) else materiaal(Y,X)   # lijn die de kop raakt = kopomlijning (één tint)
     v.append((X,Y,3 if m=='bol' else SEL))
 zet(v,'zwart -> selout')
 # --- 2. wolk-diep lijnen tussen kop en onderwolk (rij 37) en inkepingen: tegen het lijf -> selout donker blijft (2 -> 12 alleen waar het lijf raakt);

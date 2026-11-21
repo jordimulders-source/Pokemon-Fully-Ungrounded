@@ -2438,3 +2438,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.585] - Onweerswolk-Swablu-lijn: Gemini-prompts r1
 - Jordi: "en shelf cloud akkoord", "maak maar prompts". Prompts Swablu en Altaria in `docs/concept/sprites/swablu_regional/gemini/PROMPTS.md`; Jordi's bijlage in `referenties/`.
+
+### [v0.0.586] - Onweerswolk-Swablu-lijn: Gemini r1, Altaria-prompt r2
+- Swablu r1: Jordi "ziet er al goed uit". Altaria r1 nog niet: moet in de wolk zitten, kleur en static richting fan art. Rondes, referentie en prompt r2 in `docs/concept/sprites/swablu_regional/`.

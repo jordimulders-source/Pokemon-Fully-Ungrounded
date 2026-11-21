@@ -47,3 +47,29 @@ Style: official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 
 
 AVOID: plush toy / Neopets look, cotton-candy cloud, yellow electricity, lightning bolts flying around it, looking like Zekrom or a generic thunder dragon.
 ```
+
+## Ronde 1 (21 nov)
+- Swablu r1 (`r1/swablu_r1.png`), Jordi: "swablu ziet er al goed uit".
+- Altaria r1 (`r1/altaria_r1.png`), Jordi: "Altaria nog niet. Heb nog niet duidelijk verteld volgens mij, maar ook Altaria moet echt in de wolk zitten en omringd erdoor worden. verder mag je qua kleur en static gebruik een beetje naar de bijlage kijken van fan art fakemon" (`../referenties/fanart_altaria_elysian_kleur_static.webp`, @talesofelysium; alleen kleur en static als richting, niet als bijlage voor Gemini, anders kopieert hij het ontwerp).
+
+## Altaria r2 (nieuw gesprek; bijlage optioneel: officiële Altaria-art)
+```
+Design a regional form of ALTARIA (attached: official art of normal Altaria). Like the Alolan forms (Alolan Diglett, Alolan Geodude, Alolan Grimer): clearly different, but instantly recognizable as Altaria.
+
+Theme: a wild thunderstorm cloud. Type: Electric/Dragon.
+
+Altaria sits deep INSIDE a big thundercloud and is surrounded by it, the way Swablu and normal Altaria sit in their cotton cloud. Only its head, long neck and part of the chest stick out; the cloud wraps around the rest of the body. Keep Altaria's head, crest feathers, beak and face. Exactly two wings, and they are made of cloud.
+
+The cloud: a fierce cumulonimbus thundercloud, soft and billowing, made of round puffs (NOT flat slabs or stone):
+- the top of the cloud spreads out wide like an anvil and forms the wings;
+- along the bottom, a dark rolling shelf cloud.
+Colors of the cloud: deep navy blue, darkest at the bottom, with lighter cyan-blue highlights on the tops of the puffs.
+
+Body color: deep indigo / night blue.
+
+Static electricity: thin, jagged, light blue-white crackling lines on and in the cloud, along the edges of the puffs, part of the cloud itself. Not yellow. No big lightning bolts shooting out, no glow, no rain.
+
+Style: official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 colors, dark outline, facing 3/4 to the left, compact composition: one round mass of cloud with the bird in it. White background, no ground, no shadow.
+
+AVOID: plush toy / Neopets look, cotton-candy cloud, rock-like or slab-like cloud, yellow electricity, lightning bolts flying around it, looking like Zekrom or a generic thunder dragon.
+```

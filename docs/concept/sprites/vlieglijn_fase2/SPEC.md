@@ -42,3 +42,4 @@ Lijn: **vlieg → mug, 2 fases** (Jordi, 20 nov). Mug = **Poison/Electric** (Jor
 - Jordi (21 nov): "en wederom niks opnieuw tekenen he!" · "het is puur kleurgebruik" · "en belijning"
 - Sprite r5 (maker, 21 nov): r4B + 42 px kleur/belijning, alpha-diff 0; gemeten op het model-raster: borstarm (bovenarm x33–34 → gele elleboog (35,36) → onderarm = de rechte poot) is één voorste ledemaat met glans; knie-poot donker erachter. Open punten waar Jordi en model verschillen: geen lijn op (29,37), onderkant rechte poot zonder glans (model), knie-poot donkerder dan in het model.
 - Jordi (21 nov): "r4b is een flinke vooruitgang, op afstand leest die goed. Ga maar naar eindkeuring" · "r5 bedoel ik, excuses, deze" → r5 naar de eindkeuring.
+- Eindkeuring r5 (verse DFC-keurder): BIJNA → MOET 13 px (achterlijf spikkels/hooglichtstrook, schaduwkant borststuk, knie) + MAG 11 px (geel schaduwkant, vleugeltip, ader); toegepast als `sprite_r6/mug_r6.png` (24 px, alpha-diff 0).

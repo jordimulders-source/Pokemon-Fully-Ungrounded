@@ -2580,3 +2580,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.623] - Onweerswolk-Altaria: r13 (K2 + 2 vergeten kuifpixels)
 - Jordi: "vanzelfsprekend dat de kuif meeschuift, je bent wel 2 pixels vergeten mee te schuiven." (40,20)/(41,20) navy rand van de kuifpunt mee naar (42,20)/(43,20). Naar eindkeuring (hals-aansluiting, lijnen, tinten, schaduw).
+
+### [v0.0.624] - Onweerswolk-Altaria: eindkeuring r13 → r14
+- PASS na 5 px: halsrand doorgetrokken tot de wolkkwab, L-hoek weg, gaatje in de kuif dicht, kuifpunt eindigt tegen de vleugelrand (`altaria/sprite_r13/EINDKEURING.md`). r14 = proefkopie.

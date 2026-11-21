@@ -653,3 +653,4 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - **Clownfish → kempvis (Jordi):** "exeggcute evolved toch ook gewoon in exeggutor"; een andere vissoort in fase 1 is dus geen probleem.
 - **Fase 2 (Jordi):** "ik zie de discusvis wel zitten, maar dan echt als een zeepje, zoals de winegum blobfish." "Misschien dan klein beetje schuim laten komen uit de mond of kieuwen (voorkeur voor 2e, maar weet niet of dat goed vertaalt)." Over het cirkels-en-driehoekenrisico: "nonsens, dat is alleen als je blender gebruikt, dat doen we niet meer."
 - **Open:** schuim uit kieuwen of mond, namen.
+- **Fase 3 prompt v1 (21 nov):** `sprites/zeepvis_fase3/gemini/PROMPT.md`.

@@ -2451,3 +2451,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.589] - Oricorio cumbia: frontsprite af
 - Oricorio Cumbia (Water/Flying) af in `docs/concept/sprites/oricorio_dansen/cumbia/af/` (r6): Gemini-model r2 overgenomen, lichtblauw "midden" (Jordi), oog en snavel van Pom-Pom, poten van Pa'u; eindkeuring PASS na kleur/lijnreparaties (volume kop/lijf, minder zwarte binnenlijnen, rokrand, onderste ruche). Op het overzichtsvel.
+
+### [v0.0.590] - Oricorio tango: prompt r6
+- Jordi stelde een nieuw Gemini-ontwerp voor ("hoef je minder te gokken"). r6: dunne Oricorio-pootjes die onder de jurk uitkomen, geen split, onregelmatige rode franjezoom.

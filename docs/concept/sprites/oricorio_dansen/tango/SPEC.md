@@ -18,3 +18,4 @@ Model: `model/gemini_r7.png` (Gemini r7, 21 nov; vervangt r5). Prompt: `../gemin
 - r2: "tango kleur 2" (= variant B, rood in de franjezoom); "De linkerpoot zit nu niet meer vast aan de rest, die moet in de jurk verdwijnen"; "de franje aan de bovenkant niet 1 rechte lijn".
 - r3: "beter, maar dit lezen nog steeds heel erg als rechte lijnen. De vorm van de jurk was beter in r2, alleen de franje mogen een paar pixels naar boven uitschieten zodat het er wat realistischer uit ziet. De poot moet nog wat hoger in de jurk verdwijnen" (gele lijn: `feedback/r3_jordi_lijn.png`).
 - r7: Jordi: "moet ik anders gemini vragen om een nieuw ontwerp? misschien makkelijker, hoef je minder te gokken"; r6 "beter qua lengte"; r7: "ja start de maker voor tango r7".
+- sprite r5 (op model r7): "kijk tango begint netjes te worden, vleugels zijn nog wat rafelig, maar ga verder met het verbeteren".

@@ -19,7 +19,7 @@ PAL=[(152,208,160),(6,12,28),(17,31,61),
 G.PAL=PAL; P=np.array(PAL,float)
 WOLK=[3,4,5,6,7]; VULW=[4,5,6,7]; VIOL=[8,9,10,11]; VULV=[9,10,11]
 CH='.KN01234abcdsW'
-def toon(o,y0=8,y1=64,x0=0,x1=64):
+def toon(o,y0=4,y1=64,x0=0,x1=64):
     print('   '+''.join(str(x%10) for x in range(x0,x1)))
     for y in range(y0,y1): print('%2d '%y+''.join(CH[v] for v in o[y,x0:x1]))
 a,c,L=B.a,B.c,B.L; af=a.astype(float)
@@ -77,6 +77,7 @@ kaal=o.copy()
 def groep(k): return VULW if k in VULW else VULV if k in VULV else [k]
 def ontkorrel(o,grens=4):
     for k in VULW+VULV:
+        if k in VULW: grens=6   # Jordi: "iets minder detail is niet erg tov het model, zolang die niet blurry wordt" -> wolkvlakjes < 6 px (o.a. piepkleine hooglichtjes) samenvoegen
         lab,n=label(o==k,acht=False)
         for i in range(1,n+1):
             mm=lab==i
@@ -99,6 +100,17 @@ for Y,X in zip(*np.where(np.isin(o,[3,8]))):
     if not any(o[Y+dy,X+dx] in (3,8,0) for dy,dx in N8):
         nb=[o[Y+dy,X+dx] for dy,dx in N4 if o[Y+dy,X+dx] in VULW+VULV]
         if nb: o[Y,X]=meest(nb)
+# korte naadstreepjes (selout-stukjes < 4 px die niet aan de buitenrand liggen) en korte static-stukjes (< 5 px) gaven ruis: samenvoegen met de buurvultint
+for k,grens in ((3,4),(12,5)):
+    lab,n=label(o==k,acht=True)
+    for i in range(1,n+1):
+        mm=lab==i
+        if mm.sum()>=grens: continue
+        if k==3 and any(not fig[Y+dy,X+dx] for Y,X in zip(*np.where(mm)) for dy,dx in N4): continue
+        for Y,X in zip(*np.where(mm)):
+            nb=[o[Y+dy,X+dx] for dy,dx in N4 if o[Y+dy,X+dx] in VULW]
+            if nb: o[Y,X]=meest(nb)
+v2=o.copy(); ontkorrel(o)
 stap('selout-stippen',v,o)
 # --- 4. buitenlijn: zachter en niet zwart. Achtergrond rechts/onder (schaduwkant) -> navy (17,31,61); lichtkant -> selout van de groep.
 #        Static buiten de wolk en de kuif apart. ---

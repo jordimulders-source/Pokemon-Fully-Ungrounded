@@ -15,31 +15,37 @@ NATIEF = os.path.join(BASIS, 'maat', 'natief.png')
 CH = '.#kdgwPpqLliYyEe'
 CHI = {c: i for i, c in enumerate(CH)}
 
-# (x, y, van, naar)
+# (x, y, van, naar, modelcel) - modelcel = wat het model (1024, op het spriteraster, tabel.py) in die cel toont:
+# zwart% / helderheid van het niet-zwarte deel. Pootpalet: i ~130-140 (glans), l ~80, k ~45, # lijn.
 WISSELS = [
-    # LIJN boven: zwarte lijn tussen schuine knie-poot en rechte poot tot het borststuk
-    # (vulpixels van de achterste knie-poot), verlengt de lijn x30 (y38-44) omhoog
-    (30, 35, 'i', '#'), (30, 36, 'i', '#'), (30, 37, 'l', '#'),
-    # LIJN onder: onderstuk van de knie-poot verdwijnt achter de rechte poot
-    (31, 47, 'l', '#'),
-    # RECHTE POOT (voor): glans x31 tot de top, onderkant x32 in glans
-    (31, 35, 'l', 'i'),
-    (32, 45, 'l', 'i'), (32, 46, 'l', 'i'), (32, 47, 'l', 'i'), (32, 48, 'l', 'i'), (32, 49, 'l', 'i'),
-    # lange onderpoot = vervolg van de rechte poot (voor): glans links waar 2 breed
-    (34, 49, 'l', 'i'), (35, 49, 'k', 'l'), (34, 50, 'l', 'i'), (35, 50, 'k', 'l'),
-    (34, 51, 'l', 'i'), (35, 51, 'k', 'l'), (35, 53, 'l', 'i'), (36, 56, 'l', 'i'),
-    # KNIE-POOT (achter): hele lengte een stap donkerder, geen glans (i->l, l->k)
-    (29, 36, 'i', 'l'), (29, 37, 'i', 'l'),
-    (28, 38, 'i', 'l'), (29, 38, 'l', 'k'),
-    (27, 39, 'i', 'l'), (28, 39, 'l', 'k'),
-    (27, 40, 'i', 'l'), (28, 40, 'l', 'k'),
-    (26, 41, 'i', 'l'), (27, 41, 'l', 'k'),
-    (25, 42, 'i', 'l'), (26, 42, 'l', 'k'),
-    (25, 43, 'i', 'l'), (26, 43, 'l', 'k'),
-    (26, 45, 'i', 'l'),
-    (26, 46, 'l', 'k'), (27, 46, 'i', 'l'), (28, 46, 'i', 'l'),
-    (27, 47, 'l', 'k'), (28, 47, 'l', 'k'), (29, 47, 'l', 'k'), (30, 47, 'l', 'k'),
+    # BOVENARM borstarm (schouder -> elleboog geel 35,36-37): glans links zoals de onderarm, model x33/x34 licht
+    (33, 28, 'l', 'i', '0/124'), (33, 29, 'l', 'i', '8/113'), (33, 30, 'l', 'i', '20/113'), (33, 31, 'l', 'i', '50/75*'),
+    (34, 32, 'l', 'i', '0/123'), (34, 33, 'l', 'i', '4/127'), (34, 34, 'l', 'i', '22/117'), (34, 35, 'l', 'i', '17/99'),
+    (35, 35, 'k', 'l', '0/82'),
+    # ELLEBOOG -> ONDERARM: verbinding elleboog met de rechte poot is in het model vulling, geen lijn (r4 maakte er # van)
+    (33, 36, '#', 'i', '16/104'), (33, 37, '#', 'l', '2/72'), (33, 38, '#', 'l', '34/70'),
+    (34, 37, 'k', 'l', '1/69'), (34, 38, 'k', 'l', '2/72'), (35, 38, 'k', 'l', '0/67'),
+    (34, 36, 'k', '#', '79/59'),            # lijn tussen bovenarm en onderarm (Jordi's bovenlijn)
+    (32, 37, 'l', 'k', '71/71'),            # model hier grotendeels zwart; k i.p.v. # zodat de poot niet breekt
+    # ONDERARM = rechte poot (Jordi's lus x30-33, y34-51): top x30 in glans, linkerrand lijn op x29
+    (30, 35, 'i', 'i', '11/113'), (30, 36, 'i', 'i', '0/113'), (30, 37, 'l', 'i', '6/113'),
+    (31, 37, 'i', 'l', '2/78'),
+    (29, 36, 'i', '#', '76/102'),
+    # onderkant: onderstuk knie-poot verdwijnt achter de rechte poot
+    (31, 47, 'l', '#', '43/70'),
+    # KNIE-POOT (achter): een stap donkerder dan de rechte poot, geen glans (i->l, l->k)
+    (29, 37, 'i', 'l', '0/109'),
+    (28, 38, 'i', 'l', '0/116'), (29, 38, 'l', 'k', '0/109'),
+    (27, 39, 'i', 'l', '1/110'), (28, 39, 'l', 'k', '0/110'),
+    (27, 40, 'i', 'l', '0/109'), (28, 40, 'l', 'k', '0/72'),
+    (26, 41, 'i', 'l', '0/110'), (27, 41, 'l', 'k', '0/71'),
+    (25, 42, 'i', 'l', '1/102'), (26, 42, 'l', 'k', '0/84'),
+    (25, 43, 'i', 'l', '0/105'), (26, 43, 'l', 'k', '0/72'),
+    (26, 45, 'i', 'l', '44/75'),
+    (26, 46, 'l', 'k', '0/71'), (27, 46, 'i', 'l', '0/70'), (28, 46, 'i', 'l', '8/69'),
+    (27, 47, 'l', 'k', '44/67'), (28, 47, 'l', 'k', '0/71'), (29, 47, 'l', 'k', '0/72'), (30, 47, 'l', 'k', '0/69'),
 ]
+# (30,35) en (30,36) zijn in r4B al i: staan alleen in de lijst als modelcontrole, tellen niet als wissel.
 
 
 def main():
@@ -47,9 +53,15 @@ def main():
     a0 = np.array(im)
     pal = [tuple(im.getpalette()[i * 3:i * 3 + 3]) for i in range(16)]
     a = a0.copy()
-    for x, y, van, naar in WISSELS:
+    regels = []
+    for x, y, van, naar, mod in WISSELS:
         assert a0[y, x] == CHI[van], (x, y, CH[a0[y, x]], van)
         a[y, x] = CHI[naar]
+        if van != naar:
+            regels.append('(%d,%d) %s -> %s   model %s' % (x, y, van, naar, mod))
+    with open(os.path.join(HIER, 'diff.txt'), 'w') as f:
+        f.write('# r5 t.o.v. r4B, per pixel: oud -> nieuw, model zwart%/helderheid in die cel (* = cel deels buiten de poot)\n')
+        f.write('\n'.join(regels) + '\n')
     assert ((a > 0) == (a0 > 0)).all()
     print('alpha-diff met r4B:', int(((a > 0) != (a0 > 0)).sum()), '| gewisseld:', int((a != a0).sum()), 'px')
     out = Image.fromarray(a.astype(np.uint8), 'P')
@@ -85,7 +97,7 @@ def model64():
 
 def vel(a0, a, pal):
     """Rij 1: r4B | r5 | model op 8x. Rij 2: driehoek-zone (x22-38, y33-50) op 16x: r4B | r5 | model (natief).
-    Rij 3: r4B | r5 op 1x en 2x, op licht en donker."""
+    Rij 3: r4B | r5 op 1x en 2x, op licht en donker. Rij 4: model op het spriteraster | r4B | r5."""
     mod, nat, nb = model64()
     gap = 16
     rij1 = [rgb(a0, pal).resize((512, 512), Image.NEAREST), rgb(a, pal).resize((512, 512), Image.NEAREST),
@@ -115,7 +127,13 @@ def vel(a0, a, pal):
     for im in rij3:
         v.paste(im, (x, y3 + (128 - im.height) // 2))
         x += im.width + 8
-    v.save(os.path.join(HIER, 'vel.png'))
+    # rij 4: model op het spriteraster | r4B | r5 (rasterzone.py)
+    import rasterzone
+    r = rasterzone.maak([R4B, os.path.join(HIER, 'mug_r5.png')], os.path.join(HIER, 'raster_model_r4B_r5.png'))
+    r = r.resize((W, int(r.height * W / r.width)), Image.LANCZOS)
+    v2 = Image.new('RGB', (W, H + gap + r.height), (255, 255, 255))
+    v2.paste(v, (0, 0)); v2.paste(r, (0, H + gap))
+    v2.save(os.path.join(HIER, 'vel.png'))
 
 
 if __name__ == '__main__':

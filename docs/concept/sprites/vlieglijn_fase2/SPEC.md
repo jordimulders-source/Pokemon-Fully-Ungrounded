@@ -40,3 +40,4 @@ Lijn: **vlieg → mug, 2 fases** (Jordi, 20 nov). Mug = **Poison/Electric** (Jor
 - Jordi (21 nov), krabbel op het raster `raster/krabbel_jordi_raster.png` (gele lus over r4B): "zo lees ik het een beetje"
 - Jordi (21 nov): "de bovenarm is ook nog niet heel duidelijk te zien van dezelfde arm"
 - Jordi (21 nov): "en wederom niks opnieuw tekenen he!" · "het is puur kleurgebruik" · "en belijning"
+- Sprite r5 (maker, 21 nov): r4B + 42 px kleur/belijning, alpha-diff 0; gemeten op het model-raster: borstarm (bovenarm x33–34 → gele elleboog (35,36) → onderarm = de rechte poot) is één voorste ledemaat met glans; knie-poot donker erachter. Open punten waar Jordi en model verschillen: geen lijn op (29,37), onderkant rechte poot zonder glans (model), knie-poot donkerder dan in het model.

@@ -2486,3 +2486,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.600] - Swablu r8 naar eindkeuring; Altaria-kop x1,5
 - Swablu: Jordi "middenlinks van de witte pixel moet een andere kleur zijn dan linksboven en linksonder, kijk naar hoe de originele swablu dat doet, daarna mag die naar eindkeuring". Echte Swablu: middenlinks donkere lijntint, diagonaal middentint → (27,28) selout, (27,27)/(27,29) vogel donker; variant A (r7A) als basis (`sprite_r8/`). Eindkeuring loopt.
 - Altaria: keuring r2 FAIL (`altaria/sprite_r2/KEURING.md`); verre oog past niet → volgens Jordi's regel kop nog te klein: model kop x1,5 en 10 natieve px in de wolk gezakt (`model_kop/natief_kop15_dy10.png`, `vergelijk_kop15.png`). Verse maker r3.
+
+### [v0.0.601] - Onweerswolk-Swablu: eindkeuring + r9
+- Eindkeuring r8: bijna PASS, 3 MOETEN (10 px in de onderwolk; `sprite_r8/EINDKEURING.md`). Toegepast in r9 (`sprite_r9/bouw.py`), verder diff 0 → PASS. Wacht op Jordi.

@@ -3,7 +3,9 @@
 # 3 violet (kop, hals, kuif) | 4 static (cyaanwit) | 5 lavendelwit (kuiflichtjes, oogglans)
 import numpy as np; from PIL import Image
 NAMEN=['bg','K','wolk','violet','static','lavwit']
-def klassen(path="gereedschap/natief.png",LS=203):
+def klassen(path="gereedschap/natief.png",LS=203,KOP=(45,65,68,101),KUIF=(44,88)):
+    """KOP = (y0,y1,x0,x1) van snavel/wang/oog (daar geen ingesloten-wit-achtergrond en geen static); KUIF = (y1,x0) gebied waar blauwgrijze kuifranden violet worden.
+    Standaard = origineel model; voor het kop x1,3-model (model_kop/natief_kop13.png): KOP=(44,64,60,112), KUIF=(40,72)."""
     a=np.asarray(Image.open(path).convert('RGB')).astype(int)
     R,G,B=a[...,0],a[...,1],a[...,2]; L=.299*R+.587*G+.114*B
     licht=a.min(2)>=215
@@ -16,7 +18,7 @@ def klassen(path="gereedschap/natief.png",LS=203):
             yy,xx=y+dy,x+dx
             if 0<=yy<H and 0<=xx<W and licht[yy,xx] and not bg[yy,xx]: bg[yy,xx]=True; st.append((yy,xx))
     # ingesloten wit (tussen kop en kuifstrengen) is ook achtergrond: puur wit (min>=240), buiten de kop
-    wit=a.min(2)>=240; wit[45:65,68:101]=False; bg|=wit
+    wit=a.min(2)>=240; wit[KOP[0]:KOP[1],KOP[2]:KOP[3]]=False; bg|=wit
     c=np.zeros(L.shape,int); f=~bg
     c[f]=2
     c[f&(B-G>=45)]=3
@@ -28,7 +30,7 @@ def klassen(path="gereedschap/natief.png",LS=203):
     v=(c==3)|(c==5); dil=v.copy()
     for dy in (-2,-1,0,1,2):
         for dx in (-2,-1,0,1,2): dil|=np.roll(np.roll(v,dy,0),dx,1)
-    kuif=np.zeros(L.shape,bool); kuif[:44,88:]=True
+    kuif=np.zeros(L.shape,bool); kuif[:KUIF[0],KUIF[1]:]=True
     c[kuif&dil&(c==2)]=3
     return a,c,L
 if __name__=='__main__':
@@ -37,7 +39,7 @@ if __name__=='__main__':
         m=c==i; print(n,m.sum(), a[m].mean(0).astype(int) if m.any() else '')
     Image.fromarray(np.array([(255,255,255),(0,0,0),(70,110,140),(100,90,220),(0,255,255),(255,120,255)],'uint8')[c]).resize((796,796),Image.NEAREST).save('/tmp/claude-0/-home-user-Pokemon-Fully-Ungrounded/4e735dd6-f6a1-5c3e-ad61-ba772ef1cd53/scratchpad/klassen.png')
 
-def statisch(a,c,L):
+def statisch(a,c,L,KOP=(45,65,68,101)):
     """Static-lijntjes in het model: cyaanwitte pixels (L>=203) + dunne lichte lijntjes (1-2 natieve px breed, beide kanten >=35 donkerder,
     cyaan: G-R>=25, L>=135). Kop/snavel/wang (natief x68-100, y45-64) niet (daar is het snavel- en wanglicht). Stukjes < 3 natieve px weg."""
     import numpy as np
@@ -52,7 +54,7 @@ def statisch(a,c,L):
                 if L[y-dy,x-dx]<=l-35 and L[y+2*dy,x+2*dx]<=l-35 and L[y+dy,x+dx]>=l-25: thin[y,x]=True
                 if L[y+dy,x+dx]<=l-35 and L[y-2*dy,x-2*dx]<=l-35 and L[y-dy,x-dx]>=l-25: thin[y,x]=True
     s=(c==4)|thin
-    s[45:65,68:101]=False
+    s[KOP[0]:KOP[1],KOP[2]:KOP[3]]=False
     from gemeen import label
     lab,n=label(s,acht=True)
     for i in range(1,n+1):

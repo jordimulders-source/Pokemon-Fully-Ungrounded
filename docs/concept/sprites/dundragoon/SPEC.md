@@ -34,3 +34,4 @@
 - Jordi na de gedraaide r4: "nee nieuwe prompt from scratch, geen bijlage" → `gemini/PROMPT_r6.md` (vliegpose bovenaan).
 - r6 (`gemini/r6.png`), Jordi: "best prima, maar hij mag nog iets dikker"; "beetje chubby". Prompt r7 = r6 met lijf dikker + exact 2 poten (r6 had er 4).
 - **r7 gekozen** (Jordi, 21 nov: "dit is hem"): `referenties/gemini_gekozen_r7.png` = bevroren model. Volgende stap: frontsprite (SPRITE_WERKWIJZE → "Gemini-model namaken").
+- Jordi bij r7: "de drill is nog niet zo mooi, maar dat kunnen we in de sprite met kleurgebruik oplossen" (= toestemming voor kleurwerk aan de boor in de spritefase; vorm blijft het model).

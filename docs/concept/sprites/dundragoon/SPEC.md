@@ -36,3 +36,4 @@
 - **r7 gekozen** (Jordi, 21 nov: "dit is hem"): `referenties/gemini_gekozen_r7.png` = bevroren model. Volgende stap: frontsprite (SPRITE_WERKWIJZE → "Gemini-model namaken").
 - Jordi bij r7: "de drill is nog niet zo mooi, maar dat kunnen we in de sprite met kleurgebruik oplossen" (= toestemming voor kleurwerk aan de boor in de spritefase; vorm blijft het model).
 - Jordi bij r7: "het silhouet klopt".
+- Jordi (21 nov): "ik zie vier poten en ik vind dat er goed uit zien, dus dit model is leidend" (vier poten, keuze "twee korte" vervalt).

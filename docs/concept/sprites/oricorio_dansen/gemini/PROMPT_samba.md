@@ -1,6 +1,6 @@
-# Oricorio Samba – Gemini-startprompt (r3, nieuw gesprek, zonder bijlagen)
+# Oricorio Samba – Gemini-startprompt (r4, nieuw gesprek, zonder bijlagen)
 
-Jordi 21 nov: nieuwe prompts zonder bijlagen. Oordeel r2: `../STUDIE.md`.
+Jordi 21 nov: nieuwe prompts zonder bijlagen. r3 (`../samba/model/gemini_r3.png`): "hij mist de pauw achtige tooi" → r4: alleen de tooi gewijzigd. Oordeel r2: `../STUDIE.md`.
 
 ```
 Design a new form of the Pokémon ORICORIO: SAMBA STYLE, from the carnival of Rio de Janeiro. Its type is Grass/Flying.
@@ -8,7 +8,7 @@ It is a new dance style of the Pokémon ORICORIO (the dancing bird from Alola, l
 THE EYE: a big, solid black oval eye with one small white shine dot, just above the base of the beak, with a thick dark eyelid line over the top of it (calm, cool look). NO white around the eye, not a narrow slit, not sleepy.
 
 WHAT IT IS
-A samba carnival dancer made of feathers: green and yellow carnival feathers, MAINLY GREEN (the Grass type color); yellow only as accent. Behind it a fan of FIVE OR SIX big, long plumes like a carnival backpiece, shaped like tropical leaves because it is Grass type. On the head a separate, clearly visible feathered headdress crest. The head and face stay free and clearly visible, not buried in the plumes. Few, big feather shapes, not many small ones. The body has smooth, plain feathers (no sparkle or speckle pattern).
+A samba carnival dancer made of feathers: green and yellow carnival feathers, MAINLY GREEN (the Grass type color); yellow only as accent. Behind it a big PEACOCK-LIKE fan of long plumes, fully fanned open in a wide half circle behind the whole body like a peacock's display and a carnival backpiece, taller and wider than the bird itself, so the bird stands in front of it. The plumes are shaped like tropical leaves because it is Grass type. On the head a separate, clearly visible feathered headdress crest. The head and face stay free and clearly visible, not buried in the plumes. Few, big feather shapes, not many small ones. The body has smooth, plain feathers (no sparkle or speckle pattern).
 
 POSE
 Samba step: standing on the toes of one foot, the other foot lifted, wings raised and spread, the backpiece fanned open behind it.

@@ -19,3 +19,5 @@ De prompts staan in `gemini/PROMPT_samba.md`, `PROMPT_tango.md`, `PROMPT_cumbia.
 **r1 (21 nov):** alle drie "wel ok", maar Oricorio niet genoeg herkenbaar door 3× hetzelfde verkeerde oog (Jordi). Oorzaak: "half-closed sleepy eye" in de prompt gaf een spleetoog met wit. Echt Oricorio-oog (`koppen.png`): groot zwart ovaal met één wit glimpje, net boven de snavelbasis, géén wit eromheen, dikke donkere ooglidlijn erover (Pom-Pom zonder lid, wijd open). r2: alleen het oog gewijzigd + `koppen.png` als tweede bijlage.
 
 **r2 (21 nov), oordeel:** oog weer niet goed ("niet erg", Jordi; in de sprite overnemen van Oricorio). Cumbia kan door (meest Oricorio; vleugel-vingertjes weg in de sprite). Samba: kop verdwijnt in de bladveren, spikkels = ruis. Tango: kraai met een echte hoed, niet dansend. Jordi: tango en samba nieuwe prompts, zonder bijlagen → `gemini/PROMPT_samba.md`, `PROMPT_tango.md` (r3; Oricorio-lijf in woorden).
+
+**Samba r3 (21 nov):** "deze vind ik toch minder, hij mist de pauw achtige tooi" (Jordi). r4: alleen de tooi terug als grote pauwwaaier achter het hele lijf.

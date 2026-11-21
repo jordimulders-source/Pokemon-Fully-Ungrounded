@@ -2369,7 +2369,62 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.568] - Spooktrein fase 3: opknappen geparkeerd
 - Koeienvanger-prompt gaf de hele trein zonder geest (`gemini/opknap/r2_koeienvanger.png`). Jordi: "laat maar zitten voor nu, hier moeten we iets anders voor bedenken". Geparkeerd in `OPKNAPRONDE_GEMINI.md`; les in `GEMINI.md`.
 
-### [v0.0.569] - Vlieglijn: start fruitvlieg
+### [v0.0.569] - Harpij-arend: frontsprite af
+- Nieuwe soort volgens het Perrserker-idee: **regionale Rufflet (puur Flying, harpijkuiken) evolueert in de harpij-arend** (Steel/Flying); gewone Rufflet blijft Braviary. Steel zit in klauwen en snavel. Naam gepauzeerd (werknaam Harpiary). Alles in `docs/concept/sprites/harpij_braviary/SPEC.md`.
+- Model: Gemini r6 (9 rondes, bronfoto van Jordi) + kuifveren door Claude getekend op het natieve raster (variant D + middelste veer J, `plak/`).
+- Sprite: r1–r3 waren te veel getekend (801/1380 px afwijking van de kale reductie, Jordi: "Je gaat me toch niet vertellen dat ze opnieuw getekend zijn he?"); r4 opnieuw vanaf de kale reductie, daarna alleen pixel fixes. Jordi's keuzes: oog c, kuif B, snavel V2 met subtielere mond (naar Pidgeot), pootstrepen. Eindkeuring Dragonfly Cave: 4 pixelfixes.
+- Af: `docs/concept/sprites/harpij_braviary/af/harpij.png` (+ `_8x.png`, `normal.pal`, `harpij.txt`); op het overzichtsvel.
+- Les in `docs/lessen/GEMINI.md`: afwijkingsgetal van de maker is een stopsignaal.
+
+### [v0.0.570] - Regionale Rufflet: SPEC en Gemini-startprompt
+- `docs/concept/sprites/rufflet_regional/` (SPEC met Jordi's besluiten en de beschrijving van zijn inspiratiefoto; `gemini/PROMPT.md` r1 voor een nieuw gesprek).
+
+### [v0.0.571] - Regionale Rufflet: frontsprite af
+- Fase 1 van de harpij-lijn (puur Flying, harpijkuiken), naar Gemini r1 ("Ik vind deze heel tof, pose goed, lijkt op rufflet"). Exacte 2×-reductie van het natieve raster (33×46).
+- Jordi's keuzes: groter grijs masker met Rufflets oog pixel voor pixel (r4A), Rufflets rode kuifveer korter (V3) met linkerrand opgeschoond en 2 bovenste rode pixels wit. Keurder BIJNA → PASS; eindkeuring Dragonfly Cave: 11 pixelfixes; verre (linker)vleugel één tint donkerder ("luister naar de gidsen").
+- Af: `docs/concept/sprites/rufflet_regional/af/rufflet.png` (+ `_8x.png`, `normal.pal`); op het overzichtsvel. Rufflets originele sprite als referentie in `referenties/`. Naam open.
+
+### [v0.0.572] - Ontwerpenlijst bijgewerkt
+- Jordi (20 nov): "lopende lijnen zijn allemaal af" (vuurwerk fase 1–3, spooktrein fase 1–3, koningstiran-lijn met namen Kiskiddo → Princadee → Sunperor). Bestanden van vuurwerk fase 2 en spooktrein fase 1 staan nog niet in de repo.
+- Geschrapt: regionale vogel die eindigt als condor ("We hebben een regionale vogel en hanan pacha wordt de enige condor"), Lanturn-evolutie.
+- Af genoteerd: één pinguïn (Skinguin), Rotom-boombox (DJ Rotom).
+- Nieuw: een Steel/Cosmic-lijn waarin één Pokémon een satelliet is.
+- `TODO.md`: nieuwe sectie Ontwerpen met alles wat nog open staat.
+
+### [v0.0.573] - Rock/Water-idee terug, twee ideeën geschrapt
+- Rock/Water-lijn fontein ↔ gargoyle (Jordi, 16 nov) stond alleen op branch `ccr-02976dbb-9o96jp` (v0.0.433); nu in `IDEEEN.md` en `TODO.md`.
+- Geschrapt (Jordi, 20 nov): brandweerhond-Growlithe ("niet zo'n goed idee"), opossum (verwerkt in Abra; ook opossum-Kangaskhan).
+- Ook overgenomen van die branch: fontein/gargoyle-prompts geschrapt en "uitwerking nog niet forceren"; vicuña/guanaco alleen met een leuk idee (Jordi, 16 nov).
+
+### [v0.0.574] - Onderwater-Oddish-lijn: start
+- Besloten (Jordi, 20 nov): reuzenkokerworm; Oddish Water, Gloom en Vileplume Water/Fire; Oddish-lichamen en gelaat blijven, "niet veel uitmaakt wat je er bovenop zet"; Oddish wit als de koker met de rode pluim bovenop. `docs/concept/sprites/oddish_regional/SPEC.md`.
+- Gemini-prompt fase 1: `docs/concept/sprites/oddish_regional/gemini/PROMPT_v1_fase1.md`.
+
+### [v0.0.575] - Onderwater-Oddish-lijn geschrapt
+- Gemini-rondes (20 nov): kokerworm-Oddish lukte (v5, kolonie r1); Gloom/Vileplume werden palette swaps (schoorsteen) of kwasten/taarten (kolonie). Jordi: "ja hier doen we een streep doorheen" (de hele lijn). Doorgestreept in `IDEEEN.md`, `POKEMON.md`, `TODO.md`; naslag `docs/concept/sprites/oddish_regional/`. Les in `GEMINI.md`.
+
+### [v0.0.576] - Onderwater-Oddish-lijn weer open
+- Jordi (20 nov): onderwateridee blijft; Vileplume = heetwaterbron omringd door zeeplanten/anemonen, Oddish anemonen/kelp/"wat dan ook", Gloom "iets van een bol"; geen partners in de sprite. Referenties: andermans regionale Vileplumes en de anemoon-fan-art in `docs/concept/sprites/oddish_regional/referenties/`.
+
+### [v0.0.577] - Onderwater-Oddish: kelp-lijn en Oddish-frontsprite af
+- Lijn (Jordi, 20 nov): Oddish = Galápagos-kelp (Water/Grass, turquoise, kelp-hechtvoetjes) → Gloom = gezonken, dieprood gelatineus lijf met lavabrok, verschroeide kelp en gloeiend kwijl (Water/Fire) → Vileplume = levende heetwaterbron met vijf anemonen, wit lijf op steltpoten (Water/Fire). Modellen bevroren in `docs/concept/sprites/oddish_regional/referenties/`.
+- Oddish-frontsprite af: model verkleind (maker), 7 px keurderreparaties, gezicht 1-op-1 van de game-Oddish met schaduwlijn boven de mond (Jordi), kelp subtiel amber met golvende rand (Jordi: "Akkoord, maar houd het subtiel"); r6 (middelste blad) verworpen; Dragonfly Cave-eindkeuring PASS. `oddish_regional/af/`, op het overzichtsvel.
+- Sessieprompts voor de Gloom- en Vileplume-sprites: `oddish_regional/SESSIE_PROMPTS_gloom_vileplume.md`.
+
+### [v0.0.578] - Onderwater-Gloom: frontsprite kandidaat
+- Frontsprite van de regionale Gloom (Water/Fire) naar het bevroren Gemini-model `referenties/gemini_gekozen_gloom.png`: `docs/concept/sprites/oddish_regional/gloom_sprite/r2/gloom_r2.png` (+ `gloom_r2_8x.png`). Natief raster van het model teruggehaald (pitch 6,83 px, 149×149), oppervlakgewogen verkleind ×0,412 tot 43×42 px (1177 px), onderkant op y52 zoals de Gloom in de game; 15 kleuren incl. transparant.
+- Gloeiende delen (kieren, kwijl/mond, kelppunten) in een eigen fel oranje-geel uit het model (204,74,40 / 244,124,48 / 252,184,80); gloed en dunne mondlijnen winnen in de reductie, dus op de gemeten modelplekken.
+- r1 maker (161 px afwijkend van de kale reductie: buitenlijn, ontkorrelen, gloed, 5 px hooglicht); keurder BIJNA → r2 = 13 pixelwissels (selout aan de lichtkant links, hooglicht van de kelpschaduw af, kelpspleet rechts, vinnetje links iets lichter). Wacht op Jordi.
+
+### [v0.0.579] - Onderwater-Gloom: frontsprite r3
+- Jordi over r2: "best netjes al, in het hoofd mag je wat meer kleurtinten/schaduw gebruiken voor de lava, voor de rest is het alleen afwerking". r3 (`gloom_sprite/r3/gloom_r3.png` + `_8x`): kieren per pixel op de modelgloed getint (dieprood randen, oranje, geel op de kruisingen), schaduwkant van de brok één tint donkerder met nieuwe tint sintel (150,40,32); 16 kleuren incl. transparant. Afwerking: mondring rechts bordeaux i.p.v. zwart, los vlekje in het linkervinnetje weg (34 px t.o.v. r2).
+- Jordi over r3: "ja fenomenaal werk wat betreft die lava" (lava bevroren). Eindkeuring: PASS, geen moeten.
+
+### [v0.0.580] - Onderwater-Gloom: frontsprite r4 (volume lijf)
+- Jordi: "ja graag wat meer bolling, schaduw, tinten etc, doe dat in een eindkeuring". Eindkeurder (studie Ditto/Gulpin/Grimer/Gloom op 8×) zette 133 tintwissels binnen lijf en vinnen: lichte bolling linksboven, schaduwsikkel rechts die naar onder breder wordt, diepe sikkel tegen de rand en onder de rechtervin, eigen lobben met hooglichtje in de voet; lijf-licht (index 8) (198,108,116) → (204,116,120). Diff 0 in lavabrok, gloed, ogen, kelp, zwart en silhouet (`gloom_sprite/r4/bewijs.py`). `gloom_sprite/r4/gloom_r4.png` + `_8x`.
+- Jordi: "commit en push naar main" → frontsprite af: `docs/concept/sprites/oddish_regional/gloom_sprite/af/gloom.png` (+ `gloom_8x.png`).
+
+### [v0.0.581] - Vlieglijn: start fruitvlieg
 - Nieuwe lijn fruitvlieg → huisvlieg → mug (Jordi, 20 nov); mug blijft Poison/Electric, typen fase 1–2 open. SPEC en Gemini-startprompt fase 1 in `docs/concept/sprites/vlieglijn_fase1/`.
 - Fruitvlieg Gemini r1 bewaard; Jordi: "dit is net beedrill".
 - Fruitvlieg r1: Jordi denkt na over richting en kleuren.
@@ -2387,12 +2442,12 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Vlieg: sprite r3–r5 (50 px, maker + keurder); poten blijven fout → Gemini-ronde r9 voor de poten (prompt + bijlage).
 - Vlieg: sprite r6–r10 (poten via Gemini r9 + krabbel Jordi, eindkeuring r9 + reparaties) → kandidaat `vlieglijn_fase1/sprite_r10/`.
 
-### [v0.0.570] - Robotvlieg (vlieglijn fase 1): frontsprite af
+### [v0.0.582] - Robotvlieg (vlieglijn fase 1): frontsprite af
 - Frontsprite af: `docs/concept/sprites/vlieglijn_fase1/af/vlieg.png` (+ 8×, `normal.pal`), Bug/Electric, 50 px breed; op het overzichtsvel (`showcase/frontsprites_af.png`) als "Robotvlieg". Lijn: vlieg → mug (2 fases), evolutie rond lv 30; mug (Poison/Electric) nog te doen. Naam open.
 - Ontwerp: Gemini r1–r8 (fruitvlieg → huisvlieg → robotisch; LED-vizier met blije paarse ^, stroomkabelpoten naar Xurkitree: ronde kabel met glans, witte ringen, twee koperdraadjes als klauwtjes); model = r8 + strepen van r7.
 - Sprite: r1–r2 op 42 px (te klein: kop en kabels gingen verloren), r3–r5 op 50 px; poten via Gemini r9 (alleen een extra achterpoot) en Jordi's krabbels; buis onder het achterlijf weg, voorpoten naar achteren, LED-ogen O2, ringen A, randbelichting onderkant borststuk (P1), lichte vleugellijn (L12), keuringen en Dragonfly Cave-eindronde; r24 = rechte lijnen gebroken + kleurronde. Alle rondes en Jordi letterlijk in `vlieglijn_fase1/SPEC.md`.
 
-### [v0.0.571] - Overzichtsvel frontsprites in drie categorieën
+### [v0.0.583] - Overzichtsvel frontsprites in drie categorieën
 - `docs/concept/sprites/showcase/maak_vel.py` deelt het vel nu in (Jordi, 21 nov): **New** (40, volledig originele designs, lijnen bij elkaar op volgorde), **Evolutions of existing Pokémon** (4: Hitmongroove (Hitmontop), Krassault (Octillery), Shuppetto (Banette), Skinguin (Delibird)), **Regional forms / convergent Pokémon** (9: Silicobra-lijn, Abra-lijn, Dustly-lijn, DJ Rotom). Rufflet en Harpiary komen in de derde sectie zodra ze af zijn. Lange namen krijgen automatisch een kleiner lettertype.
 - Ontbrekende designs van andere branches op het vel gezet (sectie Regional forms / convergent, nu 14): regionale Rufflet en "Harpiary" (`claude/fervent-dijkstra-lvtc7o`), regionale Oddish en Gloom (idem) en Vileplume (`claude/great-maxwell-bgon7h`); hun `af/`-mappen zijn naar deze branch gehaald.
 - Spooktrein fase 1 (`spooktrein_fase1/af/`, van `claude/cool-lovelace-5vjif4`, Steel; Jordi 21 nov: "die is allang goedgekeurd") op het vel en in de stand van zaken.
@@ -2401,3 +2456,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Sessieprompt voor de mug (vlieglijn fase 2) in `docs/concept/sprites/vlieglijn_fase2/SESSIE_PROMPT.md`.
 - Werknamen (Jordi, 21 nov): Flytron, Purrpillar, Globsnail, Clionice, Cryomet, Mosaguar, Axolaunch, Pyrowyrm, Pitaling; op het vel en in POKEMON.md.
 - Werknamen (Jordi, 21 nov): **Rowmate** (mate-kano) en **Tejuice** (pitahaya-draak fase 2); overige namen gepauzeerd (voorstellen in POKEMON.md).
+
+### [v0.0.584] - Merge naar main
+- Branch `claude/peaceful-cori-756ovj` (vlieglijn, overzichtsvel in drie categorieën, werknamen 21 nov, Llamauler r7) samengevoegd met `main`; eigen changelogsecties hernummerd naar 581–583. Regionale Vileplume (`oddish_regional/vileplume_sprite/af/`, van `claude/great-maxwell-bgon7h`) staat daarmee ook in main.

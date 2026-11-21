@@ -93,7 +93,8 @@ def rand(o):
         bL=not fg[Y,X-1]; bR=not fg[Y,X+1]; bU=not fg[Y-1,X]; bD=not fg[Y+1,X]
         if not(bL or bR or bU or bD): continue
         if (Y<=16 and 24<=X<=45) or (Y<=21 and 32<=X<=45):   # kuif: strengen en takjes zijn 1 px dun; geen zwart erop (dan wordt de hele streng zwart),
-            if k in (8,9): uit.append((Y,X,7))             # geen lichte rand: licht -> midden-violet
+            if k in (8,9) and (bR or bD or (bL and bR) or (bU and bD) or not (o[Y+1,X] in (1,6,7) or o[Y,X+1] in (1,6,7))):
+                uit.append((Y,X,7))   # licht alleen aan de lichtkant (boven/links) van een streng die eronder/rechts donkerder doorloopt; anders midden-violet
             elif k==7 and (bR or bD) and (o[Y-1,X] in VIOLET|{9} or o[Y,X-1] in VIOLET|{9}): uit.append((Y,X,6))   # schaduwkant van een 2 px dikke streng -> donker
             continue
         n=1 if (bR or bD) else 2 if k in WOLK else 6 if k in VIOLET|{9} else k

@@ -2442,3 +2442,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.586] - Oricorio tango: prompt r4
 - Tango r3 bleef een kraai met hoed en mes (Jordi: "tango moet wat gracieuzer"). r4 zonder de woorden hat/knife, slanker, staart als split tangojurk, sierlijke pose. Les in GEMINI.md.
+
+### [v0.0.587] - Oricorio samba: prompt r5
+- Oog = het blije Pom-Pom-oog (wijd open, geen ooglid); lijf rechtop als een persoon (verticaal ei-lijf) zoals alle Oricorio-vormen. Jordi: slaperig oog en lijfvorm niet Oricorio.

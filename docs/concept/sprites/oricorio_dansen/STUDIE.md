@@ -23,3 +23,5 @@ De prompts staan in `gemini/PROMPT_samba.md`, `PROMPT_tango.md`, `PROMPT_cumbia.
 **Samba r3 (21 nov):** "deze vind ik toch minder, hij mist de pauw achtige tooi" (Jordi). r4: alleen de tooi terug als grote pauwwaaier achter het hele lijf.
 
 **Tango r3 (21 nov):** "blijft wel erg kraai", "tango moet wat gracieuzer" (Jordi). Echte hoed en een metalen mes (de woorden hat/knife worden letterlijk getekend), kraaienlijf, keek naar rechts. r4: die woorden eruit, kuif en mesveer in vormen beschreven, slank, staart als split tangojurk, sierlijke pose.
+
+**Samba r4 (21 nov):** tooi goed; Jordi: "Ik snap niet waarom die zon slaperig oog blijft behouden, deze moet echt dezelfde blije look hebben als de electric oricorio, de vorm van het lichaam is ook niet echt oricorio". Oorzaak oog: "thick dark eyelid line ... calm, cool look" in de prompt. Oorzaak lijf: alle Oricorio-vormen staan rechtop als een persoon (verticaal ei-lijf, kop erop), Gemini tekent een liggende vogel. r5: Pom-Pom-oog, lijf rechtop.

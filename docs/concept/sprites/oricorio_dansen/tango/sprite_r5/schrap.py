@@ -19,6 +19,6 @@ def kies(a,axis,start,G=2):
 if __name__=='__main__':
     sy=int(sys.argv[1]) if len(sys.argv)>1 else 0; sx=int(sys.argv[2]) if len(sys.argv)>2 else 0
     r=kies(cl,0,sy); c=kies(cl[r],1,sx)
-    o=cl[r][:,c]; np.save('schrap.npy',o); np.save('schrap_rc.npy',np.array([r+[-1]*(len(c)-len(r)) if len(r)<len(c) else r, c+[-1]*(len(r)-len(c)) if len(c)<len(r) else c]))
+    o=cl[r][:,c]; np.save('schrap.npy',o)
     np.save('klassen_natief.npy',cl)
     ys,xs=np.where(o>0); print(o.shape,'bbox',xs.max()-xs.min()+1,ys.max()-ys.min()+1,'px',(o>0).sum())

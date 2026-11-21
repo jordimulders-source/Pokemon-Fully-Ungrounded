@@ -2398,3 +2398,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Spooktrein fase 1 (`spooktrein_fase1/af/`, van `claude/cool-lovelace-5vjif4`, Steel; Jordi 21 nov: "die is allang goedgekeurd") op het vel en in de stand van zaken.
 - Werknaam: spooktrein fase 2 heet **Wagogogon** (Jordi, 21 nov); op het vel, in POKEMON.md en CLAUDE.md.
 - Llamauler: opgeknapte sprite r7 (19 nov) naar `lama/fase2/af/` (Jordi, 21 nov: "r7 akkoord, zet maar op het vel"); oude in `af/oud_voor_gemini/`; op het vel.
+- Sessieprompt voor de mug (vlieglijn fase 2) in `docs/concept/sprites/vlieglijn_fase2/SESSIE_PROMPT.md`.

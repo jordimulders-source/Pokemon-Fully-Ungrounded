@@ -11,3 +11,4 @@ Model: `model/gemini_r6.png` (Gemini r6, 21 nov). Prompt: `../gemini/PROMPT_samb
 ## Besluiten
 - Model 1-op-1 overnemen; oog = Pom-Pom pixel voor pixel; snavel vergelijken met de 4 vormen en zo nodig vervangen.
 - Welk "polijsten" Jordi bedoelt: nog te vragen; niets eigens toevoegen.
+- r2 (21 nov): "2 is er flink achteruit op gegaan, omdat er weer eens dingen opnieuw getekend zijn ziet de hele sprite er niet meer uit, verder werken met r1 en die verder oppoetsen zonder opnieuw te tekenen". r2 verworpen; r3 = r1 oppoetsen.

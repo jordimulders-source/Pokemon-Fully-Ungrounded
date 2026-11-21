@@ -2400,3 +2400,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Llamauler: opgeknapte sprite r7 (19 nov) naar `lama/fase2/af/` (Jordi, 21 nov: "r7 akkoord, zet maar op het vel"); oude in `af/oud_voor_gemini/`; op het vel.
 - Sessieprompt voor de mug (vlieglijn fase 2) in `docs/concept/sprites/vlieglijn_fase2/SESSIE_PROMPT.md`.
 - Werknamen (Jordi, 21 nov): Flytron, Purrpillar, Globsnail, Clionice, Cryomet, Mosaguar, Axolaunch, Pyrowyrm, Pitaling; op het vel en in POKEMON.md.
+- Werknamen (Jordi, 21 nov): **Rowmate** (mate-kano) en **Tejuice** (pitahaya-draak fase 2); overige namen gepauzeerd (voorstellen in POKEMON.md).

@@ -21,3 +21,4 @@ Model: `model/gemini_r10.png` (Gemini r10, 21 nov; vervangt r6). Prompt: `../gem
 - sprite r5: "Ik vind de veren veel netter, alleen de groengele linksonderin is erg afgekapt en lijkt niet op het model. De linkerpoot is nog wat gek, die mag nog wat beter, en rechterpoot mag in zijn geheel 1 pixel naar links denk ik".
 - sprite r6: "de meest linkse groengele veer in de tooi, die moet nog beter, je hebt nu de vleugel wel netter gemaakt ook, wat goed is. Linkerpoot is wat beter, maar nog steeds lijkt die een beetje gebroken, kijk goed naar het model daarvoor".
 - sprite r7: "op de tooi, de tweede veer van rechts onder mag nog iets dikker zodat die netter aansluit, alles voor de rest is echt goed".
+- r8: de bedoelde veer = de geel omcirkelde kleine veer rechts bovenin de tooi (tussen de meest rechtse grote tooiveer en de rechtervleugel): "zit wat meer een gat tussen dan in het model". Eindkeuring r8 FAIL (kleur: zebra in veren, franje, spikkels).

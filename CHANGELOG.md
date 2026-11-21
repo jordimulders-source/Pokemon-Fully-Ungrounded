@@ -2452,3 +2452,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.588] - Dundragoon: Gemini r6, prompt r7
 - r6 (`dundragoon/gemini/r6.png`): "best prima, maar hij mag nog iets dikker"; "beetje chubby". Prompt r7 = r6 met dikker lijf en precies 2 poten.
+
+### [v0.0.589] - Dundragoon: Gemini-model gekozen (r7)
+- Jordi bij r6: "beetje chubby" (verwerkt in prompt r7). Bij r7: "dit is hem". Bevroren model: `docs/concept/sprites/dundragoon/referenties/gemini_gekozen_r7.png`. Volgende stap: frontsprite.

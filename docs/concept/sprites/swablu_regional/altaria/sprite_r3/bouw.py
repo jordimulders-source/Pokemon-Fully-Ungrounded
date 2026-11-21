@@ -14,7 +14,7 @@ UIT='sprite_r3'
 # 0 transp | 1 pupil | wolk 2 selout L55, 3 donker L80, 4 midden L110, 5 licht L145, 6 hooglicht L191 |
 # violet 7 selout L53, 8 donker L78, 9 midden L112, 10 licht L156 | 11 static (eigen cyaan) | 12 glans
 PAL=[(152,208,160),(16,18,40),
-     (32,60,94),(50,88,122),(72,120,154),(102,158,188),(150,206,224),
+     (34,62,96),(48,84,118),(70,114,148),(100,154,184),(150,206,224),
      (44,44,116),(66,68,160),(98,100,210),(144,146,236),
      (120,232,255),(240,244,255)]
 G.PAL=PAL
@@ -38,7 +38,7 @@ T=np.full(L.shape,-1); w=c==2; vi=(c==3)|(c==5)
 T[w&(L<58)]=WD; T[w&(L>=58)&(L<100)]=WM; T[w&(L>=100)&(L<156)]=WL; T[w&(L>=156)]=WH
 T[vi&(L<85)]=VD; T[vi&(L>=85)&(L<130)]=VM; T[vi&(L>=130)]=VL
 T[c==1]=99
-KMIN=int(sys.argv[1]) if len(sys.argv)>1 else 3
+KMIN=2   # >=2 zwarte modelpixels in het blok = lijnkandidaat (alleen als hij doorloopt, zie stap 2)
 # --- 1. modus per blok ---
 o=np.zeros((64,64),int); K=np.zeros((64,64),bool)
 for Y,X in zip(*np.where(fig)):
@@ -76,5 +76,26 @@ for _ in range(2):                      # uitsteeksels van 1 px (3 buren van een
         for t in set(nb):
             if t!=k and t in groep(k) and nb.count(t)>=3: o[Y,X]=t; break
 stap('ontkorrelen',v,o)
+# --- 4. static: modelplekken (statisch() uit klassen.py, natief). Spritepixel = static als >= 2 static-modelpixels in het blok, plus blokken
+#        met 1 die aan zo'n pixel grenzen (de lijn loopt door); 2x2-klontjes uitgedund (pixel met de minste modeldekking eruit);
+#        stukjes < 4 px weg (Keuring MOET 6: weinig, langere zigzaglijnen, geen stukjes < 4 px). Eigen cyaan (11), niet de hooglichttint. ---
+st=B.st; cnt=np.zeros((64,64),int)
+for Y in range(64):
+    for X in range(64):
+        u,v=blok(X,Y)
+        if 0<=u<st.shape[1]-2 and 0<=v<st.shape[0]-2: cnt[Y,X]=st[v:v+3,u:u+3].sum()
+S=cnt>=2
+S|=(cnt==1)&np.array([[any(cnt[Y+dy,X+dx]>=2 for dy,dx in N8) if 0<Y<63 and 0<X<63 else False for X in range(64)] for Y in range(64)])
+for _ in range(2):
+    for Y in range(63):
+        for X in range(63):
+            q=[(Y,X),(Y,X+1),(Y+1,X),(Y+1,X+1)]
+            if all(S[p] for p in q): S[min(q,key=lambda p:cnt[p])]=False
+lab,n=label(S,acht=True)
+for i in range(1,n+1):
+    if (lab==i).sum()<4: S[lab==i]=False
+STAT=S.copy()
 if __name__=='__main__':
     G.opslaan(o,UIT+'/tussen.png'); print(tel); toon(o)
+    print('   '+''.join(str(x%10) for x in range(64)))
+    for Y in range(14,62): print('%2d '%Y+''.join('S' if S[Y,X] else ('#' if fig[Y,X] else '.') for X in range(64)))

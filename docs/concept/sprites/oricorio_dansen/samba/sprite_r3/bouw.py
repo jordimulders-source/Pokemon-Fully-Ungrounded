@@ -11,6 +11,7 @@ def poly(pts):   # pixelmiddens binnen de veelhoek (via 8x supersample)
     return np.array(im)[4::8,4::8].astype(bool)
 # bevroren: lijf+kop+oog+snavel (veelhoek langs de lijfrand van r1) en poten (rij >= 47)
 BODY=poly([(19,22.5),(32.9,22.5),(32.9,38),(36,38.6),(37,47),(23,47),(19,42)])
+BODY[22,24:29]=True   # kopbovenkant (lichte koppixels op rij 22)
 FROZEN=BODY.copy(); FROZEN[47:,:37]=True
 KUIF=np.zeros((H,W),bool); KUIF[15:22,24:34]=True; KUIF[14,24:26]=True
 YY,XX=np.mgrid[0:H,0:W]
@@ -55,3 +56,29 @@ def s3():
             if nx or ny:
                 if -nx-ny>=2: o[y,x]=2
 step('S3_selout_lichtkant',s3)
+# S4: losse 1-px tintvlekjes in waaier/vleugels -> de tint die alle vulburen delen
+def s4():
+    for it in range(2):
+        for y in range(H):
+            for x in range(W):
+                if not (EDIT[y,x] and not KUIF[y,x] and o[y,x] in FILL): continue
+                nb=[v for v in nb4(o,y,x) if v in FILL]
+                if len(nb)>=3 and o[y,x] not in nb and len(set(nb))==1: o[y,x]=nb[0]
+step('S4_tintvlekjes',s4)
+# S5: kuif onderscheiden: vulling lichter/geler (3->11), lijnen binnen de kuif olijf (12), rand van de kuif doorlopend zwart,
+#     waaierpixels direct rond de kuif een tint donkerder
+def s5():
+    K=KUIF&(R1>0)
+    old=o.copy()
+    for y,x in zip(*np.where(K)):
+        v=old[y,x]
+        border=any(0<=y+a<H and 0<=x+b<W and old[y+a,x+b]>0 and not KUIF[y+a,x+b] for a,b in((-1,0),(1,0),(0,-1),(0,1)))
+        if v in (3,4): o[y,x]=11
+        elif v in (1,2,6,7): o[y,x]=1 if border else 12
+    for y in range(H):
+        for x in range(W):
+            if FAN[y,x] and old[y,x]>0 and not KUIF[y,x]:
+                near=[(a,b) for a in (-1,0,1) for b in (-1,0,1) if 0<=y+a<H and 0<=x+b<W and KUIF[y+a,x+b] and old[y+a,x+b] in (3,4,13)]
+                if near and old[y,x] in (3,4,5,6,7,2): o[y,x]=1 if any(a==0 or b==0 for a,b in near) else {3:6,4:6,5:7,6:7,7:2,2:2}[old[y,x]]
+                elif touches(KUIF,y,x,True) and old[y,x] in (3,4): o[y,x]=6
+step('S5_kuif',s5)

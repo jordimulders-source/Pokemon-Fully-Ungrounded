@@ -67,3 +67,4 @@ Lijn (besloten 20 nov): **vlieg → mug, 2 fases** (reguliere vlieg; fruitvlieg 
 - Jordi (20 nov): "misschien lijn met lichte kleur"
 - Jordi (20 nov) over r22: "je hebt de vleugel verkleurd / dadt was niet de taak" · "de lijn tussen de vleugel in is het enige wat je moet veranderen" · "zodat ze los van elkaar zijn" · "niet de hele vleugel herkleuren" → r23: alleen de lijn (12 resp. 21 px), vleugels verder als r21
 - Jordi (20 nov) over r23 L12 (krabbel `sprite_r23/krabbel_jordi_r23.png`, rode streepjes op rechte lijnen): "top, ik vind dat er nog wt teveel rechte lijnen in het ontwerp zitten, als je dat kan fixen en alles wat smoother, geleidelijker kan maken, en nog een definitieve kleur/schaduw ronde kan doen, dan is die klaar. Niks hertekenen, behalve wat pixelwerk om rechte lijnen iets minder recht te maken"
+- Jordi (21 nov): "24 akkoord" → **af**: `af/vlieg.png` (= sprite_r24, normaal zwart), op het overzichtsvel als "Robotvlieg".

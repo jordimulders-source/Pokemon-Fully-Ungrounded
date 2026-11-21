@@ -1,13 +1,13 @@
-# Paletten (index = klasse). MODEL = gemeten k-means-centra op het natieve raster. Roze = Gen 3 Oricorio (Pa'u/Pom-Pom-roze), wit = glimpje.
+# Paletten r7 (index = klasse). Eén donkere reeks met stappen >=25-30 en koel-blauw (Gen 3-zwart = blauwzwart); idx 4 (D2) is samengevoegd met D3 en ongebruikt.
 NAMEN=['_','O','D0','D1','D2','D3','D4','R1','R2','R3','K1','K2','K3','W']
 VAST={'_':(152,208,160),'K1':(255,166,181),'K2':(191,105,120),'K3':(115,63,72),'W':(252,252,252)}
-MODEL={'O':(2,2,4),'D0':(89,92,99),'D1':(66,68,74),'D2':(56,57,62),'D3':(42,43,48),'D4':(31,32,36),'R1':(158,78,93),'R2':(149,41,60),'R3':(90,20,30)}
 VARIANT={
- # A: zo dicht bij het bijna-zwarte model als leesbaar is (blauwzwart zoals Umbreon/Murkrow, stappen ±14)
- 'A_donker':{'O':(14,14,20),'D0':(104,106,126),'D1':(76,78,96),'D2':(62,63,80),'D3':(46,47,62),'D4':(32,33,44),'R1':(184,52,76),'R2':(150,34,58),'R3':(98,18,36)},
- # B: één stap lichter (Gen 3-leesbaarheid, Umbreon-niveau)
- 'B_lichter':{'O':(16,16,24),'D0':(128,130,154),'D1':(96,98,120),'D2':(78,79,100),'D3':(60,61,80),'D4':(42,43,58),'R1':(208,72,96),'R2':(168,40,66),'R3':(104,20,40)},
+ # r7: hooglicht ±128 / licht ±100 / midden ±67 / donker ±40 / lijn ±17; rood met grotere stappen, donkerste rood naar paars (±330°)
+ 'r7':       {'O':(16,16,28),'D0':(120,128,160),'D1':(92,100,132),'D2':(58,64,92),'D3':(58,64,92),'D4':(34,38,60),'R1':(216,76,100),'R2':(168,40,72),'R3':(100,22,62)},
+ # r7_donker: zelfde reeks, ±12-14 donkerder
+ 'r7_donker':{'O':(10,10,20),'D0':(104,112,146),'D1':(78,86,118),'D2':(46,52,80),'D3':(46,52,80),'D4':(24,26,46),'R1':(204,66,92),'R2':(156,34,66),'R3':(90,18,56)},
 }
 def pal(v):
-    d=dict(VAST); d.update(MODEL if v=='model' else VARIANT[v]); d['R1']=d.get('R1',(200,64,88))
-    return [d[n] for n in NAMEN]
+    d=dict(VAST); d.update(VARIANT[v]); return [d[n] for n in NAMEN]
+if __name__=='__main__':
+    for v in VARIANT: print(v,[(n,round(.299*c[0]+.587*c[1]+.114*c[2])) for n,c in zip(NAMEN,pal(v)) if n not in('_','D2')])

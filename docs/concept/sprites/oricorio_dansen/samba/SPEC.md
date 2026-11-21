@@ -17,3 +17,4 @@ Model: `model/gemini_r10.png` (Gemini r10, 21 nov; vervangt r6). Prompt: `../gem
 - r3 (21 nov): "Samba is nog steeds r1 de beste, dus daar moeten we even opnieuw gaan overleggen".
 - r7 (Gemini): "hij is niet mooi"; inspiratie: fanart + danseres (`referenties/`); "Dat we het zoals de danseres doen, dan heb je geen overlap".
 - r10: "ga maar met dit model werken. Je mag op detailniveau er wat van afwijken als de sprite daardoor mooier wordt".
+- sprite r4: "Samba is helemaal niet slecht, maar moet een betere afwerking, zit hem vooral in dat rechte lijnen minder recht moeten, de linkervleugel een paar onnodige en te donkere lijnen hebben, poten wat meer als een echte oricorio mogen en verder kleurgebruik, tinten etc".

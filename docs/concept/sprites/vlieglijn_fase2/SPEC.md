@@ -24,3 +24,4 @@ Lijn: **vlieg → mug, 2 fases** (Jordi, 20 nov). Mug = **Poison/Electric** (Jor
 - r1: prompt `gemini/PROMPT_r1.md` (nieuw gesprek, geen bijlage) → `gemini/r1.png`. Jordi (21 nov): "ik vind dit design echt fenomenaal. Zo vet. Vertaalt deze goed genoeg naar een sprite denk je?"
 - Maattest (kale reductie, geen sprite): natief raster 6,83 px → 150×150, figuur 109×123; `maat/maten.png` op 46×52, 51×58, 56×63.
 - Jordi (21 nov): "ja r1 is het model, 56×63 akkoord" → sprite r1 (maker).
+- Sprite r1 (maker, 21 nov): `sprite_r1/mug_r1.png`; 202/1361 px afwijkend van de kale reductie (silhouet 0), 5 poten in het model (niets toegevoegd). Claude: trouw goed; ogen lezen op 1× nog niet als \\ /.

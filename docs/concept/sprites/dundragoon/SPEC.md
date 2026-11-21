@@ -26,3 +26,4 @@
 - r2 (`gemini/r2.png`), Jordi: "dit begint ergens op te lijken, al is het nu iets teveel een dragonite/dunsparce fusion".
 - Na r2, Jordi: wat te veel Dragonite is: "De complete vorm, zet de sprite van dragonite maar ernaast en vergelijk zelf. Hij mag best een wat lompe vorm hebben zoals dragonite, maar dit is too much". Boorstaart: "Ja, duidelijke boor".
 - Vergelijking Claude (`gemini/r2_vgl_dunsparce_dragonite.png`): Dragonite-trekken in r2 = rechtop staand bovenlijf, armpjes voor de buik, lichte buik met dwarsstrepen, gekrulde spriet op de kop, ronde Dragonite-snuit, vleugeltjes achter de schouders. Prompt r3 (`gemini/PROMPT_r3.md`, nieuw gesprek, geen bijlage) haalt die eruit; lompe vorm mag.
+- Jordi bij r3: "nee we moeten een nieuwe prompt/gesprek"; "het is teveel dragonite, maar je prompt zat goed in de richting" (r3 = prompt r2 + anti-Dragonite + boor, nieuw gesprek).

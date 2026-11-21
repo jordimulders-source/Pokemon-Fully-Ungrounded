@@ -2459,3 +2459,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.590] - Dundragoon: frontsprite r1–r3 (kandidaat)
 - Maker: r1 kale reductie van het model (61×61, silhouet = model) + opschoning; r2 gebogen rughooglicht, oogring middenblauw met donkere buitenrand, boor per winding schaduw → midden → licht (kleur, met toestemming Jordi).
 - Verse keurder: PASS, geen MOET; Claude zette 4 KAN-punten (8 px: vleugelrand, lobrand, vlekje in de boor, blauwe wangstrook) → r3 (`dundragoon/sprite_r3/`).
+
+### [v0.0.591] - Dundragoon: eindkeuring (r4)
+- Jordi: "op naar eindkeuring". Eindkeurder (Dunsparce, Gulpin, Dragonair, Whiscash, Altaria, Flygon op 8×): PASS; alleen het lijf: schaduwsikkel boven de buik (18 px) en het rughooglicht taps doorgetrokken (6 px), palet en vorm ongewijzigd (alpha-diff 0). `dundragoon/sprite_r4/`.

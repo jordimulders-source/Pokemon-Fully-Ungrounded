@@ -2432,3 +2432,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.583] - Onweerswolk-Swablu-lijn: wolken, kleur en type
 - Jordi koos: Swablu Electric/Flying, lijfkleur A (dieper blauw, leigrijze wolk), nieuwsgierige Swablu, static vonkjes in en op de wolk. Wolkvoorstellen (cumulus congestus / cumulonimbus met aambeeld) in `IDEEEN.md`.
+
+### [v0.0.584] - Onweerswolk-Swablu: voelsprieten
+- Jordi: "bij swablu kan je de voelsprieten in gele vonkvorm maken" (`IDEEEN.md`).

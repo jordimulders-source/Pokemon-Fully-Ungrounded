@@ -2562,3 +2562,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.617] - Onweerswolk-Altaria: frontsprite r8
 - Wolk in de 4 modeltinten (navy/donker teal/teal/licht cyaan) + navy selout, meerderheidsband per pixel (r5 had 498 px in een tussentint die het model niet heeft); static 105 px op modelplekken; kuif en kop per pixel uit het model (`altaria/sprite_r8/NOTITIES.md`). Eindkeuring loopt.
+
+### [v0.0.618] - Onweerswolk-Altaria: eindkeuring r8 → r9
+- Eindkeuring r8: PASS na 16 px (14 static-hoekpixels, 1 kuifglans, 1 wolkkap; `altaria/sprite_r8/EINDKEURING.md`). r9 = die proefkopie (`altaria/sprite_r9/`). Aan Jordi getoond.

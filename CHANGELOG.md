@@ -2583,3 +2583,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.624] - Onweerswolk-Altaria: eindkeuring r13 → r14
 - PASS na 5 px: halsrand doorgetrokken tot de wolkkwab, L-hoek weg, gaatje in de kuif dicht, kuifpunt eindigt tegen de vleugelrand (`altaria/sprite_r13/EINDKEURING.md`). r14 = proefkopie.
+
+### [v0.0.625] - Onweerswolk-Altaria: frontsprite af
+- Jordi: "akkoord, commit en push naar main". `docs/concept/sprites/swablu_regional/altaria/af/altaria.png` (+ `_8x`) = r14. Lessen in `docs/lessen/GEMINI.md`; Stand van zaken bijgewerkt. Daarmee is de onweerswolk-Swablu-lijn af.

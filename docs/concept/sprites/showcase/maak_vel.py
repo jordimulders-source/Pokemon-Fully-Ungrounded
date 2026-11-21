@@ -35,6 +35,7 @@ SECTIES=[
 ("steenmozaiek/af/steenjaguar.png",'Steenjaguar',"rock"),
 ("blobfish/af/blobfish.png",'Blobfish (winegum)',"water"),
 ("blobfish_fase2/af/blobfish_fase2.png",'Blobfish (pudding)',"water"),
+("spooktrein_fase1/af/spooktrein_fase1.png",'Spooktrein fase 1',"steel"),
 ("spooktrein_fase2/af/spooktrein_fase2.png",'Spooktrein fase 2',"steel/ghost"),
 ("spooktrein_fase3/af/spooktrein.png",'Spooktrein fase 3',"steel/ghost"),
 ("pitahaya_draak/af/pitahaya_draak.png",'Pitahaya-draak fase 1',"grass/dragon"),

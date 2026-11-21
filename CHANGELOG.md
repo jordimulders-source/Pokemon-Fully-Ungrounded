@@ -2448,3 +2448,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.588] - Oricorio: samba r6, tango r5
 - Samba r6: lange puntige bladveren, kleinere en donkerdere waaier. Tango r5: gracieuze vrouwelijke danseres (Jordi) met tangojurk en strakke knot; rechtop lijf en blij oog van samba r5.
+
+### [v0.0.589] - Oricorio cumbia: frontsprite af
+- Oricorio Cumbia (Water/Flying) af in `docs/concept/sprites/oricorio_dansen/cumbia/af/` (r6): Gemini-model r2 overgenomen, lichtblauw "midden" (Jordi), oog en snavel van Pom-Pom, poten van Pa'u; eindkeuring PASS na kleur/lijnreparaties (volume kop/lijf, minder zwarte binnenlijnen, rokrand, onderste ruche). Op het overzichtsvel.

@@ -59,6 +59,7 @@ items=[
 ("rufflet_regional/af/rufflet.png",'Rufflet (regionaal)',"flying"),
 ("harpij_braviary/af/harpij.png",'Harpij-arend',"steel/flying"),
 ("oddish_regional/af/oddish_regional.png",'Oddish (regional)',"water/grass"),
+("oricorio_dansen/cumbia/af/cumbia.png",'Oricorio (cumbia)',"water/flying"),
 ]
 F="/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"; FR=F.replace("-Bold","")
 ft=ImageFont.truetype(F,36); fn=ImageFont.truetype(F,19); fy=ImageFont.truetype(FR,16)

@@ -34,3 +34,4 @@ Lijn: **vlieg → mug, 2 fases** (Jordi, 20 nov). Mug = **Poison/Electric** (Jor
 - Jordi (21 nov) over r3: "ja hij is nog blurry, verschil tussen poot en arm is net wat beter, maar nog steeds lastig om het verschil te zien"
 - Jordi (21 nov): "volgens mij maakt 2 vultinten max een sprite ook blurry" · "dus misschien goed om naar de hele sprite daarvoor te kijken"
 - Jordi (21 nov): "en kijk naar fase 3 van pitahaya draak proces, dat ging ook een tijdje fout" → lessen pitahaya fase 3 (scheidingslijn ledematen, palet donkerder/gespreid, verre ledematen 1 stap donkerder) aan de maker van r4 gegeven.
+- Sprite r4 (verse maker, 21 nov): kleurronde, A (gematigd, 103 px) en B (sterker, 110 px), alpha-diff 0; poten 3 vultinten, kruising: Λ-been voor (glans), borstarm achter (donker, lijn x33); achterlijf nog troebel volgens maker.

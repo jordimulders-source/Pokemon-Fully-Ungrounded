@@ -13,7 +13,7 @@ def kijk(a,box,z,out):
         c=im.crop(box).resize((w,h),Image.NEAREST); W.paste(c,(i*(w+20),16))
         for x in range(x0,x1+1,5): d.line([(i*(w+20)+(x-x0)*z,16),(i*(w+20)+(x-x0)*z,h+16)],fill=(120,120,120))
         for y in range(y0 - y0%5 +5,y1,5): d.line([(i*(w+20),16+(y-y0)*z),(i*(w+20)+w,16+(y-y0)*z)],fill=(120,120,120))
-    W.paste(mc,(2*(w+20),16)); d.text((2,2),'r4 | r5 | model  box=%s (lijnen per 5)'%(box,),fill='black')
+    W.paste(mc,(2*(w+20),16)); d.text((2,2),'r5 | r6 | model  box=%s (lijnen per 5)'%(box,),fill='black')
     W.save(out)
 if __name__=='__main__':
     src=sys.argv[1]; a=np.load(src) if src.endswith('.npy') else np.array(Image.open(src))

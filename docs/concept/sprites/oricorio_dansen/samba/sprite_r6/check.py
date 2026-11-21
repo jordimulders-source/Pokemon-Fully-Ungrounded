@@ -1,4 +1,4 @@
-# check.py: technische controle r5 t.o.v. r4: kleuren, silhouetwijzigingen, diff per zone, losse vlakjes (<3 px), lichte rand
+# check.py: technische controle r6 t.o.v. r5: kleuren, silhouetwijzigingen, diff per zone, losse vlakjes (<3 px), lichte rand
 import numpy as np, json; from PIL import Image
 from scipy import ndimage
 a=np.array(Image.open('samba.png')); b=np.array(Image.open('r5_ref.png'))
@@ -9,7 +9,7 @@ Z={'tooi boven (rij 0-13)':(0,14,0,64),'gele tooibladen (rij 14-27, kol 14-44)':
 log={}
 for k,(y0,y1,x0,x1) in Z.items():
     d=a[y0:y1,x0:x1]!=b[y0:y1,x0:x1]; s=(a[y0:y1,x0:x1]>0)!=(b[y0:y1,x0:x1]>0)
-    log[k]={'pixels_anders_dan_r4':int(d.sum()),'waarvan_silhouet':int(s.sum())}
+    log[k]={'pixels_anders_dan_r5':int(d.sum()),'waarvan_silhouet':int(s.sum())}
 S=(a>0)!=(b>0); ys,xs=np.where(S)
 log['silhouet_totaal']={'erbij':int(((a>0)&(b==0)).sum()),'eraf':int(((a==0)&(b>0)).sum()),'pixels':[(int(y),int(x),'+' if a[y,x] else '-') for y,x in zip(ys,xs)]}
 log['anders_totaal']=int((a!=b).sum())
@@ -31,7 +31,7 @@ for y in range(64):
         if a[y,x] in (2,3,6,7,9,11,12):
             if any(not(0<=y+dy<64 and 0<=x+dx<64) or a[y+dy,x+dx]==0 for dy,dx in ((0,1),(1,0),(0,-1),(-1,0))): rand.append((H[a[y,x]],y,x))
 log['lichte_kleur_op_buitenrand']=rand
-json.dump(log,open('log_r5.json','w'),indent=1,ensure_ascii=False)
+json.dump(log,open('log_r6.json','w'),indent=1,ensure_ascii=False)
 for k,v in log.items():
     if k=='silhouet_totaal': print(k,v['erbij'],v['eraf'])
     else: print(k,v)

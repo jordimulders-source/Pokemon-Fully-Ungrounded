@@ -4,7 +4,7 @@ Jordi 21 nov: nieuwe prompts zonder bijlagen. Oordeel r2: `../STUDIE.md`. r3 (`.
 
 ```
 Design a new form of the Pokémon ORICORIO: TANGO STYLE, from the night streets of old Buenos Aires. Its type is Dark/Flying. Dark here means night and cunning, not evil.
-It is a new dance style of the Pokémon ORICORIO (the dancing bird from Alola, like its Baile, Pom-Pom, Pa'u and Sensu styles). Keep the Oricorio body exactly: a SMALL, round songbird, about sparrow-sized; a round head that flows into a plump body with no visible neck; a long, slender, slightly downcurved pink beak; thin pink legs with toes. Only the plumage changes: the feathers themselves ARE the dance costume (like Baile's feathers are a flamenco dress), never clothing or objects worn over the bird.
+It is a new dance style of the Pokémon ORICORIO (the dancing bird from Alola, like its Baile, Pom-Pom, Pa'u and Sensu styles). Keep the Oricorio body exactly: a SMALL, round songbird, about sparrow-sized; a round head that flows into a small, smooth body with no visible neck; a long, slender, slightly downcurved pink beak; thin pink legs with toes. Only the plumage changes: the feathers themselves ARE the dance costume (like Baile's feathers are a flamenco dress), never clothing or objects worn over the bird.
 THE EYE: a big, solid black oval eye with one small white shine dot, just above the base of the beak, with a thick dark eyelid line over the top of it (calm, cool look). NO white around the eye, not a narrow slit, not sleepy.
 
 WHAT IT IS

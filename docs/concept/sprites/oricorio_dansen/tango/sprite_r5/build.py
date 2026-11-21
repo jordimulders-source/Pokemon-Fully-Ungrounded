@@ -57,6 +57,9 @@ for y in range(13,20):
     xs=[x for x in range(16,32) if o[y,x] in ROZE]
     for x in range(16,min(xs) if xs else 16):
         if o[y,x]: o[y,x]=0; tel('3b_links_van_snavel')
+# 3a. kopomlijning boven de snavel zoals Pom-Pom (rij 18-20 kol 26-27 = omlijning/kop)
+for y,x,v in ((13,23,O),(13,24,D1),(14,23,O)):
+    if o[y,x]!=v: o[y,x]=v; tel('3a_kop_boven_snavel_pompom')
 np.save('na_kop.npy',o)
 # 4. poten: modelpootjes (onder de franje) weg, dan Baile-voet (frame 1, rij 56-61, kol 23-31) links (DX=+1), gespiegeld rechts;
 #    het zichtbare onderbeen als Gen 3-staakje [donkerroze, roze, zwart] op de modelplek (links kol 29-31, rechts de modeldiagonaal).

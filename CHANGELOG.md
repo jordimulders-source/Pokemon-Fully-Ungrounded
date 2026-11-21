@@ -2463,3 +2463,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.593] - Oricorio samba: prompt r8 (danseres)
 - Naar Jordi's inspiratie (samba-danseres): tooi van pluimen op het hoofd, vleugels als zijvleugels, geen overlap tussen tooi, vleugels en lijf.
+
+### [v0.0.594] - Oricorio samba: prompt r9
+- r8 niet herkenbaar als samba (Jordi). r9: grote tweelaagse tooi met gouden middenstuk, gouden borst- en heupband met kwastjes, zijvleugels met geel en wat blauw, samba no pé.

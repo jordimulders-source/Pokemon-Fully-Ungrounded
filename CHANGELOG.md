@@ -2577,3 +2577,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.622] - Onweerswolk-Altaria: r12 kop+hals 2 px rechts
 - Jordi: "a is perfect, zou je alleen het hele hoofd + nek 2 pixels naar rechts kunnen schuiven en mij dan een vergelijking kunnen laten zien?". Kop+hals als laag verschoven (niets hertekend); K1 kuif blijft, K2 kuif mee; vrijgekomen pixels = r9-wolk of wolkband ernaast (`altaria/sprite_r12/`).
+
+### [v0.0.623] - Onweerswolk-Altaria: r13 (K2 + 2 vergeten kuifpixels)
+- Jordi: "vanzelfsprekend dat de kuif meeschuift, je bent wel 2 pixels vergeten mee te schuiven." (40,20)/(41,20) navy rand van de kuifpunt mee naar (42,20)/(43,20). Naar eindkeuring (hals-aansluiting, lijnen, tinten, schaduw).

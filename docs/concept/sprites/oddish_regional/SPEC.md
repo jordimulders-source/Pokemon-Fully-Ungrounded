@@ -60,3 +60,4 @@ Na r11: "wat betreft de voorste anemonen die in de achterste overlopen, kan je o
 Over het gaatje: "nu is dat in het model zelf ook niet mooi gelukt" (afwijken van het model mag hier om het gaatje te dichten).
 Voorstel Jordi: "dus ik stel voor dat je die achterste in zijn geheel een beetje naar links schuift" (achterste = middelste bovenaan, T, tegen het gaatje met de linker anemoon L).
 Op r12: "nee dit is prima, op wat details na, het gat linksbovenin tussen 2 anemonen in moet op een natuurlijke manier dicht, de zwarte lijnen tussen anemonen moet natuurlijker en de poten zien er niet mooi uit, misschien moeten we die 1 pixel dikker maken?"
+Op r13 (welke lijn): "zwarte lijn tussen middenvoor en rechtsvoor" (naad VL|VR).

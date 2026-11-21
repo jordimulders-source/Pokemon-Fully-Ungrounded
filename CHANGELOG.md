@@ -2466,3 +2466,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.594] - Oricorio samba: prompt r9
 - r8 niet herkenbaar als samba (Jordi). r9: grote tweelaagse tooi met gouden middenstuk, gouden borst- en heupband met kwastjes, zijvleugels met geel en wat blauw, samba no pé.
+
+### [v0.0.595] - Oricorio samba: prompt r10 (laatste)
+- r9 al beter (Jordi). r10: tooi met ±9 grote pluimen en 5 brede gele binnenveren, effen borstband, opgetild been zichtbaar vóór het lijf, vleugels asymmetrisch (nabije hoog, verre laag).

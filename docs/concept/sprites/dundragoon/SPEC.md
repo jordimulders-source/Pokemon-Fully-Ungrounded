@@ -31,3 +31,4 @@
 - Keuzes na r3: lijf **Dunsparce-romp, dik** (Dunsparces worstvormige romp, veel dikker en zwaarder, op twee pootjes, geen lange slangenhals); aanpak **nieuw gesprek, alleen tekst**; "al mag de drill naar verhouding nog wat groter". Prompt r4: `gemini/PROMPT_r4.md` (hoofd, vleugels, staart beschreven zoals in r3).
 - r4 (`gemini/r4.png`), Jordi: "hij is te horizontaal en net wat te lang"; "hij mag in een soort vliegpose wel". Bijstuurprompt r5 in hetzelfde gesprek: `gemini/PROMPT_r5_bijsturen.md`.
 - r5 (`gemini/r5.png`, bijsturen): Jordi "hij snapt het niet" (bijna hetzelfde als r4). Claude draaide r4 zelf 15/25/35° (`plak/r4_rot*.png`, vel `plak/r4_rot_vel.png`) als posevoorstel.
+- Jordi na de gedraaide r4: "nee nieuwe prompt from scratch, geen bijlage" → `gemini/PROMPT_r6.md` (vliegpose bovenaan).

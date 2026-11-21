@@ -10,7 +10,7 @@ from gemeen import overlap, label, S
 a,c,L=klassen()
 # --- palet r2: wolk 5 tonen (2 materialen à 3 + selout), stappen ±30-45; vogel 3; geel feller; wit 2 ---
 PAL=[(152,208,160),(13,17,24),
-     (62,72,90),(92,104,122),(124,136,154),(162,174,190),(208,214,226),   # 2 wolk diep, 3 donker, 4 midden, 5 licht, 6 wit
+     (68,78,96),(96,108,126),(126,138,156),(164,176,192),(210,216,228),   # 2 wolk diep, 3 donker, 4 midden, 5 licht, 6 wit
      (68,90,110),(106,130,152),(150,174,194),                            # 7 vogel donker, 8 midden, 9 licht
      (200,158,40),(248,214,64),(255,246,160),                            # 10 oker, 11 geel, 12 lichtgeel
      (214,220,230),(250,251,253)]                                        # 13 snavelwit, 14 glans
@@ -24,7 +24,7 @@ tel={}
 def stap(n,v): tel[n]=tel.get(n,0)+int((v!=o).sum())
 N4=((-1,0),(1,0),(0,-1),(0,1)); N8=[(dy,dx) for dy in (-1,0,1) for dx in (-1,0,1) if dy or dx]
 # --- 1. toonstemming per spritepixel (modeltonen per natieve pixel) ---
-def wolktoon(l): return 6 if l>=188 else 5 if l>=152 else 4 if l>=118 else 3 if l>=86 else 2
+def wolktoon(l): return 6 if l>=188 else 5 if l>=152 else 4 if l>=124 else 3 if l>=97 else 2   # modelbanden ~200/~165/~138/~112/~84
 def vogeltoon(l): return 9 if l>=145 else 8 if l>=105 else 7
 STEM=np.zeros((64,64,15)); FK=np.zeros((64,64)); FD=np.zeros((64,64))
 for Y in range(64):

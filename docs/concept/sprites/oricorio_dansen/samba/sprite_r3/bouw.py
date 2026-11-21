@@ -1,0 +1,57 @@
+# r3 = r1 oppoetsen ZONDER tekenen: alleen herkleuren (belijning, kleur, schaduw) + benoemde randpixels.
+# Elke stap is een scherpe paletkeuze per pixel (geen blur/gemiddelden). Gebruik: python3 bouw.py
+import numpy as np; from PIL import Image
+from PIL import ImageDraw
+R1=np.array(Image.open('../sprite_r1/samba.png')); PAL=Image.open('../sprite_r1/samba.png').getpalette()[:48]
+H=W=64; T=0
+PAL[11*3:12*3]=[206,226,110]   # 11 geelgroen licht (kuif)
+PAL[15*3:16*3]=[246,238,150]   # 15 lichtgeel (gele reeks: 15 licht / 13 midden / 12 donker)
+def poly(pts):   # pixelmiddens binnen de veelhoek (via 8x supersample)
+    im=Image.new('L',(W*8,H*8),0); ImageDraw.Draw(im).polygon([(x*8,y*8) for x,y in pts],fill=1)
+    return np.array(im)[4::8,4::8].astype(bool)
+# bevroren: lijf+kop+oog+snavel (veelhoek langs de lijfrand van r1) en poten (rij >= 47)
+BODY=poly([(19,22.5),(32.9,22.5),(32.9,38),(36,38.6),(37,47),(23,47),(19,42)])
+FROZEN=BODY.copy(); FROZEN[47:,:37]=True
+KUIF=np.zeros((H,W),bool); KUIF[15:22,24:34]=True; KUIF[14,24:26]=True
+YY,XX=np.mgrid[0:H,0:W]
+FAN=(XX>=20)&(XX<=40)&(YY<=22)&~KUIF | (XX>=33)&(XX<=40)&(YY<=30)&~BODY
+WL=(XX<20)&~FROZEN&~FAN
+WR=(XX>=33)&~FROZEN&~FAN
+# onderste veren (donker 6/7 in r1) = dezelfde vleugel: per kant
+LOWR=WR&((YY>=35)|((XX>=44)&(YY>=21)))
+LOWL=WL&(YY>=34)
+def nb4(a,y,x):
+    for dy,dx in((-1,0),(1,0),(0,-1),(0,1)):
+        yy,xx=y+dy,x+dx; yield a[yy,xx] if 0<=yy<H and 0<=xx<W else 0
+FILL=(3,4,5,6,7)
+o=R1.copy(); LOG={}
+EDIT=FAN|WL|WR|KUIF
+def touches(mask,y,x,n8=False):
+    d=((-1,0),(1,0),(0,-1),(0,1))+(((-1,-1),(-1,1),(1,-1),(1,1)) if n8 else ())
+    return any(0<=y+a<H and 0<=x+b<W and mask[y+a,x+b] for a,b in d)
+def step(naam,f):
+    global o
+    n0=o.copy(); f(); LOG[naam]=int((n0!=o).sum())
+# S1: zwarte binnenlijnen in waaier/vleugels -> donkergroen (2); zwart blijft op de buitenrand en tegen het lijf (schaduw)
+def s1():
+    for y in range(H):
+        for x in range(W):
+            if EDIT[y,x] and not KUIF[y,x] and R1[y,x]==1 and not touches(R1==0,y,x,True) and not touches(FROZEN,y,x,True): o[y,x]=2
+step('S1_binnenlijn_zwart_naar_donkergroen',s1)
+# S2: onderste veren horen bij dezelfde vleugel: zelfde tintfamilie (6->5, 7->6)
+def s2():
+    m=LOWL|LOWR
+    o[m&(R1==6)]=5; o[m&(R1==7)]=6
+step('S2_onderveren_zelfde_familie',s2)
+# S3: buitenlijn aan de lichtkant (licht linksboven) -> gekleurde selout (2); schaduwkant blijft zwart
+def s3():
+    for y in range(H):
+        for x in range(W):
+            if not (EDIT[y,x] and R1[y,x]==1): continue
+            nx=ny=0
+            for a in (-1,0,1):
+                for b in (-1,0,1):
+                    if (a or b) and (not(0<=y+a<H and 0<=x+b<W) or R1[y+a,x+b]==0): nx+=b; ny+=a
+            if nx or ny:
+                if -nx-ny>=2: o[y,x]=2
+step('S3_selout_lichtkant',s3)

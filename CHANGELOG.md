@@ -2435,3 +2435,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.583] - Dundragoon: Gemini r1 afgekeurd, prompt r2
 - r1 (`dundragoon/gemini/r1.png`) afgekeurd: "niet gelukt, hoofd is nog hetzelfde, vorm heel raar, vleugels niet groot genoeg"; "en niet uniek genoeg de vleugels".
 - Keuzes: langere snuit, hoorntjes, oogring houden; diagonaal; vleugels "gewoon zoals dunsparce, maar iets groter, ze moeten vrij bizar zijn, niet typisch dragon". Prompt r2 in `gemini/PROMPT_r2.md`.
+
+### [v0.0.584] - Dundragoon: Gemini r2, prompt r3
+- r2 (`dundragoon/gemini/r2.png`): "dit begint ergens op te lijken, al is het nu iets teveel een dragonite/dunsparce fusion"; "De complete vorm ... Hij mag best een wat lompe vorm hebben zoals dragonite, maar dit is too much"; boor: "Ja, duidelijke boor".
+- Vergelijking naast Dunsparce en Dragonite (`gemini/r2_vgl_dunsparce_dragonite.png`); prompt r3 (`gemini/PROMPT_r3.md`): lang, lomp slangenlijf diagonaal in plaats van rechtop, geen armen/streepbuik/spriet, duidelijke boor.

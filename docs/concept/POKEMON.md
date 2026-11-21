@@ -53,6 +53,7 @@ Modeltekeningen in `docs/concept/ontwerp/<soort>/` (concept A/B/C + ONTWERP.md).
 - "voor nu allemaal goed, dat worden de working names": **Picaraio** (Picapau-evolutie), **Hummlet** (kolibrie fase 1), **Cholucha** (cholita-lama), **Pupoodle** (poedellarve).
 - Werknamen 8 nov: **Bandolingo** (olinguito; vervangt Bandingo, dat te veel op "Mandingo" lijkt; Jordi: lang, "maar bulbasaur en charmander ook"), **Zapacha** (viscacha; "geniaal, bekt lekker"), **Bootoo** (great potoo; "het meest pokemon").
 - **Shuppetto** (Banette-evolutie, Ghost/Dark puppetmaster): Jordi "Naam wordt Shuppetto" (17 nov).
+- **Werknamen 21 nov (Jordi: "Ik ben fan van ...")**: **Flytron** (robotvlieg), **Purrpillar** (poesrups), **Globsnail** (sneeuwbolslak fase 1), **Clionice** (fase 2), **Cryomet** (ijskomeet), **Mosaguar** (steenjaguar), **Axolaunch** (vuurwerk fase 1), **Pyrowyrm** (vuurwerkslang), **Pitaling** (pitahaya-draak fase 1). Overige voorstellen ("niet slecht, maar ... nog een betere"): nieuwe ronde.
 - **Wagogogon** (spooktrein fase 2, Steel/Ghost): Jordi "spooktrein fase 2 heet Wagogogon" (21 nov).
 - **Kiskiddo** (hatun runa, fase 1 koningstiran-lijn): Jordi "Kiskiddo akkoord" (8 nov).
 - **Rollen (Jordi, 8 nov):** de Inca-vogellijn (Kiskiddo → awki → Sapa Inca) wordt de regional birds, "de pidgey van deze regio"; de viscacha (Zapacha) wordt de electric rodent. De early route insect komt nog; Pupoodle is dat niet.

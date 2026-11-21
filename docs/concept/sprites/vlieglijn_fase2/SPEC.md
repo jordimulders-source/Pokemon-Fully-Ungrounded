@@ -7,8 +7,12 @@ Lijn: **vlieg → mug, 2 fases** (Jordi, 20 nov). Mug = **Poison/Electric** (Jor
 - Rol (IDEEEN.md): "Mug als bug (Jordi): iets minder early route, een beetje zoals Kricketot in Sinnoh; verschijnt zodra je in lager/warmer gebied komt".
 - Fase 1 (bevroren): grijze ronde kop zonder mond met een zwart LED-vizier en een lichtpaarse ^ in elk oog, korte voelsprietjes, zwart borststuk, grijs-zwart gestreept achterlijf, twee lichte vleugels plat naar achteren, zes poten als stroomkabels (ronde kabel met glans, witte ringen bij de knieën, twee koperdraadjes als klauwtjes).
 
-## Open
-- Zie 'Niet beantwoord' hieronder.
+## Model
+`referenties/gemini_gekozen_r1.png` (= `gemini/r1.png`), bevroren (Jordi, 21 nov: "ja r1 is het model, 56×63 akkoord"). Sprite 56×63 in het 64×64-kader.
+
+## Toegestane afwijkingen van het model
+(geen)
+
 
 ## Jordi letterlijk
 - 21 nov (sessiestart): "Hoe de mug uit de vlieg voortkomt: welke kenmerken van fase 1 terugkomen (LED-ogen, kabelpoten, robotisch/mechanisch, kleuren) en wat nieuw is (steeksnuit, grote voelsprieten, Poison)." · "Pose en grootte als eindvorm."
@@ -19,3 +23,4 @@ Lijn: **vlieg → mug, 2 fases** (Jordi, 20 nov). Mug = **Poison/Electric** (Jor
 ## Rondes
 - r1: prompt `gemini/PROMPT_r1.md` (nieuw gesprek, geen bijlage) → `gemini/r1.png`. Jordi (21 nov): "ik vind dit design echt fenomenaal. Zo vet. Vertaalt deze goed genoeg naar een sprite denk je?"
 - Maattest (kale reductie, geen sprite): natief raster 6,83 px → 150×150, figuur 109×123; `maat/maten.png` op 46×52, 51×58, 56×63.
+- Jordi (21 nov): "ja r1 is het model, 56×63 akkoord" → sprite r1 (maker).

@@ -2489,3 +2489,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.601] - Onweerswolk-Swablu: eindkeuring + r9
 - Eindkeuring r8: bijna PASS, 3 MOETEN (10 px in de onderwolk; `sprite_r8/EINDKEURING.md`). Toegepast in r9 (`sprite_r9/bouw.py`), verder diff 0 → PASS. Wacht op Jordi.
+
+### [v0.0.602] - Onweerswolk-Swablu: frontsprite af
+- Jordi: "ja zet maar in af, commit en push naar main". `docs/concept/sprites/swablu_regional/af/swablu.png` (+ `swablu_8x.png`) = r9. Lessen in `docs/lessen/GEMINI.md`; Stand van zaken bijgewerkt.

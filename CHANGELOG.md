@@ -2433,3 +2433,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.583] - Oricorio-dansen: prompts r2 (oog)
 - r1 (samba, tango, cumbia) gaf 3× een spleetoog met wit; Oricorio niet herkenbaar genoeg. Prompts r2 beschrijven het echte oog (zwart ovaal, wit glimpje, dikke ooglidlijn, geen wit eromheen) met `oricorio_dansen/koppen.png` als tweede bijlage. Les in GEMINI.md.
+
+### [v0.0.584] - Oricorio-dansen: r2 beoordeeld, samba/tango r3
+- Cumbia r2 kan door naar de sprite. Samba en tango: nieuwe prompts zonder bijlagen (samba: minder, grotere veren, kop vrij; tango: hoed als verenkuif, klein rond lijf, echte tangopose).

@@ -2424,44 +2424,166 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Jordi: "ja graag wat meer bolling, schaduw, tinten etc, doe dat in een eindkeuring". Eindkeurder (studie Ditto/Gulpin/Grimer/Gloom op 8×) zette 133 tintwissels binnen lijf en vinnen: lichte bolling linksboven, schaduwsikkel rechts die naar onder breder wordt, diepe sikkel tegen de rand en onder de rechtervin, eigen lobben met hooglichtje in de voet; lijf-licht (index 8) (198,108,116) → (204,116,120). Diff 0 in lavabrok, gloed, ogen, kelp, zwart en silhouet (`gloom_sprite/r4/bewijs.py`). `gloom_sprite/r4/gloom_r4.png` + `_8x`.
 - Jordi: "commit en push naar main" → frontsprite af: `docs/concept/sprites/oddish_regional/gloom_sprite/af/gloom.png` (+ `gloom_8x.png`).
 
-### [v0.0.581] - Dundragoon: oude testsprite uit Ungrounded erbij
+### [v0.0.581] - Vlieglijn: start fruitvlieg
+- Nieuwe lijn fruitvlieg → huisvlieg → mug (Jordi, 20 nov); mug blijft Poison/Electric, typen fase 1–2 open. SPEC en Gemini-startprompt fase 1 in `docs/concept/sprites/vlieglijn_fase1/`.
+- Fruitvlieg Gemini r1 bewaard; Jordi: "dit is net beedrill".
+- Fruitvlieg r1: Jordi denkt na over richting en kleuren.
+- Fruitvlieg: prompt r2 (plat naar achteren gevouwen vleugels, amber, paarse ogen, poten als stroomkabels).
+- Fruitvlieg r2 bewaard; Jordi twijfelt of fruitvlieg en huisvlieg genoeg verschillen.
+- Vlieglijn wordt 2 fases: vlieg → mug (fruitvlieg en horzel vervallen); poten als stroomkabels blijven.
+- Vlieg: prompt r3 (LED-ogen met blije paarse expressie, amber + zwart, stroomkabelpoten).
+- Vlieg r3 bewaard met Jordi's feedback.
+- Vlieg: prompt r4 (glad lijf, zwart + zwart-geel achterlijf, dikkere poten, ^ ^-ogen).
+- Vlieg: r4 bewaard; prompt r5 (grijze kop, twee LED-oogschermen zonder mond, grijs achterlijf met zwarte vlekken, lichtere vleugels).
+- Vlieg: Bug/Electric, robotischer; r5 bewaard, prompt r6.
+- Vlieg: prompt r7 (mechanischer achterlijf, scherpere vleugels, kabelpoten naar Xurkitree).
+- Vlieg: r7 bewaard ("nu begint het op een pokemon te lijken"); prompt r8 (boller achterlijf).
+- Vlieg: model samengesteld (r8 + strepen van r7) in `vlieglijn_fase1/model/`.
+- Vlieg: sprite r3–r5 (50 px, maker + keurder); poten blijven fout → Gemini-ronde r9 voor de poten (prompt + bijlage).
+- Vlieg: sprite r6–r10 (poten via Gemini r9 + krabbel Jordi, eindkeuring r9 + reparaties) → kandidaat `vlieglijn_fase1/sprite_r10/`.
+
+### [v0.0.582] - Robotvlieg (vlieglijn fase 1): frontsprite af
+- Frontsprite af: `docs/concept/sprites/vlieglijn_fase1/af/vlieg.png` (+ 8×, `normal.pal`), Bug/Electric, 50 px breed; op het overzichtsvel (`showcase/frontsprites_af.png`) als "Robotvlieg". Lijn: vlieg → mug (2 fases), evolutie rond lv 30; mug (Poison/Electric) nog te doen. Naam open.
+- Ontwerp: Gemini r1–r8 (fruitvlieg → huisvlieg → robotisch; LED-vizier met blije paarse ^, stroomkabelpoten naar Xurkitree: ronde kabel met glans, witte ringen, twee koperdraadjes als klauwtjes); model = r8 + strepen van r7.
+- Sprite: r1–r2 op 42 px (te klein: kop en kabels gingen verloren), r3–r5 op 50 px; poten via Gemini r9 (alleen een extra achterpoot) en Jordi's krabbels; buis onder het achterlijf weg, voorpoten naar achteren, LED-ogen O2, ringen A, randbelichting onderkant borststuk (P1), lichte vleugellijn (L12), keuringen en Dragonfly Cave-eindronde; r24 = rechte lijnen gebroken + kleurronde. Alle rondes en Jordi letterlijk in `vlieglijn_fase1/SPEC.md`.
+
+### [v0.0.583] - Overzichtsvel frontsprites in drie categorieën
+- `docs/concept/sprites/showcase/maak_vel.py` deelt het vel nu in (Jordi, 21 nov): **New** (40, volledig originele designs, lijnen bij elkaar op volgorde), **Evolutions of existing Pokémon** (4: Hitmongroove (Hitmontop), Krassault (Octillery), Shuppetto (Banette), Skinguin (Delibird)), **Regional forms / convergent Pokémon** (9: Silicobra-lijn, Abra-lijn, Dustly-lijn, DJ Rotom). Rufflet en Harpiary komen in de derde sectie zodra ze af zijn. Lange namen krijgen automatisch een kleiner lettertype.
+- Ontbrekende designs van andere branches op het vel gezet (sectie Regional forms / convergent, nu 14): regionale Rufflet en "Harpiary" (`claude/fervent-dijkstra-lvtc7o`), regionale Oddish en Gloom (idem) en Vileplume (`claude/great-maxwell-bgon7h`); hun `af/`-mappen zijn naar deze branch gehaald.
+- Spooktrein fase 1 (`spooktrein_fase1/af/`, van `claude/cool-lovelace-5vjif4`, Steel; Jordi 21 nov: "die is allang goedgekeurd") op het vel en in de stand van zaken.
+- Werknaam: spooktrein fase 2 heet **Wagogogon** (Jordi, 21 nov); op het vel, in POKEMON.md en CLAUDE.md.
+- Llamauler: opgeknapte sprite r7 (19 nov) naar `lama/fase2/af/` (Jordi, 21 nov: "r7 akkoord, zet maar op het vel"); oude in `af/oud_voor_gemini/`; op het vel.
+- Sessieprompt voor de mug (vlieglijn fase 2) in `docs/concept/sprites/vlieglijn_fase2/SESSIE_PROMPT.md`.
+- Werknamen (Jordi, 21 nov): Flytron, Purrpillar, Globsnail, Clionice, Cryomet, Mosaguar, Axolaunch, Pyrowyrm, Pitaling; op het vel en in POKEMON.md.
+- Werknamen (Jordi, 21 nov): **Rowmate** (mate-kano) en **Tejuice** (pitahaya-draak fase 2); overige namen gepauzeerd (voorstellen in POKEMON.md).
+
+### [v0.0.584] - Merge naar main
+- Branch `claude/peaceful-cori-756ovj` (vlieglijn, overzichtsvel in drie categorieën, werknamen 21 nov, Llamauler r7) samengevoegd met `main`; eigen changelogsecties hernummerd naar 581–583. Regionale Vileplume (`oddish_regional/vileplume_sprite/af/`, van `claude/great-maxwell-bgon7h`) staat daarmee ook in main.
+
+<<<<<<< HEAD
+=======
+### [v0.0.585] - Regionale Vileplume (onderwater-Oddish-lijn, Water/Fire): frontsprite af
+- Naar het bevroren Gemini-model (`referenties/gemini_gekozen_vileplume.png`): wit lijfje op twee steltpoten, vijf rode anemonen rond een gloeiende krater. 19 rondes in `docs/concept/sprites/oddish_regional/vileplume_sprite/` (r1–r19), af in `vileplume_sprite/af/vileplume_regional.png` (+ 8×).
+- Afwijkingen van het model op Jordi's woord: tentakels geklonterd (optie A); gezicht = ogen en mond van de Vileplume uit de game, ogen net onder de kroon, geel met tinten, lachmondje; middelste anemoon bovenaan naar links (gaatje dicht); voorste twee anemonen uit r3 met modelomtrek; mondjes alle vijf gelijk; poten per rij uit het natieve model.
+- Keuring poten (r18 FAIL nipt → r19), eindkeuring r19 PASS (`r19/EINDKEURING.md`; 3 optionele pixelreparaties niet uitgevoerd om goedgekeurde delen niet te raken). Figuur x2–60, y1–62, 16 kleuren.
+
+### [v0.0.586] - Regionale Vileplume: pootreparatie uit de eindkeuring
+- Jordi: "poten na, de rest voor". In `af/vileplume_regional.png` is de linkerrand van beide poten nu gelijk (licht tot halverwege, donker eronder; 6 px). Arm- en inkepingsreparaties niet uitgevoerd.
+### [v0.0.587] - Onweerswolk-Swablu-lijn: idee vastgelegd
+- Jordi: "Onweerswolk regional forms van de Swablu lijn". Idee en open voorstellen in `docs/concept/IDEEEN.md` → "Onweerswolk-Swablu-lijn".
+
+### [v0.0.588] - Onweerswolk-Swablu-lijn: eerste besluiten
+- Jordi: Altaria Electric/Dragon, geen Zuid-Amerikaanse link, Alola-aanpak (anders maar herkenbaar), Swablu in een pose zoals zijn bijlage maar wakker, Altaria in een woeste donderwolk met blauwe statische schokken. Citaten in `IDEEEN.md`.
+
+### [v0.0.589] - Onweerswolk-Swablu-lijn: wolken, kleur en type
+- Jordi koos: Swablu Electric/Flying, lijfkleur A (dieper blauw, leigrijze wolk), nieuwsgierige Swablu, static vonkjes in en op de wolk. Wolkvoorstellen (cumulus congestus / cumulonimbus met aambeeld) in `IDEEEN.md`.
+
+### [v0.0.590] - Onweerswolk-Swablu: voelsprieten
+- Jordi: "bij swablu kan je de voelsprieten in gele vonkvorm maken" (`IDEEEN.md`).
+
+### [v0.0.591] - Onweerswolk-Swablu-lijn: Gemini-prompts r1
+- Jordi: "en shelf cloud akkoord", "maak maar prompts". Prompts Swablu en Altaria in `docs/concept/sprites/swablu_regional/gemini/PROMPTS.md`; Jordi's bijlage in `referenties/`.
+
+### [v0.0.592] - Onweerswolk-Swablu-lijn: Gemini r1, Altaria-prompt r2
+- Swablu r1: Jordi "ziet er al goed uit". Altaria r1 nog niet: moet in de wolk zitten, kleur en static richting fan art. Rondes, referentie en prompt r2 in `docs/concept/sprites/swablu_regional/`.
+
+### [v0.0.593] - Onweerswolk-Swablu: frontsprite r1
+- Jordi over Swablu Gemini r1: "ik vind bij swablu de issues geen issue, ga maar bouwen". Model bevroren (`swablu_regional/model/`), SPEC. Maker r1: natief raster (cel 4,27 px) → reductie 0,42×, figuur 38×34 (864 px, game-Swablu 785 px), 113 px technisch opgeschoond t.o.v. de kale reductie, niets bijgetekend (`sprite_r1/NOTITIES.md`).
+
+### [v0.0.594] - Altaria: Gemini r3 en combinatie A
+- Jordi koos A: wolk en static van r2, kop/hals/kuif van r3 erin geplakt (zelfde raster, elders pixelgelijk; `swablu_regional/gemini/plak_r2r3.py` → `altaria_A_r2wolk_r3kop.png`).
+
+### [v0.0.595] - Onweerswolk-Altaria: model bevroren
+- Jordi: "ja, dit is het model voor Altaria". Model + SPEC in `swablu_regional/altaria/`.
+
+### [v0.0.596] - Onweerswolk-Swablu: frontsprite r2 (minder blurry)
+- Jordi over r1: "swablu is nog wat blurry". Oorzaak: gemiddelde modeltint per pixel gaf middentinten; r2 laat de modelband per pixel winnen (meerderheid), palet in stappen ±30–40, 20 px naden op modelplekken, 3 px hooglicht kop, vonken feller. Silhouet gelijk aan r1 (`sprite_r2/NOTITIES.md`).
+
+### [v0.0.597] - Onweerswolk-Swablu: frontsprite r3 (kleur, lijn, schaduw)
+- Jordi over r2: "hoofd is nog steeds blurry, evenals de belijning van de bovenste donkere wolk en de voelsprieten, maar je hoeft alleen nog maar kleur, belijning, schaduw te fixen". r3: 59 px (kop 29, wolklijnen 15, sprieten 6, vonken 9), silhouet gelijk (`sprite_r3/NOTITIES.md`).
+
+### [v0.0.598] - Onweerswolk-Altaria: frontsprite r1
+- 1/3-reductie van het model (natief raster 5,12 px), 1820 px (game-Altaria 1778), 277 px technisch opgeschoond (`altaria/sprite_r1/NOTITIES.md`). Claude: lijnen te hard/zwart (Jordi-feedback Swablu r3 geldt ook hier), gezicht leest slecht, static te fel → r2.
+
+### [v0.0.599] - Onweerswolk-Swablu r4; Altaria kopmeting
+- Jordi over Swablu r3: "nee de lijnen zijn veel te hard nu ... De belijning moet juist zachter en niet zwart. Kijk desnoods naar de snavel van de echte swablu". r4: zwart → gekleurde selout (75 px; zwart alleen oog en buitenkant onderwolk), snavel belijnd als de echte Swablu (open bovenkant), tussentinten (`sprite_r4/NOTITIES.md`).
+- Altaria: Jordi vroeg de kop te meten. r1-kop ±10×8 px (zonder kuif), game-Altaria ±13×11 px bij gelijke figuuroppervlakte (1820 vs 1778 px): lineair ±0,75×, oppervlak ±de helft.
+
+### [v0.0.600] - Onweerswolk-Altaria: kop x1,3 in het model (optie A)
+- Jordi: "A zou misschien wel moeten lukken, omdat we Altaria's hoofd in de wolk kunnen verstoppen, extra overlap over de wolk heen is ook niet erg, kijk dan wel of de voelsprieten nog wel goed in verhouding zijn". Kop + kuif x1,3 op het natieve raster, anker op de kin (`altaria/model_kop/kop13.py` → `natief_kop13.png`); wolk, hals en static pixelgelijk. Kop op spriteformaat ±13x10 (game ±13x11). Kuif: ±2,3x kopbreedte (game-Altaria ±2,7x), verhouding blijft.
+- Swablu: Jordi over r4 "de mond van swablu is nog niet herkenbaar genoeg, de mondlijn, verder vind ik hem wel goed" → r5 alleen mondlijn.
+
+### [v0.0.601] - Onweerswolk-Swablu: frontsprite r5 (mondlijn)
+- 5 px mondlijn op de modelplek in de donkerste selout, diff buiten de snavel 0 (`sprite_r5/NOTITIES.md`).
+
+### [v0.0.602] - Onweerswolk-Altaria: grotere kop goedgekeurd
+- Jordi: "altaria grotere hoofd/nek lijkt goed te passen, werk verder, laat pas zien als het echt een goede nette versie is". Model met kop x1,3 bevroren.
+
+### [v0.0.603] - Onweerswolk-Swablu: frontsprite r6 (oog, mond)
+- Jordi over r5: oog met subtiele lichtere tint rond het zwart; mondlijn "te hard en 1 pixel te veel naar links ... net teveel 2 lijnen". r6: 12 px (oog 3, mondlijn 5 zachter en 1 px naar rechts, onderrand 4 als schaduw), elders diff 0 (`sprite_r6/NOTITIES.md`).
+
+### [v0.0.604] - Onweerswolk-Altaria: frontsprite r2 (kop x1,3)
+- Op het kop x1,3-model; zachtere lijnen (zwart alleen pupillen), 4 wolktinten, kleine vlakjes/naden/static-stukjes samengevoegd ("iets minder detail is niet erg"), static lichtblauw (`altaria/sprite_r2/NOTITIES.md`). Keuring loopt; nog niet aan Jordi getoond.
+
+### [v0.0.605] - Onweerswolk-Swablu: r7 oog
+- Jordi: "oog wil ik 2 pixels linksboven en linksonder de witte pixel. de pixel rechts van het zwart van het oog mag weg". Halotint op (27,27) en (27,29); variant A haalt (30,29) weg, B (29,27) (`sprite_r7/`).
+
+### [v0.0.606] - Swablu r8 naar eindkeuring; Altaria-kop x1,5
+- Swablu: Jordi "middenlinks van de witte pixel moet een andere kleur zijn dan linksboven en linksonder, kijk naar hoe de originele swablu dat doet, daarna mag die naar eindkeuring". Echte Swablu: middenlinks donkere lijntint, diagonaal middentint → (27,28) selout, (27,27)/(27,29) vogel donker; variant A (r7A) als basis (`sprite_r8/`). Eindkeuring loopt.
+- Altaria: keuring r2 FAIL (`altaria/sprite_r2/KEURING.md`); verre oog past niet → volgens Jordi's regel kop nog te klein: model kop x1,5 en 10 natieve px in de wolk gezakt (`model_kop/natief_kop15_dy10.png`, `vergelijk_kop15.png`). Verse maker r3.
+
+### [v0.0.607] - Onweerswolk-Swablu: eindkeuring + r9
+- Eindkeuring r8: bijna PASS, 3 MOETEN (10 px in de onderwolk; `sprite_r8/EINDKEURING.md`). Toegepast in r9 (`sprite_r9/bouw.py`), verder diff 0 → PASS. Wacht op Jordi.
+
+### [v0.0.608] - Onweerswolk-Swablu: frontsprite af
+- Jordi: "ja zet maar in af, commit en push naar main". `docs/concept/sprites/swablu_regional/af/swablu.png` (+ `swablu_8x.png`) = r9. Lessen in `docs/lessen/GEMINI.md`; Stand van zaken bijgewerkt.
+
+### [v0.0.609] - Merge naar main
+- Main (vlieglijn, regionale Vileplume, overzichtsvel) samengevoegd met de onweerswolk-Swablu-lijn; onze changelogsecties hernummerd naar v0.0.587–608.
+>>>>>>> 74d5587868a23f3d483af908ec5cd6a95b1c0083
+
+### [v0.0.610] - Werknaam Hexpress
+- Spooktrein fase 3 heet **Hexpress** (Jordi, 21 nov: "Hexpress is geniaal"; hex + express); op het vel, in POKEMON.md en CLAUDE.md.
+- Regionale Swablu (onweerswolk, Electric/Flying, `swablu_regional/af/`) op het overzichtsvel (Regional forms).
+
+### [v0.0.611] - Dundragoon: oude testsprite uit Ungrounded erbij
 - Jordi: "Laten we Dundragoon doen, vis de Dundragoon vroege sprite erbij uit de ungrounded repo". Gevonden in `projectgrounded`, commit `c5cc51c42` (20 okt, "Testsprites Dundragoon en vuurvlieg-Venomoth (niet in de game)"): `tools/grounded/fakemon/dundragoon.png`, `_zoom.png` en `dundragoon.py`.
 - Gekopieerd naar `docs/concept/sprites/dundragoon/ungrounded/` als naslag (buizen-/ellipsen-methode, dus ontwerpschets, geen basis voor pixels). Type en verdere richting nog open.
 
-### [v0.0.582] - Dundragoon: keuzes en Gemini-startprompt
+### [v0.0.612] - Dundragoon: keuzes en Gemini-startprompt
 - Jordi: "dit design is nog niet heel goed gelukt, maar daar kan gemini bij helpen"; "Dundragoon wordt Dragon/Normal". Keuzes: oude testsprite niet als bijlage; grote vleugels blijven; staart loopt over in de boor; Dunsparce-lijf, groter; twee korte poten; gezicht "Lijkt op Dunsparce maar meer dragon vorm".
 - Nieuw: `docs/concept/sprites/dundragoon/SPEC.md` (citaten + keuzes) en `gemini/PROMPT.md` (r1).
 
-### [v0.0.583] - Dundragoon: Gemini r1 afgekeurd, prompt r2
+### [v0.0.613] - Dundragoon: Gemini r1 afgekeurd, prompt r2
 - r1 (`dundragoon/gemini/r1.png`) afgekeurd: "niet gelukt, hoofd is nog hetzelfde, vorm heel raar, vleugels niet groot genoeg"; "en niet uniek genoeg de vleugels".
 - Keuzes: langere snuit, hoorntjes, oogring houden; diagonaal; vleugels "gewoon zoals dunsparce, maar iets groter, ze moeten vrij bizar zijn, niet typisch dragon". Prompt r2 in `gemini/PROMPT_r2.md`.
 
-### [v0.0.584] - Dundragoon: Gemini r2, prompt r3
+### [v0.0.614] - Dundragoon: Gemini r2, prompt r3
 - r2 (`dundragoon/gemini/r2.png`): "dit begint ergens op te lijken, al is het nu iets teveel een dragonite/dunsparce fusion"; "De complete vorm ... Hij mag best een wat lompe vorm hebben zoals dragonite, maar dit is too much"; boor: "Ja, duidelijke boor".
 - Vergelijking naast Dunsparce en Dragonite (`gemini/r2_vgl_dunsparce_dragonite.png`); prompt r3 (`gemini/PROMPT_r3.md`): lang, lomp slangenlijf diagonaal in plaats van rechtop, geen armen/streepbuik/spriet, duidelijke boor.
 
-### [v0.0.585] - Dundragoon: Gemini r3, prompt r4
+### [v0.0.615] - Dundragoon: Gemini r3, prompt r4
 - r3 (`dundragoon/gemini/r3.png`): "staart, vleugels, hoofd goed, maar wil geen slang"; lijf wordt Dunsparce-romp, dik; "al mag de drill naar verhouding nog wat groter". Prompt r4 (`gemini/PROMPT_r4.md`, nieuw gesprek, alleen tekst).
 
-### [v0.0.586] - Dundragoon: Gemini r4, bijsturen r5
+### [v0.0.616] - Dundragoon: Gemini r4, bijsturen r5
 - r4 (`dundragoon/gemini/r4.png`): "hij is te horizontaal en net wat te lang"; "hij mag in een soort vliegpose wel". Bijstuurprompt r5 (`gemini/PROMPT_r5_bijsturen.md`): schuiner en korter, de rest houden.
 
-### [v0.0.587] - Dundragoon: r5 mislukt, gedraaide r4 als posevoorstel
+### [v0.0.617] - Dundragoon: r5 mislukt, gedraaide r4 als posevoorstel
 - r5 (bijsturen): "hij snapt het niet". Claude draaide r4 zelf 15/25/35 graden (`dundragoon/plak/`) als voorstel voor de schuine vliegpose.
 - Jordi: "nee nieuwe prompt from scratch, geen bijlage"; prompt r6 (`gemini/PROMPT_r6.md`) met de schuine vliegpose bovenaan en een korter lijf.
 
-### [v0.0.588] - Dundragoon: Gemini r6, prompt r7
+### [v0.0.618] - Dundragoon: Gemini r6, prompt r7
 - r6 (`dundragoon/gemini/r6.png`): "best prima, maar hij mag nog iets dikker"; "beetje chubby". Prompt r7 = r6 met dikker lijf en precies 2 poten.
 
-### [v0.0.589] - Dundragoon: Gemini-model gekozen (r7)
+### [v0.0.619] - Dundragoon: Gemini-model gekozen (r7)
 - Jordi bij r6: "beetje chubby" (verwerkt in prompt r7). Bij r7: "dit is hem"; "de drill is nog niet zo mooi, maar dat kunnen we in de sprite met kleurgebruik oplossen". Bevroren model: `docs/concept/sprites/dundragoon/referenties/gemini_gekozen_r7.png`. Volgende stap: frontsprite.
 
-### [v0.0.590] - Dundragoon: frontsprite r1–r3 (kandidaat)
+### [v0.0.620] - Dundragoon: frontsprite r1–r3 (kandidaat)
 - Maker: r1 kale reductie van het model (61×61, silhouet = model) + opschoning; r2 gebogen rughooglicht, oogring middenblauw met donkere buitenrand, boor per winding schaduw → midden → licht (kleur, met toestemming Jordi).
 - Verse keurder: PASS, geen MOET; Claude zette 4 KAN-punten (8 px: vleugelrand, lobrand, vlekje in de boor, blauwe wangstrook) → r3 (`dundragoon/sprite_r3/`).
 
-### [v0.0.591] - Dundragoon: eindkeuring (r4)
+### [v0.0.621] - Dundragoon: eindkeuring (r4)
 - Jordi: "op naar eindkeuring". Eindkeurder (Dunsparce, Gulpin, Dragonair, Whiscash, Altaria, Flygon op 8×): PASS; alleen het lijf: schaduwsikkel boven de buik (18 px) en het rughooglicht taps doorgetrokken (6 px), palet en vorm ongewijzigd (alpha-diff 0). `dundragoon/sprite_r4/`.
 
-### [v0.0.592] - Dundragoon: frontsprite af
-- Jordi: "commit en push maar naar main". `docs/concept/sprites/dundragoon/af/dundragoon.png` (+ `_8x`) = r4; op het overzichtsvel (`showcase/maak_vel.py`, Dragon/Normal). Stand van zaken: 54 frontsprites af. Les in `GEMINI.md`.
+### [v0.0.622] - Dundragoon: frontsprite af
+- Jordi: "commit en push maar naar main". `docs/concept/sprites/dundragoon/af/dundragoon.png` (+ `_8x`) = r4; op het overzichtsvel (`showcase/maak_vel.py`, Dragon/Normal). Stand van zaken: 59 frontsprites af. Les in `GEMINI.md`.

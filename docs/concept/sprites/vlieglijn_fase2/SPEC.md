@@ -39,3 +39,4 @@ Lijn: **vlieg → mug, 2 fases** (Jordi, 20 nov). Mug = **Poison/Electric** (Jor
 - Jordi (21 nov), met modeluitsnede `sprite_r4/jordi_model_uitsnede.png`: "in het model zie je het wel, leg het model op een pixelraster en kijk waar het zit" · "dat je niet hoeft te gokken" → `raster/raster.py` legt het model op het spriteraster (`raster/driehoek_model_vs_r4B.png`).
 - Jordi (21 nov), krabbel op het raster `raster/krabbel_jordi_raster.png` (gele lus over r4B): "zo lees ik het een beetje"
 - Jordi (21 nov): "de bovenarm is ook nog niet heel duidelijk te zien van dezelfde arm"
+- Jordi (21 nov): "en wederom niks opnieuw tekenen he!"

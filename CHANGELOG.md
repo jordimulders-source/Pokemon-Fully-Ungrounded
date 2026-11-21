@@ -2650,3 +2650,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.625] - Regionale Baltoy-lijn: richting Rock/Psychic
 - Jordi (21 nov): "De regional Baltoy lijn wordt denk ik rock/psychic, waar het origineel nu dus ground/cosmic is". Genoteerd in IDEEEN.md (nog niet definitief).
 - Telling per lijn (261 lijnen, gemiddeld 25,5; een lijn telt één keer per type dat erin voorkomt): Water 50, Flying 42, Normal 31, Electric 31, Ghost 31, Grass 30, Ground 29, Dark 29, Bug 28, Poison 26, Fire 23, Psychic 23, Steel 22, Ice 19, Dragon 18, Rock 15, Fighting 14, Fairy 14, Cosmic 8. Met de regionale Baltoy-lijn: Rock 16, Psychic 24.
+
+### [v0.0.626] - Idee: regionale Sableye met evolutie (zeebodem, gezonken schatten)
+- Jordi (21 nov): regionale Sableye met een evolutie, een niet-Water-type dat op de oceaanbodem leeft en gezonken schatten vindt; in Pokémon ontbreken niet-Water-types die in het water leven, waardoor waterroutes monotoon zijn. Genoteerd in IDEEEN.md; typing open.

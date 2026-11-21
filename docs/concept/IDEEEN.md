@@ -647,6 +647,12 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 
 - **Cosmic-badgekleur (Jordi, 13 nov):** "nee alle kleuren van vlakken zijn effen, dus nachtblauw is prima." Badge = nachtblauw zonder sterretjes (`sprites/showcase/types/cosmic.png`).
 
+## Regionale Sableye met evolutie: schatzoeker op de zeebodem (Jordi, 21 nov)
+- **Jordi:** "en daarnaast zat ik aan een regional sableye te denken met een evolution, een non water type die op de bodem van de oceaan leeft, en daar van die gezonken schatten vindt. Het ontbreekt imo altijd een beetje in pokemon aan non water types die in het water leven, daardoor zijn water routes vaak wat monotoon".
+- Repo: Sableye is hier Rock/Ghost (in de dex). Typing van de regionale vorm en de evolutie: open.
+- Niet-Water-soorten die al in het water leven (repo-types, in de dex): Galar-Corsola/Cursola (Ghost), Inkay/Malamar (Dark/Psychic), Dragalge (Poison/Dragon), Dhelmise (Ghost/Grass), Pincurchin (Electric), Stunfisk (Ground/Electric).
+- Raakt aan "Ruimte en diepe zee als mysterieuze gebieden" (12 nov).
+
 ## Kreten (Jordi, 19 nov)
 - "Ik wil liever geen bestaande kreten vervormen, maar dat komt op een ander moment. Latere generatie kreten gebruiken soms geluiden die op echte dieren lijken."
 

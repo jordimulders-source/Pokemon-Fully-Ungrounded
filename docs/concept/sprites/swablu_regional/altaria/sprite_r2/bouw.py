@@ -1,12 +1,14 @@
-# Altaria (onweerswolk) r2: vanaf r1, silhouet bevroren (alpha = r1), alleen kleur/lijn/schaduw opnieuw uit het model.
+# Altaria (onweerswolk) r2: op het kop x1,3-model (model_kop/natief_kop13.png; Jordi: kop te klein). Silhouet = r1-reductie op dat model
+# (sprite_r2/basis.py -> basis_kop13.png; alleen kop en kuif anders dan r1), daarop alleen kleur/lijn/schaduw opnieuw uit het model.
 # Feedback (Jordi bij Swablu, geldt hier ook): "nee de lijnen zijn veel te hard nu, het ligt aan dat er meer dan 2 kleurtinten moeten zijn
 # om minder blur te hebben. De belijning moet juist zachter en niet zwart. Kijk desnoods naar de snavel van de echte swablu qua vorm en hoe die belijnd is"
 # Studie game-Altaria: wolk zonder zwart, omlijnd in een donkere wolktint (112,112,152), bollen gescheiden door schaduwtint i.p.v. lijnen;
 # snavel omlijnd in donkerblauw/navy, niet zwart; ogen: ver oog 1x2 zwart, nabij oog 2x2 met 1 glanspixel.
 import sys, numpy as np
 from PIL import Image
-sys.path.insert(0,'gereedschap'); from klassen import klassen
-import gemeen as G; from gemeen import blok, label, X0, Y0
+sys.path.insert(0,'gereedschap'); sys.path.insert(0,'sprite_r2')
+import gemeen as G; from gemeen import label, X0, Y0
+import basis as B; from basis import blok
 UIT='sprite_r2'
 # 0 transp | 1 zwart (alleen pupillen) | 2 navy (buitenlijn schaduwkant) | wolk 3 selout 4 donker 5 midden 6 licht 7 hooglicht |
 # violet 8 selout 9 donker 10 midden 11 licht | 12 static | 13 glans.  Modelkleuren (klassengemiddelden per helderheidsband, zie NOTITIES).
@@ -20,10 +22,12 @@ CH='.KN01234abcdsW'
 def toon(o,y0=8,y1=64,x0=0,x1=64):
     print('   '+''.join(str(x%10) for x in range(x0,x1)))
     for y in range(y0,y1): print('%2d '%y+''.join(CH[v] for v in o[y,x0:x1]))
-a,c,L=klassen(); af=a.astype(float)
-r1=np.asarray(Image.open('sprite_r1/altaria_r1.png')).astype(int)
+a,c,L=B.a,B.c,B.L; af=a.astype(float)
+r1=np.asarray(Image.open('sprite_r2/basis_kop13.png')).astype(int)     # basis (r1-regels op het kop x1,3-model)
 fig=r1>0
-def kuif(X,Y): return (Y<=16 and 24<=X<=45) or (Y<=21 and 32<=X<=45)
+KUIF=np.zeros((64,64),bool)
+for Y,X in zip(*np.where(fig)): KUIF[Y,X]=B.kuif(X,Y) and r1[Y,X] in (1,6,7,8,9)
+def kuif(X,Y): return KUIF[Y,X]
 tel={}
 def stap(naam,v,o): tel[naam]=tel.get(naam,0)+int((v!=o).sum())
 N4=((-1,0),(1,0),(0,-1),(0,1)); N8=[(dy,dx) for dy in (-1,0,1) for dx in (-1,0,1) if dy or dx]
@@ -126,11 +130,13 @@ def zet(lijst,naam):
 # --- 6. gezicht (de reductie gaf geen ogen meer: zwart -> selout -> stip weg). Modelogen: zwarte ovalen natief x72-75 / x85-87, y50-53 =
 #        X23 / X27, Y21 + bovenste derde van Y22; glans natief (73,50) en (86,50-51) = bovenkant oog. Game-Altaria: ver oog 1x2 zwart, nabij oog met glanspixel.
 OOG=sys.argv[1] if len(sys.argv)>1 else 'C'   # gekozen: C (A/B in NOTITIES)
-if OOG=='A': zet([(23,21,1),(23,22,1),(27,21,1),(27,22,1)],'ogen')
-if OOG=='B': zet([(23,21,1),(23,22,1),(27,21,13),(27,22,1)],'ogen')
-if OOG=='C': zet([(23,21,1),(23,22,1),(27,21,1),(28,21,13),(27,22,1),(28,22,1)],'ogen')
+# kop x1,3-model: linkeroog natief x68-71, rij 48-51 -> (22,20-21); rechteroog x85-88, rij 47-51 -> (27-28,20-21), glans natief (86,47-48) = linksboven
+if OOG=='A': zet([(22,20,1),(22,21,1),(27,20,1),(27,21,1)],'ogen')
+if OOG=='B': zet([(22,20,1),(22,21,1),(27,20,13),(27,21,1)],'ogen')
+if OOG=='C': zet([(22,20,1),(22,21,1),(27,20,13),(28,20,1),(27,21,1),(28,21,1)],'ogen')
 #        snavel (Swablu-snavel als voorbeeld: licht boven, donkere onderrand, geen zwart): Y22 hooglicht (model 3/s), Y23 licht teal (model 2/3,
 #        mondlijn natief rij 58 valt onderin), Y24 = mondlijn/onderrand in navy (model K op rij 59 en 61) i.p.v. selout+navy door elkaar
-zet([(24,23,6),(25,23,6),(26,23,6),(23,24,2),(24,24,2),(25,24,2),(26,24,2)],'snavel')
+#        kop x1,3-model: snavel natief x65-85 (X20-26), rij 53-55 hooglicht (Y22), 56-58 licht met mondlijn onderin (Y23), 59-61 zwarte lijnen (Y24)
+zet([(X,22,7) for X in range(21,27)]+[(X,23,6) for X in range(21,27)]+[(X,24,2) for X in range(21,27)],'snavel')
 if __name__=='__main__':
     G.opslaan(o,UIT+'/altaria_r2.png'); print(tel); toon(o)

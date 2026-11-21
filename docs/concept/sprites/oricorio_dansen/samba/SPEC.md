@@ -23,3 +23,4 @@ Model: `model/gemini_r10.png` (Gemini r10, 21 nov; vervangt r6). Prompt: `../gem
 - sprite r7: "op de tooi, de tweede veer van rechts onder mag nog iets dikker zodat die netter aansluit, alles voor de rest is echt goed".
 - r8: de bedoelde veer = de geel omcirkelde kleine veer rechts bovenin de tooi (tussen de meest rechtse grote tooiveer en de rechtervleugel): "zit wat meer een gat tussen dan in het model". Eindkeuring r8 FAIL (kleur: zebra in veren, franje, spikkels).
 - r10: "je hebt alleen de verkeerde veer aangepast, kan je nog proberen de juiste te doen en 3 varianten naast elkaar tonen, de huidige, 1 waar de huidige veer is aangepast en een hybride waar beide veren wat meer naar elkaar toekomen?" (juiste veer = kleine liggende veer rechtsboven in de tooi, ±x44–53 y9–13; gat met de grote veer links ervan).
+- r11: Jordi koos variant C ("ja omdat je dus niet doet wat ik zeg, maar prima, ga maar voor c").

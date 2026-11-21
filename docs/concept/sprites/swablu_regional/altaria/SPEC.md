@@ -14,3 +14,4 @@ Citaten en besluiten: `docs/concept/IDEEEN.md` → "Onweerswolk-Swablu-lijn"; pr
 ## Frontsprite
 Fase 2 (eindvorm); formaat meten aan de game-Altaria (`graphics/pokemon/altaria/anim_front.png`, bovenste 64×64). Rondes in `sprite_rN/`, af in `af/`.
 - Jordi (21 nov): "let er bij altaria op dat het linkeroog ook zichtbaar moet zijn voor de sprite om mooi te worden, als dat niet past is het hoofd nog steeds te klein".
+- Jordi (21 nov, over r4–r7): "ik vind de wolken nog niet zo'n issue. Alleen beetje te weinig static toch wel. het zit vooral in kleurgebruik/schaduw/tinten waardoor de wolken wat minder duidelijk zijn, de hoeveelheid is het issue niet De voelsprieten mogen ook wat meer definitie en kleur in en het hofod is nog wat blurry ook wederom, werk maar door. Houd zoveel mogelijk het model aan voor de wolken, al mag er wat extra static bij, maar kijk voor inpsiratie ook naar het model, niks zelf tekenen".

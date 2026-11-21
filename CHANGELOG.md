@@ -2556,3 +2556,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.615] - Onweerswolk-Altaria: frontsprite r7
 - Modellijnen tussen de bollen als selout-bogen (289 px); bollen lezen nu als hoekige kasseien (`altaria/sprite_r7/NOTITIES.md`). Na 7 rondes vastgelopen op de wolkbollen: vergelijking r4-r7 + model voor Jordi (`altaria/vergelijk_r4_r7.png`).
+
+### [v0.0.616] - Onweerswolk-Altaria: feedback Jordi op r4-r7
+- Jordi: wolken zijn niet het probleem, wel kleurgebruik/schaduw/tinten; meer static (uit het model), kuif meer definitie en kleur, kop nog blurry; "niks zelf tekenen" (citaat in `altaria/SPEC.md`). Verse maker r8.

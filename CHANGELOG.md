@@ -2479,3 +2479,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.598] - Onweerswolk-Altaria: frontsprite r2 (kop x1,3)
 - Op het kop x1,3-model; zachtere lijnen (zwart alleen pupillen), 4 wolktinten, kleine vlakjes/naden/static-stukjes samengevoegd ("iets minder detail is niet erg"), static lichtblauw (`altaria/sprite_r2/NOTITIES.md`). Keuring loopt; nog niet aan Jordi getoond.
+
+### [v0.0.599] - Onweerswolk-Swablu: r7 oog
+- Jordi: "oog wil ik 2 pixels linksboven en linksonder de witte pixel. de pixel rechts van het zwart van het oog mag weg". Halotint op (27,27) en (27,29); variant A haalt (30,29) weg, B (29,27) (`sprite_r7/`).

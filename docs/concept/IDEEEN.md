@@ -646,3 +646,11 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 
 ## Kreten (Jordi, 19 nov)
 - "Ik wil liever geen bestaande kreten vervormen, maar dat komt op een ander moment. Latere generatie kreten gebruiken soms geluiden die op echte dieren lijken."
+
+## Onweerswolk-Swablu-lijn (Jordi, 21 nov)
+- **Jordi (21 nov):** "We gaan iets doen dat niet bepaald origineel is, maar wel leuk. Onweerswolk regional forms van de Swablu lijn". Eerder (9 nov) stond dit als "nimbus" bij de voorstellen; toen: "nog niet tevreden over deze specifieke link en uitvoering".
+- Repo nu: Swablu Normal/Flying, Altaria Dragon/Flying. Voorstel van 9 nov (Claude): Electric/Flying.
+- **Voorstellen Claude (21 nov, open):**
+  - *Zuid-Amerikaanse link:* de **Catatumbo-bliksem** (Maracaibomeer, Venezuela): de plek met de meeste bliksem ter wereld, bijna elke nacht onweer boven de monding van de rivier. Of **Illapa** (MYTHOLOGIE.md), al gereserveerd als mogelijke Electric-E4-mythe.
+  - *Vorm:* Swablu = een klein donker regenwolkje als vleugels; Altaria = een **cumulonimbus**, de wolk zelf (aambeeldtop) als vleugels/kuif.
+  - *Vogel als anatomie:* gewone Swablu/Altaria-anatomie houden (de vorm is een regional form, geen nieuw dier), of een echte vogel uit het gebied (bijv. een zwaluw/gierzwaluw die vlak voor onweer laag vliegt).

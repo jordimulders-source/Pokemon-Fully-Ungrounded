@@ -27,3 +27,5 @@
 - Na r2, Jordi: wat te veel Dragonite is: "De complete vorm, zet de sprite van dragonite maar ernaast en vergelijk zelf. Hij mag best een wat lompe vorm hebben zoals dragonite, maar dit is too much". Boorstaart: "Ja, duidelijke boor".
 - Vergelijking Claude (`gemini/r2_vgl_dunsparce_dragonite.png`): Dragonite-trekken in r2 = rechtop staand bovenlijf, armpjes voor de buik, lichte buik met dwarsstrepen, gekrulde spriet op de kop, ronde Dragonite-snuit, vleugeltjes achter de schouders. Prompt r3 (`gemini/PROMPT_r3.md`, nieuw gesprek, geen bijlage) haalt die eruit; lompe vorm mag.
 - Jordi bij r3: "nee we moeten een nieuwe prompt/gesprek"; "het is teveel dragonite, maar je prompt zat goed in de richting" (r3 = prompt r2 + anti-Dragonite + boor, nieuw gesprek).
+- r3 (`gemini/r3.png`), Jordi: "staart, vleugels, hoofd goed, maar wil geen slang".
+- Keuzes na r3: lijf **Dunsparce-romp, dik** (Dunsparces worstvormige romp, veel dikker en zwaarder, op twee pootjes, geen lange slangenhals); aanpak **nieuw gesprek, alleen tekst**; "al mag de drill naar verhouding nog wat groter". Prompt r4: `gemini/PROMPT_r4.md` (hoofd, vleugels, staart beschreven zoals in r3).

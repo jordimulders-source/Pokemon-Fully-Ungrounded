@@ -2439,3 +2439,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.584] - Dundragoon: Gemini r2, prompt r3
 - r2 (`dundragoon/gemini/r2.png`): "dit begint ergens op te lijken, al is het nu iets teveel een dragonite/dunsparce fusion"; "De complete vorm ... Hij mag best een wat lompe vorm hebben zoals dragonite, maar dit is too much"; boor: "Ja, duidelijke boor".
 - Vergelijking naast Dunsparce en Dragonite (`gemini/r2_vgl_dunsparce_dragonite.png`); prompt r3 (`gemini/PROMPT_r3.md`): lang, lomp slangenlijf diagonaal in plaats van rechtop, geen armen/streepbuik/spriet, duidelijke boor.
+
+### [v0.0.585] - Dundragoon: Gemini r3, prompt r4
+- r3 (`dundragoon/gemini/r3.png`): "staart, vleugels, hoofd goed, maar wil geen slang"; lijf wordt Dunsparce-romp, dik; "al mag de drill naar verhouding nog wat groter". Prompt r4 (`gemini/PROMPT_r4.md`, nieuw gesprek, alleen tekst).

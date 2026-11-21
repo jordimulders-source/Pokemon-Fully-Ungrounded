@@ -30,3 +30,4 @@ Lijn: **vlieg → mug, 2 fases** (Jordi, 20 nov). Mug = **Poison/Electric** (Jor
 - Jordi (21 nov) over r2: "rechterarm en linkerpoot vallen een beetje samen, dat moet met kleurgebruik en schaduw opgelost worden" (lezing Claude, ter controle: de poot van het borststuk met het gele gewricht bij (35,36) en het linker Λ-been met de gele knie bij (24,45), die elkaar midden onder het lijf kruisen).
 - Jordi (21 nov) over r2: "en hij is nog wat blurry"
 - Jordi (21 nov): "maar je hoeft niks aan te passen verder behalve kleur, schaduw en belijning" · "de vorm is perfect" → silhouet/vorm van r2 bevroren (alpha-diff 0). · "niks opnieuw tekenen"
+- Eindkeuring r2 (verse DFC-keurder): BIJNA → MOET arm/poot 8 px, scherp 14 px, volume achterlijf 13 px; MAG grijze selout vleugels/koepel 72 px; alpha-diff 0. Toegepast (MOET+MAG) als `sprite_r3/mug_r3.png`.

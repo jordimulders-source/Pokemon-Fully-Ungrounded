@@ -63,3 +63,4 @@ Op r12: "nee dit is prima, op wat details na, het gat linksbovenin tussen 2 anem
 Op r13 (welke lijn): "zwarte lijn tussen middenvoor en rechtsvoor" (naad VL|VR).
 Dikke poten: "poten zijn niet beter nee" (dunne poten blijven; Jordi vond ze eerder "niet mooi", dat punt staat nog open).
 Poten: "ga maar terug naar de vorige, zoveeel gespiegeled naar moddel" (dunne poten, zo veel mogelijk naar het model).
+Op r17: "nee doe even beter je best", "laat een maker hiernaar kijken ipv mij voor elke kleine stap", "het moet consistent zijn", "objectieve agent". (Pootkleur: "tussen deze 2 in" = tussen A gemeten modelkleuren en B r16.)

@@ -2646,3 +2646,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.624] - Cosmic: Elgyem-lijn puur Cosmic
 - Jordi (21 nov): "Elgyem lijn puur cosmic". Elgyem en Beheeyem worden puur Cosmic (eerste pure Cosmic-soorten).
 - Aanwezigheid per type na de Cosmic-omzetting (528 soorten; gemiddeld 45 per type): Water 97, Flying 59, Grass 56, Bug 56, Ground 54, Poison 53, Dark 52, Electric 51, Ghost 51, Normal 49, Psychic 40, Fire 38, Steel 37, Ice 35, Dragon 35, Fighting 26, Rock 26, Fairy 24, Cosmic 14.
+
+### [v0.0.625] - Regionale Baltoy-lijn: richting Rock/Psychic
+- Jordi (21 nov): "De regional Baltoy lijn wordt denk ik rock/psychic, waar het origineel nu dus ground/cosmic is". Genoteerd in IDEEEN.md (nog niet definitief).
+- Telling per lijn (261 lijnen, gemiddeld 25,5; een lijn telt één keer per type dat erin voorkomt): Water 50, Flying 42, Normal 31, Electric 31, Ghost 31, Grass 30, Ground 29, Dark 29, Bug 28, Poison 26, Fire 23, Psychic 23, Steel 22, Ice 19, Dragon 18, Rock 15, Fighting 14, Fairy 14, Cosmic 8. Met de regionale Baltoy-lijn: Rock 16, Psychic 24.

@@ -52,3 +52,6 @@ STYLE AND FORMAT
 AVOID
 - Not Milotic, Feebas, Goldeen, Alomomola or Finizen. No plush toy, chibi or mascot look, no oversized sparkly eyes, no human features.
 ```
+
+## Ronde 2 (prompt v2) → `r2_prompt_v2.png`
+- Jordi: "hij heeft nu wel een beetje een domme kop, past dat bij de vis? En zijn de vinnen duidelijk genoeg zeepschuim?"

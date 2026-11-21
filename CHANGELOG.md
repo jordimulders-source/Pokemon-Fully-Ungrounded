@@ -2445,3 +2445,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.587] - Oricorio samba: prompt r5
 - Oog = het blije Pom-Pom-oog (wijd open, geen ooglid); lijf rechtop als een persoon (verticaal ei-lijf) zoals alle Oricorio-vormen. Jordi: slaperig oog en lijfvorm niet Oricorio.
+
+### [v0.0.588] - Oricorio: samba r6, tango r5
+- Samba r6: lange puntige bladveren, kleinere en donkerdere waaier. Tango r5: gracieuze vrouwelijke danseres (Jordi) met tangojurk en strakke knot; rechtop lijf en blij oog van samba r5.

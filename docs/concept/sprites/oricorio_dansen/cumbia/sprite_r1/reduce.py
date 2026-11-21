@@ -1,4 +1,4 @@
-# Kale reductie: natief (klassen) -> 0,75x via oppervlakgewogen stemming per klasse. Niets getekend.
+# (NIET GEBRUIKT: stemming gaf gebroken poten) Kale reductie: natief (klassen) -> 0,75x via oppervlakgewogen stemming per klasse. Niets getekend.
 # Gebruik: python3 reduce.py [fy fx]  (fase van het 4->3 raster in natieve px)
 import sys; from PIL import Image; import numpy as np
 lab=np.load('km_lab.npy')

@@ -25,3 +25,6 @@ De prompts staan in `gemini/PROMPT_samba.md`, `PROMPT_tango.md`, `PROMPT_cumbia.
 **Tango r3 (21 nov):** "blijft wel erg kraai", "tango moet wat gracieuzer" (Jordi). Echte hoed en een metalen mes (de woorden hat/knife worden letterlijk getekend), kraaienlijf, keek naar rechts. r4: die woorden eruit, kuif en mesveer in vormen beschreven, slank, staart als split tangojurk, sierlijke pose.
 
 **Samba r4 (21 nov):** tooi goed; Jordi: "Ik snap niet waarom die zon slaperig oog blijft behouden, deze moet echt dezelfde blije look hebben als de electric oricorio, de vorm van het lichaam is ook niet echt oricorio". Oorzaak oog: "thick dark eyelid line ... calm, cool look" in de prompt. Oorzaak lijf: alle Oricorio-vormen staan rechtop als een persoon (verticaal ei-lijf, kop erop), Gemini tekent een liggende vogel. r5: Pom-Pom-oog, lijf rechtop.
+
+**Tango (21 nov):** Jordi: "voor tango wil ik veel meer naar een gracieuze vrouwelijke look, met een typische jurk en haarstijl die daarbij past". r5: compadrito, hoed en mes eruit; tangojurk (voorstel Claude: strak, lang, hoge split, franjezoom) en strakke lage knot; rechtop lijf en blij Pom-Pom-oog van samba r5 (oogkeuze niet door Jordi gemaakt, voorstel Claude).
+**Samba r5 (21 nov):** oog en lijf raak. Jordi: "doe nog maar 1 samba prompt ook" → r6: lange puntige bladveren, waaier kleiner en donkerder dan het lijf.

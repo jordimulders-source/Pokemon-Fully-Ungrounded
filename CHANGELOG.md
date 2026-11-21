@@ -2456,3 +2456,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.591] - Onweerswolk-Swablu: frontsprite r3 (kleur, lijn, schaduw)
 - Jordi over r2: "hoofd is nog steeds blurry, evenals de belijning van de bovenste donkere wolk en de voelsprieten, maar je hoeft alleen nog maar kleur, belijning, schaduw te fixen". r3: 59 px (kop 29, wolklijnen 15, sprieten 6, vonken 9), silhouet gelijk (`sprite_r3/NOTITIES.md`).
+
+### [v0.0.592] - Onweerswolk-Altaria: frontsprite r1
+- 1/3-reductie van het model (natief raster 5,12 px), 1820 px (game-Altaria 1778), 277 px technisch opgeschoond (`altaria/sprite_r1/NOTITIES.md`). Claude: lijnen te hard/zwart (Jordi-feedback Swablu r3 geldt ook hier), gezicht leest slecht, static te fel → r2.

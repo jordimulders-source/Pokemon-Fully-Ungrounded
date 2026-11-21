@@ -21,3 +21,4 @@ Model: `model/gemini_r7.png` (Gemini r7, 21 nov; vervangt r5). Prompt: `../gemin
 - sprite r5 (op model r7): "kijk tango begint netjes te worden, vleugels zijn nog wat rafelig, maar ga verder met het verbeteren".
 - "snavel is prima" (Pom-Pom-snavel zoals in sprite r5).
 - sprite r6: "tango mag naar eindkeuring, heel goed kijken naar lijnen, schaduw en tinten".
+- sprite r7: "het model is qua kleur niet leidend, hij moet er gewoon goed uitzien in de game. Let wel op dat qua schaduw en tinten hij nog niet goed is, dus let daar streng op in een eindkeuring." (= reeks r7, niet r7_donker)

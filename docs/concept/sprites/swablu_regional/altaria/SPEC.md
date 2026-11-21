@@ -13,3 +13,4 @@ Citaten en besluiten: `docs/concept/IDEEEN.md` → "Onweerswolk-Swablu-lijn"; pr
 
 ## Frontsprite
 Fase 2 (eindvorm); formaat meten aan de game-Altaria (`graphics/pokemon/altaria/anim_front.png`, bovenste 64×64). Rondes in `sprite_rN/`, af in `af/`.
+- Jordi (21 nov): "let er bij altaria op dat het linkeroog ook zichtbaar moet zijn voor de sprite om mooi te worden, als dat niet past is het hoofd nog steeds te klein".

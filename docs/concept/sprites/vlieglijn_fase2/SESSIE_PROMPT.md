@@ -3,6 +3,8 @@
 ```
 We gaan beginnen aan de mug: fase 2 (eindvorm) van de vlieglijn vlieg → mug.
 
+Alles over fase 1 staat op branch claude/peaceful-cori-756ovj (nog niet in main): haal die eerst binnen (git fetch origin claude/peaceful-cori-756ovj && git merge --no-edit FETCH_HEAD) en werk daarna op je eigen branch verder.
+
 Lees eerst:
 - CLAUDE.md (werkafspraken; vooral "Niet interpreteren", de spriteregels en de volgorde: eerst ontwerp + frontsprite).
 - docs/lessen/SPRITE_KERN.md, docs/lessen/GEMINI.md (ook de lessen onderaan van de robotvlieg, 20 nov) en docs/lessen/FAKEMON_DESIGN.md.

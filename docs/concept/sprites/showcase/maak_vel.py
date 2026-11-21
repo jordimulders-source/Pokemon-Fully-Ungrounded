@@ -61,6 +61,11 @@ SECTIES=[
 ("dustly/af/dustly.png",'"Dustly"',"cosmic/poison"),
 ("hauntflare/af/hauntflare.png",'"Hauntflare"',"cosmic/poison"),
 ("gengas/af/gengas.png",'"Gengas"',"cosmic/poison"),
+("rufflet_regional/af/rufflet.png",'Rufflet (regional)',"flying"),
+("harpij_braviary/af/harpij.png",'"Harpiary"',"steel/flying"),
+("oddish_regional/af/oddish_regional.png",'Oddish (regional)',"water/grass"),
+("oddish_regional/gloom_sprite/af/gloom.png",'Gloom (regional)',"water/fire"),
+("oddish_regional/vileplume_sprite/af/vileplume_regional.png",'Vileplume (regional)',"water/fire"),
 ("dj_rotom/af/dj_rotom.png",'"DJ Rotom"',"electric/steel"),
 ]),
 ]

@@ -2394,3 +2394,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.571] - Overzichtsvel frontsprites in drie categorieën
 - `docs/concept/sprites/showcase/maak_vel.py` deelt het vel nu in (Jordi, 21 nov): **New** (40, volledig originele designs, lijnen bij elkaar op volgorde), **Evolutions of existing Pokémon** (4: Hitmongroove (Hitmontop), Krassault (Octillery), Shuppetto (Banette), Skinguin (Delibird)), **Regional forms / convergent Pokémon** (9: Silicobra-lijn, Abra-lijn, Dustly-lijn, DJ Rotom). Rufflet en Harpiary komen in de derde sectie zodra ze af zijn. Lange namen krijgen automatisch een kleiner lettertype.
+- Ontbrekende designs van andere branches op het vel gezet (sectie Regional forms / convergent, nu 14): regionale Rufflet en "Harpiary" (`claude/fervent-dijkstra-lvtc7o`), regionale Oddish en Gloom (idem) en Vileplume (`claude/great-maxwell-bgon7h`); hun `af/`-mappen zijn naar deze branch gehaald.

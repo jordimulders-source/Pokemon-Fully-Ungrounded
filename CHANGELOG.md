@@ -2550,3 +2550,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.613] - Onweerswolk-Altaria: eindkeuring r5
 - FAIL: kop/ogen/snavel goed (bevroren); korrel, kuifpixels, static 2 px dik, onderste bol te licht, lijf/rechtervleugel als platen met rechte naden. MOETEN 1-6 als pixellijst toegepast op `proef_eindkeuring.png` (94 px); MOET 6b (bollen in lijf en rechtervleugel) naar een verse maker (`altaria/sprite_r5/EINDKEURING.md`).
+
+### [v0.0.614] - Onweerswolk-Altaria: frontsprite r6
+- MOET 6b: bollen in lijf en rechtervleugel per bol ingekleurd (393 px), rechte naden weg (`altaria/sprite_r6/NOTITIES.md`). Claude: lijf leest als lichte stippen op een donkere vlakte → r7 met de modellijnen tussen de bollen als selout-bogen (zoals de Swablu).

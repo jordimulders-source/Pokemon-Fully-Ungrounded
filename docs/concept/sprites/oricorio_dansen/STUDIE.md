@@ -21,3 +21,5 @@ De prompts staan in `gemini/PROMPT_samba.md`, `PROMPT_tango.md`, `PROMPT_cumbia.
 **r2 (21 nov), oordeel:** oog weer niet goed ("niet erg", Jordi; in de sprite overnemen van Oricorio). Cumbia kan door (meest Oricorio; vleugel-vingertjes weg in de sprite). Samba: kop verdwijnt in de bladveren, spikkels = ruis. Tango: kraai met een echte hoed, niet dansend. Jordi: tango en samba nieuwe prompts, zonder bijlagen → `gemini/PROMPT_samba.md`, `PROMPT_tango.md` (r3; Oricorio-lijf in woorden).
 
 **Samba r3 (21 nov):** "deze vind ik toch minder, hij mist de pauw achtige tooi" (Jordi). r4: alleen de tooi terug als grote pauwwaaier achter het hele lijf.
+
+**Tango r3 (21 nov):** "blijft wel erg kraai", "tango moet wat gracieuzer" (Jordi). Echte hoed en een metalen mes (de woorden hat/knife worden letterlijk getekend), kraaienlijf, keek naar rechts. r4: die woorden eruit, kuif en mesveer in vormen beschreven, slank, staart als split tangojurk, sierlijke pose.

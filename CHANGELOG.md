@@ -2439,3 +2439,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.585] - Oricorio samba: prompt r4
 - Samba r3 miste de pauwachtige tooi (Jordi); r4 vraagt alleen die tooi terug als grote waaier achter het lijf.
+
+### [v0.0.586] - Oricorio tango: prompt r4
+- Tango r3 bleef een kraai met hoed en mes (Jordi: "tango moet wat gracieuzer"). r4 zonder de woorden hat/knife, slanker, staart als split tangojurk, sierlijke pose. Les in GEMINI.md.

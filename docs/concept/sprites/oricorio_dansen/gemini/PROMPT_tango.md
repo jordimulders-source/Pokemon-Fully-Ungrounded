@@ -1,6 +1,6 @@
-# Oricorio Tango – Gemini-startprompt (r3, nieuw gesprek, zonder bijlagen)
+# Oricorio Tango – Gemini-startprompt (r4, nieuw gesprek, zonder bijlagen)
 
-Jordi 21 nov: nieuwe prompts zonder bijlagen. Oordeel r2: `../STUDIE.md`.
+Jordi 21 nov: nieuwe prompts zonder bijlagen. Oordeel r2: `../STUDIE.md`. r3 (`../tango/model/gemini_r3.png`): "blijft wel erg kraai", "tango moet wat gracieuzer" → r4: geen woorden "hat"/"knife" meer (Gemini tekende ze letterlijk), slank, sierlijke pose.
 
 ```
 Design a new form of the Pokémon ORICORIO: TANGO STYLE, from the night streets of old Buenos Aires. Its type is Dark/Flying. Dark here means night and cunning, not evil.
@@ -8,10 +8,14 @@ It is a new dance style of the Pokémon ORICORIO (the dancing bird from Alola, l
 THE EYE: a big, solid black oval eye with one small white shine dot, just above the base of the beak, with a thick dark eyelid line over the top of it (calm, cool look). NO white around the eye, not a narrow slit, not sleepy.
 
 WHAT IT IS
-A tango dancer made of feathers, like the compadrito of old Buenos Aires with his knife and hat. NO real hat: its head feathers form a crest in the SHAPE of a tilted hat with a brim, made of feathers and growing from the head. MAINLY BLACK feathers (the Dark type color), deep red only as accent, sleek and close to the body. One long, sharp, blade-like feather at the tail (the knife). It is small and round like every Oricorio, NOT a crow or raven.
+An elegant, graceful tango dancer made of feathers. Slim and sleek, NOT a crow or raven: no heavy body, no thick neck, no big heavy beak, no shaggy throat feathers. It keeps the small, round Oricorio head with the long, slender pink beak.
+MAINLY BLACK feathers (the Dark type color), deep red only as accent, glossy and close to the body.
+On the head a flat, swept-back crest of black feathers with a wide, tilted edge that shades one eye. It is part of the head, made of feathers: no object, no band, no separate headwear.
+The tail is made of long, flowing black feathers with red inner feathers, hanging down and parted like the slit skirt of a tango dress. One of the tail feathers is longer, straight and pointed.
+It holds nothing, carries nothing.
 
 POSE
-Clearly dancing, not walking: a dramatic tango pose, body leaning forward, head turned sharply to the side, one leg stretched far out with the toe pointed and touching the floor line, wings held back close to the body.
+Graceful and proud, clearly dancing: body upright and slightly arched back, chin raised, the near leg straight and standing on its toes, the far leg stretched long and straight out to the side with the toe pointed (a tango leg line), wings folded neatly along the body.
 
 Draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style): pixel art, 64×64, max 16 colors, dark selout outline, plain white background. Three-quarter view facing left, like every Gen 3 front sprite: far wing and far leg on the left, near ones on the right. 2 wings and 2 legs in total. Compact, fits in a square.
 DO NOT

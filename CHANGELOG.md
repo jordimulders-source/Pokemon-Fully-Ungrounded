@@ -2454,3 +2454,9 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Werknaam: spooktrein fase 2 heet **Wagogogon** (Jordi, 21 nov); op het vel, in POKEMON.md en CLAUDE.md.
 - Llamauler: opgeknapte sprite r7 (19 nov) naar `lama/fase2/af/` (Jordi, 21 nov: "r7 akkoord, zet maar op het vel"); oude in `af/oud_voor_gemini/`; op het vel.
 - Sessieprompt voor de mug (vlieglijn fase 2) in `docs/concept/sprites/vlieglijn_fase2/SESSIE_PROMPT.md`.
+
+### [v0.0.584] - Robotmug (vlieglijn fase 2): frontsprite af
+- Eindvorm van de vlieglijn (vlieg → mug), Poison/Electric. Jordi (21 nov): nieuwe fase moet zichtbaar zijn, niet super gedetailleerd, robotelement een beetje behouden, snuit en poten niet te dun, LED's paars met boze \ / look, steeksnuit = robotische naald, vliegend met de snuit klaar om aan te vallen, groter maar niet dik.
+- Model: Gemini r1 (één prompt, `vlieglijn_fase2/gemini/PROMPT_r1.md`), Jordi: "ik vind dit design echt fenomenaal. Zo vet." Sprite 56×63 (maattest `maat/maten.png`).
+- Sprite: r1 kale reductie van het natieve raster (maker), r2 keurdersreparaties (verre oog leest als \), daarna alleen kleur/schaduw/belijning met alpha-diff 0 (Jordi: "de vorm is perfect" · "niks opnieuw tekenen"): r3 eindkeuring, r4 drie vultinten per kleurgroep en gespreid palet (Jordi: "2 vultinten max maakt een sprite ook blurry"), r5 arm/poot-driehoek gescheiden door het model op het spriteraster te leggen (`raster/raster.py`), r6 eindkeuring (24 px).
+- Af: `docs/concept/sprites/vlieglijn_fase2/af/mug.png` (+ `_8x.png`, `normal.pal`); op het overzichtsvel als "Robotmug". Naam open. Helderheid gemeten tegen alle frontsprites: gemiddeld 92 (mediaan 117), zoals Crobat; Jordi: "prima zo".

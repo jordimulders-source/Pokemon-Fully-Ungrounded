@@ -2463,3 +2463,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.593] - Onweerswolk-Swablu r4; Altaria kopmeting
 - Jordi over Swablu r3: "nee de lijnen zijn veel te hard nu ... De belijning moet juist zachter en niet zwart. Kijk desnoods naar de snavel van de echte swablu". r4: zwart → gekleurde selout (75 px; zwart alleen oog en buitenkant onderwolk), snavel belijnd als de echte Swablu (open bovenkant), tussentinten (`sprite_r4/NOTITIES.md`).
 - Altaria: Jordi vroeg de kop te meten. r1-kop ±10×8 px (zonder kuif), game-Altaria ±13×11 px bij gelijke figuuroppervlakte (1820 vs 1778 px): lineair ±0,75×, oppervlak ±de helft.
+
+### [v0.0.594] - Onweerswolk-Altaria: kop x1,3 in het model (optie A)
+- Jordi: "A zou misschien wel moeten lukken, omdat we Altaria's hoofd in de wolk kunnen verstoppen, extra overlap over de wolk heen is ook niet erg, kijk dan wel of de voelsprieten nog wel goed in verhouding zijn". Kop + kuif x1,3 op het natieve raster, anker op de kin (`altaria/model_kop/kop13.py` → `natief_kop13.png`); wolk, hals en static pixelgelijk. Kop op spriteformaat ±13x10 (game ±13x11). Kuif: ±2,3x kopbreedte (game-Altaria ±2,7x), verhouding blijft.
+- Swablu: Jordi over r4 "de mond van swablu is nog niet herkenbaar genoeg, de mondlijn, verder vind ik hem wel goed" → r5 alleen mondlijn.

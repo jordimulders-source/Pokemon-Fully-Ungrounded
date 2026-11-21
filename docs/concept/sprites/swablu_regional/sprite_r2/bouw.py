@@ -26,13 +26,14 @@ N4=((-1,0),(1,0),(0,-1),(0,1)); N8=[(dy,dx) for dy in (-1,0,1) for dx in (-1,0,1
 # --- 1. toonstemming per spritepixel (modeltonen per natieve pixel) ---
 def wolktoon(l): return 6 if l>=188 else 5 if l>=152 else 4 if l>=124 else 3 if l>=97 else 2   # modelbanden ~200/~165/~138/~112/~84
 def vogeltoon(l): return 9 if l>=145 else 8 if l>=105 else 7
-STEM=np.zeros((64,64,15)); FK=np.zeros((64,64)); FD=np.zeros((64,64))
+STEM=np.zeros((64,64,15)); FK=np.zeros((64,64)); FD=np.zeros((64,64)); FN=np.zeros((64,64))
 for Y in range(64):
     for X in range(64):
         for u,v,w in overlap(X,Y):
             k=c[v,u]
             if k==1: FK[Y,X]+=w
             if k in (1,3) and L[v,u]<70: FD[Y,X]+=w        # donkere lijn (zwart of donkergrijze bultnaad)
+            if k in (1,3) and L[v,u]<124: FN[Y,X]+=w       # naad in een lichte bol (model: grijze lijn L<124 tussen de bollen)
             if k==3: STEM[Y,X,wolktoon(L[v,u])]+=w
             elif k==2: STEM[Y,X,vogeltoon(L[v,u])]+=w
 v=o.copy()
@@ -51,6 +52,16 @@ for Y,X in zip(*np.where(np.isin(o,list(WOLK|VOGEL)))):
     h=f>=FD[Y,X-1] and f>=FD[Y,X+1]; vv=f>=FD[Y-1,X] and f>=FD[Y+1,X]
     if h or vv: o[Y,X]=1 if FK[Y,X]>=0.5*f else 2
 stap('naden tussen bollen',v)
+# --- 2b. naden binnen de lichte bollen: het model scheidt de bollen met een grijze lijn (L<124, 1-2 natieve px). Waar een lichte pixel (licht/wit)
+#         >=20% van zo'n lijn heeft en de rug van de lijn is -> wolk midden (de selouttint van de lichte bollen) ---
+v=o.copy(); fg=o>0
+for Y,X in zip(*np.where(np.isin(o,[5,6]))):
+    if any(not fg[Y+dy,X+dx] for dy,dx in N4): continue
+    f=FN[Y,X]
+    if f<0.20: continue
+    h=f>=FN[Y,X-1] and f>=FN[Y,X+1]; vv=f>=FN[Y-1,X] and f>=FN[Y+1,X]
+    if h or vv: o[Y,X]=4
+stap('naden in lichte bollen',v)
 # --- 3. buitenlijn (zelfde regel als r1): achtergrond rechts/onder -> zwart (staat al); lichtkant -> selout: lichte bol -> wolk midden, onderwolk/vleugel -> wolk diep, vogel -> vogel donker ---
 v=o.copy(); fg=o>0
 for Y,X in zip(*np.where(fg)):
@@ -93,11 +104,11 @@ zet([(22,27,4),(23,27,4),(24,27,4)],'snavelbovenrand')
 # --- 8. hooglicht op de kop (Gen 3, licht linksboven; model is daar vlak midden): de 3 lichte modelpixels (26,24) (25,25) (26,25) uitgebreid tot een klein vlak op de bolling ---
 zet([(27,25,9),(25,26,9),(26,26,9)],'hooglicht kop')
 # --- 9. vonken feller, minder oker: oker alleen op de buitenhoek rechtsonder (achtergrond rechts én onder), lichtgeel waar de pixel niet aan
-#        lucht links/boven grenst (geen lichte buitenrand), anders fel geel ---
+#        lucht grenst (geen lichte buitenrand), anders fel geel ---
 v=o.copy(); fg=o>0
 for Y,X in zip(*np.where(np.isin(o,list(GEEL)))):
     bL=not fg[Y,X-1]; bR=not fg[Y,X+1]; bU=not fg[Y-1,X]; bD=not fg[Y+1,X]
-    o[Y,X]=10 if (bR and bD) else 11 if (bL or bU) else 12
+    o[Y,X]=10 if (bR and bD) else 11 if (bL or bU or bR or bD) else 12
 stap('vonken feller',v)
 G.opslaan(o,'sprite_r2/swablu_r2.png')
 from PIL import Image as I

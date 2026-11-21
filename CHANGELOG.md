@@ -2450,3 +2450,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.589] - Onweerswolk-Altaria: model bevroren
 - Jordi: "ja, dit is het model voor Altaria". Model + SPEC in `swablu_regional/altaria/`.
+
+### [v0.0.590] - Onweerswolk-Swablu: frontsprite r2 (minder blurry)
+- Jordi over r1: "swablu is nog wat blurry". Oorzaak: gemiddelde modeltint per pixel gaf middentinten; r2 laat de modelband per pixel winnen (meerderheid), palet in stappen ±30–40, 20 px naden op modelplekken, 3 px hooglicht kop, vonken feller. Silhouet gelijk aan r1 (`sprite_r2/NOTITIES.md`).

@@ -39,3 +39,4 @@
 - Jordi (21 nov): "ik zie vier poten en ik vind dat er goed uit zien, dus dit model is leidend" (vier poten, keuze "twee korte" vervalt).
 - Frontsprite: r1 (maker, kale reductie + opschoning), r2 (lijfhooglicht gebogen, oogring rustig, boor per winding), keurder PASS zonder MOET; r3 = r2 + KAN-punten 1–4 (8 px, `sprite_r3/NOTITIES.md`). Naar Jordi: `sprite_r3/naast_model.png`.
 - Eindkeuring (Dragonfly Cave) op r3: PASS; 24 px tintwissels in het lijf (schaduwsikkel 18, hooglicht 6), alpha-diff 0 → `sprite_r4/`.
+- **Frontsprite af** (Jordi, 21 nov: "commit en push maar naar main"): `af/dundragoon.png` (+ `_8x`) = r4.

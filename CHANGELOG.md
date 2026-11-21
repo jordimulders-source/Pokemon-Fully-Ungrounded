@@ -2462,3 +2462,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.591] - Dundragoon: eindkeuring (r4)
 - Jordi: "op naar eindkeuring". Eindkeurder (Dunsparce, Gulpin, Dragonair, Whiscash, Altaria, Flygon op 8×): PASS; alleen het lijf: schaduwsikkel boven de buik (18 px) en het rughooglicht taps doorgetrokken (6 px), palet en vorm ongewijzigd (alpha-diff 0). `dundragoon/sprite_r4/`.
+
+### [v0.0.592] - Dundragoon: frontsprite af
+- Jordi: "commit en push maar naar main". `docs/concept/sprites/dundragoon/af/dundragoon.png` (+ `_8x`) = r4; op het overzichtsvel (`showcase/maak_vel.py`, Dragon/Normal). Stand van zaken: 54 frontsprites af. Les in `GEMINI.md`.

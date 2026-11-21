@@ -2459,3 +2459,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.584] - Merge naar main
 - Branch `claude/peaceful-cori-756ovj` (vlieglijn, overzichtsvel in drie categorieën, werknamen 21 nov, Llamauler r7) samengevoegd met `main`; eigen changelogsecties hernummerd naar 581–583. Regionale Vileplume (`oddish_regional/vileplume_sprite/af/`, van `claude/great-maxwell-bgon7h`) staat daarmee ook in main.
+
+### [v0.0.585] - Werknaam Hexpress
+- Spooktrein fase 3 heet **Hexpress** (Jordi, 21 nov: "Hexpress is geniaal"; hex + express); op het vel, in POKEMON.md en CLAUDE.md.

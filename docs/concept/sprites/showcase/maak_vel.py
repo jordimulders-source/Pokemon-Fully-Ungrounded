@@ -37,7 +37,7 @@ SECTIES=[
 ("blobfish_fase2/af/blobfish_fase2.png",'Blobfish (pudding)',"water"),
 ("spooktrein_fase1/af/spooktrein_fase1.png",'Spooktrein fase 1',"steel"),
 ("spooktrein_fase2/af/spooktrein_fase2.png",'"Wagogogon"',"steel/ghost"),
-("spooktrein_fase3/af/spooktrein.png",'Spooktrein fase 3',"steel/ghost"),
+("spooktrein_fase3/af/spooktrein.png",'"Hexpress"',"steel/ghost"),
 ("pitahaya_draak/af/pitahaya_draak.png",'"Pitaling"',"grass/dragon"),
 ("pitahaya_draak_fase2/af/pitahaya_draak_fase2.png",'"Tejuice"',"grass/dragon"),
 ("pitahaya_draak_fase3/af/pitahaya_draak_fase3.png",'Pitahaya-draak fase 3',"grass/dragon"),

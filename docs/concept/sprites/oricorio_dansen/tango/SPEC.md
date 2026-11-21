@@ -16,3 +16,4 @@ Model: `model/gemini_r5.png` (Gemini r5, 21 nov). Prompt: `../gemini/PROMPT_tang
 - Formaat: als de bestaande Oricorio-sprites.
 - r1: "het linkerbeen ... als een lange streep, ... de jurk daar wat meer overheen te laten vallen, zodat je alleen de onderkant van de poot ziet zoals bij de rechterpoot"; kop: "de bovenste lijn van het hoofd" "mag wat ronder".
 - r2: "tango kleur 2" (= variant B, rood in de franjezoom); "De linkerpoot zit nu niet meer vast aan de rest, die moet in de jurk verdwijnen"; "de franje aan de bovenkant niet 1 rechte lijn".
+- r3: "beter, maar dit lezen nog steeds heel erg als rechte lijnen. De vorm van de jurk was beter in r2, alleen de franje mogen een paar pixels naar boven uitschieten zodat het er wat realistischer uit ziet. De poot moet nog wat hoger in de jurk verdwijnen" (gele lijn: `feedback/r3_jordi_lijn.png`).

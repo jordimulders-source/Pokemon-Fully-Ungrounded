@@ -81,3 +81,5 @@ STYLE AND FORMAT
 AVOID
 - Not Milotic, Feebas, Goldeen, Alomomola or Finizen. No plush toy, chibi or mascot look, no oversized sparkly eyes, no human features, no dopey or derpy face.
 ```
+
+## Ronde 3 (prompt v3) → `r3_prompt_v3.png`

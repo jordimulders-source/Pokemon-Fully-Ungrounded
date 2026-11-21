@@ -82,3 +82,36 @@ def s5():
                 if near and old[y,x] in (3,4,5,6,7,2): o[y,x]=1 if any(a==0 or b==0 for a,b in near) else {3:6,4:6,5:7,6:7,7:2,2:2}[old[y,x]]
                 elif touches(KUIF,y,x,True) and old[y,x] in (3,4): o[y,x]=6
 step('S5_kuif',s5)
+# S6: binnenlijnen tussen veren in een donkere tint van het vlak (niet zwart/donkst): lijn = donkerste vulbuur + 2 stappen
+#     (3->5, 4->6, 5->7, 6/7->2). Buitenrand, lijfrand, kuifrand en geelrand blijven zoals ze zijn.
+LIJN=np.zeros((H,W),bool)
+def s6():
+    old=o.copy()
+    for y in range(H):
+        for x in range(W):
+            if not (EDIT[y,x] and not KUIF[y,x] and old[y,x] in (1,2)): continue
+            if touches(R1==0,y,x,True) or touches(FROZEN,y,x,True) or touches(KUIF,y,x,True) or touches(np.isin(old,(12,13,15)),y,x,True): continue
+            nb=[v for v in nb4(old,y,x) if v in FILL]
+            if len(nb)<2: continue
+            d=max(nb); o[y,x]={3:5,4:6,5:7}.get(d,2); LIJN[y,x]=True
+step('S6_binnenlijn_tint_van_vlak',s6)
+# S7: tintklusters van 1-2 px in waaier/vleugels -> de meest voorkomende vulbuur (scherpe paletkeuze)
+def s7():
+    from collections import Counter
+    for it in range(2):
+        for k in FILL:
+            m=(o==k)&EDIT&~KUIF&~LIJN&np.isin(R1,FILL)
+            seen=np.zeros_like(m)
+            for y,x in zip(*np.where(m)):
+                if seen[y,x]: continue
+                st=[(y,x)]; seen[y,x]=1; pts=[]
+                while st:
+                    a,b=st.pop(); pts.append((a,b))
+                    for c,d in((a-1,b),(a+1,b),(a,b-1),(a,b+1)):
+                        if 0<=c<H and 0<=d<W and m[c,d] and not seen[c,d]: seen[c,d]=1; st.append((c,d))
+                if len(pts)>2: continue
+                cnt=Counter(o[c,d] for a,b in pts for c,d in((a-1,b),(a+1,b),(a,b-1),(a,b+1)) if 0<=c<H and 0<=d<W and o[c,d] in FILL and o[c,d]!=k and not LIJN[c,d])
+                if cnt: 
+                    v=cnt.most_common(1)[0][0]
+                    for a,b in pts: o[a,b]=v
+step('S7_tintklusters_1_2px',s7)

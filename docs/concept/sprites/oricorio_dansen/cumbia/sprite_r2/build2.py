@@ -109,6 +109,23 @@ log['5b_roze_buitenrand']=n
 # 6. plaatsen in 64x64: onderkant op rij 61, horizontaal gecentreerd
 ys,xs=np.where(o>0); crop=o[ys.min():ys.max()+1,xs.min():xs.max()+1]; h,w=crop.shape
 full=np.zeros((64,64),int); y0=62-h; x0=(64-w)//2; full[y0:y0+h,x0:x0+w]=crop
+# 7. snavel (Jordi 21 nov: "controleer ook of de snavel klopt met de 4 bestaande vormen"): de modelsnavel is ±10x8 px,
+#    alle Gen 3-vormen hebben dezelfde kleine haaksnavel (±6x7). Modelsnavel weg, Pom-Pom-snavel pixel voor pixel erop
+#    (zelfde verschuiving als het Pom-Pom-oog: rij -4, kolom -8), zodat oog en snavel onderling exact als bij Pom-Pom staan.
+f=full; n7=0
+for y in range(11,22):
+    for x in range(10,21):
+        if f[y,x] in (I['K1'],I['K2']) or (f[y,x]==I['O'] and y>=13): f[y,x]=0; n7+=1
+for y in range(12,19):                      # kopvoorkant achter de oude snavel dichtzetten: kol 20 = selout, 21-23 = kopkleur
+    if f[y,20]==0 or f[y,20] in (I['K1'],I['K2']): f[y,20]=I['B3']; n7+=1
+    for x in range(21,24):
+        if f[y,x] in (I['K1'],I['K2'],I['O']): f[y,x]=I['B1']; n7+=1
+POMSNAVEL={19:{28:'D',29:'D',30:'D'},20:{27:'D',28:'k',29:'k',30:'k',31:'D'},21:{26:'D',27:'k',28:'k',29:'k',30:'k',31:'D'},
+           22:{25:'D',26:'k',27:'k',28:'k',29:'O',30:'O'},23:{25:'D',26:'k',27:'K',28:'O'},24:{25:'D',26:'k',27:'O'},25:{25:'D',26:'O'}}
+MAP={'k':I['K1'],'K':I['K2'],'D':I['K2'],'O':I['O']}
+for r,d in POMSNAVEL.items():
+    for c,v in d.items(): f[r-4,c-8]=MAP[v]; n7+=1
+log['7_snavel_pompom']=n7
 np.save('cumbia_kls.npy',full)
 diff=(o!=basis); log['totaal_afwijkend_van_onderlaag']=int(diff.sum()); log['bbox']=[w,h,int(y0),int(x0)]
 print(json.dumps(log))

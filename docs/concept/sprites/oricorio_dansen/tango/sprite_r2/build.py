@@ -124,13 +124,29 @@ POOT=set()
 def plak(rows,dy,dx,zone):
     for r in rows:
         for c,v in BAILE[r].items(): zet(r+dy,c+dx,I[BM[v]],zone); POOT.add((r+dy,c+dx))
-# 7a. standbeen: Baile-staak + knik + voet, onderkant voet op de modelvoet (rij 57), staak op de modelstaak (kol 26-27)
+# r2 (Jordi over r1: "het linkerbeen er heel gek uit ziet als een lange streep, is het mogelijk om de jurk daar wat meer overheen te laten vallen,
+#     zodat je alleen de onderkant van de poot ziet zoals bij de rechterpoot")
+# 7r2a. split dicht: binnenkant -> jurktint D2; alleen een smalle spleet blijft (per rij de meest rechtse splitpixel, tegen de modelrand) in D1
+SPLEET=set()
+spl=nieuw.get('split_binnenkant',set())
+for y in sorted({p[0] for p in spl}):
+    xs=sorted(x for yy,x in spl if yy==y)
+    SPLEET.add((y,xs[-1]))
+    for x in xs[:-1]: zet(y,x,I['D2'],'r2_split_dicht_jurk')
+# 7r2b. franjezoom links: blok rij 43-50, kol 28-38 (franje rechts, r1 na opschonen) 20 kolommen naar links gekopieerd (kol 8-18)
+blok=o[43:51,28:39].copy()
+for r in range(8):
+    for c in range(11):
+        zet(43+r,8+c,blok[r,c],'r2_franje_kopie_rechts')
+# 7a. standbeen: Baile-staak + knik + voet (zoals r1)
 plak(range(48,62),-4,-4,'standbeen_baile')
-# 7b. gestrekt been: Baile-voet (rij 57-61) op de modelvoet linksonder; staak = NIEUW, schuin van de split (rij 33, kol 25) naar de voet
+# 7b. gestrekt been: Baile-voet (zoals r1); staak alleen het stuk onder de franje (vanaf de eerste rij waaronder alles vrij is), Baile-staakpatroon b d 3
 plak(range(57,62),-4,-20,'gestrekt_voet_baile')
-for r in range(33,53):
-    xc=int(round(25-(r-33)*17/19))
-    for dx,v in ((-1,'K3'),(0,'K1'),(1,'O')): zet(r,xc+dx,I[v],'gestrekt_staak_nieuw'); POOT.add((r,xc+dx))
+rows=list(range(33,53)); cx={r:int(round(25-(r-33)*17/19)) for r in rows}
+vrij=[r for r in rows if all(o[rr,cx[rr]+dx]==0 for rr in range(r,53) for dx in (-1,0,1))]
+R0=min(vrij); log['r2_staak_vanaf_rij']=R0
+for r in range(R0,53):
+    for dx,v in ((-1,'K3'),(0,'K1'),(1,'O')): zet(r,cx[r]+dx,I[v],'gestrekt_staak_onder_franje'); POOT.add((r,cx[r]+dx))
 np.save('na_poten.npy',o)
 # 8a. kop onder de snavel: bij Pom-Pom loopt de wang onder de snavel door (Pom-Pom rij 23-25, kol 27-29); het gat dat de langere modelsnavel achterliet -> kopvulling
 for p in [(12,17),(12,18),(13,16),(13,17),(14,15),(14,16),(12,19),(13,18),(14,17)]:
@@ -171,7 +187,7 @@ basis=np.load('basis.npy'); log['afwijkend_van_onderlaag_totaal']=int((basis!=o)
 print(json.dumps(log))
 # maskers voor de roodvarianten (rood.py)
 sp=np.zeros_like(o,bool)
-for p in nieuw.get('split_binnenkant',()): sp[p]=True
+for p in SPLEET: sp[p]=True
 np.save('split_mask.npy',sp)
 kn=np.zeros_like(o,bool)
 for p in [(6,28),(7,29),(8,29),(9,29),(10,29),(11,29),(12,29),(13,29)]: kn[p]=True   # binnenlijn kop|knot (modellijn, O/D1)

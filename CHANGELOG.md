@@ -2395,3 +2395,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Naar het bevroren Gemini-model (`referenties/gemini_gekozen_vileplume.png`): wit lijfje op twee steltpoten, vijf rode anemonen rond een gloeiende krater. 19 rondes in `docs/concept/sprites/oddish_regional/vileplume_sprite/` (r1–r19), af in `vileplume_sprite/af/vileplume_regional.png` (+ 8×).
 - Afwijkingen van het model op Jordi's woord: tentakels geklonterd (optie A); gezicht = ogen en mond van de Vileplume uit de game, ogen net onder de kroon, geel met tinten, lachmondje; middelste anemoon bovenaan naar links (gaatje dicht); voorste twee anemonen uit r3 met modelomtrek; mondjes alle vijf gelijk; poten per rij uit het natieve model.
 - Keuring poten (r18 FAIL nipt → r19), eindkeuring r19 PASS (`r19/EINDKEURING.md`; 3 optionele pixelreparaties niet uitgevoerd om goedgekeurde delen niet te raken). Figuur x2–60, y1–62, 16 kleuren.
+
+### [v0.0.575] - Regionale Vileplume: pootreparatie uit de eindkeuring
+- Jordi: "poten na, de rest voor". In `af/vileplume_regional.png` is de linkerrand van beide poten nu gelijk (licht tot halverwege, donker eronder; 6 px). Arm- en inkepingsreparaties niet uitgevoerd.

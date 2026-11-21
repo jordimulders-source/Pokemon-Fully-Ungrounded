@@ -2642,3 +2642,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Typingvoorstel: Lunatone/Solrock Rock/Cosmic, Baltoy/Claydol Ground/Cosmic, Clefairy-lijn Fairy/Cosmic, Elgyem/Beheeyem puur Cosmic of Psychic/Cosmic (open).
 - Typeverdeling (ROM + 67 besloten nieuwe soorten, 528 soorten): Water 97, Flying 59, Grass 56, Bug 56, Ground 54, Poison 53, Dark 52, Electric 51, Ghost 51, Normal 49, Psychic 46, Fire 38, Steel 37, Ice 35, Dragon 35, Fighting 26, Rock 26, Fairy 24, Cosmic 5 (±13 met deze kandidaten). 56 van de 171 combinaties ontbreken; prioriteit: Fire-, Ice- en Dragon-combinaties voor de gyms, een pure en een vroege Cosmic.
 - Bijgewerkt: CONCEPT.md, POKEMON.md, IDEEEN.md, TODO.md. Nog niets in de code (Cosmic bestaat nog niet als type).
+
+### [v0.0.624] - Cosmic: Elgyem-lijn puur Cosmic
+- Jordi (21 nov): "Elgyem lijn puur cosmic". Elgyem en Beheeyem worden puur Cosmic (eerste pure Cosmic-soorten).
+- Aanwezigheid per type na de Cosmic-omzetting (528 soorten; gemiddeld 45 per type): Water 97, Flying 59, Grass 56, Bug 56, Ground 54, Poison 53, Dark 52, Electric 51, Ghost 51, Normal 49, Psychic 40, Fire 38, Steel 37, Ice 35, Dragon 35, Fighting 26, Rock 26, Fairy 24, Cosmic 14.

@@ -2424,6 +2424,55 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Jordi: "ja graag wat meer bolling, schaduw, tinten etc, doe dat in een eindkeuring". Eindkeurder (studie Ditto/Gulpin/Grimer/Gloom op 8×) zette 133 tintwissels binnen lijf en vinnen: lichte bolling linksboven, schaduwsikkel rechts die naar onder breder wordt, diepe sikkel tegen de rand en onder de rechtervin, eigen lobben met hooglichtje in de voet; lijf-licht (index 8) (198,108,116) → (204,116,120). Diff 0 in lavabrok, gloed, ogen, kelp, zwart en silhouet (`gloom_sprite/r4/bewijs.py`). `gloom_sprite/r4/gloom_r4.png` + `_8x`.
 - Jordi: "commit en push naar main" → frontsprite af: `docs/concept/sprites/oddish_regional/gloom_sprite/af/gloom.png` (+ `gloom_8x.png`).
 
+### [v0.0.581] - Oricorio: drie nieuwe dansen, studie + Gemini-prompts
+- Snelle studie van de vier bestaande Oricorio-vormen (vaste kern: zangvogellijf, roze snavel/poten, slaperig oog; de veren zijn het kostuum; eigen kuif, één kleurfamilie, pose = dansbeweging): `docs/concept/sprites/oricorio_dansen/STUDIE.md` + `bestaande_vormen.png`.
+- Drie Gemini-startprompts (samba Grass, tango Dark, cumbia Water) in `oricorio_dansen/gemini/`.
+
+### [v0.0.582] - Oricorio-dansen: hoofdkleur = typekleur
+- Jordi: hoofdkleur is de kleur die je het meest met het type associeert. Prompts aangescherpt: samba vooral groen, tango vooral zwart, cumbia vooral blauw (rest als accent).
+
+### [v0.0.583] - Oricorio-dansen: prompts r2 (oog)
+- r1 (samba, tango, cumbia) gaf 3× een spleetoog met wit; Oricorio niet herkenbaar genoeg. Prompts r2 beschrijven het echte oog (zwart ovaal, wit glimpje, dikke ooglidlijn, geen wit eromheen) met `oricorio_dansen/koppen.png` als tweede bijlage. Les in GEMINI.md.
+
+### [v0.0.584] - Oricorio-dansen: r2 beoordeeld, samba/tango r3
+- Cumbia r2 kan door naar de sprite. Samba en tango: nieuwe prompts zonder bijlagen (samba: minder, grotere veren, kop vrij; tango: hoed als verenkuif, klein rond lijf, echte tangopose).
+
+### [v0.0.585] - Oricorio samba: prompt r4
+- Samba r3 miste de pauwachtige tooi (Jordi); r4 vraagt alleen die tooi terug als grote waaier achter het lijf.
+
+### [v0.0.586] - Oricorio tango: prompt r4
+- Tango r3 bleef een kraai met hoed en mes (Jordi: "tango moet wat gracieuzer"). r4 zonder de woorden hat/knife, slanker, staart als split tangojurk, sierlijke pose. Les in GEMINI.md.
+
+### [v0.0.587] - Oricorio samba: prompt r5
+- Oog = het blije Pom-Pom-oog (wijd open, geen ooglid); lijf rechtop als een persoon (verticaal ei-lijf) zoals alle Oricorio-vormen. Jordi: slaperig oog en lijfvorm niet Oricorio.
+
+### [v0.0.588] - Oricorio: samba r6, tango r5
+- Samba r6: lange puntige bladveren, kleinere en donkerdere waaier. Tango r5: gracieuze vrouwelijke danseres (Jordi) met tangojurk en strakke knot; rechtop lijf en blij oog van samba r5.
+
+### [v0.0.589] - Oricorio cumbia: frontsprite af
+- Oricorio Cumbia (Water/Flying) af in `docs/concept/sprites/oricorio_dansen/cumbia/af/` (r6): Gemini-model r2 overgenomen, lichtblauw "midden" (Jordi), oog en snavel van Pom-Pom, poten van Pa'u; eindkeuring PASS na kleur/lijnreparaties (volume kop/lijf, minder zwarte binnenlijnen, rokrand, onderste ruche). Op het overzichtsvel.
+
+### [v0.0.590] - Oricorio tango: prompt r6
+- Jordi stelde een nieuw Gemini-ontwerp voor ("hoef je minder te gokken"). r6: dunne Oricorio-pootjes die onder de jurk uitkomen, geen split, onregelmatige rode franjezoom.
+
+### [v0.0.591] - Oricorio tango: prompt r7
+- r6 beter qua lengte en pootjes, maar de pose leest minder als tango. r7 verandert alleen de vleugels: nabije vleugel hoog op schouderhoogte (tango-omhelzing), verre vleugel laag naar achteren.
+
+### [v0.0.592] - Oricorio: tango-maker op model r7, samba prompt r7
+- Tango: maker gestart op Gemini r7 (oog/snavel Pom-Pom, Oricorio-voeten, rode franje). Samba: sprite r1 blijft de beste (r2 hertekend, r3 alleen herkleurd); nieuwe Gemini-prompt r7 met 7 grote gladde veren (om en om geel), losse lichtere kuif, vleugels als één vorm.
+
+### [v0.0.593] - Oricorio samba: prompt r8 (danseres)
+- Naar Jordi's inspiratie (samba-danseres): tooi van pluimen op het hoofd, vleugels als zijvleugels, geen overlap tussen tooi, vleugels en lijf.
+
+### [v0.0.594] - Oricorio samba: prompt r9
+- r8 niet herkenbaar als samba (Jordi). r9: grote tweelaagse tooi met gouden middenstuk, gouden borst- en heupband met kwastjes, zijvleugels met geel en wat blauw, samba no pé.
+
+### [v0.0.595] - Oricorio samba: prompt r10 (laatste)
+- r9 al beter (Jordi). r10: tooi met ±9 grote pluimen en 5 brede gele binnenveren, effen borstband, opgetild been zichtbaar vóór het lijf, vleugels asymmetrisch (nabije hoog, verre laag).
+
+### [v0.0.596] - Oricorio tango: frontsprite af
+- Oricorio Tango (Dark/Flying) af in `docs/concept/sprites/oricorio_dansen/tango/af/` (r9 op Gemini-model r7): sierlijke danseres met strakke knot, V-hals en rode franjezoom; Pom-Pom-oog en -snavel, Baile-voeten; kleur afgestemd op de game (Jordi: "het model is qua kleur niet leidend"); eindkeuring PASS na rondes op schaduw/tinten (vleugelbelichting, jurkplooi, torsovolume, open randen). Op het overzichtsvel.
+- Samba: model Gemini r10 (tooi op het hoofd en zijvleugels zoals een sambadanseres, geen overlap); sprite r4 gemaakt, afwerking volgt.
 ### [v0.0.581] - Vlieglijn: start fruitvlieg
 - Nieuwe lijn fruitvlieg → huisvlieg → mug (Jordi, 20 nov); mug blijft Poison/Electric, typen fase 1–2 open. SPEC en Gemini-startprompt fase 1 in `docs/concept/sprites/vlieglijn_fase1/`.
 - Fruitvlieg Gemini r1 bewaard; Jordi: "dit is net beedrill".
@@ -2539,50 +2588,99 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.609] - Merge naar main
 - Main (vlieglijn, regionale Vileplume, overzichtsvel) samengevoegd met de onweerswolk-Swablu-lijn; onze changelogsecties hernummerd naar v0.0.587–608.
 
-### [v0.0.610] - Onweerswolk-Altaria: frontsprite r3
+### [v0.0.610] - Werknaam Hexpress
+- Spooktrein fase 3 heet **Hexpress** (Jordi, 21 nov: "Hexpress is geniaal"; hex + express); op het vel, in POKEMON.md en CLAUDE.md.
+- Regionale Swablu (onweerswolk, Electric/Flying, `swablu_regional/af/`) op het overzichtsvel (Regional forms).
+
+### [v0.0.611] - Dundragoon: oude testsprite uit Ungrounded erbij
+- Jordi: "Laten we Dundragoon doen, vis de Dundragoon vroege sprite erbij uit de ungrounded repo". Gevonden in `projectgrounded`, commit `c5cc51c42` (20 okt, "Testsprites Dundragoon en vuurvlieg-Venomoth (niet in de game)"): `tools/grounded/fakemon/dundragoon.png`, `_zoom.png` en `dundragoon.py`.
+- Gekopieerd naar `docs/concept/sprites/dundragoon/ungrounded/` als naslag (buizen-/ellipsen-methode, dus ontwerpschets, geen basis voor pixels). Type en verdere richting nog open.
+
+### [v0.0.612] - Dundragoon: keuzes en Gemini-startprompt
+- Jordi: "dit design is nog niet heel goed gelukt, maar daar kan gemini bij helpen"; "Dundragoon wordt Dragon/Normal". Keuzes: oude testsprite niet als bijlage; grote vleugels blijven; staart loopt over in de boor; Dunsparce-lijf, groter; twee korte poten; gezicht "Lijkt op Dunsparce maar meer dragon vorm".
+- Nieuw: `docs/concept/sprites/dundragoon/SPEC.md` (citaten + keuzes) en `gemini/PROMPT.md` (r1).
+
+### [v0.0.613] - Dundragoon: Gemini r1 afgekeurd, prompt r2
+- r1 (`dundragoon/gemini/r1.png`) afgekeurd: "niet gelukt, hoofd is nog hetzelfde, vorm heel raar, vleugels niet groot genoeg"; "en niet uniek genoeg de vleugels".
+- Keuzes: langere snuit, hoorntjes, oogring houden; diagonaal; vleugels "gewoon zoals dunsparce, maar iets groter, ze moeten vrij bizar zijn, niet typisch dragon". Prompt r2 in `gemini/PROMPT_r2.md`.
+
+### [v0.0.614] - Dundragoon: Gemini r2, prompt r3
+- r2 (`dundragoon/gemini/r2.png`): "dit begint ergens op te lijken, al is het nu iets teveel een dragonite/dunsparce fusion"; "De complete vorm ... Hij mag best een wat lompe vorm hebben zoals dragonite, maar dit is too much"; boor: "Ja, duidelijke boor".
+- Vergelijking naast Dunsparce en Dragonite (`gemini/r2_vgl_dunsparce_dragonite.png`); prompt r3 (`gemini/PROMPT_r3.md`): lang, lomp slangenlijf diagonaal in plaats van rechtop, geen armen/streepbuik/spriet, duidelijke boor.
+
+### [v0.0.615] - Dundragoon: Gemini r3, prompt r4
+- r3 (`dundragoon/gemini/r3.png`): "staart, vleugels, hoofd goed, maar wil geen slang"; lijf wordt Dunsparce-romp, dik; "al mag de drill naar verhouding nog wat groter". Prompt r4 (`gemini/PROMPT_r4.md`, nieuw gesprek, alleen tekst).
+
+### [v0.0.616] - Dundragoon: Gemini r4, bijsturen r5
+- r4 (`dundragoon/gemini/r4.png`): "hij is te horizontaal en net wat te lang"; "hij mag in een soort vliegpose wel". Bijstuurprompt r5 (`gemini/PROMPT_r5_bijsturen.md`): schuiner en korter, de rest houden.
+
+### [v0.0.617] - Dundragoon: r5 mislukt, gedraaide r4 als posevoorstel
+- r5 (bijsturen): "hij snapt het niet". Claude draaide r4 zelf 15/25/35 graden (`dundragoon/plak/`) als voorstel voor de schuine vliegpose.
+- Jordi: "nee nieuwe prompt from scratch, geen bijlage"; prompt r6 (`gemini/PROMPT_r6.md`) met de schuine vliegpose bovenaan en een korter lijf.
+
+### [v0.0.618] - Dundragoon: Gemini r6, prompt r7
+- r6 (`dundragoon/gemini/r6.png`): "best prima, maar hij mag nog iets dikker"; "beetje chubby". Prompt r7 = r6 met dikker lijf en precies 2 poten.
+
+### [v0.0.619] - Dundragoon: Gemini-model gekozen (r7)
+- Jordi bij r6: "beetje chubby" (verwerkt in prompt r7). Bij r7: "dit is hem"; "de drill is nog niet zo mooi, maar dat kunnen we in de sprite met kleurgebruik oplossen". Bevroren model: `docs/concept/sprites/dundragoon/referenties/gemini_gekozen_r7.png`. Volgende stap: frontsprite.
+
+### [v0.0.620] - Dundragoon: frontsprite r1–r3 (kandidaat)
+- Maker: r1 kale reductie van het model (61×61, silhouet = model) + opschoning; r2 gebogen rughooglicht, oogring middenblauw met donkere buitenrand, boor per winding schaduw → midden → licht (kleur, met toestemming Jordi).
+- Verse keurder: PASS, geen MOET; Claude zette 4 KAN-punten (8 px: vleugelrand, lobrand, vlekje in de boor, blauwe wangstrook) → r3 (`dundragoon/sprite_r3/`).
+
+### [v0.0.621] - Dundragoon: eindkeuring (r4)
+- Jordi: "op naar eindkeuring". Eindkeurder (Dunsparce, Gulpin, Dragonair, Whiscash, Altaria, Flygon op 8×): PASS; alleen het lijf: schaduwsikkel boven de buik (18 px) en het rughooglicht taps doorgetrokken (6 px), palet en vorm ongewijzigd (alpha-diff 0). `dundragoon/sprite_r4/`.
+
+### [v0.0.622] - Dundragoon: frontsprite af
+- Jordi: "commit en push maar naar main". `docs/concept/sprites/dundragoon/af/dundragoon.png` (+ `_8x`) = r4; op het overzichtsvel (`showcase/maak_vel.py`, Dragon/Normal). Stand van zaken: 59 frontsprites af. Les in `GEMINI.md`.
+
+### [v0.0.623] - Onweerswolk-Altaria: frontsprite r3
 - Op het kop x1,5-model (`altaria/sprite_r3/`): beide ogen lezen op 1x, geen zwart/navy in de lijnen, ronde kappen per bol. Claude: static te fel, kuif rommelig, vleugeltoppen te licht/vlak → r4. Nog niet aan Jordi getoond.
 
-### [v0.0.611] - Onweerswolk-Altaria: frontsprite r4
+### [v0.0.624] - Onweerswolk-Altaria: frontsprite r4
 - Static subtieler (150,206,230; 6 stukken, 76 px), kuif als twee strengen, vleugels donkerder; silhouet -16 px (`altaria/sprite_r4/NOTITIES.md`). Claude: vleugels lezen nog als vlakke massa met trapjesrand → r5 alleen vleugels.
 
-### [v0.0.612] - Onweerswolk-Altaria: frontsprite r5 (vleugels)
+### [v0.0.625] - Onweerswolk-Altaria: frontsprite r5 (vleugels)
 - Alleen vleugels (89 px): kap per modelbol (links 6, rechts 5), alpha links 2 px (`altaria/sprite_r5/NOTITIES.md`). Eindkeuring loopt.
 
-### [v0.0.613] - Onweerswolk-Altaria: eindkeuring r5
+### [v0.0.626] - Onweerswolk-Altaria: eindkeuring r5
 - FAIL: kop/ogen/snavel goed (bevroren); korrel, kuifpixels, static 2 px dik, onderste bol te licht, lijf/rechtervleugel als platen met rechte naden. MOETEN 1-6 als pixellijst toegepast op `proef_eindkeuring.png` (94 px); MOET 6b (bollen in lijf en rechtervleugel) naar een verse maker (`altaria/sprite_r5/EINDKEURING.md`).
 
-### [v0.0.614] - Onweerswolk-Altaria: frontsprite r6
+### [v0.0.627] - Onweerswolk-Altaria: frontsprite r6
 - MOET 6b: bollen in lijf en rechtervleugel per bol ingekleurd (393 px), rechte naden weg (`altaria/sprite_r6/NOTITIES.md`). Claude: lijf leest als lichte stippen op een donkere vlakte → r7 met de modellijnen tussen de bollen als selout-bogen (zoals de Swablu).
 
-### [v0.0.615] - Onweerswolk-Altaria: frontsprite r7
+### [v0.0.628] - Onweerswolk-Altaria: frontsprite r7
 - Modellijnen tussen de bollen als selout-bogen (289 px); bollen lezen nu als hoekige kasseien (`altaria/sprite_r7/NOTITIES.md`). Na 7 rondes vastgelopen op de wolkbollen: vergelijking r4-r7 + model voor Jordi (`altaria/vergelijk_r4_r7.png`).
 
-### [v0.0.616] - Onweerswolk-Altaria: feedback Jordi op r4-r7
+### [v0.0.629] - Onweerswolk-Altaria: feedback Jordi op r4-r7
 - Jordi: wolken zijn niet het probleem, wel kleurgebruik/schaduw/tinten; meer static (uit het model), kuif meer definitie en kleur, kop nog blurry; "niks zelf tekenen" (citaat in `altaria/SPEC.md`). Verse maker r8.
 
-### [v0.0.617] - Onweerswolk-Altaria: frontsprite r8
+### [v0.0.630] - Onweerswolk-Altaria: frontsprite r8
 - Wolk in de 4 modeltinten (navy/donker teal/teal/licht cyaan) + navy selout, meerderheidsband per pixel (r5 had 498 px in een tussentint die het model niet heeft); static 105 px op modelplekken; kuif en kop per pixel uit het model (`altaria/sprite_r8/NOTITIES.md`). Eindkeuring loopt.
 
-### [v0.0.618] - Onweerswolk-Altaria: eindkeuring r8 → r9
+### [v0.0.631] - Onweerswolk-Altaria: eindkeuring r8 → r9
 - Eindkeuring r8: PASS na 16 px (14 static-hoekpixels, 1 kuifglans, 1 wolkkap; `altaria/sprite_r8/EINDKEURING.md`). r9 = die proefkopie (`altaria/sprite_r9/`). Aan Jordi getoond.
 
-### [v0.0.619] - Onweerswolk-Altaria: gezicht naar echte Altaria
+### [v0.0.632] - Onweerswolk-Altaria: gezicht naar echte Altaria
 - Jordi over r9: wolken goed, gezicht niet (linksonder valt weg, linkeroog slecht zichtbaar, rechte rechterkant); gezicht mag van het model afwijken, baseren op de echte Altaria. r10: alleen de kop.
 
-### [v0.0.620] - Onweerswolk-Altaria: frontsprite r10 (kop naar echte Altaria)
+### [v0.0.633] - Onweerswolk-Altaria: frontsprite r10 (kop naar echte Altaria)
 - Kop pixel voor pixel van de Gen 3-Altaria (rijen Y16-17, kolommen X28/X34 geschrapt), omgekleurd naar ons violet/teal; diff met r9 85 px alleen in de kop, alpha -11/+1 in de kopzone (`altaria/sprite_r10/NOTITIES.md`).
 
-### [v0.0.621] - Onweerswolk-Altaria: r11 grotere kop (A/B)
+### [v0.0.634] - Onweerswolk-Altaria: r11 grotere kop (A/B)
 - Jordi: "ik denk dat de kop nog wat groter moet, want de vorm is echt raar". A = Gen 3-Altaria-kop op 100% (17x12), B = ±117% (20x14); kuif hoefde niet te schuiven; pluis cyaanwit met wolk-selout (`altaria/sprite_r11/NOTITIES.md`).
 
-### [v0.0.622] - Onweerswolk-Altaria: r12 kop+hals 2 px rechts
+### [v0.0.635] - Onweerswolk-Altaria: r12 kop+hals 2 px rechts
 - Jordi: "a is perfect, zou je alleen het hele hoofd + nek 2 pixels naar rechts kunnen schuiven en mij dan een vergelijking kunnen laten zien?". Kop+hals als laag verschoven (niets hertekend); K1 kuif blijft, K2 kuif mee; vrijgekomen pixels = r9-wolk of wolkband ernaast (`altaria/sprite_r12/`).
 
-### [v0.0.623] - Onweerswolk-Altaria: r13 (K2 + 2 vergeten kuifpixels)
+### [v0.0.636] - Onweerswolk-Altaria: r13 (K2 + 2 vergeten kuifpixels)
 - Jordi: "vanzelfsprekend dat de kuif meeschuift, je bent wel 2 pixels vergeten mee te schuiven." (40,20)/(41,20) navy rand van de kuifpunt mee naar (42,20)/(43,20). Naar eindkeuring (hals-aansluiting, lijnen, tinten, schaduw).
 
-### [v0.0.624] - Onweerswolk-Altaria: eindkeuring r13 → r14
+### [v0.0.637] - Onweerswolk-Altaria: eindkeuring r13 → r14
 - PASS na 5 px: halsrand doorgetrokken tot de wolkkwab, L-hoek weg, gaatje in de kuif dicht, kuifpunt eindigt tegen de vleugelrand (`altaria/sprite_r13/EINDKEURING.md`). r14 = proefkopie.
 
-### [v0.0.625] - Onweerswolk-Altaria: frontsprite af
+### [v0.0.638] - Onweerswolk-Altaria: frontsprite af
 - Jordi: "akkoord, commit en push naar main". `docs/concept/sprites/swablu_regional/altaria/af/altaria.png` (+ `_8x`) = r14. Lessen in `docs/lessen/GEMINI.md`; Stand van zaken bijgewerkt. Daarmee is de onweerswolk-Swablu-lijn af.
+
+### [v0.0.639] - Merge naar main
+- Main (Dundragoon, Oricorio-dansen) samengevoegd met de onweerswolk-Altaria; onze secties hernummerd naar v0.0.623–638; achtergebleven conflictmarkeringen uit een eerdere merge op main opgeruimd.

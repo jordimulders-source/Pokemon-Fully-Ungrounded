@@ -37,7 +37,7 @@ SECTIES=[
 ("blobfish_fase2/af/blobfish_fase2.png",'Blobfish (pudding)',"water"),
 ("spooktrein_fase1/af/spooktrein_fase1.png",'Spooktrein fase 1',"steel"),
 ("spooktrein_fase2/af/spooktrein_fase2.png",'"Wagogogon"',"steel/ghost"),
-("spooktrein_fase3/af/spooktrein.png",'Spooktrein fase 3',"steel/ghost"),
+("spooktrein_fase3/af/spooktrein.png",'"Hexpress"',"steel/ghost"),
 ("pitahaya_draak/af/pitahaya_draak.png",'"Pitaling"',"grass/dragon"),
 ("pitahaya_draak_fase2/af/pitahaya_draak_fase2.png",'"Tejuice"',"grass/dragon"),
 ("pitahaya_draak_fase3/af/pitahaya_draak_fase3.png",'Pitahaya-draak fase 3',"grass/dragon"),
@@ -52,6 +52,7 @@ SECTIES=[
 ('octillery_evo/af/krassault.png', '"Krassault" (Octillery)', 'water/steel'),
 ('banette_evo/af/shuppetto.png', '"Shuppetto" (Banette)', 'ghost/dark'),
 ('skinguin/af/skinguin.png', '"Skinguin" (Delibird)', 'ice/water'),
+('dundragoon/af/dundragoon.png', '"Dundragoon" (Dunsparce)', 'dragon/normal'),
 ]),
 ("Regional forms / convergent Pokémon",[
 ("silicobra_uyuni/af/silicobra_uyuni.png",'"Silicobra" (regional)',"ground/electric"),
@@ -67,6 +68,9 @@ SECTIES=[
 ("oddish_regional/af/oddish_regional.png",'Oddish (regional)',"water/grass"),
 ("oddish_regional/gloom_sprite/af/gloom.png",'Gloom (regional)',"water/fire"),
 ("oddish_regional/vileplume_sprite/af/vileplume_regional.png",'Vileplume (regional)',"water/fire"),
+("swablu_regional/af/swablu.png",'Swablu (regional)',"electric/flying"),
+("oricorio_dansen/cumbia/af/cumbia.png",'Oricorio (cumbia)',"water/flying"),
+("oricorio_dansen/tango/af/tango.png",'Oricorio (tango)',"dark/flying"),
 ("dj_rotom/af/dj_rotom.png",'"DJ Rotom"',"electric/steel"),
 ]),
 ]

@@ -1,0 +1,31 @@
+{
+ "S1_binnenlijn_zwart_naar_donkergroen": 73,
+ "S2_onderveren_zelfde_familie": 146,
+ "S3_selout_lichtkant": 33,
+ "S4_tintvlekjes": 0,
+ "S5_kuif": 54,
+ "S6_binnenlijn_tint_van_vlak": 66,
+ "S7_tintklusters_1_2px": 5,
+ "S8_geel_A": 23,
+ "S8_geel_B": 66,
+ "controle_A": {
+  "alpha_diff_vs_r1": 0,
+  "bevroren_lijf_kop_oog_snavel_poten_gewijzigd": 0,
+  "herkleurd_totaal": 344,
+  "kleuren_gebruikt": 15,
+  "kuif": 44,
+  "waaier": 33,
+  "vleugel_L": 77,
+  "vleugel_R": 193
+ },
+ "controle_B": {
+  "alpha_diff_vs_r1": 0,
+  "bevroren_lijf_kop_oog_snavel_poten_gewijzigd": 0,
+  "herkleurd_totaal": 392,
+  "kleuren_gebruikt": 16,
+  "kuif": 44,
+  "waaier": 33,
+  "vleugel_L": 96,
+  "vleugel_R": 222
+ }
+}

@@ -1,6 +1,6 @@
 # Dundragoon – Gemini-startprompt r7 (21 nov, nieuw gesprek, geen bijlage)
 
-Na r6: "best prima, maar hij mag nog iets dikker". Prompt r6 met alleen het lijf dikker (en "exactly 2 legs": r6 kreeg er 4).
+Na r6: "best prima, maar hij mag nog iets dikker"; "beetje chubby". Prompt r6 met alleen het lijf dikker (en "exactly 2 legs": r6 kreeg er 4).
 
 ---
 
@@ -12,7 +12,7 @@ POSE (most important)
 It is FLYING, lazily rising up through the air on a steep DIAGONAL: the head is high at the upper left, the body slopes down behind it, and the drill tail hangs low at the lower right. Seen as a whole, its body is a diagonal line from upper left to lower right, NOT a horizontal line. The 2 short legs dangle loosely under the body. The wings are raised on its back.
 
 WHAT IT IS
-Body: a short, compact, VERY THICK, fat and heavy sausage-shaped torso (like Dunsparce's, but much chunkier): the body is clearly thicker than the head is tall, a round, bulging belly and back. Not long: the body is about as long as the head plus the drill together. No long neck: the head sits on a short, thick neck.
+Body: a short, compact, thick sausage-shaped torso (like Dunsparce's, but chunkier), a bit THICKER than before: a little CHUBBY, with a slightly rounder belly and back. Not long: the body is about as long as the head plus the drill together. No long neck: the head sits on a short, thick neck.
 Head: a dragon head with a longer snout and 2 small straight pale blue-white horns pointing backward. A blue ring around the eye; inside it the eye is closed in a lazy line. A blue marking along the jaw. Expression lazy and goofy, not fierce.
 Colors: pale yellow body with a few blue bands across the back. No light belly plate, no belly stripes.
 Legs: exactly 2 short, stubby legs (not 4). NO arms, no hands.

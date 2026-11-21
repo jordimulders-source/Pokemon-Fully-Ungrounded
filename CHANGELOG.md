@@ -2451,4 +2451,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Jordi: "nee nieuwe prompt from scratch, geen bijlage"; prompt r6 (`gemini/PROMPT_r6.md`) met de schuine vliegpose bovenaan en een korter lijf.
 
 ### [v0.0.588] - Dundragoon: Gemini r6, prompt r7
-- r6 (`dundragoon/gemini/r6.png`): "best prima, maar hij mag nog iets dikker". Prompt r7 = r6 met dikker lijf en precies 2 poten.
+- r6 (`dundragoon/gemini/r6.png`): "best prima, maar hij mag nog iets dikker"; "beetje chubby". Prompt r7 = r6 met dikker lijf en precies 2 poten.

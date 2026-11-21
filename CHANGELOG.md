@@ -2423,3 +2423,34 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.580] - Onderwater-Gloom: frontsprite r4 (volume lijf)
 - Jordi: "ja graag wat meer bolling, schaduw, tinten etc, doe dat in een eindkeuring". Eindkeurder (studie Ditto/Gulpin/Grimer/Gloom op 8×) zette 133 tintwissels binnen lijf en vinnen: lichte bolling linksboven, schaduwsikkel rechts die naar onder breder wordt, diepe sikkel tegen de rand en onder de rechtervin, eigen lobben met hooglichtje in de voet; lijf-licht (index 8) (198,108,116) → (204,116,120). Diff 0 in lavabrok, gloed, ogen, kelp, zwart en silhouet (`gloom_sprite/r4/bewijs.py`). `gloom_sprite/r4/gloom_r4.png` + `_8x`.
 - Jordi: "commit en push naar main" → frontsprite af: `docs/concept/sprites/oddish_regional/gloom_sprite/af/gloom.png` (+ `gloom_8x.png`).
+
+### [v0.0.581] - Vlieglijn: start fruitvlieg
+- Nieuwe lijn fruitvlieg → huisvlieg → mug (Jordi, 20 nov); mug blijft Poison/Electric, typen fase 1–2 open. SPEC en Gemini-startprompt fase 1 in `docs/concept/sprites/vlieglijn_fase1/`.
+- Fruitvlieg Gemini r1 bewaard; Jordi: "dit is net beedrill".
+- Fruitvlieg r1: Jordi denkt na over richting en kleuren.
+- Fruitvlieg: prompt r2 (plat naar achteren gevouwen vleugels, amber, paarse ogen, poten als stroomkabels).
+- Fruitvlieg r2 bewaard; Jordi twijfelt of fruitvlieg en huisvlieg genoeg verschillen.
+- Vlieglijn wordt 2 fases: vlieg → mug (fruitvlieg en horzel vervallen); poten als stroomkabels blijven.
+- Vlieg: prompt r3 (LED-ogen met blije paarse expressie, amber + zwart, stroomkabelpoten).
+- Vlieg r3 bewaard met Jordi's feedback.
+- Vlieg: prompt r4 (glad lijf, zwart + zwart-geel achterlijf, dikkere poten, ^ ^-ogen).
+- Vlieg: r4 bewaard; prompt r5 (grijze kop, twee LED-oogschermen zonder mond, grijs achterlijf met zwarte vlekken, lichtere vleugels).
+- Vlieg: Bug/Electric, robotischer; r5 bewaard, prompt r6.
+- Vlieg: prompt r7 (mechanischer achterlijf, scherpere vleugels, kabelpoten naar Xurkitree).
+- Vlieg: r7 bewaard ("nu begint het op een pokemon te lijken"); prompt r8 (boller achterlijf).
+- Vlieg: model samengesteld (r8 + strepen van r7) in `vlieglijn_fase1/model/`.
+- Vlieg: sprite r3–r5 (50 px, maker + keurder); poten blijven fout → Gemini-ronde r9 voor de poten (prompt + bijlage).
+- Vlieg: sprite r6–r10 (poten via Gemini r9 + krabbel Jordi, eindkeuring r9 + reparaties) → kandidaat `vlieglijn_fase1/sprite_r10/`.
+
+### [v0.0.582] - Robotvlieg (vlieglijn fase 1): frontsprite af
+- Frontsprite af: `docs/concept/sprites/vlieglijn_fase1/af/vlieg.png` (+ 8×, `normal.pal`), Bug/Electric, 50 px breed; op het overzichtsvel (`showcase/frontsprites_af.png`) als "Robotvlieg". Lijn: vlieg → mug (2 fases), evolutie rond lv 30; mug (Poison/Electric) nog te doen. Naam open.
+- Ontwerp: Gemini r1–r8 (fruitvlieg → huisvlieg → robotisch; LED-vizier met blije paarse ^, stroomkabelpoten naar Xurkitree: ronde kabel met glans, witte ringen, twee koperdraadjes als klauwtjes); model = r8 + strepen van r7.
+- Sprite: r1–r2 op 42 px (te klein: kop en kabels gingen verloren), r3–r5 op 50 px; poten via Gemini r9 (alleen een extra achterpoot) en Jordi's krabbels; buis onder het achterlijf weg, voorpoten naar achteren, LED-ogen O2, ringen A, randbelichting onderkant borststuk (P1), lichte vleugellijn (L12), keuringen en Dragonfly Cave-eindronde; r24 = rechte lijnen gebroken + kleurronde. Alle rondes en Jordi letterlijk in `vlieglijn_fase1/SPEC.md`.
+
+### [v0.0.583] - Overzichtsvel frontsprites in drie categorieën
+- `docs/concept/sprites/showcase/maak_vel.py` deelt het vel nu in (Jordi, 21 nov): **New** (40, volledig originele designs, lijnen bij elkaar op volgorde), **Evolutions of existing Pokémon** (4: Hitmongroove (Hitmontop), Krassault (Octillery), Shuppetto (Banette), Skinguin (Delibird)), **Regional forms / convergent Pokémon** (9: Silicobra-lijn, Abra-lijn, Dustly-lijn, DJ Rotom). Rufflet en Harpiary komen in de derde sectie zodra ze af zijn. Lange namen krijgen automatisch een kleiner lettertype.
+- Ontbrekende designs van andere branches op het vel gezet (sectie Regional forms / convergent, nu 14): regionale Rufflet en "Harpiary" (`claude/fervent-dijkstra-lvtc7o`), regionale Oddish en Gloom (idem) en Vileplume (`claude/great-maxwell-bgon7h`); hun `af/`-mappen zijn naar deze branch gehaald.
+- Spooktrein fase 1 (`spooktrein_fase1/af/`, van `claude/cool-lovelace-5vjif4`, Steel; Jordi 21 nov: "die is allang goedgekeurd") op het vel en in de stand van zaken.
+- Werknaam: spooktrein fase 2 heet **Wagogogon** (Jordi, 21 nov); op het vel, in POKEMON.md en CLAUDE.md.
+- Llamauler: opgeknapte sprite r7 (19 nov) naar `lama/fase2/af/` (Jordi, 21 nov: "r7 akkoord, zet maar op het vel"); oude in `af/oud_voor_gemini/`; op het vel.
+- Sessieprompt voor de mug (vlieglijn fase 2) in `docs/concept/sprites/vlieglijn_fase2/SESSIE_PROMPT.md`.

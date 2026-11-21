@@ -2429,3 +2429,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.582] - Onweerswolk-Swablu-lijn: eerste besluiten
 - Jordi: Altaria Electric/Dragon, geen Zuid-Amerikaanse link, Alola-aanpak (anders maar herkenbaar), Swablu in een pose zoals zijn bijlage maar wakker, Altaria in een woeste donderwolk met blauwe statische schokken. Citaten in `IDEEEN.md`.
+
+### [v0.0.583] - Onweerswolk-Swablu-lijn: wolken, kleur en type
+- Jordi koos: Swablu Electric/Flying, lijfkleur A (dieper blauw, leigrijze wolk), nieuwsgierige Swablu, static vonkjes in en op de wolk. Wolkvoorstellen (cumulus congestus / cumulonimbus met aambeeld) in `IDEEEN.md`.

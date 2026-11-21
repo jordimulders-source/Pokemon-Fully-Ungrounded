@@ -2547,3 +2547,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.612] - Onweerswolk-Altaria: frontsprite r5 (vleugels)
 - Alleen vleugels (89 px): kap per modelbol (links 6, rechts 5), alpha links 2 px (`altaria/sprite_r5/NOTITIES.md`). Eindkeuring loopt.
+
+### [v0.0.613] - Onweerswolk-Altaria: eindkeuring r5
+- FAIL: kop/ogen/snavel goed (bevroren); korrel, kuifpixels, static 2 px dik, onderste bol te licht, lijf/rechtervleugel als platen met rechte naden. MOETEN 1-6 als pixellijst toegepast op `proef_eindkeuring.png` (94 px); MOET 6b (bollen in lijf en rechtervleugel) naar een verse maker (`altaria/sprite_r5/EINDKEURING.md`).

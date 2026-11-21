@@ -7,7 +7,7 @@ Design a new form of the Pokémon ORICORIO: CUMBIA STYLE, from the Caribbean coa
 It is a new dance style of ORICORIO. The attached image shows the 4 existing Oricorio styles (Baile, Pom-Pom, Pa'u, Sensu): keep exactly the same small songbird body, short neck, pink beak, thin pink legs with toes and the half-closed sleepy eye. Only the plumage changes: the feathers themselves ARE the dance costume (like Baile's feathers are a flamenco dress), not clothing worn over the bird. Do not copy one of the 4 existing styles.
 
 WHAT IT IS
-A cumbia dancer made of feathers: the lower body feathers form a very wide, ruffled skirt like the cumbia pollera, with layered ruffles that look like waves, because it is Water type. Blue and white, with a few bright colored ruffle edges. A flower-like crest on its head.
+A cumbia dancer made of feathers: the lower body feathers form a very wide, ruffled skirt like the cumbia pollera, with layered ruffles that look like waves, because it is Water type. MAINLY BLUE (the Water type color), with white and a few bright colored ruffle edges as accents. A flower-like crest on its head.
 
 POSE
 Cumbia: small steps with the feet close together, the wing tips hold out the edges of the wide skirt and swing it, like a dancer swirling her pollera.

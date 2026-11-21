@@ -7,7 +7,7 @@ Design a new form of the Pokémon ORICORIO: SAMBA STYLE, from the carnival of Ri
 It is a new dance style of ORICORIO. The attached image shows the 4 existing Oricorio styles (Baile, Pom-Pom, Pa'u, Sensu): keep exactly the same small songbird body, short neck, pink beak, thin pink legs with toes and the half-closed sleepy eye. Only the plumage changes: the feathers themselves ARE the dance costume (like Baile's feathers are a flamenco dress), not clothing worn over the bird. Do not copy one of the 4 existing styles.
 
 WHAT IT IS
-A samba carnival dancer made of feathers: green and yellow carnival feathers. A huge fan of long plumes rising behind it like a carnival backpiece, and a tall feathered headdress as its crest. The plumes look like tropical leaves, because it is Grass type. The body feathers are short and shiny like a sequined costume.
+A samba carnival dancer made of feathers: green and yellow carnival feathers, MAINLY GREEN (the Grass type color); yellow only as accent. A huge fan of long plumes rising behind it like a carnival backpiece, and a tall feathered headdress as its crest. The plumes look like tropical leaves, because it is Grass type. The body feathers are short and shiny like a sequined costume.
 
 POSE
 Samba step: standing on the toes of one foot, the other foot lifted, wings raised and spread, the backpiece fanned open.

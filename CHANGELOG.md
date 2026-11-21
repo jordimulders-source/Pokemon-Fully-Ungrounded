@@ -2427,3 +2427,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.581] - Oricorio: drie nieuwe dansen, studie + Gemini-prompts
 - Snelle studie van de vier bestaande Oricorio-vormen (vaste kern: zangvogellijf, roze snavel/poten, slaperig oog; de veren zijn het kostuum; eigen kuif, één kleurfamilie, pose = dansbeweging): `docs/concept/sprites/oricorio_dansen/STUDIE.md` + `bestaande_vormen.png`.
 - Drie Gemini-startprompts (samba Grass, tango Dark, cumbia Water) in `oricorio_dansen/gemini/`.
+
+### [v0.0.582] - Oricorio-dansen: hoofdkleur = typekleur
+- Jordi: hoofdkleur is de kleur die je het meest met het type associeert. Prompts aangescherpt: samba vooral groen, tango vooral zwart, cumbia vooral blauw (rest als accent).

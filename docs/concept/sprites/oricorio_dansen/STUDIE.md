@@ -13,3 +13,5 @@ Besloten: `IDEEEN.md` (29 okt / 9 nov; cueca en marinera niet). Bestaande vormen
 Bijlage bij elke prompt: `bestaande_vormen.png` (benoemd in de prompt, zodat Gemini het lijf houdt maar niet een bestaande vorm kopieert). Per prompt een nieuw gesprek.
 Kenmerken per dans zijn voorstellen van Claude (behalve type, stad en "groene en gele carnavalsveren", "nacht, compadrito met mes en hoed", "Caribische kust"): Jordi beslist.
 De prompts staan in `gemini/PROMPT_samba.md`, `PROMPT_tango.md`, `PROMPT_cumbia.md`.
+
+**Hoofdkleur = de kleur die je het meest met het type associeert** (Jordi, 21 nov: "samba wordt vooral groen"): samba vooral groen, tango vooral zwart, cumbia vooral blauw; andere kleuren alleen als accent.

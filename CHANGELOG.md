@@ -2460,3 +2460,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.592] - Oricorio: tango-maker op model r7, samba prompt r7
 - Tango: maker gestart op Gemini r7 (oog/snavel Pom-Pom, Oricorio-voeten, rode franje). Samba: sprite r1 blijft de beste (r2 hertekend, r3 alleen herkleurd); nieuwe Gemini-prompt r7 met 7 grote gladde veren (om en om geel), losse lichtere kuif, vleugels als één vorm.
+
+### [v0.0.593] - Oricorio samba: prompt r8 (danseres)
+- Naar Jordi's inspiratie (samba-danseres): tooi van pluimen op het hoofd, vleugels als zijvleugels, geen overlap tussen tooi, vleugels en lijf.

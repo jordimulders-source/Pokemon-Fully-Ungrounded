@@ -15,3 +15,4 @@ Model: `model/gemini_r6.png` (Gemini r6, 21 nov). Prompt: `../gemini/PROMPT_samb
 - 21 nov: "oppoetsen doe je met belijning, kleur en schaduw".
 - 21 nov: "niet met een blur tekenen".
 - r3 (21 nov): "Samba is nog steeds r1 de beste, dus daar moeten we even opnieuw gaan overleggen".
+- r7 (Gemini): "hij is niet mooi"; inspiratie: fanart + danseres (`referenties/`); "Dat we het zoals de danseres doen, dan heb je geen overlap".

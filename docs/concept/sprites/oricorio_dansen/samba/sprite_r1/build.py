@@ -1,9 +1,10 @@
-# kaal_11_d1.npy (2x2-blokreductie van het natieve model, elke pixel uit zijn eigen modelblok) -> samba_kls.npy + log per stap.
+# kaal_11.npy (2x2-blokreductie van het natieve model, elke pixel uit zijn eigen modelblok) -> samba_kls.npy + log per stap.
 # Coordinaten hieronder = uitsnede (rij, kolom) van de onderlaag; aan het eind geplaatst in 64x64.
 import numpy as np, json
 from collections import Counter
 from palet import NAMEN, I
-o=np.load('kaal_11_d1.npy'); ys,xs=np.where(o>0); o=o[ys.min():ys.max()+1,xs.min():xs.max()+1].copy()
+import sys
+o=np.load(sys.argv[1] if len(sys.argv)>1 else 'kaal_11geel.npy'); ys,xs=np.where(o>0); o=o[ys.min():ys.max()+1,xs.min():xs.max()+1].copy()
 H,W=o.shape; basis=o.copy(); log={}
 def nb4(y,x):
     for dy,dx in((-1,0),(1,0),(0,-1),(0,1)):
@@ -21,12 +22,13 @@ def comps(mask):
                         if yy is not None and mask[yy,xx] and not seen[yy,xx]: seen[yy,xx]=True; st.append((yy,xx))
                 out.append(pts)
     return out
-GREEN=[I[c] for c in ('G1','G2','G3','G4','G5','G6')]
+GREEN=[I[c] for c in ('G1','G2','G3','G4','G5')]
+LINE=[I['O'],I['L']]
 PINK=[I[c] for c in ('K3','K2','K1','K0')]
-# 0. oogglimp: het witte glimpje viel bij de reductie onder 'achtergrond'; ingesloten transparante pixels -> W (model is daar wit)
+# 0. oogglimp: het witte glimpje viel bij de reductie onder 'achtergrond'; ingesloten transparante pixels in de oogzone -> W (model is daar wit)
 n=0
 for pts in comps(o==0):
-    if not any(a in (0,H-1) or b in (0,W-1) for a,b in pts):
+    if not any(a in (0,H-1) or b in (0,W-1) for a,b in pts) and all(14<=a<=20 and 20<=b<=26 for a,b in pts):
         for a,b in pts: o[a,b]=I['W']; n+=1
 log['0_ingesloten_wit']=n
 # 1. ontkorrelen: groene vulklusters < 3 px -> meest voorkomende groene buur (geel, roze, omlijning bevroren: modeldetail)
@@ -43,7 +45,7 @@ for it in range(3):
 log['1_ontkorrelen']=n
 # 2. losse omlijningspixels (1 px, geen O-buur, niet aan de buitenrand) -> buurvulkleur
 n=0
-for pts in comps(o==I['O']):
+for pts in comps(np.isin(o,LINE)):
     if len(pts)>1: continue
     a,b=pts[0]; nbv=[o[yy,xx] if yy is not None else 0 for yy,xx in nb4(a,b)]
     if 0 in nbv: continue
@@ -54,14 +56,14 @@ log['2_losse_omlijning']=n
 n=0
 for y in range(H):
     for x in range(W):
-        if o[y,x] and o[y,x]!=I['O'] and o[y,x] not in PINK and any(yy is None or o[yy,xx]==0 for yy,xx in nb4(y,x)):
+        if o[y,x] and o[y,x] not in LINE and o[y,x] not in PINK and any(yy is None or o[yy,xx]==0 for yy,xx in nb4(y,x)):
             o[y,x]=I['O']; n+=1
 log['3_buitenrand_dicht']=n
 # 4. snavel (Jordi 21 nov: "controleer ook of de snavel klopt met de 4 bestaande vormen"): modelsnavel = 9x5 px, recht naar links met
 #    hangende punt; alle 4 Gen 3-vormen hebben een korte haaksnavel (5-6 x 6-7). -> modelsnavel weg, Pom-Pom-snavel pixel voor pixel,
 #    verschoven met dezelfde (DY,DX) als het Pom-Pom-oog, zodat oog en snavel onderling exact als bij Pom-Pom staan.
 DY,DX=-3,-11
-SNAVELZONE=[(y,x) for y in range(15,22) for x in range(12,22) if o[y,x] in PINK or (o[y,x]==I['O'] and 16<=y<=20 and 14<=x<=21)]
+SNAVELZONE=[(y,x) for y in range(15,22) for x in range(11,22) if o[y,x] in PINK+[I['Y2']] or (o[y,x]==I['O'] and 16<=y<=20 and 14<=x<=20 and not (y==16 and x>=21))]
 n4=0
 for y,x in SNAVELZONE:
     # wat erachter ligt: links van de kop = verre vleugel (meest voorkomende groene buur), in de kop = kopkleur G1
@@ -89,19 +91,23 @@ for r,d in POM.items():
     for c,v in d.items(): o[r+DY,c+DX]=I[v]; n5+=1
 log['5_oog_model_gewist']=len(OOGZONE); log['5_oog_pompom']=n5
 np.save('voor_selout.npy',o)
-# 6. selout: omlijning aan de lichtkant (transparant boven/links, niet onder/rechts) -> donkere tint van de vulgroep eronder/rechts
-SEL={I['G1']:I['G3'],I['G2']:I['G4'],I['G3']:I['G4'],I['G4']:I['G5'],I['G5']:I['G6'],I['G6']:I['G6'],I['Y1']:I['Y2'],I['Y2']:I['Y2']}
-n=0
+# 6. selout: buitenrandpixel (lijn) met transparant boven/links en niet onder/rechts -> gekleurde selout (groen L, geel Y2, roze K3);
+#    donkergroene modellijn (L) op de buitenrand aan de schaduwkant (transparant onder/rechts) -> zwart
+SEL={**{g:I['L'] for g in GREEN},I['Y1']:I['Y2'],I['Y2']:I['Y2'],I['W']:I['L']}
+n=0; n6b=0
 for y in range(H):
     for x in range(W):
-        if o[y,x]!=I['O']: continue
+        if o[y,x] not in LINE: continue
         up=y==0 or o[y-1,x]==0; lf=x==0 or o[y,x-1]==0
         dn=y==H-1 or o[y+1,x]==0; rt=x==W-1 or o[y,x+1]==0
-        if not (up or lf) or dn or rt: continue
+        if not (up or lf or dn or rt): continue
+        if dn or rt:
+            if o[y,x]==I['L']: o[y,x]=I['O']; n6b+=1
+            continue
         inn=[v for v in ((o[y+1,x] if up else None),(o[y,x+1] if lf else None)) if v is not None and v in SEL]
         if not inn: continue
-        o[y,x]=SEL[inn[0]]; n+=1
-log['6_selout']=n
+        if o[y,x]!=SEL[inn[0]]: o[y,x]=SEL[inn[0]]; n+=1
+log['6_selout']=n; log['6b_L_schaduwkant_zwart']=n6b
 # 7. plaatsen in 64x64: onderkant op rij 61, horizontaal gecentreerd
 full=np.zeros((64,64),int); y0=62-H; x0=(64-W)//2; full[y0:y0+H,x0:x0+W]=o
 np.save('samba_kls.npy',full)

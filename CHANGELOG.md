@@ -2445,3 +2445,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.586] - Dundragoon: Gemini r4, bijsturen r5
 - r4 (`dundragoon/gemini/r4.png`): "hij is te horizontaal en net wat te lang"; "hij mag in een soort vliegpose wel". Bijstuurprompt r5 (`gemini/PROMPT_r5_bijsturen.md`): schuiner en korter, de rest houden.
+
+### [v0.0.587] - Dundragoon: r5 mislukt, gedraaide r4 als posevoorstel
+- r5 (bijsturen): "hij snapt het niet". Claude draaide r4 zelf 15/25/35 graden (`dundragoon/plak/`) als voorstel voor de schuine vliegpose.

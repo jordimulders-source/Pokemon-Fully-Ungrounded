@@ -19,6 +19,12 @@ for cl,grp in ((1,[1]),(2,[2,3,4,5]),(3,[6,7,8]),(4,[10]),(5,[9])):
     m=c==cl
     if m.any(): d=((a[m][:,None,:]-P[grp][None])**2).sum(2); q[m]=np.array(grp)[d.argmin(1)]
 q[st]=10; q[(c==4)&~st]=5
+# r4 (coördinator: "je mag het silhouet aan de vleugelrand aanpassen zodat het de gegolfde bolletjesrand van het MODEL volgt (alpha uit het
+# model met een andere drempel)"): in de vleugelzones telt een spritepixel als figuur bij >= WT van 9 figuurpixels in het model i.p.v. >= 5.
+# Bij een bolletjesrand hebben de randpixels op de bolkruinen een hogere dekking dan die bij de inhammen tussen twee bollen, dus een hogere
+# drempel laat de inhammen open (golf). Static telt daar niet mee als figuur (de boog buiten de rechtervleugel valt weg; vonk links blijft).
+import os; WT=int(os.environ.get('WT','6'))
+def vleugel(X,Y): return 13<=Y<=32 and (6<=X<=21 or (39<=X<=61 and not kuif(X,Y)))
 def kies(Y,X):
     u,v=blok(X,Y); b=q[v:v+3,u:u+3].ravel(); n=lambda k:(b==k).sum(); fig=(b>0).sum()
     w=sum(n(k) for k in WOLK); vi=sum(n(k) for k in (6,7,8,9))
@@ -28,7 +34,9 @@ def kies(Y,X):
         if n(1)>=4: return 1
         t={6:n(6)+n(2)+n(3),7:n(7)+n(4),8:n(8)+n(9)+n(5)}; m=max(t.values())
         return [k for k in (8,7,6) if t[k]==m][0]
-    if n(10)>=2: return 10
+    if vleugel(X,Y):
+        if fig<WT: return 0
+    elif n(10)>=2: return 10
     if fig<5: return 0
     if n(1)>=3: return 1
     if n(9)>=2: return 9
@@ -53,6 +61,23 @@ for i in range(1,n+1):
 lab,n=label(o>0,acht=True)                                     # losse figuurpixels (geen 8-buur) weg
 for i in range(1,n+1):
     if (lab==i).sum()==1: o[lab==i]=0
+# r4 kuif (coördinator: "Houd twee gladde hoofdstrengen ... per streng alleen de 2-3 grootste vorken uit het model, elke vork minstens 2 px
+# lang en vast aan de streng. Geen losse pixels."): in de kuifzone (boven de kop, Y<=17) twijgjes van 1 px (eindpixel waarvan de enige buur
+# een vertakkingspunt is) en losse groepjes < 3 px weg. Alleen weghalen, niets bijzetten.
+KZB=np.zeros((64,64),bool); KZB[:18,22:56]=True; KZB[18:22,34:52]=True
+def buren(m,Y,X): return sum(m[Y+dy,X+dx] for dy in (-1,0,1) for dx in (-1,0,1) if dy or dx)
+weg=[]
+for _ in range(2):
+    m=o>0
+    for Y,X in zip(*np.where(m&KZB)):
+        if Y>=18 and o[Y,X] not in (1,6,7,8,9): continue
+        if buren(m,Y,X)==1:
+            (ny,nx),=[(Y+dy,X+dx) for dy in (-1,0,1) for dx in (-1,0,1) if (dy or dx) and m[Y+dy,X+dx]]
+            if buren(m,ny,nx)>=3: o[Y,X]=0; weg.append((X,Y))
+lab,n=label((o>0)&KZB,acht=True)
+for i in range(1,n+1):
+    if (lab==i).sum()<3: o[lab==i]=0; weg+= [(X,Y) for Y,X in zip(*np.where(lab==i))]
+KUIFWEG=weg
 opslaan(o,'sprite_r4/basis_kop15.png')
 if __name__=='__main__':
     yy,xx=np.where(o>0); print('bbox x%d-%d y%d-%d, %d px'%(xx.min(),xx.max(),yy.min(),yy.max(),(o>0).sum())); toon(o,2,30,14,56)

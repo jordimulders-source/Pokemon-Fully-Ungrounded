@@ -12,11 +12,11 @@ import basis as B; from basis import blok
 from PIL import Image
 UIT='sprite_r4'
 # 0 transp | 1 pupil | wolk 2 selout L55, 3 donker L73, 4 midden L95, 5 licht L123, 6 hooglicht L178 (dicht bij de modeltonen L44/72/122/186; selout lichter) |
-# violet 7 selout L53, 8 donker L78, 9 midden L112, 10 licht L156 | 11 static (eigen elektrisch blauw L191: even licht als het hooglicht maar veel verzadigder) | 12 glans
+# violet 7 selout L53, 8 donker L78, 9 midden L112, 10 licht L156 | 11 static (r4: (150,206,230) L190, tussen het wolkhooglicht en het r3-cyaan in: subtiel lichtblauw) | 12 glans
 PAL=[(152,208,160),(16,18,40),
      (34,58,92),(46,80,112),(62,104,138),(84,134,166),(136,192,214),
      (44,44,116),(66,68,160),(98,100,210),(144,146,236),
-     (120,216,248),(240,244,255)]
+     (150,206,230),(240,244,255)]
 G.PAL=PAL
 WS,WD,WM,WL,WH=2,3,4,5,6; VS,VD,VM,VL=7,8,9,10; ST,GL,PU=11,12,1
 VULW=[WD,WM,WL,WH]; VULV=[VD,VM,VL]
@@ -42,6 +42,7 @@ import os; KORREL=int(os.environ.get('KORREL','4')); SMIN=int(os.environ.get('SM
 KW=float(os.environ.get('KW','2')); DW=float(os.environ.get('DW','1.4'))
 LAAG=int(os.environ.get('LAAG','2')); LT=int(os.environ.get('LT','5')); HT=int(os.environ.get('HT','4')); DT=int(os.environ.get('DT','4'))
 GEM=int(os.environ.get('GEM','1')); TD=float(os.environ.get('TD','62'))
+LTV=int(os.environ.get('LTV','5')); KH=int(os.environ.get('KH','8'))
 KMIN=2   # >=2 zwarte modelpixels in het blok = lijnkandidaat (alleen als hij doorloopt, zie stap 2)
 # --- 1. modus per blok ---
 o=np.zeros((64,64),int); K=np.zeros((64,64),bool)
@@ -87,7 +88,7 @@ if LAAG==2:
         u,v=blok(X,Y); b=lc[v:v+3,u:u+3].ravel(); b=b[b>0]
         if len(b)==0: continue
         cnt=np.bincount(b); k=cnt.argmax(); tot=len(b)
-        if tot>=LT: own[Y,X]=k; cov[Y,X]=cnt[k]
+        if tot>=(LTV if B.vleugel(X,Y) else LT): own[Y,X]=k; cov[Y,X]=cnt[k]   # r4: vleugels strenger (lichte kappen alleen op de bollen)
     for Y,X in zip(*np.where(own>0)):
         for dy,dx in N4:
             k2=own[Y+dy,X+dx]
@@ -142,11 +143,23 @@ stap('ontkorrelen',v,o)
 # zodat een grote modelkap geen vlak hooglichtblok is (Gen 3: hooglicht linksboven, kap daaronder) ---
 v=o.copy(); kap=np.isin(o,[WL,WH])
 for Y,X in zip(*np.where(o==WH)):
-    if any(not kap[Y+dy,X+dx] for dy,dx in ((1,0),(0,1),(1,1),(2,0),(2,1))): o[Y,X]=WL
+    if any(not kap[Y+dy,X+dx] for dy,dx in ((1,0),(0,1),(1,1))): o[Y,X]=WL   # r4: 1 px rand rechtsonder (2 px liet kleine kappen zonder hooglicht)
 lab,n=label(o==WH,acht=False)
 for i in range(1,n+1):
     if (lab==i).sum()<2: o[lab==i]=WL
 stap('kapvolume',v,o)
+# r4 kappen ronder (coördinator: "Kappen ronder (3 tinten met een tussenstap aan de rand, geen hoekige vlakken)"): een kappixel op een bolle
+# hoek (boven/onder én links/rechts geen kap, ook de diagonaal niet) wordt middentint, de tussenstap naar het lijf; hooglicht dat daardoor aan
+# de kaprand komt wordt licht (hooglicht | licht | midden van binnen naar buiten)
+v=o.copy(); kap=np.isin(o,[WL,WH]); lab,n=label(kap,acht=False)
+for Y,X in zip(*np.where(kap)):
+    if (lab==lab[Y,X]).sum()<KH: continue
+    for dy,dx in ((-1,-1),(-1,1),(1,-1),(1,1)):
+        if not kap[Y+dy,X] and not kap[Y,X+dx] and not kap[Y+dy,X+dx]: o[Y,X]=WM; break
+kap=np.isin(o,[WL,WH])
+for Y,X in zip(*np.where(o==WH)):
+    if any(not kap[Y+dy,X+dx] for dy,dx in ((1,0),(0,1))): o[Y,X]=WL
+stap('kaphoeken',v,o)
 # onderbogen (MOET 2: "donkere onderboog per bol"): waar in de reductie een lichtere bol (midden/licht) direct boven een donker dal ligt,
 # wordt de bovenste dalpixel wolk-selout; alleen stukken >= ONB px (gebogen lijnen langs de onderkant van een modelbol, geen stippen)
 ONB=int(os.environ.get('ONB','3'))
@@ -178,6 +191,27 @@ for i in range(1,n+1):
     m=lab==i; xs=np.where(m)[1]
     vonk=xs.max()<=6 or xs.min()>=58          # de losse boogjes naast de vleugels (model) mogen korter
     if m.sum()<(4 if vonk else SMIN): S[m]=False   # Keuring MOET 6: weinig, langere lijnen -> alleen de langste modellijnen
+# r4 (coördinator: "lijnen 1 px dik, ... alleen de langere modelstukken"): uitdunnen tot 1 px (Zhang-Suen) en daarna weer stukken < SMIN weg
+def dun(m):
+    m=m.copy(); ver=True
+    while ver:
+        ver=False
+        for st in (0,1):
+            weg=[]
+            for Y,X in zip(*np.where(m)):
+                P=[m[Y-1,X],m[Y-1,X+1],m[Y,X+1],m[Y+1,X+1],m[Y+1,X],m[Y+1,X-1],m[Y,X-1],m[Y-1,X-1]]
+                b=sum(P); a=sum((not P[i]) and P[(i+1)%8] for i in range(8))
+                if not(2<=b<=6 and a==1): continue
+                if st==0 and not(P[0] and P[2] and P[4]) and not(P[2] and P[4] and P[6]): weg.append((Y,X))
+                if st==1 and not(P[0] and P[2] and P[6]) and not(P[0] and P[4] and P[6]): weg.append((Y,X))
+            for p in weg: m[p]=False
+            ver|=bool(weg)
+    return m
+S=dun(S)
+lab,n=label(S,acht=True)
+for i in range(1,n+1):
+    m=lab==i; xs=np.where(m)[1]
+    if m.sum()<(4 if xs.max()<=6 else SMIN): S[m]=False
 STAT=S.copy()
 # --- 5. kuif (MOET 5): vorm = silhouet van de reductie (model), alleen opnieuw ingekleurd: strengen midden-violet, lichtviolet alleen
 #        binnenin (pixel zonder achtergrondbuur), selout alleen aan de onderkant/schaduwkant (achtergrond onder/rechts) als de streng daar >= 2 dik is;
@@ -196,6 +230,15 @@ stap('kuif',v,o)
 v=o.copy(); uit=[]
 for Y,X in zip(*np.where(fig&~KZ)):
     if any(not fig[Y+dy,X+dx] for dy,dx in N4): uit.append((Y,X,WS if o[Y,X] in VULW+[WS] else VS))
+# r4: waar de buitenlijn een kap opeet (de modelkap ligt tegen de modelomlijning), schuift de kaptint 1 px naar binnen (onder, of opzij
+# van de achtergrond af) als daar lijf (midden/donker) ligt; zo houden de vleugelbollen hun lichte kap onder de lijn
+oud=o.copy(); rand=set((Y,X) for Y,X,_ in uit)
+for Y,X,k in uit:
+    if oud[Y,X] not in (WL,WH): continue
+    for dy,dx in ((1,0),(0,1),(0,-1)):
+        if fig[Y-dy,X-dx] and (dy,dx)!=(1,0): continue      # opzij alleen weg van de achtergrond
+        yy,xx=Y+dy,X+dx
+        if (yy,xx) not in rand and o[yy,xx] in (WM,WD): o[yy,xx]=oud[Y,X]; break
 for Y,X,k in uit: o[Y,X]=k
 stap('buitenlijn',v,o)
 # --- 7. static op de modelplekken (stap 4). Op de buitenrand alleen de vonken buiten de vleugels (links x3-5, rechts x59-61: in het model
@@ -203,7 +246,7 @@ stap('buitenlijn',v,o)
 v=o.copy()
 for Y,X in zip(*np.where(STAT&fig)):
     rand=any(not fig[Y+dy,X+dx] for dy,dx in N4)
-    if rand and not (X<=5 or X>=59): continue
+    if rand and not X<=5: continue          # r4: alleen de vonk links buiten de vleugel op de rand; de boog rechts is weg
     o[Y,X]=ST
 lab,n=label(o==ST,acht=True)               # wat de buitenlijn heeft opgesplitst: stukjes < 4 px terug naar de wolktint eronder
 for i in range(1,n+1):
@@ -264,5 +307,5 @@ for Y,X in zip(*np.where(o==WS)):
 o[(np.arange(64)[:,None]>=41)&np.isin(o,VULV+[VS])]=WS     # halspuntje onder de wolkrand (1 px) hoort bij de wolklijn
 stap('halsrand',v,o)
 if __name__=='__main__':
-    G.opslaan(o,UIT+'/altaria_r3.png'); print(tel); toon(o)
-    im=G.rgb(o,(255,255,255)); im.resize((512,512),Image.NEAREST).save(UIT+'/altaria_r3_8x.png')
+    G.opslaan(o,UIT+'/altaria_r4.png'); print(tel); toon(o)
+    im=G.rgb(o,(255,255,255)); im.resize((512,512),Image.NEAREST).save(UIT+'/altaria_r4_8x.png')

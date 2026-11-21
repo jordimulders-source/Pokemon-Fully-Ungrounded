@@ -2541,3 +2541,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.610] - Onweerswolk-Altaria: frontsprite r3
 - Op het kop x1,5-model (`altaria/sprite_r3/`): beide ogen lezen op 1x, geen zwart/navy in de lijnen, ronde kappen per bol. Claude: static te fel, kuif rommelig, vleugeltoppen te licht/vlak → r4. Nog niet aan Jordi getoond.
+
+### [v0.0.611] - Onweerswolk-Altaria: frontsprite r4
+- Static subtieler (150,206,230; 6 stukken, 76 px), kuif als twee strengen, vleugels donkerder; silhouet -16 px (`altaria/sprite_r4/NOTITIES.md`). Claude: vleugels lezen nog als vlakke massa met trapjesrand → r5 alleen vleugels.

@@ -83,3 +83,24 @@ def zet(lijst,naam):
     v=o.copy()
     for X,Y,k in lijst: o[Y,X]=k
     stap(naam,v)
+# --- 6. r1-reparaties bewaren die stap 1-4 overschreven (oog, kruin, snavelrand, staartje: gemeten modelplekken uit r1) ---
+R1REP=[(28,27),(28,28),(29,28),(28,29),(29,29),(27,28),(28,24),(21,29),(21,30)]+[(x,46) for x in range(45,49)]
+zet([(X,Y,start[Y,X]) for X,Y in R1REP],'r1-reparaties terug')
+# staartje (45-48,45): model natief L~85 = zelfde band als de onderwolk eromheen -> wolk diep (r1: donker)
+zet([(x,45,2) for x in range(45,49)],'staartje toon')
+# --- 7. snavelbovenrand: drie tinten door elkaar (model: dunne donkere rand + lichtgrijze snaveltop, natief rij 50-51) -> één tint wolk midden, zoals r1 ---
+zet([(22,27,4),(23,27,4),(24,27,4)],'snavelbovenrand')
+# --- 8. hooglicht op de kop (Gen 3, licht linksboven; model is daar vlak midden): de 3 lichte modelpixels (26,24) (25,25) (26,25) uitgebreid tot een klein vlak op de bolling ---
+zet([(27,25,9),(25,26,9),(26,26,9)],'hooglicht kop')
+# --- 9. vonken feller, minder oker: oker alleen op de buitenhoek rechtsonder (achtergrond rechts én onder), lichtgeel waar de pixel niet aan
+#        lucht links/boven grenst (geen lichte buitenrand), anders fel geel ---
+v=o.copy(); fg=o>0
+for Y,X in zip(*np.where(np.isin(o,list(GEEL)))):
+    bL=not fg[Y,X-1]; bR=not fg[Y,X+1]; bU=not fg[Y-1,X]; bD=not fg[Y+1,X]
+    o[Y,X]=10 if (bR and bD) else 11 if (bL or bU) else 12
+stap('vonken feller',v)
+G.opslaan(o,'sprite_r2/swablu_r2.png')
+from PIL import Image as I
+im=G.rgb(o,(255,255,255)).resize((512,512),I.NEAREST); im.save('sprite_r2/swablu_r2_8x.png')
+print('stappen',tel); print('anders dan r1: %d px'%(o!=start).sum(),'| alpha-diff met r1:',int(((o>0)!=(start>0)).sum()),'| kleuren excl. transp.',len(set(o.ravel()))-1)
+G.toon(o,15,50,8,52)

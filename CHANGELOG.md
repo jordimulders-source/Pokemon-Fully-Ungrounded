@@ -2574,3 +2574,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.621] - Onweerswolk-Altaria: r11 grotere kop (A/B)
 - Jordi: "ik denk dat de kop nog wat groter moet, want de vorm is echt raar". A = Gen 3-Altaria-kop op 100% (17x12), B = ±117% (20x14); kuif hoefde niet te schuiven; pluis cyaanwit met wolk-selout (`altaria/sprite_r11/NOTITIES.md`).
+
+### [v0.0.622] - Onweerswolk-Altaria: r12 kop+hals 2 px rechts
+- Jordi: "a is perfect, zou je alleen het hele hoofd + nek 2 pixels naar rechts kunnen schuiven en mij dan een vergelijking kunnen laten zien?". Kop+hals als laag verschoven (niets hertekend); K1 kuif blijft, K2 kuif mee; vrijgekomen pixels = r9-wolk of wolkband ernaast (`altaria/sprite_r12/`).

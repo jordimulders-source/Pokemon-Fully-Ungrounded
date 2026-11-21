@@ -26,3 +26,4 @@ Lijn: **vlieg → mug, 2 fases** (Jordi, 20 nov). Mug = **Poison/Electric** (Jor
 - Jordi (21 nov): "ja r1 is het model, 56×63 akkoord" → sprite r1 (maker).
 - Sprite r1 (maker, 21 nov): `sprite_r1/mug_r1.png`; 202/1361 px afwijkend van de kale reductie (silhouet 0), 5 poten in het model (niets toegevoegd). Claude: trouw goed; ogen lezen op 1× nog niet als \ /.
 - Keuring r1 (verse keurder): BIJNA; MOET: linkeroog leest als | i.p.v. \ (cel 16,24), om-en-om-rand linkervleugel, gele knie zonder lijn; MAG: achterlijf volume, 2 losse pixels. Model heeft 3 zichtbare vleugels en 5 poten. `keuring_r1/KEURING.md`.
+- Sprite r2 (maker, 21 nov): keurdersreparaties, 10 px t.o.v. r1; verre oog variant B (3 px, schuine band) → leest \ /; MAG 1 en 3 niet gedaan (model spreekt ze tegen).

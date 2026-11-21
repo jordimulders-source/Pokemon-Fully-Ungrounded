@@ -31,3 +31,4 @@ Lijn: **vlieg → mug, 2 fases** (Jordi, 20 nov). Mug = **Poison/Electric** (Jor
 - Jordi (21 nov) over r2: "en hij is nog wat blurry"
 - Jordi (21 nov): "maar je hoeft niks aan te passen verder behalve kleur, schaduw en belijning" · "de vorm is perfect" → silhouet/vorm van r2 bevroren (alpha-diff 0). · "niks opnieuw tekenen"
 - Eindkeuring r2 (verse DFC-keurder): BIJNA → MOET arm/poot 8 px, scherp 14 px, volume achterlijf 13 px; MAG grijze selout vleugels/koepel 72 px; alpha-diff 0. Toegepast (MOET+MAG) als `sprite_r3/mug_r3.png`.
+- Jordi (21 nov) over r3: "ja hij is nog blurry, verschil tussen poot en arm is net wat beter, maar nog steeds lastig om het verschil te zien"

@@ -29,3 +29,4 @@
 - Jordi bij r3: "nee we moeten een nieuwe prompt/gesprek"; "het is teveel dragonite, maar je prompt zat goed in de richting" (r3 = prompt r2 + anti-Dragonite + boor, nieuw gesprek).
 - r3 (`gemini/r3.png`), Jordi: "staart, vleugels, hoofd goed, maar wil geen slang".
 - Keuzes na r3: lijf **Dunsparce-romp, dik** (Dunsparces worstvormige romp, veel dikker en zwaarder, op twee pootjes, geen lange slangenhals); aanpak **nieuw gesprek, alleen tekst**; "al mag de drill naar verhouding nog wat groter". Prompt r4: `gemini/PROMPT_r4.md` (hoofd, vleugels, staart beschreven zoals in r3).
+- r4 (`gemini/r4.png`), Jordi: "hij is te horizontaal en net wat te lang". Bijstuurprompt r5 in hetzelfde gesprek: `gemini/PROMPT_r5_bijsturen.md`.

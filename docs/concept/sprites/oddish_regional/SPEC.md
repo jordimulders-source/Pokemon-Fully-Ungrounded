@@ -59,3 +59,4 @@ Op r11: "veel beter, het rondje in het midden van de anemoon moet alleen consist
 Na r11: "wat betreft de voorste anemonen die in de achterste overlopen, kan je ook fixen met kleurtinten, ik vind juist dat de achterste niet voldoende overlapt met de meest linkse, daar zit een gaatje tussen".
 Over het gaatje: "nu is dat in het model zelf ook niet mooi gelukt" (afwijken van het model mag hier om het gaatje te dichten).
 Voorstel Jordi: "dus ik stel voor dat je die achterste in zijn geheel een beetje naar links schuift" (achterste = middelste bovenaan, T, tegen het gaatje met de linker anemoon L).
+Op r12: "nee dit is prima, op wat details na, het gat linksbovenin tussen 2 anemonen in moet op een natuurlijke manier dicht, de zwarte lijnen tussen anemonen moet natuurlijker en de poten zien er niet mooi uit, misschien moeten we die 1 pixel dikker maken?"

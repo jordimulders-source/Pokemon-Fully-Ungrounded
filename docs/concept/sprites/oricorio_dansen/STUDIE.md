@@ -28,3 +28,5 @@ De prompts staan in `gemini/PROMPT_samba.md`, `PROMPT_tango.md`, `PROMPT_cumbia.
 
 **Tango (21 nov):** Jordi: "voor tango wil ik veel meer naar een gracieuze vrouwelijke look, met een typische jurk en haarstijl die daarbij past". r5: compadrito, hoed en mes eruit; tangojurk (voorstel Claude: strak, lang, hoge split, franjezoom) en strakke lage knot; rechtop lijf en blij Pom-Pom-oog van samba r5 (oogkeuze niet door Jordi gemaakt, voorstel Claude).
 **Samba r5 (21 nov):** oog en lijf raak. Jordi: "doe nog maar 1 samba prompt ook" → r6: lange puntige bladveren, waaier kleiner en donkerder dan het lijf.
+
+**Tango r5 (21 nov):** "stuk beter, alleen de benen zijn wel erg menselijk" (Jordi).

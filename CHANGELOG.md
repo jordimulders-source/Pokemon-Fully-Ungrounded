@@ -2565,3 +2565,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.618] - Onweerswolk-Altaria: eindkeuring r8 → r9
 - Eindkeuring r8: PASS na 16 px (14 static-hoekpixels, 1 kuifglans, 1 wolkkap; `altaria/sprite_r8/EINDKEURING.md`). r9 = die proefkopie (`altaria/sprite_r9/`). Aan Jordi getoond.
+
+### [v0.0.619] - Onweerswolk-Altaria: gezicht naar echte Altaria
+- Jordi over r9: wolken goed, gezicht niet (linksonder valt weg, linkeroog slecht zichtbaar, rechte rechterkant); gezicht mag van het model afwijken, baseren op de echte Altaria. r10: alleen de kop.

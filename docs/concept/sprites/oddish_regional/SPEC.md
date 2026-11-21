@@ -57,3 +57,23 @@
 - r3 (lava: donkere randen, felle kruisingen, schaduwkant een tint donkerder), Jordi (20 nov): "ja fenomenaal werk wat betreft die lava" → lava in de brok bevroren.
 - r3 → Jordi: "ja graag wat meer bolling, schaduw, tinten etc, doe dat in een eindkeuring" → r4. Jordi vroeg ook of dit een duidelijke Water/Fire is: "Dat kunnen we wel wijsmaken toch, dat die onderwater leeft" (Claude: dieprood = diepzeekleur, vinnen, kelp, lavabrok = pillow lava).
 - r4 → Jordi: "commit en push naar main" → `af/gloom.png`.
+
+## Vileplume-sprite: feedback Jordi (20 nov, op r3)
+"best al een aardige start, het moet wat netter afgewerkt worden. Je mag qua gelaat afwerken van het model, het zou leuk zijn als we de ogen wel goed kunnen zien. Linkerpoot is te recht en de anemonen zijn niet allemaal even netjes"
+"de krater mag wat netter rond"
+Op r4: "nu neemt wel de definitie af idd". Linkerpoot = links op het scherm, moet "schuiner" (hele poot schuiner, meer naar buiten; Jordi koos uit opties).
+Op r7: "Het gezicht is nog steeds niet zichtbaar, de poot misschien toch maar het model na maken met de knik erin. De voorste twee anemonen zijn nu veel te simpel. In de meest linkse zijn de achterste 3 in elk geval bijna goed, alleen de cirkel in het midden is wat slordig". Verduidelijkt (keuzes): cirkel = alle mondjes; voorste twee = zoals de achterste 3.
+Gezicht (Jordi, op r8-varianten): "neem gewoon de vileplume mond en ogen over en doe ze ver genoeg uit elkaar".
+Jordi: "we hadden het nog erover dat het gezicht het ALLERBELANGRIJKSTE is".
+"de ogen dus maar net zichtbaar" = net onder de kroon uit, zoals Vileplume in de game (Jordi koos).
+Op r9: "r3 was voor de voorste anemonen het beste, daarna eigenlijk alleen nog maar slechter geworden".
+Op r10: "wat er bij de voorste 2 foutgaat is niet zo zeer de vorm van de anemonen, maar meer de ronde vorm erom heen die er niet goed bij past, daarnaast zijn de cirkels erin ook nog niet goed. De linkerpoot mag nog iets meer een knievorm hebben, ogen moeten we een andere kleur geven zodat het niet samenvoegt met de anemonen". Keuzes: omtrek voorste 2 = zoals het model; mondjes voorste 2 = zoals het model; ogen = "een kleur die goed contrast geeft".
+Op r11: "veel beter, het rondje in het midden van de anemoon moet alleen consistenter, ogen van b zijn goed alleen moet je nog met kleurtinten werken, zoals bij de oorspronkelijke vileplume wss met tinten rood gewerkt is".
+Na r11: "wat betreft de voorste anemonen die in de achterste overlopen, kan je ook fixen met kleurtinten, ik vind juist dat de achterste niet voldoende overlapt met de meest linkse, daar zit een gaatje tussen".
+Over het gaatje: "nu is dat in het model zelf ook niet mooi gelukt" (afwijken van het model mag hier om het gaatje te dichten).
+Voorstel Jordi: "dus ik stel voor dat je die achterste in zijn geheel een beetje naar links schuift" (achterste = middelste bovenaan, T, tegen het gaatje met de linker anemoon L).
+Op r12: "nee dit is prima, op wat details na, het gat linksbovenin tussen 2 anemonen in moet op een natuurlijke manier dicht, de zwarte lijnen tussen anemonen moet natuurlijker en de poten zien er niet mooi uit, misschien moeten we die 1 pixel dikker maken?"
+Op r13 (welke lijn): "zwarte lijn tussen middenvoor en rechtsvoor" (naad VL|VR).
+Dikke poten: "poten zijn niet beter nee" (dunne poten blijven; Jordi vond ze eerder "niet mooi", dat punt staat nog open).
+Poten: "ga maar terug naar de vorige, zoveeel gespiegeled naar moddel" (dunne poten, zo veel mogelijk naar het model).
+Op r17: "nee doe even beter je best", "laat een maker hiernaar kijken ipv mij voor elke kleine stap", "het moet consistent zijn", "objectieve agent". (Pootkleur: "tussen deze 2 in" = tussen A gemeten modelkleuren en B r16.)

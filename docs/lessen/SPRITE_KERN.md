@@ -1,5 +1,7 @@
 > **Gemini-model namaken = NIET TEKENEN (Jordi, 15 nov).** Onderlaag is het verkleinde model; de maker tekent geen schotsen, naden, pieken, kernen of strepen zelf. Ook reparatie-opdrachten van Claude/keurders zeggen nooit "teken" of "opnieuw met de hand", maar "neem over uit het model".
 
+**Het gezicht is het ALLERBELANGRIJKSTE (Jordi, 20 nov).** Geen eigen gezichtvarianten verzinnen (glans, andere oogvormen): mag het gezicht afwijken van het model, neem dan het gezicht van een bestaande Gen 3-sprite 1-op-1 over (Vileplume: "neem gewoon de vileplume mond en ogen over en doe ze ver genoeg uit elkaar").
+
 # SPRITE-KERN: de enige pagina die je vóór spritewerk MOET lezen
 Samengevat uit alle spritelessen (5 nov, Jordi: "vat de lessen echt enorm samen ... hij vergeet heel vaak lessen mee te nemen"). Geef dit bestand mee aan **elke** sprite-agent, ook bij kleine reparaties. Al het andere in `docs/lessen/` is naslag.
 

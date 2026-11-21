@@ -2441,3 +2441,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.586] - Onweerswolk-Swablu-lijn: Gemini r1, Altaria-prompt r2
 - Swablu r1: Jordi "ziet er al goed uit". Altaria r1 nog niet: moet in de wolk zitten, kleur en static richting fan art. Rondes, referentie en prompt r2 in `docs/concept/sprites/swablu_regional/`.
+
+### [v0.0.587] - Onweerswolk-Swablu: frontsprite r1
+- Jordi over Swablu Gemini r1: "ik vind bij swablu de issues geen issue, ga maar bouwen". Model bevroren (`swablu_regional/model/`), SPEC. Maker r1: natief raster (cel 4,27 px) → reductie 0,42×, figuur 38×34 (864 px, game-Swablu 785 px), 113 px technisch opgeschoond t.o.v. de kale reductie, niets bijgetekend (`sprite_r1/NOTITIES.md`).

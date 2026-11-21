@@ -23,5 +23,4 @@ for j,y in enumerate(ys):
         y0,y1=int(max(0,round(y-1))),int(min(H,round(y+1)+1)); x0,x1=int(max(0,round(x-1))),int(min(W,round(x+1)+1))
         out[j,i]=np.median(a[y0:y1,x0:x1].reshape(-1,3),axis=0)
 Image.fromarray(out).save(OUT)
-np.save('gereedschap/raster.npy',np.array([px,phx,py,phy]))
 m=out.min(2)<215; yy,xx=np.where(m); print('natief',out.shape[1],out.shape[0],'bbox x',xx.min(),xx.max(),'y',yy.min(),yy.max(),'figuur',m.sum())

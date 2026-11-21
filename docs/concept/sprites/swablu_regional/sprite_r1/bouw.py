@@ -25,7 +25,8 @@ for Y in range(1,63):
         if f[1:].sum()<0.5: continue                      # minder dan een halve pixel figuur = achtergrond
         if f[4]>=TG: o[Y,X]=toon_van(GEEL,C[Y,X,4]/f[4]); continue      # dunne vonk wint
         if f[1]>=TK or (f[1]>=TKR and kam(Y,X)): o[Y,X]=1; continue     # dunne zwarte lijn wint (drempel, of rug van de lijn)
-        if f[5]>=TW: o[Y,X]=toon_van(WIT,C[Y,X,5]/f[5]); continue
+        if f[5]>=TW:   # wit (L>=205): in snavel en oog snavelwit/glans, elders is het het lichtste wolkwit (wolkhooglicht)
+            o[Y,X]=toon_van(WIT,C[Y,X,5]/f[5]) if (21<=X<=26 and 27<=Y<=32) or (27<=X<=29 and 27<=Y<=29) else 7; continue
         g=2+int(np.argmax(f[2:4]))
         o[Y,X]=toon_van(VOGEL if g==2 else WOLK,C[Y,X,g]/f[g])
 kaal=o.copy(); opslaan(kaal,UIT+'/kaal.png')
@@ -65,7 +66,7 @@ def rand(o):
         if not(bL or bR or bU or bD): continue
         if bR or bD: n=1
         elif k in VOGEL: n=8
-        elif k in WOLK: n=4 if k>=5 else 2
+        elif k in WOLK: n=4 if any(o[Y+dy,X+dx] in (5,6,7) for dy,dx in N4) else 2   # lichte wolk -> midden, donkere wolk -> selout
         else: n=k
         if n!=k: uit.append((Y,X,n))
     for Y,X,n in uit: o[Y,X]=n
@@ -93,4 +94,16 @@ zet([(25,19,9),(26,20,9),(26,21,9),(27,22,9),(27,23,9),     # linker spriet slat
      (31,20,8),(30,21,8),                                      # rechter spriet slate (v9, v7), rand eronder blijft zwart
      (31,21,1),                                                # K4: zwarte onderrand rechter spriet (was lucht -> gat in de lijn)
      (33,18,8),(34,18,0)],'voelsprieten')                     # spriettop onder de vonk is slate (model C/E/D), (34,18) w3Y2 = randje -> lucht
-if __name__=='__main__' and 'stop7' in sys.argv: opsl(); toon(o,14,36,18,42); sys.exit()
+# --- 8. kop: de rug-van-de-lijnregel zette op twee plekken zwart waar het model kop/spriet heeft ---
+zet([(28,24,9),          # K2v8: kopkruin onder de sprieten is slate in het model
+     (29,22,8)],'kop')   # K2v4w3: voet van de rechter spriet is slate in het model (blok van 4 zwarte px)
+# --- 9. snavel: het model heeft links een dunne donkergrijze rand (natief x92-93, L 103-114) tussen het witte snavelvlak en de lichte wolk;
+#        op deze schaal viel die weg (wit tegen lichtgrijs, open rand). Terug als wolk midden (109,121,137) op de modelplek. ---
+zet([(21,29,4),(21,30,4)],'snavelrand')
+# --- 10. staartje rechtsonder: het model heeft een slierterig staartje (natief 2-3 px slate) met een zwarte lijn eronder (rij 46: K2).
+#         De buitenlijnregel maakte de enige slate-rij (45) zwart -> staartje was een zwarte streep. Slate terug (kale toon) en de zwarte modellijn eronder. ---
+zet([(45,45,3),(46,45,3),(47,45,3),(48,45,3),(45,46,1),(46,46,1),(47,46,1),(48,46,1)],'staartje')
+# --- 11. ruis tussen linkerwolk en kop (rij 25, x22-24: drie tinten 4/5/6 naast elkaar, model = wolk w8-w9 aan de schaduwrand van de bol) -> één tint (wolk midden, zoals (23,25));
+#         vonktop (34,19) lichtgeel op de buitenrand nadat (34,18) lucht werd -> geel ---
+zet([(22,25,4),(24,25,4)],'ruis wolk/kop'); zet([(34,19,12)],'vonkrand')
+opsl(); toon(o)

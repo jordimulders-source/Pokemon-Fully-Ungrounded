@@ -20,3 +20,4 @@ Model: `model/gemini_r7.png` (Gemini r7, 21 nov; vervangt r5). Prompt: `../gemin
 - r7: Jordi: "moet ik anders gemini vragen om een nieuw ontwerp? misschien makkelijker, hoef je minder te gokken"; r6 "beter qua lengte"; r7: "ja start de maker voor tango r7".
 - sprite r5 (op model r7): "kijk tango begint netjes te worden, vleugels zijn nog wat rafelig, maar ga verder met het verbeteren".
 - "snavel is prima" (Pom-Pom-snavel zoals in sprite r5).
+- sprite r6: "tango mag naar eindkeuring, heel goed kijken naar lijnen, schaduw en tinten".

@@ -61,3 +61,4 @@
 - Jordi over r11: "de stekel aan de onderkant leest niet meer als een stekel. Daarnaast mogen de pixels die op een mond lijken weg, voor de rest prima genoeg om naar eindkeuring te gaan, daar fixen we de laatste issues". → r12, dan eindkeuring.
 - r12 (stekel terug naar donkere r10B-band onder het lijf + smal uitlopend licht voorvlak; mondpixels weg; 8 px t.o.v. r11) → eindkeuring.
 - Eindkeuring r12: BIJNA (geen blokkade); 31 uitvoeringspixels (ruis, lijn-gat, lange 1-tintlijnen, egaal zijvlak kop, omgekeerd verloop onder het lijf) toegepast → r13 (`sprite_r13/`, kandidaat; `r13_vs_r12.png`).
+- Jordi over r13: "de stekel onderin klopt niet qua vorm" · "nog steeds niet" · "al 3 keer aangegeven". Stekel versmalt-verbreedt-versmalt (dopvorm) door de 2×-reductie; r14: 3 vormprobeersels (model / zuivere spits / kleine ruit).

@@ -6,7 +6,7 @@ R,D=int(sys.argv[1]),int(sys.argv[2])
 s=Image.open('sunflora_f1.png'); sp=s.getpalette(); a=np.array(s)
 green={12,13,14,15}
 g=np.isin(a,list(green)); bl=(a==1)&ndimage.binary_dilation(g,iterations=1)
-m=(g|bl); m[:32]=False
+m=(g|bl); m[:32]=False; m[48:]=False   # alleen armen + lijfje; voeten komen uit r5 (Jordi: "ik wil ze hangend")
 # losse zwarte kop-onderrand (grenst niet aan groen buiten de kop) weg: alleen component met groen
 lab,n=ndimage.label(m); keep=np.isin(lab,[l for l in range(1,n+1) if (g&(lab==l)).any()]); m=keep
 ys,xs=np.where(m); y0,x0=ys.min(),xs.min(); a=a[y0:ys.max()+1,x0:xs.max()+1]; m=m[y0:ys.max()+1,x0:xs.max()+1]
@@ -26,6 +26,6 @@ for j in range(H):
         col=c[dk].mean(0) if dk.mean()>=0.35 else c[~dk].mean(0)
         cand=[0]+list(range(10,14))   # zwart + groen
         out[j,i]=1+cand[int(np.argmin([((P[k]-col)**2).sum() for k in cand]))]
-np.save('lijf_kaal.npy',out); print('lijf sprite',W,'x',H)
-im=Image.fromarray(out,'P'); im.putpalette([v for c in PAL for v in c]); im.save('lijf_kaal.png',transparency=0)
-Image.open('lijf_kaal.png').convert('RGBA').resize((W*16,H*16),Image.NEAREST).save('lijf_kaal_16x.png')
+np.save('lijfboven_kaal.npy',out); print('lijf sprite',W,'x',H)
+im=Image.fromarray(out,'P'); im.putpalette([v for c in PAL for v in c]); im.save('lijfboven_kaal.png',transparency=0)
+Image.open('lijfboven_kaal.png').convert('RGBA').resize((W*16,H*16),Image.NEAREST).save('lijfboven_kaal_16x.png')

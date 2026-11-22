@@ -1,0 +1,105 @@
+# Handmatige reparaties na de eerste eigen controle (regel: rasterrij x tekens; beeld-y = rij + 1)
+# kuifband: 2 tinten (A/B), geen C-randje meer (banding)
+4 18 B
+5 17 B
+6 15 B
+8 18 B
+# snuit/wang: gele snuitpunt rustiger, wang oranje
+17 4 FFF
+18 4 BFFF
+19 2 BBC
+20 2 CCG
+21 1 G
+11 25 HG
+# gele band links van de oogring: licht = A, onder B
+10 11 A
+11 10 A
+12 10 A
+13 9 A
+14 9 A
+15 9 A
+18 9 B
+19 17 G
+19 23 F
+# onderlip en roze kaak
+23 4 BB
+24 7 B
+25 9 q
+# buik: A-lichtvlak
+30 11 A
+31 10 A
+# verre arm: geen 1-px H-randje, schaduwsikkel onderaan bij de hand
+33 28 G
+34 28 G
+35 27 G
+36 25 H
+37 23 H
+38 22 H
+39 22 H
+40 22 H
+# staartstreep 1 in 2 tinten
+37 48 BBB
+38 48 CCC
+# nabije hand: twee klauwen
+38 5 BB
+40 6 C
+# verre klauwen: per klauw B boven, C onder, E-onderlijn doorlopend
+41 17 B
+41 24 B
+42 17 C
+42 20 C
+43 19 E
+43 22 E
+42 55 G
+51 47 H
+# lijn buik/verre dij
+47 29 k
+48 29 k
+49 30 G
+50 30 G
+51 31 G
+# tenen
+56 9 BB
+56 13 B
+57 12 C
+55 36 F
+57 35 F
+# zwart aan de schaduwkant (binnenlijnen onderaan, stekelonderkanten, spiraal rechtsonder, knie)
+35 10 k
+36 10 k
+38 16 k
+39 16 k
+40 16 k
+45 15 k
+46 16 k
+47 17 kk
+48 19 k
+13 27 kk
+14 27 k
+15 28 k
+16 30 k
+17 35 k
+26 40 kk
+29 40 k
+30 40 k
+31 41 k
+32 42 kk
+34 44 H
+35 43 H
+36 44 H
+37 44 H
+40 58 k
+41 57 k
+42 56 k
+43 55 k
+44 51 kkkk
+43 49 kk
+53 32 kkkkk
+42 45 B
+# buitenlijn naast geel = E; dubbele lijn bij de snuitpunt en stekel weg
+27 8 E
+28 8 E
+38 4 E
+22 2 BB
+9 26 G
+55 9 E

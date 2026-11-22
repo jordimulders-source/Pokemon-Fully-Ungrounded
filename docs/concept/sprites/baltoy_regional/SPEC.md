@@ -33,3 +33,9 @@
 - r4 (`gemini/baltoy_r4.png`, vierkante kop met trapband en kruis, rechte pijler met reliëf en punt, beige steen), Jordi: "en nu".
 - Claude over r4: Tiwanaku klopt, maar paal/tentharing-gevoel. Jordi: "ja maak hem levendiger, schrijf r5" → `gemini/PROMPT_baltoy_r5.md` (bredere pijler, bijna geen hals, armen schuin omlaag/naar voren: voorstel Claude).
 - r5 (`gemini/baltoy_r5.png`, breder blok zonder hals, armen schuin omlaag, chakana getrapt, punt los onder het lijf).
+
+## Model gekozen (22 nov)
+- Claude over r5: beter (kop op het lijf, breder, armen schuin omlaag, chakana getrapt); minder: punt los onder het blok, wat robotachtig, rode band dunner. Jordi: "de wat minder dingen zijn niet erg, helemaal omdat de punt in een sprite gefixed kan worden, lijkt die genoeg tiwanaku?" Claude: ja. Jordi: "ga maar bouwen dan".
+- **Bevroren model: `referenties/gemini_gekozen_r5.png`** (natief raster ±10,1 px, figuur ±69×71).
+- **Toegestane afwijking (benoemde reparatie):** de punt sluit aan op het lijf: het lijf loopt onderaan taps toe naar de punt (zoals in r4), in plaats van een los ruitje onder een plat blok.
+- Formaat (voorstel Claude, fase 1): ±48 px hoog, door rijen/kolommen te schrappen zoals Gengas/Alphyena (gezicht en band beschermd).

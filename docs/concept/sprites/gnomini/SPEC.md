@@ -21,6 +21,7 @@
 - **Bevroren model: `r2/gemini_r2.png`.** Toegestane afwijkingen in de sprite: schaduw en volume verbeteren; lijf ronder (minder eivormig). Muts: "uitstekend" (bevroren).
 - Sprite r1 (`sprite_r1/`, A = lijf als model, B = 3 px breder): Jordi "A". Over B: "B is compleet mislukt", "dat is niet rond".
 - r2 (`sprite_r2/`): vraag "grens roze/blauw met de bol mee laten buigen?" → Jordi: "ja en misschien dat we een soort streep ertussen moeten doen, doe dat als A/B test".
+- "en zijn linkerhand is niet rond" (= armpje links in beeld, met het duimachtige bultje; eerder: "de armpjes worden idd gewoon rondjes").
 
 ## Open (overleggen vóór de Gemini-prompt)
 - Type: puur Fairy?

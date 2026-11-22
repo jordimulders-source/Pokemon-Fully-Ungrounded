@@ -17,3 +17,4 @@
 - r2 (`r2/gemini_r2.png`, bijsturen snor + muts): "dit is too much qua details, dit vertaalt niet naar een sprite, laat de muts maar normaal. De riem wordt gewoon een streep van paar pixels diep, kleur die goed past tussen de kleuren die we al hebben"
 - **Bevroren model: `r1/gemini_r1.png`** (muts normaal). In de sprite: snor iets rafeliger (r1: "de snor mag wat rafeliger"; niet zo gedetailleerd als r2), riem = streep van een paar pixels diep, kleur die past bij het palet (varianten).
 - Geslacht (vraag Claude: gnomes altijd mannen? opties gemengd / snor alleen bij mannetjes / alleen mannetjes): "er zijn genoeg pokemon met een snor, maar niet zoals deze. Dus daar moet ik nog even over nadenken" (open).
+- sprite r1 (`sprite_r1/`, A riem bruin / B donkerblauw): "de riem is nog iets teveel gewoon een lijn, verder bijna goed, rechts naast de neus iets teveel zwarte pixels, lijkt net een oog" (keuze A/B nog niet genoemd)

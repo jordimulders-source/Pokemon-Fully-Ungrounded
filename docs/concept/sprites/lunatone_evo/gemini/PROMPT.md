@@ -435,3 +435,25 @@ Change only the angle. Right now we see it in pure side view, facing left. Do NO
 
 ## Jordi over v15 (`r15/gemini_v15.png`, letterlijk)
 - "nee dit is ook niet geslaagd"
+
+---
+
+# Prompt v16 (23 nov): NIEUW gesprek, bijlage `lunatone_evo_8x.png`
+
+## Jordi (letterlijk)
+- "laten we nog een keer gemini vragen om een andere pose" / "met perspectief"
+- Richting (eerder): "hij moet een x aantal graden draaien" / "naar rechts"; r6 draaide "de verkeerde kant op".
+
+```
+The attached image is my finished Pokémon sprite, a crumbling blood moon. Redraw this same Pokémon as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art), with the same design and colors: red cracked stone ball, crumbled gaps, floating chunks, the single red eye with thick black rim and the pointed stone nose.
+
+Give it a new pose WITH PERSPECTIVE, a real three-quarter view like Pokémon front sprites:
+- The ball has turned toward the viewer. The face is no longer on the left edge of the ball but on the front of the ball, left of center.
+- Behind and around the base of the nose we see the round left edge of the ball continue.
+- The nose points left and toward the viewer, so it looks shorter in perspective and its base sits on the front of the ball.
+- The eye is seen slightly from the side: an upright oval.
+- The ball shows real volume: light on its upper left, a dark shadow band along its right side and bottom, as a sphere seen in perspective.
+- The floating chunks are spread in depth: some in front of the ball (larger, overlapping it), some behind it (smaller, partly hidden).
+
+64x64 pixels, max 16 colors, 1 px dark outline, light from the top left, clean Game Freak shading. Plain white background, no glow, no shadow, no effects.
+```

@@ -2463,3 +2463,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.598] - Nazca-astronaut: zigzagpatroon r5–r8, keurder PASS
 - Patroon (Jordi: alles behalve onderarmen/onderbenen, naar Sigilyph, zigzag) in r5–r8; keurder r6 BIJNA → reparaties r7/r8 → herkeuring r8: P1 (zwart/groen/wit) en P2 (zwart/rood/wit) PASS op netheid en zigzag. `sprite_r8/nazca_r8_8x.png`.
+
+### [v0.0.599] - Nazca-astronaut: r9, 5 kleur-/patroonvariaties
+- `sprite_r9/`: linkerarm komt nu op dezelfde hoogte uit de romp (4 px silhouet); V1 aardewerk, V2 woestijn, V3 kosmisch, V4 Sigilyph-kleuren (alle getrapt, tunica-motief), V5 aardewerk schuin.

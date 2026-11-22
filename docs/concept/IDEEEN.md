@@ -84,7 +84,7 @@ Bovenaan gehouden zodat de stand in één oogopslag te zien is. Details in de se
 - **Venomoth-vuurvlieg** (Electric/Fire): Venonat wordt de nieuwe Venomoth **met een move die hij leert**; conceptueel een insect dat tot vuurvlieg evolueert (zoals Volbeat). **Ontwerp opnieuw met Gemini** (Jordi, 9 nov: "Het design was prima, maar kunnen we denk ik nu veel beter maken met Gemini").
 - **Banette-evolutie** ("nog meer marionet").
   - **Jordi (17 nov):** Ghost/Dark puppetmaster die uit Banettes geopende ritsmond is geklommen; Banette zit als kledingstuk om hem heen (rits om zijn middel), handen = marionettenkruizen van donkere ghost-vorm, bestuurt twee mini-Shuppets (zoals Dragapult zijn Dreepy). Letterlijk citaat en open vragen: `sprites/banette_evo/SPEC.md`.
-- **Mime-lijn:** Mime Jr. blijft → regionale jiujitsu-Mr. Mime → **Mr. Prime** (zie sectie hieronder en `POKEMON.md`).
+- **Mime-lijn:** ~~regionale jiujitsu-Mr. Mime~~ geschrapt (Jordi, 22 nov: "het hele idee"); **Mr. Prime** open. Oud: Mime Jr. blijft → regionale jiujitsu-Mr. Mime → **Mr. Prime** (zie sectie hieronder en `POKEMON.md`).
 - **Blobfish-lijn, 2 fases** (voorstel Claude, Jordi 9 nov "goed idee": fase 1 een gewone diepzeevis, fase 2 "naar boven gehaald" en ingezakt).
   - **Typing (Jordi, 16 nov): Water → Water.** Eerst ideeën bespreken vóór een Gemini-prompt (Jordi, 16 nov).
   - **Jordi (16 nov):** "we moeten er een pokemon van maken, dus hoe gaan we afwijken van dat het gewoon een dier is"; geen link met Zuid-Amerika, algemene concepten. Uit 7 voorstellen (theatermasker, lavalamp, waterballon, spons, boetseerklei, zitzak, drukvat) koos hij boetseerklei voor fase 1.

@@ -33,5 +33,5 @@
 - r7a (`gemini/r7a.png`; stap A, staand in vechthouding; blauwe romp met revers, zwarte band, blote ledematen). Stap B bijstuurprompt: `gemini/PROMPT_r7b.md` (woorden "guard"/"opponent" weggelaten: gaven mogelijk de twee figuren in r6).
 - r7a (stap A, staand in vechthouding; plaatje niet in de repo), Jordi: "hij heeft weer gewoon een gi aan"; "ik denk dat dit ontwerp het niet gaat worden".
 
-## Status (22 nov): geparkeerd
-Het gi-ontwerp gaat het volgens Jordi niet worden. Wat wel vastligt uit deze rondes: Fighting/Psychic, normale Mr. Mime-huid (voor Mr. Prime), gele wangen, paarse "oren", lichtblauwe vingertoppen/voeten, zwarte band, op de rug "get into my guard". Gemini tekende 7 rondes lang een mens in een pak of een verkeerde ligpose.
+## Status (22 nov): idee geschrapt
+Jordi: "ik denk dat dit ontwerp het niet gaat worden" – "het hele idee bedoel ik". De jiujitsu-Mr. Mime vervalt; of Mr. Prime (bartitsu-gentleman) blijft, is open. Wat wel vastligt uit deze rondes: Fighting/Psychic, normale Mr. Mime-huid (voor Mr. Prime), gele wangen, paarse "oren", lichtblauwe vingertoppen/voeten, zwarte band, op de rug "get into my guard". Gemini tekende 7 rondes lang een mens in een pak of een verkeerde ligpose.

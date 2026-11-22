@@ -140,3 +140,35 @@ STYLE AND FORMAT
 AVOID
 - Not Carvanha, Milotic, Feebas, Goldeen, Alomomola or Finizen. No plush toy, chibi or mascot look, no oversized sparkly eyes, no human features, no dopey or derpy face, no teeth. No normal fins with bubbles on them.
 ```
+
+## Ronde 4 (prompt v5) → `r4_prompt_v5.png`
+- Jordi: "het lijkt nu meer uitslag dan echt zeep. Plus de vorm van de vinnen is weg". Claude: "volledig uit losse bellen, geen vlies" gaf een vormloze bellenwolk met paarse vinnen eronder (vlekken = uitslag). Waaier-opzet en lijfkleur werken.
+
+## Prompt v6 (nieuw gesprek; bijlage `bijlage_hoek_carvanha_8x.png`, alleen voor de hoek)
+```
+Design a new Pokémon and draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art).
+
+ATTACHMENT
+- The attached sprite is CARVANHA, an official Gen 3 sprite. Use it ONLY for the camera angle: a real 3/4 view where the fish faces left and its head is turned towards the viewer, so we see the front of the face and both eyes (the far eye smaller). Do NOT copy anything else from it: not its face, teeth, colors, fins, shape or expression.
+
+THE CREATURE
+- A Water/Fairy Pokémon based on a betta fish (Siamese fighting fish, Betta splendens), with real betta anatomy: compact sturdy body, upturned mouth, long flowing fins and tail.
+- It is a FINAL evolution and must look fully grown and mature: an adult fish with presence, not a baby or a cute small fish. Not angrier, just more grown-up.
+- FACE: alert, proud and intelligent, like a real male betta. A fairly large, fully open eye placed high and forward on the head, with a dark upper rim so it looks focused (not angry, not sleepy or half-closed, not blank). Small, neat pink lips that do not stick out or pout. The head has shape (cheek and gill cover visible).
+- BODY colors: blue on the head, shifting to purple towards the tail, with a visible scale pattern; pink lips.
+- FINS AND TAIL: they keep the clear, recognizable SHAPE of real betta fins: a tall dorsal fin, a long anal fin hanging below, and a big flowing tail with wavy, rippling edges and soft folds, each fin a distinct shape with a clean outline. But the fins are made of SOAP LATHER: thick, creamy white soap foam (like bath foam or shaving foam) with a faint pink tint and a fine bubbly texture of small bubbles. The foam fills the whole fin; no blue or purple fin underneath showing through, no spots, no fin rays. Only along the outer edges does the lather break up into a row of slightly bigger round bubbles, and a few loose bubbles drift off.
+- Nothing on top of the head: no bubble, bump, crest or growth on the head.
+- The body is large and clearly the main part of the creature; the foam fins are big but do not dwarf the body.
+
+POSE
+- The classic betta display pose: the fish shows off, with the dorsal fin, the anal fin and the tail spread fully open like a big round fan around the body. The body is slightly curved, not a straight torpedo.
+- Real 3/4 view as in the attachment, facing left: the head turned towards the viewer, the far side on the left and smaller, the near side on the right. Not a side profile.
+- Compact composition that fits a square, like official Gen 3 sprites.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline around everything (also around the foam, so it stays readable on white), light from top left, clean shading with large calm areas like official Gen 3 sprites, no noise.
+- Plain white background. No water, ground, rock, shadow or base. No glow, sparkles or effects. One single creature.
+
+AVOID
+- Not Carvanha, Milotic, Feebas, Goldeen, Alomomola or Finizen. No plush toy, chibi or mascot look, no oversized sparkly eyes, no human features, no dopey or derpy face, no teeth. No shapeless cloud of bubbles, no spotty or blotchy fins, no normal fins with bubbles on them.
+```

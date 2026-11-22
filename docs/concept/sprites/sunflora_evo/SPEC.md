@@ -14,4 +14,5 @@ Alleen Jordi's woorden (22 nov); niets anders is besloten.
 - Hoofd = r5-hoofd (`gemini/r5.png`); kleuren "zelfde kleuren, minder tinten".
 - Voeten (Jordi, 22 nov): "ik wil ze hangend" (zoals in r5).
 - Na sprite r1 (Jordi, 22 nov): "het lichaam zit niet vast aan het hoofd en je hebt het lichaam opnieuw getekend" · "dat mag niet" · "in het model zit het lichaam niet vast dus daar moet je van afwijken" · "het lichaam mag dus wat groter omdat het hoofd gaat overlappen". Lijf = Sunflora-pixels overnemen (niet tekenen), vast aan het hoofd.
+- Jordi (22 nov): "overlappen maakt niet uit zolang je in elk geval maar iets van de onderdelen van het lichaam ziet, incl de bladhanden".
 - Open: naam, kleuren, details van het kosmische deel, stats.

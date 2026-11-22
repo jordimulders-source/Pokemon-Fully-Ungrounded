@@ -3,10 +3,10 @@
 Nieuw gesprek, **geen bijlage**. Basis = v7; bijsturen in hetzelfde gesprek gaf `r7.png` (hoorns/pose gelijk, maar een gladde dikke mensenbuik).
 
 ## Jordi over r7 (letterlijk)
-- "zucht, het moet meer een geiten lichaam"
+- "zucht, het moet meer een geiten lichaam"; "niet dikker"
 
 ## Gewijzigd t.o.v. v7
-- BODY-regel herschreven: beschrijft wat het wél is (rechtop zittende zwarte geit: slank, diepe smalle geitenborst, dikke nek naar voren, hele bovenlijf en armen in ruige zwarte geitenvacht) in plaats van alleen wat het niet is.
+- BODY-regel herschreven: beschrijft wat het wél is (rechtop zittende zwarte geit: slank, niet dikker, smalle geitenborst, nek naar voren, korte zwarte vacht die tegen het lijf ligt) in plaats van alleen wat het niet is.
 
 ## Prompt
 
@@ -19,7 +19,7 @@ CONCEPT
 - This evolution is the grown-up version: a mature GOAT DEVIL. Bigger and stronger, with powerful shaggy goat legs with cloven hooves. The goat side is now much stronger: a goat-like devil head.
 - HORNS: two thick, ridged, COILED goat horns, rolled up like a big ram's horns. Both horns are the same: each one starts at the top of the head, sweeps back, then curls down and forward around the ear into a full round coil tight against the side of the head. Not straight, not pointing up, not horizontal, not spread wide. Plain horns with no fire or flame pattern. They are the most striking part of the silhouette.
 - POSE: a Baphomet-like seated pose. It sits upright with its shaggy goat legs crossed in front of it, hooves visible. Exactly two arms. ARMS: no pointing gestures (not one hand up and one hand down); instead one or both hands are held open, palm up, with a small flame burning in the palm. Upright, calm and confident, like an idol. NOT a sideways pose: the body faces the viewer like the classic Baphomet image, only turned slightly to the left.
-- BODY: a GOAT BODY, not a human one. Picture a black goat that sits upright: a lean goat build with a deep, narrow goat chest and a thick goat neck that slopes forward into the head. The whole upper body and the arms are covered in shaggy black goat fur (same shaggy texture as the brown legs, with fur tufts at the elbows and along the neck and chest). No smooth skin, no human chest, no pecs, no round belly, no human shoulders.
+- BODY: a GOAT BODY, not a human one. Picture a black goat that sits upright: a slim, lean goat build, NOT thicker or bulkier than a slender figure: a narrow goat chest and a goat neck that slopes forward into the head. The upper body and the arms have short black goat fur that lies close to the body (a few small fur tufts at the elbows and on the chest), so the fur does not make it look bigger. No smooth skin, no human chest, no pecs, no round belly, no human shoulders.
 - It keeps the same family features: black body, the flame hair (now a bigger mane of fire), the shaggy brown goat fur on the legs, the tail with the fire-colored tip.
 - A serious expression, no grin. Imposing, but still a Pokémon, not a horror monster.
 - Not cartoony: only the first stage was cartoony; this evolution is a more serious design. Clear readable silhouette, like an official Ken Sugimori design.

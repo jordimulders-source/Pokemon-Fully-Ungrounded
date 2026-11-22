@@ -1,4 +1,4 @@
-# vel.py SPRITE.png UIT.png [KAAL.png]: sprite 8x | kaal 8x | model op dezelfde schaal 8x (natief raster, zelfde rijen/kolommen geschrapt)
+# vel.py SPRITE.png UIT.png [VORIGE/KAAL.png] [kopregel]: sprite 8x | kaal 8x | model op dezelfde schaal 8x (natief raster, zelfde rijen/kolommen geschrapt)
 # / close-ups 12x (sprite | model op schaal): kop+bek+oog, opgeheven poot, manen, poten / 1x op wit, licht, donker naast Mightyena 1x
 import sys; sys.path.insert(0,'gereedschap')
 from PIL import Image, ImageDraw; import numpy as np; from gemeen import *; from schrap import schrap
@@ -29,7 +29,8 @@ W=max(len(pan)*520,rows[0].width+rows[1].width+16,rows[2].width+rows[3].width+16
 H=530+max(rows[0].height,rows[1].height)+8+max(rows[2].height,rows[3].height)+8+90
 v=Image.new('RGB',(W,H),'white'); d=ImageDraw.Draw(v)
 for i,p in enumerate(pan): v.paste(p.resize((512,512),Image.NEAREST),(i*520,14))
-d.text((2,0),'r1 8x | kaal 8x | model op dezelfde schaal 8x' if len(pan)==3 else 'r1 8x | model 8x',fill=(0,0,0))
+lbl=sys.argv[4] if len(sys.argv)>4 else 'sprite 8x | kaal 8x | model op dezelfde schaal 8x'
+d.text((2,0),lbl,fill=(0,0,0))
 y=532
 for pr in (rows[0:2],rows[2:4]):
     x=0
@@ -37,5 +38,5 @@ for pr in (rows[0:2],rows[2:4]):
     y+=max(r.height for r in pr)+8
 for i,bg in enumerate([(255,255,255),(232,232,216),(40,48,56)]):
     v.paste(rgbp(sp,bg),(i*140,y+8)); v.paste(rgbp(my,bg),(i*140+68,y+8))
-v.paste(m,(3*140,y+8)); d.text((2,y+76),'1x: r1 | Mightyena op wit, licht, donker; model op schaal',fill=(0,0,0))
+v.paste(m,(3*140,y+8)); d.text((2,y+76),'1x: sprite | Mightyena op wit, licht, donker; model op schaal',fill=(0,0,0))
 v.save(sys.argv[2]); print(sys.argv[2],v.size)

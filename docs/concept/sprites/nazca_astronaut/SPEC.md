@@ -51,3 +51,4 @@ Zwart lijf en zwarte kop met één groot blauw oog; ronde romp met een groene zi
 - 22 nov (r14): "zigzag voor de benen akkoord, maar andere kleuren, de armen doe je blauw/rood/blauw zoals bij de enkels en polsen, maar die trek je niet over heel de bovenarm heen, het moet echt een t-shirt idee zijn" (r15: korte mouwen in 2 lezingen × 3 kleuren shorts).
 - 22 nov (r15): "A, maar de aansluiting van alles mag wat geleidelijker, want nu lijkt het net kleding, het moet echt duidelijk de patronen op een soort alien zijn" (r16: naden/zomen weg, patronen als tekening op de huid; shorts-kleur nog niet gekozen, L1 en L3 gemaakt).
 - 22 nov: "dus minder zwart, minder rechte lijnen, en werk met kleurtinten en schaduw".
+- 22 nov (r16): "L1 is goed qua kleur maar het moet beter aansluiten, het zijn teveel rechte zwarte lijnen" (r17).

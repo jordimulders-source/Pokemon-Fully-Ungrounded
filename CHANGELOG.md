@@ -2825,3 +2825,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Besloten (Jordi, 22 nov): Bug/Fairy, dirigent, duidelijke 3e fase, "groter en grootser" = een echte maestro (uitstraling, kleding, silhouet), niet dikker; stok = één vinger die ook wapen is (zoals een krab met één grotere klauw); vleugels als rokpanden; armen omhoog. `docs/concept/sprites/kricketune_evo/SPEC.md`.
 - Gemini: r1, r2a/r2b, v2 (nieuwe prompt), v3 met uitgewerkte maestro-definitie → gekozen (`model/`); stok in de handkleur gezet, ogen naar Kricketune.
 - Frontsprite r1 (maker, schrappen 75×85 → 56×64), keurder BIJNA → r3 (ruis); oog links naar de modelplek (r2); oogstudie A/B/C, Jordi koos A (Kricketune frame 2) + afgeronde onderkant rechteroog (r4); eindkeuring BIJNA → 22 px (r5) → **af**: `kricketune_evo/af/krickestro.png` (+ `_8x`). Werknaam **Krickestro** (Jordi). Op het overzichtsvel (evoluties); POKEMON.md, TODO, Stand van zaken en GEMINI.md-lessen bijgewerkt.
+
+### [v0.0.676] - Teller frontsprites gecorrigeerd
+- Stand van zaken in CLAUDE.md: 71 frontsprites af (zoals op het overzichtsvel: 44 new + 8 evoluties + 19 regional forms). Jordi: "pas de teller in CLAUDE.md aan naar 71".

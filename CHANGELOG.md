@@ -2876,3 +2876,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.689] - Bokser-Mr. Mime: nieuw idee voor Mr. Prime, prompt r1
 - Jordi koos de ouderwetse bokser ("rocky marciano achtig", heel anders dan Hitmonchan, niet Mr. Mime met handschoenen). Gedrongen silhouet met Mr. Mime-hoofd, crouch; prompt `mrmime_regional/bokser/PROMPT.md`.
+
+### [v0.0.690] - Bokser-Mr. Mime: r1 en prompt r2
+- r1 "best aardig idee"; r2: meer gentlemanly, zwart-wit palet, oren ver achterover, houding van Jordi's 19e-eeuwse boksersfoto (rechtop, één vuist vooruit, de andere tegen de borst).

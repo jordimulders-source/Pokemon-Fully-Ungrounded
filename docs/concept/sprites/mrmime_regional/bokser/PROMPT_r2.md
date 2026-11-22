@@ -1,5 +1,5 @@
 # Bokser-Mr. Mime – Gemini-startprompt r2 (22 nov, nieuw gesprek, geen bijlage)
-Alleen Jordi's punten bij r1: meer gentlemanly, kleur meer afwijkend van Mr. Mime, zwart-wit palet, oren meer achterovergekamd. Houding/snor/accent: niet beantwoord, dus als r1.
+Alleen Jordi's punten bij r1: meer gentlemanly, kleur meer afwijkend van Mr. Mime, zwart-wit palet, oren meer achterovergekamd. Houding: Jordi stuurde een 19e-eeuwse boksersfoto ("deze houding"), in woorden overgenomen. Snor/accent: niet beantwoord, dus niet erin.
 
 ```
 Design a brand-new regional form of Mr. Mime: an old-time GENTLEMAN boxer, like the heavyweights in black-and-white boxing photos. Fighting type.
@@ -18,7 +18,8 @@ COLORS
 A BLACK-AND-WHITE palette, like an old boxing photo and like a classic mime: white, greys and black. Clearly different colors from Kanto Mr. Mime (no blue, no pink).
 
 POSE
-The old-time crouch: low and hunched, chin tucked, shoulders up, the near fist cocked back for an overhand punch, the far fist guarding the face.
+The classic 1880s boxer photo pose: standing UPRIGHT and still, feet planted, chest out, chin up, proud.
+One arm stretched forward, fist out in front of it at shoulder height; the other fist held close against its chest.
 
 VIEW
 Three-quarter view facing left, like every Gen 3 front sprite. Compact: fits inside a square.

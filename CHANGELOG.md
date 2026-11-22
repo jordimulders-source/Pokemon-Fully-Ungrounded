@@ -2693,3 +2693,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - r2 opgeslagen; bijstuurprompt r3 (blik geniepig in plaats van evil, mond opnieuw; rest perfect volgens Jordi).
 - r3 opgeslagen; bijstuurprompt r4 (mond open).
 - Frontsprite r1–r3 (maker, keurder BIJNA → PASS op r2, r3 = 9 losse pixels opgeruimd): `sprites/mightyena_evo/sprite_r3/`, ter beoordeling bij Jordi.
+- Eindkeuring PASS (3 kleurpixels), **frontsprite af**: `docs/concept/sprites/mightyena_evo/af/alphyena.png`. Naam **Alphyena** (Jordi). Op het overzichtsvel (evoluties); POKEMON.md (werknamen), TODO en Stand van zaken bijgewerkt.

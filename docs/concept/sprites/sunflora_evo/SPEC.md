@@ -7,4 +7,5 @@ Alleen Jordi's woorden (22 nov); niets anders is besloten.
 - Uiterlijk: "hij zit echt tussen plant en ster in, maar mag wel erg kosmisch lijken en unlocked zijn, waar het lichaam dan wel nog op ene plant lijkt".
 - Gezicht: "Het tevreden/blije gezicht blijft of wordt net iets anders, maar hij is heel blij".
 - Houding: "laten we hem maar zweven, dat is leuk".
+- Hoofd (na r1): "ja de bloem wordt veel meer een ster, maar dan geen 5punt ster, meer een kosmisch uitziende ster"; geen heelalpatroon.
 - Open: naam, kleuren, details van het kosmische deel, stats.

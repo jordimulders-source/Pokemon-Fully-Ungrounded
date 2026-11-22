@@ -30,3 +30,4 @@
 - Jordi: "dat is met andere mr mimes en mr rime ook niet"; daarna "die uren zijn voorbij, ga verder" (geen richting gekozen). Claude ging verder met voorstel 1, "de gi wordt het lijf": `gemini/PROMPT_r6.md` (blauw romp met revers als huidplooien, zwarte band als tekening, blote ledematen in Mr. Mime-tint; posefoto als bijlage aangeraden).
 - r6 (`gemini/r6.png`; twee Mr. Mimes in elkaar gevlochten), Jordi: "hij gaat steeds gekker doen". Claude: nieuwe aanpak asset voor asset, r7 stap A = alleen het ontwerp staand (`gemini/PROMPT_r7.md`), stap B = pose via bijlage.
 - Jordi: "nee ik stuur geen bijlagen want gemini werkt telkens beter zonder bijlagen". Stap B wordt bijsturen in hetzelfde gesprek als stap A.
+- r7a (`gemini/r7a.png`; stap A, staand in vechthouding; blauwe romp met revers, zwarte band, blote ledematen). Stap B bijstuurprompt: `gemini/PROMPT_r7b.md` (woorden "guard"/"opponent" weggelaten: gaven mogelijk de twee figuren in r6).

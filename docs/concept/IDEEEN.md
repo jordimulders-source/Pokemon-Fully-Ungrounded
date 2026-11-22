@@ -575,6 +575,7 @@ Overig:
 - **Een Pokémon gebaseerd op hannya** (Japans demonmasker).
 - **Baltoy/Claydol: Andes-vorm** (zie het huaco-retratovoorstel in `DEX_NOMINATIES.md` §5).
   - **Type (Jordi, 21 nov, nog niet definitief):** "De regional Baltoy lijn wordt denk ik rock/psychic, waar het origineel nu dus ground/cosmic is". (Eerder voorstel huaco retrato: Ground/Fire.)
+  - **Besloten (Jordi, 22 nov):** inspiratie Tiwanaku-monoliet; Rock/Psychic (akkoord op Claude-advies, de levende tempel krijgt een andere typing); "baltoy/claydol, moet herkenbaar zijn vanwege de ogen, het silhouet mag veranderen". Alles in `sprites/baltoy_regional/SPEC.md`.
 - **Ruïne- of zelfs tempel-Pokémon:** een levende tempel, enorm, mogelijk een Snorlax-idee: geen legendary, wel een static encounter (idee uit een gesprek met een maat).
 - **Vlieg → mug-lijn:** "denk ik nog wel een goede" (mug was al Poison/Electric).
   - Jordi (20 nov): "misschien kunnen we fruitvlieg -> huisvlieg -> mug"; "Waar ze voorkomen is niet belangrijk, we gaan aan het design werken". Map: `sprites/vlieglijn_fase1/`. Daarna (20 nov): "correct, dus we doen 2 fases, ook de horzel maken we niet onderscheidend genoeg. Met een reguliere vlieg komen we met wat meer zwart ook weg in het ontwerp. De elektriciteitskabels als poten wil ik graag wel behouden, dat is tof".

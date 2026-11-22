@@ -1,0 +1,4 @@
+A: 60 pixels gewijzigd, png y 47..55, x 27..34 (zone lijfvoorvlak y 47..55, x 27..34); buiten de zone: 0; transparantie gelijk: True
+B: 51 pixels gewijzigd, png y 47..55, x 27..34 (zone lijfvoorvlak y 47..55, x 27..34); buiten de zone: 0; transparantie gelijk: True
+C: 46 pixels gewijzigd, png y 47..55, x 27..34 (zone lijfvoorvlak y 47..55, x 27..34); buiten de zone: 0; transparantie gelijk: True
+blauw kader = zone lijfvoorvlak (klassen x 12..19, y 20..28). Gecontroleerd met gereedschap/vel_r9.py.

@@ -1,56 +1,67 @@
 # r9 = r8 met alleen een nieuw reliëf op het VOORVLAK VAN HET LIJF (klassen-x 12..19, y 20..28; png x 27..34, y 47..55).
 # Basis van het vlak = r8-verloop zonder het oude reliëf (oude groeven 'd' -> vlaktint volgens vlak() uit bouw_r8).
-# Reliëf: groef = vlaktint+3 (wisselt dus mee met het verloop), lichtrand = vlaktint-1/-2 onder/rechts van de groef.
+# Reliëf: alle tinten zijn een verschuiving op de vlaktint, dus lijnen wisselen mee met het verloop (licht links, donker rechtsonder).
+# Licht linksboven, consequent: verhoogd = lichter met lichtste bovenrand, slagschaduw rechts/onder; groef = donker met lichtrand rechts/onder.
 import sys; sys.path.insert(0,'gereedschap'); from r4lib import lees, op, rgba
-import numpy as np; from PIL import Image, ImageDraw
+import numpy as np; from PIL import Image
 g=lees('gereedschap/baltoy_r6_klassen.txt')
 r8=np.array(Image.open('sprite_r8/baltoy_r8.png')); PAL=Image.open('sprite_r8/baltoy_r8.png').getpalette()
 OY,OX=27,15; Y0,Y1,X0,X1=20,28,12,19
-def v(y,x): return 0.8+(x-11)/8*2.3+(y-20)/8*1.5+max(0,(x-15)/4+(y-24)/4-0.6)*1.2
+def v(y,x): return 0.8+(x-11)/8*2.3+(y-20)/8*1.5+max(0,(x-15)/4+(y-24)/4-0.6)*1.2   # = vlak() lijf uit bouw_r8
 def base(y,x):
     if g[y][x] in 'lM': return int(r8[y+OY,x+OX])-1
     return int(round(v(y,x)))
 # maskers 8 breed (x12..19) x 9 hoog (y20..28)
-# . vlak | g groef (+3) | G diepe groef (+4) | s schaduw (+2) | m (+1) | h licht (-1) | H hooglicht (-2)
+# verschuiving op de vlaktint: a -2, b -1 (verhoogd/licht, bovenranden lichtst) | n 0 | c +1, d +2 (weggehakt veld) | e +3 (groef/slagschaduw) | f +4
+# (X/g/'.' = automatische variant, in r9 alleen gebruikt in B: g groef, '.' krijgt lichtrand rechts/onder van een groef)
 M={
-'A':[  # Ponce/Bennett: hand met kero (links) en hand met staf (rechts) voor de borst, gordel eronder
- "Hh...h..",
- "hgm..hg.",
- "hgm..hg.",
- "gggg.hg.",
- "hhhg.ggg",
- "....hhhg",
- "......g.",
- "gggggggg",
- "hhhhhhhh"],
-'B':[  # gordel met getrapt motief, erboven en eronder verticale kledingbanen
+'A':[  # Ponce/Bennett: linkerhand met kero (rechte beker), rechterhand met staf, in reliëf voor de borst; gordel eronder
+ "dabdddad",
+ "dbnedcbe",
+ "dbnedcbe",
+ "aaaaedbe",
+ "bbbbeaaa",
+ "eeeedbbb",
+ "ddddeebe",
+ "bbbbbbbb",
+ "nnnnnnnn"],
+'B':[  # brede gordel met getrapt motief (lichte trappiramide tussen ingehouwen treden), erboven en eronder verticale kledingbanen
  "..g..g..",
  "..g..g..",
- "..g..g..",
  "gggggggg",
- "hg.hhg.h",
- "hgg.hgg.",
+ "eee..eee",
+ "ee....ee",
+ "e......e",
  "gggggggg",
- "hhhhhhhh",
+ "........",
  "..g..g.."],
-'C':[  # groot getrapt kruis (chakana) als ingehouwen paneel
- "..gggg..",
- "..ghhg..",
- "gggssggg",
- "ghs..shg",
- "ghs..shg",
- "gggssggg",
- "..ghhg..",
- "..gggg..",
- "........"],
+'C':[  # groot getrapt kruis (chakana) met gat in het midden, als ingehouwen paneel: kruis blijft staan, hoeken getrapt weggehakt
+ "eeebbeee",
+ "eeebneee",
+ "eebnnnee",
+ "bbnnnnnn",
+ "bnneennn",
+ "nnnnnnnn",
+ "eebnnnee",
+ "eeebneee",
+ "eeebneee"],
 }
-D={'.':0,'g':3,'G':4,'s':2,'m':1,'h':-1,'H':-2}
+OFF={'n':0,'a':-2,'b':-1,'.':0,'c':1,'d':2,'e':3,'f':4,'g':3}
+def off(m,j,i):
+    at=lambda jj,ii: m[jj][ii] if 0<=jj<len(m) and 0<=ii<len(m[0]) else '.'
+    c=m[j][i]
+    if c=='X': return -2 if at(j-1,i)!='X' else -1
+    if c!='.': return OFF[c]
+    if at(j-1,i)=='X' or at(j,i-1)=='X': return 3
+    if at(j-1,i-1)=='X': return 2
+    if at(j-1,i)=='g' or at(j,i-1)=='g': return -1
+    return 0
 def bouw(k):
-    a=r8.copy()
-    for j,row in enumerate(M[k]):
+    a=r8.copy(); m=M[k]
+    for j,row in enumerate(m):
         for i,c in enumerate(row):
-            y,x=Y0+j,X0+i; b=base(y,x)
-            a[y+OY,x+OX]=1+max(0,min(8,b+D[c]))
+            y,x=Y0+j,X0+i
+            a[y+OY,x+OX]=1+max(0,min(8,base(y,x)+off(m,j,i)))
     return a
 def sla(a,naam):
     im=Image.fromarray(a,'P'); im.putpalette(PAL); im.save(naam,transparency=0); return Image.open(naam)

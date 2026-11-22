@@ -358,3 +358,7 @@ Change only the pose: a clear three-quarter view facing left. The face sits on t
 
 64x64 pixels, max 16 colors, 1 px dark outline, light from the top left, clean Game Freak shading. Plain white background, no glow, no shadow, no effects.
 ```
+
+## Jordi over v12 (`r12/gemini_v12.png`, letterlijk)
+- "het lukt hem niet" (pose niet gedraaid; wel netjes opnieuw getekend, oog en neus van v5 erin opgenomen)
+- Claude: zelf draaien in het 1024-model geeft naden (geprobeerd, niet bewaard). Voorstel: v12 als model; driekwart in de sprite op 64×64 door oog + neus als geheel een paar pixels naar links te schuiven en het oog 1 px smaller te maken (Krassault-methode: onderdelen als assets verschuiven). Wacht op Jordi.

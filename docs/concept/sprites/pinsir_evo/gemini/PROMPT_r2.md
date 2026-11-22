@@ -6,7 +6,7 @@ Draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style): pixel a
 
 WHAT IT IS
 A huge beetle-kaiju hybrid, based on the SABERTOOTH LONGHORN BEETLE (Macrodontia cervicornis) from the Amazon.
-Keep Pinsir's identity: the brown beetle body, Pinsir's face with ONE wide mouth lined with teeth (only one mouth: no snout, nose or second mouth above it), and the two big spiked pincers on top of the head. Here those pincers become the sabertooth longhorn's enormous curved mandibles with a FEW big, chunky spikes (big enough to read at 64×64). Head and body are large in the frame; the mandibles are at most about one third of the total height.
+Keep Pinsir's identity: the brown beetle body, Pinsir's face with Pinsir's own regular mouth (the vertical mouth with rows of teeth on both sides), just somewhat bigger; only that one mouth, no snout, nose, grin or second mouth, and the two big spiked pincers on top of the head. Here those pincers become the sabertooth longhorn's enormous curved mandibles with a FEW big, chunky spikes (big enough to read at 64×64). Head and body are large in the frame; the mandibles are at most about one third of the total height.
 From the sabertooth longhorn: a bold bark-like pattern on the back and wing cases. NO antennae.
 
 COLOR

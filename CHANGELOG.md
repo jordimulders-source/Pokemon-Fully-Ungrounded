@@ -2730,3 +2730,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Af: `docs/concept/sprites/vuurduivel_fase1/af/vuurduivel.png` (+ `_8x`); op het overzichtsvel (sectie New).
 - Les in SPRITE_KERN.md: witte pixel in de pupil in de onderhoek, niet tegen het oogwit; GEMINI.md: geen eerdere ronde als bijlage.
 - Gemini-prompt voor de evolutie: `docs/concept/sprites/vuurduivel_fase2/gemini/PROMPT.md` (+ sessieprompt).
+
+### [v.0.0.x] - Lunatone-evolutie: Gemini-startprompt (22 nov)
+- `docs/concept/sprites/lunatone_evo/gemini/PROMPT.md` (v1) + bijlage `bijlage_lunatone_gen3.png`: bloedmaan als tegenhanger van de Solrock-corona (fervent-hamilton), met de lessen uit die rondes.

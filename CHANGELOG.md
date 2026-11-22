@@ -2789,3 +2789,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.667] - Gnome-lijn: neus en muts
 - Jordi: "Iig een grote ronde neus en een muts die de ogen blokkeert". Toegevoegd aan `IDEEEN.md` → "Gnome-lijn".
+
+### [v0.0.668] - Gnome-lijn: fases en voorstellen
+- Jordi: tuinkabouter; fase 1 Gnomini, fase 2 Gnomad (loopt veel), meerdere fase 3-vormen aangepast aan klimaat of vervoer (Fairy/Ground, Fairy/Flying enz.). Claude stelde naam (Gnometrotter), evolutie (stappen + plek bepaalt vorm) en vormen voor; alles in `IDEEEN.md` → "Gnome-lijn".

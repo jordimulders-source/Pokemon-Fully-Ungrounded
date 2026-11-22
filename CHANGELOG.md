@@ -2689,3 +2689,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.640] - Sunflora-evolutie: typing Grass/Cosmic
 - Jordi wil een Sunflora-evolutie ("een van de allerzwakste pokemon"), typing Grass/Cosmic. Brainstormrichtingen in `docs/concept/IDEEEN.md`; ontwerp nog open. Concept: Sunflora is "zo hard gegaan op de fotosynthese dat die kosmische krachten heeft gekregen" (Jordi). Uiterlijk: tussen plant en ster, erg kosmisch en "unlocked", lichaam nog plant; heel blij gezicht (Jordi).
+
+### [v0.0.641] - Sunflora-evolutie: SPEC en Gemini-prompt r1
+- Jordi: "laten we hem maar zweven, dat is leuk". `docs/concept/sprites/sunflora_evo/SPEC.md` (alleen Jordi's citaten) en `gemini/PROMPT_r1.md`.

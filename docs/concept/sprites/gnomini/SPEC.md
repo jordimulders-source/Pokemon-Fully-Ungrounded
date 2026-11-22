@@ -36,3 +36,4 @@
 - "maar zoek nou eens naar ronde vormen zoals de neus van gnomini" · "dezelfde grootte" · (over "die was al goed") "ja vond ik maar nu niet meer omdat ik er ook wel eens naast zit". Vergelijking: `sprite_r7/neus_gen3.png` (Grumpig-snuit, Mr. Mime-cirkels).
 - "fix de neus van gnomini gewoon" → **af = r6-A** (neuslijn donkerroze, zwart alleen aan de buitenrand, zoals de Grumpig-snuit).
 - "ik zie geen enkel verschil" → af = C zonder de 2 zwarte pixels (neuslijn lichter linksboven, donkerroze onder, geen zwart), `sprite_r8/`.
+- "hoe zit het met de neus van popplio" → gemeten (`sprite_r8/popplio_neus.png`): Popplio-neuslijn is overal de donkerste eigen tint (883070), ook waar de neus tegen de witte snuit ligt; zwart (101010) alleen aan de buitenrand linksonder; binnenin 3 tinten + wit glanspixel linksboven.

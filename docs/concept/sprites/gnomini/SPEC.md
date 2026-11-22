@@ -31,3 +31,4 @@
 - Neuskleur (prompt: roze als de huid).
 - Na af (22 nov): "Gnomini mag trouwens ook nog wel een dragonflycave keuring ja" (zelfde ronde als Gnomad r10–r11).
 - Dragonfly Cave-ronde r6 (A egaal donkerroze rond de neus, B + 2 zwarte px): Jordi "de hele lijn om de neus dezelfde kleurtint?" · "maar daar worden toch meerdere tints gebruikt?" · "ja waarom doe je dat dan niet" → variant C (lijnen lopen mee met het licht).
+- Variant C (verloop + 2 zwarte px rechtsonder de neus): "het klopt gewoon weer niet, 2 zwarte pixels rechtsonderin de neus, is echt bij elke cirkel de gehele lijn om de cirkel heen dezelfde kleurtint? dat hebben we toch eerder nog nooit zo gedaan?" → gecontroleerd op Gen 3 (Azurill, Jigglypuff, Whismur) en Gnomad af: binnenlijn rond een vorm = één egale eigen tint, zonder zwart → A klopt.

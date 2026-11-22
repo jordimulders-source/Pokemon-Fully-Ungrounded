@@ -57,3 +57,4 @@
 - Keuring r8: A BIJNA / B BIJNA; kleurreparaties (nek, x35-lijn, zijvlak lijf, armen, onderrand) in het rapport van keuring_r8; worden toegepast nadat Jordi een lijfvariant van r9 kiest.
 - r9 varianten A/B/C (alleen voorvlak, plat). Jordi: "het werkt allemaal niet omdat je ze niet in het juiste perspectief hebt gezet" → r10: motieven op voor- en zijvlak in driekwart, zoals de hoofdband.
 - r10 varianten in driekwart. Jordi: "nu heeft B een mooi patroon. Armen en stekel aan de onderkant lijken alleen nog volledig 2d" → B gekozen; r11: armen en punt 3D.
+- r11 (vanaf r10B): armen met doorsnede-schaduw en eindvlak, rechterarm donkerder; punt met voor-/zijvlak en schaduw onder het lijf; nek/ribbe/zijvlak-keurderpunten. Hoofd, band, patroon B diff 0.

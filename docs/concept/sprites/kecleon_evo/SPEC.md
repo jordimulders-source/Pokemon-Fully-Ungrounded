@@ -15,4 +15,4 @@
 
 ## Rondes
 - Prompt r1: `gemini/PROMPT.md` (nieuw gesprek, geen bijlage).
-- r1 (`gemini/r1.png`), Jordi: "leuk maar ik zie hier geen kecleon in terug, oog mond, de langere kuif en krulstaart mogen bewaard blijven". Prompt r2 (nieuw gesprek, geen bijlage): `gemini/PROMPT_r2.md`.
+- r1 (`gemini/r1.png`), Jordi: "leuk maar ik zie hier geen kecleon in terug, oog mond, de langere kuif en krulstaart mogen bewaard blijven"; "hij heeft ook iets teveel detail"; "of misschien gewoon de hele hoofdvorm moet vergelijkbaar zijn". Prompt r2 (nieuw gesprek, geen bijlage): `gemini/PROMPT_r2.md`.

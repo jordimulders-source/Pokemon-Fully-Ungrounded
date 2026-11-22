@@ -2804,3 +2804,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.671] - Gnomad: frontsprite af
 - Gnome-lijn fase 2 (Fairy), naar Gemini r1 (r2 "too much qua details"). Sprite in 7 makerrondes: snor rafeliger, riem als Machoke (zwarte lijnen boven/onder, bruine band), gesp naar Jordi's vormfoto (crème, afgeronde hoeken, staand gat, in driekwart links), riem sluit op zichzelf aan en volgt de bol. Eindkeuring PASS na 7 lijnreparaties (zwart 21,4 → 18,2 %) → `docs/concept/sprites/gnomad/af/gnomad.png`; op het overzichtsvel. Gnome-lijn: Steel-vorm = urban areas, ijsvorm overwogen (IDEEEN.md); geslacht open.
+
+### [v0.0.672] - Gnomad: omlijning volgens Dragonfly Cave
+- Na Jordi's feedback over te veel zwart: r8 (zwart in snor, haarpluk, armen naar tinten), r9 (snorrand bruin i.p.v. roze: "dat moet een kleur zijn die bij de snor past juist"), r10 (hele sprite volgens de Dragonfly Cave-gids: eigen outline base per onderdeel, zwart alleen aan de schaduwkant), r11-A (geen zwart meer onder neus en snor) + 1 verdwaalde pixel. Zwart 18,2 → 12,3 %. `gnomad/af/gnomad.png` en overzichtsvel bijgewerkt. Les in GEMINI.md: omlijning in de eigen tint, DC-regel citeren.

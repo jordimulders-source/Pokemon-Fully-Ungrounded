@@ -36,3 +36,4 @@
 - "dat is toch niet hoe het hoort" (over de roze snorrand)
 - r9: "ja en doe nu de hele sprite volgens dragonflycave"
 - r10: "beter, maar nu lezen de zwarte lijn onder de dneus en de zwarte pixels onder de snor niet zo goed, horen die daar nog? de rest is prima"
+- r11: "a heeft nog 1 verdwaalde zwarte pixel links in de snor. Dat is verder wel de beste" → (11,37) zwart → bruin; **af = r11-A + die pixel** (`af/gnomad.png`).

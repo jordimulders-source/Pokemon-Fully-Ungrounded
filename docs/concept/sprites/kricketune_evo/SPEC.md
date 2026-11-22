@@ -36,3 +36,7 @@
 - Jordi: "ga maar bouwen dan kunnen we aan het einde het oog nog wat finetunen".
 - r1 (maker, `sprite_r1/`): reductie 75×85 → 56×64 door schrappen; ogen uit Kricketune, vinger, kleding iets meer lichaamsvorm (+ variant zonder). Keurder loopt.
 - Jordi op r1: "let op de positie van het linker oog", "die is niet natuurlijk", "naar de plek waar het oog in het model staat" (Claudes oogaanpassing in het model zette het te ver op de rand; plek = origineel `gemini/v3_r1.png`).
+- Keurder r1: BIJNA (alleen ruis) → r3 (vest-onderrand, strik, losse pixels; kledingversie = basis).
+- Jordi: "ja beide ogen zijn niet mooi, beetje uitgerekt" → oogstudie `sprite_r3/ogen_vel.png` (A Kricketune frame 2, B Kricketot, C Volbeat).
+- Jordi: "A is het beste, alleen het rechteroog is aan de onderkant een beetje afgekapt, met schaduw en kleurtinten kan je dat fixen" → r4 = ogen_A + 4 px onderkant rechteroog ((32,17),(35,17) rood-schaduw 9; (33,17),(34,17) donker 2), Claude: `sprite_r4/`.
+- Naam, Jordi: "Als naam kwamen Krickestra en Krickestro in me op".

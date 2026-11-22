@@ -2839,3 +2839,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.679] - Capybarrel: niet Normal/Water
 - `IDEEEN.md`: Jordi wil Normal/Water vermijden (Bibarel, die nog een evolutie krijgt).
+
+### [v0.0.680] - Capybarrel: Normal
+- `IDEEEN.md`: Capybarrel begint als puur Normal (Jordi); evolutie open.

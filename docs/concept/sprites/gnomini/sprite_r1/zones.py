@@ -1,7 +1,7 @@
 # Natief indexraster -> onderdelen (4-samenhangende vlakken tussen de zwarte lijnen). Print zonekaart.
 import numpy as np
 idx=np.load('natief_idx.npy')
-ZWART={1,2}  # modelpalet 0 en 1 (bijna zwart) -> index 1,2 in natief_idx
+ZWART={1,2,3,4,5,6}  # zwart + donkerste tinten (lijnen/selout in het model)
 fg=idx>0; vlak=fg&~np.isin(idx,list(ZWART))
 lab=np.zeros(idx.shape,int); n=0
 for y,x in zip(*np.where(vlak)):

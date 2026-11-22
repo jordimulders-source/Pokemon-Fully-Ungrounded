@@ -30,3 +30,4 @@
 - **r4 gekozen**, Jordi: "yes ga maar los, de ogen zijn prima voor nu". Bevroren model: `referenties/gemini_gekozen_r4.png`.
 - Toegestane afwijking: tanden in de open bek als witte hoektanden van 1–2 px zoals de Gen 3-Mightyena frame 2 (Jordi vroeg "of zou je kunnen smokkelen door naar andere sprites te kijken"; voorstel Claude, door Jordi met "ga maar los" aanvaard). Ogen: zoals het model ("prima voor nu").
 - Frontsprite: r1 (maker, schrappen 74→64 zoals Gengas, gezicht 1-op-1), keurder BIJNA (manenhagel, vlakke zwarte poten); r2 kleur, keurder PASS; r3 = r2 + 9 losse pixels naar buurtint (Claude). Naar Jordi: `sprite_r3/naast_model.png`.
+- Jordi bij r3: "nice, dit is het kleurpatroon van mightyena ook?"; na de vergelijking (zwarte snuit i.p.v. rode neus, geen lichte buik, bruinrode bek): "nee juist goed dat er iets van verschil is".

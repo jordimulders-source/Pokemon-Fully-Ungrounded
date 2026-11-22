@@ -43,3 +43,4 @@ AVOID
 ## Reactie op v1 (`r1/gemini_v1.png`), Jordi (22 nov, letterlijk)
 - "lijkt wel teveel op de echte lunatone he, hoe kunnen we het anders maken dan een pallette swap"
 - Claude stelde voor: A spiegel van Solrock-corona (rode volle maan met de sikkel als gezichtsplaat), B sikkel in stukken als baan om een kern met het oog, C volle maan in aardschaduw met een dun licht stukje sikkel. Wacht op Jordi.
+- Jordi (22 nov): "misschien een volle maan? is een lunar eclipse/blood moon altijd vol?" (ja: een maansverduistering kan alleen bij volle maan)

@@ -203,3 +203,25 @@ Better: keep the cracked dark core, the face plate and the broken floating stone
 
 Same face, same Gen 3 sprite style, plain white background, no glow outside the rim.
 ```
+
+---
+
+# Prompt v7 (22 nov): NIEUW gesprek, bijlagen v5 (`r5/gemini_v5.png`) + Solrock (`bijlage_solrock_gen3.png`)
+
+## Jordi (letterlijk)
+- Over v6: "ik denk dat ik dit minder mooi vind" (v5 is de basis; diagonale baan werd een Saturnusring)
+- "het enige waar ik nog echt over twijfel is het stuk ogen met oranje in het midden" / "ja de vorm van dat oranje plaatje"
+- Keuze uit 5 opties: "2 akkoord" (gebroken Solrock-plaat: ronde plaat met puntjes, met afgebroken stukken en een barst)
+
+## Analyse Claude
+Plaat in v5 leest als kattenkop (twee punten boven, rafelige onderkant). Eén wijziging; licht en baan blijven zoals in v5.
+
+```
+The first attached image is my Pokémon design (an evolution of Solrock). The second attached image is SOLROCK, its pre-evolution.
+
+Keep the first design exactly as it is: the cracked dark core, the thin light rim, the broken floating stones, the red eyes, the colors, the pose and the size. Change only one thing:
+
+The orange face plate. Its current shape looks like a cat head (two points on top, ragged bottom). Replace its shape with Solrock's own face plate from the second image: a round plate with small, even points all around its edge, like a small sun. But this plate is old and battered like the rest of the body: a few of its points are broken off, a chunk is missing from one side, and one crack runs through it. Same orange color, same two red eyes in the same place.
+
+Same Gen 3 sprite style, plain white background.
+```

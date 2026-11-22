@@ -53,3 +53,19 @@ def reduceer(c,fg,x0,y0,cel,W,H,wzwart=1.0,alpha=0.45):
             h=h.copy(); h[1]*=wzwart
             o[j,i]=h[1:].argmax()+1
     return o,frac
+def platen(a,c,fg,glans_min=95,glans_d=20,minpx=40):
+    # r2: lijf als PLATEN. De zwarte modellijnen (klasse 1) scheiden het lijf in platen (4-samenhangend); elke plaat krijgt de
+    # band van zijn mediane modelhelderheid (2 <50, 3 <72, 4 <95, 5 >=95), alleen de glans (helderheid >= max(95, mediaan+20))
+    # wordt licht (5). Zo worden de dij-/knieplaten één vlak met de gemeten middentint i.p.v. een gestreepte textuur.
+    from scipy import ndimage
+    L=a.mean(2); m=np.isin(c,(2,3,4,5))
+    lab,n=ndimage.label(m)
+    med=ndimage.median(L,lab,index=np.arange(1,n+1)); cnt=ndimage.sum(m,lab,index=np.arange(1,n+1))
+    med=np.concatenate([[0],med]); cnt=np.concatenate([[0],cnt])
+    M=med[lab]
+    t=np.where(M<50,2,np.where(M<72,3,np.where(M<95,4,5)))
+    g=m&(L>=np.maximum(glans_min,M+glans_d))
+    t[g]=5
+    small=m&(cnt[lab]<minpx)
+    c2=c.copy(); c2[m&~small]=t[m&~small]
+    return c2,lab,M

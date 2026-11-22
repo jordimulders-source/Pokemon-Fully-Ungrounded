@@ -23,5 +23,5 @@ Eindvorm, zwevend: vult het 64×64-vak zoals het model (puin tot bijna de rand).
 ## Nieuw model (23 nov): Gemini v16
 - Jordi over v16: "voor mijn gevoel is deze beter"; "alleen de rechterkant is niet meer rond" / "lijkt nu een opening te zitten"; bijsturen in Gemini (v17): "hij maakt het erger".
 - Voorstel Claude, Jordi "akkoord": v16 wordt het model (`referenties/model_v16.png`); de rechterkant wordt rond gemaakt zonder tekenen: de ronde omtrek van boven/links/onder doortrekken naar rechts, bijgekomen strook vullen met de schaduwtinten die al rechts liggen. Gezicht, neus, barsten en puin zoals v16.
-- Uitgebrokkelde stukken uit r5 terughalen: gevraagd, niet beantwoord; dus niet gedaan (v16 zoals hij is).
+- Jordi: "en de brokkels mogen terug": de uitgebrokkelde stukken uit de rand worden overgenomen uit sprite r5 (zelfde gaten op dezelfde relatieve plek, pixels uit r5).
 - Vorige kandidaat (model v11+v5): `sprite/r5/` blijft bewaard.

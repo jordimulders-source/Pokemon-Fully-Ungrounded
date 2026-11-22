@@ -1,0 +1,10 @@
+# romp (met de hand): c kraag, g rompgrond, a band 1 (getrapte Λ), k band 2 (getrapte Λ, 3 rijen lager).
+# Band 1 houdt 1 px voor de armaanzetten op, zodat romp en bovenarmen een eigen kleurgrens houden.
+26 x31 cccc
+27 x30 cccccc
+28 x29 gggaaggg
+29 x29 gaaaaaagg
+30 x29 gaaggaagg
+31 x28 ggggkkgg
+32 x29 gkkkkkk
+33 x29 kkk.gkkk

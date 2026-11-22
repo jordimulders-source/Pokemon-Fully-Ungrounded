@@ -166,3 +166,37 @@ The left side. Remove the smooth curved hollow around the nose: there is no half
 
 Same Gen 3 sprite style, plain white background.
 ```
+
+---
+
+# Prompt v6 (22 nov): NIEUW gesprek, GEEN bijlage
+
+## Jordi over v5 (`r5/gemini_v5.png`, letterlijk)
+- "niet goed" (vrijwel gelijk aan v4, uitsparing bleef)
+
+## Analyse Claude
+Het woord "Lunatone" (en "crescent" in AVOID) roept de sikkel op. Daarom nergens Lunatone of halve maan noemen; de vorm als bol/bal beschrijven, oog en neus alleen in woorden.
+
+```
+Design a new Pokémon and draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art).
+
+CONCEPT
+- A crumbling blood moon: a living ball of moon rock during a total lunar eclipse, falling apart. Old, battered and powerful.
+
+DESIGN
+- Body: a perfect round ball of stone, like a planet seen from space, in deep coppery blood red, darker on the shadow side, covered in craters and deep cracks. Its outline is a full, unbroken circle all the way around.
+- Crumbling: a few chunks have broken off the ball and float loose around it, none of them touching it, with smaller fragments between them.
+- Face: one single round red eye with a thick black ring around it, set in the surface of the ball, slightly right of center. Left of the eye, a short pointed stone nose grows straight out of the curved surface of the ball, like a small horizontal spike pointing left. Around the base of the nose the stone is rough, cracked and crumbled. No other facial features.
+
+POSE
+- Three-quarter view facing left, floating.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, clean shading like official Game Freak Gen 3 sprites.
+- Plain white background. NO soft glow or halo behind the creature, no floor, shadow, sparkles or effects. One single creature, no extra views.
+
+AVOID
+- No notch, hollow, cut-out or open mouth in the ball: the ball is solid and round everywhere, also around the nose.
+- Not an emblem, badge, logo or symbol. Not a sun. No lava, no gems or crystals, no fire.
+- No arms, legs, wings, mouth or human features. No glossy 3D render, no plush or mascot look.
+```

@@ -2700,3 +2700,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.642] - Robotmug naar main en op het overzichtsvel
 - De robotmug (vlieglijn fase 2, Poison/Electric, af op 21 nov) stond alleen op branch `claude/intelligent-bohr-npyumy`. Jordi: "de mug ontbreekt". `docs/concept/sprites/vlieglijn_fase2/` overgenomen (af, SPEC, Gemini, keuringen), met de lessen in GEMINI.md, POKEMON.md en TODO; op het overzichtsvel naast Flytron ("Robotmug", naam gepauzeerd). Details over de rondes: changelog op die branch (v0.0.584 daar).
+- Naam robotmug: Jordi neigt naar **Buzzquito** (22 nov); in POKEMON.md bij de gepauzeerde namen.

@@ -7,3 +7,4 @@
 - r1: "het is nog teveel bok en te weinig satyr, en het vuur is er gewoon op geplakt". v2: "hij mag iets duivelachtiger".
 - r2: "ben alleen geen fan van de ogen", "hij mag wat meer lachen", "nee ik wil geen buikspieren", "lachen met ogen open maar wel van die ondeugende ogen, hij mag wat minder mensachtig, wat meer cute nog".
 - r3: "ik ben van het eerste design wel fan" → **gekozen: `referenties/gemini_gekozen_r3a.png`** (prompt `gemini/PROMPT_v3.md`). r3b (gele ogen) niet gekozen.
+- Staart: "pijlstaart met vuurkleur" (Jordi, 22 nov; staartvlam "een beetje overdone"). Prompt `gemini/PROMPT_v4_staart.md`.

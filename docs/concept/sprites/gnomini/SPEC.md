@@ -30,3 +30,14 @@
 - Type: puur Fairy?
 - Neuskleur (prompt: roze als de huid).
 - Na af (22 nov): "Gnomini mag trouwens ook nog wel een dragonflycave keuring ja" (zelfde ronde als Gnomad r10–r11).
+- Dragonfly Cave-ronde r6 (A egaal donkerroze rond de neus, B + 2 zwarte px): Jordi "de hele lijn om de neus dezelfde kleurtint?" · "maar daar worden toch meerdere tints gebruikt?" · "ja waarom doe je dat dan niet" → variant C (lijnen lopen mee met het licht).
+- Variant C (verloop + 2 zwarte px rechtsonder de neus): "het klopt gewoon weer niet, 2 zwarte pixels rechtsonderin de neus, is echt bij elke cirkel de gehele lijn om de cirkel heen dezelfde kleurtint? dat hebben we toch eerder nog nooit zo gedaan?" → gecontroleerd op Gen 3 (Azurill, Jigglypuff, Whismur) en Gnomad af: binnenlijn rond een vorm = één egale eigen tint, zonder zwart → A klopt.
+- "nu ben je echt aan het gaslighten" · "je zegt iets en daar geef je voorbeelden die je eigen ongelijk bewijen" (vergelijkingsvel `sprite_r7/binnenlijnen_vergelijk.png`). Onverifieerde les uit SPRITE_KERN gehaald.
+- "maar zoek nou eens naar ronde vormen zoals de neus van gnomini" · "dezelfde grootte" · (over "die was al goed") "ja vond ik maar nu niet meer omdat ik er ook wel eens naast zit". Vergelijking: `sprite_r7/neus_gen3.png` (Grumpig-snuit, Mr. Mime-cirkels).
+- "fix de neus van gnomini gewoon" → **af = r6-A** (neuslijn donkerroze, zwart alleen aan de buitenrand, zoals de Grumpig-snuit).
+- "ik zie geen enkel verschil" → af = C zonder de 2 zwarte pixels (neuslijn lichter linksboven, donkerroze onder, geen zwart), `sprite_r8/`.
+- "hoe zit het met de neus van popplio" → gemeten (`sprite_r8/popplio_neus.png`): Popplio-neuslijn is overal de donkerste eigen tint (883070), ook waar de neus tegen de witte snuit ligt; zwart (101010) alleen aan de buitenrand linksonder; binnenin 3 tinten + wit glanspixel linksboven.
+- "nou daar heb je je antwoord" → zoals Popplio: neuslijn rondom de donkerste eigen tint, zwart alleen aan de buitenrand → **af = r6-A**.
+- "en pak de gnomini met zwarte omlijning" · "fix die" · "want daarna is alles fout gegaan" · "gnomini met zwart omlijnde neus" → **af = oude af (zwarte omlijning) met alleen de neuslijn zoals Popplio**: zwart waar de neus aan de achtergrond grenst, donkerroze waar hij tegen muts/lijf ligt (27 px, `sprite_r9/`). DC-rondes r6–r8 vervallen.
+- "KIJK NAAR DE NEUS VAN POPPLIO / DOE DAT NA" · "DE MANIER WAAROP DIE OMLIJND IS" · "GNOMINI IS NIET AF" → r10: neuslijn zoals Popplio: zwart van linksmidden via linksonder tot onder-midden, donkerroze bovenom en rechts, 1 px (`sprite_r10/`). Status: niet af.
+- "kijk eindelijk" → **af = r10**.

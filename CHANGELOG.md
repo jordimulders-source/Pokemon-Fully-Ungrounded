@@ -2686,3 +2686,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.639] - Merge naar main
 - Main (Dundragoon, Oricorio-dansen) samengevoegd met de onweerswolk-Altaria; onze secties hernummerd naar v0.0.623–638; achtergebleven conflictmarkeringen uit een eerdere merge op main opgeruimd.
+
+### [v0.0.640] - Mightyena-evolutie gestart
+- Besloten (Jordi, 22 nov): Dark/Fighting, female only (clanleider), duidelijke Mightyena-evolutie in grootte en machtigheid, typische hyenakop, pose misschien met 1 poot alsof hij geniepig lacht. `docs/concept/sprites/mightyena_evo/SPEC.md`, Gemini-prompt r1 in `gemini/PROMPT.md`.

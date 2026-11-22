@@ -14,7 +14,7 @@
 - Pose: "misschien" één poot, alsof hij geniepig lacht.
 
 ## Open
-- Evolutiemethode/level, naam (grap *Almightyena* genoteerd). Poochyena-lijn moet terug in de dex.
+- Evolutiemethode/level, naam: kandidaten *Almightyena* (Claude, 9 nov) en *Alphyena* (Jordi, 22 nov: "alphyena vind ik ook wel een goede"). Poochyena-lijn moet terug in de dex.
 
 ## Voorstel Claude (niet van Jordi)
 - Kleuren en tekening van Mightyena (zwart en grijs, rode ogen met geel oogwit) in de prompt, zodat het een herkenbare evolutie is; hyenakop = gevlekte hyena (breed, stomp, zware kaken, ronde oren, dikke nek, aflopende rug). Andere wens: aanpassen.

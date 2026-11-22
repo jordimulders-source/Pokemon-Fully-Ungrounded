@@ -2878,3 +2878,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.689] - Merge naar main
 - Main (Lunatone-evolutie bloedmaan, Solrock-corona, Krickestro, vuurduivel fase 2) samengevoegd met de gnome-lijn (Gnomini, Gnomad); onze secties hernummerd naar v0.0.682–688. Overzichtsvel opnieuw gegenereerd.
+
+### [v0.0.690] - Idee: Emolga-evolutie (wingsuit)
+- Jordi's idee voor een Emolga-evolutie gebaseerd op wingsuit flying vastgelegd in `docs/concept/IDEEEN.md`.

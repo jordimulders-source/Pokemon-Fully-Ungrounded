@@ -17,6 +17,8 @@
 - "misschien wel een soort 'broek' wat gewoon een 2e kleur op het lichaam is"
 - Broekkleur: "hemelsblauw" → prompt `gemini/PROMPT_v2.md`.
 - r2 (`r2/gemini_r2.png`, prompt v2): "lijkt nu een beetje op een verrassingsei haha"
+- Jordi over r2: "de muts is uitstekend, ik vind het wel een prima ontwerp en ik denk dat jij de schaduw en volume wel kan verbeteren, misschien is het lijf te eivormig en mag dat ronder nog"
+- **Bevroren model: `r2/gemini_r2.png`.** Toegestane afwijkingen in de sprite: schaduw en volume verbeteren; lijf ronder (minder eivormig). Muts: "uitstekend" (bevroren).
 
 ## Open (overleggen vóór de Gemini-prompt)
 - Type: puur Fairy?

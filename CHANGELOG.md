@@ -2733,3 +2733,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.654] - Sunflora-evolutie: eindkeuring, r6 en r7
 - Eindkeuring BIJNA: open rand bovenop het rechterbeen dicht (r6). Jordi: "ja fixen" voor de twee punten in het hoofd: okerrand linksonder aan het gele bloemblad, groen vlekje verbonden met de linker bladhand (r7, 5 px; `sprite_r7/`).
+
+### [v0.0.655] - Sunflora-evolutie: frontsprite af
+- Jordi: "ja commit en push naar main". `docs/concept/sprites/sunflora_evo/af/sunflora_evo.png` (+ `_8x`) = r7; op het overzichtsvel onder "Evolutions of existing Pokémon"; Stand van zaken en les in GEMINI.md bijgewerkt.

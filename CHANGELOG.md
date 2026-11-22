@@ -2481,3 +2481,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.604] - Nazca-astronaut: r13 masker los van de nek, naden
 - `sprite_r13/`: rij rood tussen nek en masker (masker 8×6), zwarte schoudernaden en tailleband tussen shirt en shorts.
+
+### [v0.0.605] - Nazca-astronaut: r14 mouwen/shorts S1–S5
+- `sprite_r14/`: romp r13 bevroren; mouwen en shorts in 5 stoffen (blauw+goud, goud+rood/zwart, zwart+gouden banden, crème+rode zigzag, goud/zwart + blauw/wit).

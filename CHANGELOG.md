@@ -2792,3 +2792,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.668] - Gnome-lijn: fases en voorstellen
 - Jordi: tuinkabouter; fase 1 Gnomini, fase 2 Gnomad (loopt veel), meerdere fase 3-vormen aangepast aan klimaat of vervoer (Fairy/Ground, Fairy/Flying enz.). Claude stelde naam (Gnometrotter), evolutie (stappen + plek bepaalt vorm) en vormen voor; alles in `IDEEEN.md` → "Gnome-lijn".
+
+### [v0.0.669] - Gnome-lijn: naam fase 3
+- Jordi: "Ik dacht aan Gnomigration maar Gnometrotter bekt wat lekkerder". In `IDEEEN.md` → "Gnome-lijn".

@@ -693,4 +693,5 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
   - *Naam fase 3:* **Gnometrotter** (globetrotter); vormen heten dan bijv. Gnometrotter (Sky Form).
   - *Evolutie Gnomad → fase 3:* op aantal stappen met Gnomad vooraan in de party (bestaat al in de expansion: `IF_MIN_OVERWORLD_STEPS`, zoals Pawmo). De vorm hangt af van waar hij evolueert (Wormadam/Burmy-idee, vast na evolutie; kan met `IF_IN_MAPSEC`/kaarttype). Castform-achtig (wisselen in gevecht op weer) past minder bij "aangepast aan een vervoermiddel".
   - *Vormen (klimaat + vervoer):* bergen → Fairy/Flying (paraglider of muts als luchtballon); zee/kust → Fairy/Water (zeilbootje, muts als zeil); sneeuw → Fairy/Ice (slee of ski's; let op overlap met Skinguin); woestijn/zoutvlakte → Fairy/Ground; grot → Fairy/Rock (mijnkarretje met lantaarn); jungle → Fairy/Grass; stad → Fairy/Steel (fiets).
+- **Jordi (22 nov):** "Ik dacht aan Gnomigration maar Gnometrotter bekt wat lekkerder".
 - Open: aantal fases, type naast Fairy, wat voor kabouter (tuinkabouter, folklore zoals de Latijns-Amerikaanse *duende*, iets anders), waar de woordgrappen zitten (namen, moves, dex-teksten).

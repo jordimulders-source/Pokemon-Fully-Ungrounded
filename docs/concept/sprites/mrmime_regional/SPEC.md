@@ -45,3 +45,4 @@ Jordi: "ik denk dat dit ontwerp het niet gaat worden" – "het hele idee bedoel 
 - r1 (`bokser/r1.png`), Jordi: "ok best aardig idee, alleen hij moet meer gentlemanly en wat meer afwijken qua en kleur ook van de mr mime. Zou het idee zijn om voor meer een zwart wit pallette te gaan? past gek genoeg ook goed bij mime. Zou mr prime ook goed daarvan uit de verf komen?"
 - Jordi: "en de oren misschien wat meer achterovergekamd". Vragen over houding/snor/accent niet beantwoord. Prompt r2: `bokser/PROMPT_r2.md` (zwart-wit, gentlemanly, oren ver achterover; houding als r1).
 - Jordi stuurde een 19e-eeuwse boksersfoto (rechtop, één arm gestrekt met vuist vooruit, andere vuist tegen de borst): "deze houding". Verwerkt in r2 (in woorden, geen bijlage).
+- Jordi over Mr. Rime vs Mr. Prime: "mr rime is een jolly danser en mr prime wordt een volledige gentleman qua pose, dat en qua kleur is echt genoeg verschil". (Kanttekening Claude vervalt.)

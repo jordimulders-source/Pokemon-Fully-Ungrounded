@@ -19,7 +19,7 @@
 - r2 (`r2/gemini_r2.png`, prompt v2): "lijkt nu een beetje op een verrassingsei haha"
 - Jordi over r2: "de muts is uitstekend, ik vind het wel een prima ontwerp en ik denk dat jij de schaduw en volume wel kan verbeteren, misschien is het lijf te eivormig en mag dat ronder nog"
 - **Bevroren model: `r2/gemini_r2.png`.** Toegestane afwijkingen in de sprite: schaduw en volume verbeteren; lijf ronder (minder eivormig). Muts: "uitstekend" (bevroren).
-- Sprite r1 (`sprite_r1/`, A = lijf als model, B = 3 px breder): Jordi "A".
+- Sprite r1 (`sprite_r1/`, A = lijf als model, B = 3 px breder): Jordi "A". Over B: "B is compleet mislukt", "dat is niet rond".
 
 ## Open (overleggen vóór de Gemini-prompt)
 - Type: puur Fairy?

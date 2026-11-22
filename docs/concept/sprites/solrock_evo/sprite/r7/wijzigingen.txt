@@ -1,0 +1,66 @@
+(26,23) 13->10: bovenste punt: linkerkant bruin in het model (frac L0,40 / L0,35 / g0,42+c0,31)
+(25,24) 13->10: bovenste punt: linkerkant bruin in het model (frac L0,40 / L0,35 / g0,42+c0,31)
+(24,25) 13->10: bovenste punt: linkerkant bruin in het model (frac L0,40 / L0,35 / g0,42+c0,31)
+(21,26) 13->10: plaattop zakt hier in: frac g0,4-0,5 + L/K 0,2-0,3 -> bruine rand
+(22,26) 13->10: plaattop zakt hier in: frac g0,4-0,5 + L/K 0,2-0,3 -> bruine rand
+(19,27) 13->7: licht vlak kleiner: model frac A<0,4 hier
+(20,27) 13->7: licht vlak kleiner: model frac A<0,4 hier
+(23,27) 7->13: licht vlak: model frac A>=0,4 hier
+(24,27) 7->13: licht vlak: model frac A>=0,4 hier
+(30,27) 13->7: licht vlak kleiner: model frac A<0,4 hier
+(19,28) 13->7: licht vlak kleiner: model frac A<0,4 hier
+(23,28) 7->13: 1-px vlakje weg (frac a0,74 A0,15): sluit aan op het lichte vlak
+(25,28) 9->7: geen lijn hier in het model (frac a)
+(18,29) 8->3: rand: rij 29 begint op x19 (was 18)
+(19,29) 8->7: geen lijn hier in het model (frac a)
+(20,29) 9->7: geen lijn hier in het model (frac a)
+(21,29) 9->13: licht vlak: model frac A>=0,4 hier
+(22,29) 9->13: licht vlak: model frac A>=0,4 hier
+(17,30) 10->3: rand: rij 30 begint op x18 (was 17); lidcontour links blijft (18-19,30)
+(22,30) 13->9: barst midden-boven: model L/c (24,28),(24,29),(22,29-31)
+(23,30) 13->7: licht vlak kleiner: model frac A<0,4 hier
+(29,30) 1->7: crack alleen op native x90-91 (pixel 28); frac (29,30) a5K1
+(18,31) 7->13: bolling: native (67-68,89-90) AAA (frac A3-4)
+(19,31) 7->13: bolling: native (69-70,89-90) A
+(22,31) 7->9: barst midden-boven: model L/c (24,28),(24,29),(22,29-31)
+(29,31) 1->10: boogcontour: frac L3A2/A4K3, native (91-93,89) KKK -> boog
+(30,31) 8->9: boogcontour rechts: frac c4b2
+(20,32) 10->7: onderkant bolling sluit aan op de plaat: frac a4b3
+(19,33) 7->1: lid: native (69-70,94-95) KK, gat in het lid dicht
+(21,33) 1->7: plaat: frac a6K2
+(19,34) 1->12: iris boven: native (69-70,96-97) R+K; +1 px voor ronde vorm
+(21,34) 1->7: plaat naast de streep: frac A3b3
+(22,34) 9->13: lichte streep: native (76-77,96) A
+(32,34) 1->8: plaat: frac b5K2 (lid loopt tot x31, native x97-99)
+(20,35) 12->1: lid rechts: native (71-72,98-100) K
+(21,35) 1->13: lichte streep onder: native (75,97-100) A
+(25,35) 1->8: plaat: frac b9/b6
+(26,35) 12->1: lid links: native x85-86
+(28,35) 1->12: iris boven (donker): native y98-100 x87-96 R; notch native x90 (1 natieve px) als R gevuld
+(32,35) 1->8: plaat: frac b5K4
+(17,36) 1->8: rand: plaat onder het linkeroog bolt naar x17 (model native x64-65,y101-102: a/b, frac b3K2)
+(19,36) 11->10: onderlid: native (69-70,101) KK/L
+(20,36) 12->8: plaat: frac b6K3
+(21,36) 1->8: plaat: frac b9 (was zwart)
+(32,36) 1->8: plaat: frac b7L1
+(20,37) 1->8: plaat: frac b9 (was zwart)
+(26,37) 1->10: onderlid: native (86,103) K/c
+(27,37) 12->10: onderlid: native (87-88,103-104) cc/K
+(30,37) 8->10: onderlid: native (94-95,103) LL
+(18,38) 8->1: rand: buitenlijn diagonaal (17,37)-(20,40)
+(20,38) 9->8: vlak glad (dambord weg): model frac b
+(22,38) 9->8: vlak glad (dambord weg): model frac b
+(28,38) 1->10: onderlid onder de iris: native (89-93,104) LKLLL, 1 rij omlaag door de ronde onderkant
+(29,38) 8->10: idem
+(18,39) 8->3: rand: rij 39 begint op x20
+(19,39) 8->1: rand: buitenlijn diagonaal
+(20,39) 8->9: barst neus -> linksonder: model L (21,37-38),(20,39)
+(22,39) 9->8: vlak glad (dambord weg): model frac b
+(32,39) 9->8: vlak glad (dambord weg): model frac b
+(23,40) 9->8: vlak glad (dambord weg): model frac b
+(29,40) 9->8: vlak glad (dambord weg): model frac b
+(30,40) 8->9: barst onder rechteroog: model L (29,39),(29,40),(30,40)
+(31,40) 9->8: vlak glad (dambord weg): model frac b
+(33,40) 9->8: vlak glad (dambord weg): model frac b
+(24,41) 9->8: vlak glad (dambord weg): model frac b
+(25,41) 8->9: barst neus -> onderpunt: model L (23,37),(24,38),(25,39-41)

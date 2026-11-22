@@ -2509,8 +2509,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.584] - Merge naar main
 - Branch `claude/peaceful-cori-756ovj` (vlieglijn, overzichtsvel in drie categorieën, werknamen 21 nov, Llamauler r7) samengevoegd met `main`; eigen changelogsecties hernummerd naar 581–583. Regionale Vileplume (`oddish_regional/vileplume_sprite/af/`, van `claude/great-maxwell-bgon7h`) staat daarmee ook in main.
 
-<<<<<<< HEAD
-=======
 ### [v0.0.585] - Regionale Vileplume (onderwater-Oddish-lijn, Water/Fire): frontsprite af
 - Naar het bevroren Gemini-model (`referenties/gemini_gekozen_vileplume.png`): wit lijfje op twee steltpoten, vijf rode anemonen rond een gloeiende krater. 19 rondes in `docs/concept/sprites/oddish_regional/vileplume_sprite/` (r1–r19), af in `vileplume_sprite/af/vileplume_regional.png` (+ 8×).
 - Afwijkingen van het model op Jordi's woord: tentakels geklonterd (optie A); gezicht = ogen en mond van de Vileplume uit de game, ogen net onder de kroon, geel met tinten, lachmondje; middelste anemoon bovenaan naar links (gaatje dicht); voorste twee anemonen uit r3 met modelomtrek; mondjes alle vijf gelijk; poten per rij uit het natieve model.
@@ -2589,7 +2587,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.609] - Merge naar main
 - Main (vlieglijn, regionale Vileplume, overzichtsvel) samengevoegd met de onweerswolk-Swablu-lijn; onze changelogsecties hernummerd naar v0.0.587–608.
->>>>>>> 74d5587868a23f3d483af908ec5cd6a95b1c0083
 
 ### [v0.0.610] - Werknaam Hexpress
 - Spooktrein fase 3 heet **Hexpress** (Jordi, 21 nov: "Hexpress is geniaal"; hex + express); op het vel, in POKEMON.md en CLAUDE.md.
@@ -2639,3 +2636,53 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.597] - Oricorio samba: frontsprite af (alle drie de dansen af)
 - Oricorio Samba (Grass/Flying) af in `docs/concept/sprites/oricorio_dansen/samba/af/` (r11, variant C): Gemini-model r10 (tooi op het hoofd en zijvleugels zoals een sambadanseres, gouden borst- en heupband, blauwe puntjes); Pom-Pom-oog en -snavel, Baile-standvoet; afwerking op Jordi's punten (veren als bladvormen, linkervleugel, poten, tooiveer rechtsboven) en eindkeuring PASS na kleurrondes (zebra in veren en franje weg, spikkels weg). Op het overzichtsvel. Daarmee zijn cumbia, tango en samba af.
+### [v0.0.623] - Onweerswolk-Altaria: frontsprite r3
+- Op het kop x1,5-model (`altaria/sprite_r3/`): beide ogen lezen op 1x, geen zwart/navy in de lijnen, ronde kappen per bol. Claude: static te fel, kuif rommelig, vleugeltoppen te licht/vlak → r4. Nog niet aan Jordi getoond.
+
+### [v0.0.624] - Onweerswolk-Altaria: frontsprite r4
+- Static subtieler (150,206,230; 6 stukken, 76 px), kuif als twee strengen, vleugels donkerder; silhouet -16 px (`altaria/sprite_r4/NOTITIES.md`). Claude: vleugels lezen nog als vlakke massa met trapjesrand → r5 alleen vleugels.
+
+### [v0.0.625] - Onweerswolk-Altaria: frontsprite r5 (vleugels)
+- Alleen vleugels (89 px): kap per modelbol (links 6, rechts 5), alpha links 2 px (`altaria/sprite_r5/NOTITIES.md`). Eindkeuring loopt.
+
+### [v0.0.626] - Onweerswolk-Altaria: eindkeuring r5
+- FAIL: kop/ogen/snavel goed (bevroren); korrel, kuifpixels, static 2 px dik, onderste bol te licht, lijf/rechtervleugel als platen met rechte naden. MOETEN 1-6 als pixellijst toegepast op `proef_eindkeuring.png` (94 px); MOET 6b (bollen in lijf en rechtervleugel) naar een verse maker (`altaria/sprite_r5/EINDKEURING.md`).
+
+### [v0.0.627] - Onweerswolk-Altaria: frontsprite r6
+- MOET 6b: bollen in lijf en rechtervleugel per bol ingekleurd (393 px), rechte naden weg (`altaria/sprite_r6/NOTITIES.md`). Claude: lijf leest als lichte stippen op een donkere vlakte → r7 met de modellijnen tussen de bollen als selout-bogen (zoals de Swablu).
+
+### [v0.0.628] - Onweerswolk-Altaria: frontsprite r7
+- Modellijnen tussen de bollen als selout-bogen (289 px); bollen lezen nu als hoekige kasseien (`altaria/sprite_r7/NOTITIES.md`). Na 7 rondes vastgelopen op de wolkbollen: vergelijking r4-r7 + model voor Jordi (`altaria/vergelijk_r4_r7.png`).
+
+### [v0.0.629] - Onweerswolk-Altaria: feedback Jordi op r4-r7
+- Jordi: wolken zijn niet het probleem, wel kleurgebruik/schaduw/tinten; meer static (uit het model), kuif meer definitie en kleur, kop nog blurry; "niks zelf tekenen" (citaat in `altaria/SPEC.md`). Verse maker r8.
+
+### [v0.0.630] - Onweerswolk-Altaria: frontsprite r8
+- Wolk in de 4 modeltinten (navy/donker teal/teal/licht cyaan) + navy selout, meerderheidsband per pixel (r5 had 498 px in een tussentint die het model niet heeft); static 105 px op modelplekken; kuif en kop per pixel uit het model (`altaria/sprite_r8/NOTITIES.md`). Eindkeuring loopt.
+
+### [v0.0.631] - Onweerswolk-Altaria: eindkeuring r8 → r9
+- Eindkeuring r8: PASS na 16 px (14 static-hoekpixels, 1 kuifglans, 1 wolkkap; `altaria/sprite_r8/EINDKEURING.md`). r9 = die proefkopie (`altaria/sprite_r9/`). Aan Jordi getoond.
+
+### [v0.0.632] - Onweerswolk-Altaria: gezicht naar echte Altaria
+- Jordi over r9: wolken goed, gezicht niet (linksonder valt weg, linkeroog slecht zichtbaar, rechte rechterkant); gezicht mag van het model afwijken, baseren op de echte Altaria. r10: alleen de kop.
+
+### [v0.0.633] - Onweerswolk-Altaria: frontsprite r10 (kop naar echte Altaria)
+- Kop pixel voor pixel van de Gen 3-Altaria (rijen Y16-17, kolommen X28/X34 geschrapt), omgekleurd naar ons violet/teal; diff met r9 85 px alleen in de kop, alpha -11/+1 in de kopzone (`altaria/sprite_r10/NOTITIES.md`).
+
+### [v0.0.634] - Onweerswolk-Altaria: r11 grotere kop (A/B)
+- Jordi: "ik denk dat de kop nog wat groter moet, want de vorm is echt raar". A = Gen 3-Altaria-kop op 100% (17x12), B = ±117% (20x14); kuif hoefde niet te schuiven; pluis cyaanwit met wolk-selout (`altaria/sprite_r11/NOTITIES.md`).
+
+### [v0.0.635] - Onweerswolk-Altaria: r12 kop+hals 2 px rechts
+- Jordi: "a is perfect, zou je alleen het hele hoofd + nek 2 pixels naar rechts kunnen schuiven en mij dan een vergelijking kunnen laten zien?". Kop+hals als laag verschoven (niets hertekend); K1 kuif blijft, K2 kuif mee; vrijgekomen pixels = r9-wolk of wolkband ernaast (`altaria/sprite_r12/`).
+
+### [v0.0.636] - Onweerswolk-Altaria: r13 (K2 + 2 vergeten kuifpixels)
+- Jordi: "vanzelfsprekend dat de kuif meeschuift, je bent wel 2 pixels vergeten mee te schuiven." (40,20)/(41,20) navy rand van de kuifpunt mee naar (42,20)/(43,20). Naar eindkeuring (hals-aansluiting, lijnen, tinten, schaduw).
+
+### [v0.0.637] - Onweerswolk-Altaria: eindkeuring r13 → r14
+- PASS na 5 px: halsrand doorgetrokken tot de wolkkwab, L-hoek weg, gaatje in de kuif dicht, kuifpunt eindigt tegen de vleugelrand (`altaria/sprite_r13/EINDKEURING.md`). r14 = proefkopie.
+
+### [v0.0.638] - Onweerswolk-Altaria: frontsprite af
+- Jordi: "akkoord, commit en push naar main". `docs/concept/sprites/swablu_regional/altaria/af/altaria.png` (+ `_8x`) = r14. Lessen in `docs/lessen/GEMINI.md`; Stand van zaken bijgewerkt. Daarmee is de onweerswolk-Swablu-lijn af.
+
+### [v0.0.639] - Merge naar main
+- Main (Dundragoon, Oricorio-dansen) samengevoegd met de onweerswolk-Altaria; onze secties hernummerd naar v0.0.623–638; achtergebleven conflictmarkeringen uit een eerdere merge op main opgeruimd.

@@ -2839,3 +2839,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Prompt r4 (trapmotief in de band, pijlerlijf): `baltoy_regional/gemini/PROMPT_baltoy_r4.md`.
 - r4 (`baltoy_regional/gemini/baltoy_r4.png`).
 - Prompt r5 (levendiger): `baltoy_regional/gemini/PROMPT_baltoy_r5.md`.
+- r5 (`baltoy_regional/gemini/baltoy_r5.png`).

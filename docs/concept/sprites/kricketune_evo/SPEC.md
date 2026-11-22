@@ -25,3 +25,4 @@
 ## Rondes
 - Prompt r1: `gemini/PROMPT.md` (nieuw gesprek, geen bijlage).
 - r1: `gemini/r1.png`. Claude: nog geen duidelijke 3e fase/niet grootser, los stokje, vleugels als cape i.p.v. rokpanden, frontaal, beentjes/onderlijf zakken weg. Jordi: "ja het stokje kan 1 vinger zijn die als stok fungeert en tevens als wapen, zoals een krab ook 1 grotere klauw kan hebben". Bijstuurprompt r2 (zelfde gesprek): `gemini/PROMPT_r2_bijsturen.md`.
+- r2a (zelfde gesprek, `gemini/r2a_zelfde_gesprek.png`) en r2b (nieuw gesprek, `gemini/r2b_nieuw_gesprek.png`).

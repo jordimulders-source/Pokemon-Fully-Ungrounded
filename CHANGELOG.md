@@ -2835,3 +2835,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Jordi: wat van Baltoy blijft = "die ronde ogen met een streep erin met het rode patroon erboven". Prompt r2: `docs/concept/sprites/baltoy_regional/gemini/PROMPT_baltoy_r2.md`.
 - r2 (`baltoy_regional/gemini/baltoy_r2.png`): Jordi "nu is die herkenbaar baltoy"; maattest 64/48 px in `baltoy_regional/maattest/`.
 - Jordi over r2: "dus dan moet de vorm veranderen en dan moet de band robuuster" → prompt r3 (`baltoy_regional/gemini/PROMPT_baltoy_r3.md`).
+- r3 (`baltoy_regional/gemini/baltoy_r3.png`): Jordi "hij is nog herkenbaar baltoy".

@@ -1,0 +1,14 @@
+Ronde 3 (opdracht Claude na r2): alleen de rechterkant, vanaf v16_r2 (A) en v16_r2/variant_B (B). Script: schaduw.py, vel: vel.py.
+1. Verticale naad tussen lijf en donkere band weg (verticale zwarte runs >= 3 px zonder horizontale barstbuur -> tint van de baan/lijftint ernaast).
+   Dwarsbarsten (horizontaal, uit het model) blijven, in de schaduwbanen als tint twee stappen donkerder dan hun baan (4->2, 3->1), buiten de banen zwart.
+2. Schaduw als sikkel: banen 4 -> 3 -> 2 naar de buitenrand; afstand = afstand tot de echte buitenrand, breedte x cos(hoek)^0.7 vanaf het bolmidden
+   (breed in het midden: 4 ±3 px, 3 ±2,5 px, 2 ±1,5 px; smal boven/onder). Donkere bandresten binnen de sikkel -> 4. Losse zwarte 2x2-blokjes -> 3.
+   Kleur/schaduw wijkt hier bewust af van het model; vorm en silhouet zoals r2.
+3. Brokje rechtsboven los gemaakt: (52,18) en (53,18) weg -> 1 px lucht (ook diagonaal); het brokje blijft 17 px.
+Controle (script):
+losse zwarte blokjes -> 3: 3
+. gewijzigd t.o.v. r2: 241 | gezicht: 0 | silhouet: 2 | buiten de rechterzone (excl. brokje): 0 | naadpixels weg: 5 | dwarsbarstpixels: 43
+
+losse zwarte blokjes -> 3: 7
+variant_B gewijzigd t.o.v. r2: 232 | gezicht: 0 | silhouet: 2 | buiten de rechterzone (excl. brokje): 0 | naadpixels weg: 6 | dwarsbarstpixels: 48
+(gezicht = oog + neus: 0 px; silhouet: alleen de 2 brokjepixels; buiten de rechterzone: 0 px)

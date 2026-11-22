@@ -2833,3 +2833,21 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Gemini v1–v7 (`solrock_evo/gemini/PROMPT.md`, `r1/`–`r7/`); v5 gekozen als model (losse afgebroken stenen, gebarsten zwarte kern, eclipsrand, Solrocks gezichtsplaat). Lava en olivijnkristal (eigen voorstellen Claude) geschrapt; diagonale baan werd in Gemini een Saturnusring.
 - Sprite: r1–r3 met Jordi's breuk in de plaat (varianten A/B, Solrock-ogen letterlijk/aangepast) → Jordi: "ze zijn geen van allen mooi, probeer maar het model na te maken" (zonder breuk). r4–r8: model trouw, ogen per pixel naar het model (pupil aan het lid), linker plaatrand ronder (Jordi); keurder PASS. Eindkeuring Dragonfly Cave (r9), "blurry" → meer tinten en schaduwopbouw in de kern (r10–r11), Jordi koos kleurvariant B (koele schaduw, warm licht), eindkeuring B (r12), barsten in de plaat lichter (r13).
 - Af: `docs/concept/sprites/solrock_evo/af/solrock_evo.png` (+ `_8x`); op het overzichtsvel (Evolutions of existing Pokémon, nu 9; teller 72; type op het vel = Solrocks huidige type, eigen type open). Naam en evolutiemethode open.
+### [v0.0.678] - Lunatone-evolutie: Gemini-prompts (22 nov)
+- `docs/concept/sprites/lunatone_evo/gemini/PROMPT.md` (v1) + bijlage `bijlage_lunatone_gen3.png`: bloedmaan als tegenhanger van de Solrock-corona (fervent-hamilton), met de lessen uit die rondes.
+- Rondes v1–v13 (`lunatone_evo/r*/`): sikkel bleef terugkomen zolang de Lunatone-bijlage of -naam in de prompt stond; v10 (pure beschrijving, geen bijlage) + v11 (meer uitgebrokkeld) gaf de vorm.
+
+### [v0.0.679] - Lunatone-evolutie "bloedmaan": frontsprite-kandidaat
+- Model (Jordi): Gemini v11 met oog en neus van v5 geplakt, kleinste puin weg (`lunatone_evo/referenties/model.png`, `model/script/plak2.py`); SPEC met Jordi letterlijk.
+- Sprite r1–r5 (`lunatone_evo/sprite/`): verkleining van het model, niets hertekend; plaknaden rond het oog weggewerkt (toegestaan). Keuring r3: barsten te druk, tinten ongelijk → r4 lange modelbarsten, tinten 48/79/113/147; eindkeuring r4 PASS op beide eisen. r5 = r4 + klein hooglicht op de bolling (keurder, optioneel).
+- Kleurvariant B (dieper bloedrood, dichter bij het model): `sprite/r5/sprite_B_bloedrood.png`. Jordi kiest. Vellen: `lunatone_evo_8x.png`, `lunatone_evo_B_bloedrood_8x.png`, `sprite/r5/vel.png`.
+
+### [v0.0.680] - Lunatone-evolutie: nieuw model v16 (driekwart) en sprite-kandidaat
+- Gemini v14–v17: pose met perspectief; Jordi koos v16 ("voor mijn gevoel is deze beter"); rechterkant rond gemaakt en brokkels uit r5 terug (Jordi akkoord).
+- Sprite `lunatone_evo/sprite/v16_r1`–`v16_r7`: Jordi koos r2A om de driekwart van de donkere rechterband; daarna schaduw over het hele lijf voor perspectief (r5), twee donkerdere roodtinten rechts in het oog (r6, Jordi), keuringsreparaties (r7). Keuring r5: trouw PASS, techniek bijna PASS; r7 lost de resterende punten op.
+- Vel: `lunatone_evo/lunatone_evo_v16_8x.png` (naast Lunatone). Vorige kandidaat (model v11) blijft in `sprite/r5/`.
+
+### [v0.0.681] - Lunatone-evolutie "bloedmaan": frontsprite af
+- r8: neusaansluiting netter, pupil 1 px lager (kijkt niet meer omhoog), oog op 0/2/4 px naar rechts × iris zoals r7/donkerder; Jordi: "midden onder is goed" (2 px, donkere iris).
+- r9: losgekomen barstjes rechts van het oog taps laten uitlopen (3 px).
+- Af: `lunatone_evo/af/bloedmaan.png` (+ 8×), op het overzichtsvel onder "Evolutions of existing Pokémon" als "Bloedmaan (Lunatone)", rock/cosmic. Naam en evolutiemethode open.

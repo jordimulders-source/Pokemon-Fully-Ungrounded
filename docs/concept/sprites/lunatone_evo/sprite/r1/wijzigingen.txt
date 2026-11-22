@@ -1,0 +1,8 @@
+Ronde 1: pixels afwijkend van de kale reductie (../kaal.png), per zone
+oog  :   33 van 184
+naad :   25 van 184
+neus :   19 van 203
+lijf :  116 van 1131
+puin :   62 van 232
+totaal: 255
+alpha-diff (silhouet) t.o.v. kale reductie: 0

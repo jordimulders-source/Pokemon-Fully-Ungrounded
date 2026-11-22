@@ -1,0 +1,12 @@
+Ronde 7 vanaf v16_r6 (keuring r5, benoemde pixels)
+punt 1: NIET gedaan - model v16 heeft daar zelf tint 4 tussen tint 2 (lichte lip langs de neusbuik); gemeld en gelaten
+(45,45) 2 -> 5  punt 2: lichte bovenrand puin rechtsonder (44-47,45)
+(14,23) 4 -> 5  punt 3
+(14,24) 4 -> 5  punt 3
+(17,35) 4 -> 2  punt 3 (punt 1 vervallen)
+(39,47) 3 -> 1  punt 4: alleen omringd door lijn (5 van 8 buren zwart, steen alleen diagonaal 3) -> lijnkleur
+(50,15) 4 -> 2  punt 4: buurtint
+(40,11) 3 -> 2  punt 4: buurtint
+(52,19) 3 -> 2  punt 4: buurtint
+(31,53) 3 -> 1  punt 4: onderrand
+totaal t.o.v. r6: 9 px (alle in de lijst hierboven; verder pixeldiff 0)

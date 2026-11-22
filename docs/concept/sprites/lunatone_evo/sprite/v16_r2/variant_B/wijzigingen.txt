@@ -1,0 +1,18 @@
+Ronde 2B (model v16); t.o.v. r1: randkleur met lokale normaal (wanden van de happen), brokkels.py zet de rand niet meer zwart
+Pipeline: natief.py (Gemini-raster 16 px, fase 15, 1-op-1) -> kwant.py (r4-palet; oog binnen de ring met irispalet)
+  -> rond.py (rechterkant rond) -> rek.py (4 kolommen + 4 rijen verdubbeld zodat de groep het vak vult) -> brokkels.py -> bouw.py
+Pixels afwijkend van de kale reductie (natief raster, gekwantiseerd, zelfde vergroting) per zone:
+  oog                 :    0 van 113
+  neus                :    8 van 220
+  lijf                :   26 van 1054
+  rechterkant (rond)  :  143 van 424
+  brokkels (r5)       :   79 van 86
+  puin                :    6 van 211
+  totaal: 262
+Uitsteeksels van het knippen weg: 2 px
+Opschonen: buitenlijn 23 px (selout linksboven / zwart schaduwkant), steenvlekjes 35 px, losse zwarte pixels 6 px
+bbox x2-61 y4-60; kleuren gebruikt: [np.int64(1), np.int64(2), np.int64(3), np.int64(4), np.int64(5), np.int64(7), np.int64(8), np.int64(9), np.int64(10)]
+schaal r5->v16 1.015; r5 c=(39.0,29.5) R=23.7; v16 c=(35.2,30.5) R=24.0
+hap rechtsboven: r5-gebied x46-63 y2-20 -> v16 x42-60 y3-21; 61 px uit r5 overgenomen
+hap linksonder (onder de neus): r5-gebied x11-25 y37-50 -> v16 x7-21 y38-51; 28 px uit r5 overgenomen
+snippers weg: 0 px; randpixels in de knipzone naar zwart: 0

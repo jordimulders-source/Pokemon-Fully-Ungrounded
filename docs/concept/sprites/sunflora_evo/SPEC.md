@@ -17,4 +17,5 @@ Alleen Jordi's woorden (22 nov); niets anders is besloten.
 - Jordi (22 nov): "overlappen maakt niet uit zolang je in elk geval maar iets van de onderdelen van het lichaam ziet, incl de bladhanden".
 - Jordi (22 nov): "ja of je vergroot het lichaam dan, het idee is dat het wel lijkt alsof het hoofd op een logische plek aan het lichaam zit" + "ondanks de komische grootte".
 - Na sprite r2 (Jordi, 22 nov): "maar het lichaam ziet er toch niet uit zo. Assets heel raar aan elkaar geplakt zo, er klopt niks van" · "en nergens sluit die dus goed aan" · "overal te laag".
+- Jordi (22 nov): "anders haal je het hele lichaam weg" · "en gaan we gemini vragen om een lichaam eronder te maken" · "dan wordt die maar anders, is niet erg".
 - Open: naam, kleuren, details van het kosmische deel, stats.

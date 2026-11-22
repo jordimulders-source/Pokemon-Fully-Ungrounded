@@ -7,3 +7,4 @@
 - 22 nov: "gnomad" (start ontwerp).
 
 ## Open (overleggen vóór de Gemini-prompt)
+- Antwoorden (22 nov): lopen in het lichaam: geen voorkeur; muts: "Groter en langer" (blijft over de ogen, langer, slappe punt die meezwiept); kleuren: "Zelfde kleuren"; baard: "iets anders" (nog niet gespecificeerd).

@@ -234,3 +234,35 @@ AVOID
 - Not an emblem, badge, logo or symbol. Not a sun. No lava, no gems or crystals, no fire.
 - No arms, legs, wings, mouth or human features. No glossy 3D render, no plush or mascot look.
 ```
+
+---
+
+# Prompt v8 (22 nov): NIEUW gesprek, GEEN bijlage, zonder gezicht
+
+## Jordi over v7 (`r7/gemini_v7.png`, letterlijk)
+- "nee dit is het ook niet, doe een prompt zonder lunatone erin, kunnen we daarna wel knippen en plakken"
+- Dus: oog en neus van Lunatone worden later in de sprite geplakt.
+
+```
+Design a new Pokémon and draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art).
+
+CONCEPT
+- A crumbling blood moon: a living full moon of stone during a total lunar eclipse, falling apart. Old, battered and powerful.
+
+DESIGN
+- Body: a big round full moon of stone in deep coppery blood red, darker on the shadow side, covered in craters and deep cracks. It is crumbling: chunks have broken off its edge.
+- Crumbling pieces: the broken chunks float loose around the moon, none of them touching it, with smaller fragments between them.
+- No face: no eyes, no nose, no mouth.
+
+POSE
+- Three-quarter view, the sphere slightly tilted, floating.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, clean shading like official Game Freak Gen 3 sprites.
+- Plain white background. NO soft glow or halo behind the creature, no floor, shadow, sparkles or effects. One single creature, no extra views.
+
+AVOID
+- No notch, hollow, cut-out or bite in the moon.
+- Not an emblem, badge, logo or symbol. Not a sun. No lava, no gems or crystals, no fire.
+- No arms, legs, wings or human features. No glossy 3D render, no plush or mascot look.
+```

@@ -1,0 +1,9 @@
+# romp: lichtvlek bovenaan breder, naar rechts en onder via G naar H
+29 31 GFFFFFGG
+30 31 GFFFFFGG
+31 32 GFFFFGGH
+32 31 GGFFFGGGHH
+33 31 GGGFGGGGHH
+34 31 GGGGGGGGHH
+35 31 GGGGGGGGHH
+36 31 GGGGGGGHHH

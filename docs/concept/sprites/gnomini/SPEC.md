@@ -23,6 +23,7 @@
 - r2 (`sprite_r2/`): vraag "grens roze/blauw met de bol mee laten buigen?" → Jordi: "ja en misschien dat we een soort streep ertussen moeten doen, doe dat als A/B test".
 - "en zijn linkerhand is niet rond" (= armpje links in beeld, met het duimachtige bultje; eerder: "de armpjes worden idd gewoon rondjes").
 - r3 (`sprite_r3/`, A gebogen grens / B + donkerblauwe streep): Jordi "B is goed, maar het lichaam moet nog iets smoother rond qua vorm".
+- r4 (`sprite_r4/`, A licht smoother / B onderflanken uitgebold): Jordi "A".
 
 ## Open (overleggen vóór de Gemini-prompt)
 - Type: puur Fairy?

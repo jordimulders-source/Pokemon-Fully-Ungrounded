@@ -325,3 +325,18 @@ Its face sits on the left half of the body, at mid-height:
 
 Sprite: 64x64 pixels, max 16 colors, 1 px dark outline, light from the top left, clean Game Freak shading with bold, simple shapes. Plain white background, no glow, no shadow, no effects.
 ```
+
+---
+
+# Prompt v11 (22 nov): zelfde gesprek als v10, bijsturen (reactie op `r10/gemini_v10.png`)
+
+## Jordi (letterlijk)
+- "ok en nu moeten er meer stukken uitgebrokkeld zijn"
+
+```
+Good. Keep everything exactly as it is: the eye, the nose, the colors, the craters, the pose and the size. Change only one thing:
+
+More pieces have crumbled out of the moon. Several clear chunks are missing from its edge, with jagged broken gaps in the round outline, and those broken-off chunks float loose around the body, close to it but not touching it.
+
+Same Gen 3 sprite style, plain white background.
+```

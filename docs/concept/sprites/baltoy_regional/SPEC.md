@@ -31,3 +31,4 @@
 - r3 (`gemini/baltoy_r3.png`, vierkante bloklkop met platte top, meanderband, gefacetteerd lijf, grijze steen), Jordi: "hij is nog herkenbaar baltoy, klopt het ontwerp met tiwanaku?"
 - Claude over r3: kop en grijze steen kloppen met Tiwanaku; band = Grieks meander, lijf = kristal. Jordi: "ja schrijf r4 met trapmotief en pijlerlijf" → `gemini/PROMPT_baltoy_r4.md`.
 - r4 (`gemini/baltoy_r4.png`, vierkante kop met trapband en kruis, rechte pijler met reliëf en punt, beige steen), Jordi: "en nu".
+- Claude over r4: Tiwanaku klopt, maar paal/tentharing-gevoel. Jordi: "ja maak hem levendiger, schrijf r5" → `gemini/PROMPT_baltoy_r5.md` (bredere pijler, bijna geen hals, armen schuin omlaag/naar voren: voorstel Claude).

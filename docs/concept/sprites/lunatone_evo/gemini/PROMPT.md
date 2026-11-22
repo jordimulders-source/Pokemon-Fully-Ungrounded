@@ -362,3 +362,27 @@ Change only the pose: a clear three-quarter view facing left. The face sits on t
 ## Jordi over v12 (`r12/gemini_v12.png`, letterlijk)
 - "het lukt hem niet" (pose niet gedraaid; wel netjes opnieuw getekend, oog en neus van v5 erin opgenomen)
 - Claude: zelf draaien in het 1024-model geeft naden (geprobeerd, niet bewaard). Voorstel: v12 als model; driekwart in de sprite op 64×64 door oog + neus als geheel een paar pixels naar links te schuiven en het oog 1 px smaller te maken (Krassault-methode: onderdelen als assets verschuiven). Wacht op Jordi.
+- Jordi: "probeer nogn 1 keer een prompt from scratch" / "zonder bijlagen"
+
+---
+
+# Prompt v13 (22 nov): NIEUW gesprek, GEEN bijlage, from scratch
+
+Basis v10 (werkte) + Jordi's punten daarna: meer uitgebrokkeld (v11), minder puin (ruis), oog en neus zoals in v5, driekwart.
+
+```
+Draw an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art) of this Pokémon:
+
+A Rock/Cosmic-type Pokémon that is a crumbling blood moon. Its body is a big round full moon made of stone, deep coppery red, as if lit by a total lunar eclipse. It is old and battered: a few large craters, some deep cracks, and several big chunks have crumbled out of its edge, leaving jagged gaps in the round outline. Only 4 or 5 of those broken chunks float loose around it, close to the body but not touching it. No tiny debris.
+
+It is seen in a clear three-quarter view, turned to the left, like a globe turned so that its face is on the left side of the ball, close to the left edge. The right half of the ball shows plain cratered stone.
+
+Its face:
+- The eye: one large eye, a slightly narrow upright oval because the ball is turned. Bright red iris with a black vertical slit pupil, set in a thick black rim.
+- The nose: a short, pointed stone wedge growing out of the curved left side of the ball, just left of the eye, level with the eye, pointing left and a little toward the viewer. A lighter top face and a darker bottom face, divided by one dark line running to the tip. Same red stone as the body.
+- The ball stays round all the way around the nose; the stone around the base of the nose is cracked and crumbled.
+
+It has no mouth, no arms, no legs. It floats.
+
+Sprite: 64x64 pixels, max 16 colors, 1 px dark outline, light from the top left, clean Game Freak shading with bold, simple shapes. Plain white background, no glow, no shadow, no effects.
+```

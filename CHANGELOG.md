@@ -2878,3 +2878,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.689] - Merge naar main
 - Main (Lunatone-evolutie bloedmaan, Solrock-corona, Krickestro, vuurduivel fase 2) samengevoegd met de gnome-lijn (Gnomini, Gnomad); onze secties hernummerd naar v0.0.682–688. Overzichtsvel opnieuw gegenereerd.
+
+### [v0.0.690] - Gnomini: omlijning volgens Dragonfly Cave
+- Jordi: "Gnomini mag trouwens ook nog wel een dragonflycave keuring ja". r6-A (binnenlijnen in de eigen tint, zwart alleen aan de schaduwkant/buitenrand; zwart 14,8 → 8,4 %); varianten B/C met zwart bij de neus afgewezen; vergeleken met de Grumpig-snuit. `gnomini/af/gnomini.png` en overzichtsvel bijgewerkt. Werkwijze: Dragonfly Cave-omlijning verplicht in de eindkeuring (SPRITE_WERKWIJZE stap 7); les in SPRITE_KERN: eerst meten, dan beweren.

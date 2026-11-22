@@ -22,3 +22,5 @@
 
 ## Rondes
 - Prompt r1: `gemini/PROMPT.md` (nieuw gesprek, geen bijlage).
+- r1 (`gemini/r1.png`), Jordi: "de dubbele mond ben ik geen fan van, die gekke voelsprieten passen ook niet, kleur beetje te monotoon, verder conceptueel wel prima, maar zou dit vertalen naar een sprite?"
+  Claude: kale reductie naar 64 px (`plak/r1_64_8x.png`): de kaken nemen ±40 % van de hoogte, waardoor kop en lijf klein worden; gezicht wordt ±10 px (brij), de zaagtandjes en stekels worden losse pixels, de schorstekening valt weg. Conceptueel vertaalt het, in deze verhouding niet goed. Prompt r2 (nieuw gesprek, geen bijlage): `gemini/PROMPT_r2.md` (één bek, geen antennes, meer kleurcontrast; als voorstel van Claude: grotere kop en lijf, kaken iets korter, minder maar grotere stekels).

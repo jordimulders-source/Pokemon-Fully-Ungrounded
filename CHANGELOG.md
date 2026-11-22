@@ -2704,3 +2704,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.645] - Sunflora-evolutie: r3 mislukt, startprompt r4
 - Jordi over r3 (bijsturen): "niet gelukt". `gemini/PROMPT_r4.md`: r2-prompt met groter hoofd en minder detail in de tekst, nieuw gesprek zonder bijlage.
+
+### [v0.0.646] - Sunflora-evolutie: r4 hoofd goed, prompt r5
+- Jordi: "hoofd wel prima nu, als we de kleuren wat simpeler maken"; meer punten; "nog net wat meer echt een kosmische entiteit"; lijf van Sunflora. r4 opgeslagen, `gemini/PROMPT_r5.md` (eerst hoofd, dan lijf).

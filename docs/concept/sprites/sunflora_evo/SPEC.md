@@ -8,4 +8,5 @@ Alleen Jordi's woorden (22 nov); niets anders is besloten.
 - Gezicht: "Het tevreden/blije gezicht blijft of wordt net iets anders, maar hij is heel blij".
 - Houding: "laten we hem maar zweven, dat is leuk".
 - Hoofd (na r1): "ja de bloem wordt veel meer een ster, maar dan geen 5punt ster, meer een kosmisch uitziende ster"; geen heelalpatroon.
+- Na r4: "hoofd wel prima nu, als we de kleuren wat simpeler maken" (= "zelfde kleuren, minder tinten"); ster: meer punten; "misschien dat het hoofd nog net wat meer echt een kosmische entiteit kan worden". Lijf: "is nu eigenlijk meer een pre sunflora vorm, die kunnen we misschien gewoon van sunflora kopieren"; voeten (zweven): "kunnen we nog aan gemini vragen".
 - Open: naam, kleuren, details van het kosmische deel, stats.

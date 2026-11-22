@@ -418,13 +418,14 @@ Change only its orientation. Right now it is completely horizontal: the nose poi
 
 ## Jordi over v14 (`r14/gemini_v14.png`, letterlijk)
 - "dit is gedraaid, maar geen driekwart pose" (Gemini draaide alleen in het vlak)
+- "hij moet een x aantal graden draaien" / "naar rechts" (graden niet genoemd; in de prompt 30–45 als voorstel Claude)
 
 # Prompt v15 (23 nov): NIEUW gesprek, bijlage `lunatone_evo_8x.png`
 
 ```
 The attached image is my finished Pokémon sprite, a crumbling blood moon. Redraw this exact same Pokémon as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art), with the same design, colors, eye, nose, cracks, crumbled gaps and floating chunks.
 
-Change only the camera angle. Right now we see it in pure side view. Do NOT just rotate the picture. Instead, the ball turns in 3D toward the viewer, as if it turned its face about 45 degrees toward the camera, like every Pokémon front sprite in three-quarter view facing left:
+Change only the angle. Right now we see it in pure side view, facing left. Do NOT rotate the picture flat. Instead, the ball spins around its own vertical axis, about 30 to 45 degrees to the right, so its face turns toward the viewer: a three-quarter view facing left, like every Pokémon front sprite:
 - The eye is now on the front-left of the ball, seen in perspective: an upright, narrower oval.
 - The nose now points toward the viewer and to the left, so it looks shorter in perspective and overlaps the ball; we see its base on the front of the ball, not on the left edge.
 - More of the ball's right side, with its cracks and crumbled gaps, is visible behind the face.

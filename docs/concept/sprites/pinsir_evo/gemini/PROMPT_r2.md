@@ -6,14 +6,14 @@ Draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style): pixel a
 
 WHAT IT IS
 A huge beetle-kaiju hybrid, based on the SABERTOOTH LONGHORN BEETLE (Macrodontia cervicornis) from the Amazon.
-Keep Pinsir's identity: the brown beetle body, Pinsir's face with Pinsir's own regular mouth (the vertical mouth with rows of teeth on both sides), just somewhat bigger; only that one mouth, no snout, nose, grin or second mouth, and the two big spiked pincers on top of the head. Here those pincers become the sabertooth longhorn's enormous curved mandibles with a FEW big, chunky spikes (big enough to read at 64×64). Head and body are large in the frame; the mandibles are at most about one third of the total height.
+Keep Pinsir's identity: the brown beetle body, Pinsir's face with Pinsir's own regular mouth (the vertical mouth with rows of teeth on both sides), just somewhat bigger; only that one mouth, no snout, nose, grin or second mouth, and the two big spiked pincers on top of the head. Here those pincers become the sabertooth longhorn's enormous curved mandibles with big, chunky spikes (big enough to read at 64×64). Head and body are large in the frame; the mandibles are at most about one third of the total height.
 From the sabertooth longhorn: a bold bark-like pattern on the back and wing cases. NO antennae.
 
 COLOR
 Not monotone: clear contrast between the parts, e.g. a warm reddish-brown/chestnut body, darker wing cases with a bold lighter bark pattern, pale bone-colored mandibles and spikes, a lighter belly.
 
 KAIJU
-It stands UPRIGHT ON TWO heavy, thick legs like a classic movie kaiju, with a thick heavy tail dragging behind it, a row of big sharp spikes running down its back and tail, a hunched, massive, towering posture. Short strong arms like Pinsir's. More spikes than Pinsir overall, but fewer and bigger rather than many tiny ones.
+It stands UPRIGHT ON TWO heavy, thick legs like a classic movie kaiju, with a thick heavy tail dragging behind it, a row of big sharp spikes running down its back and tail, a hunched, massive, towering posture. Short strong arms like Pinsir's. VERY SPIKY: much spikier than Pinsir overall, every spike big enough to read at 64×64 (no tiny 1-pixel spikes).
 
 VIEW
 Three-quarter view facing left, like every Gen 3 front sprite: the far limbs on the left (partly hidden), the near ones on the right.

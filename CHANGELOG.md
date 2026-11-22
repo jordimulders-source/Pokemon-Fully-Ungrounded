@@ -2723,3 +2723,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.651] - Sunflora-evolutie: sprite r3 (model 1,6)
 - Model gekozen (Jordi: "1,6 is precies wat ik bedoel"): `gemini/model_16.png`. r3 = r1-hoofd (diff 0) + kale verkleining van het r12-lijf op hetzelfde raster, geen handpixels. Jordi: "als je dan nog de voeten zo kan zetten dat het lijkt alsof die zweeft dan ben ik tevreden": voeten als blok gedraaid in vier varianten (model/binnen/buiten/slap), `sprite_r3/vel.png`.
+
+### [v0.0.652] - Sunflora-evolutie: sprite r4 en r5 (lijf)
+- Jordi over r3: "r3 buiten is goed, maar nu moet je nog de lijnen wat minder recht maken en kijken naar kleurtinten/schaduw en lijngebruik. Bijv niet overal zwarte lijnen bij het lichaam, hoofd vind ik prima zo".
+- r4 (maker): selout donkergroen boven/links, zwart onder/rechts, 3 groentinten met volume. Keurder BIJNA: armen nog rechte balken. r5: ronde bladonderkanten uit het model, losse voetpixel weg (25 px, hoofd per assert onaangeroerd); A modelgroen, B Sunflora-groen (`sprite_r5/vel.png`).

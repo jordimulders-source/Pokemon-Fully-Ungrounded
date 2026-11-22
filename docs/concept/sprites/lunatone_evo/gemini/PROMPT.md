@@ -460,3 +460,14 @@ Give it a new pose WITH PERSPECTIVE, a real three-quarter view like Pokémon fro
 
 ## Jordi over v16 (`r16/gemini_v16.png`, letterlijk)
 - "voor mijn gevoel is deze beter"
+- "alleen de rechterkant is niet meer rond"
+
+# Prompt v17 (23 nov): zelfde gesprek als v16, bijsturen
+
+```
+Better. Keep everything exactly as it is: the pose, the perspective, the face, the colors, the cracks and the floating chunks. Change only one thing:
+
+The right side of the ball is flattened into a straight edge. Make the right side round again, so the whole ball has a round outline, like a sphere.
+
+Same Gen 3 sprite style, plain white background.
+```

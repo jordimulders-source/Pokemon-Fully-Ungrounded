@@ -2870,3 +2870,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.687] - Regionale Mr. Mime: r6 en aanpak in twee stappen
 - r6 opgeslagen (twee figuren). Prompt r7 stap A: eerst alleen het ontwerp in een staande pose, daarna de guard-pose met dat plaatje als bijlage.
+
+### [v0.0.688] - Regionale Mr. Mime: gi-ontwerp geparkeerd
+- r7a (staand) had weer gewoon een gi aan; Jordi: "ik denk dat dit ontwerp het niet gaat worden". Besluiten tot nu toe in `mrmime_regional/SPEC.md`; TODO bijgewerkt. Les in `GEMINI.md`: geen bijlagen voorstellen.

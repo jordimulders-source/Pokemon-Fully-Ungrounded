@@ -9,4 +9,7 @@ Alleen Jordi's woorden (22 nov); niets anders is besloten.
 - Houding: "laten we hem maar zweven, dat is leuk".
 - Hoofd (na r1): "ja de bloem wordt veel meer een ster, maar dan geen 5punt ster, meer een kosmisch uitziende ster"; geen heelalpatroon.
 - Na r4: "hoofd wel prima nu, als we de kleuren wat simpeler maken" (= "zelfde kleuren, minder tinten"); ster: meer punten; "misschien dat het hoofd nog net wat meer echt een kosmische entiteit kan worden". Lijf: "is nu eigenlijk meer een pre sunflora vorm, die kunnen we misschien gewoon van sunflora kopieren"; voeten (zweven): "kunnen we nog aan gemini vragen".
+- Na r5 (model): "vrij oke, maar het hoofd moet echt overdreven groot zijn tov het lichaam, door de extreme fotosynthese"; "dat het lijf heel klein is, is niet erg. Gemini had het lijf in verhouding nog groter gemaakt dan de normale sunflora"; keuze **2,6×** (`gemini/r5_kop_groter_180_220_260.png`, rechts).
+- Sprite (Jordi, 22 nov): "ja 2,6 is goed, gebruik het oorspronkelijke sunflora lijf ervoor als inspiratie, zorg dat die goed aansluit op het hoofd, overlapping is niet erg".
+- Hoofd = r5-hoofd (`gemini/r5.png`); kleuren "zelfde kleuren, minder tinten".
 - Open: naam, kleuren, details van het kosmische deel, stats.

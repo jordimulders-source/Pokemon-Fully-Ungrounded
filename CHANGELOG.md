@@ -2873,3 +2873,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.688] - Regionale Mr. Mime: idee geschrapt
 - r7a (staand) had weer gewoon een gi aan; Jordi: "ik denk dat dit ontwerp het niet gaat worden". Daarna: "het hele idee bedoel ik". Geschrapt in SPEC, TODO en IDEEEN; Mr. Prime open. Les in `GEMINI.md`: geen bijlagen voorstellen.
+
+### [v0.0.689] - Bokser-Mr. Mime: nieuw idee voor Mr. Prime, prompt r1
+- Jordi koos de ouderwetse bokser ("rocky marciano achtig", heel anders dan Hitmonchan, niet Mr. Mime met handschoenen). Gedrongen silhouet met Mr. Mime-hoofd, crouch; prompt `mrmime_regional/bokser/PROMPT.md`.

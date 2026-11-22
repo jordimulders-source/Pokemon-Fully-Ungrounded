@@ -37,3 +37,8 @@
 Jordi: "ik denk dat dit ontwerp het niet gaat worden" – "het hele idee bedoel ik". De jiujitsu-Mr. Mime vervalt; of Mr. Prime (bartitsu-gentleman) blijft, is open. Wat wel vastligt uit deze rondes: Fighting/Psychic, normale Mr. Mime-huid (voor Mr. Prime), gele wangen, paarse "oren", lichtblauwe vingertoppen/voeten, zwarte band, op de rug "get into my guard". Gemini tekende 7 rondes lang een mens in een pak of een verkeerde ligpose.
 - Jordi (22 nov) over Mr. Prime: "mr prime is nog steeds een leuk idee, maar moeten we eerst bedenken of we nog een nieuwe mr mime maken". Open: komt er een andere nieuwe Mr. Mime (voor Mr. Prime)?
 - Jordi (22 nov): nieuwe Mr. Mime vóór Mr. Prime = **Victoriaanse bokser** (voorstel van 9 nov). Brainstorm gestart.
+
+# Bokser-Mr. Mime (22 nov)
+- Jordi: "ja van die vroege rocky marciano achtige boksers"; "maar het moet wel heel anders dan hitmonchan zijn he"; "dus niet gewoon mr mime met bokshandschoenen"; op Claude's voorstel (silhouet gedrongen: dikke nek, zware schouders, tonborst, korte dikke onderarmen; Mr. Mime-hoofd; crouch): "laten we het proberen".
+- Voorstellen Claude (niet besloten): schaduwboksen = gevecht mimen; geen handschoenen; boksbroek als lichaamstekening; haarpieken achterover; type Fighting/Psychic of Fighting/Fairy (Queensberry = fair play); link Luis Ángel Firpo; Mr. Prime = gepensioneerde bokser.
+- Prompt r1: `bokser/PROMPT.md` (type alleen "Fighting", tweede type open).

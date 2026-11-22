@@ -172,3 +172,6 @@ STYLE AND FORMAT
 AVOID
 - Not Carvanha, Milotic, Feebas, Goldeen, Alomomola or Finizen. No plush toy, chibi or mascot look, no oversized sparkly eyes, no human features, no dopey or derpy face, no teeth. No shapeless cloud of bubbles, no spotty or blotchy fins, no normal fins with bubbles on them.
 ```
+
+## Ronde 5 (prompt v6) → `r5_prompt_v6.png`
+- Jordi: "ik blijf het zeep concept niet mooi vinden lukken, misschien is dat toch iets wat niet goed vertaalt naar een ontwerp"

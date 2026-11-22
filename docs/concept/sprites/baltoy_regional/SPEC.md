@@ -29,3 +29,4 @@
 - r2 (`gemini/baltoy_r2.png`, rond Baltoy-lijf met gekerfde zigzag-hoofdband, roodbruine steen), Jordi: "nu is die herkenbaar baltoy, alleen klopt de vorm met tiwanaku? plus vertaalt dit naar een sprite". Natief raster ±10,2 px (±80×80). Ruwe maattest 64 en 48 px naast de Gen 3-Baltoy: `maattest/maattest_64_48_gen3baltoy.png` (vertaalt goed; zigzagband wordt bij 48 px ruis).
 - Jordi over r2: "dus dan moet de vorm veranderen en dan moet de band robuuster". Prompt r3: `gemini/PROMPT_baltoy_r3.md` (nieuw gesprek; r2-prompt + hoekige Tiwanaku-vorm bovenaan + robuuste band).
 - r3 (`gemini/baltoy_r3.png`, vierkante bloklkop met platte top, meanderband, gefacetteerd lijf, grijze steen), Jordi: "hij is nog herkenbaar baltoy, klopt het ontwerp met tiwanaku?"
+- Claude over r3: kop en grijze steen kloppen met Tiwanaku; band = Grieks meander, lijf = kristal. Jordi: "ja schrijf r4 met trapmotief en pijlerlijf" → `gemini/PROMPT_baltoy_r4.md`.

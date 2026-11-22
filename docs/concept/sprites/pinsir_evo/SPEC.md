@@ -42,3 +42,4 @@
 - Jordi bij r4: "oog a is goed, hij is nog steeds super blurry, het ligt aan het feit dat er niet genoeg kleurtinten gebruikt worden en de lijnen te zacht zijn", "en nee dat betekent niet meteen zwarte lijnen doen nu". r5: oog A bevroren, volle palet (16), hardere lijnen via gekleurde donkere tinten per onderdeel, geen extra zwart.
 - r5 (`sprite_r5/`): 16 kleuren, gekleurde lijnen aan de buitenrand, geen extra zwart; Claude: nog steeds druk/blurry door de vele korte zwarte lijnstukjes en celgewijze tonen in het lijf. r6: verse maker met de pitahaya/spooktrein-methode (alleen lange modellijnen, doorlopende contouren uit het modelskelet, vlakken glad per vorm).
 - r6 (`sprite_r6/`, verse maker, contourmethode: 37 vlakken uit de modellijnen, alleen lange lijnen, gekleurde binnenlijnen, 0 zwart binnenin buiten het gezicht): rustiger dan r5. Naar Jordi: `sprite_r6/naast_model.png`.
+- Jordi bij r6: "stuk beter dan 5 al wel". Naast elkaar: `sprite_r6/r6_naast_model.png`.

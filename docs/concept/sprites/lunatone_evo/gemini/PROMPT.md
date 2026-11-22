@@ -457,3 +457,6 @@ Give it a new pose WITH PERSPECTIVE, a real three-quarter view like Pokémon fro
 
 64x64 pixels, max 16 colors, 1 px dark outline, light from the top left, clean Game Freak shading. Plain white background, no glow, no shadow, no effects.
 ```
+
+## Jordi over v16 (`r16/gemini_v16.png`, letterlijk)
+- "voor mijn gevoel is deze beter"

@@ -16,3 +16,4 @@ Lijn: Solrock (Rock/Psychic in de repo) → deze evolutie. Evolutiemethode (voor
 Eindvorm, zwevend: vult het 64×64-vak zoals het model (stenen tot bijna de rand).
 - **Ogen (Jordi, 22 nov):** "zorg wel dat de ogen echt duidelijk ogen zijn, pas daarna sturen" (eis vóór Jordi het ziet).
 - **Ogen (Jordi, 22 nov):** "kopieer gewoon solrocks ogen en pas die dan aan".
+- **Vergelijking (Jordi, 22 nov):** "en toon 1 variant waar je gewoon letterlijk solrocks ogen hebt gekopieerd als vergelijkingsmateriaal".

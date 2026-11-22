@@ -15,5 +15,5 @@ Alleen Jordi's woorden (22 nov); niets anders is besloten.
 - Voeten (Jordi, 22 nov): "ik wil ze hangend" (zoals in r5).
 - Na sprite r1 (Jordi, 22 nov): "het lichaam zit niet vast aan het hoofd en je hebt het lichaam opnieuw getekend" · "dat mag niet" · "in het model zit het lichaam niet vast dus daar moet je van afwijken" · "het lichaam mag dus wat groter omdat het hoofd gaat overlappen". Lijf = Sunflora-pixels overnemen (niet tekenen), vast aan het hoofd.
 - Jordi (22 nov): "overlappen maakt niet uit zolang je in elk geval maar iets van de onderdelen van het lichaam ziet, incl de bladhanden".
-- Jordi (22 nov): "ja of je vergroot het lichaam dan, het idee is dat het wel lijkt alsof het hoofd op een logische plek aan het lichaam zit".
+- Jordi (22 nov): "ja of je vergroot het lichaam dan, het idee is dat het wel lijkt alsof het hoofd op een logische plek aan het lichaam zit" + "ondanks de komische grootte".
 - Open: naam, kleuren, details van het kosmische deel, stats.

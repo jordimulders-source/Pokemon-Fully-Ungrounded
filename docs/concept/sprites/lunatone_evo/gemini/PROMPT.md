@@ -347,12 +347,14 @@ Same Gen 3 sprite style, plain white background.
 - "is de pose voldoende driekwart? anders moeten we een nieuwe versie aan gemini vragen"
 - Tussenstand plakken (oog + neus van v5, kleine puinstukjes weg; naad rond het oog nog zichtbaar): `model/plak_v11_v5_tussenstand.png`, script `model/script/plak2.py`.
 
-# Prompt v12 (22 nov): zelfde gesprek als v11, bijsturen naar driekwart (voorstel, wacht op Jordi)
+- Jordi: "nee je plakt nu vluchtig en dan vragen we om een driekwart versie"
+
+# Prompt v12 (22 nov): NIEUW gesprek, bijlage `model/plak_v11_v5_tussenstand.png`
 
 ```
-Good. Keep the body, the crumbled chunks, the colors and the style exactly as they are. Change only one thing:
+The attached image is my Pokémon design, a crumbling blood moon. Redraw this exact same Pokémon as a clean official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art). Keep its design exactly: the red cracked stone ball with chunks broken out of its edge, the floating broken pieces, the single red eye with the thick black rim and the pointed stone nose with the dark line along it. Keep the colors.
 
-Turn the creature into a clear three-quarter view facing left. The face moves to the left part of the ball, so more of the right side of the ball is visible. Because the ball is turned, the eye becomes a slightly narrower oval and the nose points left and a little toward the viewer.
+Change only the pose: a clear three-quarter view facing left. The face sits on the left part of the ball, so more of the right side of the ball is visible. Because the ball is turned, the eye is a slightly narrower oval and the nose points left and a little toward the viewer. The ball stays round all the way around the nose.
 
-Same Gen 3 sprite style, plain white background.
+64x64 pixels, max 16 colors, 1 px dark outline, light from the top left, clean Game Freak shading. Plain white background, no glow, no shadow, no effects.
 ```

@@ -2739,3 +2739,8 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Model (Jordi): Gemini v11 met oog en neus van v5 geplakt, kleinste puin weg (`lunatone_evo/referenties/model.png`, `model/script/plak2.py`); SPEC met Jordi letterlijk.
 - Sprite r1–r5 (`lunatone_evo/sprite/`): verkleining van het model, niets hertekend; plaknaden rond het oog weggewerkt (toegestaan). Keuring r3: barsten te druk, tinten ongelijk → r4 lange modelbarsten, tinten 48/79/113/147; eindkeuring r4 PASS op beide eisen. r5 = r4 + klein hooglicht op de bolling (keurder, optioneel).
 - Kleurvariant B (dieper bloedrood, dichter bij het model): `sprite/r5/sprite_B_bloedrood.png`. Jordi kiest. Vellen: `lunatone_evo_8x.png`, `lunatone_evo_B_bloedrood_8x.png`, `sprite/r5/vel.png`.
+
+### [v0.0.651] - Lunatone-evolutie: nieuw model v16 (driekwart) en sprite-kandidaat
+- Gemini v14–v17: pose met perspectief; Jordi koos v16 ("voor mijn gevoel is deze beter"); rechterkant rond gemaakt en brokkels uit r5 terug (Jordi akkoord).
+- Sprite `lunatone_evo/sprite/v16_r1`–`v16_r7`: Jordi koos r2A om de driekwart van de donkere rechterband; daarna schaduw over het hele lijf voor perspectief (r5), twee donkerdere roodtinten rechts in het oog (r6, Jordi), keuringsreparaties (r7). Keuring r5: trouw PASS, techniek bijna PASS; r7 lost de resterende punten op.
+- Vel: `lunatone_evo/lunatone_evo_v16_8x.png` (naast Lunatone). Vorige kandidaat (model v11) blijft in `sprite/r5/`.

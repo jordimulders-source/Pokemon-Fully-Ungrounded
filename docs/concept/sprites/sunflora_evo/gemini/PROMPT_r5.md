@@ -19,3 +19,6 @@ Sprite rules:
 - No glow, no sparkles, no light rays, no loose effects.
 - No starfield or galaxy pattern on the green body.
 AVOID: plush/toy look, Neopets style, chibi mascot, realistic sunflower painting, a human in a costume, a five-pointed star.
+
+## Resultaat r5 (`r5.png`)
+Jordi: "vrij oke, maar het hoofd moet echt overdreven groot zijn tov het lichaam, door de extreme fotosynthese". Claude schaalde het hoofd van r5 zelf (script, niets hertekend): `r5_kop_groter_150_180.png` (links 1,5×, rechts 1,8×), want "groter" via Gemini mislukte in r3.

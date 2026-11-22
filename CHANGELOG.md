@@ -2707,3 +2707,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.646] - Sunflora-evolutie: r4 hoofd goed, prompt r5
 - Jordi: "hoofd wel prima nu, als we de kleuren wat simpeler maken"; meer punten; "nog net wat meer echt een kosmische entiteit"; lijf van Sunflora. r4 opgeslagen, `gemini/PROMPT_r5.md` (eerst hoofd, dan lijf).
+
+### [v0.0.647] - Sunflora-evolutie: r5 + hoofd groter geschaald
+- Jordi over r5: "vrij oke, maar het hoofd moet echt overdreven groot zijn tov het lichaam, door de extreme fotosynthese". Hoofd per script 1,5× en 1,8× geschaald op het r5-lijf (`gemini/r5_kop_groter_150_180.png`).

@@ -14,6 +14,7 @@
 - 22 nov: "1 prima, maar het moet wel een muts blijven. 2 mag wel wat meer leeftijd in zitten idd. 3 akkoord maar wat gemini doet met hier en daar een klein rotsje erop geplakt is niet mooi. 4 misschien ook wel een idee en 5 sowieso goed"
 - Claude vroeg: muts a zwaar/breed, b hoog/spits, c vorm Gnomad; leeftijd; steen in lijf a handen, b voeten, c schouders/rug overgang; materiaal A/B/C.
 - 22 nov: "ik zat meer aan ruwer gesteente te denken dan echt smooth"
+- 22 nov: "1 wel vergelijkbare vorm, te hoog en spits zou teveel van de sprite innemen. 2 voorovergebogen met zware stap, misschien een wandelstok geven die per vorm anders is 3 misschien wat rotsen die uit het lichaam groeien 4 ruwer geteente, dus geen druipsteen, gemini maakt toch niet veel onderscheid, teveel detail vertaalt niet naar een sprite"
 
 ## Voorgelegd door Claude (22 nov, nog niet gekozen)
 - A geode (muts = geode met amethist in een barst, snor/plukjes = kwartskristal, neus = rozenkwarts); B druipsteen (muts = stalactiet, kalksteen met lagen); C ertsader (riem = ader, gesp = goudklomp, korstmos op de snor).

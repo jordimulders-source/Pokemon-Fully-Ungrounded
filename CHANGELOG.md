@@ -2833,3 +2833,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Gemini v1–v7 (`solrock_evo/gemini/PROMPT.md`, `r1/`–`r7/`); v5 gekozen als model (losse afgebroken stenen, gebarsten zwarte kern, eclipsrand, Solrocks gezichtsplaat). Lava en olivijnkristal (eigen voorstellen Claude) geschrapt; diagonale baan werd in Gemini een Saturnusring.
 - Sprite: r1–r3 met Jordi's breuk in de plaat (varianten A/B, Solrock-ogen letterlijk/aangepast) → Jordi: "ze zijn geen van allen mooi, probeer maar het model na te maken" (zonder breuk). r4–r8: model trouw, ogen per pixel naar het model (pupil aan het lid), linker plaatrand ronder (Jordi); keurder PASS. Eindkeuring Dragonfly Cave (r9), "blurry" → meer tinten en schaduwopbouw in de kern (r10–r11), Jordi koos kleurvariant B (koele schaduw, warm licht), eindkeuring B (r12), barsten in de plaat lichter (r13).
 - Af: `docs/concept/sprites/solrock_evo/af/solrock_evo.png` (+ `_8x`); op het overzichtsvel (Evolutions of existing Pokémon, nu 9; teller 72; type op het vel = Solrocks huidige type, eigen type open). Naam en evolutiemethode open.
+
+### [v0.0.678] - Idee Capybarrel
+- `docs/concept/IDEEEN.md`: nieuw kopje "Capybarrel" met Jordi's idee en de eerste voorstellen (alles open).

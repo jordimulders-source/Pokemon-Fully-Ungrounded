@@ -683,3 +683,8 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - **Besloten:** Swablu Electric/Flying, Altaria Electric/Dragon; kleur A; Swablu kijkt nieuwsgierig; schokken = static, kleine vonkjes in en op de wolk. Open: mammatus of shelf cloud bij Altaria; vonkjes ook bij Swablu.
 - **Jordi (21 nov):** "bij swablu kan je de voelsprieten in gele vonkvorm maken". Open: mammatus of shelf cloud (voorstel Claude: mammatus).
 - **Jordi (21 nov):** "en shelf cloud akkoord" → Altaria krijgt een shelf cloud (geen mammatus). "maak maar prompts": `docs/concept/sprites/swablu_regional/gemini/PROMPTS.md`.
+
+## Capybarrel (Jordi, 22 nov)
+- **Jordi (22 nov):** "ik las de wikipedia door van capybara en stond er iets over het lichaam heeft de vorm van een barrel en sindsdien heb ik de naam capybarrel in mijn hoofd. Dat vertaalt goed naar een ontwerp, maar hoe kunnen we die echt uniek maken en wat voor evolutie zou die kunnen krijgen". Werknaam: **Capybarrel**.
+- **Voorstellen Claude (22 nov, alles open):** zie het antwoord van die dag; kern: (A) het lijf ís een ton (duigen, hoepels, spongat), drijft als een ton; (B) andere Pokémon zitten erop (echt capibaragedrag); evolutierichtingen: veerpont/vlot, warmwaterbad (termen, Aguas Calientes), wijnvat/bodega (Mendoza), regenton/watertoren. Weetje: in Venezuela mag chigüire in de vastentijd gegeten worden omdat hij als "vis" gold.
+- Let op: Cacnea is al de bolcactus (barrel cactus); Cuyby/Cuychu zijn de cavia-lijn (familie van de capibara); Zapacha is de electric rodent.

@@ -12,7 +12,7 @@
 - Type **Bug/Fairy** (Kricketune is in de repo puur Bug, Technician).
 - Een dirigent.
 - Duidelijk een 3e fase (Kricketot → Kricketune → deze), groter en grootser dan Kricketune.
-- Eén voorarm loopt uit in een dirigeerstokje (organisch, zoals Kricketunes mes-armen).
+- Stokje = één vinger die als stok én als wapen dient, zoals een krab één grotere klauw heeft (Jordi, 22 nov; vervangt "arm wordt stokje").
 - De dekvleugels hangen als de slippen van een rokkostuum.
 - Pose: midden in een maat, beide armen geheven.
 
@@ -24,4 +24,4 @@
 
 ## Rondes
 - Prompt r1: `gemini/PROMPT.md` (nieuw gesprek, geen bijlage).
-- r1: `gemini/r1.png`.
+- r1: `gemini/r1.png`. Claude: nog geen duidelijke 3e fase/niet grootser, los stokje, vleugels als cape i.p.v. rokpanden, frontaal, beentjes/onderlijf zakken weg. Jordi: "ja het stokje kan 1 vinger zijn die als stok fungeert en tevens als wapen, zoals een krab ook 1 grotere klauw kan hebben". Bijstuurprompt r2 (zelfde gesprek): `gemini/PROMPT_r2_bijsturen.md`.

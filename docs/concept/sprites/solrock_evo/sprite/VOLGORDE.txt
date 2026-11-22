@@ -1,0 +1,8 @@
+Bouwvolgorde (alles herhaalbaar):
+python3 natief.py 5.12 4.25 natief512.png   # natief raster (alleen meting/barstkaart)
+python3 reduceer.py    # kale reductie -> kaal.npy/png, frac.pkl
+python3 opschonen.py   # ruis/losse lijnstukjes -> schoon.npy
+python3 barst.py 2     # kernbarsten uit het natieve model
+python3 bouw.py        # barsten, buitenlijn, ring 1 px, benoemde pixelreparaties -> basis.npy/png
+python3 varianten.py   # Jordi's breuk A/B -> A_ruw.npy, B_ruw.npy
+python3 lever.py       # palet, A.png, B.png, vel.png, diffbewijs + afwijkingen per zone

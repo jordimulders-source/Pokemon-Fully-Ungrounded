@@ -1,0 +1,10 @@
+v16_r5 (vanaf v16_r2 A): 542 px gewijzigd; oog 5; silhouet 0; rechterband 2; neusvorm (zwart/selout in neus) 27
+  oog: 5 irispixels 9->8 (rechterkant donkerder; pupil, hooglicht en ring ongewijzigd)
+  lijf herbelicht: 449 px; kraters: 4; neusschaduw: 40 px; puin: 53 px
+  keurderpunten: onder de neus 2->3: 27; randpixels ->zwart: 0; dubbele barst: 6; vlekjes: 62
+Vanaf v16_r2 A (Jordi: "r2a is wel de beste" / "verder moet je over het hele lichaam slim met schaduw spelen voor het perspectief" /
+"ook rechts in het oog"). Script r5.py, vel vel.py. Alleen tinten: silhouet, lijnen, rechterband (incl. scheiding), neusvorm, pupil,
+hooglicht en oogring blijven. Lijf: bol-belichting licht linksboven (Lambert, c=(35.2,30.5), R=23.5) in niveaus 7/5/4/3,
+modeltextuur blijft als +-1 niveau; kraters donker binnen-linksboven, licht rand rechtsonder; neusschaduw op de bol eronder (-1 niveau);
+puin licht linksboven / donker rechtsonder, stukken rechts (achter de bol) een niveau donkerder.
+Keurderpunten: 'randpixels -> zwart' = 0 omdat die pixels in r2A al zwart waren.

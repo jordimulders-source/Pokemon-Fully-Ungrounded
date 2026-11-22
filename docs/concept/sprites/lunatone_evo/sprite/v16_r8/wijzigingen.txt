@@ -1,0 +1,28 @@
+Ronde 8 vanaf v16_r7
+(18,23) 3 -> 2  naad neus/lijf
+(19,24) 3 -> 2  naad neus/lijf
+(20,25) 4 -> 2  naad neus/lijf
+(19,23) 3 -> 5  rafel rechts van de naad -> lijftint
+(20,24) 4 -> 5  idem
+(21,25) 2 -> 5  dubbele naad -> lijftint
+(18,24) 2 -> 4  rafel links van de naad -> neusbasis-schaduw
+(19,25) 3 -> 4  idem
+(19,27) 5 -> 4  neusbasis-strook doorlopend
+(20,31) 2 -> 3  los pixel in de neusbuik -> buiktint
+(30,30) 9 -> 1  pupil 1 px omlaag
+(31,30) 9 -> 1  pupil 1 px omlaag
+(30,27) 1 -> 9  vrijgekomen pupilplek -> iris
+(31,27) 1 -> 9  vrijgekomen pupilplek -> iris
+(29,25) 9 -> 8  irisrand links/onder donker 1 (Lunatone)
+(28,26) 9 -> 8  irisrand links/onder donker 1 (Lunatone)
+(28,27) 9 -> 8  irisrand links/onder donker 1 (Lunatone)
+(28,28) 9 -> 8  irisrand links/onder donker 1 (Lunatone)
+(28,29) 9 -> 8  irisrand links/onder donker 1 (Lunatone)
+(28,30) 9 -> 8  irisrand links/onder donker 1 (Lunatone)
+(29,31) 9 -> 8  irisrand links/onder donker 1 (Lunatone)
+neus: 10 px; oog: 11 px; totaal A t.o.v. r7: 21 px; silhouet 0
+varianten: B = oog (ring+binnen) 2 px naar rechts (129 px anders dan A), C = 4 px (159 px); vrijgekomen strook links = lijftint direct links van het oog in die rij
+Oog naar Lunatone: Lunatones pupil staat midden in de iris (niet in de bovenhelft) en de iris heeft rondom een donkere rand met een
+lichtere vulling en klein hooglicht; daarom pupil 1 px omlaag (nu rijen 28-30 in iris 25-33) en de irisrand links/onder donker 1.
+De donkere sikkel rechts (r6), het hooglicht en de dikke zwarte ring blijven. Varianten B/C: dwarsbarstjes die tegen de rechterkant
+van de ring liepen worden door de verschoven ring deels afgedekt of los (zichtbaar als korte streepjes rechtsboven/-onder).

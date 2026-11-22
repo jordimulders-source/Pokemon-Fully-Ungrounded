@@ -1,0 +1,10 @@
+absol A: 16 bronpixels, verschuiving (3,-6), 14 px anders dan r1 (alle in zone x25-31 y17-21), 4 rood
+absol B: 16 bronpixels, verschuiving (3,-6), 13 px anders dan r1 (alle in zone x25-31 y17-21), 3 rood
+sharpedo A: 18 bronpixels, verschuiving (2,-22), 15 px anders dan r1 (alle in zone x25-31 y17-21), 5 rood
+sharpedo B: 18 bronpixels, verschuiving (2,-22), 15 px anders dan r1 (alle in zone x25-31 y17-21), 2 rood
+sneasel A: 19 bronpixels, verschuiving (-4,-4), 18 px anders dan r1 (alle in zone x25-31 y17-21), 9 rood
+sneasel B: 19 bronpixels, verschuiving (-4,-4), 15 px anders dan r1 (alle in zone x25-31 y17-21), 1 rood
+umbreon A: 12 bronpixels, verschuiving (7,-8), 9 px anders dan r1 (alle in zone x25-31 y17-21), 6 rood
+umbreon B: 12 bronpixels, verschuiving (7,-8), 9 px anders dan r1 (alle in zone x25-31 y17-21), 1 rood
+banette A: 14 bronpixels, verschuiving (10,-7), 13 px anders dan r1 (alle in zone x25-31 y17-21), 6 rood
+banette B: 14 bronpixels, verschuiving (10,-7), 11 px anders dan r1 (alle in zone x25-31 y17-21), 2 rood

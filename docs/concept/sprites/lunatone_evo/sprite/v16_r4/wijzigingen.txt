@@ -1,0 +1,12 @@
+v16_r4A: 94 px gewijzigd t.o.v. r3A; oog 0 px; silhouet 0 px
+  2 rand-binnenkolom: 17
+  3 gebogen barst (index 3): 18
+  3 dwarsbarst ->2: 9
+  3 dwarsbarst eind ->3: 3
+  4 onder de neus: 27
+  5 randpixels ->zwart: 6
+  6 vlekjes: 8
+  7 dubbele barst: 6
+Keuring v16_r3 punten 1-7 (keurdertint k = paletindex k+1). B = hoofdversie (variant_B/), A = deze map. Script r4.py; modellum.npy =
+helderheid van het natieve modelraster op spritecoördinaten (voor punt 1). Punt 1 alleen B. Punt 7: B x39 y44-46 weg (x41 loopt door);
+A x37 y44-45, x38 y46, x39 y49-51 weg (x39/x41 daar zijn de buitenrand van het gat en blijven).

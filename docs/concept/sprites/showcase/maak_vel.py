@@ -48,6 +48,7 @@ SECTIES=[
 ("vlieglijn_fase1/af/vlieg.png",'"Flytron"',"bug/electric"),
 ("vlieglijn_fase2/af/mug.png",'"Buzzquito"',"poison/electric"),
 ("vuurduivel_fase1/af/vuurduivel.png",'Vuurduivel fase 1',"fire/dark"),
+("vuurduivel_fase2/af/vuurduivel2.png",'Vuurduivel fase 2',"fire/dark"),
 ("gnomini/af/gnomini.png",'"Gnomini"',"fairy"),
 ("gnomad/af/gnomad.png",'"Gnomad"',"fairy"),
 ]),
@@ -59,6 +60,9 @@ SECTIES=[
 ('dundragoon/af/dundragoon.png', '"Dundragoon" (Dunsparce)', 'dragon/normal'),
 ('mightyena_evo/af/alphyena.png', '"Alphyena" (Mightyena)', 'dark/fight'),
 ('sunflora_evo/af/sunflora_evo.png', 'Sunflora-evolutie (Sunflora)', 'grass/cosmic'),
+('kricketune_evo/af/krickestro.png', '"Krickestro" (Kricketune)', 'bug/fairy'),
+('solrock_evo/af/solrock_evo.png', 'Solrock-evolutie (Solrock)', 'rock/psychic'),
+('lunatone_evo/af/bloedmaan.png', 'Bloedmaan (Lunatone)', 'rock/cosmic'),
 ]),
 ("Regional forms / convergent Pokémon",[
 ("silicobra_uyuni/af/silicobra_uyuni.png",'"Silicobra" (regional)',"ground/electric"),

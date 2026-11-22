@@ -1,0 +1,21 @@
+Ronde 4 (keuring r3: netheid)
+Pixels afwijkend van de kale reductie per zone:
+  oog  :   28 van 184
+  neus :   69 van 168
+  lijf :  401 van 1350
+  puin :   95 van 232
+  totaal: 593; verschil met r3: 218
+Silhouet (alpha) t.o.v. r3 en kale reductie: 0 / 0 px
+Gezicht t.o.v. r3: oog 5 px (punt 4: 5 donkerrode irisvlekjes -> iris), neus 0 px buiten de naad, naad y29 18 px zwart -> selout (punt 6)
+Zwart binnenin (geen rand, zonder oog): 91 (r3: 196); met oogrand+pupil: 191 (r3: 296)
+Vlekjes < 3 px (tinten 2,3,4,5,7,8,9, incl. lijnstukjes en selout-stukjes): 63 (r3: 106); steentint-vlekjes in het lijf: 4
+Tinthelderheid (r+g+b)/3: 1:18, 2:36, 3:51, 4:81, 5:114, 7:146, 8:70, 9:105, 10:158
+Barstpaden (goedkoopste route over de modelbarstkaart):
+  A: lange barst naar linksboven: (x23,y23) -> (x22,y20) -> (x21,y17) -> (x19,y16)
+  B1: neusbasis -> links: (x22,y30) -> (x21,y32) -> (x20,y33) -> (x18,y34) -> (x16,y35)
+  B2: neusbasis -> linksonder: (x24,y34) -> (x22,y35) -> (x20,y36) -> (x19,y38) -> (x18,y39)
+  B3: neusbasis -> onder: (x24,y35) -> (x25,y36) -> (x26,y38) -> (x26,y39)
+  R1: plaatgrens dwars: (x47,y21) -> (x50,y22) -> (x55,y23)
+  R2: boog onder de hap omlaag: (x56,y17) -> (x55,y18) -> (x54,y23) -> (x55,y28) -> (x54,y31)
+  R3: plaatgrens onder: (x54,y31) -> (x51,y31) -> (x47,y32)
+  R4: naar de opening rechtsonder: (x54,y31) -> (x52,y33) -> (x52,y37)

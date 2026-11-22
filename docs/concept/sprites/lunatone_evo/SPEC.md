@@ -25,3 +25,6 @@ Eindvorm, zwevend: vult het 64×64-vak zoals het model (puin tot bijna de rand).
 - Voorstel Claude, Jordi "akkoord": v16 wordt het model (`referenties/model_v16.png`); de rechterkant wordt rond gemaakt zonder tekenen: de ronde omtrek van boven/links/onder doortrekken naar rechts, bijgekomen strook vullen met de schaduwtinten die al rechts liggen. Gezicht, neus, barsten en puin zoals v16.
 - Jordi: "en de brokkels mogen terug": de uitgebrokkelde stukken uit de rand worden overgenomen uit sprite r5 (zelfde gaten op dezelfde relatieve plek, pixels uit r5).
 - Vorige kandidaat (model v11+v5): `sprite/r5/` blijft bewaard.
+
+## Sprite v16 (23 nov)
+- Jordi over het vel r2A | r3A | r3B | model: "r2a is wel de beste van dit lijstje". r4 (vanaf r3B) gestopt.

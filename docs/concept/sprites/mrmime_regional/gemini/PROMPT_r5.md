@@ -10,7 +10,7 @@ A really different design from Kanto Mr. Mime, just as Galarian Mr. Mime is a co
 NO pink balls anywhere.
 
 COLORS
-- Skin: RED, the head is red too.
+- Skin: the normal Mr. Mime skin tone (pale pinkish), the head too.
 - Fingertips and feet: light blue.
 - Cheeks: yellow.
 - Two jagged purple spikes ("ears") on the sides of the head, like a jester's hair.

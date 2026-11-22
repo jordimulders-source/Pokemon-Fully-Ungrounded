@@ -2861,3 +2861,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.684] - Regionale Mr. Mime: r3 en prompt r4
 - r3 opgeslagen; Jordi: op zijn rug in driekwart, met de handen "get into my guard" gebaren, rode huid en kop, lichtblauwe vingertoppen en voeten, gele wangen, paarse "oren" blijven, zwarte band. Prompt `gemini/PROMPT_r4.md`; Jordi denkt nog na over het design.
+
+### [v0.0.685] - Regionale Mr. Mime: r4 en prompt r5
+- r4 opgeslagen (kleuren goed, ligt nog op zijn zij). Prompt `gemini/PROMPT_r5.md`: pose concreet (op de rug als een schildpad, kijker = tegenstander aan zijn voeten); huid terug naar de normale Mr. Mime-tint (Jordi: anders klopt Mr. Prime niet).

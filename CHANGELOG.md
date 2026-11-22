@@ -2692,3 +2692,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - r1 van Gemini opgeslagen; bijstuurprompt r2 (kop valser en meer hyena, poot hoger).
 - r2 opgeslagen; bijstuurprompt r3 (blik geniepig in plaats van evil, mond opnieuw; rest perfect volgens Jordi).
 - r3 opgeslagen; bijstuurprompt r4 (mond open).
+- Frontsprite r1–r3 (maker, keurder BIJNA → PASS op r2, r3 = 9 losse pixels opgeruimd): `sprites/mightyena_evo/sprite_r3/`, ter beoordeling bij Jordi.

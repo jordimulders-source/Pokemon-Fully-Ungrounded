@@ -5,8 +5,10 @@
 - 22 nov: "kecleon evolutie" (start ontwerp).
 - 22 nov, keuzes: leguaan = **landleguaan**; type = **Grass/Fire**; Fire zichtbaar via **kleur/huid** (warme schubben, geen echt vuur); pose **rechtop zoals Kecleon**; wat van Kecleon terugkomt (zigzagstreep, krulstaart, kegelogen, groen): **geen voorkeur**.
 
+- 22 nov: "een van de andere kleuren wordt roze, hij staat een beetje voorover geleund, kecleon moet je herkennen aan wat design traits".
+
 ## Besloten
-- Galápagos-landleguaan, Grass/Fire, rechtop op twee poten zoals Kecleon, Fire alleen in kleur/huid.
+- Galápagos-landleguaan, Grass/Fire, rechtop op twee poten zoals Kecleon, Fire alleen in kleur/huid; een van de andere kleuren roze; een beetje voorover geleund; Kecleon herkenbaar aan wat design traits (welke: niet gezegd, aan Gemini gelaten).
 
 ## Open
 - Naam, evolutiemethode (plaatsgebonden Galápagos, zie boven), welke Kecleon-kenmerken (Jordi: geen voorkeur; prompt laat het aan Gemini).

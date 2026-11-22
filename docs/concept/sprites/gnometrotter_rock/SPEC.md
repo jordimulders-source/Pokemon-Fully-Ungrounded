@@ -12,6 +12,8 @@
 - r1 (`r1/gemini_A.png`, `_B`, `_C`; prompts v1): "bij alle drie is er iets van een oog zichtbaar, dat hoort niet. Verder vind ik hem nog teveel opgnomad lijken en zit er niet heel veel verschil in het design"
 - Claude stelde knoppen voor: (1) silhouet muts als rots, (2) postuur zwaarder/voorovergebogen, (3) steen in het lijf zelf, (4) grotere kristallen/rotspunten, (5) baard en snor als één rotsmassa; oog = donkere spleet onder de muts.
 - 22 nov: "1 prima, maar het moet wel een muts blijven. 2 mag wel wat meer leeftijd in zitten idd. 3 akkoord maar wat gemini doet met hier en daar een klein rotsje erop geplakt is niet mooi. 4 misschien ook wel een idee en 5 sowieso goed"
+- Claude vroeg: muts a zwaar/breed, b hoog/spits, c vorm Gnomad; leeftijd; steen in lijf a handen, b voeten, c schouders/rug overgang; materiaal A/B/C.
+- 22 nov: "ik zat meer aan ruwer gesteente te denken dan echt smooth"
 
 ## Voorgelegd door Claude (22 nov, nog niet gekozen)
 - A geode (muts = geode met amethist in een barst, snor/plukjes = kwartskristal, neus = rozenkwarts); B druipsteen (muts = stalactiet, kalksteen met lagen); C ertsader (riem = ader, gesp = goudklomp, korstmos op de snor).

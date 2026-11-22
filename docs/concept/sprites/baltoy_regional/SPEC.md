@@ -62,3 +62,4 @@
 - r12 (stekel terug naar donkere r10B-band onder het lijf + smal uitlopend licht voorvlak; mondpixels weg; 8 px t.o.v. r11) → eindkeuring.
 - Eindkeuring r12: BIJNA (geen blokkade); 31 uitvoeringspixels (ruis, lijn-gat, lange 1-tintlijnen, egaal zijvlak kop, omgekeerd verloop onder het lijf) toegepast → r13 (`sprite_r13/`, kandidaat; `r13_vs_r12.png`).
 - Jordi over r13: "de stekel onderin klopt niet qua vorm" · "nog steeds niet" · "al 3 keer aangegeven". Stekel versmalt-verbreedt-versmalt (dopvorm) door de 2×-reductie; r14: 3 vormprobeersels (model / zuivere spits / kleine ruit).
+- r14 stekelvormen A/B/C (symmetrisch). Jordi: "zucht het is allemaal niet driekwart" → r15: stekel als piramide in driekwart (breed voorvlak links, smal zijvlak rechts, ribbe schuin naar de tip, asymmetrische omtrek), 2 maten.

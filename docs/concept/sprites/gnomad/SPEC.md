@@ -12,3 +12,4 @@
 - "we gaan een paar dingen in het design toevoegen die Gnometrotter vervolgens type specifiek kan maken" (prompt v1 wacht daarop)
 - "cremewit, plukjes haar ook goed, de armpjes worden nu een bolle hand met een ovaal armpje"
 - r1 (`r1/gemini_r1.png`, prompt v1): "de snor mag wat rafeliger, we geven hem ook een soort riem"
+- "verder erg goed"

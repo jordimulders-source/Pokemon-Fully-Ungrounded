@@ -50,3 +50,4 @@ Zwart lijf en zwarte kop met één groot blauw oog; ronde romp met een groene zi
 - 22 nov (r13): "ok behoud de romp, die is netjes, we gaan de benen en armen een ander patroon en kleuren geven". Romp van `sprite_r13/astro_P_rood.png` bevroren (r14: 5 varianten voor mouwen/shorts).
 - 22 nov (r14): "zigzag voor de benen akkoord, maar andere kleuren, de armen doe je blauw/rood/blauw zoals bij de enkels en polsen, maar die trek je niet over heel de bovenarm heen, het moet echt een t-shirt idee zijn" (r15: korte mouwen in 2 lezingen × 3 kleuren shorts).
 - 22 nov (r15): "A, maar de aansluiting van alles mag wat geleidelijker, want nu lijkt het net kleding, het moet echt duidelijk de patronen op een soort alien zijn" (r16: naden/zomen weg, patronen als tekening op de huid; shorts-kleur nog niet gekozen, L1 en L3 gemaakt).
+- 22 nov: "dus minder zwart, minder rechte lijnen, en werk met kleurtinten en schaduw".

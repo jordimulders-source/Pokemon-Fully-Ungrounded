@@ -19,3 +19,5 @@
 - Prompt r1: `gemini/PROMPT.md` (nieuw gesprek, geen bijlage).
 - r1 (`gemini/r1.png`), Jordi: "ziet er niet uit"; "wat doen al die ballen daar"; "en hij mag echt wel wat anders"; "zie galar mr mime"; "kijk al die domme willekeurige roze ballen". (De plekken handen/schouders/knieën voor de ballen had Claude zelf in r1 gezet.)
 - Prompt r2: `gemini/PROMPT_r2.md` (nieuw gesprek): geen roze ballen, ontwerp echt anders zoals Galar-Mr. Mime (zonder die te kopiëren), alleen het mimegezicht met rode wangen blijft; rug plat op de grond, compact.
+- r2 (niet opgeslagen), Jordi: "hij ligt gewoon maar het is geen jiu jitsu guard". Bijstuurprompt (zelfde gesprek, alleen pose: open guard op de rug, heupen naar de tegenstander, op één elleboog, knieën hoog, hand nodigt uit).
+- r3 (`gemini/r3.png`; lichtblauw hoofd, paarse pieken, blauwe gi, witte band), Jordi: "beter maar nog steeds slecht". Claude: nog steeds een liggende figuur in zijaanzicht met de ledematen alle kanten op.

@@ -1,0 +1,11 @@
+Ronde 3: pixels afwijkend van de kale reductie (../kaal.png), per zone (index-verschil)
+oog  :   30 van 184
+naad :   39 van 147
+neus :   63 van 228
+lijf :  253 van 1143
+puin :   77 van 232
+totaal: 462
+alpha-diff (silhouet): 0
+verschil met r2: 25 px (alleen puin binnenin + 0 losse zwarte pixels)
+Wat er gebeurde t.o.v. r2: binnenkant van de puinstukken terug naar de kale reductie (barstverbindingen maakten
+van het stukje linksonder een G-vorm); zwarte kale pixels in puin -> buurtint; tint 6 -> 7/5 volgens modelhelderheid.

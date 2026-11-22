@@ -1,0 +1,46 @@
+(9,17) r->O  vonk: model OO
+(9,18) r->O  vonk: model .O/.m
+(10,18) #->A  vonk: model c./C. (licht puntje, randtint)
+(16,18) H->h  hoornhaak: model hH/hH
+(27,18) d->#  oog: bovenlid, model 18b zwart over x27-30
+(27,19) #->r  oog: iris linksboven, model rozerood in de cel
+(28,19) #->R  oog: pupil donkerrood, model #R/#m
+(29,19) c->C  oog: lichte oogrand rechts, model cc/CC
+(16,20) d->h  hoornhaak: model hh/hh (was donkergrijs)
+(17,20) d->H  hoornhaak: model H#/hd
+(27,20) d->r  oog: iris onder, model CO/BR
+(28,20) c->R  oog: pupil onder, model #m/Rr
+(29,20) c->c  oog: onderrand, model CB/Rc (crème met donker)
+(17,21) d->h  hoornhaak naar de kop: model #g/dh
+(18,21) #->h  hoornhaak naar de kop: model hh/h#
+(26,21) C->c  gezicht: los crème-puntje (1 px) in de wangschaduw, model dC/Cc -> crème-schaduw
+(5,29) #->h  hand: bruine vinger/handpalm, natieve cel (meerderheid zonder lijnpixels)
+(6,29) #->B  hand: bruine vinger/handpalm, natieve cel (meerderheid zonder lijnpixels)
+(5,30) #->B  hand: bruine vinger/handpalm, natieve cel (meerderheid zonder lijnpixels)
+(6,30) #->h  hand: bruine vinger/handpalm, natieve cel (meerderheid zonder lijnpixels)
+(7,30) #->B  hand: bruine vinger/handpalm, natieve cel (meerderheid zonder lijnpixels)
+(6,31) #->h  hand: bruine vinger/handpalm, natieve cel (meerderheid zonder lijnpixels)
+(7,31) #->H  hand: bruine vinger/handpalm, natieve cel (meerderheid zonder lijnpixels)
+(8,31) #->B  hand: bruine vinger/handpalm, natieve cel (meerderheid zonder lijnpixels)
+(9,31) #->B  hand: bruine vinger/handpalm, natieve cel (meerderheid zonder lijnpixels)
+(6,32) #->H  hand: bruine vinger/handpalm, natieve cel (meerderheid zonder lijnpixels)
+(7,32) #->H  hand: bruine vinger/handpalm, natieve cel (meerderheid zonder lijnpixels)
+(8,32) #->B  hand: bruine vinger/handpalm, natieve cel (meerderheid zonder lijnpixels)
+(14,43) #->h  selout lichtkant been/hoef (vlak eronder lichtbruin)
+(15,43) #->h  selout lichtkant been/hoef (vlak eronder lichtbruin)
+(19,43) #->H  selout lichtkant been (vlak eronder middenbruin)
+(12,44) #->h  selout lichtkant been/hoef (vlak eronder lichtbruin)
+(20,44) #->H  selout lichtkant been (vlak eronder middenbruin)
+(21,44) #->H  selout lichtkant been (vlak eronder middenbruin)
+(22,44) #->H  selout lichtkant been (vlak eronder middenbruin)
+(55,44) C->Y  staartvlam: lichtgeel vlamhart viel in de crèmeklasse, model = vlamkern
+(11,45) #->h  selout lichtkant been/hoef (vlak eronder lichtbruin)
+(23,45) #->H  selout lichtkant been (vlak eronder middenbruin)
+(24,45) #->H  selout lichtkant been (vlak eronder middenbruin)
+(10,47) #->h  selout lichtkant been/hoef (vlak eronder lichtbruin)
+(10,48) #->H  selout lichtkant been (vlak eronder middenbruin)
+(10,49) #->H  selout lichtkant been (vlak eronder middenbruin)
+(11,50) #->H  selout lichtkant been (vlak eronder middenbruin)
+(17,56) #->h  selout lichtkant been/hoef (vlak eronder lichtbruin)
+(16,57) #->h  selout lichtkant been/hoef (vlak eronder lichtbruin)
+(15,58) #->h  selout lichtkant been/hoef (vlak eronder lichtbruin)

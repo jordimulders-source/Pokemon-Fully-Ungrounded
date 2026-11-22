@@ -1,0 +1,9 @@
+v16_r4A: 94 px gewijzigd t.o.v. r3A; oog 0 px; silhouet 0 px
+  2 rand-binnenkolom: 17
+  3 gebogen barst (index 3): 18
+  3 dwarsbarst ->2: 9
+  3 dwarsbarst eind ->3: 3
+  4 onder de neus: 27
+  5 randpixels ->zwart: 6
+  6 vlekjes: 8
+  7 dubbele barst: 6

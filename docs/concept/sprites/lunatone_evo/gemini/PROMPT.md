@@ -340,3 +340,19 @@ More pieces have crumbled out of the moon. Several clear chunks are missing from
 
 Same Gen 3 sprite style, plain white background.
 ```
+
+## Jordi over v11 (`r11/gemini_v11.png`, letterlijk)
+- "nu plak je hier de neus en oog op van lunatone die we al hadden, we halen wat puinstukken weg want dat is ruis en dan hebben we een model"
+- "netter plakken"
+- "is de pose voldoende driekwart? anders moeten we een nieuwe versie aan gemini vragen"
+- Tussenstand plakken (oog + neus van v5, kleine puinstukjes weg; naad rond het oog nog zichtbaar): `model/plak_v11_v5_tussenstand.png`, script `model/script/plak2.py`.
+
+# Prompt v12 (22 nov): zelfde gesprek als v11, bijsturen naar driekwart (voorstel, wacht op Jordi)
+
+```
+Good. Keep the body, the crumbled chunks, the colors and the style exactly as they are. Change only one thing:
+
+Turn the creature into a clear three-quarter view facing left. The face moves to the left part of the ball, so more of the right side of the ball is visible. Because the ball is turned, the eye becomes a slightly narrower oval and the nose points left and a little toward the viewer.
+
+Same Gen 3 sprite style, plain white background.
+```

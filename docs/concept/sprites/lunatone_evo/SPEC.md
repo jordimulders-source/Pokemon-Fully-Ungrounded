@@ -27,4 +27,4 @@ Eindvorm, zwevend: vult het 64×64-vak zoals het model (puin tot bijna de rand).
 - Vorige kandidaat (model v11+v5): `sprite/r5/` blijft bewaard.
 
 ## Sprite v16 (23 nov)
-- Jordi over het vel r2A | r3A | r3B | model: "r2a is wel de beste van dit lijstje". r4 (vanaf r3B) gestopt.
+- Jordi over het vel r2A | r3A | r3B | model: "r2a is wel de beste van dit lijstje" / "want daar lijkt die driekwart". De donkere rechterband van r2A blijft dus zoals hij is. r4 (vanaf r3B) gestopt.

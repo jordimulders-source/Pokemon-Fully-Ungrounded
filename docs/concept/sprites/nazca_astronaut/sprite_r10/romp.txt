@@ -1,0 +1,9 @@
+# romp (x29..37), met de hand: g grond, a band 1 (getrapte Λ), k band 2 (getrapte Λ, 3 rijen lager)
+26 x31 gggg
+27 x30 ggaagg
+28 x29 gaaaaaag
+29 x29 aaaggaaaa
+30 x29 aggkkggaa
+31 x28 ggkkkkkk
+32 x29 kkkggkk
+33 x29 kgg.gggk

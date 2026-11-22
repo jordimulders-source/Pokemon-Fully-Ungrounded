@@ -2466,3 +2466,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.599] - Nazca-astronaut: r9, 5 kleur-/patroonvariaties
 - `sprite_r9/`: linkerarm komt nu op dezelfde hoogte uit de romp (4 px silhouet); V1 aardewerk, V2 woestijn, V3 kosmisch, V4 Sigilyph-kleuren (alle getrapt, tunica-motief), V5 aardewerk schuin.
+
+### [v0.0.600] - Nazca-astronaut: r10, eigen patroon per deel
+- `sprite_r10/`: romp getrapte zigzag (2 banden), ledematen A ringbanden / B lengtebaan / C tocapu-blokjes, in aardewerk (1) en kosmisch (3).

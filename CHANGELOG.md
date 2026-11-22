@@ -2656,3 +2656,11 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.627] - Regionale Sableye: Jordi denkt aan Ghost/Rock
 - Jordi (21 nov, nog niet besloten): regionale Sableye mogelijk Ghost/Rock, en de gewone Sableye dan terug naar Ghost/Dark. Genoteerd in IDEEEN.md.
+
+### [v0.0.628] - Vuurduivel fase 1: frontsprite af
+- Nieuwe lijn (Jordi, 22 nov): vuurduivel, 2 fases. Fase 1 = cute maar cheeky Fire/Dark sater-duiveltje dat ongein uithaalt en daarom lacht ("zelfde idee" als het duiveltje van Ashley in WarioWare, niet hetzelfde design). Evolutie: "de wat volgroeidere bokkenduivel look".
+- Gemini-rondes r1–r4 (`docs/concept/sprites/vuurduivel_fase1/gemini/`); gekozen r3a, staart bijgestuurd naar pijlvorm (r4 = bevroren model). Pijlopties A–D in de sprite afgewezen ("behoud de vlam maar"): staartpunt van r6 blijft.
+- Frontsprite r1–r9: model overgenomen (2×-reductie van het natieve raster), gezicht in 3 rondes hersteld (Haunter-techniek; witte pixel in de onderhoek van de pupil, Jordi), kleurronde (zwart lijf lichter met glans zoals Houndour/Umbreon, broek als twee dijen, roze tong), eindkeuring verwerkt (11 px, 2 paletkleuren). 64×64, 16 kleuren, 50 px hoog.
+- Af: `docs/concept/sprites/vuurduivel_fase1/af/vuurduivel.png` (+ `_8x`); op het overzichtsvel (sectie New).
+- Les in SPRITE_KERN.md: witte pixel in de pupil in de onderhoek, niet tegen het oogwit; GEMINI.md: geen eerdere ronde als bijlage.
+- Gemini-prompt voor de evolutie: `docs/concept/sprites/vuurduivel_fase2/gemini/PROMPT.md` (+ sessieprompt).

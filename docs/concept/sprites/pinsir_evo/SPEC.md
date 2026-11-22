@@ -30,3 +30,7 @@
 - Jordi bij r3: "de kaken lijken nu vooral een beetje opgeplakt, anders dan bij de echte sabeltandboktor". Prompt r4 (`gemini/PROMPT_r4.md`) = r3 + kaken dik aan de basis, vergroeid met de kophoeken naast de mond.
 - r4 (`gemini/r4.webp`), Jordi: "ik vind hem wel tof, alleen die kaken wijken een beetje af omdat ze een totaal andere kleur hebben", "en de vleugels zitten gek", "of heeft hij 4 vleugels en zien we er maar 2/". Claude: kaken omgekleurd zonder Gemini (`kaakkleur/`: A kopbruin, B donker roodbruin; `vergelijk.png`). Vleugels: echte kevers hebben 2 harde dekschilden + 2 vliezige vleugels eronder; dicht zie je alleen de dekschilden, plat op de rug met een naad in het midden. In r4 is maar één dekschild te zien, als schild op de zij. Bijstuurprompt r5 (bijlage = r4 met gekozen kaakkleur, alleen vleugels): `gemini/PROMPT_r5_bijsturen.md`.
 - Jordi over de vleugels: "nee maar dan is het goed, want dan heeft die 2 extra vleugels maar buiten beeld". Vleugels blijven zoals in r4; bijstuurprompt r5 vervalt.
+
+## Model gekozen (22 nov)
+- **r4 met kaakkleur B gekozen**, Jordi: "en rechts is de beste kleur", "ga maar bouwen daarmee". Bevroren model: `referenties/gemini_gekozen_r4B.png` (r4 van Gemini, kaken door Claude omgekleurd naar donker roodbruin; vleugels zoals r4).
+- Frontsprite r1: maker gestart.

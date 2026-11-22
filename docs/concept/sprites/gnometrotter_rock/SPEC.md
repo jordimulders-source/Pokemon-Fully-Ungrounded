@@ -10,6 +10,8 @@
 - Claude stelde per onderdeel voor (muts steen, mutspunt kristal/stalactiet, snor/baard/haar gruis met kristalpunten, kristallen uit schouders/rug) + kleur A/B/C.
 - 22 nov: "doe maar meerdere prompts, ik moet het eerst voor me zien" → `gemini/PROMPTS.md` (A amethist/geode, B lavendel steen, C druipsteen).
 - r1 (`r1/gemini_A.png`, `_B`, `_C`; prompts v1): "bij alle drie is er iets van een oog zichtbaar, dat hoort niet. Verder vind ik hem nog teveel opgnomad lijken en zit er niet heel veel verschil in het design"
+- Claude stelde knoppen voor: (1) silhouet muts als rots, (2) postuur zwaarder/voorovergebogen, (3) steen in het lijf zelf, (4) grotere kristallen/rotspunten, (5) baard en snor als één rotsmassa; oog = donkere spleet onder de muts.
+- 22 nov: "1 prima, maar het moet wel een muts blijven. 2 mag wel wat meer leeftijd in zitten idd. 3 akkoord maar wat gemini doet met hier en daar een klein rotsje erop geplakt is niet mooi. 4 misschien ook wel een idee en 5 sowieso goed"
 
 ## Voorgelegd door Claude (22 nov, nog niet gekozen)
 - A geode (muts = geode met amethist in een barst, snor/plukjes = kwartskristal, neus = rozenkwarts); B druipsteen (muts = stalactiet, kalksteen met lagen); C ertsader (riem = ader, gesp = goudklomp, korstmos op de snor).

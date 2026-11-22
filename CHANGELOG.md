@@ -2493,3 +2493,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.608] - Nazca-astronaut: r17 minder zwart, betere aansluiting
 - `sprite_r17/`: a_L1; zwart in het lichaam 72 → 48 px (masker in donkerrood, spleet in donkerblauw), grotere getrapte tanden rood/blauw, zigzag als één getrapte witte lijn.
+
+### [v0.0.609] - Nazca-astronaut: gepauzeerd
+- Jordi pauzeert het ontwerp; stand en open punt onderaan `SPEC.md`, Stand van zaken bijgewerkt, les in `GEMINI.md`.

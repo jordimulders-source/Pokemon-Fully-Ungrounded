@@ -52,3 +52,8 @@ Zwart lijf en zwarte kop met één groot blauw oog; ronde romp met een groene zi
 - 22 nov (r15): "A, maar de aansluiting van alles mag wat geleidelijker, want nu lijkt het net kleding, het moet echt duidelijk de patronen op een soort alien zijn" (r16: naden/zomen weg, patronen als tekening op de huid; shorts-kleur nog niet gekozen, L1 en L3 gemaakt).
 - 22 nov: "dus minder zwart, minder rechte lijnen, en werk met kleurtinten en schaduw".
 - 22 nov (r16): "L1 is goed qua kleur maar het moet beter aansluiten, het zijn teveel rechte zwarte lijnen" (r17).
+
+## Gepauzeerd (22 nov)
+Jordi: "we stoppen even, ik krijg dit design niet mooi voorlopig helaas".
+- Laatste stand: `sprite_r17/astro_a_L1.png` (romp Paracas-rood met masker, korte mouwen met blauw/rood/blauw-armband, blauwe dijen met witte getrapte zigzag, patronen als tekening op de huid). Open punt toen: "het gaat om de aansluiting, niet om het patroon zelf" / "de patronen aansluiting op elkaar, daar zitten horizontale zwarte lijnen tussen"; welke lijnen precies: genummerde kaart `sprite_r17/zwarte_lijnen.png`, nog geen antwoord.
+- Wel af en bruikbaar: model (r11), silhouet (spleet rij 28 met ^, armcorrectie r9), keurder-PASS-versie r8 (zwart + groen/rood zigzag).

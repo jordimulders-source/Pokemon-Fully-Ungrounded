@@ -19,3 +19,4 @@ Eindvorm, zwevend: vult het 64×64-vak zoals het model (stenen tot bijna de rand
 - **Vergelijking (Jordi, 22 nov):** "en toon 1 variant waar je gewoon letterlijk solrocks ogen hebt gekopieerd als vergelijkingsmateriaal".
 - **Over r3 (Jordi, 22 nov):** "ze zijn geen van allen mooi, probeer maar het model na te maken"; op de vraag alleen ogen of alles: "Hele sprite, zonder breuk". De breuk vervalt; ogen naar het model.
 - **Werkwijze (Jordi, 22 nov):** "nee ik wil eerst het model helemaal goed nagemaakt hebben voordat je laat zien" (geen ogen of onderdelen uit andere sprites).
+- **Plaat (Jordi, 22 nov):** "de linkerkant van de plaat moet ronder, want door het driekwart perspectief zie je die niet volledig, of iig geen volledig rechte lijn".

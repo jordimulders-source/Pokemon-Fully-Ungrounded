@@ -30,4 +30,4 @@
 ## Model gekozen (22 nov)
 - **v3_r1 gekozen** (`gemini/v3_r1.png`), Jordi: "ok dit is een model om mee te bouwen, want ik heb 2 issues en die kan je fixen, de ogen en de stok, die kan je gweoon van kleur veranderen zodat het een vinger is".
 - Jordi: "en de kleding trouwens ook, is teveel kleding, maar die kan je in een sprite ook wat meer lichaamsvorm geven".
-- Toegestane afwijkingen: (1) stok in de handkleur → vinger: gedaan in `model/v3_r1_vinger.png` (Claude, alleen kleur); (2) ogen: wat er mis is nog navragen; (3) kleding: in de sprite meer lichaamsvorm.
+- Toegestane afwijkingen: (1) stok in de handkleur → vinger: gedaan in `model/v3_r1_vinger.png` (Claude, alleen kleur); (2) ogen: Jordi "het wijkt veel af van de kricketune insecten ogen" → Kricketune-ogen (bol in grijsbruin/donker met zwarte kern en witte glans, kleuren uit `graphics/pokemon/kricketune`) erin gezet: `model/v3_r1_vinger_ogen.png`, vergelijking `model/ogen_vergelijk.png` (Claude, voorstel); (3) kleding: in de sprite meer lichaamsvorm.

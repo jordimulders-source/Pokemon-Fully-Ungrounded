@@ -20,3 +20,4 @@
 - sprite r1 (`sprite_r1/`, A riem bruin / B donkerblauw): "de riem is nog iets teveel gewoon een lijn, verder bijna goed, rechts naast de neus iets teveel zwarte pixels, lijkt net een oog" (keuze A/B nog niet genoemd)
 - sprite r2: "kijk eens hoe machoke de riem goed doet" (Machoke Gen 3: riem = donkere band met zwarte lijn erboven en eronder, gouden gesp in het midden als blikvanger met eigen omlijning).
 - Jordi stuurt een foto van een gesp (`referenties/gesp_jordi.png`): zilveren, rechthoekige frame-gesp met een pin in het midden, zonder tekst.
+- "doe beetje deze vorm dan" (gesp naar de foto).

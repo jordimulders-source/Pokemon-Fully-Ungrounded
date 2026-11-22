@@ -29,3 +29,4 @@
 - "de gesp is nu beter" (r6; A of B niet genoemd)
 - "ik stel voor om op de andere 2 hoeken ook 1 zwarte pixel weg te halen bij de gesp"
 - r7: "akkoord, naar de eindkeuring" (zwart omlaag door de eindkeuring, Jordi bij r4).
+- Eindkeuring r7: PASS na reparaties 1–7 (zwart 21,4 → 18,2 %, alleen binnenlijnen muts/snor) → **af: `af/gnomad.png`** (+ `_8x`), op het overzichtsvel (New).

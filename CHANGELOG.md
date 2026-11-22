@@ -2801,3 +2801,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.670] - Gnomini: frontsprite af
 - Gnome-lijn fase 1 (Fairy): Gemini-prompts v1/v2 (`gnomini/gemini/`), Jordi koos r2 als model ("de muts is uitstekend"). Sprite in 4 makerrondes: r1 A (lijf als model; B "compleet mislukt, dat is niet rond"), r2 keurderreparaties, r3 gebogen roze/blauw-grens + donkerblauwe streep (B gekozen) en rond linkerarmpje, r4 lijf smoother (A gekozen). Eindkeuring PASS, 5 pixels gerepareerd → `docs/concept/sprites/gnomini/af/gnomini.png`; op het overzichtsvel onder New. Les in GEMINI.md ("ronder" = echt rond).
+
+### [v0.0.671] - Gnomad: frontsprite af
+- Gnome-lijn fase 2 (Fairy), naar Gemini r1 (r2 "too much qua details"). Sprite in 7 makerrondes: snor rafeliger, riem als Machoke (zwarte lijnen boven/onder, bruine band), gesp naar Jordi's vormfoto (crème, afgeronde hoeken, staand gat, in driekwart links), riem sluit op zichzelf aan en volgt de bol. Eindkeuring PASS na 7 lijnreparaties (zwart 21,4 → 18,2 %) → `docs/concept/sprites/gnomad/af/gnomad.png`; op het overzichtsvel. Gnome-lijn: Steel-vorm = urban areas, ijsvorm overwogen (IDEEEN.md); geslacht open.

@@ -25,3 +25,4 @@
 - Prompt Baltoy r1: `gemini/PROMPT_baltoy_r1.md` (nieuw gesprek, geen bijlage).
 - r1 (`gemini/baltoy_r1.png`, rechthoekig frontaal beeld), Jordi: "dit is geen pokemon sprite, niet driekwart, geen goede vorm en totaal geen baltoy".
 - Daarna (meerkeuze): Tiwanaku-deel = "vorm deels" (kop en lijf hoekiger zoals een monoliet, armen en tolpunt blijven Baltoy); geen bijlage, "alleen tekst". Wat er naast de ogen van Baltoy moet blijven: "something else", toelichting gevraagd.
+- Toelichting "something else" (Jordi, 22 nov, met een close-up van Baltoys gezicht): "die ronde ogen met een streep erin met het rode patroon erboven". Prompt r2: `gemini/PROMPT_baltoy_r2.md` (driekwart, Baltoy bij naam, armen en tolpunt van Baltoy, kop en lijf hoekiger als monoliet).

@@ -400,3 +400,18 @@ Good, the three-quarter pose is right. Keep the pose, the ball, the colors, the 
 
 Same Gen 3 sprite style, plain white background.
 ```
+
+---
+
+# Prompt v14 (23 nov): NIEUW gesprek, bijlage `lunatone_evo_8x.png` (sprite r5 A)
+
+## Jordi (letterlijk)
+- "hij is mooi, maar wel volledig horizontaal, misschien nog even toch een keer aan gemini vragen"
+
+```
+The attached image is my finished Pokémon sprite, a crumbling blood moon. Redraw this exact same Pokémon as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art), with the same design, colors, eye, nose, cracks, crumbled gaps and floating chunks.
+
+Change only its orientation. Right now it is completely horizontal: the nose points straight left and the eye and nose sit on one flat level line, like a side view. Tilt and turn the whole ball instead, the way Lunatone's own Gen 3 sprite is tilted: the face rotated down toward the lower left, so the nose points down-left and slightly toward the viewer, and the eye sits a bit above and behind the base of the nose. The ball shows more of its top and right side.
+
+64x64 pixels, max 16 colors, 1 px dark outline, light from the top left, clean Game Freak shading. Plain white background, no glow, no shadow, no effects.
+```

@@ -29,3 +29,4 @@ Eindvorm, zwevend: vult het 64×64-vak zoals het model (puin tot bijna de rand).
 ## Sprite v16 (23 nov)
 - Jordi over het vel r2A | r3A | r3B | model: "r2a is wel de beste van dit lijstje" / "want daar lijkt die driekwart". De donkere rechterband van r2A blijft dus zoals hij is. r4 (vanaf r3B) gestopt.
 - Jordi: "verder moet je over het hele lichaam slim met schaduw spelen voor het perspectief" / "ook rechts in het oog". v16_r5 vanaf r2A in de maak.
+- Jordi over r5: "rechts in het oog moeten dus 2 donkerdere tinten komen dan de basis rode kleur om echt perspectief te tonen".

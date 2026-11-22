@@ -24,3 +24,4 @@
 - Jordi stuurt daarna een tweede foto (niet als bestand binnengekomen): kabouterkostuum met een **zwarte riem** en een **grote vierkante gele gesp** die boven en onder de riem uitsteekt, met in het midden een **donker rechthoekig gat** (staand) waar de zwarte riem doorheen zichtbaar is; geen pin. Jordi: "onee" · "gewoon dit" · "dat moet makkelijk zijn" (vervangt de zilveren gespfoto).
 - Jordi: "qua vorm" → de foto geldt alleen voor de vorm (groot vierkant dat boven en onder uitsteekt, staand gat), niet voor de kleuren zwart/geel.
 - sprite r4: "ja het zwart moet afnemen, maar dat doet de eindkeuring. Daarnaast is de riem nu wel wat blurry en de gesp is nu niet goed in perspectief met de rest van het lichaam, gezien het driekwart is"
+- sprite r5: "nee want hij is nu iets te vierkant, voor het ontwerp is het goed als dat net afwijkt, evenals de riem zelf die niet moooi op zichzelf aansluit"

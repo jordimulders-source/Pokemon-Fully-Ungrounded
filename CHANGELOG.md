@@ -2730,3 +2730,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.653] - Sunflora-evolutie: lijfkleur C
 - Vraag Jordi: verandert een plant van kleur bij extreme fotosynthese, en hoe past dat bij een zonnebloem? Varianten C (dieper groen) en D (C + paars accent op de stengel). Jordi koos **C**: `sprite_r5/sunflora_evo_r5_C_donkergroen.png`.
+
+### [v0.0.654] - Sunflora-evolutie: eindkeuring, r6 en r7
+- Eindkeuring BIJNA: open rand bovenop het rechterbeen dicht (r6). Jordi: "ja fixen" voor de twee punten in het hoofd: okerrand linksonder aan het gele bloemblad, groen vlekje verbonden met de linker bladhand (r7, 5 px; `sprite_r7/`).

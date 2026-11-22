@@ -56,6 +56,7 @@ SECTIES=[
 ('skinguin/af/skinguin.png', '"Skinguin" (Delibird)', 'ice/water'),
 ('dundragoon/af/dundragoon.png', '"Dundragoon" (Dunsparce)', 'dragon/normal'),
 ('mightyena_evo/af/alphyena.png', '"Alphyena" (Mightyena)', 'dark/fight'),
+('lunatone_evo/af/bloedmaan.png', 'Bloedmaan (Lunatone)', 'rock/cosmic'),
 ]),
 ("Regional forms / convergent Pokémon",[
 ("silicobra_uyuni/af/silicobra_uyuni.png",'"Silicobra" (regional)',"ground/electric"),

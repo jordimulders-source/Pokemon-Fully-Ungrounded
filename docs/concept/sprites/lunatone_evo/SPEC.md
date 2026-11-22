@@ -32,3 +32,4 @@ Eindvorm, zwevend: vult het 64×64-vak zoals het model (puin tot bijna de rand).
 - Jordi over r5: "rechts in het oog moeten dus 2 donkerdere tinten komen dan de basis rode kleur om echt perspectief te tonen".
 - Jordi over v16_r7: "de aansluiting neus op het lichaam mag iets netter nog, daarnaast mag je voor het oog nog net wat meer naar de al bestaande lunatone kijken, hij kijjkt namelijk iets teveel naar boven en lunatones oog is iets donkerder vanwege het perspectief, misschien dat die ook wat pixels naar rechts kan". r8 met oog op 0/2/4 px naar rechts als varianten.
 - Jordi kiest uit r8 (oog 0/2/4 px rechts × iris zoals r7/donkerder): "midden onder is goed" = `v16_r8/B_2px_donker.png`. r9: alleen losgekomen barstjes rechts van het oog netjes aansluiten.
+- Af (23 nov): `af/bloedmaan.png` = `sprite/v16_r9`; op het overzichtsvel.

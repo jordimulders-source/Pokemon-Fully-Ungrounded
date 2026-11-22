@@ -2744,3 +2744,8 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Gemini v14–v17: pose met perspectief; Jordi koos v16 ("voor mijn gevoel is deze beter"); rechterkant rond gemaakt en brokkels uit r5 terug (Jordi akkoord).
 - Sprite `lunatone_evo/sprite/v16_r1`–`v16_r7`: Jordi koos r2A om de driekwart van de donkere rechterband; daarna schaduw over het hele lijf voor perspectief (r5), twee donkerdere roodtinten rechts in het oog (r6, Jordi), keuringsreparaties (r7). Keuring r5: trouw PASS, techniek bijna PASS; r7 lost de resterende punten op.
 - Vel: `lunatone_evo/lunatone_evo_v16_8x.png` (naast Lunatone). Vorige kandidaat (model v11) blijft in `sprite/r5/`.
+
+### [v0.0.652] - Lunatone-evolutie "bloedmaan": frontsprite af
+- r8: neusaansluiting netter, pupil 1 px lager (kijkt niet meer omhoog), oog op 0/2/4 px naar rechts × iris zoals r7/donkerder; Jordi: "midden onder is goed" (2 px, donkere iris).
+- r9: losgekomen barstjes rechts van het oog taps laten uitlopen (3 px).
+- Af: `lunatone_evo/af/bloedmaan.png` (+ 8×), op het overzichtsvel onder "Evolutions of existing Pokémon" als "Bloedmaan (Lunatone)", rock/cosmic. Naam en evolutiemethode open.

@@ -11,3 +11,5 @@ S([(21,42),(19,44),(21,44),(23,45),(21,46)],3)
 S([(34,3),(52,12),(54,36),(9,45),(16,46)],6)
 S([(31,14)],3)
 im.save('r8/sprite.png',transparency=0)
+# Herkeuring: buitenlijn onderaan terug (r7-waarde).
+im=Image.open('r8/sprite.png'); px=im.load(); px[36,49]=1; px[37,49]=1; im.save('r8/sprite.png',transparency=0)

@@ -14,3 +14,5 @@
 - r1 (`r1/gemini_r1.png`, prompt v1): "de snor mag wat rafeliger, we geven hem ook een soort riem"
 - "verder erg goed"
 - "alleen de muts mag nog iets meer weathered"
+- r2 (`r2/gemini_r2.png`, bijsturen snor + muts): "dit is too much qua details, dit vertaalt niet naar een sprite, laat de muts maar normaal. De riem wordt gewoon een streep van paar pixels diep, kleur die goed past tussen de kleuren die we al hebben"
+- **Bevroren model: `r1/gemini_r1.png`** (muts normaal). In de sprite: snor iets rafeliger (r1: "de snor mag wat rafeliger"; niet zo gedetailleerd als r2), riem = streep van een paar pixels diep, kleur die past bij het palet (varianten).

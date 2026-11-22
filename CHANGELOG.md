@@ -2727,3 +2727,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.652] - Sunflora-evolutie: sprite r4 en r5 (lijf)
 - Jordi over r3: "r3 buiten is goed, maar nu moet je nog de lijnen wat minder recht maken en kijken naar kleurtinten/schaduw en lijngebruik. Bijv niet overal zwarte lijnen bij het lichaam, hoofd vind ik prima zo".
 - r4 (maker): selout donkergroen boven/links, zwart onder/rechts, 3 groentinten met volume. Keurder BIJNA: armen nog rechte balken. r5: ronde bladonderkanten uit het model, losse voetpixel weg (25 px, hoofd per assert onaangeroerd); A modelgroen, B Sunflora-groen (`sprite_r5/vel.png`).
+
+### [v0.0.653] - Sunflora-evolutie: lijfkleur C
+- Vraag Jordi: verandert een plant van kleur bij extreme fotosynthese, en hoe past dat bij een zonnebloem? Varianten C (dieper groen) en D (C + paars accent op de stengel). Jordi koos **C**: `sprite_r5/sunflora_evo_r5_C_donkergroen.png`.

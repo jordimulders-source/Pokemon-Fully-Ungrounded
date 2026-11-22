@@ -49,3 +49,4 @@
 - r8 (`sprite_r8/`, verse maker): kopschild als nette plaat, ogen = Gen 3-Pinsir-oog (A met pupil, B zonder), stekels naar Tyranitar/Sandslash, dekschild A (V's, Mega Pinsir/Ninjask) en B (knobbels, Shuckle/Dustox); arm/been/staart pixelgelijk aan r7. Naar Jordi: `sprite_r8/r7_r8_model.png`.
 - Jordi bij r8: "wat is er gebeurd met het hoofd?", "lekker opnieuw tekenen want dat kan je zo goed". Kop in r8 hertekend (rechte plank, zaag stekels), fout in Claudes opdracht ("maak de vorm netjes"). r9: kop opnieuw uit het model.
 - Jordi daarna: "gewoon het model volgen", "je moest alleen de ogen een paar pixels aanpassen" → r9 = kop van r7 pixelgelijk, alleen ogen een paar pixels puntiger; rest r8.
+- r9 (`sprite_r9/`): kop = r7 pixelgelijk, alleen ogen 4 px (wig met punt naar het midden; A met pupil, B zonder); rest = r8 (schild A of B). Naar Jordi: `sprite_r9/r9_keuze.png`.

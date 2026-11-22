@@ -182,6 +182,6 @@ tijdelijk vervangen. Elk heeft in de nieuwe regio een eigen plek nodig (`IF_IN_M
 - Magnezone (Magneton) en Vikavolt (Charjabug): magnetisch veld (was New Mauville/Chargestone Cave); nu alleen Thunder Stone.
 - Leafeon (Eevee): mosrots in een bos (was Petalburg Woods); nu alleen Leaf Stone.
 - Glaceon (Eevee) en Crabominable (Crabrawler, nog niet in de dex): ijsrots (was Shoal Cave); nu alleen Ice Stone.
-- Kecleon-evolutie: het ontwerp landleguaan Grass/Fire (22 nov) is geschrapt; Jordi, 22 nov: "ik ga nadenken wat ik met de kecleon evo wil".
+- Kecleon-evolutie: het ontwerp landleguaan Grass/Fire (22 nov) is geschrapt; Jordi, 22 nov: "ik ga nadenken wat ik met de kecleon evo wil"; Jordi, 22 nov: "ja ik wil met een kecleon evo nog wel verder gaan, maar een andere inspiratie, een andere keer".
 - Alolan Exeggutor (Exeggcute): was Route 119; nu tijdelijk level-up met een Dragon-type in het team. Plek: de
   waspalmenvallei (zie "Bestaande soorten in de regio").

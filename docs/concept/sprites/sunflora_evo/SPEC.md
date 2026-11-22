@@ -21,4 +21,5 @@ Alleen Jordi's woorden (22 nov); niets anders is besloten.
 - Jordi (22 nov): "ligt ook aan prompt denk ik" · "het mag best een normaal lichaam zijn".
 - **Model (Jordi, 22 nov): r5-hoofd op het r12-lijf, schaal 1,6** ("1,6 is precies wat ik bedoel"): `gemini/model_16.png` (`gemini/gereedschap/kop_op_r12.py model_16.png 1.6`).
 - Jordi (22 nov): "als je dan nog de voeten zo kan zetten dat het lijkt alsof die zweeft dan ben ik tevreden".
+- Na sprite r3 (Jordi, 22 nov): voeten "r3 buiten is goed, maar nu moet je nog de lijnen wat minder recht maken en kijken naar kleurtinten/schaduw en lijngebruik. Bijv niet overal zwarte lijnen bij het lichaam, hoofd vind ik prima zo". Hoofd bevroren.
 - Open: naam, kleuren, details van het kosmische deel, stats.

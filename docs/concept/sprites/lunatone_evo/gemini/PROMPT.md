@@ -148,3 +148,21 @@ AVOID
 - Not an emblem, badge, logo or symbol. Not a sun. No lava, no gems or crystals, no fire.
 - No arms, legs, wings, mouth or human features. No glossy 3D render, no plush or mascot look.
 ```
+
+---
+
+# Prompt v5 (22 nov): zelfde gesprek als v4, bijsturen (reactie op `r4/gemini_v4.png`)
+
+## Jordi (letterlijk)
+- "de neus komt dus uit de bolling ook, of misschien uit een stuk afgebrokkeld, maar hij moet niet zo smooth halve maan zijn"
+
+## Analyse Claude
+Goed: volle rode bol, oog, losse brokken. Mis: links nog steeds een gladde C-vormige uitsparing waar de neus in zit. Eén wijziging.
+
+```
+Better. Keep the red moon, the eye, the cracks, the colors and the floating chunks exactly as they are. Change only one thing:
+
+The left side. Remove the smooth curved hollow around the nose: there is no half-moon shape cut out of the disc. The left edge of the moon bulges outward, round like the rest of the sphere, and the nose sticks straight out of that round bulging surface. Where the nose comes out, the stone may be rough and crumbled, with a few jagged broken chips, but never a smooth curve.
+
+Same Gen 3 sprite style, plain white background.
+```

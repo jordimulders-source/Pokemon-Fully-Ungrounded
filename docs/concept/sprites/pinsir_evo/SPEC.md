@@ -36,3 +36,4 @@
 - Frontsprite r1: maker gestart.
 - r1 (`sprite_r1/`): mond en kaken goed; Claude: poten vlekkerig, schorspatroon weg, te veel zwart, ruis op stekels. Jordi bij r1: "ogen zijn ook gewoon een rij witte pixels".
 - r2 (`sprite_r2/`): ogen met pupil en wenkbrauw, schildtinten naar het model, stekels netter, zwart 29 %. Claude: poten nog vlekkerig (losse lichte plekken in plaats van ronde platen); verse maker alleen voor poten/onderlijf (r3).
+- r3 (`sprite_r3/`, verse maker, alleen onderlijf): platen met schaduw en glans, lichter dan het model; Claude: beter, maar nog druk. Naar Jordi: `sprite_r3/naast_model.png`.

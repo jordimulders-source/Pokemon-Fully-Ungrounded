@@ -8,6 +8,7 @@
 - "laten we eerst beginnen met Gnomini ontwerpen"
 - Antwoorden op vragen (22 nov): lichaam: "geen baard"; kleuren: "Eigen kleuren"; pose: "Waggelend lopen".
 - "het moet een pokemon worden he niet een tekening van een tuinkabouter"
+- "dat de muts veel bedekt lijkt me geinig ja" (na voorstellen: mol als basis / muts als lichaamsdeel à la Hatenna / paddenstoelhoed; keuze nog niet gemaakt)
 - Lijn en vormen: `docs/concept/IDEEEN.md` → "Gnome-lijn".
 
 ## Open (overleggen vóór de Gemini-prompt)

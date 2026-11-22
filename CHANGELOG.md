@@ -2783,3 +2783,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.665] - Merge naar main
 - Main (Mightyena-evolutie Alphyena, robotmug, Cosmic-besluiten, vuurduivel fase 1) samengevoegd met de Sunflora-evolutie; onze secties hernummerd naar v0.0.649–664.
+
+### [v0.0.666] - Idee: Gnome-lijn
+- Jordi: "Ik denk aan een Gnome fairy lijn. Het woord gnome laat ook veel woordgrappen toe". Vastgelegd in `IDEEEN.md` → "Gnome-lijn", met voorstellen voor woordgrappen en open vragen.

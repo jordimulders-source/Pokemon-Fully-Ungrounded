@@ -682,3 +682,9 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - **Besloten:** Swablu Electric/Flying, Altaria Electric/Dragon; kleur A; Swablu kijkt nieuwsgierig; schokken = static, kleine vonkjes in en op de wolk. Open: mammatus of shelf cloud bij Altaria; vonkjes ook bij Swablu.
 - **Jordi (21 nov):** "bij swablu kan je de voelsprieten in gele vonkvorm maken". Open: mammatus of shelf cloud (voorstel Claude: mammatus).
 - **Jordi (21 nov):** "en shelf cloud akkoord" → Altaria krijgt een shelf cloud (geen mammatus). "maak maar prompts": `docs/concept/sprites/swablu_regional/gemini/PROMPTS.md`.
+
+## Gnome-lijn (Jordi, 22 nov)
+- **Jordi:** "Ik denk aan een Gnome fairy lijn. Het woord gnome laat ook veel woordgrappen toe".
+- Repo/dex: geen kabouter-Pokémon; het dichtst erbij is de Impidimp-lijn (Dark/Fairy, ondeugende kobolden). Pombero (FAKEMON_PITCH #64, "harige nachtkabouter", Dark/Normal) is een eerdere pitch.
+- **Woordgrappen (voorstellen Claude, open):** Gnomad (nomad), Astrognomer (astronomer; Cosmic?), Gastrognome (gastronome), Metrognome (metronome), Gnomesis (nemesis), Ergognomic, Gnomenclature, Gnomaste (namasté), Gnome Sweet Gnome / Gnome Alone (dex- of NPC-tekst).
+- Open: aantal fases, type naast Fairy, wat voor kabouter (tuinkabouter, folklore zoals de Latijns-Amerikaanse *duende*, iets anders), waar de woordgrappen zitten (namen, moves, dex-teksten).

@@ -19,3 +19,9 @@ Eindvorm, zwevend: vult het 64×64-vak zoals het model (puin tot bijna de rand).
 - Jordi: "hij is mooi, maar wel volledig horizontaal"; Gemini v14/v15 mislukt ("dit is gedraaid, maar geen driekwart pose" · "nee dit is ook niet geslaagd").
 - Jordi: "hij moet een x aantal graden draaien" / "naar rechts"; "lunatone is dus wel een driekwart sprite zie ik nu".
 - r6 (oog naar links geschoven): "nee dit is niet gelukt, je draait hem de verkeerde kant op". Juist: gezicht schuift naar rechts (naar de voorkant), linkerrand van de bol komt achter de neus in beeld. r7 in de maak.
+
+## Nieuw model (23 nov): Gemini v16
+- Jordi over v16: "voor mijn gevoel is deze beter"; "alleen de rechterkant is niet meer rond" / "lijkt nu een opening te zitten"; bijsturen in Gemini (v17): "hij maakt het erger".
+- Voorstel Claude, Jordi "akkoord": v16 wordt het model (`referenties/model_v16.png`); de rechterkant wordt rond gemaakt zonder tekenen: de ronde omtrek van boven/links/onder doortrekken naar rechts, bijgekomen strook vullen met de schaduwtinten die al rechts liggen. Gezicht, neus, barsten en puin zoals v16.
+- Uitgebrokkelde stukken uit r5 terughalen: gevraagd, niet beantwoord; dus niet gedaan (v16 zoals hij is).
+- Vorige kandidaat (model v11+v5): `sprite/r5/` blijft bewaard.

@@ -13,4 +13,5 @@ Alleen Jordi's woorden (22 nov); niets anders is besloten.
 - Sprite (Jordi, 22 nov): "ja 2,6 is goed, gebruik het oorspronkelijke sunflora lijf ervoor als inspiratie, zorg dat die goed aansluit op het hoofd, overlapping is niet erg".
 - Hoofd = r5-hoofd (`gemini/r5.png`); kleuren "zelfde kleuren, minder tinten".
 - Voeten (Jordi, 22 nov): "ik wil ze hangend" (zoals in r5).
+- Na sprite r1 (Jordi, 22 nov): "het lichaam zit niet vast aan het hoofd en je hebt het lichaam opnieuw getekend" · "dat mag niet" · "in het model zit het lichaam niet vast dus daar moet je van afwijken" · "het lichaam mag dus wat groter omdat het hoofd gaat overlappen". Lijf = Sunflora-pixels overnemen (niet tekenen), vast aan het hoofd.
 - Open: naam, kleuren, details van het kosmische deel, stats.

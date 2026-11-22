@@ -13,9 +13,9 @@ g=np.isin(s,[12,13,14,15]); bl=(s==1)&ndimage.binary_dilation(g,structure=np.one
 m=g|bl
 def knip(y0,y1,x0,x1):
     b=np.where(m[y0:y1,x0:x1],s[y0:y1,x0:x1],0); return np.vectorize(lambda v: MAP.get(int(v),0))(b).astype('uint8')
-romp=knip(32,47,12,52)        # armen + lijfje (rij 32-46, kol 12-51)
-lv=knip(47,55,17,30)          # linkervoet (rij 47-54, kol 17-29)
-rv=knip(47,55,30,45)          # rechtervoet (rij 47-54, kol 30-44)
+romp=knip(32,48,12,52)        # armen + lijfje (rij 32-47, kol 12-51)
+lv=knip(48,56,17,31)          # linkervoet (rij 48-55, kol 17-30)
+rv=knip(48,56,31,46)          # rechtervoet (rij 48-55, kol 31-45)
 np.save('romp.npy',romp); np.save('lv.npy',lv); np.save('rv.npy',rv)
 ch='.123456789abcdef'
 for nm,a in (('romp',romp),('lv',lv),('rv',rv),('lv_rot',np.rot90(lv,1)),('rv_rot',np.rot90(rv,-1))):

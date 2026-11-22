@@ -2731,40 +2731,93 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Les in SPRITE_KERN.md: witte pixel in de pupil in de onderhoek, niet tegen het oogwit; GEMINI.md: geen eerdere ronde als bijlage.
 - Gemini-prompt voor de evolutie: `docs/concept/sprites/vuurduivel_fase2/gemini/PROMPT.md` (+ sessieprompt).
 
-### [v0.0.649] - Vuurduivel fase 2: Gemini r1 + prompt v2
+### [v0.0.649] - Sunflora-evolutie: typing Grass/Cosmic
+- Jordi wil een Sunflora-evolutie ("een van de allerzwakste pokemon"), typing Grass/Cosmic. Brainstormrichtingen in `docs/concept/IDEEEN.md`; ontwerp nog open. Concept: Sunflora is "zo hard gegaan op de fotosynthese dat die kosmische krachten heeft gekregen" (Jordi). Uiterlijk: tussen plant en ster, erg kosmisch en "unlocked", lichaam nog plant; heel blij gezicht (Jordi).
+
+### [v0.0.650] - Sunflora-evolutie: SPEC en Gemini-prompt r1
+- Jordi: "laten we hem maar zweven, dat is leuk". `docs/concept/sprites/sunflora_evo/SPEC.md` (alleen Jordi's citaten) en `gemini/PROMPT_r1.md`.
+
+### [v0.0.651] - Sunflora-evolutie: Gemini r1 afgekeurd
+- Jordi: "het hoofd is vrijwel hetzelfde terwijl juist daar de verandering in moet zitten" + heelalpatroon ongewenst. r1 in `sunflora_evo/gemini/r1.png`; les in GEMINI.md.
+
+### [v0.0.652] - Sunflora-evolutie: Gemini-prompt r2
+- Jordi: "de bloem wordt veel meer een ster, maar dan geen 5punt ster, meer een kosmisch uitziende ster". SPEC bijgewerkt, `gemini/PROMPT_r2.md` (zonder Sunflora-naam bij het gezicht, heelalpatroon verboden).
+
+### [v0.0.653] - Sunflora-evolutie: Gemini r2 + bijsturen
+- Jordi: "ok het is teveel detailwerk, het hoofd is nog net te klein denk ik ook, dat mag nog wat overdrevener". r2 opgeslagen; bijstuurprompt r3 onder `gemini/PROMPT_r2.md`.
+
+### [v0.0.654] - Sunflora-evolutie: r3 mislukt, startprompt r4
+- Jordi over r3 (bijsturen): "niet gelukt". `gemini/PROMPT_r4.md`: r2-prompt met groter hoofd en minder detail in de tekst, nieuw gesprek zonder bijlage.
+
+### [v0.0.655] - Sunflora-evolutie: r4 hoofd goed, prompt r5
+- Jordi: "hoofd wel prima nu, als we de kleuren wat simpeler maken"; meer punten; "nog net wat meer echt een kosmische entiteit"; lijf van Sunflora. r4 opgeslagen, `gemini/PROMPT_r5.md` (eerst hoofd, dan lijf).
+
+### [v0.0.656] - Sunflora-evolutie: r5 + hoofd groter geschaald
+- Jordi over r5: "vrij oke, maar het hoofd moet echt overdreven groot zijn tov het lichaam, door de extreme fotosynthese". Hoofd per script 1,5× en 1,8× geschaald op het r5-lijf (`gemini/r5_kop_groter_150_180.png`).
+
+### [v0.0.657] - Sunflora-evolutie: hoofd 1,8× / 2,2× / 2,6×
+- Jordi: "dat het lijf heel klein is, is niet erg. Gemini had het lijf in verhouding nog groter gemaakt dan de normale sunflora". Extra schalen 2,2× en 2,6× (`gemini/r5_kop_groter_180_220_260.png`, script `gemini/gereedschap/kop_schaal.py`).
+
+### [v0.0.658] - Sunflora-evolutie: sprite r1 en r2
+- r1: hoofd overgenomen uit r5 (gezicht 0 px afwijking), lijf verkleind en hertekend. Jordi: "het lichaam zit niet vast aan het hoofd en je hebt het lichaam opnieuw getekend" · "dat mag niet".
+- r2 (`sprite_r2/vel.png`): hoofd = r1 (diff 0), lijf = Sunflora-pixels zonder handwerk, vast aan de ster, voeten 90° gedraaid zodat ze hangen. A = lijf 1×, B = 2× kleiner, C = 1,25× groter. Ter keuze voor Jordi.
+
+### [v0.0.659] - Sunflora-evolutie: lijf via Gemini r6–r12, hoofd erop geplakt
+- r6–r11: Gemini maakte geen goed vastzittend lijf (vóór het hoofd, rank, "swamp demon", losse bladeren). r12 (prompt vanaf nul) gaf een Sunflora met een lijf dat goed onder het hoofd zit; Jordi: "we kunnen hier het hoofd op plakken". r5-hoofd erop in drie maten (`gemini/r12_kop_r5.png`).
+
+### [v0.0.660] - Sunflora-evolutie: sprite r3 (model 1,6)
+- Model gekozen (Jordi: "1,6 is precies wat ik bedoel"): `gemini/model_16.png`. r3 = r1-hoofd (diff 0) + kale verkleining van het r12-lijf op hetzelfde raster, geen handpixels. Jordi: "als je dan nog de voeten zo kan zetten dat het lijkt alsof die zweeft dan ben ik tevreden": voeten als blok gedraaid in vier varianten (model/binnen/buiten/slap), `sprite_r3/vel.png`.
+
+### [v0.0.661] - Sunflora-evolutie: sprite r4 en r5 (lijf)
+- Jordi over r3: "r3 buiten is goed, maar nu moet je nog de lijnen wat minder recht maken en kijken naar kleurtinten/schaduw en lijngebruik. Bijv niet overal zwarte lijnen bij het lichaam, hoofd vind ik prima zo".
+- r4 (maker): selout donkergroen boven/links, zwart onder/rechts, 3 groentinten met volume. Keurder BIJNA: armen nog rechte balken. r5: ronde bladonderkanten uit het model, losse voetpixel weg (25 px, hoofd per assert onaangeroerd); A modelgroen, B Sunflora-groen (`sprite_r5/vel.png`).
+
+### [v0.0.662] - Sunflora-evolutie: lijfkleur C
+- Vraag Jordi: verandert een plant van kleur bij extreme fotosynthese, en hoe past dat bij een zonnebloem? Varianten C (dieper groen) en D (C + paars accent op de stengel). Jordi koos **C**: `sprite_r5/sunflora_evo_r5_C_donkergroen.png`.
+
+### [v0.0.663] - Sunflora-evolutie: eindkeuring, r6 en r7
+- Eindkeuring BIJNA: open rand bovenop het rechterbeen dicht (r6). Jordi: "ja fixen" voor de twee punten in het hoofd: okerrand linksonder aan het gele bloemblad, groen vlekje verbonden met de linker bladhand (r7, 5 px; `sprite_r7/`).
+
+### [v0.0.664] - Sunflora-evolutie: frontsprite af
+- Jordi: "ja commit en push naar main". `docs/concept/sprites/sunflora_evo/af/sunflora_evo.png` (+ `_8x`) = r7; op het overzichtsvel onder "Evolutions of existing Pokémon"; Stand van zaken en les in GEMINI.md bijgewerkt.
+
+### [v0.0.665] - Merge naar main
+- Main (Mightyena-evolutie Alphyena, robotmug, Cosmic-besluiten, vuurduivel fase 1) samengevoegd met de Sunflora-evolutie; onze secties hernummerd naar v0.0.649–664.
+
+### [v0.0.666] - Vuurduivel fase 2: Gemini r1 + prompt v2
 - Gemini r1 bewaard (`docs/concept/sprites/vuurduivel_fase2/gemini/r1.png`). Jordi: "nog wat meer een typische baphomet pose" en "langere hoorns die meer krullen"; pose gekozen: zittend met gekruiste poten, één arm omhoog, één omlaag.
 - Prompt v2: `docs/concept/sprites/vuurduivel_fase2/gemini/PROMPT_v2.md` (alleen pose en hoorns gewijzigd t.o.v. v1).
 
-### [v0.0.650] - Vuurduivel fase 2: Gemini r2 + prompt v3
+### [v0.0.667] - Vuurduivel fase 2: Gemini r2 + prompt v3
 - r2 bewaard (`docs/concept/sprites/vuurduivel_fase2/gemini/r2.png`). Jordi: "hij is nu te cartoony, dat hoefde alleen bij fase 1. Hij mag serieuzer kijken, de hoorns hoeven geen vuur patroon te hebben"; "en het is een zijwaartse pose".
 - Prompt v3: `docs/concept/sprites/vuurduivel_fase2/gemini/PROMPT_v3.md` (niet cartoony, serieuze blik, hoorns zonder vuurpatroon, lijf naar de kijker).
 
-### [v0.0.651] - Vuurduivel fase 2: Gemini r3 + prompt v4
+### [v0.0.668] - Vuurduivel fase 2: Gemini r3 + prompt v4
 - r3 bewaard (`docs/concept/sprites/vuurduivel_fase2/gemini/r3.png`; Baphomet-pose, effen krulhoorns, serieus). Jordi: "nieuwe prompt, het moet ook meer een sprite worden".
 - Prompt v4: `docs/concept/sprites/vuurduivel_fase2/gemini/PROMPT_v4.md` (alleen het stijlblok: echte 64×64-sprite, eenvoudige vormen, compact).
 
-### [v0.0.652] - Vuurduivel fase 2: Gemini r4 + prompt v5
+### [v0.0.669] - Vuurduivel fase 2: Gemini r4 + prompt v5
 - r4 bewaard (`docs/concept/sprites/vuurduivel_fase2/gemini/r4.png`). Jordi: "laten we afwijken van de armpose"; gekozen: vuur in de handpalm (zitten met gekruiste poten blijft).
 - Jordi over de hoorns: "nog niet mooi", "beetje te wijd", "staan ze bijna helemaal horizontaal"; v5 vraagt hoorns die eerst omhoog gaan en dicht langs het hoofd krullen.
 - Prompt v5: `docs/concept/sprites/vuurduivel_fase2/gemini/PROMPT_v5.md`.
 
-### [v0.0.653] - Vuurduivel fase 2: Gemini r5 + prompt v6
+### [v0.0.670] - Vuurduivel fase 2: Gemini r5 + prompt v6
 - r5 bewaard (`docs/concept/sprites/vuurduivel_fase2/gemini/r5.png`; vuur in beide handpalmen). Jordi: "hoorns niet goed, dat moet echt een opgerolde bok achtige zijn".
 - Prompt v6: `docs/concept/sprites/vuurduivel_fase2/gemini/PROMPT_v6.md` (alleen de hoorns: opgerolde ramshoorns, beide gelijk, strak langs het hoofd).
 
-### [v0.0.654] - Vuurduivel fase 2: Gemini r6 + prompt v7
+### [v0.0.671] - Vuurduivel fase 2: Gemini r6 + prompt v7
 - r6 bewaard (`docs/concept/sprites/vuurduivel_fase2/gemini/r6.png`; ramshoorns goed). Jordi: "het lichaam is nu te menselijk, verder wel goed".
 - Prompt v7: `docs/concept/sprites/vuurduivel_fase2/gemini/PROMPT_v7.md` (bijstuurzin voor hetzelfde gesprek + volledige prompt met een BODY-regel).
 
-### [v0.0.655] - Vuurduivel fase 2: Gemini r7 + prompt v8
+### [v0.0.672] - Vuurduivel fase 2: Gemini r7 + prompt v8
 - r7 bewaard (`docs/concept/sprites/vuurduivel_fase2/gemini/r7.png`; bijsturen gaf een dikke gladde buik). Jordi: "zucht, het moet meer een geiten lichaam".
 - Prompt v8: `docs/concept/sprites/vuurduivel_fase2/gemini/PROMPT_v8.md` (BODY = rechtop zittende zwarte geit, slank; Jordi: "niet dikker").
 - Les in GEMINI.md: lijf omschrijven als het dier dat het wel is, niet alleen wat het niet is.
 
-### [v0.0.656] - Vuurduivel fase 2: model r8 + frontsprite r1–r4
+### [v0.0.673] - Vuurduivel fase 2: model r8 + frontsprite r1–r4
 - Jordi over r8: "het gezicht is nu anders, maar dat is juist tof, ga maar bouwen" → bevroren model `docs/concept/sprites/vuurduivel_fase2/referenties/gemini_gekozen_r8.png`, SPEC.md.
 - Sprite r1 (2×-reductie van het natieve raster), keuring r1 (BIJNA). Oog mag afwijken (Jordi: "rood met zwart erin of zwart met rood erin, geen wit"); 10 opties uit echte Gen 3-ogen, Jordi koos "sharpedo A".
 - r2: lijftinten neutraal lichter, vlammen in banden; r3: Sharpedo A-oog, slankere hand- en staartvlam; eindkeuring r3 (BIJNA: rompvolume); r4: romp met volume naar de modelhelderheid, rustige dijselout. Kandidaat voor Jordi: `sprite_r4/vuurduivel2_r4_8x.png`.
 
-### [v0.0.657] - Vuurduivel fase 2: frontsprite af
+### [v0.0.674] - Vuurduivel fase 2: frontsprite af
 - Jordi over r4: "uitstekend". Af: `docs/concept/sprites/vuurduivel_fase2/af/vuurduivel2.png` (+ `_8x`); op het overzichtsvel (sectie New, na fase 1). De vuurduivel-lijn is daarmee af (namen open).

@@ -2786,3 +2786,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.666] - Idee: Gnome-lijn
 - Jordi: "Ik denk aan een Gnome fairy lijn. Het woord gnome laat ook veel woordgrappen toe". Vastgelegd in `IDEEEN.md` → "Gnome-lijn", met voorstellen voor woordgrappen en open vragen.
+
+### [v0.0.667] - Gnome-lijn: neus en muts
+- Jordi: "Iig een grote ronde neus en een muts die de ogen blokkeert". Toegevoegd aan `IDEEEN.md` → "Gnome-lijn".

@@ -59,3 +59,4 @@
 - r10 varianten in driekwart. Jordi: "nu heeft B een mooi patroon. Armen en stekel aan de onderkant lijken alleen nog volledig 2d" → B gekozen; r11: armen en punt 3D.
 - r11 (vanaf r10B): armen met doorsnede-schaduw en eindvlak, rechterarm donkerder; punt met voor-/zijvlak en schaduw onder het lijf; nek/ribbe/zijvlak-keurderpunten. Hoofd, band, patroon B diff 0.
 - Jordi over r11: "de stekel aan de onderkant leest niet meer als een stekel. Daarnaast mogen de pixels die op een mond lijken weg, voor de rest prima genoeg om naar eindkeuring te gaan, daar fixen we de laatste issues". → r12, dan eindkeuring.
+- r12 (stekel terug naar donkere r10B-band onder het lijf + smal uitlopend licht voorvlak; mondpixels weg; 8 px t.o.v. r11) → eindkeuring.

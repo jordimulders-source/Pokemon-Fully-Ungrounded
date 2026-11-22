@@ -707,3 +707,4 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 ## Emolga-evolutie: wingsuit (Jordi, 22 nov)
 - Jordi: "ik wil een emolga evolutie. gebaseerd op die extreme sport dat mensen in zo'n pak met vleugels naar beneden duiken en vliegen" (= **wingsuit flying**, vaak vanaf een klif als BASE-sprong).
 - Emolga is in de repo Electric/Flying. Type, uiterlijk, methode en naam van de evolutie: nog niet besproken.
+- Besloten (Jordi, 22 nov): zelfde type (Electric/Flying), "moet echt op een wingsuit lijken", groter, geen helm, geen bril; sprite groter, stoerder, "echt in een duikvlucht, adrenaline junkie". Verder in `docs/concept/sprites/emolga_evo/SPEC.md`.

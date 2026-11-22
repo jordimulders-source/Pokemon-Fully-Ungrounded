@@ -2881,3 +2881,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.690] - Idee: Emolga-evolutie (wingsuit)
 - Jordi's idee voor een Emolga-evolutie gebaseerd op wingsuit flying vastgelegd in `docs/concept/IDEEEN.md`.
+
+### [v0.0.691] - Emolga-evolutie: besluiten + Gemini-prompt r1
+- Jordi's besluiten in `docs/concept/sprites/emolga_evo/SPEC.md`; Gemini-prompt r1 in `emolga_evo/gemini/PROMPT_r1.md`.

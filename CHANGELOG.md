@@ -2472,3 +2472,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.601] - Nazca-astronaut: r11, eigen kleur per deel (K1–K3)
 - `sprite_r11/`: kraag/romp/bovenarmen/dijen elk eigen kleur, romp getrapte zigzag, ledematen tocapu-blokjes; K1 zwart-wit/rood/blauw, K2 terracotta/indigo/oker, K3 indigo-goud/goud/terracotta.
+
+### [v0.0.602] - Nazca-astronaut: gepauzeerd op patroon/kleur
+- Stand in `SPEC.md` en Stand van zaken; Jordi denkt na over patroon en kleur.

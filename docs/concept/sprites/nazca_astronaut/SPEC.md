@@ -38,3 +38,9 @@ Nieuwe Pokémon naast Sigilyph (Cosmic/Flying).
 
 ## Sigilyph-ontwerptaal (Claude, gelezen van de Gen 5-sprite in de repo)
 Zwart lijf en zwarte kop met één groot blauw oog; ronde romp met een groene zigzagband en oogvlekken; gele vleugel-armen met veerpunten in blauw en rood; donkere drietandhanden; gele staartveren met rood en blauw; frontaal en symmetrisch, zwevend. Palet: zwart, geel, rood, blauw, groen.
+
+## Stand (22 nov)
+- Model: `model/model.png` (Gemini r11). Silhouet bevroren: spleet tot rij 28 met dunne ^ (r3), linkerarm op dezelfde hoogte als rechts (r9).
+- Patroon/kleur: nog niet gekozen. Jordi (22 nov): "ik loop vast, als in ik weet niet wat ik wil, ik denk er even langer over na".
+- Probeersels: r8 (zwart + groen/rood zigzag, keurder PASS), r9 (5 paletten, één tunica-motief), r10 (eigen motief per deel: ringbanden/lengtebaan/tocapu), r11 (eigen kleur per deel K1–K3; Jordi: "C komt het dichtste in de buurt", "de kleuren per deel moeten anders ook").
+- Beperking: 16 kleuren, waarvan ±13 vast (kop, ogen, crème, strepen); per deel een eigen kleur kan alleen door vaste kleuren te hergebruiken.

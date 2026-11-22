@@ -1,5 +1,5 @@
 # r3.py: r2-A -> r3 (riem op de Machoke-manier). Zwarte lijn direct boven en onder de band, band zelf vlak donkerbruin (15),
-# 1 klein hooglichtstukje links op de bovenste bandrij (14, lichtkant). A: + gesp in het midden (creme 12, glans 13, zwarte omlijning). B: zonder gesp.
+# 1 klein hooglichtstukje links op de bovenste bandrij (14, lichtkant). A: + zilveren framegesp naar Jordi's foto (lavendel 4/3 als zilver, glans 13, zwarte omlijning, open midden, pin). B: zonder gesp.
 # Verder diff 0 t.o.v. r2-A (assert).
 import sys, numpy as np; from PIL import Image
 sys.path.insert(0,'../sprite_r1'); from gemeen import opslaan
@@ -22,12 +22,18 @@ def bouw(gesp):
         elif Y==t+dik:
             o[Y,X]=10 if X<30 else 9            # broek direct onder de riem in schaduw (zoals r2)
     if gesp:
-        t=int(round(top(25)))                   # midden van de band, laagste punt van de boog
-        for y in range(t,t+5):
-            for x in range(23,28):
-                rand=(x in (23,27)) or y in (t,t+4)
-                o[y,x]=1 if rand else 12
-        o[t+1,24]=13                            # glanspixel linksboven
+        # Jordi's foto (referenties/gesp_jordi.png): zilveren rechthoekige framegesp, open midden (riem zichtbaar), pin van boven naar beneden.
+        # Zilver = lavendeltinten van de muts (4 licht, 3 schaduw) + glans 13; geen nieuwe kleur. 7x6 incl. omlijning, 1 px boven de band uit.
+        t=int(round(top(25)))
+        G=["kkkkkkk",
+           "kGSSSSk",
+           "kSbPbDk",
+           "kSbPbDk",
+           "kSDDDDk",
+           "kkkkkkk"]
+        M={'k':1,'S':4,'D':3,'G':13,'P':4,'b':15}
+        for j,r in enumerate(G):
+            for i,c in enumerate(r): o[t-1+j,22+i]=M[c]
     d=o!=r2; zm=riem|np.isin(zone,(5,8))|riem1
     assert not (d&~zm).any()
     return o,d.sum()

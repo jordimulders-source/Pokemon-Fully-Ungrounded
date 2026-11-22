@@ -21,3 +21,4 @@
 - sprite r2: "kijk eens hoe machoke de riem goed doet" (Machoke Gen 3: riem = donkere band met zwarte lijn erboven en eronder, gouden gesp in het midden als blikvanger met eigen omlijning).
 - Jordi stuurt een foto van een gesp (`referenties/gesp_jordi.png`): zilveren, rechthoekige frame-gesp met een pin in het midden, zonder tekst.
 - "doe beetje deze vorm dan" (gesp naar de foto).
+- Jordi stuurt daarna een tweede foto (niet als bestand binnengekomen): kabouterkostuum met een **zwarte riem** en een **grote vierkante gele gesp** die boven en onder de riem uitsteekt, met in het midden een **donker rechthoekig gat** (staand) waar de zwarte riem doorheen zichtbaar is; geen pin. Jordi: "onee" · "gewoon dit" · "dat moet makkelijk zijn" (vervangt de zilveren gespfoto).

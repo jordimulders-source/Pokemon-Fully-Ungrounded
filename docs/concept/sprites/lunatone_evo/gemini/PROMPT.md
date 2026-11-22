@@ -114,3 +114,37 @@ AVOID
 - Not a sun. No lava, no gems or crystals, no fire.
 - No arms, legs, wings, mouth or human features. No glossy 3D render, no plush or mascot look.
 ```
+
+---
+
+# Prompt v4 (22 nov): NIEUW gesprek, GEEN bijlage
+
+## Jordi over v3 (`r3/gemini_v3.png`, letterlijk)
+- "teveel halve maan nog"
+
+## Analyse Claude
+De Lunatone-bijlage trekt Gemini steeds naar de sikkel; daarom zonder bijlage (zoals bij de vuurduivel), oog en neus in woorden.
+
+```
+Design a new Pokémon and draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art). It is the evolution of Lunatone.
+
+CONCEPT
+- A crumbling blood moon: a FULL moon of stone during a total lunar eclipse, falling apart. Older, battered and powerful.
+
+DESIGN
+- Body: one big, completely round full moon of stone, a full disc, in deep coppery blood red, darker on the shadow side, covered in craters and deep cracks. It is crumbling: a few small chunks are missing from its edge, but the overall outline stays a full circle.
+- Face, exactly like Lunatone's face: one single round red eye with a thick black ring around it, and next to it, on the left, a short pointed stone nose that sticks straight out sideways from the surface of the moon, like a small horizontal spike. Same red stone as the moon. No other facial features.
+- Crumbling pieces: broken chunks of the moon float loose around it, none of them touching it, with smaller fragments between them.
+
+POSE
+- Three-quarter view facing left, the sphere slightly tilted, floating.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, clean shading like official Game Freak Gen 3 sprites.
+- Plain white background. NO soft glow or halo behind the creature, no floor, shadow, sparkles or effects. One single creature, no extra views.
+
+AVOID
+- No crescent moon, no half moon, no C-shape, no Pac-Man shape: nothing is cut out of the disc.
+- Not an emblem, badge, logo or symbol. Not a sun. No lava, no gems or crystals, no fire.
+- No arms, legs, wings, mouth or human features. No glossy 3D render, no plush or mascot look.
+```

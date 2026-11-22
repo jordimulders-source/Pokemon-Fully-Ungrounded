@@ -2833,3 +2833,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.677] - Regional Baltoy r1 afgekeurd
 - r1 bewaard (`docs/concept/sprites/baltoy_regional/gemini/baltoy_r1.png`). Jordi: "dit is geen pokemon sprite, niet driekwart, geen goede vorm en totaal geen baltoy". Keuzes voor r2 (vorm deels monoliet, alleen tekst) in SPEC.md.
 - Jordi: wat van Baltoy blijft = "die ronde ogen met een streep erin met het rode patroon erboven". Prompt r2: `docs/concept/sprites/baltoy_regional/gemini/PROMPT_baltoy_r2.md`.
+- r2 (`baltoy_regional/gemini/baltoy_r2.png`): Jordi "nu is die herkenbaar baltoy"; maattest 64/48 px in `baltoy_regional/maattest/`.

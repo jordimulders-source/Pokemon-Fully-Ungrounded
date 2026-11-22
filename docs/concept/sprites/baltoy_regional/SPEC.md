@@ -50,3 +50,4 @@
 - r5 (`sprite_r5/`): kaal34 + 48 pixels (47 uit de bronpixels, 1 oogring); punt nog los zoals het model.
 - Jordi over r5: "hij is best prima, alleen de lijnen zijn erg hard en dik, het kleurgebruik en schaduwgebruik is nog niet goed, weinig tinten. De lijnen op het lichaam zijn een blur, op het hoofd wel prima. Het hoofd mag 1 pixel langer aan de onderkant, want die lijn kapt af. Hij is wat vierkant dus het is niet erg als je wat meer rechte lijnen dan normaal hebt, maar probeer het smooth te maken waar het kan". → r6.
 - r6 (afwerking op r5: hoofd 1 px langer, binnenlijnen bruin, ramp met 5 steentinten, lijfreliëf scherp; 18 vormpixels + nieuwe rij, alles uit de bronpixels).
+- Jordi over r6: "het is beter maar een halfbakken oplossing, er moeten meer kleurtinten, meer schaduw, je kan niet rechte lijnen in 1 kleur trekken, dat is niet mooi. Zoek naar andere rechthoekige/vierkante pokemon en kijk hoe die dat doen". → r7 met studie (`sprite_r7/studie.md`).

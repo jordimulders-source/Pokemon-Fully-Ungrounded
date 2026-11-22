@@ -79,3 +79,38 @@ AVOID
 - Not a sun. No lava, no gems or crystals, no fire.
 - No arms, legs, wings, mouth or human features. No glossy 3D render, no plush or mascot look.
 ```
+
+---
+
+# Prompt v3 (22 nov): NIEUW gesprek, startprompt, bijlage alleen `bijlage_lunatone_gen3.png`
+
+## Jordi over v2 (`r2/gemini_v2.png`, letterlijk)
+- "teveel lunatone erop geplakt, dat hele halve maan idee moet weg, hij is nu de brokkelende blood moon. Hij behoudt alleen oog en neus"
+
+```
+Design the evolution of the Pokémon LUNATONE and draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art).
+
+THE ATTACHED SPRITE IS LUNATONE (the pre-evolution). From it, keep ONLY two things: its single red eye with the dark surround, and its pointed nose (the stone point sticking out in the middle of the crescent). Nothing else of Lunatone: no crescent shape, no crescent plate, no pale yellow.
+
+CONCEPT
+- The evolution is a crumbling blood moon: a full moon of stone during a total lunar eclipse, falling apart.
+- It evolves when the sun (Solrock) is with it. Older, battered and more powerful than Lunatone.
+
+DESIGN
+- Body: one big round full moon of stone in deep coppery blood red, darker on the shadow side, covered in craters and deep cracks. It is crumbling: chunks are missing from its edge.
+- Face: Lunatone's red eye and pointed nose, set directly in the red moon, made of the same red stone.
+- Crumbling pieces: broken chunks of the moon float loose around it, none of them touching it, with smaller fragments between them.
+
+POSE
+- Three-quarter view facing left, tilted, floating. Not straight-on, not symmetrical.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, clean shading like official Game Freak Gen 3 sprites.
+- Plain white background. NO soft glow or halo behind the creature, no floor, shadow, sparkles or effects. One single creature, no extra views.
+
+AVOID
+- No crescent moon anywhere: not as the body, not as a plate, not as a cut-out shape.
+- Not an emblem, badge, logo or symbol: no flat, symmetrical, straight-on layout.
+- Not a sun. No lava, no gems or crystals, no fire.
+- No arms, legs, wings, mouth or human features. No glossy 3D render, no plush or mascot look.
+```

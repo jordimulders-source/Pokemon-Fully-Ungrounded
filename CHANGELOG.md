@@ -2867,3 +2867,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.686] - Regionale Mr. Mime: r5 en prompt r6 (de gi is het lijf)
 - r5 opgeslagen (vogelvlucht, hoofd ondersteboven); les in `GEMINI.md`. Jordi twijfelt over "een Mr. Mime in een pak"; prompt r6: de gi is zijn eigen lijf, zoals bij Mr. Mime en Mr. Rime.
+
+### [v0.0.687] - Regionale Mr. Mime: r6 en aanpak in twee stappen
+- r6 opgeslagen (twee figuren). Prompt r7 stap A: eerst alleen het ontwerp in een staande pose, daarna de guard-pose met dat plaatje als bijlage.

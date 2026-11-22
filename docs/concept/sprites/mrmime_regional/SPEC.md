@@ -28,3 +28,4 @@
 - r5 (`gemini/r5.png`), Jordi: "wat is dit voor pose". Vogelvlucht met het hoofd ondersteboven onderaan en voeten als grote blokken bovenaan: Claude's kijkhoek ("viewer at its feet looking down") letterlijk genomen.
 - Jordi (22 nov): "en ik weet niet of ik er een fan van ben een mr mime te maken die gewoon een pak aan heeft". Concept staat ter discussie.
 - Jordi: "dat is met andere mr mimes en mr rime ook niet"; daarna "die uren zijn voorbij, ga verder" (geen richting gekozen). Claude ging verder met voorstel 1, "de gi wordt het lijf": `gemini/PROMPT_r6.md` (blauw romp met revers als huidplooien, zwarte band als tekening, blote ledematen in Mr. Mime-tint; posefoto als bijlage aangeraden).
+- r6 (`gemini/r6.png`; twee Mr. Mimes in elkaar gevlochten), Jordi: "hij gaat steeds gekker doen". Claude: nieuwe aanpak asset voor asset, r7 stap A = alleen het ontwerp staand (`gemini/PROMPT_r7.md`), stap B = pose via bijlage.

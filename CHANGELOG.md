@@ -2848,3 +2848,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.682] - Capybarrel: geen Water
 - `IDEEEN.md`: geen Water-type in de Capybarrel-lijn (Jordi).
+
+### [v0.0.683] - Capybarrel: geen water als thema
+- `IDEEEN.md`: ook geen water-concepten; nieuwe voorstellen (candombe-trommel, buskruitvat, wijnvat).

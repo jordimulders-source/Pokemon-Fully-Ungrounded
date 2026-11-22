@@ -691,4 +691,5 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - **Jordi (22 nov):** "hij begint als Normal". Besloten: Capybarrel is puur Normal; type(s) van de evolutie open.
 - **Jordi (22 nov), op het voorstel "veerpont/vlot: Water erbij":** "nee geen normal/water, lezen". Ook voor de evolutie dus geen Normal/Water.
 - **Jordi (22 nov):** "GEEN WATER". Besloten: geen Water-type in de Capybarrel-lijn.
+- **Jordi (22 nov):** "warmwaterbad is ook water". Dus ook geen water als thema (vervalt: warmwaterbad, veerpont/vlot, regenton/watertoren). Nieuwe voorstellen Claude (open): candombe-trommel (Uruguay; tamboriles zijn van duigen met hoepels gebouwd), buskruitvat, wijnvat (Mendoza).
 - Let op: Cacnea is al de bolcactus (barrel cactus); Cuyby/Cuychu zijn de cavia-lijn (familie van de capibara); Zapacha is de electric rodent.

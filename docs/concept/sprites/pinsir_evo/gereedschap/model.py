@@ -69,3 +69,13 @@ def platen(a,c,fg,glans_min=95,glans_d=20,minpx=40):
     small=m&(cnt[lab]<minpx)
     c2=c.copy(); c2[m&~small]=t[m&~small]
     return c2,lab,M
+def skeletlijnen(c,x0,y0,cel,W,H):
+    # aantal skeletpixels (middellijn van de zwarte modellijnen) per spritecel: een modellijn die door een cel loopt geeft ±15
+    from skimage.morphology import skeletonize
+    sk=skeletonize(c==1)
+    out=np.zeros((H,W))
+    for j in range(H):
+        for i in range(W):
+            ya,yb=int(round(y0+j*cel)),int(round(y0+(j+1)*cel)); xa,xb=int(round(x0+i*cel)),int(round(x0+(i+1)*cel))
+            out[j,i]=sk[max(ya,0):yb,max(xa,0):xb].sum()
+    return out

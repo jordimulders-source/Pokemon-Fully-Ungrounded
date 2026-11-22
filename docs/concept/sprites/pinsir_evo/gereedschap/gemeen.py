@@ -6,7 +6,7 @@ from model import label
 PAL=[(120,200,160),(20,14,12),
      (50,42,38),(82,68,58),(116,98,82),(156,136,114),    # 2-5 lijf: donker, middendonker, midden, licht (khaki pantser)
      (84,38,30),(128,68,50),(164,104,78),                # 6-8 kaak: donker, midden, licht (donker roodbruin)
-     (90,52,26),(154,106,62),(200,154,102),              # 9-11 dekschild: vlek, midden, licht
+     (74,42,20),(150,104,64),(200,154,102),              # 9-11 dekschild: vlek, midden, licht (r2: vlek en midden naar de modelmediaan 77,46,22 / 139,100,69)
      (230,214,200),(168,150,138),                        # 12 tand/oog crème (model 217,198,187, iets lichter), 13 tandschaduw
      (0,0,0),(0,0,0)]
 CH='.K2345abcvmlTt??'

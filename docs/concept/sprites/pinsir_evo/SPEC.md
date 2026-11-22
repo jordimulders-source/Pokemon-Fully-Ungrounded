@@ -34,3 +34,5 @@
 ## Model gekozen (22 nov)
 - **r4 met kaakkleur B gekozen**, Jordi: "en rechts is de beste kleur", "ga maar bouwen daarmee". Bevroren model: `referenties/gemini_gekozen_r4B.png` (r4 van Gemini, kaken door Claude omgekleurd naar donker roodbruin; vleugels zoals r4).
 - Frontsprite r1: maker gestart.
+- r1 (`sprite_r1/`): mond en kaken goed; Claude: poten vlekkerig, schorspatroon weg, te veel zwart, ruis op stekels. Jordi bij r1: "ogen zijn ook gewoon een rij witte pixels".
+- r2 (`sprite_r2/`): ogen met pupil en wenkbrauw, schildtinten naar het model, stekels netter, zwart 29 %. Claude: poten nog vlekkerig (losse lichte plekken in plaats van ronde platen); verse maker alleen voor poten/onderlijf (r3).

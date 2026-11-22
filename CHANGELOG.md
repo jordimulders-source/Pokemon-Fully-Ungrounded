@@ -2687,52 +2687,99 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.639] - Merge naar main
 - Main (Dundragoon, Oricorio-dansen) samengevoegd met de onweerswolk-Altaria; onze secties hernummerd naar v0.0.623–638; achtergebleven conflictmarkeringen uit een eerdere merge op main opgeruimd.
 
-### [v0.0.640] - Sunflora-evolutie: typing Grass/Cosmic
+### [v0.0.640] - Mightyena-evolutie gestart
+- Besloten (Jordi, 22 nov): Dark/Fighting, female only (clanleider), duidelijke Mightyena-evolutie in grootte en machtigheid, typische hyenakop, pose misschien met 1 poot alsof hij geniepig lacht. `docs/concept/sprites/mightyena_evo/SPEC.md`, Gemini-prompt r1 in `gemini/PROMPT.md`.
+- r1 van Gemini opgeslagen; bijstuurprompt r2 (kop valser en meer hyena, poot hoger).
+- r2 opgeslagen; bijstuurprompt r3 (blik geniepig in plaats van evil, mond opnieuw; rest perfect volgens Jordi).
+- r3 opgeslagen; bijstuurprompt r4 (mond open).
+- Frontsprite r1–r3 (maker, keurder BIJNA → PASS op r2, r3 = 9 losse pixels opgeruimd): `sprites/mightyena_evo/sprite_r3/`, ter beoordeling bij Jordi.
+- Eindkeuring PASS (3 kleurpixels), **frontsprite af**: `docs/concept/sprites/mightyena_evo/af/alphyena.png`. Naam **Alphyena** (Jordi). Op het overzichtsvel (evoluties); POKEMON.md (werknamen), TODO en Stand van zaken bijgewerkt.
+
+### [v0.0.641] - Overzichtsvel: regionale Altaria erbij, naar main
+- Regionale Altaria (Electric/Dragon) op het overzichtsvel bij de regional forms (stond er nog niet op); vel opnieuw gemaakt. Jordi: "commit en push naar main".
+
+### [v0.0.642] - Robotmug naar main en op het overzichtsvel
+- De robotmug (vlieglijn fase 2, Poison/Electric, af op 21 nov) stond alleen op branch `claude/intelligent-bohr-npyumy`. Jordi: "de mug ontbreekt". `docs/concept/sprites/vlieglijn_fase2/` overgenomen (af, SPEC, Gemini, keuringen), met de lessen in GEMINI.md, POKEMON.md en TODO; op het overzichtsvel naast Flytron ("Robotmug", naam gepauzeerd). Details over de rondes: changelog op die branch (v0.0.584 daar).
+- Naam robotmug: Jordi neigt naar **Buzzquito** (22 nov); in POKEMON.md bij de gepauzeerde namen.
+- Werknaam robotmug: **Buzzquito** (Jordi: "ja"); op het overzichtsvel, POKEMON.md en Stand van zaken.
+
+### [v0.0.643] - Cosmic: kandidaten definitief
+- Jordi (21 nov): "de kandidaten die ik noemden mogen cosmic worden definitief": Elgyem-lijn, Lunatone & Solrock, Baltoy-lijn, Clefairy-lijn (Minior en Deoxys ook, maar die staan niet in de dex).
+- Typingvoorstel: Lunatone/Solrock Rock/Cosmic, Baltoy/Claydol Ground/Cosmic, Clefairy-lijn Fairy/Cosmic, Elgyem/Beheeyem puur Cosmic of Psychic/Cosmic (open).
+- Typeverdeling (ROM + 67 besloten nieuwe soorten, 528 soorten): Water 97, Flying 59, Grass 56, Bug 56, Ground 54, Poison 53, Dark 52, Electric 51, Ghost 51, Normal 49, Psychic 46, Fire 38, Steel 37, Ice 35, Dragon 35, Fighting 26, Rock 26, Fairy 24, Cosmic 5 (±13 met deze kandidaten). 56 van de 171 combinaties ontbreken; prioriteit: Fire-, Ice- en Dragon-combinaties voor de gyms, een pure en een vroege Cosmic.
+- Bijgewerkt: CONCEPT.md, POKEMON.md, IDEEEN.md, TODO.md. Nog niets in de code (Cosmic bestaat nog niet als type).
+
+### [v0.0.644] - Cosmic: Elgyem-lijn puur Cosmic
+- Jordi (21 nov): "Elgyem lijn puur cosmic". Elgyem en Beheeyem worden puur Cosmic (eerste pure Cosmic-soorten).
+- Aanwezigheid per type na de Cosmic-omzetting (528 soorten; gemiddeld 45 per type): Water 97, Flying 59, Grass 56, Bug 56, Ground 54, Poison 53, Dark 52, Electric 51, Ghost 51, Normal 49, Psychic 40, Fire 38, Steel 37, Ice 35, Dragon 35, Fighting 26, Rock 26, Fairy 24, Cosmic 14.
+
+### [v0.0.645] - Regionale Baltoy-lijn: richting Rock/Psychic
+- Jordi (21 nov): "De regional Baltoy lijn wordt denk ik rock/psychic, waar het origineel nu dus ground/cosmic is". Genoteerd in IDEEEN.md (nog niet definitief).
+- Telling per lijn (261 lijnen, gemiddeld 25,5; een lijn telt één keer per type dat erin voorkomt): Water 50, Flying 42, Normal 31, Electric 31, Ghost 31, Grass 30, Ground 29, Dark 29, Bug 28, Poison 26, Fire 23, Psychic 23, Steel 22, Ice 19, Dragon 18, Rock 15, Fighting 14, Fairy 14, Cosmic 8. Met de regionale Baltoy-lijn: Rock 16, Psychic 24.
+
+### [v0.0.646] - Idee: regionale Sableye met evolutie (zeebodem, gezonken schatten)
+- Jordi (21 nov): regionale Sableye met een evolutie, een niet-Water-type dat op de oceaanbodem leeft en gezonken schatten vindt; in Pokémon ontbreken niet-Water-types die in het water leven, waardoor waterroutes monotoon zijn. Genoteerd in IDEEEN.md; typing open.
+
+### [v0.0.647] - Regionale Sableye: Jordi denkt aan Ghost/Rock
+- Jordi (21 nov, nog niet besloten): regionale Sableye mogelijk Ghost/Rock, en de gewone Sableye dan terug naar Ghost/Dark. Genoteerd in IDEEEN.md.
+
+### [v0.0.648] - Vuurduivel fase 1: frontsprite af
+- Nieuwe lijn (Jordi, 22 nov): vuurduivel, 2 fases. Fase 1 = cute maar cheeky Fire/Dark sater-duiveltje dat ongein uithaalt en daarom lacht ("zelfde idee" als het duiveltje van Ashley in WarioWare, niet hetzelfde design). Evolutie: "de wat volgroeidere bokkenduivel look".
+- Gemini-rondes r1–r4 (`docs/concept/sprites/vuurduivel_fase1/gemini/`); gekozen r3a, staart bijgestuurd naar pijlvorm (r4 = bevroren model). Pijlopties A–D in de sprite afgewezen ("behoud de vlam maar"): staartpunt van r6 blijft.
+- Frontsprite r1–r9: model overgenomen (2×-reductie van het natieve raster), gezicht in 3 rondes hersteld (Haunter-techniek; witte pixel in de onderhoek van de pupil, Jordi), kleurronde (zwart lijf lichter met glans zoals Houndour/Umbreon, broek als twee dijen, roze tong), eindkeuring verwerkt (11 px, 2 paletkleuren). 64×64, 16 kleuren, 50 px hoog.
+- Af: `docs/concept/sprites/vuurduivel_fase1/af/vuurduivel.png` (+ `_8x`); op het overzichtsvel (sectie New).
+- Les in SPRITE_KERN.md: witte pixel in de pupil in de onderhoek, niet tegen het oogwit; GEMINI.md: geen eerdere ronde als bijlage.
+- Gemini-prompt voor de evolutie: `docs/concept/sprites/vuurduivel_fase2/gemini/PROMPT.md` (+ sessieprompt).
+
+### [v0.0.649] - Sunflora-evolutie: typing Grass/Cosmic
 - Jordi wil een Sunflora-evolutie ("een van de allerzwakste pokemon"), typing Grass/Cosmic. Brainstormrichtingen in `docs/concept/IDEEEN.md`; ontwerp nog open. Concept: Sunflora is "zo hard gegaan op de fotosynthese dat die kosmische krachten heeft gekregen" (Jordi). Uiterlijk: tussen plant en ster, erg kosmisch en "unlocked", lichaam nog plant; heel blij gezicht (Jordi).
 
-### [v0.0.641] - Sunflora-evolutie: SPEC en Gemini-prompt r1
+### [v0.0.650] - Sunflora-evolutie: SPEC en Gemini-prompt r1
 - Jordi: "laten we hem maar zweven, dat is leuk". `docs/concept/sprites/sunflora_evo/SPEC.md` (alleen Jordi's citaten) en `gemini/PROMPT_r1.md`.
 
-### [v0.0.642] - Sunflora-evolutie: Gemini r1 afgekeurd
+### [v0.0.651] - Sunflora-evolutie: Gemini r1 afgekeurd
 - Jordi: "het hoofd is vrijwel hetzelfde terwijl juist daar de verandering in moet zitten" + heelalpatroon ongewenst. r1 in `sunflora_evo/gemini/r1.png`; les in GEMINI.md.
 
-### [v0.0.643] - Sunflora-evolutie: Gemini-prompt r2
+### [v0.0.652] - Sunflora-evolutie: Gemini-prompt r2
 - Jordi: "de bloem wordt veel meer een ster, maar dan geen 5punt ster, meer een kosmisch uitziende ster". SPEC bijgewerkt, `gemini/PROMPT_r2.md` (zonder Sunflora-naam bij het gezicht, heelalpatroon verboden).
 
-### [v0.0.644] - Sunflora-evolutie: Gemini r2 + bijsturen
+### [v0.0.653] - Sunflora-evolutie: Gemini r2 + bijsturen
 - Jordi: "ok het is teveel detailwerk, het hoofd is nog net te klein denk ik ook, dat mag nog wat overdrevener". r2 opgeslagen; bijstuurprompt r3 onder `gemini/PROMPT_r2.md`.
 
-### [v0.0.645] - Sunflora-evolutie: r3 mislukt, startprompt r4
+### [v0.0.654] - Sunflora-evolutie: r3 mislukt, startprompt r4
 - Jordi over r3 (bijsturen): "niet gelukt". `gemini/PROMPT_r4.md`: r2-prompt met groter hoofd en minder detail in de tekst, nieuw gesprek zonder bijlage.
 
-### [v0.0.646] - Sunflora-evolutie: r4 hoofd goed, prompt r5
+### [v0.0.655] - Sunflora-evolutie: r4 hoofd goed, prompt r5
 - Jordi: "hoofd wel prima nu, als we de kleuren wat simpeler maken"; meer punten; "nog net wat meer echt een kosmische entiteit"; lijf van Sunflora. r4 opgeslagen, `gemini/PROMPT_r5.md` (eerst hoofd, dan lijf).
 
-### [v0.0.647] - Sunflora-evolutie: r5 + hoofd groter geschaald
+### [v0.0.656] - Sunflora-evolutie: r5 + hoofd groter geschaald
 - Jordi over r5: "vrij oke, maar het hoofd moet echt overdreven groot zijn tov het lichaam, door de extreme fotosynthese". Hoofd per script 1,5× en 1,8× geschaald op het r5-lijf (`gemini/r5_kop_groter_150_180.png`).
 
-### [v0.0.648] - Sunflora-evolutie: hoofd 1,8× / 2,2× / 2,6×
+### [v0.0.657] - Sunflora-evolutie: hoofd 1,8× / 2,2× / 2,6×
 - Jordi: "dat het lijf heel klein is, is niet erg. Gemini had het lijf in verhouding nog groter gemaakt dan de normale sunflora". Extra schalen 2,2× en 2,6× (`gemini/r5_kop_groter_180_220_260.png`, script `gemini/gereedschap/kop_schaal.py`).
 
-### [v0.0.649] - Sunflora-evolutie: sprite r1 en r2
+### [v0.0.658] - Sunflora-evolutie: sprite r1 en r2
 - r1: hoofd overgenomen uit r5 (gezicht 0 px afwijking), lijf verkleind en hertekend. Jordi: "het lichaam zit niet vast aan het hoofd en je hebt het lichaam opnieuw getekend" · "dat mag niet".
 - r2 (`sprite_r2/vel.png`): hoofd = r1 (diff 0), lijf = Sunflora-pixels zonder handwerk, vast aan de ster, voeten 90° gedraaid zodat ze hangen. A = lijf 1×, B = 2× kleiner, C = 1,25× groter. Ter keuze voor Jordi.
 
-### [v0.0.650] - Sunflora-evolutie: lijf via Gemini r6–r12, hoofd erop geplakt
+### [v0.0.659] - Sunflora-evolutie: lijf via Gemini r6–r12, hoofd erop geplakt
 - r6–r11: Gemini maakte geen goed vastzittend lijf (vóór het hoofd, rank, "swamp demon", losse bladeren). r12 (prompt vanaf nul) gaf een Sunflora met een lijf dat goed onder het hoofd zit; Jordi: "we kunnen hier het hoofd op plakken". r5-hoofd erop in drie maten (`gemini/r12_kop_r5.png`).
 
-### [v0.0.651] - Sunflora-evolutie: sprite r3 (model 1,6)
+### [v0.0.660] - Sunflora-evolutie: sprite r3 (model 1,6)
 - Model gekozen (Jordi: "1,6 is precies wat ik bedoel"): `gemini/model_16.png`. r3 = r1-hoofd (diff 0) + kale verkleining van het r12-lijf op hetzelfde raster, geen handpixels. Jordi: "als je dan nog de voeten zo kan zetten dat het lijkt alsof die zweeft dan ben ik tevreden": voeten als blok gedraaid in vier varianten (model/binnen/buiten/slap), `sprite_r3/vel.png`.
 
-### [v0.0.652] - Sunflora-evolutie: sprite r4 en r5 (lijf)
+### [v0.0.661] - Sunflora-evolutie: sprite r4 en r5 (lijf)
 - Jordi over r3: "r3 buiten is goed, maar nu moet je nog de lijnen wat minder recht maken en kijken naar kleurtinten/schaduw en lijngebruik. Bijv niet overal zwarte lijnen bij het lichaam, hoofd vind ik prima zo".
 - r4 (maker): selout donkergroen boven/links, zwart onder/rechts, 3 groentinten met volume. Keurder BIJNA: armen nog rechte balken. r5: ronde bladonderkanten uit het model, losse voetpixel weg (25 px, hoofd per assert onaangeroerd); A modelgroen, B Sunflora-groen (`sprite_r5/vel.png`).
 
-### [v0.0.653] - Sunflora-evolutie: lijfkleur C
+### [v0.0.662] - Sunflora-evolutie: lijfkleur C
 - Vraag Jordi: verandert een plant van kleur bij extreme fotosynthese, en hoe past dat bij een zonnebloem? Varianten C (dieper groen) en D (C + paars accent op de stengel). Jordi koos **C**: `sprite_r5/sunflora_evo_r5_C_donkergroen.png`.
 
-### [v0.0.654] - Sunflora-evolutie: eindkeuring, r6 en r7
+### [v0.0.663] - Sunflora-evolutie: eindkeuring, r6 en r7
 - Eindkeuring BIJNA: open rand bovenop het rechterbeen dicht (r6). Jordi: "ja fixen" voor de twee punten in het hoofd: okerrand linksonder aan het gele bloemblad, groen vlekje verbonden met de linker bladhand (r7, 5 px; `sprite_r7/`).
 
-### [v0.0.655] - Sunflora-evolutie: frontsprite af
+### [v0.0.664] - Sunflora-evolutie: frontsprite af
 - Jordi: "ja commit en push naar main". `docs/concept/sprites/sunflora_evo/af/sunflora_evo.png` (+ `_8x`) = r7; op het overzichtsvel onder "Evolutions of existing Pokémon"; Stand van zaken en les in GEMINI.md bijgewerkt.
+
+### [v0.0.665] - Merge naar main
+- Main (Mightyena-evolutie Alphyena, robotmug, Cosmic-besluiten, vuurduivel fase 1) samengevoegd met de Sunflora-evolutie; onze secties hernummerd naar v0.0.649–664.

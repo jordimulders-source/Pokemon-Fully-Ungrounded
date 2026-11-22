@@ -44,6 +44,7 @@ Samengevat uit alle spritelessen (5 nov, Jordi: "vat de lessen echt enorm samen 
 - **Contrast**: helderheidsstappen meten tegen Taillow (±30–40 per tint).
 - **Belijning**: buitenlijn 1 px; zwart alleen aan de schaduwkant, gekleurde selout aan de lichtkant; **nooit zwart en donkerlila om en om op één rand**; binnenlijnen alleen waar vorm over vorm valt, in een donkere tint van het vlak, taps; geen open randen, geen lichte kleur op de buitenrand.
 - **Stuurt Jordi een referentie, dan is díe de hoofdbron** (picapau-evo, 6 nov: Gen 3 Raichu gepakt i.p.v. zijn Gen 1 → "nee de gen 1 raichu sprite moet je ook naar kijken"); andere sprites alleen als aanvulling.
+- **Witte pixel in de pupil (vuurduivel, 22 nov, Jordi: "in de onderhoek, het moet een oog zijn, niet een lichtinval"):** in een onderhoek van de pupil, op een pupilpixel die niet aan het oogwit grenst; niet linksboven ("nee niet linksboven"). Eerst kijken hoe ogen in de game eruitzien, niet redeneren vanuit de lichtrichting.
 - **Ogen**: neem een oog pixel voor pixel over van een echte sprite (zelf tekenen of opblazen geeft "geen Pokémon-oog"/"monster").
 - **Pootjes/ledematen**: in perspectief (verre hoger en achter, nooit op één lijn naast elkaar), omlijnd, verre in schaduwtint; kleine vogelpootjes echt klein.
 - **Vorm**: geen rechte stukken waar het dier rond is (buikrand!), geen knikken; snavel/dunne delen ≥ 2 px als het moet lezen.

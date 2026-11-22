@@ -38,3 +38,4 @@
 - "ik zie geen enkel verschil" → af = C zonder de 2 zwarte pixels (neuslijn lichter linksboven, donkerroze onder, geen zwart), `sprite_r8/`.
 - "hoe zit het met de neus van popplio" → gemeten (`sprite_r8/popplio_neus.png`): Popplio-neuslijn is overal de donkerste eigen tint (883070), ook waar de neus tegen de witte snuit ligt; zwart (101010) alleen aan de buitenrand linksonder; binnenin 3 tinten + wit glanspixel linksboven.
 - "nou daar heb je je antwoord" → zoals Popplio: neuslijn rondom de donkerste eigen tint, zwart alleen aan de buitenrand → **af = r6-A**.
+- "en pak de gnomini met zwarte omlijning" · "fix die" · "want daarna is alles fout gegaan" · "gnomini met zwart omlijnde neus" → **af = oude af (zwarte omlijning) met alleen de neuslijn zoals Popplio**: zwart waar de neus aan de achtergrond grenst, donkerroze waar hij tegen muts/lijf ligt (27 px, `sprite_r9/`). DC-rondes r6–r8 vervallen.

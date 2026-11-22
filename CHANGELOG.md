@@ -2882,3 +2882,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.690] - Gnomini: omlijning volgens Dragonfly Cave
 - Jordi: "Gnomini mag trouwens ook nog wel een dragonflycave keuring ja". r6-A (binnenlijnen in de eigen tint, zwart alleen aan de schaduwkant/buitenrand; zwart 14,8 → 8,4 %); varianten B/C met zwart bij de neus afgewezen; vergeleken met de Grumpig-snuit. `gnomini/af/gnomini.png` en overzichtsvel bijgewerkt. Werkwijze: Dragonfly Cave-omlijning verplicht in de eindkeuring (SPRITE_WERKWIJZE stap 7); les in SPRITE_KERN: eerst meten, dan beweren.
 - Neus nagemeten op Popplio (lijn rondom donkerste eigen tint, zwart alleen aan de buitenrand): af = r6-A. Les in SPRITE_KERN.
+- Correctie: Jordi wil de Gnomini met zwarte omlijning terug ("daarna is alles fout gegaan"); alleen de neuslijn aangepast zoals Popplio (zwart aan de buitenrand, donkerroze tegen muts/lijf, 27 px). af = `sprite_r9/gnomini.png`; r6–r8 vervallen.

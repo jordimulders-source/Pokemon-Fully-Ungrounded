@@ -31,3 +31,4 @@
 - r7: "akkoord, naar de eindkeuring" (zwart omlaag door de eindkeuring, Jordi bij r4).
 - Eindkeuring r7: PASS na reparaties 1–7 (zwart 21,4 → 18,2 %, alleen binnenlijnen muts/snor) → **af: `af/gnomad.png`** (+ `_8x`), op het overzichtsvel (New).
 - Na af: "rechtsonderin in de snor zijn wat onnodige zwarte pixels, evenals onderin de rechtse haarpluk, aan de linkerkant de hand en arm, rechteram, zijn echt veel zwarte pixels nog, kijk daar strenger naar, ook dragonflycave"
+- "als de zwarte lijnen nodig zijn, behouden, maar ik vraag me dat echt af"

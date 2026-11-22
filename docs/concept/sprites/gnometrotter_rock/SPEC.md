@@ -9,6 +9,7 @@
 - 22 nov: "ja goed idee, dan doen we een baard, 1 en 3 goed, 2 kan je niet zien op sprite niveau" → baard (mond blijft onzichtbaar); per type veranderen: snor, haar, baard, muts, mutspunt, schouders/rug; gesp niet.
 - Claude stelde per onderdeel voor (muts steen, mutspunt kristal/stalactiet, snor/baard/haar gruis met kristalpunten, kristallen uit schouders/rug) + kleur A/B/C.
 - 22 nov: "doe maar meerdere prompts, ik moet het eerst voor me zien" → `gemini/PROMPTS.md` (A amethist/geode, B lavendel steen, C druipsteen).
+- r1 (`r1/gemini_A.png`, `_B`, `_C`; prompts v1): "bij alle drie is er iets van een oog zichtbaar, dat hoort niet. Verder vind ik hem nog teveel opgnomad lijken en zit er niet heel veel verschil in het design"
 
 ## Voorgelegd door Claude (22 nov, nog niet gekozen)
 - A geode (muts = geode met amethist in een barst, snor/plukjes = kwartskristal, neus = rozenkwarts); B druipsteen (muts = stalactiet, kalksteen met lagen); C ertsader (riem = ader, gesp = goudklomp, korstmos op de snor).

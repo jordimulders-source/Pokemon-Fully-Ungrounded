@@ -196,6 +196,7 @@ Bovenaan gehouden zodat de stand in één oogopslag te zien is. Details in de se
 - **Ledian-evolutie** (nadenken).
 - ~~**Lanturn-evolutie:** voorstel Claude: diepzee-hengelvis waarbij het mannetje als parasiet aan het vrouwtje vastgroeit; Jordi (9 nov): "erg smerig en grounded, nu nog bedenken of ik Lanturn die horror wil aandoen". Eerder: "is dat uberhaupt nodig? Die kunnen we dan nog wat verder diepzee maken en enger, zoals Annihilape, maar misschien valt dat uit de toon".~~ **Geschrapt (Jordi, 20 nov).**
 - **Sunflora-evolutie:** "alleen als we echt met een vet idee kunnen bedenken".
+  - **22 nov:** Jordi: "sunflora heeft een evolutie nodig omdat het een van de allerzwakste pokemon is". Typing **Grass/Cosmic** (Jordi: "is wel een goede buff en een leuk idee"). Brainstorm Claude (nog niets gekozen): (1) zaadschijf als spiraalstelsel, (2) zonsverduistering (schijf + corona), (3) Inti-zonnemasker (Coricancha), (4) frailejón (Andes-páramo), (5) Atacama-observatorium / desierto florido.
 - **Shuckle-evolutie** (Delibird: zie sowieso): gimmickmons, dan moeten ze ontgimmickt worden; "vraag me af of dat werkt".
 - **Evolutie voor Ninjask, Sableye, Mawile, Manectric:** "zelfs met terugwerkende kracht in Ungrounded".
 - **Regionale Cacnea/Maractus-lijn** ("dit zijn geen zuid amerikaanse cactussen").

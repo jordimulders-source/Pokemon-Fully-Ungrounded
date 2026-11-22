@@ -2686,3 +2686,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.639] - Merge naar main
 - Main (Dundragoon, Oricorio-dansen) samengevoegd met de onweerswolk-Altaria; onze secties hernummerd naar v0.0.623–638; achtergebleven conflictmarkeringen uit een eerdere merge op main opgeruimd.
+
+### [v0.0.640] - Sunflora-evolutie: typing Grass/Cosmic
+- Jordi wil een Sunflora-evolutie ("een van de allerzwakste pokemon"), typing Grass/Cosmic. Brainstormrichtingen in `docs/concept/IDEEEN.md`; ontwerp nog open.

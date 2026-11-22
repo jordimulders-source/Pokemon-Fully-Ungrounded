@@ -698,3 +698,6 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - **Voorstellen Claude (open):** de baard wordt het elektrische deel (statische plasma-baard, zoals een plasmabol/teslaspoel) in plaats van wol; hoorns vervangen door bliksemafleiders of geen hoorns; de rook wordt een onweerswolk/ozon; gotische spitsen als lichaamsvorm (kap of rug); kleur bijna zwart-wit (gravure) met één elektrische accentkleur.
 - **Jordi (22 nov):** "zonder de bong natuurlijk".
 - **Jordi (22 nov):** "nee geen zuid amerika link" → yatiri en heksenmarkt vervallen.
+- **Jordi (22 nov):** "ja of je moet gewoon zeggen dat het een slecht idee is en dat we een ander type elektrische wizard kunnen maken, electric/psychic type".
+- **Oordeel Claude:** de hoes als basis is zwak: wat hem herkenbaar maakt (hoorns, baard, oude man) overlapt met gnome-lijn en vuurduivel fase 2; zonder die drie blijft er weinig van de hoes over. Electric/Psychic is beter. Let op: Porygon2 is in ons project al Electric/Psychic (DEX_NOMINATIES).
+- **Voorstellen Claude (Electric/Psychic, open):** (a) hersenen/zenuwen: tovenaar wiens magie zenuwprikkels zijn (lichtgevende neuronen als gewaad, kwal-achtig); (b) wetenschapper-tovenaar à la Tesla: plasmabol als kristallen bol, voorspelt met stroom; (c) wezen in plaats van figuur: een uil of kat met een elektrisch "derde oog".

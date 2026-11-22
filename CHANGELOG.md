@@ -2845,3 +2845,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Jordi: "ga maar bouwen dan" → model r5 bevroren (`baltoy_regional/referenties/gemini_gekozen_r5.png`), punt mag in de sprite aan het lijf.
 - r1 (maker, schrappen naar 47×48), keuring BIJNA; r2 (5 benoemde reparaties), keuring BIJNA + eindkeuring PASS; r3 = r2 + 6 lijnpixels (Claude). Kandidaat: `baltoy_regional/sprite_r3/naast_model.png`.
 - r4A (34×34) te veel hertekend (Jordi: "ik zie dat heel veel opnieuw getekend is" · "niet de bedoeling"); r5 vanaf de kale 2×-reductie. Les in GEMINI.md.
+- r5 (kale 2×-reductie + 48 px): Jordi "hij is best prima" + punten voor r6 (lijnen, kleur/schaduw, hoofd 1 px langer).

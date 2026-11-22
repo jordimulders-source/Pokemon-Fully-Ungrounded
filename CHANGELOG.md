@@ -2698,3 +2698,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.643] - Sunflora-evolutie: Gemini-prompt r2
 - Jordi: "de bloem wordt veel meer een ster, maar dan geen 5punt ster, meer een kosmisch uitziende ster". SPEC bijgewerkt, `gemini/PROMPT_r2.md` (zonder Sunflora-naam bij het gezicht, heelalpatroon verboden).
+
+### [v0.0.644] - Sunflora-evolutie: Gemini r2 + bijsturen
+- Jordi: "ok het is teveel detailwerk, het hoofd is nog net te klein denk ik ook, dat mag nog wat overdrevener". r2 opgeslagen; bijstuurprompt r3 onder `gemini/PROMPT_r2.md`.

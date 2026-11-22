@@ -13,3 +13,11 @@ Sprite rules:
 - No glow, no sparkles, no light rays, no loose effects.
 - NO starfield, galaxy or night-sky pattern anywhere on the body.
 AVOID: plush/toy look, Neopets style, chibi mascot, realistic sunflower painting, a human in a costume, a five-pointed star.
+
+## Resultaat r2 (`r2.png`)
+Jordi: "ok het is teveel detailwerk, het hoofd is nog net te klein denk ik ook, dat mag nog wat overdrevener".
+
+## Bijstuurprompt r3 (zelfde gesprek)
+Good direction. Two changes only, keep everything else the same:
+1. Far less detail: simpler shapes, fewer small lines and color patches, like a real Gen 3 sprite with big clear areas.
+2. The head is still a bit too small: make it bigger, it may be more exaggerated.

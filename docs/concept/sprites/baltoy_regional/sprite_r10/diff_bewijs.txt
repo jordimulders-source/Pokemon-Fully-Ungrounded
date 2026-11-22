@@ -1,0 +1,4 @@
+A: 64 pixels gewijzigd, png y 47..55, x 27..37 (zone lijfvoorvlak y 47..55, x 26..38); buiten de zone: 0; transparantie gelijk: True
+B: 62 pixels gewijzigd, png y 47..55, x 26..38 (zone lijfvoorvlak y 47..55, x 26..38); buiten de zone: 0; transparantie gelijk: True
+C: 38 pixels gewijzigd, png y 47..55, x 27..34 (zone lijfvoorvlak y 47..55, x 26..38); buiten de zone: 0; transparantie gelijk: True
+blauw kader = zone lijfvoorvlak (voorvlak x11..19 + ribbe x20 + zijvlak x21..23, y 20..28). Gecontroleerd met gereedschap/vel_r10.py; armpixels (20,23),(21,23) en x11 rijen 25-28 apart gecontroleerd: ongewijzigd.

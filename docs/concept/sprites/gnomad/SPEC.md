@@ -33,3 +33,4 @@
 - Na af: "rechtsonderin in de snor zijn wat onnodige zwarte pixels, evenals onderin de rechtse haarpluk, aan de linkerkant de hand en arm, rechteram, zijn echt veel zwarte pixels nog, kijk daar strenger naar, ook dragonflycave"
 - "als de zwarte lijnen nodig zijn, behouden, maar ik vraag me dat echt af"
 - r8: "maar die snor met roze omringd ziet er ook raar uit"
+- "dat is toch niet hoe het hoort" (over de roze snorrand)

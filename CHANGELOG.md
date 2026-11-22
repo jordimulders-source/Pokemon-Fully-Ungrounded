@@ -2692,3 +2692,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.641] - Sunflora-evolutie: SPEC en Gemini-prompt r1
 - Jordi: "laten we hem maar zweven, dat is leuk". `docs/concept/sprites/sunflora_evo/SPEC.md` (alleen Jordi's citaten) en `gemini/PROMPT_r1.md`.
+
+### [v0.0.642] - Sunflora-evolutie: Gemini r1 afgekeurd
+- Jordi: "het hoofd is vrijwel hetzelfde terwijl juist daar de verandering in moet zitten" + heelalpatroon ongewenst. r1 in `sunflora_evo/gemini/r1.png`; les in GEMINI.md.

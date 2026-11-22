@@ -10,3 +10,6 @@ Sprite rules:
 - Plain white background; no ground, no shadow, no rock.
 - No glow, no sparkles, no light rays, no loose effects: everything cosmic must be part of its own body.
 AVOID: plush/toy look, Neopets style, chibi mascot, realistic sunflower painting, a human in a costume.
+
+## Resultaat r1 (`r1.png`)
+Jordi: "nog niet zo goed he, het hoofd is vrijwel hetzelfde terwijl juist daar de verandering in moet zitten. En om de een of andere reden vindt Gemini dat elke cosmic type een heelal patroon moet hebben ergens".

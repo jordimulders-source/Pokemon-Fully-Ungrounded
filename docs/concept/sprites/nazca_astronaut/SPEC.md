@@ -44,3 +44,4 @@ Zwart lijf en zwarte kop met één groot blauw oog; ronde romp met een groene zi
 - Patroon/kleur: nog niet gekozen. Jordi (22 nov): "ik loop vast, als in ik weet niet wat ik wil, ik denk er even langer over na".
 - Probeersels: r8 (zwart + groen/rood zigzag, keurder PASS), r9 (5 paletten, één tunica-motief), r10 (eigen motief per deel: ringbanden/lengtebaan/tocapu), r11 (eigen kleur per deel K1–K3; Jordi: "C komt het dichtste in de buurt", "de kleuren per deel moeten anders ook").
 - Beperking: 16 kleuren, waarvan ±13 vast (kop, ogen, crème, strepen); per deel een eigen kleur kan alleen door vaste kleuren te hergebruiken.
+- 22 nov: "probeer maar een paracas doek, maar die draagt als t-shirt + shorts qua wat die bedekt, kijk of je de pixels hebt om een gezicht patroon te maken, zo ja, doen" (r12).

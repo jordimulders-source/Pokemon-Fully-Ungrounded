@@ -200,3 +200,37 @@ AVOID
 - Not an emblem, badge, logo or symbol. Not a sun. No lava, no gems or crystals, no fire.
 - No arms, legs, wings, mouth or human features. No glossy 3D render, no plush or mascot look.
 ```
+
+---
+
+# Prompt v7 (22 nov): NIEUW gesprek, GEEN bijlage
+
+## Jordi over v6 (plaatje niet gestuurd, letterlijk)
+- "het brokkelige rondom de neus wel, maar blijft de halve maan vorm"
+
+## Analyse Claude
+Zolang de neus aan de linkerrand zit, snijdt Gemini er een C-vorm omheen. Daarom oog en neus midden op de bol, neus schuin naar de kijker/links, zodat de omtrek achter de neus gewoon doorloopt. Plan B: de uitsparing zelf dichtmaken in de sprite (zoals bij Solrock "dan kunnen we zelf in de sprite spelen"), alleen als Jordi dat wil.
+
+```
+Design a new Pokémon and draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art).
+
+CONCEPT
+- A crumbling blood moon: a living ball of moon rock during a total lunar eclipse, falling apart. Old, battered and powerful.
+
+DESIGN
+- Body: a perfect round ball of stone, like a planet seen from space, in deep coppery blood red, darker on the shadow side, covered in craters and deep cracks. Its outline is a full, unbroken circle all the way around.
+- Crumbling: a few chunks have broken off the ball and float loose around it, none of them touching it, with smaller fragments between them.
+- Face, in the MIDDLE of the ball, well inside its outline: one single round red eye with a thick black ring around it. Just left of the eye, a short pointed stone nose grows out of the front of the ball and points toward the viewer and slightly left, like a small spike. The round outline of the ball continues unbroken behind the nose. Around the base of the nose the stone is rough, cracked and crumbled. No other facial features.
+
+POSE
+- Three-quarter view facing left, floating.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, clean shading like official Game Freak Gen 3 sprites.
+- Plain white background. NO soft glow or halo behind the creature, no floor, shadow, sparkles or effects. One single creature, no extra views.
+
+AVOID
+- No notch, hollow, cut-out, bite or open mouth in the ball: the ball is solid and round everywhere, also around the nose. Nothing touches the edge of the ball.
+- Not an emblem, badge, logo or symbol. Not a sun. No lava, no gems or crystals, no fire.
+- No arms, legs, wings, mouth or human features. No glossy 3D render, no plush or mascot look.
+```

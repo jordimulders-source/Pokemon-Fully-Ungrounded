@@ -10,8 +10,9 @@
 - "het moet een pokemon worden he niet een tekening van een tuinkabouter"
 - "dat de muts veel bedekt lijkt me geinig ja" (na voorstellen: mol als basis / muts als lichaamsdeel à la Hatenna / paddenstoelhoed; keuze nog niet gemaakt)
 - "nee gewoon een gnome, maar dan cartoony, niet een ventej in kleding"
+- "het mutsje wordt lavendel, huid roze, de armpjes worden idd gewoon rondjes"
 - Lijn en vormen: `docs/concept/IDEEEN.md` → "Gnome-lijn".
 
 ## Open (overleggen vóór de Gemini-prompt)
 - Type: puur Fairy?
-- Welke eigen kleuren? (voorstellen in `gemini/PROMPT.md`)
+- Neuskleur (prompt: roze als de huid).

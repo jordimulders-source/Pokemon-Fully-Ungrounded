@@ -10,12 +10,12 @@ Nieuw gesprek, geen bijlage.
 
 ## Ingevuld door Claude (voorleggen aan Jordi vóór gebruik)
 - Type puur Fairy (fase 3-vormen zijn Fairy/X).
-- Kleine stompe armpjes (niet genoemd door Jordi).
+- Neus in dezelfde roze als de huid (Jordi noemde de neuskleur niet).
 - Kleur: optie A of B hieronder (Jordi koos "eigen kleuren", maar noemde nog geen kleuren).
   - A: muts mosgroen met lichtere punt, huid perzik, neus rozerood.
   - B: muts lavendel/paars, huid perzik, neus roze.
 
-## Prompt (kleurregel invullen met A of B)
+## Prompt
 
 ```
 Design an original Pokémon and draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style).
@@ -25,10 +25,10 @@ CONCEPT
 - It is simply a garden gnome, turned into a cartoony Pokémon: a tiny, funny, very round little gnome.
 - Its huge, soft pointed cap is the most important feature: the cap is far too big for it, droops down over its eyes so the eyes are completely hidden, and covers most of its round body.
 - Below the cap sticks out a big, round, bulbous nose. No beard.
-- Tiny stubby arms and two small feet sticking out underneath.
+- Two tiny arms that are just little round balls, and two small feet sticking out underneath.
 - It is waddling: caught mid-step, leaning a little to one side, as if it walks a lot but has very short legs.
 - NO clothes: no jacket, no belt, no boots, no buttons. Just the round little body, the cap and the nose.
-- Colors: [A: a mossy green cap with a lighter tip, peach skin, a rosy red nose | B: a lavender-purple cap, peach skin, a pink nose].
+- Colors: a lavender cap, pink skin; the nose is pink like the skin.
 - Cartoony, but in the Pokémon way: simple bold shapes, a clear readable silhouette, like an official Ken Sugimori design.
 
 STYLE AND FORMAT

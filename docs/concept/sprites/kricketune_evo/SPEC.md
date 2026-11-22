@@ -40,3 +40,4 @@
 - Jordi: "ja beide ogen zijn niet mooi, beetje uitgerekt" → oogstudie `sprite_r3/ogen_vel.png` (A Kricketune frame 2, B Kricketot, C Volbeat).
 - Jordi: "A is het beste, alleen het rechteroog is aan de onderkant een beetje afgekapt, met schaduw en kleurtinten kan je dat fixen" → r4 = ogen_A + 4 px onderkant rechteroog ((32,17),(35,17) rood-schaduw 9; (33,17),(34,17) donker 2), Claude: `sprite_r4/`.
 - Naam, Jordi: "Als naam kwamen Krickestra en Krickestro in me op".
+- Jordi: "Krickestra klinkt wat beter, maar krickestro past beter. Doe maar stro voor nu." → werknaam **Krickestro**.

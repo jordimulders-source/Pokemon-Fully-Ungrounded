@@ -2636,3 +2636,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.622] - Dundragoon: frontsprite af
 - Jordi: "commit en push maar naar main". `docs/concept/sprites/dundragoon/af/dundragoon.png` (+ `_8x`) = r4; op het overzichtsvel (`showcase/maak_vel.py`, Dragon/Normal). Stand van zaken: 59 frontsprites af. Les in `GEMINI.md`.
+
+### [v0.0.597] - Oricorio samba: frontsprite af (alle drie de dansen af)
+- Oricorio Samba (Grass/Flying) af in `docs/concept/sprites/oricorio_dansen/samba/af/` (r11, variant C): Gemini-model r10 (tooi op het hoofd en zijvleugels zoals een sambadanseres, gouden borst- en heupband, blauwe puntjes); Pom-Pom-oog en -snavel, Baile-standvoet; afwerking op Jordi's punten (veren als bladvormen, linkervleugel, poten, tooiveer rechtsboven) en eindkeuring PASS na kleurrondes (zebra in veren en franje weg, spikkels weg). Op het overzichtsvel. Daarmee zijn cumbia, tango en samba af.

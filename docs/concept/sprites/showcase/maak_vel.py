@@ -71,6 +71,7 @@ SECTIES=[
 ("swablu_regional/af/swablu.png",'Swablu (regional)',"electric/flying"),
 ("oricorio_dansen/cumbia/af/cumbia.png",'Oricorio (cumbia)',"water/flying"),
 ("oricorio_dansen/tango/af/tango.png",'Oricorio (tango)',"dark/flying"),
+("oricorio_dansen/samba/af/samba.png",'Oricorio (samba)',"grass/flying"),
 ("dj_rotom/af/dj_rotom.png",'"DJ Rotom"',"electric/steel"),
 ]),
 ]

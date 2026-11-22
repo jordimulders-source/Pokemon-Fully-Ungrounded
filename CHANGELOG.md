@@ -2742,3 +2742,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.651] - Vuurduivel fase 2: Gemini r3 + prompt v4
 - r3 bewaard (`docs/concept/sprites/vuurduivel_fase2/gemini/r3.png`; Baphomet-pose, effen krulhoorns, serieus). Jordi: "nieuwe prompt, het moet ook meer een sprite worden".
 - Prompt v4: `docs/concept/sprites/vuurduivel_fase2/gemini/PROMPT_v4.md` (alleen het stijlblok: echte 64×64-sprite, eenvoudige vormen, compact).
+
+### [v0.0.652] - Vuurduivel fase 2: Gemini r4 + prompt v5
+- r4 bewaard (`docs/concept/sprites/vuurduivel_fase2/gemini/r4.png`). Jordi: "laten we afwijken van de armpose"; gekozen: vuur in de handpalm (zitten met gekruiste poten blijft).
+- Prompt v5: `docs/concept/sprites/vuurduivel_fase2/gemini/PROMPT_v5.md`.

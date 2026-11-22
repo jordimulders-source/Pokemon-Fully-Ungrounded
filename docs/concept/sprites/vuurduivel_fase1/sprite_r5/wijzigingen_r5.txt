@@ -1,0 +1,66 @@
+(20,19) #->R  haarrand: zwart tussen donkerrood -> donkerrood
+(14,22) R->.  linkerhoorn: model-kegel, punt (15,22), hoornrood/hoornlicht, zwart aan de haarkant
+(25,22) #->R  rechterhoorn: model-kegel 3 breed aan de voet, punt (26,21) boven de haarrand, hoornrood/hoornlicht, zwarte rand rechts en onder, R links
+(26,22) p->h  rechterhoorn: model-kegel 3 breed aan de voet, punt (26,21) boven de haarrand, hoornrood/hoornlicht, zwarte rand rechts en onder, R links
+(15,23) p->h  linkerhoorn: model-kegel, punt (15,22), hoornrood/hoornlicht, zwart aan de haarkant
+(24,23) #->R  rechterhoorn: model-kegel 3 breed aan de voet, punt (26,21) boven de haarrand, hoornrood/hoornlicht, zwarte rand rechts en onder, R links
+(25,23) p->h  rechterhoorn: model-kegel 3 breed aan de voet, punt (26,21) boven de haarrand, hoornrood/hoornlicht, zwarte rand rechts en onder, R links
+(26,23) r->H  rechterhoorn: model-kegel 3 breed aan de voet, punt (26,21) boven de haarrand, hoornrood/hoornlicht, zwarte rand rechts en onder, R links
+(15,24) p->h  linkerhoorn: model-kegel, punt (15,22), hoornrood/hoornlicht, zwart aan de haarkant
+(16,24) r->H  linkerhoorn: model-kegel, punt (15,22), hoornrood/hoornlicht, zwart aan de haarkant
+(25,24) p->h  rechterhoorn: model-kegel 3 breed aan de voet, punt (26,21) boven de haarrand, hoornrood/hoornlicht, zwarte rand rechts en onder, R links
+(26,24) r->H  rechterhoorn: model-kegel 3 breed aan de voet, punt (26,21) boven de haarrand, hoornrood/hoornlicht, zwarte rand rechts en onder, R links
+(27,24) #->H  rechterhoorn: model-kegel 3 breed aan de voet, punt (26,21) boven de haarrand, hoornrood/hoornlicht, zwarte rand rechts en onder, R links
+(28,24) r->#  rechterhoorn: model-kegel 3 breed aan de voet, punt (26,21) boven de haarrand, hoornrood/hoornlicht, zwarte rand rechts en onder, R links
+(16,25) r->h  linkerhoorn: model-kegel, punt (15,22), hoornrood/hoornlicht, zwart aan de haarkant
+(17,25) #->H  linkerhoorn: model-kegel, punt (15,22), hoornrood/hoornlicht, zwart aan de haarkant
+(18,25) r->#  linkerhoorn: model-kegel, punt (15,22), hoornrood/hoornlicht, zwart aan de haarkant
+(24,25) R->#  rechterhoorn: model-kegel 3 breed aan de voet, punt (26,21) boven de haarrand, hoornrood/hoornlicht, zwarte rand rechts en onder, R links
+(25,25) R->H  rechterhoorn: model-kegel 3 breed aan de voet, punt (26,21) boven de haarrand, hoornrood/hoornlicht, zwarte rand rechts en onder, R links
+(26,25) r->H  rechterhoorn: model-kegel 3 breed aan de voet, punt (26,21) boven de haarrand, hoornrood/hoornlicht, zwarte rand rechts en onder, R links
+(27,25) R->H  rechterhoorn: model-kegel 3 breed aan de voet, punt (26,21) boven de haarrand, hoornrood/hoornlicht, zwarte rand rechts en onder, R links
+(16,26) r->H  linkerhoorn: model-kegel, punt (15,22), hoornrood/hoornlicht, zwart aan de haarkant
+(17,26) r->H  linkerhoorn: model-kegel, punt (15,22), hoornrood/hoornlicht, zwart aan de haarkant
+(18,26) l->#  linkerhoorn: model-kegel, punt (15,22), hoornrood/hoornlicht, zwart aan de haarkant
+(24,26) m->#  rechterhoorn: model-kegel 3 breed aan de voet, punt (26,21) boven de haarrand, hoornrood/hoornlicht, zwarte rand rechts en onder, R links
+(25,26) r->H  rechterhoorn: model-kegel 3 breed aan de voet, punt (26,21) boven de haarrand, hoornrood/hoornlicht, zwarte rand rechts en onder, R links
+(26,26) r->H  rechterhoorn: model-kegel 3 breed aan de voet, punt (26,21) boven de haarrand, hoornrood/hoornlicht, zwarte rand rechts en onder, R links
+(27,26) r->H  rechterhoorn: model-kegel 3 breed aan de voet, punt (26,21) boven de haarrand, hoornrood/hoornlicht, zwarte rand rechts en onder, R links
+(28,26) m->#  rechterhoorn: model-kegel 3 breed aan de voet, punt (26,21) boven de haarrand, hoornrood/hoornlicht, zwarte rand rechts en onder, R links
+(17,27) r->#  linkerhoorn: model-kegel, punt (15,22), hoornrood/hoornlicht, zwart aan de haarkant
+(18,27) l->d  linkerhoorn: model-kegel, punt (15,22), hoornrood/hoornlicht, zwart aan de haarkant
+(25,27) m->#  rechterhoorn: model-kegel 3 breed aan de voet, punt (26,21) boven de haarrand, hoornrood/hoornlicht, zwarte rand rechts en onder, R links
+(26,27) d->#  rechterhoorn: model-kegel 3 breed aan de voet, punt (26,21) boven de haarrand, hoornrood/hoornlicht, zwarte rand rechts en onder, R links
+(27,27) m->#  rechterhoorn: model-kegel 3 breed aan de voet, punt (26,21) boven de haarrand, hoornrood/hoornlicht, zwarte rand rechts en onder, R links
+(34,27) r->O  haar rechts: vlamtong 2 loopt door naar linksonder zoals het model (34-35,26.5-27.5)
+(35,27) r->O  haar rechts: vlamtong 2 samenhangend (model)
+(36,27) O->r  haar rechts: rode schaduw tussen tong 2 en 3 (model), geen O-r-O-dambord
+(25,29) m->#  rechteroog: V-lid + amandel (model), glimpje onderhoek
+(26,29) m->#  rechteroog: V-lid + amandel (model), glimpje onderhoek
+(27,29) #->m  rechteroog: V-lid + amandel (model), glimpje onderhoek
+(28,29) #->m  rechteroog: V-lid + amandel (model), glimpje onderhoek
+(16,30) m->#  linkeroog: V-lid + amandel (model), glimpje onderhoek
+(26,30) #->m  rechteroog: V-lid + amandel (model), glimpje onderhoek
+(27,30) #->m  rechteroog: V-lid + amandel (model), glimpje onderhoek
+(28,30) #->m  rechteroog: V-lid + amandel (model), glimpje onderhoek
+(23,31) m->#  rechteroog: V-lid + amandel (model), glimpje onderhoek
+(26,31) W->#  rechteroog: V-lid + amandel (model), glimpje onderhoek
+(27,31) W->#  rechteroog: V-lid + amandel (model), glimpje onderhoek
+(28,31) W->m  rechteroog: V-lid + amandel (model), glimpje onderhoek
+(26,32) #->W  rechteroog: V-lid + amandel (model), glimpje onderhoek
+(23,33) m->d  rechteroog: pupil 1 px groter (d) links van het glimpje; model heeft daar zwart op 33.0 x24a
+(24,33) m->W  rechteroog: V-lid + amandel (model), glimpje onderhoek
+(16,34) W->d  linkeroog: V-lid + amandel (model), glimpje onderhoek
+(18,34) #->W  linkeroog: V-lid + amandel (model), glimpje onderhoek
+(19,34) m->d  linkeroog: pupil 1 px groter (d) rechts van het glimpje; model heeft zwart op 33.1 x19a en 34.1 x18b
+(24,34) m->d  rechteroog: V-lid + amandel (model), glimpje onderhoek
+(19,35) m->#  mond: lachkuiltje/linker mondhoek omhoog (model: zwart op 35.0 x19b)
+(20,35) l->m  KAN: losse l-pixel op de wang weg (model: dat lichte pixel hoort bij het kuiltje, op 1x ruis)
+(25,37) r->R  mond: mondinterieur rechts naast de tand donkerrood zoals het model (37.x x25: R) i.p.v. losse r
+(45,44) R->r  staartpunt: schone R-onderrand van beide lobben, inkeping (46,44-45), stam erin
+(46,44) #->R  staartpunt: schone R-onderrand van beide lobben, inkeping (46,44-45), stam erin
+(47,44) R->r  staartpunt: schone R-onderrand van beide lobben, inkeping (46,44-45), stam erin
+(45,45) #->R  staartpunt: schone R-onderrand van beide lobben, inkeping (46,44-45), stam erin
+(47,45) .->R  staartpunt: schone R-onderrand van beide lobben, inkeping (46,44-45), stam erin
+(44,46) #->.  staartpunt: schone R-onderrand van beide lobben, inkeping (46,44-45), stam erin
+(46,46) .->#  staartpunt: schone R-onderrand van beide lobben, inkeping (46,44-45), stam erin

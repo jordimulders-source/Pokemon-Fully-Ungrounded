@@ -21,3 +21,4 @@ Eindvorm, zwevend: vult het 64×64-vak zoals het model (stenen tot bijna de rand
 - **Werkwijze (Jordi, 22 nov):** "nee ik wil eerst het model helemaal goed nagemaakt hebben voordat je laat zien" (geen ogen of onderdelen uit andere sprites).
 - **Plaat (Jordi, 22 nov):** "de linkerkant van de plaat moet ronder, want door het driekwart perspectief zie je die niet volledig, of iig geen volledig rechte lijn".
 - **Over r9 (Jordi, 22 nov):** "hij is nog wat blurry. Dat komt door niet voldoende tinten kleur denk ik".
+- **Kleurvariant (Jordi, 22 nov):** "ik vind B wel tof" (r11 B, koele schaduwen/warm licht).

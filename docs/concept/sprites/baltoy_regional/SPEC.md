@@ -47,3 +47,4 @@
 - Jordi over r3: "hij is nog niet mooi" · "onderkant klopt de vorm niet, de band is ook nu al niet mooi, armen zijn niet mooi, hij kan dus prima kleiner. ogen zijn niet rond, hele slordige sprite" · "model is mooier dan r4, dus ondanks dat die dan wat minder tiwanaku wordt is het wel een beter design" (= onderkant zoals het model; de taps-afwijking vervalt).
 - r4: verse maker, opnieuw vanaf het model, exacte 2×-reductie (±34×35), ronde ogen (anders Gen 3-Baltoy-oog 1-op-1), band vereenvoudigd op de modelplekken, armen schoon.
 - r4A (verse maker, 2×-reductie 34×34): 299 van 642 pixels afwijkend van de kale reductie (band/reliëf "vereenvoudigd" op Claudes opdracht). Jordi: "ik zie dat heel veel opnieuw getekend is" · "niet de bedoeling". r5: basis = kale 2×-reductie (`gereedschap/kaal34`), alleen technische reparaties met bronpixels uit het model.
+- r5 (`sprite_r5/`): kaal34 + 48 pixels (47 uit de bronpixels, 1 oogring); punt nog los zoals het model.

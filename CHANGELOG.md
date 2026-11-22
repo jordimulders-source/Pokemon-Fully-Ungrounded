@@ -2798,3 +2798,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Jordi: "en hij gaat niet in een stuk vervoer want dan is het gweoon een mannetje in tools"; vervoer-voorstellen vervallen.
 - Jordi: "hij past zich volledig aan aan de omgeving, dus zijn lichaam verandert mee".
 - Jordi: "Rock, Flying en Steel doen we" (drie Gnometrotter-vormen).
+
+### [v0.0.670] - Gnomini: frontsprite af
+- Gnome-lijn fase 1 (Fairy): Gemini-prompts v1/v2 (`gnomini/gemini/`), Jordi koos r2 als model ("de muts is uitstekend"). Sprite in 4 makerrondes: r1 A (lijf als model; B "compleet mislukt, dat is niet rond"), r2 keurderreparaties, r3 gebogen roze/blauw-grens + donkerblauwe streep (B gekozen) en rond linkerarmpje, r4 lijf smoother (A gekozen). Eindkeuring PASS, 5 pixels gerepareerd → `docs/concept/sprites/gnomini/af/gnomini.png`; op het overzichtsvel onder New. Les in GEMINI.md ("ronder" = echt rond).

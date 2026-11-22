@@ -24,6 +24,7 @@
 - "en zijn linkerhand is niet rond" (= armpje links in beeld, met het duimachtige bultje; eerder: "de armpjes worden idd gewoon rondjes").
 - r3 (`sprite_r3/`, A gebogen grens / B + donkerblauwe streep): Jordi "B is goed, maar het lichaam moet nog iets smoother rond qua vorm".
 - r4 (`sprite_r4/`, A licht smoother / B onderflanken uitgebold): Jordi "A".
+- Eindkeuring r4-A: PASS; 5 pixelreparaties door Claude → **af: `af/gnomini.png`** (+ `_8x`), op het overzichtsvel (New).
 
 ## Open (overleggen vóór de Gemini-prompt)
 - Type: puur Fairy?

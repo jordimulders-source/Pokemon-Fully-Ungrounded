@@ -48,6 +48,7 @@ SECTIES=[
 ("vlieglijn_fase1/af/vlieg.png",'"Flytron"',"bug/electric"),
 ("vlieglijn_fase2/af/mug.png",'"Buzzquito"',"poison/electric"),
 ("vuurduivel_fase1/af/vuurduivel.png",'Vuurduivel fase 1',"fire/dark"),
+("gnomini/af/gnomini.png",'"Gnomini"',"fairy"),
 ]),
 ("Evolutions of existing Pokémon",[
 ('hitmontop_evo/af/hitmongroove.png', '"Hitmongroove" (Hitmontop)', 'fight/ground'),

@@ -14,6 +14,7 @@
 - Lijn en vormen: `docs/concept/IDEEEN.md` → "Gnome-lijn".
 
 - r1 (`r1/gemini_r1.png`, prompt v1): "hij is toch wat aan de kale kant zo"
+- "misschien wel een soort 'broek' wat gewoon een 2e kleur op het lichaam is"
 
 ## Open (overleggen vóór de Gemini-prompt)
 - Type: puur Fairy?

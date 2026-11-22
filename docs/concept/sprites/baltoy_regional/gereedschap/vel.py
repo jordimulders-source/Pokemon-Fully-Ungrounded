@@ -14,6 +14,8 @@ mo=Image.new('RGBA',(64,64),(0,0,0,0)); mi=nat.resize((W,H),Image.BOX).convert('
 def op(im,bg,z):
     b=Image.new('RGBA',im.size,bg); b.alpha_composite(im); return b.convert('RGB').resize((im.width*z,im.height*z),Image.NEAREST)
 Z=8; panelen=[(f'sprite {r}',spr),('kale reductie (schrappen)',ka),('model, verkleind',mo)]
+if len(sys.argv)>2:   # bv. 'r2 r1': tweede paneel = vorige ronde
+    p=sys.argv[2]; panelen[1]=(f'sprite {p}',Image.open(f'sprite_{p}/baltoy_{p}.png').convert('RGBA'))
 v=Image.new('RGB',(3*64*Z+40,64*Z+30+64*3+30),(255,255,255)); d=ImageDraw.Draw(v)
 for i,(t,im) in enumerate(panelen):
     v.paste(op(im,(255,255,255,255),Z),(10+i*(64*Z+10),24)); d.text((10+i*(64*Z+10),6),t,fill=(0,0,0))

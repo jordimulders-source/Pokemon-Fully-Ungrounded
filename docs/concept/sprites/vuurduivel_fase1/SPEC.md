@@ -11,3 +11,4 @@
 - r4 (`r4/gemini_r4.png`, staart bijgestuurd in hetzelfde gesprek), Jordi: "het is niet genoeg een pijl, maar dat kunnen we in de sprite doen, ga maar bouwen". **Bevroren model: `referenties/gemini_gekozen_r4.png`** (= r3a met pijlstaart). Toegestane afwijking: de staartpunt moet in de sprite duidelijker een pijl (schoppenpunt) worden, in dezelfde vuurkleuren; de rest exact het model.
 - Frontsprite: werkwijze SPRITE_WERKWIJZE → "Gemini-model namaken" (gereedschap uit `dundragoon/gereedschap/`).
 - Staartpijl-opties A–D (`sprite_r7/pijl_opties.png`), Jordi: "nee behoud de vlam maar, deze zijn allemaal niet mooier" → staartpunt van r6 blijft.
+  Jordi daarna: "ofja iig het eerdere ontwerp" (= de staartpunt zoals in r6, vóór de opties).

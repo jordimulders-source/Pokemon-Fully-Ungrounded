@@ -2879,3 +2879,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.690] - Bokser-Mr. Mime: r1 en prompt r2
 - r1 "best aardig idee"; r2: meer gentlemanly, zwart-wit palet, oren ver achterover, houding van Jordi's 19e-eeuwse boksersfoto (rechtop, één vuist vooruit, de andere tegen de borst).
+
+### [v0.0.691] - Bokser-Mr. Mime: rondes r2–r4, posepoppetje en prompt r6
+- r2 (zwart-wit, verkeerde pose), r3 (minder Mr. Mime, stoot), r4 (met Jordi's foto: mensenlichaam). Posepoppetje `bokser/pose_stickman.png` (grote kop, tonlijf, korte benen) als bijlage + Hitmongroove-verhoudingen in `bokser/PROMPT_r6.md`.

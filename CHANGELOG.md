@@ -2765,3 +2765,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Jordi over r8: "het gezicht is nu anders, maar dat is juist tof, ga maar bouwen" → bevroren model `docs/concept/sprites/vuurduivel_fase2/referenties/gemini_gekozen_r8.png`, SPEC.md.
 - Sprite r1 (2×-reductie van het natieve raster), keuring r1 (BIJNA). Oog mag afwijken (Jordi: "rood met zwart erin of zwart met rood erin, geen wit"); 10 opties uit echte Gen 3-ogen, Jordi koos "sharpedo A".
 - r2: lijftinten neutraal lichter, vlammen in banden; r3: Sharpedo A-oog, slankere hand- en staartvlam; eindkeuring r3 (BIJNA: rompvolume); r4: romp met volume naar de modelhelderheid, rustige dijselout. Kandidaat voor Jordi: `sprite_r4/vuurduivel2_r4_8x.png`.
+
+### [v0.0.657] - Vuurduivel fase 2: frontsprite af
+- Jordi over r4: "uitstekend". Af: `docs/concept/sprites/vuurduivel_fase2/af/vuurduivel2.png` (+ `_8x`); op het overzichtsvel (sectie New, na fase 1). De vuurduivel-lijn is daarmee af (namen open).

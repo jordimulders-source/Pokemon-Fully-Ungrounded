@@ -6,11 +6,12 @@ Nieuw gesprek, geen bijlage.
 - "Dan gnomad die bekend erom staan ontzettend veel te lopen."
 - Muts: "Groter en langer"; kleuren: "Zelfde kleuren".
 - "ja ronde lijf blijft, maar hij wordt iets meer volgroeid, hij krijgt nu een wollige snor ook onder zijn neus, wat groter en wat langere benen"
+- "we gaan een paar dingen in het design toevoegen die Gnometrotter vervolgens type specifiek kan maken"
+- "cremewit, plukjes haar ook goed, de armpjes worden nu een bolle hand met een ovaal armpje"
 - Gnomini (fase 1): lavendel muts over de ogen, grote ronde roze neus (zelfde roze als de huid), roze lijf, hemelsblauwe onderkant met donkerblauwe streep op de gebogen grens, ronde armpjes, "niet een ventej in kleding".
 
 ## Ingevuld door Claude (voorleggen)
-- Snor crèmewit (kleur niet genoemd).
-- Armpjes blijven ronde balletjes zoals bij Gnomini.
+- Haarplukjes crèmewit zoals de snor (kleur niet genoemd).
 - Pose: stevig wandelend, midden in een stap (lopen niet als vorm gekozen, wel "bekend om veel lopen").
 - Formaat ±50 px hoog (middenfase).
 
@@ -26,9 +27,10 @@ CONCEPT
 - Its huge, soft pointed cap is bigger and longer than before: it still droops down over its eyes so the eyes are completely hidden, and the long floppy tip of the cap trails behind it.
 - Below the cap sticks out a big, round, bulbous nose, the same pink as its skin.
 - NEW: a woolly, fluffy mustache under the nose. Only a mustache, no beard.
-- Two small arms that are just little round balls.
+- Two small arms: a short oval arm ending in a round, chubby ball-shaped hand.
+- Little woolly tufts of hair sticking out sideways from under the cap, on both sides of the head.
 - It is walking: caught mid-stride, a determined, steady walk, as if it has been walking for days.
-- Colors: a lavender cap, pink skin. The lower half of the body including the legs is sky blue, like a garden gnome's trousers; the border between pink and blue curves around the round body with a thin dark-blue line on it. This is NOT clothing: just a second body color, no seams, pockets, buttons or belt. Cream-white mustache.
+- Colors: a lavender cap, pink skin. The lower half of the body including the legs is sky blue, like a garden gnome's trousers; the border between pink and blue curves around the round body with a thin dark-blue line on it. This is NOT clothing: just a second body color, no seams, pockets, buttons or belt. Cream-white mustache and cream-white hair tufts.
 - NO clothes: no jacket, no belt, no boots, no backpack, no walking stick.
 - Cartoony, but in the Pokémon way: simple bold shapes, a clear readable silhouette, like an official Ken Sugimori design.
 

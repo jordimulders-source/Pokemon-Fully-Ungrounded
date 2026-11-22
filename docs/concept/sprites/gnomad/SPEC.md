@@ -10,3 +10,4 @@
 - Antwoorden (22 nov): lopen in het lichaam: geen voorkeur; muts: "Groter en langer" (blijft over de ogen, langer, slappe punt die meezwiept); kleuren: "Zelfde kleuren"; baard: "iets anders" (nog niet gespecificeerd).
 - "ja ronde lijf blijft, maar hij wordt iets meer volgroeid, hij krijgt nu een wollige snor ook onder zijn neus, wat groter en wat langere benen"
 - "we gaan een paar dingen in het design toevoegen die Gnometrotter vervolgens type specifiek kan maken" (prompt v1 wacht daarop)
+- "cremewit, plukjes haar ook goed, de armpjes worden nu een bolle hand met een ovaal armpje"

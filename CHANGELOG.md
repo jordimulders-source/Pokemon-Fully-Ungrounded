@@ -2851,3 +2851,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - r8: neusaansluiting netter, pupil 1 px lager (kijkt niet meer omhoog), oog op 0/2/4 px naar rechts × iris zoals r7/donkerder; Jordi: "midden onder is goed" (2 px, donkere iris).
 - r9: losgekomen barstjes rechts van het oog taps laten uitlopen (3 px).
 - Af: `lunatone_evo/af/bloedmaan.png` (+ 8×), op het overzichtsvel onder "Evolutions of existing Pokémon" als "Bloedmaan (Lunatone)", rock/cosmic. Naam en evolutiemethode open.
+
+### [v0.0.682] - Regionale (jiujitsu-)Mr. Mime: ontwerp gestart
+- Keuzes Jordi: Fighting/Psychic; gezicht + rode wangen, blauwe haarpieken en roze ballen blijven; blauwe gi met band; eerst alleen Mr. Mime, Mr. Prime later.
+- `docs/concept/sprites/mrmime_regional/SPEC.md` en Gemini-startprompt r1 (`gemini/PROMPT.md`).

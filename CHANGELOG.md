@@ -2864,3 +2864,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.685] - Regionale Mr. Mime: r4 en prompt r5
 - r4 opgeslagen (kleuren goed, ligt nog op zijn zij). Prompt `gemini/PROMPT_r5.md`: pose concreet (op de rug als een schildpad, kijker = tegenstander aan zijn voeten); huid terug naar de normale Mr. Mime-tint (Jordi: anders klopt Mr. Prime niet).
+
+### [v0.0.686] - Regionale Mr. Mime: r5 en prompt r6 (de gi is het lijf)
+- r5 opgeslagen (vogelvlucht, hoofd ondersteboven); les in `GEMINI.md`. Jordi twijfelt over "een Mr. Mime in een pak"; prompt r6: de gi is zijn eigen lijf, zoals bij Mr. Mime en Mr. Rime.

@@ -2747,3 +2747,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - r4 bewaard (`docs/concept/sprites/vuurduivel_fase2/gemini/r4.png`). Jordi: "laten we afwijken van de armpose"; gekozen: vuur in de handpalm (zitten met gekruiste poten blijft).
 - Jordi over de hoorns: "nog niet mooi", "beetje te wijd", "staan ze bijna helemaal horizontaal"; v5 vraagt hoorns die eerst omhoog gaan en dicht langs het hoofd krullen.
 - Prompt v5: `docs/concept/sprites/vuurduivel_fase2/gemini/PROMPT_v5.md`.
+
+### [v0.0.653] - Vuurduivel fase 2: Gemini r5 + prompt v6
+- r5 bewaard (`docs/concept/sprites/vuurduivel_fase2/gemini/r5.png`; vuur in beide handpalmen). Jordi: "hoorns niet goed, dat moet echt een opgerolde bok achtige zijn".
+- Prompt v6: `docs/concept/sprites/vuurduivel_fase2/gemini/PROMPT_v6.md` (alleen de hoorns: opgerolde ramshoorns, beide gelijk, strak langs het hoofd).

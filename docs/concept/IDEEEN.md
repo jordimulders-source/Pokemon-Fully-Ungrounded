@@ -657,6 +657,7 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 
 ## Vuurduivel-lijn (Jordi, 22 nov)
 - **Jordi:** "Ik zit ook te denken aan een soort vuurduivel lijn, er zijn nog niet echt duiveltjes. Ik heb tot nu toe alleen de fase 1 in gedachten wat een cute maar cheeky fire/dark duiveltje is".
+- **Jordi (22 nov):** "hoeft niet per se zuid amerikaans".
 - Eerder in de pitches: Diablada-masker (Dark/Fire, FAKEMON_PITCH #65), El Tío (Dark/Rock, #56). In de dex: Houndour-lijn (enige Fire/Dark), Impidimp-lijn (Dark/Fairy, ondeugende kobolden).
 
 ## Kreten (Jordi, 19 nov)

@@ -2846,3 +2846,9 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - r1 (maker, schrappen naar 47×48), keuring BIJNA; r2 (5 benoemde reparaties), keuring BIJNA + eindkeuring PASS; r3 = r2 + 6 lijnpixels (Claude). Kandidaat: `baltoy_regional/sprite_r3/naast_model.png`.
 - r4A (34×34) te veel hertekend (Jordi: "ik zie dat heel veel opnieuw getekend is" · "niet de bedoeling"); r5 vanaf de kale 2×-reductie. Les in GEMINI.md.
 - r5 (kale 2×-reductie + 48 px): Jordi "hij is best prima" + punten voor r6 (lijnen, kleur/schaduw, hoofd 1 px langer).
+
+### [v0.0.679] - Regional Baltoy: frontsprite r5–r13
+- r5: opnieuw vanaf de kale 2×-reductie (34×35) met alleen technische reparaties uit de bronpixels; Jordi: "hij is best prima" + afwerkpunten.
+- r6–r8: hoofd 1 px langer, zachtere lijnen, steenramp na een studie van blokvormige Pokémon (`sprite_r7/studie.md`), lijnen wisselen van tint.
+- r9–r10: lijfreliëf naar Tiwanaku (A handen/kero/staf, B getrapte gordel, C chakana), in driekwart; Jordi koos B.
+- r11–r12: armen en stekel met volume, stekel weer leesbaar, mondpixels weg. Eindkeuring BIJNA → 31 pixels → r13 (kandidaat).

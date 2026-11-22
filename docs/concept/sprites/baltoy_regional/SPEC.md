@@ -60,3 +60,4 @@
 - r11 (vanaf r10B): armen met doorsnede-schaduw en eindvlak, rechterarm donkerder; punt met voor-/zijvlak en schaduw onder het lijf; nek/ribbe/zijvlak-keurderpunten. Hoofd, band, patroon B diff 0.
 - Jordi over r11: "de stekel aan de onderkant leest niet meer als een stekel. Daarnaast mogen de pixels die op een mond lijken weg, voor de rest prima genoeg om naar eindkeuring te gaan, daar fixen we de laatste issues". → r12, dan eindkeuring.
 - r12 (stekel terug naar donkere r10B-band onder het lijf + smal uitlopend licht voorvlak; mondpixels weg; 8 px t.o.v. r11) → eindkeuring.
+- Eindkeuring r12: BIJNA (geen blokkade); 31 uitvoeringspixels (ruis, lijn-gat, lange 1-tintlijnen, egaal zijvlak kop, omgekeerd verloop onder het lijf) toegepast → r13 (`sprite_r13/`, kandidaat; `r13_vs_r12.png`).

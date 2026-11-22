@@ -2845,3 +2845,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.681] - Capybarrel: ook evolutie niet Normal/Water
 - `IDEEEN.md`: Jordi's correctie vastgelegd.
+
+### [v0.0.682] - Capybarrel: geen Water
+- `IDEEEN.md`: geen Water-type in de Capybarrel-lijn (Jordi).

@@ -690,4 +690,5 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - **Jordi (22 nov):** "normal/water wil ik ontwijken aangezien we bibarel al hebben die ik nog een evo wil geven" (Bibarel-evo staat als Water/Fighting, zie hierboven). Typing Capybarrel dus open, niet Normal/Water.
 - **Jordi (22 nov):** "hij begint als Normal". Besloten: Capybarrel is puur Normal; type(s) van de evolutie open.
 - **Jordi (22 nov), op het voorstel "veerpont/vlot: Water erbij":** "nee geen normal/water, lezen". Ook voor de evolutie dus geen Normal/Water.
+- **Jordi (22 nov):** "GEEN WATER". Besloten: geen Water-type in de Capybarrel-lijn.
 - Let op: Cacnea is al de bolcactus (barrel cactus); Cuyby/Cuychu zijn de cavia-lijn (familie van de capibara); Zapacha is de electric rodent.

@@ -36,3 +36,4 @@
 ## Status (22 nov): idee geschrapt
 Jordi: "ik denk dat dit ontwerp het niet gaat worden" – "het hele idee bedoel ik". De jiujitsu-Mr. Mime vervalt; of Mr. Prime (bartitsu-gentleman) blijft, is open. Wat wel vastligt uit deze rondes: Fighting/Psychic, normale Mr. Mime-huid (voor Mr. Prime), gele wangen, paarse "oren", lichtblauwe vingertoppen/voeten, zwarte band, op de rug "get into my guard". Gemini tekende 7 rondes lang een mens in een pak of een verkeerde ligpose.
 - Jordi (22 nov) over Mr. Prime: "mr prime is nog steeds een leuk idee, maar moeten we eerst bedenken of we nog een nieuwe mr mime maken". Open: komt er een andere nieuwe Mr. Mime (voor Mr. Prime)?
+- Jordi (22 nov): nieuwe Mr. Mime vóór Mr. Prime = **Victoriaanse bokser** (voorstel van 9 nov). Brainstorm gestart.

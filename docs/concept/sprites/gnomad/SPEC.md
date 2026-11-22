@@ -25,3 +25,4 @@
 - Jordi: "qua vorm" → de foto geldt alleen voor de vorm (groot vierkant dat boven en onder uitsteekt, staand gat), niet voor de kleuren zwart/geel.
 - sprite r4: "ja het zwart moet afnemen, maar dat doet de eindkeuring. Daarnaast is de riem nu wel wat blurry en de gesp is nu niet goed in perspectief met de rest van het lichaam, gezien het driekwart is"
 - sprite r5: "nee want hij is nu iets te vierkant, voor het ontwerp is het goed als dat net afwijkt, evenals de riem zelf die niet moooi op zichzelf aansluit"
+- sprite r6 (krabbel `sprite_r6/jordi_krabbel_riem.png`: gele lijnen langs boven- en onderrand van de riem rechts van de gesp, streepjes bij het rechteruiteinde boven en onder): "deze lijnen zijn te egaal en daar zitten pixel gaten"

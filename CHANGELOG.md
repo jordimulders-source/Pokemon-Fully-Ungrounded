@@ -2755,3 +2755,8 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.654] - Vuurduivel fase 2: Gemini r6 + prompt v7
 - r6 bewaard (`docs/concept/sprites/vuurduivel_fase2/gemini/r6.png`; ramshoorns goed). Jordi: "het lichaam is nu te menselijk, verder wel goed".
 - Prompt v7: `docs/concept/sprites/vuurduivel_fase2/gemini/PROMPT_v7.md` (bijstuurzin voor hetzelfde gesprek + volledige prompt met een BODY-regel).
+
+### [v0.0.655] - Vuurduivel fase 2: Gemini r7 + prompt v8
+- r7 bewaard (`docs/concept/sprites/vuurduivel_fase2/gemini/r7.png`; bijsturen gaf een dikke gladde buik). Jordi: "zucht, het moet meer een geiten lichaam".
+- Prompt v8: `docs/concept/sprites/vuurduivel_fase2/gemini/PROMPT_v8.md` (BODY = rechtop zittende zwarte geit met ruige vacht).
+- Les in GEMINI.md: lijf omschrijven als het dier dat het wel is, niet alleen wat het niet is.

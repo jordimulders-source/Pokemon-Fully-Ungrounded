@@ -30,3 +30,4 @@
 - Type: puur Fairy?
 - Neuskleur (prompt: roze als de huid).
 - Na af (22 nov): "Gnomini mag trouwens ook nog wel een dragonflycave keuring ja" (zelfde ronde als Gnomad r10–r11).
+- Dragonfly Cave-ronde r6 (A egaal donkerroze rond de neus, B + 2 zwarte px): Jordi "de hele lijn om de neus dezelfde kleurtint?" · "maar daar worden toch meerdere tints gebruikt?" · "ja waarom doe je dat dan niet" → variant C (lijnen lopen mee met het licht).

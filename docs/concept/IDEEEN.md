@@ -703,3 +703,10 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - **Voorstellen Claude (Electric/Psychic, open):** (a) hersenen/zenuwen: tovenaar wiens magie zenuwprikkels zijn (lichtgevende neuronen als gewaad, kwal-achtig); (b) wetenschapper-tovenaar à la Tesla: plasmabol als kristallen bol, voorspelt met stroom; (c) wezen in plaats van figuur: een uil of kat met een elektrisch "derde oog".
 - **Jordi (22 nov):** "iets met een tesla coil is wel vet" → richting (b).
 - **Voorstellen Claude (open):** de tovenaar ís een teslaspoel: lang smal lijf = de spoel (gewaad met koperen windingen als strepen), de ronde torus bovenop = hoofd/hoed (rond, dus geen puntmuts zoals de gnome), bliksemboogjes als handen of als "spreuk"; Psychic: hij voorspelt/leest gedachten via de bogen. Fases: klein spoeltje (fase 1) → grotere spoel → volledige spoel met torus en vrije bogen.
+- **Jordi (22 nov):** "schrijf tesla coil maar even als idee op en laten we deze even rusten." → **Gepauzeerd** met de teslaspoel als richting.
+
+## Glitch-lijn (Jordi, 22 nov)
+- **Jordi:** "een soort glitch pokemon lijn. Misschien glitch -> bug -> virus, maar is dat een logische ontwikkeling. Is dan een digitale pokemon die de digitale wereld ontsnapt is".
+- **Logica (Claude):** technisch is het omgekeerd (een bug is de oorzaak, een glitch het zichtbare gevolg); als groei van toeval naar wil klopt het wel: glitch = losse fout zonder bedoeling, bug = vaste fout met een eigen lijf (woordgrap met het type Bug en de mot in de Harvard Mark II, 1947), virus = heeft een doel, kopieert zichzelf en verspreidt.
+- **Overlap (Claude):** Porygon-lijn is al digitaal (Porygon2 Electric/Psychic, Porygon-Z Electric/Ghost in ons project); MissingNo. niet namaken.
+- **Voorstellen Claude (open):** types bijv. Normal of Electric → Bug/Electric → Poison/Electric; het ontsnappen zichtbaar maken door per fase minder pixelachtig en meer "echt" te worden (of juist andersom: de echte wereld raakt besmet).

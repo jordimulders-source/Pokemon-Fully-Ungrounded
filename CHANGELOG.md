@@ -2855,3 +2855,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.682] - Idee: electric wizard-lijn
 - Jordi wil een electric wizard-lijn, "beetje geinspireerd door de band", zonder overlap met de Gnometrotter-lijn. Vastgelegd in `IDEEEN.md` → "Electric wizard-lijn", met voorstellen van Claude (open).
 - Jordi's referentie (hoes *Dopethrone*) toegevoegd in `docs/concept/sprites/electric_wizard/referenties/`; overlap met gnome-lijn en vuurduivel fase 2 en voorstellen in `IDEEEN.md`.
+- Electric wizard-lijn: teslaspoel als richting, gepauzeerd (Jordi). Nieuw idee: glitch-lijn (`IDEEEN.md` → "Glitch-lijn").

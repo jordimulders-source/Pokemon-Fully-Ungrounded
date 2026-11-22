@@ -2829,3 +2829,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.676] - Regional Baltoy-lijn: besluiten + Gemini-prompt Baltoy r1
 - Besloten (Jordi, 22 nov): inspiratie Tiwanaku-monoliet; Rock/Psychic voor Baltoy en Claydol (de levende tempel krijgt een andere typing); "moet herkenbaar zijn vanwege de ogen, het silhouet mag veranderen". `docs/concept/sprites/baltoy_regional/SPEC.md`, IDEEEN.md bijgewerkt.
 - Startprompt Baltoy r1: `docs/concept/sprites/baltoy_regional/gemini/PROMPT_baltoy_r1.md` (frontaal, spleetogen in rode band + rond borstoog).
+
+### [v0.0.677] - Regional Baltoy r1 afgekeurd
+- r1 bewaard (`docs/concept/sprites/baltoy_regional/gemini/baltoy_r1.png`). Jordi: "dit is geen pokemon sprite, niet driekwart, geen goede vorm en totaal geen baltoy". Keuzes voor r2 (vorm deels monoliet, alleen tekst) in SPEC.md.

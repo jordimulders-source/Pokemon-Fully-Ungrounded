@@ -471,3 +471,6 @@ The right side of the ball is flattened into a straight edge with a dark band, s
 
 Same Gen 3 sprite style, plain white background.
 ```
+
+## Jordi over v17 (`r17/gemini_v17.png`, letterlijk)
+- "hij maakt het erger"

@@ -2710,3 +2710,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.647] - Sunflora-evolutie: r5 + hoofd groter geschaald
 - Jordi over r5: "vrij oke, maar het hoofd moet echt overdreven groot zijn tov het lichaam, door de extreme fotosynthese". Hoofd per script 1,5× en 1,8× geschaald op het r5-lijf (`gemini/r5_kop_groter_150_180.png`).
+
+### [v0.0.648] - Sunflora-evolutie: hoofd 1,8× / 2,2× / 2,6×
+- Jordi: "dat het lijf heel klein is, is niet erg. Gemini had het lijf in verhouding nog groter gemaakt dan de normale sunflora". Extra schalen 2,2× en 2,6× (`gemini/r5_kop_groter_180_220_260.png`, script `gemini/gereedschap/kop_schaal.py`).

@@ -29,3 +29,4 @@
 ## Open (overleggen vóór de Gemini-prompt)
 - Type: puur Fairy?
 - Neuskleur (prompt: roze als de huid).
+- Na af (22 nov): "Gnomini mag trouwens ook nog wel een dragonflycave keuring ja" (zelfde ronde als Gnomad r10–r11).

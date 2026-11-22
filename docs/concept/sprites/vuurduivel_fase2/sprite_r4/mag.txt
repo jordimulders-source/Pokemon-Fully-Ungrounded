@@ -1,0 +1,7 @@
+(14,43) h->H  selout dijbeen links in één tint (donkerbruin)
+(15,43) h->H  selout dijbeen links in één tint (donkerbruin)
+(12,44) h->H  selout dijbeen links in één tint (donkerbruin)
+(11,45) h->H  selout dijbeen links in één tint (donkerbruin)
+(10,47) h->H  selout dijbeen links in één tint (donkerbruin)
+(10,46) #->H  zwarte pixel in de selout dijbeen -> donkerbruin
+(8,20) r->R  losse rode pixel in de donkerrode tongpunt -> donkerrood

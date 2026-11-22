@@ -2760,3 +2760,8 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - r7 bewaard (`docs/concept/sprites/vuurduivel_fase2/gemini/r7.png`; bijsturen gaf een dikke gladde buik). Jordi: "zucht, het moet meer een geiten lichaam".
 - Prompt v8: `docs/concept/sprites/vuurduivel_fase2/gemini/PROMPT_v8.md` (BODY = rechtop zittende zwarte geit, slank; Jordi: "niet dikker").
 - Les in GEMINI.md: lijf omschrijven als het dier dat het wel is, niet alleen wat het niet is.
+
+### [v0.0.656] - Vuurduivel fase 2: model r8 + frontsprite r1–r4
+- Jordi over r8: "het gezicht is nu anders, maar dat is juist tof, ga maar bouwen" → bevroren model `docs/concept/sprites/vuurduivel_fase2/referenties/gemini_gekozen_r8.png`, SPEC.md.
+- Sprite r1 (2×-reductie van het natieve raster), keuring r1 (BIJNA). Oog mag afwijken (Jordi: "rood met zwart erin of zwart met rood erin, geen wit"); 10 opties uit echte Gen 3-ogen, Jordi koos "sharpedo A".
+- r2: lijftinten neutraal lichter, vlammen in banden; r3: Sharpedo A-oog, slankere hand- en staartvlam; eindkeuring r3 (BIJNA: rompvolume); r4: romp met volume naar de modelhelderheid, rustige dijselout. Kandidaat voor Jordi: `sprite_r4/vuurduivel2_r4_8x.png`.

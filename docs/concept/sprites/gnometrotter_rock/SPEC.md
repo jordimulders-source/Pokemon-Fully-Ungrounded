@@ -1,0 +1,14 @@
+# Gnometrotter (Rock-vorm, Fairy/Rock, grot), fase 3 van de gnome-lijn (Gnomini → Gnomad → Gnometrotter)
+
+## Jordi (letterlijk)
+- Uit IDEEEN.md → Gnome-lijn: "hij past zich volledig aan aan de omgeving, dus zijn lichaam verandert mee"; "niet in een stuk vervoer"; "Rock, Flying en Steel doen we"; "wat we kunnen doen is iig met de rock variant beginnen, die weet ik zeker dat ik die wil".
+- Basis: Gnomad `../gnomad/af/gnomad.png` (Gnomini `../gnomini/af/gnomini.png`).
+- 22 nov: "allereerst is gnometrotter nog wat groter dan gnomad, hij is echt een ervaren wandelaar, logisch doorgegroeid zoals gnomad uit gnomini is gegroeid. Dan met kernmerken van steen erin, omdat die volledig aan de omgeving is aangepast"
+
+## Voorgelegd door Claude (22 nov, nog niet gekozen)
+- A geode (muts = geode met amethist in een barst, snor/plukjes = kwartskristal, neus = rozenkwarts); B druipsteen (muts = stalactiet, kalksteen met lagen); C ertsader (riem = ader, gesp = goudklomp, korstmos op de snor).
+
+## Open (overleggen vóór de Gemini-prompt)
+- Welke steenkenmerken, en waar (muts, snor, plukjes, riem/gesp, handen, huid).
+- Wat "logisch doorgegroeid" verder inhoudt naast groter.
+- Kleuren.

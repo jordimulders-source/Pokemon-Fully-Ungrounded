@@ -22,3 +22,4 @@
 - Jordi stuurt een foto van een gesp (`referenties/gesp_jordi.png`): zilveren, rechthoekige frame-gesp met een pin in het midden, zonder tekst.
 - "doe beetje deze vorm dan" (gesp naar de foto).
 - Jordi stuurt daarna een tweede foto (niet als bestand binnengekomen): kabouterkostuum met een **zwarte riem** en een **grote vierkante gele gesp** die boven en onder de riem uitsteekt, met in het midden een **donker rechthoekig gat** (staand) waar de zwarte riem doorheen zichtbaar is; geen pin. Jordi: "onee" · "gewoon dit" · "dat moet makkelijk zijn" (vervangt de zilveren gespfoto).
+- Jordi: "qua vorm" → de foto geldt alleen voor de vorm (groot vierkant dat boven en onder uitsteekt, staand gat), niet voor de kleuren zwart/geel.

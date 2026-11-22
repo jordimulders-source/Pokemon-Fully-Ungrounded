@@ -2858,3 +2858,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.683] - Regionale Mr. Mime: Gemini r1 afgekeurd, prompt r2
 - r1 opgeslagen (`gemini/r1.png`); Jordi: geen willekeurige roze ballen, "mag echt wel wat anders", "zie galar mr mime". Nieuwe startprompt `gemini/PROMPT_r2.md`.
+
+### [v0.0.684] - Regionale Mr. Mime: r3 en prompt r4
+- r3 opgeslagen; Jordi: op zijn rug in driekwart, met de handen "get into my guard" gebaren, rode huid en kop, lichtblauwe vingertoppen en voeten, gele wangen, paarse "oren" blijven, zwarte band. Prompt `gemini/PROMPT_r4.md`; Jordi denkt nog na over het design.

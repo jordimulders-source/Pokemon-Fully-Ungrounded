@@ -1,5 +1,5 @@
 # Regionale Mr. Mime (jiujitsu) – r7, stap A (NIEUW gesprek, geen bijlage)
-Asset voor asset (zoals vuurwerk fase 1): eerst het ontwerp in een eenvoudige staande pose; stap B = dit plaatje als bijlage + alleen de pose naar de guard.
+Asset voor asset (zoals vuurwerk fase 1): eerst het ontwerp in een eenvoudige staande pose; stap B = in hetzelfde gesprek alleen de pose bijsturen (geen bijlagen, Jordi).
 
 ```
 Design a brand-new regional form of Mr. Mime: a Brazilian jiu-jitsu fighter. Type Fighting/Psychic.

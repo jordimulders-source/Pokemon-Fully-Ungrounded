@@ -64,3 +64,4 @@
 - Jordi over r13: "de stekel onderin klopt niet qua vorm" · "nog steeds niet" · "al 3 keer aangegeven". Stekel versmalt-verbreedt-versmalt (dopvorm) door de 2×-reductie; r14: 3 vormprobeersels (model / zuivere spits / kleine ruit).
 - r14 stekelvormen A/B/C (symmetrisch). Jordi: "zucht het is allemaal niet driekwart" → r15: stekel als piramide in driekwart (breed voorvlak links, smal zijvlak rechts, ribbe schuin naar de tip, asymmetrische omtrek), 2 maten.
 - Jordi: "maar het idee klopt niet" · "kijk naar het model". Model-stekel = tolpunt: korte smalle hals, donker bovenvlak van bovenaf gezien, breedste rand, kegel met licht voorvlak links en donker rechts tot een platte tip. r15 = exacte vertaling daarvan.
+- r15 (maker, 2×) leek nog op r13. r16 (Claude): stekel per laag uit het model opgebouwd (hals, bovenvlak van bovenaf, breedste rand, kegel licht links/donker rechts, platte tip), figuur 2 px omhoog voor ruimte; rest = r13.

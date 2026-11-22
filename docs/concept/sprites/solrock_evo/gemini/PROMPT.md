@@ -184,3 +184,22 @@ AVOID
 - Not a spiked ball: the stones must not be attached to the body.
 - No lava, no gems or crystals. No arms, legs, wings or human features. No glossy 3D render, no plush or mascot look.
 ```
+
+---
+
+# Prompt v6 (22 nov): zelfde gesprek als v5, bijsturen (reactie op `r5/gemini_v5.png`)
+
+## Jordi (letterlijk)
+- "het wordt al iets beter"
+
+## Analyse Claude
+Goed: Solrocks gezichtsplaat, gebarsten gehavende kern, stenen echt los, afgebroken punten. Mis: de rand is een flauw lijntje (geen eclipskracht), de stenen zijn dof zwart (weinig licht), geen diagonale baan (nog een platte, rechte stralenkrans). Max. 2 wijzigingen.
+
+```
+Better: keep the cracked dark core, the face plate and the broken floating stones exactly as they are. Change only two things:
+
+1. Eclipse light: make the rim around the core much brighter and stronger, a thick blazing white-gold ring of light hugging the dark body, like the moment of a total solar eclipse. The floating stones catch this light: give each one a clear bright gold edge on the side facing the core.
+2. Orbit: tilt the ring of floating stones diagonally, like a ring seen at an angle (from top right to bottom left). Stones on the front of the orbit are larger and overlap the core; stones on the back are smaller and partly hidden behind it.
+
+Same face, same Gen 3 sprite style, plain white background, no glow outside the rim.
+```

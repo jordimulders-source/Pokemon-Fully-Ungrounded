@@ -653,6 +653,11 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - Niet-Water-soorten die al in het water leven (repo-types, in de dex): Galar-Corsola/Cursola (Ghost), Inkay/Malamar (Dark/Psychic), Dragalge (Poison/Dragon), Dhelmise (Ghost/Grass), Pincurchin (Electric), Stunfisk (Ground/Electric).
 - Raakt aan "Ruimte en diepe zee als mysterieuze gebieden" (12 nov).
 - **Jordi (21 nov, denkt nog na):** "ja moet nog nadenken want ik vind dan wederom ghost/rock het meest logische, misschien dat we dan de reguliere sableye gewoon weer ghost/dark maken". (Rock/Ghost komt uit de Ungrounded-revisie v0.2.1: grotbewoner die edelstenen eet; origineel is Dark/Ghost.)
+- **Ontwerp (21–22 nov, gepauzeerd door Jordi):** regionale Sableye blijft qua vorm vergelijkbaar, wordt een deep-sea treasure dweller; evolutie = piratengeest die eeuwig bij zijn verloren schatten blijft, piraat "heel subtiel ... is meer conceptueel" (geen hoed, ooglapje, haak). Jordi zag overlap met Gimmighoul ("dan is het wel een beetje dubbelop"). Voorstel Claude (open): alleen edelstenen (Colombiaanse smaragden, wrak San José bij Cartagena), geen munten/goud/kist; evolutie vastgegroeid aan zijn smaragden.
+
+## Vuurduivel-lijn (Jordi, 22 nov)
+- **Jordi:** "Ik zit ook te denken aan een soort vuurduivel lijn, er zijn nog niet echt duiveltjes. Ik heb tot nu toe alleen de fase 1 in gedachten wat een cute maar cheeky fire/dark duiveltje is".
+- Eerder in de pitches: Diablada-masker (Dark/Fire, FAKEMON_PITCH #65), El Tío (Dark/Rock, #56). In de dex: Houndour-lijn (enige Fire/Dark), Impidimp-lijn (Dark/Fairy, ondeugende kobolden).
 
 ## Kreten (Jordi, 19 nov)
 - "Ik wil liever geen bestaande kreten vervormen, maar dat komt op een ander moment. Latere generatie kreten gebruiken soms geluiden die op echte dieren lijken."

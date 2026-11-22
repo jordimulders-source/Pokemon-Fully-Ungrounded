@@ -386,3 +386,17 @@ It has no mouth, no arms, no legs. It floats.
 
 Sprite: 64x64 pixels, max 16 colors, 1 px dark outline, light from the top left, clean Game Freak shading with bold, simple shapes. Plain white background, no glow, no shadow, no effects.
 ```
+
+## v13 (`r13/gemini_v13.png`): Jordi stuurde hem zonder commentaar
+Analyse Claude: driekwart gelukt (gezicht links op de bol), bol rond, weinig puin. Mis: wit oogwit (geen Lunatone-oog), neus klein en kaal (geen lijn), te weinig uitgebrokkeld.
+
+# Prompt v14 (22 nov): zelfde gesprek als v13, bijsturen (voorstel)
+
+```
+Good, the three-quarter pose is right. Keep the pose, the ball, the colors, the craters and the floating chunks exactly as they are. Change only two things:
+
+1. The eye: no white in it. The whole eye is a bright red iris with a black vertical slit pupil, filling a thick black rim, like a red gem set deep in the stone. Keep its size and place.
+2. Crumbling: more pieces have crumbled out of the moon's edge: several clear chunks missing, with jagged broken gaps in the round outline.
+
+Same Gen 3 sprite style, plain white background.
+```

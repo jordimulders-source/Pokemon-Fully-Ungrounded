@@ -683,3 +683,13 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - **Besloten:** Swablu Electric/Flying, Altaria Electric/Dragon; kleur A; Swablu kijkt nieuwsgierig; schokken = static, kleine vonkjes in en op de wolk. Open: mammatus of shelf cloud bij Altaria; vonkjes ook bij Swablu.
 - **Jordi (21 nov):** "bij swablu kan je de voelsprieten in gele vonkvorm maken". Open: mammatus of shelf cloud (voorstel Claude: mammatus).
 - **Jordi (21 nov):** "en shelf cloud akkoord" → Altaria krijgt een shelf cloud (geen mammatus). "maak maar prompts": `docs/concept/sprites/swablu_regional/gemini/PROMPTS.md`.
+
+## Electric wizard-lijn (Jordi, 22 nov)
+- **Jordi:** "zat te denken aan een electric wizard pokemon lijn, beetje geinspireerd door de band, maar vraag me af hoe we dat kunnen doen zonder onnodig met de gnometrotter lijn te overlappen die we nu aan het bouwen zijn".
+- **Overlap (Claude):** het tovenaar-archetype (puntmuts, baard, kleine man) ligt dicht bij de gnome-lijn (muts over de ogen, snor, rond lijf, Fairy). Ook de charlatan-Abra-lijn (Dark/Psychic, kaartentrucs) zit in de "magiër"-hoek.
+- **Voorstellen Claude (open):**
+  - Geen puntmuts en geen baard; silhouet via een kap/pij (doom, occult) in plaats van een muts.
+  - Type Electric/Dark of Electric/Ghost (sfeer van de band: occult, horror, zwaar en traag), ver weg van Fairy.
+  - Regionaal haakje: de Aymara-**yatiri**, die volgens de traditie gekozen wordt doordat de bliksem hem treft en overleeft; en de heksenmarkt (Mercado de las Brujas) in La Paz.
+  - Basis een dier in plaats van een mannetje, bijv. een pad (padden roepen in de Andes de regen en het onweer aan) of een uil/nachtzwaluw.
+  - Band-haakjes zonder de band na te maken: fuzz/brom (versterker), rook, paars en groen, traag maar loodzwaar (lage Speed, hoge Sp. Atk).

@@ -2702,3 +2702,8 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - De robotmug (vlieglijn fase 2, Poison/Electric, af op 21 nov) stond alleen op branch `claude/intelligent-bohr-npyumy`. Jordi: "de mug ontbreekt". `docs/concept/sprites/vlieglijn_fase2/` overgenomen (af, SPEC, Gemini, keuringen), met de lessen in GEMINI.md, POKEMON.md en TODO; op het overzichtsvel naast Flytron ("Robotmug", naam gepauzeerd). Details over de rondes: changelog op die branch (v0.0.584 daar).
 - Naam robotmug: Jordi neigt naar **Buzzquito** (22 nov); in POKEMON.md bij de gepauzeerde namen.
 - Werknaam robotmug: **Buzzquito** (Jordi: "ja"); op het overzichtsvel, POKEMON.md en Stand van zaken.
+
+### [v0.0.643] - Kricketune-evolutie Krickestro: frontsprite af
+- Besloten (Jordi, 22 nov): Bug/Fairy, dirigent, duidelijke 3e fase, "groter en grootser" = een echte maestro (uitstraling, kleding, silhouet), niet dikker; stok = één vinger die ook wapen is (zoals een krab met één grotere klauw); vleugels als rokpanden; armen omhoog. `docs/concept/sprites/kricketune_evo/SPEC.md`.
+- Gemini: r1, r2a/r2b, v2 (nieuwe prompt), v3 met uitgewerkte maestro-definitie → gekozen (`model/`); stok in de handkleur gezet, ogen naar Kricketune.
+- Frontsprite r1 (maker, schrappen 75×85 → 56×64), keurder BIJNA → r3 (ruis); oog links naar de modelplek (r2); oogstudie A/B/C, Jordi koos A (Kricketune frame 2) + afgeronde onderkant rechteroog (r4); eindkeuring BIJNA → 22 px (r5) → **af**: `kricketune_evo/af/krickestro.png` (+ `_8x`). Werknaam **Krickestro** (Jordi). Op het overzichtsvel (evoluties); POKEMON.md, TODO, Stand van zaken en GEMINI.md-lessen bijgewerkt.

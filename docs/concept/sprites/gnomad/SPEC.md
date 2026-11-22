@@ -28,3 +28,4 @@
 - sprite r6 (krabbel `sprite_r6/jordi_krabbel_riem.png`: gele lijnen langs boven- en onderrand van de riem rechts van de gesp, streepjes bij het rechteruiteinde boven en onder): "deze lijnen zijn te egaal en daar zitten pixel gaten"
 - "de gesp is nu beter" (r6; A of B niet genoemd)
 - "ik stel voor om op de andere 2 hoeken ook 1 zwarte pixel weg te halen bij de gesp"
+- r7: "akkoord, naar de eindkeuring" (zwart omlaag door de eindkeuring, Jordi bij r4).

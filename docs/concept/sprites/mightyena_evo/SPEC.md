@@ -22,3 +22,4 @@
 ## Rondes
 - Prompt r1: `gemini/PROMPT.md` (nieuw gesprek, geen bijlage).
 - r1 (`gemini/r1.png`), Jordi: "prima eerste poging, maar de kop mag nog valser en meer hyena en de poot wat hoger voor die typische lach pose". Bijstuurprompt r2 (zelfde gesprek): `gemini/PROMPT_r2_bijsturen.md`.
+- r2 (`gemini/r2.png`, kop hyena-achtiger, poot hoger), Jordi: "ik ben geen fan van de blik, hij lijkt nu meer evil dan echt geniepig". Bijstuurprompt r3 (zelfde gesprek, alleen de blik): `gemini/PROMPT_r3_bijsturen.md`.

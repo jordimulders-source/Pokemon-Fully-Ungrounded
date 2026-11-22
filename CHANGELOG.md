@@ -2690,3 +2690,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.640] - Mightyena-evolutie gestart
 - Besloten (Jordi, 22 nov): Dark/Fighting, female only (clanleider), duidelijke Mightyena-evolutie in grootte en machtigheid, typische hyenakop, pose misschien met 1 poot alsof hij geniepig lacht. `docs/concept/sprites/mightyena_evo/SPEC.md`, Gemini-prompt r1 in `gemini/PROMPT.md`.
 - r1 van Gemini opgeslagen; bijstuurprompt r2 (kop valser en meer hyena, poot hoger).
+- r2 opgeslagen; bijstuurprompt r3 (blik geniepig in plaats van evil).

@@ -205,3 +205,6 @@ STYLE AND FORMAT
 AVOID
 - Not Carvanha, Milotic, Feebas, Goldeen, Alomomola or Finizen. No plush toy, chibi or mascot look, no oversized sparkly eyes, no human features, no dopey or derpy face, no teeth. No foam, no white cloud fins, no saturated rainbow stripes.
 ```
+
+## Ronde 6 (prompt v7) → `r6_prompt_v7.png`
+- Jordi: "de beste tot nu toe"; "die extra bubbels blijven weg, zit te denken of we buiten kleur nog een zeep hint kunnen geven".

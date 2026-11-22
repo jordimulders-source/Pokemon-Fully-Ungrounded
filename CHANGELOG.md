@@ -2490,3 +2490,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.607] - Nazca-astronaut: r16 patronen als tekening op de huid
 - `sprite_r16/`: naden, tailleband en zomen weg; getrapte overgangen, armband-tatoeage, zwart alleen nog buitenlijn schaduwkant + masker; a_L1 (blauw/wit) en a_L3 (indigo/goud).
+
+### [v0.0.608] - Nazca-astronaut: r17 minder zwart, betere aansluiting
+- `sprite_r17/`: a_L1; zwart in het lichaam 72 → 48 px (masker in donkerrood, spleet in donkerblauw), grotere getrapte tanden rood/blauw, zigzag als één getrapte witte lijn.

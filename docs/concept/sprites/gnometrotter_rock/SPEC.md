@@ -15,6 +15,7 @@
 - Claude vroeg: muts a zwaar/breed, b hoog/spits, c vorm Gnomad; leeftijd; steen in lijf a handen, b voeten, c schouders/rug overgang; materiaal A/B/C.
 - 22 nov: "ik zat meer aan ruwer gesteente te denken dan echt smooth"
 - 22 nov: "1 wel vergelijkbare vorm, te hoog en spits zou teveel van de sprite innemen. 2 voorovergebogen met zware stap, misschien een wandelstok geven die per vorm anders is 3 misschien wat rotsen die uit het lichaam groeien 4 ruwer geteente, dus geen druipsteen, gemini maakt toch niet veel onderscheid, teveel detail vertaalt niet naar een sprite"
+- 22 nov (op Claude's vraag of de wandelstok botst met "niet in een stuk vervoer"): "een wandelstok is toch geen boot" → wandelstok mag.
 
 ## Voorgelegd door Claude (22 nov, nog niet gekozen)
 - A geode (muts = geode met amethist in een barst, snor/plukjes = kwartskristal, neus = rozenkwarts); B druipsteen (muts = stalactiet, kalksteen met lagen); C ertsader (riem = ader, gesp = goudklomp, korstmos op de snor).

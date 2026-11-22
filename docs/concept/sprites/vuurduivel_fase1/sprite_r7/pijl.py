@@ -1,8 +1,8 @@
-# pijl.py: 4 varianten van alleen de staartpunt op basis van r6 -> pijl_A..D.png + pijl_opties.png
+# pijl.py: 4 varianten van alleen de staartpunt op basis van vuurduivel_r7_basis.png -> pijl_A..D.png + pijl_opties.png
 # Gebied van de punt: x40-52, y33-45 (stampixel (46,45) en (45-46,46) blijven). Palet r6 ongewijzigd (16 kleuren).
 import numpy as np; from PIL import Image, ImageDraw
-src=Image.open('../sprite_r6/vuurduivel_r6.png'); pal=src.getpalette(); A0=np.array(src)
-K,R,r,O,H=1,5,6,7,14
+src=Image.open('vuurduivel_r7_basis.png'); pal=src.getpalette(); A0=np.array(src)
+K,R,r,O=1,5,6,7; H=r  # r7-palet: hoornmidden is samengevoegd met haarrood, index 14 is nu roze
 C=46
 def vorm(rijen):  # rijen: {y:[(x0,x1),...]}
     S=set()

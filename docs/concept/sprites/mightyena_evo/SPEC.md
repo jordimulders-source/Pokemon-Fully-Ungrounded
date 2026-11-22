@@ -23,3 +23,4 @@
 - Prompt r1: `gemini/PROMPT.md` (nieuw gesprek, geen bijlage).
 - r1 (`gemini/r1.png`), Jordi: "prima eerste poging, maar de kop mag nog valser en meer hyena en de poot wat hoger voor die typische lach pose". Bijstuurprompt r2 (zelfde gesprek): `gemini/PROMPT_r2_bijsturen.md`.
 - r2 (`gemini/r2.png`, kop hyena-achtiger, poot hoger), Jordi: "ik ben geen fan van de blik, hij lijkt nu meer evil dan echt geniepig". Ook: "en de mond is lelijk"; "verder is die perfect". Bijstuurprompt r3 (zelfde gesprek, alleen blik en mond): `gemini/PROMPT_r3_bijsturen.md`.
+- r3 (`gemini/r3.png`), Jordi: "de mond wil ik graag open hebben". Bijstuurprompt r4: `gemini/PROMPT_r4_bijsturen.md`.

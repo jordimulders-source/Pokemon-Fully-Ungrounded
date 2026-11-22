@@ -8,6 +8,7 @@
 - 22 nov: "een van de andere kleuren wordt roze, hij staat een beetje voorover geleund, kecleon moet je herkennen aan wat design traits".
 
 ## Besloten
+- Hoofdkleur geel en oranje, geen groen (22 nov); roze als een van de andere kleuren.
 - Galápagos-landleguaan, Grass/Fire, rechtop op twee poten zoals Kecleon, Fire alleen in kleur/huid; een van de andere kleuren roze; een beetje voorover geleund; Kecleon herkenbaar aan wat design traits (welke: niet gezegd, aan Gemini gelaten).
 
 ## Open
@@ -17,3 +18,4 @@
 - Prompt r1: `gemini/PROMPT.md` (nieuw gesprek, geen bijlage).
 - r1 (`gemini/r1.png`), Jordi: "leuk maar ik zie hier geen kecleon in terug, oog mond, de langere kuif en krulstaart mogen bewaard blijven"; "hij heeft ook iets teveel detail"; "of misschien gewoon de hele hoofdvorm moet vergelijkbaar zijn". Prompt r2 (nieuw gesprek, geen bijlage): `gemini/PROMPT_r2.md`.
 - r2 (`gemini/r2.png`), Jordi: "de kleuren zijn echt gruwelijk lelijk, wat vind je van het model verder?"
+- Voorstel Claude: kop + krulstaart van r2, zwaar landleguaanlijf van r1, grote rustige kleurvlakken. Jordi: "akkoord, geel en oranje als hoofdkleur, groen gaat weg". Prompt r3 (nieuw gesprek, geen bijlage): `gemini/PROMPT_r3.md`.

@@ -13,6 +13,8 @@
 - "het mutsje wordt lavendel, huid roze, de armpjes worden idd gewoon rondjes"
 - Lijn en vormen: `docs/concept/IDEEEN.md` → "Gnome-lijn".
 
+- r1 (`r1/gemini_r1.png`, prompt v1): "hij is toch wat aan de kale kant zo"
+
 ## Open (overleggen vóór de Gemini-prompt)
 - Type: puur Fairy?
 - Neuskleur (prompt: roze als de huid).

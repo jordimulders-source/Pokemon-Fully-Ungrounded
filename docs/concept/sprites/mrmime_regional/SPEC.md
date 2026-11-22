@@ -25,3 +25,4 @@
 - Prompt r4: `gemini/PROMPT_r4.md` (nieuw gesprek, geen bijlage), klaar voor als Jordi verder wil.
 - r4 (`gemini/r4.png`; rode huid, gele wangen, paarse oren, zwarte band), Jordi: "zelfde issue, ligt niet op zijn rug". Prompt r5 (`gemini/PROMPT_r5.md`): kijker = tegenstander aan zijn voeten, op de rug als een schildpad, buik/band naar boven, voetzolen naar de kijker, hoofd achter de knieën (Claude's uitwerking van "op zijn rug, driekwart").
 - Jordi (22 nov): "we gaan wel weer naar de normale mr mime huidtint, anders komt mr prime er dalijk raar uit te zien". Prompt r5 aangepast (huid en hoofd: normale Mr. Mime-tint; rest van de kleuren ongewijzigd).
+- r5 (`gemini/r5.png`), Jordi: "wat is dit voor pose". Vogelvlucht met het hoofd ondersteboven onderaan en voeten als grote blokken bovenaan: Claude's kijkhoek ("viewer at its feet looking down") letterlijk genomen.

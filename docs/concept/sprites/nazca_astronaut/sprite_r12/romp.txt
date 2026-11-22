@@ -1,0 +1,12 @@
+# romp met de hand, naar Jordi's Paracas-doek: g rode grond, y goud/oker lijn, k zwart
+# gezicht 8 breed x 7 hoog (x29-36, rij 26-32 incl. boord en tooi), symmetrisch rond x32.5:
+# rij 26 gouden kraagboord, rij 27 getrapte tooi, rij 28-30 twee zeshoek-ogen van 4x3 (gouden rand, zwarte kern van 2 px;
+# ze raken elkaar in het midden = neusbrug), rij 31-32 brede grijns met zigzag-tanden (goud/zwart)
+26 x31 yyyy
+27 x30 ykyyky
+28 x29 gyyggyyg
+29 x29 ykkyykkyg
+30 x29 gyyggyygg
+31 x28 ggkykkyk
+32 x29 ggyyyyg
+33 x29 ggg.gggg

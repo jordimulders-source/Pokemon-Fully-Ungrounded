@@ -2475,3 +2475,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.602] - Nazca-astronaut: gepauzeerd op patroon/kleur
 - Stand in `SPEC.md` en Stand van zaken; Jordi denkt na over patroon en kleur.
+
+### [v0.0.603] - Nazca-astronaut: r12 Paracas-doek als t-shirt + shorts
+- `sprite_r12/`: P_rood (hoofdvariant naar Jordi's referentie: rood, goud, zwart), P_blauw, P_zwart; gezicht 8×7 op de borst als gouden masker, getrapte zaagtandjes op mouwen en shorts, gouden boorden.

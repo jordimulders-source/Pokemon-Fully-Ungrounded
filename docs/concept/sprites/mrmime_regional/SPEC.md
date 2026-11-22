@@ -17,3 +17,5 @@
 
 ## Rondes
 - Prompt r1: `gemini/PROMPT.md` (nieuw gesprek, geen bijlage).
+- r1 (`gemini/r1.png`), Jordi: "ziet er niet uit"; "wat doen al die ballen daar"; "en hij mag echt wel wat anders"; "zie galar mr mime"; "kijk al die domme willekeurige roze ballen". (De plekken handen/schouders/knieën voor de ballen had Claude zelf in r1 gezet.)
+- Prompt r2: `gemini/PROMPT_r2.md` (nieuw gesprek): geen roze ballen, ontwerp echt anders zoals Galar-Mr. Mime (zonder die te kopiëren), alleen het mimegezicht met rode wangen blijft; rug plat op de grond, compact.

@@ -52,3 +52,4 @@
 - r6 (afwerking op r5: hoofd 1 px langer, binnenlijnen bruin, ramp met 5 steentinten, lijfreliëf scherp; 18 vormpixels + nieuwe rij, alles uit de bronpixels).
 - Jordi over r6: "het is beter maar een halfbakken oplossing, er moeten meer kleurtinten, meer schaduw, je kan niet rechte lijnen in 1 kleur trekken, dat is niet mooi. Zoek naar andere rechthoekige/vierkante pokemon en kijk hoe die dat doen". → r7 met studie (`sprite_r7/studie.md`).
 - r7 (studie vierkante Pokémon `sprite_r7/studie.md`; 10 steentinten, lijnen wisselen van tint, vorm-diff 0); ogen zachter → r8 ogen scherp + keurderpunten r6.
+- r8 (ogen scherp, lichte vlakken warm, keurderpunten r6 verwerkt; vorm-diff 0 t.o.v. r6).

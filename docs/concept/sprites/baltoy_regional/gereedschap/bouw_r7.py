@@ -24,7 +24,7 @@ def vlak(y,x):
     if R=='bandzij': return 6.6 if y==9 else 4.6+(y-1)/8*0.9+(x-22)/4*0.4
     if R=='gezicht': return 1.3+(x-8)/12*1.9+(y-10)/6*1.0+(1.4 if y==9 else 0)
     if R=='gezichtzij': return 6.2 if y<=10 else 4.9+(y-11)/6*0.8
-    if R=='lijf': return 6.4 if y==18 else 4.9 if y==19 else 5.4 if y==29 else 1.6+(x-11)/8*2.0+(y-20)/8*1.4
+    if R=='lijf': return 6.4 if y==18 else 4.9 if y==19 else 5.4 if y==29 else 1.0+(x-11)/8*2.4+(y-20)/8*1.6+max(0,(x-15)/4+(y-24)/4-0.6)*1.2   # sikkel naar rechtsonder
     if R=='lijfzij': return 6.8 if y<=19 else 5.6+(y-20)/8*0.8
     if R=='punt': return 6.2 if y==31 else 2.0+(x-15)/5*2.2+(y-32)*0.3
     return None
@@ -71,6 +71,20 @@ for y in range(H):
         if c=='d': out[y][x]=min(int(round(v))+(4 if regio(y,x)=='gezicht' else 3),8); continue
         extra={'h':-0.5,'l':0,'M':1.0,'m':2.0}[c] if R in ('band','gezicht','lijf','top','punt') else {'h':-0.5,'l':-1,'M':-0.5,'m':0}[c]
         out[y][x]=max(0,min(q(v+extra,y,x,R in ('gezicht','lijf','gezichtzij','lijfzij','bandzij')),7))
+# keurderpunten r6 (alleen kleur):
+for y in range(21,30):                       # rechterarm: schaduwband binnen-onder, buitenkant iets terug, punt naar schaduw
+    xs=[x for x in range(21,W) if g[y][x]!='.' and regio(y,x)=='arm']
+    if not xs: continue
+    ls=[x for x in xs if g[y][x]=='l']
+    if ls and len(ls)>=2: out[y][ls[-1]]=3
+    if y>=28:
+        for x in xs:
+            if g[y][x] in 'lM' and out[y][x]!=9: out[y][x]=min(out[y][x]+1,6)
+for (y,x),v in {(20,7):3,(20,8):4,(20,9):5,(20,10):5,(21,8):5,(21,9):5}.items(): out[y][x]=v   # linkerschouder: geen dambord
+for x in range(13,21):                        # onderrand lijf gelijkmatig
+    if g[29][x] in 'lMm': out[29][x]=6
+    elif g[29][x] in 'dD': out[29][x]=7
+out[24][10]=6; out[12][7]=6                   # losse zwarte pixels in de selout -> selout
 # hooglichten op lichte hoeken/randen (studie: Registeel/Probopass)
 for y,x in ((1,9),(1,10),(3,8),(32,15)):
     if isinstance(out[y][x],int): out[y][x]=max(0,out[y][x]-1)

@@ -2795,3 +2795,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.669] - Gnome-lijn: naam fase 3
 - Jordi: "Ik dacht aan Gnomigration maar Gnometrotter bekt wat lekkerder". In `IDEEEN.md` → "Gnome-lijn".
+- Jordi: "en hij gaat niet in een stuk vervoer want dan is het gweoon een mannetje in tools"; vervoer-voorstellen vervallen.

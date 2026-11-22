@@ -46,6 +46,7 @@ SECTIES=[
 ("mate/af/mate.png",'Mate-kalebas',"grass/water"),
 ("mate_fase2/af/mate2.png",'"Rowmate"',"grass/water"),
 ("vlieglijn_fase1/af/vlieg.png",'"Flytron"',"bug/electric"),
+("vlieglijn_fase2/af/mug.png",'Robotmug',"poison/electric"),
 ]),
 ("Evolutions of existing Pokémon",[
 ('hitmontop_evo/af/hitmongroove.png', '"Hitmongroove" (Hitmontop)', 'fight/ground'),

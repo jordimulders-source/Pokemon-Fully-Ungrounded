@@ -2697,3 +2697,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.641] - Overzichtsvel: regionale Altaria erbij, naar main
 - Regionale Altaria (Electric/Dragon) op het overzichtsvel bij de regional forms (stond er nog niet op); vel opnieuw gemaakt. Jordi: "commit en push naar main".
+
+### [v0.0.642] - Robotmug naar main en op het overzichtsvel
+- De robotmug (vlieglijn fase 2, Poison/Electric, af op 21 nov) stond alleen op branch `claude/intelligent-bohr-npyumy`. Jordi: "de mug ontbreekt". `docs/concept/sprites/vlieglijn_fase2/` overgenomen (af, SPEC, Gemini, keuringen), met de lessen in GEMINI.md, POKEMON.md en TODO; op het overzichtsvel naast Flytron ("Robotmug", naam gepauzeerd). Details over de rondes: changelog op die branch (v0.0.584 daar).

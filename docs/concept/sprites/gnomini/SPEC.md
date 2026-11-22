@@ -35,3 +35,4 @@
 - "nu ben je echt aan het gaslighten" · "je zegt iets en daar geef je voorbeelden die je eigen ongelijk bewijen" (vergelijkingsvel `sprite_r7/binnenlijnen_vergelijk.png`). Onverifieerde les uit SPRITE_KERN gehaald.
 - "maar zoek nou eens naar ronde vormen zoals de neus van gnomini" · "dezelfde grootte" · (over "die was al goed") "ja vond ik maar nu niet meer omdat ik er ook wel eens naast zit". Vergelijking: `sprite_r7/neus_gen3.png` (Grumpig-snuit, Mr. Mime-cirkels).
 - "fix de neus van gnomini gewoon" → **af = r6-A** (neuslijn donkerroze, zwart alleen aan de buitenrand, zoals de Grumpig-snuit).
+- "ik zie geen enkel verschil" → af = C zonder de 2 zwarte pixels (neuslijn lichter linksboven, donkerroze onder, geen zwart), `sprite_r8/`.

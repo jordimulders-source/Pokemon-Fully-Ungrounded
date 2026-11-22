@@ -38,3 +38,4 @@
 - r2 (`sprite_r2/`): ogen met pupil en wenkbrauw, schildtinten naar het model, stekels netter, zwart 29 %. Claude: poten nog vlekkerig (losse lichte plekken in plaats van ronde platen); verse maker alleen voor poten/onderlijf (r3).
 - r3 (`sprite_r3/`, verse maker, alleen onderlijf): platen met schaduw en glans, lichter dan het model; Claude: beter, maar nog druk. Naar Jordi: `sprite_r3/naast_model.png`.
 - Jordi bij r3: "ogen niet goed en beetje zelfde probleem als pitahaya fase 3 had" (daar: geen belijning tussen delen/blur, schaduw en kleur niet optimaal, te weinig contrast). r4: verse maker, kleurronde over de hele sprite (contrast, licht/schaduw per vorm, lijnen tussen delen) + 3 oogvarianten.
+- r4 (`sprite_r4/`, verse maker): kleurronde (lijf 61/95/131/175, kaak 57/91/135, schild 56/106/157), 3 oogvarianten A/B/C; zelf: onderlijf midden nog druk. Naar Jordi: `sprite_r4/ABC_8x.png`.

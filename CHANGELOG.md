@@ -2842,3 +2842,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.680] - Capybarrel: Normal
 - `IDEEEN.md`: Capybarrel begint als puur Normal (Jordi); evolutie open.
+
+### [v0.0.681] - Capybarrel: ook evolutie niet Normal/Water
+- `IDEEEN.md`: Jordi's correctie vastgelegd.

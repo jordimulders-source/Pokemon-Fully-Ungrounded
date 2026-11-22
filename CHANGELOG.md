@@ -2731,5 +2731,11 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Les in SPRITE_KERN.md: witte pixel in de pupil in de onderhoek, niet tegen het oogwit; GEMINI.md: geen eerdere ronde als bijlage.
 - Gemini-prompt voor de evolutie: `docs/concept/sprites/vuurduivel_fase2/gemini/PROMPT.md` (+ sessieprompt).
 
-### [v.0.0.x] - Lunatone-evolutie: Gemini-startprompt (22 nov)
+### [v0.0.649] - Lunatone-evolutie: Gemini-prompts (22 nov)
 - `docs/concept/sprites/lunatone_evo/gemini/PROMPT.md` (v1) + bijlage `bijlage_lunatone_gen3.png`: bloedmaan als tegenhanger van de Solrock-corona (fervent-hamilton), met de lessen uit die rondes.
+- Rondes v1–v13 (`lunatone_evo/r*/`): sikkel bleef terugkomen zolang de Lunatone-bijlage of -naam in de prompt stond; v10 (pure beschrijving, geen bijlage) + v11 (meer uitgebrokkeld) gaf de vorm.
+
+### [v0.0.650] - Lunatone-evolutie "bloedmaan": frontsprite-kandidaat
+- Model (Jordi): Gemini v11 met oog en neus van v5 geplakt, kleinste puin weg (`lunatone_evo/referenties/model.png`, `model/script/plak2.py`); SPEC met Jordi letterlijk.
+- Sprite r1–r5 (`lunatone_evo/sprite/`): verkleining van het model, niets hertekend; plaknaden rond het oog weggewerkt (toegestaan). Keuring r3: barsten te druk, tinten ongelijk → r4 lange modelbarsten, tinten 48/79/113/147; eindkeuring r4 PASS op beide eisen. r5 = r4 + klein hooglicht op de bolling (keurder, optioneel).
+- Kleurvariant B (dieper bloedrood, dichter bij het model): `sprite/r5/sprite_B_bloedrood.png`. Jordi kiest. Vellen: `lunatone_evo_8x.png`, `lunatone_evo_B_bloedrood_8x.png`, `sprite/r5/vel.png`.

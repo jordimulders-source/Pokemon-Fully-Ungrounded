@@ -54,3 +54,4 @@
 - r7 (studie vierkante Pokémon `sprite_r7/studie.md`; 10 steentinten, lijnen wisselen van tint, vorm-diff 0); ogen zachter → r8 ogen scherp + keurderpunten r6.
 - r8 (ogen scherp, lichte vlakken warm, keurderpunten r6 verwerkt; vorm-diff 0 t.o.v. r6).
 - Jordi over r8: "het patroon op het lichaam is ook maar wat halfbakken, daar kunnen we iets meer mee denk ik" · "iets wat op echte tiwanaku monolieten zit, maar goed vertaald naar een sprite, vullend, maar niet teveel detail, het moet er netjes uit zien". → r9 varianten lijfvoorvlak: A handen met kero en staf + gordel, B getrapte gordel + reliëfbanen, C groot chakana/trappaneel (voorstel Claude).
+- Keuring r8: A BIJNA / B BIJNA; kleurreparaties (nek, x35-lijn, zijvlak lijf, armen, onderrand) in het rapport van keuring_r8; worden toegepast nadat Jordi een lijfvariant van r9 kiest.

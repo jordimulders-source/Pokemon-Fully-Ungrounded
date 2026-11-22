@@ -7,6 +7,7 @@
 - "Fase 1 is gnomini, een hele kleine grappige ronde gnome."
 - "laten we eerst beginnen met Gnomini ontwerpen"
 - Antwoorden op vragen (22 nov): lichaam: "geen baard"; kleuren: "Eigen kleuren"; pose: "Waggelend lopen".
+- "het moet een pokemon worden he niet een tekening van een tuinkabouter"
 - Lijn en vormen: `docs/concept/IDEEEN.md` → "Gnome-lijn".
 
 ## Open (overleggen vóór de Gemini-prompt)

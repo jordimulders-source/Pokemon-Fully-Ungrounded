@@ -143,3 +143,44 @@ AVOID
 - No lava, no gems or crystals, no one-eyed face.
 - Not a sun with a human face. No arms, legs, wings or human features. No glossy 3D render, no plush or mascot look.
 ```
+
+---
+
+# Prompt v5 (22 nov): NIEUW gesprek, startprompt (reactie op v4, `r4/gemini_v4.png`)
+
+## Jordi (letterlijk)
+- "dit is het nog niet helemaal he"; op Claudes analyse (embleem/logo, gezicht = sieraad, te weinig evolutie): "wat je zegt klopt volledig"
+- "A is lastig uit te beelden, het gaat er vooral om dat Solrock echt een meteoor is die aan elkaar vast zit en dat deze nu veel meer losgaat, dus de stenen zijn echt los en zweven eromheen, diagonale baan is wel een goed idee, en qua kleur echt eclipse creëren, dan lijkt die krachtiger. Punten afbreken ook wel een goed idee, ouder en gehavender ook"
+
+## Keuzes Claude (schrappen mag)
+- 3/4 gekanteld zoals Solrocks eigen sprite (tegen het embleemgevoel); gezicht = Solrocks gezichtsplaat uit de bijlage.
+- "Echt eclipse" als kleur: zwarte kern, felle wit-gouden rand; de zwevende stenen in tegenlicht (donker met een lichte rand aan de kant van de kern).
+
+```
+Design the evolution of the Pokémon SOLROCK and draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art).
+
+THE ATTACHED SPRITE IS SOLROCK (the pre-evolution). Copy its face plate with the red eyes exactly, and keep the shape of its stone spikes recognizable.
+
+CONCEPT
+- Solrock is a meteorite of stones stuck together in the shape of the sun. Its evolution is that meteorite coming apart: the stones are now truly loose and float around a dark core.
+- It evolves when the moon (Lunatone) is with it: a total solar eclipse made of stone. Older, battered and more powerful than Solrock.
+
+DESIGN
+- Core: a round body of dark, almost black stone, scarred and cracked, with Solrock's face plate on it.
+- Eclipse colors: the black core is surrounded by a thin, intensely bright white-gold rim, like the edge of the black moon in a total solar eclipse. This rim is the main light source.
+- Floating stones: Solrock's spikes have broken off and float around the core as separate stones, none of them touching the body. Several spikes are broken: snapped tips, jagged ends, chips missing. Between them float smaller fragments.
+- The floating stones are backlit by the eclipse: dark stone with a bright edge on the side facing the core.
+- Orbit: the stones circle the core in a tilted, diagonal orbit (like a ring seen at an angle), so stones in front of the core are larger and overlap it, stones behind it are smaller and partly hidden by it.
+
+POSE
+- Three-quarter view facing left, tilted like Solrock's own sprite, floating. Not straight-on, not symmetrical.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, clean shading like official Game Freak Gen 3 sprites.
+- Plain white background. NO soft glow or halo behind the creature, no floor, shadow, sparkles or effects. One single creature, no extra views.
+
+AVOID
+- Not an emblem, badge, logo or compass: no flat, symmetrical, straight-on layout.
+- Not a spiked ball: the stones must not be attached to the body.
+- No lava, no gems or crystals. No arms, legs, wings or human features. No glossy 3D render, no plush or mascot look.
+```

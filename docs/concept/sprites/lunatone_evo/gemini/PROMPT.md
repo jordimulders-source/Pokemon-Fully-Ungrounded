@@ -300,3 +300,7 @@ AVOID
 - No notch, hollow, cut-out or bite in the moon. Not an emblem or logo. Not a sun. No lava, no gems, no fire.
 - No arms, legs, wings or human features. No glossy 3D render, no plush or mascot look.
 ```
+
+## Jordi over v9 (`r9/gemini_v9.png`, letterlijk)
+- "hebben we ook niks aan, het is geen pokemon en het is niet de stijl waar we met lunatone net ver waren"
+- Claude: zonder Lunatone-gezicht verliest Gemini de Pokémon-stijl; voorstel: v4/v5 (of v6) als model nemen en de uitsparing in de sprite dichtmaken (knippen en plakken). Wacht op Jordi.

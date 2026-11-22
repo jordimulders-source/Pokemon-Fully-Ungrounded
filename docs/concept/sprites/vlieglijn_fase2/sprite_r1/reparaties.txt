@@ -1,0 +1,132 @@
+kop/vizier: (21,22) -> E  oog dichtbij: model violet 26 / zwart 23 / antraciet; reductie gaf paars P (1 px) -> violet, wenkbrauw /
+kop/vizier: (16,24) -> k  oog ver: model antraciet 41 > zwart 29 > roze 16 > violet 14
+kop/vizier: (21,24) -> e  oog dichtbij: model 44% lichtroze + lichtviolette tussentint (q) tegen 53% violet incl. die tussentint; roze leest op 1x
+kop/vizier: (15,26) -> #  vizier: model zwart 48; reductie gaf los donkerpaars pixel
+kop/vizier: (15,19) -> q  koepelband: model lichtpaars (157,102,169) met zwart; reductie gaf oogviolet E door hoge verzadiging
+kop/vizier: (20,20) -> d  koepelrand: model 4/9 zwart + paars/blauwgrijs; los indigo-pixel l -> buurtint d
+naald: (12,32) -> k  naald voor de klauw: model heeft hier de antraciet linkerrand van de naald (natief k tussen geel gewricht en naaldwit); reductie gaf d
+naald: (11,33) -> k  idem rij 33: model k tussen indigo klauwdeel en naaldwit; naald houdt 2 px vulling (g+d)
+naald: (15,27) -> g  naaldvolume: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde (licht linksboven, schaduw rechtsonder)
+naald: (15,28) -> g  naaldvolume: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde (licht linksboven, schaduw rechtsonder)
+naald: (17,28) -> g  naaldvolume: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde (licht linksboven, schaduw rechtsonder)
+naald: (16,29) -> g  naaldvolume: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde (licht linksboven, schaduw rechtsonder)
+naald: (17,29) -> k  naaldvolume: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde (licht linksboven, schaduw rechtsonder)
+naald: (14,30) -> w  naaldvolume: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde (licht linksboven, schaduw rechtsonder)
+naald: (15,30) -> g  naaldvolume: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde (licht linksboven, schaduw rechtsonder)
+naald: (13,31) -> w  naaldvolume: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde (licht linksboven, schaduw rechtsonder)
+naald: (14,32) -> g  naaldvolume: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde (licht linksboven, schaduw rechtsonder)
+naald: (12,33) -> w  naaldvolume: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde (licht linksboven, schaduw rechtsonder)
+naald: (11,34) -> w  naaldvolume: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde (licht linksboven, schaduw rechtsonder)
+naald: (10,35) -> w  naaldvolume: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde (licht linksboven, schaduw rechtsonder)
+naald: (9,36) -> w  naaldvolume: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde (licht linksboven, schaduw rechtsonder)
+naald: (10,36) -> d  naaldvolume: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde (licht linksboven, schaduw rechtsonder)
+naald: (8,37) -> w  naaldvolume: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde (licht linksboven, schaduw rechtsonder)
+naald: (7,39) -> g  naaldvolume: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde (licht linksboven, schaduw rechtsonder)
+naald: (6,40) -> g  naaldvolume: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde (licht linksboven, schaduw rechtsonder)
+borststuk: (27,29) -> P  borststuk: model 6/9 donker + lichtpaars; los indigo L -> donkerpaars (zelfde kleurgroep)
+achterlijf: (46,43) -> p  achterlijf: model 3/6 paars (119,72,131) + donkerpaars; los indigo L -> paars
+vleugels: (35,23) -> y  geel accent vleugelaanzet: model 1,1 spritepx (2 lichtgele modelpixels in deze cel); van 1 naar 2 px
+vleugels: (36,23) -> Y  idem, model 2 licht + 2 donker geel; Y blijft
+vleugels: (50,4) -> w  vlaktint: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde
+vleugels: (25,5) -> g  vlaktint: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde
+vleugels: (49,5) -> w  vlaktint: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde
+vleugels: (23,6) -> w  vlaktint: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde
+vleugels: (25,6) -> g  vlaktint: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde
+vleugels: (53,6) -> g  vlaktint: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde
+vleugels: (54,6) -> g  vlaktint: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde
+vleugels: (23,7) -> w  vlaktint: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde
+vleugels: (25,7) -> g  vlaktint: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde
+vleugels: (45,7) -> d  vlaktint: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde
+vleugels: (46,7) -> w  vlaktint: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde
+vleugels: (51,7) -> g  vlaktint: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde
+vleugels: (52,7) -> g  vlaktint: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde
+vleugels: (54,7) -> w  vlaktint: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde
+vleugels: (26,8) -> g  vlaktint: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde
+vleugels: (50,8) -> g  vlaktint: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde
+vleugels: (26,9) -> g  vlaktint: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde
+vleugels: (45,9) -> g  vlaktint: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde
+vleugels: (23,10) -> w  vlaktint: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde
+vleugels: (26,10) -> g  vlaktint: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde
+vleugels: (44,10) -> g  vlaktint: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde
+vleugels: (45,10) -> g  vlaktint: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde
+vleugels: (24,11) -> w  vlaktint: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde
+vleugels: (26,11) -> g  vlaktint: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde
+vleugels: (27,11) -> g  vlaktint: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde
+vleugels: (43,11) -> g  vlaktint: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde
+vleugels: (44,11) -> g  vlaktint: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde
+vleugels: (46,11) -> g  vlaktint: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde
+vleugels: (24,12) -> w  vlaktint: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde
+vleugels: (26,12) -> g  vlaktint: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde
+vleugels: (27,12) -> g  vlaktint: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde
+vleugels: (28,12) -> g  vlaktint: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde
+vleugels: (29,12) -> g  vlaktint: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde
+vleugels: (42,12) -> g  vlaktint: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde
+vleugels: (43,12) -> g  vlaktint: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde
+vleugels: (45,12) -> g  vlaktint: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde
+vleugels: (26,13) -> g  vlaktint: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde
+vleugels: (27,13) -> g  vlaktint: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde
+vleugels: (28,13) -> g  vlaktint: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde
+vleugels: (39,13) -> w  vlaktint: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde
+vleugels: (41,13) -> g  vlaktint: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde
+vleugels: (42,13) -> g  vlaktint: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde
+vleugels: (44,13) -> g  vlaktint: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde
+vleugels: (26,14) -> g  vlaktint: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde
+vleugels: (27,14) -> g  vlaktint: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde
+vleugels: (28,14) -> g  vlaktint: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde
+vleugels: (40,14) -> g  vlaktint: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde
+vleugels: (41,14) -> g  vlaktint: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde
+vleugels: (44,14) -> g  vlaktint: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde
+vleugels: (23,16) -> g  vlaktint: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde
+vleugels: (24,16) -> g  vlaktint: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde
+vleugels: (46,20) -> g  vlaktint: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde
+vleugels: (47,20) -> g  vlaktint: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde
+vleugels: (48,20) -> g  vlaktint: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde
+vleugels: (41,21) -> g  vlaktint: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde
+vleugels: (43,21) -> g  vlaktint: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde
+vleugels: (46,21) -> g  vlaktint: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde
+vleugels: (49,21) -> g  vlaktint: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde
+vleugels: (50,21) -> g  vlaktint: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde
+vleugels: (38,22) -> g  vlaktint: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde
+vleugels: (42,22) -> g  vlaktint: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde
+kop/vizier: (19,16) -> w  vlaktint: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde
+kop/vizier: (16,19) -> g  vlaktint: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde
+kop/vizier: (17,19) -> g  vlaktint: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde
+kop/vizier: (18,19) -> g  vlaktint: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde
+kop/vizier: (19,19) -> g  vlaktint: meest voorkomende modeltint in de cel i.p.v. vlakgemiddelde
+vleugels: (25,5) -> d  ader: lange modelader (>=12 natieve px) als doorlopende lijn
+vleugels: (25,6) -> d  ader: lange modelader (>=12 natieve px) als doorlopende lijn
+vleugels: (25,7) -> d  ader: lange modelader (>=12 natieve px) als doorlopende lijn
+vleugels: (26,8) -> d  ader: lange modelader (>=12 natieve px) als doorlopende lijn
+vleugels: (26,9) -> d  ader: lange modelader (>=12 natieve px) als doorlopende lijn
+vleugels: (26,10) -> d  ader: lange modelader (>=12 natieve px) als doorlopende lijn
+vleugels: (26,11) -> d  ader: lange modelader (>=12 natieve px) als doorlopende lijn
+vleugels: (26,12) -> d  ader: lange modelader (>=12 natieve px) als doorlopende lijn
+vleugels: (26,13) -> d  ader: lange modelader (>=12 natieve px) als doorlopende lijn
+vleugels: (26,14) -> d  ader: lange modelader (>=12 natieve px) als doorlopende lijn
+vleugels: (28,12) -> d  ader: lange modelader (>=12 natieve px) als doorlopende lijn
+vleugels: (28,14) -> d  ader: lange modelader (>=12 natieve px) als doorlopende lijn
+vleugels: (37,16) -> d  ader: lange modelader (>=12 natieve px) als doorlopende lijn
+vleugels: (40,14) -> d  ader: lange modelader (>=12 natieve px) als doorlopende lijn
+vleugels: (41,13) -> d  ader: lange modelader (>=12 natieve px) als doorlopende lijn
+vleugels: (42,12) -> d  ader: lange modelader (>=12 natieve px) als doorlopende lijn
+vleugels: (42,22) -> d  ader: lange modelader (>=12 natieve px) als doorlopende lijn
+vleugels: (43,11) -> d  ader: lange modelader (>=12 natieve px) als doorlopende lijn
+vleugels: (43,21) -> d  ader: lange modelader (>=12 natieve px) als doorlopende lijn
+vleugels: (44,10) -> d  ader: lange modelader (>=12 natieve px) als doorlopende lijn
+vleugels: (44,13) -> d  ader: lange modelader (>=12 natieve px) als doorlopende lijn
+vleugels: (45,9) -> d  ader: lange modelader (>=12 natieve px) als doorlopende lijn
+vleugels: (45,12) -> d  ader: lange modelader (>=12 natieve px) als doorlopende lijn
+vleugels: (45,20) -> d  ader: lange modelader (>=12 natieve px) als doorlopende lijn
+vleugels: (46,11) -> d  ader: lange modelader (>=12 natieve px) als doorlopende lijn
+vleugels: (46,20) -> d  ader: lange modelader (>=12 natieve px) als doorlopende lijn
+vleugels: (47,10) -> d  ader: lange modelader (>=12 natieve px) als doorlopende lijn
+vleugels: (47,20) -> d  ader: lange modelader (>=12 natieve px) als doorlopende lijn
+vleugels: (48,20) -> d  ader: lange modelader (>=12 natieve px) als doorlopende lijn
+vleugels: (49,20) -> d  ader: lange modelader (>=12 natieve px) als doorlopende lijn
+vleugels: (50,8) -> d  ader: lange modelader (>=12 natieve px) als doorlopende lijn
+vleugels: (50,20) -> d  ader: lange modelader (>=12 natieve px) als doorlopende lijn
+vleugels: (51,7) -> d  ader: lange modelader (>=12 natieve px) als doorlopende lijn
+vleugels: (51,20) -> d  ader: lange modelader (>=12 natieve px) als doorlopende lijn
+vleugels: (52,7) -> d  ader: lange modelader (>=12 natieve px) als doorlopende lijn
+vleugels: (53,6) -> d  ader: lange modelader (>=12 natieve px) als doorlopende lijn
+vleugels: (54,6) -> d  ader: lange modelader (>=12 natieve px) als doorlopende lijn

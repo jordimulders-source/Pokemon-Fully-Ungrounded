@@ -2074,3 +2074,754 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - `docs/concept/sprites/mate_fase2/af/mate2.png` (+ `_8x`): kalebas-kano met boos yerba-ventje dat roeit met twee bombilla's, zilveren rand om het yerba-vak, gekerfde ogen, warm water achterin. Model: Gemini r6 + water en gezicht van r2.
 - Sprite r1–r9 in `mate_fase2/sprite/`: natief raster verkleind door schrappen (hals 2 kolommen, yerba-vak 2, naden in romp/water), achtersteven heel, rechterrand op één boog die achter het zeefje aansluit (Jordi koos B → zacht → A); keurder PASS en Dragonfly Cave-eindkeuring, 11 px reparaties.
 - Op het overzichtsvel (`showcase/frontsprites_af.png`). De mate-lijn is af. Lessen in `docs/lessen/GEMINI.md`.
+
+### [v0.0.511] - Banette-evolutie: idee vastgelegd
+- Jordi's idee voor de Banette-evolutie (Ghost/Dark, puppetmaster met twee mini-Shuppets) letterlijk vastgelegd in `docs/concept/sprites/banette_evo/SPEC.md` en `IDEEEN.md`; eerst overleggen, daarna de Gemini-prompt.
+
+### [v0.0.512] - Banette-evolutie: antwoorden en Gemini-prompt v1
+- Jordi's antwoorden (draden, kledingstuk, beentjes, zigzagmond, houding) letterlijk in `banette_evo/SPEC.md`; prompt `banette_evo/gemini/PROMPT_v1.md` met Banette- en Shuppet-sprite als bijlage. Kleur nog open.
+
+### [v0.0.513] - Banette-evolutie: Gemini r1 en prompt v2
+- r1 bewaard (`banette_evo/gemini/r1/`), Jordi's feedback letterlijk in SPEC; prompt v2 (groter, jas = Banettes oude lijf, twee hoofdaanhangsels, wat donkerder, 64×64 vullen).
+
+### [v0.0.514] - Banette-evolutie: Gemini r2 en prompt v3
+- r2 bewaard, feedback letterlijk in SPEC; prompt v3 (narrenmutspunten, imposanter/sinisterder, lijf sluit aan op de rits, grotere Shuppets, kruizen groeien uit de armen).
+
+### [v0.0.515] - Banette-evolutie: Gemini r3 en prompt v4
+- r3 bewaard ("nog slechter"); prompt v4 zonder Banette-bijlage en Banette-naam (Gemini kopieerde steeds Banettes hoofd), kledingstuk en ogen in woorden.
+
+### [v0.0.516] - Banette-evolutie: Gemini r4 en prompt v5 (stap 1)
+- r4 bewaard (ook zonder bijlagen weer Banette); v5 in stappen: eerst alleen de puppetmaster zelf, daarna kledingstuk, daarna Shuppets. Les in `GEMINI.md`.
+
+### [v0.0.517] - Banette-evolutie: Gemini r5
+- r5 bewaard ("echt bizar slecht"); werkwijze voorgelegd aan Jordi.
+- Prompt v6: begint bij de figuur (kwaadaardige nar die aan de touwtjes trekt), silhouet en gedrag; eerst artwork. Les in `GEMINI.md`.
+- r6 bewaard (eerste ronde zonder Banette-hoofd); prompt v7 = v6 met een groot, breed silhouet ("imposant is niet mager, imposant is groot, breed").
+- Jordi: "waardeloos ontwerp weer". Voorstel v8: terug naar r2 en per bericht één wijziging (`gemini/PROMPT_v8_vanaf_r2.md`); v7 in de wacht.
+- Referentie Shuppeteer (fan-fakemon) van Jordi; prompt v9 met Shuppeteer als maat ("nog groter en imposanter") en alle besluiten uit SPEC.
+- r7 bewaard ("iets beter"); les: geen Sugimori-artwork als tussenstap.
+- Jordi: "nog steeds teveel banette"; prompt v10 = r7 als bijlage, hoofd minder Banette + Gen 3-sprite.
+- r7 per besluit tegen de SPEC afgevinkt; prompt v11 (lijf = gladde geest, kledingstuk = Banettes oude lijf, kruizen zijn de handen, tanden in hoofdkleur, van bovenaf, Gen 3-sprite). Les in `GEMINI.md`.
+- r8 bewaard en afgevinkt (lijf, kledingstuk, kruizen, tanden goed; hoofd en imposant fout); prompt v12 met r8 + hoofdvorm van r7 als bijlagen.
+- r9 bewaard ("manmanman": bodybuilder, derde arm, hoofd-bijlage genegeerd); werkwijze voorgelegd.
+- Vormschets (`gemini/bijlage_vormschets.png`) en prompt v13 in twee varianten: A met vormschets, B met Shuppeteer als voorbeeld.
+- r10 (A en B) bewaard: allebei slecht; Gemini haalt dit concept niet. Werkwijze voorgelegd, les in `GEMINI.md`.
+
+### [v0.0.518] - Banette-evolutie: asset voor asset
+- Main (mate fase 2, pitahaya fase 2) in de branch gemerged; Banette-changelogsecties hernummerd naar v0.0.511–517.
+- Plan asset voor asset zonder Banette-referenties (`banette_evo/gemini/assets/PLAN.md`), prompt asset 1 (hoofd).
+- Hoofd r1 weer Banette/Gengar (r7-bijlage was zelf een Banette-hoofd); hoofdprompt v2 zonder bijlage en zonder "ghost", narrenmuts in woorden.
+- Hoofd r2 (twee punten, maar bal + grijns leest als Banette); hoofdprompt v3: lang narrengezicht met puntige kin, stoffen punten.
+- Hoofdprompt v4: alle mogelijke Banette-verwijzingen weg (kleur, rode ogen, "puppet"), expliciet "do not draw Banette".
+- Hoofd r3: mond goed ("eindelijk"), punten werden duivelshoorns; hoofdprompt v5 met r3 als bijlage, alleen de punten naar slappe narrenmutsstof.
+- Hoofd r4: vorm beter, moet meer nar; hoofdprompt v6 met r4 als bijlage: belletjes aan de punten.
+- Hoofd r5 (belletjes; "moet meer een jester vorm worden"); hoofdprompt v7: hele bovenkant wordt de narrenmuts met band boven de ogen, brede punten omhoog en omgeslagen.
+- Hoofd r6: mond goed, muts is een accessoire; hoofdprompt v8: muts wordt deel van het hoofd (geen rand, punten groeien uit het hoofd, twee kleuren blijven).
+- Hoofd r7: vorm goed (kleuren later); prompt voor de rest van het lijf op dit hoofd (`gemini/assets/PROMPT_2_lijf_v1.md`).
+- Lijf r1 (dik, pak en handen fout); prompt lijf v2: groot zoals Dusknoir/Grimmsnarl, niet dik/gespierd, half uit het poppenpak gestapt, kruishanden als +.
+- Lijf r2 "beter gelukt"; Jordi pauzeert en herevalueert het ontwerp. Stand in SPEC en CLAUDE.md.
+- Jordi herevalueerde: lijf grotendeels weg, alleen hoofd en armen, Spiritomb-mond, Shuppeteer als hoofdreferentie; prompt `PROMPT_3_hoofd_armen.md`.
+- Hoofd + armen r1: "kijk nu komen we ergens"; prompt v2: alleen het hoofd groter.
+- Gemini vergrootte het hoofd niet; Claude vergrootte het zelf in het model, 4 vormen (`hoofdarmen_groter/vormen.png`: 1,4×, 1,6×, 1,6× lager, 1,8×).
+- Jordi koos D (1,8×); prompt om het ontwerp met Gemini op te poetsen (`PROMPT_4_oppoetsen.md`).
+- Gemini-oppoetsronde niet goed; D opnieuw zonder meegeknipt armstuk en met de armen 0/60/110 px lager (`hoofdarmen_D2/vormen_D2.png`).
+- D2 afgekeurd ("dit kan je niet"); prompt `PROMPT_5_armen.md`: D als bijlage, los grijs stuk weg en armen lager uit de zijkanten van het hoofd. Les in `GEMINI.md`.
+- Armen-ronde: Gemini veranderde bijna niets ("zucht"). Prompt hoofd + armen v3: de startprompt van r1 met een enorm hoofd en armen uit de zijkanten in de tekst.
+- Jordi: "hij mag best de hele sprite redrawen"; prompt `PROMPT_6_redraw.md` (D als ontwerpreferentie, alles opnieuw tekenen, armen uit de zijkanten).
+- Redraw-ronde: Gemini kopieert D weer bijna 1-op-1 ("hij doet het weer niet goed"). Volgende: hoofd + armen v3 zonder D (alleen Shuppeteer).
+- Hoofd + armen v3: weer bijna D (Gemini hield het vorige gesprek/beeld vast); Jordi heeft een ander idee.
+- Hoofd langs Jordi's gele lijn geknipt en 1,5/1,65/1,8× geschaald, armen los van de kruizen en aan de zijkant van het hoofd gezet (`gemini/assets/knip/knip.py`); model = 1,8× (`banette_evo/model/model.png`). Sprite wordt gebouwd.
+- Naam Banette-evolutie: **Shuppetto** (Jordi). In SPEC, POKEMON.md (Werknamen) en CLAUDE.md.
+
+### [v0.0.519] - Shuppetto (Banette-evolutie): frontsprite af
+- Sprite naar het model (Gemini hoofd + armen, hoofd 1,8× langs Jordi's gele lijn) in 14 rondes: makers r1–r10, keurders per ronde, Dragonfly Cave-eindkeuring (r12), slotcontrole r14 PASS. Pixelreparaties r11–r14 door Claude uit de keuringen.
+- `docs/concept/sprites/banette_evo/af/shuppetto.png` (+ `_8x.png`, `_vel.png` naast het model); op het overzichtsvel. SPEC, CLAUDE.md (46 frontsprites) en een les in `GEMINI.md` bijgewerkt.
+
+### [v0.0.520] - Shuppetto: punten van Jordi verwerkt (r15–r18)
+- Linkeroor gebogen met schaduw, linker-Shuppet 2 px lager (ruimte onder de bel), mutsrand als bolle boog over het linkerkruis, losse pixels (7,24), (8,24), (9,25). Eindkeuring r18 PASS; `banette_evo/af/` en het overzichtsvel bijgewerkt. Les in `GEMINI.md` (screenshot van Jordi registreren).
+
+### [v0.0.521] - Pitahaya-draak fase 3 (komododraak): Gemini-startprompt
+- Jordi (17 nov): "fase 3 van de dragonfruit draak. Komodo draak". Startprompt v1 in `docs/concept/sprites/pitahaya_draak_fase3/gemini/PROMPT.md` (op 2 poten, voorover leunend; pitahaya-schil en cactusrank op het lijf als keuze van Claude, schrappen mag).
+- Bijgewerkt na de merge met `main`: fase 2 (teju) is af; de prompt gaat nu uit van fase 1 én fase 2 als bijlagen.
+- r1 (`gemini/r1.png`): Jordi "beetje too much overdesigned [...] vertaalt die niet lekker naar een sprite"; wil een dragonfruitbloem en een dragonfruit-knots aan de staart. Prompt v2 (nieuw gesprek) in `PROMPT.md`.
+- Prompt v2 bijgewerkt: lijf groener (Jordi), plus alle vier ideeën van Claude (bloem als kraag/kam, driekantige rugplaten, luchtwortels, tong van meeldraden; Jordi: "laten we allemaal proberen").
+- r2 (`gemini/r2.png`): pose, staart en hoofd prima; bloemkraag, roze op de rug, cactusribben in het lijf, tong simpeler. Prompt v3 (zelfde gesprek).
+- r3 (`gemini/r3.png`): Jordi "beter maar de bloem moet weg"; tongproef op 64 px (`r3_proef64_8x.png`); prompt v4 A (tong blijft) / B (tong weg).
+- r4 (`gemini/r4a_tong.png`, `r4b_zonder_tong.png`): bloem weg. Jordi: "probeer maar met tong". Model bevroren (`pitahaya_draak_fase3/model/`), `SPEC.md`; sprite gestart.
+
+### [v0.0.522] - Pitahaya-draak fase 3 (komododraak): frontsprite af, drie versies
+- Model: Gemini r4 (prompts v1–v4 in `pitahaya_draak_fase3/gemini/PROMPT.md`: minder druk, groener lijf, roze rug, cactusribben, dragonfruit-knots aan de staart; bloem weer weg; tong geprobeerd).
+- Sprite r1–r6 (`sprite_r*/`): model overgenomen (natief raster, niet-gehele reductie 3,66× naar 62 px, lijnen uit het modelskelet), palet van de teju; keurder na r4 (arm en keel), keurder + Dragonfly Cave na r5.
+- **Af:** `pitahaya_draak_fase3/af/` in drie versies: A met tong, B zonder tong, C buik in vruchtvlees wit met zwarte pitjes (Jordi). Overzicht `af/keuze_8x.png`. Keuze en naam open.
+
+### [v0.0.523] - Pitahaya-draak fase 3: buikversie zonder tong af
+- Jordi koos C (buik vruchtvlees) zonder tong; kritiek: geen lijn achterpoot/staart, te weinig contrast, rafels knots (uiteinde te groot, beenzijde verdwenen).
+- Sprite r7–r9 (`sprite_r7/`–`sprite_r9/`): groen palet donkerder en gespreid (L 60/96/137/199 + 37), licht/schaduw per vorm, lijn achterpoot/staart, nek/schouder, verre ledematen donkerder, rafels naar het model, banding en streepruis weg. Keurder: r8 FAIL (klein), r9 PASS.
+- **Af:** `pitahaya_draak_fase3/af/pitahaya_draak_fase3.png`; oude versies A/B/C in `af/oud_r6/`.
+
+### [v0.0.524] - Pitahaya-draak fase 3: knots, bek en schaduw bijgewerkt (r10–r14)
+- Jordi over r9: knots niet los van het been, bek slordig (1 pitje); r10: blad rechtsboven de knots omgedraaid naar het model, groene brug weg, verre achterbeen één tintstap onder de verre arm.
+- Bek: r11 varianten C/D/E (Jordi koos D: teju-opbouw, grijze bovenrij, pitjes als driehoek); r12 rechte lijn y30 weg in de bek, kaakonderrand met trapje (silhouet +1 px); r13 schaduw onderin de bek: F/G/H, G gekozen (ondertanden in de schaduw zoals het model). Buikpitjes onregelmatig (7).
+- Eindkeuring G: 7 px gerepareerd (r14). **Af:** `pitahaya_draak_fase3/af/pitahaya_draak_fase3.png`.
+
+### [v0.0.525] - Pitahaya-draak fase 3: definitief af
+- Jordi: "de stippen op de buik waren eerst beter, kopieer de buik van eerder en dan is die klaar". r15 = r14 met de buikpitjes van r10 terug (17 px gekopieerd, verder pixelgelijk). `pitahaya_draak_fase3/af/pitahaya_draak_fase3.png`.
+
+### [v0.0.526] - Studie rugsprites, iconen en overworldsprites
+- `docs/concept/sprites/rug_icoon_studie/STUDIE.md`: 962 soorten (Gen 1–9, in-game set) en 385 originele GBA-sprites gemeten. Rug ±1,16× zo breed als de front en even hoog, onderkant vlak afgesneden (`backPicYOffset` = lege rijen eronder), zelfde palet; icoon ±0,44× de fronthoogte, onderkant y 29, frame 2 meestal bovenkant 1 px lager; overworld ±0,43× (HGSS-stijl, voor/achter/opzij, 32×32, alleen in de ROM als de soort in de wereld staat; volgers staan uit). Tabel per fronthoogte, want kleine soorten krijgen relatief grote ruggen en iconen.
+- Bevindingen: de rug is een nieuw aanzicht (kop in profiel over de schouder, ingezoomd), het icoon een mini-ontwerp (grote kop, eigen eenvoudige pose, één kenmerk groot), geen verkleining.
+- Voorgestelde werkwijze (rug via Gemini-rugmodel + Jordi kiest + overnemen in het frontpalet; iconen in batches met script-onderlaag en handwerk; overworld pas als nodig) en open vragen (volgers, icoonpose, proef viscacha + Gengas).
+- Vellen `1_vel_ingame.png`, `2_vel_gba.png`, `3_icoon_vs_verkleining.png` en scripts `vel.py`, `naief.py`, `meet_*.py`.
+
+### [v0.0.527] - Rug/icoon: antwoorden Jordi en voorbereiding proef
+- Antwoorden Jordi in `rug_icoon_studie/STUDIE.md` §6: volgers voorlopig niet, wel Pokémon in de overworld die alle kanten op kijken; iconen mogen een eigen pose hebben zoals bij Game Freak.
+- Gemini-rugprompts klaar: `viscacha/rug/PROMPT_RUG.md` (voorbeeld Raticate-rug) en `gengas/rug/PROMPT_RUG.md` (voorbeeld Gengar-rug); nog niet gebruikt.
+- `rug_icoon_studie/icon_onderlaag.py` (onderlaag voor iconen, nooit eindresultaat); `vel.py` toont iconen nu in hun echte icoonpalet. Correctie: icoonpaletten 3–5 worden door een paar tientallen soorten gebruikt.
+
+### [v0.0.528] - Proef rug en icoon met de viscacha; eisenlijst iconen
+- **Viscacha-rug af** (`docs/concept/sprites/viscacha/rug/af/rug.png`, backPicYOffset 13): Gemini-rug zonder voorbeeldbijlage (Jordi's poging), 1-op-1 verkleind (16-px raster), A gekozen boven B ("b lijkt opgeblazen"), oog 4 gekozen, selout aan de lichtkant na keuring; keurder PASS. Jordi: "backsprites lukken iig, dat is geslaagd". Verloop in `viscacha/rug/PROMPT_RUG.md`.
+- **Viscacha-icoon in de maak** (`viscacha/icoon/maker/`, v1–v4, v5 loopt): Gemini-iconen afgekeurd (eigen ontwerp/pose; bewerken hield de vorm maar niet het detail); nu uit onze front. v4: "type ontwerp is uitstekend, super consistent", maar viscacha niet herkenbaar → v5 met herkenningstekens.
+- **Overworld:** Gemini gaf een Raichu/Pachirisu; nog open.
+- **Eisenlijst iconen** `docs/concept/sprites/rug_icoon_studie/EISEN_ICOON.md` + `icoon_check.py` (17 automatische eisen: maat, palet, omlijning, binnenlijnen, kleurvlakken, hoekigheid, frame 2, pose), normen uit vanilla Gen 1–3, de in-game set (die de game toont) en fanmade Gen 9; strengere ontwerpregels en smokkelruimte; herkenningstekens eerst vastleggen. Hulpscripts `vorm_meet.py`, `hoekig_meet.py`, `icoon_groepen.py`, `icoon_paren.py --new`, `pose_buren.py`.
+- Jordi: iconen en overworld "minder belangrijk ... moeten gewoon consistent zijn"; les in SPRITE_KERN: "namaken, niet scheppen".
+- **Volgende proef:** Krassault-icoon via een Gemini chibi-model op 64×64 (`octillery_evo/icoon/PROMPT_ICOON.md`).
+
+### [v0.0.529] - Viscacha-icoon frame 1 af; meetstudie en eisenlijst iconen
+- `docs/concept/sprites/viscacha/icoon/af/icon.png` (frame 1 af, pal2; frame 2 nog nalopen). Na Gemini-pogingen, verkleinen en handwerk werkte: onderdelen-methode (front per onderdeel verkleind, `icoon/onderdelen/bouw.py`), poetsen per zone, rekenregels uit de meetstudie, en Jordi's krabbels pixel voor pixel. Verloop en citaten in `icoon/PROMPT_ICOON.md`.
+- Meetstudie front → icoon op 31 soorten (`rug_icoon_studie/verhoudingen/STUDIE_VERHOUDINGEN.md`): kop ×1,25, lijf ×0,95, oog verschuift niet binnen de kop, minimummaten voor kleine delen.
+- Eisenlijst (`EISEN_ICOON.md`) uitgebreid: eis 0 lijkt op de front, rekenen niet schatten, onmisbare kenmerken per soort, kleine details, snorharen/1-px-details, overlap (Dragapult laat de Dreepy's weg), gekleurde vlekken zonder binnenlijn, lijnkleur binnen het lijf, "witter" ≠ wit, de 6 gedeelde icoonpaletten (geen aanpassingen: Jordi). Vellen 10–24 en scripts (`icoon_check.py` 17 eisen, `gelijkenis.py`, `hoekig_meet.py`, `vorm_meet.py`, `front_icoon_8x.py`).
+- Krassault-icoon: Gemini-chibi als vormmodel geprobeerd (silhouet goed, rupsbanden anders); nog niet verder.
+
+### [v0.0.530] - Viscacha-icoon frame 2 af
+- Frame 2 opnieuw opgebouwd uit frame 1: alles 1 px omlaag, één pootrij minder (voeten blijven), pluimpunt zwiept 1 px; geen pixels verloren. Vergeleken met 15 in-game buren (`rug_icoon_studie/26_frame2_8x.gif`); Jordi: "alle sprites doen hetzelfde!". Icoon `viscacha/icoon/af/icon.png` + `icon_anim.gif` is af.
+
+### [v0.0.531] - Werkwijze iconen vastgelegd
+- Nieuw: `docs/lessen/ICOON_WERKWIJZE.md`, compacte, verplichte stappen voor een party-icoon (kenmerken → onderdelen-methode → meetstudie-regels → poetsen → script + 8× → krabbels pixel voor pixel → frame 2 door schuiven). Verwijzing in CLAUDE.md.
+
+
+### [v0.0.532] - Overworldsprite viscacha en werkwijze overworld
+- Meetstudie overworldsprites (`docs/concept/sprites/rug_icoon_studie/overworld/`): maat per aanzicht, loopframes en kleur over 775 sprites; handmeting kop/oog/oren/poten/staart bij 15 viervoeters (`meting_onderdelen/RESULTAAT.md`).
+- Test twee routes naast elkaar: Gemini-model (ronde 2, front + rug als bijlage) tegen een eigen methode zonder Gemini. Jordi: "dit is no contest", "Gemini is echt zeer goed", "en de eigen route echt heel matig".
+- Viscacha-overworld (Gemini-route, 3 rondes + keuring): `docs/concept/sprites/viscacha/overworld/gemini_route/af/overworld.png` (+ pal, 8x, loop.gif). Eigen route bewaard in `viscacha/overworld_eigen/`.
+- Werkwijze vastgelegd in `docs/lessen/OVERWORLD_WERKWIJZE.md`.
+- Viscacha-overworld goedgekeurd als af (Jordi: "de overworld sprites hoeven allemaal niet perfect te zijn, ze moeten herkenbaar zijn en consistent").
+
+### [v0.0.533] - Werkwijze overworld aangevuld; toon en kreten
+- `docs/lessen/OVERWORLD_WERKWIJZE.md`: Gemini is leidend; nog niet getest wanneer Gemini de fout in gaat; volgorde eerst front, rug en icoon, dan samen naar Gemini; promptsjabloon van de viscacha (ronde 2).
+- CLAUDE.md, toon: Jordi "je hoeft de serieuzere toon niet zo te benadrukken, ungrounded is gewoon humor alom en fully ungrounded wordt gewoon net als normale pokemon games".
+- IDEEEN.md, kreten: geen bestaande kreten vervormen; latere generaties gebruiken soms geluiden die op echte dieren lijken (komt later).
+
+### [v0.0.534] - Picapau opgeknapt via Gemini
+- Opknapronde gestart (`docs/concept/sprites/OPKNAPRONDE_GEMINI.md`): Picapau, Picaraio, Soulibri, Moonkey en Hummlet opnieuw via Gemini, omdat ze nog "een beetje in 2D" staan.
+- **Picapau af (v3):** Gemini-model in driekwart (5 rondes, `picapau/gemini/`), sprite v3 door maker + keurders (vorm r17 na Jordi's punten: stekels, kop rond naar het model, verre oog 1 px, rand onder de snavel volgens zijn tekening), kleur- en schaduwronde met keurder-PASS. Palet van Picapau, vleugels in Pikachu-bruin, staartschaduw Pikachu-roodbruin. `picapau/af/` (oude versie in `af/oud_v2/`), overzichtsvel bijgewerkt.
+- Lessen in `docs/lessen/GEMINI.md`: "geen issue" betekent terugzetten; diepte (kam achter de kop) is een kleur-/schaduwvraag; "ronder" = geen rechte stukken; een krabbel van Jordi meten, niet schatten.
+
+### [v0.0.535] - Picaraio opgeknapt via Gemini
+- **Picaraio af (v2):** Gemini-model in 9 rondes (`picapau_evo/gemini/`; Fearow-verwijzingen geschrapt, pose = vliegend en achteroverleunend zoals het origineel, illustratie r7 als ontwerp, r9 als gepixeld model), sprite v2 door makers + keurders (4 vormrondes, kleurronde met bliksem naar Raichu, eindkeuring GOED), laatste losse pixels onder poten en staart door Jordi aangewezen. `picapau_evo/af/` (oude versie in `af/oud_v1/`), overzichtsvel bijgewerkt.
+
+### [v0.0.536] - Hummlet: opknapronde via Gemini gestart
+- Jordi: "hummlet is net niet genoeg een hummingbird chick". Keuzes: alles mag beter ("maar wat wel goed vertaalt naar een sprite"), snavel langer en dun en dicht, kleuren blijven, pose als bolletje zoals foto 5.
+- Gemini-prompt v1 + bijlagen in `docs/concept/sprites/kolibrie_pre/gemini/`; SPEC en `OPKNAPRONDE_GEMINI.md` bijgewerkt.
+
+### [v0.0.537] - Hummlet opnieuw via Gemini: frontsprite af
+- Gemini r5 gekozen (kolibriekuiken als bolletje zoals foto 5, kop schuin omhoog, lange dichte snavel); Jordi: "ja echt veel beter, ga maar bouwen" · "op alle fronten".
+- Sprite (maker + keurder, 3 rondes): model overgenomen op 40 px breed, kleurpalet van de oude sprite ("dat was het enige aan de originele sprite dat ik zeer goed vond"), perspectief via licht en schaduw. Keurder GOED + Dragonfly Cave-eindkeuring. Jordi: "Akkoord".
+- `kolibrie_pre/af/` vervangen (oud in `af/oud_voor_gemini/`), overzichtsvel bijgewerkt, les in `GEMINI.md`.
+- Soulibri: Gemini-prompt v1 voor de opknapronde klaargezet (`kolibrie/gemini/PROMPT.md`).
+
+### [v0.0.538] - Soulibri opnieuw via Gemini: frame 1 en 2 af
+- Jordi: "mag nog wat meer een typische kolibrie pose, maar behoud de kleuren en design". Gemini r1 bijna goed; snavel met eigen pixels +2 verlengd ("+2 is perfect"); te breed voor 64×64 → staart via bijsturing laten krullen (r4, 63×53).
+- Gemini r3 (andere pose) wordt frame 2 ("niet erg overigens, want we hebben nu een frame 2"); op dezelfde schaal gebracht (×0,76), Jordi's eigen vleugellijn (21 px) subtiel afgewerkt (variant a: "nee A, want bij B is een stuk staart verdwenen").
+- `kolibrie/af/`: frame 1, frame 2, `anim_front.png`, palet en `soulibri_uit_de_bal.gif` (bal → groeien volgens sAffineAnim_Battler_Emerge → frame 2 + ANIM_V_SLIDE). Oud in `af/oud_voor_gemini/`. Jordi: "uitstekend, frame 1 en 2 zijn klaar".
+
+### [v0.0.539] - Vuurwerklijn: vuurpijl als rode draad
+- IDEEEN.md → Vuurwerk: Jordi's oplossing (19 nov): de vuurpijl komt in elke fase terug, wat eruit komt verschilt per fase; fase 3 = de vuurwerkslang; fase 1 = rechtopstaande vuurpijl met vuur uit de onderkant dat eromheen krult (wat precies nog open); fase 2 nog open.
+- IDEEEN.md → Vuurwerk: idee fase 2 (Jordi, open): de Pokémon houdt zelf de vuurpijl vast, als een wapen of zoiets.
+- IDEEEN.md → Vuurwerk: besloten dat het wezen in alle drie de fases uit de pijl komt; vijf voorstellen voor het krullende vuur van fase 1 (open). Fase 2: komt uit de pijl én houdt hem vast. Fase 1 moet cute zijn. Fase 1: armpjes die zich aan de pijl vastklampen, gezichtje erbovenuit; dier open. Krullen als motief in alle drie de fases. Fase 1: armen krullen eerst om de pijl, daaronder pas de handen. Dier: salamander/gekko; alleen het bovenlijf zichtbaar. "De rest komt niet uit de vuurpijl." Alleen een bovenlijf; salamander én gekko proberen.
+- Gemini-prompt fase 1 vuurwerklijn: `docs/concept/sprites/vuurwerk_fase1/gemini/PROMPT.md` (A salamander, B gekko; besluiten letterlijk, lezing Claude apart).
+- Vuurwerk fase 1 r1 (Gemini A/B) opgeslagen in `docs/concept/sprites/vuurwerk_fase1/r1/`; Jordi: Charmander-kop, lijf niet zichtbaar uit de pijl, armen geen extra ronde. Prompt v2 (vuursalamander/wimpergekko, zonder bijlage (Jordi), vlam uit mondstuk = lijf, armen een volle ronde om de huls).
+- Vuurwerk fase 1 r2 opgeslagen (`r2/`); Jordi: kleuren prima, armen krullen niet, komt niet uit de pijl. Prompt v3: lijf recht omhoog, de armen zijn de krullen, één vlam uit het mondstuk = het wezen.
+- Vuurwerk fase 1 r3 opgeslagen (`r3/`); Jordi: "het wordt er niet beter op", "flinke stap achteruit".
+- Vuurwerk fase 1: vormschets (`schets/vormschets.png`, script ernaast) als bijlage + prompt v4 (v2 als basis, opbouw uit de schets, alleen de armen krullen).
+- Vuurwerk fase 1 r4 (met vormschets) opgeslagen (`r4/`); Jordi: hoofd te hoog, armen nog steeds niet goed, komt nog steeds niet uit de vuurpijl.
+- Vuurwerk fase 1 prompt v5: opnieuw opgebouwd vanuit het beeld (geest uit een wonderlamp, lamp = vuurpijl), armen als kapperspaalstreep, kop vlak boven de punt, korter; analyse waarom v1–v4 misgingen in het bestand.
+- Vuurwerk fase 1 r5 (prompt v5) opgeslagen (`r5/`); Jordi: "geen idee wat dit is". Wel: "de designs vind ik echt prima, mooi kleur gebruik, prima gezicht, alleen dezelfde 2 dingen gaan telkens fout".
+- Vuurwerk fase 1: Jordi: "ze krullen nog nergens echt goed", samenstellen vervalt; nieuwe opbouw van Jordi (vuur maakt het dier, 2 armen 2 keer om de pijl, handen pakken hem bovenin, hoofd daar vlak bij) → prompt v6.
+- Vuurwerk fase 1 r6 opgeslagen; Jordi: lukt niet. Prompt v7: alleen pijl + vuur dat onderuit komt en omhoog om de pijl krult (asset voor asset).
+- Vuurwerk fase 1 r7 (alleen pijl + vuur) opgeslagen: eerste keer dat het vuur echt om de pijl krult.
+- Vuurwerk fase 1 prompt v8: r7 als bijlage + kop (r5) met zichtbare handjes bovenin, korte bocht onderaan; Jordi: de sliert mag het lijf zijn "zolang de handen maar zichtbaar eruit komen".
+- Vuurwerk fase 1 r8 opgeslagen (axolotl; Jordi: "dat vind ik prima"); prompt v9: punt van de pijl terug, kop opzij.
+- Vuurwerk fase 1 r9 opgeslagen (Jordi: "geweldige pose"); prompt v10: handen uit de golvende krul, staart sluit aan op het vuur uit de pijl. Sterretjes rondom mogen weg (Jordi; Claude wist ze zelf).
+
+### [v0.0.540] - Vuurwerklijn fase 1: frontsprite af
+- `docs/concept/sprites/vuurwerk_fase1/af/vuurwerk_fase1.png` (+ `_8x.png`): vuuraxolotl (Fire/Fairy) waarvan het vuurlijf uit de onderkant van een rechtopstaande vuurpijl komt en eromheen krult; handjes pakken de pijl onder de punt, kop opzij. Model = Gemini r10 (stap voor stap via bijlagen opgebouwd), sprieten uit Gemini r11, 29×62 px (vorm als Sentret).
+- Rondes r1–r15 in `sprite/`: krullen op de kop weg (r10 B), sprieten/kieuwen erbij, vlamtongetjes en kleurverloop (B), palet van fase 3 als motief en strepen doorgetrokken tot onder de punt (r14, Jordi: "r14 is top"), eindkeuring Dragonfly Cave verwerkt (r15).
+- Op het overzichtsvel (`showcase/frontsprites_af.png`, werknaam "Vuurwerk-axolotl", naam open). Alle uitspraken van Jordi in `vuurwerk_fase1/SPEC.md`.
+- Lessen in `docs/lessen/GEMINI.md`: lange armen om een voorwerp tekent Gemini niet; asset voor asset met bijlagen werkt; "leest niet" is geen tekenopdracht; Gemini voegt goed iets toe aan een eigen sprite maar poetst slecht op.
+
+### [v0.0.541] - Nocticue opknappen: Gemini-prompt
+- Nocticue (nachtaap fase 1) in de opknapronde via Gemini. Jordi: "ik ben echt fan van het design, dus het is puur de pose. De cuteness moet niet weg" · "ook de positie van zijn armen" · "dus puur de hoek".
+- Prompt v1 + bijlage (huidige sprite 8×) in `docs/concept/sprites/nachtaap/gemini/`; alleen de hoek (lijf en armen) naar driekwart links, design/kleuren/schattigheid bevroren.
+
+### [v0.0.542] - Nocticue opgepoetst: driekwart via Gemini
+- Nocticue (nachtaap fase 1) heeft een nieuwe frontsprite: `docs/concept/sprites/nachtaap/af/nachtaap.png` (oud in `af/oud_voor_gemini/`, voor/na in `af/voor_na_8x.png`). Jordi: "ik ben echt fan van het design, dus het is puur de pose. De cuteness moet niet weg" · "dus puur de hoek".
+- Gemini: 6 rondes (`nachtaap/gemini/PROMPT.md`); r4 gekozen, met Teddiursa als hoekvoorbeeld. r5 (molliger lijf) en r6 (streep tussen de ogen) mislukten.
+- Sprite (`nachtaap/sprite_r4/`): natief raster van r4 1-op-1 overgenomen (37×36, even groot als de oude sprite), palet van de oude sprite, Gen 3-volume; streep tussen de ogen smaller in twee tinten met crème rand om het linkeroog (Jordi's keuze om dat in de sprite-fase te doen). Keurder PASS, daarna Dragonfly Cave-eindronde (licht op armen/voet, kooilijnen romp, staartkrul, verre oog, wangschaduw) en Jordi's punten: oogrand onder het linkeroog, zonder hoekpixel. Jordi: "nice".
+- Overzichtsvel bijgewerkt; Nocticue in de opknapronde af.
+
+### [v0.0.543] - Overzichtsvel: pitahaya-draak fase 3 erbij
+- `docs/concept/sprites/showcase/frontsprites_af.png` (+ `maak_vel.py`): pitahaya-draak fase 3 (`pitahaya_draak_fase3/af/`, Grass/Dragon) toegevoegd naast fase 1 en 2; daarmee staat de hele lijn op het vel.
+
+### [v0.0.544] - Opknapronde: Palpaca-prompt
+- `docs/concept/sprites/alpaca/gemini/PROMPT.md` + bijlage (huidige sprite 8×): Gemini-prompt v1 om Palpaca op te knappen. Design blijft, pose wordt een echte alpacagang (telgang: poten aan dezelfde kant tegelijk, anders dan het diagonale draven van een paard), driekwart hoek, gezicht dat bij die hoek klopt.
+- `OPKNAPRONDE_GEMINI.md`: tweede ronde met Jordi's woorden (netter maken, geen designwijziging; Palpaca; spooktrein fase 3).
+
+### [v0.0.545] - Palpaca opgepoetst: telgang en driekwart
+- Palpaca (alpaca, Fighting-starter fase 1) heeft een nieuwe frontsprite: `docs/concept/sprites/alpaca/af/palpaca.png` (+ `_8x`, `normal.pal`; oud in `af/oud_voor_gemini/`). Jordi: "palpaca heeft bijv nog steeds een beetje een gek aangezicht" · "de sprite moet zijn zoals een alpaca in het echt loopt" · "Het design moet zo blijven alleen de pose moet natuurlijker, de hoek moet natuurlijker, hij moet netter" · "hij moet een cute starter zijn".
+- Gemini (`alpaca/gemini/PROMPT.md`, 11 rondes): r4 gaf ontwerp, gezicht en geheven handschoen, maar een paardengang; vijf pogingen om de achterpoten om te wisselen mislukten; een foto van een lopende alpaca als bijlage (r10) gaf de telgang; achterpoten van r10 ruw in r4 geplakt en Gemini liet de naad gladmaken (r11 = model, `alpaca/model/model.png`).
+- Sprite (`alpaca/sprite/r1–r6`): verkleining van het model, daarna kleur/schaduw; Jordi's punten (snuit, oren, staartaanzet, oog, haardos, verre oog, schaduw achterpoot); kleuren en binnenlijnen uit het model i.p.v. de oude sprite (r4); Dragonfly Cave-eindronde met torso-perspectief en losse pixel weg (r5). r6 (rondere romp-omtrek) afgewezen: "r5 is beter".
+- Overzichtsvel bijgewerkt.
+
+### [v0.0.546] - Coathief opgepoetst: echte driekwart en Gen 3-kleur
+- Opknapronde via Gemini: Coathief stond bijna zijwaarts. Prompt met alleen de huidige sprite als bijlage (`coathief/gemini/PROMPT.md`); Gemini r1 gekozen als nieuw model ("eigenlijk is die heel goed he"; klauwen zoals Gemini ze tekende).
+- Sprite = Gemini's eigen pixelraster (natief pitch 8 → 2×2, 52×62, `coathief/sprite/reduce.py`), vorm bevroren. In de sprite: oog rood (oude kleuren), oren zwart (bivakmuts), kop koel antraciet, lijf warm roodbruin.
+- Rondes r1–r7: maker + vier keuringen (trouw/techniek, Dragonfly Cave/Gen 3, controle, lijfvolume). Na Jordi's opmerking "die is wel erg effen 2 kleuren" kreeg het lijf volume: ronde schouder en dij met sikkelschaduw, 4e hooglichttint, gekartelde vachtgrenzen. 15 kleuren.
+- `coathief/af/coathief.png` = r7; oude sprite in `coathief/af/oud_voor_gemini/`. Overzichtsvel bijgewerkt.
+- Lessen: opknappen met alleen de huidige sprite als bijlage (GEMINI.md); keurders toetsen eerst volume, dan regels (SPRITE_KERN.md).
+
+### [v0.0.547] - Llamauler opknappen: Gemini-prompt
+- Llamauler (lama fase 2) toegevoegd aan de opknapronde via Gemini. Jordi: "erg plat, niet helemaal goed in verhouding, niet goed aangekleed, handschoenen kunnen beter en de kop is net niet llama genoeg"; MMA-handschoenen blijven ("hij wisselt juist van vechtstijl").
+- Prompt v1 + bijlagen (oude sprite 8×, lamafoto voor de pose, MMA-handschoenen): `docs/concept/sprites/lama/fase2/gemini/`.
+
+### [v0.0.548] - Gemini: geen extra referentiefoto's
+- Llamauler prompt v2 (`docs/concept/sprites/lama/fase2/gemini/PROMPT.md`); ronde 1 en de les "opknappen = eerst de hele SPEC lezen" vastgelegd.
+- Jordi: "gemini heeft echt een prima referentie kader dus die andere fotos zijn niet nodig" → vaste regel in `docs/lessen/GEMINI.md`.
+
+### [v0.0.549] - Llamauler: nieuwe frontsprite (kandidaat na eindkeuring)
+- Gemini-rondes r1–r15 (`docs/concept/sprites/lama/fase2/gemini/PROMPT.md`): fluffy lama met droog ooglid, kleed en halsband (r4); telgang via een gespiegelde loopfoto (r12); handschoenen van r3; samengesteld model `gemini/poten/model_v3.png`.
+- Sprite (`docs/concept/sprites/lama/fase2/sprite/`): r3 met modeltonen (Palpaca-werkwijze), poten uit een Gemini-bewerking van de sprite op 16× (r15), poten rustig (r4b), consistente ramps en wolbogen (r5), kleed r4b + geleidelijke achterpoot (r6), Dragonfly Cave-eindkeuring (r7: 11 px + lichter hooglicht). Nog niet naar `af/`.
+- Les: opknappen = eerst de hele SPEC lezen (`docs/lessen/GEMINI.md`).
+
+### [v0.0.550] - Moonkey opgepoetst: driekwart via Gemini
+- Moonkey (nachtaap fase 2) heeft een nieuwe frontsprite: `docs/concept/sprites/nachtaap_evo/af/nachtaap_evo.png` (oud in `af/oud_voor_gemini/`, voor/na in `af/voor_na_8x.png`). Jordi: "ook prima model en design, maar iets betere pose." · "driekwart hoek en iets meer kloppend qua perspectief".
+- Gemini (`nachtaap_evo/gemini/PROMPT.md`): r1 met Persian als hoekvoorbeeld veranderde te veel aan het design ("zonder persian is het beter"); r2 zonder voorbeeld behield het design; r3 (verbeterprompt voeten in perspectief) gekozen.
+- Sprite (`nachtaap_evo/sprite_r3/`): natief raster van r3 1-op-1 (58×54), oud palet, ogen uit de oude sprite, maan uit de oude sprite op de nieuwe kopvorm; Jordi: "misschien kunnen we de bovenkant van de halve maan iets inkorten en aan de rechterkant is die niet helemaal lekker rond" · "de maan moet symmetrisch zijn" → symmetrisch rond de as tussen de ogen, 2 px korter (B). Gen 3-volume, keurder PASS (30 px wissels), Dragonfly Cave-eindkeuring (17 px). Jordi: "uitstekend".
+- Daarmee is de opknapronde via Gemini rond (Picapau, Picaraio, Soulibri, Hummlet, Nocticue, Moonkey). Overzichtsvel bijgewerkt.
+
+### [v0.0.551] - Idee: Skinguin (Delibird-evolutie)
+- `IDEEEN.md` → Delibird-evolutie: Skinguin, een pinguïn met ski's als voeten, rood/wit, een ski-/kerstmuts als hoofdvorm, en een pose alsof hij razendsnel van een piste afvliegt (Jordi, 19 nov). Achtergrond rockhopper, voorstel macaronipinguïn en open vragen erbij.
+
+### [v0.0.552] - Skinguin: koningspinguïn-argument
+- `IDEEEN.md` → Skinguin: Jordi's argument voor de koningspinguïn ("s-kinguin") erbij.
+
+### [v0.0.553] - Skinguin: pose en hybride
+- `IDEEEN.md` → Skinguin: pose (vleugels strak naar achter, ski's schuin naar voren, muts/hoofd naar achter) en het idee van een hybride koningspinguïn met een macaroni-kenmerk.
+
+### [v0.0.554] - Skinguin: kuif
+- `IDEEEN.md` → Skinguin: kuif "delibird stijl" en Jordi's opmerking over de L-vorm.
+- L-vorm is een beschrijving van de pose, geen bezwaar (Jordi).
+
+### [v0.0.555] - Skinguin: Gemini-startprompt
+- Zak verdwijnt (Jordi). Startprompt r1 in `docs/concept/sprites/skinguin/gemini/PROMPT.md` met de Delibird-sprite als bijlage (`bijlage_delibird.png`); foto van een koningspinguïn zoekt Jordi erbij.
+
+### [v0.0.556] - Skinguin: snavel en wenkbrauwen van de macaroni
+- Prompt bijgewerkt: snavel en wenkbrauwen in de vorm van de macaronipinguïn, in Delibirds artstijl (Jordi).
+- Prompt: hij staat niet op ski's, zijn voeten hebben een skivorm (Jordi).
+- Prompt zonder bijlagen (Jordi).
+
+### [v0.0.557] - Skinguin: Gemini r1 en prompt v2
+- r1 (`skinguin/gemini/r1.png`): zwart-witte pinguïn met losse muts en losse ski's. Jordi: rood/wit zoals Delibird, snavel en ski's Delibird-geel, wenkbrauwen wit, muts onderdeel van het rode lijf met witte buik, verder voorover leunen. Nieuwe startprompt `PROMPT_v2.md` (nieuw gesprek).
+- Prompt v2: "de pinguin mag wat groter" (Jordi).
+
+### [v0.0.558] - Skinguin: Gemini r2
+- r2 (`skinguin/gemini/r2.png`): rood/wit, muts-hoofd, voorover. Jordi: "beter", lichaam iets langer (nu Delibird-formaat), poten echt ski's met uiteinden als tenen, "Verder ben ik wel tevreden". Bijstuurprompt `PROMPT_r3_bijsturen.md`.
+- Bijstuurprompt: twee ski-voeten, r2 lijkt er maar één te hebben (Jordi).
+
+### [v0.0.559] - Skinguin: Gemini r3
+- r3 (`skinguin/gemini/r3.png`): langer lijf, twee ski-poten met tenen. Jordi: "ik vind deze echt tof, alleen hij gaat nog niet snel genoeg, ski's iets dichter bij elkaar en iets meer voorover leunend". Bijstuurprompt `PROMPT_r4_bijsturen.md`.
+
+### [v0.0.560] - Skinguin: Gemini r4
+- r4 (`skinguin/gemini/r4.png`). Jordi: "lichaamspose is nu goed, alleen bovenste lijn muts niet zo, poten zijn alleen verknald helaas".- Nieuw Gemini-gesprek (Jordi): `PROMPT_r5_nieuw_gesprek.md` met r4 + r3 als bijlage; poten van r3, muts zonder lange rechte bovenlijn.
+
+### [v0.0.561] - Skinguin: model en type
+- r5 (nieuw gesprek) afgekeurd ("nee dit is niks"). Model = r4 met de ski-voeten van r3 (schenen liggen in beide pixel-exact gelijk, dus naadloos vanaf y 700), gespiegeld naar links: `skinguin/model/model.png`. Bovenkant muts wordt bij het spritewerk gefixt.
+- Type: Ice/Water (Jordi).
+
+### [v0.0.562] - Skinguin: frontsprite r1 (A, B, B2)
+- `skinguin/sprite_r1/`: model verkleind (natief raster pitch 10,24, 75 → 61 px door rijen/kolommen te schrappen), muts-bovenlijn gebogen (Jordi: "de muts is netjes"), herbelicht. Keurder: vorm PASS; 2 losse pixels gerepareerd.
+- Varianten: A zoals het model; B (2 px opzij) gaf geen zichtbaar verschil (Jordi); B2: verre ski omlaag, tussenruimte gem. 4,4 → 2,4 px.
+
+### [v0.0.563] - Skinguin af
+- Jordi koos A ("b is alleen de achterkant die dichterbij is ... maar ik vind A wel prima"). `docs/concept/sprites/skinguin/af/skinguin.png` (+ `_8x`, `normal.pal`); op het overzichtsvel.
+
+### [v0.0.564] - Skinguin: Dragonfly Cave-eindkeuring
+- Jordi: "misschien schaduw/belijning/kleur check nog 1 keer". Eindkeuring: schaduw en belijning PASS; rood te weinig contrast. Palet rood index 3 → (168,32,48), index 4 → (224,64,56); 12 zwarte binnenlijnen in lichte staartveren → donkerrood; los grijs pixel weg; geel strookje onder linkerski, teennaden en pompon-schaduw. 24 px, vorm/muts/gezicht onaangeroerd. `af/` en overzichtsvel bijgewerkt.
+
+### [v0.0.565] - Overzichtsvel: blobfish fase 2 erbij
+- Blobfish fase 2 ("pudding", Water) staat nu op het overzichtsvel, naast fase 1 (Jordi: "die is helemaal af").
+
+### [v0.0.566] - Spooktrein fase 3 opknappen: Gemini-prompt
+- Jordi: "het hele model hetzelfde blijven, maar de afwerking mag wat mooier en minder slordig". Prompt + bijlage (huidige sprite 8×): `docs/concept/sprites/spooktrein_fase3/gemini/opknap/`.
+
+### [v0.0.567] - Spooktrein fase 3: koeienvanger los via Gemini
+- Opknap-r1 (hele sprite) gaf hetzelfde probleem ("de koeienvanger blijft lelijk"). Jordi koos: alleen de koeienvanger opnieuw ("heel lelijk afgewerkt, willekeurige lijnen etc"). Prompt + uitsnede: `spooktrein_fase3/gemini/opknap/PROMPT_koeienvanger.md`.
+
+### [v0.0.568] - Spooktrein fase 3: opknappen geparkeerd
+- Koeienvanger-prompt gaf de hele trein zonder geest (`gemini/opknap/r2_koeienvanger.png`). Jordi: "laat maar zitten voor nu, hier moeten we iets anders voor bedenken". Geparkeerd in `OPKNAPRONDE_GEMINI.md`; les in `GEMINI.md`.
+
+### [v0.0.569] - Harpij-arend: frontsprite af
+- Nieuwe soort volgens het Perrserker-idee: **regionale Rufflet (puur Flying, harpijkuiken) evolueert in de harpij-arend** (Steel/Flying); gewone Rufflet blijft Braviary. Steel zit in klauwen en snavel. Naam gepauzeerd (werknaam Harpiary). Alles in `docs/concept/sprites/harpij_braviary/SPEC.md`.
+- Model: Gemini r6 (9 rondes, bronfoto van Jordi) + kuifveren door Claude getekend op het natieve raster (variant D + middelste veer J, `plak/`).
+- Sprite: r1–r3 waren te veel getekend (801/1380 px afwijking van de kale reductie, Jordi: "Je gaat me toch niet vertellen dat ze opnieuw getekend zijn he?"); r4 opnieuw vanaf de kale reductie, daarna alleen pixel fixes. Jordi's keuzes: oog c, kuif B, snavel V2 met subtielere mond (naar Pidgeot), pootstrepen. Eindkeuring Dragonfly Cave: 4 pixelfixes.
+- Af: `docs/concept/sprites/harpij_braviary/af/harpij.png` (+ `_8x.png`, `normal.pal`, `harpij.txt`); op het overzichtsvel.
+- Les in `docs/lessen/GEMINI.md`: afwijkingsgetal van de maker is een stopsignaal.
+
+### [v0.0.570] - Regionale Rufflet: SPEC en Gemini-startprompt
+- `docs/concept/sprites/rufflet_regional/` (SPEC met Jordi's besluiten en de beschrijving van zijn inspiratiefoto; `gemini/PROMPT.md` r1 voor een nieuw gesprek).
+
+### [v0.0.571] - Regionale Rufflet: frontsprite af
+- Fase 1 van de harpij-lijn (puur Flying, harpijkuiken), naar Gemini r1 ("Ik vind deze heel tof, pose goed, lijkt op rufflet"). Exacte 2×-reductie van het natieve raster (33×46).
+- Jordi's keuzes: groter grijs masker met Rufflets oog pixel voor pixel (r4A), Rufflets rode kuifveer korter (V3) met linkerrand opgeschoond en 2 bovenste rode pixels wit. Keurder BIJNA → PASS; eindkeuring Dragonfly Cave: 11 pixelfixes; verre (linker)vleugel één tint donkerder ("luister naar de gidsen").
+- Af: `docs/concept/sprites/rufflet_regional/af/rufflet.png` (+ `_8x.png`, `normal.pal`); op het overzichtsvel. Rufflets originele sprite als referentie in `referenties/`. Naam open.
+
+### [v0.0.572] - Ontwerpenlijst bijgewerkt
+- Jordi (20 nov): "lopende lijnen zijn allemaal af" (vuurwerk fase 1–3, spooktrein fase 1–3, koningstiran-lijn met namen Kiskiddo → Princadee → Sunperor). Bestanden van vuurwerk fase 2 en spooktrein fase 1 staan nog niet in de repo.
+- Geschrapt: regionale vogel die eindigt als condor ("We hebben een regionale vogel en hanan pacha wordt de enige condor"), Lanturn-evolutie.
+- Af genoteerd: één pinguïn (Skinguin), Rotom-boombox (DJ Rotom).
+- Nieuw: een Steel/Cosmic-lijn waarin één Pokémon een satelliet is.
+- `TODO.md`: nieuwe sectie Ontwerpen met alles wat nog open staat.
+
+### [v0.0.573] - Rock/Water-idee terug, twee ideeën geschrapt
+- Rock/Water-lijn fontein ↔ gargoyle (Jordi, 16 nov) stond alleen op branch `ccr-02976dbb-9o96jp` (v0.0.433); nu in `IDEEEN.md` en `TODO.md`.
+- Geschrapt (Jordi, 20 nov): brandweerhond-Growlithe ("niet zo'n goed idee"), opossum (verwerkt in Abra; ook opossum-Kangaskhan).
+- Ook overgenomen van die branch: fontein/gargoyle-prompts geschrapt en "uitwerking nog niet forceren"; vicuña/guanaco alleen met een leuk idee (Jordi, 16 nov).
+
+### [v0.0.574] - Onderwater-Oddish-lijn: start
+- Besloten (Jordi, 20 nov): reuzenkokerworm; Oddish Water, Gloom en Vileplume Water/Fire; Oddish-lichamen en gelaat blijven, "niet veel uitmaakt wat je er bovenop zet"; Oddish wit als de koker met de rode pluim bovenop. `docs/concept/sprites/oddish_regional/SPEC.md`.
+- Gemini-prompt fase 1: `docs/concept/sprites/oddish_regional/gemini/PROMPT_v1_fase1.md`.
+
+### [v0.0.575] - Onderwater-Oddish-lijn geschrapt
+- Gemini-rondes (20 nov): kokerworm-Oddish lukte (v5, kolonie r1); Gloom/Vileplume werden palette swaps (schoorsteen) of kwasten/taarten (kolonie). Jordi: "ja hier doen we een streep doorheen" (de hele lijn). Doorgestreept in `IDEEEN.md`, `POKEMON.md`, `TODO.md`; naslag `docs/concept/sprites/oddish_regional/`. Les in `GEMINI.md`.
+
+### [v0.0.576] - Onderwater-Oddish-lijn weer open
+- Jordi (20 nov): onderwateridee blijft; Vileplume = heetwaterbron omringd door zeeplanten/anemonen, Oddish anemonen/kelp/"wat dan ook", Gloom "iets van een bol"; geen partners in de sprite. Referenties: andermans regionale Vileplumes en de anemoon-fan-art in `docs/concept/sprites/oddish_regional/referenties/`.
+
+### [v0.0.577] - Onderwater-Oddish: kelp-lijn en Oddish-frontsprite af
+- Lijn (Jordi, 20 nov): Oddish = Galápagos-kelp (Water/Grass, turquoise, kelp-hechtvoetjes) → Gloom = gezonken, dieprood gelatineus lijf met lavabrok, verschroeide kelp en gloeiend kwijl (Water/Fire) → Vileplume = levende heetwaterbron met vijf anemonen, wit lijf op steltpoten (Water/Fire). Modellen bevroren in `docs/concept/sprites/oddish_regional/referenties/`.
+- Oddish-frontsprite af: model verkleind (maker), 7 px keurderreparaties, gezicht 1-op-1 van de game-Oddish met schaduwlijn boven de mond (Jordi), kelp subtiel amber met golvende rand (Jordi: "Akkoord, maar houd het subtiel"); r6 (middelste blad) verworpen; Dragonfly Cave-eindkeuring PASS. `oddish_regional/af/`, op het overzichtsvel.
+- Sessieprompts voor de Gloom- en Vileplume-sprites: `oddish_regional/SESSIE_PROMPTS_gloom_vileplume.md`.
+
+### [v0.0.578] - Onderwater-Gloom: frontsprite kandidaat
+- Frontsprite van de regionale Gloom (Water/Fire) naar het bevroren Gemini-model `referenties/gemini_gekozen_gloom.png`: `docs/concept/sprites/oddish_regional/gloom_sprite/r2/gloom_r2.png` (+ `gloom_r2_8x.png`). Natief raster van het model teruggehaald (pitch 6,83 px, 149×149), oppervlakgewogen verkleind ×0,412 tot 43×42 px (1177 px), onderkant op y52 zoals de Gloom in de game; 15 kleuren incl. transparant.
+- Gloeiende delen (kieren, kwijl/mond, kelppunten) in een eigen fel oranje-geel uit het model (204,74,40 / 244,124,48 / 252,184,80); gloed en dunne mondlijnen winnen in de reductie, dus op de gemeten modelplekken.
+- r1 maker (161 px afwijkend van de kale reductie: buitenlijn, ontkorrelen, gloed, 5 px hooglicht); keurder BIJNA → r2 = 13 pixelwissels (selout aan de lichtkant links, hooglicht van de kelpschaduw af, kelpspleet rechts, vinnetje links iets lichter). Wacht op Jordi.
+
+### [v0.0.579] - Onderwater-Gloom: frontsprite r3
+- Jordi over r2: "best netjes al, in het hoofd mag je wat meer kleurtinten/schaduw gebruiken voor de lava, voor de rest is het alleen afwerking". r3 (`gloom_sprite/r3/gloom_r3.png` + `_8x`): kieren per pixel op de modelgloed getint (dieprood randen, oranje, geel op de kruisingen), schaduwkant van de brok één tint donkerder met nieuwe tint sintel (150,40,32); 16 kleuren incl. transparant. Afwerking: mondring rechts bordeaux i.p.v. zwart, los vlekje in het linkervinnetje weg (34 px t.o.v. r2).
+- Jordi over r3: "ja fenomenaal werk wat betreft die lava" (lava bevroren). Eindkeuring: PASS, geen moeten.
+
+### [v0.0.580] - Onderwater-Gloom: frontsprite r4 (volume lijf)
+- Jordi: "ja graag wat meer bolling, schaduw, tinten etc, doe dat in een eindkeuring". Eindkeurder (studie Ditto/Gulpin/Grimer/Gloom op 8×) zette 133 tintwissels binnen lijf en vinnen: lichte bolling linksboven, schaduwsikkel rechts die naar onder breder wordt, diepe sikkel tegen de rand en onder de rechtervin, eigen lobben met hooglichtje in de voet; lijf-licht (index 8) (198,108,116) → (204,116,120). Diff 0 in lavabrok, gloed, ogen, kelp, zwart en silhouet (`gloom_sprite/r4/bewijs.py`). `gloom_sprite/r4/gloom_r4.png` + `_8x`.
+- Jordi: "commit en push naar main" → frontsprite af: `docs/concept/sprites/oddish_regional/gloom_sprite/af/gloom.png` (+ `gloom_8x.png`).
+
+### [v0.0.581] - Oricorio: drie nieuwe dansen, studie + Gemini-prompts
+- Snelle studie van de vier bestaande Oricorio-vormen (vaste kern: zangvogellijf, roze snavel/poten, slaperig oog; de veren zijn het kostuum; eigen kuif, één kleurfamilie, pose = dansbeweging): `docs/concept/sprites/oricorio_dansen/STUDIE.md` + `bestaande_vormen.png`.
+- Drie Gemini-startprompts (samba Grass, tango Dark, cumbia Water) in `oricorio_dansen/gemini/`.
+
+### [v0.0.582] - Oricorio-dansen: hoofdkleur = typekleur
+- Jordi: hoofdkleur is de kleur die je het meest met het type associeert. Prompts aangescherpt: samba vooral groen, tango vooral zwart, cumbia vooral blauw (rest als accent).
+
+### [v0.0.583] - Oricorio-dansen: prompts r2 (oog)
+- r1 (samba, tango, cumbia) gaf 3× een spleetoog met wit; Oricorio niet herkenbaar genoeg. Prompts r2 beschrijven het echte oog (zwart ovaal, wit glimpje, dikke ooglidlijn, geen wit eromheen) met `oricorio_dansen/koppen.png` als tweede bijlage. Les in GEMINI.md.
+
+### [v0.0.584] - Oricorio-dansen: r2 beoordeeld, samba/tango r3
+- Cumbia r2 kan door naar de sprite. Samba en tango: nieuwe prompts zonder bijlagen (samba: minder, grotere veren, kop vrij; tango: hoed als verenkuif, klein rond lijf, echte tangopose).
+
+### [v0.0.585] - Oricorio samba: prompt r4
+- Samba r3 miste de pauwachtige tooi (Jordi); r4 vraagt alleen die tooi terug als grote waaier achter het lijf.
+
+### [v0.0.586] - Oricorio tango: prompt r4
+- Tango r3 bleef een kraai met hoed en mes (Jordi: "tango moet wat gracieuzer"). r4 zonder de woorden hat/knife, slanker, staart als split tangojurk, sierlijke pose. Les in GEMINI.md.
+
+### [v0.0.587] - Oricorio samba: prompt r5
+- Oog = het blije Pom-Pom-oog (wijd open, geen ooglid); lijf rechtop als een persoon (verticaal ei-lijf) zoals alle Oricorio-vormen. Jordi: slaperig oog en lijfvorm niet Oricorio.
+
+### [v0.0.588] - Oricorio: samba r6, tango r5
+- Samba r6: lange puntige bladveren, kleinere en donkerdere waaier. Tango r5: gracieuze vrouwelijke danseres (Jordi) met tangojurk en strakke knot; rechtop lijf en blij oog van samba r5.
+
+### [v0.0.589] - Oricorio cumbia: frontsprite af
+- Oricorio Cumbia (Water/Flying) af in `docs/concept/sprites/oricorio_dansen/cumbia/af/` (r6): Gemini-model r2 overgenomen, lichtblauw "midden" (Jordi), oog en snavel van Pom-Pom, poten van Pa'u; eindkeuring PASS na kleur/lijnreparaties (volume kop/lijf, minder zwarte binnenlijnen, rokrand, onderste ruche). Op het overzichtsvel.
+
+### [v0.0.590] - Oricorio tango: prompt r6
+- Jordi stelde een nieuw Gemini-ontwerp voor ("hoef je minder te gokken"). r6: dunne Oricorio-pootjes die onder de jurk uitkomen, geen split, onregelmatige rode franjezoom.
+
+### [v0.0.591] - Oricorio tango: prompt r7
+- r6 beter qua lengte en pootjes, maar de pose leest minder als tango. r7 verandert alleen de vleugels: nabije vleugel hoog op schouderhoogte (tango-omhelzing), verre vleugel laag naar achteren.
+
+### [v0.0.592] - Oricorio: tango-maker op model r7, samba prompt r7
+- Tango: maker gestart op Gemini r7 (oog/snavel Pom-Pom, Oricorio-voeten, rode franje). Samba: sprite r1 blijft de beste (r2 hertekend, r3 alleen herkleurd); nieuwe Gemini-prompt r7 met 7 grote gladde veren (om en om geel), losse lichtere kuif, vleugels als één vorm.
+
+### [v0.0.593] - Oricorio samba: prompt r8 (danseres)
+- Naar Jordi's inspiratie (samba-danseres): tooi van pluimen op het hoofd, vleugels als zijvleugels, geen overlap tussen tooi, vleugels en lijf.
+
+### [v0.0.594] - Oricorio samba: prompt r9
+- r8 niet herkenbaar als samba (Jordi). r9: grote tweelaagse tooi met gouden middenstuk, gouden borst- en heupband met kwastjes, zijvleugels met geel en wat blauw, samba no pé.
+
+### [v0.0.595] - Oricorio samba: prompt r10 (laatste)
+- r9 al beter (Jordi). r10: tooi met ±9 grote pluimen en 5 brede gele binnenveren, effen borstband, opgetild been zichtbaar vóór het lijf, vleugels asymmetrisch (nabije hoog, verre laag).
+
+### [v0.0.596] - Oricorio tango: frontsprite af
+- Oricorio Tango (Dark/Flying) af in `docs/concept/sprites/oricorio_dansen/tango/af/` (r9 op Gemini-model r7): sierlijke danseres met strakke knot, V-hals en rode franjezoom; Pom-Pom-oog en -snavel, Baile-voeten; kleur afgestemd op de game (Jordi: "het model is qua kleur niet leidend"); eindkeuring PASS na rondes op schaduw/tinten (vleugelbelichting, jurkplooi, torsovolume, open randen). Op het overzichtsvel.
+- Samba: model Gemini r10 (tooi op het hoofd en zijvleugels zoals een sambadanseres, geen overlap); sprite r4 gemaakt, afwerking volgt.
+### [v0.0.581] - Vlieglijn: start fruitvlieg
+- Nieuwe lijn fruitvlieg → huisvlieg → mug (Jordi, 20 nov); mug blijft Poison/Electric, typen fase 1–2 open. SPEC en Gemini-startprompt fase 1 in `docs/concept/sprites/vlieglijn_fase1/`.
+- Fruitvlieg Gemini r1 bewaard; Jordi: "dit is net beedrill".
+- Fruitvlieg r1: Jordi denkt na over richting en kleuren.
+- Fruitvlieg: prompt r2 (plat naar achteren gevouwen vleugels, amber, paarse ogen, poten als stroomkabels).
+- Fruitvlieg r2 bewaard; Jordi twijfelt of fruitvlieg en huisvlieg genoeg verschillen.
+- Vlieglijn wordt 2 fases: vlieg → mug (fruitvlieg en horzel vervallen); poten als stroomkabels blijven.
+- Vlieg: prompt r3 (LED-ogen met blije paarse expressie, amber + zwart, stroomkabelpoten).
+- Vlieg r3 bewaard met Jordi's feedback.
+- Vlieg: prompt r4 (glad lijf, zwart + zwart-geel achterlijf, dikkere poten, ^ ^-ogen).
+- Vlieg: r4 bewaard; prompt r5 (grijze kop, twee LED-oogschermen zonder mond, grijs achterlijf met zwarte vlekken, lichtere vleugels).
+- Vlieg: Bug/Electric, robotischer; r5 bewaard, prompt r6.
+- Vlieg: prompt r7 (mechanischer achterlijf, scherpere vleugels, kabelpoten naar Xurkitree).
+- Vlieg: r7 bewaard ("nu begint het op een pokemon te lijken"); prompt r8 (boller achterlijf).
+- Vlieg: model samengesteld (r8 + strepen van r7) in `vlieglijn_fase1/model/`.
+- Vlieg: sprite r3–r5 (50 px, maker + keurder); poten blijven fout → Gemini-ronde r9 voor de poten (prompt + bijlage).
+- Vlieg: sprite r6–r10 (poten via Gemini r9 + krabbel Jordi, eindkeuring r9 + reparaties) → kandidaat `vlieglijn_fase1/sprite_r10/`.
+
+### [v0.0.582] - Robotvlieg (vlieglijn fase 1): frontsprite af
+- Frontsprite af: `docs/concept/sprites/vlieglijn_fase1/af/vlieg.png` (+ 8×, `normal.pal`), Bug/Electric, 50 px breed; op het overzichtsvel (`showcase/frontsprites_af.png`) als "Robotvlieg". Lijn: vlieg → mug (2 fases), evolutie rond lv 30; mug (Poison/Electric) nog te doen. Naam open.
+- Ontwerp: Gemini r1–r8 (fruitvlieg → huisvlieg → robotisch; LED-vizier met blije paarse ^, stroomkabelpoten naar Xurkitree: ronde kabel met glans, witte ringen, twee koperdraadjes als klauwtjes); model = r8 + strepen van r7.
+- Sprite: r1–r2 op 42 px (te klein: kop en kabels gingen verloren), r3–r5 op 50 px; poten via Gemini r9 (alleen een extra achterpoot) en Jordi's krabbels; buis onder het achterlijf weg, voorpoten naar achteren, LED-ogen O2, ringen A, randbelichting onderkant borststuk (P1), lichte vleugellijn (L12), keuringen en Dragonfly Cave-eindronde; r24 = rechte lijnen gebroken + kleurronde. Alle rondes en Jordi letterlijk in `vlieglijn_fase1/SPEC.md`.
+
+### [v0.0.583] - Overzichtsvel frontsprites in drie categorieën
+- `docs/concept/sprites/showcase/maak_vel.py` deelt het vel nu in (Jordi, 21 nov): **New** (40, volledig originele designs, lijnen bij elkaar op volgorde), **Evolutions of existing Pokémon** (4: Hitmongroove (Hitmontop), Krassault (Octillery), Shuppetto (Banette), Skinguin (Delibird)), **Regional forms / convergent Pokémon** (9: Silicobra-lijn, Abra-lijn, Dustly-lijn, DJ Rotom). Rufflet en Harpiary komen in de derde sectie zodra ze af zijn. Lange namen krijgen automatisch een kleiner lettertype.
+- Ontbrekende designs van andere branches op het vel gezet (sectie Regional forms / convergent, nu 14): regionale Rufflet en "Harpiary" (`claude/fervent-dijkstra-lvtc7o`), regionale Oddish en Gloom (idem) en Vileplume (`claude/great-maxwell-bgon7h`); hun `af/`-mappen zijn naar deze branch gehaald.
+- Spooktrein fase 1 (`spooktrein_fase1/af/`, van `claude/cool-lovelace-5vjif4`, Steel; Jordi 21 nov: "die is allang goedgekeurd") op het vel en in de stand van zaken.
+- Werknaam: spooktrein fase 2 heet **Wagogogon** (Jordi, 21 nov); op het vel, in POKEMON.md en CLAUDE.md.
+- Llamauler: opgeknapte sprite r7 (19 nov) naar `lama/fase2/af/` (Jordi, 21 nov: "r7 akkoord, zet maar op het vel"); oude in `af/oud_voor_gemini/`; op het vel.
+- Sessieprompt voor de mug (vlieglijn fase 2) in `docs/concept/sprites/vlieglijn_fase2/SESSIE_PROMPT.md`.
+- Werknamen (Jordi, 21 nov): Flytron, Purrpillar, Globsnail, Clionice, Cryomet, Mosaguar, Axolaunch, Pyrowyrm, Pitaling; op het vel en in POKEMON.md.
+- Werknamen (Jordi, 21 nov): **Rowmate** (mate-kano) en **Tejuice** (pitahaya-draak fase 2); overige namen gepauzeerd (voorstellen in POKEMON.md).
+
+### [v0.0.584] - Merge naar main
+- Branch `claude/peaceful-cori-756ovj` (vlieglijn, overzichtsvel in drie categorieën, werknamen 21 nov, Llamauler r7) samengevoegd met `main`; eigen changelogsecties hernummerd naar 581–583. Regionale Vileplume (`oddish_regional/vileplume_sprite/af/`, van `claude/great-maxwell-bgon7h`) staat daarmee ook in main.
+
+### [v0.0.585] - Regionale Vileplume (onderwater-Oddish-lijn, Water/Fire): frontsprite af
+- Naar het bevroren Gemini-model (`referenties/gemini_gekozen_vileplume.png`): wit lijfje op twee steltpoten, vijf rode anemonen rond een gloeiende krater. 19 rondes in `docs/concept/sprites/oddish_regional/vileplume_sprite/` (r1–r19), af in `vileplume_sprite/af/vileplume_regional.png` (+ 8×).
+- Afwijkingen van het model op Jordi's woord: tentakels geklonterd (optie A); gezicht = ogen en mond van de Vileplume uit de game, ogen net onder de kroon, geel met tinten, lachmondje; middelste anemoon bovenaan naar links (gaatje dicht); voorste twee anemonen uit r3 met modelomtrek; mondjes alle vijf gelijk; poten per rij uit het natieve model.
+- Keuring poten (r18 FAIL nipt → r19), eindkeuring r19 PASS (`r19/EINDKEURING.md`; 3 optionele pixelreparaties niet uitgevoerd om goedgekeurde delen niet te raken). Figuur x2–60, y1–62, 16 kleuren.
+
+### [v0.0.586] - Regionale Vileplume: pootreparatie uit de eindkeuring
+- Jordi: "poten na, de rest voor". In `af/vileplume_regional.png` is de linkerrand van beide poten nu gelijk (licht tot halverwege, donker eronder; 6 px). Arm- en inkepingsreparaties niet uitgevoerd.
+### [v0.0.587] - Onweerswolk-Swablu-lijn: idee vastgelegd
+- Jordi: "Onweerswolk regional forms van de Swablu lijn". Idee en open voorstellen in `docs/concept/IDEEEN.md` → "Onweerswolk-Swablu-lijn".
+
+### [v0.0.588] - Onweerswolk-Swablu-lijn: eerste besluiten
+- Jordi: Altaria Electric/Dragon, geen Zuid-Amerikaanse link, Alola-aanpak (anders maar herkenbaar), Swablu in een pose zoals zijn bijlage maar wakker, Altaria in een woeste donderwolk met blauwe statische schokken. Citaten in `IDEEEN.md`.
+
+### [v0.0.589] - Onweerswolk-Swablu-lijn: wolken, kleur en type
+- Jordi koos: Swablu Electric/Flying, lijfkleur A (dieper blauw, leigrijze wolk), nieuwsgierige Swablu, static vonkjes in en op de wolk. Wolkvoorstellen (cumulus congestus / cumulonimbus met aambeeld) in `IDEEEN.md`.
+
+### [v0.0.590] - Onweerswolk-Swablu: voelsprieten
+- Jordi: "bij swablu kan je de voelsprieten in gele vonkvorm maken" (`IDEEEN.md`).
+
+### [v0.0.591] - Onweerswolk-Swablu-lijn: Gemini-prompts r1
+- Jordi: "en shelf cloud akkoord", "maak maar prompts". Prompts Swablu en Altaria in `docs/concept/sprites/swablu_regional/gemini/PROMPTS.md`; Jordi's bijlage in `referenties/`.
+
+### [v0.0.592] - Onweerswolk-Swablu-lijn: Gemini r1, Altaria-prompt r2
+- Swablu r1: Jordi "ziet er al goed uit". Altaria r1 nog niet: moet in de wolk zitten, kleur en static richting fan art. Rondes, referentie en prompt r2 in `docs/concept/sprites/swablu_regional/`.
+
+### [v0.0.593] - Onweerswolk-Swablu: frontsprite r1
+- Jordi over Swablu Gemini r1: "ik vind bij swablu de issues geen issue, ga maar bouwen". Model bevroren (`swablu_regional/model/`), SPEC. Maker r1: natief raster (cel 4,27 px) → reductie 0,42×, figuur 38×34 (864 px, game-Swablu 785 px), 113 px technisch opgeschoond t.o.v. de kale reductie, niets bijgetekend (`sprite_r1/NOTITIES.md`).
+
+### [v0.0.594] - Altaria: Gemini r3 en combinatie A
+- Jordi koos A: wolk en static van r2, kop/hals/kuif van r3 erin geplakt (zelfde raster, elders pixelgelijk; `swablu_regional/gemini/plak_r2r3.py` → `altaria_A_r2wolk_r3kop.png`).
+
+### [v0.0.595] - Onweerswolk-Altaria: model bevroren
+- Jordi: "ja, dit is het model voor Altaria". Model + SPEC in `swablu_regional/altaria/`.
+
+### [v0.0.596] - Onweerswolk-Swablu: frontsprite r2 (minder blurry)
+- Jordi over r1: "swablu is nog wat blurry". Oorzaak: gemiddelde modeltint per pixel gaf middentinten; r2 laat de modelband per pixel winnen (meerderheid), palet in stappen ±30–40, 20 px naden op modelplekken, 3 px hooglicht kop, vonken feller. Silhouet gelijk aan r1 (`sprite_r2/NOTITIES.md`).
+
+### [v0.0.597] - Onweerswolk-Swablu: frontsprite r3 (kleur, lijn, schaduw)
+- Jordi over r2: "hoofd is nog steeds blurry, evenals de belijning van de bovenste donkere wolk en de voelsprieten, maar je hoeft alleen nog maar kleur, belijning, schaduw te fixen". r3: 59 px (kop 29, wolklijnen 15, sprieten 6, vonken 9), silhouet gelijk (`sprite_r3/NOTITIES.md`).
+
+### [v0.0.598] - Onweerswolk-Altaria: frontsprite r1
+- 1/3-reductie van het model (natief raster 5,12 px), 1820 px (game-Altaria 1778), 277 px technisch opgeschoond (`altaria/sprite_r1/NOTITIES.md`). Claude: lijnen te hard/zwart (Jordi-feedback Swablu r3 geldt ook hier), gezicht leest slecht, static te fel → r2.
+
+### [v0.0.599] - Onweerswolk-Swablu r4; Altaria kopmeting
+- Jordi over Swablu r3: "nee de lijnen zijn veel te hard nu ... De belijning moet juist zachter en niet zwart. Kijk desnoods naar de snavel van de echte swablu". r4: zwart → gekleurde selout (75 px; zwart alleen oog en buitenkant onderwolk), snavel belijnd als de echte Swablu (open bovenkant), tussentinten (`sprite_r4/NOTITIES.md`).
+- Altaria: Jordi vroeg de kop te meten. r1-kop ±10×8 px (zonder kuif), game-Altaria ±13×11 px bij gelijke figuuroppervlakte (1820 vs 1778 px): lineair ±0,75×, oppervlak ±de helft.
+
+### [v0.0.600] - Onweerswolk-Altaria: kop x1,3 in het model (optie A)
+- Jordi: "A zou misschien wel moeten lukken, omdat we Altaria's hoofd in de wolk kunnen verstoppen, extra overlap over de wolk heen is ook niet erg, kijk dan wel of de voelsprieten nog wel goed in verhouding zijn". Kop + kuif x1,3 op het natieve raster, anker op de kin (`altaria/model_kop/kop13.py` → `natief_kop13.png`); wolk, hals en static pixelgelijk. Kop op spriteformaat ±13x10 (game ±13x11). Kuif: ±2,3x kopbreedte (game-Altaria ±2,7x), verhouding blijft.
+- Swablu: Jordi over r4 "de mond van swablu is nog niet herkenbaar genoeg, de mondlijn, verder vind ik hem wel goed" → r5 alleen mondlijn.
+
+### [v0.0.601] - Onweerswolk-Swablu: frontsprite r5 (mondlijn)
+- 5 px mondlijn op de modelplek in de donkerste selout, diff buiten de snavel 0 (`sprite_r5/NOTITIES.md`).
+
+### [v0.0.602] - Onweerswolk-Altaria: grotere kop goedgekeurd
+- Jordi: "altaria grotere hoofd/nek lijkt goed te passen, werk verder, laat pas zien als het echt een goede nette versie is". Model met kop x1,3 bevroren.
+
+### [v0.0.603] - Onweerswolk-Swablu: frontsprite r6 (oog, mond)
+- Jordi over r5: oog met subtiele lichtere tint rond het zwart; mondlijn "te hard en 1 pixel te veel naar links ... net teveel 2 lijnen". r6: 12 px (oog 3, mondlijn 5 zachter en 1 px naar rechts, onderrand 4 als schaduw), elders diff 0 (`sprite_r6/NOTITIES.md`).
+
+### [v0.0.604] - Onweerswolk-Altaria: frontsprite r2 (kop x1,3)
+- Op het kop x1,3-model; zachtere lijnen (zwart alleen pupillen), 4 wolktinten, kleine vlakjes/naden/static-stukjes samengevoegd ("iets minder detail is niet erg"), static lichtblauw (`altaria/sprite_r2/NOTITIES.md`). Keuring loopt; nog niet aan Jordi getoond.
+
+### [v0.0.605] - Onweerswolk-Swablu: r7 oog
+- Jordi: "oog wil ik 2 pixels linksboven en linksonder de witte pixel. de pixel rechts van het zwart van het oog mag weg". Halotint op (27,27) en (27,29); variant A haalt (30,29) weg, B (29,27) (`sprite_r7/`).
+
+### [v0.0.606] - Swablu r8 naar eindkeuring; Altaria-kop x1,5
+- Swablu: Jordi "middenlinks van de witte pixel moet een andere kleur zijn dan linksboven en linksonder, kijk naar hoe de originele swablu dat doet, daarna mag die naar eindkeuring". Echte Swablu: middenlinks donkere lijntint, diagonaal middentint → (27,28) selout, (27,27)/(27,29) vogel donker; variant A (r7A) als basis (`sprite_r8/`). Eindkeuring loopt.
+- Altaria: keuring r2 FAIL (`altaria/sprite_r2/KEURING.md`); verre oog past niet → volgens Jordi's regel kop nog te klein: model kop x1,5 en 10 natieve px in de wolk gezakt (`model_kop/natief_kop15_dy10.png`, `vergelijk_kop15.png`). Verse maker r3.
+
+### [v0.0.607] - Onweerswolk-Swablu: eindkeuring + r9
+- Eindkeuring r8: bijna PASS, 3 MOETEN (10 px in de onderwolk; `sprite_r8/EINDKEURING.md`). Toegepast in r9 (`sprite_r9/bouw.py`), verder diff 0 → PASS. Wacht op Jordi.
+
+### [v0.0.608] - Onweerswolk-Swablu: frontsprite af
+- Jordi: "ja zet maar in af, commit en push naar main". `docs/concept/sprites/swablu_regional/af/swablu.png` (+ `swablu_8x.png`) = r9. Lessen in `docs/lessen/GEMINI.md`; Stand van zaken bijgewerkt.
+
+### [v0.0.609] - Merge naar main
+- Main (vlieglijn, regionale Vileplume, overzichtsvel) samengevoegd met de onweerswolk-Swablu-lijn; onze changelogsecties hernummerd naar v0.0.587–608.
+
+### [v0.0.610] - Werknaam Hexpress
+- Spooktrein fase 3 heet **Hexpress** (Jordi, 21 nov: "Hexpress is geniaal"; hex + express); op het vel, in POKEMON.md en CLAUDE.md.
+- Regionale Swablu (onweerswolk, Electric/Flying, `swablu_regional/af/`) op het overzichtsvel (Regional forms).
+
+### [v0.0.611] - Dundragoon: oude testsprite uit Ungrounded erbij
+- Jordi: "Laten we Dundragoon doen, vis de Dundragoon vroege sprite erbij uit de ungrounded repo". Gevonden in `projectgrounded`, commit `c5cc51c42` (20 okt, "Testsprites Dundragoon en vuurvlieg-Venomoth (niet in de game)"): `tools/grounded/fakemon/dundragoon.png`, `_zoom.png` en `dundragoon.py`.
+- Gekopieerd naar `docs/concept/sprites/dundragoon/ungrounded/` als naslag (buizen-/ellipsen-methode, dus ontwerpschets, geen basis voor pixels). Type en verdere richting nog open.
+
+### [v0.0.612] - Dundragoon: keuzes en Gemini-startprompt
+- Jordi: "dit design is nog niet heel goed gelukt, maar daar kan gemini bij helpen"; "Dundragoon wordt Dragon/Normal". Keuzes: oude testsprite niet als bijlage; grote vleugels blijven; staart loopt over in de boor; Dunsparce-lijf, groter; twee korte poten; gezicht "Lijkt op Dunsparce maar meer dragon vorm".
+- Nieuw: `docs/concept/sprites/dundragoon/SPEC.md` (citaten + keuzes) en `gemini/PROMPT.md` (r1).
+
+### [v0.0.613] - Dundragoon: Gemini r1 afgekeurd, prompt r2
+- r1 (`dundragoon/gemini/r1.png`) afgekeurd: "niet gelukt, hoofd is nog hetzelfde, vorm heel raar, vleugels niet groot genoeg"; "en niet uniek genoeg de vleugels".
+- Keuzes: langere snuit, hoorntjes, oogring houden; diagonaal; vleugels "gewoon zoals dunsparce, maar iets groter, ze moeten vrij bizar zijn, niet typisch dragon". Prompt r2 in `gemini/PROMPT_r2.md`.
+
+### [v0.0.614] - Dundragoon: Gemini r2, prompt r3
+- r2 (`dundragoon/gemini/r2.png`): "dit begint ergens op te lijken, al is het nu iets teveel een dragonite/dunsparce fusion"; "De complete vorm ... Hij mag best een wat lompe vorm hebben zoals dragonite, maar dit is too much"; boor: "Ja, duidelijke boor".
+- Vergelijking naast Dunsparce en Dragonite (`gemini/r2_vgl_dunsparce_dragonite.png`); prompt r3 (`gemini/PROMPT_r3.md`): lang, lomp slangenlijf diagonaal in plaats van rechtop, geen armen/streepbuik/spriet, duidelijke boor.
+
+### [v0.0.615] - Dundragoon: Gemini r3, prompt r4
+- r3 (`dundragoon/gemini/r3.png`): "staart, vleugels, hoofd goed, maar wil geen slang"; lijf wordt Dunsparce-romp, dik; "al mag de drill naar verhouding nog wat groter". Prompt r4 (`gemini/PROMPT_r4.md`, nieuw gesprek, alleen tekst).
+
+### [v0.0.616] - Dundragoon: Gemini r4, bijsturen r5
+- r4 (`dundragoon/gemini/r4.png`): "hij is te horizontaal en net wat te lang"; "hij mag in een soort vliegpose wel". Bijstuurprompt r5 (`gemini/PROMPT_r5_bijsturen.md`): schuiner en korter, de rest houden.
+
+### [v0.0.617] - Dundragoon: r5 mislukt, gedraaide r4 als posevoorstel
+- r5 (bijsturen): "hij snapt het niet". Claude draaide r4 zelf 15/25/35 graden (`dundragoon/plak/`) als voorstel voor de schuine vliegpose.
+- Jordi: "nee nieuwe prompt from scratch, geen bijlage"; prompt r6 (`gemini/PROMPT_r6.md`) met de schuine vliegpose bovenaan en een korter lijf.
+
+### [v0.0.618] - Dundragoon: Gemini r6, prompt r7
+- r6 (`dundragoon/gemini/r6.png`): "best prima, maar hij mag nog iets dikker"; "beetje chubby". Prompt r7 = r6 met dikker lijf en precies 2 poten.
+
+### [v0.0.619] - Dundragoon: Gemini-model gekozen (r7)
+- Jordi bij r6: "beetje chubby" (verwerkt in prompt r7). Bij r7: "dit is hem"; "de drill is nog niet zo mooi, maar dat kunnen we in de sprite met kleurgebruik oplossen". Bevroren model: `docs/concept/sprites/dundragoon/referenties/gemini_gekozen_r7.png`. Volgende stap: frontsprite.
+
+### [v0.0.620] - Dundragoon: frontsprite r1–r3 (kandidaat)
+- Maker: r1 kale reductie van het model (61×61, silhouet = model) + opschoning; r2 gebogen rughooglicht, oogring middenblauw met donkere buitenrand, boor per winding schaduw → midden → licht (kleur, met toestemming Jordi).
+- Verse keurder: PASS, geen MOET; Claude zette 4 KAN-punten (8 px: vleugelrand, lobrand, vlekje in de boor, blauwe wangstrook) → r3 (`dundragoon/sprite_r3/`).
+
+### [v0.0.621] - Dundragoon: eindkeuring (r4)
+- Jordi: "op naar eindkeuring". Eindkeurder (Dunsparce, Gulpin, Dragonair, Whiscash, Altaria, Flygon op 8×): PASS; alleen het lijf: schaduwsikkel boven de buik (18 px) en het rughooglicht taps doorgetrokken (6 px), palet en vorm ongewijzigd (alpha-diff 0). `dundragoon/sprite_r4/`.
+
+### [v0.0.622] - Dundragoon: frontsprite af
+- Jordi: "commit en push maar naar main". `docs/concept/sprites/dundragoon/af/dundragoon.png` (+ `_8x`) = r4; op het overzichtsvel (`showcase/maak_vel.py`, Dragon/Normal). Stand van zaken: 59 frontsprites af. Les in `GEMINI.md`.
+
+### [v0.0.597] - Oricorio samba: frontsprite af (alle drie de dansen af)
+- Oricorio Samba (Grass/Flying) af in `docs/concept/sprites/oricorio_dansen/samba/af/` (r11, variant C): Gemini-model r10 (tooi op het hoofd en zijvleugels zoals een sambadanseres, gouden borst- en heupband, blauwe puntjes); Pom-Pom-oog en -snavel, Baile-standvoet; afwerking op Jordi's punten (veren als bladvormen, linkervleugel, poten, tooiveer rechtsboven) en eindkeuring PASS na kleurrondes (zebra in veren en franje weg, spikkels weg). Op het overzichtsvel. Daarmee zijn cumbia, tango en samba af.
+### [v0.0.623] - Onweerswolk-Altaria: frontsprite r3
+- Op het kop x1,5-model (`altaria/sprite_r3/`): beide ogen lezen op 1x, geen zwart/navy in de lijnen, ronde kappen per bol. Claude: static te fel, kuif rommelig, vleugeltoppen te licht/vlak → r4. Nog niet aan Jordi getoond.
+
+### [v0.0.624] - Onweerswolk-Altaria: frontsprite r4
+- Static subtieler (150,206,230; 6 stukken, 76 px), kuif als twee strengen, vleugels donkerder; silhouet -16 px (`altaria/sprite_r4/NOTITIES.md`). Claude: vleugels lezen nog als vlakke massa met trapjesrand → r5 alleen vleugels.
+
+### [v0.0.625] - Onweerswolk-Altaria: frontsprite r5 (vleugels)
+- Alleen vleugels (89 px): kap per modelbol (links 6, rechts 5), alpha links 2 px (`altaria/sprite_r5/NOTITIES.md`). Eindkeuring loopt.
+
+### [v0.0.626] - Onweerswolk-Altaria: eindkeuring r5
+- FAIL: kop/ogen/snavel goed (bevroren); korrel, kuifpixels, static 2 px dik, onderste bol te licht, lijf/rechtervleugel als platen met rechte naden. MOETEN 1-6 als pixellijst toegepast op `proef_eindkeuring.png` (94 px); MOET 6b (bollen in lijf en rechtervleugel) naar een verse maker (`altaria/sprite_r5/EINDKEURING.md`).
+
+### [v0.0.627] - Onweerswolk-Altaria: frontsprite r6
+- MOET 6b: bollen in lijf en rechtervleugel per bol ingekleurd (393 px), rechte naden weg (`altaria/sprite_r6/NOTITIES.md`). Claude: lijf leest als lichte stippen op een donkere vlakte → r7 met de modellijnen tussen de bollen als selout-bogen (zoals de Swablu).
+
+### [v0.0.628] - Onweerswolk-Altaria: frontsprite r7
+- Modellijnen tussen de bollen als selout-bogen (289 px); bollen lezen nu als hoekige kasseien (`altaria/sprite_r7/NOTITIES.md`). Na 7 rondes vastgelopen op de wolkbollen: vergelijking r4-r7 + model voor Jordi (`altaria/vergelijk_r4_r7.png`).
+
+### [v0.0.629] - Onweerswolk-Altaria: feedback Jordi op r4-r7
+- Jordi: wolken zijn niet het probleem, wel kleurgebruik/schaduw/tinten; meer static (uit het model), kuif meer definitie en kleur, kop nog blurry; "niks zelf tekenen" (citaat in `altaria/SPEC.md`). Verse maker r8.
+
+### [v0.0.630] - Onweerswolk-Altaria: frontsprite r8
+- Wolk in de 4 modeltinten (navy/donker teal/teal/licht cyaan) + navy selout, meerderheidsband per pixel (r5 had 498 px in een tussentint die het model niet heeft); static 105 px op modelplekken; kuif en kop per pixel uit het model (`altaria/sprite_r8/NOTITIES.md`). Eindkeuring loopt.
+
+### [v0.0.631] - Onweerswolk-Altaria: eindkeuring r8 → r9
+- Eindkeuring r8: PASS na 16 px (14 static-hoekpixels, 1 kuifglans, 1 wolkkap; `altaria/sprite_r8/EINDKEURING.md`). r9 = die proefkopie (`altaria/sprite_r9/`). Aan Jordi getoond.
+
+### [v0.0.632] - Onweerswolk-Altaria: gezicht naar echte Altaria
+- Jordi over r9: wolken goed, gezicht niet (linksonder valt weg, linkeroog slecht zichtbaar, rechte rechterkant); gezicht mag van het model afwijken, baseren op de echte Altaria. r10: alleen de kop.
+
+### [v0.0.633] - Onweerswolk-Altaria: frontsprite r10 (kop naar echte Altaria)
+- Kop pixel voor pixel van de Gen 3-Altaria (rijen Y16-17, kolommen X28/X34 geschrapt), omgekleurd naar ons violet/teal; diff met r9 85 px alleen in de kop, alpha -11/+1 in de kopzone (`altaria/sprite_r10/NOTITIES.md`).
+
+### [v0.0.634] - Onweerswolk-Altaria: r11 grotere kop (A/B)
+- Jordi: "ik denk dat de kop nog wat groter moet, want de vorm is echt raar". A = Gen 3-Altaria-kop op 100% (17x12), B = ±117% (20x14); kuif hoefde niet te schuiven; pluis cyaanwit met wolk-selout (`altaria/sprite_r11/NOTITIES.md`).
+
+### [v0.0.635] - Onweerswolk-Altaria: r12 kop+hals 2 px rechts
+- Jordi: "a is perfect, zou je alleen het hele hoofd + nek 2 pixels naar rechts kunnen schuiven en mij dan een vergelijking kunnen laten zien?". Kop+hals als laag verschoven (niets hertekend); K1 kuif blijft, K2 kuif mee; vrijgekomen pixels = r9-wolk of wolkband ernaast (`altaria/sprite_r12/`).
+
+### [v0.0.636] - Onweerswolk-Altaria: r13 (K2 + 2 vergeten kuifpixels)
+- Jordi: "vanzelfsprekend dat de kuif meeschuift, je bent wel 2 pixels vergeten mee te schuiven." (40,20)/(41,20) navy rand van de kuifpunt mee naar (42,20)/(43,20). Naar eindkeuring (hals-aansluiting, lijnen, tinten, schaduw).
+
+### [v0.0.637] - Onweerswolk-Altaria: eindkeuring r13 → r14
+- PASS na 5 px: halsrand doorgetrokken tot de wolkkwab, L-hoek weg, gaatje in de kuif dicht, kuifpunt eindigt tegen de vleugelrand (`altaria/sprite_r13/EINDKEURING.md`). r14 = proefkopie.
+
+### [v0.0.638] - Onweerswolk-Altaria: frontsprite af
+- Jordi: "akkoord, commit en push naar main". `docs/concept/sprites/swablu_regional/altaria/af/altaria.png` (+ `_8x`) = r14. Lessen in `docs/lessen/GEMINI.md`; Stand van zaken bijgewerkt. Daarmee is de onweerswolk-Swablu-lijn af.
+
+### [v0.0.639] - Merge naar main
+- Main (Dundragoon, Oricorio-dansen) samengevoegd met de onweerswolk-Altaria; onze secties hernummerd naar v0.0.623–638; achtergebleven conflictmarkeringen uit een eerdere merge op main opgeruimd.
+
+### [v0.0.640] - Mightyena-evolutie gestart
+- Besloten (Jordi, 22 nov): Dark/Fighting, female only (clanleider), duidelijke Mightyena-evolutie in grootte en machtigheid, typische hyenakop, pose misschien met 1 poot alsof hij geniepig lacht. `docs/concept/sprites/mightyena_evo/SPEC.md`, Gemini-prompt r1 in `gemini/PROMPT.md`.
+- r1 van Gemini opgeslagen; bijstuurprompt r2 (kop valser en meer hyena, poot hoger).
+- r2 opgeslagen; bijstuurprompt r3 (blik geniepig in plaats van evil, mond opnieuw; rest perfect volgens Jordi).
+- r3 opgeslagen; bijstuurprompt r4 (mond open).
+- Frontsprite r1–r3 (maker, keurder BIJNA → PASS op r2, r3 = 9 losse pixels opgeruimd): `sprites/mightyena_evo/sprite_r3/`, ter beoordeling bij Jordi.
+- Eindkeuring PASS (3 kleurpixels), **frontsprite af**: `docs/concept/sprites/mightyena_evo/af/alphyena.png`. Naam **Alphyena** (Jordi). Op het overzichtsvel (evoluties); POKEMON.md (werknamen), TODO en Stand van zaken bijgewerkt.
+
+### [v0.0.641] - Overzichtsvel: regionale Altaria erbij, naar main
+- Regionale Altaria (Electric/Dragon) op het overzichtsvel bij de regional forms (stond er nog niet op); vel opnieuw gemaakt. Jordi: "commit en push naar main".
+
+### [v0.0.642] - Robotmug naar main en op het overzichtsvel
+- De robotmug (vlieglijn fase 2, Poison/Electric, af op 21 nov) stond alleen op branch `claude/intelligent-bohr-npyumy`. Jordi: "de mug ontbreekt". `docs/concept/sprites/vlieglijn_fase2/` overgenomen (af, SPEC, Gemini, keuringen), met de lessen in GEMINI.md, POKEMON.md en TODO; op het overzichtsvel naast Flytron ("Robotmug", naam gepauzeerd). Details over de rondes: changelog op die branch (v0.0.584 daar).
+- Naam robotmug: Jordi neigt naar **Buzzquito** (22 nov); in POKEMON.md bij de gepauzeerde namen.
+- Werknaam robotmug: **Buzzquito** (Jordi: "ja"); op het overzichtsvel, POKEMON.md en Stand van zaken.
+
+### [v0.0.643] - Cosmic: kandidaten definitief
+- Jordi (21 nov): "de kandidaten die ik noemden mogen cosmic worden definitief": Elgyem-lijn, Lunatone & Solrock, Baltoy-lijn, Clefairy-lijn (Minior en Deoxys ook, maar die staan niet in de dex).
+- Typingvoorstel: Lunatone/Solrock Rock/Cosmic, Baltoy/Claydol Ground/Cosmic, Clefairy-lijn Fairy/Cosmic, Elgyem/Beheeyem puur Cosmic of Psychic/Cosmic (open).
+- Typeverdeling (ROM + 67 besloten nieuwe soorten, 528 soorten): Water 97, Flying 59, Grass 56, Bug 56, Ground 54, Poison 53, Dark 52, Electric 51, Ghost 51, Normal 49, Psychic 46, Fire 38, Steel 37, Ice 35, Dragon 35, Fighting 26, Rock 26, Fairy 24, Cosmic 5 (±13 met deze kandidaten). 56 van de 171 combinaties ontbreken; prioriteit: Fire-, Ice- en Dragon-combinaties voor de gyms, een pure en een vroege Cosmic.
+- Bijgewerkt: CONCEPT.md, POKEMON.md, IDEEEN.md, TODO.md. Nog niets in de code (Cosmic bestaat nog niet als type).
+
+### [v0.0.644] - Cosmic: Elgyem-lijn puur Cosmic
+- Jordi (21 nov): "Elgyem lijn puur cosmic". Elgyem en Beheeyem worden puur Cosmic (eerste pure Cosmic-soorten).
+- Aanwezigheid per type na de Cosmic-omzetting (528 soorten; gemiddeld 45 per type): Water 97, Flying 59, Grass 56, Bug 56, Ground 54, Poison 53, Dark 52, Electric 51, Ghost 51, Normal 49, Psychic 40, Fire 38, Steel 37, Ice 35, Dragon 35, Fighting 26, Rock 26, Fairy 24, Cosmic 14.
+
+### [v0.0.645] - Regionale Baltoy-lijn: richting Rock/Psychic
+- Jordi (21 nov): "De regional Baltoy lijn wordt denk ik rock/psychic, waar het origineel nu dus ground/cosmic is". Genoteerd in IDEEEN.md (nog niet definitief).
+- Telling per lijn (261 lijnen, gemiddeld 25,5; een lijn telt één keer per type dat erin voorkomt): Water 50, Flying 42, Normal 31, Electric 31, Ghost 31, Grass 30, Ground 29, Dark 29, Bug 28, Poison 26, Fire 23, Psychic 23, Steel 22, Ice 19, Dragon 18, Rock 15, Fighting 14, Fairy 14, Cosmic 8. Met de regionale Baltoy-lijn: Rock 16, Psychic 24.
+
+### [v0.0.646] - Idee: regionale Sableye met evolutie (zeebodem, gezonken schatten)
+- Jordi (21 nov): regionale Sableye met een evolutie, een niet-Water-type dat op de oceaanbodem leeft en gezonken schatten vindt; in Pokémon ontbreken niet-Water-types die in het water leven, waardoor waterroutes monotoon zijn. Genoteerd in IDEEEN.md; typing open.
+
+### [v0.0.647] - Regionale Sableye: Jordi denkt aan Ghost/Rock
+- Jordi (21 nov, nog niet besloten): regionale Sableye mogelijk Ghost/Rock, en de gewone Sableye dan terug naar Ghost/Dark. Genoteerd in IDEEEN.md.
+
+### [v0.0.648] - Vuurduivel fase 1: frontsprite af
+- Nieuwe lijn (Jordi, 22 nov): vuurduivel, 2 fases. Fase 1 = cute maar cheeky Fire/Dark sater-duiveltje dat ongein uithaalt en daarom lacht ("zelfde idee" als het duiveltje van Ashley in WarioWare, niet hetzelfde design). Evolutie: "de wat volgroeidere bokkenduivel look".
+- Gemini-rondes r1–r4 (`docs/concept/sprites/vuurduivel_fase1/gemini/`); gekozen r3a, staart bijgestuurd naar pijlvorm (r4 = bevroren model). Pijlopties A–D in de sprite afgewezen ("behoud de vlam maar"): staartpunt van r6 blijft.
+- Frontsprite r1–r9: model overgenomen (2×-reductie van het natieve raster), gezicht in 3 rondes hersteld (Haunter-techniek; witte pixel in de onderhoek van de pupil, Jordi), kleurronde (zwart lijf lichter met glans zoals Houndour/Umbreon, broek als twee dijen, roze tong), eindkeuring verwerkt (11 px, 2 paletkleuren). 64×64, 16 kleuren, 50 px hoog.
+- Af: `docs/concept/sprites/vuurduivel_fase1/af/vuurduivel.png` (+ `_8x`); op het overzichtsvel (sectie New).
+- Les in SPRITE_KERN.md: witte pixel in de pupil in de onderhoek, niet tegen het oogwit; GEMINI.md: geen eerdere ronde als bijlage.
+- Gemini-prompt voor de evolutie: `docs/concept/sprites/vuurduivel_fase2/gemini/PROMPT.md` (+ sessieprompt).
+
+### [v0.0.649] - Sunflora-evolutie: typing Grass/Cosmic
+- Jordi wil een Sunflora-evolutie ("een van de allerzwakste pokemon"), typing Grass/Cosmic. Brainstormrichtingen in `docs/concept/IDEEEN.md`; ontwerp nog open. Concept: Sunflora is "zo hard gegaan op de fotosynthese dat die kosmische krachten heeft gekregen" (Jordi). Uiterlijk: tussen plant en ster, erg kosmisch en "unlocked", lichaam nog plant; heel blij gezicht (Jordi).
+
+### [v0.0.650] - Sunflora-evolutie: SPEC en Gemini-prompt r1
+- Jordi: "laten we hem maar zweven, dat is leuk". `docs/concept/sprites/sunflora_evo/SPEC.md` (alleen Jordi's citaten) en `gemini/PROMPT_r1.md`.
+
+### [v0.0.651] - Sunflora-evolutie: Gemini r1 afgekeurd
+- Jordi: "het hoofd is vrijwel hetzelfde terwijl juist daar de verandering in moet zitten" + heelalpatroon ongewenst. r1 in `sunflora_evo/gemini/r1.png`; les in GEMINI.md.
+
+### [v0.0.652] - Sunflora-evolutie: Gemini-prompt r2
+- Jordi: "de bloem wordt veel meer een ster, maar dan geen 5punt ster, meer een kosmisch uitziende ster". SPEC bijgewerkt, `gemini/PROMPT_r2.md` (zonder Sunflora-naam bij het gezicht, heelalpatroon verboden).
+
+### [v0.0.653] - Sunflora-evolutie: Gemini r2 + bijsturen
+- Jordi: "ok het is teveel detailwerk, het hoofd is nog net te klein denk ik ook, dat mag nog wat overdrevener". r2 opgeslagen; bijstuurprompt r3 onder `gemini/PROMPT_r2.md`.
+
+### [v0.0.654] - Sunflora-evolutie: r3 mislukt, startprompt r4
+- Jordi over r3 (bijsturen): "niet gelukt". `gemini/PROMPT_r4.md`: r2-prompt met groter hoofd en minder detail in de tekst, nieuw gesprek zonder bijlage.
+
+### [v0.0.655] - Sunflora-evolutie: r4 hoofd goed, prompt r5
+- Jordi: "hoofd wel prima nu, als we de kleuren wat simpeler maken"; meer punten; "nog net wat meer echt een kosmische entiteit"; lijf van Sunflora. r4 opgeslagen, `gemini/PROMPT_r5.md` (eerst hoofd, dan lijf).
+
+### [v0.0.656] - Sunflora-evolutie: r5 + hoofd groter geschaald
+- Jordi over r5: "vrij oke, maar het hoofd moet echt overdreven groot zijn tov het lichaam, door de extreme fotosynthese". Hoofd per script 1,5× en 1,8× geschaald op het r5-lijf (`gemini/r5_kop_groter_150_180.png`).
+
+### [v0.0.657] - Sunflora-evolutie: hoofd 1,8× / 2,2× / 2,6×
+- Jordi: "dat het lijf heel klein is, is niet erg. Gemini had het lijf in verhouding nog groter gemaakt dan de normale sunflora". Extra schalen 2,2× en 2,6× (`gemini/r5_kop_groter_180_220_260.png`, script `gemini/gereedschap/kop_schaal.py`).
+
+### [v0.0.658] - Sunflora-evolutie: sprite r1 en r2
+- r1: hoofd overgenomen uit r5 (gezicht 0 px afwijking), lijf verkleind en hertekend. Jordi: "het lichaam zit niet vast aan het hoofd en je hebt het lichaam opnieuw getekend" · "dat mag niet".
+- r2 (`sprite_r2/vel.png`): hoofd = r1 (diff 0), lijf = Sunflora-pixels zonder handwerk, vast aan de ster, voeten 90° gedraaid zodat ze hangen. A = lijf 1×, B = 2× kleiner, C = 1,25× groter. Ter keuze voor Jordi.
+
+### [v0.0.659] - Sunflora-evolutie: lijf via Gemini r6–r12, hoofd erop geplakt
+- r6–r11: Gemini maakte geen goed vastzittend lijf (vóór het hoofd, rank, "swamp demon", losse bladeren). r12 (prompt vanaf nul) gaf een Sunflora met een lijf dat goed onder het hoofd zit; Jordi: "we kunnen hier het hoofd op plakken". r5-hoofd erop in drie maten (`gemini/r12_kop_r5.png`).
+
+### [v0.0.660] - Sunflora-evolutie: sprite r3 (model 1,6)
+- Model gekozen (Jordi: "1,6 is precies wat ik bedoel"): `gemini/model_16.png`. r3 = r1-hoofd (diff 0) + kale verkleining van het r12-lijf op hetzelfde raster, geen handpixels. Jordi: "als je dan nog de voeten zo kan zetten dat het lijkt alsof die zweeft dan ben ik tevreden": voeten als blok gedraaid in vier varianten (model/binnen/buiten/slap), `sprite_r3/vel.png`.
+
+### [v0.0.661] - Sunflora-evolutie: sprite r4 en r5 (lijf)
+- Jordi over r3: "r3 buiten is goed, maar nu moet je nog de lijnen wat minder recht maken en kijken naar kleurtinten/schaduw en lijngebruik. Bijv niet overal zwarte lijnen bij het lichaam, hoofd vind ik prima zo".
+- r4 (maker): selout donkergroen boven/links, zwart onder/rechts, 3 groentinten met volume. Keurder BIJNA: armen nog rechte balken. r5: ronde bladonderkanten uit het model, losse voetpixel weg (25 px, hoofd per assert onaangeroerd); A modelgroen, B Sunflora-groen (`sprite_r5/vel.png`).
+
+### [v0.0.662] - Sunflora-evolutie: lijfkleur C
+- Vraag Jordi: verandert een plant van kleur bij extreme fotosynthese, en hoe past dat bij een zonnebloem? Varianten C (dieper groen) en D (C + paars accent op de stengel). Jordi koos **C**: `sprite_r5/sunflora_evo_r5_C_donkergroen.png`.
+
+### [v0.0.663] - Sunflora-evolutie: eindkeuring, r6 en r7
+- Eindkeuring BIJNA: open rand bovenop het rechterbeen dicht (r6). Jordi: "ja fixen" voor de twee punten in het hoofd: okerrand linksonder aan het gele bloemblad, groen vlekje verbonden met de linker bladhand (r7, 5 px; `sprite_r7/`).
+
+### [v0.0.664] - Sunflora-evolutie: frontsprite af
+- Jordi: "ja commit en push naar main". `docs/concept/sprites/sunflora_evo/af/sunflora_evo.png` (+ `_8x`) = r7; op het overzichtsvel onder "Evolutions of existing Pokémon"; Stand van zaken en les in GEMINI.md bijgewerkt.
+
+### [v0.0.665] - Merge naar main
+- Main (Mightyena-evolutie Alphyena, robotmug, Cosmic-besluiten, vuurduivel fase 1) samengevoegd met de Sunflora-evolutie; onze secties hernummerd naar v0.0.649–664.
+
+### [v0.0.666] - Vuurduivel fase 2: Gemini r1 + prompt v2
+- Gemini r1 bewaard (`docs/concept/sprites/vuurduivel_fase2/gemini/r1.png`). Jordi: "nog wat meer een typische baphomet pose" en "langere hoorns die meer krullen"; pose gekozen: zittend met gekruiste poten, één arm omhoog, één omlaag.
+- Prompt v2: `docs/concept/sprites/vuurduivel_fase2/gemini/PROMPT_v2.md` (alleen pose en hoorns gewijzigd t.o.v. v1).
+
+### [v0.0.667] - Vuurduivel fase 2: Gemini r2 + prompt v3
+- r2 bewaard (`docs/concept/sprites/vuurduivel_fase2/gemini/r2.png`). Jordi: "hij is nu te cartoony, dat hoefde alleen bij fase 1. Hij mag serieuzer kijken, de hoorns hoeven geen vuur patroon te hebben"; "en het is een zijwaartse pose".
+- Prompt v3: `docs/concept/sprites/vuurduivel_fase2/gemini/PROMPT_v3.md` (niet cartoony, serieuze blik, hoorns zonder vuurpatroon, lijf naar de kijker).
+
+### [v0.0.668] - Vuurduivel fase 2: Gemini r3 + prompt v4
+- r3 bewaard (`docs/concept/sprites/vuurduivel_fase2/gemini/r3.png`; Baphomet-pose, effen krulhoorns, serieus). Jordi: "nieuwe prompt, het moet ook meer een sprite worden".
+- Prompt v4: `docs/concept/sprites/vuurduivel_fase2/gemini/PROMPT_v4.md` (alleen het stijlblok: echte 64×64-sprite, eenvoudige vormen, compact).
+
+### [v0.0.669] - Vuurduivel fase 2: Gemini r4 + prompt v5
+- r4 bewaard (`docs/concept/sprites/vuurduivel_fase2/gemini/r4.png`). Jordi: "laten we afwijken van de armpose"; gekozen: vuur in de handpalm (zitten met gekruiste poten blijft).
+- Jordi over de hoorns: "nog niet mooi", "beetje te wijd", "staan ze bijna helemaal horizontaal"; v5 vraagt hoorns die eerst omhoog gaan en dicht langs het hoofd krullen.
+- Prompt v5: `docs/concept/sprites/vuurduivel_fase2/gemini/PROMPT_v5.md`.
+
+### [v0.0.670] - Vuurduivel fase 2: Gemini r5 + prompt v6
+- r5 bewaard (`docs/concept/sprites/vuurduivel_fase2/gemini/r5.png`; vuur in beide handpalmen). Jordi: "hoorns niet goed, dat moet echt een opgerolde bok achtige zijn".
+- Prompt v6: `docs/concept/sprites/vuurduivel_fase2/gemini/PROMPT_v6.md` (alleen de hoorns: opgerolde ramshoorns, beide gelijk, strak langs het hoofd).
+
+### [v0.0.671] - Vuurduivel fase 2: Gemini r6 + prompt v7
+- r6 bewaard (`docs/concept/sprites/vuurduivel_fase2/gemini/r6.png`; ramshoorns goed). Jordi: "het lichaam is nu te menselijk, verder wel goed".
+- Prompt v7: `docs/concept/sprites/vuurduivel_fase2/gemini/PROMPT_v7.md` (bijstuurzin voor hetzelfde gesprek + volledige prompt met een BODY-regel).
+
+### [v0.0.672] - Vuurduivel fase 2: Gemini r7 + prompt v8
+- r7 bewaard (`docs/concept/sprites/vuurduivel_fase2/gemini/r7.png`; bijsturen gaf een dikke gladde buik). Jordi: "zucht, het moet meer een geiten lichaam".
+- Prompt v8: `docs/concept/sprites/vuurduivel_fase2/gemini/PROMPT_v8.md` (BODY = rechtop zittende zwarte geit, slank; Jordi: "niet dikker").
+- Les in GEMINI.md: lijf omschrijven als het dier dat het wel is, niet alleen wat het niet is.
+
+### [v0.0.673] - Vuurduivel fase 2: model r8 + frontsprite r1–r4
+- Jordi over r8: "het gezicht is nu anders, maar dat is juist tof, ga maar bouwen" → bevroren model `docs/concept/sprites/vuurduivel_fase2/referenties/gemini_gekozen_r8.png`, SPEC.md.
+- Sprite r1 (2×-reductie van het natieve raster), keuring r1 (BIJNA). Oog mag afwijken (Jordi: "rood met zwart erin of zwart met rood erin, geen wit"); 10 opties uit echte Gen 3-ogen, Jordi koos "sharpedo A".
+- r2: lijftinten neutraal lichter, vlammen in banden; r3: Sharpedo A-oog, slankere hand- en staartvlam; eindkeuring r3 (BIJNA: rompvolume); r4: romp met volume naar de modelhelderheid, rustige dijselout. Kandidaat voor Jordi: `sprite_r4/vuurduivel2_r4_8x.png`.
+
+### [v0.0.674] - Vuurduivel fase 2: frontsprite af
+- Jordi over r4: "uitstekend". Af: `docs/concept/sprites/vuurduivel_fase2/af/vuurduivel2.png` (+ `_8x`); op het overzichtsvel (sectie New, na fase 1). De vuurduivel-lijn is daarmee af (namen open).
+### [v0.0.675] - Kricketune-evolutie Krickestro: frontsprite af
+- Besloten (Jordi, 22 nov): Bug/Fairy, dirigent, duidelijke 3e fase, "groter en grootser" = een echte maestro (uitstraling, kleding, silhouet), niet dikker; stok = één vinger die ook wapen is (zoals een krab met één grotere klauw); vleugels als rokpanden; armen omhoog. `docs/concept/sprites/kricketune_evo/SPEC.md`.
+- Gemini: r1, r2a/r2b, v2 (nieuwe prompt), v3 met uitgewerkte maestro-definitie → gekozen (`model/`); stok in de handkleur gezet, ogen naar Kricketune.
+- Frontsprite r1 (maker, schrappen 75×85 → 56×64), keurder BIJNA → r3 (ruis); oog links naar de modelplek (r2); oogstudie A/B/C, Jordi koos A (Kricketune frame 2) + afgeronde onderkant rechteroog (r4); eindkeuring BIJNA → 22 px (r5) → **af**: `kricketune_evo/af/krickestro.png` (+ `_8x`). Werknaam **Krickestro** (Jordi). Op het overzichtsvel (evoluties); POKEMON.md, TODO, Stand van zaken en GEMINI.md-lessen bijgewerkt.

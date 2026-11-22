@@ -1,0 +1,20 @@
+# r9 (coordinator na r8 + Jordi "ogen beter, tussen de krullen moet ruimte zitten, zie het model"). Oog V4 blijft. Meting: cov.py/lum.py/rgb.py, F=2.4 ox=76.6 oy=14.6.
+def S9(zone,spec):
+    for t in spec.split():
+        rc,v=t.split('='); r,c=map(int,rc.split(','))
+        if a[r,c]!=I[v]: LOG.append(('r9 '+zone,r,c,CH[a[r,c]],v)); a[r,c]=I[v]
+# --- 2 KAMMEN: twee losse vormen met dunne tan omlijning b (geen # meer), ruimte ertussen.
+#   kam 1 (vlamtong): binnen cw (5,22) 62 (6,22) 85 (7,21) 78 (7,22) 94 (8,20) 90 (8,21) 92 (8,22) 49 (9,22) 40; rechterlijn kol 23 rij 5-9 (lijn (6,23) 35 (7,23) 34 (8,23) 26).
+#   kam 2 (halvemaan): binnen cw (6,27) 74 (7,26) 74 (8,25) 100 (9,24) 81 (9,25) 100 (10,24) 67 (10,25) 100 (11,24) 94 (11,25) 100; lijnen top (5,27-28) 42/38, rechts kol 26 (38/17/35), tip (6,28) 21.
+#   RUIMTE (silhouetwijziging, model toont achtergrond): (6,25) leeg 51 %, (7,24) leeg 25 % maar wit in de 3x-uitsnede tot rij 7,6 -> transparant.
+S9('kam1',"4,22=b 4,23=b 5,21=b 5,22=L 5,23=b 6,21=b 6,22=L 6,23=b 7,21=L 7,22=L 7,23=b 8,20=L 8,21=L 8,22=L 8,23=b 9,22=L 9,23=b")
+S9('kam2',"5,27=b 5,28=b 6,25=. 6,26=b 6,27=L 6,28=b 7,24=. 7,25=b 7,26=L 7,27=b 8,24=b 8,25=L 8,26=b 9,24=L 9,25=L 9,26=b 10,24=L 10,25=L 10,26=b 11,24=L 11,25=L 11,26=b")
+# --- 1 MOND: roze band onder het gezicht doorgetrokken tot de kieuwen (rgb per pixel), donkere mondlijn d erboven (b had dezelfde helderheid als l).
+#   bovenlijn: (14,15) a56a56 (15,18) c5876d (16,19) cf7a79 (17,20) c97071 (+ (14,16) brug) -> d
+#   band: (18,18) d46675 -> m; (18,23) e19c8f (18,24) d9a28a -> l; onderlip (19,19-22) c38568 af6a58 bf6f66 d67b7c en (19,24) be5e69 -> t (mauve)
+S9('mond',"14,15=d 14,16=d 15,18=d 16,19=d 17,20=d 18,18=m 18,23=l 18,24=l 19,19=t 19,20=t 19,21=t 19,22=t 19,24=t")
+S9('kin',"19,18=k")   # dcae76 = kin
+# --- 3 HANDJES: alleen spleten waar het model >=40 % lijn meet; de s-spleten van r8 (30-38 %) terug naar vulling (r4-tint)
+S9('handjes',"15,4=m 16,5=l 16,6=l 16,11=l 17,12=l 18,11=l")
+# Jordi: "hoeft maar 1 pixel te zijn golvend he de ruimte": ruimte = 1 px, (6,24) en (7,24) (model leeg 100/25 %); (6,25) weer kam-2-lijn b (model lijn 42).
+S9('ruimte 1px',"6,25=b")

@@ -1,0 +1,11 @@
+vleugel links rand: (21,5) # -> k  lichtkant-selout zoals rest van de rand (was # tussen k)
+vleugel links rand: (22,10) # -> k  idem
+vleugel links rand: (23,11) # -> k  idem
+vleugel links rand: (23,12) # -> k  idem
+gele knie: (22,44) . -> #  omtrek: model heeft donkere lijn om het gewricht; was lucht (silhouet +1)
+gele knie: (22,45) . -> #  idem (silhouet +1)
+borststuk: (27,29) P -> p  losse P -> p: model 6/9 donker + lichtpaars, buurtint in de paarse band
+oog ver: (16,24) k -> E  als A
+oog ver: (14,25) E -> k  model: oog 50% (E38 e12) / vizier 50%: linkeronderhoek weg, linkerkant loopt ook schuin
+oog ver: (16,25) # -> E  model E33 / zwart 66: onderste oogpunt rechts, schuine band 15-16
+totaal 10 px anders dan mug_r1; buiten deze lijst: 0

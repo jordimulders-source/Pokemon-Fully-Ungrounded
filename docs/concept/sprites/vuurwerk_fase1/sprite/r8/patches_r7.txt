@@ -1,0 +1,11 @@
+# r7: ALLEEN palet/kleurindex (keurder r6: techniek FAIL op kleur). Geen vormpixels. Draait na alle vormpatches, logt in LOG.
+# 1 index 9 (p) samengevoegd met 4 (s): luma-verschil was 1. De staart na de onderste oversteek is al donkerder dan het lijf
+#   (basis s, luma 79, tegen lijf m 113; model staart c23583 luma 104 tegen lijf e95082 131). Index 9 wordt daarna OKER (c29a30), letter 'p' = oker.
+# Paletwijzigingen in reduce2.py (PALHEX): l(6) f294b8->e8709a, k(13) e6cdac->e0bf98, 9 9a2662->c29a30 (oker).
+def _set(z,r,c,v):
+    if a[r,c]!=I[v]: LOG.append(('r7 '+z,r,c,CH[a[r,c]],v)); a[r,c]=I[v]
+_old=a.copy()
+for _r,_c in zip(*np.where(_old==I['p'])): _set('p->s',_r,_c,'s')
+# 4 gele streep schaduwkant: b -> oker (model c29339/c09622/c29a2c/bf9828/c59831)
+for _r,_c in [(21,11),(21,12),(22,11),(22,12),(23,11),(34,11),(34,12)]:
+    assert CH[_old[_r,_c]]=='b'; _set('geel schaduw',_r,_c,'p')

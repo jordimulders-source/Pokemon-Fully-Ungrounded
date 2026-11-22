@@ -1,0 +1,25 @@
+# r8: Jordi over r7 (zie SPEC). Alles op gemeten modelpixels (cov.py lijn '#dE' / huls 'tkbcwYM' / leeg '.', lum.py, rgb.py), F=2.4 ox=76.6 oy=14.6.
+# Letters na r7: 'p' = oker, 'w' = wit (glans). Regels: lijn >=40 % -> d, 30-40 % binnen de hand -> s (zachte vingerspleet), huls >=50 % -> k.
+def S8(zone,spec):
+    for t in spec.split():
+        rc,v=t.split('='); r,c=map(int,rc.split(','))
+        if a[r,c]!=I[v]: LOG.append(('r8 '+zone,r,c,CH[a[r,c]],v)); a[r,c]=I[v]
+# --- 1 HANDJES (r4-basis, alleen waar het model anders meet): linkerhand vingers schuin omlaag naar rechts, rechterhand hoger/kleiner
+S8('hand L',"15,4=s 16,5=s 16,6=s 16,7=k 17,5=l 18,5=d")
+#   model: (15,4) lijn 32 · (16,5) 35 (16,6) 38 = vingerspleet schuin · (16,7) huls 58 · (17,5) lijn 0, roze · (18,5) lijn 62
+S8('hand R',"15,11=k 16,10=k 16,11=s 16,12=d 17,11=l 17,12=s 18,11=s 19,13=m 19,14=d 20,12=d")
+#   model: (15,11) huls 66 · (16,10) huls 100 · (16,11) lijn 38 (16,12) 48 · (17,11) lijn 25 roze (17,12) 35 · (18,11) 38 · (19,13) lijn 22 (19,14) 48 · (20,12) 42
+# --- 2 GEZICHT (rgb.py per pixel): mondlijn, mondhoek, wang, kin
+S8('mond',"17,20=b 18,22=l")          # (17,20) model c97071 = bovenlijn mond; (18,22) d07c79 = mondhoek roze
+S8('wang',"14,25=c 15,26=s 17,24=c 17,25=b 17,26=m 17,27=s 19,26=s")  # f4dfc0 / b54068 / f1d8a9 / cd8777 / df5b82 / b72870 / c25c88
+S8('kin',"20,18=d")                   # ac495d = lijn links van de kin
+# --- 3 SPLITSING onder de rechterarm (model lum: tong (27,11) 31 (27,12) 36 (28,9) 49 (28,10) 27 (28,11) 40, band eronder 53-60;
+#     pijlrand (26,13) lijn 56): de tak die achter de pijl rondkrult naar de linkerarm in schaduw s, de band die vóór doorloopt licht
+S8('splitsing',"26,13=# 27,11=s 27,12=s 28,9=s 28,10=s 28,11=s")
+# --- 4 KAMMETJES (cov 'cw' / lijnklasse): kam 2 binnen 2 px breed (kol 24-25, cw 77/81/67/94 op rij 8-11), geen lijn op kol 24 onder rij 7;
+#     scheidingslijn kam/gezicht (11,23) 60 (12,24) 73 (12,25) 19
+S8('kam',"8,24=L 9,24=L 10,24=L 11,24=L 11,23=b 12,24=b 12,25=b")
+# --- 2b NABIJ OOG: Gen 3-oog zoals Mudkip (graphics/pokemon/mudkip/anim_front_gba.png, oog 3x4: hoek/zwart/hoek, zwart/glans/zwart, zwart x3, hoek/zwart/hoek);
+#     model: oog kol 22.4-24.6, rij 14.3-16.6 (rgb (15,23) 0f0b15, (14,23) 593629, (16,23) a78257); rij 17 is 1 px groter dan het model (geen modelbasis: (17,23) E, hoeken (17,22)(17,24) huid k).
+#     Variant V2 (3x3, hoeken b) staat in eyevar.py / sprite_V2.png.
+S8('oog',"14,22=k 14,23=E 14,24=k 15,22=E 15,23=w 15,24=E 16,22=E 16,23=E 16,24=E 17,22=k 17,23=E 17,24=k")

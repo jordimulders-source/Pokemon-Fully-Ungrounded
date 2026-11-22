@@ -1,5 +1,7 @@
 > **Gemini-model namaken = NIET TEKENEN (Jordi, 15 nov).** Onderlaag is het verkleinde model; de maker tekent geen schotsen, naden, pieken, kernen of strepen zelf. Ook reparatie-opdrachten van Claude/keurders zeggen nooit "teken" of "opnieuw met de hand", maar "neem over uit het model".
 
+**Het gezicht is het ALLERBELANGRIJKSTE (Jordi, 20 nov).** Geen eigen gezichtvarianten verzinnen (glans, andere oogvormen): mag het gezicht afwijken van het model, neem dan het gezicht van een bestaande Gen 3-sprite 1-op-1 over (Vileplume: "neem gewoon de vileplume mond en ogen over en doe ze ver genoeg uit elkaar").
+
 # SPRITE-KERN: de enige pagina die je vóór spritewerk MOET lezen
 Samengevat uit alle spritelessen (5 nov, Jordi: "vat de lessen echt enorm samen ... hij vergeet heel vaak lessen mee te nemen"). Geef dit bestand mee aan **elke** sprite-agent, ook bij kleine reparaties. Al het andere in `docs/lessen/` is naslag.
 
@@ -8,6 +10,8 @@ Samengevat uit alle spritelessen (5 nov, Jordi: "vat de lessen echt enorm samen 
 **MODEL OVERNEMEN, NOOIT HERTEKENEN (Jordi, 13 en 15 nov: "je hebt alles weer opnieuw getekend he" · "moet ik dat in elk gesprek opnieuw aangeven?").** Bij een model (Gemini of ander) is de sprite de **verkleining van het model zelf**: natief raster terughalen → verkleinen met vlakgemiddelde + dichtstbijzijnde kleur uit het model → alleen technisch opschonen (buitenlijn, ruis, ≤3 tinten) en per pixel repareren wat de reductie kapotmaakt (oog, neus, tanden), steeds naar het model. Gezicht, vlakken, schaduw en poten komen uit het model, niet uit de hand van de maker. Een toegestane afwijking van Jordi komt als laatste, als bovenlaag. De maker meldt per zone hoeveel pixels afwijken van de kale reductie. Zet dit letterlijk in elke makeropdracht. Voorbeeld: Krassault (`octillery_evo/sprite3/`). **Kleur mag altijd afwijken van het model** (Jordi, 17 nov: "het model is minder goed met kleuren dan onze keuringen" · "Je mag met kleur altijd van het model afwijken he"): vorm/silhouet/onderdelen uit het model, kleur, schaduw en volume naar Gen 3 en de keuringen.
 
 **Ontwerp uit Gemini?** Volg `SPRITE_WERKWIJZE.md` → "Gemini-model namaken" (meetgereedschap poedelmot) en `docs/lessen/GEMINI.md`; die vervangen stap 1–3 hieronder (Gemini-keuze van Jordi = bevroren ontwerp; sprite = trouwe vertaling; keurder toetst trouw + techniek, niet het ontwerp).
+
+**Namaken, niet scheppen (Jordi, 18 nov: "dat jij in namaken vele malen beter bent dan in from scratch poses/vormen etc creëren"):** ook voor rug, icoon en overworld eerst een model zoeken of laten maken (Gemini op spritegrootte, een bestaande sprite, een krabbel); zonder model gaat het in veel kleine rondes en verdwijnt het ontwerp (viscacha-icoon v1–v4 tegenover de rug in ±5 rondes).
 
 ## Volgorde (nooit overslaan)
 1. **Ontwerp met Jordi**: pose + kenmerken, letterlijk in `SPEC.md` van de Pokémon. Foto's van Jordi direct in `referenties/` (komt een foto niet als bestand binnen: punt voor punt beschrijven).
@@ -40,6 +44,7 @@ Samengevat uit alle spritelessen (5 nov, Jordi: "vat de lessen echt enorm samen 
 - **Contrast**: helderheidsstappen meten tegen Taillow (±30–40 per tint).
 - **Belijning**: buitenlijn 1 px; zwart alleen aan de schaduwkant, gekleurde selout aan de lichtkant; **nooit zwart en donkerlila om en om op één rand**; binnenlijnen alleen waar vorm over vorm valt, in een donkere tint van het vlak, taps; geen open randen, geen lichte kleur op de buitenrand.
 - **Stuurt Jordi een referentie, dan is díe de hoofdbron** (picapau-evo, 6 nov: Gen 3 Raichu gepakt i.p.v. zijn Gen 1 → "nee de gen 1 raichu sprite moet je ook naar kijken"); andere sprites alleen als aanvulling.
+- **Witte pixel in de pupil (vuurduivel, 22 nov, Jordi: "in de onderhoek, het moet een oog zijn, niet een lichtinval"):** in een onderhoek van de pupil, op een pupilpixel die niet aan het oogwit grenst; niet linksboven ("nee niet linksboven"). Eerst kijken hoe ogen in de game eruitzien, niet redeneren vanuit de lichtrichting.
 - **Ogen**: neem een oog pixel voor pixel over van een echte sprite (zelf tekenen of opblazen geeft "geen Pokémon-oog"/"monster").
 - **Pootjes/ledematen**: in perspectief (verre hoger en achter, nooit op één lijn naast elkaar), omlijnd, verre in schaduwtint; kleine vogelpootjes echt klein.
 - **Vorm**: geen rechte stukken waar het dier rond is (buikrand!), geen knikken; snavel/dunne delen ≥ 2 px als het moet lezen.
@@ -49,3 +54,4 @@ Samengevat uit alle spritelessen (5 nov, Jordi: "vat de lessen echt enorm samen 
 Eén maker per sprite (SendMessage), één keurder, kleine vellen, commit en push na elke ronde. Max 3–4 agents.
 - Een verkleinde 3D-render per script kwantiseren is geen sprite (Hitmontop-evo, 6 nov: "lachwekkend slecht"): ook als Jordi "zelf, zonder agents" zegt, blijft kleur handwerk op een raster na een studie van de echte sprite (Hitmontop/Hitmonlee).
 - **Gemini als bron (potoo, 6 nov):** vraag je meerdere wijzigingen tegelijk, dan tekent Gemini een heel nieuw beeld (stijl, oog en snavel kwijt). Eén wijziging per prompt, of de beste versie als bestand nemen en zelf bewerken (oprekken, tak weg, spiegelen).
+- **Keurders toetsen eerst volume, dan regels** (Coathief r5, 19 nov, Jordi: "die is wel erg effen 2 kleuren"): drie keuringen gaven BIJNA/PASS op ≤3 tinten en stappen, terwijl het lijf één middenvlak met een lichtstrook en een donkere rand was. Vraag elke keurder eerst: "heeft elk groot vlak volume zoals in Gen 3 (ronde schouder/dij, sikkel, hooglicht op de bolling, tintverdeling binnenin, niet alleen langs de rand)?"

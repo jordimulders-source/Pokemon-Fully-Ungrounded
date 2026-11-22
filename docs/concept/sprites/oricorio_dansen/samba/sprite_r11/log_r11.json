@@ -1,0 +1,32 @@
+{
+ "A": {
+  "herkleurd": 0,
+  "silhouet_px": []
+ },
+ "B": {
+  "herkleurd": 3,
+  "silhouet_px": [
+   [
+    43,
+    10
+   ],
+   [
+    42,
+    11
+   ]
+  ]
+ },
+ "C": {
+  "herkleurd": 3,
+  "silhouet_px": [
+   [
+    43,
+    10
+   ],
+   [
+    42,
+    11
+   ]
+  ]
+ }
+}

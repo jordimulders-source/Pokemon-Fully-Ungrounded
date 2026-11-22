@@ -1,0 +1,156 @@
+(26,16) O->X  vlam: middentint op de r/O-grens (r -> X -> O -> Y)
+(25,17) O->X  vlam: middentint op de r/O-grens (r -> X -> O -> Y)
+(32,17) O->X  vlam: middentint op de r/O-grens (r -> X -> O -> Y)
+(36,17) O->X  vlam: middentint op de r/O-grens (r -> X -> O -> Y)
+(24,18) O->X  vlam: middentint op de r/O-grens (r -> X -> O -> Y)
+(22,19) O->X  vlam: middentint op de r/O-grens (r -> X -> O -> Y)
+(20,20) O->X  vlam: middentint op de r/O-grens (r -> X -> O -> Y)
+(23,20) O->X  vlam: middentint op de r/O-grens (r -> X -> O -> Y)
+(24,20) O->X  vlam: middentint op de r/O-grens (r -> X -> O -> Y)
+(25,20) O->X  vlam: middentint op de r/O-grens (r -> X -> O -> Y)
+(27,20) O->X  vlam: middentint op de r/O-grens (r -> X -> O -> Y)
+(19,21) O->X  vlam: middentint op de r/O-grens (r -> X -> O -> Y)
+(21,21) O->X  vlam: middentint op de r/O-grens (r -> X -> O -> Y)
+(22,21) O->X  vlam: middentint op de r/O-grens (r -> X -> O -> Y)
+(28,21) O->X  vlam: middentint op de r/O-grens (r -> X -> O -> Y)
+(29,21) O->X  vlam: middentint op de r/O-grens (r -> X -> O -> Y)
+(32,21) O->X  vlam: middentint op de r/O-grens (r -> X -> O -> Y)
+(21,22) O->X  vlam: middentint op de r/O-grens (r -> X -> O -> Y)
+(30,22) O->X  vlam: middentint op de r/O-grens (r -> X -> O -> Y)
+(31,22) O->X  vlam: middentint op de r/O-grens (r -> X -> O -> Y)
+(33,22) O->X  vlam: middentint op de r/O-grens (r -> X -> O -> Y)
+(33,23) O->X  vlam: middentint op de r/O-grens (r -> X -> O -> Y)
+(34,23) O->X  vlam: middentint op de r/O-grens (r -> X -> O -> Y)
+(33,24) O->X  vlam: middentint op de r/O-grens (r -> X -> O -> Y)
+(35,24) O->X  vlam: middentint op de r/O-grens (r -> X -> O -> Y)
+(36,24) O->X  vlam: middentint op de r/O-grens (r -> X -> O -> Y)
+(20,25) l->g  kop: glans op de bolling van het voorhoofd
+(21,25) l->g  kop: glans op de bolling van het voorhoofd
+(32,25) O->X  vlam: middentint op de r/O-grens (r -> X -> O -> Y)
+(33,25) O->X  vlam: middentint op de r/O-grens (r -> X -> O -> Y)
+(35,25) O->X  vlam: middentint op de r/O-grens (r -> X -> O -> Y)
+(20,26) l->g  kop: glans op de bolling van het voorhoofd
+(21,26) l->g  kop: glans op de bolling van het voorhoofd
+(35,26) O->X  vlam: middentint op de r/O-grens (r -> X -> O -> Y)
+(37,26) O->X  vlam: middentint op de r/O-grens (r -> X -> O -> Y)
+(34,27) O->X  vlam: middentint op de r/O-grens (r -> X -> O -> Y)
+(35,27) O->X  vlam: middentint op de r/O-grens (r -> X -> O -> Y)
+(37,27) O->X  vlam: middentint op de r/O-grens (r -> X -> O -> Y)
+(17,28) l->m  kop: l-vlak smaller naar onder (bolling)
+(22,28) l->m  kop: l-vlak smaller naar onder (bolling)
+(16,29) l->m  kop: l-vlak smaller naar onder (bolling)
+(17,29) l->m  kop: l-vlak smaller naar onder (bolling)
+(21,29) l->m  kop: l-vlak smaller naar onder (bolling)
+(22,29) l->m  kop: l-vlak smaller naar onder (bolling)
+(13,31) d->l  linkeroor: lichte voorrand
+(13,32) d->m  linkeroor: voorrand
+(17,35) m->l  kop: kleine wangbolling links
+(17,36) m->l  kop: kleine wangbolling links
+(21,37) r->R  mond: keelschaduw
+(22,37) r->R  mond: keelschaduw
+(23,37) r->R  mond: keelschaduw
+(45,38) O->Y  pijlpunt: geel 2 px breed
+(44,40) O->X  vlam: middentint op de r/O-grens (r -> X -> O -> Y)
+(43,41) O->X  vlam: middentint op de r/O-grens (r -> X -> O -> Y)
+(47,41) O->X  vlam: middentint op de r/O-grens (r -> X -> O -> Y)
+(48,41) O->X  vlam: middentint op de r/O-grens (r -> X -> O -> Y)
+(49,41) O->X  vlam: middentint op de r/O-grens (r -> X -> O -> Y)
+(43,42) O->X  vlam: middentint op de r/O-grens (r -> X -> O -> Y)
+(45,42) O->X  vlam: middentint op de r/O-grens (r -> X -> O -> Y)
+(46,42) O->X  vlam: middentint op de r/O-grens (r -> X -> O -> Y)
+(22,43) m->l  borst: bolling linksboven
+(23,43) m->l  borst: bolling linksboven
+(24,43) m->l  borst: bolling linksboven
+(25,43) m->l  borst: bolling linksboven
+(26,43) m->l  borst: bolling linksboven
+(44,43) O->X  vlam: middentint op de r/O-grens (r -> X -> O -> Y)
+(21,44) m->l  nabije arm: bovenrij licht
+(22,44) m->l  borst: bolling + glans
+(23,44) l->g  borst: bolling + glans
+(24,44) l->g  borst: bolling + glans
+(25,44) m->l  borst: bolling + glans
+(28,44) m->d  borst: sikkel rechts
+(29,44) m->d  borst: sikkel rechts
+(20,45) m->l  nabije arm: boven licht, onder m
+(23,45) m->l  borst: bolling
+(25,45) m->l  borst: bolling
+(29,45) m->d  borst: sikkel rechts
+(37,45) m->d  verre hand: onder donker
+(38,45) m->d  verre hand: onder donker
+(17,46) m->l  nabije hand: linksboven licht
+(29,46) m->d  borst: sikkel rechts
+(37,46) m->d  verre hand: onder donker
+(29,47) m->d  borst: sikkel rechts
+(32,47) B->b  broek: schaduwkant rechts
+(44,47) #->d  staartstam: bovenkant licht
+(28,48) m->d  borst: sikkel rechtsonder
+(29,48) m->d  borst: sikkel rechtsonder
+(30,48) k->B  broek: taille rechts in schaduw
+(31,48) k->B  broek: taille rechts in schaduw
+(32,48) B->b  broek: taille rechts in schaduw
+(33,48) B->b  broek: taille rechts in schaduw
+(43,48) #->d  staartstam: bovenkant licht
+(27,49) m->d  borst: sikkel onder
+(28,49) m->d  borst: sikkel onder
+(29,49) k->B  broek: rechterdij linksboven licht, rechts sikkel
+(30,49) k->B  broek: rechterdij linksboven licht, rechts sikkel
+(31,49) k->B  broek: rechterdij linksboven licht, rechts sikkel
+(32,49) B->b  broek: rechterdij linksboven licht, rechts sikkel
+(33,49) B->b  broek: rechterdij linksboven licht, rechts sikkel
+(34,49) B->b  broek: rechterdij linksboven licht, rechts sikkel
+(42,49) #->d  staartstam: bovenkant licht
+(28,50) k->B  broek: t rechts in rij 50 -> B (schaduwkant)
+(29,50) k->B  broek: t rechts in rij 50 -> B (schaduwkant)
+(30,50) k->B  broek: t rechts in rij 50 -> B (schaduwkant)
+(31,50) k->B  broek: t rechts in rij 50 -> B (schaduwkant)
+(32,50) k->B  broek: t rechts in rij 50 -> B (schaduwkant)
+(33,50) B->b  broek: t rechts in rij 50 -> B (schaduwkant)
+(34,50) B->b  broek: t rechts in rij 50 -> B (schaduwkant)
+(36,50) #->d  staartstam: bovenrij licht
+(37,50) #->d  staartstam: bovenrij licht
+(38,50) #->d  staartstam: bovenrij licht
+(39,50) #->d  staartstam: bovenrij licht
+(40,50) #->d  staartstam: bovenrij licht
+(41,50) #->d  staartstam: bovenrij licht
+(26,51) k->B  broek: linkerdij t, kruis B, rechterdij linksboven t, sikkel b
+(27,51) k->B  broek: linkerdij t, kruis B, rechterdij linksboven t, sikkel b
+(28,51) k->B  broek: linkerdij t, kruis B, rechterdij linksboven t, sikkel b
+(32,51) k->B  broek: linkerdij t, kruis B, rechterdij linksboven t, sikkel b
+(33,51) B->b  broek: linkerdij t, kruis B, rechterdij linksboven t, sikkel b
+(34,51) B->b  broek: linkerdij t, kruis B, rechterdij linksboven t, sikkel b
+(23,52) B->k  broek: linkerdij bolling t, kruis B, rechterdij
+(24,52) B->k  broek: linkerdij bolling t, kruis B, rechterdij
+(28,52) b->B  broek: linkerdij bolling t, kruis B, rechterdij
+(32,52) k->B  broek: linkerdij bolling t, kruis B, rechterdij
+(33,52) B->b  broek: linkerdij bolling t, kruis B, rechterdij
+(34,52) B->b  broek: linkerdij bolling t, kruis B, rechterdij
+(21,53) B->k  broek: linkerdij t, plooi B, rechterdij midden B, sikkel b
+(23,53) B->k  broek: linkerdij t, plooi B, rechterdij midden B, sikkel b
+(28,53) b->B  broek: linkerdij t, plooi B, rechterdij midden B, sikkel b
+(31,53) k->B  broek: linkerdij t, plooi B, rechterdij midden B, sikkel b
+(33,53) B->b  broek: linkerdij t, plooi B, rechterdij midden B, sikkel b
+(34,53) B->b  broek: linkerdij t, plooi B, rechterdij midden B, sikkel b
+(20,54) k->B  broek: linkerdij onder B, b tegen de rafels
+(24,54) B->b  broek: linkerdij onder B, b tegen de rafels
+(30,54) k->B  broek: rechterdij onder, sikkel b
+(31,54) k->B  broek: rechterdij onder, sikkel b
+(32,54) k->B  broek: rechterdij onder, sikkel b
+(33,54) B->b  broek: rechterdij onder, sikkel b
+(34,54) B->b  broek: rechterdij onder, sikkel b
+(35,54) B->b  broek: rechterdij onder, sikkel b
+(20,55) B->b  broek: rafel onder
+(24,55) B->b  broek: rafel onder
+(33,55) B->b  broek: rafel onder, sikkel
+(34,55) B->b  broek: rafel onder, sikkel
+(25,56) B->b  broek: rafel onder
+(32,56) B->b  broek: rafel onder, sikkel
+(33,56) B->b  broek: rafel onder, sikkel
+(25,57) B->b  linkerpoot: schaduwkant
+(36,57) B->b  rechterpoot: schaduwkant
+(24,58) B->b  linkerpoot: schaduwkant
+(37,58) B->b  rechterpoot: schaduwkant
+(21,59) b->k  linkerhoef: één licht vlak (hoef lichter dan de poot)
+(22,59) B->k  linkerhoef: één licht vlak
+(35,60) b->k  rechterhoef: streep weg
+(36,60) b->k  rechterhoef: streep weg
+(37,60) b->B  rechterhoef: streep weg

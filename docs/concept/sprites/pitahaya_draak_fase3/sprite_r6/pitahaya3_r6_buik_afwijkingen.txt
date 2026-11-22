@@ -1,0 +1,27 @@
+# pitahaya3_r6_buik.png: elke pixel die afwijkt van ../sprite_r5/pitahaya3_r5_buik.png: stap | x | y | r5 -> r6 (tekens: .#drpPgGhHwWoyYs)
+# totaal 25 px
+buik: slagschaduw onder kaak, sikkel i.p.v. band, pitjes van de rand | 17 | 30 | W -> w
+buik: slagschaduw onder kaak, sikkel i.p.v. band, pitjes van de rand | 18 | 30 | W -> w
+buik: slagschaduw onder kaak, sikkel i.p.v. band, pitjes van de rand | 19 | 30 | W -> w
+buik: slagschaduw onder kaak, sikkel i.p.v. band, pitjes van de rand | 20 | 30 | W -> w
+buik: slagschaduw onder kaak, sikkel i.p.v. band, pitjes van de rand | 21 | 30 | W -> w
+buik: slagschaduw onder kaak, sikkel i.p.v. band, pitjes van de rand | 17 | 31 | W -> w
+buik: slagschaduw onder kaak, sikkel i.p.v. band, pitjes van de rand | 18 | 31 | W -> w
+buik: slagschaduw onder kaak, sikkel i.p.v. band, pitjes van de rand | 19 | 31 | s -> W
+buik: slagschaduw onder kaak, sikkel i.p.v. band, pitjes van de rand | 20 | 31 | W -> s
+buik: slagschaduw onder kaak, sikkel i.p.v. band, pitjes van de rand | 23 | 31 | w -> W
+buik: slagschaduw onder kaak, sikkel i.p.v. band, pitjes van de rand | 24 | 32 | w -> W
+buik: slagschaduw onder kaak, sikkel i.p.v. band, pitjes van de rand | 23 | 36 | s -> W
+buik: slagschaduw onder kaak, sikkel i.p.v. band, pitjes van de rand | 24 | 36 | W -> s
+buik: slagschaduw onder kaak, sikkel i.p.v. band, pitjes van de rand | 26 | 36 | W -> w
+buik: slagschaduw onder kaak, sikkel i.p.v. band, pitjes van de rand | 28 | 37 | W -> w
+buik: slagschaduw onder kaak, sikkel i.p.v. band, pitjes van de rand | 28 | 38 | W -> s
+buik: slagschaduw onder kaak, sikkel i.p.v. band, pitjes van de rand | 29 | 38 | s -> w
+buik: slagschaduw onder kaak, sikkel i.p.v. band, pitjes van de rand | 25 | 39 | s -> W
+buik: slagschaduw onder kaak, sikkel i.p.v. band, pitjes van de rand | 26 | 39 | W -> s
+buik: slagschaduw onder kaak, sikkel i.p.v. band, pitjes van de rand | 29 | 39 | W -> w
+buik: slagschaduw onder kaak, sikkel i.p.v. band, pitjes van de rand | 29 | 40 | W -> w
+buik: slagschaduw onder kaak, sikkel i.p.v. band, pitjes van de rand | 27 | 41 | W -> w
+buik: slagschaduw onder kaak, sikkel i.p.v. band, pitjes van de rand | 28 | 41 | W -> w
+borst: losse korrels (21,33),(26,33),(22,33) -> G | 26 | 33 | g -> G
+verre hand: (10,43) -> g | 10 | 43 | # -> g

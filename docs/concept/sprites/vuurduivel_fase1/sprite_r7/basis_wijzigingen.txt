@@ -1,0 +1,72 @@
+(26,23) 14->6  MOET1: hoornmidden -> haarrood
+(16,24) 14->6  MOET1: hoornmidden -> haarrood
+(26,24) 14->6  MOET1: hoornmidden -> haarrood
+(27,24) 14->6  MOET1: hoornmidden -> haarrood
+(17,25) 14->6  MOET1: hoornmidden -> haarrood
+(25,25) 14->6  MOET1: hoornmidden -> haarrood
+(26,25) 14->6  MOET1: hoornmidden -> haarrood
+(27,25) 14->6  MOET1: hoornmidden -> haarrood
+(16,26) 14->6  MOET1: hoornmidden -> haarrood
+(17,26) 14->6  MOET1: hoornmidden -> haarrood
+(25,26) 14->6  MOET1: hoornmidden -> haarrood
+(26,26) 14->6  MOET1: hoornmidden -> haarrood
+(27,26) 14->6  MOET1: hoornmidden -> haarrood
+(22,38) 12->14  MOET1: tong roze
+(23,38) 12->14  MOET1: tong roze
+(24,38) 12->14  MOET1: tong roze
+(25,38) 12->14  MOET1: tong roze
+(22,39) 12->14  MOET1: tong roze
+(23,39) 12->14  MOET1: tong roze
+(24,39) 12->14  MOET1: tong roze
+(15,23) 12->14  MOET1: hoornlicht roze
+(15,24) 12->14  MOET1: hoornlicht roze
+(16,25) 12->14  MOET1: hoornlicht roze
+(25,23) 12->14  MOET1: hoornlicht roze
+(25,24) 12->14  MOET1: hoornlicht roze
+(26,22) 12->14  MOET1: hoornlicht roze
+(25,16) 6->7  MOET2: vlamrand opnieuw (middentint alleen doorlopend langs een oranje tong)
+(26,16) 12->7  MOET2: vlamrand opnieuw (middentint alleen doorlopend langs een oranje tong)
+(30,16) 6->7  MOET2: vlamrand opnieuw (middentint alleen doorlopend langs een oranje tong)
+(24,17) 6->7  MOET2: vlamrand opnieuw (middentint alleen doorlopend langs een oranje tong)
+(25,17) 12->7  MOET2: vlamrand opnieuw (middentint alleen doorlopend langs een oranje tong)
+(28,17) 6->7  MOET2: vlamrand opnieuw (middentint alleen doorlopend langs een oranje tong)
+(31,17) 6->7  MOET2: vlamrand opnieuw (middentint alleen doorlopend langs een oranje tong)
+(32,17) 12->7  MOET2: vlamrand opnieuw (middentint alleen doorlopend langs een oranje tong)
+(36,17) 12->7  MOET2: vlamrand opnieuw (middentint alleen doorlopend langs een oranje tong)
+(24,18) 12->7  MOET2: vlamrand opnieuw (middentint alleen doorlopend langs een oranje tong)
+(36,18) 6->7  MOET2: vlamrand opnieuw (middentint alleen doorlopend langs een oranje tong)
+(22,19) 12->7  MOET2: vlamrand opnieuw (middentint alleen doorlopend langs een oranje tong)
+(20,20) 12->7  MOET2: vlamrand opnieuw (middentint alleen doorlopend langs een oranje tong)
+(19,21) 12->7  MOET2: vlamrand opnieuw (middentint alleen doorlopend langs een oranje tong)
+(21,21) 12->7  MOET2: vlamrand opnieuw (middentint alleen doorlopend langs een oranje tong)
+(26,22) 12->14  MOET2: vlamrand opnieuw (middentint alleen doorlopend langs een oranje tong)
+(33,22) 12->7  MOET2: vlamrand opnieuw (middentint alleen doorlopend langs een oranje tong)
+(15,23) 12->14  MOET2: vlamrand opnieuw (middentint alleen doorlopend langs een oranje tong)
+(25,23) 12->14  MOET2: vlamrand opnieuw (middentint alleen doorlopend langs een oranje tong)
+(26,23) 14->6  MOET2: vlamrand opnieuw (middentint alleen doorlopend langs een oranje tong)
+(33,23) 12->7  MOET2: vlamrand opnieuw (middentint alleen doorlopend langs een oranje tong)
+(34,23) 12->7  MOET2: vlamrand opnieuw (middentint alleen doorlopend langs een oranje tong)
+(15,24) 12->14  MOET2: vlamrand opnieuw (middentint alleen doorlopend langs een oranje tong)
+(16,24) 14->6  MOET2: vlamrand opnieuw (middentint alleen doorlopend langs een oranje tong)
+(25,24) 12->14  MOET2: vlamrand opnieuw (middentint alleen doorlopend langs een oranje tong)
+(26,24) 14->6  MOET2: vlamrand opnieuw (middentint alleen doorlopend langs een oranje tong)
+(27,24) 14->6  MOET2: vlamrand opnieuw (middentint alleen doorlopend langs een oranje tong)
+(33,24) 12->6  MOET2: vlamrand opnieuw (middentint alleen doorlopend langs een oranje tong)
+(35,24) 12->7  MOET2: vlamrand opnieuw (middentint alleen doorlopend langs een oranje tong)
+(16,25) 12->14  MOET2: vlamrand opnieuw (middentint alleen doorlopend langs een oranje tong)
+(17,25) 14->6  MOET2: vlamrand opnieuw (middentint alleen doorlopend langs een oranje tong)
+(25,25) 14->6  MOET2: vlamrand opnieuw (middentint alleen doorlopend langs een oranje tong)
+(26,25) 14->6  MOET2: vlamrand opnieuw (middentint alleen doorlopend langs een oranje tong)
+(27,25) 14->6  MOET2: vlamrand opnieuw (middentint alleen doorlopend langs een oranje tong)
+(32,25) 12->6  MOET2: vlamrand opnieuw (middentint alleen doorlopend langs een oranje tong)
+(33,25) 12->6  MOET2: vlamrand opnieuw (middentint alleen doorlopend langs een oranje tong)
+(35,25) 12->7  MOET2: vlamrand opnieuw (middentint alleen doorlopend langs een oranje tong)
+(36,25) 6->12  MOET2: vlamrand opnieuw (middentint alleen doorlopend langs een oranje tong)
+(16,26) 14->6  MOET2: vlamrand opnieuw (middentint alleen doorlopend langs een oranje tong)
+(17,26) 14->6  MOET2: vlamrand opnieuw (middentint alleen doorlopend langs een oranje tong)
+(25,26) 14->6  MOET2: vlamrand opnieuw (middentint alleen doorlopend langs een oranje tong)
+(26,26) 14->6  MOET2: vlamrand opnieuw (middentint alleen doorlopend langs een oranje tong)
+(27,26) 14->6  MOET2: vlamrand opnieuw (middentint alleen doorlopend langs een oranje tong)
+(37,26) 12->6  MOET2: vlamrand opnieuw (middentint alleen doorlopend langs een oranje tong)
+(34,27) 12->6  MOET2: vlamrand opnieuw (middentint alleen doorlopend langs een oranje tong)
+(37,27) 12->6  MOET2: vlamrand opnieuw (middentint alleen doorlopend langs een oranje tong)

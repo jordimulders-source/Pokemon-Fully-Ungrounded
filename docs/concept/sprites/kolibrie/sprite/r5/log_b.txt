@@ -1,0 +1,40 @@
+variant b: 39 px gewijzigd t.o.v. r1/frame2.png, buiten zone x41-52 y8-23: 0
+(47,10) 12 -> 4  hoek rechtsboven, overgang naar schaduwkant: 4
+(48,10) 12 -> 4  hoek: 4
+(48,11) 12 -> 4  rechterkant: 4
+(49,11) 12 -> 4  buitenste hoekpixel: 4
+(47,12) 14 -> 13  1 px binnen de lijn naast 11: e -> d, zachte schaduw (frame 1 heeft d-banden in deze vleugel)
+(48,12) 4 -> 11  tegen de donkere staart: een tint donkerder, 11 (basis A)
+(47,13) 14 -> 13  idem
+(48,13) 13 -> 11  tegen de staart: 11
+(47,14) 12 -> 4  staart wijkt: 4
+(46,15) 12 -> 4  rechterkant (schaduwkant): 4
+(46,16) 12 -> 4  rechterkant: 4
+(46,17) 13 -> 4  rechterkant: 4
+(47,17) 12 -> 0  b: lichte vleugelpixel rechts van de lijn -> transparant (witte kier uit het model)
+(45,18) 14 -> 12  binnenste van het dubbele stuk: c (lijn dunner)
+(46,18) 14 -> 4  buitenste van het dubbele stuk: 4
+(47,18) 13 -> 0  b: lichte vleugelpixel rechts van de lijn -> transparant (witte kier uit het model)
+(48,18) 12 -> 0  b: lichte vleugelpixel rechts van de lijn -> transparant (witte kier uit het model)
+(50,18) 11 -> 0  b: lichte vleugelpixel rechts van de lijn -> transparant (witte kier uit het model)
+(51,18) 5 -> 2  b: staartrand aan de kier dicht: 5 -> 2 (donkere rand)
+(45,19) 14 -> 4  onderloop: 4
+(46,19) 14 -> 0  b: lichte vleugelpixel rechts van de lijn -> transparant (witte kier uit het model)
+(47,19) 13 -> 0  b: lichte vleugelpixel rechts van de lijn -> transparant (witte kier uit het model)
+(48,19) 13 -> 0  b: lichte vleugelpixel rechts van de lijn -> transparant (witte kier uit het model)
+(49,19) 12 -> 0  b: lichte vleugelpixel rechts van de lijn -> transparant (witte kier uit het model)
+(50,19) 12 -> 0  b: lichte vleugelpixel rechts van de lijn -> transparant (witte kier uit het model)
+(51,19) 5 -> 2  b: staartrand aan de kier dicht: 5 -> 2 (donkere rand)
+(46,20) 4 -> 0  b: lichte vleugelpixel rechts van de lijn -> transparant (witte kier uit het model)
+(47,20) 4 -> 0  b: lichte vleugelpixel rechts van de lijn -> transparant (witte kier uit het model)
+(48,20) 11 -> 0  b: lichte vleugelpixel rechts van de lijn -> transparant (witte kier uit het model)
+(49,20) 13 -> 0  b: lichte vleugelpixel rechts van de lijn -> transparant (witte kier uit het model)
+(50,20) 13 -> 0  b: lichte vleugelpixel rechts van de lijn -> transparant (witte kier uit het model)
+(51,20) 5 -> 2  b: staartrand aan de kier dicht: 5 -> 2 (donkere rand)
+(44,21) 12 -> 4  b: buitenrand naar de kier: 4, taps naar c op (43,22)
+(46,21) 4 -> 0  b: lichte vleugelpixel rechts van de lijn -> transparant (witte kier uit het model)
+(47,21) 11 -> 0  b: lichte vleugelpixel rechts van de lijn -> transparant (witte kier uit het model)
+(48,21) 11 -> 0  b: lichte vleugelpixel rechts van de lijn -> transparant (witte kier uit het model)
+(49,21) 13 -> 0  b: lichte vleugelpixel rechts van de lijn -> transparant (witte kier uit het model)
+(50,21) 13 -> 0  b: lichte vleugelpixel rechts van de lijn -> transparant (witte kier uit het model)
+(51,21) 5 -> 2  b: staartrand aan de kier dicht: 5 -> 2 (donkere rand)

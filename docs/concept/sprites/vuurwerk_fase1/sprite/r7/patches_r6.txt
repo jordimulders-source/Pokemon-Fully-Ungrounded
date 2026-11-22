@@ -1,0 +1,20 @@
+# r6 (coordinator na keuring r5 + Jordi "r5 maakt de handen wel minder mooi dan r4" / "hij hertekent ze gewoon").
+# MODEL OVERNEMEN: geen nieuwe vormen; kammetjes en lus volgen de gemeten modelpixels (cov.py '.', '#dE', 'sml', 'Lktb#d').
+# --- 0 HANDJESZONE terug naar r4 (rij 13-20, kol 0-17 in spritecoordinaten = canvas rij 14-21, kol 17-34), pixel voor pixel
+import numpy as _np
+_R4=_np.load('../r4/sprite_A.npy')
+for _r in range(13,21):
+    for _c in range(0,18): R3.append(('r4 handjes',_r,_c,CH[_R4[_r,_c]],'handjeszone = r4 (Jordi)'))
+# --- 1 KAMMETJES: silhouet ongewijzigd (= model: cov '.'), alleen kleur. Binnenkant L (index 7 = nieuwe lichtste crème fff8ea, lichter dan gezicht c),
+#     omlijning b aan de lichtkant (boven/links), # aan de schaduwkant (rechts/onder). Lijnplekken model (cov lijnklasse): kam 1 rechts (6,23) 35;
+#     kam 2 links (6,25) 42 (7,24) 42 (8-10,24) 19-33, top (5,27-28) 42/38, rechts (8,26) 38 (10,26) 35 (6,28) 21 (7,27) 21, onder (12,25) 33 (12,26) 68.
+P('kam1',"4,22=b 4,23=b 5,21=b 6,21=b 5,23=# 6,23=# 5,22=L 6,22=L 7,21=L 7,22=L 7,23=L 8,20=L 8,21=L 8,22=L 8,23=L 9,22=L 9,23=L","kam 1: omlijning b links/boven, # rechts; binnen L")
+P('kam2',"5,27=b 5,28=b 6,25=b 6,26=b 6,27=L 6,28=# 7,24=b 7,25=L 7,26=L 7,27=# 8,24=b 8,25=L 8,26=# 9,24=b 9,25=L 9,26=# 10,24=b 10,25=L 10,26=# 11,24=b 11,25=L 11,26=# 12,25=b 12,26=#","kam 2 (sikkel uit het model: haak rechtsboven, linkerlijn kol 24, rechterlijn kol 26): b links/boven, # rechts/onder, binnen L")
+# --- 2 KINRAND schaduwkant: donkerste lijnkleur zoals (20,24-26)
+P('kin',"21,20=# 21,21=# 21,22=# 19,23=# 20,23=#","kinrand onderkant = # (model lijn, schaduwkant)")
+# --- 3 LIJNKLEUR per rand: staart rechts # (schaduwkant), links d; linkerrand kegelvoet/handjes d (lichtkant)
+P('staart',"52,11=# 53,12=# 54,12=# 55,12=# 56,12=# 57,12=# 60,10=#","staart rechterrand d -> # (schaduwkant)")
+P('kegelvoet',"11,3=d 11,4=d 13,6=d 14,3=d 14,4=d 14,6=d","linkerrand rij 11-14 # -> d (lichtkant); (13,6)(14,3)(14,4)(14,6) liggen in de handjeszone: alleen kleurindex, vorm = r4")
+# --- 5 RECHTERLUS naast de opening: bolling uit het model (cov '.'/'sml'/'#dE'): vulling kol 14-16 op rij 40-42 (sml 100/100/83), lijn kol 17 (25 %),
+#     rij 38 blijft r5 (top van de lus: (37,15) is in het model maar 26 % dekkend, anders open rand)
+P('lus',"40,15=m 40,16=s 40,17=# 41,15=m 41,16=s 41,17=# 42,15=m 42,16=s 42,17=#","rechterlus 1 px breder op de modelrand")

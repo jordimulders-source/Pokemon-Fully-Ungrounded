@@ -1,0 +1,53 @@
+{
+ "tooi (rij 0-26, kol 12-47)": {
+  "pixels_anders_dan_kale_reductie": 413,
+  "waarvan_dekking": 45,
+  "dekkend": 610
+ },
+ "rechtervleugel (rij 13-40, kol 37-60)": {
+  "pixels_anders_dan_kale_reductie": 321,
+  "waarvan_dekking": 50,
+  "dekkend": 436
+ },
+ "kop (rij 25-33, kol 22-37)": {
+  "pixels_anders_dan_kale_reductie": 83,
+  "waarvan_dekking": 14,
+  "dekkend": 118
+ },
+ "lijf + rokje (rij 34-49, kol 24-39)": {
+  "pixels_anders_dan_kale_reductie": 173,
+  "waarvan_dekking": 8,
+  "dekkend": 234
+ },
+ "linkervleugel (rij 34-50, kol 0-24)": {
+  "pixels_anders_dan_kale_reductie": 109,
+  "waarvan_dekking": 25,
+  "dekkend": 173
+ },
+ "onderste rechterveren (rij 41-51, kol 38-52)": {
+  "pixels_anders_dan_kale_reductie": 61,
+  "waarvan_dekking": 9,
+  "dekkend": 82
+ },
+ "poten (rij 50-63)": {
+  "pixels_anders_dan_kale_reductie": 83,
+  "waarvan_dekking": 39,
+  "dekkend": 100
+ },
+ "totaal": {
+  "anders": 1110,
+  "dekking_anders": 172,
+  "dekkend": 1550,
+  "bbox": [
+   6,
+   57,
+   2,
+   61
+  ],
+  "breed_x_hoog": [
+   52,
+   60
+  ],
+  "kleuren_incl_transparant": 15
+ }
+}

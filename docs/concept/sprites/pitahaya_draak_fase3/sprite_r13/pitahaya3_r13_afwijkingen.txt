@@ -1,0 +1,19 @@
+# pitahaya3_r13_F.png t.o.v. r12: 6 px
+F | 8 | 30 | w -> W
+F | 9 | 30 | w -> W
+F | 8 | 31 | W -> d
+F | 9 | 31 | W -> d
+F | 8 | 32 | r -> W
+F | 9 | 32 | r -> w
+
+# pitahaya3_r13_G.png t.o.v. r12: 4 px
+G | 8 | 30 | w -> W
+G | 9 | 30 | w -> W
+G | 8 | 31 | W -> w
+G | 9 | 31 | W -> q
+
+# pitahaya3_r13_H.png t.o.v. r12: 3 px
+H | 8 | 30 | w -> W
+H | 8 | 31 | W -> w
+H | 9 | 31 | W -> w
+

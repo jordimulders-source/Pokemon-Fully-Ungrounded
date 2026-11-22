@@ -175,6 +175,7 @@ Gevolgen:
 - In `species_info` wisselen de frames via `.frontAnimFrames` (`ANIMCMD_FRAME(0, n)`/`(1, n)`) plus een `.frontAnimId` (bijv. `ANIM_V_SQUISH_AND_BOUNCE`).
 
 ### 1.8 De achterkant (back)
+> Uitgebreidere studie (alle generaties, verhoudingstabel per fronthoogte, overworld) en werkwijze: `docs/concept/sprites/rug_icoon_studie/STUDIE.md`.
 - Van achteren-linksboven gezien, het lijf naar rechtsboven gericht; de kop is vaak in profiel gedraaid zodat **één oog zichtbaar** blijft (Treecko, Ralts, Zigzagoon, Aron, Linoone).
 - **Groter dan de front:** ±1,14× zo breed en ongeveer even hoog, want de onderkant is **recht afgesneden**: bij 82% van de backs is de onderste rij voor meer dan de helft gevuld (de rest valt achter het tekstvak). Die snijlijn heeft **geen** zwarte omlijning.
 - Zelfde licht (linksboven) en dezelfde selout als de front. Bovenrug en kop krijgen de meeste details; de afgesneden onderkant is egaal.

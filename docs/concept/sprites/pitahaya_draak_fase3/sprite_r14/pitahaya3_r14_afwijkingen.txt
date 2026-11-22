@@ -1,0 +1,8 @@
+# pitahaya3_r14.png t.o.v. ../sprite_r13/pitahaya3_r13_G.png: 7 px (tekens .#drpPgGhHwWkqQs)
+1 schaduw achterin de bek | 11 | 29 | W -> w
+2 banding staartlus | 58 | 45 | g -> G
+2 banding staartlus | 58 | 46 | g -> G
+2 banding staartlus | 58 | 47 | g -> G
+3 knots: rechtsonder donkerst, niet links | 23 | 59 | d -> r
+4 rafel lichtkant | 15 | 51 | h -> H
+4 rafel lichtkant | 16 | 51 | h -> H

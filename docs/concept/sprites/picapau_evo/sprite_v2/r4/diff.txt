@@ -1,0 +1,17 @@
+diff r3 -> r4 per zone
+1 kuif x17-47 y0-10                 31
+2 buik x11-31 y23-44                40
+3 binnenlijnen x29-43 y32-36        15
+4 slagpen x49-58 y26-29              6
+-- bevroren --
+oog x19-22 y11-14                    0
+wang x21-24 y15-16                   0
+snavel x9-17 y13-17                  0
+staartkoord+poten x9-38 y45-63       0
+vleugelpunten x46-63 y3-24           0
+verre vleugel x8-14 y0-12            0
+bliksem x0-12 y29-50                 0
+achterhoofd x27-29 y11-20            0
+stippen                              0
+selout 15 r3 gewijzigd 0
+totaal 89 | buiten de zones: []

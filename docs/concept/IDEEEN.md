@@ -695,4 +695,5 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
   - *Vormen (klimaat + vervoer):* bergen → Fairy/Flying (paraglider of muts als luchtballon); zee/kust → Fairy/Water (zeilbootje, muts als zeil); sneeuw → Fairy/Ice (slee of ski's; let op overlap met Skinguin); woestijn/zoutvlakte → Fairy/Ground; grot → Fairy/Rock (mijnkarretje met lantaarn); jungle → Fairy/Grass; stad → Fairy/Steel (fiets).
 - **Jordi (22 nov):** "Ik dacht aan Gnomigration maar Gnometrotter bekt wat lekkerder".
 - **Jordi (22 nov):** "en hij gaat niet in een stuk vervoer want dan is het gweoon een mannetje in tools" → de vervoer-voorstellen hierboven (paraglider, bootje, mijnkarretje, fiets, slee) vervallen.
+- **Jordi (22 nov):** "hij past zich volledig aan aan de omgeving, dus zijn lichaam verandert mee".
 - Open: aantal fases, type naast Fairy, wat voor kabouter (tuinkabouter, folklore zoals de Latijns-Amerikaanse *duende*, iets anders), waar de woordgrappen zitten (namen, moves, dex-teksten).

@@ -697,3 +697,4 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - **Overlap met de hoes (Claude):** baard → gnome-lijn (snor); hoorns + duivelse oude figuur → vuurduivel fase 2 (Fire/Dark, zittende Baphomet-geitenduivel met ramshoorns).
 - **Voorstellen Claude (open):** de baard wordt het elektrische deel (statische plasma-baard, zoals een plasmabol/teslaspoel) in plaats van wol; hoorns vervangen door bliksemafleiders of geen hoorns; de rook wordt een onweerswolk/ozon; gotische spitsen als lichaamsvorm (kap of rug); kleur bijna zwart-wit (gravure) met één elektrische accentkleur.
 - **Jordi (22 nov):** "zonder de bong natuurlijk".
+- **Jordi (22 nov):** "nee geen zuid amerika link" → yatiri en heksenmarkt vervallen.

@@ -35,3 +35,4 @@
 - r8: "maar die snor met roze omringd ziet er ook raar uit"
 - "dat is toch niet hoe het hoort" (over de roze snorrand)
 - r9: "ja en doe nu de hele sprite volgens dragonflycave"
+- r10: "beter, maar nu lezen de zwarte lijn onder de dneus en de zwarte pixels onder de snor niet zo goed, horen die daar nog? de rest is prima"

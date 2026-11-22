@@ -2836,3 +2836,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.678] - Idee Capybarrel
 - `docs/concept/IDEEEN.md`: nieuw kopje "Capybarrel" met Jordi's idee en de eerste voorstellen (alles open).
+
+### [v0.0.679] - Capybarrel: niet Normal/Water
+- `IDEEEN.md`: Jordi wil Normal/Water vermijden (Bibarel, die nog een evolutie krijgt).

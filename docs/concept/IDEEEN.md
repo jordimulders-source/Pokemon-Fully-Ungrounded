@@ -698,4 +698,5 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - **Jordi (22 nov):** "hij past zich volledig aan aan de omgeving, dus zijn lichaam verandert mee".
 - **Voorstellen Claude (22 nov, lichaam past zich aan; open):** bergen Fairy/Flying (muts lang en vliezig als vleugel, baard wordt veren); zee Fairy/Water (muts als vin, baard als kieuwen/zeewier, zwemvliezen); sneeuw Fairy/Ice (dikke vachtbaard met ijspegels); woestijn Fairy/Ground (graafhanden, snuffelsnuit); grot Fairy/Rock (huid wordt steen en kristal, muts als stalactiet); jungle Fairy/Grass (baard van mos en lianen). Neus en muts over de ogen blijven altijd.
 - **Jordi (22 nov):** "Rock, Flying en Steel doen we". Open: omgeving en lichaam van de Steel-vorm.
+- **Jordi (22 nov):** "ik zit ook nog aan een ijs gnometrotter vorm te denken maar vraag me af of 4 types niet teveel is" (open).
 - Open (oud): aantal fases, type naast Fairy, wat voor kabouter (tuinkabouter, folklore zoals de Latijns-Amerikaanse *duende*, iets anders), waar de woordgrappen zitten (namen, moves, dex-teksten).

@@ -14,3 +14,8 @@ Lijn: Lunatone → deze evolutie. Tegenhanger van de Solrock-evolutie "corona" (
 
 ## Grootte
 Eindvorm, zwevend: vult het 64×64-vak zoals het model (puin tot bijna de rand).
+
+## Pose (23 nov)
+- Jordi: "hij is mooi, maar wel volledig horizontaal"; Gemini v14/v15 mislukt ("dit is gedraaid, maar geen driekwart pose" · "nee dit is ook niet geslaagd").
+- Jordi: "hij moet een x aantal graden draaien" / "naar rechts"; "lunatone is dus wel een driekwart sprite zie ik nu".
+- r6 (oog naar links geschoven): "nee dit is niet gelukt, je draait hem de verkeerde kant op". Juist: gezicht schuift naar rechts (naar de voorkant), linkerrand van de bol komt achter de neus in beeld. r7 in de maak.

@@ -654,3 +654,5 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - **Fase 2 (Jordi):** "ik zie de discusvis wel zitten, maar dan echt als een zeepje, zoals de winegum blobfish." "Misschien dan klein beetje schuim laten komen uit de mond of kieuwen (voorkeur voor 2e, maar weet niet of dat goed vertaalt)." Over het cirkels-en-driehoekenrisico: "nonsens, dat is alleen als je blender gebruikt, dat doen we niet meer."
 - **Open:** schuim uit kieuwen of mond, namen.
 - **Fase 3 prompt v1 (21 nov):** `sprites/zeepvis_fase3/gemini/PROMPT.md`.
+- **Fase 3 Gemini (21–22 nov):** 6 rondes in `sprites/zeepvis_fase3/gemini/` (prompts + Jordi's reacties in PROMPT.md). Schuim las steeds als witte vinnen of "uitslag"; r6 met zeepbelvliezen (pastel regenboogglans) is "de beste tot nu toe"; losse bubbels blijven weg. Open: extra zeephint buiten kleur (Claude-opties: zeepstempel op de flank, natte glans, schuimplukje bij de kieuwen, vinranden als boogjes).
+- **Gepauzeerd (Jordi, 22 nov):** "pauzeer het maar even, ik ga nog even meer over dit design en de lijn nadenken, merk dat ik nog niet helemaal overtuigd ben".

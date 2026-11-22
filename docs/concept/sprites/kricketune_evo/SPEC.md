@@ -4,11 +4,13 @@
 - (eerder, IDEEEN.md) "Kricketune-evolutie die echt een dirigent wordt."
 - 22 nov: "Laten we met Kricketune aan de slag gaan"
 - 22 nov: "die wordt bug/fairy"
+- 22 nov: "hij moet ook een duidelijke 3e fase zijn"
 - 22 nov, keuzes uit Claudes opties: arm wordt stokje; vleugels = rokpanden; pose armen omhoog.
 
 ## Besloten
 - Type **Bug/Fairy** (Kricketune is in de repo puur Bug, Technician).
 - Een dirigent.
+- Duidelijk een 3e fase (Kricketot → Kricketune → deze).
 - Eén voorarm loopt uit in een dirigeerstokje (organisch, zoals Kricketunes mes-armen).
 - De dekvleugels hangen als de slippen van een rokkostuum.
 - Pose: midden in een maat, beide armen geheven.

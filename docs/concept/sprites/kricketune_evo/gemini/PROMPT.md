@@ -2,6 +2,7 @@
 
 ```
 Design a brand-new Pokémon: the evolution of Kricketune. Type Bug/Fairy. It is an orchestra CONDUCTOR. It must clearly read as Kricketune's evolution (same colors, same curled moustache-like antennae, same cricket build), but it is a new creature, not a copy of Kricketune.
+It must clearly read as a THIRD (final) stage: Kricketot → Kricketune → this.
 Draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style): pixel art, 64×64, max 16 colors, dark selout outline, plain white background.
 
 WHAT IT IS

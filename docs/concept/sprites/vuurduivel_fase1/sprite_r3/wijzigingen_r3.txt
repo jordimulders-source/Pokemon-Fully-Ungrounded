@@ -1,0 +1,28 @@
+(26,27) #->d  lijn onder de rechterhoorn: werd een losse zwarte pixel na het weghalen van de wenkbrauwpixel (26,28); donkere vlaktint (model ##)
+(26,28) #->m  rechteroog: Haunter-techniek, lid 2 dik schuin naar de neus, pupil 2x2 binnenkant in het wit (model: pupil kol 50-53)
+(25,29) #->m  rechteroog: Haunter-techniek, lid 2 dik schuin naar de neus, pupil 2x2 binnenkant in het wit (model: pupil kol 50-53)
+(27,29) m->#  rechteroog: Haunter-techniek, lid 2 dik schuin naar de neus, pupil 2x2 binnenkant in het wit (model: pupil kol 50-53)
+(28,29) m->#  rechteroog: Haunter-techniek, lid 2 dik schuin naar de neus, pupil 2x2 binnenkant in het wit (model: pupil kol 50-53)
+(17,30) #->m  linkeroog: Haunter-techniek, lid 2 dik schuin naar de neus, pupil 2x2 rechts in het wit (model: pupil kol 35-36 rechts)
+(25,30) m->#  rechteroog: Haunter-techniek, lid 2 dik schuin naar de neus, pupil 2x2 binnenkant in het wit (model: pupil kol 50-53)
+(26,30) m->#  rechteroog: Haunter-techniek, lid 2 dik schuin naar de neus, pupil 2x2 binnenkant in het wit (model: pupil kol 50-53)
+(18,31) m->#  linkeroog: Haunter-techniek, lid 2 dik schuin naar de neus, pupil 2x2 rechts in het wit (model: pupil kol 35-36 rechts)
+(24,31) m->#  rechteroog: Haunter-techniek, lid 2 dik schuin naar de neus, pupil 2x2 binnenkant in het wit (model: pupil kol 50-53)
+(26,31) #->W  rechteroog: Haunter-techniek, lid 2 dik schuin naar de neus, pupil 2x2 binnenkant in het wit (model: pupil kol 50-53)
+(17,32) #->W  linkeroog: Haunter-techniek, lid 2 dik schuin naar de neus, pupil 2x2 rechts in het wit (model: pupil kol 35-36 rechts)
+(19,32) m->#  linkeroog: Haunter-techniek, lid 2 dik schuin naar de neus, pupil 2x2 rechts in het wit (model: pupil kol 35-36 rechts)
+(25,32) W->#  rechteroog: Haunter-techniek, lid 2 dik schuin naar de neus, pupil 2x2 binnenkant in het wit (model: pupil kol 50-53)
+(17,33) W->#  linkeroog: Haunter-techniek, lid 2 dik schuin naar de neus, pupil 2x2 rechts in het wit (model: pupil kol 35-36 rechts)
+(18,33) W->#  linkeroog: Haunter-techniek, lid 2 dik schuin naar de neus, pupil 2x2 rechts in het wit (model: pupil kol 35-36 rechts)
+(19,33) #->m  linkeroog: Haunter-techniek, lid 2 dik schuin naar de neus, pupil 2x2 rechts in het wit (model: pupil kol 35-36 rechts)
+(17,34) W->#  linkeroog: Haunter-techniek, lid 2 dik schuin naar de neus, pupil 2x2 rechts in het wit (model: pupil kol 35-36 rechts)
+(18,36) m->#  mond: open lachende mond op modelmaat, mondhoeken omhoog (18,36) en (26,35), zwarte rand, binnenkant rood i.p.v. donkerbruin zodat hij leest
+(19,36) d->#  mond: open lachende mond op modelmaat, mondhoeken omhoog (18,36) en (26,35), zwarte rand, binnenkant rood i.p.v. donkerbruin zodat hij leest
+(20,36) d->#  mond: open lachende mond op modelmaat, mondhoeken omhoog (18,36) en (26,35), zwarte rand, binnenkant rood i.p.v. donkerbruin zodat hij leest
+(21,36) d->#  mond: open lachende mond op modelmaat, mondhoeken omhoog (18,36) en (26,35), zwarte rand, binnenkant rood i.p.v. donkerbruin zodat hij leest
+(21,37) M->r  mond: open lachende mond op modelmaat, mondhoeken omhoog (18,36) en (26,35), zwarte rand, binnenkant rood i.p.v. donkerbruin zodat hij leest
+(22,37) M->r  mond: open lachende mond op modelmaat, mondhoeken omhoog (18,36) en (26,35), zwarte rand, binnenkant rood i.p.v. donkerbruin zodat hij leest
+(23,37) M->r  mond: open lachende mond op modelmaat, mondhoeken omhoog (18,36) en (26,35), zwarte rand, binnenkant rood i.p.v. donkerbruin zodat hij leest
+(25,37) M->r  mond: open lachende mond op modelmaat, mondhoeken omhoog (18,36) en (26,35), zwarte rand, binnenkant rood i.p.v. donkerbruin zodat hij leest
+(21,38) M->r  mond: open lachende mond op modelmaat, mondhoeken omhoog (18,36) en (26,35), zwarte rand, binnenkant rood i.p.v. donkerbruin zodat hij leest
+(25,39) d->#  mond: open lachende mond op modelmaat, mondhoeken omhoog (18,36) en (26,35), zwarte rand, binnenkant rood i.p.v. donkerbruin zodat hij leest

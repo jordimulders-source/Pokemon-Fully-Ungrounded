@@ -24,3 +24,4 @@
 
 ## Rondes
 - Prompt r1: `gemini/PROMPT.md` (nieuw gesprek, geen bijlage).
+- r1: `gemini/r1.png`.

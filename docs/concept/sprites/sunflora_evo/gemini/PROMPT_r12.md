@@ -13,3 +13,6 @@ Sprite rules:
 - Plain white background; no ground, no shadow.
 - No glow, no sparkles, no effects, no loose leaves, no vines.
 AVOID: plush/toy look, swamp creature with skin, fingers or toes, a human in a costume.
+
+## Resultaat r12 (`r12.png`)
+Jordi: "geen idee waarom die nu precies sunflora maakt, maar we kunnen hier het hoofd op plakken denk ik". Claude plakte het r5-hoofd op het r12-lijf (gezichtsmiddens gelijk, hoofd vóór het lijf), schaal 1,3/1,6/1,9 × de breedte van het r12-hoofd: `r12_kop_r5.png` (script `gereedschap/kop_op_r12.py`; bij 1,0 piepen de oude bloemblaadjes erachter uit).

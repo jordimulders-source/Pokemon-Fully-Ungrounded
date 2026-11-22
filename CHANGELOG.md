@@ -2717,3 +2717,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.649] - Sunflora-evolutie: sprite r1 en r2
 - r1: hoofd overgenomen uit r5 (gezicht 0 px afwijking), lijf verkleind en hertekend. Jordi: "het lichaam zit niet vast aan het hoofd en je hebt het lichaam opnieuw getekend" · "dat mag niet".
 - r2 (`sprite_r2/vel.png`): hoofd = r1 (diff 0), lijf = Sunflora-pixels zonder handwerk, vast aan de ster, voeten 90° gedraaid zodat ze hangen. A = lijf 1×, B = 2× kleiner, C = 1,25× groter. Ter keuze voor Jordi.
+
+### [v0.0.650] - Sunflora-evolutie: lijf via Gemini r6–r12, hoofd erop geplakt
+- r6–r11: Gemini maakte geen goed vastzittend lijf (vóór het hoofd, rank, "swamp demon", losse bladeren). r12 (prompt vanaf nul) gaf een Sunflora met een lijf dat goed onder het hoofd zit; Jordi: "we kunnen hier het hoofd op plakken". r5-hoofd erop in drie maten (`gemini/r12_kop_r5.png`).

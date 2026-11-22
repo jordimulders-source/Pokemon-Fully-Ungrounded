@@ -19,4 +19,5 @@ Alleen Jordi's woorden (22 nov); niets anders is besloten.
 - Na sprite r2 (Jordi, 22 nov): "maar het lichaam ziet er toch niet uit zo. Assets heel raar aan elkaar geplakt zo, er klopt niks van" · "en nergens sluit die dus goed aan" · "overal te laag".
 - Jordi (22 nov): "anders haal je het hele lichaam weg" · "en gaan we gemini vragen om een lichaam eronder te maken" · "dan wordt die maar anders, is niet erg".
 - Jordi (22 nov): "ligt ook aan prompt denk ik" · "het mag best een normaal lichaam zijn".
+- **Model (Jordi, 22 nov): r5-hoofd op het r12-lijf, schaal 1,6** ("1,6 is precies wat ik bedoel"): `gemini/model_16.png` (`gemini/gereedschap/kop_op_r12.py model_16.png 1.6`).
 - Open: naam, kleuren, details van het kosmische deel, stats.

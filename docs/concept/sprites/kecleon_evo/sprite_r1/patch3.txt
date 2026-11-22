@@ -1,7 +1,0 @@
-# losse pixels opgeruimd
-31 22 C
-36 22 F
-38 56 B
-46 16 B
-48 44 D
-51 25 D

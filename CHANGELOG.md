@@ -2851,3 +2851,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - r8: neusaansluiting netter, pupil 1 px lager (kijkt niet meer omhoog), oog op 0/2/4 px naar rechts × iris zoals r7/donkerder; Jordi: "midden onder is goed" (2 px, donkere iris).
 - r9: losgekomen barstjes rechts van het oog taps laten uitlopen (3 px).
 - Af: `lunatone_evo/af/bloedmaan.png` (+ 8×), op het overzichtsvel onder "Evolutions of existing Pokémon" als "Bloedmaan (Lunatone)", rock/cosmic. Naam en evolutiemethode open.
+
+### [v0.0.682] - Kecleon-evolutie geschrapt
+- Kecleon-evolutie (Galápagos-landleguaan, Grass/Fire) ontworpen en in 4 spriterondes geprobeerd; Jordi: "als een ontwerp al twijfelachtig is qua looks dan wordt het vaak niet meer beter, schrap deze maar volledig". Map `docs/concept/sprites/kecleon_evo/` verwijderd (staat nog in de git-geschiedenis); geschrapt in POKEMON.md, IDEEEN.md en TODO.md. Kecleon zelf blijft in de dex.
+- Lessen in `docs/lessen/GEMINI.md`: model per script omkleuren, "met de hand inkleuren" werd hertekenen, en twijfelachtig ontwerp = schrappen.

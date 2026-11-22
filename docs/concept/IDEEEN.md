@@ -659,6 +659,7 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - **Jordi:** "Ik zit ook te denken aan een soort vuurduivel lijn, er zijn nog niet echt duiveltjes. Ik heb tot nu toe alleen de fase 1 in gedachten wat een cute maar cheeky fire/dark duiveltje is".
 - **Jordi (22 nov):** "hoeft niet per se zuid amerikaans".
 - **Jordi (22 nov):** "het wordt een soort wezentje als het duiveltje van ashley in wario ware, niet precies hetzelfde design, maar zelfde idee. Het is een duiveltje die ongein veroorzaakt en dat lachen vindt." Lucifer-idee (Claude): "geinig bedacht maar de uitvoering gaat niet top zijn". **Basis: sater** (Jordi: "ja een satyr is een goede, daar was ik een beetje naar op zoek").
+- **Jordi (22 nov):** "en die kan dan evolven naar een meer baphomet richting" (vraag: is Baphomet erg controversieel?).
 - Eerder in de pitches: Diablada-masker (Dark/Fire, FAKEMON_PITCH #65), El Tío (Dark/Rock, #56). In de dex: Houndour-lijn (enige Fire/Dark), Impidimp-lijn (Dark/Fairy, ondeugende kobolden).
 
 ## Kreten (Jordi, 19 nov)

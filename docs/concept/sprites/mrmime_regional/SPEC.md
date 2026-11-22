@@ -46,3 +46,4 @@ Jordi: "ik denk dat dit ontwerp het niet gaat worden" – "het hele idee bedoel 
 - Jordi: "en de oren misschien wat meer achterovergekamd". Vragen over houding/snor/accent niet beantwoord. Prompt r2: `bokser/PROMPT_r2.md` (zwart-wit, gentlemanly, oren ver achterover; houding als r1).
 - Jordi stuurde een 19e-eeuwse boksersfoto (rechtop, één arm gestrekt met vuist vooruit, andere vuist tegen de borst): "deze houding". Verwerkt in r2 (in woorden, geen bijlage).
 - Jordi over Mr. Rime vs Mr. Prime: "mr rime is een jolly danser en mr prime wordt een volledige gentleman qua pose, dat en qua kleur is echt genoeg verschil". (Kanttekening Claude vervalt.)
+- r2 (`bokser/r2.png`; zwart-wit, gedrongen, maar wijde vechthouding met beide vuisten bij de borst), Jordi: "niet de juiste pose". Bijsturen r3 (zelfde gesprek, alleen pose): `bokser/PROMPT_r3_bijsturen.md`.

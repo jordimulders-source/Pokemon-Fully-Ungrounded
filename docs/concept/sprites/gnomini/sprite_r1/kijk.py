@@ -17,8 +17,9 @@ def model_op_schaal():
                     if w>1e-9: acc+=w*a[v,u]; tw+=w
             out[Y,X]=acc/tw
     return Image.fromarray(out.astype('uint8'))
-ims=[lees(p) for p in sys.argv[2:]]+[model_op_schaal()]
-box=(10,14,54,62); z=8
-W=Image.new('RGB',((box[2]-box[0])*z*len(ims)+8*len(ims),(box[3]-box[1])*z),'white')
-for i,im in enumerate(ims): W.paste(im.crop(box).resize(((box[2]-box[0])*z,(box[3]-box[1])*z),Image.NEAREST),(i*((box[2]-box[0])*z+8),0))
-W.save(sys.argv[1])
+if __name__=="__main__":
+  ims=[lees(p) for p in sys.argv[2:]]+[model_op_schaal()]
+  box=(10,14,54,62); z=8
+  W=Image.new('RGB',((box[2]-box[0])*z*len(ims)+8*len(ims),(box[3]-box[1])*z),'white')
+  for i,im in enumerate(ims): W.paste(im.crop(box).resize(((box[2]-box[0])*z,(box[3]-box[1])*z),Image.NEAREST),(i*((box[2]-box[0])*z+8),0))
+  W.save(sys.argv[1])

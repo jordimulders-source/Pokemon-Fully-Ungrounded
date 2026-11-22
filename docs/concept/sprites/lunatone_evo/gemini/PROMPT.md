@@ -311,13 +311,17 @@ AVOID
 
 ## Jordi (letterlijk)
 - "het ligt aan je prompt, je moet de pokemon gewoon beschrijven puur zonder lunatone te benoemen"
+- "dus incl oog en neus hoe die eruit moeten zien" (oog en neus beschreven naar Lunatones Gen 3-sprite)
 
 ```
 Draw an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art) of this Pokémon:
 
 A Rock/Cosmic-type Pokémon that is a blood moon. Its body is a big round full moon made of stone, deep coppery red, as if lit by a total lunar eclipse. It is old and battered: a few large craters, some deep cracks, and pieces have broken off its edge. Those broken pieces float loose around it, close to the body but not touching it.
 
-Its face: one large round red eye with a thick black rim, and next to it a short, pointed stone nose sticking out of the round body. The body stays round all the way around the nose; the stone around the base of the nose is cracked and crumbled. It has no mouth, no arms, no legs. It floats, seen in three-quarter view facing left.
+Its face sits on the left half of the body, at mid-height:
+- The eye: one large round eye, bright red iris with a small black vertical slit pupil and a tiny white highlight. The eye sits deep in a thick black socket that is wider on its right side, like a dark crescent-shaped rim hugging the eye.
+- The nose: a long, sharp stone spike growing straight out to the left from just beside the eye, level with the eye, about twice as long as the eye is wide. It is wedge-shaped and tapers to a sharp point: a lighter top face and a darker bottom face, divided by one dark line running along its length to the tip. Same red stone as the body.
+- The body stays round all the way around the nose: the nose grows out of the bulging surface. The stone around the base of the nose is cracked and crumbled. It has no mouth, no arms, no legs. It floats, seen in three-quarter view facing left.
 
 Sprite: 64x64 pixels, max 16 colors, 1 px dark outline, light from the top left, clean Game Freak shading with bold, simple shapes. Plain white background, no glow, no shadow, no effects.
 ```

@@ -266,3 +266,37 @@ AVOID
 - Not an emblem, badge, logo or symbol. Not a sun. No lava, no gems or crystals, no fire.
 - No arms, legs, wings or human features. No glossy 3D render, no plush or mascot look.
 ```
+
+---
+
+# Prompt v9 (22 nov): NIEUW gesprek, GEEN bijlage, zonder gezicht
+
+## Jordi over v8 (`r8/gemini_v8.png`, letterlijk)
+- "teveel detail, kunnen we niet gebruiken, maak er wel echt een pokemon van"
+
+## Analyse Claude
+v8 = realistische maanfoto in pixels (vlekkerige textuur, veel scheurtjes, grijze brokken). Nu: weinig grote vormen, vlakke Gen 3-schaduw, Pokémon-stijl zoals Minior/Geodude/Carbink; gezicht blijft leeg (plakken we later).
+
+```
+Design a new Rock-type Pokémon and draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art). It must look like a real Pokémon from the games, not like a picture of a planet.
+
+CONCEPT
+- A crumbling blood moon: a living full moon of stone during a total lunar eclipse, falling apart. Old, battered and powerful.
+
+DESIGN
+- Body: a big round full moon of stone in coppery blood red. Simple and bold like Minior, Geodude or Carbink: a clean round shape with only a few big, clear craters (3 or 4) and 2 or 3 bold cracks. No noisy texture, no speckles, no realistic moon surface.
+- Crumbling: a few big chunks have broken off its edge and float loose around it, none of them touching it, in the same red stone. Only 4 or 5 chunks, plus 2 or 3 tiny fragments.
+- No face: no eyes, no nose, no mouth. Leave the front-left of the moon smooth and plain.
+
+POSE
+- Three-quarter view, the sphere slightly tilted, floating.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from the top left, clean flat cel shading in 4 or 5 tones of red like official Game Freak Gen 3 sprites.
+- Plain white background. NO soft glow or halo behind the creature, no floor, shadow, sparkles or effects. One single creature, no extra views.
+
+AVOID
+- No realistic or photographic texture, no dithering noise, no many small cracks.
+- No notch, hollow, cut-out or bite in the moon. Not an emblem or logo. Not a sun. No lava, no gems, no fire.
+- No arms, legs, wings or human features. No glossy 3D render, no plush or mascot look.
+```

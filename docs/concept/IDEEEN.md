@@ -700,4 +700,5 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - **Jordi (22 nov):** "Rock, Flying en Steel doen we". Open: lichaam van de Steel-vorm (omgeving: urban areas).
 - **Jordi (22 nov):** "ik zit ook nog aan een ijs gnometrotter vorm te denken maar vraag me af of 4 types niet teveel is" (open).
 - **Jordi (22 nov):** "dat hoeft niet nu, maar steel wordt dan urban areas" → Steel-vorm = stad/urban areas.
+- **Jordi (22 nov):** "ik vraag me af of flying en ice niet overlappen" → voorstel Claude: Flying = wind (kliffen, pampa, hoogvlakte; muts als zeil/vlies, snor/haar als veren), Ice = kou (sneeuw, gletsjers; vachtbaard met ijspegels), of Ice laten vallen (open). "wat we kunnen doen is iig met de rock variant beginnen, die weet ik zeker dat ik die wil".
 - Open (oud): aantal fases, type naast Fairy, wat voor kabouter (tuinkabouter, folklore zoals de Latijns-Amerikaanse *duende*, iets anders), waar de woordgrappen zitten (namen, moves, dex-teksten).

@@ -37,3 +37,4 @@
 - "fix de neus van gnomini gewoon" → **af = r6-A** (neuslijn donkerroze, zwart alleen aan de buitenrand, zoals de Grumpig-snuit).
 - "ik zie geen enkel verschil" → af = C zonder de 2 zwarte pixels (neuslijn lichter linksboven, donkerroze onder, geen zwart), `sprite_r8/`.
 - "hoe zit het met de neus van popplio" → gemeten (`sprite_r8/popplio_neus.png`): Popplio-neuslijn is overal de donkerste eigen tint (883070), ook waar de neus tegen de witte snuit ligt; zwart (101010) alleen aan de buitenrand linksonder; binnenin 3 tinten + wit glanspixel linksboven.
+- "nou daar heb je je antwoord" → zoals Popplio: neuslijn rondom de donkerste eigen tint, zwart alleen aan de buitenrand → **af = r6-A**.

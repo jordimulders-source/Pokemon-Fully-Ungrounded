@@ -1,0 +1,12 @@
+# romp met de hand (P_rood): g rode grond, y goud, k zwart, s naad/tailleband (zwart)
+# rij 26 rode grond = ruimte tussen nek en masker ("iets losser van de nek")
+# masker 8 breed x 6 hoog (x29-36, rij 27-32): rij 27 getrapte tooi, rij 28-30 zeshoek-ogen, rij 31-32 grijns
+# rij 33 tailleband (zwart, 1 px) tussen shirt en shorts, onderbroken door de top van de ^-spleet
+26 x31 gggg
+27 x30 ykyyky
+28 x29 gyyggyyg
+29 x29 ykkyykkyg
+30 x29 gyyggyygg
+31 x28 ggkykkyk
+32 x29 ggyyyyg
+33 x29 sss.ssss

@@ -27,3 +27,4 @@
 - sprite r5: "nee want hij is nu iets te vierkant, voor het ontwerp is het goed als dat net afwijkt, evenals de riem zelf die niet moooi op zichzelf aansluit"
 - sprite r6 (krabbel `sprite_r6/jordi_krabbel_riem.png`: gele lijnen langs boven- en onderrand van de riem rechts van de gesp, streepjes bij het rechteruiteinde boven en onder): "deze lijnen zijn te egaal en daar zitten pixel gaten"
 - "de gesp is nu beter" (r6; A of B niet genoemd)
+- "ik stel voor om op de andere 2 hoeken ook 1 zwarte pixel weg te halen bij de gesp"

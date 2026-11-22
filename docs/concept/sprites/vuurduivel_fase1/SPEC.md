@@ -8,3 +8,5 @@
 - r2: "ben alleen geen fan van de ogen", "hij mag wat meer lachen", "nee ik wil geen buikspieren", "lachen met ogen open maar wel van die ondeugende ogen, hij mag wat minder mensachtig, wat meer cute nog".
 - r3: "ik ben van het eerste design wel fan" → **gekozen: `referenties/gemini_gekozen_r3a.png`** (prompt `gemini/PROMPT_v3.md`). r3b (gele ogen) niet gekozen.
 - Staart: "pijlstaart met vuurkleur" (Jordi, 22 nov; staartvlam "een beetje overdone"). Prompt `gemini/PROMPT_v4_staart.md`.
+- r4 (`r4/gemini_r4.png`, staart bijgestuurd in hetzelfde gesprek), Jordi: "het is niet genoeg een pijl, maar dat kunnen we in de sprite doen, ga maar bouwen". **Bevroren model: `referenties/gemini_gekozen_r4.png`** (= r3a met pijlstaart). Toegestane afwijking: de staartpunt moet in de sprite duidelijker een pijl (schoppenpunt) worden, in dezelfde vuurkleuren; de rest exact het model.
+- Frontsprite: werkwijze SPRITE_WERKWIJZE → "Gemini-model namaken" (gereedschap uit `dundragoon/gereedschap/`).

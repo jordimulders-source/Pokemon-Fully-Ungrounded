@@ -2484,3 +2484,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.605] - Nazca-astronaut: r14 mouwen/shorts S1–S5
 - `sprite_r14/`: romp r13 bevroren; mouwen en shorts in 5 stoffen (blauw+goud, goud+rood/zwart, zwart+gouden banden, crème+rode zigzag, goud/zwart + blauw/wit).
+
+### [v0.0.606] - Nazca-astronaut: r15 korte mouwen + zigzagshorts
+- `sprite_r15/`: korte mouwen (a: rode stof met blauw/rood/blauw-rand; b: mouwtje = de strepen), blote crème bovenarm; shorts met getrapte zigzag in L1 blauw/wit, L2 goud/zwart, L3 zwart/goud.

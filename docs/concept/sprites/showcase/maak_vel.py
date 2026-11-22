@@ -70,6 +70,7 @@ SECTIES=[
 ("oddish_regional/gloom_sprite/af/gloom.png",'Gloom (regional)',"water/fire"),
 ("oddish_regional/vileplume_sprite/af/vileplume_regional.png",'Vileplume (regional)',"water/fire"),
 ("swablu_regional/af/swablu.png",'Swablu (regional)',"electric/flying"),
+("swablu_regional/altaria/af/altaria.png",'Altaria (regional)',"electric/dragon"),
 ("oricorio_dansen/cumbia/af/cumbia.png",'Oricorio (cumbia)',"water/flying"),
 ("oricorio_dansen/tango/af/tango.png",'Oricorio (tango)',"dark/flying"),
 ("oricorio_dansen/samba/af/samba.png",'Oricorio (samba)',"grass/flying"),

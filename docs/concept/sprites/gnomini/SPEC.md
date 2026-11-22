@@ -6,10 +6,10 @@
 - "Soort tuinkabouter achtig."
 - "Fase 1 is gnomini, een hele kleine grappige ronde gnome."
 - "laten we eerst beginnen met Gnomini ontwerpen"
+- Antwoorden op vragen (22 nov): lichaam: "geen baard"; kleuren: "Eigen kleuren"; pose: "Waggelend lopen".
 - Lijn en vormen: `docs/concept/IDEEEN.md` → "Gnome-lijn".
 
 ## Open (overleggen vóór de Gemini-prompt)
 - Type: puur Fairy?
-- Baard ja/nee; kleuren (klassieke tuinkabouter: rode puntmuts, witte baard?).
-- Lichaam: is de muts/baard het lijf (Pokémon-achtig) of kleren?
-- Pose.
+- Wat is het lijf (zonder baard)?
+- Welke eigen kleuren?

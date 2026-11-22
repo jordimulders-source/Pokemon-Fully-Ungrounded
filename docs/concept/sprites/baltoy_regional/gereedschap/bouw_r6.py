@@ -44,6 +44,7 @@ oud17[20]='D'                                            # hoek (bron KKDm)
 g=g[:16]+[nieuw,chin,oud17]+g[18:]
 LOG.append(('kop +1 rij',16,'*','-','rij',None,True,'natief rij 32 ingevoegd; kin r17 x17-20 K (natief 34), r18 x17-20 m/D (bron)'))
 H=len(g)
+open('gereedschap/baltoy_r6_klassen.txt','w').write('\n'.join(''.join(r) for r in g)+'\n')   # vorm (klassen) voor r7
 # ---- D. KLEUR: Gen 3-ramp, licht linksboven, warm licht / koele schaduw ----
 PAL={'.':(255,255,255),'H':(238,231,210),'1':(212,202,176),'2':(182,172,148),'3':(148,140,124),'4':(114,108,100),
      'L':(86,78,74),'S':(104,90,78),'K':(40,32,36),'R':(220,90,86),'r':(166,52,60),'P':(240,138,124)}

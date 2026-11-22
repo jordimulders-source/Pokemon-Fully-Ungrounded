@@ -432,3 +432,6 @@ Change only the angle. Right now we see it in pure side view, facing left. Do NO
 
 64x64 pixels, max 16 colors, 1 px dark outline, light from the top left, clean Game Freak shading. Plain white background, no glow, no shadow, no effects.
 ```
+
+## Jordi over v15 (`r15/gemini_v15.png`, letterlijk)
+- "nee dit is ook niet geslaagd"

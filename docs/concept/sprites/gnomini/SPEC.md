@@ -40,3 +40,4 @@
 - "nou daar heb je je antwoord" → zoals Popplio: neuslijn rondom de donkerste eigen tint, zwart alleen aan de buitenrand → **af = r6-A**.
 - "en pak de gnomini met zwarte omlijning" · "fix die" · "want daarna is alles fout gegaan" · "gnomini met zwart omlijnde neus" → **af = oude af (zwarte omlijning) met alleen de neuslijn zoals Popplio**: zwart waar de neus aan de achtergrond grenst, donkerroze waar hij tegen muts/lijf ligt (27 px, `sprite_r9/`). DC-rondes r6–r8 vervallen.
 - "KIJK NAAR DE NEUS VAN POPPLIO / DOE DAT NA" · "DE MANIER WAAROP DIE OMLIJND IS" · "GNOMINI IS NIET AF" → r10: neuslijn zoals Popplio: zwart van linksmidden via linksonder tot onder-midden, donkerroze bovenom en rechts, 1 px (`sprite_r10/`). Status: niet af.
+- "kijk eindelijk" → **af = r10**.

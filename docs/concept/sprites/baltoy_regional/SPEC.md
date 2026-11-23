@@ -126,3 +126,4 @@
 - Jordi over r6 H3b: "links heeft nu helemaal geen neus meer en de ogen staan nu verder uit elkaar, niet erg, maar de rode boog is niet meegegaan. nu is het hele hoofd vrij rommelig geworden, met allemaal losse vlakken, lijnen, krassen etc, niet mooi meer".
 - Claude: oorzaak = de kop is een lappendeken van steeds meer bronnen (3-ogenbasis, verschoven blokken, U5, r7). Voorstel: kop uit één bron opbouwen.
 - Jordi: "ik stel voor nog een gemini ronde om dan te prompten wat we met het hoofd doen, pronpten ben jij beter in dan designen" → `gemini/PROMPT_claydol_r8_bewerking.md` (nieuw gesprek, bijlage = de 3-ogensprite r5 palet B op 8×; "keep pixel grid and palette, change only the face").
+- r8 (`gemini/claydol_r8_bewerking.png`): Gemini tekende een heel nieuw, glad wezen (pootjes, andere staven); alleen de gezichtsindeling bruikbaar. Jordi: "ehm deze wijkt flink af". → r8b-prompt (sterker als pixelbewerking).

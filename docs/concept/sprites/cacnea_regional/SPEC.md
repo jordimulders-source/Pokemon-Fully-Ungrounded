@@ -27,4 +27,5 @@
 
 ## Rondes
 - Prompt Cacnea r1 (`gemini/PROMPT_cacnea_r1.md`, yareta): vervallen, niet gebruikt.
-- Prompt Cacnea r2: `gemini/PROMPT_cacnea_r2.md` (Copiapoa, nieuw gesprek, geen bijlage).
+- Prompt Cacnea r2: `gemini/PROMPT_cacnea_r2.md` → `gemini/cacnea_r2.png` (grijsgroene bol, gele kroon, kleine stekeldriehoekjes). Jordi: "vind het nog niet herkenbaar genoeg de copiapoa, plus die bloem hoort niet?"
+- Prompt Cacnea r3: `gemini/PROMPT_cacnea_r3.md` (nieuw gesprek; geen kroon maar wollige kruin, diepe ribben, lange zwarte naalden, krijtwit).

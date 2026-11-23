@@ -26,3 +26,4 @@
 - **Besloten (Jordi, 23 nov):** "zien er allemaal wel goed uit, dus ga maar voor rechts" → model = r6 met lijf +25% breed (`model/model.png`, ±26,3 px bij 64 hoog); r7 als model vervalt. Eerder akkoord: A zwarte V-kap, C oogvlek leigrijs (fase 2); B (geel vlak) vervallen.
 - r1 (maker): A0/A/A_geel 26×64, `sprite_r1/` (NOTITIES). Claude: silhouet trouw; vleugelpakket vlak, wangplukje rechts weg, V-kap in A leest als donkere massa → r2 (verse maker).
 - r2 (verse maker): vleugelpakket volume (ramp fase 2), wangpunten terug, V-kap P1; diff 0 buiten de zones. Volgende: verse keurder.
+- Keuring r2: A0 en A BIJNA (trouw goed; 8 reparaties: volume onderste vleugelvlak, open rand, pillow shading wit, vuisten, details). Ter info: A heeft geen voorhoofdgeel (A_geel wel), V-punt 1 px. → r3 (maker).

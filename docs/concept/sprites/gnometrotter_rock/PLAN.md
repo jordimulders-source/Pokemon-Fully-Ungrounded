@@ -81,3 +81,4 @@ Jordi (letterlijk): "nee ik wil toch kijken of het lukt om een hybride vorm te m
 - Jordi (over Grass r9): "de houten stok moet beter gekleurd, betere schaduw, evenals de muts en de bladersnor/haren. misschien nog 1 hout boog onder de arm door, voor de rest ben ik tevreden"
 - Jordi (over Ice r8): "ijs is geen onderscheid meer tussen muts en rugijs, haar mag ook net iets meer. Lichaam moet nog ietsje meer ijsvorm, maar ook daar komen we dichterbij"
 - Jordi (over Grass r11): "de muts heeft nu geen bladeren meer"
+- Jordi (over Ice r9 + Grass r11): "ijs mag naar de eindkeuring en wat je hier met de neus hebt gedaan mag direct gecopy paste worden naar rock, ijs moet eindkeuring qua dragonflycave, kleurtinten, schaduw, lijnen, streng maar geen onnodige fixes"

@@ -2885,3 +2885,8 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.692] - Bokser-Mr. Mime: r6–r10 en prompt r11
 - Posepoppetje gaf de pose maar een plat poppetje (r6–r7); r9 palette swap; r10 (Mr. Mime niet genoemd) pose goed. Jordi: verschil via een V-patroon op de torso (borstspieren, geen mensenlijf), getapete vingers (5), haren iets meer achterover, heel klein snorretje, minder stocky. Prompt `bokser/PROMPT_r11.md`.
+
+### [v0.0.693] - Bokser-Mr. Mime: frontsprite af
+- Regionale Mr. Mime als ouderwetse gentleman-bokser (zwart-wit), fase 2 van Mime Jr. → bokser-Mr. Mime → Mr. Prime. Gemini-model r12 (pose naar Jordi's boksersfoto), daarna 24 spriterondes: kop op Mr. Mime-formaat met twee achterovergekamde kuiven, ronde Mr. Mime-romp en -schouderballen, armen en getapete vuisten uit r9, boksbroek, donkergrijze V rekenkundig 20° gedraaid voor de driekwarthoek (Jordi's idee).
+- `docs/concept/sprites/mrmime_regional/bokser/af/bokser.png`; op het overzichtsvel bij de regional forms. Tweede type, naam en evolutiemethode open; Mr. Prime volgt in een nieuw gesprek.
+- Lessen in `docs/lessen/GEMINI.md`: ligposes lukken niet met tekst, geen bijlagen voorstellen, geen half werk naar Jordi, makerrapport op "zelf getekend" lezen.

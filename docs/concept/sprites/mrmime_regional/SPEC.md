@@ -137,3 +137,5 @@ Jordi: "ik denk dat dit ontwerp het niet gaat worden" – "het hele idee bedoel 
 - Jordi start Mr. Prime in een nieuw gesprek. Lijn: Mime Jr. → bokser-Mr. Mime (deze, frontsprite `bokser/sprite_r23/`, na eindkeuring in `bokser/af/`) → **Mr. Prime** (oude gentleman met wandelstok, bartitsu).
 - Vast voor de lijn (Jordi): zwart-witpalet; normale Mr. Mime-huidtint was de reden voor de kleurkeuze ("anders komt mr prime er dalijk raar uit te zien" — daarna werd het zwart-wit); Mr. Prime = "volledige gentleman qua pose", verschil met Mr. Rime (jolly danser) via pose + kleur; bokser 50×56–59 als middenfase, Mr. Prime mag groter/zwaarder.
 - Lessen uit deze sessie: in `docs/lessen/GEMINI.md` (onderaan: ligposes, geen bijlagen voorstellen, geen half werk sturen, makerrapport op "zelf getekend" lezen) en hier per ronde.
+- Eindkeuring r23: BIJNA, 6 punten (8 pixels omkleuren: losse pixels romp/elleboog/broek, tailleband, hooglicht broekspijp); door Claude toegepast → `bokser/sprite_r24/`.
+- **Frontsprite af:** `bokser/af/bokser.png` (+ `_8x`) = r24; op het overzichtsvel bij de regional forms. Tweede type, naam (blijft Mr. Mime?) en evolutiemethode open.

@@ -103,3 +103,4 @@ Jordi: "ik denk dat dit ontwerp het niet gaat worden" – "het hele idee bedoel 
 - Sprite r13 (`bokser/sprite_r13/`): 46×54, ronde Mr. Mime-romp, boksbroek met pijpen, lange dunne benen, armen van Galar. Claude: verre arm leest als stokje, verre schouder randje, nabije onderarm onzichtbaar → r14 (niet naar Jordi).
 - Sprite r14 (`bokser/sprite_r14/`): 50×54, dikke verre arm met knik, twee Mr. Mime-schouderballen, nabije onderarm naar de borstvuist. Keurder gestart.
 - Keurder op r14: BIJNA (schouderranden, verre schouder/scheen perspectief, rompsikkel, broeksband, Y-naad, onderarmlicht); gezichtspunten overgeslagen (vastgesteld). → r15.
+- Sprite r15 (`bokser/sprite_r15/`): 9 keurderspunten uitgevoerd (107 px). Eindcheck keurder gestart.

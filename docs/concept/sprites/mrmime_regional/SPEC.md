@@ -60,3 +60,4 @@ Jordi: "ik denk dat dit ontwerp het niet gaat worden" – "het hele idee bedoel 
 - Jordi: "en nee hij moet niet meer buff of wat dan ook".
 - Jordi: "het silhouet is prima" → r12: lijfomtrek blijft, alleen spierschaduw binnen de romp eruit + V-patroon; pose blijft bijgestuurd.
 - Jordi: "vraag maar alleen om de voorarm te veranderen" → r12 bijsturen alleen de voorarm van de gestrekte arm.
+- r12 (`bokser/r12.png`, voorarm omhoog), Jordi: "vertaalt dit ontwerp naar een sprite?". Model natief ±10 px per pixel → ±60×88; kale verkleining naar 63 px hoog = 43×63 (`bokser/plak/r12_64_8x.png`).

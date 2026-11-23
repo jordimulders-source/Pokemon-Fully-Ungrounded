@@ -47,3 +47,4 @@
 - Eindkeuring (Dragonfly Cave) r2: A PASS, A0 BIJNA (oog); r3 met de reparaties (oog/pupil naar zwart, hand 1 px, tint d (68,68,80)): **beide PASS**. Af: `af/model.png` (A0) en `af/kop14.png` (A), met 8× en `af/vergelijk.png`. Keuze A0/A aan Jordi.
 - Jordi (23 nov): "we gaan voor links" → `af/model.png` (A0) gekozen; vergelijking met het model in `af/naast_model.png`.
 - Jordi: "ja het is puur dat de buik in onze sprite net wat teveel een diagonale lijn is, maak dat iets smoother" · "baseer je op het model" · "dus hele subtiele wijzigingen" → r4: 5 px buikonderrand naar het model (rij 44, 48, 49), diff 0 elders; `af/model.png` = r4.
+- Jordi over r4: "nog niet goed, leg ze allebei op een raster" · "nu heb je sommige hoekjes te dik gepixeld" → raster `sprite_r5/raster_buik.png`; terug naar r3 ("prima aanpak"); Jordi wijst op het raster aan wat te recht is.

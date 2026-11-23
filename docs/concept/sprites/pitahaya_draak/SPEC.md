@@ -1,6 +1,6 @@
 # Pitahaya-draak fase 1 (werknaam open), frontsprite naar Gemini-model
 
-- Eigen lijn, 3 fases: pitahayahoofd met cactusrank-lijf → teju → komododraak (op 2 poten, voorover leunend). Pseudo-legendary, waarschijnlijk Grass/Dragon.
+- Eigen lijn, 3 fases: pitahayahoofd met cactusrank-lijf → teju → komododraak (op 2 poten, voorover leunend). Pseudo-legendary, waarschijnlijk Grass/Dragon. **(23 nov: geen pseudo meer; de Cosmic-lijn wordt de pseudo, Jordi.)**
 - **Model (bevroren ontwerp):** `model/model.png` (= `gemini/r6_gekozen.png`, prompts `gemini/PROMPT.md` v1–v6). Kijkt al naar links, niet spiegelen.
 - Ontwerpgeschiedenis en citaten: `docs/concept/IDEEEN.md` (Pseudo-legendary draak: pitahaya).
 

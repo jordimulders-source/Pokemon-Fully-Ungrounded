@@ -84,11 +84,10 @@ Modeltekeningen in `docs/concept/ontwerp/<soort>/` (concept A/B/C + ONTWERP.md).
 | 5 | Water-regi | diepe zee, nieuw lid Regi-familie | Water? | besloten (23 nov) |
 | 6 | Cosmic-regi | ruimte, nieuw lid Regi-familie; "melkweg thema ... ofzo" (Jordi 23 nov) | Cosmic? | besloten (23 nov) |
 | 7 | Iguazú | waterval, slang/draak, watervallen als vleugels, regenboog | open | gekozen (23 nov) |
-| 8 | Zwart gat | ruimte | open | idee; misschien toch een Cosmic pseudo-lijn i.p.v. legendary (Jordi 23 nov) |
 | 9 | Gletsjer | gletsjer | open | gekozen (23 nov) |
 | 10–12 | Japans maskertrio | kitsune, hannya, kabuki mask (kumadori-masker) | open | gekozen (23 nov) |
 
-Nog 2 of 3 erbij, max (Jordi, 23 nov); kandidaten in `IDEEEN.md`. Eerder genoemd in de concepten, niet in het rijtje ("wordt wel heel veel slangen"): Cai Cai Vilu / Tren Tren Vilu (Mapuche-duo zee/aarde, `MYTHOLOGIE.md`).
+**Zwart gat is geen legendary meer: de Cosmic-lijn (ster/supernova → zwart gat) wordt de pseudo** (Jordi, 23 nov: "1, cosmic lijn wordt de pseudo"); de pitahaya-lijn (Grass/Dragon) is daarmee geen pseudo meer ("qua type denk ik te zwak"). Nog 2 of 3 erbij, max (Jordi, 23 nov); kandidaten in `IDEEEN.md`. Eerder genoemd in de concepten, niet in het rijtje ("wordt wel heel veel slangen"): Cai Cai Vilu / Tren Tren Vilu (Mapuche-duo zee/aarde, `MYTHOLOGIE.md`).
 
 - **Trio: de drie Inca-werelden.** Hanan Pacha (bovenwereld, zon, goden) = **condor** (Jordi, 9 nov: "klinkt uitstekend"; dit is de condor-Pokémon); Kay Pacha (deze wereld) = **poema**; Uku Pacha (onderwereld, voorouders, oorsprong) = **slang**. Typen, namen en rol: open.
 - **Opper-legendary: Pachamama** (Moeder Aarde; "pacha" = wereld én tijd); de drie werelden zijn delen van haar. **Ground/Fairy maken: "ook een goede ja"** (Jordi, 8 nov; Ground/Fairy bestaat nog bij geen enkele soort). Type, naam en rol: open.

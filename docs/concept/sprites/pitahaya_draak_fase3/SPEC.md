@@ -1,6 +1,6 @@
 # Pitahaya-draak fase 3 (komododraak; werknaam open), frontsprite naar Gemini-model
 
-- Lijn: pitahayahoofd met cactusrank-lijf (fase 1, `../pitahaya_draak/af/`) → teju (fase 2, `../pitahaya_draak_fase2/af/`) → **komododraak (deze)**. Pseudo-legendary eindvorm, waarschijnlijk Grass/Dragon.
+- Lijn: pitahayahoofd met cactusrank-lijf (fase 1, `../pitahaya_draak/af/`) → teju (fase 2, `../pitahaya_draak_fase2/af/`) → **komododraak (deze)**. Pseudo-legendary eindvorm, waarschijnlijk Grass/Dragon. **(23 nov: geen pseudo meer; de Cosmic-lijn wordt de pseudo, Jordi.)**
 - **Model (bevroren ontwerp):** `model/model.png` (= `gemini/r4a_tong.png`, met tong). Zonder tong: `model/model_zonder_tong.png` (= `gemini/r4b_zonder_tong.png`, verder pixel-gelijk). Kijkt al naar links, niet spiegelen. Prompts: `gemini/PROMPT.md` v1–v4.
 
 ## Jordi (letterlijk)

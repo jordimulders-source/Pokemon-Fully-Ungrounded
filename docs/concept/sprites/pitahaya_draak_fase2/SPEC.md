@@ -1,6 +1,6 @@
 # Pitahaya-draak fase 2 (teju; werknaam open), frontsprite naar Gemini-model
 
-- Lijn: pitahayahoofd met cactusrank-lijf (fase 1, `../pitahaya_draak/af/`) → **teju (deze)** → komododraak op 2 poten, voorover leunend. Pseudo-legendary, waarschijnlijk Grass/Dragon.
+- Lijn: pitahayahoofd met cactusrank-lijf (fase 1, `../pitahaya_draak/af/`) → **teju (deze)** → komododraak op 2 poten, voorover leunend. Pseudo-legendary, waarschijnlijk Grass/Dragon. **(23 nov: geen pseudo meer; de Cosmic-lijn wordt de pseudo, Jordi.)**
 - **Model (bevroren ontwerp):** `model/model.png` (= `gemini/r2.png`, prompts `gemini/PROMPT.md` v1–v2). Kijkt al naar links, niet spiegelen.
 - Ontwerpgeschiedenis en citaten: `docs/concept/IDEEEN.md` (Pseudo-legendary draak: pitahaya).
 

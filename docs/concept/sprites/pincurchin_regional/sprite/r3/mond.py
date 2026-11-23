@@ -24,9 +24,8 @@ PRI={3:1.3,8:1.25,0:1.0}
 MAP={3:0,10:8,9:9,8:12,11:13}   # Pincurchin-index -> onze waarde
 # Pincurchins mondmidden in het vak: x16-26 -> 1..11 (midden 6,0), y37-45 -> 1..9 (midden 5,0) -> +0.5 voor pixelmidden
 CX,CY=6.5,5.5
-A2=np.load('../r2/A.npy'); B2=np.load('../r2/B.npy')
 oud=np.zeros((64,64),bool); oud[41:50,17:28]=True
-for s in (1.15,1.30):
+def maak(A2,B2,oog,s):
     h,w=int(round(H*s)),int(round(W*s))
     m=np.zeros((h,w),int)
     for j in range(h):
@@ -63,7 +62,6 @@ for s in (1.15,1.30):
         for i in range(w):
             if m[j,i]>0: B[oy+j,ox+i]=MAP[m[j,i]]; vak[oy+j,ox+i]=True
     # ogen blijven zoals ze zijn: oogpixels gaan voor; mondpixels die tegen het oog komen worden mondlijn (8)
-    oog=np.zeros((64,64),bool); oog[39:44,13:18]=True; oog[39:44,28:33]=True; oog&=np.isin(A2,[8,9,10,11])
     over=0
     for y,x in zip(*np.where(oog)):
         if B[y,x]!=A2[y,x]: over+=1
@@ -79,8 +77,12 @@ for s in (1.15,1.30):
     for y,x in zip(*np.where(vak&~oog&(B!=A2))):
         if not any(B[y+dy,x+dx] in (9,12,13) or (B[y+dy,x+dx]==0 and B[y+dy,x+dx]!=A2[y+dy,x+dx]) for dy,dx in ((0,1),(1,0),(0,-1),(-1,0))):
             B[y,x]=A2[y,x]; niet+=1; print('losse pixel terug',x,y)
-    tag=f'B{int(round(s*100))}'
-    np.save(tag+'.npy',B); save(B,tag+'.png')
-    ys,xs=np.where(vak)
-    print(tag,'mond',w,'x',h,'op x',ox,'y',oy,'| px niet uit de geschaalde mond:',niet,
-          '| diff buiten mondvak t.o.v. r2/B:',((B!=B2)&~vak).sum(),'| mondvak x',xs.min(),xs.max(),'y',ys.min(),ys.max())
+    return B,niet,over,vak
+
+if __name__=='__main__':
+    A2=np.load('../r2/A.npy'); B2=np.load('../r2/B.npy')
+    oog=np.zeros((64,64),bool); oog[39:44,13:18]=True; oog[39:44,28:33]=True; oog&=np.isin(A2,[8,9,10,11])
+    for s in (1.15,1.30):
+        B,niet,over,vak=maak(A2,B2,oog,s); tag=f'B{int(round(s*100))}'
+        np.save(tag+'.npy',B); save(B,tag+'.png')
+        print(tag,'niet uit mond',niet,'oogpixels onder mond',over,'diff buiten mondvak',((B!=B2)&~vak).sum())

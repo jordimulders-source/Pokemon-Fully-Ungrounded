@@ -75,3 +75,4 @@ Jordi (letterlijk): "nee ik wil toch kijken of het lukt om een hybride vorm te m
   → Grass: basis `gnometrotter_grass/sprite_hybride_r2/gnometrotter_grass_hybride.png`; neus, rechterschouder, linkerhand zoals Rock af, lijf verbeteren.
 - Jordi (over Grass r5): "grass gaat de goede kant op, alleen de rechte lijnen mogen wat minder recht, onthoud het perspectief" → r6: plank-/nerflijnen buigen mee met de ronde ton in driekwart.
 - Jordi (erbij, Grass r5): "vergeet de benen en de rechterarm niet"
+- Jordi (over Grass r6): "het bovenlichaam is nu wat slordiger, kijk naar het model"

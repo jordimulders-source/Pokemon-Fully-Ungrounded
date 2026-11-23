@@ -9,3 +9,8 @@
 
 ## Open
 - Naam, evolutiemethode, kleuren (prompt r1 houdt Emolga's kleuren aan; keuze Claude, niet van Jordi).
+
+## Ronde 1 → 2 (Jordi, 23 nov, over Gemini r1)
+- "dit is teveel emolga nog met een verkeerd kleurenpatroon. Hij mag groter met een super groot wingsuit, echt een evolution moet het zijn, iets meer aerodynamische look ook, en wat meer naar beneden duikend zoals het met een wingsuit werkt"
+- Kleurenpatroon = Emolga's echte patroon (Jordi, keuze in vraag).
+- r2 zonder Emolga-bijlage (die maakte hem te veel Emolga); kleuren in woorden.

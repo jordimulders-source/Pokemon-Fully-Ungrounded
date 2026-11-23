@@ -14,7 +14,7 @@ COLORS
 White face and white belly. Black on top of the head, on the back and on the outer side of the wing membrane. Bright yellow on the inner side of the wing membrane.
 
 POSE
-It hangs upside down by its feet, head pointing down. The HEAD IS UPSIDE DOWN TOO, like a real hanging bat: the ears point down, the chin and mouth point up, the eyes are below the nose. Not a face turned the right way up. Its wings are closed and and wrapped around its body. Its feet grip at the top as if hanging from a branch, but do NOT draw the branch.
+It hangs upside down by its feet, head pointing down. The HEAD IS UPSIDE DOWN TOO, like a real hanging bat: the ears point down, the chin and mouth point up, the eyes are below the nose. Not a face turned the right way up. Its wings are closed and wrapped around its body. Its feet grip at the top as if hanging from a branch, but do NOT draw the branch.
 
 VIEW
 Three-quarter view facing left, like every Gen 3 front sprite.

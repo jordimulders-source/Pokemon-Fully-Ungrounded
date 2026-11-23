@@ -19,3 +19,7 @@ Lijn: Pincurchin (repo: puur Electric) → regionale vorm. Pincurchin weer in de
 
 ## Rondes
 - Gemini-startprompt v1: `gemini/PROMPT.md` (bijlage `gemini/bijlage_pincurchin.png` = Pincurchins sprite uit de repo, 8×, voor het gezicht).
+
+## Gemini v1 (`r1/gemini_v1.png`, 23 nov)
+- Jordi: "de stekels moeten groter, ik dacht aan bruin voor de binnenkant en donkerrood voor de stekels, geen roest"
+- → prompt v2 (`gemini/PROMPT.md`), nieuw gesprek, alleen de Pincurchin-bijlage.

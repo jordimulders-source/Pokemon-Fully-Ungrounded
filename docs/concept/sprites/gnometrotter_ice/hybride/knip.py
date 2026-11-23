@@ -282,9 +282,13 @@ def basismaskers(a, delen, donker=105, gat=40, minkern=10, binnennaad=0):
             rand = ndi.binary_dilation(maskers[i], iterations=2) & ~bezet & kaders[i]
             licht = (lum >= 150) & ~achtergrond(a) & (a.max(axis=-1) - a.min(axis=-1) < 60)
             maskers[i] |= rand & licht
+        donkerpx = lum < donker
         for i in idx:
             m = maskers[i]
-            gaten = ndi.binary_fill_holes(m) & ~m
+            # gaten: ingesloten door het onderdeel (en eventueel zwarte lijnen
+            # eromheen), bv. glimlijnen, noesten/jaarringen
+            r_ = m | (donkerpx & ndi.binary_dilation(m, iterations=6))
+            gaten = ndi.binary_fill_holes(r_) & ~r_ & kaders[i]
             gl, gn = ndi.label(gaten)
             if gn:
                 maten = ndi.sum(gaten, gl, range(1, gn + 1))

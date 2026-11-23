@@ -22,9 +22,11 @@ if __name__=='__main__':
                 else: z=4                                          # baard
             elif fam==3:   # roze hout
                 if 375<=cx<=445 and 160<=cy<=225: z=5
+                elif cx<330 and cy>=265: z=19                      # vuist L (bol om de stok)
                 elif cx<385 and cy>=265: z=7
                 elif cx>=668 and cy>=300: z=9
-                elif (cx>=655 and cy<300) or (cx>=585 and cy<275 and cx>=600): z=8
+                elif cx>=655 and cy<300: z=8                       # elleboogschijf R
+                elif cx>=600 and cy<275: z=18                      # schouderschijf R
                 else: z=6
             elif fam==4: z=12
             else:          # bruin (schors)
@@ -43,6 +45,6 @@ if __name__=='__main__':
     _,(iy,ix)=nd.distance_transform_edt(Z==0,return_indices=True)
     Z[rest]=Z[iy[rest],ix[rest]]
     np.savez_compressed('model_zone.npz',z=Z.astype('uint8'))
-    rng=np.random.default_rng(3); C=np.vstack([[255,255,255],rng.integers(40,230,(19,3))]).astype('uint8')
+    rng=np.random.default_rng(3); C=np.vstack([[255,255,255],rng.integers(40,230,(21,3))]).astype('uint8')
     img=C[Z]; img[f==1]=img[f==1]//3
     Image.fromarray(img).crop((260,30,760,530)).save('model_zone.png')

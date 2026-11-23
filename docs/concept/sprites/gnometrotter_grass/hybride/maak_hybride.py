@@ -16,7 +16,7 @@ DONOR = '../r1/gemini_r1_handen_gewisseld.png'
 #   tegel: vaste schaal (donorpixels per basispixel = 1/tegel), gespiegeld herhaald
 #   spiegel: horizontaal spiegelen
 DELEN = [
-    ('voorhand',   'roze',  (272, 268, 358, 340), (266, 292, 352, 362), {'kaart': (271, 298, 346, 346)}),
+    ('voorhand',   'roze',  (272, 268, 358, 340), (266, 292, 352, 362), {'kaart': (271, 298, 346, 338)}),
     # de voorarm van de donor zit achter de hand/baard: de geribbelde
     # bovenarm van de achterste arm (ligt ook horizontaal) is de donor
     ('voorarm',    'roze',  (350, 262, 402, 322), (585, 183, 695, 265), {'kaart': (600, 200, 680, 255)}),
@@ -26,7 +26,7 @@ DELEN = [
     # neus (x 395-460, y 160-215) hoort er niet bij
     ('romp',       'roze',  [(462, 160), (600, 160), (668, 240), (668, 348), (380, 348), (380, 235), (462, 222)],
                             [(530, 255), (645, 255), (645, 326), (530, 326)],
-                            {'kaart': (550, 270, 630, 308), 'tegel': 1.0}),
+                            {'kaart': (561, 278, 632, 295), 'tegel': 1.0}),
     ('voet_links', 'blauw', (372, 437, 505, 484), (380, 372, 560, 482), {'kaart': (425, 430, 502, 478)}),
     ('been_links', 'blauw', [(390, 360), (545, 360), (545, 437), (390, 437)],
                             [(372, 370), (560, 380), (560, 482), (372, 482)], {'kaart': (382, 380, 505, 452)}),
@@ -40,11 +40,15 @@ def main(debug=True):
     b = laad(BASIS)
     d = laad(DONOR)
     uit = b.copy()
-    mbs = basismaskers(b, DELEN, donker=80, gat=400, binnennaad=4)
+    mbs = basismaskers(b, DELEN, donker=80, gat=900, binnennaad=4)
     mb_all, md_all = [], []
     for (naam, cls, kb, kd, opt), mb in zip(DELEN, mbs):
         md = zonder_omlijning(d, deelmasker(d, cls, kd, sluit=3))
         md &= klasse(d, cls, True) | (d.mean(axis=-1) < 110)
+        if opt.get('zonder_zwart'):
+            # pikzwarte donorlijnen (lum < 45) zijn omlijning tussen losse
+            # donorstukken; in de basisvorm worden het losse strepen
+            md &= d.mean(axis=-1) >= 45
         nood = plak(uit, mb, d, md, spiegel=opt.get('spiegel', False), kader_b=bbox(mb),
                     kader_d=opt.get('kaart') or bbox(md), tegel=opt.get('tegel'))
         mb_all.append(mb); md_all.append(md)

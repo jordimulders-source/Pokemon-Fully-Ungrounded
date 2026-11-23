@@ -1,9 +1,11 @@
 """Gnometrotter Ice hybride: basis r3 (zelfde pose) + lijfmateriaal van r1.
-Draai: python3 maak_hybride.py  (vanuit deze map)"""
+Alleen knippen, schalen en plakken binnen de maskers van de basis; niets
+getekend. Draai: python3 maak_hybride.py"""
 import sys, os
 import numpy as np
 from PIL import Image
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, '.')
 from knip import *
 
 BASIS = '../r3/gemini_r3_lijf.png'

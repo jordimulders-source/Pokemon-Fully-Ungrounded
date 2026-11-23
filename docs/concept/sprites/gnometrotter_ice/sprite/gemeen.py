@@ -3,7 +3,7 @@ import numpy as np; from PIL import Image
 # 0 transp | 1 zwart (=Gnomad) | 2-5 ijs (2 = outline base ijs, 3-5 ijsblauw: muts, rugkam, stok) [muts-plek van Gnomad]
 # 6-8 roze (=Gnomad) | 9-11 blauw (=Gnomad) | 12-14 sneeuw/ijspegelwit (baard, haar, riem, zolen) [creme-plek van Gnomad] | 15 roze hooglicht (=Gnomini)
 PAL=[(152,208,160),(24,20,32),
-     (64,88,122),(116,150,184),(158,192,220),(202,226,242),
+     (64,88,122),(124,160,196),(176,206,232),(222,238,250),
      (172,72,102),(213,102,136),(244,153,181),
      (56,109,142),(82,148,197),(122,188,232),
      (170,192,214),(214,228,240),(246,249,252),

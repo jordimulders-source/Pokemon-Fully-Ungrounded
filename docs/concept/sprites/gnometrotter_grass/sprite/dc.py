@@ -1,4 +1,4 @@
-# dc.py: Dragonfly Cave-omlijningsronde (gids r. 80-170, 340-470; maatstaf Gnomad r10-r11) op red.png -> gnometrotter_rock.png
+# dc.py: Dragonfly Cave-omlijningsronde (gids r. 80-170, 340-470; maatstaf Gnomad r10-r11) op red.png -> gnometrotter_grass.png
 # 1. buitenlijn: geen zwart en outline base om en om (losse enkele pixel op een rand neemt de kleur van zijn twee randburen over)
 # 2. outline highlight: op de meest belichte buitenrand (normaal recht naar linksboven) van muts, rugkam en de ronde roze delen
 #    komt de schaduwtint van het vlak in de lijn (gids: "outline highlights" binnen de lijn), max 3 px per onderdeel
@@ -25,19 +25,10 @@ def normaal(Y,X):
         for dx in (-1,0,1):
             if (dy or dx) and (not(0<=Y+dy<64 and 0<=X+dx<64) or not fg[Y+dy,X+dx]): v+=(dx,dy)
     n=np.linalg.norm(v); return v/n if n else v
-HL={1:3,5:7,9:7,7:7}
+HL={1:13,5:7,9:7,19:7}
 for zz,t in HL.items():
     kand=sorted(((normaal(Y,X)@LICHT,Y,X) for Y,X in zip(*np.where(OUT&(zone==zz))) if o[Y,X]==BASIS[zz]),reverse=True)
     for s,Y,X in kand[:3]:
         if s>0.9: o[Y,X]=t; gew.append((X,Y,'outline highlight'))
-# reparatie naar het model (de vlakgemiddelde poetste de 0,5 px-lijnen van de gesp weg): gesp = rechthoek x24-29, y39-41
-# (gemeten op het model, zie RAPPORT), zwarte lijn zoals de gesp van Gnomad (bevroren daar), binnenin tint 4 zoals het model
-GESP=[]
-for X in range(24,30):
-    for Y in range(39,42):
-        k=1 if (X in (24,29) or Y in (39,41)) else 4
-        if o[Y,X]!=k: GESP.append((X,Y,k))
-        o[Y,X]=k
-print('gesp',len(GESP),'px gewijzigd')
-opslaan(o,'gnometrotter_rock.png')
+opslaan(o,'gnometrotter_grass.png')
 print(len(gew),'pixels:',gew)

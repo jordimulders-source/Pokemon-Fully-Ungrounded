@@ -1,7 +1,7 @@
 # tel.py: afwijking van gnometrotter_ice.png t.o.v. de kale reductie (kaal.png), per onderdeel, uitgesplitst naar oorzaak
 import numpy as np
 from gemeen import *
-o=lees('gnometrotter_ice.png'); k=lees('kaal.png'); r=lees('red.png'); z=np.load('zone_af.npy'); oog=np.load('oog.npy')&(np.load('zone.npy')!=5)
+o=lees('gnometrotter_ice.png'); k=lees('kaal.png'); r=lees('red2.png'); z=np.load('zone_af.npy'); oog=np.load('oog.npy')&(np.load('zone.npy')!=5)
 fg=(o>0)|(k>0); d=fg&(o!=k)
 lijn=np.zeros((64,64),bool)
 for Y,X in zip(*np.where(o>0)): lijn[Y,X]=o[Y,X] in (1,BASIS[z[Y,X]]) or (z[Y,X] in (5,8,9) and o[Y,X]==6)

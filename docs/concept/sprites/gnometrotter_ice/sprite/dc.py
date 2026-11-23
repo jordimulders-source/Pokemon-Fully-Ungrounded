@@ -5,7 +5,7 @@
 # 3. binnenlijnen nooit zwart behalve de vaste zwarte boog rond de ronde delen (al in maak.py)
 import numpy as np
 from gemeen import *
-o=lees('red.png'); zone=np.load('zone_af.npy'); fg=o>0
+o=lees('red2.png'); zone=np.load('zone_af.npy'); fg=o>0
 OUT=np.zeros((64,64),bool)
 for Y,X in zip(*np.where(fg)):
     if any(not(0<=Y+dy<64 and 0<=X+dx<64) or not fg[Y+dy,X+dx] for dy,dx in ((1,0),(-1,0),(0,1),(0,-1))): OUT[Y,X]=True

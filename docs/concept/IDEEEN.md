@@ -703,4 +703,6 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - **Jordi (22 nov):** "dat hoeft niet nu, maar steel wordt dan urban areas" → Steel-vorm = stad/urban areas.
 - **Jordi (22 nov):** "ik vraag me af of flying en ice niet overlappen" → voorstel Claude: Flying = wind (kliffen, pampa, hoogvlakte; muts als zeil/vlies, snor/haar als veren), Ice = kou (sneeuw, gletsjers; vachtbaard met ijspegels), of Ice laten vallen (open). "wat we kunnen doen is iig met de rock variant beginnen, die weet ik zeker dat ik die wil".
 - **Jordi (23 nov):** "ik bedenk me nu ook baldurs gate 3, daar heb je forest, rock en deep gnomes, misschien leuk om die 3 te doen als extra referentie, deep zou dark logisch zijn, maar welke types nog meer? ook als je kijkt naar wat past bij gnometrotter, forest is makkelijk om goed te doen"
+- Claude: deep gnome ≈ huidige grot-Rock-vorm, BG3-rock gnome (uitvinder) ≈ Steel/urban; optie 1 Rock/Steel/Grass/Flying, optie 2 + Fairy/Dark (overlap Impidimp).
+- **Jordi (23 nov):** "ik vind rock gnome juist goed voor rock"
 - Open (oud): aantal fases, type naast Fairy, wat voor kabouter (tuinkabouter, folklore zoals de Latijns-Amerikaanse *duende*, iets anders), waar de woordgrappen zitten (namen, moves, dex-teksten).

@@ -37,6 +37,7 @@
 - r7 (`r7/gemini_r7.png`, prompt v7): "dit vind ik wel een erg geinig design, alleen gemini doet alleen barsten om het steen aan te tonen en niet vormen"
 - Claude: A nog een Gemini-ronde (steen in de vorm) of B r7 bevriezen + kleine pixelreparaties; eerlijk: echte gehakte steenvlakken tekenen kan Claude niet betrouwbaar.
 - 23 nov: "regirock zou een goede inspiratie kunnen zijn" → prompt v8.
+- r8 (`r8/gemini_r8.png`, prompt v8): "dit is het beste wat we gaan krijgen denk ik"
 
 ## Voorgelegd door Claude (22 nov, nog niet gekozen)
 - A geode (muts = geode met amethist in een barst, snor/plukjes = kwartskristal, neus = rozenkwarts); B druipsteen (muts = stalactiet, kalksteen met lagen); C ertsader (riem = ader, gesp = goudklomp, korstmos op de snor).

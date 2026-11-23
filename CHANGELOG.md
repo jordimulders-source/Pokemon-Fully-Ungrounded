@@ -2914,3 +2914,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.701] - Emolga-lijn fase 3: prompt r2
 - r1 te compact; r2 lang en slank.
+
+### [v0.0.702] - Emolga-lijn: 2 evoluties
+- Fase 3 fruitvampier r2 "gaat lukken"; Emolga krijgt 2 evoluties (Jordi).

@@ -60,3 +60,4 @@ Lijn: Pincurchin (repo: puur Electric) → regionale vorm. Pincurchin weer in de
 
 ## Sprite (23 nov)
 - r1 (maker) → keuring BIJNA (lijnen staafjes, naadgat, vlekjes, onderrand) → r2 met reparaties 1–5 (`sprite/r2/`, A en B). Naar Jordi: `pincurchin_regional_r2_AB_8x.png`. Open: loopt alleen de bovenste naadlijn over de mond in B of de hele naad (keurder: tweede lijn wist de onderlip).
+- Jordi (r2, met 3D-render Pincurchin `referenties/pincurchin_3d_jordi.png`): "ah klopt ja, het zijn driehoekjes, dus datd is niet anders te vertalen denk ik. Misschien de mond iets groter en dat de mond de lijn overlapt ipv andersom" → ogen blijven; B: mond iets groter (Pincurchins mond geschaald, niet hertekend) en de mond ligt over de naad.

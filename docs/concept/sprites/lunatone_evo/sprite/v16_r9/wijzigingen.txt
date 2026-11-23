@@ -1,0 +1,5 @@
+Ronde 9 vanaf v16_r8/B_2px_donker.png
+(41,21) 1 -> 3  barst rechtsboven: punt aan de oogkant taps (lijf 4/5 ernaast)
+(42,21) 1 -> 2  idem, tussenstap
+(41,32) 2 -> 3  barst rechtsonder: punt aan de oogkant taps
+totaal 3 px t.o.v. B_2px_donker; oog/neus/silhouet 0. Vrijgekomen strook links van het oog (x28-31, y21-35) gecontroleerd: alleen doorlopende lijftinten 4/5, geen losse pixels of spookkas; niets veranderd.

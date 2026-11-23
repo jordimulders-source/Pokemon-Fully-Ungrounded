@@ -2826,11 +2826,70 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Gemini: r1, r2a/r2b, v2 (nieuwe prompt), v3 met uitgewerkte maestro-definitie → gekozen (`model/`); stok in de handkleur gezet, ogen naar Kricketune.
 - Frontsprite r1 (maker, schrappen 75×85 → 56×64), keurder BIJNA → r3 (ruis); oog links naar de modelplek (r2); oogstudie A/B/C, Jordi koos A (Kricketune frame 2) + afgeronde onderkant rechteroog (r4); eindkeuring BIJNA → 22 px (r5) → **af**: `kricketune_evo/af/krickestro.png` (+ `_8x`). Werknaam **Krickestro** (Jordi). Op het overzichtsvel (evoluties); POKEMON.md, TODO, Stand van zaken en GEMINI.md-lessen bijgewerkt.
 
-### [v0.0.676] - Regional Baltoy-lijn: besluiten + Gemini-prompt Baltoy r1
+### [v0.0.676] - Teller frontsprites gecorrigeerd
+- Stand van zaken in CLAUDE.md: 71 frontsprites af (zoals op het overzichtsvel: 44 new + 8 evoluties + 19 regional forms). Jordi: "pas de teller in CLAUDE.md aan naar 71".
+### [v0.0.677] - Solrock-evolutie (corona): frontsprite af
+- Ideeën (Jordi, 17 nov): Cosmic-lijnen (Steel/Cosmic met satelliet, supernova/zwart gat), Solrock/Lunatone-evolutie als eclips; Lanturn-evolutie geschrapt. Voorstel Claude: optie B (Solrock evolueert met Lunatone in het team en omgekeerd); Solrock = corona van steen, Lunatone = bloedmaan (nog te doen). Citaten: `IDEEEN.md` (Cosmic-lijnen), SPEC: `docs/concept/sprites/solrock_evo/SPEC.md`.
+- Gemini v1–v7 (`solrock_evo/gemini/PROMPT.md`, `r1/`–`r7/`); v5 gekozen als model (losse afgebroken stenen, gebarsten zwarte kern, eclipsrand, Solrocks gezichtsplaat). Lava en olivijnkristal (eigen voorstellen Claude) geschrapt; diagonale baan werd in Gemini een Saturnusring.
+- Sprite: r1–r3 met Jordi's breuk in de plaat (varianten A/B, Solrock-ogen letterlijk/aangepast) → Jordi: "ze zijn geen van allen mooi, probeer maar het model na te maken" (zonder breuk). r4–r8: model trouw, ogen per pixel naar het model (pupil aan het lid), linker plaatrand ronder (Jordi); keurder PASS. Eindkeuring Dragonfly Cave (r9), "blurry" → meer tinten en schaduwopbouw in de kern (r10–r11), Jordi koos kleurvariant B (koele schaduw, warm licht), eindkeuring B (r12), barsten in de plaat lichter (r13).
+- Af: `docs/concept/sprites/solrock_evo/af/solrock_evo.png` (+ `_8x`); op het overzichtsvel (Evolutions of existing Pokémon, nu 9; teller 72; type op het vel = Solrocks huidige type, eigen type open). Naam en evolutiemethode open.
+### [v0.0.678] - Lunatone-evolutie: Gemini-prompts (22 nov)
+- `docs/concept/sprites/lunatone_evo/gemini/PROMPT.md` (v1) + bijlage `bijlage_lunatone_gen3.png`: bloedmaan als tegenhanger van de Solrock-corona (fervent-hamilton), met de lessen uit die rondes.
+- Rondes v1–v13 (`lunatone_evo/r*/`): sikkel bleef terugkomen zolang de Lunatone-bijlage of -naam in de prompt stond; v10 (pure beschrijving, geen bijlage) + v11 (meer uitgebrokkeld) gaf de vorm.
+
+### [v0.0.679] - Lunatone-evolutie "bloedmaan": frontsprite-kandidaat
+- Model (Jordi): Gemini v11 met oog en neus van v5 geplakt, kleinste puin weg (`lunatone_evo/referenties/model.png`, `model/script/plak2.py`); SPEC met Jordi letterlijk.
+- Sprite r1–r5 (`lunatone_evo/sprite/`): verkleining van het model, niets hertekend; plaknaden rond het oog weggewerkt (toegestaan). Keuring r3: barsten te druk, tinten ongelijk → r4 lange modelbarsten, tinten 48/79/113/147; eindkeuring r4 PASS op beide eisen. r5 = r4 + klein hooglicht op de bolling (keurder, optioneel).
+- Kleurvariant B (dieper bloedrood, dichter bij het model): `sprite/r5/sprite_B_bloedrood.png`. Jordi kiest. Vellen: `lunatone_evo_8x.png`, `lunatone_evo_B_bloedrood_8x.png`, `sprite/r5/vel.png`.
+
+### [v0.0.680] - Lunatone-evolutie: nieuw model v16 (driekwart) en sprite-kandidaat
+- Gemini v14–v17: pose met perspectief; Jordi koos v16 ("voor mijn gevoel is deze beter"); rechterkant rond gemaakt en brokkels uit r5 terug (Jordi akkoord).
+- Sprite `lunatone_evo/sprite/v16_r1`–`v16_r7`: Jordi koos r2A om de driekwart van de donkere rechterband; daarna schaduw over het hele lijf voor perspectief (r5), twee donkerdere roodtinten rechts in het oog (r6, Jordi), keuringsreparaties (r7). Keuring r5: trouw PASS, techniek bijna PASS; r7 lost de resterende punten op.
+- Vel: `lunatone_evo/lunatone_evo_v16_8x.png` (naast Lunatone). Vorige kandidaat (model v11) blijft in `sprite/r5/`.
+
+### [v0.0.681] - Lunatone-evolutie "bloedmaan": frontsprite af
+- r8: neusaansluiting netter, pupil 1 px lager (kijkt niet meer omhoog), oog op 0/2/4 px naar rechts × iris zoals r7/donkerder; Jordi: "midden onder is goed" (2 px, donkere iris).
+- r9: losgekomen barstjes rechts van het oog taps laten uitlopen (3 px).
+- Af: `lunatone_evo/af/bloedmaan.png` (+ 8×), op het overzichtsvel onder "Evolutions of existing Pokémon" als "Bloedmaan (Lunatone)", rock/cosmic. Naam en evolutiemethode open.
+
+### [v0.0.682] - Idee: Gnome-lijn
+- Jordi: "Ik denk aan een Gnome fairy lijn. Het woord gnome laat ook veel woordgrappen toe". Vastgelegd in `IDEEEN.md` → "Gnome-lijn", met voorstellen voor woordgrappen en open vragen.
+
+### [v0.0.683] - Gnome-lijn: neus en muts
+- Jordi: "Iig een grote ronde neus en een muts die de ogen blokkeert". Toegevoegd aan `IDEEEN.md` → "Gnome-lijn".
+
+### [v0.0.684] - Gnome-lijn: fases en voorstellen
+- Jordi: tuinkabouter; fase 1 Gnomini, fase 2 Gnomad (loopt veel), meerdere fase 3-vormen aangepast aan klimaat of vervoer (Fairy/Ground, Fairy/Flying enz.). Claude stelde naam (Gnometrotter), evolutie (stappen + plek bepaalt vorm) en vormen voor; alles in `IDEEEN.md` → "Gnome-lijn".
+
+### [v0.0.685] - Gnome-lijn: naam fase 3
+- Jordi: "Ik dacht aan Gnomigration maar Gnometrotter bekt wat lekkerder". In `IDEEEN.md` → "Gnome-lijn".
+- Jordi: "en hij gaat niet in een stuk vervoer want dan is het gweoon een mannetje in tools"; vervoer-voorstellen vervallen.
+- Jordi: "hij past zich volledig aan aan de omgeving, dus zijn lichaam verandert mee".
+- Jordi: "Rock, Flying en Steel doen we" (drie Gnometrotter-vormen).
+
+### [v0.0.686] - Gnomini: frontsprite af
+- Gnome-lijn fase 1 (Fairy): Gemini-prompts v1/v2 (`gnomini/gemini/`), Jordi koos r2 als model ("de muts is uitstekend"). Sprite in 4 makerrondes: r1 A (lijf als model; B "compleet mislukt, dat is niet rond"), r2 keurderreparaties, r3 gebogen roze/blauw-grens + donkerblauwe streep (B gekozen) en rond linkerarmpje, r4 lijf smoother (A gekozen). Eindkeuring PASS, 5 pixels gerepareerd → `docs/concept/sprites/gnomini/af/gnomini.png`; op het overzichtsvel onder New. Les in GEMINI.md ("ronder" = echt rond).
+
+### [v0.0.687] - Gnomad: frontsprite af
+- Gnome-lijn fase 2 (Fairy), naar Gemini r1 (r2 "too much qua details"). Sprite in 7 makerrondes: snor rafeliger, riem als Machoke (zwarte lijnen boven/onder, bruine band), gesp naar Jordi's vormfoto (crème, afgeronde hoeken, staand gat, in driekwart links), riem sluit op zichzelf aan en volgt de bol. Eindkeuring PASS na 7 lijnreparaties (zwart 21,4 → 18,2 %) → `docs/concept/sprites/gnomad/af/gnomad.png`; op het overzichtsvel. Gnome-lijn: Steel-vorm = urban areas, ijsvorm overwogen (IDEEEN.md); geslacht open.
+
+### [v0.0.688] - Gnomad: omlijning volgens Dragonfly Cave
+- Na Jordi's feedback over te veel zwart: r8 (zwart in snor, haarpluk, armen naar tinten), r9 (snorrand bruin i.p.v. roze: "dat moet een kleur zijn die bij de snor past juist"), r10 (hele sprite volgens de Dragonfly Cave-gids: eigen outline base per onderdeel, zwart alleen aan de schaduwkant), r11-A (geen zwart meer onder neus en snor) + 1 verdwaalde pixel. Zwart 18,2 → 12,3 %. `gnomad/af/gnomad.png` en overzichtsvel bijgewerkt. Les in GEMINI.md: omlijning in de eigen tint, DC-regel citeren.
+
+### [v0.0.689] - Merge naar main
+- Main (Lunatone-evolutie bloedmaan, Solrock-corona, Krickestro, vuurduivel fase 2) samengevoegd met de gnome-lijn (Gnomini, Gnomad); onze secties hernummerd naar v0.0.682–688. Overzichtsvel opnieuw gegenereerd.
+
+### [v0.0.690] - Gnomini: omlijning volgens Dragonfly Cave
+- Jordi: "Gnomini mag trouwens ook nog wel een dragonflycave keuring ja". r6-A (binnenlijnen in de eigen tint, zwart alleen aan de schaduwkant/buitenrand; zwart 14,8 → 8,4 %); varianten B/C met zwart bij de neus afgewezen; vergeleken met de Grumpig-snuit. `gnomini/af/gnomini.png` en overzichtsvel bijgewerkt. Werkwijze: Dragonfly Cave-omlijning verplicht in de eindkeuring (SPRITE_WERKWIJZE stap 7); les in SPRITE_KERN: eerst meten, dan beweren.
+- Neus nagemeten op Popplio (lijn rondom donkerste eigen tint, zwart alleen aan de buitenrand): af = r6-A. Les in SPRITE_KERN.
+- Correctie: Jordi wil de Gnomini met zwarte omlijning terug ("daarna is alles fout gegaan"); alleen de neuslijn aangepast zoals Popplio (zwart aan de buitenrand, donkerroze tegen muts/lijf, 27 px). af = `sprite_r9/gnomini.png`; r6–r8 vervallen.
+- Gnomini r10: neusomlijning precies zoals Popplio (zwart van linksmidden via linksonder tot onder-midden, donkerroze bovenom en rechts, 1 px). Jordi: "kijk eindelijk" → af = `sprite_r10/gnomini.png`.
+
+### [v0.0.691] - Regional Baltoy-lijn: besluiten + Gemini-prompt Baltoy r1
 - Besloten (Jordi, 22 nov): inspiratie Tiwanaku-monoliet; Rock/Psychic voor Baltoy en Claydol (de levende tempel krijgt een andere typing); "moet herkenbaar zijn vanwege de ogen, het silhouet mag veranderen". `docs/concept/sprites/baltoy_regional/SPEC.md`, IDEEEN.md bijgewerkt.
 - Startprompt Baltoy r1: `docs/concept/sprites/baltoy_regional/gemini/PROMPT_baltoy_r1.md` (frontaal, spleetogen in rode band + rond borstoog).
 
-### [v0.0.677] - Regional Baltoy r1 afgekeurd
+### [v0.0.692] - Regional Baltoy r1 afgekeurd
 - r1 bewaard (`docs/concept/sprites/baltoy_regional/gemini/baltoy_r1.png`). Jordi: "dit is geen pokemon sprite, niet driekwart, geen goede vorm en totaal geen baltoy". Keuzes voor r2 (vorm deels monoliet, alleen tekst) in SPEC.md.
 - Jordi: wat van Baltoy blijft = "die ronde ogen met een streep erin met het rode patroon erboven". Prompt r2: `docs/concept/sprites/baltoy_regional/gemini/PROMPT_baltoy_r2.md`.
 - r2 (`baltoy_regional/gemini/baltoy_r2.png`): Jordi "nu is die herkenbaar baltoy"; maattest 64/48 px in `baltoy_regional/maattest/`.
@@ -2841,14 +2900,18 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Prompt r5 (levendiger): `baltoy_regional/gemini/PROMPT_baltoy_r5.md`.
 - r5 (`baltoy_regional/gemini/baltoy_r5.png`).
 
-### [v0.0.678] - Regional Baltoy: frontsprite r1–r3
+### [v0.0.693] - Regional Baltoy: frontsprite r1–r3
 - Jordi: "ga maar bouwen dan" → model r5 bevroren (`baltoy_regional/referenties/gemini_gekozen_r5.png`), punt mag in de sprite aan het lijf.
 - r1 (maker, schrappen naar 47×48), keuring BIJNA; r2 (5 benoemde reparaties), keuring BIJNA + eindkeuring PASS; r3 = r2 + 6 lijnpixels (Claude). Kandidaat: `baltoy_regional/sprite_r3/naast_model.png`.
 - r4A (34×34) te veel hertekend (Jordi: "ik zie dat heel veel opnieuw getekend is" · "niet de bedoeling"); r5 vanaf de kale 2×-reductie. Les in GEMINI.md.
 - r5 (kale 2×-reductie + 48 px): Jordi "hij is best prima" + punten voor r6 (lijnen, kleur/schaduw, hoofd 1 px langer).
 
-### [v0.0.679] - Regional Baltoy: frontsprite r5–r13
+### [v0.0.694] - Regional Baltoy: frontsprite r5–r13
 - r5: opnieuw vanaf de kale 2×-reductie (34×35) met alleen technische reparaties uit de bronpixels; Jordi: "hij is best prima" + afwerkpunten.
 - r6–r8: hoofd 1 px langer, zachtere lijnen, steenramp na een studie van blokvormige Pokémon (`sprite_r7/studie.md`), lijnen wisselen van tint.
 - r9–r10: lijfreliëf naar Tiwanaku (A handen/kero/staf, B getrapte gordel, C chakana), in driekwart; Jordi koos B.
 - r11–r12: armen en stekel met volume, stekel weer leesbaar, mondpixels weg. Eindkeuring BIJNA → 31 pixels → r13 (kandidaat).
+
+### [v0.0.695] - Regional Baltoy: stekel en eindkeuring (r14–r19)
+- Stekel: vormprobeersels (r14), tolpunt per laag uit het model (r15–r16); Jordi: "anders gewoon van de originele baltoy pakken" → r17 = r13 + de tolpunt van de Gen 3-Baltoy 1-op-1 in steentinten; Jordi koos 1 px naar links (r18).
+- Eindkeuring Dragonfly Cave r18: PASS met 1 pixel → r19 (`docs/concept/sprites/baltoy_regional/sprite_r19/baltoy_r19.png`, kandidaat). Lessen in GEMINI.md.

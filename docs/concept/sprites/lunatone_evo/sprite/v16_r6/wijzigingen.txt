@@ -1,0 +1,3 @@
+v16_r6 (vanaf r5): alleen iris. 13 px gewijzigd: 9->8 (donker 1): 4, ->11 (donker 2, nieuw): 10
+buiten de iris gewijzigd: 0; pupil/hooglicht/ring gewijzigd: 0
+helderheid iris: basis 9=105, donker 1 (8)=71, donker 2 (11, nieuw (112,12,18))=47, ring (1)=19; paletkleuren: 12 incl. transparant

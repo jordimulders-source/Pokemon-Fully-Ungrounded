@@ -1,0 +1,19 @@
+FIX_B [(44, 39)]
+A afwijkend t.o.v. de kale reductie per zone (px afwijkend / px zone):
+   muts     84 / 434
+   neus      6 /  60
+   lijf     99 / 283
+   arm L    14 /  34
+   arm R    13 /  38
+   voet L   20 /  51
+   voet R   16 /  40
+   buiten    0 (silhouetrand: in de een wel, in de ander niet)
+B afwijkend t.o.v. de kale reductie per zone (px afwijkend / px zone):
+   muts     84 / 434
+   neus      6 /  60
+   lijf    114 / 329
+   arm L    14 /  34
+   arm R    14 /  38
+   voet L   20 /  51
+   voet R   18 /  40
+   buiten    3 (silhouetrand: in de een wel, in de ander niet)

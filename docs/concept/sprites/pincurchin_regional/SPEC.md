@@ -34,3 +34,6 @@ Lijn: Pincurchin (repo: puur Electric) → regionale vorm. Pincurchin weer in de
 - Jordi: "beter, maar het steen heeft teveel detail" → bijstuurzin in hetzelfde Gemini-gesprek (één wijziging), zie PROMPT.md.
 - Jordi (na v4): "hij lijkt ook steeds minder op pincurchin"
 - Jordi kiest wat er van Pincurchin terug moet: "Gezicht exact" (ogen en tanden 1-op-1 zoals Pincurchin). → startprompt v5, nieuw gesprek (vervangt de bijstuurzin).
+
+## Gemini v5 (`r5/gemini_v5.png`, 23 nov)
+- Jordi stuurt v5 naast een foto van een pencil urchin (`referenties/foto_pencil_urchin_jordi.jpg`): "behoorlijk verschil nog wel"

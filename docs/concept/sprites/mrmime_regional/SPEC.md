@@ -78,3 +78,4 @@ Jordi: "ik denk dat dit ontwerp het niet gaat worden" – "het hele idee bedoel 
 - Sprite r5 (`bokser/sprite_r5/`): haar r3 terug, tussenstuk (19 px) weg; kale strook smal (4–5 px); grijze schaduwkolom loopt door in de kop.
 - Jordi bij r5: "je hebt het hoofd veranderd, dat isn niet de bedoeling, het enige wat je moet doen is de linkerkuif zodanig afknippen dat het dezelfde vorm heeft als de rechter, maar hij valt er vanwege de hoek een beetje achter het hoofd" → r6: kop = r3, alleen linkerkuif knippen.
 - Jordi: "en de ogen zijn hele lichte grijze cirkels, dat doe je ook niet" → ogen van r3 (geen lichtgrijs eromheen).
+- Sprite r6 (`bokser/sprite_r6/`): kop = r3 (oog B), linkerkuif = gespiegelde rechterkuif deels achter de kop; varianten minder (hoofd) / meer.

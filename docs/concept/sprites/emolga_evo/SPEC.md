@@ -27,3 +27,7 @@
 - r4 (Skinguin-opbouw): "oren niet lang genoeg, lichaam niet lang genoeg, vleugels niet lang genoeg, op zn ogen is het een bril, wat een patroon moest zijn".
 - r5: zelfde startprompt + verhoudingen in maten + oogpatroon als vachttekening beschreven.
 - Daarna: "is weer gewoon net emolga" → r5 noemt Emolga niet meer.
+
+## Ronde 5 → 6 (Jordi, 23 nov)
+- Over r5 (zonder de naam Emolga): "deze is wel al wat beter, maar jouw idee wil ik wel proberen" → r6 = r5 met colugo als anatomie (voorstel Claude; alternatieven reuzenvliegende eekhoorn, Draco-hagedis).
+- Jordi: "ik heb stiekem nu wel inspiratie gekregen hoe we de fruitvampier in het hele verhaal kunnen betrekken, dat kan misschien een 3e vorm in de emolga lijn worden haha, vrij bizar maar waarom ook niet he" (zie IDEEEN.md).

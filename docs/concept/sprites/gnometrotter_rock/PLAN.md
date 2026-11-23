@@ -77,3 +77,4 @@ Jordi (letterlijk): "nee ik wil toch kijken of het lukt om een hybride vorm te m
 - Jordi (erbij, Grass r5): "vergeet de benen en de rechterarm niet"
 - Jordi (over Grass r6): "het bovenlichaam is nu wat slordiger, kijk naar het model"
 - Jordi: "of wordt het teveel detail?" · "wat we ook kunnen doen is gewoon de vormen iets meer houtblokkeriger maken" (optie, nog niet gekozen)
+- Claude stelde voor: romp max. 2 plankennaden met vloeiende bocht + hooguit 1 nerflijn; Jordi: "akkoord"

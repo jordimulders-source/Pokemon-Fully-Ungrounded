@@ -47,3 +47,7 @@ Lijn: Pincurchin (repo: puur Electric) → regionale vorm. Pincurchin weer in de
 - Jordi: "ok veel beter, en hoe maken we hier nu een semi onderwater mijn nog van (ogen en mond kloppen niet maar die fixen we zelf)"
 - Ogen en mond: in de sprite zelf Pincurchins gezicht overnemen (niet meer via Gemini).
 - Op de vraag welke mijnkenmerken: "lastig te zeggen, bedenk maar een prompt". Voorstel Claude in bijstuurprompt v7 → v8: korte contacthoorns met bol kapje tussen de staafjes + naad om het midden (ring bovenop als reserve).
+
+## Gemini v8 (`r8/gemini_v8.png`, 23 nov) = kandidaat-model
+- Jordi: "ok prima, alleen we behouden slechts 3 van die spikes"
+- v8 heeft 4 mijnhoorns: links, midden en rechts op het lijf, plus een klein knobbeltje bovenop tussen twee staafjes. Voorstel Claude (wacht op Jordi): het knobbeltje bovenop gaat weg, de andere 3 blijven. Weghalen in de sprite, niet via Gemini.

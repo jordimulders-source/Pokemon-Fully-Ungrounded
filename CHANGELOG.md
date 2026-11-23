@@ -3037,3 +3037,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.729] - Levende Inca-tempel: start ontwerp
 - Nieuwe ontwerpmap `docs/concept/sprites/tempel/` met `SPEC.md`: Jordi's idee letterlijk (static encounter, groot zoals Snorlax, Ghost/Rock, fake-out als ingang) en zijn keuzes: trapeziumdeur + nissen, deur = mond, geen ledematen, ogen = licht uit gaten in de architectuur.
 - Gemini-prompt v1 in `tempel/gemini/PROMPT.md`; `IDEEEN.md` bijgewerkt.
+
+### [v0.0.730] - Levende Inca-tempel: frontsprite-kandidaat
+- Ontwerp via Gemini r1–r7 (tempel gelaagd tegen een bergwand naar Jordi's Inca Trail-foto's, ingang = mond, lichtende raampjes = ogen); r7 bevroren als model.
+- Frontsprite r1–r7 in `docs/concept/sprites/tempel/sprite/`; keurder- en eindkeuring (Dragonfly Cave) verwerkt. Kandidaat `sprite/r7/tempel.png`, wacht op Jordi.

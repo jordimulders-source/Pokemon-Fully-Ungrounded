@@ -3023,3 +3023,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.726] - Regionale Pincurchin: ontwerpkeuzes en Gemini-prompt
 - Jordi (23 nov): Poison/Rock; "hybride, lijkend op een soort onderwater mijn" (pencil urchin + zeemijn); Pincurchins gezicht.
 - `docs/concept/sprites/pincurchin_regional/SPEC.md` en `gemini/PROMPT.md` (v1, bijlage = Pincurchins sprite 8× voor het gezicht). IDEEEN.md en POKEMON.md bijgewerkt.
+
+### [v0.0.727] - Regionale Pincurchin: frontsprite af
+- Model: Gemini v8 (v1–v8 met Jordi: bruin lijf, donkerrode gladde potloodstaafjes, dicht en lang, zeemijn met 3 contacthoorns en een naad). Gezicht = Pincurchins eigen ogen en mond, 1-op-1 uit zijn sprite: linkeroog smaller (kolom geschrapt, pupil heel), rechteroog 1 px lager, mond 115 % bovenop de naad met lijf tussen mond en ogen (V1).
+- Eindkeuring Dragonfly Cave (schaduw, kleurtinten, belijning): 29 px gerepareerd, middenrood iets lichter (B). Af: `docs/concept/sprites/pincurchin_regional/af/pincurchin_regional.png`; op het overzichtsvel (Regional forms). Alles in `pincurchin_regional/SPEC.md`.

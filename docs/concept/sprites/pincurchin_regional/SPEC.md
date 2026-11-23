@@ -72,3 +72,4 @@ Lijn: Pincurchin (repo: puur Electric) → regionale vorm. Pincurchin weer in de
 - r5 (`sprite/r5/vel.png`): V1 oog 4×5 mond +1/+2, V2 oog 4×6, V3 mond +1/+3. 3 breed kan niet met de hele pupil (pupil zelf 2 breed). Mond 115% blijft groter dan in het model en bedekt de naad.
 - Jordi: "stuur v1 naar de eindkeuring, dragonflycave, schaduw, kleurtinten, belijning" → V1 (`sprite/r5/V1_oog4x5_mond+1+2.png`) gekozen; eindkeuring.
 - r6 (`sprite/r6/`): eindkeuringsreparaties 1–8 (29 px) → final_A; final_B = idem + rood 7 lichter (156,38,42). Keuze bij Jordi.
+- **Af (23 nov):** Jordi "akkoord" op final_B → `af/pincurchin_regional.png` (= `sprite/r6/final_B.png`); op het overzichtsvel. Naam (blijft Pincurchin?) en evolutiemethode open.

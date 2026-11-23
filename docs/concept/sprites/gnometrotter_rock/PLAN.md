@@ -63,3 +63,11 @@ Jordi (letterlijk): "nee ik wil toch kijken of het lukt om een hybride vorm te m
 - Jordi (23 nov, over r16/r15 heel): "nee die is nog niet af" · "dat is nog niet mooi" → Rock NIET af; r16 = laatste stand.
 - Jordi (23 nov): "moet dat niet gewoon een zeer donkere roze tint zijn" (neusboog) → r17.
 - Jordi (23 nov): "links is af nu" → r17 af (`af/gnometrotter_rock.png`).
+
+## Ice en Grass (nieuwe sessie, 23 nov)
+- Jordi: "ijs en gras zouden gebouwd worden vanuit het basis lichaam van rock, en niet rock af, eerdere rock" · "het LICHAAM he niet de rest" (= de nachtsprites, gebouwd op het lichaam van de eerdere Rock).
+- Jordi (over het vel Rock af | Ice r3 | Ice hybride r2 | Grass r3 | Grass hybride r2): "ijs links, maar moet geen gesp hebben, de rechtershouder is nog niet goed, voor de rest mag je het lichaam meer ijsvormen geven, de rest behouden. Grass heeft geen goede neus en geen goede rechterschouder, de linkerhand wijkt ook af van rock, maar dat doet ijs ook. Dan mag die het lichaam verbeteren, bij grass is het lichaam nog het slechtste"
+- Jordi: "ik bedoel dus dat we niet de rock versies pakken"
+- Jordi: "want alle rock versies vertalen niet goed" · "en ik wil geen knip en plak werk" (geen hybride, niets uit Rock of r1 plakken)
+  → Ice: basis `gnometrotter_ice/sprite_r3/gnometrotter_ice.png` (niet de Rock-sprite); gesp weg; rechterschouder goed; lijf meer ijsvormen; de rest behouden (linkerhand dus ook).
+  → Grass: neus en rechterschouder niet goed, lijf verbeteren (slechtste deel); linkerhand: open (vragen).

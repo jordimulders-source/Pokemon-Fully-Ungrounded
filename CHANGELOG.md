@@ -2911,3 +2911,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.700] - Emolga-lijn fase 3: Gemini-prompt r1
 - `docs/concept/sprites/emolga_evo_fase3/` (SPEC + prompt r1: fruitvampier op zijn kop, vleugels gesloten).
+
+### [v0.0.701] - Emolga-lijn fase 3: prompt r2
+- r1 te compact; r2 lang en slank.

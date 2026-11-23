@@ -3033,3 +3033,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Twee ogen (Jordi: drie ogen staan van voren gek): samengestelde koppen werden een lappendeken; Gemini-bewerkingen van de eigen sprite tekenden alles opnieuw; doorbraak = de kop van Gemini r10 (één bron) op ons r3-ontwerp (`claydol_r10kop/`), daarna neus en ogen uit de 3-ogenversie, rode lijn om het rechteroog, kop- en lijfshading, eindkeuring (alleen tinten), voeten met eigen ronding, rechtervoet 1 rij korter.
 - Af: `docs/concept/sprites/baltoy_regional/claydol_af/claydol_regional.png` (+ `_8x`), op het overzichtsvel (Regional forms).
 - Les bovenaan `docs/lessen/SPRITE_KERN.md`: "rustiger maken" = pixelblur; lessen in `GEMINI.md`.
+
+### [v0.0.729] - Legendaries-brainstorm
+- Besloten (Jordi): naast het Inca-trio een Water-regi (diepe zee) en een Cosmic-regi (ruimte), "de great unknowns"; overige legendaries hoeven niet allemaal Zuid-Amerikaans. Vastgelegd in `POKEMON.md` (Legendaries) en `IDEEEN.md` (Legendaries-brainstorm, met voorstellen van Claude).

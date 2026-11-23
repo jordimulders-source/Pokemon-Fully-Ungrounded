@@ -722,3 +722,13 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - Jordi (23 nov): "En als we voor een fase 3 fruitvampier gaan die op zijn kop hangt met de vleugels gesloten?" Open: type, wat er met de vleermuislijn gebeurt, welke fase-2-basis (r5/r6).
 - Jordi (23 nov): "Emolga krijgt dus 2 evoluties": fase 2 wingsuit, fase 3 fruitvampier (Gemini r2 "dit gaat lukken", design nog interessanter maken).
 - **Besloten (Jordi, 23 nov):** de vleermuislijn "vervalt"; de fruitvampier is fase 3 van de Emolga-lijn en "blijft electric/flying".
+
+## Legendaries-brainstorm (23 nov)
+- **Jordi (23 nov):** "tijd voor de brainstorm van de legendaries, buiten het trio wil ik een water en cosmic regi toevoegen, omdat de game ook gaat over de great unknowns, ofwel de diepe zee en de ruimte". Daarna: "laten we kijken wat voor legendaries nog meer erbij komen, ze hoeven niet allemaal zuid amerikaans thema".
+- Repo: alle bestaande Regi's zijn uit de ROM (DEX_IN_ROM.md); in DEX_NOMINATIES stond een Regi-puzzel met quipu in plaats van braille (optioneel/post-game).
+- **Voorstellen Claude (open, niets besloten):**
+  - *Water-regi:* het puntjesgezicht van de Regi's als **lichtorganen** (fotoforen) van diepzeevissen; lijf van samengeperst donker water of drukbestendig "abyssaal" materiaal. Plek: de **Atacamatrog** (Peru-Chilitrog, ±8 km diep) voor de kust.
+  - *Cosmic-regi:* de puntjes als **sterren/sterrenbeeld**; lijf van de **donkere wolken in de Melkweg**, waarin de Inca's dieren zagen (de "donkere sterrenbeelden": lama, vos, pad, slang, patrijs). Plek: de sterrenwachten van de Atacama; alternatief: de ijzermeteorieten van Campo del Cielo (Argentinië) (overlap met Registeel).
+  - *Koppeling:* in de Inca-kosmologie is de Melkweg (**Mayu**) een hemelrivier die water uit de zee opneemt en als regen teruggeeft; zo horen de diepe zee en de ruimte bij elkaar.
+  - *Puzzel:* quipu als "schrift" (uit DEX_NOMINATIES).
+- **Overige legendary-ideeën (Claude, open; ook niet-Zuid-Amerikaans mag):** zie het gesprek van 23 nov; wat Jordi kiest komt in `POKEMON.md` → Legendaries.

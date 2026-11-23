@@ -1,4 +1,4 @@
-# Gnometrotter: nachtplan 5 eindsprites (23 nov)
+# Gnometrotter: 5 eindsprites (23 nov)
 
 Jordi (letterlijk): "nee ik wil toch kijken of het lukt om een hybride vorm te maken. Dus je doet het volgende, je maakt eerst rock, dan doe je ijs en grass met dezelfde pose. Daarna ga je kijken of het lukt om alleen de onderdelen die in de hybride versies anders moeten te verplaatsen, zo netjes mogelijk. Ik ga nu slapen en wil morgen 5 eindsprites zien"
 

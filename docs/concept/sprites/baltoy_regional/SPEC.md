@@ -68,3 +68,4 @@
 - Jordi over r16: "de arm rechts heeft opeens een stuk weggeknipt en de stekel klopt nog steeds niet, het is een 2d vlak wat niet past bij de rest van de sprite, hij moet meer naar verhouding en met netter kleurgebruik, waarom is dit zo moeilijk" · "is dit een vereiste voor de tiwanaku? anders gewoon van de originele baltoy pakken want dit duurt echt lang". r17 = r13 (armen heel) + tolpunt van de Gen 3-Baltoy 1-op-1 (3 rijen), in onze steentinten.
 - Stekel 0/1/2 px naar links ter vergelijking (`sprite_r17/stekel_links_vergelijk.png`). Jordi: "ik vind de rest van de sprite wel vrij prima".
 - Jordi: "de middelste mag naar de eindkeuring" → r18 = r17 met stekel 1 px links (`sprite_r18/`).
+- Eindkeuring r18 (Dragonfly Cave): PASS met 1 pixel ((35,56) 9→10, gat in de onderlijn na het verschuiven) → r19 (`sprite_r19/`, kandidaat).

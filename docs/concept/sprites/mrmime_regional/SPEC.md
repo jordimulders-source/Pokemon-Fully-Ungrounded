@@ -117,3 +117,4 @@ Jordi: "ik denk dat dit ontwerp het niet gaat worden" – "het hele idee bedoel 
 - Jordi bij r18: "de linkse schouderbal is niet rond" → r19: verre bal = Mr. Mime-bal 1-op-1, donkerder.
 - Jordi: "het v ontwerp links is beter, maar is niet goed in perspectief" → V groot; punt op de middenlijn, verre helft smaller, nabije breder.
 - Sprite r19 (`bokser/sprite_r19/`): verre bal rond (Mr. Mime-bal, rond gespiegeld, 1 tint donkerder), V groot in perspectief (punt op de middenlijn, verre helft smaller, nabije breder).
+- Jordi bij r19: "ja maar de schouderbal lijkt nu net wat teveel los van het lichaam, kijk naar de andere mr mimes. Het lichaamspatroon is nu geen v meer en amper zichtbaar" → r20 (verse maker): bal tegen de romp zoals Mr. Mime, V terug als V in perspectief (2 varianten).

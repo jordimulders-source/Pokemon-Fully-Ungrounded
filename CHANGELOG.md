@@ -2937,3 +2937,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.708] - Emolga-lijn fase 2: terug naar r3
 - r4 (buikrand) gaf te dikke hoekjes; `af/model.png` weer r3. Rastervergelijking model | r3 | r4 in `sprite_r5/raster_buik.png`.
+
+### [v0.0.709] - Emolga-lijn fase 2: 3 pixels van Jordi
+- Buik: (40,41) zwart, (31,50) lichtgrijs, (28,52) donkergrijs zoals in het model; `af/model.png` = sprite_r6.

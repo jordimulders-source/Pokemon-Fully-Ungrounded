@@ -48,3 +48,4 @@
 - Jordi (23 nov): "we gaan voor links" → `af/model.png` (A0) gekozen; vergelijking met het model in `af/naast_model.png`.
 - Jordi: "ja het is puur dat de buik in onze sprite net wat teveel een diagonale lijn is, maak dat iets smoother" · "baseer je op het model" · "dus hele subtiele wijzigingen" → r4: 5 px buikonderrand naar het model (rij 44, 48, 49), diff 0 elders; `af/model.png` = r4.
 - Jordi over r4: "nog niet goed, leg ze allebei op een raster" · "nu heb je sommige hoekjes te dik gepixeld" → raster `sprite_r5/raster_buik.png`; terug naar r3 ("prima aanpak"); Jordi wijst op het raster aan wat te recht is.
+- Jordi (raster): "41, 40 mag zwart worden, 50, 31 lichtgrijs zoals in het model en 52, 28 donkergrijs zoals in het model, dus donkerder dan door wat die omringd wordt" (rij, kolom) → r6: (x40,y41) zwart, (x31,y50) zilver (8), (x28,y52) index 4; `af/model.png` = r6.

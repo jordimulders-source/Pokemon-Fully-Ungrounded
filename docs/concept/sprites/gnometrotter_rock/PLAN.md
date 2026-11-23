@@ -43,3 +43,4 @@ Jordi (letterlijk): "nee ik wil toch kijken of het lukt om een hybride vorm te m
 - Jordi (23 nov): "alleen de lijnen van de stenen wijken af van het model ook, kijk daar goed naar, daarom lijkt het slordiger, er zijn teveel kleine vormen"
 - Jordi (23 nov): "ja en als het echt niet mooi is, dan is dat ook een les en dan houden we het lichaam neutraal"
 - Jordi (23 nov, over r9): "ja r9 is weer wat beter, het kan wel dus. Sterker nog, ik denk dat die naar de eindkeuring kan, goed naar kleurtinten, schaduw vooral en lijnen kijken" → eindkeuring r9.
+- Jordi (23 nov, over r10): "de schaduw mag wat meer uberhaupt op het lichaam vallen, de neus is niet meer rond nu, de schaduw is gewoon vrij inconsitent nog of niet?"

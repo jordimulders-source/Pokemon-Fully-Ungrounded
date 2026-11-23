@@ -109,3 +109,4 @@ Jordi: "ik denk dat dit ontwerp het niet gaat worden" – "het hele idee bedoel 
 - Jordi: "voor de rest vind ik hem vrij prima behalve dat de broek half op de torso ervoor hangt ipv dat die eronder zit en netjes aansluit" → r16: broek onder de ronde romp.
 - Eindkeurder op r15: BIJNA (kuifpixel, schoenhooglicht, broekrand, band onder de romp); mee in r16, gezichtspixel overgeslagen.
 - Sprite r16 (`bokser/sprite_r16/`): 50×56; armen uit het model (52-schaal, pols loopt de vuist in), buik volledig zichtbaar met broek eronder, keurderspunten. Arm/kop 0,52 (model 0,90) omdat de kop op Mr. Mime-formaat staat; buik oogt zwaar.
+- Jordi bij r16: "de armen kloppen niet, komen niet op de juiste plek uit de schouders en zijn gewoon te kort. Kan je niet gewoon de armen van r9 pakken? het broekje komt nu op de goede plek, maar is iets te kort, de benen mogen ietse langer en het lichaam is afgekapt rechtsonder, mag ronder" → r17.

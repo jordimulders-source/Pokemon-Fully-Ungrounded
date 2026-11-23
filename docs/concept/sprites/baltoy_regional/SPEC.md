@@ -74,3 +74,4 @@
 - r1 (`gemini/claydol_r1.png`, 23 nov; Zonnepoort/Viracocha-figuur: vierkant gezicht, stralenkrans met ronde uiteinden, twee losse staven), Jordi: "Dit is best tof, maar het is totaal nog niet herkenbaar als claydol".
 - Jordi: "de ogen wel, maar dat is niet voldoende, het moet denk ik in de hoofdvorm met ogen zitten, als dat kan" → vervolgprompt r2 in hetzelfde gesprek: `gemini/PROMPT_claydol_r2.md` (alleen de kop: Claydol-hoofdvorm met oogring; gezicht in het midden en staven nog open).
 - r2 (`gemini/claydol_r2.png`; Claydol-schotelkop met punt en oogring van 5 bleke ogen, stralen, rode verf en kopreliëf weg; lijf en staven van r1), Jordi: "nu wijkt die wel erg af he" · "ondanks dat ik het wel vet gemaakt vind".
+- Jordi: "of denk je dat een hybride mogelijk is" → Claude: ja; `gemini/PROMPT_claydol_r3.md` (kop van r2 + stralen die in de ogen eindigen, rode verf en reliëf van r1).

@@ -3010,3 +3010,8 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Model = r6 met het lijf per script 25% breder (`model/model.png`, ±26×64 px); sprite via verkleining (maker r1–r3), keuring r2 BIJNA → r3, eindkeuring (Dragonfly Cave, A_geel) BIJNA → 35 px belijning → r4.
 - Jordi koos A_geel: leigrijze oogvlek (fase 2), zwarte kap met V, geel voorhoofdvlekje. `af/fruitvampier.png`, lijnoverzicht `af/lijn.png`; op het overzichtsvel als "Fruitvampier (Emolga)" (naam open).
 - Jordi: "de designs zijn tof, het enige waar ik over twijfel is of fase 2 evolved in 3 of naast elkar komen te staan, maar dat is iets voor mij om te bedenken."
+
+### [v0.0.724] - Ontwerplijst opgeschoond
+- Geschrapt (Jordi, 23 nov): wilde lijn vicuña → guanaco, carnavalspauw.
+- Fire/Water-Pokémon van de lijst: gedaan (onderwater-Oddish-lijn).
+- Bijgewerkt in `TODO.md`, `IDEEEN.md`, `POKEMON.md`.

@@ -2928,3 +2928,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Model Gemini r6b (duikvlucht). Gebouwd als het model 1-op-1 (`emolga_evo/af/model.png`) en met alleen de kop 1,4× vergroot (`af/kop14.png`, Jordi: "bouw maar het originele gemini model en A net allebei"; overlap met het lijf mag zoals bij de Sunflora-evolutie).
 - Maker r1, keurder (A0 BIJNA, A PASS), r2 (zebra gezicht, vachttint), eindkeuring Dragonfly Cave r2 → r3 (oog/pupil zwart, hand, tint): beide PASS.
 - Ter info (eindkeuring): voorste vleugel bijna egaal geel en zwarte binnenlijnen, trouw aan het model; gezicht leest beter in de versie met de grote kop.
+
+### [v0.0.706] - Emolga-lijn fase 2: keuze
+- Jordi kiest de versie met de originele kop (`emolga_evo/af/model.png`); vergelijking naast het model in `af/naast_model.png`.

@@ -62,3 +62,36 @@ AVOID
 - No arms, legs or human features. No glossy 3D render, no plush or mascot look.
 - Not thin needle spines like the normal Pincurchin. Not small spines.
 ```
+
+# Startprompt v3 (23 nov), na v2
+Jordi over v2: "de ogen zijn anders maar dat is niet erg, ik vind hem verder te kaal" · "en het rood mag wat feller" · "wel donker". "Te kaal" letterlijk doorgegeven. Nieuw gesprek, bijlage alleen `bijlage_pincurchin.png`.
+
+```
+Design a regional form of the Pokémon PINCURCHIN and draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art).
+
+THE ATTACHED SPRITE IS PINCURCHIN. Use its face: the yellow eyes and the orange teeth/mouth, low on the front of the body.
+
+CONCEPT
+- A hybrid of a pencil-spined sea urchin and an old underwater naval mine (sea mine).
+- Type Poison/Rock. It should look sinister.
+
+DESIGN
+- Body: a round sea-mine body that is also an urchin shell. The body is brown.
+- Spines: BIG spines, the thick, blunt, pencil-like spines of a pencil sea urchin, placed around the body the way the contact horns sit on a sea mine.
+- Spine color: a dark red, but more vivid and saturated (a brighter red that is still dark), not a dull brownish red.
+- Face: Pincurchin's eyes and teeth from the attachment.
+- Clean colors: NO rust, no rust spots or stains.
+- It must NOT look too bare or plain.
+
+POSE
+- Three-quarter view facing left, like official Gen 3 front sprites.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, clean shading like official Game Freak Gen 3 sprites.
+- Plain white background. No floor, rock, shadow, water, bubbles, glow, sparkles or effects. One single creature, no extra views.
+
+AVOID
+- No rust. Not a cartoon bomb with a fuse, no chains, no anchor, no metal bolts or rivets, no skull.
+- No arms, legs or human features. No glossy 3D render, no plush or mascot look.
+- Not thin needle spines like the normal Pincurchin. Not small spines. Not bare or plain.
+```

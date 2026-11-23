@@ -26,3 +26,5 @@ Lijn: Pincurchin (repo: puur Electric) → regionale vorm. Pincurchin weer in de
 
 ## Gemini v2 (`r2/gemini_v2.png`, 23 nov)
 - Jordi: "de ogen zijn anders maar dat is niet erg, ik vind hem verder te kaal"
+- Jordi: "en het rood mag wat feller" · "wel donker"
+- Wat "te kaal" inhoudt is niet gespecificeerd; in prompt v3 letterlijk doorgegeven ("too bare"), zonder eigen invulling.

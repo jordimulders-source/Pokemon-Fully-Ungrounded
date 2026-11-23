@@ -31,3 +31,5 @@ No wavy tentacles, no round dome head, no gems.
 No effects, no glow, no bubbles, no water, no ground, no shadow.
 No plush/Neopets look, no chibi mascot.
 ```
+
+Jordi over r1: "dit lukt nog niet helemaal, hij lijkt gewoon op een water pokemon, niet op een legendary cryptid".

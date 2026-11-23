@@ -16,6 +16,7 @@
 - r3 (`gemini/r3.png`), Jordi (met `referenties/bibarel_officieel.png`): "ok dat is al wat beter, maar het is kleding en geen lichaampatroon, de ogen zijn te klein, wat bibarel hier om de ogen heeft die vacht, dat mag doorlopen en een helm worden. De vacht onder zijn kin dat mag de vorm van de tuinbroek worden. De staart mag dan een soort van pylonkleur krijgen, oranje met wit gestreept". Prompt r4 (nieuw gesprek): `gemini/PROMPT_r4.md`.
 - r4 (`gemini/r4.png`), Jordi: "ik vind die potlood wel geniaal, maar de helm moet van vacht zijn". Bijstuurprompt r5 (zelfde gesprek): `gemini/PROMPT_r5_bijsturen.md`.
 - r5 (`gemini/r5.png`, pluizige crème muts bovenop), Jordi: "dit is niet wat ik bedoel".
+- Daarna: "de helm moet geen accessoire zijn"; gekozen optie "A: hoofd zélf is de helm" (kop = koepel met rand, niets erbovenop, crème oogvlak loopt over de koepel). Prompt r6 (nieuw gesprek): `gemini/PROMPT_r6.md`.
 
 ## Open
 - Welke suggesties (Claude, 23 nov): 1 oranje beiteltanden, 2 staart als troffel, 3 schepklauwen, 4 sjouwt tak/stam of modder tegen de borst, 5 knagend aan een stam, 6 waarschuwingskleuren (geel-zwarte staart), 7 helm van modderkorst/twijgjes.

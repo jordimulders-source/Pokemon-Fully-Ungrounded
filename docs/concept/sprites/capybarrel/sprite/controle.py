@@ -33,5 +33,20 @@ for f in sys.argv[1:]:
             if a[y,x]==1 and all(op[y+dy,x+dx] for dx,dy in((1,0),(-1,0),(0,1),(0,-1))):
                 if not any(a[y+dy,x+dx] in (1,2,8) for dx in(-1,0,1) for dy in(-1,0,1) if dx or dy): lone.append((x-9,y-26))
     print(' losse lijnpixels:', lone)
+    # inwendige lijnclusters (zwart/selout, niet aan de rand) van 1-2 px
+    seen2=set(); kl=[]
+    edge2=lambda x,y: any(not(0<=x+dx<W and 0<=y+dy<H) or not op[y+dy,x+dx] for dx,dy in((1,0),(-1,0),(0,1),(0,-1)))
+    for y in range(H):
+        for x in range(W):
+            if (x,y) in seen2 or a[y,x] not in (1,2) or edge2(x,y): continue
+            st=[(x,y)]; seen2.add((x,y)); comp=[]
+            while st:
+                cx,cy=st.pop(); comp.append((cx,cy))
+                for dx in(-1,0,1):
+                    for dy in(-1,0,1):
+                        nx,ny=cx+dx,cy+dy
+                        if (nx,ny) not in seen2 and 0<=nx<W and 0<=ny<H and a[ny,nx] in (1,2) and not edge2(nx,ny): seen2.add((nx,ny)); st.append((nx,ny))
+            if len(comp)<=2: kl.append([(p[0]-9,p[1]-26) for p in comp])
+    print(' losse inwendige lijnclusters 1-2 px:', kl)
     rand=[a[y,x] for y in range(H) for x in range(W) if op[y,x] and any(not op[y+dy,x+dx] for dx,dy in((1,0),(-1,0),(0,1),(0,-1)))]
     print(' rand zwart %.0f%%, selout %.0f%%'%(100*rand.count(1)/len(rand),100*rand.count(2)/len(rand)))

@@ -69,3 +69,6 @@
 - Stekel 0/1/2 px naar links ter vergelijking (`sprite_r17/stekel_links_vergelijk.png`). Jordi: "ik vind de rest van de sprite wel vrij prima".
 - Jordi: "de middelste mag naar de eindkeuring" → r18 = r17 met stekel 1 px links (`sprite_r18/`).
 - Eindkeuring r18 (Dragonfly Cave): PASS met 1 pixel ((35,56) 9→10, gat in de onderlijn na het verschuiven) → r19 (`sprite_r19/`, kandidaat).
+
+## Claydol
+- r1 (`gemini/claydol_r1.png`, 23 nov; Zonnepoort/Viracocha-figuur: vierkant gezicht, stralenkrans met ronde uiteinden, twee losse staven), Jordi: "Dit is best tof, maar het is totaal nog niet herkenbaar als claydol".

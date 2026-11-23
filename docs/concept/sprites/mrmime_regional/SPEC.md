@@ -121,3 +121,4 @@ Jordi: "ik denk dat dit ontwerp het niet gaat worden" – "het hele idee bedoel 
 - Jordi over de V van r19: "verkeerd perspectief"; op Claude's vraag (andersom verkorten?): "ja hij staat toch in drie kwart" → r20: linker baan breder, rechter smaller, punt iets rechts van het midden.
 - Jordi: "nee linekrhelft moet smaller" → V: linker baan smaller, rechter breder, maar duidelijk een V en zichtbaar.
 - Jordi: "maar wat jij hebt gedaan is dat je hem helemaal naar rechts hebt gezet" → V op de plek van r18 houden, alleen linker baan smaller.
+- Jordi: "maar de positie verandert niet vanuit het midden" → punt van de V blijft waar hij in r18 zat.

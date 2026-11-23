@@ -2915,3 +2915,75 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.695] - Regional Baltoy: stekel en eindkeuring (r14–r19)
 - Stekel: vormprobeersels (r14), tolpunt per laag uit het model (r15–r16); Jordi: "anders gewoon van de originele baltoy pakken" → r17 = r13 + de tolpunt van de Gen 3-Baltoy 1-op-1 in steentinten; Jordi koos 1 px naar links (r18).
 - Eindkeuring Dragonfly Cave r18: PASS met 1 pixel → r19 (`docs/concept/sprites/baltoy_regional/sprite_r19/baltoy_r19.png`, kandidaat). Lessen in GEMINI.md.
+### [v0.0.696] - Idee: Emolga-evolutie (wingsuit)
+- Jordi's idee voor een Emolga-evolutie gebaseerd op wingsuit flying vastgelegd in `docs/concept/IDEEEN.md`.
+
+### [v0.0.697] - Emolga-evolutie: besluiten + Gemini-prompt r1
+- Jordi's besluiten in `docs/concept/sprites/emolga_evo/SPEC.md`; Gemini-prompt r1 in `emolga_evo/gemini/PROMPT_r1.md`.
+
+### [v0.0.698] - Emolga-evolutie: Gemini-prompt r2
+- Feedback op r1 in `emolga_evo/SPEC.md`; prompt r2 zonder bijlage, super groot wingsuit, aerodynamisch, steilere duik, Emolga's echte kleurpatroon.
+
+### [v0.0.699] - Emolga-evolutie: Gemini-prompt r3
+- Feedback op r2 in `emolga_evo/SPEC.md`; prompt r3: langere puntoren, langwerpig lijf vastgegroeid aan de vleugels, langere poten, aerodynamisch buikpatroon, visorkleur rond de ogen i.p.v. wangen.
+
+### [v0.0.700] - Emolga-evolutie: aanpak r4
+- r3 afgekeurd; r4 vertrekt van r2 als bijlage met max. 2 wijzigingen per ronde (`emolga_evo/gemini/PROMPT_r4.md`).
+
+### [v0.0.701] - Emolga-evolutie: prompt r4 naar het Skinguin-voorbeeld
+- `emolga_evo/gemini/PROMPT_r4.md` herschreven als nieuwe startprompt in Skinguin-opbouw (geen bijlage); les in `docs/lessen/GEMINI.md`.
+
+### [v0.0.702] - Emolga-evolutie: prompt r5
+- Feedback r4 in SPEC; `PROMPT_r5.md`: verhoudingen in maten, oogpatroon als vachttekening.
+
+### [v0.0.703] - Emolga-evolutie: prompt r6 (colugo) + fruitvampier-idee
+- `emolga_evo/gemini/PROMPT_r6.md`: colugo als anatomie. Jordi's idee fruitvampier als 3e vorm van de Emolga-lijn in IDEEEN.md.
+
+### [v0.0.704] - Emolga-evolutie: prompt r7 (reuzenvliegende eekhoorn)
+- r6 (colugo) "vrij ok"; `PROMPT_r7.md` met Petaurista als anatomie.
+
+### [v0.0.705] - Emolga-evolutie: r7 + idee fase 3
+- r7 (Petaurista) minder goed; fase 3 fruitvampier op zijn kop met gesloten vleugels voorgesteld door Jordi (IDEEEN.md).
+
+### [v0.0.706] - Emolga-lijn fase 3: Gemini-prompt r1
+- `docs/concept/sprites/emolga_evo_fase3/` (SPEC + prompt r1: fruitvampier op zijn kop, vleugels gesloten).
+
+### [v0.0.707] - Emolga-lijn fase 3: prompt r2
+- r1 te compact; r2 lang en slank.
+
+### [v0.0.708] - Emolga-lijn: 2 evoluties
+- Fase 3 fruitvampier r2 "gaat lukken"; Emolga krijgt 2 evoluties (Jordi).
+
+### [v0.0.709] - Emolga-lijn fase 2: r6 gekozen
+- r6 (colugo) is het design voor fase 2; draaiproeven en bijstuurprompt voor de duik. Fase 3 = fruitvampier.
+
+### [v0.0.710] - Vleermuislijn vervalt
+- Fruitvampier = fase 3 van de Emolga-lijn (Electric/Flying); POKEMON.md, IDEEEN.md en SPEC bijgewerkt.
+
+### [v0.0.711] - Emolga-lijn fase 2 (wingsuit-colugo): twee frontsprites af
+- Model Gemini r6b (duikvlucht). Gebouwd als het model 1-op-1 (`emolga_evo/af/model.png`) en met alleen de kop 1,4× vergroot (`af/kop14.png`, Jordi: "bouw maar het originele gemini model en A net allebei"; overlap met het lijf mag zoals bij de Sunflora-evolutie).
+- Maker r1, keurder (A0 BIJNA, A PASS), r2 (zebra gezicht, vachttint), eindkeuring Dragonfly Cave r2 → r3 (oog/pupil zwart, hand, tint): beide PASS.
+- Ter info (eindkeuring): voorste vleugel bijna egaal geel en zwarte binnenlijnen, trouw aan het model; gezicht leest beter in de versie met de grote kop.
+
+### [v0.0.712] - Emolga-lijn fase 2: keuze
+- Jordi kiest de versie met de originele kop (`emolga_evo/af/model.png`); vergelijking naast het model in `af/naast_model.png`.
+
+### [v0.0.713] - Emolga-lijn fase 2: buikonderrand
+- 5 pixels van de buikonderrand naar de curve van het model (Jordi: "hele subtiele wijzigingen"); `af/model.png` = sprite_r4.
+
+### [v0.0.714] - Emolga-lijn fase 2: terug naar r3
+- r4 (buikrand) gaf te dikke hoekjes; `af/model.png` weer r3. Rastervergelijking model | r3 | r4 in `sprite_r5/raster_buik.png`.
+
+### [v0.0.715] - Emolga-lijn fase 2: 3 pixels van Jordi
+- Buik: (40,41) zwart, (31,50) lichtgrijs, (28,52) donkergrijs zoals in het model; `af/model.png` = sprite_r6.
+
+### [v0.0.716] - Emolga-lijn fase 2: eindkeuring
+- Eindkeuring r6 BIJNA (open rand); (31,51) zwart (ook Jordi's idee) → r7 PASS. `af/model.png` = sprite_r7.
+
+### [v0.0.717] - Emolga-lijn fase 2 (wingsuit-colugo): frontsprite af
+- Kleurrondes r8–r12 na Jordi's feedback ("klopt die echt al aan de kleurtinten?", "erg effen", "nog steeds een effen vlak"): donkere ramp 38/64/98 koel, volume in kop, oor, lijf, donkere band en bovenbuik (glans + index 10 (140,152,172)), schaduw op de gele vleugel; r12 haalt het donkere zilver onder het handje weg. Vorm/omlijning sinds r3 ongewijzigd (op Jordi's 4 buikpixels na).
+- `emolga_evo/af/model.png` = r12; op het overzichtsvel bij "Evolutions" als "Wingsuit-colugo (Emolga)" (naam open).
+
+
+### [v0.0.718] - Merge naar main
+- Emolga-lijn (fase 2 af, fase 3-prompts) samengevoegd met main (Gnomini-omlijning, regional Baltoy); onze secties hernummerd naar v0.0.696–717. Overzichtsvel opnieuw gemaakt.

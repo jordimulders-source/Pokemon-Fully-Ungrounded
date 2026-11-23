@@ -63,6 +63,7 @@ SECTIES=[
 ('kricketune_evo/af/krickestro.png', '"Krickestro" (Kricketune)', 'bug/fairy'),
 ('solrock_evo/af/solrock_evo.png', 'Solrock-evolutie (Solrock)', 'rock/psychic'),
 ('lunatone_evo/af/bloedmaan.png', 'Bloedmaan (Lunatone)', 'rock/cosmic'),
+('emolga_evo/af/model.png', 'Wingsuit-colugo (Emolga)', 'electric/flying'),
 ]),
 ("Regional forms / convergent Pokémon",[
 ("silicobra_uyuni/af/silicobra_uyuni.png",'"Silicobra" (regional)',"ground/electric"),

@@ -75,3 +75,4 @@ Jordi: "ik denk dat dit ontwerp het niet gaat worden" – "het hele idee bedoel 
 - Keurder op r3: BIJNA (benen, schoenen, buikstreep, vuist tegen V, ogen = variant B i.p.v. Mr. Mime-oog). Punten mee naar r4; hoofdversie oog A.
 - Sprite r4 (`bokser/sprite_r4/`): Mr. Mime-kuiven (kanteling 0,25), kale schedel, oog A, keurderspunten r3 verwerkt. Naar Jordi als tussencheck (kuiven = zijn punt).
 - Jordi bij r4: "nee het idee dat die kuiven slicked back waren was goed, alleen er zat nog iets tussen" → r5: haar van r3 terug, alleen het middenstuk weg.
+- Sprite r5 (`bokser/sprite_r5/`): haar r3 terug, tussenstuk (19 px) weg; kale strook smal (4–5 px); grijze schaduwkolom loopt door in de kop.

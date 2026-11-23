@@ -51,3 +51,9 @@ Lijn: Pincurchin (repo: puur Electric) → regionale vorm. Pincurchin weer in de
 ## Gemini v8 (`r8/gemini_v8.png`, 23 nov) = kandidaat-model
 - Jordi: "ok prima, alleen we behouden slechts 3 van die spikes"
 - v8 heeft 4 mijnhoorns: links, midden en rechts op het lijf, plus een klein knobbeltje bovenop tussen twee staafjes. Voorstel Claude (wacht op Jordi): het knobbeltje bovenop gaat weg, de andere 3 blijven. Weghalen in de sprite, niet via Gemini.
+- Jordi: "de mond hier gaat weg en de ogen vervangen we"
+- Besloten (Jordi): hoorns links, midden en rechts blijven (knobbeltje bovenop weg); ogen = Pincurchins ogen.
+- Mond, Jordi: "het enige wat ik nog niet zeker weet is of we de mond helemaal weglaten of dat we die erop zetten dat de lijn eroverheen loopt. misschien beide proberen" → twee varianten: A zonder mond, B Pincurchins mond met de naad eroverheen.
+
+## Model (bevroren)
+`r8/gemini_v8.png`, met bovengenoemde uitzonderingen (knobbeltje bovenop weg, gezicht van Pincurchin). Verder niets hertekenen.

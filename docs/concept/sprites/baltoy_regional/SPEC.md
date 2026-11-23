@@ -104,3 +104,4 @@
 - g3 r3 (`claydol_gemini_r3/r3/claydol_g3r3.png`): onderkop = g3 (alleen tintomzetting 4↔5), rest = r2 (script-bewijs), staven los.
 - Keuring g3r2 (verse keurder): BIJNA; onderkop van r2 = pixelblur (bevestigt Jordi; r3 zette hem al terug), verder neusruggen tot de kaakrand, dambord in beide stafknoppen, ^ ^-boogjes op het lijf moeten trapjes zijn (model). → g3 ronde 4 (niets gladstrijken).
 - g3 r4 (`claydol_gemini_r3/r4/claydol_g3r4.png`): 17 px (stafknoppen per modelpixel, treden op het lijf hoekig); neusruggen waren in r3 al goed. → eindkeuring Dragonfly Cave.
+- Eindkeuring Dragonfly Cave (g3r4 → `claydol_gemini_r3/eindkeuring/claydol_eind.png`): BIJNA → PASS na 15 px (gaten/om-en-om in de omlijning van punt, krans-bolletje en staven, rood door de schaduwlijn, lichtrood op de buitenrand, linkerstafsteel 5→4 voor een lichte zijde). Silhouet = r4, staven los. Ter info: steel linkerstaf in het model effen (de 7 px kunnen terug). Naar Jordi.

@@ -76,3 +76,4 @@
 - r2 (`gemini/claydol_r2.png`; Claydol-schotelkop met punt en oogring van 5 bleke ogen, stralen, rode verf en kopreliëf weg; lijf en staven van r1), Jordi: "nu wijkt die wel erg af he" · "ondanks dat ik het wel vet gemaakt vind".
 - Jordi: "of denk je dat een hybride mogelijk is" → Claude: ja; `gemini/PROMPT_claydol_r3.md` (kop van r2 + stralen die in de ogen eindigen, rode verf en reliëf van r1).
 - r3 (`gemini/claydol_r3.png`; ronde kop met 3 grote ogen voor, krans van ±14 kleine oogbolletjes met punt, rode zigzag erboven; schotelrand weg), Jordi: "wat vind je?"
+- Claude over r3: rode zigzag goed; schotelrand weg, stralen lezen als bolletjes/bloem, te druk (±17 ogen), voorstel r2 + zigzag + reliëf, stralen weg (of 6–8 echte stralen). Jordi: "zeg het maar" → eerste richting, `gemini/PROMPT_claydol_r4.md`.

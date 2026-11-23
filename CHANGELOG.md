@@ -3042,3 +3042,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.731] - Waterval-legendary: Iguazú
 - Jordi kiest Iguazú voor de waterval-legendary (slang/draak, watervallen als vleugels, regenboog ergens); voorlopig alleen nieuwe designs bespreken. `POKEMON.md`, `IDEEEN.md`.
+
+### [v0.0.732] - Rijtje legendaries
+- Overzichtstabel van alle nieuwe legendaries (trio, Pachamama, Water- en Cosmic-regi, Iguazú, zwart gat) bovenaan `POKEMON.md` → Legendaries.

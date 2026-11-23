@@ -73,6 +73,21 @@ Modeltekeningen in `docs/concept/ontwerp/<soort>/` (concept A/B/C + ONTWERP.md).
 - **Mr. Prime** (Jordi, 9 nov): Bartitsu-eindvorm van de regionale (jiujitsu-)Mr. Mime; oude gentleman met wandelstok. Lijn: Mime Jr. → regionale Mr. Mime → Mr. Prime.
 
 ## Legendaries
+**Rijtje (23 nov, nieuwe designs):**
+
+| # | Legendary | Thema | Type | Status |
+|---|---|---|---|---|
+| 1 | Hanan Pacha (trio) | bovenwereld, condor | open | condor besloten (9 nov) |
+| 2 | Kay Pacha (trio) | deze wereld, poema | open | poema besloten |
+| 3 | Uku Pacha (trio) | onderwereld, slang | open | slang besloten |
+| 4 | Pachamama | opper-legendary, Moeder Aarde | Ground/Fairy ("ook een goede ja") | richting |
+| 5 | Water-regi | diepe zee, nieuw lid Regi-familie | Water? | besloten (23 nov) |
+| 6 | Cosmic-regi | ruimte, nieuw lid Regi-familie | Cosmic? | besloten (23 nov) |
+| 7 | Iguazú | waterval, slang/draak, watervallen als vleugels, regenboog | open | gekozen (23 nov) |
+| 8 | Zwart gat | ruimte | open | idee ("eigenlijk nog wat logischer" dan ster → zwart gat) |
+
+Eerder genoemd in de concepten, niet besproken: Cai Cai Vilu / Tren Tren Vilu (Mapuche-duo zee/aarde, `MYTHOLOGIE.md`).
+
 - **Trio: de drie Inca-werelden.** Hanan Pacha (bovenwereld, zon, goden) = **condor** (Jordi, 9 nov: "klinkt uitstekend"; dit is de condor-Pokémon); Kay Pacha (deze wereld) = **poema**; Uku Pacha (onderwereld, voorouders, oorsprong) = **slang**. Typen, namen en rol: open.
 - **Opper-legendary: Pachamama** (Moeder Aarde; "pacha" = wereld én tijd); de drie werelden zijn delen van haar. **Ground/Fairy maken: "ook een goede ja"** (Jordi, 8 nov; Ground/Fairy bestaat nog bij geen enkele soort). Type, naam en rol: open.
 - **Naast het trio: een Water-regi en een Cosmic-regi** (Jordi, 23 nov: "buiten het trio wil ik een water en cosmic regi toevoegen, omdat de game ook gaat over de great unknowns, ofwel de diepe zee en de ruimte"). Het worden **nieuwe leden van de Regi-familie** ("zoals Regieleki en Regidrago ook pas later komen"); "ik wil puur nieuwe designs"; over de rest (andere Regi's) nog niets besloten (Jordi, 23 nov). Ideeën in de brainstorm: een zwart gat-legendary ("eigenlijk nog wat logischer" dan ster → zwart gat) en een waterval-legendary ("ook wel tof"). **Waterval-legendary: Iguazú** (Jordi, 23 nov: "Iguazu lijkt me tof ja"; "Een slang/draak met watervallen als vleugels en een regenboog ergens zou wel kunnen"). Voor nu alleen nieuwe designs bespreken (Jordi, 23 nov). Verdere legendaries hoeven niet allemaal een Zuid-Amerikaans thema (Jordi, 23 nov). Uitwerking en voorstellen: `IDEEEN.md` → Legendaries-brainstorm.

@@ -131,3 +131,4 @@ Jordi: "ik denk dat dit ontwerp het niet gaat worden" – "het hele idee bedoel 
 - Jordi: "dus de v kan niet recht naar beneden zijn"; "ik kan het niet beter uitleggen dan dit, ben geen grafische artiest" → V-as schuin (punt links van het midden van de bovenrand), varianten 1–3 px.
 - Jordi op de schuine as: "ja precies, dat bedoel ik, top". Sprite r22 (`bokser/sprite_r22/`): keuzevel V; 7–9 = schuine as (punt 1/2/3 px links), 1–6 micro-varianten.
 - Jordi: "wacht, laten we het rekenkundig doen, teken een v. Draai hem dan wat graden naar links. Dan blijft de rechterhoek redelijk hetzelfde, maar de linker wordt wat ingekort". Claude (script, `bokser/sprite_r23/`): symmetrische V (bovenrand x27–35, punt rij 33), gedraaid om een verticale as door de rechterhoek (x' = R − (R−x)·cos θ), θ = 0/20/30/40/50°; alleen romppixels, tint 3.
+- Jordi: "de tweede prima" → V 20°; r23 = r20 + V 20° (`bokser/sprite_r23/bokser.png`). Eindkeurder gestart.

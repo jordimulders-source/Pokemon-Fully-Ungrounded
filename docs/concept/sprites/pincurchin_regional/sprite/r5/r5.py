@@ -15,7 +15,7 @@ def zet(A,oog,y0,x0):
             v=oog[j,i]
             if v in MAP: A[y0+j,x0+i]=MAP[v]; m[y0+j,x0+i]=True
     return m
-ozone=np.zeros((64,64),bool); ozone[38:44,13:18]=True; ozone[39:45,28:33]=True
+ozone=np.zeros((64,64),bool); ozone[37:44,13:18]=True; ozone[39:45,28:33]=True
 def bouw(oog,y0,dx,dy):
     A=A2.copy(); A[ozone]=kaal[ozone]
     ml=zet(A,oog,y0,14); mr=zet(A,OOG,40,28)
@@ -26,12 +26,16 @@ def bouw(oog,y0,dx,dy):
     my,mx=np.where(mond); ey,ex=np.where(ml)
     gap=min(max(abs(a-c),abs(b-d)) for a,b in zip(my,mx) for c,d in zip(ey,ex))-1
     return B,niet,over,gap,mond
-reg=np.zeros((64,64),bool); reg[36:52,12:31]=True   # oog- en mondgebied
-VAR={'V1_oog3x5_mond+1+1':(O35,39,1,1),'V2_oog3x5_mond+2+1':(O35,39,2,1),'V3_oog3x6_mond+1+1':(O36,38,1,1)}
-for k,(o,y0,dx,dy) in VAR.items():
-    B,niet,over,gap,mond=bouw(o,y0,dx,dy)
-    my,mx=np.where(mond)
-    np.save(k+'.npy',B); save(B,k+'.png')
-    print(k,'| lijf tussen oog en mond:',gap,'px | mond x',mx.min(),mx.max(),'y',my.min(),my.max(),
-          '| niet uit geschaalde mond',niet,'| oogpx onder mond',over,'| diff buiten oog/mond (x12-30,y36-51) t.o.v. R2:',((B!=R2)&~reg).sum())
-for o in (O35,O36): print('\n'.join(''.join({10:'A',9:'9',7:'7',5:'5'}.get(v,'.') for v in r) for r in o)); print()
+reg=np.zeros((64,64),bool); reg[36:54,12:32]=True   # oog- en mondgebied x12-31, y36-53
+# Jordi: pupil volledig behouden -> 3 breed kan niet (pupil is 2 kolommen); smalste = c3-oog 4 breed (ring|pupil 2|ring).
+C36=np.insert(C3,1,C3[1],0)   # 6 hoog: ringrij 1 herhaald
+VAR={'V1_oog4x5_mond+1+2':(C3,38,1,2),'V2_oog4x6_mond+1+2':(C36,37,1,2),'V3_oog4x5_mond+1+3':(C3,38,1,3)}
+def _main():
+  for k,(o,y0,dx,dy) in VAR.items():
+      B,niet,over,gap,mond=bouw(o,y0,dx,dy)
+      my,mx=np.where(mond)
+      np.save(k+'.npy',B); save(B,k+'.png')
+      print(k,'| lijf tussen oog en mond:',gap,'px | mond x',mx.min(),mx.max(),'y',my.min(),my.max(),
+            '| niet uit geschaalde mond',niet,'| oogpx onder mond',over,'| diff buiten oog/mond (x12-31,y36-53) t.o.v. R2:',((B!=R2)&~reg).sum())
+
+if __name__=='__main__': _main()

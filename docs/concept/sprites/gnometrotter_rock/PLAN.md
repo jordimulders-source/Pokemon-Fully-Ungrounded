@@ -52,3 +52,5 @@ Jordi (letterlijk): "nee ik wil toch kijken of het lukt om een hybride vorm te m
 - Jordi (23 nov): krabbel op r13: gele cirkel om de schouder (sprite ±x 41–52, y 22–30) en een gele boog van onder het haar rechts (±38,19) naar de arm (±55,29): de schouderbal hoort daar groter en hoger, met de bovenrand langs die boog (zoals het model: bal vóór de rugrots).
 - Jordi (23 nov, bij de krabbel): "dit zijn schetsen" · "dus niet volledig nadoen" · "je past telkens het verkeerde aan" · "de bovenarm moet gewoon iets ovaler" · "en de ruglijn is een diagonale rechte lijn"
 - Jordi (23 nov, over r14): "neee"
+- Jordi (23 nov, krabbel op r12 12×): "geel moet weg, zwart moet nog een binnenlijn (niet in het zwart) voor 1 aansluiting en rood is de lijn die iets ronder moet"
+- Jordi (23 nov): "verder verander je niks"

@@ -24,3 +24,4 @@ Jordi (letterlijk): "nee ik wil toch kijken of het lukt om een hybride vorm te m
 - Jordi (23 nov, nacht): "en je gaat niks of zo weinig mogelijk opnieuw tekenen"
 - Jordi (23 nov, over de 5 eindsprites): "Ze zijn eigenlijk allemaal nog niet mooi he"
 - Jordi (23 nov): "ik vind ze alle 5 heel slordig. de gesp is nergens goed gelukt, rock heeft willekeurige pixels in de hoed, het lijnenwerk is slordig, nergens is het kleurgebruik/schaduwgebruik met tinten perfect gelukt. ijs heeft 2 keer een afgekapte rechterschouder, desondanks vind ik de rechtse versie nog net wat beter, maar ook halfbakken, de vraag is of het lichaam echt goed een ijsvorm kan krijgen, bij grass zijn beide lichamen ontzettend slordig en mislukt"
+- Jordi (23 nov, op Claude's analyse "te druk/te groot"): "ze zijn niet te druk, niet met teveel details, niet te groot, jij hebt gewoon slordig werk geleverd"

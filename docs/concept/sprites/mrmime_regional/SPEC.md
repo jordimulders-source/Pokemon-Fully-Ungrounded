@@ -108,3 +108,4 @@ Jordi: "ik denk dat dit ontwerp het niet gaat worden" – "het hele idee bedoel 
 - Jordi: "dus nu kloppen de hele verhoudingen niet meer"; "de handen zitten er niet lekker aan vast ook" → r16: arm/vuist in verhouding zoals model/r9, pols loopt de vuist in.
 - Jordi: "voor de rest vind ik hem vrij prima behalve dat de broek half op de torso ervoor hangt ipv dat die eronder zit en netjes aansluit" → r16: broek onder de ronde romp.
 - Eindkeurder op r15: BIJNA (kuifpixel, schoenhooglicht, broekrand, band onder de romp); mee in r16, gezichtspixel overgeslagen.
+- Sprite r16 (`bokser/sprite_r16/`): 50×56; armen uit het model (52-schaal, pols loopt de vuist in), buik volledig zichtbaar met broek eronder, keurderspunten. Arm/kop 0,52 (model 0,90) omdat de kop op Mr. Mime-formaat staat; buik oogt zwaar.

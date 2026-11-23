@@ -41,3 +41,4 @@ Lijn: Pincurchin (repo: puur Electric) → regionale vorm. Pincurchin weer in de
 
 ## Gemini v6 (`r6/gemini_v6.png`, 23 nov)
 - Jordi: "hij lijkt nog steeds niet, veel te stekelig"
+- Uitleg (keuze Jordi): "Vorm: gladde staafjes" (gladde potloodstaafjes met een stomp eind zoals op de foto, geen gekartelde punten) → startprompt v7.

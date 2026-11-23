@@ -93,3 +93,4 @@ Jordi: "ik denk dat dit ontwerp het niet gaat worden" – "het hele idee bedoel 
 - Jordi: "mr mime formaat" → alleen kop A (±20 breed).
 - Sprite r11 (`bokser/sprite_r11/`): 43×52, kop = natief model 1-op-1 (21 breed) met koepel + kuiven, lijf = r10 met 7 rijen geschrapt. Claude: lijf/vuisten nu te klein en grof t.o.v. de kop.
 - Jordi bij r11: "hij wijkt wel heel erg van de andere twee mr mimes af he"; op Claude's analyse (romp, handen, voeten, verhoudingen uit het model): "misschien iets meer proberen qua vormen ze vergelijkbaar te maken?" → r12: ronde Mr. Mime-romp, dunne ledematen, grote getapete vuisten, Mr. Mime-voeten; kop/pose/palet blijven.
+- Jordi: "en pose en idee verder hetzelfde"; "dus hoofd, romp, benen, armen, schouders" → r12 alleen die vormen; handen en voeten blijven (Claude's voorstel daarvoor vervalt).

@@ -752,3 +752,4 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - **Jordi (23 nov, over de Nikkei-koppeling):** "niet alles hoeft zuid amerika te zijn". "wederom". Dus: bij legendaries geen Zuid-Amerikaanse koppeling zoeken als die er niet vanzelf is.
 - **Jordi (23 nov):** "maar je hebt ook kumadori maskers". Het kabuki-lid wordt dus een kumadori-masker.
 - **Jordi (23 nov):** "en ogerpon is echt anders" (geen overlap).
+- **Jordi (23 nov):** stuurde een voorbeeld van een kumadori-masker ("zie"): wit masker, rode kumadori-lijnen, zwarte wenkbrauwen, paarse koorden (`sprites/maskertrio/referenties/kumadori_jordi.png`).

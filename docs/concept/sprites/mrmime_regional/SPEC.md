@@ -91,3 +91,4 @@ Jordi: "ik denk dat dit ontwerp het niet gaat worden" – "het hele idee bedoel 
 - Sprite r10 (`bokser/sprite_r10/`): 35×50 vanaf het model, alle wijzigingen erop, verre kuif ongespiegeld; gezicht en vuisten grover, glimlach weg; kleinste van de rij. ±56 nog niet gemaakt.
 - Jordi bij r10: "ja dat is niet zo mooi, het hoofd is denk ik wel 3keer kleiner als een normale mr mime" (gemeten: gezicht r10 ±10×11, r9 ±13×14, Mr. Mime ±20×17). Voorstel Claude: kop en lijf apart schalen, totaal ±50–52. Jordi: "probeer maar" → r11 (verse maker), varianten kop A ±20 / B ±16–17 breed.
 - Jordi: "mr mime formaat" → alleen kop A (±20 breed).
+- Sprite r11 (`bokser/sprite_r11/`): 43×52, kop = natief model 1-op-1 (21 breed) met koepel + kuiven, lijf = r10 met 7 rijen geschrapt. Claude: lijf/vuisten nu te klein en grof t.o.v. de kop.

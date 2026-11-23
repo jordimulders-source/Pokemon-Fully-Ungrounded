@@ -33,3 +33,4 @@ Jordi (letterlijk): "nee ik wil toch kijken of het lukt om een hybride vorm te m
 - Jordi (23 nov): "je mag de gesp trouwens bij rock en ijs weglaten"
 - Jordi (23 nov, gesp): "is bij grass ook en ziet er prima uit" (Grass heeft geen gesp; zo laten)
 - Jordi (23 nov): "je hebt dingen opnieuw getekend, of niet?" · "ja dat had je meteen moeten stoppen" → Rock r6 vanaf de kale verkleining van r8, alleen technisch opschonen.
+- Jordi (23 nov, over r5): "hij is niet slecht hoor, maar het wijkt veel meer af van het model dan nodig is. Ga niet dingen opnieuw bouwen die niet nodig zijn, gebruik al wat je hebt, maar het moet beter. Het kleurgebruik is grotendeels wat beter al, maar je hebt vaak wel minimaal 3 kleurtinten nodig voor perspectief" → r6 = r5 als basis, alleen afwijkende vormen terug naar het model, ≥3 tinten per vorm.

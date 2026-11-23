@@ -104,3 +104,4 @@ Jordi: "ik denk dat dit ontwerp het niet gaat worden" – "het hele idee bedoel 
 - Sprite r14 (`bokser/sprite_r14/`): 50×54, dikke verre arm met knik, twee Mr. Mime-schouderballen, nabije onderarm naar de borstvuist. Keurder gestart.
 - Keurder op r14: BIJNA (schouderranden, verre schouder/scheen perspectief, rompsikkel, broeksband, Y-naad, onderarmlicht); gezichtspunten overgeslagen (vastgesteld). → r15.
 - Sprite r15 (`bokser/sprite_r15/`): 9 keurderspunten uitgevoerd (107 px). Eindcheck keurder gestart.
+- Jordi: "de armen zijn opnieuw getekend" (r14: arm als zelfgetekende doorsnede). → r16: armen uit het model (zoals r9) op de huidige schaal, niets tekenen.

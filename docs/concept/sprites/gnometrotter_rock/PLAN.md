@@ -58,3 +58,4 @@ Jordi (letterlijk): "nee ik wil toch kijken of het lukt om een hybride vorm te m
 - Jordi (23 nov): "gele puntjes betekenen ALLEEn die pixel, niet de hele lijn"
 - Jordi (23 nov): "juist 15 is goed" → af: `af/gnometrotter_rock.png` (= sprite_r15).
 - Jordi (23 nov): "dan mag die naar een definitieve eindkeuirng" → definitieve eindkeuring r15.
+- Definitieve eindkeuring r15: PASS, geen reparaties (`keuring_r15/KEURING.md`). Rock definitief af.

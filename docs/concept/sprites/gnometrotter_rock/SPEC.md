@@ -48,3 +48,4 @@
 - Welke steenkenmerken, en waar (muts, snor, plukjes, riem/gesp, handen, huid).
 - Wat "logisch doorgegroeid" verder inhoudt naast groter.
 - Kleuren.
+- 23 nov (alle drie de vormen): "en we moeten zorgen dat ze allemaal even groot worden de sprites"

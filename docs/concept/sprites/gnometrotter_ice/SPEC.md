@@ -9,3 +9,4 @@
 - `gemini/PROMPT_v1.md`
 - r1 (`r1/gemini_r1.png`, prompt v1): "echt heel vet de grass, maar de stok moet bij alle 3 in dezelfde hand"
 - 23 nov: "ice perfect"
+- 23 nov (alle drie de vormen): "en we moeten zorgen dat ze allemaal even groot worden de sprites"

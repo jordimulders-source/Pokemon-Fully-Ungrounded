@@ -73,3 +73,4 @@ Lijn: Pincurchin (repo: puur Electric) → regionale vorm. Pincurchin weer in de
 - Jordi: "stuur v1 naar de eindkeuring, dragonflycave, schaduw, kleurtinten, belijning" → V1 (`sprite/r5/V1_oog4x5_mond+1+2.png`) gekozen; eindkeuring.
 - r6 (`sprite/r6/`): eindkeuringsreparaties 1–8 (29 px) → final_A; final_B = idem + rood 7 lichter (156,38,42). Keuze bij Jordi.
 - **Af (23 nov):** Jordi "akkoord" op final_B → `af/pincurchin_regional.png` (= `sprite/r6/final_B.png`); op het overzichtsvel. Naam (blijft Pincurchin?) en evolutiemethode open.
+- Jordi (23 nov): "blijft pincurchin, geen evolutie" → naam blijft Pincurchin (regional form), geen evolutie; de regionale vorm is gewoon de Pincurchin van deze regio.

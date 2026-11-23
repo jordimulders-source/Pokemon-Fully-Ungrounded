@@ -99,3 +99,4 @@ Jordi: "ik denk dat dit ontwerp het niet gaat worden" – "het hele idee bedoel 
 - Jordi bij r12: "welke mr mime draagt een rok?" → broek weer de boksbroekvorm van r11/r9 (geen Mr. Mime-heupbollen).
 - Jordi bij r12: "deze lijkt nu net een dwerg" → r13: langere dunne ledematen zoals Mr. Mime, hoogte mag ±52–54.
 - Jordi: "ja en houd rekening ermee dat de pose anders is, dus dat die daarin kan verschillen" → vormen als de Mr. Mimes, pose van r9/r11 leidend.
+- Jordi: "deze staat wat meer rechtop tov de gebogen andere twee" → rechte benen, mag hoger uitvallen.

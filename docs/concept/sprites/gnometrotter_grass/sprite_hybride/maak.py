@@ -52,6 +52,15 @@ lab,n=nd.label(LIN&LANG,structure=np.ones((3,3)))
 for i in range(1,n+1):
     m=lab==i
     if m.sum()<4 and not (nd.binary_dilation(m,structure=np.ones((3,3)))&(OUT|(LIN&~m&~LANG))).any(): LIN[m]=False
+# HYBRIDE: verticale planknerf van het lijf (donor r1): kolommen waar de donkere modelnerf (donker.npy, aandeel modelpixels dat
+# >= 18 donkerder is dan de omgeving) over het lijf een mediaan >= 0,4 heeft en een lokaal maximum is -> lijn 6 over de hele kolom
+DK=np.load('donker.npy'); PLANK=[]
+med={X:np.median(DK[zone[:,X]==6,X]) for X in range(64) if (zone[:,X]==6).sum()>=8}
+for X,v in med.items():
+    if v>=0.4 and v>=med.get(X-1,0) and v>=med.get(X+1,0): PLANK.append(X)
+for X in PLANK:
+    for Y in np.where((zone[:,X]==6)&~OUT[:,X])[0]: LIN[Y,X]=True
+print('planknerf kolommen',PLANK)
 print('binnenlijn',LIN.sum(),'(grens',BIN.sum(),', modellijn',NAAD.sum(),'), stipjes weg',weg)
 # vlakken en volume
 o=np.zeros((64,64),int)
@@ -103,6 +112,12 @@ for _ in range(2):
         c=np.bincount(t,minlength=16)
         if c[o[Y,X]]<=1 and c.max()>=3: o2[Y,X]=c.argmax()
     o=o2
+# HYBRIDE: ribbels van de benen (donor r1) als schaduwtint 10 waar de donkere modelribbel >= 0,35 dekt en dwars een lokaal maximum is
+D=np.pad(DK,1); RIB=0
+for Y,X in zip(*np.where(np.isin(zone,(12,20,21))&fg&~LIN&~OUT&(DK>=0.35))):
+    c=DK[Y,X]; y,x=Y+1,X+1
+    if any(c>=D[y-dy,x-dx] and c>=D[y+dy,x+dx] for dy,dx in ((0,1),(1,0),(1,1),(1,-1))): o[Y,X]=10; RIB+=1
+print('ribbelpixels',RIB)
 # tintvlekjes < 3 px binnen een stuk -> meest voorkomende buurtint van hetzelfde stuk (ruis); kleine stukken zelf (twijgblaadjes, knoesten) blijven
 for _ in range(2):
     for k in (3,4,7,8,10,11,12,13,14):

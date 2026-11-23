@@ -8,6 +8,7 @@
 - 23 nov: "yareta doen we los want het is geen cactus, en die moet dus eigenlijk wel rock krijgen, maar wat doen we met de copiapoa. Ik wil liever niet twee rock/grass lijnen. daar is de typing ook niet goed genoeg voor".
 - 23 nov: "regional met zelfde type kan niet. Zou Cacnea grass/ground en dan cacturne ground/dark logisch zijn? Hoe kunnen we dat logisch maken".
 - 23 nov, op de vraag of Cacturne blijft of een nieuwe Pokémon wordt: "nieuwe pokemon".
+- 23 nov, over de nieuwe evolutie: "dan doen we voor de nieuwe evolutie een soort magneton achtig idee maar dan meer, dat er heel veel regionale cacneas een geheel worden, dat past wel toch dan?"
 
 ## Besloten
 - **Yareta = een eigen lijn (geen cactus), krijgt Rock.** Los van Cacnea; zie IDEEEN.md.
@@ -18,7 +19,7 @@
 
 ## Voorstel Claude (niet van Jordi)
 - Cacnea houdt de bouw en herkenningspunten van de Gen 3-Cacnea (bol lijf, gele kroon, ronde ogen, donkere vlekken als mond, twee dikke armen, korte voetjes); lijf wordt een jonge Copiapoa. De gele kroon past: Copiapoa bloeit geel uit een wollige kruin.
-- Nieuwe soort: een pol van grijze bollen die samen één wezen vormen (zo groeit een oude Copiapoa). Niet besloten.
+- Nieuwe soort: Jordi's idee (zie citaat): heel veel regionale Cacneas worden één geheel, Magneton-achtig maar meer. Past bij hoe Copiapoa groeit (pollen van tientallen koppen).
 - "Is steen" hoorde bij yareta; bij Copiapoa niet in de prompt (Copiapoa lijkt op steen, is het niet).
 
 ## Referenties

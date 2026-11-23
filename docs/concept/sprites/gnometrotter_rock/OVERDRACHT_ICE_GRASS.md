@@ -2,7 +2,7 @@
 
 Plak in een nieuwe sessie (branch `ccr-e4619ef4-kb7349`):
 
-> We gaan verder met Gnometrotter Ice en Grass. Lees eerst `docs/lessen/SPRITE_KERN.md`, `docs/concept/sprites/gnometrotter_rock/PLAN.md` (alle uitspraken van Jordi, bindend) en `docs/concept/sprites/gnometrotter_rock/OVERDRACHT_ICE_GRASS.md`. Rock is af (`gnometrotter_rock/af/`); doe Ice en Grass op precies dezelfde manier. Overleg eerst welke modelversie (gewoon of hybride) per vorm.
+> We gaan verder met Gnometrotter Ice en Grass. Lees eerst `docs/lessen/SPRITE_KERN.md`, `docs/concept/sprites/gnometrotter_rock/PLAN.md` (alle uitspraken van Jordi, bindend) en `docs/concept/sprites/gnometrotter_rock/OVERDRACHT_ICE_GRASS.md`. Rock is nog niet af (laatste stand `gnometrotter_rock/sprite_r16/`; Jordi: "nee die is nog niet af" · "dat is nog niet mooi"): eerst Rock afmaken met Jordi, daarna Ice en Grass op dezelfde manier. Overleg eerst welke modelversie (gewoon of hybride) per vorm.
 
 ## Wat vastligt
 - 3 vormen: Rock (af), Ice, Grass. Zelfde pose en maat als Rock (Wormadam: "hooguit paar pixels afwijking"); gedeelde verkleining `gnometrotter_rock/sprite/GEDEELD.md` + `reductie_gedeeld.py`; roze/blauw/zwart = Gnomad-kleuren en -indexen.

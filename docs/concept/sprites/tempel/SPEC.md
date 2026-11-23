@@ -31,3 +31,4 @@ Static encounter, geen legendary. Type: Ghost/Rock. Single stage (Jordi, 23 nov:
 - r6 (`r6/gemini_v6.webp`), Jordi: "maar dit is niet wat ik bedoel, het toffe is dat die tempels gelaagd op bergen worden gebouwd, het zou vet zijn om daarom een tempel te hebben die dus ook gelaagd is alsof die op een bergwand staat, met de ingang onderin en de rest van de tempel een paar terraslagen".
 - Prompt v7: gelaagd tegen een bergwand, ingang onderin (mond, raampjes erboven = ogen), daarboven 2–3 asymmetrische terraslagen met ruïnes met puntgevels, geen trap. Ruw stapelwerk en mos van v6 behouden.
 - Jordi over r6: "en dit is teveel detail" → v7: weinig, grote stenen, vlakke delen, alleen een dun strookje mos, geen korstmosvlekken.
+- r7 (`r7/gemini_v7.webp`, prompt v7), Jordi: "geweldig design, vertaalt dit naar een sprite? dit is wat ik zocht". Snelle 64 px-test (verkleinen + 16 kleuren, geen tekenwerk): `r7/test_64px_8x.png`.

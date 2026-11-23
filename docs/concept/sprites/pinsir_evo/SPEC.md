@@ -63,3 +63,4 @@
 - v2_r3 (`gemini/v2_r3.png`, bijgestuurd), Jordi: "lukt hem niet" (vleugel blijft een losse schijf). Optie 2: dekschild weg, prompt `gemini/PROMPT_v2_r4_zonder_vleugel.md` (bijlage v2_r2).
 - v2_r4 (`gemini/v2_r4.webp`, dekschild weg), Jordi: "ik zie wel een risico voor pixelblur nu op de rug, al vind ik het idee wel goed". Claude: kale 64-px-reductie (`plak/v2_r2_r4_64_8x.png`) bevestigt het: rug wordt textuurbrij, rest leest goed. Bijsturen v2_r5 (`gemini/PROMPT_v2_r5_rug.md`): rug als 2–3 grote gladde platen.
 - v2_r5 (`gemini/v2_r5.webp`, rug als gladde platen), Jordi: "nu klopt het perspectief niet meer", "doe maar een prompt from scratch", "zonder bijlage" → `gemini/PROMPT_v2_r6.md` (= v2_r2-prompt, geen dekschilden, rug grotendeels verborgen zoals Tyranitar/Aggron vooraanzicht, alleen de rugstekels in het silhouet).
+- v2_r6 (`gemini/v2_r6.png`, from scratch), Jordi: "dit ziet er ook niet uit, gemini hallucineert hier teveel".

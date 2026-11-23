@@ -22,3 +22,4 @@
 - Jordi (overzicht r1–r9): "maar bij beide kloppen de vleugels niet meer" (r7, r9) · "4 en 6 waren de beste qua vorm". Model r7 dus herzien; vleugels openvallen (r7+) was fout van Claudes prompt.
 - Jordi: "het moet niet geel worden om maar geel te hebben" → voorstel B (groot geel vlak) vervalt; geel als naad zoals r4/r6.
 - Jordi: "wat kunnen we doen om hem iets minder smal te maken" → test `gemini/r6_breder_test.png`: rijen schrappen uit het vleugelstuk (Gengas-methode, niets hertekenen): −10% ≈ 25,6 px, −16% ≈ 27,5 px breed.
+- Jordi: "het draait om het lijf" → test `gemini/r6_lijf_breder_test.png`: alleen het lijf (vleugelpakket) horizontaal verbreed, kop/oren/voeten gelijk: +15% ≈ 24,7 px, +25% ≈ 26,3 px. Wacht op Jordi.

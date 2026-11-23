@@ -3020,10 +3020,24 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.725] - Merge naar main
 - Branch `claude/gallant-allen-ifpm5k` (Gnometrotter Ice af, Rock-neus, Grass tussenstand) naar main; conflicten in CHANGELOG/CLAUDE.md/GEMINI.md naar de main-versie, overzichtsvel opnieuw gemaakt.
 
-### [v0.0.726] - Regionale Pincurchin: ontwerpkeuzes en Gemini-prompt
+### [v0.0.726] - Gnometrotter Grass af; gnome-lijn af
+- Gnometrotter Grass: r14–r16 muts (grote blad bevroren, overige bladeren opnieuw uit de lijnen van het model; onderblad naar Jordi's krabbel), eindkeuring r16 BIJNA → r17 met 11 lijnpixels; frontsprite af (`gnometrotter_grass/af/`), op het overzichtsvel (Jordi: "akkoord").
+- Daarmee is de hele gnome-lijn af: Gnomini, Gnomad, Gnometrotter Rock/Ice/Grass.
+
+### [v0.0.727] - Merge naar main
+- Branch `claude/gallant-allen-ifpm5k` naar main.
+
+### [v0.0.728] - Regionale Claydol: frontsprite af
+- Ontwerp via Gemini (r1–r10, `docs/concept/sprites/baltoy_regional/gemini/`): Zonnepoort/Stafgod-figuur → Claydol-schotelkop met oogring → krans van oogbolletjes; Jordi koos r3 als basis.
+- Sprite: Gemini r3 ongewijzigd omgebouwd (`claydol_gemini_r3/`), onderkop terug na "rustiger = pixelblur", tinten onderin warmer (palet B), krans . - . - (stipjes uit r6), eindkeuring Dragonfly Cave.
+- Twee ogen (Jordi: drie ogen staan van voren gek): samengestelde koppen werden een lappendeken; Gemini-bewerkingen van de eigen sprite tekenden alles opnieuw; doorbraak = de kop van Gemini r10 (één bron) op ons r3-ontwerp (`claydol_r10kop/`), daarna neus en ogen uit de 3-ogenversie, rode lijn om het rechteroog, kop- en lijfshading, eindkeuring (alleen tinten), voeten met eigen ronding, rechtervoet 1 rij korter.
+- Af: `docs/concept/sprites/baltoy_regional/claydol_af/claydol_regional.png` (+ `_8x`), op het overzichtsvel (Regional forms).
+- Les bovenaan `docs/lessen/SPRITE_KERN.md`: "rustiger maken" = pixelblur; lessen in `GEMINI.md`.
+
+### [v0.0.729] - Regionale Pincurchin: ontwerpkeuzes en Gemini-prompt
 - Jordi (23 nov): Poison/Rock; "hybride, lijkend op een soort onderwater mijn" (pencil urchin + zeemijn); Pincurchins gezicht.
 - `docs/concept/sprites/pincurchin_regional/SPEC.md` en `gemini/PROMPT.md` (v1, bijlage = Pincurchins sprite 8× voor het gezicht). IDEEEN.md en POKEMON.md bijgewerkt.
 
-### [v0.0.727] - Regionale Pincurchin: frontsprite af
+### [v0.0.730] - Regionale Pincurchin: frontsprite af (+ merge main)
 - Model: Gemini v8 (v1–v8 met Jordi: bruin lijf, donkerrode gladde potloodstaafjes, dicht en lang, zeemijn met 3 contacthoorns en een naad). Gezicht = Pincurchins eigen ogen en mond, 1-op-1 uit zijn sprite: linkeroog smaller (kolom geschrapt, pupil heel), rechteroog 1 px lager, mond 115 % bovenop de naad met lijf tussen mond en ogen (V1).
 - Eindkeuring Dragonfly Cave (schaduw, kleurtinten, belijning): 29 px gerepareerd, middenrood iets lichter (B). Af: `docs/concept/sprites/pincurchin_regional/af/pincurchin_regional.png`; op het overzichtsvel (Regional forms). Alles in `pincurchin_regional/SPEC.md`.

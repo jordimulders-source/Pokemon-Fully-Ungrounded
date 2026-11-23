@@ -84,3 +84,5 @@ Jordi (letterlijk): "nee ik wil toch kijken of het lukt om een hybride vorm te m
 - Jordi (over Ice r9 + Grass r11): "ijs mag naar de eindkeuring en wat je hier met de neus hebt gedaan mag direct gecopy paste worden naar rock, ijs moet eindkeuring qua dragonflycave, kleurtinten, schaduw, lijnen, streng maar geen onnodige fixes"
 - Jordi (Rock r18 = Ice-neus): "ja rock is af" → af/ = sprite_r18.
 - Jordi (over Grass r12): "de bladeren lijken niet op bladeren, kijk naar pokemon met bladeren"
+- Jordi (over Grass r13): "het is nu een warboel geworden, het grote blad klopt, maar voor de rest herken je er amper nog iets in, kijk naar het model en maak er dan bladeren van zoals bij andere pokemon"
+- Jordi (krabbel op r15, rode cirkel om het onderste blad boven de neus, `gnometrotter_grass/krabbels/r15_onderblad.png`): "alleen dit blad klopt niet, daarna mag die naar de eindkeuirng, goed kijken naar lijnen, kleuren, tinten, dragonflycave etc"

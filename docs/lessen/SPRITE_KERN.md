@@ -4,6 +4,8 @@
 
 **Het gezicht is het ALLERBELANGRIJKSTE (Jordi, 20 nov).** Geen eigen gezichtvarianten verzinnen (glans, andere oogvormen): mag het gezicht afwijken van het model, neem dan het gezicht van een bestaande Gen 3-sprite 1-op-1 over (Vileplume: "neem gewoon de vileplume mond en ogen over en doe ze ver genoeg uit elkaar").
 
+**"RUSTIGER MAKEN" = PIXELBLUR (Jordi, 23 nov: "elke keer als je iets 'rustiger' maakt dat het pixelblur wordt" · "echt al in 6 verschillende gesprekken gezien" · "en dat je het altijd beter vindt maar het altijd slechter is").** Nooit vlakken gladstrijken, middelen of detail wegpoetsen om drukte op te lossen, en Claudes eigen oordeel "rustiger = beter" niet vertrouwen. Drukte = de vormen uit het model scherp overnemen (heldere lijnen, harde tintgrenzen, contrast), of laten staan en Jordi laten kiezen.
+
 # SPRITE-KERN: de enige pagina die je vóór spritewerk MOET lezen
 Samengevat uit alle spritelessen (5 nov, Jordi: "vat de lessen echt enorm samen ... hij vergeet heel vaak lessen mee te nemen"). Geef dit bestand mee aan **elke** sprite-agent, ook bij kleine reparaties. Al het andere in `docs/lessen/` is naslag.
 

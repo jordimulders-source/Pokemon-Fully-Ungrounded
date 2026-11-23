@@ -53,6 +53,7 @@ SECTIES=[
 ("gnomad/af/gnomad.png",'"Gnomad"',"fairy"),
 ("gnometrotter_rock/af/gnometrotter_rock.png",'"Gnometrotter" (Rock)',"fairy/rock"),
 ("gnometrotter_ice/af/gnometrotter_ice.png",'"Gnometrotter" (Ice)',"fairy/ice"),
+("gnometrotter_grass/af/gnometrotter_grass.png",'"Gnometrotter" (Grass)',"fairy/grass"),
 ]),
 ("Evolutions of existing Pokémon",[
 ('hitmontop_evo/af/hitmongroove.png', '"Hitmongroove" (Hitmontop)', 'fight/ground'),
@@ -82,6 +83,7 @@ SECTIES=[
 ("oddish_regional/af/oddish_regional.png",'Oddish (regional)',"water/grass"),
 ("oddish_regional/gloom_sprite/af/gloom.png",'Gloom (regional)',"water/fire"),
 ("oddish_regional/vileplume_sprite/af/vileplume_regional.png",'Vileplume (regional)',"water/fire"),
+("baltoy_regional/claydol_af/claydol_regional.png",'Claydol (regional)',"rock/psychic"),
 ("swablu_regional/af/swablu.png",'Swablu (regional)',"electric/flying"),
 ("swablu_regional/altaria/af/altaria.png",'Altaria (regional)',"electric/dragon"),
 ("oricorio_dansen/cumbia/af/cumbia.png",'Oricorio (cumbia)',"water/flying"),

@@ -36,3 +36,7 @@ Citaten en besluiten (Jordi, 23 nov); het overzicht staat ook in `docs/concept/I
 - r4 (`fase1/sprite_r4/`, 985 px, factor 0,617): meetbaar in orde (rond ≤0,71 px, 0 open randen), maar oog armer (binnenring past niet, iris 1 px) en voetje linksboven bijna weg → voorwaarde "alles mooi" niet gehaald volgens maker en Claude. Opties: r3 houden of tussenmaat ±0,68 (±1150 px).
 - Jordi over r4: "zet er zeker nog mooi uit, alleen de pootjes hebben allemaal maar 2 kleurtinten toch?" · "ik vind klein goed" → **r4 gekozen (klein)**. Claude: antennes = 2 vultinten (midden- en lichtpaars) + donkerpaarse lijn + zwart aan de schaduwkant, ook in r3.
 - Jordi: "zo laten, doe de eindkeuring maar" (antennes 2 vultinten blijven) → eindkeuring_r4.
+
+## Fase 2
+- Jordi (23 nov): "ja, schrijf de prompt voor fase 2 en dan in nieuw gesprek verder neem ik aan?" → `fase2/gemini/PROMPT_r1.md`; overdracht `OVERDRACHT_FASE2.md`.
+- Keuze Claude (voor te leggen): oog van fase 2 = het oog van fase 1 in de kernbol (fase 1 is onderdeel), i.p.v. het "telescoopoog" uit het eerdere voorstel.

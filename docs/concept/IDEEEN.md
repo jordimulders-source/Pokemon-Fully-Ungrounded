@@ -708,4 +708,5 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - **Jordi (23 nov):** "ik zat te denken of we met deep gnome met ijs weg komen"
 - Claude: Ice = deep gnome diep in de gletsjer (Andes/Patagonië); voorgelegd Rock/Ice/Grass/Flying/Steel.
 - **Jordi (23 nov):** "nee 3 vormen"
+- **Jordi (23 nov):** "nee en we doen niks met bg3 verder" → BG3-idee vervalt.
 - Open (oud): aantal fases, type naast Fairy, wat voor kabouter (tuinkabouter, folklore zoals de Latijns-Amerikaanse *duende*, iets anders), waar de woordgrappen zitten (namen, moves, dex-teksten).

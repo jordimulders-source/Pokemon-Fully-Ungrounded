@@ -3,7 +3,7 @@
 Nieuw gesprek, geen bijlage. Verwerkt r3-feedback: te buff, vuist niet vast aan de stok, voeten werden stenen, ogen zichtbaar, neus rond.
 
 ## Ingevuld door Claude
-- Voeten zonder steen (uit "voeten blijven dzelfde vorm maar iets groter").
+- Voeten: blauw en rond (Gnomad, iets groter) met een dunne stenen zool eronder (suggestie 7, "probeer allemaal maar"; r3: "de voeten zijn gewoon stenen geworden"). Eerder ten onrechte zonder steen ingevuld; Jordi: "jij wilde toch een soort stenen schoenen onder de voeten?"
 - Vrije arm dun en kort zoals Gnomad.
 - Oog: muts overlapt de bovenkant van de neus; vangnet in de sprite.
 
@@ -20,7 +20,7 @@ THE GNOME PART (keep)
 - A big, perfectly ROUND, ball-shaped pink nose, like a round ball. Not oval, not long.
 - A soft, round, chubby pink body, like a ball. NOT muscular: no big biceps, no broad chest, no bodybuilder shape. Its heaviness comes from the rock on it and its old posture, not from muscles.
 - The lower half of the body including the legs is sky blue, like a garden gnome's trousers, with a thin dark-blue line on the border. This is NOT clothing, just a second body color.
-- Feet: simple, rounded, sky-blue feet, a bit big. NOT made of stone, no toes.
+- Feet: the same simple, rounded, sky-blue feet, a bit big, with a thin dark rock sole underneath each foot, like the sole of a shoe. The foot itself stays blue and round; only the sole is rock. No toes.
 - A simple dark belt around the waist with a small square buckle.
 - Its free arm (the one without the stick) is a thin, short pink oval arm ending in a round, chubby ball-shaped pink hand. Not muscular.
 
@@ -42,5 +42,5 @@ STYLE AND FORMAT
 - Cartoony, but in the Pokémon way: bold shapes, a clear and cool silhouette, like an official Ken Sugimori design.
 
 AVOID
-- No visible eyes, no dark band under the cap, no visible mouth. No muscles, no buff arms. No stone feet, no toes. No hand holding a separate stick. No oval or long nose. No crystals, no glow. No pebbles stuck onto the skin. No human proportions, no little man in a costume. Not Golem, not Graveler, not Impidimp. No western-cartoon or plush look. No glossy 3D render.
+- No visible eyes, no dark band under the cap, no visible mouth. No muscles, no buff arms. No feet made entirely of stone, no toes. No hand holding a separate stick. No oval or long nose. No crystals, no glow. No pebbles stuck onto the skin. No human proportions, no little man in a costume. Not Golem, not Graveler, not Impidimp. No western-cartoon or plush look. No glossy 3D render.
 ```

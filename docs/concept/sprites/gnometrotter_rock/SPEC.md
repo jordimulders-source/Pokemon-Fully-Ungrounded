@@ -28,6 +28,7 @@
 - 23 nov: "en de ogen zijn nog steeds zichtbaar" · "de neus mag rond blijven"
 - 23 nov: "de vuist zit niet vast aan de stok hier" → vuist en stok moeten één stuk zijn.
 - Prompt v4: lijf rond en niet gespierd ("te buff"), voeten weer de blauwe Gnomad-voeten iets groter ("voeten blijven dzelfde vorm maar iets groter", r3 "gewoon stenen geworden"), neus rond, muts valt over de bovenkant van de neus (oog).
+- 23 nov: "jij wilde toch een soort stenen schoenen onder de voeten?" → v4 aangepast: blauwe ronde voeten met een dunne stenen zool.
 
 ## Voorgelegd door Claude (22 nov, nog niet gekozen)
 - A geode (muts = geode met amethist in een barst, snor/plukjes = kwartskristal, neus = rozenkwarts); B druipsteen (muts = stalactiet, kalksteen met lagen); C ertsader (riem = ader, gesp = goudklomp, korstmos op de snor).

@@ -41,3 +41,4 @@ Jordi (letterlijk): "nee ik wil toch kijken of het lukt om een hybride vorm te m
 - Jordi (23 nov, over r8): "weer wat beter, maar de zwarte lijnen lijken wat willekeurig te zijn, dat is niet hoe dat in andere goede sprites gelukt is"
 - Jordi (23 nov): "het lijf is uiteraard drukker dan gnomad, dat is het design" (geen punt; niet als zwak punt melden)
 - Jordi (23 nov): "alleen de lijnen van de stenen wijken af van het model ook, kijk daar goed naar, daarom lijkt het slordiger, er zijn teveel kleine vormen"
+- Jordi (23 nov): "ja en als het echt niet mooi is, dan is dat ook een les en dan houden we het lichaam neutraal"

@@ -70,4 +70,6 @@ Jordi (letterlijk): "nee ik wil toch kijken of het lukt om een hybride vorm te m
 - Jordi: "ik bedoel dus dat we niet de rock versies pakken"
 - Jordi: "want alle rock versies vertalen niet goed" · "en ik wil geen knip en plak werk" (geen hybride, niets uit Rock of r1 plakken)
   → Ice: basis `gnometrotter_ice/sprite_r3/gnometrotter_ice.png` (niet de Rock-sprite); gesp weg; rechterschouder goed; lijf meer ijsvormen; de rest behouden. Jordi: "nee ijs moet de linkerhand ook als rock" → linkerhand (vuist + arm) zoals Rock af.
-  → Grass: neus en rechterschouder niet goed, lijf verbeteren (slechtste deel); linkerhand: open (vragen).
+  → Grass: neus en rechterschouder niet goed, lijf verbeteren (slechtste deel).
+- Jordi: "de rechter hybride grass, maar ze zijn allebei nog niet goed" · "ja de linkerhand moet gelijk worden aan rock" · "bij allebei"
+  → Grass: basis `gnometrotter_grass/sprite_hybride_r2/gnometrotter_grass_hybride.png`; neus, rechterschouder, linkerhand zoals Rock af, lijf verbeteren.

@@ -30,3 +30,4 @@ Citaten en besluiten (Jordi, 23 nov); het overzicht staat ook in `docs/concept/I
 - Jordi over r3: "nice, ga maar naar de eindkeuring" → eindkeuring_r3 (verse DFC-keurder).
 - Eindkeuring r3: **PASS** (eis 1 en 2; rondheid 0,78 px, geen onnodige zwarte pixels). Optioneel 1 px (33,55) P→p. Ter info: formaat 1548 px is ruim voor fase 1 (checklist 700–950), weinig ruimte voor fase 2/3 "groter en complexer". Vraag aan Jordi.
 - Jordi: "hoeveel fase 1s hebben dezelfde grootte?" · "en groter is perspectief natuurlijk he, anders zou wailord neit op het scherm passen". Gemeten (125 Gen 1–3 eerste fases, anim_front_gba): mediaan 796 px, 90% < 1131; groter dan onze 1548 alleen Gastly 1658, Rhyhorn 1702, Exeggcute 1762 (Drowzee 1486 erbij).
+- **Jordi: "A, verklein maar naar ±950 px, maar alleen als alles er dan nog mooi uitziet".** r3 (PASS, 1548 px) blijft de terugvaloptie. r4 = model ×±0,617.

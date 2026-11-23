@@ -29,3 +29,5 @@
 - Prompt Cacnea r1 (`gemini/PROMPT_cacnea_r1.md`, yareta): vervallen, niet gebruikt.
 - Prompt Cacnea r2: `gemini/PROMPT_cacnea_r2.md` → `gemini/cacnea_r2.png` (grijsgroene bol, gele kroon, kleine stekeldriehoekjes). Jordi: "vind het nog niet herkenbaar genoeg de copiapoa, plus die bloem hoort niet?"
 - Prompt Cacnea r3: `gemini/PROMPT_cacnea_r3.md` (nieuw gesprek; geen kroon maar wollige kruin, diepe ribben, lange zwarte naalden, krijtwit).
+- r3 → `gemini/cacnea_r3.png` (krijtwit, ribben, zwarte naalden, platte bruine schijf bovenop). Jordi: "wat vind je? buiten de ogen, die zijn niet goed. En kijk goed naar de stekels, die moeten te vertalen zijn". Maattest 53 px: `maattest/r3_53px_nearest_box_gen3.png` (naalden worden ruis).
+- Prompt Cacnea r4: `gemini/PROMPT_cacnea_r4.md` (r3-prompt; 8–10 dikke korte stekels alleen op de rand, ogen en mond als Cacnea, kruin als wollig plukje, armen met ribben).

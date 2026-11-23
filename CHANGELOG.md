@@ -3045,3 +3045,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.732] - Rijtje legendaries
 - Overzichtstabel van alle nieuwe legendaries (trio, Pachamama, Water- en Cosmic-regi, Iguazú, zwart gat) bovenaan `POKEMON.md` → Legendaries.
+
+### [v0.0.733] - Typevoorstel Pacha-trio en concept Pachamama
+- Voorstellen van Claude in `IDEEEN.md` (Legendaries-brainstorm); Jordi vindt het Mapuche-duo te veel slangen.

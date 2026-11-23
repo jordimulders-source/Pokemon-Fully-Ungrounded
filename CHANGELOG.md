@@ -3004,3 +3004,9 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.722] - Merge naar main
 - Branch `ccr-e4619ef4-kb7349` (gnome-lijn, Gnometrotter Rock) naar main; conflicten in CHANGELOG/CLAUDE.md/GEMINI.md samengevoegd, overzichtsvel opnieuw gemaakt.
+
+### [v0.0.723] - Emolga-lijn fase 3 (fruitvampier): frontsprite af
+- Gemini r1–r9 (`emolga_evo_fase3/gemini/`): Moche vervalt ("gewoon een normale fruitvampier. maar wel duidelijk maken dat die in de emolga lijn zit"); vleugels openvallen (r7–r9) was fout, r4/r6 "de beste qua vorm"; "het moet niet geel worden om maar geel te hebben".
+- Model = r6 met het lijf per script 25% breder (`model/model.png`, ±26×64 px); sprite via verkleining (maker r1–r3), keuring r2 BIJNA → r3, eindkeuring (Dragonfly Cave, A_geel) BIJNA → 35 px belijning → r4.
+- Jordi koos A_geel: leigrijze oogvlek (fase 2), zwarte kap met V, geel voorhoofdvlekje. `af/fruitvampier.png`, lijnoverzicht `af/lijn.png`; op het overzichtsvel als "Fruitvampier (Emolga)" (naam open).
+- Jordi: "de designs zijn tof, het enige waar ik over twijfel is of fase 2 evolved in 3 of naast elkar komen te staan, maar dat is iets voor mij om te bedenken."

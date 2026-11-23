@@ -30,3 +30,4 @@
 - r3 (maker): 8 keurderreparaties, diff alleen benoemde px. Volgende: eindkeuring Dragonfly Cave + omlijningsronde.
 - **Jordi (23 nov): "A_geel naar de eindkeuring"** (kap met V + geel voorhoofdvlekje + leigrijze oogvlek).
 - Eindkeuring r3 (A_geel): BIJNA, 5 reparaties (35 px; outline base lichtkant tint 2, binnenlijn, open rand, losse px, kruinlijn). Claude voerde ze per script exact uit → `sprite_r4/A_geel.png` (+ `_8x`, `vergelijk.png`). Ter info: 1024 px (checklist fase 3 1700–2600; komt door het smalle hangmodel). Aan Jordi.
+- **Af (Jordi, 23 nov): "de designs zijn tof"** → `af/fruitvampier.png` (= sprite_r4/A_geel), `af/lijn.png`. Open (Jordi): "of fase 2 evolved in 3 of naast elkar komen te staan, maar dat is iets voor mij om te bedenken."

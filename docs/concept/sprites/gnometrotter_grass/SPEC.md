@@ -16,3 +16,4 @@
 - Eerste poging (stok onder de bolhand): "nee niet gelukt" · "hij heeft geen stok meer vast" · (crop van r2: hand om de stok) "wis alleen dat stukje arm" · "dan heb je hem" → v2: hele vuist + stok van achter naar voor, bolhand naar achter, uitstekend stukje arm boven de vuist gewist.
 - Jordi: "zijn ze in de juiste verhouding daarvoor? Voor grass krijg je goedkeuring om ietsje van het model af te werken, omdat het knip en plak werk niet super netjes is"
 - 23 nov (vergelijking drie vormen): "kijk in deze meting zijn de verhoudingen complete anders" · "en die moeten juist vergelijkbaar zijn" · "het zijn ook net andere poses" → nieuwe prompt met Rock r8 als bijlage (`gemini/PROMPT_basis_rock.md`).
+- Grass r3 (`r3/gemini_r3_basis_rock.png`, met Rock r8 als bijlage): zelfde omtrek (481×475 px) en neus (64 px) als Rock r8.

@@ -42,15 +42,25 @@ for z,r in ((1,2),(12,1),(6,1),(2,1),(3,1)):
         c=np.bincount(t,minlength=16); o2[Y,X]=c.argmax() if c.max()>c[o[Y,X]] else o[Y,X]
     o=o2
 # lijnen uit het model: donker-aandeel >= 0,35 en lokaal maximum (1 px), in muts (2), broek (9), lijf (6, naast de r2-facetnaden)
-for z,b,dr in ((1,2,0.35),(12,9,0.35),(6,6,0.5)):
+for z,b,dr in ((1,2,0.35),(12,9,0.22),(6,6,0.5)):
     for Y,X in zip(*np.where(binnen(z))):
         if nms(Y,X,dr): o[Y,X]=b
 for Y,X in zip(*np.where(naad2&(zone==6))): o[Y,X]=6
+# modellijn die naast de buitenlijn loopt = dubbele lijn: in de broek weg (buurtint)
+for Y,X in zip(*np.where(binnen(12)&(o==9))):
+    if sum(OUT[Y+dy,X+dx] for dy,dx in ((1,0),(-1,0),(0,1),(0,-1)))>=1 and sum(o[Y+dy,X+dx]==9 and not OUT[Y+dy,X+dx] for dy in (-1,0,1) for dx in (-1,0,1) if dy or dx)==0:
+        o[Y,X]=toon(12,Y,X); log('dubbele lijn broek weg',X,Y)
 # 3. schouderovaal rechts: eigen onderdeel = het r2-facet onder (45,24); lijn 6 rondom (ook de onderrand), vulling uit het model
 ov=(fac==fac[24,45])&(zone==6)
 rand=ov&nd.binary_dilation(~ov,structure=np.array([[0,1,0],[1,1,1],[0,1,0]]))
-for Y,X in zip(*np.where(ov&~rand&~OUT)):
-    o[Y,X]=15 if hel[Y,X]>=197 else 8
+bin_ov=list(zip(*np.where(ov&~rand&~OUT)))
+for Y,X in bin_ov: o[Y,X]=8
+for _,Y,X in sorted(((hel[Y,X],Y,X) for Y,X in bin_ov),reverse=True)[:4]: o[Y,X]=15   # glans op de 4 lichtste modelpixels
+# 7. hooglicht lijf: op de lichtste modelplek buiten het ovaal (4 lichtste vlakpixels, aaneengesloten rond de lichtste)
+kand=(zone==6)&~ov&~OUT&(o==8)
+ys,xs=np.where(kand); i0=np.argmax(hel[ys,xs]); Y0,X0=ys[i0],xs[i0]
+buurt=[(hel[Y,X],Y,X) for Y,X in zip(ys,xs) if abs(Y-Y0)<=1 and abs(X-X0)<=2]
+for _,Y,X in sorted(buurt,reverse=True)[:4]: o[Y,X]=15; log('hooglicht lijf (lichtste modelplek)',X,Y)
 for Y,X in zip(*np.where(rand)):
     if not OUT[Y,X]: o[Y,X]=6
 # 8./4. haar: lijn 2 op de buitenrand (al outline), plukje R: rand naar de muts op de mutskant als het model daar donker is
@@ -65,7 +75,7 @@ for X in range(11,18):
         if zone[Y,X]==7 and not OUT[Y,X]: o[Y,X]=k
 for Y in range(31,34):
     if zone[Y,10]==7 and not OUT[Y,10]: o[Y,10]=6
-for X,Y in ((5,30),(4,31)): o[Y,X]=6                       # outline highlight op de vuist weg (las als dambord)
+for X,Y in ((5,30),(4,31),(15,31)): o[Y,X]=6                      # outline highlight op de vuist weg (las als dambord)
 if zone[32,8]==7: o[32,8]=8
 # losse lijnstipjes (1 px, raken geen andere lijn/buitenrand) in broek/muts/lijf weg -> buurtint
 for z,b in ((12,9),(1,2),(6,6)):
@@ -76,13 +86,15 @@ for z,b in ((12,9),(1,2),(6,6)):
             if t: o[Y,X]=max(set(t),key=t.count)
 # tintvlekjes < 3 px in de herkleurde onderdelen -> buurtint (glans 15 >= 3 px, anders 8)
 for z in (6,12,1,2,3):
-    for k in set(o[binnen(z)].ravel())-{1,2,6,9}:
+    for k in set(o[binnen(z)].ravel())-{1,2,6,9,15}:
         lab,n=nd.label((o==k)&binnen(z),structure=np.ones((3,3)))
         for i in range(1,n+1):
             mm=lab==i
             if mm.sum()>=3: continue
             r=nd.binary_dilation(mm,structure=np.ones((3,3)))&~mm&(zone==z)&~OUT; t=o[r]; t=t[(t!=k)&~np.isin(t,[1,2,6,9])]
             if len(t): o[mm]=np.bincount(t).argmax()
+for Y,X in zip(*np.where((o==15)&(zone==6))):          # glanspixel zonder glansbuur -> 8
+    if not ((o[Y-1:Y+2,X-1:X+2]==15).sum()-1): o[Y,X]=8
 np.save('zone.npy',zone)
 opslaan(o,'gnometrotter_rock.png')
 for k,v in LOG.items(): print(k,len(v),v)

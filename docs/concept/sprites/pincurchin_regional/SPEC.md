@@ -66,3 +66,4 @@ Lijn: Pincurchin (repo: puur Electric) → regionale vorm. Pincurchin weer in de
 - r3 (`sprite/r3/vel2.png`): 4 varianten, linkeroog c4/c3 (andere kolom geschrapt) × mond 115/130%; rechteroog 1 px lager (model: 0,73 px). Keuze bij Jordi.
 - Jordi: "de derde is het beste" (= B115_c3). "Alleen het linker oog klopt volgens mij nog net niet helemaal, maar dat is echt 1 of 2 pixels verschil denk ik? kijk eens goed vanuit de hoek en de belijning"
 - Gemeten (Claude): het linkeroog (x13–16) staat met zijn ring óp de linkerlijfrand (x13, rij 40–42 geel waar de lijflijn hoort), dus de ring raakt direct het rode staafje; geen lijf/lijn ertussen. Model zegt x13,7–16,6, dus x14–17 is even trouw. → r4: oog 1 px naar rechts, lijfrand terug.
+- r4 (`sprite/r4/vel.png`): linkeroog R1 (x14–17, mond ervoor) / R2 (x14–17, oog voor de mond) / R3 (x13–16, 3 breed). Model: ring overal gelijk, geen lijn, ±1 px lijfrand tussen ring en staafje. Voorstel Claude: R2.

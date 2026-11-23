@@ -2851,3 +2851,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.683] - Capybarrel: geen water als thema
 - `IDEEEN.md`: ook geen water-concepten; nieuwe voorstellen (candombe-trommel, buskruitvat, wijnvat).
+
+### [v0.0.684] - Capybarrel: evolutie groeit uit de ton
+- `IDEEEN.md`: Jordi's idee dat de evolutie uit de ton groeit.

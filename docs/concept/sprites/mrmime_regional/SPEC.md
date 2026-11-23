@@ -84,3 +84,4 @@ Jordi: "ik denk dat dit ontwerp het niet gaat worden" – "het hele idee bedoel 
 - Jordi bij r7: "de ogen zijn echt zo slecht, kijk nou eens naar het model. het hoofd is nu ook onnodig groot geworden,". Model-oog (Claude bekeken): zwarte pupil 1×2 natief met dunne lichtgrijze boog eromheen. → r8: ogen 1-op-1 uit het model, kop op r6-maat maar rond.
 - Sprite r8 (`bokser/sprite_r8/`): ogen = modelraster (zwarte pupil 1×2, lichtgrijze boog tint 7), 1 rij hoger dan het model (anders in de snor); kop terug op r6-maat, hoeken afgerond.
 - Jordi bij r8: "prima" (ogen/kop); perspectiefcheck Claude: verre schouder symmetrisch/vóór de romp, verre voet even laag, tailleband recht. Jordi: "ja doe 1 t/m 3, maar niet opnieuw tekenen" → r9: alleen verschuiven.
+- Sprite r9 (`bokser/sprite_r9/`): verre schouder 2 px naar het midden, deels achter de borst; verre voet 1 rij hoger; tailleband knik (x35–37 1 rij lager). Keurder gestart.

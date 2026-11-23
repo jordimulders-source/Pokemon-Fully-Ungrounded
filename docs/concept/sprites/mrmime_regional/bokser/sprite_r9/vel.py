@@ -18,7 +18,7 @@ def vel(naam,box,Z,F,een=True):
         if een and i<len(F): o.paste(sp(np.load(F[i][1]),(0,0,64,64),1),(i*(w+10),h+30))
     o.save(naam)
 if __name__=='__main__':
-    F=[('r8','bokser.npy'),('r7','../sprite_r7/bokser.npy'),('r6 meer','../sprite_r6/var/meer.npy')]
+    F=[('r9','bokser.npy'),('r8','../sprite_r8/bokser.npy')]
     vel('vel.png',(0,0,64,64),8,F)
     vel('kop_12x.png',(24,0,56,20),12,F,False)
     a=np.load('bokser.npy'); Image.fromarray(np.array([(255,255,255)]+PAL[1:],'uint8')[a]).resize((512,512),Image.NEAREST).save('bokser_8x.png')

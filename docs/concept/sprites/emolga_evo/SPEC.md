@@ -55,3 +55,4 @@
 - r8 (kleurronde, maker): donkere ramp 38/64/98 koel, kop + linkeroor + schouder verdeeld (56 px), rest niet aangeraakt; zwak volgens maker: onderkant lijf egaal, oor streperig, nabije gele vleugel 1 tint, donkere band boven buik egaal. Aan Jordi.
 - Jordi: "ja totdat het goed is" → r9 (maker): punt 1–4 aangepakt, 39 px, palet = r8. Volgende: verse eindkeuring.
 - Jordi over r9: bovenbuik "dit is nog steeds een effen vlak" (uitsnede). Eindkeuring r9 BIJNA (zilveren bovenbuik + gele vleugel effen, buikrand, flap, losse pixel); r10 = die 48 px, index 10 = (140,152,172). Close-up `sprite_r10/buik_closeup.png`.
+- Jordi over r10: "ja het wit is nog iets teveel een streep, daar kan misschien nog iets beter met schaduw en tinten gespeeld worden, hij is wel al beter" → r11: korte brede glans + sikkel 10 rechts (31 px, alleen bovenbuik).

@@ -27,3 +27,5 @@ Jordi (letterlijk): "nee ik wil toch kijken of het lukt om een hybride vorm te m
 - Jordi (23 nov, op Claude's analyse "te druk/te groot"): "ze zijn niet te druk, niet met teveel details, niet te groot, jij hebt gewoon slordig werk geleverd"
 - Jordi (23 nov): "het silhouet is prima" → silhouetten van alle 5 bevroren; alleen binnenwerk netjes maken.
 - Jordi (23 nov): "ijs mag je rond maken zoals bij rock, zoals we volgens mij afgesproken hadden. Akkoord met slechts een paar materiaal vormen bij ijs en grass"
+- Jordi (23 nov): "kijk vooral ook naar andere pokemon, ijs pokemon voor ijs en nuzleaf en shiftry en andere houten pokemon als die er zijn voor grass"
+  - Referenties (eerste frame van `graphics/pokemon/<soort>/anim_front.png`): Ice: regice, glalie, snorunt, avalugg, bergmite, cryogonal, vanillish. Grass/hout: nuzleaf, shiftry, seedot, sudowoodo, bonsly, trevenant, phantump. Rock: regirock, graveler, golem.

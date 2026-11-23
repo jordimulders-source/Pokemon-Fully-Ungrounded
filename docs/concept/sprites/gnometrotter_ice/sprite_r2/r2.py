@@ -76,6 +76,11 @@ for i in np.unique(DE[DE>0]):
 for Y,X in zip(*np.where(np.isin(DE,[2,4]))):
     if DE[Y,X]==2 or any(0<=Y-k and zone[Y-k,X] in (1,2,3,4,5) for k in (1,2)): zet(Y,X,7,'slagschaduw')
 # ---------- 1. baard ----------
+# Spleten = kolommen met minimale modelhelderheid (gemeten: 20, 24, 28). Bovenin (tot rij 28) is de baard in het model een
+# samenhangende massa, eronder hangen losse pegels. Punten (gemeten op het model, 4x-raster sprite_r2/meet_baard.png):
+# pegel X 21-23 punt (22,38) en X 25-27 punt (26,38) hangen over de riem; X 29-31 punt (30,33) hangt over het lijf;
+# de linkerpegel X 15-19 loopt in het model door tot de riem (onderkant ongewijzigd). Tussen de punten: wat in het model
+# achter de pegels zit (roze lijf of riem).
 B=zone==4
 kol={}
 for X in range(14,33):
@@ -83,37 +88,38 @@ for X in range(14,33):
     if v: kol[X]=np.mean(v)
 xs=sorted(kol); SPLEET=[X for X in xs[1:-1] if kol[X]<kol[X-1] and kol[X]<kol[X+1] and X-1 in kol and X+1 in kol]
 print('baard: kolomhelderheid',{k:int(v) for k,v in kol.items()},'spleten',SPLEET)
-grenzen=[min(xs)-1]+SPLEET+[max(xs)+1]
-BEARD=ZM==4
-bot={X:max([Y for Y in range(20,42) if aandeel(X,Y,BEARD)>=0.3],default=0) for X in xs}
-PEGELS=[]
-for g0,g1 in zip(grenzen[:-1],grenzen[1:]):
-    cols=list(range(g0+1,g1))
-    if not cols: continue
-    T=max(bot[X] for X in cols); c=(cols[0]+cols[-1])/2; PEGELS.append((cols,T))
+PEGELS=[(list(range(15,20)),None),(list(range(21,24)),38),(list(range(25,28)),38),(list(range(29,32)),33)]
+MASSA=28
+ROZEM=(f==3)
+def achter(Y,X):
+    p=aandeel(X,Y,ROZEM)
+    if p>=0.3 or Y<37: zone[Y,X]=6; zet(Y,X,7,'baard: tussen de punten (lijf)')
+    else: zone[Y,X]=10; zet(Y,X,13,'baard: tussen de punten (riem)')
+for cols,T in PEGELS:
+    if T is None: continue
+    c=cols[len(cols)//2]
     for X in cols:
-        onder=T-int(round(abs(X-c)))                      # spitse punt: midden het diepst, 1 rij hoger per kolom naar de rand
-        for Y in range(onder+1,64):
-            if zone[Y,X]==4:                               # tussen de punten: wat in het model achter de pegels zit
-                p=aandeel(X,Y,f==3); zone[Y,X]=6 if p>=0.3 else 10; DE[Y,X]=4 if p>=0.3 else 0
-                zet(Y,X,7 if p>=0.3 else 13,'baard: tussen de punten')
-for X in SPLEET:                                            # spleetkolom: 1 rij hoger dan de buren
-    nb=[Y for Y in range(64) if zone[Y,X-1]==4]+[Y for Y in range(64) if zone[Y,X+1]==4]
-    if not nb: continue
-    for Y in range(64):
-        if zone[Y,X]==4 and Y>=min(max(Y2 for Y2 in range(64) if zone[Y2,X-1]==4),max(Y2 for Y2 in range(64) if zone[Y2,X+1]==4)):
-            p=aandeel(X,Y,f==3); zone[Y,X]=6 if p>=0.3 else 10; zet(Y,X,7 if p>=0.3 else 13,'baard: tussen de punten')
-print('pegels (kolommen, punt-rij):',PEGELS)
+        onder=T if X==c else T-1
+        for Y in range(MASSA+1,64):
+            if Y<=onder:
+                if zone[Y,X] in (4,10,6) and o[Y,X]>0 and o[Y,X]!=1 and not (zone[Y,X]==10 and Y>onder):
+                    if zone[Y,X]!=4: zone[Y,X]=4; zet(Y,X,13,'baard: pegel over riem/lijf')
+            elif zone[Y,X]==4: achter(Y,X)
+for X in SPLEET:
+    bodem=min(max([Y for Y in range(64) if zone[Y,X-1]==4]),max([Y for Y in range(64) if zone[Y,X+1]==4]))-1
+    for Y in range(MASSA+1,64):
+        if zone[Y,X]==4 and Y>bodem: achter(Y,X)
 for cols,T in PEGELS:
     for X in cols:
         for Y in range(64):
             if zone[Y,X]!=4: continue
-            k=14 if X==cols[0] else 13                     # licht links (lichtrichting), midden
-            if len(cols)>=3 and X==cols[-1]: k=12          # schaduwzijde rechts
-            zet(Y,X,k,'baard: pegelband')
+            k=14 if X==cols[0] else 13
+            if X==31: k=12                                   # schaduwzijde rechts
+            if zone[Y-1,X]==5: k=12                          # slagschaduw van de neus
+            zet(Y,X,k,'baard: pegel')
 for X in SPLEET:
     for Y in range(64):
-        if zone[Y,X]==4: zet(Y,X,12,'baard: spleet (modelschaduw)')
+        if zone[Y,X]==4: zet(Y,X,13 if Y<25 else 12,'baard: spleet (modelschaduw)')
 # ---------- lijnen ----------
 fg=o>0
 OUT=np.zeros((64,64),bool)
@@ -135,7 +141,7 @@ for Y,X in zip(*np.where(OUT&(WERK|GATRAND))):
 # baard vooraan: rand tegen lijf/riem = 2
 rank={p:i for i,p in enumerate(PRIO)}
 for Y,X in zip(*np.where((zone==4)&fg&~OUT)):
-    if any(zone[Y+dy,X+dx]!=4 and zone[Y+dy,X+dx]>0 and rank[zone[Y+dy,X+dx]]>rank[4] for dy,dx in ((1,0),(0,1),(0,-1))): zet(Y,X,2,'baard: rand')
+    if any(zone[Y+dy,X+dx]!=4 and zone[Y+dy,X+dx]>0 and rank[zone[Y+dy,X+dx]]>rank[4] for dy,dx in ((1,0),(0,1),(0,-1))) or (zone[Y-1,X]!=4 and zone[Y-1,X]>0 and zone[Y-1,X]!=5 and Y>MASSA): zet(Y,X,2,'baard: rand')
 # haar R vooraan: muts/lijf-pixel onder of naast het plukje met donkere modellijn (>= 20 %) = lijn
 for Y in range(14,22):
     for X in range(31,43):
@@ -181,6 +187,9 @@ for X in np.unique(np.where(m)[1]):
         elif Y==ys.max()-1: k=7
         else: k=8
         zet(Y,X,k,'arm L')
+# lichte tint op de buitenrand (na de volumeronde) -> DC-regel
+for Y,X in zip(*np.where(OUT&np.isin(o,[4,5,7,8,10,11,12,13,14,15]))):
+    if zone[Y,X]>0: zet(Y,X,BASIS[zone[Y,X]] if normaal(Y,X)@LR>0.35 else 1,'buitenlijn (DC)')
 # tintvlekjes < 3 px in delen -> buurtint
 for i in np.unique(DE[DE>0]):
     for k in (7,8,10,11,15):
@@ -196,4 +205,4 @@ uit='gnometrotter_ice.png' if VARIANT=='open' else 'gnometrotter_ice_gatdicht.pn
 opslaan(o,uit)
 d=(o!=r1)
 print(uit,'anders t.o.v. r1:',d.sum(),' silhouet t.o.v. r1:',((o>0)!=(r1>0)).sum())
-for k,v in LOG.items(): print('  %-34s %3d'%(k,len(v)))
+for k,v in LOG.items(): print('  %-34s %3d'%(k,len(v)), [p for p in v if p[0] in (22,26,27,31) and p[1]>26] if 'baard' in k or 'ruis' in k or 'grens' in k else '')

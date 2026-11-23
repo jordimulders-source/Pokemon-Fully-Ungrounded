@@ -1,0 +1,33 @@
+baard: kolomhelderheid {15: 161, 16: 199, 17: 199, 18: 208, 19: 206, 20: 197, 21: 210, 22: 203, 23: 200, 24: 192, 25: 193, 26: 196, 27: 186, 28: 179, 29: 184, 30: 192, 31: 148} spleten [20, 24, 28]
+gnometrotter_ice.png anders t.o.v. r1: 484  silhouet t.o.v. r1: 0
+  haar R                              14 
+  volume neus                         29 
+  volume nek                          15 
+  volume schouderovaal                43 
+  volume lijf                         61 
+  volume arm R                        24 
+  volume vuist                        31 
+  volume arm L                        18 
+  volume hand R                       35 
+  volume rechterdij                   75 
+  volume band                         30 
+  volume linkerdij                    81 
+  volume linkervoet                   26 
+  volume rechtervoet                  32 
+  slagschaduw                         38 
+  baard: pegel over riem/lijf         16 [(22, 37), (22, 38), (26, 36), (26, 37), (26, 38), (27, 35), (27, 36), (27, 37), (31, 29), (31, 30), (31, 31), (31, 32)]
+  baard: tussen de punten (lijf)       6 []
+  baard: pegel                       105 [(22, 27), (22, 28), (22, 29), (22, 30), (22, 35), (22, 36), (26, 27), (26, 28), (26, 29), (26, 31), (26, 32), (26, 33), (26, 34), (26, 35), (27, 27), (27, 28), (27, 32), (27, 33), (27, 34), (31, 28), (31, 29), (31, 30), (31, 31), (31, 32)]
+  baard: spleet (modelschaduw)        23 []
+  buitenlijn (DC)                    117 
+  baard: rand                         38 [(31, 27), (31, 28), (31, 29), (31, 30), (31, 31), (27, 32), (31, 32), (27, 33), (27, 34), (27, 35), (27, 36), (27, 37), (22, 38), (26, 38)]
+  haar R: modellijn                    8 
+  grens tussen delen (modellijn)      35 [(31, 45), (22, 50), (26, 50), (27, 50)]
+  naad in deel (modellijn)            17 
+  ring neus                           20 
+  ring schouderovaal                  25 
+  ring arm R                          14 
+  ring vuist                          14 
+  ring hand R                         13 
+  arm L                                7 
+  ruis                                 6 []

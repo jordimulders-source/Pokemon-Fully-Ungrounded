@@ -67,3 +67,4 @@ Jordi: "ik denk dat dit ontwerp het niet gaat worden" – "het hele idee bedoel 
 - **r12 bevroren** (`bokser/r12.png`), Jordi: "ja" op de spritefase. Toegestane afwijkingen: ronde Mr. Mime-schouders uit de Gen 3-sprite (grijs), donkergrijs V-patroon bovenin de romp (Jordi), getapete vingers (5), ogen/mond uit de Gen 3-Mr. Mime, knieblobjes weg (voorstel Claude, door Jordi met "ja" aanvaard).
 - Sprite r1: maker gestart (`bokser/sprite_r1/`).
 - Sprite r1 (`bokser/sprite_r1/`): Claude: snor als streepje, ogen lezen als bril, benen vlekkerig, vuisten als wanten; V gevuld. Reparaties naar de maker (r2).
+- Sprite r2 (`bokser/sprite_r2/`): snor uit het model, ogen zonder brilrand (B), benen schoon, vuisten donker met tape (D); varianten in `sprite_r2/varianten.png`. Keurder gestart.

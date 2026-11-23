@@ -20,3 +20,4 @@ Static encounter, geen legendary. Type: Ghost/Rock. Single stage (Jordi, 23 nov:
 - Prompt v2: `gemini/PROMPT_v2.md` (nieuw gesprek, geen bijlage). Architectuurkeuzes van Claude (ter keuze voorgelegd, niet van Jordi): grote veelhoekige blokken, dubbel-getrapte trapeziumdeur, getrapte sokkel.
 - r2 (`r2/gemini_v2.png`), Jordi: "hij lijkt wel ok, maar ik wil iets meer lagen, dat het echt een tempel is ipv alleen een deur".
 - Prompt v3: `gemini/PROMPT_v3.md` = v2 met alleen het lagen-blok veranderd (Claude leest "lagen" als gestapelde verdiepingen/terrassen).
+- r3 (`r3/gemini_v3.webp`), Jordi: "lijkt dit op een echte tempel?" (Claude: deels; de getrapte toren met overstekende randen en een stenen plat dak is niet Inca).

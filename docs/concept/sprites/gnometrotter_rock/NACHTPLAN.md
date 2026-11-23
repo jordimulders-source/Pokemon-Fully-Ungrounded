@@ -23,3 +23,4 @@ Jordi (letterlijk): "nee ik wil toch kijken of het lukt om een hybride vorm te m
 - Werkwijze: `docs/lessen/SPRITE_KERN.md` + `SPRITE_WERKWIJZE.md` → "Gemini-model namaken"; model overnemen, niet hertekenen; Dragonfly Cave-omlijning in de eindkeuring; voorbeeld en scripts: `gnomad/sprite_r1/` t/m `sprite_r11/`.
 - Jordi (23 nov, nacht): "en je gaat niks of zo weinig mogelijk opnieuw tekenen"
 - Jordi (23 nov, over de 5 eindsprites): "Ze zijn eigenlijk allemaal nog niet mooi he"
+- Jordi (23 nov): "ik vind ze alle 5 heel slordig. de gesp is nergens goed gelukt, rock heeft willekeurige pixels in de hoed, het lijnenwerk is slordig, nergens is het kleurgebruik/schaduwgebruik met tinten perfect gelukt. ijs heeft 2 keer een afgekapte rechterschouder, desondanks vind ik de rechtse versie nog net wat beter, maar ook halfbakken, de vraag is of het lichaam echt goed een ijsvorm kan krijgen, bij grass zijn beide lichamen ontzettend slordig en mislukt"

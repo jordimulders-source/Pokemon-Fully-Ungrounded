@@ -11,6 +11,7 @@
 ## Rondes
 - Jordi (23 nov) op het spritefilter: "probeer maar". Prompt r1 met 1, 2, 4, 6: `gemini/PROMPT.md` (nieuw gesprek, geen bijlage).
 - r1 (`gemini/r1.png`), Jordi: "het is nog iets teveel bidoof, niet eens bibarel, moet echt een fase 3 zijn, zoals alphyena dat ook is". Prompt r2 (nieuw gesprek, alleen fase 3-blok erbij): `gemini/PROMPT_r2.md`.
+- Jordi deelde fanart "Bibuzzer" (`referenties/fanart_bibuzzer.png`, Rock/Water, rotshelm, stam op de schouder): "deze fanart had een vergelijkbaar idee, alleen vind ik deze een beetje lelijk overdesigned".
 
 ## Open
 - Welke suggesties (Claude, 23 nov): 1 oranje beiteltanden, 2 staart als troffel, 3 schepklauwen, 4 sjouwt tak/stam of modder tegen de borst, 5 knagend aan een stam, 6 waarschuwingskleuren (geel-zwarte staart), 7 helm van modderkorst/twijgjes.

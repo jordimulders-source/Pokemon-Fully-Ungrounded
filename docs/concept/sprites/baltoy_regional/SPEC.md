@@ -94,3 +94,5 @@
 - Jordi over r2: "de twee stokken zitten ook vast aan het lijf, dat is in het model ook niet" → doorgegeven aan de maker van r3 (staven als losse componenten, script-check).
 - Jordi: "maar wat je zegt, het model klopt sowieso niet" · "die is slechter gemaakt" (vraag van Claude: welke delen).
 - Jordi: "pauzeer de maker, pak het oorspronkelijke r3 model erbij en ga die helemaal ombouwen, als dat af is kijken we hoe we het beter kunnen maken" → maker r3 (`claydol_sprite_r3/`, onaf) gestopt; nieuwe lijn: Gemini `claydol_r3.png` ongewijzigd naar een sprite in `claydol_gemini_r3/`.
+- Jordi bevestigt A: "ja A hij is een stuk slechter gewordne" (= ons samengestelde model is slechter dan de Gemini-plaatjes zelf).
+- **Les (Claude):** een model samenstellen/verschuiven uit Gemini-stukken maakte het slechter (bolletjes, staven); eerst het Gemini-plaatje ongewijzigd ombouwen, pas daarna verbeteren.

@@ -113,3 +113,4 @@ Jordi: "ik denk dat dit ontwerp het niet gaat worden" – "het hele idee bedoel 
 - Sprite r17 (`bokser/sprite_r17/`): 53×59; armen+vuisten r9 1-op-1 uit de schouderballen, broek +2 rijen, benen +1, buik rechtsonder rond.
 - Jordi bij r17: "alleen de verre schouderbal eens, verder is het grijze v patroon weg" → r18: V terug, verre bal rond; borstvuist blijft.
 - Jordi: "ofja veel te klein" (V) → r18: V veel groter, 2 maten.
+- Sprite r18 (`bokser/sprite_r18/`): V groot (r7 v_groot 1-op-1) en V nog groter (`bokser_groter.png`), verre bal bovenrand rond (4 px).

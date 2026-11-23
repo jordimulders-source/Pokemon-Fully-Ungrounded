@@ -23,3 +23,4 @@
 - Jordi: "het moet niet geel worden om maar geel te hebben" → voorstel B (groot geel vlak) vervalt; geel als naad zoals r4/r6.
 - Jordi: "wat kunnen we doen om hem iets minder smal te maken" → test `gemini/r6_breder_test.png`: rijen schrappen uit het vleugelstuk (Gengas-methode, niets hertekenen): −10% ≈ 25,6 px, −16% ≈ 27,5 px breed.
 - Jordi: "het draait om het lijf" → test `gemini/r6_lijf_breder_test.png`: alleen het lijf (vleugelpakket) horizontaal verbreed, kop/oren/voeten gelijk: +15% ≈ 24,7 px, +25% ≈ 26,3 px. Wacht op Jordi.
+- **Besloten (Jordi, 23 nov):** "zien er allemaal wel goed uit, dus ga maar voor rechts" → model = r6 met lijf +25% breed (`model/model.png`, ±26,3 px bij 64 hoog); r7 als model vervalt. Eerder akkoord: A zwarte V-kap, C oogvlek leigrijs (fase 2); B (geel vlak) vervallen.

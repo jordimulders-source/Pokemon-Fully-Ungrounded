@@ -710,4 +710,5 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - **Jordi (23 nov):** "nee 3 vormen"
 - **Jordi (23 nov):** "nee en we doen niks met bg3 verder" → BG3-idee vervalt.
 - **Jordi (23 nov):** "het is alleen een kleine reference zoals de gen 6 starters" (BG3 = kleine referentie, zoals de klassen achter de Gen 6-starters; verder niets mee).
+- **Jordi (23 nov):** "ja dat verandret" · "ice en grass is leuker qua design" → **besloten: 3 vormen Gnometrotter: Rock (rock gnome), Ice (deep gnome), Grass (forest gnome)**; Flying en Steel vervallen.
 - Open (oud): aantal fases, type naast Fairy, wat voor kabouter (tuinkabouter, folklore zoals de Latijns-Amerikaanse *duende*, iets anders), waar de woordgrappen zitten (namen, moves, dex-teksten).

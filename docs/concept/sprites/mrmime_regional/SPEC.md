@@ -69,3 +69,4 @@ Jordi: "ik denk dat dit ontwerp het niet gaat worden" – "het hele idee bedoel 
 - Sprite r1 (`bokser/sprite_r1/`): Claude: snor als streepje, ogen lezen als bril, benen vlekkerig, vuisten als wanten; V gevuld. Reparaties naar de maker (r2).
 - Sprite r2 (`bokser/sprite_r2/`): snor uit het model, ogen zonder brilrand (B), benen schoon, vuisten donker met tape (D); varianten in `sprite_r2/varianten.png`. Keurder gestart.
 - Keurder op r2: BIJNA (borstvuist te klein, tintbrij schouder/vuist, romp/benen zonder volume, open randen, rechte kinlijn; V gevuld leest als slabbetje → keuze Jordi). Reparaties naar de maker (r3).
+- Sprite r3 (`bokser/sprite_r3/`): 13 keurderspunten verwerkt (borstvuist groter, romp met volume, benen per been, randen dicht). Verse keurder gestart.

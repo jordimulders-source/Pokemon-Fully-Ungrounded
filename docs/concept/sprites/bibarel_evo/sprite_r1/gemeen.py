@@ -1,8 +1,8 @@
 # Gedeelde palet- en hulpfuncties voor bibarel_evo sprite_r1
 import numpy as np; from PIL import Image
 PAL=[(152,208,160),(16,16,16),(96,56,32),(144,92,52),(188,128,74),(220,168,112),(208,176,136),(248,232,200),
-     (56,44,36),(96,78,64),(140,120,100),(240,124,60),(192,72,36),(248,248,248),(176,176,168),(224,48,40)]
-NAAM=['bg','zwart','bruin-lijn','bruin-donker','bruin-midden','bruin-licht','creme-schaduw','creme','donker-lijn','donker-midden','donker-licht','oranje','oranje-donker','wit','wit-schaduw','rood']
+     (56,44,36),(96,78,64),(140,120,100),(240,124,60),(192,72,36),(248,248,248),(176,176,168),(176,138,96)]
+NAAM=['bg','zwart','bruin-lijn','bruin-donker','bruin-midden','bruin-licht','creme-schaduw','creme','donker-lijn','donker-midden','donker-licht','oranje','oranje-donker','wit','wit-schaduw','creme-donker']
 # k-means cluster -> paletindex (eerste toewijzing, plaatsafhankelijke correcties in de bouw)
 REF=[((7,4,2),1),((38,29,24),1),((65,52,43),8),((91,77,66),9),((116,86,65),9),((106,68,41),2),((123,80,48),2),((146,94,52),3),((171,115,68),3),
      ((189,129,75),4),((196,138,85),5),((176,142,105),6),((210,177,141),6),((243,225,193),7),((192,189,186),14),((252,252,251),13),

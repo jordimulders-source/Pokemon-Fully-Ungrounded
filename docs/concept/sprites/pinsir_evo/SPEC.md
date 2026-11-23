@@ -60,3 +60,4 @@
 - Werkwijze: elk Gemini-resultaat meteen kaal naar 64 px verkleinen en pas bevriezen als die reductie al leest.
 - v2_r1 (`gemini/v2_r1.png`), Jordi: "beter te vertalen naar een sprite, maar niet genoeg kaiju/evolutie van pinsir denk ik". Prompt v2_r2 (`gemini/PROMPT_v2_r2.md`, nieuw gesprek): kaken weer het grootste kenmerk (zoals Pinsirs scharen), Godzilla-bouw (massief, brede schouders, dikke dijen, lange zware staart, klein hoofd), rugstekelrij van rug tot staart, dekschild als deel van het lijf.
 - v2_r2 (`gemini/v2_r2.png`), Jordi: "tof design wel, maar de vleugel blijft telkens een beetje raar". Opties: bijsturen alleen vleugel (`gemini/PROMPT_v2_r3_bijsturen.md`) of dekschilden weglaten (Pinsir toont in Gen 3 ook geen vleugels).
+- v2_r3 (`gemini/v2_r3.png`, bijgestuurd), Jordi: "lukt hem niet" (vleugel blijft een losse schijf). Optie 2: dekschild weg, prompt `gemini/PROMPT_v2_r4_zonder_vleugel.md` (bijlage v2_r2).

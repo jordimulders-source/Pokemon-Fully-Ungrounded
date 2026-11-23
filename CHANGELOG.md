@@ -3069,3 +3069,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.740] - Angst-duo: twee legendaries, Gemini-prompt diepzee
 - Diepzee- (Water, bigfin squid) en ruimte-legendary (Cosmic), beide post-game, staan als 12 en 13 in het rijtje (`POKEMON.md`). Gemini-prompt r1 voor de diepzee-legendary in `docs/concept/sprites/angst_onbekende/diepzee/gemini/`.
+
+### [v0.0.741] - Diepzee-legendary: bigfin squid vervalt
+- Na 3 Gemini-rondes (bewaard in `docs/concept/sprites/angst_onbekende/diepzee/gemini/`) vindt Jordi de bigfin squid niet haalbaar als sprite; basis weer open. Twee nieuwe Gemini-lessen in `docs/lessen/GEMINI.md`.

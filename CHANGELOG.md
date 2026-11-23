@@ -3033,3 +3033,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Twee ogen (Jordi: drie ogen staan van voren gek): samengestelde koppen werden een lappendeken; Gemini-bewerkingen van de eigen sprite tekenden alles opnieuw; doorbraak = de kop van Gemini r10 (één bron) op ons r3-ontwerp (`claydol_r10kop/`), daarna neus en ogen uit de 3-ogenversie, rode lijn om het rechteroog, kop- en lijfshading, eindkeuring (alleen tinten), voeten met eigen ronding, rechtervoet 1 rij korter.
 - Af: `docs/concept/sprites/baltoy_regional/claydol_af/claydol_regional.png` (+ `_8x`), op het overzichtsvel (Regional forms).
 - Les bovenaan `docs/lessen/SPRITE_KERN.md`: "rustiger maken" = pixelblur; lessen in `GEMINI.md`.
+
+### [v0.0.729] - Levende Inca-tempel: start ontwerp
+- Nieuwe ontwerpmap `docs/concept/sprites/tempel/` met `SPEC.md`: Jordi's idee letterlijk (static encounter, groot zoals Snorlax, Ghost/Rock, fake-out als ingang) en zijn keuzes: trapeziumdeur + nissen, deur = mond, geen ledematen, ogen = licht uit gaten in de architectuur.
+- Gemini-prompt v1 in `tempel/gemini/PROMPT.md`; `IDEEEN.md` bijgewerkt.

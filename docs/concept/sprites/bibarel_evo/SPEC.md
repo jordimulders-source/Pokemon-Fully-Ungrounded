@@ -17,6 +17,7 @@
 - r4 (`gemini/r4.png`), Jordi: "ik vind die potlood wel geniaal, maar de helm moet van vacht zijn". Bijstuurprompt r5 (zelfde gesprek): `gemini/PROMPT_r5_bijsturen.md`.
 - r5 (`gemini/r5.png`, pluizige crème muts bovenop), Jordi: "dit is niet wat ik bedoel".
 - Daarna: "de helm moet geen accessoire zijn"; gekozen optie "A: hoofd zélf is de helm" (kop = koepel met rand, niets erbovenop, crème oogvlak loopt over de koepel). Prompt r6 (nieuw gesprek): `gemini/PROMPT_r6.md`.
+- r6 (`gemini/r6.png`), Jordi: "potlood is weg, helm wel iets beter, maar nog steeds net iets teveel een losse helm denk ik". Bijstuurprompt r7 (zelfde gesprek): `gemini/PROMPT_r7_bijsturen.md`. Terugval: potloodstam uit r4 in de spritefase erop plakken.
 
 ## Open
 - Welke suggesties (Claude, 23 nov): 1 oranje beiteltanden, 2 staart als troffel, 3 schepklauwen, 4 sjouwt tak/stam of modder tegen de borst, 5 knagend aan een stam, 6 waarschuwingskleuren (geel-zwarte staart), 7 helm van modderkorst/twijgjes.

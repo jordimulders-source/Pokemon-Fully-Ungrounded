@@ -134,3 +134,4 @@
 - r10 (`gemini/claydol_r10_nieuw.png`, nieuwe startprompt): chibi-achtig, krans alleen bovenop, Tiwanaku/Zonnepoort-gevoel weg; gezicht en rode band wel zoals beschreven. Jordi: "deze is heel anders, minder goed".
 - Jordi: "wat als je dit hoofd plakt op de rest van het design, kan je netjes de rondjes die erop zitten nu weghalen?" → kop van r10 (zonder zijn krans-rondjes) op de 3-ogensprite r5 palet B (onze krans, punt, lijf, staven blijven); `claydol_r10kop/`.
 - Jordi over de r10-kop: "hmm hij is wel meer baltoy dan claydol he".
+- Jordi: "en het ontwerp van de ogen is ook meer baltoy".

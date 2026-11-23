@@ -51,6 +51,7 @@ SECTIES=[
 ("vuurduivel_fase2/af/vuurduivel2.png",'Vuurduivel fase 2',"fire/dark"),
 ("gnomini/af/gnomini.png",'"Gnomini"',"fairy"),
 ("gnomad/af/gnomad.png",'"Gnomad"',"fairy"),
+("gnometrotter_rock/af/gnometrotter_rock.png",'"Gnometrotter" (Rock)',"fairy/rock"),
 ]),
 ("Evolutions of existing Pokémon",[
 ('hitmontop_evo/af/hitmongroove.png', '"Hitmongroove" (Hitmontop)', 'fight/ground'),

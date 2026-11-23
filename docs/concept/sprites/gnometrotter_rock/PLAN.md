@@ -46,3 +46,5 @@ Jordi (letterlijk): "nee ik wil toch kijken of het lukt om een hybride vorm te m
 - Jordi (23 nov, over r10): "de schaduw mag wat meer uberhaupt op het lichaam vallen, de neus is niet meer rond nu, de schaduw is gewoon vrij inconsitent nog of niet?"
 - Jordi (23 nov, over r11): "ik zie in het roze lichaam een paar gekke horizontale lijnen, als je dat nog kan fixen en de neus rond kan maken dan zijn we er denk ik"
 - Jordi (23 nov, over r12): "ja maar nu zijn er weer 2 onnodige horizontale lijntjes op de arm terug, en de onderkant van de arm is ook te recht horziontaal" → r13.
+- Jordi (23 nov): "hij is te hoekig"
+- Jordi (23 nov): "en je moet geen zwarte lijnen onnodig doen"

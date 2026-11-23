@@ -3015,3 +3015,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Geschrapt (Jordi, 23 nov): wilde lijn vicuña → guanaco, carnavalspauw.
 - Fire/Water-Pokémon van de lijst: gedaan (onderwater-Oddish-lijn).
 - Bijgewerkt in `TODO.md`, `IDEEEN.md`, `POKEMON.md`.
+
+### [v0.0.725] - Steel/Cosmic-lijn (satelliet): concept + prompt fase 1
+- Besloten met Jordi (23 nov): pure machines met één oog; Spoetnik-bolletje → satelliet → ruimtestation (groter en complexer, zoals Magneton); geen Zuid-Amerika-link nodig; nu alleen designs.
+- `docs/concept/sprites/satelliet_lijn/SPEC.md` en Gemini-prompt fase 1 r1.

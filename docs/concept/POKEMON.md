@@ -82,9 +82,9 @@ Modeltekeningen in `docs/concept/ontwerp/<soort>/` (concept A/B/C + ONTWERP.md).
 | 3 | Uku Pacha (trio) | onderwereld, slang | Ghost/Ground (Jordi 23 nov: akkoord) | slang besloten |
 | 4 | Pachamama | opper-legendary, Moeder Aarde; berg-idee goed + dierlijk wezen eraan koppelen; brilbeer en glyptodont "beide kunnen we proberen" (Jordi 23 nov) | Ground/Fairy ("ook een goede ja") | richting |
 | 5 | Water-regi | diepe zee, nieuw lid Regi-familie | Water? | besloten (23 nov) |
-| 6 | Cosmic-regi | ruimte, nieuw lid Regi-familie | Cosmic? | besloten (23 nov) |
+| 6 | Cosmic-regi | ruimte, nieuw lid Regi-familie; "melkweg thema ... ofzo" (Jordi 23 nov) | Cosmic? | besloten (23 nov) |
 | 7 | Iguazú | waterval, slang/draak, watervallen als vleugels, regenboog | open | gekozen (23 nov) |
-| 8 | Zwart gat | ruimte | open | idee ("eigenlijk nog wat logischer" dan ster → zwart gat) |
+| 8 | Zwart gat | ruimte | open | idee; misschien toch een Cosmic pseudo-lijn i.p.v. legendary (Jordi 23 nov) |
 | 9 | Gletsjer | gletsjer | open | gekozen (23 nov) |
 | 10–12 | Japans maskertrio | kitsune, hannya, kabuki mask (kumadori-masker) | open | gekozen (23 nov) |
 

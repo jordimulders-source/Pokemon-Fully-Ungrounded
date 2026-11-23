@@ -3060,3 +3060,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.737] - Gletsjer-legendary en Japans maskertrio
 - Jordi kiest een gletsjer-legendary en een Japans maskertrio (kitsune, hannya, kabuki mask). Rijtje in `POKEMON.md`, notities in `IDEEEN.md`.
+
+### [v0.0.738] - Maskertrio, Cosmic-regi en zwart gat
+- Kabuki-lid = kumadori-masker (referentie van Jordi in `sprites/maskertrio/referenties/`). Cosmic-regi: melkwegthema. Zwart gat misschien een Cosmic pseudo-lijn in plaats van een legendary.

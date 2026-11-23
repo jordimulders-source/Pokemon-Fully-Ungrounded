@@ -62,3 +62,7 @@ Jordi: "ik denk dat dit ontwerp het niet gaat worden" – "het hele idee bedoel 
 - Jordi: "vraag maar alleen om de voorarm te veranderen" → r12 bijsturen alleen de voorarm van de gestrekte arm.
 - r12 (`bokser/r12.png`, voorarm omhoog), Jordi: "vertaalt dit ontwerp naar een sprite?". Model natief ±10 px per pixel → ±60×88; kale verkleining naar 63 px hoog = 43×63 (`bokser/plak/r12_64_8x.png`).
 - Jordi: "het enige wat we missen zijn de ronde mr mime schouders en het v patroon in het bovenste stuk van het lichaam, donkergrijs, dat kan je beide wel toch?"
+
+## Model gekozen (23 nov)
+- **r12 bevroren** (`bokser/r12.png`), Jordi: "ja" op de spritefase. Toegestane afwijkingen: ronde Mr. Mime-schouders uit de Gen 3-sprite (grijs), donkergrijs V-patroon bovenin de romp (Jordi), getapete vingers (5), ogen/mond uit de Gen 3-Mr. Mime, knieblobjes weg (voorstel Claude, door Jordi met "ja" aanvaard).
+- Sprite r1: maker gestart (`bokser/sprite_r1/`).

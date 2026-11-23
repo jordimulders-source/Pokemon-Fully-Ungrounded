@@ -81,3 +81,4 @@
 - v2 r5 (`sprite_v2_r5/`): hoofd gewelfd naar het model, arm los van het lijf (rand, schaduw ernaast), benen met licht/schaduw en knieschijven, buikplaatlijnen terug. Zelf genoemd: rug B banding, palet donkerder/roder dan het model. r6: die twee, dan keurder.
 - v2 r6 (`sprite_v2_r6/`): palet naar het model (bruin L 68/101/133/166, rood minder verzadigd), rug B drie bolle platen zonder banding; meeste vlakken binnen ±5. Naar keurder.
 - Keuring v2 r6 (`sprite_v2_r6/KEURING.md`): BIJNA; hoofd opgelost, arm en nabije knie half; reparaties: korrel (61 vlakjes), bovenarm lichter, gesloten kniering, 1 randpixel. r7 = die reparaties.
+- v2 r7 (`sprite_v2_r7/`): de 4 keurderreparaties (89 px). Naar korte herkeuring.

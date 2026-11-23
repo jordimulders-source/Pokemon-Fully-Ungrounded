@@ -12,3 +12,4 @@
 - 23 nov (alle drie de vormen): "en we moeten zorgen dat ze allemaal even groot worden de sprites"
 - 23 nov: "zoals bij wormadam" → in de spritefase: zelfde hoogte, voetlijn en lijfmaat voor alle drie; alleen het materiaal verschilt.
 - 23 nov: "hooguit paar pixels afwijking"
+- 23 nov (vergelijking drie vormen): "kijk in deze meting zijn de verhoudingen complete anders" · "en die moeten juist vergelijkbaar zijn" · "het zijn ook net andere poses" → nieuwe prompt met Rock r8 als bijlage (`gemini/PROMPT_basis_rock.md`).

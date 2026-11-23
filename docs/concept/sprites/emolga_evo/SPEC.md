@@ -50,3 +50,4 @@
 - Jordi over r4: "nog niet goed, leg ze allebei op een raster" · "nu heb je sommige hoekjes te dik gepixeld" → raster `sprite_r5/raster_buik.png`; terug naar r3 ("prima aanpak"); Jordi wijst op het raster aan wat te recht is.
 - Jordi (raster): "41, 40 mag zwart worden, 50, 31 lichtgrijs zoals in het model en 52, 28 donkergrijs zoals in het model, dus donkerder dan door wat die omringd wordt" (rij, kolom) → r6: (x40,y41) zwart, (x31,y50) zilver (8), (x28,y52) index 4; `af/model.png` = r6.
 - Jordi (na r6): "ik denk dat onder de lichtgrijze pixel die ik heb toegevoegd nog een zwarte moet, maar die kan goed daarna weer verkleurd moeten worden, dus doe eerst maar de eindkeuring" → na de eindkeuring: (x31,y51) zwart overwegen.
+- Eindkeuring r6: BIJNA (open rand onder (31,50)); reparatie = Jordi's eigen voorstel (31,51) zwart → r7, daarmee PASS. Ter info: L-hoek bij (40,41) (lijn daar 2 px; optie (41,41) → 8), keuze Jordi. `af/model.png` = r7.

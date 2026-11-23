@@ -166,3 +166,35 @@ AVOID
 - No eyebrows, no changed eyes or mouth. No arms, legs or human features. No glossy 3D render, no plush or mascot look.
 - Not thin needle spines like the normal Pincurchin. Not short spines, not few spines, not a bare body.
 ```
+
+# Startprompt v6 (23 nov), na v5
+Jordi (v5 naast foto pencil urchin): "behoorlijk verschil nog wel" · "dunner, langer en dichtheid, maar het gezicht mag daarvan utigezonderd zijn". Nieuw gesprek, bijlage alleen `bijlage_pincurchin.png` (foto niet meesturen, GEMINI.md). "thick" en de AVOID-regel tegen dunne stekels zijn weg.
+
+```
+Design a regional form of the Pokémon PINCURCHIN and draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art).
+
+THE ATTACHED SPRITE IS PINCURCHIN. COPY ITS FACE EXACTLY, pixel for pixel: the two round yellow eyes with a dark pupil, set far apart, and the orange teeth/mouth between them, low on the front of the body. Same shapes, same sizes, same colors, same positions as in the attachment. Do not redesign the eyes (no eyebrows, no angry or slanted eyes) and do not redesign the mouth.
+
+CONCEPT
+- A hybrid of a pencil-spined sea urchin and an old underwater naval mine (sea mine).
+- Type Poison/Rock. It should look sinister.
+
+DESIGN
+- Body: a round sea-mine body that is also an urchin shell. The body is brown and SIMPLE: smooth, with clean Gen 3 shading, no lumps, cracks, bumps, ridges or texture.
+- Spines: the pencil-like spines of a pencil sea urchin. THINNER, LONGER and MUCH DENSER than usual: many long, slender spines packed closely together, radiating out from the body in all directions, covering most of the body.
+- The face area is the exception: no spines in front of the face, so the eyes and mouth stay fully visible.
+- Spine color: a dark red, but vivid and saturated (a brighter red that is still dark), not a dull brownish red.
+- Clean colors: NO rust, no rust spots or stains.
+
+POSE
+- Three-quarter view facing left, like official Gen 3 front sprites.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, clean shading like official Game Freak Gen 3 sprites.
+- Plain white background. No floor, rock, shadow, water, bubbles, glow, sparkles or effects. One single creature, no extra views.
+
+AVOID
+- No rust, no texture or detail on the stone body. Not a cartoon bomb with a fuse, no chains, no anchor, no metal bolts or rivets, no skull.
+- No eyebrows, no changed eyes or mouth. No arms, legs or human features. No glossy 3D render, no plush or mascot look.
+- Not short spines, not few spines, not thick cone-shaped spines, not a bare body.
+```

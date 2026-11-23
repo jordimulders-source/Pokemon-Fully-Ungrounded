@@ -136,3 +136,4 @@
 - Jordi over de r10-kop: "hmm hij is wel meer baltoy dan claydol he".
 - Jordi: "en het ontwerp van de ogen is ook meer baltoy".
 - Claude-opties oogontwerp: A Claydol-kleur, B Claydol-opbouw (crème, bredere lichte rand, ogen in een gekerfde band), C zo laten. Jordi: "B". Uitvoeren als aparte stap na het plakken van de r10-kop.
+- r10-kop op ons design (`claydol_r10kop/claydol_r10kop.png`): r10-kop natief (pitch 10,24) uitgeknipt, 18 rijen/19 kolommen geschrapt, op onze kopplek; r10-rondjes en punt weg (kopsteen uit de directe omgeving); tinten naar palet B; silhouet = g3r5, buiten de kop diff 0. Zwak: rechte tintgrenzen bovenop (onder de krans), gemengde oogringen, band rechts korter/dikker, linkeroog dicht bij de krans.

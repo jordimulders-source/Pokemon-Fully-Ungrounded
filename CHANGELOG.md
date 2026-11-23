@@ -2869,3 +2869,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.689] - Capybarrel: 2 fases
 - `IDEEEN.md`: lijn van 2 fases (Jordi).
+
+### [v0.0.690] - Capybarrel: Gemini-prompts r1
+- `docs/concept/sprites/capybarrel/gemini/PROMPTS.md`: twee varianten (lijf ís de ton / zit in de ton).

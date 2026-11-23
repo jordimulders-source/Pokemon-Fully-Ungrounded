@@ -231,3 +231,15 @@ AVOID
 - No eyebrows, no changed eyes or mouth. No arms, legs or human features. No glossy 3D render, no plush or mascot look.
 - Not short spines, not few spines, not a bare body.
 ```
+
+# Bijsturen v7 → v8 (23 nov), in hetzelfde gesprek als v7
+Jordi: "ok veel beter, en hoe maken we hier nu een semi onderwater mijn nog van" · "bedenk maar een prompt". Kenmerken = voorstel Claude. Ogen/mond fixen we zelf in de sprite.
+
+```
+This is very good. Keep the spines, colors, body shape and pose exactly the same. Now make it look half like an old naval sea mine, with only these two additions:
+1. Between the long red rods, add 4 to 6 SHORT, THICK sea-mine contact horns sticking out of the body: short stubby cylinders with a rounded, dome-shaped cap on the end, in a darker brown-grey than the body.
+2. Add one horizontal seam around the middle of the body, like the welded joint where the two halves of a sea mine meet: a thin raised band that follows the curve of the ball. No rivets or bolts.
+Do not add chains, an anchor, a fuse or a skull. Do not change the face.
+```
+
+Reserve (als het nog te weinig mijn is): "Add a small round ring on top of the body, like the lifting eye of a sea mine."

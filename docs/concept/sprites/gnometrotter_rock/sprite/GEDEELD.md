@@ -35,3 +35,7 @@ Omdat de omtrek gelijk is, kunnen de zusters de Rock-zones als start nemen (`zon
 ## Werkvolgorde Rock (herbruikbaar)
 `fam.py` → `zones.py` → `reductie.py` (kaal.png + zone/lijnkans) → `maak.py` (technisch opschonen → red.png) → `dc.py` (Dragonfly Cave-omlijning + gesp → `gnometrotter_rock.png`) → `tel.py` (afwijking per zone) → `controle.py` → `vel.py`.
 Oogstrook (Jordi "1 akkoord"): model x 440–515, y 160–200, zwart ≥ 40 % → mutskleur 3 (neusrand uitgezonderd).
+
+## Aanvulling r2 (23 nov; geometrie en palet ongewijzigd)
+- Geldt ook voor de zusters: vlakken uit de **modelfacetten** (`sprite_r2/facetten.py`: samenhangende pixels per onderdeel tussen de modellijnen; lijn = helderheid < 115 roze, < 100 blauw/licht, < 60 donker gesteente, 1 px verdikt; facet ≥ 120 modelpx). Per spritepixel het facet met de grootste bedekking; facetgrens = 1 px naad op de pixel met de meeste modellijn. Voor Ice/Grass de drempels per materiaal opnieuw kiezen (bekijk `facet_full.png`).
+- Lijf en benen: Gen 3-volume per bol (`sprite_r2/r2.py`), dezelfde regels voor alle vormen, zodat roze/blauw in de hele lijn gelijk blijft.

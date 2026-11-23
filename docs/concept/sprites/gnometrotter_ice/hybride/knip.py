@@ -20,9 +20,10 @@ def klasse(a, cls, breed=False):
     r, g, b = a[..., 0], a[..., 1], a[..., 2]
     wit = np.all(a > 240, axis=-1)
     if cls == 'roze':
+        # roze heeft b >= g; bruin hout (riem, zolen, stok) heeft b < g
         if breed:   # alles met roodzweem: vlak, glimlijnen, naden (niet het groenblauwe ijs)
-            return (r > g + 6) & (r >= b - 12) & ~wit
-        return (r - g > 28) & (r >= b - 5) & (r > 120)
+            return (r > g + 6) & (r >= b - 12) & (b >= g - 3) & ~wit
+        return (r - g > 28) & (r >= b - 5) & (r > 120) & (b >= g - 3)
     if cls == 'blauw':
         mx = a.max(axis=-1).clip(1)
         sat = (mx - a.min(axis=-1)) / mx
@@ -113,8 +114,14 @@ def rijranden(m, y0, y1, glad=4):
     return L, R
 
 
+def pingpong(t, n):
+    """Spiegeltegels: 0..n-1, n-1..0, 0..n-1, ..."""
+    t = np.mod(t, 2 * n)
+    return np.where(t < n, t, 2 * n - 1 - t)
+
+
 def plak(uit, basis_m, donor, donor_m, spiegel=False, kader_b=None, kader_d=None,
-         rij=False):
+         rij=False, tegel=None):
     """Schaal het donorstuk op het basisonderdeel en plak alleen binnen basis_m.
     Verticaal: kader op kader. Horizontaal (rij=True): per rij de randen van het
     basisonderdeel op de randen van het donoronderdeel (zo valt de donorrand op
@@ -126,7 +133,18 @@ def plak(uit, basis_m, donor, donor_m, spiegel=False, kader_b=None, kader_d=None
     ys, xs = np.nonzero(basis_m)
     v = (ys - by0 + 0.5) / (by1 - by0)
     sy = np.clip((dy0 + v * (dy1 - dy0)).astype(int), 0, donor.shape[0] - 1)
-    if rij:
+    if tegel:
+        # vaste schaal; buiten het donorstuk gespiegeld herhaald (zelfde
+        # textuur, geen uitrekken)
+        tx = ((xs - bx0) / tegel).astype(int)
+        ty = ((ys - by0) / tegel).astype(int)
+        tx = pingpong(tx, dx1 - dx0)
+        ty = pingpong(ty, dy1 - dy0)
+        if spiegel:
+            tx = (dx1 - dx0 - 1) - tx
+        sx = dx0 + tx
+        sy = dy0 + ty
+    elif rij:
         bL, bR = rijranden(basis_m, by0, by1)
         dm = donor_m.copy()
         dm[:, :dx0] = False
@@ -194,7 +212,7 @@ def achtergrond(a):
     return np.isin(lab, list(rand))
 
 
-def basismaskers(a, delen, donker=105, gat=40, minkern=10):
+def basismaskers(a, delen, donker=105, gat=40, minkern=10, binnennaad=0):
     """Basismaskers die de zwarte lijnen van de basis heilig houden.
     Kandidaten = brede kleurklasse zonder donkere lijnpixels; samenhangende
     vlakken (4-buren) gaan naar het onderdeel waarvan het kader het meeste
@@ -206,13 +224,21 @@ def basismaskers(a, delen, donker=105, gat=40, minkern=10):
     for cls in sorted({d[1] for d in delen}):
         idx = [i for i, d in enumerate(delen) if d[1] == cls]
         kand = klasse(a, cls, True) & (lum >= donker)
+        kand0 = kand
         # dunne lichte barst-/glimlijnen tussen twee stukken van dezelfde kleur
         # horen erbij (sluiten), donkere lijnen en achtergrond niet
         st = ndi.generate_binary_structure(2, 1)
         dicht = ndi.binary_closing(kand, st, iterations=3)
-        kand = kand | (dicht & (lum >= donker) & ~achtergrond(a))
+        bijlijn = ndi.binary_dilation(lum < donker, iterations=2)
+        kand = kand | (dicht & (lum >= 170) & ~achtergrond(a) & ~bijlijn)
         streng = klasse(a, cls)
-        lab, n = ndi.label(kand)
+        # vlakken die via een gaatje in een zwarte lijn aan elkaar hangen
+        # (schouderschijf en romp) splitsen: eerst 2 px eroderen, labelen,
+        # dan elke pixel het label van het dichtstbijzijnde kernvlak geven
+        kernm = ndi.binary_erosion(kand0, iterations=2)
+        klab, n = ndi.label(kernm)
+        dist, (iy, ix) = ndi.distance_transform_edt(~kernm, return_indices=True)
+        lab = np.where(kand & (dist <= 5), klab[iy, ix], 0)
         if not n:
             continue
         overlap = np.stack([ndi.sum(kaders[i], lab, range(1, n + 1)) for i in idx])
@@ -240,6 +266,9 @@ def basismaskers(a, delen, donker=105, gat=40, minkern=10):
                     deel = comp & kaders[i] & vrij
                     maskers[i] |= deel
                     comp &= ~deel
+        # niet ver buiten het eigen kader (bv. het gezicht naast de nek)
+        for i in idx:
+            maskers[i] &= ndi.binary_dilation(kaders[i], iterations=8)
         # een pixel hoort bij één onderdeel
         for i in idx:
             maskers[i] &= vrij
@@ -262,4 +291,30 @@ def basismaskers(a, delen, donker=105, gat=40, minkern=10):
                 klein = [j + 1 for j, s in enumerate(maten) if s <= gat]
                 m |= np.isin(gl, klein)
             maskers[i] = m
+    if binnennaad:
+        maskers = binnennaden(a, maskers, donker, binnennaad)
     return maskers
+
+
+def binnennaden(a, maskers, donker, r):
+    """Donkere lijnen die helemaal binnen één onderdeel liggen (naden, nerf,
+    jaarringen van de basis) horen bij dat onderdeel en worden vervangen.
+    Donkere pixels die binnen r px iets anders zien (achtergrond, ander
+    materiaal, een ander onderdeel) zijn omlijning en blijven van de basis."""
+    lum = a.mean(axis=-1)
+    dark = lum < donker
+    alle = np.zeros(a.shape[:2], bool)
+    for m in maskers:
+        alle |= m
+    vreemd = ~dark & ~alle
+    st = ndi.generate_binary_structure(2, 2)
+    bij_vreemd = ndi.binary_dilation(vreemd, st, iterations=r)
+    bij = [ndi.binary_dilation(m, st, iterations=r) for m in maskers]
+    uit = []
+    for i, m in enumerate(maskers):
+        ander = np.zeros(a.shape[:2], bool)
+        for j, bj in enumerate(bij):
+            if j != i:
+                ander |= bj
+        uit.append(m | (dark & bij[i] & ~bij_vreemd & ~ander))
+    return uit

@@ -1,6 +1,6 @@
 # Levende Inca-tempel (werknaam open)
 
-Static encounter, geen legendary. Type: Ghost/Rock. Eén fase (niet gezegd dat er een lijn is).
+Static encounter, geen legendary. Type: Ghost/Rock. Single stage (Jordi, 23 nov: "Is een single stage").
 
 ## Jordi letterlijk (23 nov)
 - "we gaan de tempel pokemon maken. In game gaat het een soort fake out worden, static pokemon, groot zoals snorlax en qua data helemaal groot. Het is een tempel die leeft, ghost/rock. De speler denkt dat het een ingang is in game en dan blijkt de hele tempel tot leven te komen, inca tempel idee"
@@ -16,4 +16,5 @@ Static encounter, geen legendary. Type: Ghost/Rock. Eén fase (niet gezegd dat e
 - Naam, kleur van het licht in de ogen, data (stats/ability/moves; "qua data helemaal groot"), plek in de wereld.
 
 ## Rondes
-- Prompt v1: `gemini/PROMPT.md`.
+- Prompt v1: `gemini/PROMPT.md` → `r1/gemini_v1.png`. Jordi: "ok hij oogt nog wat klein, het mag groter" (= vak meer vullen, meerkeuze) / "en beetje saai" / "niet per se meer detail dat niet naar een sprite vertaalt, maar interessantere architectuur" / "maar goed begin".
+- Prompt v2: `gemini/PROMPT_v2.md` (nieuw gesprek, geen bijlage). Architectuurkeuzes van Claude (ter keuze voorgelegd, niet van Jordi): grote veelhoekige blokken, dubbel-getrapte trapeziumdeur, getrapte sokkel.

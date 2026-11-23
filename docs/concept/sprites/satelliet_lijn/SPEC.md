@@ -32,3 +32,4 @@ Citaten en besluiten (Jordi, 23 nov); het overzicht staat ook in `docs/concept/I
 - Jordi: "hoeveel fase 1s hebben dezelfde grootte?" · "en groter is perspectief natuurlijk he, anders zou wailord neit op het scherm passen". Gemeten (125 Gen 1–3 eerste fases, anim_front_gba): mediaan 796 px, 90% < 1131; groter dan onze 1548 alleen Gastly 1658, Rhyhorn 1702, Exeggcute 1762 (Drowzee 1486 erbij).
 - **Jordi: "A, verklein maar naar ±950 px, maar alleen als alles er dan nog mooi uitziet".** r3 (PASS, 1548 px) blijft de terugvaloptie. r4 = model ×±0,617.
 - **Jordi (23 nov):** "wat er ook gebeurt, de fase 1 wordt onderdeel van 2 en 3 toch? want die groeitd aaruit, dus die wordt toch een steeds kleiner onderdeel van het geheel dan". → Fase 1 (bol met oog) is onderdeel van fase 2 en 3; de lijn groeit eruit en fase 1 wordt een steeds kleiner deel van het geheel.
+  - Jordi erbij: "awt niet erg is" (= wat niet erg is).

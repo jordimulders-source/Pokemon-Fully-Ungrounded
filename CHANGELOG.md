@@ -2878,3 +2878,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.692] - Capybarrel: prompt r3
 - `capybarrel/gemini/`: r2 bewaard, Jordi's feedback ("meer pokemon stijl, kijk naar andere regional rodents") en prompt r3.
+
+### [v0.0.693] - Capybarrel: r3 op het oog na goed
+- `capybarrel/gemini/r3/`: r3 bewaard; Jordi: "ok op oog na vind ik hem prima".

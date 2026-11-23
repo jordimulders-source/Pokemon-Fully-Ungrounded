@@ -78,3 +78,6 @@ Style: official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 
 
 AVOID: realistic animal look, plush toy / Neopets look, beaver look, standing upright, sitting inside an upright barrel, a cartoon barrel with a face, water, hot spring, fruit on its head.
 ```
+
+## Ronde 3 (23 nov)
+- `r3/capybarrel_r3.png`: Jordi: "ok op oog na vind ik hem prima". Beste versie tot nu toe; alleen het oog nog.

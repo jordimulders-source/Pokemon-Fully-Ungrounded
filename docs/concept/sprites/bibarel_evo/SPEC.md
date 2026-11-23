@@ -25,6 +25,7 @@
 - r9 (`gemini/r9.png`, klep erbij), Jordi: "hij doet wat we vragen maar het ziet er net een beetje gek uit, hij mist ook oren denk ik". Daarna: "onee bibarel heeft geen oren". Daarna: "bibarel heeft wel fur om het hele hoofd heen, misschien dat ook doen". Bijstuurprompt r10 (klep + vachtkraag): `gemini/PROMPT_r10_bijsturen.md` (diagnose "scheve platte pet" is van Claude).
 - r10 (`gemini/r10.png`), Jordi: "ok prima, vertaalt dit?". Vertaaltest: natief raster 99×99 (pitch 10,24), figuur 98×81 → 64 breed = factor 0,65; kale reductie `plak/r10_64_8x.png`.
 - Jordi: "het is meer een pet dan een helm, maar dat kunnen we in de afwerking fixen".
+- Jordi: "akkoord" (r10 bevroren: `referenties/gemini_gekozen_r10.png`; geen prompt meer, staart als los onderdeel 8 natieve px achter het lijf geschoven: `model/r10_k8.png` (script `model/compact.py`), figuur 90×81 → factor 0,71; vergelijking `model/vergelijk_compact.png`).
 
 ## Open
 - Welke suggesties (Claude, 23 nov): 1 oranje beiteltanden, 2 staart als troffel, 3 schepklauwen, 4 sjouwt tak/stam of modder tegen de borst, 5 knagend aan een stam, 6 waarschuwingskleuren (geel-zwarte staart), 7 helm van modderkorst/twijgjes.

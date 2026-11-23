@@ -59,3 +59,4 @@ Jordi (letterlijk): "nee ik wil toch kijken of het lukt om een hybride vorm te m
 - Jordi (23 nov): "juist 15 is goed" → af: `af/gnometrotter_rock.png` (= sprite_r15).
 - Jordi (23 nov): "dan mag die naar een definitieve eindkeuirng" → definitieve eindkeuring r15.
 - Definitieve eindkeuring r15: PASS, geen reparaties (`keuring_r15/KEURING.md`). Rock definitief af.
+- Jordi (23 nov): "klopt de zwarte lijn bij de neus wel, erg dik" → r16 voorstel: (18,21) en (19,22) zwart → 7, boog 1 px.

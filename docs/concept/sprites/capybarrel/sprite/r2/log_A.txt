@@ -1,0 +1,193 @@
+hoepel (23,6) 3->h  hoepelkern gemeten op model
+hoepel (24,6) 3->h  hoepelkern gemeten op model
+hoepel (33,6) 3->h  hoepelkern gemeten op model
+hoepel (33,7) s->h  hoepelkern gemeten op model
+hoepel (34,7) 9->h  hoepelkern gemeten op model
+hoepel (24,8) 0->h  hoepelkern gemeten op model
+hoepel (34,8) 9->h  hoepelkern gemeten op model
+hoepel (35,8) s->h  hoepelkern gemeten op model
+hoepel (25,10) 0->9  hoepelkern gemeten op model
+hoepel (34,10) 9->h  hoepelkern gemeten op model
+hoepel (25,11) 0->9  hoepelkern gemeten op model
+hoepel (35,11) 3->h  hoepelkern gemeten op model
+hoepel (36,11) 3->h  hoepelkern gemeten op model
+hoepel (26,12) 3->h  hoepelkern gemeten op model
+hoepel (27,12) 3->h  hoepelkern gemeten op model
+hoepel (35,12) 3->h  hoepelkern gemeten op model
+hoepel (36,12) 0->h  hoepelkern gemeten op model
+hoepel (26,13) 3->h  hoepelkern gemeten op model
+hoepel (27,13) 0->h  hoepelkern gemeten op model
+hoepel (35,13) 3->h  hoepelkern gemeten op model
+hoepel (36,13) 0->h  hoepelkern gemeten op model
+hoepel (26,14) 3->h  hoepelkern gemeten op model
+hoepel (27,14) 0->h  hoepelkern gemeten op model
+hoepel (35,14) 3->h  hoepelkern gemeten op model
+hoepel (36,14) 0->h  hoepelkern gemeten op model
+hoepel (26,15) 3->h  hoepelkern gemeten op model
+hoepel (27,15) 0->h  hoepelkern gemeten op model
+hoepel (35,15) 3->h  hoepelkern gemeten op model
+hoepel (36,15) 0->h  hoepelkern gemeten op model
+hoepel (26,16) 3->h  hoepelkern gemeten op model
+hoepel (27,16) 0->h  hoepelkern gemeten op model
+hoepel (35,16) 3->h  hoepelkern gemeten op model
+hoepel (36,16) 0->h  hoepelkern gemeten op model
+hoepel (26,17) 3->h  hoepelkern gemeten op model
+hoepel (27,17) 0->h  hoepelkern gemeten op model
+hoepel (35,17) 3->h  hoepelkern gemeten op model
+hoepel (36,17) 0->h  hoepelkern gemeten op model
+hoepel (25,18) 0->h  hoepelkern gemeten op model
+hoepel (26,18) 3->h  hoepelkern gemeten op model
+hoepel (35,18) 3->h  hoepelkern gemeten op model
+hoepel (36,18) 0->h  hoepelkern gemeten op model
+hoepel (25,19) 0->h  hoepelkern gemeten op model
+hoepel (26,19) 3->h  hoepelkern gemeten op model
+hoepel (35,19) 3->h  hoepelkern gemeten op model
+hoepel (36,19) 0->h  hoepelkern gemeten op model
+hoepel (25,20) 0->h  hoepelkern gemeten op model
+hoepel (26,20) 3->h  hoepelkern gemeten op model
+hoepel (35,20) 3->h  hoepelkern gemeten op model
+hoepel (25,21) 3->h  hoepelkern gemeten op model
+hoepel (26,21) 0->h  hoepelkern gemeten op model
+hoepel (34,21) 0->h  hoepelkern gemeten op model
+hoepel (35,21) 3->h  hoepelkern gemeten op model
+hoepel (24,22) 0->h  hoepelkern gemeten op model
+hoepel (25,22) 3->h  hoepelkern gemeten op model
+hoepel (34,22) 3->h  hoepelkern gemeten op model
+hoepel (34,23) 3->h  hoepelkern gemeten op model
+hoepel (33,24) 3->h  hoepelkern gemeten op model
+hoepel (34,24) 0->h  hoepelkern gemeten op model
+hoepel (32,25) 3->h  hoepelkern gemeten op model
+hoepel (33,25) 3->h  hoepelkern gemeten op model
+hoepel (31,26) 0->h  hoepelkern gemeten op model
+hoepel (32,26) 3->h  hoepelkern gemeten op model
+hoepel (26,7) s->0  zwarte rand schaduwkant hoepel (model)
+hoepel (35,7) s->0  zwarte rand schaduwkant hoepel (model)
+hoepel (36,8) B->0  zwarte rand schaduwkant hoepel (model)
+hoepel (27,9) B->0  zwarte rand schaduwkant hoepel (model)
+hoepel (36,9) B->0  zwarte rand schaduwkant hoepel (model)
+hoepel (36,10) B->0  zwarte rand schaduwkant hoepel (model)
+hoepel (37,11) B->0  zwarte rand schaduwkant hoepel (model)
+hoepel (28,12) B->0  zwarte rand schaduwkant hoepel (model)
+hoepel (37,12) B->0  zwarte rand schaduwkant hoepel (model)
+hoepel (28,13) 7->0  zwarte rand schaduwkant hoepel (model)
+hoepel (37,13) 7->0  zwarte rand schaduwkant hoepel (model)
+hoepel (28,14) 7->0  zwarte rand schaduwkant hoepel (model)
+hoepel (37,14) 7->0  zwarte rand schaduwkant hoepel (model)
+hoepel (28,15) 7->0  zwarte rand schaduwkant hoepel (model)
+hoepel (37,15) 7->0  zwarte rand schaduwkant hoepel (model)
+hoepel (28,16) 7->0  zwarte rand schaduwkant hoepel (model)
+hoepel (37,16) 7->0  zwarte rand schaduwkant hoepel (model)
+hoepel (28,17) s->0  zwarte rand schaduwkant hoepel (model)
+hoepel (37,17) s->0  zwarte rand schaduwkant hoepel (model)
+hoepel (37,18) 7->0  zwarte rand schaduwkant hoepel (model)
+hoepel (37,19) 7->0  zwarte rand schaduwkant hoepel (model)
+hoepel (36,20) 7->0  zwarte rand schaduwkant hoepel (model)
+hoepel (27,21) 4->0  zwarte rand schaduwkant hoepel (model)
+hoepel (36,21) 7->0  zwarte rand schaduwkant hoepel (model)
+hoepel (35,24) s->0  zwarte rand schaduwkant hoepel (model)
+duig (27,7) 4->s  duiglijn: modelaandeel donkerbruin 0.50
+duig (29,7) 4->s  duiglijn: modelaandeel donkerbruin 0.56
+duig (23,11) B->s  duiglijn: modelaandeel donkerbruin 0.31
+duig (30,11) B->s  duiglijn: modelaandeel donkerbruin 0.30
+duig (22,13) 4->s  duiglijn: modelaandeel donkerbruin 0.51
+duig (22,14) 4->s  duiglijn: modelaandeel donkerbruin 0.56
+duig (22,15) 4->s  duiglijn: modelaandeel donkerbruin 0.58
+duig (22,16) 4->s  duiglijn: modelaandeel donkerbruin 0.56
+duig (23,17) 7->s  duiglijn: modelaandeel donkerbruin 0.46
+duig (22,21) 4->s  duiglijn: modelaandeel donkerbruin 0.48
+duig (23,21) 4->s  duiglijn: modelaandeel donkerbruin 0.41
+duig (28,22) 4->s  duiglijn: modelaandeel donkerbruin 0.53
+duig (29,22) 4->s  duiglijn: modelaandeel donkerbruin 0.53
+duig (30,22) 4->s  duiglijn: modelaandeel donkerbruin 0.53
+duig (31,22) 4->s  duiglijn: modelaandeel donkerbruin 0.53
+oor (11,2) 5->s  oorbinnenkant donker (model donker, zoals nabije oor)
+oor (12,2) 5->s  idem
+volume (42,14) A->5  Gen 3-volume dij
+volume (40,15) A->C  Gen 3-volume dij
+volume (43,15) A->5  Gen 3-volume dij
+volume (40,16) A->C  Gen 3-volume dij
+volume (40,17) A->C  Gen 3-volume dij
+volume (43,17) 5->A  Gen 3-volume dij
+volume (43,18) 5->A  Gen 3-volume dij
+volume (43,19) 5->A  Gen 3-volume dij
+volume (43,20) 5->A  Gen 3-volume dij
+volume (42,21) 5->A  Gen 3-volume dij
+volume (38,22) A->5  Gen 3-volume dij
+volume (41,22) 5->A  Gen 3-volume dij
+volume (42,22) 5->A  Gen 3-volume dij
+volume (38,23) A->5  Gen 3-volume dij
+volume (40,23) 5->A  Gen 3-volume dij
+volume (41,23) 5->A  Gen 3-volume dij
+volume (39,26) 5->A  lichtkant onderpoot achter
+volume (39,27) 5->A  lichtkant onderpoot achter
+volume (40,26) 5->A  lichtkant onderpoot achter
+volume (13,25) 5->A  bolling verre voorpoot
+volume (14,25) 5->A  bolling verre voorpoot
+volume (13,26) 5->A  bolling verre voorpoot
+fix (25,12) 0->B  los hoepelzwart buiten gemeten hoepel
+fix (24,9) 0->B  idem
+fix (24,7) 9->h  hoepeleinde doorlopend (3+ px)
+fix (34,10) h->9  hoepel 2: lichte band doorlopend
+fix (1,9) 3->9  neus-hooglicht aaneen
+fix (14,24) 5->A  bolling verre voorpoot aaneen
+fix (42,14) 5->A  dij-volume aaneen
+fix (23,11) s->B  los duigstipje terug (lijn te zwak gemeten)
+fix (30,11) s->B  idem
+fix (28,7) 4->s  duiglijn rij 7 doorlopend (model 0.33)
+fix (22,13) s->4  geen dubbele rand naast buitenlijn
+fix (22,14) s->4  idem
+fix (22,15) s->4  idem
+fix (22,16) s->4  idem
+fix (43,14) s->5  sikkel rand dij doorlopend
+fix (37,9) B->s  2px houtrest aan tonrand
+fix (37,10) B->s  idem
+fix (38,18) 7->s  houtvlakje <3 px
+fix (37,20) 7->s  houtvlakje <3 px
+fix (21,21) 4->s  houtvlakje <3 px
+fix (36,22) 7->s  houtvlakje <3 px
+fix (36,23) 7->s  houtvlakje <3 px
+lijn (10,1) 0->s  selout lichtkant / zwart schaduwkant
+lijn (18,1) 0->s  selout lichtkant / zwart schaduwkant
+lijn (19,1) 0->s  selout lichtkant / zwart schaduwkant
+lijn (10,2) 0->s  selout lichtkant / zwart schaduwkant
+lijn (20,2) 0->s  selout lichtkant / zwart schaduwkant
+lijn (23,5) 0->s  selout lichtkant / zwart schaduwkant
+lijn (24,5) 0->s  selout lichtkant / zwart schaduwkant
+lijn (25,5) 0->s  selout lichtkant / zwart schaduwkant
+lijn (32,5) 0->s  selout lichtkant / zwart schaduwkant
+lijn (33,5) 0->s  selout lichtkant / zwart schaduwkant
+lijn (34,6) 0->s  selout lichtkant / zwart schaduwkant
+lijn (35,6) 0->s  selout lichtkant / zwart schaduwkant
+lijn (36,6) 0->s  selout lichtkant / zwart schaduwkant
+lijn (2,7) s->n  selout lichtkant / zwart schaduwkant
+lijn (3,7) 0->n  selout lichtkant / zwart schaduwkant
+lijn (37,7) 0->s  selout lichtkant / zwart schaduwkant
+lijn (1,8) 0->n  selout lichtkant / zwart schaduwkant
+lijn (0,9) 0->n  selout lichtkant / zwart schaduwkant
+lijn (38,9) 0->s  selout lichtkant / zwart schaduwkant
+lijn (0,10) 0->n  selout lichtkant / zwart schaduwkant
+lijn (41,10) 0->s  selout lichtkant / zwart schaduwkant
+lijn (0,11) 0->n  selout lichtkant / zwart schaduwkant
+lijn (45,11) 0->s  selout lichtkant / zwart schaduwkant
+lijn (0,12) 0->n  selout lichtkant / zwart schaduwkant
+lijn (0,13) 0->n  selout lichtkant / zwart schaduwkant
+lijn (0,14) 0->n  selout lichtkant / zwart schaduwkant
+lijn (0,15) 0->n  selout lichtkant / zwart schaduwkant
+lijn (13,20) 0->s  selout lichtkant / zwart schaduwkant
+lijn (14,23) 0->s  selout lichtkant / zwart schaduwkant
+lijn (12,25) 0->s  selout lichtkant / zwart schaduwkant
+lijn (44,25) 0->s  selout lichtkant / zwart schaduwkant
+lijn (12,26) 0->s  selout lichtkant / zwart schaduwkant
+lijn (11,27) 0->s  selout lichtkant / zwart schaduwkant
+lijn (11,28) 0->s  selout lichtkant / zwart schaduwkant
+lijn (30,28) 0->s  selout lichtkant / zwart schaduwkant
+lijn (39,28) 0->s  selout lichtkant / zwart schaduwkant
+lijn (11,29) 0->s  selout lichtkant / zwart schaduwkant
+lijn (22,29) 0->s  selout lichtkant / zwart schaduwkant
+lijn (29,29) 0->s  selout lichtkant / zwart schaduwkant
+lijn (39,29) 0->s  selout lichtkant / zwart schaduwkant
+lijn (38,30) 0->s  selout lichtkant / zwart schaduwkant
+lijn (20,31) 0->s  selout lichtkant / zwart schaduwkant
+lijn (37,8) 0->s  om-en-om weg
+lijn (13,22) 0->s  om-en-om weg
+lijn (44,25) s->0  om-en-om weg

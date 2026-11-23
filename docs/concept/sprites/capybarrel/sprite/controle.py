@@ -11,7 +11,7 @@ for f in sys.argv[1:]:
         for x in range(W):
             if not op[y,x]: continue
             if any(not(0<=x+dx<W and 0<=y+dy<H) or not op[y+dy,x+dx] for dx,dy in((1,0),(-1,0),(0,1),(0,-1))):
-                if a[y,x] not in (1,2,12,13): bad.append((x,y,int(a[y,x])))
+                if a[y,x] not in (1,2,8,12,13,14): bad.append((x,y,int(a[y,x])))
     print(' open buitenlijn:', bad)
     # clusters <3 px per index (behalve 0,1,2 lijn en oog/tand)
     seen=np.zeros_like(op); small=[]
@@ -24,7 +24,7 @@ for f in sys.argv[1:]:
                 for dx,dy in((1,0),(-1,0),(0,1),(0,-1)):
                     nx,ny=cx+dx,cy+dy
                     if 0<=nx<W and 0<=ny<H and not seen[ny,nx] and a[ny,nx]==v: seen[ny,nx]=1; st.append((nx,ny))
-            if len(comp)<3 and v not in (1,2): small.append((int(v),[(p[0]-9,p[1]-26) for p in comp]))
+            if len(comp)<3 and v not in (1,2,8): small.append((int(v),[(p[0]-9,p[1]-26) for p in comp]))
     print(' tintvlakjes <3 px (figuurcoörd):', small)
     # losse zwarte pixel zonder zwarte/selout-buur en niet aan de rand
     lone=[]

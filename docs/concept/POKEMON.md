@@ -80,7 +80,7 @@ Modeltekeningen in `docs/concept/ontwerp/<soort>/` (concept A/B/C + ONTWERP.md).
 | 1 | Hanan Pacha (trio) | bovenwereld, condor | Psychic/Flying of Fire/Flying (niet Cosmic, Jordi 23 nov) | condor besloten (9 nov) |
 | 2 | Kay Pacha (trio) | deze wereld, poema | open | poema besloten |
 | 3 | Uku Pacha (trio) | onderwereld, slang | open | slang besloten |
-| 4 | Pachamama | opper-legendary, Moeder Aarde; berg-idee goed + dierlijk wezen eraan koppelen (Jordi 23 nov) | Ground/Fairy ("ook een goede ja") | richting |
+| 4 | Pachamama | opper-legendary, Moeder Aarde; berg-idee goed + dierlijk wezen eraan koppelen; brilbeer en glyptodont "beide kunnen we proberen" (Jordi 23 nov) | Ground/Fairy ("ook een goede ja") | richting |
 | 5 | Water-regi | diepe zee, nieuw lid Regi-familie | Water? | besloten (23 nov) |
 | 6 | Cosmic-regi | ruimte, nieuw lid Regi-familie | Cosmic? | besloten (23 nov) |
 | 7 | Iguazú | waterval, slang/draak, watervallen als vleugels, regenboog | open | gekozen (23 nov) |

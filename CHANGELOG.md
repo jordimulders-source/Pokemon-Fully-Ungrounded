@@ -3051,3 +3051,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.734] - Hanan Pacha-type en Pachamama-dier
 - Hanan Pacha: Psychic/Flying of Fire/Flying, niet Cosmic. Pachamama: berg + dierlijk wezen; diervoorstellen in `IDEEEN.md`.
+
+### [v0.0.735] - Pachamama: twee richtingen
+- Brilbeer-berg en glyptodont-berg worden allebei geprobeerd (Jordi).

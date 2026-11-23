@@ -24,3 +24,4 @@ Citaten en besluiten (Jordi, 23 nov); het overzicht staat ook in `docs/concept/I
 - Jordi: "dan haal je die kleine 5e weg, zitten de andere wel op een logische plek? Ik heb het gevoel dat de lengte van de onderste te kort is, maar ik weet niet of jij dat logisch kan verlengen" → `fase1/model/model_r7b.png` (natief raster r7 via `model/natief.py`, pitch 10,24; `bewerk_r7.py`: 5e antenne weg, onderste +15 px verlengd door het eigen pixelpatroon (stap 3,1) te herhalen, punt verplaatst). Wacht op Jordi.
 - Jordi (met foto van de echte Spoetnik): "op zich klopt het wel zo te zien he". Claude: ja, ook bij Spoetnik lopen twee antennes ongeveer parallel en waaieren de andere uit.
 - **Model bevroren (Jordi, 23 nov: "begin maar met bouwen om 19:01")**: `fase1/model/model_gekozen.png` (= r7b; natief 99 px: `model_gekozen_natief.png`). Spritefase start 19:01.
+- Jordi (spritefase, 23 nov): "let erop dat de bol mooi rond blijft".

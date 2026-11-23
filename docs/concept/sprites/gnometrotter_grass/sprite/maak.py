@@ -120,6 +120,6 @@ for zz in (5,9,19,8,18):
     m=zone==zz; yy,xx=np.where(m); cy,cx=yy.mean(),xx.mean()
     rand=m&nd.binary_dilation(~m,structure=np.array([[0,1,0],[1,1,1],[0,1,0]]))
     for Y,X in zip(*np.where(rand)):
-        h=np.degrees(np.arctan2(Y-cy,X-cx)); o[Y,X]=1 if 80<=h<=190 else 6
+        h=np.degrees(np.arctan2(Y-cy,X-cx)); o[Y,X]=1 if 80<=h<=190 and zz!=18 else 6   # schouderschijf ligt op het lijf: rand rondom 6, geen zwarte boog (las als donkere vlek)
 np.save('zone_af.npy',zone); np.save('lin.npy',LIN)
 opslaan(o,'red.png')

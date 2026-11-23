@@ -21,13 +21,14 @@ THE GNOME PART (keep)
 - A soft, round, chubby pink body, like a ball. NOT muscular: no big biceps, no broad chest, no bodybuilder shape. Its heaviness comes from the rock on it and its old posture, not from muscles.
 - The lower half of the body including the legs is sky blue, like a garden gnome's trousers, with a thin dark-blue line on the border. This is NOT clothing, just a second body color.
 - Feet: the same simple, rounded, sky-blue feet, a bit big, with a thin dark rock sole underneath each foot, like the sole of a shoe. The foot itself stays blue and round; only the sole is rock. No toes.
-- A simple dark belt around the waist with a small square buckle.
+- A simple dark belt around the waist with a small square buckle. The belt is surrounded by rocks growing out of the body (see the rock part).
 - Its free arm (the one without the stick) is a thin, short pink oval arm ending in a round, chubby ball-shaped pink hand. Not muscular.
 
 THE ROCK PART
 - Posture: hunched forward with age, taking a slow, heavy step, leaning on its stick. An old, seasoned hiker.
 - Stick arm: one arm has turned to stone from the shoulder down, and its fist has grown into a long rock walking stick. Fist and stick are ONE single piece of rock: there is no hand gripping a stick, no fingers, no visible border between fist and stick; the stone forearm simply continues and grows down into the stick.
 - Cap and back are one rock mass: the cap has the droopy pointed shape of a soft gnome cap (NOT tall, NOT straight up), but is made of dark rough rock; its tip hangs down behind and fuses with a rocky ridge growing out of its shoulders and back.
+- Back and belt: the rocks on its back continue down to the belt and run along it, so the belt is surrounded by rocks growing out of the body, above and below it. Back ridge and belt rocks are one connected band of rock growing out of the skin.
 - The cap comes down low over the face: its lower edge overlaps and covers the top of the nose. The cap touches the nose directly, so there is NO dark band, gap, slit or shadow between cap and face, and nothing that could read as eyes.
 - Where pink skin meets rock (shoulders, back, the stone arm) the border is jagged, with cracks running into the skin. The rock grows out of it, nothing is stuck on.
 - Beard like a rockslide: one heavy beard of light grey angular rock layers, from under the nose down to the belt, with a broken, angular bottom edge. Mustache part of it. NO mouth visible.

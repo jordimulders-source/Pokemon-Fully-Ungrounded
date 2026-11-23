@@ -1,7 +1,7 @@
 import sys
 from PIL import Image, ImageDraw
 # gebruik: crop.py uit.png naam:x0:y0 ...  (14x14 uitsnede, 16x, met coördinaten)
-S=22; N=10
+S=24; N=10
 items=[a.split(':') for a in sys.argv[2:]]
 W=Image.new('RGB',(len(items)*(N*S+30)+30,N*S+50),(255,255,255)); d=ImageDraw.Draw(W)
 for i,(n,x0,y0) in enumerate(items):

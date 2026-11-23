@@ -121,3 +121,4 @@
 - 2 ogen r5 (`claydol_2ogen/r5/`): ogen/neus naar de r7-posities (I1 = middelpunten als r7: links −4, rechts −6, neus 3 breed; I2 = blok −4), rode lijn uit r7 die doorgolft (A: derde boog even groot; B: smaller, perspectief), 42 losse rode pixels weg, rechterkant = crackreliëf uit U5. Maker: I1A.
 - Jordi over r5: "wat beter, maar het is nog steeds niet heel mooi".
 - Jordi: "midden is geen optie die is echt ziek lelijk" (vraag Claude: midden = U5 op het vel van r5?).
+- Jordi: "onder de ogen is te rommelig, daar kunnen we wat meer het gemini model proberen na te maken, smoothed out, maar dan met wat cracks. Rode lijn moet misschien ipv die laatste golf een smooth overgang worden naar een horizontale lijn (in perspectief), de neus klopt niet helemaal meer" → r6 (onderkop naar r7-toonverdeling + enkele cracks; varianten lijnovergang en neus).

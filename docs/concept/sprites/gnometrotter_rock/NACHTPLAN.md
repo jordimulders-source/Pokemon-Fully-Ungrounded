@@ -31,3 +31,4 @@ Jordi (letterlijk): "nee ik wil toch kijken of het lukt om een hybride vorm te m
   - Referenties (eerste frame van `graphics/pokemon/<soort>/anim_front.png`): Ice: regice, glalie, snorunt, avalugg, bergmite, cryogonal, vanillish. Grass/hout: nuzleaf, shiftry, seedot, trevenant, phantump (Jordi: "sudowoodo en bonsly zijn niet van hout"). Rock: regirock, graveler, golem.
 - Jordi (23 nov): "en kijk vooral hoe je de vorm kan creëren zonder de kleur te veranderen van het roze en blauw" (materiaal op het lijf via vorm, niet via andere kleuren; roze en blauw blijven de Gnomad-kleuren)
 - Jordi (23 nov): "je mag de gesp trouwens bij rock en ijs weglaten"
+- Jordi (23 nov, gesp): "is bij grass ook en ziet er prima uit" (Grass heeft geen gesp; zo laten)

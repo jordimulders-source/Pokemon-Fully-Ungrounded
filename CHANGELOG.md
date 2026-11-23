@@ -3037,3 +3037,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.729] - Regionale Cacnea-lijn: start (overleg)
 - Nieuwe map `docs/concept/sprites/cacnea_regional/` met SPEC (Jordi's keuzes: Cacnea yareta, Cacturne Copiapoa, Rock/Grass → Rock/Grass, "is steen", Cacturne herkenbaar met dezelfde ledematen maar stockier, de hoed verandert), Gen 3-referenties en een concept-startprompt voor Cacnea (r1, nog niet gebruikt).
 - Open: houden we yareta → Copiapoa, of Copiapoa in beide fases; waarin de hoed verandert.
+
+### [v0.0.730] - Regionale Cacnea: Copiapoa, yareta los
+- Besloten (Jordi): yareta wordt een eigen Rock-lijn; de regionale Cacnea wordt Copiapoa (Grass/Ground) en evolueert in een nieuwe Pokémon (Ground/Dark). SPEC herschreven, IDEEEN en TODO bijgewerkt, nieuwe Cacnea-prompt r2 (`cacnea_regional/gemini/PROMPT_cacnea_r2.md`).

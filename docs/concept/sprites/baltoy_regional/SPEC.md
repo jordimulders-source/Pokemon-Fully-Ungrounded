@@ -97,3 +97,4 @@
 - Jordi bevestigt A: "ja A hij is een stuk slechter gewordne" (= ons samengestelde model is slechter dan de Gemini-plaatjes zelf).
 - **Les (Claude):** een model samenstellen/verschuiven uit Gemini-stukken maakte het slechter (bolletjes, staven); eerst het Gemini-plaatje ongewijzigd ombouwen, pas daarna verbeteren.
 - Gemini r3 ongewijzigd omgebouwd (`claydol_gemini_r3/claydol_g3.png`): natief 73×72 → 64×64 door 8 rijen/9 kolommen te schrappen (binnenkant van de ogen, rustige plekken), 71 px hergekleurd (ruis/buitenlijn), silhouet = model, staven los (3 componenten), palet r19 (lijntint donkerder). Zwak (maker): steen 4 tinten, onderkop druk met barstjes, rechterstafkop iets spitser. Naar Jordi om te kijken hoe het beter kan.
+- Jordi: "Dat is echt helemaal niet slecht, maar ik ben het eens met wat je zegt" → r2 van deze lijn: de 4 zwakke punten (onderkop rustiger, steen ≤3 tinten, rechterstafkop naar het model, lichtrood minder fel).

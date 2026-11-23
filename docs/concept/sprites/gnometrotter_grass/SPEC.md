@@ -10,3 +10,4 @@
 - r1 (`r1/gemini_r1.png`, prompt v1): "echt heel vet de grass, maar de stok moet bij alle 3 in dezelfde hand"
 - 23 nov (alle drie de vormen): "en we moeten zorgen dat ze allemaal even groot worden de sprites"
 - 23 nov: "zoals bij wormadam" → in de spritefase: zelfde hoogte, voetlijn en lijfmaat voor alle drie; alleen het materiaal verschilt.
+- 23 nov: "hooguit paar pixels afwijking"

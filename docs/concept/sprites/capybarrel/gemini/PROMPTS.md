@@ -81,3 +81,13 @@ AVOID: realistic animal look, plush toy / Neopets look, beaver look, standing up
 
 ## Ronde 3 (23 nov)
 - `r3/capybarrel_r3.png`: Jordi: "ok op oog na vind ik hem prima". Beste versie tot nu toe; alleen het oog nog.
+- Oog, Jordi (23 nov): "geen cute neopets oog maar een lui capybara oog pokemon stijl".
+
+## r4 (zelfde gesprek of nieuw gesprek met `r3/capybarrel_r3.png` als bijlage; alleen het oog)
+```
+The attached image is CAPYBARREL, an original Pokemon. Keep everything exactly the same: pose, barrel, body, colors, nose, teeth, ears, legs, outline, size.
+
+Change only the eye: no cute big round Neopets eye, but a lazy capybara eye in Pokemon style. A heavy, relaxed upper eyelid covers the top half of the eye, so it looks half-closed and sleepy-calm; a small dark pupil under the eyelid, at most a tiny highlight. Same position on the head as now.
+
+Style: official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 colors, dark outline, white background.
+```

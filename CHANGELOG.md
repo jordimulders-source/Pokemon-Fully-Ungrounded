@@ -2881,3 +2881,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.693] - Capybarrel: r3 op het oog na goed
 - `capybarrel/gemini/r3/`: r3 bewaard; Jordi: "ok op oog na vind ik hem prima".
+
+### [v0.0.694] - Capybarrel: prompt r4 (oog)
+- `capybarrel/gemini/PROMPTS.md`: Jordi's oogwens en een prompt die alleen het oog verandert.

@@ -750,3 +750,4 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - **Jordi (23 nov):** "maar 1 is gewoon thundurus. Ik zou idd nog voor een gletsjer willen gaan en een japans masker legendary trio (kitsune (en ja ik weet dat er al kitsune pokemon zijn), hannya en een kabuki mask)".
 - **Claude (open):** immersie: Brazilië (São Paulo, Liberdade) en Peru hebben grote Japanse gemeenschappen (Nikkei). Let op: kabuki gebruikt meestal geen maskers maar *kumadori*-schmink (rood = held/kracht, blauw = schurk, bruin = bovennatuurlijk); kitsune- en hannya-maskers komen uit Noh en festivals. Overlap: Ogerpon (maskers, niet in de dex).
 - **Jordi (23 nov, over de Nikkei-koppeling):** "niet alles hoeft zuid amerika te zijn". "wederom". Dus: bij legendaries geen Zuid-Amerikaanse koppeling zoeken als die er niet vanzelf is.
+- **Jordi (23 nov):** "maar je hebt ook kumadori maskers". Het kabuki-lid wordt dus een kumadori-masker.

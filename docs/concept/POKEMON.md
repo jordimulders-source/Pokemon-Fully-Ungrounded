@@ -86,7 +86,7 @@ Modeltekeningen in `docs/concept/ontwerp/<soort>/` (concept A/B/C + ONTWERP.md).
 | 7 | Iguazú | waterval, slang/draak, watervallen als vleugels, regenboog | open | gekozen (23 nov) |
 | 8 | Zwart gat | ruimte | open | idee ("eigenlijk nog wat logischer" dan ster → zwart gat) |
 | 9 | Gletsjer | gletsjer | open | gekozen (23 nov) |
-| 10–12 | Japans maskertrio | kitsune, hannya, kabuki mask | open | gekozen (23 nov) |
+| 10–12 | Japans maskertrio | kitsune, hannya, kabuki mask (kumadori-masker) | open | gekozen (23 nov) |
 
 Nog 2 of 3 erbij, max (Jordi, 23 nov); kandidaten in `IDEEEN.md`. Eerder genoemd in de concepten, niet in het rijtje ("wordt wel heel veel slangen"): Cai Cai Vilu / Tren Tren Vilu (Mapuche-duo zee/aarde, `MYTHOLOGIE.md`).
 

@@ -50,3 +50,4 @@
 - Jordi bij r8: "wat is er gebeurd met het hoofd?", "lekker opnieuw tekenen want dat kan je zo goed". Kop in r8 hertekend (rechte plank, zaag stekels), fout in Claudes opdracht ("maak de vorm netjes"). r9: kop opnieuw uit het model.
 - Jordi daarna: "gewoon het model volgen", "je moest alleen de ogen een paar pixels aanpassen" → r9 = kop van r7 pixelgelijk, alleen ogen een paar pixels puntiger; rest r8.
 - r9 (`sprite_r9/`): kop = r7 pixelgelijk, alleen ogen 4 px (wig met punt naar het midden; A met pupil, B zonder); rest = r8 (schild A of B). Naar Jordi: `sprite_r9/r9_keuze.png`.
+- Jordi bij r9: "het hoofd is gewoon nog steeds niet zoals het model en hij kijkt scheel" → r10 (verse maker): kop opnieuw als verkleining van het model (silhouet = modelmasker, overlay per rij), ogen als gespiegelde schuine spleten (boze V), rest = r9 A_A.

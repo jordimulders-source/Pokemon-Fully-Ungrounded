@@ -2896,3 +2896,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Gnometrotter (Rock-vorm, Fairy/Rock): frontsprite af (`docs/concept/sprites/gnometrotter_rock/af/gnometrotter_rock.png` = sprite_r15), op het overzichtsvel (New, na Gnomad). Model Gemini r8; vormen bevroren op r7b; daarna alleen belijning/tinten/schaduw (r8–r11, eindkeuring PASS), ronde neus (r12) en Jordi's krabbel per pixel (r15). Ice en Grass volgen op dezelfde manier.
 - Definitieve eindkeuring Gnometrotter Rock r15: PASS zonder reparaties (`gnometrotter_rock/keuring_r15/`). Overdracht voor Ice/Grass: `gnometrotter_rock/OVERDRACHT_ICE_GRASS.md`.
 - Gnometrotter Rock toch nog niet af (Jordi: "nee die is nog niet af" · "dat is nog niet mooi"); laatste stand sprite_r16.
+
+### [v0.0.693] - Gnometrotter Rock af (r17)
+- Na r15: neusboog 1 px (r16) en in zeer donker roze i.p.v. zwart (r17; index 12, blauw hooglicht → 11). Jordi: "links is af nu". In `af/` en op het overzichtsvel.

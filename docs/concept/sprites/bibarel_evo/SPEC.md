@@ -20,6 +20,7 @@
 - r6 (`gemini/r6.png`), Jordi: "potlood is weg, helm wel iets beter, maar nog steeds net iets teveel een losse helm denk ik". Bijstuurprompt r7 (zelfde gesprek): `gemini/PROMPT_r7_bijsturen.md`. Terugval: potloodstam uit r4 in de spritefase erop plakken.
 - r7 (`gemini/r7.png`, helm weg, stam onveranderd), Jordi: "nu is die kaal".
 - Keuze (23 nov): samenstellen uit de rondes; lijf/pose r4, kop r6 met de donkere lijn onder de rand eruit. Daarna Jordi: "en hij lijkt niet voldoende een bibarel evo"; "en het is geen potlood".
+- Toelichting Jordi: "nee ik bedoel dat het geen fase 3 is nog genoeg"; "geen potlood" gaat over r6/r7. Methode: "wat werkt het beste? hebben 80 designs gemaakt, mag hopen dat je ondertussen een beste manier weet" → nieuwe startprompt r8 (`gemini/PROMPT_r8.md`), daarna samenstellen.
 
 ## Open
 - Welke suggesties (Claude, 23 nov): 1 oranje beiteltanden, 2 staart als troffel, 3 schepklauwen, 4 sjouwt tak/stam of modder tegen de borst, 5 knagend aan een stam, 6 waarschuwingskleuren (geel-zwarte staart), 7 helm van modderkorst/twijgjes.

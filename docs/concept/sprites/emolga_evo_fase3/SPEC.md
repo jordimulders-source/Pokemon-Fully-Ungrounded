@@ -7,3 +7,4 @@
 - Jordi (23 nov): "Emolga krijgt dus 2 evoluties" (eerder: "fase 3", "3e vorm in de emolga lijn").
 - Besloten (Jordi, 23 nov): vleermuislijn vervalt; fase 3 is Electric/Flying.
 - Jordi (23 nov): "moche vertaalt niet goed, gewoon een normale fruitvampier. maar wel duidelijk maken dat die in de emolga lijn zit". → Jordi: "nee from scratch" → r3 = nieuwe startprompt (`gemini/PROMPT_r3.md`) = r2 +: oogvlek als vizier + lange puntige oren van fase 2 (keuze Claude), naam Emolga niet genoemd.
+- Over r3: "aardig design, alleen: in het gezicht moet wat geel terugkomen · de tak bovenin moet weg · Vertaalt zo'n verticaal model goed naar een sprite?" → r4 bijsturen in het r3-gesprek (`gemini/PROMPT_r4_bijsturen.md`).

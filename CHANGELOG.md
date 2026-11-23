@@ -2866,3 +2866,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.688] - Capybarrel-evolutie: puur Normal
 - `IDEEEN.md`: de kart-evolutie is puur Normal (Jordi).
+
+### [v0.0.689] - Capybarrel: 2 fases
+- `IDEEEN.md`: lijn van 2 fases (Jordi).

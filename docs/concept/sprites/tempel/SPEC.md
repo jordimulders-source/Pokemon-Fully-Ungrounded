@@ -23,3 +23,5 @@ Static encounter, geen legendary. Type: Ghost/Rock. Single stage (Jordi, 23 nov:
 - r3 (`r3/gemini_v3.webp`), Jordi: "lijkt dit op een echte tempel?" (Claude: deels; de getrapte toren met overstekende randen en een stenen plat dak is niet Inca).
 - Jordi over r3: "ik vind het denk ik iets te simplistisch"; bevestigt Claudes punt "Een toren van gestapelde verdiepingen bouwden de Inca's niet ... Dit doet eerder denken aan een ziggurat of een fantasietempel": "dit ja, dat bedoel ik". Keuze (meerkeuze): **tempel op terrassen** (Machu Picchu/Pisac: tempelgebouw van één laag bovenop een paar landbouwterrassen).
 - Prompt v4: `gemini/PROMPT_v4.md` (zonder strodak; dat was "eventueel" en is niet gekozen).
+- r4 (`r4/gemini_v4.webp`), Jordi: "nu een beetje een maya tempel he" (Claude: door de trap in het midden, die Claude zelf had toegevoegd, en de getrapte vorm).
+- Prompt v5: geen trap, lange lage gebogen terrassen breder dan de tempel. v5b: idem + stenen puntgevels (voorstel Claude, niet van Jordi).

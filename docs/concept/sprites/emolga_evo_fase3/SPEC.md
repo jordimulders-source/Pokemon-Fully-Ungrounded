@@ -13,3 +13,4 @@
 - Over r5: "slechter geworden" (Claude: niet breder geworden, ±23 px; grijsblauwe oogvlek verdwenen; geel kin nu een driehoekje). r4 blijft de beste.
 - Jordi "akkoord" → r6 nieuwe startprompt (`gemini/PROMPT_r6.md`): r3 + 2,3:1 + gezicht van r4 (kin wit). Lukt het niet: r4 als model, breedte in de spritefase.
 - Over r6: "weer stapje beter, al twijfel ik over de kleur van het 'masker'". Claude: breedte weer ±23 px (Gemini negeert de maat); masker r6 lichter staalblauw (±111,132,154) dan het vizier van fase 2 (donker leigrijs uit de zwarte ramp, `emolga_evo/af/model.png`). Kleur kan in de spritefase zonder nieuwe Gemini-ronde.
+- Jordi: "leest die voldoende als een evo?" → Claude: half (geen zwarte kap, bijna geen geel). Jordi "Alle 3 akkoord": A kap met V, B vleugels iets open met geel vlak, C oogvlek leigrijs → r7 nieuwe startprompt (`gemini/PROMPT_r7.md`).

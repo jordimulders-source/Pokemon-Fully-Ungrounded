@@ -9,3 +9,6 @@ Citaten en besluiten (Jordi, 23 nov); het overzicht staat ook in `docs/concept/I
 - **1 oog** (Jordi).
 - "we doen nu alleen de designs": evolutiemethode, lore, namen later.
 - Open: kleuren (niet besproken; in r1 laat Claude Gemini kiezen).
+
+## Fase 1 rondes
+- r1 (`fase1/gemini/r1.png`): "conceptueel prima idee, maar dit is teveel detail". Claude: paneelnaden, koperen vlekken, schoteltjes op de antennepunten, 4e korte antenne, drie ringen rond het oog → r2 nieuwe startprompt zonder die details (zelfde concept en kleuren).

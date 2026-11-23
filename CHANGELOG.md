@@ -3033,3 +3033,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Twee ogen (Jordi: drie ogen staan van voren gek): samengestelde koppen werden een lappendeken; Gemini-bewerkingen van de eigen sprite tekenden alles opnieuw; doorbraak = de kop van Gemini r10 (één bron) op ons r3-ontwerp (`claydol_r10kop/`), daarna neus en ogen uit de 3-ogenversie, rode lijn om het rechteroog, kop- en lijfshading, eindkeuring (alleen tinten), voeten met eigen ronding, rechtervoet 1 rij korter.
 - Af: `docs/concept/sprites/baltoy_regional/claydol_af/claydol_regional.png` (+ `_8x`), op het overzichtsvel (Regional forms).
 - Les bovenaan `docs/lessen/SPRITE_KERN.md`: "rustiger maken" = pixelblur; lessen in `GEMINI.md`.
+
+### [v0.0.729] - Regionale Cacnea-lijn: start (overleg)
+- Nieuwe map `docs/concept/sprites/cacnea_regional/` met SPEC (Jordi's keuzes: Cacnea yareta, Cacturne Copiapoa, Rock/Grass → Rock/Grass, "is steen", Cacturne herkenbaar met dezelfde ledematen maar stockier, de hoed verandert), Gen 3-referenties en een concept-startprompt voor Cacnea (r1, nog niet gebruikt).
+- Open: houden we yareta → Copiapoa, of Copiapoa in beide fases; waarin de hoed verandert.

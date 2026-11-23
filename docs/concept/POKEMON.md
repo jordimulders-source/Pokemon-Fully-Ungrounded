@@ -77,16 +77,16 @@ Modeltekeningen in `docs/concept/ontwerp/<soort>/` (concept A/B/C + ONTWERP.md).
 
 | # | Legendary | Thema | Type | Status |
 |---|---|---|---|---|
-| 1 | Hanan Pacha (trio) | bovenwereld, condor | Psychic/Flying of Fire/Flying (niet Cosmic, Jordi 23 nov) | condor besloten (9 nov) |
-| 2 | Kay Pacha (trio) | deze wereld, poema | open | poema besloten |
-| 3 | Uku Pacha (trio) | onderwereld, slang | open | slang besloten |
+| 1 | Hanan Pacha (trio) | bovenwereld, condor | Psychic/Flying (Jordi 23 nov) | condor besloten (9 nov) |
+| 2 | Kay Pacha (trio) | deze wereld, poema | Rock/Fighting (Jordi 23 nov: akkoord) | poema besloten |
+| 3 | Uku Pacha (trio) | onderwereld, slang | Ghost/Ground (Jordi 23 nov: akkoord) | slang besloten |
 | 4 | Pachamama | opper-legendary, Moeder Aarde; berg-idee goed + dierlijk wezen eraan koppelen; brilbeer en glyptodont "beide kunnen we proberen" (Jordi 23 nov) | Ground/Fairy ("ook een goede ja") | richting |
 | 5 | Water-regi | diepe zee, nieuw lid Regi-familie | Water? | besloten (23 nov) |
 | 6 | Cosmic-regi | ruimte, nieuw lid Regi-familie | Cosmic? | besloten (23 nov) |
 | 7 | Iguazú | waterval, slang/draak, watervallen als vleugels, regenboog | open | gekozen (23 nov) |
 | 8 | Zwart gat | ruimte | open | idee ("eigenlijk nog wat logischer" dan ster → zwart gat) |
 
-Eerder genoemd in de concepten, niet besproken: Cai Cai Vilu / Tren Tren Vilu (Mapuche-duo zee/aarde, `MYTHOLOGIE.md`).
+Nog 2 of 3 erbij, max (Jordi, 23 nov); kandidaten in `IDEEEN.md`. Eerder genoemd in de concepten, niet in het rijtje ("wordt wel heel veel slangen"): Cai Cai Vilu / Tren Tren Vilu (Mapuche-duo zee/aarde, `MYTHOLOGIE.md`).
 
 - **Trio: de drie Inca-werelden.** Hanan Pacha (bovenwereld, zon, goden) = **condor** (Jordi, 9 nov: "klinkt uitstekend"; dit is de condor-Pokémon); Kay Pacha (deze wereld) = **poema**; Uku Pacha (onderwereld, voorouders, oorsprong) = **slang**. Typen, namen en rol: open.
 - **Opper-legendary: Pachamama** (Moeder Aarde; "pacha" = wereld én tijd); de drie werelden zijn delen van haar. **Ground/Fairy maken: "ook een goede ja"** (Jordi, 8 nov; Ground/Fairy bestaat nog bij geen enkele soort). Type, naam en rol: open.

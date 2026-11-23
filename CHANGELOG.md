@@ -3054,3 +3054,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.735] - Pachamama: twee richtingen
 - Brilbeer-berg en glyptodont-berg worden allebei geprobeerd (Jordi).
+
+### [v0.0.736] - Types Pacha-trio besloten
+- Hanan Pacha Psychic/Flying, Kay Pacha Rock/Fighting, Uku Pacha Ghost/Ground (Jordi). Nog max 2–3 legendaries erbij; kandidaten in `IDEEEN.md`.

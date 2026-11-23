@@ -3039,3 +3039,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.730] - Legendaries-brainstorm ronde 2
 - Besloten (Jordi): de Water- en Cosmic-regi worden nieuwe leden van de Regi-familie, puur nieuwe designs. Nieuwe ideeën: zwart gat-legendary en waterval-legendary (opties van Claude in `IDEEEN.md`).
+
+### [v0.0.731] - Waterval-legendary: Iguazú
+- Jordi kiest Iguazú voor de waterval-legendary (slang/draak, watervallen als vleugels, regenboog ergens); voorlopig alleen nieuwe designs bespreken. `POKEMON.md`, `IDEEEN.md`.

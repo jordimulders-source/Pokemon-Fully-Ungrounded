@@ -3025,3 +3025,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Jordi (23 nov): "emolga moet in de dex idd" → `P_FAMILY_EMOLGA` weer aan (`species_enabled.h`, DEX_IN_ROM).
 - Jordi (23 nov): "regional forms komen naast het origineel" → in POKEMON.md (Regional forms).
 - Jordi (23 nov): "solrock evo is rock/cosmic" → SPEC, CONCEPT, overzichtsvel opnieuw gemaakt.
+
+### [v0.0.727] - Hoatzin voorlopig eruit, Pincurchin-regional Rock/Poison
+- Jordi (23 nov): "hoatzin mag voorlopig eruit, daar kregen we geen goed design voor elkaar" → doorgestreept in POKEMON.md/IDEEEN.md, weg uit TODO.
+- Jordi (23 nov): "pincurchin dacht ik aan een soort onderwater mijn, rock/poison" → POKEMON.md, IDEEEN.md, TODO.

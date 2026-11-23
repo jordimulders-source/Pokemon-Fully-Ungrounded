@@ -3019,3 +3019,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.725] - Merge naar main
 - Branch `claude/gallant-allen-ifpm5k` (Gnometrotter Ice af, Rock-neus, Grass tussenstand) naar main; conflicten in CHANGELOG/CLAUDE.md/GEMINI.md naar de main-versie, overzichtsvel opnieuw gemaakt.
+
+### [v0.0.726] - Regionale Pincurchin: ontwerpkeuzes en Gemini-prompt
+- Jordi (23 nov): Poison/Rock; "hybride, lijkend op een soort onderwater mijn" (pencil urchin + zeemijn); Pincurchins gezicht.
+- `docs/concept/sprites/pincurchin_regional/SPEC.md` en `gemini/PROMPT.md` (v1, bijlage = Pincurchins sprite 8× voor het gezicht). IDEEEN.md en POKEMON.md bijgewerkt.

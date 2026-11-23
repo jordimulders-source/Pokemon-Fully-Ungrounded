@@ -86,6 +86,8 @@ Modeltekeningen in `docs/concept/ontwerp/<soort>/` (concept A/B/C + ONTWERP.md).
 | 7 | Iguazú | waterval, slang/draak, watervallen als vleugels, regenboog | open | gekozen (23 nov) |
 | 8 | Gletsjer | gletsjer | open | gekozen (23 nov) |
 | 9–11 | Japans maskertrio | kitsune, hannya, kabuki mask (kumadori-masker) | open | gekozen (23 nov) |
+| 12 | Diepzee-legendary | angst voor het onbekende, bigfin squid (*Magnapinna*), post-game | Water | gekozen (23 nov); Gemini r1-prompt in `sprites/angst_onbekende/diepzee/gemini/` |
+| 13 | Ruimte-legendary | angst voor het onbekende, post-game | Cosmic | gekozen (23 nov) |
 
 **Zwart gat is geen legendary meer: de Cosmic-lijn (ster/supernova → zwart gat) wordt de pseudo** (Jordi, 23 nov: "1, cosmic lijn wordt de pseudo"); de pitahaya-lijn (Grass/Dragon) is daarmee geen pseudo meer ("qua type denk ik te zwak"). Nog 2 of 3 erbij, max (Jordi, 23 nov); kandidaten in `IDEEEN.md`. Eerder genoemd in de concepten, niet in het rijtje ("wordt wel heel veel slangen"): Cai Cai Vilu / Tren Tren Vilu (Mapuche-duo zee/aarde, `MYTHOLOGIE.md`).
 

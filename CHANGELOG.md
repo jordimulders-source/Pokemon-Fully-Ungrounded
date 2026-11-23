@@ -3066,3 +3066,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.739] - Cosmic-lijn wordt de pseudo
 - De ster → zwart gat-lijn (Cosmic) wordt de pseudo-legendary; het zwart gat gaat uit het legendary-rijtje. De pitahaya-lijn (Grass/Dragon) is geen pseudo meer. `POKEMON.md`, `IDEEEN.md`, pitahaya-SPECs.
+
+### [v0.0.740] - Angst-duo: twee legendaries, Gemini-prompt diepzee
+- Diepzee- (Water, bigfin squid) en ruimte-legendary (Cosmic), beide post-game, staan als 12 en 13 in het rijtje (`POKEMON.md`). Gemini-prompt r1 voor de diepzee-legendary in `docs/concept/sprites/angst_onbekende/diepzee/gemini/`.

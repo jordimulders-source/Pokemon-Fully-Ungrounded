@@ -67,3 +67,4 @@
 - r15 (maker, 2×) leek nog op r13. r16 (Claude): stekel per laag uit het model opgebouwd (hals, bovenvlak van bovenaf, breedste rand, kegel licht links/donker rechts, platte tip), figuur 2 px omhoog voor ruimte; rest = r13.
 - Jordi over r16: "de arm rechts heeft opeens een stuk weggeknipt en de stekel klopt nog steeds niet, het is een 2d vlak wat niet past bij de rest van de sprite, hij moet meer naar verhouding en met netter kleurgebruik, waarom is dit zo moeilijk" · "is dit een vereiste voor de tiwanaku? anders gewoon van de originele baltoy pakken want dit duurt echt lang". r17 = r13 (armen heel) + tolpunt van de Gen 3-Baltoy 1-op-1 (3 rijen), in onze steentinten.
 - Stekel 0/1/2 px naar links ter vergelijking (`sprite_r17/stekel_links_vergelijk.png`). Jordi: "ik vind de rest van de sprite wel vrij prima".
+- Jordi: "de middelste mag naar de eindkeuring" → r18 = r17 met stekel 1 px links (`sprite_r18/`).

@@ -2902,3 +2902,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.697] - Emolga-evolutie: prompt r6 (colugo) + fruitvampier-idee
 - `emolga_evo/gemini/PROMPT_r6.md`: colugo als anatomie. Jordi's idee fruitvampier als 3e vorm van de Emolga-lijn in IDEEEN.md.
+
+### [v0.0.698] - Emolga-evolutie: prompt r7 (reuzenvliegende eekhoorn)
+- r6 (colugo) "vrij ok"; `PROMPT_r7.md` met Petaurista als anatomie.

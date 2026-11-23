@@ -92,3 +92,4 @@
 - Keuring r1 (verse keurder): BIJNA (krans-bolletjes onderaan afgesneden/doosje, 2 roze pixels).
 - r2 (`claydol_sprite_r2/`; ogen+neus 2 natieve px rechts (varianten 1/3 px op het vel), facetboog over het uitgewiste oog, krans = één bolletje-asset uit het model, spikkels → tintvlakken, staven 1 px vrij van de rand). Claude: krans is slechter (modelbolletje is niet rond: hobbelig, plat, inkeping, overlappend), gezicht/lijf nog vlekkerig → r3 met verse maker.
 - Jordi over r2: "de twee stokken zitten ook vast aan het lijf, dat is in het model ook niet" → doorgegeven aan de maker van r3 (staven als losse componenten, script-check).
+- Jordi: "maar wat je zegt, het model klopt sowieso niet" (vraag van Claude: welke delen).

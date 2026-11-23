@@ -71,6 +71,14 @@ def lijf(S):
     S[m]=T[m]; return m
 
 VAST=(np.isin(B,(7,8,9)))&LIJF          # tekening die moet blijven (rood mag 8/9 wisselen)
+G3R5=np.array(Image.open(os.path.join(H,'../../claydol_gemini_r3/r5/claydol_g3r5_paletB.png'))).astype(int)
+def neus(S):
+    """neus pixel voor pixel = g3r5 (1 px lager): de 5 randpixels waar de oogringen overheen vielen terug naar g3r5;
+       ring van het linkeroog wijkt 1 px naar links (x21, y23-25); rechterring lag al dubbel (x28) en blijft"""
+    M=np.zeros((64,64),bool)
+    for x,y in ((22,23),(22,24),(22,25),(27,25),(27,26)): S[y,x]=G3R5[y-1,x]; M[y,x]=True
+    for y in (23,24,25): S[y,21]=6; M[y,21]=True
+    return M
 def bouw(k):
     S=B.copy()
     oud=golf(0); nieuw=golf(k); O=onderlaag()
@@ -80,8 +88,9 @@ def bouw(k):
         ys=np.where(nieuw[:,x])[0]
         if len(ys) and x<=36: C[ys[0],x]=8
     erbij=nieuw&KIN; S[erbij]=C[erbij]
+    nz=neus(S)
     lm=lijf(S)
-    return S,weg|erbij,lm
+    return S,weg|erbij|nz,lm
 
 def check(S,zone,lm):
     assert ((S>0)==(B>0)).all(),'silhouet'
@@ -97,3 +106,10 @@ if __name__=='__main__':
     for k in (2,3):
         S,z,lm=bouw(k); check(S,z,lm); save(S,os.path.join(H,'claydol_r10kop_r5_bocht%d'%k))
         d=(S!=B); print('k',k,'lijn px',int((d&z).sum()),'lijf px',int((d&lm).sum()),'rood weg',int((golf(0)&~golf(k)&KIN).sum()),'rood erbij',int((golf(k)&~golf(0)&KIN).sum()))
+
+def lever(k=2):
+    S,z,lm=bouw(k); check(S,z,lm); save(S,os.path.join(H,'claydol_r10kop_r5'))
+    d=S!=B
+    nz=np.zeros((64,64),bool); nz[23:27,21:28]=True
+    print('r5 = bocht %d; afwijkend van r4: totaal %d | lijn %d | neus+ring %d | lijf %d | elders %d'%(k,d.sum(),(d&z&~nz).sum(),(d&nz).sum(),(d&lm).sum(),(d&~z&~lm).sum()))
+    print('silhouet gelijk:',((S>0)==(B>0)).all(),' staven/krans/punt (buiten KIN en LIJF) diff:',int((d&~KIN&~LIJF).sum()))

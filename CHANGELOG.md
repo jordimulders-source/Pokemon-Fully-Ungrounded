@@ -2821,3 +2821,8 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.674] - Vuurduivel fase 2: frontsprite af
 - Jordi over r4: "uitstekend". Af: `docs/concept/sprites/vuurduivel_fase2/af/vuurduivel2.png` (+ `_8x`); op het overzichtsvel (sectie New, na fase 1). De vuurduivel-lijn is daarmee af (namen open).
+
+### [v0.0.675] - Pinsir-evolutie gestopt
+- Pinsir-evolutie (Bug/Ground, sabeltandboktor-kaiju) ontworpen met Gemini: model v1 (r1–r4, kaken omgekleurd naar donker roodbruin) en na 11 sprite-rondes een eenvoudiger model v2 (v2_r1–r7; dekschild weg, v2_r4 gekozen). Sprite v2 r1–r7 met keurder (PASS op r7).
+- Jordi: "ik ben er wel een beetje klaar mee, er zit gewoon totaal geen vooruitgang in, we stoppen". Gestopt; alles bewaard in `docs/concept/sprites/pinsir_evo/` (SPEC.md met alle citaten). Niet in de ROM.
+- Lessen in `docs/lessen/GEMINI.md`: model pas bevriezen na de 64-px-proef; "maak de vorm netjes" = hertekenen; methode in ronde 1 kiezen en vasthouden, keurder vanaf ronde 1.

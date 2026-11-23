@@ -83,3 +83,7 @@
 - Keuring v2 r6 (`sprite_v2_r6/KEURING.md`): BIJNA; hoofd opgelost, arm en nabije knie half; reparaties: korrel (61 vlakjes), bovenarm lichter, gesloten kniering, 1 randpixel. r7 = die reparaties.
 - v2 r7 (`sprite_v2_r7/`): de 4 keurderreparaties (89 px). Naar korte herkeuring.
 - Herkeuring v2 r7 (`sprite_v2_r7/KEURING.md`): **PASS**. Naar Jordi: `sprite_v2_r7/naar_jordi.png`.
+
+## Gestopt (23 nov)
+- Jordi bij r7 (PASS van de keurder): "ik ben er wel een beetje klaar mee, er zit gewoon totaal geen vooruitgang in, we stoppen".
+- Stand: model v1 r4B (11 sprite-rondes) en model v2_r4 (7 sprite-rondes, laatste `sprite_v2_r7/pinsir_evo_v2_r7.png`, keurder PASS). Niet in de ROM, niet op het overzichtsvel.

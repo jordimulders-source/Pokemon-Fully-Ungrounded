@@ -2893,3 +2893,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.694] - Emolga-evolutie: aanpak r4
 - r3 afgekeurd; r4 vertrekt van r2 als bijlage met max. 2 wijzigingen per ronde (`emolga_evo/gemini/PROMPT_r4.md`).
+
+### [v0.0.695] - Emolga-evolutie: prompt r4 naar het Skinguin-voorbeeld
+- `emolga_evo/gemini/PROMPT_r4.md` herschreven als nieuwe startprompt in Skinguin-opbouw (geen bijlage); les in `docs/lessen/GEMINI.md`.

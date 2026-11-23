@@ -28,3 +28,5 @@ Static encounter, geen legendary. Type: Ghost/Rock. Single stage (Jordi, 23 nov:
 - r5: `r5/gemini_v5.png` (zonder gevels), `r5/gemini_v5b.png` (met gevels). Beide liggend/breed (1024×559).
 - Jordi stuurt eigen foto's van een Inca-ruïne, "de laatste middag van de inca trail" (`referenties/jordi_incatrail_*.webp`; waarschijnlijk Wiñay Wayna): "Kunnen we hier niet iets mee?"
 - Prompt v6 (Claude, uit de foto's): ruw stapelwerk i.p.v. gepolijste veelhoeken, hoge puntgevels met stenen pinnen, mos/gras op de muren, deur met stenen latei, twee rechthoekige raampjes als ogen, lage terrasmuren.
+- r6 (`r6/gemini_v6.webp`), Jordi: "maar dit is niet wat ik bedoel, het toffe is dat die tempels gelaagd op bergen worden gebouwd, het zou vet zijn om daarom een tempel te hebben die dus ook gelaagd is alsof die op een bergwand staat, met de ingang onderin en de rest van de tempel een paar terraslagen".
+- Prompt v7: gelaagd tegen een bergwand, ingang onderin (mond, raampjes erboven = ogen), daarboven 2–3 asymmetrische terraslagen met ruïnes met puntgevels, geen trap. Ruw stapelwerk en mos van v6 behouden.

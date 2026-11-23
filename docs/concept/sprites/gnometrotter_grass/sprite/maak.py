@@ -10,6 +10,19 @@ import numpy as np; from scipy import ndimage as nd
 from gemeen import *
 zone=np.load('zone.npy'); kl=np.load('lijnkans.npy')
 fg=zone>0; rank={p:i for i,p in enumerate(PRIO)}
+# onderdeelkaart opschonen: eilandjes van <= 3 px van een onderdeel (randruis van de meerderheidsstem, bv. mutsrand tussen
+# neus en haar R) gaan naar het onderdeel dat er het meest omheen ligt (twijgblaadjes en knoesten uitgezonderd: die zijn echt klein)
+OPGESCHOOND=[]
+for z in list(ZNAAM):
+    if z in (16,17): continue
+    lab,n=nd.label(zone==z)
+    for i in range(1,n+1):
+        m=lab==i
+        if m.sum()>3: continue
+        r=nd.binary_dilation(m)&~m&fg; t=zone[r]
+        if len(t):
+            nz=np.bincount(t).argmax(); zone[m]=nz; OPGESCHOOND+=[(int(X),int(Y),ZNAAM[z],ZNAAM[nz]) for Y,X in zip(*np.where(m))]
+print('onderdeelkaart opgeschoond',len(OPGESCHOOND),OPGESCHOOND)
 N4=((1,0),(-1,0),(0,1),(0,-1))
 def binnen(Y,X): return 0<=Y<64 and 0<=X<64
 OUT=np.zeros((64,64),bool)
@@ -52,7 +65,6 @@ for Y,X in zip(*np.where(fg)):
     if RAMP[z] in (ROZE,BLAUW):   # roze en blauw hout: Gen 3-volume (model is daar vlak)
         b=BOL[Y,X]; g=((cz[b][1]-X)*0.6+(cz[b][0]-Y)*0.8)/sz[b]          # licht van linksboven over de hele bol
         o[Y,X]=li if g>-0.45 else sch
-        if z==6 and g>1.25: o[Y,X]=15                                     # hooglicht linksboven op de buik
         if z==6 and binnen(Y-1,X) and zone[Y-1,X] in (1,2,3,4,5): o[Y,X]=sch   # slagschaduw onder muts, haar, baard en neus
     else:                         # blad en schors: toon uit het model (lichte/donkere bladhelften, schors)
         o[Y,X]=vlak[Y,X] if vlak[Y,X] in (li,sch) else (li if lum(PAL[vlak[Y,X]])>lum(PAL[sch]) else sch)
@@ -76,7 +88,18 @@ for _ in range(2):
         c=np.bincount(t,minlength=16)
         if c[o[Y,X]]<=1 and c.max()>=3: o2[Y,X]=c.argmax()
     o=o2
-# ronde delen (neus, hand R, vuist L, elleboogschijf R): rand rondom outline base 6, zwart als boog linksmidden-linksonder-ondermidden (Gnomini r10);
+# tintvlekjes < 3 px binnen een stuk -> meest voorkomende buurtint van hetzelfde stuk (ruis); kleine stukken zelf (twijgblaadjes, knoesten) blijven
+for _ in range(2):
+    for k in (3,4,7,8,10,11,12,13,14):
+        lab,n=nd.label((o==k)&fg&~LIN&~OUT,structure=np.ones((3,3)))
+        for i in range(1,n+1):
+            m=lab==i
+            if m.sum()>=3: continue
+            ys,xs=np.where(m); st=stuk[ys[0],xs[0]]
+            if psz[st]<=4 or zone[ys[0],xs[0]] in (16,17): continue
+            r=nd.binary_dilation(m,structure=np.ones((3,3)))&~m&(stuk==st); t=o[r]; t=t[t!=k]
+            if len(t): o[m]=np.bincount(t).argmax()
+# ronde delen (neus, hand R, vuist L, elleboog- en schouderschijf R): rand rondom outline base 6, zwart als boog linksmidden-linksonder-ondermidden (Gnomini r10);
 # hooglicht 15: 2 px linksboven in het stuk
 for zz in (5,9,19):
     m=zone==zz; yy,xx=np.where(m); cy,cx=yy.mean(),xx.mean(); rad=np.sqrt(m.sum()/np.pi)
@@ -93,7 +116,7 @@ def normaal(Y,X):
             if (dy or dx) and (not binnen(Y+dy,X+dx) or not fg[Y+dy,X+dx]): v+=(dx,dy)
     n=np.linalg.norm(v); return v/n if n else v
 for Y,X in zip(*np.where(OUT)): o[Y,X]=BASIS[zone[Y,X]] if normaal(Y,X)@LICHT>0.35 else 1
-for zz in (5,9,19,8):
+for zz in (5,9,19,8,18):
     m=zone==zz; yy,xx=np.where(m); cy,cx=yy.mean(),xx.mean()
     rand=m&nd.binary_dilation(~m,structure=np.array([[0,1,0],[1,1,1],[0,1,0]]))
     for Y,X in zip(*np.where(rand)):

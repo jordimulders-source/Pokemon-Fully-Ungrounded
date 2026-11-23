@@ -34,3 +34,7 @@
 - Over r6 (colugo): "ok dat is vrij ok, probeer nu die reuzen vliegende eekhoorn" → r7 = r5 met Petaurista.
 - Over r7 (Petaurista): "deze is minder goed gelukt". Beste tot nu toe: r6 (colugo, "vrij ok") en r5 ("wel al wat beter").
 - Jordi: "En als we voor een fase 3 fruitvampier gaan die op zijn kop hangt met de vleugels gesloten?" (vragen gesteld, zie chat 23 nov).
+
+## Keuze fase 2 (Jordi, 23 nov)
+- Over r6 (colugo): "dit is een prima design, beetje finetunen en dan doen we die, hij moet sowieso naar beneden duiken" · "en dan wordt de fruitvampier fase 3".
+- Draaiproeven van r6 (45° en 65°, kop omlaag) in `model/r6_duikopties.png` (origineel links).

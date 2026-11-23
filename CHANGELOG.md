@@ -2917,3 +2917,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.702] - Emolga-lijn: 2 evoluties
 - Fase 3 fruitvampier r2 "gaat lukken"; Emolga krijgt 2 evoluties (Jordi).
+
+### [v0.0.703] - Emolga-lijn fase 2: r6 gekozen
+- r6 (colugo) is het design voor fase 2; draaiproeven en bijstuurprompt voor de duik. Fase 3 = fruitvampier.

@@ -17,3 +17,4 @@
 - 23 nov: "het enige wat nu wel zo is, is dat het roze/blauwe lichaam nu minder ijsblokken, houtvormen zijn" → `gemini/PROMPT_lijf_materiaal.md` (bijlage = eigen basis-rock-versie, één wijziging).
 - Bijstuurronde lijf (`r3/gemini_r3_lijf.png`): "nog niet wat we eerst hadden" → `gemini/PROMPT_twee_bijlagen.md` (pose Rock r8 + materiaal eerste versie).
 - Twee-bijlagen-ronde: "dit lukt niet"
+- 23 nov (Jordi, opdracht voor de nacht): "nee ik wil toch kijken of het lukt om een hybride vorm te maken. Dus je doet het volgende, je maakt eerst rock, dan doe je ijs en grass met dezelfde pose. Daarna ga je kijken of het lukt om alleen de onderdelen die in de hybride versies anders moeten te verplaatsen, zo netjes mogelijk. Ik ga nu slapen en wil morgen 5 eindsprites zien"

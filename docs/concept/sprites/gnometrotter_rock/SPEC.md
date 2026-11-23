@@ -51,3 +51,4 @@
 - 23 nov (alle drie de vormen): "en we moeten zorgen dat ze allemaal even groot worden de sprites"
 - 23 nov: "zoals bij wormadam" → in de spritefase: zelfde hoogte, voetlijn en lijfmaat voor alle drie; alleen het materiaal verschilt.
 - 23 nov: "hooguit paar pixels afwijking"
+- 23 nov (Jordi, opdracht voor de nacht): "nee ik wil toch kijken of het lukt om een hybride vorm te maken. Dus je doet het volgende, je maakt eerst rock, dan doe je ijs en grass met dezelfde pose. Daarna ga je kijken of het lukt om alleen de onderdelen die in de hybride versies anders moeten te verplaatsen, zo netjes mogelijk. Ik ga nu slapen en wil morgen 5 eindsprites zien"

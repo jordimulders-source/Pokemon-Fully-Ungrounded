@@ -120,3 +120,4 @@ Jordi: "ik denk dat dit ontwerp het niet gaat worden" – "het hele idee bedoel 
 - Jordi bij r19: "ja maar de schouderbal lijkt nu net wat teveel los van het lichaam, kijk naar de andere mr mimes. Het lichaamspatroon is nu geen v meer en amper zichtbaar" → r20 (verse maker): bal tegen de romp zoals Mr. Mime, V terug als V in perspectief (2 varianten).
 - Jordi over de V van r19: "verkeerd perspectief"; op Claude's vraag (andersom verkorten?): "ja hij staat toch in drie kwart" → r20: linker baan breder, rechter smaller, punt iets rechts van het midden.
 - Jordi: "nee linekrhelft moet smaller" → V: linker baan smaller, rechter breder, maar duidelijk een V en zichtbaar.
+- Jordi: "maar wat jij hebt gedaan is dat je hem helemaal naar rechts hebt gezet" → V op de plek van r18 houden, alleen linker baan smaller.

@@ -13,6 +13,7 @@
 - r1 (`gemini/r1.png`), Jordi: "het is nog iets teveel bidoof, niet eens bibarel, moet echt een fase 3 zijn, zoals alphyena dat ook is". Prompt r2 (nieuw gesprek, alleen fase 3-blok erbij): `gemini/PROMPT_r2.md`.
 - Jordi deelde fanart "Bibuzzer" (`referenties/fanart_bibuzzer.png`, Rock/Water, rotshelm, stam op de schouder): "deze fanart had een vergelijkbaar idee, alleen vind ik deze een beetje lelijk overdesigned".
 - r2 (`gemini/r2.png`), Jordi: "ok de tanden vertalen duidelijk niet, de houten log mag een punt hebben alsof die er goed aan heeft geknaagd, hij mag wel wat groter en meer buff denk ik, op zich is het bouwvakkerstuinbroek idee als lichaamspatroon wel een goede, evenals een helm die onderdeel van het hoofd lijkt te zijn, grotere ogen zoals bibarel". Daarna: "tanden weer gewoon wit". Prompt r3 (nieuw gesprek): `gemini/PROMPT_r3.md`.
+- r3 (`gemini/r3.png`), Jordi (met `referenties/bibarel_officieel.png`): "ok dat is al wat beter, maar het is kleding en geen lichaampatroon, de ogen zijn te klein, wat bibarel hier om de ogen heeft die vacht, dat mag doorlopen en een helm worden. De vacht onder zijn kin dat mag de vorm van de tuinbroek worden. De staart mag dan een soort van pylonkleur krijgen, oranje met wit gestreept". Prompt r4 (nieuw gesprek): `gemini/PROMPT_r4.md`.
 
 ## Open
 - Welke suggesties (Claude, 23 nov): 1 oranje beiteltanden, 2 staart als troffel, 3 schepklauwen, 4 sjouwt tak/stam of modder tegen de borst, 5 knagend aan een stam, 6 waarschuwingskleuren (geel-zwarte staart), 7 helm van modderkorst/twijgjes.

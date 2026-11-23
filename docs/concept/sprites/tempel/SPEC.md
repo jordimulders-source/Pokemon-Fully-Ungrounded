@@ -32,3 +32,12 @@ Static encounter, geen legendary. Type: Ghost/Rock. Single stage (Jordi, 23 nov:
 - Prompt v7: gelaagd tegen een bergwand, ingang onderin (mond, raampjes erboven = ogen), daarboven 2–3 asymmetrische terraslagen met ruïnes met puntgevels, geen trap. Ruw stapelwerk en mos van v6 behouden.
 - Jordi over r6: "en dit is teveel detail" → v7: weinig, grote stenen, vlakke delen, alleen een dun strookje mos, geen korstmosvlekken.
 - r7 (`r7/gemini_v7.webp`, prompt v7), Jordi: "geweldig design, vertaalt dit naar een sprite? dit is wat ik zocht". Snelle 64 px-test (verkleinen + 16 kleuren, geen tekenwerk): `r7/test_64px_8x.png`.
+
+## Model (bevroren, 23 nov)
+`referenties/model.webp` = Gemini r7. Jordi: "ja akkoord, de ogen mag je afwijken van het model" (op Claudes voorstel: ogen iets groter en lichter zodat de schrik werkt; raampjes in de gevels dicht/donker en klein zodat alleen het onderste paar licht geeft). Jordi: "het voordeel is dat het vrij hoekig is dus dat vertaalt goed naar een sprite denk ik".
+
+## Grootte
+Static, groot zoals Snorlax: vult het 64×64-vak zoals de 64 px-test (`r7/test_64px_8x.png`).
+
+## Sprite
+Rondes in `sprite/rN/`.

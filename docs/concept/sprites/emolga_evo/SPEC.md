@@ -14,3 +14,7 @@
 - "dit is teveel emolga nog met een verkeerd kleurenpatroon. Hij mag groter met een super groot wingsuit, echt een evolution moet het zijn, iets meer aerodynamische look ook, en wat meer naar beneden duikend zoals het met een wingsuit werkt"
 - Kleurenpatroon = Emolga's echte patroon (Jordi, keuze in vraag).
 - r2 zonder Emolga-bijlage (die maakte hem te veel Emolga); kleuren in woorden.
+
+## Ronde 2 → 3 (Jordi, 23 nov, over Gemini r2)
+- "beter, maar het is nu wel gewoon emolga met langere vleugels, de oren mogen wat langer en puntiger, het lichaam wat langwerpiger en vastgegroeid aan de vleugels, de poten wat langer en op zijn buik een tof aerodynamisch patroon, rondom de ogen heeft die een soort van visor kleur zoals een helm zou hebben, ipv de wangen"
+- Open: welke kleur de visor heeft, welk buikpatroon (niet ingevuld in r3).

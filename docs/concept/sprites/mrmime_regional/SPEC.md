@@ -127,3 +127,4 @@ Jordi: "ik denk dat dit ontwerp het niet gaat worden" – "het hele idee bedoel 
 - Jordi bij r20: "alleen de v is nog niet goed, kijk naar andere pokemon desnoods" → r21: studie V-borstpatronen in Gen 3 (Blaziken, Combusken, Breloom e.a.), 2–3 varianten; bal r20 goed.
 - Sprite r21 (`bokser/sprite_r21/`): V-studie (Throh/Sawk-kraag, Blaziken, Swellow), varianten A gevuld, B banen (advies maker), C steil.
 - Jordi bij r21: "allemaal niet goed want je schuift het weer in zijn geheel naar rechts"; "r20 zit het dichtste in de buurt"; "echt een paar pixels beter moet die nog" → r22: keuzevel met 6 micro-varianten van de r20-V.
+- Jordi: "het perspectief"; "we kijken er vanuit een driekwart hoek op". Claude: varianten 7/8 erbij (buitenranden r18, punt 1–2 px naar links).

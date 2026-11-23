@@ -120,3 +120,4 @@
 - Jordi: "wat we kunnen doen is, de positie van de ogen, maar de ogen dan vullen met de streepjes. De rode lijn overnemen en deze doorlaten golven en dan de rest van het hoofd wat verder afwerken met de cracks en geen ander patroon" · "en de rode vage strepen die niet werken wegdoen" → doorgegeven aan de maker (`claydol_2ogen/r5/`).
 - 2 ogen r5 (`claydol_2ogen/r5/`): ogen/neus naar de r7-posities (I1 = middelpunten als r7: links −4, rechts −6, neus 3 breed; I2 = blok −4), rode lijn uit r7 die doorgolft (A: derde boog even groot; B: smaller, perspectief), 42 losse rode pixels weg, rechterkant = crackreliëf uit U5. Maker: I1A.
 - Jordi over r5: "wat beter, maar het is nog steeds niet heel mooi".
+- Jordi: "midden is geen optie die is echt ziek lelijk" (vraag Claude: midden = U5 op het vel van r5?).

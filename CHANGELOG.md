@@ -2863,3 +2863,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.687] - Capybarrel: evolutie wordt een houten kart
 - `IDEEEN.md`: Jordi's besluit (het hout evolueert mee tot een houten autotje, lichaamsdelen steken uit).
+
+### [v0.0.688] - Capybarrel-evolutie: puur Normal
+- `IDEEEN.md`: de kart-evolutie is puur Normal (Jordi).

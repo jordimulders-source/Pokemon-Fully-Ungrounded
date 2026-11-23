@@ -122,3 +122,4 @@ Jordi: "ik denk dat dit ontwerp het niet gaat worden" – "het hele idee bedoel 
 - Jordi: "nee linekrhelft moet smaller" → V: linker baan smaller, rechter breder, maar duidelijk een V en zichtbaar.
 - Jordi: "maar wat jij hebt gedaan is dat je hem helemaal naar rechts hebt gezet" → V op de plek van r18 houden, alleen linker baan smaller.
 - Jordi: "maar de positie verandert niet vanuit het midden" → punt van de V blijft waar hij in r18 zat.
+- Jordi: "alleen de vorm is anders in perspectief".

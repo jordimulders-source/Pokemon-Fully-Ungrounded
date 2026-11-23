@@ -122,3 +122,4 @@
 - Jordi over r5: "wat beter, maar het is nog steeds niet heel mooi".
 - Jordi: "midden is geen optie die is echt ziek lelijk" (vraag Claude: midden = U5 op het vel van r5?).
 - Jordi: "onder de ogen is te rommelig, daar kunnen we wat meer het gemini model proberen na te maken, smoothed out, maar dan met wat cracks. Rode lijn moet misschien ipv die laatste golf een smooth overgang worden naar een horizontale lijn (in perspectief), de neus klopt niet helemaal meer" → r6 (onderkop naar r7-toonverdeling + enkele cracks; varianten lijnovergang en neus).
+- 2 ogen r6 (`claydol_2ogen/r6/`, 9 varianten H1–H3 × a–c): onderkop + rechterkant = r7-toonverdeling in onze tinten + 3 cracks; H3 = zachte bocht 1-1-2-3 naar horizontaal, b = volle neus met de V erboven. Maker en Claude: H3b. Zwak: mozaïekring rond het linkeroog, voorhoofd nog r5-textuur, horizontaal stuk dikker/lichter rood.

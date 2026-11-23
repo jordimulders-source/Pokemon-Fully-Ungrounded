@@ -22,3 +22,4 @@ Jordi (letterlijk): "nee ik wil toch kijken of het lukt om een hybride vorm te m
 - Oogstrook: de donkere strook onder de muts die als ogen leest wordt in de sprite dichtgemaakt met mutskleur (Jordi bij Rock: "1 akkoord").
 - Werkwijze: `docs/lessen/SPRITE_KERN.md` + `SPRITE_WERKWIJZE.md` → "Gemini-model namaken"; model overnemen, niet hertekenen; Dragonfly Cave-omlijning in de eindkeuring; voorbeeld en scripts: `gnomad/sprite_r1/` t/m `sprite_r11/`.
 - Jordi (23 nov, nacht): "en je gaat niks of zo weinig mogelijk opnieuw tekenen"
+- Jordi (23 nov, over de 5 eindsprites): "Ze zijn eigenlijk allemaal nog niet mooi he"

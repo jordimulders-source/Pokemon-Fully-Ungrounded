@@ -18,3 +18,4 @@
 - Bijstuurronde lijf (`r3/gemini_r3_lijf.png`): "nog niet wat we eerst hadden" → `gemini/PROMPT_twee_bijlagen.md` (pose Rock r8 + materiaal eerste versie).
 - Twee-bijlagen-ronde: "dit lukt niet"
 - 23 nov (Jordi, opdracht voor de nacht): "nee ik wil toch kijken of het lukt om een hybride vorm te maken. Dus je doet het volgende, je maakt eerst rock, dan doe je ijs en grass met dezelfde pose. Daarna ga je kijken of het lukt om alleen de onderdelen die in de hybride versies anders moeten te verplaatsen, zo netjes mogelijk. Ik ga nu slapen en wil morgen 5 eindsprites zien"
+- Jordi (23 nov): "ijs mag je rond maken zoals bij rock, zoals we volgens mij afgesproken hadden. Akkoord met slechts een paar materiaal vormen bij ijs en grass" → Ice: afgekapte rechterschouder rond zoals Rock; lijf Ice/Grass: alleen een paar grote materiaalvormen (optie b).

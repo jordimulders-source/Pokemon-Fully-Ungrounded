@@ -2891,3 +2891,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Ice en Grass met Rock r8 als bijlage (zelfde pose en maat, Wormadam-principe), plus hybride modellen: het ijs-/houtlijf uit de eerste versies geknipt en geplakt binnen de omtrek (`*/hybride/`).
 - 5 frontsprites (64×64, zelfde verkleining en palet voor zwart/roze/blauw, zelfde voetlijn): Rock `gnometrotter_rock/sprite_r4/`, Ice `gnometrotter_ice/sprite_r3/`, Grass `gnometrotter_grass/sprite_r3/`, Ice hybride `gnometrotter_ice/sprite_hybride_r2/`, Grass hybride `gnometrotter_grass/sprite_hybride_r2/`; alle vijf met eindkeuring (Dragonfly Cave-omlijning) en reparaties. Overzicht: `gnometrotter_rock/eindsprites/vijf_eindsprites.png`.
 - Ice: het gat bij de mutspunt is dichtgemaakt (open las als oog); open variant in `gnometrotter_ice/sprite_r2/gnometrotter_ice.png`.
+
+### [v0.0.692] - Gnometrotter Rock: frontsprite af
+- Gnometrotter (Rock-vorm, Fairy/Rock): frontsprite af (`docs/concept/sprites/gnometrotter_rock/af/gnometrotter_rock.png` = sprite_r15), op het overzichtsvel (New, na Gnomad). Model Gemini r8; vormen bevroren op r7b; daarna alleen belijning/tinten/schaduw (r8–r11, eindkeuring PASS), ronde neus (r12) en Jordi's krabbel per pixel (r15). Ice en Grass volgen op dezelfde manier.

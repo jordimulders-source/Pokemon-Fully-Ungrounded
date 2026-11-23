@@ -18,3 +18,7 @@
 ## Ronde 2 → 3 (Jordi, 23 nov, over Gemini r2)
 - "beter, maar het is nu wel gewoon emolga met langere vleugels, de oren mogen wat langer en puntiger, het lichaam wat langwerpiger en vastgegroeid aan de vleugels, de poten wat langer en op zijn buik een tof aerodynamisch patroon, rondom de ogen heeft die een soort van visor kleur zoals een helm zou hebben, ipv de wangen"
 - Open: welke kleur de visor heeft, welk buikpatroon (niet ingevuld in r3).
+
+## Ronde 3 (Jordi, 23 nov)
+- Over r3: "totaal niet wat ik wil". r3 nam de meeste punten niet over (oren niet langer, vleugels kleiner dan in r2, lijf kort).
+- Aanpak r4: r2 als bijlage, max. 2 wijzigingen per ronde (les GEMINI.md: bij veel wijzigingen tegelijk negeert Gemini ze). Volgorde Claude: r4 oren + lijf vastgegroeid; daarna poten + buikpatroon; daarna visor i.p.v. wangen.

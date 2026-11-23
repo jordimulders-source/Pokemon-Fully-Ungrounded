@@ -2890,3 +2890,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.693] - Emolga-evolutie: Gemini-prompt r3
 - Feedback op r2 in `emolga_evo/SPEC.md`; prompt r3: langere puntoren, langwerpig lijf vastgegroeid aan de vleugels, langere poten, aerodynamisch buikpatroon, visorkleur rond de ogen i.p.v. wangen.
+
+### [v0.0.694] - Emolga-evolutie: aanpak r4
+- r3 afgekeurd; r4 vertrekt van r2 als bijlage met max. 2 wijzigingen per ronde (`emolga_evo/gemini/PROMPT_r4.md`).

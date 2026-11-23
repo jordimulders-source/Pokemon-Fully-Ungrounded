@@ -751,3 +751,4 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - **Claude (open):** immersie: Brazilië (São Paulo, Liberdade) en Peru hebben grote Japanse gemeenschappen (Nikkei). Let op: kabuki gebruikt meestal geen maskers maar *kumadori*-schmink (rood = held/kracht, blauw = schurk, bruin = bovennatuurlijk); kitsune- en hannya-maskers komen uit Noh en festivals. Overlap: Ogerpon (maskers, niet in de dex).
 - **Jordi (23 nov, over de Nikkei-koppeling):** "niet alles hoeft zuid amerika te zijn". "wederom". Dus: bij legendaries geen Zuid-Amerikaanse koppeling zoeken als die er niet vanzelf is.
 - **Jordi (23 nov):** "maar je hebt ook kumadori maskers". Het kabuki-lid wordt dus een kumadori-masker.
+- **Jordi (23 nov):** "en ogerpon is echt anders" (geen overlap).

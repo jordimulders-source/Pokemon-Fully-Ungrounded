@@ -3019,3 +3019,10 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.725] - Merge naar main
 - Branch `claude/gallant-allen-ifpm5k` (Gnometrotter Ice af, Rock-neus, Grass tussenstand) naar main; conflicten in CHANGELOG/CLAUDE.md/GEMINI.md naar de main-versie, overzichtsvel opnieuw gemaakt.
+
+### [v0.0.726] - Gnometrotter Grass af; gnome-lijn af
+- Gnometrotter Grass: r14–r16 muts (grote blad bevroren, overige bladeren opnieuw uit de lijnen van het model; onderblad naar Jordi's krabbel), eindkeuring r16 BIJNA → r17 met 11 lijnpixels; frontsprite af (`gnometrotter_grass/af/`), op het overzichtsvel (Jordi: "akkoord").
+- Daarmee is de hele gnome-lijn af: Gnomini, Gnomad, Gnometrotter Rock/Ice/Grass.
+
+### [v0.0.727] - Merge naar main
+- Branch `claude/gallant-allen-ifpm5k` naar main.

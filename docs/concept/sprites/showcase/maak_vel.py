@@ -52,6 +52,7 @@ SECTIES=[
 ("gnomini/af/gnomini.png",'"Gnomini"',"fairy"),
 ("gnomad/af/gnomad.png",'"Gnomad"',"fairy"),
 ("gnometrotter_rock/af/gnometrotter_rock.png",'"Gnometrotter" (Rock)',"fairy/rock"),
+("satelliet_lijn/fase1/af/satelliet_fase1.png",'Satelliet fase 1 (Spoetnik)',"steel/cosmic"),
 ]),
 ("Evolutions of existing Pokémon",[
 ('hitmontop_evo/af/hitmongroove.png', '"Hitmongroove" (Hitmontop)', 'fight/ground'),

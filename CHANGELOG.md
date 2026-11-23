@@ -2920,3 +2920,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.703] - Emolga-lijn fase 2: r6 gekozen
 - r6 (colugo) is het design voor fase 2; draaiproeven en bijstuurprompt voor de duik. Fase 3 = fruitvampier.
+
+### [v0.0.704] - Vleermuislijn vervalt
+- Fruitvampier = fase 3 van de Emolga-lijn (Electric/Flying); POKEMON.md, IDEEEN.md en SPEC bijgewerkt.

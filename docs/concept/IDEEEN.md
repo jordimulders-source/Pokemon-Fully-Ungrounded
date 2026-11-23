@@ -711,3 +711,4 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - Jordi (23 nov): "ik heb stiekem nu wel inspiratie gekregen hoe we de fruitvampier in het hele verhaal kunnen betrekken, dat kan misschien een 3e vorm in de emolga lijn worden haha, vrij bizar maar waarom ook niet he". Fruitvampier stond tot nu toe als eindvorm van de vleermuislijn (zie hierboven en POKEMON.md); niet besloten.
 - Jordi (23 nov): "En als we voor een fase 3 fruitvampier gaan die op zijn kop hangt met de vleugels gesloten?" Open: type, wat er met de vleermuislijn gebeurt, welke fase-2-basis (r5/r6).
 - Jordi (23 nov): "Emolga krijgt dus 2 evoluties": fase 2 wingsuit, fase 3 fruitvampier (Gemini r2 "dit gaat lukken", design nog interessanter maken).
+- **Besloten (Jordi, 23 nov):** de vleermuislijn "vervalt"; de fruitvampier is fase 3 van de Emolga-lijn en "blijft electric/flying".

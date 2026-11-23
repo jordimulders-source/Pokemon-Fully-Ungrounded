@@ -13,3 +13,4 @@
 - 23 nov: "hooguit paar pixels afwijking"
 - r2 (`r2/gemini_r2.png`, prompt v2): stok in de voorste arm; geen pixelstijl maar getekende lijnen (geen commentaar Jordi nog).
 - Jordi: "je kan misschien de handen wisselen" · "dat zijn simpele vormen" · "moet met knippen en plakken lukken" → `r1/gemini_r1_handen_gewisseld.png` (stok van de achterste naar de voorste hand geknipt/geplakt; achterhand = kopie van de voorste bolhand).
+- Eerste poging (stok onder de bolhand): "nee niet gelukt" · "hij heeft geen stok meer vast" · (crop van r2: hand om de stok) "wis alleen dat stukje arm" · "dan heb je hem" → v2: hele vuist + stok van achter naar voor, bolhand naar achter, uitstekend stukje arm boven de vuist gewist.

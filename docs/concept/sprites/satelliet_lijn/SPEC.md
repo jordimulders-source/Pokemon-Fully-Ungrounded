@@ -25,3 +25,4 @@ Citaten en besluiten (Jordi, 23 nov); het overzicht staat ook in `docs/concept/I
 - Jordi (met foto van de echte Spoetnik): "op zich klopt het wel zo te zien he". Claude: ja, ook bij Spoetnik lopen twee antennes ongeveer parallel en waaieren de andere uit.
 - **Model bevroren (Jordi, 23 nov: "begin maar met bouwen om 19:01")**: `fase1/model/model_gekozen.png` (= r7b; natief 99 px: `model_gekozen_natief.png`). Spritefase start 19:01.
 - Jordi (spritefase, 23 nov): "let erop dat de bol mooi rond blijft".
+- Jordi (spritefase): "let op onnodige zwarte pixels ook".

@@ -33,6 +33,7 @@
 - r4 (`r4/gemini_r4.png`, prompt v4): "iets beter al maar de hele beltsectie moet van steen, plus de haren en baard zijn niet meer van steen" → prompt v5.
 - 23 nov: "en de schoenzolen lezen niet goed" → v5: dikke, duidelijke stenen zool.
 - r5 (`r5/gemini_r5.png`, prompt v5): "beter, we kunnen ook doen dat hij helemaal van stenen is geworden, maar dat we de kleurenpatronen wel behouden" → prompt v6 (alles steen, kleuren per vlak behouden).
+- r6 (`r6/gemini_r6.png`, prompt v6): "muts is nu weg en hij is niet duidelijk van steen" → prompt v7 = v5 + alles steen in eigen kleur.
 
 ## Voorgelegd door Claude (22 nov, nog niet gekozen)
 - A geode (muts = geode met amethist in een barst, snor/plukjes = kwartskristal, neus = rozenkwarts); B druipsteen (muts = stalactiet, kalksteen met lagen); C ertsader (riem = ader, gesp = goudklomp, korstmos op de snor).

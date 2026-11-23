@@ -2896,3 +2896,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.695] - Emolga-evolutie: prompt r4 naar het Skinguin-voorbeeld
 - `emolga_evo/gemini/PROMPT_r4.md` herschreven als nieuwe startprompt in Skinguin-opbouw (geen bijlage); les in `docs/lessen/GEMINI.md`.
+
+### [v0.0.696] - Emolga-evolutie: prompt r5
+- Feedback r4 in SPEC; `PROMPT_r5.md`: verhoudingen in maten, oogpatroon als vachttekening.

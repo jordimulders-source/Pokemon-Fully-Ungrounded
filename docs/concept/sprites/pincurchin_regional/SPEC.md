@@ -70,3 +70,4 @@ Lijn: Pincurchin (repo: puur Electric) → regionale vorm. Pincurchin weer in de
 - Jordi bij r4: "kijk nu eens naar het model". Claude ziet in het model (r8, close-up): (1) het linkeroog is een smal, staand ovaal (±4×6 natief → ±3×4–5 in de sprite) met één smalle pupil in het midden; (2) tussen linkeroog en mond zit lijf: de mond raakt het oog niet en begint lager (bovenkant mond ±halverwege het oog). In r4 is het oog 4 breed met een pupil van 2 en ligt de mond er direct tegenaan. → r5.
 - Jordi: "behoud de pupil wel volleidg" (bij het smaller maken van het linkeroog blijft de hele pupil staan).
 - r5 (`sprite/r5/vel.png`): V1 oog 4×5 mond +1/+2, V2 oog 4×6, V3 mond +1/+3. 3 breed kan niet met de hele pupil (pupil zelf 2 breed). Mond 115% blijft groter dan in het model en bedekt de naad.
+- Jordi: "stuur v1 naar de eindkeuring, dragonflycave, schaduw, kleurtinten, belijning" → V1 (`sprite/r5/V1_oog4x5_mond+1+2.png`) gekozen; eindkeuring.

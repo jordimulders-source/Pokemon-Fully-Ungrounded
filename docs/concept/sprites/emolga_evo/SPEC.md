@@ -42,3 +42,4 @@
 - Proef 64 px (`model/test_64px_8x.png`): silhouet sterk; kop ±12 px, oog en poten nauwelijks leesbaar (vraag aan Jordi of de kop groter mag).
 - r6c (kop 1,5× via Gemini, `gemini/r6c.png`): "dit werkt niet helemaal, ik denk dat je voor de gengas methode moet gaan".
 - Bouw: model = r6b (`model/model.png`), Gengas-methode: model verkleinen door te schrappen (niets hertekenen), gezicht = Emolga's eigen spritepixels (`graphics/pokemon/emolga/anim_front.png`) 1-op-1 als blok, geschaald (±125%), op de kop van het model; visortekening uit het model, geen wangen (Jordi eerder: visor "ipv de wangen"). Maker-agent, sprite_r1/.
+- Jordi: "en net als met de sunflora evolutie eerder, het is dan niet erg dat het hoofd een stuk lichaam overlapt" → kopopties `model/kop_opties/` (A: r6b-kop 1,4×, B: r6c-kop 1,15×, beide op het r6b-lijf; ruwe schets).

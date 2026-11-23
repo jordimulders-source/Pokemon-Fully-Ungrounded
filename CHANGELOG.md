@@ -3026,3 +3026,10 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.727] - Merge naar main
 - Branch `claude/gallant-allen-ifpm5k` naar main.
+
+### [v0.0.728] - Regionale Claydol: frontsprite af
+- Ontwerp via Gemini (r1–r10, `docs/concept/sprites/baltoy_regional/gemini/`): Zonnepoort/Stafgod-figuur → Claydol-schotelkop met oogring → krans van oogbolletjes; Jordi koos r3 als basis.
+- Sprite: Gemini r3 ongewijzigd omgebouwd (`claydol_gemini_r3/`), onderkop terug na "rustiger = pixelblur", tinten onderin warmer (palet B), krans . - . - (stipjes uit r6), eindkeuring Dragonfly Cave.
+- Twee ogen (Jordi: drie ogen staan van voren gek): samengestelde koppen werden een lappendeken; Gemini-bewerkingen van de eigen sprite tekenden alles opnieuw; doorbraak = de kop van Gemini r10 (één bron) op ons r3-ontwerp (`claydol_r10kop/`), daarna neus en ogen uit de 3-ogenversie, rode lijn om het rechteroog, kop- en lijfshading, eindkeuring (alleen tinten), voeten met eigen ronding, rechtervoet 1 rij korter.
+- Af: `docs/concept/sprites/baltoy_regional/claydol_af/claydol_regional.png` (+ `_8x`), op het overzichtsvel (Regional forms).
+- Les bovenaan `docs/lessen/SPRITE_KERN.md`: "rustiger maken" = pixelblur; lessen in `GEMINI.md`.

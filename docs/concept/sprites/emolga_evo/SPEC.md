@@ -57,3 +57,4 @@
 - Jordi over r9: bovenbuik "dit is nog steeds een effen vlak" (uitsnede). Eindkeuring r9 BIJNA (zilveren bovenbuik + gele vleugel effen, buikrand, flap, losse pixel); r10 = die 48 px, index 10 = (140,152,172). Close-up `sprite_r10/buik_closeup.png`.
 - Jordi over r10: "ja het wit is nog iets teveel een streep, daar kan misschien nog iets beter met schaduw en tinten gespeeld worden, hij is wel al beter" → r11: korte brede glans + sikkel 10 rechts (31 px, alleen bovenbuik).
 - Jordi over r11: "nu overlapt de bovenste poot wel iets teveel met de vleugel, dat was eerst niet toch" → vorm was gelijk (masker identiek sinds r3); oorzaak = donker zilver (10) onder het handje. r12: die 12 px 10→8.
+- Jordi: "nee prima, commit r12 maar en push naar main" → `af/model.png` = r12, op het overzichtsvel ("Wingsuit-colugo (Emolga)"). Fase 3 in een nieuw gesprek.

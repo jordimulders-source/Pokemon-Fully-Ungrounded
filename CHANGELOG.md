@@ -2943,3 +2943,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.710] - Emolga-lijn fase 2: eindkeuring
 - Eindkeuring r6 BIJNA (open rand); (31,51) zwart (ook Jordi's idee) → r7 PASS. `af/model.png` = sprite_r7.
+
+### [v0.0.711] - Emolga-lijn fase 2 (wingsuit-colugo): frontsprite af
+- Kleurrondes r8–r12 na Jordi's feedback ("klopt die echt al aan de kleurtinten?", "erg effen", "nog steeds een effen vlak"): donkere ramp 38/64/98 koel, volume in kop, oor, lijf, donkere band en bovenbuik (glans + index 10 (140,152,172)), schaduw op de gele vleugel; r12 haalt het donkere zilver onder het handje weg. Vorm/omlijning sinds r3 ongewijzigd (op Jordi's 4 buikpixels na).
+- `emolga_evo/af/model.png` = r12; op het overzichtsvel bij "Evolutions" als "Wingsuit-colugo (Emolga)" (naam open).

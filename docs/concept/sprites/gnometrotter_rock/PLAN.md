@@ -54,3 +54,5 @@ Jordi (letterlijk): "nee ik wil toch kijken of het lukt om een hybride vorm te m
 - Jordi (23 nov, over r14): "neee"
 - Jordi (23 nov, krabbel op r12 12×): "geel moet weg, zwart moet nog een binnenlijn (niet in het zwart) voor 1 aansluiting en rood is de lijn die iets ronder moet"
 - Jordi (23 nov): "verder verander je niks"
+- Jordi (23 nov, over r15): "AAAAAAH" · "ik teken de fucking pixels" · "en je doet het gewoon nog niet"
+- Jordi (23 nov): "gele puntjes betekenen ALLEEn die pixel, niet de hele lijn"

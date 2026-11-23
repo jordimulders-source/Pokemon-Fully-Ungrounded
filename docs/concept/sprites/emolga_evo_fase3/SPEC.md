@@ -29,3 +29,4 @@
 - Keuring r2: A0 en A BIJNA (trouw goed; 8 reparaties: volume onderste vleugelvlak, open rand, pillow shading wit, vuisten, details). Ter info: A heeft geen voorhoofdgeel (A_geel wel), V-punt 1 px. → r3 (maker).
 - r3 (maker): 8 keurderreparaties, diff alleen benoemde px. Volgende: eindkeuring Dragonfly Cave + omlijningsronde.
 - **Jordi (23 nov): "A_geel naar de eindkeuring"** (kap met V + geel voorhoofdvlekje + leigrijze oogvlek).
+- Eindkeuring r3 (A_geel): BIJNA, 5 reparaties (35 px; outline base lichtkant tint 2, binnenlijn, open rand, losse px, kruinlijn). Claude voerde ze per script exact uit → `sprite_r4/A_geel.png` (+ `_8x`, `vergelijk.png`). Ter info: 1024 px (checklist fase 3 1700–2600; komt door het smalle hangmodel). Aan Jordi.

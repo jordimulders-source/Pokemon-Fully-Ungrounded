@@ -706,4 +706,6 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - Claude: deep gnome ≈ huidige grot-Rock-vorm, BG3-rock gnome (uitvinder) ≈ Steel/urban; optie 1 Rock/Steel/Grass/Flying, optie 2 + Fairy/Dark (overlap Impidimp).
 - **Jordi (23 nov):** "ik vind rock gnome juist goed voor rock"
 - **Jordi (23 nov):** "ik zat te denken of we met deep gnome met ijs weg komen"
+- Claude: Ice = deep gnome diep in de gletsjer (Andes/Patagonië); voorgelegd Rock/Ice/Grass/Flying/Steel.
+- **Jordi (23 nov):** "nee 3 vormen"
 - Open (oud): aantal fases, type naast Fairy, wat voor kabouter (tuinkabouter, folklore zoals de Latijns-Amerikaanse *duende*, iets anders), waar de woordgrappen zitten (namen, moves, dex-teksten).

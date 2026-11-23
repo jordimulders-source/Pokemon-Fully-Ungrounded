@@ -95,3 +95,35 @@ AVOID
 - No arms, legs or human features. No glossy 3D render, no plush or mascot look.
 - Not thin needle spines like the normal Pincurchin. Not small spines. Not bare or plain.
 ```
+
+# Startprompt v4 (23 nov), vervangt v3
+Jordi over "te kaal": "de stekels bedekken niet genoeg van het lijf, te kort, niet genoeg, misschien wel allebei". Nieuw gesprek, bijlage alleen `bijlage_pincurchin.png`.
+
+```
+Design a regional form of the Pokémon PINCURCHIN and draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art).
+
+THE ATTACHED SPRITE IS PINCURCHIN. Use its face: the yellow eyes and the orange teeth/mouth, low on the front of the body.
+
+CONCEPT
+- A hybrid of a pencil-spined sea urchin and an old underwater naval mine (sea mine).
+- Type Poison/Rock. It should look sinister.
+
+DESIGN
+- Body: a round sea-mine body that is also an urchin shell. The body is brown.
+- Spines: the thick, blunt, pencil-like spines of a pencil sea urchin. MANY spines and LONG spines: they must cover much more of the body, so only parts of the brown body show between them. Spines all over the body, also in front of the body pointing toward the viewer, not only along the outline.
+- Spine color: a dark red, but more vivid and saturated (a brighter red that is still dark), not a dull brownish red.
+- Face: Pincurchin's eyes and teeth from the attachment, still clearly visible between the spines.
+- Clean colors: NO rust, no rust spots or stains.
+
+POSE
+- Three-quarter view facing left, like official Gen 3 front sprites.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, clean shading like official Game Freak Gen 3 sprites.
+- Plain white background. No floor, rock, shadow, water, bubbles, glow, sparkles or effects. One single creature, no extra views.
+
+AVOID
+- No rust. Not a cartoon bomb with a fuse, no chains, no anchor, no metal bolts or rivets, no skull.
+- No arms, legs or human features. No glossy 3D render, no plush or mascot look.
+- Not thin needle spines like the normal Pincurchin. Not short spines, not few spines, not a bare body.
+```

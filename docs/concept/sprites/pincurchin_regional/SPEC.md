@@ -23,3 +23,6 @@ Lijn: Pincurchin (repo: puur Electric) → regionale vorm. Pincurchin weer in de
 ## Gemini v1 (`r1/gemini_v1.png`, 23 nov)
 - Jordi: "de stekels moeten groter, ik dacht aan bruin voor de binnenkant en donkerrood voor de stekels, geen roest"
 - → prompt v2 (`gemini/PROMPT.md`), nieuw gesprek, alleen de Pincurchin-bijlage.
+
+## Gemini v2 (`r2/gemini_v2.png`, 23 nov)
+- Jordi: "de ogen zijn anders maar dat is niet erg, ik vind hem verder te kaal"

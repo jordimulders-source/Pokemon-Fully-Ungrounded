@@ -2923,3 +2923,8 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.704] - Vleermuislijn vervalt
 - Fruitvampier = fase 3 van de Emolga-lijn (Electric/Flying); POKEMON.md, IDEEEN.md en SPEC bijgewerkt.
+
+### [v0.0.705] - Emolga-lijn fase 2 (wingsuit-colugo): twee frontsprites af
+- Model Gemini r6b (duikvlucht). Gebouwd als het model 1-op-1 (`emolga_evo/af/model.png`) en met alleen de kop 1,4× vergroot (`af/kop14.png`, Jordi: "bouw maar het originele gemini model en A net allebei"; overlap met het lijf mag zoals bij de Sunflora-evolutie).
+- Maker r1, keurder (A0 BIJNA, A PASS), r2 (zebra gezicht, vachttint), eindkeuring Dragonfly Cave r2 → r3 (oog/pupil zwart, hand, tint): beide PASS.
+- Ter info (eindkeuring): voorste vleugel bijna egaal geel en zwarte binnenlijnen, trouw aan het model; gezicht leest beter in de versie met de grote kop.

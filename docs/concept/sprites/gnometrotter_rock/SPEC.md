@@ -19,6 +19,7 @@
 - 23 nov (stok, kristallen, kleur): "ja een stuk rots, geen kristal erop, het is geen patser, ik zat alleen gewoon grijze rotsen te denken" → stok = stuk rots; grijze rotsen (prompt v2 zonder kristallen).
 - r2 (`r2/gemini_r2.png`, prompt v2): "de ogen zijn teveel zichtbaar en hij heeft een beetje een saaie veilige look?"
 - 23 nov: "misschien moeten niet alle rotsen hetzelfde"
+- 23 nov: "en die op zijn rug zijn gewoon erop geplakt"
 
 ## Voorgelegd door Claude (22 nov, nog niet gekozen)
 - A geode (muts = geode met amethist in een barst, snor/plukjes = kwartskristal, neus = rozenkwarts); B druipsteen (muts = stalactiet, kalksteen met lagen); C ertsader (riem = ader, gesp = goudklomp, korstmos op de snor).

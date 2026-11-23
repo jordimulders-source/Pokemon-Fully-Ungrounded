@@ -3036,3 +3036,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.729] - Legendaries-brainstorm
 - Besloten (Jordi): naast het Inca-trio een Water-regi (diepe zee) en een Cosmic-regi (ruimte), "de great unknowns"; overige legendaries hoeven niet allemaal Zuid-Amerikaans. Vastgelegd in `POKEMON.md` (Legendaries) en `IDEEEN.md` (Legendaries-brainstorm, met voorstellen van Claude).
+
+### [v0.0.730] - Legendaries-brainstorm ronde 2
+- Besloten (Jordi): de Water- en Cosmic-regi worden nieuwe leden van de Regi-familie, puur nieuwe designs. Nieuwe ideeën: zwart gat-legendary en waterval-legendary (opties van Claude in `IDEEEN.md`).

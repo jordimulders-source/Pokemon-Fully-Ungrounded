@@ -31,3 +31,5 @@ No wavy or curly tentacles.
 No effects, no glow, no bubbles, no water, no ground, no shadow.
 No plush/Neopets look, no chibi mascot.
 ```
+
+Jordi over r3: "haha dit is denk ik de slechtste gemini sprite die ik ooit gehad heb" (Mickey-oren, kleerhanger, windgong: de vergelijkingen letterlijk getekend).

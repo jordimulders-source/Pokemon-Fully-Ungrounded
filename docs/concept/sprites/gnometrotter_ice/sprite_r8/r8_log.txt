@@ -1,0 +1,27 @@
+schouder (54,30) 1 -> 7
+schouder (55,30) 0 -> 1
+barst R (45,42) A -> 9
+barst R (45,43) A -> 9
+barst L (23,44) 9 -> B
+barst L (24,44) A -> 9
+barst L (24,45) A -> 9
+barst L (22,46) B -> A
+barst L (23,46) B -> A
+barst L (24,46) 9 -> B
+barst L (25,46) A -> 9
+barst R (45,46) B -> A
+barst R (46,46) 9 -> B
+barst R (47,46) A -> 9
+barst L (23,47) B -> A
+barst L (24,47) 9 -> B
+barst L (25,47) A -> 9
+barst R (45,47) B -> A
+barst R (46,47) 9 -> B
+barst R (47,47) A -> 9
+barst L (23,48) B -> A
+barst L (24,48) 9 -> B
+barst L (25,48) A -> 9
+barst R (46,48) 9 -> A
+barst L (23,49) B -> A
+barst L (24,49) 9 -> A
+barst L (25,49) 9 -> B

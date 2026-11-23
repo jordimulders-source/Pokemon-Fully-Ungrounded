@@ -3,8 +3,8 @@
 import os, json, numpy as np
 from PIL import Image
 from palet import PAL
-K=float(os.environ.get('KANTEL','0.25')); UIT=os.environ.get('UIT','bokser')
-r3=np.load('../sprite_r3/bokser.npy'); f=np.zeros((64,64),int); f[0:63,10:53]=r3; r3f=f.copy()
+K=float(os.environ.get('KANTEL','0.25')); UIT=os.environ.get('UIT','bokser')   # gekozen: 0.25
+OOG=os.environ.get('OOG','A'); r3=np.load('../sprite_r3/var/oog_%s.npy'%OOG); f=np.zeros((64,64),int); f[0:63,10:53]=r3; r3f=f.copy()   # oog A = hoofdversie (keurder punt 6)
 mm=np.asarray(Image.open('../../../../../../graphics/pokemon/mr_mime/anim_front_gba.png'))[0:64]
 DX,DY=8,-8          # MM-oog (24,19) -> sprite-oog (32,10/11); MM-schedeltop rij 13 -> rij 5
 # 1. haar van het model weg (r1-haarzone + alles boven rij 6), ook het stuk haar tussen de kuiven
@@ -39,7 +39,44 @@ for y in range(0,12):
         if f[y,x] in (5,6,7,8) and any(f[yy,xx]==0 for yy,xx in ((y-1,x),(y+1,x),(y,x-1),(y,x+1))): f[y,x]=1
 for x in (43,44,45): f[11,x]=1
 f[12:,:]=r3f[12:,:]   # vanaf rij 12 geen haar: alles terug naar r3 (wang, bol, nek)     # bovenrand achterhoofd (oude haarrand r3 rij 11)
+# ===== keurderspunten r3 (64x64-coördinaten)
+zones={}
+def put(z,y,x,v): zones.setdefault(z,set()).add((y,x)); f[y,x]=v
+def rows(z,y,x0,s):
+    for i,c in enumerate(s.replace(' ','')):
+        if c!='.': put(z,y,x0+i,int(c))
+# 1. rechterbeen: buitenlijn op x44, wit vlak, schaduw aan de binnenkant
+for y in (43,44,45): rows('been_r',y,39,"1 6 8 8 7 1")
+for y in range(46,51): rows('been_r',y,40,"1 8 8 7 1")
+for y in range(51,55): rows('been_r',y,40,"6 8 8 7 1")
+rows('been_r',55,40,"1 8 7 7 1")
+put('been_r',56,44,1)
+# 2. linkerbeen: één lichte baan (8) en één schaduwbaan (7) langs de diagonaal
+L={43:(33,"8 8 7"),44:(33,"8 8 7"),45:(34,"8 7"),46:(34,"8 7"),47:(34,"8 8 7"),48:(34,"8 8 7"),49:(35,"8 8 7"),
+   50:(36,"8 7"),51:(36,"8 8 7"),52:(37,"8 7"),53:(37,"8 7"),54:(37,"8 7"),55:(38,"7")}
+for y,(x,s_) in L.items(): rows('been_l',y,x,s_)
+# 3. schoenen: donker (3), één hooglicht op de neus (5), zwarte zool
+rows('schoenen',57,37,"1 3 3 1")
+rows('schoenen',58,34,"1 1 1 3 3 3 1")
+rows('schoenen',59,32,"1 1 3 3 3 3 3 3 1")
+rows('schoenen',60,31,"1 5 5 3 3 3 3 1 1")
+rows('schoenen',61,31,"1 1 1 1 1 1 1")
+rows('schoenen',57,41,"1 3 3 1"); rows('schoenen',58,40,"1 3 3 3 1"); rows('schoenen',59,40,"1 3 3 3 1")
+rows('schoenen',60,40,"1 3 3 3 5 1"); rows('schoenen',61,40,"1 3 3 3 5 3 1"); rows('schoenen',62,41,"1 1 1 1 1")
+# 4. buik: gebogen onderlijn borst i.p.v. rechte streep; onderbuik als sikkel
+rows('romp',25,31,"7 7 8 8 8 7 6")
+rows('romp',30,32,"8 8 8 8 8 7 7 6 6 6")
+rows('romp',31,32,"7 8 8 7 7 7 6 6 6 6")
+# 5. borstvuist: lichtere linkerbovenkant/knokkels (5) los van de V
+put('vuist',21,39,5); put('vuist',23,38,5)
+# 7. onderrand gestrekte arm 1 rij lager (model)
+for x in range(21,28): put('arm',21,x,7); put('arm',22,x,1)
+# 9. broek: losse 144-pixels weg / vouw als strookje van 3
+put('broek',36,33,3); put('broek',36,39,5)
+# 10. bovenrand uitgestoken vuist 1 rij hoger
+rows('vuist_n',8,13,"1 1 1"); rows('vuist_n',9,13,"5 2 5")
 np.save(UIT+'.npy',f)
 p=Image.fromarray(f.astype('uint8'),'P'); pal=[v for c in PAL for v in c]; p.putpalette(pal+[0]*(768-len(pal))); p.save(UIT+'.png',transparency=0)
 d=(f!=r3f); hz=np.zeros_like(d); hz[0:18,:]=1
+json.dump({k:sorted([int(a),int(c)] for a,c in v) for k,v in zones.items()},open(UIT+'_zones.json','w'))
 print(UIT,'KANTEL',K,'afwijkend van r3:',int(d.sum()),' buiten rij 0-17:',int((d&~hz.astype(bool)).sum()))

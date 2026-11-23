@@ -28,3 +28,4 @@ Citaten en besluiten (Jordi, 23 nov); het overzicht staat ook in `docs/concept/I
 - Jordi (spritefase): "let op onnodige zwarte pixels ook".
 - Spritefase: r1 (maker) → keuring r1 (eis 1 PASS, eis 2 BIJNA, rondheid ≤0,86 px) → r2 (23 px + palet) → eindkeuring DFC r2 (21 onnodige zwarte pixels) → **r3** (`fase1/sprite_r3/`, rondheid ≤0,78 px, 0 open randen). Naar Jordi; wacht op oordeel. Ter info: linksonder (kol 2–8, rij 37–47) zwart volgens Gnomini-regel; Voltorb/Electrode gebruiken daar de eigen donkerste tint.
 - Jordi over r3: "nice, ga maar naar de eindkeuring" → eindkeuring_r3 (verse DFC-keurder).
+- Eindkeuring r3: **PASS** (eis 1 en 2; rondheid 0,78 px, geen onnodige zwarte pixels). Optioneel 1 px (33,55) P→p. Ter info: formaat 1548 px is ruim voor fase 1 (checklist 700–950), weinig ruimte voor fase 2/3 "groter en complexer". Vraag aan Jordi.

@@ -36,3 +36,4 @@
 - r5 → `gemini/cacnea_r5.png` (lange naalden als stralenkrans boven de kop, omtrek nog glad, ogen weer ringen). Jordi: "ik weet niet, ik vind het niet echt geslaagd".
 - Jordi over r5: "stekels raar, mond raar, en echt teveel nog de normale cacnea"; "is dit wel een design wat kan?"
 - Wat van Cacnea blijft (Jordi): "ogen, mondpatroon en iets op zijn hoofd". Prompt r6: `gemini/PROMPT_cacnea_r6.md` (begint bij een levende jonge Copiapoa, zonder de naam Cacnea).
+- r6 → `gemini/cacnea_r6.png` (gladde geribde bol, witte wolkruin, bijna geen stekels, stompe armpjes en voetjes). Jordi, met foto `referenties/copiapoa_foto_jordi.webp.png`: "ik vind het grootste verschil dat de copiapoa wat meer bulby is, met een paar stekels rondom/op de kroon". Prompt r7: `gemini/PROMPT_cacnea_r7.md`.

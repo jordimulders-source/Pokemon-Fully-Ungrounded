@@ -2884,3 +2884,10 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Neus nagemeten op Popplio (lijn rondom donkerste eigen tint, zwart alleen aan de buitenrand): af = r6-A. Les in SPRITE_KERN.
 - Correctie: Jordi wil de Gnomini met zwarte omlijning terug ("daarna is alles fout gegaan"); alleen de neuslijn aangepast zoals Popplio (zwart aan de buitenrand, donkerroze tegen muts/lijf, 27 px). af = `sprite_r9/gnomini.png`; r6–r8 vervallen.
 - Gnomini r10: neusomlijning precies zoals Popplio (zwart van linksmidden via linksonder tot onder-midden, donkerroze bovenom en rechts, 1 px). Jordi: "kijk eindelijk" → af = `sprite_r10/gnomini.png`.
+
+### [v0.0.691] - Gnometrotter: drie vormen (Rock, Ice, Grass) + twee hybrides, 5 eindsprites
+- Gnome-lijn fase 3 besloten: Gnometrotter met 3 vormen, Fairy/Rock (rock gnome), Fairy/Ice (deep gnome), Fairy/Grass (forest gnome); Flying en Steel vervallen; BG3 als kleine referentie (IDEEEN.md → Gnome-lijn).
+- Ontwerp Rock via Gemini r1–r8: hele lichaam van steen met behoud van de kleurpatronen, opbouw uit losse rotsstukken (Regirock-idee), voorovergebogen oude wandelaar met stok, stenen baard/muts/riem/rugkam/zolen. Model `gnometrotter_rock/r8/`.
+- Ice en Grass met Rock r8 als bijlage (zelfde pose en maat, Wormadam-principe), plus hybride modellen: het ijs-/houtlijf uit de eerste versies geknipt en geplakt binnen de omtrek (`*/hybride/`).
+- 5 frontsprites (64×64, zelfde verkleining en palet voor zwart/roze/blauw, zelfde voetlijn): Rock `gnometrotter_rock/sprite_r4/`, Ice `gnometrotter_ice/sprite_r3/`, Grass `gnometrotter_grass/sprite_r3/`, Ice hybride `gnometrotter_ice/sprite_hybride_r2/`, Grass hybride `gnometrotter_grass/sprite_hybride_r2/`; alle vijf met eindkeuring (Dragonfly Cave-omlijning) en reparaties. Overzicht: `gnometrotter_rock/eindsprites/vijf_eindsprites.png`.
+- Ice: het gat bij de mutspunt is dichtgemaakt (open las als oog); open variant in `gnometrotter_ice/sprite_r2/gnometrotter_ice.png`.

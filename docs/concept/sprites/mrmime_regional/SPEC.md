@@ -132,3 +132,8 @@ Jordi: "ik denk dat dit ontwerp het niet gaat worden" – "het hele idee bedoel 
 - Jordi op de schuine as: "ja precies, dat bedoel ik, top". Sprite r22 (`bokser/sprite_r22/`): keuzevel V; 7–9 = schuine as (punt 1/2/3 px links), 1–6 micro-varianten.
 - Jordi: "wacht, laten we het rekenkundig doen, teken een v. Draai hem dan wat graden naar links. Dan blijft de rechterhoek redelijk hetzelfde, maar de linker wordt wat ingekort". Claude (script, `bokser/sprite_r23/`): symmetrische V (bovenrand x27–35, punt rij 33), gedraaid om een verticale as door de rechterhoek (x' = R − (R−x)·cos θ), θ = 0/20/30/40/50°; alleen romppixels, tint 3.
 - Jordi: "de tweede prima" → V 20°; r23 = r20 + V 20° (`bokser/sprite_r23/bokser.png`). Eindkeurder gestart.
+
+## Overdracht naar Mr. Prime (23 nov)
+- Jordi start Mr. Prime in een nieuw gesprek. Lijn: Mime Jr. → bokser-Mr. Mime (deze, frontsprite `bokser/sprite_r23/`, na eindkeuring in `bokser/af/`) → **Mr. Prime** (oude gentleman met wandelstok, bartitsu).
+- Vast voor de lijn (Jordi): zwart-witpalet; normale Mr. Mime-huidtint was de reden voor de kleurkeuze ("anders komt mr prime er dalijk raar uit te zien" — daarna werd het zwart-wit); Mr. Prime = "volledige gentleman qua pose", verschil met Mr. Rime (jolly danser) via pose + kleur; bokser 50×56–59 als middenfase, Mr. Prime mag groter/zwaarder.
+- Lessen uit deze sessie: in `docs/lessen/GEMINI.md` (onderaan: ligposes, geen bijlagen voorstellen, geen half werk sturen, makerrapport op "zelf getekend" lezen) en hier per ronde.

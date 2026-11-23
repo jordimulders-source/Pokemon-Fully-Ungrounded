@@ -59,3 +59,4 @@ Jordi: "ik denk dat dit ontwerp het niet gaat worden" – "het hele idee bedoel 
 - r11 (`bokser/r11.png`), Jordi: "ja behalve pose en gespierd lichaam". Bijsturen r12 (zelfde gesprek): lijf glad met één V-patroon, pose stilstaand.
 - Jordi: "en nee hij moet niet meer buff of wat dan ook".
 - Jordi: "het silhouet is prima" → r12: lijfomtrek blijft, alleen spierschaduw binnen de romp eruit + V-patroon; pose blijft bijgestuurd.
+- Jordi: "vraag maar alleen om de voorarm te veranderen" → r12 bijsturen alleen de voorarm van de gestrekte arm.

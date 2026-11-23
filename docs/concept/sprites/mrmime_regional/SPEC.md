@@ -112,3 +112,4 @@ Jordi: "ik denk dat dit ontwerp het niet gaat worden" – "het hele idee bedoel 
 - Jordi bij r16: "de armen kloppen niet, komen niet op de juiste plek uit de schouders en zijn gewoon te kort. Kan je niet gewoon de armen van r9 pakken? het broekje komt nu op de goede plek, maar is iets te kort, de benen mogen ietse langer en het lichaam is afgekapt rechtsonder, mag ronder" → r17.
 - Sprite r17 (`bokser/sprite_r17/`): 53×59; armen+vuisten r9 1-op-1 uit de schouderballen, broek +2 rijen, benen +1, buik rechtsonder rond.
 - Jordi bij r17: "alleen de verre schouderbal eens, verder is het grijze v patroon weg" → r18: V terug, verre bal rond; borstvuist blijft.
+- Jordi: "ofja veel te klein" (V) → r18: V veel groter, 2 maten.

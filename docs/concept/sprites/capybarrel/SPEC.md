@@ -13,3 +13,4 @@ Alle citaten en lijnbesluiten: `docs/concept/IDEEEN.md` → "Capybarrel". Prompt
 - Jordi (23 nov): "ga maar bouwen en baseer het oog op een sprite studie". → Oog 1-op-1 overnemen van een bestaande Gen 3-sprite met een lui/half-dicht oog (SPRITE_KERN: gezicht = model of een echte Gen 3-sprite, geen eigen oogvorm).
 - Sprite r2 (A Hypno-oog, B Drowzee-oog), Jordi (23 nov): "dat zijn geen luie ogen". Keuzevel: `oog/studie/luie_ogen.png`.
 - Jordi (23 nov) stuurde een foto van een echte capibara: "check die blik" en "mag volledig zwart oog". Op de foto (niet als bestand binnengekomen): klein, rond, volledig donker/zwart glanzend oog hoog op de kop, geen oogwit zichtbaar, met een zwaar bovenlid/vachtwenkbrauw net erboven die het bovenste stukje afdekt; kalme, onverschillige blik.
+- Jordi (23 nov) over het oog: "streepje met een rondje erin".

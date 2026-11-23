@@ -135,3 +135,4 @@
 - Jordi: "wat als je dit hoofd plakt op de rest van het design, kan je netjes de rondjes die erop zitten nu weghalen?" → kop van r10 (zonder zijn krans-rondjes) op de 3-ogensprite r5 palet B (onze krans, punt, lijf, staven blijven); `claydol_r10kop/`.
 - Jordi over de r10-kop: "hmm hij is wel meer baltoy dan claydol he".
 - Jordi: "en het ontwerp van de ogen is ook meer baltoy".
+- Claude-opties oogontwerp: A Claydol-kleur, B Claydol-opbouw (crème, bredere lichte rand, ogen in een gekerfde band), C zo laten. Jordi: "B". Uitvoeren als aparte stap na het plakken van de r10-kop.

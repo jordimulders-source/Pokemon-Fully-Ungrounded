@@ -128,3 +128,4 @@ Jordi: "ik denk dat dit ontwerp het niet gaat worden" – "het hele idee bedoel 
 - Sprite r21 (`bokser/sprite_r21/`): V-studie (Throh/Sawk-kraag, Blaziken, Swellow), varianten A gevuld, B banen (advies maker), C steil.
 - Jordi bij r21: "allemaal niet goed want je schuift het weer in zijn geheel naar rechts"; "r20 zit het dichtste in de buurt"; "echt een paar pixels beter moet die nog" → r22: keuzevel met 6 micro-varianten van de r20-V.
 - Jordi: "het perspectief"; "we kijken er vanuit een driekwart hoek op". Claude: varianten 7/8 erbij (buitenranden r18, punt 1–2 px naar links).
+- Jordi: "dus de v kan niet recht naar beneden zijn"; "ik kan het niet beter uitleggen dan dit, ben geen grafische artiest" → V-as schuin (punt links van het midden van de bovenrand), varianten 1–3 px.

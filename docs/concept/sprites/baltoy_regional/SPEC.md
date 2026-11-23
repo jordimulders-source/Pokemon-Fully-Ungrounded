@@ -103,3 +103,4 @@
 - Jordi: "echt al in 6 verschillende gesprekken gezien" · "en dat je het altijd beter vindt maar het altijd slechter is" (Claude had de rustige onderkop "een duidelijke verbetering" genoemd). Les bovenaan SPRITE_KERN. Onderkop terug naar g3.
 - g3 r3 (`claydol_gemini_r3/r3/claydol_g3r3.png`): onderkop = g3 (alleen tintomzetting 4↔5), rest = r2 (script-bewijs), staven los.
 - Keuring g3r2 (verse keurder): BIJNA; onderkop van r2 = pixelblur (bevestigt Jordi; r3 zette hem al terug), verder neusruggen tot de kaakrand, dambord in beide stafknoppen, ^ ^-boogjes op het lijf moeten trapjes zijn (model). → g3 ronde 4 (niets gladstrijken).
+- g3 r4 (`claydol_gemini_r3/r4/claydol_g3r4.png`): 17 px (stafknoppen per modelpixel, treden op het lijf hoekig); neusruggen waren in r3 al goed. → eindkeuring Dragonfly Cave.

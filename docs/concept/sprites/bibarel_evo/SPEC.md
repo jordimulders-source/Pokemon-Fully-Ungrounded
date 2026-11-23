@@ -21,6 +21,7 @@
 - r7 (`gemini/r7.png`, helm weg, stam onveranderd), Jordi: "nu is die kaal".
 - Keuze (23 nov): samenstellen uit de rondes; lijf/pose r4, kop r6 met de donkere lijn onder de rand eruit. Daarna Jordi: "en hij lijkt niet voldoende een bibarel evo"; "en het is geen potlood".
 - Toelichting Jordi: "nee ik bedoel dat het geen fase 3 is nog genoeg"; "geen potlood" gaat over r6/r7. Methode: "wat werkt het beste? hebben 80 designs gemaakt, mag hopen dat je ondertussen een beste manier weet" → nieuwe startprompt r8 (`gemini/PROMPT_r8.md`), daarna samenstellen.
+- r8 (`gemini/r8.png`), Jordi: "beste tot nu toe, alleen we missen een helmklep en de tuinbroek is halverwege afgekapt, dat tweede is puur inkleuren". Bijstuurprompt r9 (zelfde gesprek, alleen klep): `gemini/PROMPT_r9_bijsturen.md`; tuinbroek doorkleuren over de benen in de spritefase.
 
 ## Open
 - Welke suggesties (Claude, 23 nov): 1 oranje beiteltanden, 2 staart als troffel, 3 schepklauwen, 4 sjouwt tak/stam of modder tegen de borst, 5 knagend aan een stam, 6 waarschuwingskleuren (geel-zwarte staart), 7 helm van modderkorst/twijgjes.

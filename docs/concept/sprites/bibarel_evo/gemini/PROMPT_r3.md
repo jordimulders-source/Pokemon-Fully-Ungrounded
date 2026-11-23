@@ -1,6 +1,7 @@
 # Bibarel-evolutie – Gemini-startprompt r3 (23 nov, NIEUW gesprek, geen bijlage)
 
 Jordi bij r2: "ok de tanden vertalen duidelijk niet, de houten log mag een punt hebben alsof die er goed aan heeft geknaagd, hij mag wel wat groter en meer buff denk ik, op zich is het bouwvakkerstuinbroek idee als lichaamspatroon wel een goede, evenals een helm die onderdeel van het hoofd lijkt te zijn, grotere ogen zoals bibarel".
+Jordi (23 nov, tijdens het schrijven): "tanden weer gewoon wit".
 Vijf wijzigingen → nieuwe startprompt (GEMINI.md: max 1–2 per bijlageronde). "Not muscular" vervalt; "no detailed muscle definition" blijft (Jordi eerder: gespierd is vaak lelijk). Bibarel niet bij naam: ogen in woorden. Kleur van tuinbroek en helm niet voorgeschreven (Jordi zei geen kleur).
 
 ```
@@ -18,7 +19,7 @@ Brown fur with a lighter tan muzzle.
 FUR PATTERN LIKE BIB OVERALLS: its fur is patterned like construction-worker dungarees (a bib on the chest/belly with two shoulder straps, continuing over the legs) in a different fur color. It is fur, part of its body, not cloth.
 HELMET THAT IS PART OF ITS HEAD: the top of its head is shaped like a hard hat (a rounded dome with a small brim), but it grows from its head, like a hard natural cap. Not a separate hat.
 EYES: big, round, dark eyes with a white shine, clearly visible.
-TEETH: two HUGE orange front teeth, sticking far out of the mouth, very big and very clear, the most noticeable feature of the face (real beaver teeth are orange).
+TEETH: two HUGE white front teeth, sticking far out of the mouth, very big and very clear, the most noticeable feature of the face.
 A big, broad, flat paddle tail, shaped a bit like a mason's trowel, with one or two BROAD bands in a bright warning color (safety yellow or orange) like a road-work sign.
 
 POSE

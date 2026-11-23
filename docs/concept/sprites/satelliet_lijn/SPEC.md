@@ -17,3 +17,5 @@ Citaten en besluiten (Jordi, 23 nov); het overzicht staat ook in `docs/concept/I
 - Jordi over r3: "oog oneens, dat hoeft niet per se, mag best robotisch zijn, alleen de glans op het oog vertaalt niet naar een sprite, je mag wel prompten voor de andere 2 punten" → r4 nieuwe startprompt: r3 + antennes gelijk en naar achteren, meer contrast (diepere paarse schaduw), oog robotische lens zoals r3 maar zonder glans.
 - r4 (`fase1/gemini/r4.png`): antennes gelijk, paars en naar achteren, oog zonder glans. Claude: bol nog licht en linksboven geen donkere buitenlijn (oplosbaar in de spritefase); voorstel r4 = model. Wacht op Jordi.
 - Jordi over r4: "lijkt een beetje op een pokebal bijna haha maar dat vind ik niet erg".
+- Jordi over r4: "is deze pose alleen genoeg driekwart? met de rechte lijn ook?" → Claude: nee, rechte naad + oog op de rand = bijna profiel → r5 (prompt in chat, alleen kijkhoek).
+- r5 (`fase1/gemini/r5.png`): Jordi "ik weet niet of ik deze sterker vind, wat vind jij?". Claude: kijkhoek beter (gebogen naad, volume, verkorte antennes), maar antennes dunner (op 64 px ±1–2 px), voetjes wit, naad op 64 px bijna weg. Wacht op Jordi.

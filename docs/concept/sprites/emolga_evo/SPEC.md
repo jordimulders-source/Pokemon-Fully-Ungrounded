@@ -43,3 +43,4 @@
 - r6c (kop 1,5× via Gemini, `gemini/r6c.png`): "dit werkt niet helemaal, ik denk dat je voor de gengas methode moet gaan".
 - Bouw: model = r6b (`model/model.png`), Gengas-methode: model verkleinen door te schrappen (niets hertekenen), gezicht = Emolga's eigen spritepixels (`graphics/pokemon/emolga/anim_front.png`) 1-op-1 als blok, geschaald (±125%), op de kop van het model; visortekening uit het model, geen wangen (Jordi eerder: visor "ipv de wangen"). Maker-agent, sprite_r1/.
 - Jordi: "en net als met de sunflora evolutie eerder, het is dan niet erg dat het hoofd een stuk lichaam overlapt" → kopopties `model/kop_opties/` (A: r6b-kop 1,4×, B: r6c-kop 1,15×, beide op het r6b-lijf; ruwe schets).
+- Bouw r1 (maker): A0 = model, A = kop 1,4× (diff 0 buiten kopzone). Keurder r1: A0 BIJNA (zebra in gezicht 10–13,55–57), A PASS; optioneel vacht D lichter. r2 (Claude): zebra uit de kale reductie overgenomen, D (36,36,44) → (44,44,54).

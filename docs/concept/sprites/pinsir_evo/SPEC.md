@@ -70,3 +70,4 @@
 
 ## Model v2 gekozen (23 nov)
 - Jordi: "probeer 1 maar" → **v2_r4 bevroren** (`referenties/model_v2_r4.webp`); rug pas in de sprite vereenvoudigen (alleen grote plaatlijnen en rugstekels uit het model, kleine krasjes weg). Eerst de rug op 8×% naast het model aan Jordi, daarna de rest.
+- Sprite v2 r1 (`sprite_v2/`, verse maker): natief raster (pitch 10,24) exact verkleind 91→64 (meerderheid, geen mengtinten), alleen lange lijnen, rug in grote platen met 3 tinten, 12 kleuren. Claude: leest scherp en Gen 3-achtig; nog veel losse lijnstukjes in rug/heup. Naar Jordi: `sprite_v2/rug_8x.png` en `sprite_v2/vel.png`.

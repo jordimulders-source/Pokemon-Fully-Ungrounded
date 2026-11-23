@@ -1,0 +1,20 @@
+kopschild+stekels    30 van  193 px anders (16%)
+gezicht              24 van  180 px anders (13%)
+kaken                24 van  118 px anders (20%)
+buik+arm links       54 van  369 px anders (15%)
+rug+schouder        237 van  553 px anders (43%)
+staart               29 van  181 px anders (16%)
+benen                92 van  432 px anders (21%)
+
+herkomst (pixels die van de pure reductie met de gekozen lijnen afwijken, per stap):
+ opschonen vlakjes (< 3 px, schaduw/bruin < 5 px):  156
+ rug: vlakjes < 8 px opgeslokt:                      16
+ rug: plaatvulling 3 tinten (licht linksboven):      169
+ oogrand+pupil zwart (model: zwart):               4
+ tanden room (model: roomkleurig, hooglichtindex):   3
+ stekelflanken + losse tintvlekjes opgeruimd:       21
+ stekelpunten 1 px (transparant gemaakt):            5
+ buitenlijn niet-zwart (model: gekleurde rand):      36
+silhouet: 5 px anders dan kale reductie
+stekelpunten weggehaald: [(36, 17), (45, 21), (49, 24), (53, 28), (55, 31)]
+losse tintvlekjes opgeruimd: 15 px

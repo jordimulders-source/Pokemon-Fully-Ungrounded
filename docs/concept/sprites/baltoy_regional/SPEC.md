@@ -93,3 +93,4 @@
 - r2 (`claydol_sprite_r2/`; ogen+neus 2 natieve px rechts (varianten 1/3 px op het vel), facetboog over het uitgewiste oog, krans = één bolletje-asset uit het model, spikkels → tintvlakken, staven 1 px vrij van de rand). Claude: krans is slechter (modelbolletje is niet rond: hobbelig, plat, inkeping, overlappend), gezicht/lijf nog vlekkerig → r3 met verse maker.
 - Jordi over r2: "de twee stokken zitten ook vast aan het lijf, dat is in het model ook niet" → doorgegeven aan de maker van r3 (staven als losse componenten, script-check).
 - Jordi: "maar wat je zegt, het model klopt sowieso niet" · "die is slechter gemaakt" (vraag van Claude: welke delen).
+- Jordi: "pauzeer de maker, pak het oorspronkelijke r3 model erbij en ga die helemaal ombouwen, als dat af is kijken we hoe we het beter kunnen maken" → maker r3 (`claydol_sprite_r3/`, onaf) gestopt; nieuwe lijn: Gemini `claydol_r3.png` ongewijzigd naar een sprite in `claydol_gemini_r3/`.

@@ -72,3 +72,4 @@ Jordi: "ik denk dat dit ontwerp het niet gaat worden" – "het hele idee bedoel 
 - Sprite r3 (`bokser/sprite_r3/`): 13 keurderspunten verwerkt (borstvuist groter, romp met volume, benen per been, randen dicht). Verse keurder gestart.
 - Jordi (23 nov): "belangrijk is dat de haren echt als 2 kuiven lezen zoals bij mr mime, dat heeft het model niet helemaal goed gedaan, dus daar mag je van af wijken". → r4: kuiven uit de Gen 3-Mr. Mime, iets achterover, even lang.
 - Jordi: "die heeft nog een stuk haar ertussenin gedaan" → haar tussen de kuiven weg, kale kopbovenkant zoals Mr. Mime.
+- Keurder op r3: BIJNA (benen, schoenen, buikstreep, vuist tegen V, ogen = variant B i.p.v. Mr. Mime-oog). Punten mee naar r4; hoofdversie oog A.

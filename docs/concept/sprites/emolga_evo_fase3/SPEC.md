@@ -1,0 +1,33 @@
+# Emolga-lijn fase 3: fruitvampier
+- Jordi (23 nov): "ik heb stiekem nu wel inspiratie gekregen hoe we de fruitvampier in het hele verhaal kunnen betrekken, dat kan misschien een 3e vorm in de emolga lijn worden" · "En als we voor een fase 3 fruitvampier gaan die op zijn kop hangt met de vleugels gesloten?"
+- Open: naam, methode, design interessanter maken.
+- Over r1: "dit komt nog niet goed over, vanwege de compacte lengte" → r2 lang en slank, verhoudingen in maten.
+- Jordi: "en moet het hoofd ook niet op zn kop" → ja, in r2 erbij.
+- Over r2: "dit gaat lukken. Alleen we moeten nog meer over design nadenken en interessanter maken" (voorstellen Claude in chat 23 nov).
+- Jordi (23 nov): "Emolga krijgt dus 2 evoluties" (eerder: "fase 3", "3e vorm in de emolga lijn").
+- Besloten (Jordi, 23 nov): vleermuislijn vervalt; fase 3 is Electric/Flying.
+- Jordi (23 nov): "moche vertaalt niet goed, gewoon een normale fruitvampier. maar wel duidelijk maken dat die in de emolga lijn zit". → Jordi: "nee from scratch" → r3 = nieuwe startprompt (`gemini/PROMPT_r3.md`) = r2 +: oogvlek als vizier + lange puntige oren van fase 2 (keuze Claude), naam Emolga niet genoemd.
+- Over r3: "aardig design, alleen: in het gezicht moet wat geel terugkomen · de tak bovenin moet weg · Vertaalt zo'n verticaal model goed naar een sprite?" → r4 bijsturen in het r3-gesprek (`gemini/PROMPT_r4_bijsturen.md`).
+- r4 (Jordi in het r3-gesprek, eigen bijsturing): tak weg, geel op snuit/kin en voorhoofd; ±23 px breed bij 64 hoog (smalste Gen 3/repo-sprites ≥27 bij ±60 hoog). Claude: kingeel kan als snavel lezen; voorstel breder (±2,3:1). Wacht op Jordi.
+- Jordi "akkoord" → r5 bijsturen (`gemini/PROMPT_r5_bijsturen.md`): breder ±2,3:1, geel weg van snuit/kin (voorhoofdgeel blijft).
+- Over r5: "slechter geworden" (Claude: niet breder geworden, ±23 px; grijsblauwe oogvlek verdwenen; geel kin nu een driehoekje). r4 blijft de beste.
+- Jordi "akkoord" → r6 nieuwe startprompt (`gemini/PROMPT_r6.md`): r3 + 2,3:1 + gezicht van r4 (kin wit). Lukt het niet: r4 als model, breedte in de spritefase.
+- Over r6: "weer stapje beter, al twijfel ik over de kleur van het 'masker'". Claude: breedte weer ±23 px (Gemini negeert de maat); masker r6 lichter staalblauw (±111,132,154) dan het vizier van fase 2 (donker leigrijs uit de zwarte ramp, `emolga_evo/af/model.png`). Kleur kan in de spritefase zonder nieuwe Gemini-ronde.
+- Jordi: "leest die voldoende als een evo?" → Claude: half (geen zwarte kap, bijna geen geel). Jordi "Alle 3 akkoord": A kap met V, B vleugels iets open met geel vlak, C oogvlek leigrijs → r7 nieuwe startprompt (`gemini/PROMPT_r7.md`).
+- r7: ±27,5 px breed (opgelost), kap-V en leigrijs goed. Jordi: "klopt de vleugelvorm nog?" → Claude: nee, vlakke panelen/revers; voorstel r8 bijsturen (`gemini/PROMPT_r8_bijsturen.md`): vingerbotten + geschulpte rand, duimklauw. Takje bovenaan weghalen in de spritefase.
+- r8 (bijsturen): "dit gaat fout" — Gemini plakte twee uitgespreide halloweenvleugels op de zijkanten bovenop de gesloten vleugels (4 vleugels). r7 blijft de beste.
+- Jordi: "nog 1 keer prompt proberen" → r9 nieuwe startprompt (`gemini/PROMPT_r9.md`); anders r7 als model.
+- r9: "vleugels weer fout?" Claude: vleugels iets beter (botten, duimklauw), rand nog recht/blokkig; maar kop slechter (snuit/neus weg, grijs leest als masker, V-kap valt weg), weer ±24 px breed. r7 blijft de beste → voorstel optie A (r7 als model).
+- **Besloten (Jordi, 23 nov):** r7 is het model ("ja en dat heeft ook de vampierenhouding beter dan dit"), `model/model_gemini_r7.png`. Spritefase: takje bovenaan weg. Open: vingerlijnen in het geel (A zo laten / B lijnen naar r9).
+- Jordi (overzicht r1–r9): "maar bij beide kloppen de vleugels niet meer" (r7, r9) · "4 en 6 waren de beste qua vorm". Model r7 dus herzien; vleugels openvallen (r7+) was fout van Claudes prompt.
+- Jordi: "het moet niet geel worden om maar geel te hebben" → voorstel B (groot geel vlak) vervalt; geel als naad zoals r4/r6.
+- Jordi: "wat kunnen we doen om hem iets minder smal te maken" → test `gemini/r6_breder_test.png`: rijen schrappen uit het vleugelstuk (Gengas-methode, niets hertekenen): −10% ≈ 25,6 px, −16% ≈ 27,5 px breed.
+- Jordi: "het draait om het lijf" → test `gemini/r6_lijf_breder_test.png`: alleen het lijf (vleugelpakket) horizontaal verbreed, kop/oren/voeten gelijk: +15% ≈ 24,7 px, +25% ≈ 26,3 px. Wacht op Jordi.
+- **Besloten (Jordi, 23 nov):** "zien er allemaal wel goed uit, dus ga maar voor rechts" → model = r6 met lijf +25% breed (`model/model.png`, ±26,3 px bij 64 hoog); r7 als model vervalt. Eerder akkoord: A zwarte V-kap, C oogvlek leigrijs (fase 2); B (geel vlak) vervallen.
+- r1 (maker): A0/A/A_geel 26×64, `sprite_r1/` (NOTITIES). Claude: silhouet trouw; vleugelpakket vlak, wangplukje rechts weg, V-kap in A leest als donkere massa → r2 (verse maker).
+- r2 (verse maker): vleugelpakket volume (ramp fase 2), wangpunten terug, V-kap P1; diff 0 buiten de zones. Volgende: verse keurder.
+- Keuring r2: A0 en A BIJNA (trouw goed; 8 reparaties: volume onderste vleugelvlak, open rand, pillow shading wit, vuisten, details). Ter info: A heeft geen voorhoofdgeel (A_geel wel), V-punt 1 px. → r3 (maker).
+- r3 (maker): 8 keurderreparaties, diff alleen benoemde px. Volgende: eindkeuring Dragonfly Cave + omlijningsronde.
+- **Jordi (23 nov): "A_geel naar de eindkeuring"** (kap met V + geel voorhoofdvlekje + leigrijze oogvlek).
+- Eindkeuring r3 (A_geel): BIJNA, 5 reparaties (35 px; outline base lichtkant tint 2, binnenlijn, open rand, losse px, kruinlijn). Claude voerde ze per script exact uit → `sprite_r4/A_geel.png` (+ `_8x`, `vergelijk.png`). Ter info: 1024 px (checklist fase 3 1700–2600; komt door het smalle hangmodel). Aan Jordi.
+- **Af (Jordi, 23 nov): "de designs zijn tof"** → `af/fruitvampier.png` (= sprite_r4/A_geel), `af/lijn.png`. Open (Jordi): "of fase 2 evolved in 3 of naast elkar komen te staan, maar dat is iets voor mij om te bedenken."

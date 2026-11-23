@@ -2915,3 +2915,114 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.695] - Regional Baltoy: stekel en eindkeuring (r14–r19)
 - Stekel: vormprobeersels (r14), tolpunt per laag uit het model (r15–r16); Jordi: "anders gewoon van de originele baltoy pakken" → r17 = r13 + de tolpunt van de Gen 3-Baltoy 1-op-1 in steentinten; Jordi koos 1 px naar links (r18).
 - Eindkeuring Dragonfly Cave r18: PASS met 1 pixel → r19 (`docs/concept/sprites/baltoy_regional/sprite_r19/baltoy_r19.png`, kandidaat). Lessen in GEMINI.md.
+### [v0.0.696] - Idee: Emolga-evolutie (wingsuit)
+- Jordi's idee voor een Emolga-evolutie gebaseerd op wingsuit flying vastgelegd in `docs/concept/IDEEEN.md`.
+
+### [v0.0.697] - Emolga-evolutie: besluiten + Gemini-prompt r1
+- Jordi's besluiten in `docs/concept/sprites/emolga_evo/SPEC.md`; Gemini-prompt r1 in `emolga_evo/gemini/PROMPT_r1.md`.
+
+### [v0.0.698] - Emolga-evolutie: Gemini-prompt r2
+- Feedback op r1 in `emolga_evo/SPEC.md`; prompt r2 zonder bijlage, super groot wingsuit, aerodynamisch, steilere duik, Emolga's echte kleurpatroon.
+
+### [v0.0.699] - Emolga-evolutie: Gemini-prompt r3
+- Feedback op r2 in `emolga_evo/SPEC.md`; prompt r3: langere puntoren, langwerpig lijf vastgegroeid aan de vleugels, langere poten, aerodynamisch buikpatroon, visorkleur rond de ogen i.p.v. wangen.
+
+### [v0.0.700] - Emolga-evolutie: aanpak r4
+- r3 afgekeurd; r4 vertrekt van r2 als bijlage met max. 2 wijzigingen per ronde (`emolga_evo/gemini/PROMPT_r4.md`).
+
+### [v0.0.701] - Emolga-evolutie: prompt r4 naar het Skinguin-voorbeeld
+- `emolga_evo/gemini/PROMPT_r4.md` herschreven als nieuwe startprompt in Skinguin-opbouw (geen bijlage); les in `docs/lessen/GEMINI.md`.
+
+### [v0.0.702] - Emolga-evolutie: prompt r5
+- Feedback r4 in SPEC; `PROMPT_r5.md`: verhoudingen in maten, oogpatroon als vachttekening.
+
+### [v0.0.703] - Emolga-evolutie: prompt r6 (colugo) + fruitvampier-idee
+- `emolga_evo/gemini/PROMPT_r6.md`: colugo als anatomie. Jordi's idee fruitvampier als 3e vorm van de Emolga-lijn in IDEEEN.md.
+
+### [v0.0.704] - Emolga-evolutie: prompt r7 (reuzenvliegende eekhoorn)
+- r6 (colugo) "vrij ok"; `PROMPT_r7.md` met Petaurista als anatomie.
+
+### [v0.0.705] - Emolga-evolutie: r7 + idee fase 3
+- r7 (Petaurista) minder goed; fase 3 fruitvampier op zijn kop met gesloten vleugels voorgesteld door Jordi (IDEEEN.md).
+
+### [v0.0.706] - Emolga-lijn fase 3: Gemini-prompt r1
+- `docs/concept/sprites/emolga_evo_fase3/` (SPEC + prompt r1: fruitvampier op zijn kop, vleugels gesloten).
+
+### [v0.0.707] - Emolga-lijn fase 3: prompt r2
+- r1 te compact; r2 lang en slank.
+
+### [v0.0.708] - Emolga-lijn: 2 evoluties
+- Fase 3 fruitvampier r2 "gaat lukken"; Emolga krijgt 2 evoluties (Jordi).
+
+### [v0.0.709] - Emolga-lijn fase 2: r6 gekozen
+- r6 (colugo) is het design voor fase 2; draaiproeven en bijstuurprompt voor de duik. Fase 3 = fruitvampier.
+
+### [v0.0.710] - Vleermuislijn vervalt
+- Fruitvampier = fase 3 van de Emolga-lijn (Electric/Flying); POKEMON.md, IDEEEN.md en SPEC bijgewerkt.
+
+### [v0.0.711] - Emolga-lijn fase 2 (wingsuit-colugo): twee frontsprites af
+- Model Gemini r6b (duikvlucht). Gebouwd als het model 1-op-1 (`emolga_evo/af/model.png`) en met alleen de kop 1,4× vergroot (`af/kop14.png`, Jordi: "bouw maar het originele gemini model en A net allebei"; overlap met het lijf mag zoals bij de Sunflora-evolutie).
+- Maker r1, keurder (A0 BIJNA, A PASS), r2 (zebra gezicht, vachttint), eindkeuring Dragonfly Cave r2 → r3 (oog/pupil zwart, hand, tint): beide PASS.
+- Ter info (eindkeuring): voorste vleugel bijna egaal geel en zwarte binnenlijnen, trouw aan het model; gezicht leest beter in de versie met de grote kop.
+
+### [v0.0.712] - Emolga-lijn fase 2: keuze
+- Jordi kiest de versie met de originele kop (`emolga_evo/af/model.png`); vergelijking naast het model in `af/naast_model.png`.
+
+### [v0.0.713] - Emolga-lijn fase 2: buikonderrand
+- 5 pixels van de buikonderrand naar de curve van het model (Jordi: "hele subtiele wijzigingen"); `af/model.png` = sprite_r4.
+
+### [v0.0.714] - Emolga-lijn fase 2: terug naar r3
+- r4 (buikrand) gaf te dikke hoekjes; `af/model.png` weer r3. Rastervergelijking model | r3 | r4 in `sprite_r5/raster_buik.png`.
+
+### [v0.0.715] - Emolga-lijn fase 2: 3 pixels van Jordi
+- Buik: (40,41) zwart, (31,50) lichtgrijs, (28,52) donkergrijs zoals in het model; `af/model.png` = sprite_r6.
+
+### [v0.0.716] - Emolga-lijn fase 2: eindkeuring
+- Eindkeuring r6 BIJNA (open rand); (31,51) zwart (ook Jordi's idee) → r7 PASS. `af/model.png` = sprite_r7.
+
+### [v0.0.717] - Emolga-lijn fase 2 (wingsuit-colugo): frontsprite af
+- Kleurrondes r8–r12 na Jordi's feedback ("klopt die echt al aan de kleurtinten?", "erg effen", "nog steeds een effen vlak"): donkere ramp 38/64/98 koel, volume in kop, oor, lijf, donkere band en bovenbuik (glans + index 10 (140,152,172)), schaduw op de gele vleugel; r12 haalt het donkere zilver onder het handje weg. Vorm/omlijning sinds r3 ongewijzigd (op Jordi's 4 buikpixels na).
+- `emolga_evo/af/model.png` = r12; op het overzichtsvel bij "Evolutions" als "Wingsuit-colugo (Emolga)" (naam open).
+
+
+### [v0.0.718] - Merge naar main
+- Emolga-lijn (fase 2 af, fase 3-prompts) samengevoegd met main (Gnomini-omlijning, regional Baltoy); onze secties hernummerd naar v0.0.696–717. Overzichtsvel opnieuw gemaakt.
+### [v0.0.719] - Gnometrotter: drie vormen (Rock, Ice, Grass) + twee hybrides, 5 eindsprites
+- Gnome-lijn fase 3 besloten: Gnometrotter met 3 vormen, Fairy/Rock (rock gnome), Fairy/Ice (deep gnome), Fairy/Grass (forest gnome); Flying en Steel vervallen; BG3 als kleine referentie (IDEEEN.md → Gnome-lijn).
+- Ontwerp Rock via Gemini r1–r8: hele lichaam van steen met behoud van de kleurpatronen, opbouw uit losse rotsstukken (Regirock-idee), voorovergebogen oude wandelaar met stok, stenen baard/muts/riem/rugkam/zolen. Model `gnometrotter_rock/r8/`.
+- Ice en Grass met Rock r8 als bijlage (zelfde pose en maat, Wormadam-principe), plus hybride modellen: het ijs-/houtlijf uit de eerste versies geknipt en geplakt binnen de omtrek (`*/hybride/`).
+- 5 frontsprites (64×64, zelfde verkleining en palet voor zwart/roze/blauw, zelfde voetlijn): Rock `gnometrotter_rock/sprite_r4/`, Ice `gnometrotter_ice/sprite_r3/`, Grass `gnometrotter_grass/sprite_r3/`, Ice hybride `gnometrotter_ice/sprite_hybride_r2/`, Grass hybride `gnometrotter_grass/sprite_hybride_r2/`; alle vijf met eindkeuring (Dragonfly Cave-omlijning) en reparaties. Overzicht: `gnometrotter_rock/eindsprites/vijf_eindsprites.png`.
+- Ice: het gat bij de mutspunt is dichtgemaakt (open las als oog); open variant in `gnometrotter_ice/sprite_r2/gnometrotter_ice.png`.
+
+### [v0.0.720] - Gnometrotter Rock: frontsprite af
+- Gnometrotter (Rock-vorm, Fairy/Rock): frontsprite af (`docs/concept/sprites/gnometrotter_rock/af/gnometrotter_rock.png` = sprite_r15), op het overzichtsvel (New, na Gnomad). Model Gemini r8; vormen bevroren op r7b; daarna alleen belijning/tinten/schaduw (r8–r11, eindkeuring PASS), ronde neus (r12) en Jordi's krabbel per pixel (r15). Ice en Grass volgen op dezelfde manier.
+- Definitieve eindkeuring Gnometrotter Rock r15: PASS zonder reparaties (`gnometrotter_rock/keuring_r15/`). Overdracht voor Ice/Grass: `gnometrotter_rock/OVERDRACHT_ICE_GRASS.md`.
+- Gnometrotter Rock toch nog niet af (Jordi: "nee die is nog niet af" · "dat is nog niet mooi"); laatste stand sprite_r16.
+
+### [v0.0.721] - Gnometrotter Rock af (r17)
+- Na r15: neusboog 1 px (r16) en in zeer donker roze i.p.v. zwart (r17; index 12, blauw hooglicht → 11). Jordi: "links is af nu". In `af/` en op het overzichtsvel.
+
+### [v0.0.722] - Merge naar main
+- Branch `ccr-e4619ef4-kb7349` (gnome-lijn, Gnometrotter Rock) naar main; conflicten in CHANGELOG/CLAUDE.md/GEMINI.md samengevoegd, overzichtsvel opnieuw gemaakt.
+
+### [v0.0.723] - Emolga-lijn fase 3 (fruitvampier): frontsprite af
+- Gemini r1–r9 (`emolga_evo_fase3/gemini/`): Moche vervalt ("gewoon een normale fruitvampier. maar wel duidelijk maken dat die in de emolga lijn zit"); vleugels openvallen (r7–r9) was fout, r4/r6 "de beste qua vorm"; "het moet niet geel worden om maar geel te hebben".
+- Model = r6 met het lijf per script 25% breder (`model/model.png`, ±26×64 px); sprite via verkleining (maker r1–r3), keuring r2 BIJNA → r3, eindkeuring (Dragonfly Cave, A_geel) BIJNA → 35 px belijning → r4.
+- Jordi koos A_geel: leigrijze oogvlek (fase 2), zwarte kap met V, geel voorhoofdvlekje. `af/fruitvampier.png`, lijnoverzicht `af/lijn.png`; op het overzichtsvel als "Fruitvampier (Emolga)" (naam open).
+- Jordi: "de designs zijn tof, het enige waar ik over twijfel is of fase 2 evolved in 3 of naast elkar komen te staan, maar dat is iets voor mij om te bedenken."
+
+### [v0.0.724] - Gnometrotter Ice af, Rock met Ice-neus
+- Ice en Grass niet op de Rock-sprites gebouwd ("want alle rock versies vertalen niet goed"), geen knip- en plakwerk: Ice vanaf `gnometrotter_ice/sprite_r3`, Grass vanaf `gnometrotter_grass/sprite_hybride_r2` (Jordi).
+- Gnometrotter Ice: r4–r9 (gesp weg, rechterschouder rond, linkerhand = Rock, lijf ijsfacetten uit het model, benen rustig met één barst per dij, muts los van het rugijs, haar), eindkeuring r9 BIJNA → r10 met 13 lijnpixels; frontsprite af (`gnometrotter_ice/af/`), op het overzichtsvel.
+- Gnometrotter Rock: neus van Ice r9 1-op-1 overgenomen (Jordi: "mag direct gecopy paste worden naar rock") → sprite_r18 = af.
+- Gnometrotter Grass: r4–r13 (neus/schouder/linkerhand = Rock, romp 2 gebogen plankennaden, benen met volume, stok/muts/baard herkleurd, groenpalet 5/12–14 herverdeeld, muts-bladeren naar een studie van Sewaddle/Shiftry/Chikorita e.a.); nog niet af.
+
+### [v0.0.725] - Merge naar main
+- Branch `claude/gallant-allen-ifpm5k` (Gnometrotter Ice af, Rock-neus, Grass tussenstand) naar main; conflicten in CHANGELOG/CLAUDE.md/GEMINI.md naar de main-versie, overzichtsvel opnieuw gemaakt.
+
+### [v0.0.726] - Gnometrotter Grass af; gnome-lijn af
+- Gnometrotter Grass: r14–r16 muts (grote blad bevroren, overige bladeren opnieuw uit de lijnen van het model; onderblad naar Jordi's krabbel), eindkeuring r16 BIJNA → r17 met 11 lijnpixels; frontsprite af (`gnometrotter_grass/af/`), op het overzichtsvel (Jordi: "akkoord").
+- Daarmee is de hele gnome-lijn af: Gnomini, Gnomad, Gnometrotter Rock/Ice/Grass.
+
+### [v0.0.727] - Merge naar main
+- Branch `claude/gallant-allen-ifpm5k` naar main.

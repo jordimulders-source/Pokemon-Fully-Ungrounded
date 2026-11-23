@@ -1,0 +1,51 @@
+# A baard/lijf-grens = alleen lijflijn 6 (zoals Gnomad); baardonderkant 4
+23 30 6
+24 30 6
+25 31 6
+26 31 6
+27 31 6
+28 31 6
+29 29 5
+30 29 5
+31 29 5
+32 29 5
+33 29 5
+34 28 44
+35 28 4
+36 27 4
+35 19 4
+36 20 4
+# B schouderschijf: geen zwarte boog binnen het lijf
+23 40 6
+24 41 6
+25 42 6
+26 43 66
+# C riem: bovenrand eigen tint 2, onderkant (over de broek) zwart
+37 21 22222222
+42 23 111111111111
+41 36 1111
+# D rechterbeen links (lichtkant) eigen tint
+49 39 9
+50 40 9
+51 41 9
+# E arm R rechterrand zwart
+26 51 1
+27 53 1
+28 54 1
+29 54 1
+30 55 1
+31 55 1
+32 55 1
+# F hand R rechterrand zwart vanaf midden
+36 60 1
+37 60 1
+38 60 1
+39 60 1
+40 59 1
+41 57 11
+41 35 11111111
+40 43 11
+39 45 11
+38 47 1
+37 48 1
+36 49 1

@@ -16,3 +16,4 @@
 - Ice r2 (`r2/gemini_r2_basis_rock.png`, met Rock r8 als bijlage): zelfde omtrek (481×475 px) en neus (64 px) als Rock r8.
 - 23 nov: "het enige wat nu wel zo is, is dat het roze/blauwe lichaam nu minder ijsblokken, houtvormen zijn" → `gemini/PROMPT_lijf_materiaal.md` (bijlage = eigen basis-rock-versie, één wijziging).
 - Bijstuurronde lijf (`r3/gemini_r3_lijf.png`): "nog niet wat we eerst hadden" → `gemini/PROMPT_twee_bijlagen.md` (pose Rock r8 + materiaal eerste versie).
+- Twee-bijlagen-ronde: "dit lukt niet"

@@ -20,6 +20,8 @@
 - r2 (`r2/gemini_r2.png`, prompt v2): "de ogen zijn teveel zichtbaar en hij heeft een beetje een saaie veilige look?"
 - 23 nov: "misschien moeten niet alle rotsen hetzelfde"
 - 23 nov: "en die op zijn rug zijn gewoon erop geplakt"
+- Claude stelde voor (r2): 1 twee soorten gesteente, 2 verschil in vorm (blok vs brokjes), 3 rots groeit uit de huid (bergrug), 4 muts groter en zwaarder; oog oplossen in de sprite.
+- 23 nov: "ja hij moet nog meer rock worden, misschien dat de stenen onderdeel van hem zijn geworden en dat zijn vuist daarom ook is doorgegroeid tot een wandelstok, doe verder ook nog wat suggesties om er echt een tof design van te maken, dat het een rock gnome/golem wordt, maar wel nog herkenbaar evolutie van gnomad"
 
 ## Voorgelegd door Claude (22 nov, nog niet gekozen)
 - A geode (muts = geode met amethist in een barst, snor/plukjes = kwartskristal, neus = rozenkwarts); B druipsteen (muts = stalactiet, kalksteen met lagen); C ertsader (riem = ader, gesp = goudklomp, korstmos op de snor).

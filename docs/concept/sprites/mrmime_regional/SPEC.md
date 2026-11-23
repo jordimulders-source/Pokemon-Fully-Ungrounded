@@ -76,3 +76,4 @@ Jordi: "ik denk dat dit ontwerp het niet gaat worden" – "het hele idee bedoel 
 - Sprite r4 (`bokser/sprite_r4/`): Mr. Mime-kuiven (kanteling 0,25), kale schedel, oog A, keurderspunten r3 verwerkt. Naar Jordi als tussencheck (kuiven = zijn punt).
 - Jordi bij r4: "nee het idee dat die kuiven slicked back waren was goed, alleen er zat nog iets tussen" → r5: haar van r3 terug, alleen het middenstuk weg.
 - Sprite r5 (`bokser/sprite_r5/`): haar r3 terug, tussenstuk (19 px) weg; kale strook smal (4–5 px); grijze schaduwkolom loopt door in de kop.
+- Jordi bij r5: "je hebt het hoofd veranderd, dat isn niet de bedoeling, het enige wat je moet doen is de linkerkuif zodanig afknippen dat het dezelfde vorm heeft als de rechter, maar hij valt er vanwege de hoek een beetje achter het hoofd" → r6: kop = r3, alleen linkerkuif knippen.

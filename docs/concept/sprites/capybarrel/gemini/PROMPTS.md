@@ -31,3 +31,23 @@ Style: official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 
 
 AVOID: plush toy / Neopets look, beaver or Bidoof/Bibarel look, a cartoon barrel with a face, Donkey Kong barrel, water, hot spring, fruit on its head.
 ```
+
+## Ronde 1 (23 nov)
+- Variant B (`r1/capybarrel_r1_B.png`): rechtopstaande capibara in een staande ton. Jordi: "hmm ik dacht meer aan gewoon een capybara in pokemon stijl met een barrel om zijn lichaam, maar die wel nog kan lopen".
+
+## r2 (nieuw gesprek, zonder bijlage)
+```
+Design an original Pokemon called CAPYBARREL. Type: Normal. First stage of a two-stage line.
+
+Concept: just a capybara in Pokemon style, with a wooden barrel around its body, but it can still walk.
+
+The capybara stands on all four legs in a natural walking stance. A wooden barrel lies horizontally around its torso, like a tube: the head sticks out of the front opening, the rump out of the back opening, and the four short legs come out underneath. The barrel has vertical wooden staves and two dark iron hoops.
+
+Anatomy: a real capybara (Hydrochoerus hydrochaeris): large blunt square head, small rounded ears high on the head, small eyes high on the head, big flat nose, short sturdy legs with small feet. Drawn as a Pokemon, not as a realistic animal.
+
+Fur: warm reddish-brown capybara fur. Barrel: warm brown wood with darker grain lines.
+
+Style: official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 colors, dark outline, facing 3/4 to the left, compact composition. White background, no ground, no shadow, no effects.
+
+AVOID: plush toy / Neopets look, beaver or Bidoof/Bibarel look, standing upright, sitting inside an upright barrel, a cartoon barrel with a face, water, hot spring, fruit on its head.
+```

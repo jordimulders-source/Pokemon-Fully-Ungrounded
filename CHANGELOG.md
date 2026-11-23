@@ -2872,3 +2872,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.690] - Capybarrel: Gemini-prompts r1
 - `docs/concept/sprites/capybarrel/gemini/PROMPTS.md`: twee varianten (lijf ís de ton / zit in de ton).
+
+### [v0.0.691] - Capybarrel: r1-feedback en prompt r2
+- `capybarrel/gemini/`: r1 variant B bewaard, Jordi's feedback en prompt r2 (lopend op vier poten, ton om het lijf).

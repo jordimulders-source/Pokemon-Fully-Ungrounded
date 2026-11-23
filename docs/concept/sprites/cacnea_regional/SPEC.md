@@ -33,3 +33,4 @@
 - Prompt Cacnea r4: `gemini/PROMPT_cacnea_r4.md` (r3-prompt; 8–10 dikke korte stekels alleen op de rand, ogen en mond als Cacnea, kruin als wollig plukje, armen met ribben).
 - r4 → `gemini/cacnea_r4.png` (dikke zwarte stekels op de rand, Cacnea-ogen en -mond, bruin plukje bovenop, hoekige armen). Maattest 53 px: `maattest/r4_53px_nearest_box_gen3.png` (stekels blijven leesbaar). Jordi: "wat vind je?"
 - Jordi: "maar is het voldoende een copiapoa?" Claude: half; stekels zijn hoorntjes en de omtrek is glad. Prompt r5: `gemini/PROMPT_cacnea_r5.md` (lange dunne zwarte naalden 1 px × 4–6 px op de rand, bolle ribben met golvende omtrek).
+- r5 → `gemini/cacnea_r5.png` (lange naalden als stralenkrans boven de kop, omtrek nog glad, ogen weer ringen). Jordi: "ik weet niet, ik vind het niet echt geslaagd".

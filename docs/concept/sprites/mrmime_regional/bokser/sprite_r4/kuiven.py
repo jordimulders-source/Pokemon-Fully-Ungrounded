@@ -37,7 +37,8 @@ for y,x in weg:
 for y in range(0,12):
     for x in range(64):
         if f[y,x] in (5,6,7,8) and any(f[yy,xx]==0 for yy,xx in ((y-1,x),(y+1,x),(y,x-1),(y,x+1))): f[y,x]=1
-for x in (43,44,45): f[11,x]=1     # bovenrand achterhoofd (oude haarrand r3 rij 11)
+for x in (43,44,45): f[11,x]=1
+f[12:,:]=r3f[12:,:]   # vanaf rij 12 geen haar: alles terug naar r3 (wang, bol, nek)     # bovenrand achterhoofd (oude haarrand r3 rij 11)
 np.save(UIT+'.npy',f)
 p=Image.fromarray(f.astype('uint8'),'P'); pal=[v for c in PAL for v in c]; p.putpalette(pal+[0]*(768-len(pal))); p.save(UIT+'.png',transparency=0)
 d=(f!=r3f); hz=np.zeros_like(d); hz[0:18,:]=1

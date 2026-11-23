@@ -42,3 +42,7 @@ Lijn: Pincurchin (repo: puur Electric) → regionale vorm. Pincurchin weer in de
 ## Gemini v6 (`r6/gemini_v6.png`, 23 nov)
 - Jordi: "hij lijkt nog steeds niet, veel te stekelig"
 - Uitleg (keuze Jordi): "Vorm: gladde staafjes" (gladde potloodstaafjes met een stomp eind zoals op de foto, geen gekartelde punten) → startprompt v7.
+
+## Gemini v7 (`r7/gemini_v7.png`, 23 nov)
+- Jordi: "ok veel beter, en hoe maken we hier nu een semi onderwater mijn nog van (ogen en mond kloppen niet maar die fixen we zelf)"
+- Ogen en mond: in de sprite zelf Pincurchins gezicht overnemen (niet meer via Gemini).

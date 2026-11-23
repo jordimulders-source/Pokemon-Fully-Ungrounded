@@ -2905,3 +2905,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.698] - Emolga-evolutie: prompt r7 (reuzenvliegende eekhoorn)
 - r6 (colugo) "vrij ok"; `PROMPT_r7.md` met Petaurista als anatomie.
+
+### [v0.0.699] - Emolga-evolutie: r7 + idee fase 3
+- r7 (Petaurista) minder goed; fase 3 fruitvampier op zijn kop met gesloten vleugels voorgesteld door Jordi (IDEEEN.md).

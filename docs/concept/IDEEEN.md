@@ -709,3 +709,4 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - Emolga is in de repo Electric/Flying. Type, uiterlijk, methode en naam van de evolutie: nog niet besproken.
 - Besloten (Jordi, 22 nov): zelfde type (Electric/Flying), "moet echt op een wingsuit lijken", groter, geen helm, geen bril; sprite groter, stoerder, "echt in een duikvlucht, adrenaline junkie". Verder in `docs/concept/sprites/emolga_evo/SPEC.md`.
 - Jordi (23 nov): "ik heb stiekem nu wel inspiratie gekregen hoe we de fruitvampier in het hele verhaal kunnen betrekken, dat kan misschien een 3e vorm in de emolga lijn worden haha, vrij bizar maar waarom ook niet he". Fruitvampier stond tot nu toe als eindvorm van de vleermuislijn (zie hierboven en POKEMON.md); niet besloten.
+- Jordi (23 nov): "En als we voor een fase 3 fruitvampier gaan die op zijn kop hangt met de vleugels gesloten?" Open: type, wat er met de vleermuislijn gebeurt, welke fase-2-basis (r5/r6).

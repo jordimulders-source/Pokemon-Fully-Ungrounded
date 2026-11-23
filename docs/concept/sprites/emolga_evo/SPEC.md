@@ -32,3 +32,5 @@
 - Over r5 (zonder de naam Emolga): "deze is wel al wat beter, maar jouw idee wil ik wel proberen" → r6 = r5 met colugo als anatomie (voorstel Claude; alternatieven reuzenvliegende eekhoorn, Draco-hagedis).
 - Jordi: "ik heb stiekem nu wel inspiratie gekregen hoe we de fruitvampier in het hele verhaal kunnen betrekken, dat kan misschien een 3e vorm in de emolga lijn worden haha, vrij bizar maar waarom ook niet he" (zie IDEEEN.md).
 - Over r6 (colugo): "ok dat is vrij ok, probeer nu die reuzen vliegende eekhoorn" → r7 = r5 met Petaurista.
+- Over r7 (Petaurista): "deze is minder goed gelukt". Beste tot nu toe: r6 (colugo, "vrij ok") en r5 ("wel al wat beter").
+- Jordi: "En als we voor een fase 3 fruitvampier gaan die op zijn kop hangt met de vleugels gesloten?" (vragen gesteld, zie chat 23 nov).

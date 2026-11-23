@@ -38,3 +38,5 @@
 ## Keuze fase 2 (Jordi, 23 nov)
 - Over r6 (colugo): "dit is een prima design, beetje finetunen en dan doen we die, hij moet sowieso naar beneden duiken" · "en dan wordt de fruitvampier fase 3".
 - Draaiproeven van r6 (45° en 65°, kop omlaag) in `model/r6_duikopties.png` (origineel links).
+- Bijgestuurd r6 → `gemini/r6b.png` = model (`model/model.png`). Jordi: "ga maar bouwen met deze, vertaalt dit goed naar een sprite?"
+- Proef 64 px (`model/test_64px_8x.png`): silhouet sterk; kop ±12 px, oog en poten nauwelijks leesbaar (vraag aan Jordi of de kop groter mag).

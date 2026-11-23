@@ -1,3 +1,5 @@
+# aanroep r20: python3 bouw.py -30 -2 -4 6 40 -2 -4 -19 -1 && python3 bouw_v.py && python3 toon_vel.py && python3 bewijs.py
+# r20 (vanaf r19): verre schouderbal (VERBAL) 3 px naar rechts en 1 omhoog (arg 8/9: -22 0 -> -19 -1): tegen de romp en onder de wang zoals Mr. Mime; romp ligt ervoor.
 # r17 (vanaf r16): armen + vuisten = r9 1-op-1 (zelfde pixels), geplaatst op de schouderballen; broek en benen langer
 # door bestaande rijen te herhalen; buik rechtsonder rond; hele sprite 3 px naar rechts en 3 rijen omhoog.
 # r16 (vanaf r14/r15): armen = natief model (kale 52-reductie, reductie.py), zelfde verschuiving als hun vuist

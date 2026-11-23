@@ -123,3 +123,4 @@ Jordi: "ik denk dat dit ontwerp het niet gaat worden" – "het hele idee bedoel 
 - Jordi: "maar wat jij hebt gedaan is dat je hem helemaal naar rechts hebt gezet" → V op de plek van r18 houden, alleen linker baan smaller.
 - Jordi: "maar de positie verandert niet vanuit het midden" → punt van de V blijft waar hij in r18 zat.
 - Jordi: "alleen de vorm is anders in perspectief".
+- Sprite r20 (`bokser/sprite_r20/`, verse maker): verre bal 3 px naar rechts/1 omhoog tegen de romp; V op de r18-plek, links 1 kolom smaller, rechts 1 breder (variant sterk: 2/2).

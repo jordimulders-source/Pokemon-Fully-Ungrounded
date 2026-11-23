@@ -33,3 +33,4 @@ No plush/Neopets look, no chibi mascot.
 ```
 
 Jordi over r1: "dit lukt nog niet helemaal, hij lijkt gewoon op een water pokemon, niet op een legendary cryptid".
+Jordi: "en geen mooi design".

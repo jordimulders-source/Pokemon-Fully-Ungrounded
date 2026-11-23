@@ -49,3 +49,4 @@
 - Wat "logisch doorgegroeid" verder inhoudt naast groter.
 - Kleuren.
 - 23 nov (alle drie de vormen): "en we moeten zorgen dat ze allemaal even groot worden de sprites"
+- 23 nov: "zoals bij wormadam" → in de spritefase: zelfde hoogte, voetlijn en lijfmaat voor alle drie; alleen het materiaal verschilt.

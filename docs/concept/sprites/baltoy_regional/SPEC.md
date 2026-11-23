@@ -152,3 +152,4 @@
 - Jordi: "de vorm verandert niet van het lijf, alleen de inkleuring" (doorgegeven aan de eindkeuring).
 - Jordi: "ja echt ga nu aub niks meer opnieuw tekenen want dan word ik gek" → eindkeuring: alleen tinten binnen dezelfde klasse (lijn/rood/crème/steen), script-bewijs.
 - Eindkeuring (`claydol_r10kop/eindkeuring/claydol_eind.png`): alleen tinten (125 px: steen 122, lijn 3; klassen en alpha = r6, boven rij 40 niets), lijf als één ronde ton (schuine kopschaduw over hals/romp, voeten zetten de rompschaduw voort, armen eigen kap), 2 lichte randpixels linkerarm → selout. Zwak: onderkant één groot A-vlak. Naar Jordi.
+- Jordi: "kloppen de poten wel? zijn die niet te effen nu" → ja (linkervoet bijna alleen 5, rechter bijna alleen A); eindkeuring r2: voeten eigen ronding, alleen tinten.

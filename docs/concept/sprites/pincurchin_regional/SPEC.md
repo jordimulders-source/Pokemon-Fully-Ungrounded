@@ -57,3 +57,6 @@ Lijn: Pincurchin (repo: puur Electric) → regionale vorm. Pincurchin weer in de
 
 ## Model (bevroren)
 `r8/gemini_v8.png`, met bovengenoemde uitzonderingen (knobbeltje bovenop weg, gezicht van Pincurchin). Verder niets hertekenen.
+
+## Sprite (23 nov)
+- r1 (maker) → keuring BIJNA (lijnen staafjes, naadgat, vlekjes, onderrand) → r2 met reparaties 1–5 (`sprite/r2/`, A en B). Naar Jordi: `pincurchin_regional_r2_AB_8x.png`. Open: loopt alleen de bovenste naadlijn over de mond in B of de hele naad (keurder: tweede lijn wist de onderlip).

@@ -20,5 +20,5 @@
 - Open: welke kleur de visor heeft, welk buikpatroon (niet ingevuld in r3).
 
 ## Ronde 3 (Jordi, 23 nov)
-- Over r3: "totaal niet wat ik wil". r3 nam de meeste punten niet over (oren niet langer, vleugels kleiner dan in r2, lijf kort).
+- Over r3: "totaal niet wat ik wil", "dit is emolga met een bril". r3 nam de meeste punten niet over (oren niet langer, vleugels kleiner dan in r2, lijf kort).
 - Aanpak r4: r2 als bijlage, max. 2 wijzigingen per ronde (les GEMINI.md: bij veel wijzigingen tegelijk negeert Gemini ze). Volgorde Claude: r4 oren + lijf vastgegroeid; daarna poten + buikpatroon; daarna visor i.p.v. wangen.

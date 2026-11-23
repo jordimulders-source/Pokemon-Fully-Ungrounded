@@ -1,0 +1,141 @@
+== A ==
+buiklijnen: 14 in de buik -> 6                              21 px
+buik: hoofdvlak 7                                            6 px
+buik: hooglicht linksboven 8                                16 px
+buik: schaduwsikkel onder (y>=48) en rechts 6               34 px
+kopschild: vlak 5 (geen effen licht/donker-blok, geen x20-21-streep)  99 px
+kopschild: lichte schuine bovenband 14                      17 px
+kopschild: onderrand y19-20 -> 4 (ook links 9-13)           43 px
+kopschild: rechteronderhoek 4                                9 px
+kopschild: lichte streep rechtsonder op de rand              5 px
+kopschild: selout lichtkant 1->2                             6 px
+kopschild: stekelpunt roomtint 6 -> 14                       1 px
+ogen: los geel/brauw -> zwart                                4 px
+ogen: pupillen binnen                                        2 px
+ogen: geel                                                   0 px
+ogen: doorlopende balk                                       0 px
+verre been: vlak 4                                          65 px
+verre been: knieknobbel 5                                   13 px
+verre been: knobbel hooglicht                                2 px
+verre been: sikkel rechts                                    1 px
+verre been: sikkel rechts                                    1 px
+verre been: sikkel rechts                                    1 px
+verre been: sikkel rechts                                    1 px
+verre been: sikkel rechts                                    1 px
+verre been: sikkel rechts                                    1 px
+verre been: sikkel rechts                                    1 px
+verre been: sikkel rechts                                    1 px
+verre been: sikkel rechts                                    1 px
+verre been: sikkel rechts                                    1 px
+verre been: sikkel rechts                                    1 px
+verre been: sikkel rechts                                    1 px
+verre been: sikkel onder                                     7 px
+verre been: dwarslijn (19-23,54)                             5 px
+verre been: knobbelrand (18,51-53)                           3 px
+verre voet: scheiding twee klauwen                           2 px
+verre voet: klauwpunten 7                                    0 px
+verre voet: klauwonderkant 6                                 2 px
+nabije hand: drie klauwen (geen dambord)                    25 px
+verre hand: 8 -> 7                                           2 px
+verre hand: 7 -> 6                                           2 px
+knie: binnenkant 6/14 -> 5                                   0 px
+knie: hooglicht linksboven                                   2 px
+knie: onderste helft binnen de ring en rand eronder 4 (helderheid +14 -> model)  15 px
+knie: dubbele lijn x34/x36 -> een lijn                       2 px
+dij: lichte strook y47 -> 5 (banding)                        0 px
+staart: lichte strook y46-47 -> 5 (banding)                  0 px
+koepel: 14 -> 5 (alleen 32-34,30-31 licht)                   0 px
+koepel: hooglicht                                            6 px
+onderarm: 5 -> 4                                            13 px
+onderarm: lichtrand links                                    1 px
+onderarm: lichtrand links                                    1 px
+onderarm: lichtrand links                                    1 px
+onderarm: lichtrand links                                    1 px
+onderarm: lichtrand boven                                    6 px
+onderarm: tweede lichte rij (helderheid arm -11 -> model)    6 px
+onderarm: lichtrand links rij 39                             2 px
+verre arm: bovenkant 5 (helderheid -8 -> model)              4 px
+kopschild links onder 6 -> 4                                 0 px
+rugstekels + gladde rugrand: silhouet                       47 px erbij, 0 px weg
+vlakje < 3 px -> buurtint                                    1 px
+vlakje < 3 px -> buurtint                                    1 px
+vlakje < 3 px -> buurtint                                    1 px
+vlakje < 3 px -> buurtint                                    2 px
+vlakje < 3 px -> buurtint                                    2 px
+vlakje < 3 px -> buurtint                                    1 px
+vlakje < 3 px -> buurtint                                    1 px
+vlakje < 3 px -> buurtint                                    1 px
+vlakje < 3 px -> buurtint                                    2 px
+vlakje < 3 px -> buurtint                                    1 px
+silhouet anders dan r1: 47 px, allemaal nieuw (stekels): True
+  [(39, 18), (38, 19), (39, 19), (40, 19), (42, 19), (38, 20), (39, 20), (40, 20), (42, 20), (43, 20), (42, 21), (43, 21), (46, 21), (42, 22), (46, 22), (47, 22), (42, 23), (46, 23), (47, 23), (48, 23), (47, 24), (50, 24), (47, 25), (50, 25), (51, 25), (50, 26), (51, 26), (52, 26), (54, 26), (50, 27), (51, 27), (52, 27), (53, 27), (54, 27), (55, 27), (53, 28), (54, 28), (55, 28), (56, 28), (54, 29), (55, 29), (56, 29), (53, 30), (53, 31), (55, 31), (56, 32), (54, 34)]
+
+== B ==
+buiklijnen: 14 in de buik -> 6                              21 px
+buik: hoofdvlak 7                                            6 px
+buik: hooglicht linksboven 8                                16 px
+buik: schaduwsikkel onder (y>=48) en rechts 6               34 px
+kopschild: vlak 5 (geen effen licht/donker-blok, geen x20-21-streep)  99 px
+kopschild: lichte schuine bovenband 14                      17 px
+kopschild: onderrand y19-20 -> 4 (ook links 9-13)           43 px
+kopschild: rechteronderhoek 4                                9 px
+kopschild: lichte streep rechtsonder op de rand              5 px
+kopschild: selout lichtkant 1->2                             6 px
+kopschild: stekelpunt roomtint 6 -> 14                       1 px
+ogen: los geel/brauw -> zwart                                4 px
+ogen: pupillen binnen                                        2 px
+ogen: geel                                                   0 px
+ogen: doorlopende balk                                       0 px
+verre been: vlak 4                                          65 px
+verre been: knieknobbel 5                                   13 px
+verre been: knobbel hooglicht                                2 px
+verre been: sikkel rechts                                    1 px
+verre been: sikkel rechts                                    1 px
+verre been: sikkel rechts                                    1 px
+verre been: sikkel rechts                                    1 px
+verre been: sikkel rechts                                    1 px
+verre been: sikkel rechts                                    1 px
+verre been: sikkel rechts                                    1 px
+verre been: sikkel rechts                                    1 px
+verre been: sikkel rechts                                    1 px
+verre been: sikkel rechts                                    1 px
+verre been: sikkel rechts                                    1 px
+verre been: sikkel rechts                                    1 px
+verre been: sikkel onder                                     7 px
+verre been: dwarslijn (19-23,54)                             5 px
+verre been: knobbelrand (18,51-53)                           3 px
+verre voet: scheiding twee klauwen                           2 px
+verre voet: klauwpunten 7                                    0 px
+verre voet: klauwonderkant 6                                 2 px
+nabije hand: drie klauwen (geen dambord)                    25 px
+verre hand: 8 -> 7                                           2 px
+verre hand: 7 -> 6                                           2 px
+knie: binnenkant 6/14 -> 5                                   0 px
+knie: hooglicht linksboven                                   2 px
+knie: onderste helft binnen de ring en rand eronder 4 (helderheid +14 -> model)  15 px
+knie: dubbele lijn x34/x36 -> een lijn                       2 px
+dij: lichte strook y47 -> 5 (banding)                        0 px
+staart: lichte strook y46-47 -> 5 (banding)                  0 px
+koepel: 14 -> 5 (alleen 32-34,30-31 licht)                   0 px
+koepel: hooglicht                                            6 px
+onderarm: 5 -> 4                                            13 px
+onderarm: lichtrand links                                    1 px
+onderarm: lichtrand links                                    1 px
+onderarm: lichtrand links                                    1 px
+onderarm: lichtrand links                                    1 px
+onderarm: lichtrand boven                                    6 px
+onderarm: tweede lichte rij (helderheid arm -11 -> model)    6 px
+onderarm: lichtrand links rij 39                             2 px
+verre arm: bovenkant 5 (helderheid -8 -> model)              4 px
+kopschild links onder 6 -> 4                                 0 px
+rugstekels + gladde rugrand: silhouet                       47 px erbij, 0 px weg
+vlakje < 3 px -> buurtint                                    1 px
+vlakje < 3 px -> buurtint                                    1 px
+vlakje < 3 px -> buurtint                                    1 px
+vlakje < 3 px -> buurtint                                    1 px
+vlakje < 3 px -> buurtint                                    1 px
+vlakje < 3 px -> buurtint                                    2 px
+vlakje < 3 px -> buurtint                                    1 px
+silhouet anders dan r1: 47 px, allemaal nieuw (stekels): True
+  [(39, 18), (38, 19), (39, 19), (40, 19), (42, 19), (38, 20), (39, 20), (40, 20), (42, 20), (43, 20), (42, 21), (43, 21), (46, 21), (42, 22), (46, 22), (47, 22), (42, 23), (46, 23), (47, 23), (48, 23), (47, 24), (50, 24), (47, 25), (50, 25), (51, 25), (50, 26), (51, 26), (52, 26), (54, 26), (50, 27), (51, 27), (52, 27), (53, 27), (54, 27), (55, 27), (53, 28), (54, 28), (55, 28), (56, 28), (54, 29), (55, 29), (56, 29), (53, 30), (53, 31), (55, 31), (56, 32), (54, 34)]
+

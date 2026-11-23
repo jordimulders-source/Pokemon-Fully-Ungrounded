@@ -38,3 +38,4 @@ Jordi (letterlijk): "nee ik wil toch kijken of het lukt om een hybride vorm te m
 - Jordi (23 nov, over r7b): "beter al, maar je bent er nog niet. Rots op de rug is ook prima, het gaat nu echt om belijning, kleuren en schaduwen" → vormen r7b bevroren; ronde r8 alleen belijning/kleur/schaduw.
 - Jordi (23 nov): "de vorm laat je intact vanaf nu"
 - Jordi (23 nov): "kijk ook naar geslaagde sprites die wij al gemaakt hebben" → o.a. steenjaguar + welp (`steenmozaiek/af/`, steen), Lunatone- en Solrock-evolutie (`lunatone_evo/af/`, `solrock_evo/af/`, steen), Gnomad/Gnomini; overzicht `showcase/frontsprites_af.png`.
+- Jordi (23 nov, over r8): "weer wat beter, maar de zwarte lijnen lijken wat willekeurig te zijn, dat is niet hoe dat in andere goede sprites gelukt is"

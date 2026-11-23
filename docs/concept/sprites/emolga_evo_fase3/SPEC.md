@@ -16,3 +16,4 @@
 - Jordi: "leest die voldoende als een evo?" → Claude: half (geen zwarte kap, bijna geen geel). Jordi "Alle 3 akkoord": A kap met V, B vleugels iets open met geel vlak, C oogvlek leigrijs → r7 nieuwe startprompt (`gemini/PROMPT_r7.md`).
 - r7: ±27,5 px breed (opgelost), kap-V en leigrijs goed. Jordi: "klopt de vleugelvorm nog?" → Claude: nee, vlakke panelen/revers; voorstel r8 bijsturen (`gemini/PROMPT_r8_bijsturen.md`): vingerbotten + geschulpte rand, duimklauw. Takje bovenaan weghalen in de spritefase.
 - r8 (bijsturen): "dit gaat fout" — Gemini plakte twee uitgespreide halloweenvleugels op de zijkanten bovenop de gesloten vleugels (4 vleugels). r7 blijft de beste.
+- Jordi: "nog 1 keer prompt proberen" → r9 nieuwe startprompt (`gemini/PROMPT_r9.md`); anders r7 als model.

@@ -311,7 +311,7 @@
 #define P_FAMILY_DUCKLETT                P_GEN_5_POKEMON
 #define P_FAMILY_VANILLITE               FALSE // FU: niet in de dex (was P_GEN_5_POKEMON)
 #define P_FAMILY_DEERLING                P_GEN_5_POKEMON
-#define P_FAMILY_EMOLGA                  FALSE // FU: niet in de dex (was P_GEN_5_POKEMON)
+#define P_FAMILY_EMOLGA                  P_GEN_5_POKEMON // FU: terug in de dex (Jordi 23 nov)
 #define P_FAMILY_KARRABLAST              FALSE // FU: niet in de dex (was P_GEN_5_POKEMON)
 #define P_FAMILY_FOONGUS                 P_GEN_5_POKEMON
 #define P_FAMILY_FRILLISH                P_GEN_5_POKEMON

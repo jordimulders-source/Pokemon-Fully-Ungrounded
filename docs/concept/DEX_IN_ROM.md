@@ -1,7 +1,7 @@
 # Pokémon in de ROM (Fully Ungrounded)
 
 
-> **Na v0.0.7 teruggezet:** Alomomola (Jordi 23 okt). De lijst hieronder is de stand van v0.0.7; schakelaars in `include/config/species_enabled.h` zijn leidend.
+> **Na v0.0.7 teruggezet:** Alomomola (Jordi 23 okt), Emolga (Jordi 23 nov). De lijst hieronder is de stand van v0.0.7; schakelaars in `include/config/species_enabled.h` zijn leidend.
 
 Welke bestaande Pokémon in de ROM zitten en welke eruit zijn (22 okt). Bron: `tools/concept/dex/out.json` (categorie A en B blijven, C gaat eruit) en de Dex-besluiten in `POKEMON.md`. Legendaries/mythicals: alleen Mew, Mewtwo en Zarude.
 

@@ -3019,3 +3019,9 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.725] - Merge naar main
 - Branch `claude/gallant-allen-ifpm5k` (Gnometrotter Ice af, Rock-neus, Grass tussenstand) naar main; conflicten in CHANGELOG/CLAUDE.md/GEMINI.md naar de main-versie, overzichtsvel opnieuw gemaakt.
+
+### [v0.0.726] - Typebalans van de dex, Emolga terug, Solrock-evolutie Rock/Cosmic
+- Typebalans opgemaakt: 450 bestaande dex-soorten + 81 nieuwe ontwerpen (79 af, plus Gnometrotter Grass en regionale Claydol) tegen Kanto t/m Paldea en de National Dex; samenvatting in `POKEMON.md` → Typebalans.
+- Jordi (23 nov): "emolga moet in de dex idd" → `P_FAMILY_EMOLGA` weer aan (`species_enabled.h`, DEX_IN_ROM).
+- Jordi (23 nov): "regional forms komen naast het origineel" → in POKEMON.md (Regional forms).
+- Jordi (23 nov): "solrock evo is rock/cosmic" → SPEC, CONCEPT, overzichtsvel opnieuw gemaakt.

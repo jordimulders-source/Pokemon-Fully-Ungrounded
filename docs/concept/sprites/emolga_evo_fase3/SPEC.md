@@ -9,3 +9,4 @@
 - Jordi (23 nov): "moche vertaalt niet goed, gewoon een normale fruitvampier. maar wel duidelijk maken dat die in de emolga lijn zit". → Jordi: "nee from scratch" → r3 = nieuwe startprompt (`gemini/PROMPT_r3.md`) = r2 +: oogvlek als vizier + lange puntige oren van fase 2 (keuze Claude), naam Emolga niet genoemd.
 - Over r3: "aardig design, alleen: in het gezicht moet wat geel terugkomen · de tak bovenin moet weg · Vertaalt zo'n verticaal model goed naar een sprite?" → r4 bijsturen in het r3-gesprek (`gemini/PROMPT_r4_bijsturen.md`).
 - r4 (Jordi in het r3-gesprek, eigen bijsturing): tak weg, geel op snuit/kin en voorhoofd; ±23 px breed bij 64 hoog (smalste Gen 3/repo-sprites ≥27 bij ±60 hoog). Claude: kingeel kan als snavel lezen; voorstel breder (±2,3:1). Wacht op Jordi.
+- Jordi "akkoord" → r5 bijsturen (`gemini/PROMPT_r5_bijsturen.md`): breder ±2,3:1, geel weg van snuit/kin (voorhoofdgeel blijft).

@@ -1,0 +1,6 @@
+Pijplijn (kale reductie -> r1/r2):
+reduce.py -> lijnen.py -> skelet2.py -> vlakken.py -> vlaklum.py -> spritevlak.py -> bouw2.py (masker)
+-> mediaan.py 31 -> bouw4.py 170 0.3 -> raster.py uit kaal4.npy ../raster_kaal.txt
+-> fix.py 1 0 ../raster.txt (r1)  |  fix.py 1 1 ../../r2/raster.txt (r2)   (reparaties staan per zone in fixes.py)
+-> raster.py in <raster> x.npy -> toon.py x.npy tempel.png -> vel.py nieuw.png vorig.png vel.png
+Meten: zone.py (spritelijnen over het model), scan.py (modellijnen per rij/kolom), check.py, spurs.py, diff.py

@@ -29,3 +29,6 @@ Lijn: Pincurchin (repo: puur Electric) → regionale vorm. Pincurchin weer in de
 - Jordi: "en het rood mag wat feller" · "wel donker"
 - Wat "te kaal" inhoudt is niet gespecificeerd; in prompt v3 letterlijk doorgegeven ("too bare"), zonder eigen invulling.
 - Uitleg "te kaal" (Jordi): "de stekels bedekken niet genoeg van het lijf, te kort, niet genoeg, misschien wel allebei" → prompt v4 (vervangt v3).
+
+## Gemini v4 (`r4/gemini_v4.png`, 23 nov)
+- Jordi: "beter, maar het steen heeft teveel detail" → bijstuurzin in hetzelfde Gemini-gesprek (één wijziging), zie PROMPT.md.

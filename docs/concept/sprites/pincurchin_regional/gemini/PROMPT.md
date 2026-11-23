@@ -127,3 +127,10 @@ AVOID
 - No arms, legs or human features. No glossy 3D render, no plush or mascot look.
 - Not thin needle spines like the normal Pincurchin. Not short spines, not few spines, not a bare body.
 ```
+
+# Bijsturen v4 → v5 (23 nov), in hetzelfde gesprek
+Jordi over v4: "beter, maar het steen heeft teveel detail". Eén wijziging, dus bijsturen i.p.v. nieuw gesprek.
+
+```
+Keep everything exactly the same (spines, colors, face, pose). Only change one thing: the brown stone body has too much detail. Make the brown body simpler and smoother, with clean Gen 3 shading and no extra lumps, cracks, bumps or texture on it.
+```

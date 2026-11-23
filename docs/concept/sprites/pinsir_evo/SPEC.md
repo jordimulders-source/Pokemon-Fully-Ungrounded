@@ -82,3 +82,4 @@
 - v2 r6 (`sprite_v2_r6/`): palet naar het model (bruin L 68/101/133/166, rood minder verzadigd), rug B drie bolle platen zonder banding; meeste vlakken binnen ±5. Naar keurder.
 - Keuring v2 r6 (`sprite_v2_r6/KEURING.md`): BIJNA; hoofd opgelost, arm en nabije knie half; reparaties: korrel (61 vlakjes), bovenarm lichter, gesloten kniering, 1 randpixel. r7 = die reparaties.
 - v2 r7 (`sprite_v2_r7/`): de 4 keurderreparaties (89 px). Naar korte herkeuring.
+- Herkeuring v2 r7 (`sprite_v2_r7/KEURING.md`): **PASS**. Naar Jordi: `sprite_v2_r7/naar_jordi.png`.

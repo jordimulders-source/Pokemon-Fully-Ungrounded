@@ -18,3 +18,4 @@
 - r8 (bijsturen): "dit gaat fout" — Gemini plakte twee uitgespreide halloweenvleugels op de zijkanten bovenop de gesloten vleugels (4 vleugels). r7 blijft de beste.
 - Jordi: "nog 1 keer prompt proberen" → r9 nieuwe startprompt (`gemini/PROMPT_r9.md`); anders r7 als model.
 - r9: "vleugels weer fout?" Claude: vleugels iets beter (botten, duimklauw), rand nog recht/blokkig; maar kop slechter (snuit/neus weg, grijs leest als masker, V-kap valt weg), weer ±24 px breed. r7 blijft de beste → voorstel optie A (r7 als model).
+- **Besloten (Jordi, 23 nov):** r7 is het model ("ja en dat heeft ook de vampierenhouding beter dan dit"), `model/model_gemini_r7.png`. Spritefase: takje bovenaan weg. Open: vingerlijnen in het geel (A zo laten / B lijnen naar r9).

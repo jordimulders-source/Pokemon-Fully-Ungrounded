@@ -48,3 +48,4 @@ Jordi (letterlijk): "nee ik wil toch kijken of het lukt om een hybride vorm te m
 - Jordi (23 nov, over r12): "ja maar nu zijn er weer 2 onnodige horizontale lijntjes op de arm terug, en de onderkant van de arm is ook te recht horziontaal" → r13.
 - Jordi (23 nov): "hij is te hoekig"
 - Jordi (23 nov): "en je moet geen zwarte lijnen onnodig doen"
+- Jordi (23 nov, over r13-schouder): "nee weer fout"

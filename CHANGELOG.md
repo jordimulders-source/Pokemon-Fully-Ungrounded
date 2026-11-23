@@ -2875,3 +2875,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.691] - Capybarrel: r1-feedback en prompt r2
 - `capybarrel/gemini/`: r1 variant B bewaard, Jordi's feedback en prompt r2 (lopend op vier poten, ton om het lijf).
+
+### [v0.0.692] - Capybarrel: prompt r3
+- `capybarrel/gemini/`: r2 bewaard, Jordi's feedback ("meer pokemon stijl, kijk naar andere regional rodents") en prompt r3.

@@ -51,3 +51,30 @@ Style: official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 
 
 AVOID: plush toy / Neopets look, beaver or Bidoof/Bibarel look, standing upright, sitting inside an upright barrel, a cartoon barrel with a face, water, hot spring, fruit on its head.
 ```
+
+## Ronde 2 (23 nov)
+- `r2/capybarrel_r2.png`: lopend op vier poten, liggende ton om het lijf. Jordi: "ok nu nog meer pokemon stijl maken, kijk naar andere regional rodents".
+
+## r3 (nieuw gesprek, zonder bijlage)
+Uit de early-route-knagers (Rattata, Sentret, Zigzagoon, Bidoof, Patrat, Skwovet) gehaald: grotere kop t.o.v. lijf, grote ogen met glimlicht, zichtbare voortanden, simpele vormen, stevige pootjes. Geen namen bij het gezicht (Gemini kopieert dan).
+```
+Design an original Pokemon called CAPYBARREL. Type: Normal. First stage of a two-stage line, an early-route rodent Pokemon.
+
+Concept: a capybara Pokemon with a wooden barrel around its body; it can still walk.
+
+Pose: standing on all four legs in a walking stance. A wooden barrel lies horizontally around its torso, like a tube: the head sticks out of the front opening, the rump out of the back opening, and the four short legs come out underneath. The barrel has vertical wooden staves and two dark iron hoops.
+
+Make it look like a real Pokemon, at the same level of stylization as the early-route rodent Pokemon of the main games, but do not copy any of them:
+- the head is big compared to the body (about as tall as the barrel);
+- big, expressive eyes with a white highlight, set high on the head;
+- two front teeth visible under the big flat nose;
+- small rounded ears, short chunky legs with small rounded feet;
+- simple, clean shapes with few details; no realistic fur texture.
+It must still read as a capybara: blunt square muzzle, heavy calm build.
+
+Fur: warm reddish-brown. Barrel: warm brown wood with darker grain lines.
+
+Style: official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 colors, dark outline, facing 3/4 to the left, compact composition. White background, no ground, no shadow, no effects.
+
+AVOID: realistic animal look, plush toy / Neopets look, beaver look, standing upright, sitting inside an upright barrel, a cartoon barrel with a face, water, hot spring, fruit on its head.
+```

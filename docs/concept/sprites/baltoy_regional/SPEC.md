@@ -100,3 +100,4 @@
 - Jordi: "Dat is echt helemaal niet slecht, maar ik ben het eens met wat je zegt" → r2 van deze lijn: de 4 zwakke punten (onderkop rustiger, steen ≤3 tinten, rechterstafkop naar het model, lichtrood minder fel).
 - g3 r2 (`claydol_gemini_r3/r2/claydol_g3r2.png`): onderkop rustig (sikkel + 3–4 doorlopende barsten), steen 5/6/7 + crème 2/4/6, rechterstaf opnieuw geschrapt (stompe kop, 3 px korter, los), lichtrood naar modeltint; 373 px in de 4 zones, 0 erbuiten. → keurder.
 - Jordi: "ik wil even wel aangeven dat elke keer als je iets 'rustiger' maakt dat het pixelblur wordt" (doorgegeven aan de keurder van g3r2).
+- Jordi: "echt al in 6 verschillende gesprekken gezien" · "en dat je het altijd beter vindt maar het altijd slechter is" (Claude had de rustige onderkop "een duidelijke verbetering" genoemd). Les bovenaan SPRITE_KERN. Onderkop terug naar g3.

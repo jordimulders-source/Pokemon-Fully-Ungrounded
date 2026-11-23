@@ -2,6 +2,8 @@
 
 **Het gezicht is het ALLERBELANGRIJKSTE (Jordi, 20 nov).** Geen eigen gezichtvarianten verzinnen (glans, andere oogvormen): mag het gezicht afwijken van het model, neem dan het gezicht van een bestaande Gen 3-sprite 1-op-1 over (Vileplume: "neem gewoon de vileplume mond en ogen over en doe ze ver genoeg uit elkaar").
 
+**"RUSTIGER MAKEN" = PIXELBLUR (Jordi, 23 nov: "elke keer als je iets 'rustiger' maakt dat het pixelblur wordt" · "echt al in 6 verschillende gesprekken gezien" · "en dat je het altijd beter vindt maar het altijd slechter is").** Nooit vlakken gladstrijken, middelen of detail wegpoetsen om drukte op te lossen, en Claudes eigen oordeel "rustiger = beter" niet vertrouwen. Drukte = de vormen uit het model scherp overnemen (heldere lijnen, harde tintgrenzen, contrast), of laten staan en Jordi laten kiezen.
+
 # SPRITE-KERN: de enige pagina die je vóór spritewerk MOET lezen
 Samengevat uit alle spritelessen (5 nov, Jordi: "vat de lessen echt enorm samen ... hij vergeet heel vaak lessen mee te nemen"). Geef dit bestand mee aan **elke** sprite-agent, ook bij kleine reparaties. Al het andere in `docs/lessen/` is naslag.
 
@@ -54,5 +56,4 @@ Samengevat uit alle spritelessen (5 nov, Jordi: "vat de lessen echt enorm samen 
 Eén maker per sprite (SendMessage), één keurder, kleine vellen, commit en push na elke ronde. Max 3–4 agents.
 - Een verkleinde 3D-render per script kwantiseren is geen sprite (Hitmontop-evo, 6 nov: "lachwekkend slecht"): ook als Jordi "zelf, zonder agents" zegt, blijft kleur handwerk op een raster na een studie van de echte sprite (Hitmontop/Hitmonlee).
 - **Gemini als bron (potoo, 6 nov):** vraag je meerdere wijzigingen tegelijk, dan tekent Gemini een heel nieuw beeld (stijl, oog en snavel kwijt). Eén wijziging per prompt, of de beste versie als bestand nemen en zelf bewerken (oprekken, tak weg, spiegelen).
-- **"Rustiger maken" = pixelblur (Claydol, 23 nov, Jordi: "elke keer als je iets 'rustiger' maakt dat het pixelblur wordt").** Pixelblur is voor Jordi ook vaag en uitgesmeerd, niet alleen spikkels: los drukte op met scherpe, bewuste vormen uit het model (heldere lijnen, harde tintgrenzen, contrast), nooit door middelen of tintjes wegpoetsen.
 - **Keurders toetsen eerst volume, dan regels** (Coathief r5, 19 nov, Jordi: "die is wel erg effen 2 kleuren"): drie keuringen gaven BIJNA/PASS op ≤3 tinten en stappen, terwijl het lijf één middenvlak met een lichtstrook en een donkere rand was. Vraag elke keurder eerst: "heeft elk groot vlak volume zoals in Gen 3 (ronde schouder/dij, sikkel, hooglicht op de bolling, tintverdeling binnenin, niet alleen langs de rand)?"

@@ -3048,3 +3048,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.733] - Typevoorstel Pacha-trio en concept Pachamama
 - Voorstellen van Claude in `IDEEEN.md` (Legendaries-brainstorm); Jordi vindt het Mapuche-duo te veel slangen.
+
+### [v0.0.734] - Hanan Pacha-type en Pachamama-dier
+- Hanan Pacha: Psychic/Flying of Fire/Flying, niet Cosmic. Pachamama: berg + dierlijk wezen; diervoorstellen in `IDEEEN.md`.

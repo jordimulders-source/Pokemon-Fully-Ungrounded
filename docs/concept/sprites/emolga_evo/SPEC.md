@@ -46,3 +46,4 @@
 - Bouw r1 (maker): A0 = model, A = kop 1,4× (diff 0 buiten kopzone). Keurder r1: A0 BIJNA (zebra in gezicht 10–13,55–57), A PASS; optioneel vacht D lichter. r2 (Claude): zebra uit de kale reductie overgenomen, D (36,36,44) → (44,44,54).
 - Eindkeuring (Dragonfly Cave) r2: A PASS, A0 BIJNA (oog); r3 met de reparaties (oog/pupil naar zwart, hand 1 px, tint d (68,68,80)): **beide PASS**. Af: `af/model.png` (A0) en `af/kop14.png` (A), met 8× en `af/vergelijk.png`. Keuze A0/A aan Jordi.
 - Jordi (23 nov): "we gaan voor links" → `af/model.png` (A0) gekozen; vergelijking met het model in `af/naast_model.png`.
+- Jordi: "ja het is puur dat de buik in onze sprite net wat teveel een diagonale lijn is, maak dat iets smoother" · "baseer je op het model" · "dus hele subtiele wijzigingen" → r4: 5 px buikonderrand naar het model (rij 44, 48, 49), diff 0 elders; `af/model.png` = r4.

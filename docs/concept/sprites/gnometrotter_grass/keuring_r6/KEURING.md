@@ -35,7 +35,7 @@ Buiten scope (info): muts en bladbaard nog effen (r5 E–G), riem en zolen effen
 
 **R2 Ruis (x38–44, y26–32):** opschonen tot vlakken ≥ 3 px: (40,32)→7, (40,31)→8 of samenvoegen met het buurvlak; de 6-stukjes (41,26),(42,27),(43,27),(41,29),(40,30) óf tot één doorlopende nerf verbinden óf naar 7. Eén nerf, geen spikkel.
 
-**R3 Rechterheup (x43–50, y36–42):** tintverdeling van Rock af overnemen (waar Rock af 9 heeft → 9, waar 10 → 10): (49,36),(48,37),(48,38),(49,38),(47,39),(48,39),(46,40),(47,40),(48,40) → 9; (45,40),(43–47,41) → 10.
+**R3 Rechterheup (x43–50, y36–42):** de blauwe en lijnpixels hier 1-op-1 van Rock af overnemen (diff 0 binnen de zone, riempixels uitgezonderd). Rock af: (48,37),(48,38),(49,38),(47,39),(48,39),(46,40),(47,40),(48,40),(48,41) = 9; (45,40),(43–47,41) = 10; (48,36),(49,36) = 1.
 
 **R4 Dijen (x17–50, y42–48):** materiaal uit het model: op de rechterdij 1–2 grote diagonale plankvormen zoals in het model (naden in 9, schaduwkant in 10); tintverdeling volgens Rock af: rechts en onder 9-sikkel (Rock af x39–50 rij 44–47), het lichtvlak 11 alleen linksboven op elke dij. Doel: grootste 11-vlak ≤ ±40 px; 9 ≥ ±70 px in x17–50, y42–48.
 

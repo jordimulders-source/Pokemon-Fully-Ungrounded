@@ -9,7 +9,8 @@ def sprite2model(sx,sy):
     return 4.5+nx*PITCH-PITCH/2, 4.5+ny*PITCH-PITCH/2
 def model_crop(x0,y0,x1,y1,k):
     a=sprite2model(x0,y0); b=sprite2model(x1,y1)
-    return M.crop((round(a[0]),round(a[1]),round(b[0]),round(b[1]))).resize(((x1-x0)*k,(y1-y0)*k),Image.LANCZOS)
+    W=Image.new('RGB',(1424,1424),(255,255,255)); W.paste(M,(200,200))
+    return W.crop((round(a[0])+200,round(a[1])+200,round(b[0])+200,round(b[1])+200)).resize(((x1-x0)*k,(y1-y0)*k),Image.LANCZOS)
 def sprite_crop(path_or_img,x0,y0,x1,y1,k,bg=(152,208,160)):
     im=path_or_img if isinstance(path_or_img,Image.Image) else Image.open(path_or_img)
     im=im.convert('RGBA'); c=Image.new('RGBA',im.size,bg+(255,)); c.alpha_composite(im)
@@ -48,3 +49,14 @@ def modelkleur(sx,sy):
     a=sprite2model(sx,sy); b=sprite2model(sx+1,sy+1)
     blk=_A[round(a[1])+2:round(b[1])-2,round(a[0])+2:round(b[0])-2].reshape(-1,3)
     return np.median(blk,0)
+def modelraster(x0,y0,x1,y1,k):
+    a=sprite2model(x0,y0);b=sprite2model(x1,y1)
+    im=M.crop((round(a[0]),round(a[1]),round(b[0]),round(b[1])));im=im.resize((im.width*k,im.height*k),Image.NEAREST)
+    d=ImageDraw.Draw(im)
+    for sx in range(x0,x1+1):
+        px=(sprite2model(sx,0)[0]-a[0])*k; d.line([(px,0),(px,im.height)],fill=(0,160,255) if sx%2==0 else (150,220,255))
+        if sx%2==0: d.text((px+2,2),str(sx),fill=(0,0,255))
+    for sy in range(y0,y1+1):
+        py=(sprite2model(0,sy)[1]-a[1])*k; d.line([(0,py),(im.width,py)],fill=(0,160,255) if sy%2==0 else (150,220,255))
+        if sy%2==0: d.text((2,py+2),str(sy),fill=(0,0,255))
+    return im

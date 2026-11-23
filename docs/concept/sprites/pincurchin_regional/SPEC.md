@@ -38,3 +38,6 @@ Lijn: Pincurchin (repo: puur Electric) → regionale vorm. Pincurchin weer in de
 ## Gemini v5 (`r5/gemini_v5.png`, 23 nov)
 - Jordi stuurt v5 naast een foto van een pencil urchin (`referenties/foto_pencil_urchin_jordi.jpg`): "behoorlijk verschil nog wel"
 - Jordi: "dunner, langer en dichtheid, maar het gezicht mag daarvan utigezonderd zijn" (stekels dunner, langer, dichter; het gezicht blijft vrij) → startprompt v6.
+
+## Gemini v6 (`r6/gemini_v6.png`, 23 nov)
+- Jordi: "hij lijkt nog steeds niet, veel te stekelig"

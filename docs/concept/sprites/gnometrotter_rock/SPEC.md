@@ -39,6 +39,7 @@
 - 23 nov: "regirock zou een goede inspiratie kunnen zijn" → prompt v8.
 - r8 (`r8/gemini_r8.png`, prompt v8): "dit is het beste wat we gaan krijgen denk ik"
 - 23 nov (oogstrook in de sprite dichten; stok; bevriezen?): "1 akkoord en 2 maakt niet meer uit omdat het hele lichaam van steen is. Voordat je het bevriest, nu gaan we ook de grass en ice vorm maken, zelfde idee, alleen dan wordt gras bladeren en hout en ijs wordt allerlei vormen van ijs" → r8 nog niet bevroren; prompts Grass en Ice in `../gnometrotter_grass/` en `../gnometrotter_ice/`.
+- 23 nov (bij Grass/Ice r1): "de stok moet bij alle 3 in dezelfde hand" (Rock r8 en Ice r1: voorste arm, links in beeld; Grass r1: achterste arm).
 
 ## Voorgelegd door Claude (22 nov, nog niet gekozen)
 - A geode (muts = geode met amethist in een barst, snor/plukjes = kwartskristal, neus = rozenkwarts); B druipsteen (muts = stalactiet, kalksteen met lagen); C ertsader (riem = ader, gesp = goudklomp, korstmos op de snor).

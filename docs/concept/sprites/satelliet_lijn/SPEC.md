@@ -33,3 +33,4 @@ Citaten en besluiten (Jordi, 23 nov); het overzicht staat ook in `docs/concept/I
 - **Jordi: "A, verklein maar naar ±950 px, maar alleen als alles er dan nog mooi uitziet".** r3 (PASS, 1548 px) blijft de terugvaloptie. r4 = model ×±0,617.
 - **Jordi (23 nov):** "wat er ook gebeurt, de fase 1 wordt onderdeel van 2 en 3 toch? want die groeitd aaruit, dus die wordt toch een steeds kleiner onderdeel van het geheel dan". → Fase 1 (bol met oog) is onderdeel van fase 2 en 3; de lijn groeit eruit en fase 1 wordt een steeds kleiner deel van het geheel.
   - Jordi erbij: "awt niet erg is" (= wat niet erg is).
+- r4 (`fase1/sprite_r4/`, 985 px, factor 0,617): meetbaar in orde (rond ≤0,71 px, 0 open randen), maar oog armer (binnenring past niet, iris 1 px) en voetje linksboven bijna weg → voorwaarde "alles mooi" niet gehaald volgens maker en Claude. Opties: r3 houden of tussenmaat ±0,68 (±1150 px).

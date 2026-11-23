@@ -1,0 +1,202 @@
+## A1: 22 px
+  (rij 14, kol 37) P -> D  bovenrand antenne D
+  (rij 14, kol 38) P -> D  bovenrand antenne D
+  (rij 14, kol 39) P -> D  bovenrand antenne D
+  (rij 14, kol 40) P -> D  bovenrand antenne D
+  (rij 16, kol 32) P -> D  bovenrand antenne D
+  (rij 16, kol 33) P -> D  bovenrand antenne D
+  (rij 16, kol 34) P -> D  bovenrand antenne D
+  (rij 16, kol 38) # -> P  binnen antenne: lijnpixel -> kleur
+  (rij 18, kol 28) P -> D  bovenrand antenne D
+  (rij 18, kol 29) P -> D  bovenrand antenne D
+  (rij 18, kol 33) # -> P  binnen antenne: lijnpixel -> kleur
+  (rij 18, kol 34) # -> P  binnen antenne: lijnpixel -> kleur
+  (rij 19, kol 25) P -> D  open bovenrand bij de wortel
+  (rij 19, kol 30) # -> P  binnen antenne: lijnpixel -> kleur
+  (rij 19, kol 31) # -> P  binnen antenne: lijnpixel -> kleur
+  (rij 19, kol 33) . -> #  NIEUW (niet uit reductie): antenne 1 px verdikt onderaan langs de modelas
+  (rij 19, kol 34) . -> #  NIEUW (niet uit reductie): antenne 1 px verdikt onderaan langs de modelas
+  (rij 20, kol 28) # -> P  binnen antenne: lijnpixel -> kleur
+  (rij 20, kol 29) # -> P  binnen antenne: lijnpixel -> kleur
+  (rij 20, kol 30) . -> #  NIEUW (niet uit reductie): antenne 1 px verdikt onderaan langs de modelas
+  (rij 20, kol 31) . -> #  NIEUW (niet uit reductie): antenne 1 px verdikt onderaan langs de modelas
+  (rij 21, kol 29) . -> #  NIEUW (niet uit reductie): antenne 1 px verdikt onderaan langs de modelas
+## A2: 18 px
+  (rij 15, kol 52) P -> D  bovenrand antenne D
+  (rij 15, kol 54) m -> D  bovenrand antenne D
+  (rij 16, kol 51) P -> D  bovenrand antenne D
+  (rij 17, kol 48) P -> D  bovenrand antenne D
+  (rij 17, kol 49) P -> D  bovenrand antenne D
+  (rij 18, kol 46) P -> D  bovenrand antenne D
+  (rij 18, kol 47) P -> D  bovenrand antenne D
+  (rij 19, kol 44) P -> D  bovenrand antenne D
+  (rij 19, kol 45) P -> D  bovenrand antenne D
+  (rij 20, kol 47) # -> P  binnen antenne: lijnpixel -> kleur
+  (rij 21, kol 38) . -> D  NIEUW (niet uit reductie): bovenrand wortel 1 px, zodat kol 38 2 px kleur houdt
+  (rij 21, kol 40) P -> D  open bovenrand
+  (rij 21, kol 45) # -> P  binnen antenne: lijnpixel -> kleur
+  (rij 21, kol 47) . -> #  NIEUW (niet uit reductie): antenne 1 px verdikt onderaan langs de modelas
+  (rij 22, kol 37) P -> D  open bovenrand bij de wortel
+  (rij 22, kol 42) # -> P  binnen antenne: lijnpixel -> kleur
+  (rij 22, kol 45) . -> #  NIEUW (niet uit reductie): antenne 1 px verdikt onderaan langs de modelas
+  (rij 24, kol 38) # -> P  zwarte L-hoek onderrand wortel -> kleur
+## A3: 27 px
+  (rij 35, kol 45) P -> D  bovenrand antenne D
+  (rij 35, kol 46) p -> D  bovenrand antenne D
+  (rij 35, kol 47) P -> D  bovenrand antenne D
+  (rij 35, kol 48) P -> D  bovenrand antenne D
+  (rij 35, kol 49) P -> D  bovenrand antenne D
+  (rij 35, kol 50) P -> D  bovenrand antenne D
+  (rij 35, kol 54) # -> D  bovenrand antenne D
+  (rij 36, kol 38) # -> D  bovenrand wortel antenne 3 (lichtkant) D i.p.v. zwart
+  (rij 36, kol 42) P -> D  bovenrand antenne D
+  (rij 37, kol 46) # -> P  binnen antenne: lijnpixel -> kleur
+  (rij 37, kol 47) # -> P  binnen antenne: lijnpixel -> kleur
+  (rij 37, kol 48) # -> P  binnen antenne: lijnpixel -> kleur
+  (rij 37, kol 49) # -> P  binnen antenne: lijnpixel -> kleur
+  (rij 37, kol 50) # -> P  binnen antenne: lijnpixel -> kleur
+  (rij 38, kol 39) # -> P  binnen antenne: lijnpixel -> kleur
+  (rij 38, kol 40) # -> P  binnen antenne: lijnpixel -> kleur
+  (rij 38, kol 41) # -> P  binnen antenne: lijnpixel -> kleur
+  (rij 38, kol 42) # -> P  binnen antenne: lijnpixel -> kleur
+  (rij 38, kol 46) . -> #  NIEUW (niet uit reductie): antenne 1 px verdikt onderaan langs de modelas
+  (rij 38, kol 47) . -> #  NIEUW (niet uit reductie): antenne 1 px verdikt onderaan langs de modelas
+  (rij 38, kol 48) . -> #  NIEUW (niet uit reductie): antenne 1 px verdikt onderaan langs de modelas
+  (rij 38, kol 49) . -> #  NIEUW (niet uit reductie): antenne 1 px verdikt onderaan langs de modelas
+  (rij 38, kol 50) . -> #  NIEUW (niet uit reductie): antenne 1 px verdikt onderaan langs de modelas
+  (rij 39, kol 39) . -> #  NIEUW (niet uit reductie): antenne 1 px verdikt onderaan langs de modelas
+  (rij 39, kol 40) . -> #  NIEUW (niet uit reductie): antenne 1 px verdikt onderaan langs de modelas
+  (rij 39, kol 41) . -> #  NIEUW (niet uit reductie): antenne 1 px verdikt onderaan langs de modelas
+  (rij 39, kol 42) . -> #  NIEUW (niet uit reductie): antenne 1 px verdikt onderaan langs de modelas
+## A4: 23 px
+  (rij 47, kol 36) # -> D  bovenrand wortel antenne 4 (lichtkant) D i.p.v. zwart
+  (rij 47, kol 37) # -> D  bovenrand wortel antenne 4 (lichtkant) D i.p.v. zwart
+  (rij 47, kol 38) P -> D  bovenrand antenne D
+  (rij 48, kol 40) P -> D  bovenrand antenne D
+  (rij 48, kol 41) P -> D  bovenrand antenne D
+  (rij 48, kol 42) P -> D  bovenrand antenne D
+  (rij 49, kol 37) D -> P  D binnen de antenne -> kleur
+  (rij 50, kol 40) # -> P  binnen antenne: lijnpixel -> kleur
+  (rij 50, kol 41) # -> P  binnen antenne: lijnpixel -> kleur
+  (rij 50, kol 46) P -> D  bovenrand antenne D
+  (rij 50, kol 47) P -> D  bovenrand antenne D
+  (rij 51, kol 40) . -> #  NIEUW (niet uit reductie): antenne 1 px verdikt onderaan langs de modelas
+  (rij 51, kol 41) . -> #  NIEUW (niet uit reductie): antenne 1 px verdikt onderaan langs de modelas
+  (rij 51, kol 44) # -> P  binnen antenne: lijnpixel -> kleur
+  (rij 51, kol 45) # -> P  binnen antenne: lijnpixel -> kleur
+  (rij 51, kol 50) P -> D  bovenrand antenne D
+  (rij 51, kol 51) P -> D  bovenrand antenne D
+  (rij 52, kol 44) . -> #  NIEUW (niet uit reductie): antenne 1 px verdikt onderaan langs de modelas
+  (rij 52, kol 46) # -> P  binnen antenne: lijnpixel -> kleur
+  (rij 52, kol 53) # -> D  bovenrand antenne D
+  (rij 53, kol 46) . -> #  NIEUW (niet uit reductie): antenne 1 px verdikt onderaan langs de modelas
+  (rij 53, kol 50) # -> P  binnen antenne: lijnpixel -> kleur
+  (rij 54, kol 50) . -> #  NIEUW (niet uit reductie): antenne 1 px verdikt onderaan langs de modelas
+## bol rand: 19 px
+  (rij 22, kol 29) P -> D  buitenrand bol rechtsboven (lichtkant)
+  (rij 23, kol 17) w -> W  losse w-pixel -> hooglicht
+  (rij 31, kol 36) l -> m  losse reflectiepixel (l) in diepe schaduw -> m
+  (rij 32, kol 36) l -> m  losse reflectiepixel (l) in diepe schaduw -> m
+  (rij 38, kol 36) l -> m  losse reflectiepixel (l) in diepe schaduw -> m
+  (rij 39, kol 36) l -> m  losse reflectiepixel (l) in diepe schaduw -> m
+  (rij 43, kol 11) . -> #  NIEUW (niet uit reductie): trap linksonder 2-1-2 -> 2-2-1, spiegel van linksboven (rondheid)
+  (rij 43, kol 12) # -> l  was buitenlijn, ligt nu binnen de nieuwe rand
+  (rij 44, kol 13) # -> l  zwarte L-hoek linksonder -> vulling
+  (rij 45, kol 14) # -> m  zwarte L-hoek -> vulling
+  (rij 48, kol 19) # -> m  zwarte L-hoek -> vulling
+  (rij 48, kol 20) p -> l  reflectierand (model 163,137,194) -> lijf l
+  (rij 48, kol 21) p -> l  reflectierand (model 163,137,194) -> lijf l
+  (rij 48, kol 27) p -> m  losse reflectiepixel (l) in diepe schaduw -> m
+  (rij 49, kol 22) p -> l  reflectierand (model 163,137,194) -> lijf l
+  (rij 49, kol 23) p -> l  reflectierand (model 163,137,194) -> lijf l
+  (rij 49, kol 24) p -> l  reflectierand (model 163,137,194) -> lijf l
+  (rij 49, kol 25) p -> #  onderrand sluiten na (50,25)
+  (rij 50, kol 25) # -> .  onderrand 4 px vlak -> 3 (rondheid, 1 px eraf)
+## naad: 22 px
+  (rij 30, kol 31) D -> P  naad 1 px, tint P
+  (rij 31, kol 31) D -> P  naad 1 px, tint P
+  (rij 32, kol 30) D -> P  naad 1 px, tint P
+  (rij 32, kol 31) p -> w  lichtpaars naast naad -> lip w
+  (rij 33, kol 30) D -> P  naad 1 px, tint P
+  (rij 36, kol 28) l -> w  lip naast de naad -> w
+  (rij 36, kol 29) p -> P  naad 1 px, tint P
+  (rij 37, kol 28) p -> P  naad 1 px, tint P
+  (rij 38, kol 26) D -> P  naad 1 px, tint P
+  (rij 38, kol 27) p -> P  naad 1 px, tint P
+  (rij 39, kol 26) p -> w  lip naast de naad -> w
+  (rij 40, kol 25) p -> w  lip naast de naad -> w
+  (rij 41, kol 22) D -> P  naad 1 px, tint P
+  (rij 41, kol 24) p -> w  lip naast de naad -> w
+  (rij 42, kol 12) p -> P  naad 1 px, tint P
+  (rij 42, kol 22) p -> w  lip naast de naad -> w
+  (rij 43, kol 15) p -> P  naad 1 px, tint P
+  (rij 43, kol 16) p -> P  naad 1 px, tint P
+  (rij 43, kol 17) p -> P  naad 1 px, tint P
+  (rij 43, kol 18) p -> P  naad 1 px, tint P
+  (rij 43, kol 19) p -> P  naad 1 px, tint P
+  (rij 43, kol 20) p -> w  lip naast de naad -> w
+## omlijning: 13 px
+  (rij 22, kol 17) P -> D  selout lichtkant uniform D (model 100,57,120)
+  (rij 22, kol 18) P -> D  selout lichtkant uniform D (model 100,57,120)
+  (rij 23, kol 15) P -> D  selout lichtkant uniform D (model 100,57,120)
+  (rij 23, kol 16) P -> D  selout lichtkant uniform D (model 100,57,120)
+  (rij 24, kol 14) P -> D  selout lichtkant uniform D (model 100,57,120)
+  (rij 25, kol 13) P -> D  selout lichtkant uniform D (model 100,57,120)
+  (rij 26, kol 12) P -> D  selout lichtkant uniform D (model 100,57,120)
+  (rij 27, kol 11) P -> D  selout lichtkant uniform D (model 100,57,120)
+  (rij 28, kol 11) P -> D  selout lichtkant uniform D (model 100,57,120)
+  (rij 30, kol 10) P -> D  selout lichtkant uniform D (model 100,57,120)
+  (rij 33, kol 9) P -> D  selout lichtkant uniform D (model 100,57,120)
+  (rij 36, kol 9) P -> D  selout lichtkant uniform D (model 100,57,120)
+  (rij 39, kol 9) D -> #  geen D tussen zwart (rij 38-40 zwart)
+## oog: 28 px
+  (rij 30, kol 13) l -> D  buitenrand oogring (lichtkant) dicht
+  (rij 30, kol 14) p -> D  buitenrand oogring (lichtkant) dicht
+  (rij 30, kol 15) p -> D  buitenrand oogring (lichtkant) dicht
+  (rij 30, kol 16) p -> D  buitenrand oogring (lichtkant) dicht
+  (rij 30, kol 17) l -> D  buitenrand oogring (lichtkant) dicht
+  (rij 31, kol 12) l -> D  buitenrand oogring (lichtkant) dicht
+  (rij 31, kol 18) P -> D  buitenrand oogring (lichtkant) dicht
+  (rij 32, kol 12) P -> D  buitenrand oogring (lichtkant) dicht
+  (rij 32, kol 16) P -> p  ringvulling (was D/w/P: binnenring past niet op deze maat)
+  (rij 32, kol 19) P -> D  buitenrand oogring (lichtkant) dicht
+  (rij 33, kol 11) P -> D  buitenrand oogring (lichtkant) dicht
+  (rij 33, kol 12) w -> p  ringvulling (was D/w/P: binnenring past niet op deze maat)
+  (rij 33, kol 19) p -> D  buitenrand oogring (lichtkant) dicht
+  (rij 34, kol 11) p -> D  buitenrand oogring links (was p)
+  (rij 34, kol 12) D -> p  ringvulling (was D/w/P: binnenring past niet op deze maat)
+  (rij 34, kol 16) # -> T  pupilhoek rechtsboven -> iris: pupil 2-3-3-2 (rond i.p.v. blok)
+  (rij 35, kol 11) p -> D  buitenrand oogring links (was p)
+  (rij 35, kol 12) D -> p  ringvulling (was D/w/P: binnenring past niet op deze maat)
+  (rij 35, kol 13) # -> T  pupiluitsteeksel -> iris
+  (rij 35, kol 18) D -> P  ringvulling schaduwkant (was D)
+  (rij 36, kol 11) p -> D  buitenrand oogring links (was p)
+  (rij 36, kol 12) D -> p  ringvulling (was D/w/P: binnenring past niet op deze maat)
+  (rij 36, kol 18) D -> P  ringvulling schaduwkant (was D)
+  (rij 37, kol 11) P -> D  buitenrand oogring links (was p)
+  (rij 38, kol 12) # -> P  ringvulling i.p.v. zwarte hoek
+  (rij 38, kol 16) m -> T  iris onder (model m)
+  (rij 39, kol 12) l -> #  buitenrand linksonder sluiten (model l)
+  (rij 39, kol 13) # -> P  ringvulling i.p.v. zwarte hoek
+## voet LB: 5 px
+  (rij 19, kol 22) # -> D  bovenkant voet lichtkant D i.p.v. zwart
+  (rij 19, kol 23) # -> D  bovenkant voet lichtkant D i.p.v. zwart
+  (rij 19, kol 24) # -> D  bovenkant voet lichtkant D i.p.v. zwart
+  (rij 20, kol 21) p -> D  open rand links
+  (rij 20, kol 25) # -> P  zwarte binnenpixel tussen voet en antenne -> P
+## voet RB: 9 px
+  (rij 22, kol 34) # -> D  bovenkant voet lichtkant D i.p.v. zwart
+  (rij 23, kol 30) m -> D  open bovenrand (lijftint/p tegen transparant)
+  (rij 23, kol 31) m -> D  open bovenrand (lijftint/p tegen transparant)
+  (rij 23, kol 32) p -> D  open bovenrand (lijftint/p tegen transparant)
+  (rij 24, kol 35) # -> P  zwarte L-hoek -> vulling
+  (rij 25, kol 30) P -> D  linkerrand voet (lichtkant)
+  (rij 26, kol 30) P -> D  linkerrand voet (lichtkant)
+  (rij 27, kol 35) # -> P  zwarte L-hoek -> vulling
+  (rij 28, kol 32) # -> P  zwarte L-hoek -> vulling
+## voet RO: 5 px
+  (rij 44, kol 32) # -> D  bovenkant/linksboven voet lichtkant D i.p.v. zwart
+  (rij 44, kol 34) # -> D  bovenkant/linksboven voet lichtkant D i.p.v. zwart
+  (rij 45, kol 31) # -> D  bovenkant/linksboven voet lichtkant D i.p.v. zwart
+  (rij 48, kol 31) # -> P  zwarte L-hoek -> vulling voet
+  (rij 48, kol 35) # -> P  zwart 2x2/L onderaan voet -> vulling

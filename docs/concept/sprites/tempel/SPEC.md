@@ -26,3 +26,5 @@ Static encounter, geen legendary. Type: Ghost/Rock. Single stage (Jordi, 23 nov:
 - r4 (`r4/gemini_v4.webp`), Jordi: "nu een beetje een maya tempel he" (Claude: door de trap in het midden, die Claude zelf had toegevoegd, en de getrapte vorm).
 - Prompt v5: geen trap, lange lage gebogen terrassen breder dan de tempel. v5b: idem + stenen puntgevels (voorstel Claude, niet van Jordi).
 - r5: `r5/gemini_v5.png` (zonder gevels), `r5/gemini_v5b.png` (met gevels). Beide liggend/breed (1024×559).
+- Jordi stuurt eigen foto's van een Inca-ruïne, "de laatste middag van de inca trail" (`referenties/jordi_incatrail_*.webp`; waarschijnlijk Wiñay Wayna): "Kunnen we hier niet iets mee?"
+- Prompt v6 (Claude, uit de foto's): ruw stapelwerk i.p.v. gepolijste veelhoeken, hoge puntgevels met stenen pinnen, mos/gras op de muren, deur met stenen latei, twee rechthoekige raampjes als ogen, lage terrasmuren.

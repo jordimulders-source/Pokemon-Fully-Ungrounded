@@ -25,6 +25,7 @@
 - Claude stelde voor: herkenbaar houden (neus, muts over ogen, lijf roze/blauw, riem, wandelhouding) + 1 stokarm versteend, 2 muts en rug één rotsmassa, 3 rots breekt door de huid, 4 golem-postuur, 5 baard als steenlawine, 6 twee soorten grijs, 7 stenen zolen/tenen.
 - 23 nov: "probeer allemaal maar" → prompt v3.
 - r3 (`r3/gemini_r3.png`, prompt v3): "hij is beter, maar te buff denk ik, te gespierd. De stok is niet los van de hand en de voeten zijn gewoon stenen geworden"
+- 23 nov: "en de ogen zijn nog steeds zichtbaar" · "de neus mag rond blijven"
 
 ## Voorgelegd door Claude (22 nov, nog niet gekozen)
 - A geode (muts = geode met amethist in een barst, snor/plukjes = kwartskristal, neus = rozenkwarts); B druipsteen (muts = stalactiet, kalksteen met lagen); C ertsader (riem = ader, gesp = goudklomp, korstmos op de snor).

@@ -33,7 +33,7 @@ AVOID: plush toy / Neopets look, beaver or Bidoof/Bibarel look, a cartoon barrel
 ```
 
 ## Ronde 1 (23 nov)
-- Variant B (`r1/capybarrel_r1_B.png`): rechtopstaande capibara in een staande ton. Jordi: "hmm ik dacht meer aan gewoon een capybara in pokemon stijl met een barrel om zijn lichaam, maar die wel nog kan lopen".
+- Variant B (`r1/capybarrel_r1_B.png`): rechtopstaande capibara in een staande ton. Jordi: "hmm ik dacht meer aan gewoon een capybara in pokemon stijl met een barrel om zijn lichaam, maar die wel nog kan lopen"; "dit is gewoon een normale capybara in een ton".
 
 ## r2 (nieuw gesprek, zonder bijlage)
 ```
@@ -43,7 +43,7 @@ Concept: just a capybara in Pokemon style, with a wooden barrel around its body,
 
 The capybara stands on all four legs in a natural walking stance. A wooden barrel lies horizontally around its torso, like a tube: the head sticks out of the front opening, the rump out of the back opening, and the four short legs come out underneath. The barrel has vertical wooden staves and two dark iron hoops.
 
-Anatomy: a real capybara (Hydrochoerus hydrochaeris): large blunt square head, small rounded ears high on the head, small eyes high on the head, big flat nose, short sturdy legs with small feet. Drawn as a Pokemon, not as a realistic animal.
+Anatomy: a real capybara (Hydrochoerus hydrochaeris): large blunt square head, small rounded ears high on the head, small eyes high on the head, big flat nose, short sturdy legs with small feet. Drawn as a Pokemon designed by Ken Sugimori: stylized, simplified shapes and clean forms, NOT a realistic capybara.
 
 Fur: warm reddish-brown capybara fur. Barrel: warm brown wood with darker grain lines.
 

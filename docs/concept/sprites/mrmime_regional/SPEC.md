@@ -125,3 +125,4 @@ Jordi: "ik denk dat dit ontwerp het niet gaat worden" – "het hele idee bedoel 
 - Jordi: "alleen de vorm is anders in perspectief".
 - Sprite r20 (`bokser/sprite_r20/`, verse maker): verre bal 3 px naar rechts/1 omhoog tegen de romp; V op de r18-plek, links 1 kolom smaller, rechts 1 breder (variant sterk: 2/2).
 - Jordi bij r20: "alleen de v is nog niet goed, kijk naar andere pokemon desnoods" → r21: studie V-borstpatronen in Gen 3 (Blaziken, Combusken, Breloom e.a.), 2–3 varianten; bal r20 goed.
+- Sprite r21 (`bokser/sprite_r21/`): V-studie (Throh/Sawk-kraag, Blaziken, Swellow), varianten A gevuld, B banen (advies maker), C steil.

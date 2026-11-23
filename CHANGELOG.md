@@ -2908,3 +2908,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.699] - Emolga-evolutie: r7 + idee fase 3
 - r7 (Petaurista) minder goed; fase 3 fruitvampier op zijn kop met gesloten vleugels voorgesteld door Jordi (IDEEEN.md).
+
+### [v0.0.700] - Emolga-lijn fase 3: Gemini-prompt r1
+- `docs/concept/sprites/emolga_evo_fase3/` (SPEC + prompt r1: fruitvampier op zijn kop, vleugels gesloten).

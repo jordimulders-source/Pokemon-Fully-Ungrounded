@@ -106,3 +106,4 @@ Jordi: "ik denk dat dit ontwerp het niet gaat worden" – "het hele idee bedoel 
 - Sprite r15 (`bokser/sprite_r15/`): 9 keurderspunten uitgevoerd (107 px). Eindcheck keurder gestart.
 - Jordi: "de armen zijn opnieuw getekend" (r14: arm als zelfgetekende doorsnede). → r16: armen uit het model (zoals r9) op de huidige schaal, niets tekenen.
 - Jordi: "dus nu kloppen de hele verhoudingen niet meer"; "de handen zitten er niet lekker aan vast ook" → r16: arm/vuist in verhouding zoals model/r9, pols loopt de vuist in.
+- Jordi: "voor de rest vind ik hem vrij prima behalve dat de broek half op de torso ervoor hangt ipv dat die eronder zit en netjes aansluit" → r16: broek onder de ronde romp.

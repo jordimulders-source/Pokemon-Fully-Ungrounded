@@ -80,3 +80,4 @@
 - Jordi bij r4: "r4 is al wat netter maaar het hoofd is nog te recht, niet de juiste vorm, de arm is niet goed te zien, de benen zijn niet goed" → r5 (verse maker): hoofd, armen, benen naar het model; rest pixelgelijk aan r4 B.
 - v2 r5 (`sprite_v2_r5/`): hoofd gewelfd naar het model, arm los van het lijf (rand, schaduw ernaast), benen met licht/schaduw en knieschijven, buikplaatlijnen terug. Zelf genoemd: rug B banding, palet donkerder/roder dan het model. r6: die twee, dan keurder.
 - v2 r6 (`sprite_v2_r6/`): palet naar het model (bruin L 68/101/133/166, rood minder verzadigd), rug B drie bolle platen zonder banding; meeste vlakken binnen ±5. Naar keurder.
+- Keuring v2 r6 (`sprite_v2_r6/KEURING.md`): BIJNA; hoofd opgelost, arm en nabije knie half; reparaties: korrel (61 vlakjes), bovenarm lichter, gesloten kniering, 1 randpixel. r7 = die reparaties.

@@ -52,6 +52,7 @@ SECTIES=[
 ("gnomini/af/gnomini.png",'"Gnomini"',"fairy"),
 ("gnomad/af/gnomad.png",'"Gnomad"',"fairy"),
 ("gnometrotter_rock/af/gnometrotter_rock.png",'"Gnometrotter" (Rock)',"fairy/rock"),
+("gnometrotter_ice/af/gnometrotter_ice.png",'"Gnometrotter" (Ice)',"fairy/ice"),
 ]),
 ("Evolutions of existing Pokémon",[
 ('hitmontop_evo/af/hitmongroove.png', '"Hitmongroove" (Hitmontop)', 'fight/ground'),
@@ -65,6 +66,7 @@ SECTIES=[
 ('solrock_evo/af/solrock_evo.png', 'Solrock-evolutie (Solrock)', 'rock/psychic'),
 ('lunatone_evo/af/bloedmaan.png', 'Bloedmaan (Lunatone)', 'rock/cosmic'),
 ('emolga_evo/af/model.png', 'Wingsuit-colugo (Emolga)', 'electric/flying'),
+('emolga_evo_fase3/af/fruitvampier.png', 'Fruitvampier (Emolga)', 'electric/flying'),
 ]),
 ("Regional forms / convergent Pokémon",[
 ("silicobra_uyuni/af/silicobra_uyuni.png",'"Silicobra" (regional)',"ground/electric"),

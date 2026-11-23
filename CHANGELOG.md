@@ -2987,17 +2987,35 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.718] - Merge naar main
 - Emolga-lijn (fase 2 af, fase 3-prompts) samengevoegd met main (Gnomini-omlijning, regional Baltoy); onze secties hernummerd naar v0.0.696–717. Overzichtsvel opnieuw gemaakt.
-### [v0.0.691] - Gnometrotter: drie vormen (Rock, Ice, Grass) + twee hybrides, 5 eindsprites
+### [v0.0.719] - Gnometrotter: drie vormen (Rock, Ice, Grass) + twee hybrides, 5 eindsprites
 - Gnome-lijn fase 3 besloten: Gnometrotter met 3 vormen, Fairy/Rock (rock gnome), Fairy/Ice (deep gnome), Fairy/Grass (forest gnome); Flying en Steel vervallen; BG3 als kleine referentie (IDEEEN.md → Gnome-lijn).
 - Ontwerp Rock via Gemini r1–r8: hele lichaam van steen met behoud van de kleurpatronen, opbouw uit losse rotsstukken (Regirock-idee), voorovergebogen oude wandelaar met stok, stenen baard/muts/riem/rugkam/zolen. Model `gnometrotter_rock/r8/`.
 - Ice en Grass met Rock r8 als bijlage (zelfde pose en maat, Wormadam-principe), plus hybride modellen: het ijs-/houtlijf uit de eerste versies geknipt en geplakt binnen de omtrek (`*/hybride/`).
 - 5 frontsprites (64×64, zelfde verkleining en palet voor zwart/roze/blauw, zelfde voetlijn): Rock `gnometrotter_rock/sprite_r4/`, Ice `gnometrotter_ice/sprite_r3/`, Grass `gnometrotter_grass/sprite_r3/`, Ice hybride `gnometrotter_ice/sprite_hybride_r2/`, Grass hybride `gnometrotter_grass/sprite_hybride_r2/`; alle vijf met eindkeuring (Dragonfly Cave-omlijning) en reparaties. Overzicht: `gnometrotter_rock/eindsprites/vijf_eindsprites.png`.
 - Ice: het gat bij de mutspunt is dichtgemaakt (open las als oog); open variant in `gnometrotter_ice/sprite_r2/gnometrotter_ice.png`.
 
-### [v0.0.692] - Gnometrotter Rock: frontsprite af
+### [v0.0.720] - Gnometrotter Rock: frontsprite af
 - Gnometrotter (Rock-vorm, Fairy/Rock): frontsprite af (`docs/concept/sprites/gnometrotter_rock/af/gnometrotter_rock.png` = sprite_r15), op het overzichtsvel (New, na Gnomad). Model Gemini r8; vormen bevroren op r7b; daarna alleen belijning/tinten/schaduw (r8–r11, eindkeuring PASS), ronde neus (r12) en Jordi's krabbel per pixel (r15). Ice en Grass volgen op dezelfde manier.
 - Definitieve eindkeuring Gnometrotter Rock r15: PASS zonder reparaties (`gnometrotter_rock/keuring_r15/`). Overdracht voor Ice/Grass: `gnometrotter_rock/OVERDRACHT_ICE_GRASS.md`.
 - Gnometrotter Rock toch nog niet af (Jordi: "nee die is nog niet af" · "dat is nog niet mooi"); laatste stand sprite_r16.
 
-### [v0.0.693] - Gnometrotter Rock af (r17)
+### [v0.0.721] - Gnometrotter Rock af (r17)
 - Na r15: neusboog 1 px (r16) en in zeer donker roze i.p.v. zwart (r17; index 12, blauw hooglicht → 11). Jordi: "links is af nu". In `af/` en op het overzichtsvel.
+
+### [v0.0.722] - Merge naar main
+- Branch `ccr-e4619ef4-kb7349` (gnome-lijn, Gnometrotter Rock) naar main; conflicten in CHANGELOG/CLAUDE.md/GEMINI.md samengevoegd, overzichtsvel opnieuw gemaakt.
+
+### [v0.0.723] - Emolga-lijn fase 3 (fruitvampier): frontsprite af
+- Gemini r1–r9 (`emolga_evo_fase3/gemini/`): Moche vervalt ("gewoon een normale fruitvampier. maar wel duidelijk maken dat die in de emolga lijn zit"); vleugels openvallen (r7–r9) was fout, r4/r6 "de beste qua vorm"; "het moet niet geel worden om maar geel te hebben".
+- Model = r6 met het lijf per script 25% breder (`model/model.png`, ±26×64 px); sprite via verkleining (maker r1–r3), keuring r2 BIJNA → r3, eindkeuring (Dragonfly Cave, A_geel) BIJNA → 35 px belijning → r4.
+- Jordi koos A_geel: leigrijze oogvlek (fase 2), zwarte kap met V, geel voorhoofdvlekje. `af/fruitvampier.png`, lijnoverzicht `af/lijn.png`; op het overzichtsvel als "Fruitvampier (Emolga)" (naam open).
+- Jordi: "de designs zijn tof, het enige waar ik over twijfel is of fase 2 evolved in 3 of naast elkar komen te staan, maar dat is iets voor mij om te bedenken."
+
+### [v0.0.724] - Gnometrotter Ice af, Rock met Ice-neus
+- Ice en Grass niet op de Rock-sprites gebouwd ("want alle rock versies vertalen niet goed"), geen knip- en plakwerk: Ice vanaf `gnometrotter_ice/sprite_r3`, Grass vanaf `gnometrotter_grass/sprite_hybride_r2` (Jordi).
+- Gnometrotter Ice: r4–r9 (gesp weg, rechterschouder rond, linkerhand = Rock, lijf ijsfacetten uit het model, benen rustig met één barst per dij, muts los van het rugijs, haar), eindkeuring r9 BIJNA → r10 met 13 lijnpixels; frontsprite af (`gnometrotter_ice/af/`), op het overzichtsvel.
+- Gnometrotter Rock: neus van Ice r9 1-op-1 overgenomen (Jordi: "mag direct gecopy paste worden naar rock") → sprite_r18 = af.
+- Gnometrotter Grass: r4–r13 (neus/schouder/linkerhand = Rock, romp 2 gebogen plankennaden, benen met volume, stok/muts/baard herkleurd, groenpalet 5/12–14 herverdeeld, muts-bladeren naar een studie van Sewaddle/Shiftry/Chikorita e.a.); nog niet af.
+
+### [v0.0.725] - Merge naar main
+- Branch `claude/gallant-allen-ifpm5k` (Gnometrotter Ice af, Rock-neus, Grass tussenstand) naar main; conflicten in CHANGELOG/CLAUDE.md/GEMINI.md naar de main-versie, overzichtsvel opnieuw gemaakt.

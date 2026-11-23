@@ -77,3 +77,4 @@
 - Jordi: "of denk je dat een hybride mogelijk is" → Claude: ja; `gemini/PROMPT_claydol_r3.md` (kop van r2 + stralen die in de ogen eindigen, rode verf en reliëf van r1).
 - r3 (`gemini/claydol_r3.png`; ronde kop met 3 grote ogen voor, krans van ±14 kleine oogbolletjes met punt, rode zigzag erboven; schotelrand weg), Jordi: "wat vind je?"
 - Claude over r3: rode zigzag goed; schotelrand weg, stralen lezen als bolletjes/bloem, te druk (±17 ogen), voorstel r2 + zigzag + reliëf, stralen weg (of 6–8 echte stralen). Jordi: "zeg het maar" → eerste richting, `gemini/PROMPT_claydol_r4.md`.
+- r4 (`gemini/claydol_r4.png`; schotel van r2 terug met rode zigzag; reliëf onder de ogen = doolhof van lijntjes; oog rechts aan de rand weg), Jordi: "en?"

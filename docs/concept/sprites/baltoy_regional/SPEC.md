@@ -155,3 +155,4 @@
 - Jordi: "kloppen de poten wel? zijn die niet te effen nu" → ja (linkervoet bijna alleen 5, rechter bijna alleen A); eindkeuring r2: voeten eigen ronding, alleen tinten.
 - Eindkeuring r2 (`claydol_r10kop/eindkeuring/r2/claydol_eind_r2.png`): voeten met eigen ronding (links 3/5/A, rechts 5/A/6), 14 px, alleen tinten, check() slaagt.
 - Jordi: "ten slotte, de voeten zijn niet in verhouding qua grootte, of wel?" (gemeten: links ±9×4, rechts ±11×6 en 2 rijen lager, uit het r3-model) · "akkoord, maar doe het netjes en houd de vorm hetzelfde" → `claydol_r10kop/eindkeuring/r3/`: binnenrijen van de rechtervoet geschrapt (x ≥ 32), vorm/omlijning/sikkel blijven; 1rij (27 px) en 2rijen (45 px), staven los. Claude: 1 rij.
+- Jordi (met krabbel): "1 rij weg klopt, alleen deze twee pixels moeten nog weg, en dan de 2 pixels 1 pixel links daarvan worden zwart" → `claydol_r10kop/eindkeuring/r3/claydol_eind_r3.png`: (44,55),(44,56) weg, (43,55),(43,56) zwart. Kandidaat voor af/.

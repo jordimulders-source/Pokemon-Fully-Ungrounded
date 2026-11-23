@@ -2854,3 +2854,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.684] - Capybarrel: evolutie groeit uit de ton
 - `IDEEEN.md`: Jordi's idee dat de evolutie uit de ton groeit.
+
+### [v0.0.685] - Capybarrel: nieuwe evolutie-ideeën
+- `IDEEEN.md`: Jordi's citaten (ton gaat kapot, niet overtuigd) en vier nieuwe voorstellen.

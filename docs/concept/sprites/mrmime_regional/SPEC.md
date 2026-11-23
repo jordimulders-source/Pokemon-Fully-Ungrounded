@@ -115,3 +115,4 @@ Jordi: "ik denk dat dit ontwerp het niet gaat worden" – "het hele idee bedoel 
 - Jordi: "ofja veel te klein" (V) → r18: V veel groter, 2 maten.
 - Sprite r18 (`bokser/sprite_r18/`): V groot (r7 v_groot 1-op-1) en V nog groter (`bokser_groter.png`), verre bal bovenrand rond (4 px).
 - Jordi bij r18: "de linkse schouderbal is niet rond" → r19: verre bal = Mr. Mime-bal 1-op-1, donkerder.
+- Jordi: "het v ontwerp links is beter, maar is niet goed in perspectief" → V groot; punt op de middenlijn, verre helft smaller, nabije breder.

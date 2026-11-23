@@ -105,3 +105,4 @@ Jordi: "ik denk dat dit ontwerp het niet gaat worden" – "het hele idee bedoel 
 - Keurder op r14: BIJNA (schouderranden, verre schouder/scheen perspectief, rompsikkel, broeksband, Y-naad, onderarmlicht); gezichtspunten overgeslagen (vastgesteld). → r15.
 - Sprite r15 (`bokser/sprite_r15/`): 9 keurderspunten uitgevoerd (107 px). Eindcheck keurder gestart.
 - Jordi: "de armen zijn opnieuw getekend" (r14: arm als zelfgetekende doorsnede). → r16: armen uit het model (zoals r9) op de huidige schaal, niets tekenen.
+- Jordi: "dus nu kloppen de hele verhoudingen niet meer"; "de handen zitten er niet lekker aan vast ook" → r16: arm/vuist in verhouding zoals model/r9, pols loopt de vuist in.

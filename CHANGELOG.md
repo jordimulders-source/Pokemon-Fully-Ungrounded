@@ -2915,3 +2915,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.695] - Regional Baltoy: stekel en eindkeuring (r14–r19)
 - Stekel: vormprobeersels (r14), tolpunt per laag uit het model (r15–r16); Jordi: "anders gewoon van de originele baltoy pakken" → r17 = r13 + de tolpunt van de Gen 3-Baltoy 1-op-1 in steentinten; Jordi koos 1 px naar links (r18).
 - Eindkeuring Dragonfly Cave r18: PASS met 1 pixel → r19 (`docs/concept/sprites/baltoy_regional/sprite_r19/baltoy_r19.png`, kandidaat). Lessen in GEMINI.md.
+
+### [v0.0.696] - Regional Claydol: brainstorm en Gemini-prompt r1
+- Jordi koos de Stafgod van de Zonnepoort (Viracocha). `docs/concept/sprites/claydol_regional/SPEC.md`, prompt `gemini/PROMPT_r1.md` (stralenkrans met een ring van ronde ogen, twee zwevende staven).

@@ -27,3 +27,4 @@ Citaten en besluiten (Jordi, 23 nov); het overzicht staat ook in `docs/concept/I
 - Jordi (spritefase, 23 nov): "let erop dat de bol mooi rond blijft".
 - Jordi (spritefase): "let op onnodige zwarte pixels ook".
 - Spritefase: r1 (maker) → keuring r1 (eis 1 PASS, eis 2 BIJNA, rondheid ≤0,86 px) → r2 (23 px + palet) → eindkeuring DFC r2 (21 onnodige zwarte pixels) → **r3** (`fase1/sprite_r3/`, rondheid ≤0,78 px, 0 open randen). Naar Jordi; wacht op oordeel. Ter info: linksonder (kol 2–8, rij 37–47) zwart volgens Gnomini-regel; Voltorb/Electrode gebruiken daar de eigen donkerste tint.
+- Jordi over r3: "nice, ga maar naar de eindkeuring" → eindkeuring_r3 (verse DFC-keurder).

@@ -22,6 +22,8 @@
 - 23 nov: "en die op zijn rug zijn gewoon erop geplakt"
 - Claude stelde voor (r2): 1 twee soorten gesteente, 2 verschil in vorm (blok vs brokjes), 3 rots groeit uit de huid (bergrug), 4 muts groter en zwaarder; oog oplossen in de sprite.
 - 23 nov: "ja hij moet nog meer rock worden, misschien dat de stenen onderdeel van hem zijn geworden en dat zijn vuist daarom ook is doorgegroeid tot een wandelstok, doe verder ook nog wat suggesties om er echt een tof design van te maken, dat het een rock gnome/golem wordt, maar wel nog herkenbaar evolutie van gnomad"
+- Claude stelde voor: herkenbaar houden (neus, muts over ogen, lijf roze/blauw, riem, wandelhouding) + 1 stokarm versteend, 2 muts en rug één rotsmassa, 3 rots breekt door de huid, 4 golem-postuur, 5 baard als steenlawine, 6 twee soorten grijs, 7 stenen zolen/tenen.
+- 23 nov: "probeer allemaal maar" → prompt v3.
 
 ## Voorgelegd door Claude (22 nov, nog niet gekozen)
 - A geode (muts = geode met amethist in een barst, snor/plukjes = kwartskristal, neus = rozenkwarts); B druipsteen (muts = stalactiet, kalksteen met lagen); C ertsader (riem = ader, gesp = goudklomp, korstmos op de snor).

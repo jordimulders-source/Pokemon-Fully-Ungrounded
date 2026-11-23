@@ -1,5 +1,5 @@
 # Fase 3 – startprompt r2 (23 nov), NIEUW gesprek, geen bijlage
-Jordi over r1: "dit komt nog niet goed over, vanwege de compacte lengte". r1 zonder "stocky", met lengteverhoudingen.
+Jordi over r1: "dit komt nog niet goed over, vanwege de compacte lengte". r1 zonder "stocky", met lengteverhoudingen. Jordi: "en moet het hoofd ook niet op zn kop" → hoofd ook ondersteboven.
 
 ```
 Design a new, original Pokémon.
@@ -14,7 +14,7 @@ COLORS
 White face and white belly. Black on top of the head, on the back and on the outer side of the wing membrane. Bright yellow on the inner side of the wing membrane.
 
 POSE
-It hangs upside down by its feet, head pointing down, with its wings closed and wrapped around its body. Its feet grip at the top as if hanging from a branch, but do NOT draw the branch.
+It hangs upside down by its feet, head pointing down. The HEAD IS UPSIDE DOWN TOO, like a real hanging bat: the ears point down, the chin and mouth point up, the eyes are below the nose. Not a face turned the right way up. with its wings closed and wrapped around its body. Its feet grip at the top as if hanging from a branch, but do NOT draw the branch.
 
 VIEW
 Three-quarter view facing left, like every Gen 3 front sprite.

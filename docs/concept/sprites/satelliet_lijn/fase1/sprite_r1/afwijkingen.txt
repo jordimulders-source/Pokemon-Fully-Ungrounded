@@ -1,0 +1,142 @@
+## A1: 9 px
+  (rij 7, kol 37) P -> D  bovenrand antenne open -> D
+  (rij 7, kol 38) P -> D  bovenrand antenne open -> D
+  (rij 7, kol 39) P -> D  bovenrand antenne open -> D
+  (rij 9, kol 31) P -> D  bovenrand antenne open -> D
+  (rij 9, kol 32) P -> D  bovenrand antenne open -> D
+  (rij 11, kol 26) P -> D  bovenrand antenne open -> D
+  (rij 11, kol 27) P -> D  bovenrand antenne open -> D
+  (rij 11, kol 28) P -> D  bovenrand antenne open -> D
+  (rij 12, kol 30) # -> P  dubbele zwarte trap -> kleur, antenne 2 px dik (model #)
+## A2: 9 px
+  (rij 7, kol 57) P -> D  bovenrand antenne open -> D
+  (rij 8, kol 56) P -> D  bovenrand antenne open -> D
+  (rij 10, kol 52) P -> D  bovenrand antenne open -> D
+  (rij 10, kol 53) P -> D  bovenrand antenne open -> D
+  (rij 11, kol 50) P -> D  bovenrand antenne open -> D
+  (rij 11, kol 51) P -> D  bovenrand antenne open -> D
+  (rij 13, kol 47) P -> D  bovenrand antenne open -> D
+  (rij 15, kol 41) P -> D  bovenrand antenne open -> D
+  (rij 15, kol 42) P -> D  bovenrand antenne open -> D
+## A3: 10 px
+  (rij 32, kol 54) . -> D  NIEUW (niet uit model): bovenrand 1 px verlengd zodat x54 dicht is
+  (rij 33, kol 45) P -> D  bovenrand antenne open -> D
+  (rij 33, kol 48) P -> D  bovenrand antenne open -> D
+  (rij 33, kol 49) p -> D  bovenrand antenne open -> D
+  (rij 33, kol 50) P -> D  bovenrand antenne open -> D
+  (rij 33, kol 51) P -> D  bovenrand antenne open -> D
+  (rij 33, kol 52) P -> D  bovenrand antenne open -> D
+  (rij 33, kol 53) P -> D  bovenrand antenne open -> D
+  (rij 33, kol 54) P -> p  terug naar modelkleur (model pP), anders 1 px dik
+  (rij 34, kol 44) P -> D  bovenrand antenne open -> D
+## A4: 6 px
+  (rij 48, kol 38) P -> D  bovenrand antenne open -> D
+  (rij 48, kol 39) P -> D  bovenrand antenne open -> D
+  (rij 52, kol 49) P -> D  bovenrand antenne open -> D
+  (rij 52, kol 50) P -> D  bovenrand antenne open -> D
+  (rij 52, kol 51) P -> D  bovenrand antenne open -> D
+  (rij 55, kol 58) P -> D  bovenrand antenne open -> D
+## bol rand: 22 px
+  (rij 17, kol 28) p -> w  lijf naast buitenrand (model p, 1 px ruis)
+  (rij 17, kol 29) m -> D  buitenrand bol rechtsboven (model 2W)
+  (rij 31, kol 37) p -> l  reflectierand (model h) -> lijf l
+  (rij 32, kol 37) p -> l  reflectierand (model h) -> lijf l
+  (rij 33, kol 37) p -> l  reflectierand (model h) -> lijf l
+  (rij 36, kol 37) p -> l  reflectierand (model h) -> lijf l
+  (rij 40, kol 36) p -> l  reflectierand (model h) -> lijf l
+  (rij 42, kol 35) D -> l  reflectierand (model h) -> lijf l
+  (rij 43, kol 34) p -> l  reflectierand (model h) -> lijf l
+  (rij 49, kol 13) D -> m  dubbele binnenlijn onder (model P) -> diepe schaduw
+  (rij 49, kol 14) p -> l  reflectierand (model h) -> lijf l
+  (rij 49, kol 25) p -> l  reflectierand (model h) -> lijf l
+  (rij 49, kol 27) p -> l  reflectierand (model h) -> lijf l
+  (rij 50, kol 15) D -> m  dubbele binnenlijn onder (model P) -> diepe schaduw
+  (rij 50, kol 16) p -> l  reflectierand (model h) -> lijf l
+  (rij 50, kol 17) p -> l  reflectierand (model h) -> lijf l
+  (rij 50, kol 18) p -> l  reflectierand (model h) -> lijf l
+  (rij 50, kol 25) P -> l  reflectierand (model h) -> lijf l
+  (rij 51, kol 18) P -> l  reflectierand (model h) -> lijf l
+  (rij 51, kol 19) p -> l  reflectierand (model h) -> lijf l
+  (rij 51, kol 20) p -> l  reflectierand (model h) -> lijf l
+  (rij 51, kol 22) p -> l  reflectierand (model h) -> lijf l
+## naad: 30 px
+  (rij 26, kol 31) p -> w  lichtband naast naad -> lijf w
+  (rij 27, kol 30) D -> P  naad uniform P (was D/p)
+  (rij 28, kol 30) D -> P  naad uniform P (was D/p)
+  (rij 29, kol 29) D -> P  naad uniform P (was D/p)
+  (rij 29, kol 30) p -> w  lichtband naast naad -> lijf w
+  (rij 30, kol 29) D -> P  naad uniform P (was D/p)
+  (rij 31, kol 29) p -> P  naad uniform P (was D/p)
+  (rij 32, kol 29) D -> P  naad uniform P (was D/p)
+  (rij 34, kol 27) D -> P  naad uniform P (was D/p)
+  (rij 34, kol 28) p -> w  lichtband naast naad -> lijf w
+  (rij 35, kol 26) D -> P  naad uniform P (was D/p)
+  (rij 35, kol 27) p -> w  lichtband naast naad -> lijf w
+  (rij 36, kol 26) p -> w  lichtband naast naad -> lijf w
+  (rij 37, kol 24) D -> P  naad uniform P (was D/p)
+  (rij 37, kol 25) p -> w  lichtband naast naad -> lijf w
+  (rij 38, kol 24) p -> w  lichtband naast naad -> lijf w
+  (rij 39, kol 23) p -> w  lichtband naast naad -> lijf w
+  (rij 40, kol 21) D -> P  naad uniform P (was D/p)
+  (rij 40, kol 22) P -> w  lichtband naast naad -> lijf w
+  (rij 41, kol 19) p -> P  naad uniform P (was D/p)
+  (rij 41, kol 21) p -> w  lichtband naast naad -> lijf w
+  (rij 42, kol 18) p -> w  lichtband naast naad -> lijf w
+  (rij 43, kol 15) p -> w  lichtband naast naad -> lijf w
+  (rij 43, kol 16) p -> w  lichtband naast naad -> lijf w
+  (rij 43, kol 17) p -> w  lichtband naast naad -> lijf w
+  (rij 44, kol 10) p -> l  schaduwband onder naad (model qqqq) -> lijf l i.p.v. lichtpaars
+  (rij 44, kol 11) p -> l  schaduwband onder naad (model qqqq) -> lijf l i.p.v. lichtpaars
+  (rij 44, kol 12) p -> l  schaduwband onder naad (model qqqq) -> lijf l i.p.v. lichtpaars
+  (rij 44, kol 13) p -> l  schaduwband onder naad (model qqqq) -> lijf l i.p.v. lichtpaars
+  (rij 44, kol 14) p -> l  schaduwband onder naad (model qqqq) -> lijf l i.p.v. lichtpaars
+## omlijning: 16 px
+  (rij 16, kol 13) P -> D  selout lichtkant uniform (model 100,57,120)
+  (rij 16, kol 14) P -> D  selout lichtkant uniform (model 100,57,120)
+  (rij 17, kol 11) P -> D  selout lichtkant uniform (model 100,57,120)
+  (rij 17, kol 12) P -> D  selout lichtkant uniform (model 100,57,120)
+  (rij 18, kol 9) P -> D  selout lichtkant uniform (model 100,57,120)
+  (rij 18, kol 10) P -> D  selout lichtkant uniform (model 100,57,120)
+  (rij 19, kol 8) P -> D  selout lichtkant uniform (model 100,57,120)
+  (rij 20, kol 7) P -> D  selout lichtkant uniform (model 100,57,120)
+  (rij 22, kol 5) P -> D  selout lichtkant uniform (model 100,57,120)
+  (rij 22, kol 6) P -> D  selout lichtkant uniform (model 100,57,120)
+  (rij 23, kol 5) P -> D  selout lichtkant uniform (model 100,57,120)
+  (rij 24, kol 4) P -> D  selout lichtkant uniform (model 100,57,120)
+  (rij 30, kol 2) P -> D  selout lichtkant uniform (model 100,57,120)
+  (rij 34, kol 2) P -> D  selout lichtkant uniform (model 100,57,120)
+  (rij 38, kol 3) D -> #  geen zwart/paars om en om: vanaf rij 37 zwart
+  (rij 40, kol 4) l -> w  AA-randje (model l) naast buitenlijn -> w
+## oog: 20 px
+  (rij 27, kol 7) m -> P  ringrand (model l2)
+  (rij 27, kol 8) p -> P  ringrand sluiten tegen lijf
+  (rij 27, kol 13) m -> P  ringrand (model 2)
+  (rij 28, kol 6) l -> w  AA-randje (model l/1) naast oogring -> w
+  (rij 28, kol 7) p -> P  ringrand links sluiten (model Ph)
+  (rij 30, kol 6) w -> p  wit gat in de ring (reductie)
+  (rij 32, kol 8) t -> #  pupil rond: rij 32 = 8-11 zoals 33-34
+  (rij 33, kol 7) # -> T  pupiluitsteeksel -> iris (model tDt#)
+  (rij 34, kol 4) m -> D  ringrand links (model 2)
+  (rij 35, kol 4) m -> D  ringrand links (model 2)
+  (rij 35, kol 6) m -> D  binnenring links (model 2), als rij 32-34
+  (rij 35, kol 8) D -> T  paarse pixel in iris onder pupil -> iris
+  (rij 36, kol 13) m -> P  binnenring rechtsonder (model 2)
+  (rij 36, kol 15) D -> #  ringrand rechtsonder zwart zoals rij 31-35/37
+  (rij 36, kol 16) l -> w  AA-randje (model l/1) naast oogring -> w
+  (rij 37, kol 11) m -> P  binnenring onder (model t22p)
+  (rij 38, kol 6) l -> w  AA-randje (model l/1) naast oogring -> w
+  (rij 39, kol 8) m -> #  ringrand onder sluiten (model 2)
+  (rij 40, kol 8) l -> w  AA-randje (model l/1) naast oogring -> w
+  (rij 40, kol 12) l -> w  AA-randje (model l/1) naast oogring -> w
+## voet LB: 7 px
+  (rij 12, kol 19) # -> D  bovenrand voet aan lichtkant: D i.p.v. zwart (model #)
+  (rij 12, kol 20) # -> D  bovenrand voet aan lichtkant: D i.p.v. zwart (model #)
+  (rij 12, kol 21) # -> D  bovenrand voet aan lichtkant: D i.p.v. zwart (model #)
+  (rij 12, kol 23) m -> P  model-2 in antennevoet, paars i.p.v. lijftint
+  (rij 13, kol 18) p -> D  open rand (p tegen transparant)
+  (rij 14, kol 17) P -> D  open rand (P tegen transparant)
+  (rij 15, kol 18) p -> P  onderrand voet (model ppll gelijkspel)
+## voet RB: 3 px
+  (rij 18, kol 29) l -> D  voetrand linksboven (model l2wP)
+  (rij 18, kol 30) p -> D  open rand bovenkant voet sluiten (model 2h)
+  (rij 18, kol 31) p -> D  open rand bovenkant voet sluiten (model Ph)

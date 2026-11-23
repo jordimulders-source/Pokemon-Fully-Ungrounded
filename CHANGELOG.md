@@ -3041,3 +3041,20 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.730] - Regionale Pincurchin: frontsprite af (+ merge main)
 - Model: Gemini v8 (v1–v8 met Jordi: bruin lijf, donkerrode gladde potloodstaafjes, dicht en lang, zeemijn met 3 contacthoorns en een naad). Gezicht = Pincurchins eigen ogen en mond, 1-op-1 uit zijn sprite: linkeroog smaller (kolom geschrapt, pupil heel), rechteroog 1 px lager, mond 115 % bovenop de naad met lijf tussen mond en ogen (V1).
 - Eindkeuring Dragonfly Cave (schaduw, kleurtinten, belijning): 29 px gerepareerd, middenrood iets lichter (B). Af: `docs/concept/sprites/pincurchin_regional/af/pincurchin_regional.png`; op het overzichtsvel (Regional forms). Alles in `pincurchin_regional/SPEC.md`.
+### [v0.0.731] - Ontwerplijst opgeschoond
+- Geschrapt (Jordi, 23 nov): wilde lijn vicuña → guanaco, carnavalspauw.
+- Fire/Water-Pokémon van de lijst: gedaan (onderwater-Oddish-lijn).
+- Bijgewerkt in `TODO.md`, `IDEEEN.md`, `POKEMON.md`.
+
+### [v0.0.732] - Steel/Cosmic-lijn (satelliet): concept + prompt fase 1
+- Besloten met Jordi (23 nov): pure machines met één oog; Spoetnik-bolletje → satelliet → ruimtestation (groter en complexer, zoals Magneton); geen Zuid-Amerika-link nodig; nu alleen designs.
+- `docs/concept/sprites/satelliet_lijn/SPEC.md` en Gemini-prompt fase 1 r1.
+
+### [v0.0.733] - Satelliet-lijn fase 1 (Spoetnik): frontsprite af
+- Steel/Cosmic-lijn (Jordi, 23 nov): pure machines met één oog; Spoetnik-bolletje → satelliet → ruimtestation; fase 1 wordt onderdeel van fase 2 en 3.
+- Gemini-model r7 gekozen (r1–r7 in `satelliet_lijn/fase1/gemini/`), in het model korte 5e antenne weggehaald en onderste antenne verlengd (`fase1/model/`).
+- Sprite: r1–r3 (1548 px, eindkeuring PASS), daarna op Jordi's verzoek verkleind naar ±985 px (r4, eindkeuring PASS). Bol rond (≤0,71 px), geen onnodig zwart, antennes ≥2 px.
+- `fase1/af/satelliet_fase1.png`; op het overzichtsvel (sectie New).
+
+### [v0.0.734] - Merge naar main
+- Branch `claude/fervent-euler-uckbbn` (ontwerplijst opgeschoond, satelliet-lijn fase 1 af, prompt fase 2) samengevoegd met main; conflicten in CHANGELOG/CLAUDE/TODO/GEMINI/overzichtsvel opgelost (beide kanten behouden, versies hernummerd naar 0.0.731–733).

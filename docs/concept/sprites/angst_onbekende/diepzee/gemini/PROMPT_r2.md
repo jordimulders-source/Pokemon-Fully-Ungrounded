@@ -24,3 +24,5 @@ No wavy or curly tentacles.
 No effects, no glow, no bubbles, no water, no ground, no shadow.
 No plush/Neopets look, no chibi mascot.
 ```
+
+Jordi over r2: "haha dit ziet er niet uit" (twee armen als tafelpoten, geen gezicht/ogen, geen wezen).

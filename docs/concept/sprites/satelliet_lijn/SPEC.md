@@ -35,3 +35,4 @@ Citaten en besluiten (Jordi, 23 nov); het overzicht staat ook in `docs/concept/I
   - Jordi erbij: "awt niet erg is" (= wat niet erg is).
 - r4 (`fase1/sprite_r4/`, 985 px, factor 0,617): meetbaar in orde (rond ≤0,71 px, 0 open randen), maar oog armer (binnenring past niet, iris 1 px) en voetje linksboven bijna weg → voorwaarde "alles mooi" niet gehaald volgens maker en Claude. Opties: r3 houden of tussenmaat ±0,68 (±1150 px).
 - Jordi over r4: "zet er zeker nog mooi uit, alleen de pootjes hebben allemaal maar 2 kleurtinten toch?" · "ik vind klein goed" → **r4 gekozen (klein)**. Claude: antennes = 2 vultinten (midden- en lichtpaars) + donkerpaarse lijn + zwart aan de schaduwkant, ook in r3.
+- Jordi: "zo laten, doe de eindkeuring maar" (antennes 2 vultinten blijven) → eindkeuring_r4.

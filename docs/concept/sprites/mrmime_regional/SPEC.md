@@ -71,3 +71,4 @@ Jordi: "ik denk dat dit ontwerp het niet gaat worden" – "het hele idee bedoel 
 - Keurder op r2: BIJNA (borstvuist te klein, tintbrij schouder/vuist, romp/benen zonder volume, open randen, rechte kinlijn; V gevuld leest als slabbetje → keuze Jordi). Reparaties naar de maker (r3).
 - Sprite r3 (`bokser/sprite_r3/`): 13 keurderspunten verwerkt (borstvuist groter, romp met volume, benen per been, randen dicht). Verse keurder gestart.
 - Jordi (23 nov): "belangrijk is dat de haren echt als 2 kuiven lezen zoals bij mr mime, dat heeft het model niet helemaal goed gedaan, dus daar mag je van af wijken". → r4: kuiven uit de Gen 3-Mr. Mime, iets achterover, even lang.
+- Jordi: "die heeft nog een stuk haar ertussenin gedaan" → haar tussen de kuiven weg, kale kopbovenkant zoals Mr. Mime.

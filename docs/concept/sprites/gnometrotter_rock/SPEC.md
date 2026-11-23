@@ -31,6 +31,7 @@
 - 23 nov: "jij wilde toch een soort stenen schoenen onder de voeten?" → v4 aangepast: blauwe ronde voeten met een dunne stenen zool.
 - 23 nov: "en laten we de rotsen op de rug overgaan naar de riem, dus dat die omringt wordt met stenen die uit het lichaam groeien, dus rug en riem" → in v4.
 - r4 (`r4/gemini_r4.png`, prompt v4): "iets beter al maar de hele beltsectie moet van steen, plus de haren en baard zijn niet meer van steen" → prompt v5.
+- 23 nov: "en de schoenzolen lezen niet goed" → v5: dikke, duidelijke stenen zool.
 
 ## Voorgelegd door Claude (22 nov, nog niet gekozen)
 - A geode (muts = geode met amethist in een barst, snor/plukjes = kwartskristal, neus = rozenkwarts); B druipsteen (muts = stalactiet, kalksteen met lagen); C ertsader (riem = ader, gesp = goudklomp, korstmos op de snor).

@@ -44,3 +44,5 @@ Middenfase en alle rondes daarvan: `docs/concept/sprites/mrmime_regional/SPEC.md
 - r8 (`gemini/r8.png`; krulsnor, stok schuin omhoog, bolhoed met grijze golvende lokken erachter, benen onveranderd), Jordi: "haren en hoed niet goed, snor en arm pose wel, lichaamspose niet, stok te klein".
 - r9 bijsturen (zelfde gesprek): `gemini/PROMPT_r9_bijsturen.md`, alleen lichaamspose (benen) + stok groter. Hoed/haar: voorstel Claude in de sprite (zie chat).
 - r9 (`gemini/r9.png`; uitval: voorbeen gebogen, achterbeen gestrekt ver naar rechts; stok dikker en iets langer; kop/snor/armen gelijk aan r8). Wacht op Jordi.
+- Jordi bij r9: "denk je dat je hier iets van kan maken?"; "en de ogen dan minder geschokt maar iets meer serieus dan mr rime".
+- Kale reductie r9 (`gemini/r9_kale_reductie_64_8x.png`): 64×55, breedte is de grens (uitval + stok); kop ±20 px breed (Mr. Mime-maat). Open: hoed/haar (A sprite uit Mr. Rime-pixels / B Gemini), formaat (achterbeen inkorten?), monocle (r9 heeft ringen om beide ogen).

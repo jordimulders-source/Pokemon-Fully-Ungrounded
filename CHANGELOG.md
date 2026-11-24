@@ -3209,3 +3209,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Regionale Mr. Mime als ouderwetse gentleman-bokser (zwart-wit), fase 2 van Mime Jr. → bokser-Mr. Mime → Mr. Prime. Gemini-model r12 (pose naar Jordi's boksersfoto), daarna 24 spriterondes: kop op Mr. Mime-formaat met twee achterovergekamde kuiven, ronde Mr. Mime-romp en -schouderballen, armen en getapete vuisten uit r9, boksbroek, donkergrijze V rekenkundig 20° gedraaid voor de driekwarthoek (Jordi's idee).
 - `docs/concept/sprites/mrmime_regional/bokser/af/bokser.png`; op het overzichtsvel bij de regional forms. Tweede type, naam en evolutiemethode open; Mr. Prime volgt in een nieuw gesprek.
 - Lessen in `docs/lessen/GEMINI.md`: ligposes lukken niet met tekst, geen bijlagen voorstellen, geen half werk naar Jordi, makerrapport op "zelf getekend" lezen.
+
+### [v0.0.778] - Merge naar main: Mr. Prime en bokser-Mr. Mime
+- Branches `claude/loving-bell-swhg2l` (Mr. Prime af) en `claude/funny-ptolemy-meuol6` (bokser-Mr. Mime af) samengevoegd in main (Jordi: "ik zie mr mime nog niet, die is akkoord"). Changelogsecties van de bokser-branch hernummerd naar v0.0.766–777; overzichtsvel opnieuw gemaakt (bokser vóór Mr. Prime).

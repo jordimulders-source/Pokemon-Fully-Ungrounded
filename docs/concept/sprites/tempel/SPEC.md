@@ -47,3 +47,4 @@ Rondes in `sprite/rN/`.
 - Jordi: "beter maar de verlichting moet duidelijker geel, als de spirit die erin zit, of misschien zelfs een andere kleur" → lichtkleuren op variant E: `sprite/r8_ogen/lichtkleur.png` (geel, goud, groen, cyaan, paars).
 - Jordi koos "goud" (op variant E). Af: `af/tempel.png` (= `sprite/r8_ogen/tempel_E_goud.png`, basis r7). Op het overzichtsvel (sectie New).
 - Jordi over af-versie (24 nov): "ok het mos ziet er wel vet uit, misschien kan je dat nog wat meer doen, verder is het alleen nog maar inkleuren wat beter moet, ik zie veel effen vlakken, weinig kleurtinten, schaduw is niet goed, belijning kan nog net wat beter, eigenlijk dragonflycave, maar dat is eindkeuring". Kleurronde in `sprite/k1/` e.v.
+- Jordi (24 nov): "en op de tweede rij van boven, met het driehoekje, daarnaast interpreteerde ik als een stuk ruine dat gebroken is, dus die moet dan hetzelfde gelijnd worden als het driehoekje ernaast, neem dat ook mee in de keuring".

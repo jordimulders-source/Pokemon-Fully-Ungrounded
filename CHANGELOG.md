@@ -3041,3 +3041,9 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.730] - Regionale Pincurchin: frontsprite af (+ merge main)
 - Model: Gemini v8 (v1–v8 met Jordi: bruin lijf, donkerrode gladde potloodstaafjes, dicht en lang, zeemijn met 3 contacthoorns en een naad). Gezicht = Pincurchins eigen ogen en mond, 1-op-1 uit zijn sprite: linkeroog smaller (kolom geschrapt, pupil heel), rechteroog 1 px lager, mond 115 % bovenop de naad met lijf tussen mond en ogen (V1).
 - Eindkeuring Dragonfly Cave (schaduw, kleurtinten, belijning): 29 px gerepareerd, middenrood iets lichter (B). Af: `docs/concept/sprites/pincurchin_regional/af/pincurchin_regional.png`; op het overzichtsvel (Regional forms). Alles in `pincurchin_regional/SPEC.md`.
+
+### [v0.0.731] - Satelliet (Steel/Cosmic-lijn fase 2): frontsprite kandidaat
+- Model: Gemini r1 (Jordi: "best oke"), gespiegeld naar driekwart links, oog 1,5× door Claude. Gemini r2–r7 (kleinere panelen, driekwart, groter oog, lijf groter, panelen hoger, vanaf nul) afgekeurd; gemeten veranderde Gemini nooit de lijfmaat.
+- Panelen zelf kleiner geschaald rond hun aansluitpunt (`paneel_varianten/`); 75 % kapte het lijf af, 80 % met ander anker (80b) niet.
+- Sprite r1–r7: maker (model overnemen), keuring (BIJNA → 6 reparaties), eindkeuring Dragonfly Cave met omlijningsronde (PASS). Kandidaat met twee oogvarianten (a = model, b = één ring minder): `docs/concept/sprites/satelliet_fase2/voor_jordi_r7.png`, bestanden in `eindkeuring_r6/r7/`. Wacht op Jordi.
+- Lessen in `docs/lessen/GEMINI.md` (verhoudingen, onderdeel kleiner zonder afkappen, spiegelen).

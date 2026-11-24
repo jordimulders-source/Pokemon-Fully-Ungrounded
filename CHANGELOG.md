@@ -3133,3 +3133,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.758] - Capykart: r4 en bijstuurprompt r5
 - r4 akkoord als basis. Jordi koos: gezicht en palet van Capybarrel (spritefase), hoepels terug, hoofd netjes laten overgaan in de auto. Bijstuurprompt r5 (overgang + hoepels); volgroeider hoofd (beige, ronder) nog in overweging.
+
+### [v0.0.759] - Capykart: model r5
+- Gemini r5 (hoofd gaat over in de houten auto, twee grijze hoepels, toren van vier blokken met groene driehoek): Jordi "als silhouet prima". Model in `docs/concept/sprites/capykart/referenties/model_r5.png`; volgroeider hoofd volgt in de spritefase.

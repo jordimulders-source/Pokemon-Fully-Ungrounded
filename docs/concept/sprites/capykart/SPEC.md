@@ -12,5 +12,7 @@ Lijnbesluiten: `docs/concept/IDEEEN.md` → "Capybarrel"; fase 1: `docs/concept/
 - 24 nov (op r4): "we kunnen de kleuren veranderen he"; op Claude's voorstellen "1 en 2 akkoord, 3 idd netjes laten overgaan, 4 is niet nodig imo" → gezicht + palet van Capybarrel (spritefase), hoepels terug, geen zitopening (netjes overgaan), niets van het lijf achterin.
 - 24 nov, nog niet besloten: "Ik denk dat hij ook nog iets volgroeider moet lijken dan capybarrel, ... misschien maken we de capybara zelf een wat lichtere tint, meer richting beige en doen we de vorm van het hoofd net wat ronder, zodat die meer lijkt op een ventje in een toy car".
 
+- 24 nov (op r5): "dit is als silhouet prima" → model `referenties/model_r5.png`, silhouet bevroren.
+
 ## Open (niet door Jordi gezegd)
-- Aantal wielen, oog (fase 1: blij Flareon-oog, glans zwart). In r1 laat Gemini dit zelf ontwerpen.
+- Hoe het hoofd volgroeider wordt (Jordi's idee beige + ronder; voorstellen Claude 24 nov: morrillo, grotere tanden, oog met ooglid, kleurvarianten).

@@ -111,3 +111,6 @@ Change ONLY these two things:
 
 Style: official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 colors, dark outline, white background.
 ```
+
+## Ronde 5 (24 nov)
+- `r5/capykart_r5.png` (= `referenties/model_r5.png`): zitopening weg, twee grijze hoepels. Jordi: "dit is als silhouet prima, hoe wil je de capybara zelf iets volgroeider laten lijken dan?". Silhouet bevroren; volgroeider hoofd binnen het silhouet uitwerken in de spritefase (voorstellen Claude 24 nov, open).

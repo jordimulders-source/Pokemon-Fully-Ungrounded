@@ -96,10 +96,27 @@ for x, y in D_px: o[y, x] = I['D']
 for y, x in map(tuple, np.argwhere((a == I['D']))):
     if 14 <= y <= 18 and x >= 18: o[y, x] = I['d']
 
+# ---- 3b. buitenlijn rondom donker (beste-4-regel: Dundragoon/Princadee/Zapacha/Skinguin hebben de hele buitenrand in een
+#   getint bijna-zwart, 14-18% van de pixels; wij hadden 7% zwart + bruine b op de lichtkant): bruine b op de silhouetrand -> K.
+buiten = []
+for y in range(64):
+    for x in range(64):
+        if o[y, x] == I['b'] and any(not inb(x + dx, y + dy) or o[y + dy, x + dx] == 0 for dx, dy in N4):
+            o[y, x] = I['K']; buiten.append((x, y))
+
 # ---- 4. palet
 PAL = PAL17.copy()
-PAL[I['b']] = (80, 44, 16)    # was (88,52,20) L59 -> L51
-PAL[I['D']] = (160, 116, 48)  # was (176,136,80) L141 -> L121: gouden creme-lijn
+# beste-4-regels: licht geler en minder verzadigd, schaduw roder en verzadigder (Zapacha h40->36->31->21->20,
+#   Skinguin geel 46->42->38->32), lijntint per vlak L ~0,35-0,5 van de basistint, buitenlijn getint bijna-zwart.
+PAL[I['f']] = (228, 184, 116)  # h36 s49 L189
+PAL[I['d']] = (206, 138, 76)   # h29 s63 L151
+PAL[I['c']] = (170, 92, 52)    # h20 s69 L111
+PAL[I['b']] = (92, 40, 16)     # h19 s83 L53  (lijn/d = 0,35; was 88,52,20 L59)
+PAL[I['K']] = (40, 20, 12)     # buitenlijn bruin-zwart zoals Zapacha (was 16,16,16 neutraal)
+PAL[I['C']] = (248, 240, 200)  # h50 s19 L239
+PAL[I['M']] = (240, 216, 152)  # h44 s37 L215
+PAL[I['S']] = (220, 172, 100)  # h36 s55 L180
+PAL[I['D']] = (152, 100, 40)   # h32 s74 L108: gouden creme-lijn (lijn/C = 0,45; was 176,136,80 L141)
 
 def save(idx, pad, z=None):
     im = Image.new('P', (64, 64)); im.putpalette(PAL.ravel().tolist() + [0] * 3 * 240)
@@ -110,10 +127,10 @@ save(o, 'sprite_r18/sprite.png', 8)
 # ---- bewijs
 diff = o != a
 print('nieuwe b-lijnpixels:', int((diff & (o == I['b'])).sum()), '| schaduw naast lijn:', len(schaduw),
-      '| losse stukjes weg:', weg, '| creme-lijn D:', len(D_px), '| totaal gewijzigd:', int(diff.sum()))
+      '| losse stukjes weg:', weg, '| creme-lijn D:', len(D_px), '| buitenlijn b->K:', len(buiten), '| totaal gewijzigd:', int(diff.sum()))
 assert ((o > 0) == (a > 0)).all(), 'silhouet'
 assert not (diff & np.isin(a, [I[c] for c in 'ogWweLK'])).any(), 'gezicht/staart/potloodkern/buitenlijn aangeraakt'
-assert not diff[:14].any(), 'kop boven rij 14'
+assert all((x, y) in buiten for y, x in np.argwhere(diff[:14])), 'kop boven rij 14: alleen buitenlijn b->K'
 pot = np.zeros_like(diff); pot[15:27, :14] = True; assert not (diff & pot).any(), 'potlood'
 
 # ---- vel: r18 | r17 | Kangaskhan 4x en 8x ; 1x licht/donker ; + Dundragoon/Princadee/Zapacha 4x
@@ -128,7 +145,7 @@ ka = np.asarray(Image.open(R + 'graphics/pokemon/kangaskhan/anim_front_gba.png')
 kp = jasc(R + 'graphics/pokemon/kangaskhan/normal_gba.pal')
 items = [('r18', lambda bg=BG: rgb(o, PAL, bg)), ('r17', lambda bg=BG: rgb(a, PAL17, bg)), ('Kangaskhan Gen 3 (GBA)', lambda bg=BG: rgb(ka, kp, bg))]
 extra = [('Dundragoon', 'docs/concept/sprites/dundragoon/af/dundragoon.png'), ('Princadee', 'docs/concept/sprites/awki/af/awki.png'),
-         ('Zapacha', 'docs/concept/sprites/viscacha/af/viscacha.png')]
+         ('Zapacha', 'docs/concept/sprites/viscacha/af/viscacha.png'), ('Skinguin', 'docs/concept/sprites/skinguin/af/skinguin.png')]
 V = Image.new('RGB', (3 * 522 + 10, 22 + 256 + 34 + 512 + 34 + 64 + 34 + 256 + 10), 'white'); d = ImageDraw.Draw(V)
 for i, (t, f) in enumerate(items):
     V.paste(f().resize((256, 256), Image.NEAREST), (10 + i * 266, 22)); d.text((10 + i * 266, 6), t + ' 4x', fill='black')
@@ -140,6 +157,7 @@ d.text((10, y - 14), '1x licht / donker: r18 r17 Kangaskhan', fill='black')
 for j, bg in enumerate([(248, 248, 248), (24, 24, 32)]):
     for i, (t, f) in enumerate(items): V.paste(f(bg), (10 + j * 240 + i * 70, y))
 y += 64 + 34
-d.text((10, y - 14), 'onze best belijnde (Jordi): Dundragoon | Princadee | Zapacha 4x', fill='black')
+d.text((10, y - 14), 'onze best belijnde (Jordi): Dundragoon | Princadee | Zapacha | Skinguin 4x', fill='black')
 for i, (t, p) in enumerate(extra): V.paste(rgba(p).resize((256, 256), Image.NEAREST), (10 + i * 266, y))
+V.paste(rgb(o, PAL).resize((256, 256), Image.NEAREST), (10 + 4 * 266, y)); d.text((10 + 4 * 266, y - 14), 'r18', fill='black')
 V.save('sprite_r18/vel.png')

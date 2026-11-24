@@ -1,0 +1,39 @@
+A: 43 px groen-donker 11 -> 8; 8 = (64,104,112) gedeelde koele schaduw (hoepels, morrillo, blauwe zijkant, tandschaduw, groen schaduwvlak); 11 = vacht-hooglicht (236, 186, 146)
+   (27,14) 2->B vacht-hooglicht
+   (28,14) 2->B vacht-hooglicht
+   (26,15) 2->B vacht-hooglicht
+   (27,15) 2->B vacht-hooglicht
+   (28,15) 2->B vacht-hooglicht
+   (25,16) 2->B vacht-hooglicht
+   (26,16) 2->B vacht-hooglicht
+   (27,16) 2->B vacht-hooglicht
+   (24,17) 2->B vacht-hooglicht
+   (25,17) 2->B vacht-hooglicht
+   (26,17) 2->B vacht-hooglicht
+   (20,18) 2->B vacht-hooglicht
+   (21,18) 2->B vacht-hooglicht
+   (22,18) 2->B vacht-hooglicht
+   (22,19) 2->B vacht-hooglicht
+   (23,19) 2->B vacht-hooglicht
+B: 29 px geel 14 -> 9; 9 = crème (252,232,150) = tanden + bevels + glans + geel voorvlak; 14 = vacht-hooglicht (236, 186, 146)
+   (27,14) 2->E vacht-hooglicht
+   (28,14) 2->E vacht-hooglicht
+   (26,15) 2->E vacht-hooglicht
+   (27,15) 2->E vacht-hooglicht
+   (28,15) 2->E vacht-hooglicht
+   (25,16) 2->E vacht-hooglicht
+   (26,16) 2->E vacht-hooglicht
+   (27,16) 2->E vacht-hooglicht
+   (24,17) 2->E vacht-hooglicht
+   (25,17) 2->E vacht-hooglicht
+   (26,17) 2->E vacht-hooglicht
+   (20,18) 2->E vacht-hooglicht
+   (21,18) 2->E vacht-hooglicht
+   (22,18) 2->E vacht-hooglicht
+   (22,19) 2->E vacht-hooglicht
+   (23,19) 2->E vacht-hooglicht
+capykart_A.png: alpha-diff t.o.v. r7 0; bevroren index-diff t.o.v. r10 0
+capykart_B.png: alpha-diff t.o.v. r7 0; bevroren index-diff t.o.v. r10 0
+Proef A met blauwere gedeelde schaduw (72,96,116)/(76,92,124): hoepels/morrillo lezen dan niet groen, maar het schaduwvlak van de groene driehoek wordt blauwgrijs (driehoek niet meer groen). Met (64,104,112) lezen hoepels, morrillo en blauwe zijkant teal/groen.
+KEUZE: B. Alle tinten blijven herkenbaar (geel blok leest op 1x nog geel, iets lichter; tanden crème; glans crème), vacht-hooglicht werkt in beide.
+Hooglicht (236,186,146): bolling voorhoofd/kruin (rij 14-17, x24-28, niet tegen de bovenlijn behalve 2 px kruin) + snuitrug (rij 18-19, x20-23); (28,16) bewust overgeslagen (rand oogvak).

@@ -19,3 +19,4 @@ Kandidaat r7 (24 nov), Jordi:
 - "En de hele sprite mist nog goede schaduwen/kleurtinten etc"
 
 r8 (24 nov), Jordi: "r8 p2, het lijf is iets te lavender idd, bovenop is het nog steeds een slordig geheel, waar de bol en het paneel links samenkomen is slordig tov het model, afgekapt, mijn vragen van de vorige ronde staan ook nog steeds"
+- Jordi (24 nov): "het is helemaal niet erg als het hoofd de linkerantenne een stukje overlapt he"

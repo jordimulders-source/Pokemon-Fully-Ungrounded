@@ -1,0 +1,4 @@
+Capykart r3b = r3 + 3 pixels (verder pixel-identiek, ook B en A_blauwgrijs):
+  (53,45) D->7, (53,46) D->7, (53,47) D->7  spaak boven de achterwielnaaf terug naar houttint midden (7), naar de buren links/rechts/onder
+  Gesloten ovale naafring blijft: (53,48)-(55,48) boven, x53 r49-51 links, x56 r49-52 rechts, (54,52),(54,53),(55,53) onder.
+  Gridcoordinaten; beeld-x = grid-x + 1.

@@ -3058,3 +3058,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.734] - Levende Inca-tempel: volume per steen
 - Op Jordi's vraag "zijn de vakjes nog steeds niet te effen?": kleurrondes k7–k8, elke steen licht linksboven en sikkel rechtsonder (2 px bij grote stenen) binnen het toonbereik van zijn vlak, vlekjes uit het model, banding in het onderblok weg. Toonzones, lijnen, mos, ogen en deur diff 0. Keurder PASS.
 - `tempel/af/tempel.png` = k8; overzichtsvel bijgewerkt.
+
+### [v0.0.735] - Levende Inca-tempel: bergwand, poort en latei
+- Jordi's punten na k8: donkere bergwandvlakken niet meer effen (volume per steen binnen de donkere zone, geen diagonalen, kleine stenen zonder putje), poort volgens de regels (selout aan de lichtkant, zwart alleen rechts/onder), latei steekt rechts 2 px uit zoals in het model. Keurder PASS (k11).
+- `tempel/af/tempel.png` = k11; overzichtsvel bijgewerkt.

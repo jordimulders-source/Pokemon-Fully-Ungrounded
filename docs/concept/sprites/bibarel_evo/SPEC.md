@@ -58,6 +58,8 @@
 
 - r14 (eindkeuring PASS), Jordi: "maar kloppen de vlekjes op het lichama ook met de dragonflycave rgels?" → nee, niet getoetst; ronde r15 toetst elke vachtvlek aan de gids (r.1459–1465).
 
+- r15, Jordi: "ja de hele sprite moet goed gekeurd woren, hij moet consistent zijn met andere sprites".
+
 ## Open
 - Welke suggesties (Claude, 23 nov): 1 oranje beiteltanden, 2 staart als troffel, 3 schepklauwen, 4 sjouwt tak/stam of modder tegen de borst, 5 knagend aan een stam, 6 waarschuwingskleuren (geel-zwarte staart), 7 helm van modderkorst/twijgjes.
 - Spritefilter (Claude, 23 nov): over 1 (zonder slijtage), 2 (alleen de vorm), 4 (alleen tak/stam), 6 (alleen 1–2 brede banden); af 3 (klauwen 1–2 px), 5 (snuit achter de stam, spaanders = details), 7 (twijgjes te klein, korst leest als muts), modder tegen de borst (bruin op bruin).

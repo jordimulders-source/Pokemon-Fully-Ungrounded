@@ -46,4 +46,4 @@ Middenfase en alle rondes daarvan: `docs/concept/sprites/mrmime_regional/SPEC.md
 - r9 (`gemini/r9.png`; uitval: voorbeen gebogen, achterbeen gestrekt ver naar rechts; stok dikker en iets langer; kop/snor/armen gelijk aan r8). Wacht op Jordi.
 - Jordi bij r9: "denk je dat je hier iets van kan maken?"; "en de ogen dan minder geschokt maar iets meer serieus dan mr rime".
 - Kale reductie r9 (`gemini/r9_kale_reductie_64_8x.png`): 64×55, breedte is de grens (uitval + stok); kop ±20 px breed (Mr. Mime-maat). Open: hoed/haar (A sprite uit Mr. Rime-pixels / B Gemini), formaat (achterbeen inkorten?), monocle (r9 heeft ringen om beide ogen).
-- Jordi: "de stok is ook nog te dun eigenlijk" (in de sprite: stok 2 px dik met lijn + hooglicht).
+- Jordi: "de stok is ook nog te dun eigenlijk" (voorstel Claude: in de sprite dikker, met omlijning en hooglicht).

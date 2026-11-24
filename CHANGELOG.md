@@ -3165,3 +3165,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.765] - Gen 3-studie: kanttekening Skinguin
 - Jordi vindt Skinguin juist erg Gen 3. Kanttekening in `gen3_studie/STUDIE.md`: de score meet textuur en lijn en straft gladde ontwerpen te hard af; de afwijkende lijst is een kijklijst, geen oordeel. Vel `skinguin_naast_gen3.png` erbij.
+
+### [v0.0.766] - Gen 3-studie: kanttekening Dundragoon
+- Jordi vindt Dundragoon echt Gen 3; score 1,44 valt binnen het bereik van echte Gen 3-sprites. Conclusie in de studie: totaalscore en rangorde zeggen niet of een sprite op Gen 3 lijkt; alleen de losse metingen (zwart aan de lichtkant, effen vlakken) tellen, naast een Gen 3-sprite van hetzelfde soort ontwerp. Vel `dundragoon_naast_gen3.png` erbij.

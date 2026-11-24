@@ -48,6 +48,10 @@ Voor 30 van de 85 sprites geldt: verder van Gen 3 af dan 90 % van de echte Gen 3
 
 **Kanttekening Skinguin (Jordi, 24 nov: "Ik vind Skinguin juist heel erg op een gen 3 sprite lijken").** De score meet textuur, en een gladde pinguïn heeft van nature weinig textuur; ook echte gladde Gen 3-sprites hebben grote vlakken (Pelipper: clustergrootte 5,1, Latias 3,9). Skinguin heeft wel veel Gen 3: helder silhouet, hoog contrast (228, boven de Gen 3-mediaan), Delibird-palet, leest goed op 1× (`skinguin_naast_gen3.png`). Wat de meting wel echt laat zien: het rode lijf is grotendeels twee effen tinten (Delibird heeft meer tintstappen die de bolling tekenen) en de lijn is aan de lichtkant voor 75 % zwart. **Les: de score zegt iets over textuur en lijn, niet over "lijkt het op Gen 3"; bij gladde ontwerpen weegt hij te zwaar.** De lijst hierboven is daarom een lijst om naar te kijken, geen oordeel.
 
+**Kanttekening Dundragoon (Jordi, 24 nov: "dundragoon scoor je ook laag terwijl ik dat echt een gen 3 sprite vind").** Score 1,44: binnen het bereik van echte Gen 3-sprites (90 % zit onder 1,48), alleen plek 53 van 85 omdat onze lijst als geheel scheef is. Lijn aan de lichtkant 51 % (net boven de Gen 3-mediaan), contrast 223 (hoog). Enige afwijking: grotere effen vlakken (6,1 px tegen Dunsparce 4,0), hetzelfde gladde-ontwerp-effect als bij Skinguin; Milotic heeft dat ook (5,2). Vel: `dundragoon_naast_gen3.png`.
+
+**Conclusie na Skinguin en Dundragoon:** de totaalscore en de plek in de rangorde zeggen niet of een sprite op Gen 3 lijkt. Bruikbaar blijven alleen de twee losse metingen (zwart aan de lichtkant, effen vlakken), en die alleen naast een Gen 3-sprite van hetzelfde soort ontwerp (glad naast glad, vacht naast vacht).
+
 ## Wijken we steeds meer af?
 Ja, licht. Mediaanscore per periode (datums uit Stand van zaken; de git-geschiedenis vóór 22 nov is er niet meer):
 

@@ -84,6 +84,7 @@ SECTIES=[
 ("oddish_regional/af/oddish_regional.png",'Oddish (regional)',"water/grass"),
 ("oddish_regional/gloom_sprite/af/gloom.png",'Gloom (regional)',"water/fire"),
 ("oddish_regional/vileplume_sprite/af/vileplume_regional.png",'Vileplume (regional)',"water/fire"),
+("baltoy_regional/af/baltoy_regional.png",'Baltoy (regional)',"rock/psychic"),
 ("baltoy_regional/claydol_af/claydol_regional.png",'Claydol (regional)',"rock/psychic"),
 ("swablu_regional/af/swablu.png",'Swablu (regional)',"electric/flying"),
 ("swablu_regional/altaria/af/altaria.png",'Altaria (regional)',"electric/dragon"),

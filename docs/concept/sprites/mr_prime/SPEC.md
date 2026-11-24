@@ -29,3 +29,5 @@ Middenfase en alle rondes daarvan: `docs/concept/sprites/mrmime_regional/SPEC.md
 - r3 (`gemini/r3.png`; bollijf met vest/strik, stok naar voren, losse hoge hoed met één piek erachter, heel lange zwarte benen), Jordi: "iets beter, maar nog steeds veel dezelfde issues, de houding met de stok is wel naar voren, maar geen vechterstand, het lichaam klopt nog niet helemaal goed, de benen zijn komisch lang, hoed en oren moeten 1 zijn zoals bij mr rime, kleding is teveel kleding en niet lichaamsvorm".
 - Prompt r4: `gemini/PROMPT_r4.md` (nieuw gesprek, basis r3): hoed + pieken één vorm, benen korter, geen kraag/strik/knopen/vest, vechterstand (rug recht, korte schermstand).
 - Jordi bij r3 (erna): "ogen te klein"; "het is geen pokemon". In prompt r4 erbij: grote ogen zoals Mr. Rime, blok Pokémon-verhoudingen (kop ±1/3, ronde vormen; zoals bij bokser/Hitmongroove).
+- r4 (`gemini/r4.png`; schermstand met stok naar voren, wit eivormig lijf, losse bolhoed met pieken opzij), Jordi: "pose is goed, maar het lichaam is nu een kaal ei geworden".
+- r5 bijsturen (zelfde gesprek, geen bijlage): `gemini/PROMPT_r5_bijsturen.md`, alleen het lijf; pose blijft.

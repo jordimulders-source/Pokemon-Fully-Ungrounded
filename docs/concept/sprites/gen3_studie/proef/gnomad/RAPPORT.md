@@ -27,3 +27,30 @@ Palet: lila 3/4/5 iets verzadigder (137,119,170 → 130,104,178; 184,163,211 →
 - Roze is niet verzadigder gemaakt (zelfde paletindexen als de neus, die bevroren is); de "pastel"-indruk van het lijf blijft daardoor deels.
 - Broek/laarzen (losse lichtblauwe vlekjes in de laarzen) en de zwarte riemlijnen niet aangeraakt: buiten de opdracht.
 - Buitenlijn: was al grotendeels selout (muts 2, handen 6, broek 9); de echte winst zit in de zones, niet in de lijn.
+
+# Ronde 2 (opdracht coördinator: meer contrast, romp met snorschaduw, broek en laarzen)
+Resultaat: `na_r2.png`, vel `voor_na_r2.png` (voor | r1 | r2 | Makuhita | Jigglypuff, 6× en 1×), `diffmasker_r2.png`. Script `maak_r2.py` (bouwt op `na.png`, alleen pixellijsten), `vel_r2.py`. Bewijs: `NA=na_r2.png python3 bewijs.py`.
+
+## Per zone (r1 → r2, 169 px; t.o.v. het origineel 191 px)
+| Zone | px | Wat |
+|---|---|---|
+| Muts onderrand | 27 | 4-band rechts onder de muts (rij 24–27) is in de 3-schaduwzone opgenomen |
+| Romp, snorschaduw | 33 | slagschaduw van de snor als één 7-zone van ±2 px direct onder de snor (links, midden en onder de rechtersnorhelft) |
+| Romp, rechts | 17 | schaduw rechts in twee harde zones: 7 en aan de buitenkant een diepe 6-zone; de verticale 8-strook (rij 36–41) is het licht op de bolling |
+| Handen | 7 | diepste schaduw (6) in de hoek rechtsonder van de sikkel |
+| Broek | 24 | lichtzone (lichtblauw) linksboven op de bolling, schaduwzone rechts als één vlak; losse vlekjes weg |
+| Been links (dichtbij) | 22 | licht aan de voorkant (scheen, bovenkant voet), schaduw achter en onderzool als zone |
+| Been rechts (veraf) | 19 | donkerder: grondtint donkerblauw met middenblauw alleen aan de voorkant; geen lichtblauw meer |
+
+Palet: lila 3 (122,92,182), 4 (180,148,230), 5 (218,198,255): grotere stappen, diepere schaduw. Blauw 9 (44,92,140) donkerder, b (140,204,244) helderder; a ongewijzigd.
+Roze: geen eigen paletslots voor de romp gemaakt. Er zijn geen bijna-dubbele tinten buiten het gezicht om samen te voegen: alle 15 slots zijn in gebruik (lila 4, roze 3, crème/bruin 3, blauw 3, riem 1, zwart 1), en roze 6/7/8 zitten in de neus. Het contrast op de romp komt daarom uit grotere en dieper liggende zones (6 als echte zone), niet uit nieuwe tinten.
+
+## Bewijs r2
+- silhouet-diff (alfa): **0**
+- gezichtszone 397 px: diff index + RGB **0**
+- 15 kleuren + transparant, mode P 64×64
+
+## Zelf nog zwak (r2)
+- Het roze blijft het originele (vrij pastel) roze omdat de slots gedeeld zijn met de neus. Echt warmer/verzadigder kan alleen als de neus mee mag of als er een slot vrijkomt (bijv. lila 5 schrappen of de riem op een andere tint).
+- Lila 2 (lijnkleur, zit in het gezicht) is grijzer dan de nieuwe, verzadigde 3; in de schaduwzones leest de vouwlijn daardoor als een grijze lijn i.p.v. een donkerdere tint.
+- Snorschaduw: 2 px band; Jordi vond een roze rand om de snor eerder raar (r8). Het is nu een schaduwzone en geen rand, maar daar moet Jordi naar kijken.

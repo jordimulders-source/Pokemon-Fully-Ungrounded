@@ -3157,7 +3157,14 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.763] - Levende Inca-tempel: topgevels
 - Jordi: bovenste lijn "volledig horizontaal" (bovenin de sprite): linkerpunt en dal van de topgevels als silhouet (k15). `tempel/af/tempel.png` = k15; overzichtsvel bijgewerkt. Jordi: "geen probleem".
 
-### [v0.0.764] - Mr. Prime: frontsprite af
+### [v0.0.764] - Bibarel-evolutie: frontsprite af; regionale Baltoy af; overzichtsvel
+- **Bibarel-evolutie** (Water/Fighting, bouwvakker-bever, fase 3): ontwerp via Gemini r1–r10 (bouwvakker alleen via lichaam: helm = kop, tuinbroek = vachtpatroon, potloodstam, pylonstaart oranje/wit, kraag van Bibarel, witte tanden); model r10 bevroren, staart 8 natieve px achter het lijf; tuinbroekvorm uit Gemini r5 in de kleuren van r10. Frontsprite r1–r19: keuringen, eindkeuring Dragonfly Cave, studie Gen 3 (Kangaskhan, `_gba`) en de beste vier eigen sprites (Dundragoon, Princadee, Zapacha, Skinguin). Af: `docs/concept/sprites/bibarel_evo/af/bibarel_evo.png` (= r19), op het overzichtsvel. Naam en evolutiemethode open.
+- **Regionale Baltoy** af (`baltoy_regional/af/`, = r19) en op het overzichtsvel.
+- Overzichtsvel: Solrock-evolutie als Rock/Cosmic (Solrock zelf is Rock/Cosmic sinds 21 nov).
+- TODO: opknapronde sprites met de beste vier als maatstaf.
+- Lessen: Gen 3-referentie = `anim_front_gba.png` + `normal_gba.pal` (SPRITE_KERN); kritiek van Jordi als checklist per ronde; eindkeuring toetst ook textuur; "kijk hoe die sprites het doen" = overgangen en lijntinten, niet palet of lijnposities (GEMINI.md).
+
+### [v0.0.765] - Mr. Prime: frontsprite af
 - Eindvorm van de regionale Mime-lijn (Mime Jr. → bokser-Mr. Mime → Mr. Prime), Fighting/Psychic: oude gentleman in schermuitval met wandelstok.
 - Ontwerp: 10 Gemini-rondes (`docs/concept/sprites/mr_prime/gemini/`), model r9 gekozen (pose, snor, armpose, lijf).
 - Sprite: 16 rondes + eindkeuring (Dragonfly Cave). Hoed, haarvleugels en zijhaar 1-op-1 van Mr. Rime, ogen van Gen 3 Mr. Mime (monocle geschrapt), ronde kop met de Mr. Mime-boog, koel blauwgrijs palet naar Alphyena, achterbeen gestrekt in uitval; niets opnieuw getekend.

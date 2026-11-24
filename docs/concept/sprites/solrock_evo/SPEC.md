@@ -1,6 +1,6 @@
 # Solrock-evolutie "corona" (werknaam open)
 
-Lijn: Solrock (Rock/Psychic in de repo) → deze evolutie. Evolutiemethode (voorstel Claude, nog niet besloten): Solrock evolueert met een Lunatone in het team (optie B, zoals Mantyke/Remoraid); tegenhanger Lunatone → bloedmaan (nog te doen). Type: open (Cosmic-kandidaat). Ideeën en citaten: `docs/concept/IDEEEN.md` (Cosmic-lijnen); prompts en rondes: `gemini/PROMPT.md`, `r1/`–`r7/`.
+Lijn: Solrock (Rock/Psychic in de repo) → deze evolutie. Evolutiemethode (voorstel Claude, nog niet besloten): Solrock evolueert met een Lunatone in het team (optie B, zoals Mantyke/Remoraid); tegenhanger Lunatone → bloedmaan (nog te doen). Type: open (Cosmic-kandidaat); op het overzichtsvel Rock/Cosmic zoals Solrock zelf (Jordi 24 nov: "Waarom staat de solrock evo nog als psychic ipv cosmic trouwens?"). Ideeën en citaten: `docs/concept/IDEEEN.md` (Cosmic-lijnen); prompts en rondes: `gemini/PROMPT.md`, `r1/`–`r7/`.
 
 ## Model (bevroren)
 `referenties/model.png` = Gemini v5 (`r5/gemini_v5.png`). Jordi (22 nov) over v7: "niet beter, ga maar bouwen in het eerdere model, dan kunnen we zelf in de sprite spelen".

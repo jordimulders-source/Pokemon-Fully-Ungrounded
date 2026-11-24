@@ -97,3 +97,17 @@ Style: official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 
 
 ## Ronde 4 (24 nov)
 - `r4/capykart_r4.png`: groene driehoek bovenop, blauw blok gelijk. Jordi: "prima, leest die genoeg als een pokemon en niet alleen als een capybara in een houten auto? en genoeg als een evo van capybarrel". Claude's beoordeling + voorstellen (open): zie het antwoord van 24 nov; kern: hoofd los in een zitopening, hout en vacht dezelfde tint, gezicht en hout/hoepels van Capybarrel ontbreken.
+- Jordi (24 nov) op de voorstellen: "we kunnen de kleuren veranderen he"; "1 en 2 akkoord, 3 idd netjes laten overgaan, 4 is niet nodig imo". Dus: (1) gezicht (neus, tanden, blije oog) en palet van Capybarrel in de spritefase; (2) hoepels van de ton terug; (3) geen zitopening, hoofd gaat netjes over in de auto; (4) niets van het lijf achterin.
+- Jordi (24 nov), nog aan het denken: "Ik denk dat hij ook nog iets volgroeider moet lijken dan capybarrel, maar ik ben nog aan het nadenken hoe dat kan zonder de capybara niet meer herkenbaar te maken, misschien maken we de capybara zelf een wat lichtere tint, meer richting beige en doen we de vorm van het hoofd net wat ronder, zodat die meer lijkt op een ventje in een toy car".
+
+## r5 (bijsturen in hetzelfde gesprek als r4; max 2 wijzigingen: hoepels + overgang; kop/kleur in de spritefase)
+Keuze Claude: hoepels als banden om de auto (dichtst bij de ton); alternatief was velgen om de wielen.
+```
+Keep everything exactly the same: the capybara head, the eye, the wooden toy car shape, the wheels, the pose, the colors, the outline, the tower of four blocks.
+
+Change ONLY these two things:
+1. Remove the seat opening and its rim around the neck: the capybara's neck flows smoothly and naturally into the wooden car body, as if the fur gradually becomes the wood. One creature, not an animal sitting in a car.
+2. Add two dark grey iron hoop bands around the wooden car body, like the iron hoops of a wooden barrel.
+
+Style: official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 colors, dark outline, white background.
+```

@@ -9,6 +9,8 @@ Lijnbesluiten: `docs/concept/IDEEEN.md` → "Capybarrel"; fase 1: `docs/concept/
 - 24 nov (op r3): "ja het enige wat ik nog mis is een driehoekig toyblock op de bovenste"; "en de blauwe mag dezelfde vorm zijn als de andere twee"; "een groene driehoek erbovenop".
 - 24 nov (op r2): "beter, alleen de toyblocks moeten opgestapeld, misschien leuk om de vorm iets meer een derby car te maken, of een van de andere foto's, dat het net wat natuurlijker is dat het hoofd zo eruit komt" (foto's in `referenties/`).
 - 24 nov (op r1): "het moeten een houten speelgoedautotje zijn", "de toy blocks opgestapeld", "De capybara is de auto trouwens he. Zijn hoofd steekt er alleen uit, het autotje is zijn lichaam".
+- 24 nov (op r4): "we kunnen de kleuren veranderen he"; op Claude's voorstellen "1 en 2 akkoord, 3 idd netjes laten overgaan, 4 is niet nodig imo" → gezicht + palet van Capybarrel (spritefase), hoepels terug, geen zitopening (netjes overgaan), niets van het lijf achterin.
+- 24 nov, nog niet besloten: "Ik denk dat hij ook nog iets volgroeider moet lijken dan capybarrel, ... misschien maken we de capybara zelf een wat lichtere tint, meer richting beige en doen we de vorm van het hoofd net wat ronder, zodat die meer lijkt op een ventje in een toy car".
 
 ## Open (niet door Jordi gezegd)
 - Aantal wielen, oog (fase 1: blij Flareon-oog, glans zwart). In r1 laat Gemini dit zelf ontwerpen.

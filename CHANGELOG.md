@@ -3130,3 +3130,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.757] - Capykart: r3 en bijstuurprompt r4
 - r3 goedgekeurd op één punt na: een groen driehoekig blok bovenop de toren en het blauwe blok dezelfde vorm als de andere twee (Jordi). Bijstuurprompt r4 in `docs/concept/sprites/capykart/gemini/PROMPTS.md`.
+
+### [v0.0.758] - Capykart: r4 en bijstuurprompt r5
+- r4 akkoord als basis. Jordi koos: gezicht en palet van Capybarrel (spritefase), hoepels terug, hoofd netjes laten overgaan in de auto. Bijstuurprompt r5 (overgang + hoepels); volgroeider hoofd (beige, ronder) nog in overweging.

@@ -3066,3 +3066,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.736] - Levende Inca-tempel: poort rechts
 - Jordi: "de rechterkant van de mondpoort iets teveel gedaan ... met rechte lijnen" en "horen die lijnen ... nog zwart te zijn?": rechterstijl schuin zoals het model, parallelle voegen ernaast weg, poortlijnen (binnenlijnen) niet meer zwart maar de donkerste warme steentint. Keurder PASS (k13).
 - `tempel/af/tempel.png` = k13; overzichtsvel bijgewerkt.
+
+### [v0.0.737] - Levende Inca-tempel: latei schuin
+- Jordi: "de bovenste lijn volledig horizontaal": latei in perspectief zoals het model (2 px daling naar rechts, onderlijn en overstek mee). `tempel/af/tempel.png` = k14; overzichtsvel bijgewerkt.

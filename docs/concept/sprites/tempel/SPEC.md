@@ -62,3 +62,4 @@ Rondes in `sprite/rN/`.
 - Jordi: "horen die lijnen volgens alle keuringen en regels nog zwart te zijn?" → nee: binnenlijnen (latei/stijlen liggen binnen het silhouet) in de donkerste eigen tint, zwart alleen buitenlijn schaduwkant; mee in k12.
 - k12: rechterstijl schuin, parallelle voegen weg, poortlijnen niet meer zwart (14) → keurder BIJNA: 14 te koel/paars, donkerste warme eigen tint = 2 (48,44,38); k13 door Claude (30 px 14→2) → PASS volgens keurder. `af/tempel.png` = `sprite/k13/`.
 - Jordi: "valt me nu ook pas op dat de bovenste lijn volledig horizontaal is" → k14: latei schuin zoals het model (lezing Claude: bovenlijn latei).
+- k14: latei schuin (bovenlijn y44→y46 in treden van 5 px, onderlijn mee, overstek mee, deurgat 1 rij lager). `af/tempel.png` = `sprite/k14/`.

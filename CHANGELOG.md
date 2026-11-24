@@ -3046,3 +3046,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Ogen op Jordi's aanwijzing ("teveel vierkantjes die niet mee gaan met het perspectief"): trapeziumvormig raampje in de donkere steentint, donkere diepte links, licht rechts, lichtkleur goud (Jordi's keuze uit geel/goud/groen/cyaan/paars).
 - `docs/concept/sprites/tempel/af/tempel.png`; op het overzichtsvel (sectie New). Naam, data en plek nog open.
 - Lessen in `docs/lessen/GEMINI.md` (gebouw-Pokémon, ogen van een gebouw).
+
+### [v0.0.732] - Levende Inca-tempel: kleurronde (Dragonfly Cave)
+- Op Jordi's feedback ("meer mos", "veel effen vlakken, weinig kleurtinten, schaduw is niet goed, belijning kan nog net wat beter"): kleurrondes k1–k3, vorm/ogen/deur diff 0. Mos verdubbeld (3 tinten), steen 6 tinten van warm naar koel, tint per steen, slagschaduw, bergwandfacet; gebroken ruïneblok naast de middelste gevel gelijnd als de gevel (Jordi). Eindkeuring PASS na k3.
+- `tempel/af/tempel.png` vervangen; overzichtsvel bijgewerkt.

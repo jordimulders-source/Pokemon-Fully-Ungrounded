@@ -3173,3 +3173,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.766] - Idee: impala-lijn
 - `docs/concept/IDEEEN.md`: nieuwe sectie "Impala-lijn" met Jordi's idee (impala → kudu of iets soortgelijks); alles open.
+- Impala-lijn: Jordi's voorkeur dikdik → impala → kudu toegevoegd aan `IDEEEN.md`.

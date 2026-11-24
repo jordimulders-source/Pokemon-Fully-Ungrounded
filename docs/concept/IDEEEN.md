@@ -745,3 +745,4 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 ## Impala-lijn (Jordi, 24 nov)
 - **Jordi (24 nov):** "ik overweeg een impala lijn, ik weet dat die niet zuid amerikaans zijn overigens, die kan dan evolueren in een kudu of iets soortgelijks". Nog niets besloten (type, aantal fases, naam open).
 - Context (Claude): in de dex zitten al Deerling → Sawsbuck (voorstel regional pudú/huemul, `DEX_NOMINATIES.md` §5) en Stantler → Wyrdeer; officiële antilope-Pokémon bestaan niet.
+- **Jordi (24 nov), na een lijst antilopen en voorstellen voor 3 fases:** "oryx naar kudu of andersom werkt niet echt he" (Claude: klopt, rechte vs. spiraalhoorns, zelfde formaat). Daarna: "dikdik - impala - kudu zou ik wel tof vinden". Open: type(s), namen, of het definitief 3 fases wordt.

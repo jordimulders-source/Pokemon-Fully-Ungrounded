@@ -14,3 +14,4 @@ Alle citaten en lijnbesluiten: `docs/concept/IDEEEN.md` → "Capybarrel". Prompt
 - Sprite r2 (A Hypno-oog, B Drowzee-oog), Jordi (23 nov): "dat zijn geen luie ogen". Keuzevel: `oog/studie/luie_ogen.png`.
 - Jordi (23 nov) stuurde een foto van een echte capibara: "check die blik" en "mag volledig zwart oog". Op de foto (niet als bestand binnengekomen): klein, rond, volledig donker/zwart glanzend oog hoog op de kop, geen oogwit zichtbaar, met een zwaar bovenlid/vachtwenkbrauw net erboven die het bovenste stukje afdekt; kalme, onverschillige blik.
 - Jordi (23 nov) over het oog: "streepje met een rondje erin".
+- Jordi (24 nov) over r3: "het rechtse oog is een beetje blij en dat is ook wel geinig, maar kan je nog ter vergelijking een -o- maken en dan het rondje zwart". Vergelijking: `sprite/r3/keuze_oog_o.png` (capybarrel_4/5/6).

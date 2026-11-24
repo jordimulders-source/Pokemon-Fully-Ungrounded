@@ -34,7 +34,7 @@
 ## Checklist (alle kritiek van Jordi, elke ronde toetsen)
 - "geen rechte lijnen" (tuinbroekgrenzen, borststuk, broekspijpen volgen de ronding).
 - "Het moeten geen effen vlakken zijn" (gezegd bij de r2-kraag).
-- "A maar moet netter" (tuinbroek tot de enkels).
+- "A maar moet netter" (tuinbroek tot de enkels; vervangen 24 nov: vorm van Gemini r5, tot het kruis, benen bruin, kleuren van r10).
 - Kraag: "kraag van r1 was prima" (na de Bibarel-kraagproeven; eerder "ja kraag van bibarel overnemen" en r2 "blurry mess").
 - Broek: "broek weer precies hetzelfde fout" (r3: extra modelschaduw, zoals r2) → tinten en verdeling van r1, alleen netter en zonder rechte lijnen.
 - Bovenlichaam-patroon en broekkleur van r1 ("niet meer goed in r2").
@@ -42,6 +42,7 @@
 - "ja als de tuinbroek niet zoals het model nagemaakt wordt qua vorm is de sprite niet geslaagd" (24 nov): borststuk, zakje en bandjes 1-op-1 uit het model; alleen de broek over de benen is inkleuren.
 - r5: "ik zie al dat die afgekeurd mag worden vanwege dat de tuinbroek nog niet goed is" · "kijk maar beter naar het model" (vergelijking `sprite_r5/tuinbroek_model_vs_r5.png`).
 - Jordi daarna: "o wacht ik zie het al" · "het model doet het ook niet goed" · over Gemini r5 (`gemini/r5.png`): "hier wel de juiste vorm, maar niet de juiste kleuren".
+- Keuzes (24 nov): benen "Zoals r5" (tuinbroek tot kruis/bovenbeen, benen bruin; enkels vervalt), kleuren "Kleuren van r10".
 - Tanden wit; ogen zoals Bibarel; neus rood.
 
 ## Open

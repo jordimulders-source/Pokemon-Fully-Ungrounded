@@ -64,7 +64,7 @@
 
 - r17: palet en overgangen naar Gen 3 Kangaskhan (`_gba`; eerdere keuringen gebruikten de Gen 4/5-bestanden). Open: lange binnenlijnen zoals Kangaskhan = nieuwe lijnen, keuze Jordi.
 
-- r17, Jordi: "de lijnen mogen ook iets harder, iets donkerder, kijk naar kangaskhan en ivm daarmee hoe weinig belijnd onze sprite is" → r18: meer binnenlijnen (plek uit het model) en donkerdere lijntinten.
+- r17, Jordi: "de lijnen mogen ook iets harder, iets donkerder, kijk naar kangaskhan en ivm daarmee hoe weinig belijnd onze sprite is" · "zelfs het buikvlak bijv" · "er zit iets tussen zwart en heel licht nog he" → r18: meer binnenlijnen (plek uit het model), ook rond het crème vlak, lijntint tussen zwart en licht.
 
 ## Open
 - Welke suggesties (Claude, 23 nov): 1 oranje beiteltanden, 2 staart als troffel, 3 schepklauwen, 4 sjouwt tak/stam of modder tegen de borst, 5 knagend aan een stam, 6 waarschuwingskleuren (geel-zwarte staart), 7 helm van modderkorst/twijgjes.

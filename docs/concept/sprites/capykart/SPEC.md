@@ -19,5 +19,8 @@ Lijnbesluiten: `docs/concept/IDEEEN.md` → "Capybarrel"; fase 1: `docs/concept/
 - 24 nov: "v2 maar de tanden zijn teveel rechthoekjes, mogen ook net wat groter" → tanden uit Bibarel (T1; "t1"); blok: "wat het beste uitkomt" → blauwgrijs.
 - **Frontsprite af (24 nov):** `af/capykart.png` = `eindkeuring/capykart_r7.png` (r6 + Dragonfly Cave-omlijning).
 
+- 24 nov (op r7, "af"): "Je kan me niet vertellen dat deze door de eindkeuring is, weinig tint, vrijwel geen schaduw, vooral niet op de blokken, de lijnen op de auto, dit moet echt nog beter, dragonflycave" → schaduwrondes r8–r12.
+- 24 nov (op r12): "het is nu niet echt een geheel meer, beetje blurry, de zwarte barrel lines zijn nog niet goed, de blokken staan niet echt in goed perspectief en lijken niet daadwerkelijk opgestapeld op de auto" → r13 (blokken mogen van vorm veranderen).
+
 ## Open (niet door Jordi gezegd)
 - Evolutiemethode/level.

@@ -47,3 +47,4 @@ Middenfase en alle rondes daarvan: `docs/concept/sprites/mrmime_regional/SPEC.md
 - Jordi bij r9: "denk je dat je hier iets van kan maken?"; "en de ogen dan minder geschokt maar iets meer serieus dan mr rime".
 - Kale reductie r9 (`gemini/r9_kale_reductie_64_8x.png`): 64×55, breedte is de grens (uitval + stok); kop ±20 px breed (Mr. Mime-maat). Open: hoed/haar (A sprite uit Mr. Rime-pixels / B Gemini), formaat (achterbeen inkorten?), monocle (r9 heeft ringen om beide ogen).
 - Jordi: "de stok is ook nog te dun eigenlijk" (voorstel Claude: in de sprite dikker, met omlijning en hooglicht).
+- Jordi: "2, het lijkt geen echte wandelstok, en als je nog 1 keer wil prompten moet je het zeggen". r10 bijsturen (zelfde gesprek): `gemini/PROMPT_r10_bijsturen.md`, alleen de stok (dik, echte wandelstok met crookhandvat en metalen punt).

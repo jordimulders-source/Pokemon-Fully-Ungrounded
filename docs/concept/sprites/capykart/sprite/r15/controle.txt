@@ -1,0 +1,2 @@
+creme: 64 px anders dan r14, buiten genoemde pixels: 0; gezicht diff 0; silhouet 14 px (rood blok); kleuren 16
+wit: 64 px anders dan r14, buiten genoemde pixels: 0; gezicht diff 0; silhouet 14 px (rood blok); kleuren 16

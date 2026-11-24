@@ -1,0 +1,20 @@
+Capykart r15 (24 nov) - maker-log. Basis: sprite/r14 (crème en wit). Script: maak_r15.py (controleert per pixel de oude index vóór de wissel, assert), vel: vel_r15.py.
+Uitgevoerd precies volgens keurder r14 (BIJNA):
+1. Voorste hoepel kruin: (9,37),(10,36),(11,36),(12,35),(13,35) 8->1; (14,34) 4->1; (15-18,34) 6->1.
+2. Dalend rechts: (28,38),(29,39),(30,40),(31,41) 5->1, (33,42) 6->1; (32,41) 1->6.
+3. Verticaal links: (30,44),(30,45),(30,46) 6->1.
+4. Cockpitrand: (34,38) 6->1, (35,38) 1->4, (34,40),(34,41) 4->1.
+5. Achterste hoepel: (49, r36-44) 8->1 -> zwart | grijs (x50) | zwart (x51).
+6. Rood blok r19-24 x46-57 -> x45-56; (57,19-24) transparant; (45,18),(45,25) -> 1.
+Alle oude waarden klopten met de opdracht (geen assert-fout).
+
+CONTROLES (controle.txt)
+crème: 64 px anders dan r14, buiten genoemde pixels 0; gezicht diff 0; silhouet 14 px (alleen rood blok); 16 kleuren
+wit:   idem
+
+EIGEN BLIK
+- Achterste hoepel: nu een nette band, zwart aan beide kanten op de zijkant van de bak (r36-44).
+- Toren: leest als drie gestapelde blokken; het rode blok 1 px naar links geeft een speelse, losse stapeling. Naadlijnen sluiten links (45,18/25) en rechts (x57 r18/r25 = onderlijn geel / bovenlijn blauw).
+- Nog open (niet in de opdracht, daarom niet aangeraakt):
+  a. Voorste hoepel: bovenrand van het begin van de dalende boog is nog open tegen licht hout 5: rij 35 x21-23 en rij 36-37 x24-27 grenzen direct aan de band (8) zonder zwarte lijn.
+  b. Achterste hoepel op het dek (r34-35, x49-50): linkerkant open tegen dek 5 op (48,34),(48,35); glanspixel 9 op (49,35) staat direct boven de nieuwe zwarte linkerlijn (49,36).

@@ -753,3 +753,4 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - Claude (24 nov): in de repo bestaan Normal/Ice, Normal/Steel en Normal/Rock nog niet; Normal/Grass is al Deerling/Sawsbuck.
 - **Jordi (24 nov):** "ja steel of fighting en dan idd zwaarden, speren oid, gevechtswapens". Tweede type impala/kudu: Steel of Fighting (open); hoorns als gevechtswapens.
 - **Jordi (24 nov):** "ja het belangrijkste is dat de vorm van de hoorns blijft kloppen". Eis: de hoornvorm van het echte dier (dikdik, impala, kudu) blijft kloppen.
+- **Jordi (24 nov):** "steel is wel tof, dat bestaat nog niet, wel erg zwak tegen fighting mar geen ramp". Impala en kudu: Normal/Steel. Claude (repo-typetabel): Fighting 4×, Fire en Ground 2×; immuun voor Ghost en Poison.

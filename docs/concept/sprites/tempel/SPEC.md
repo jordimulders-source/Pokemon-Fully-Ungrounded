@@ -59,3 +59,4 @@ Rondes in `sprite/rN/`.
 - Jordi: "en rechts van de deurpoort zou het bovenste stuk net iets verder moeten komen dan het rechterstuk toch?" → klopt met het model (latei steekt ±2 px uit voorbij de rechterstijl); mee in k10.
 - k9–k11: bergwand volume per steen zonder diagonalen (kleine stenen zonder putje), poort volgens de regels, latei steekt rechts 2 px uit → keurder PASS op k11. `af/tempel.png` = `sprite/k11/`.
 - Jordi over k11: "ja nu heb je de rechterkant van de mondpoort iets teveel gedaan denk ik met rechte lijnen, de zijkant is nu eindelijk goed trouwens" → k12: rechterstijl schuin zoals het model, geen parallelle voeg ernaast (lezing Claude).
+- Jordi: "horen die lijnen volgens alle keuringen en regels nog zwart te zijn?" → nee: binnenlijnen (latei/stijlen liggen binnen het silhouet) in de donkerste eigen tint, zwart alleen buitenlijn schaduwkant; mee in k12.

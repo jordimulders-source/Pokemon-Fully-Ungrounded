@@ -66,6 +66,8 @@
 
 - r17, Jordi: "de lijnen mogen ook iets harder, iets donkerder, kijk naar kangaskhan en ivm daarmee hoe weinig belijnd onze sprite is" · "zelfs het buikvlak bijv" · "er zit iets tussen zwart en heel licht nog he" → r18: meer binnenlijnen (plek uit het model), ook rond het crème vlak, lijntint tussen zwart en licht.
 
+- Jordi (24 nov): Dundragoon, Princadee, Zapacha, Skinguin zijn de beste ("die 4 lijken het meest alsof ze uit een pokemon game komen"); "dus doe een studie naar wat het kleurgebruik zo goed maakt in die sprites en pas het toe op de bibarel evo" → `stijl_gen123/STUDIE_BESTE4.md`, toegepast in r18.
+
 ## Open
 - Welke suggesties (Claude, 23 nov): 1 oranje beiteltanden, 2 staart als troffel, 3 schepklauwen, 4 sjouwt tak/stam of modder tegen de borst, 5 knagend aan een stam, 6 waarschuwingskleuren (geel-zwarte staart), 7 helm van modderkorst/twijgjes.
 - Spritefilter (Claude, 23 nov): over 1 (zonder slijtage), 2 (alleen de vorm), 4 (alleen tak/stam), 6 (alleen 1–2 brede banden); af 3 (klauwen 1–2 px), 5 (snuit achter de stam, spaanders = details), 7 (twijgjes te klein, korst leest als muts), modder tegen de borst (bruin op bruin).

@@ -63,6 +63,14 @@ for y, x in map(tuple, np.argwhere(nieuw & (o == I['b']))):
             schaduw[(X, Y)] = I['d'] if o[Y, X] == I['f'] else I['c']
 for (X, Y), v in schaduw.items(): o[Y, X] = v
 
+# 1b. handmatig na eigen controle op 8x (alleen binnen de modellijnen hierboven):
+#   kraagonderrand doorlopend maken (gaten (29,32) en (31,32) tussen twee b-stukken), spoortje (28,33) terug;
+#   schouderlijn rechts doorlopend: gat (44,35) dicht, dubbele pixel (44,36) terug; broekrand links: vachtsliver (22,49) wordt lijn.
+for (x, y) in [(29, 32), (31, 32), (44, 35), (22, 49)]: o[y, x] = I['b']; nieuw[y, x] = True
+for (x, y) in [(28, 33), (44, 36)]: o[y, x] = a[y, x]; nieuw[y, x] = False
+for (x, y) in [(29, 33), (31, 33)]:
+    if o[y, x] == I['c'] and a[y, x] == I['d']: o[y, x] = I['d']  # schaduw van het teruggezette spoortje
+
 # ---- 2. losse korte b-stukjes (< 3 px, binnenin, niet aan een lijn) in de romp weghalen -> meest voorkomende vachtbuur
 lab, n = ndimage.label(o == I['b'], structure=np.ones((3, 3)))
 weg = []

@@ -10,3 +10,10 @@ Jordi letterlijk (23 nov):
 
 Model (bevroren): `model.png` = Gemini r1, horizontaal gespiegeld (kijkt naar links), lens/oog door Claude 1,5× vergroot (`gemini/oog_varianten/oog_150.png`; alles buiten de lenscirkel pixel voor pixel r1).
 Type: Steel/Cosmic-lijn (type van deze fase niet besproken). Fase 1 en 3: niet besproken. Naam: open.
+
+Kandidaat r7 (24 nov), Jordi:
+- Oog: "rechts is netter" (= oog b, één ring minder), "het pupil kijkt alleen niet naar driekwart".
+- "Daarnaast is het ontwerp van het middenstuk wat te 2d, maar dat ligt aan kleuring en lijnen."
+- "De paarse buitenste cirkellijn is linksbovenin wat te breed denk ik"
+- "verder vertalen de paarse lijnen bovenop nog niet helemaal mooi, incl de cirkels, beetje slordig."
+- "En de hele sprite mist nog goede schaduwen/kleurtinten etc"

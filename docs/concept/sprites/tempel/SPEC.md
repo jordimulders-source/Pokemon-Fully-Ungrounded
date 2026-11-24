@@ -63,3 +63,4 @@ Rondes in `sprite/rN/`.
 - k12: rechterstijl schuin, parallelle voegen weg, poortlijnen niet meer zwart (14) → keurder BIJNA: 14 te koel/paars, donkerste warme eigen tint = 2 (48,44,38); k13 door Claude (30 px 14→2) → PASS volgens keurder. `af/tempel.png` = `sprite/k13/`.
 - Jordi: "valt me nu ook pas op dat de bovenste lijn volledig horizontaal is" → k14: latei schuin zoals het model (lezing Claude: bovenlijn latei).
 - k14: latei schuin (bovenlijn y44→y46 in treden van 5 px, onderlijn mee, overstek mee, deurgat 1 rij lager). `af/tempel.png` = `sprite/k14/`.
+- Jordi: "nee ik bedoel helemaal bovenin de sprite" → het bedoelde was de bovenrand van de topgevels (x33–42, y3–10), niet de latei. k15: topgevels uit het model (linkerpunt, dal, schuine rechternok). De schuine latei (k14) is wel model-trouw en blijft tenzij Jordi anders zegt.

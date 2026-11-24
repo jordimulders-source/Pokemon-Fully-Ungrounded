@@ -4,7 +4,8 @@ from scipy import ndimage as nd
 PAL=[(255,0,255),(24,18,34),(240,238,234),(212,200,222),(186,170,204),(144,120,164),
      (196,146,204),(138,90,156),(92,58,116),(48,32,80),(76,66,130),(176,160,204),
      (134,194,192),(86,170,166),(60,106,134),(100,92,160)]
-np.save('pal.npy',np.array(PAL))
+PAL_UIT=np.array(PAL); PAL_UIT[4]=(192,176,208)   # r4: weergavetint 4 = modelkleur #c0b0d0 (lijftint.py); klassering houdt de oude waarde
+np.save('pal.npy',PAL_UIT)
 a=np.asarray(Image.open('../model.png').convert('RGB')).astype(float)
 w=(a.min(2)>=245)&((a.max(2)-a.min(2))<15)
 lab,n=nd.label(w); keep={lab[0,0]}; sz=nd.sum(w,lab,range(1,n+1)); ob=nd.find_objects(lab)

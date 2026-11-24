@@ -3050,3 +3050,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.732] - Levende Inca-tempel: kleurronde (Dragonfly Cave)
 - Op Jordi's feedback ("meer mos", "veel effen vlakken, weinig kleurtinten, schaduw is niet goed, belijning kan nog net wat beter"): kleurrondes k1–k3, vorm/ogen/deur diff 0. Mos verdubbeld (3 tinten), steen 6 tinten van warm naar koel, tint per steen, slagschaduw, bergwandfacet; gebroken ruïneblok naast de middelste gevel gelijnd als de gevel (Jordi). Eindkeuring PASS na k3.
 - `tempel/af/tempel.png` vervangen; overzichtsvel bijgewerkt.
+
+### [v0.0.733] - Levende Inca-tempel: zijvlakken en perspectief
+- Op Jordi's omcirkelde zones ("teveel effen vlakken ... lijkt gewoon willekeurig gedaan ... daardoor leest het perspectief niet goed"; "dus puur kleurtinten, schaduw, lijnen"): kleurrondes k4–k6. Rechts nu de drie toonzones uit het model (lichte bovenranden, middengrijze zijvlakken met grote stenen, gladde donkere bergwand), gevelplaten met lichte nok, streep naast de deur als doorlopende steenlaag. Keurder PASS (k5); vorm, ogen, deur, mos en linkerhelft diff 0.
+- `tempel/af/tempel.png` vervangen; overzichtsvel bijgewerkt; les in SPRITE_KERN.

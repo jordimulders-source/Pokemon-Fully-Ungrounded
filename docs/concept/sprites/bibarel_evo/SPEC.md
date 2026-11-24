@@ -50,6 +50,8 @@
 
 - r10, Jordi: "lichaam ben ik bijna tevredden over, onderin sluit die niet helemaal goed aan en de puntjes in het miden boven lijken 1 pixel teveel naar rechts te zitten. De tanden zijn ook 2 rechthoeken, dat is niet nodig, potlood en staart uitstekend, gezicht verder ook tevreden over, behalve de twee bollen onder en linksonder de tanden, die zijn wat vervaagd, die mogen overlappen over het lichaam. Daarna de helm fixen en nog beter inkleuren/schaduwen etc". Bevroren: potlood, staart.
 
+- r11, Jordi: "tanden goed, helm beter, alleen is teveel 1 rechte horizontale lijn. Evenals aan de rechterkant van de wollen kraag, ook iets teevel 1 verticale lijn. Aan de linkerkant zie ik trouwens dat de bollen ook ietwat afgekapt zijn. De onderkant van het lichaam is nu prima, het zakje ziet er nog een beetje gek uit, dus misschien kan die ook iets minder rechte lijnen en een tint donkerder? Dan heb je aan de bovenkant van de tuinbroek een paar pixels die naar beneden gaan, zou je dat stuk 1 pixel naar links kunnen verschuiven, weet je wat ik bedoel?". Bevroren: tanden, onderkant lichaam (A+B), potlood, staart.
+
 ## Open
 - Welke suggesties (Claude, 23 nov): 1 oranje beiteltanden, 2 staart als troffel, 3 schepklauwen, 4 sjouwt tak/stam of modder tegen de borst, 5 knagend aan een stam, 6 waarschuwingskleuren (geel-zwarte staart), 7 helm van modderkorst/twijgjes.
 - Spritefilter (Claude, 23 nov): over 1 (zonder slijtage), 2 (alleen de vorm), 4 (alleen tak/stam), 6 (alleen 1–2 brede banden); af 3 (klauwen 1–2 px), 5 (snuit achter de stam, spaanders = details), 7 (twijgjes te klein, korst leest als muts), modder tegen de borst (bruin op bruin).

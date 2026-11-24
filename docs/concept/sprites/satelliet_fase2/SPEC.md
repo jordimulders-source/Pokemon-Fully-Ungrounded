@@ -17,3 +17,5 @@ Kandidaat r7 (24 nov), Jordi:
 - "De paarse buitenste cirkellijn is linksbovenin wat te breed denk ik"
 - "verder vertalen de paarse lijnen bovenop nog niet helemaal mooi, incl de cirkels, beetje slordig."
 - "En de hele sprite mist nog goede schaduwen/kleurtinten etc"
+
+r8 (24 nov), Jordi: "r8 p2, het lijf is iets te lavender idd, bovenop is het nog steeds een slordig geheel, waar de bol en het paneel links samenkomen is slordig tov het model, afgekapt, mijn vragen van de vorige ronde staan ook nog steeds"

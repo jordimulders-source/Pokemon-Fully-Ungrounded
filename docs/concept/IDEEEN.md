@@ -749,3 +749,4 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - **Besloten (Jordi, 24 nov):** "ik wil ze alle 3 normal type geven, want dat missen we nog, maar we moeten nog bedenken hoe we ze uniek maken". Alle drie Normal. Direct daarna: "een dual type kan zeker". Open: tweede type(s), wat ze uniek maakt, namen.
 - **Besloten (Jordi, 24 nov):** "de dikdik sowieso puur normal". Impala en kudu: Normal, tweede type open.
 - **Jordi (24 nov):** "want we kunnen iets leuks met lichaamspatroon en hoorns doen en die heeft de dikdik nog niet veel". Open: wat er met patroon en hoorns gebeurt.
+- **Jordi (24 nov), op voorstellen met aguayo/charango:** "het hoeft niet allemaal zuid amerikaans te zijn".

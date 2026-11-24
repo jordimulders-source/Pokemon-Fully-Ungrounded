@@ -24,5 +24,7 @@ Lijnbesluiten: `docs/concept/IDEEEN.md` → "Capybarrel"; fase 1: `docs/concept/
 
 - 24 nov (op r15b): "ik vind niet dat mijn punten verwerkt zijn", "blokken kloppen niet, de lijnen van de capybara kloppen niet met gen 3 sprites, het kleurwerk in de auto is dramaitsch", "zoveel rechte lijnen nog", "het lijkt net alsof elke spritesessie eerst op dezeldfe manier fout moet gaan", "en de blokken kloppen niet qua kleuren waardoor ze volledig 2d lijken" → r16: auto + kop opnieuw uit de modelhelderheid; toren via een nieuw Gemini-model.
 
+- 24 nov: "Waarom? je hebt ze nog geen enkele keer goed ingekleurd", "ik kan 20000 ontwerpen tonen maar als jij weigert ze goed in te kleuren", "nu zie ik het, de blokken zijn opnieuw getekend", "en helemaal niet overgenomen vanuit het model" → r17: hele sprite opnieuw volgens de Dundragoon-methode (kale reductie per materiaal uit model_r5, tinten uit de modelhelderheid), toren 100 % uit het model.
+
 ## Open (niet door Jordi gezegd)
 - Evolutiemethode/level.

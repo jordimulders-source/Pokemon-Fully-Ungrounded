@@ -15,7 +15,7 @@ SEG={
  8:[(40,'LS'),(49,'LGS')], 9:[(40,'LS'),(49,'LGS')],
  10:[(49,'LGS')],11:[(49,'LGS')],12:[(50,'LS')],13:[(50,'LS')],14:[(50,'LS')],15:[(50,'LS')],16:[(50,'LS')],
  17:[(49,'LGS')],18:[(49,'LGS')],19:[(49,'LGS')],20:[(49,'LGS')],21:[(49,'LGS')],22:[(49,'LGS')],
- 23:[(49,'LS')],24:[(48,'LGGS')],25:[(48,'LGS')],
+ 23:[(49,'LGS')],24:[(48,'LGGS')],25:[(48,'LGS')],
  # lijf: lichtzone op de bolling linksboven (harde diagonale grens), grondtint midden, schaduwsikkel rechts/onder
  26:[(41,'LLL'),(49,'GS')],
  27:[(38,'LLLLLLLL'),(46,'GGGGS')],

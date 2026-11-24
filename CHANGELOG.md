@@ -3163,3 +3163,10 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Overzichtsvel: Solrock-evolutie als Rock/Cosmic (Solrock zelf is Rock/Cosmic sinds 21 nov).
 - TODO: opknapronde sprites met de beste vier als maatstaf.
 - Lessen: Gen 3-referentie = `anim_front_gba.png` + `normal_gba.pal` (SPRITE_KERN); kritiek van Jordi als checklist per ronde; eindkeuring toetst ook textuur; "kijk hoe die sprites het doen" = overgangen en lijntinten, niet palet of lijnposities (GEMINI.md).
+
+### [v0.0.765] - Mr. Prime: frontsprite af
+- Eindvorm van de regionale Mime-lijn (Mime Jr. → bokser-Mr. Mime → Mr. Prime), Fighting/Psychic: oude gentleman in schermuitval met wandelstok.
+- Ontwerp: 10 Gemini-rondes (`docs/concept/sprites/mr_prime/gemini/`), model r9 gekozen (pose, snor, armpose, lijf).
+- Sprite: 16 rondes + eindkeuring (Dragonfly Cave). Hoed, haarvleugels en zijhaar 1-op-1 van Mr. Rime, ogen van Gen 3 Mr. Mime (monocle geschrapt), ronde kop met de Mr. Mime-boog, koel blauwgrijs palet naar Alphyena, achterbeen gestrekt in uitval; niets opnieuw getekend.
+- `docs/concept/sprites/mr_prime/af/`, op het overzichtsvel (Regional forms); alles in `mr_prime/SPEC.md`.
+- Les in `docs/lessen/GEMINI.md`: latere Pokémon in vormen beschrijven, niet bij naam.

@@ -3170,3 +3170,42 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Sprite: 16 rondes + eindkeuring (Dragonfly Cave). Hoed, haarvleugels en zijhaar 1-op-1 van Mr. Rime, ogen van Gen 3 Mr. Mime (monocle geschrapt), ronde kop met de Mr. Mime-boog, koel blauwgrijs palet naar Alphyena, achterbeen gestrekt in uitval; niets opnieuw getekend.
 - `docs/concept/sprites/mr_prime/af/`, op het overzichtsvel (Regional forms); alles in `mr_prime/SPEC.md`.
 - Les in `docs/lessen/GEMINI.md`: latere Pokémon in vormen beschrijven, niet bij naam.
+
+### [v0.0.766] - Regionale (jiujitsu-)Mr. Mime: ontwerp gestart
+- Keuzes Jordi: Fighting/Psychic; gezicht + rode wangen, blauwe haarpieken en roze ballen blijven; blauwe gi met band; eerst alleen Mr. Mime, Mr. Prime later.
+- `docs/concept/sprites/mrmime_regional/SPEC.md` en Gemini-startprompt r1 (`gemini/PROMPT.md`).
+
+### [v0.0.767] - Regionale Mr. Mime: Gemini r1 afgekeurd, prompt r2
+- r1 opgeslagen (`gemini/r1.png`); Jordi: geen willekeurige roze ballen, "mag echt wel wat anders", "zie galar mr mime". Nieuwe startprompt `gemini/PROMPT_r2.md`.
+
+### [v0.0.768] - Regionale Mr. Mime: r3 en prompt r4
+- r3 opgeslagen; Jordi: op zijn rug in driekwart, met de handen "get into my guard" gebaren, rode huid en kop, lichtblauwe vingertoppen en voeten, gele wangen, paarse "oren" blijven, zwarte band. Prompt `gemini/PROMPT_r4.md`; Jordi denkt nog na over het design.
+
+### [v0.0.769] - Regionale Mr. Mime: r4 en prompt r5
+- r4 opgeslagen (kleuren goed, ligt nog op zijn zij). Prompt `gemini/PROMPT_r5.md`: pose concreet (op de rug als een schildpad, kijker = tegenstander aan zijn voeten); huid terug naar de normale Mr. Mime-tint (Jordi: anders klopt Mr. Prime niet).
+
+### [v0.0.770] - Regionale Mr. Mime: r5 en prompt r6 (de gi is het lijf)
+- r5 opgeslagen (vogelvlucht, hoofd ondersteboven); les in `GEMINI.md`. Jordi twijfelt over "een Mr. Mime in een pak"; prompt r6: de gi is zijn eigen lijf, zoals bij Mr. Mime en Mr. Rime.
+
+### [v0.0.771] - Regionale Mr. Mime: r6 en aanpak in twee stappen
+- r6 opgeslagen (twee figuren). Prompt r7 stap A: eerst alleen het ontwerp in een staande pose, daarna de guard-pose met dat plaatje als bijlage.
+
+### [v0.0.772] - Regionale Mr. Mime: idee geschrapt
+- r7a (staand) had weer gewoon een gi aan; Jordi: "ik denk dat dit ontwerp het niet gaat worden". Daarna: "het hele idee bedoel ik". Geschrapt in SPEC, TODO en IDEEEN; Mr. Prime open. Les in `GEMINI.md`: geen bijlagen voorstellen.
+
+### [v0.0.773] - Bokser-Mr. Mime: nieuw idee voor Mr. Prime, prompt r1
+- Jordi koos de ouderwetse bokser ("rocky marciano achtig", heel anders dan Hitmonchan, niet Mr. Mime met handschoenen). Gedrongen silhouet met Mr. Mime-hoofd, crouch; prompt `mrmime_regional/bokser/PROMPT.md`.
+
+### [v0.0.774] - Bokser-Mr. Mime: r1 en prompt r2
+- r1 "best aardig idee"; r2: meer gentlemanly, zwart-wit palet, oren ver achterover, houding van Jordi's 19e-eeuwse boksersfoto (rechtop, één vuist vooruit, de andere tegen de borst).
+
+### [v0.0.775] - Bokser-Mr. Mime: rondes r2–r4, posepoppetje en prompt r6
+- r2 (zwart-wit, verkeerde pose), r3 (minder Mr. Mime, stoot), r4 (met Jordi's foto: mensenlichaam). Posepoppetje `bokser/pose_stickman.png` (grote kop, tonlijf, korte benen) als bijlage + Hitmongroove-verhoudingen in `bokser/PROMPT_r6.md`.
+
+### [v0.0.776] - Bokser-Mr. Mime: r6–r10 en prompt r11
+- Posepoppetje gaf de pose maar een plat poppetje (r6–r7); r9 palette swap; r10 (Mr. Mime niet genoemd) pose goed. Jordi: verschil via een V-patroon op de torso (borstspieren, geen mensenlijf), getapete vingers (5), haren iets meer achterover, heel klein snorretje, minder stocky. Prompt `bokser/PROMPT_r11.md`.
+
+### [v0.0.777] - Bokser-Mr. Mime: frontsprite af
+- Regionale Mr. Mime als ouderwetse gentleman-bokser (zwart-wit), fase 2 van Mime Jr. → bokser-Mr. Mime → Mr. Prime. Gemini-model r12 (pose naar Jordi's boksersfoto), daarna 24 spriterondes: kop op Mr. Mime-formaat met twee achterovergekamde kuiven, ronde Mr. Mime-romp en -schouderballen, armen en getapete vuisten uit r9, boksbroek, donkergrijze V rekenkundig 20° gedraaid voor de driekwarthoek (Jordi's idee).
+- `docs/concept/sprites/mrmime_regional/bokser/af/bokser.png`; op het overzichtsvel bij de regional forms. Tweede type, naam en evolutiemethode open; Mr. Prime volgt in een nieuw gesprek.
+- Lessen in `docs/lessen/GEMINI.md`: ligposes lukken niet met tekst, geen bijlagen voorstellen, geen half werk naar Jordi, makerrapport op "zelf getekend" lezen.

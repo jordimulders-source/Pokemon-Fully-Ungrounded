@@ -80,3 +80,15 @@ Style: official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 
 
 AVOID: mine cart, wagon, open box or tub the capybara sits in, paws resting on the edge, a real car or go-kart with an engine, a driver sitting in a car, a cartoon vehicle with a face, blocks placed side by side, letters or numbers on the blocks, realistic animal look, plush toy / Neopets look, beaver look, water.
 ```
+
+## Ronde 3 (24 nov)
+- `r3/capykart_r3.png`: één toren van 3 blokken (blauw, rood, geel), hoofd uit een open zitplaats. Jordi: "ja het enige wat ik nog mis is een driehoekig toyblock op de bovenste".
+
+## r4 (bijsturen in hetzelfde gesprek; "keep everything, change ONLY" werkte bij Alphyena)
+```
+Keep everything exactly the same: the capybara head, the eye, the wooden toy car, the wheels, the pose, the colors, the outline, the three stacked blocks.
+
+Change ONLY this: add one triangular wooden toy block (a triangular prism, like a roof piece from a wooden block set) on top of the top block of the tower, so the tower has four blocks.
+
+Style: official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 colors, dark outline, white background.
+```

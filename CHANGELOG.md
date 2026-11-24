@@ -3177,3 +3177,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.769] - SPRITE_KERN: tintzones opnieuw indelen mag
 - Jordi (24 nov): de stap "tintzones binnen het silhouet opnieuw indelen" "hoeft voor mij niet verboden te zijn". Bovenaan SPRITE_KERN gezet, met wat het inhoudt (uit de Gen 3-studie).
+
+### [v0.0.770] - Gen 3-proef: tintzones op Gnomad, Vigiloot, Sunflora-evolutie, Bandolingo
+- Voor/na-vel `docs/concept/sprites/gen3_studie/proef/voor_na_alle4.png`; per sprite rapport en diff-bewijzen (silhouet en gezicht 0). Originelen in `af/` ongewijzigd; Jordi kiest.
+- Uitkomst en grenzen in STUDIE.md; les over kleurfix-opdrachten in `docs/lessen/GRAPHICS.md`.

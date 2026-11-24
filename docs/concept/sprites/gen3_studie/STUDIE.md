@@ -94,3 +94,10 @@ Jordi: "onze bibarel evolutie heeft van die blurry vlakken die ik niet goed kan 
 - **Kangaskhan met dezelfde soort palet:** één grondtint per vlak; schaduw als één zone aan de onderkant van elke vorm; donker alleen als korte lijnen van 1 px die een plooi of spier tekenen. Elke tintgrens beschrijft de vorm.
 - **Oorzaak:** zo ziet een verkleind model eruit (vlakgemiddelde + dichtstbijzijnde kleur): de schilderstreken van het Gemini-model worden vlekken. "Model overnemen, niet hertekenen" en "ruis weghalen" laten de vlekken staan of maken ze groter. Dezelfde vlekken: Vigiloot (lijf), Bandolingo, bloedmaan.
 - **Fan-made referenties:** Bibarel heeft geen Gen 3-origineel (geen `anim_front_gba.png`); alleen de 386 soorten met zo'n bestand zijn echt Gen 3. Onze lessen gebruiken ook fan-made sprites als maatstaf: Starly en Fletchling (SPRITE_KERN stap 4), Popplio (belijning), Bibarel-tanden (Capykart), Emolga, Oricorio.
+
+## Proef: tintzones opnieuw indelen op 4 sprites (24 nov)
+Jordi: "pak eens 4 designs die in jouw ogen het meest hiermee verbeterd kunnen worden en probeer dat eens, met voor/na erbij" · "alle 4 akkoord". Vel: `proef/voor_na_alle4.png`; per sprite map, rapport en bewijzen in `proef/` (originelen in `af/` niet aangeraakt).
+- Gnomad r2, Vigiloot C, Sunflora-evolutie r2, Bandolingo B: silhouet en gezicht diff 0; alleen tintzones, lijnkleur en palet.
+- Winst: overal één lichtzone en één schaduwzone met harde grens i.p.v. vlekken/ringen/banden; het meest zichtbaar bij Bandolingo (lichtzone rug) en Sunflora (schijf). Op 1× bescheiden.
+- Grens: het palet is vol (15) en het bevroren gezicht deelt kleuren met lijf/vacht. Contrast en verzadiging (Gnomad pastel roze, Bandolingo donkere schaduw) konden daardoor niet ver genoeg. Wie meer wil, moet ook de gezichtskleuren laten meeschuiven (pixels blijven gelijk) of een slot vrijmaken.
+- Makers waren in ronde 1 telkens te voorzichtig (29–81 px, op 1× onzichtbaar); pas met expliciete opdrachten ("lichtzone ±35–40 boven de grondtint", "verhouding licht/schaduw omdraaien") kwam er zichtbaar verschil.

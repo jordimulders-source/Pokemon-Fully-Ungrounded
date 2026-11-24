@@ -87,3 +87,10 @@ Wat er op pixelniveau gebeurt (op 4× bekeken):
 4. **Capykart r7 → r15:** na "weinig tint, vrijwel geen schaduw" kwamen er per ronde tinten bij als overlopen; het hout van het model (bruin, nerf) werd glad oranje, en de zwarte lijnen werden dikker. Meer tint ≠ meer volume: volume komt van waar de schaduw ligt (sikkel aan de schaduwkant, licht op de bolling), niet van het aantal tinten.
 
 Gemeenschappelijke oorzaak: op "meer volume/tint" of "rustiger" voegt de maker tussentinten toe of strijkt hij vlakken glad. Gen 3 doet het omgekeerde: weinig tinten met grote stappen en harde grenzen, en detail als losse streepjes.
+
+## De "blurry vlakken" benoemd: vlekken zonder richting (Bibarel-evolutie r19, 24 nov)
+Jordi: "onze bibarel evolutie heeft van die blurry vlakken die ik niet goed kan beschrijven die geen enkele pokemon sprite heeft". Vel: `bibarel_evo_r19_naast_kangaskhan.png` (10×; branch keen-pasteur).
+- **Wat het is:** losse vlekken van 2–6 px in twee of drie bruintinten, grillig gevormd (amoebe/camouflage), over het hele lijf verspreid, ongeveer evenveel van elke tint. Ze volgen geen vorm en hebben geen richting, dus er is geen lichte en donkere kant te lezen. Op 1× smelten ze samen tot "blur".
+- **Kangaskhan met dezelfde soort palet:** één grondtint per vlak; schaduw als één zone aan de onderkant van elke vorm; donker alleen als korte lijnen van 1 px die een plooi of spier tekenen. Elke tintgrens beschrijft de vorm.
+- **Oorzaak:** zo ziet een verkleind model eruit (vlakgemiddelde + dichtstbijzijnde kleur): de schilderstreken van het Gemini-model worden vlekken. "Model overnemen, niet hertekenen" en "ruis weghalen" laten de vlekken staan of maken ze groter. Dezelfde vlekken: Vigiloot (lijf), Bandolingo, bloedmaan.
+- **Fan-made referenties:** Bibarel heeft geen Gen 3-origineel (geen `anim_front_gba.png`); alleen de 386 soorten met zo'n bestand zijn echt Gen 3. Onze lessen gebruiken ook fan-made sprites als maatstaf: Starly en Fletchling (SPRITE_KERN stap 4), Popplio (belijning), Bibarel-tanden (Capykart), Emolga, Oricorio.

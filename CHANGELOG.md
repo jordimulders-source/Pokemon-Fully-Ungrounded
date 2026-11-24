@@ -3171,3 +3171,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.767] - Gen 3-studie: blur en "te schoon"
 - Sectie over de blur (Sunflora-evolutie, Vigiloot, Capykart r7→r15) en de Gnomini-lijn naast Gen 3, met vellen. Voorstel voor een regel ligt bij Jordi.
+
+### [v0.0.768] - Gen 3-studie: vlekken zonder richting, fan-made referenties
+- Bibarel-evolutie r19 op 10× naast Kangaskhan: de "blurry vlakken" zijn grillige tintvlekken zonder richting uit de modelverkleining. Lessen gebruiken soms fan-made sprites als maatstaf (Starly, Fletchling, Popplio, Bibarel).

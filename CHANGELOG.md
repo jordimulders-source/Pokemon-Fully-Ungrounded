@@ -3181,3 +3181,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.770] - Gen 3-proef: tintzones op Gnomad, Vigiloot, Sunflora-evolutie, Bandolingo
 - Voor/na-vel `docs/concept/sprites/gen3_studie/proef/voor_na_alle4.png`; per sprite rapport en diff-bewijzen (silhouet en gezicht 0). Originelen in `af/` ongewijzigd; Jordi kiest.
 - Uitkomst en grenzen in STUDIE.md; les over kleurfix-opdrachten in `docs/lessen/GRAPHICS.md`.
+
+### [v0.0.771] - Gen 3-proef afgekeurd
+- Jordi: alle 4 slechter, details (lijnen/strepen) weg, probleem niet opgelost. Proef niet overgenomen, originelen blijven; oordeel en les vastgelegd (STUDIE.md, `docs/lessen/GRAPHICS.md`).

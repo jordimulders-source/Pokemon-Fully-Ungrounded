@@ -18,6 +18,14 @@ put(13, 41, '133')
 put(14, 43, '15')
 put(15, 44, '15')
 put(16, 45, '111')
+# RECHTS, Jordi's rode streep (vorm_check/jordi_rechte_lijn_r18.png: "dit is een rechte lijn die in het model niet recht is"):
+# model (1024, per kwart rij gemeten) zwarte lijn tussen lijf en witte driehoek/paneel: rij 24 38,3-39,0 | 25 37,9-38,3 | 26 37,5-37,8 |
+# 27-28 37,0-37,8 | 29 37,1-38,2 | 30 37,9-38,3 | 31 38,4-38,8 | 32 37,6-38,0 (knop)  -> per rij x 38,38,37,37,37,37,38,38,37:
+# de lijn buigt op rij 26-29 naar binnen en op rij 30-31 weer naar buiten. r18 had x37 recht van rij 25 t/m 32.
+put(37, 25, '31')
+put(37, 30, '21')
+put(37, 31, '21')
+
 def sla(arr, naam):
     im = Image.fromarray(arr.astype('uint8'), 'P'); im.putpalette(pal + [0] * (768 - len(pal))); im.save(naam, transparency=0)
     b = Image.new('RGBA', (64, 64), (255, 255, 255, 255)); m = np.array(im.convert('RGBA')); m[arr == 0, 3] = 0; b.alpha_composite(Image.fromarray(m))
@@ -25,5 +33,5 @@ def sla(arr, naam):
 if __name__ == '__main__':
     sla(a, 'sprite.png')
     H2 = '.123456789ABCDEF'
-    for y in range(26, 48): print('%2d ' % y + ''.join(H2[v] for v in r18[y, 4:24]) + '   ' + ''.join(H2[v] for v in a[y, 4:24]))
+    for y in range(22, 48): print('%2d ' % y + ''.join(H2[v] for v in r18[y, 4:42]) + '   ' + ''.join(H2[v] for v in a[y, 4:42]))
     d = a != r18; print('gewijzigd:', int(d.sum()), ' silhouet:', int(((a == 0) != (r18 == 0)).sum()), ' kleuren:', len(np.unique(a)))

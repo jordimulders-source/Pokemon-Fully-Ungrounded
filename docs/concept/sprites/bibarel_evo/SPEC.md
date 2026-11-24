@@ -68,6 +68,8 @@
 
 - Jordi (24 nov): Dundragoon, Princadee, Zapacha, Skinguin zijn de beste ("die 4 lijken het meest alsof ze uit een pokemon game komen"); "dus doe een studie naar wat het kleurgebruik zo goed maakt in die sprites en pas het toe op de bibarel evo" → `stijl_gen123/STUDIE_BESTE4.md`, toegepast in r18.
 
+- r18, Jordi: "je hebt sommige dingen nu overfixed, de lijnen moesten niet andere vormen alleen andere kleuren, verder prima wat je hebt gedaan, vind het resultaat nog niet super maar zou niet feedback kunnen geven wat anders moet" → r19 = lijnindeling r17 + kleuren r18.
+
 ## Open
 - Welke suggesties (Claude, 23 nov): 1 oranje beiteltanden, 2 staart als troffel, 3 schepklauwen, 4 sjouwt tak/stam of modder tegen de borst, 5 knagend aan een stam, 6 waarschuwingskleuren (geel-zwarte staart), 7 helm van modderkorst/twijgjes.
 - Spritefilter (Claude, 23 nov): over 1 (zonder slijtage), 2 (alleen de vorm), 4 (alleen tak/stam), 6 (alleen 1–2 brede banden); af 3 (klauwen 1–2 px), 5 (snuit achter de stam, spaanders = details), 7 (twijgjes te klein, korst leest als muts), modder tegen de borst (bruin op bruin).

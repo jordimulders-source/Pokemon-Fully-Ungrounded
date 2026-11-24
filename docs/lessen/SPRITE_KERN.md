@@ -1,5 +1,7 @@
 > **De maker tekent NOOIT opnieuw, tenzij Jordi daar expliciet om vraagt (Jordi, 23 nov: "de maker moet gewoon nooit opnieuw tekenen tenzij expliciet verzocht").** Ook niet bij "netjes maken" of keurderpunten: vormen komen uit het model of uit een eerdere ronde; netjes maken = tinten, ruis en lijndikte.
 
+> **Tintzones opnieuw indelen mag (Jordi, 24 nov: "Die hoeft voor mij niet verboden te zijn").** Binnen het bevroren silhouet mag de maker de tintzones opnieuw indelen: vlekken zonder richting uit de modelverkleining (camouflagevlekjes van 2–6 px, zie `docs/concept/sprites/gen3_studie/STUDIE.md`) worden zones die de vorm volgen, met harde grenzen, schaduw als één zone aan de schaduwkant en donker als korte lijntjes die een plooi of vorm tekenen (maatstaf: Kangaskhan, Linoone, Ursaring). Silhouet, gezicht en onderdelen blijven uit het model.
+
 > **Gemini-model namaken = NIET TEKENEN (Jordi, 15 nov).** Onderlaag is het verkleinde model; de maker tekent geen schotsen, naden, pieken, kernen of strepen zelf. Ook reparatie-opdrachten van Claude/keurders zeggen nooit "teken" of "opnieuw met de hand", maar "neem over uit het model".
 
 **Het gezicht is het ALLERBELANGRIJKSTE (Jordi, 20 nov).** Geen eigen gezichtvarianten verzinnen (glans, andere oogvormen): mag het gezicht afwijken van het model, neem dan het gezicht van een bestaande Gen 3-sprite 1-op-1 over (Vileplume: "neem gewoon de vileplume mond en ogen over en doe ze ver genoeg uit elkaar").

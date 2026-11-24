@@ -3174,3 +3174,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.768] - Gen 3-studie: vlekken zonder richting, fan-made referenties
 - Bibarel-evolutie r19 op 10× naast Kangaskhan: de "blurry vlakken" zijn grillige tintvlekken zonder richting uit de modelverkleining. Lessen gebruiken soms fan-made sprites als maatstaf (Starly, Fletchling, Popplio, Bibarel).
+
+### [v0.0.769] - SPRITE_KERN: tintzones opnieuw indelen mag
+- Jordi (24 nov): de stap "tintzones binnen het silhouet opnieuw indelen" "hoeft voor mij niet verboden te zijn". Bovenaan SPRITE_KERN gezet, met wat het inhoudt (uit de Gen 3-studie).

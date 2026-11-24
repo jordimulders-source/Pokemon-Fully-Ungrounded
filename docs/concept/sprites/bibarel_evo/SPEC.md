@@ -46,6 +46,8 @@
 - "en let op kleurtinten en schaduw" (24 nov, bij r6).
 - Tanden wit; ogen zoals Bibarel; neus rood.
 
+- r7 keurder BIJNA → r8 (nieuwe maker, 6 reparaties) BIJNA → r9 (onderbuik) BIJNA → **r10** = r9 + 7 px donkere crème-sikkel onder de hand (Claude, keurderreparatie) = keurder-PASS. Naar Jordi: `sprite_r10/model_r10_8x.png`.
+
 ## Open
 - Welke suggesties (Claude, 23 nov): 1 oranje beiteltanden, 2 staart als troffel, 3 schepklauwen, 4 sjouwt tak/stam of modder tegen de borst, 5 knagend aan een stam, 6 waarschuwingskleuren (geel-zwarte staart), 7 helm van modderkorst/twijgjes.
 - Spritefilter (Claude, 23 nov): over 1 (zonder slijtage), 2 (alleen de vorm), 4 (alleen tak/stam), 6 (alleen 1–2 brede banden); af 3 (klauwen 1–2 px), 5 (snuit achter de stam, spaanders = details), 7 (twijgjes te klein, korst leest als muts), modder tegen de borst (bruin op bruin).

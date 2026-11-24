@@ -65,3 +65,4 @@ Rondes in `sprite/rN/`.
 - k14: latei schuin (bovenlijn y44→y46 in treden van 5 px, onderlijn mee, overstek mee, deurgat 1 rij lager). `af/tempel.png` = `sprite/k14/`.
 - Jordi: "nee ik bedoel helemaal bovenin de sprite" → het bedoelde was de bovenrand van de topgevels (x33–42, y3–10), niet de latei. k15: topgevels uit het model (linkerpunt, dal, schuine rechternok). De schuine latei (k14) is wel model-trouw en blijft tenzij Jordi anders zegt.
 - k15 (verse maker): linkerpunt + dal als silhouet (alpha −15 px, x39–46 y3–7); rechterdeel bovenlijn (x47–51) nog plat (lag buiten de zone). Maker: in het model is de buitenste bovenrand de donkere achterplaat, vrijwel horizontaal (±0,5 px over 10 px); punt en dal zijn daar binnenlijnen. Voorgelegd aan Jordi.
+- Jordi over k15: "geen probleem, commit en push naar main". `af/tempel.png` = `sprite/k15/`.

@@ -3069,3 +3069,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.737] - Levende Inca-tempel: latei schuin
 - Jordi: "de bovenste lijn volledig horizontaal": latei in perspectief zoals het model (2 px daling naar rechts, onderlijn en overstek mee). `tempel/af/tempel.png` = k14; overzichtsvel bijgewerkt.
+
+### [v0.0.738] - Levende Inca-tempel: topgevels
+- Jordi: bovenste lijn "volledig horizontaal" (bovenin de sprite): linkerpunt en dal van de topgevels als silhouet (k15). `tempel/af/tempel.png` = k15; overzichtsvel bijgewerkt. Jordi: "geen probleem".

@@ -42,3 +42,4 @@ Static, groot zoals Snorlax: vult het 64×64-vak zoals de 64 px-test (`r7/test_6
 ## Sprite
 Rondes in `sprite/rN/`.
 - r1–r2 maker 1; keurder r3 BIJNA (vlakken effen, gevels bultjes); r4–r6 verse maker (voegen, gevels met eigen omtrek, rustig gezicht, bergwand één vlak); keurder r5 BIJNA; eindkeuring DC r6 BIJNA (2 lijnreparaties, 19 px kleur) → r7 door Claude (`sprite/r7/`, diff 19 px t.o.v. r6). Kandidaat voor Jordi: `sprite/r7/tempel.png` + `tempel_8x.png`. Ter info (eindkeurder): gezichtslijnen (oogkaders, latei, deurstijlen) blijven de donkere lijntint i.p.v. selout, voor leesbaarheid.
+- Jordi over r7: "de ogen zijn niet mooi, voor de rest is alles goed behalve de eindkeuring" / "de ogen zijn teveel vierkantjes die niet mee gaan met het perspectief". Oogvarianten met de diepte (dagkant) van het model: `sprite/r8_ogen/varianten.png` (A/B/C).

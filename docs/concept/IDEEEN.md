@@ -748,3 +748,4 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - **Jordi (24 nov), na een lijst antilopen en voorstellen voor 3 fases:** "oryx naar kudu of andersom werkt niet echt he" (Claude: klopt, rechte vs. spiraalhoorns, zelfde formaat). Daarna: "dikdik - impala - kudu zou ik wel tof vinden". Open: type(s), namen, of het definitief 3 fases wordt.
 - **Besloten (Jordi, 24 nov):** "ik wil ze alle 3 normal type geven, want dat missen we nog, maar we moeten nog bedenken hoe we ze uniek maken". Alle drie Normal. Direct daarna: "een dual type kan zeker". Open: tweede type(s), wat ze uniek maakt, namen.
 - **Besloten (Jordi, 24 nov):** "de dikdik sowieso puur normal". Impala en kudu: Normal, tweede type open.
+- **Jordi (24 nov):** "want we kunnen iets leuks met lichaamspatroon en hoorns doen en die heeft de dikdik nog niet veel". Open: wat er met patroon en hoorns gebeurt.

@@ -3062,7 +3062,102 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.735] - Merge naar main
 - Branch `claude/fervent-euler-uckbbn` (ontwerplijst opgeschoond, satelliet-lijn fase 1 af, prompt fase 2) samengevoegd met main; conflicten in CHANGELOG/CLAUDE/TODO/GEMINI/overzichtsvel opgelost (beide kanten behouden, versies hernummerd naar 0.0.732–734).
 
-### [v0.0.736] - Bibarel-evolutie: frontsprite af; regionale Baltoy af; overzichtsvel
+### [v0.0.736] - Idee Capybarrel
+- `docs/concept/IDEEEN.md`: nieuw kopje "Capybarrel" met Jordi's idee en de eerste voorstellen (alles open).
+
+### [v0.0.737] - Capybarrel: niet Normal/Water
+- `IDEEEN.md`: Jordi wil Normal/Water vermijden (Bibarel, die nog een evolutie krijgt).
+
+### [v0.0.738] - Capybarrel: Normal
+- `IDEEEN.md`: Capybarrel begint als puur Normal (Jordi); evolutie open.
+
+### [v0.0.739] - Capybarrel: ook evolutie niet Normal/Water
+- `IDEEEN.md`: Jordi's correctie vastgelegd.
+
+### [v0.0.740] - Capybarrel: geen Water
+- `IDEEEN.md`: geen Water-type in de Capybarrel-lijn (Jordi).
+
+### [v0.0.741] - Capybarrel: geen water als thema
+- `IDEEEN.md`: ook geen water-concepten; nieuwe voorstellen (candombe-trommel, buskruitvat, wijnvat).
+
+### [v0.0.742] - Capybarrel: evolutie groeit uit de ton
+- `IDEEEN.md`: Jordi's idee dat de evolutie uit de ton groeit.
+
+### [v0.0.743] - Capybarrel: nieuwe evolutie-ideeën
+- `IDEEEN.md`: Jordi's citaten (ton gaat kapot, niet overtuigd) en vier nieuwe voorstellen.
+
+### [v0.0.744] - Capybarrel: visuele evolutie-ideeën
+- `IDEEEN.md`: drie voorstellen die als design werken.
+
+### [v0.0.745] - Capybarrel: evolutie wordt een houten kart
+- `IDEEEN.md`: Jordi's besluit (het hout evolueert mee tot een houten autotje, lichaamsdelen steken uit).
+
+### [v0.0.746] - Capybarrel-evolutie: puur Normal
+- `IDEEEN.md`: de kart-evolutie is puur Normal (Jordi).
+
+### [v0.0.747] - Capybarrel: 2 fases
+- `IDEEEN.md`: lijn van 2 fases (Jordi).
+
+### [v0.0.748] - Capybarrel: Gemini-prompts r1
+- `docs/concept/sprites/capybarrel/gemini/PROMPTS.md`: twee varianten (lijf ís de ton / zit in de ton).
+
+### [v0.0.749] - Capybarrel: r1-feedback en prompt r2
+- `capybarrel/gemini/`: r1 variant B bewaard, Jordi's feedback en prompt r2 (lopend op vier poten, ton om het lijf).
+
+### [v0.0.750] - Capybarrel: prompt r3
+- `capybarrel/gemini/`: r2 bewaard, Jordi's feedback ("meer pokemon stijl, kijk naar andere regional rodents") en prompt r3.
+
+### [v0.0.751] - Capybarrel: r3 op het oog na goed
+- `capybarrel/gemini/r3/`: r3 bewaard; Jordi: "ok op oog na vind ik hem prima".
+
+### [v0.0.752] - Capybarrel: prompt r4 (oog)
+- `capybarrel/gemini/PROMPTS.md`: Jordi's oogwens en een prompt die alleen het oog verandert.
+
+### [v0.0.753] - Capybarrel: frontsprite af
+- Capybarrel (Normal, fase 1 van 2): frontsprite af in `docs/concept/sprites/capybarrel/af/` (64×64 + 8×). Naar Gemini r3 (capibara op vier poten met een liggende houten ton om het lijf), blije oog overgenomen uit Flareon met zwart rondje (Jordi: "doe maar het blije oog"), vacht r6b (Jordi: "akkoord ... r6b").
+- Rondes: maker r1–r6 (oogstudie, keurderreparaties, hoepels 3 px), keurder PASS (r5), Dragonfly Cave-eindkeuring (r6: belijning, schaduw poten/romp, sprite lichter); vachtkleur r6b door Claude bruiner gemaakt (r6 werd zalmroze).
+- Op het overzichtsvel (sectie New). Fase 2 (houten kart, puur Normal) nog te ontwerpen.
+
+### [v0.0.754] - Levende Inca-tempel: start ontwerp
+- Nieuwe ontwerpmap `docs/concept/sprites/tempel/` met `SPEC.md`: Jordi's idee letterlijk (static encounter, groot zoals Snorlax, Ghost/Rock, fake-out als ingang) en zijn keuzes: trapeziumdeur + nissen, deur = mond, geen ledematen, ogen = licht uit gaten in de architectuur.
+- Gemini-prompt v1 in `tempel/gemini/PROMPT.md`; `IDEEEN.md` bijgewerkt.
+
+### [v0.0.755] - Levende Inca-tempel: frontsprite-kandidaat
+- Ontwerp via Gemini r1–r7 (tempel gelaagd tegen een bergwand naar Jordi's Inca Trail-foto's, ingang = mond, lichtende raampjes = ogen); r7 bevroren als model.
+- Frontsprite r1–r7 in `docs/concept/sprites/tempel/sprite/`; keurder- en eindkeuring (Dragonfly Cave) verwerkt. Kandidaat `sprite/r7/tempel.png`, wacht op Jordi.
+
+### [v0.0.756] - Levende Inca-tempel: frontsprite af
+- Ogen op Jordi's aanwijzing ("teveel vierkantjes die niet mee gaan met het perspectief"): trapeziumvormig raampje in de donkere steentint, donkere diepte links, licht rechts, lichtkleur goud (Jordi's keuze uit geel/goud/groen/cyaan/paars).
+- `docs/concept/sprites/tempel/af/tempel.png`; op het overzichtsvel (sectie New). Naam, data en plek nog open.
+- Lessen in `docs/lessen/GEMINI.md` (gebouw-Pokémon, ogen van een gebouw).
+
+### [v0.0.757] - Levende Inca-tempel: kleurronde (Dragonfly Cave)
+- Op Jordi's feedback ("meer mos", "veel effen vlakken, weinig kleurtinten, schaduw is niet goed, belijning kan nog net wat beter"): kleurrondes k1–k3, vorm/ogen/deur diff 0. Mos verdubbeld (3 tinten), steen 6 tinten van warm naar koel, tint per steen, slagschaduw, bergwandfacet; gebroken ruïneblok naast de middelste gevel gelijnd als de gevel (Jordi). Eindkeuring PASS na k3.
+- `tempel/af/tempel.png` vervangen; overzichtsvel bijgewerkt.
+
+### [v0.0.758] - Levende Inca-tempel: zijvlakken en perspectief
+- Op Jordi's omcirkelde zones ("teveel effen vlakken ... lijkt gewoon willekeurig gedaan ... daardoor leest het perspectief niet goed"; "dus puur kleurtinten, schaduw, lijnen"): kleurrondes k4–k6. Rechts nu de drie toonzones uit het model (lichte bovenranden, middengrijze zijvlakken met grote stenen, gladde donkere bergwand), gevelplaten met lichte nok, streep naast de deur als doorlopende steenlaag. Keurder PASS (k5); vorm, ogen, deur, mos en linkerhelft diff 0.
+- `tempel/af/tempel.png` vervangen; overzichtsvel bijgewerkt; les in SPRITE_KERN.
+
+### [v0.0.759] - Levende Inca-tempel: volume per steen
+- Op Jordi's vraag "zijn de vakjes nog steeds niet te effen?": kleurrondes k7–k8, elke steen licht linksboven en sikkel rechtsonder (2 px bij grote stenen) binnen het toonbereik van zijn vlak, vlekjes uit het model, banding in het onderblok weg. Toonzones, lijnen, mos, ogen en deur diff 0. Keurder PASS.
+- `tempel/af/tempel.png` = k8; overzichtsvel bijgewerkt.
+
+### [v0.0.760] - Levende Inca-tempel: bergwand, poort en latei
+- Jordi's punten na k8: donkere bergwandvlakken niet meer effen (volume per steen binnen de donkere zone, geen diagonalen, kleine stenen zonder putje), poort volgens de regels (selout aan de lichtkant, zwart alleen rechts/onder), latei steekt rechts 2 px uit zoals in het model. Keurder PASS (k11).
+- `tempel/af/tempel.png` = k11; overzichtsvel bijgewerkt.
+
+### [v0.0.761] - Levende Inca-tempel: poort rechts
+- Jordi: "de rechterkant van de mondpoort iets teveel gedaan ... met rechte lijnen" en "horen die lijnen ... nog zwart te zijn?": rechterstijl schuin zoals het model, parallelle voegen ernaast weg, poortlijnen (binnenlijnen) niet meer zwart maar de donkerste warme steentint. Keurder PASS (k13).
+- `tempel/af/tempel.png` = k13; overzichtsvel bijgewerkt.
+
+### [v0.0.762] - Levende Inca-tempel: latei schuin
+- Jordi: "de bovenste lijn volledig horizontaal": latei in perspectief zoals het model (2 px daling naar rechts, onderlijn en overstek mee). `tempel/af/tempel.png` = k14; overzichtsvel bijgewerkt.
+
+### [v0.0.763] - Levende Inca-tempel: topgevels
+- Jordi: bovenste lijn "volledig horizontaal" (bovenin de sprite): linkerpunt en dal van de topgevels als silhouet (k15). `tempel/af/tempel.png` = k15; overzichtsvel bijgewerkt. Jordi: "geen probleem".
+
+### [v0.0.764] - Bibarel-evolutie: frontsprite af; regionale Baltoy af; overzichtsvel
 - **Bibarel-evolutie** (Water/Fighting, bouwvakker-bever, fase 3): ontwerp via Gemini r1–r10 (bouwvakker alleen via lichaam: helm = kop, tuinbroek = vachtpatroon, potloodstam, pylonstaart oranje/wit, kraag van Bibarel, witte tanden); model r10 bevroren, staart 8 natieve px achter het lijf; tuinbroekvorm uit Gemini r5 in de kleuren van r10. Frontsprite r1–r19: keuringen, eindkeuring Dragonfly Cave, studie Gen 3 (Kangaskhan, `_gba`) en de beste vier eigen sprites (Dundragoon, Princadee, Zapacha, Skinguin). Af: `docs/concept/sprites/bibarel_evo/af/bibarel_evo.png` (= r19), op het overzichtsvel. Naam en evolutiemethode open.
 - **Regionale Baltoy** af (`baltoy_regional/af/`, = r19) en op het overzichtsvel.
 - Overzichtsvel: Solrock-evolutie als Rock/Cosmic (Solrock zelf is Rock/Cosmic sinds 21 nov).

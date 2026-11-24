@@ -1,0 +1,9 @@
+['alpha diff: 0', 'oog x13-16 y38-42 diff: 0', 'oog x22-25 y38-42 diff: 0', 'deurgat (62 px) diff: 0']
+t.o.v. k11: alpha diff: 0
+pixels gewijzigd t.o.v. k11: 47; buiten zone x12-29 y44-60: 0
+palet gelijk aan k11: True
+bergwand (x48-61,y15-56) t.o.v. k11: 0
+linkerstijl (x11-15,y48-58) t.o.v. k11: 0
+zwart (1) binnen het poortgebied x12-27 y44-60 dat geen buitenrand/deurgat is: 0
+clusters <3 px hele sprite (4-/8-samenhang): k6 115/43 | k11 114/43 | k12 114/43
+clusters <3 px x>=40 (4-/8-samenhang): k6 37/11 | k11 37/11 | k12 37/11

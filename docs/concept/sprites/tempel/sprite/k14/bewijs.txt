@@ -1,0 +1,9 @@
+alpha diff t.o.v. k13: 0
+oog x13-16 y38-42 diff: 0
+oog x22-25 y38-42 diff: 0
+palet gelijk aan k13: True
+pixels gewijzigd: 41; buiten de poortzone x12-27 y43-49: 0
+deurgat: 4 px van c naar onderlijn (2) op y48 x18-21 (deur 1 rij lager); verder diff 0
+zwart (1) in poortzone: 0
+clusters <3 px hele sprite (4-/8-samenhang): k6 115/43 | k13 114/43 | k14 114/43
+clusters <3 px x>=40 (4-/8-samenhang): k6 37/11 | k13 37/11 | k14 37/11

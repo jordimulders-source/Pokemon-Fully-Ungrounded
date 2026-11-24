@@ -579,6 +579,7 @@ Overig:
   - **Type (Jordi, 21 nov, nog niet definitief):** "De regional Baltoy lijn wordt denk ik rock/psychic, waar het origineel nu dus ground/cosmic is". (Eerder voorstel huaco retrato: Ground/Fire.)
   - **Besloten (Jordi, 22 nov):** inspiratie Tiwanaku-monoliet; Rock/Psychic (akkoord op Claude-advies, de levende tempel krijgt een andere typing); "baltoy/claydol, moet herkenbaar zijn vanwege de ogen, het silhouet mag veranderen". Alles in `sprites/baltoy_regional/SPEC.md`.
 - **Ruïne- of zelfs tempel-Pokémon:** een levende tempel, enorm, mogelijk een Snorlax-idee: geen legendary, wel een static encounter (idee uit een gesprek met een maat).
+  - **Jordi (23 nov), start ontwerp:** "we gaan de tempel pokemon maken. In game gaat het een soort fake out worden, static pokemon, groot zoals snorlax en qua data helemaal groot. Het is een tempel die leeft, ghost/rock. De speler denkt dat het een ingang is in game en dan blijkt de hele tempel tot leven te komen, inca tempel idee". Map: `sprites/tempel/` (SPEC.md).
 - **Vlieg → mug-lijn:** "denk ik nog wel een goede" (mug was al Poison/Electric).
   - Jordi (20 nov): "misschien kunnen we fruitvlieg -> huisvlieg -> mug"; "Waar ze voorkomen is niet belangrijk, we gaan aan het design werken". Map: `sprites/vlieglijn_fase1/`. Daarna (20 nov): "correct, dus we doen 2 fases, ook de horzel maken we niet onderscheidend genoeg. Met een reguliere vlieg komen we met wat meer zwart ook weg in het ontwerp. De elektriciteitskabels als poten wil ik graag wel behouden, dat is tof".
 - **Early game Bug** die op hoogte kan leven: nog nodig.
@@ -723,3 +724,20 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - Jordi (23 nov): "En als we voor een fase 3 fruitvampier gaan die op zijn kop hangt met de vleugels gesloten?" Open: type, wat er met de vleermuislijn gebeurt, welke fase-2-basis (r5/r6).
 - Jordi (23 nov): "Emolga krijgt dus 2 evoluties": fase 2 wingsuit, fase 3 fruitvampier (Gemini r2 "dit gaat lukken", design nog interessanter maken).
 - **Besloten (Jordi, 23 nov):** de vleermuislijn "vervalt"; de fruitvampier is fase 3 van de Emolga-lijn en "blijft electric/flying".
+
+## Capybarrel (Jordi, 22 nov)
+- **Jordi (22 nov):** "ik las de wikipedia door van capybara en stond er iets over het lichaam heeft de vorm van een barrel en sindsdien heb ik de naam capybarrel in mijn hoofd. Dat vertaalt goed naar een ontwerp, maar hoe kunnen we die echt uniek maken en wat voor evolutie zou die kunnen krijgen". Werknaam: **Capybarrel**.
+- **Voorstellen Claude (22 nov, alles open):** zie het antwoord van die dag; kern: (A) het lijf ís een ton (duigen, hoepels, spongat), drijft als een ton; (B) andere Pokémon zitten erop (echt capibaragedrag); evolutierichtingen: veerpont/vlot, warmwaterbad (termen, Aguas Calientes), wijnvat/bodega (Mendoza), regenton/watertoren. Weetje: in Venezuela mag chigüire in de vastentijd gegeten worden omdat hij als "vis" gold.
+- **Jordi (22 nov):** "normal/water wil ik ontwijken aangezien we bibarel al hebben die ik nog een evo wil geven" (Bibarel-evo staat als Water/Fighting, zie hierboven). Typing Capybarrel dus open, niet Normal/Water.
+- **Jordi (22 nov):** "hij begint als Normal". Besloten: Capybarrel is puur Normal; type(s) van de evolutie open.
+- **Jordi (22 nov), op het voorstel "veerpont/vlot: Water erbij":** "nee geen normal/water, lezen". Ook voor de evolutie dus geen Normal/Water.
+- **Jordi (22 nov):** "GEEN WATER". Besloten: geen Water-type in de Capybarrel-lijn.
+- **Jordi (22 nov):** "warmwaterbad is ook water". Dus ook geen water als thema (vervalt: warmwaterbad, veerpont/vlot, regenton/watertoren). Nieuwe voorstellen Claude (open): candombe-trommel (Uruguay; tamboriles zijn van duigen met hoepels gebouwd), buskruitvat, wijnvat (Mendoza).
+- **Jordi (23 nov):** "en wat als die zo groot wordt dat die uit de barrel groeit", "dat de barrel kapot gaat", "zouden we nog iets anders leuks kunnen bedenken", "ben namelijk niet overtuigd van de ideeen".
+- **Nieuwe voorstellen Claude (23 nov, open):** Diogenes in de ton (filosoof-capibara); organillo/draaiorgel (barrel organ, Chileense organilleros); barrel of monkeys (draagt een ton vol andere Pokémon); olievat (Venezolaanse olie).
+- **Jordi (23 nov):** "dit is toch allemaal niet uit te werken in een design". Nieuwe, visuele voorstellen Claude (open): (1) de ton barst, duigen staan als een kraag of rok af, hoepels spannen om de buik; (2) duigen vergroeid tot pantserplaten, hoepels als gordeldierbanden, naar de uitgestorven reuzenknager *Josephoartigasia* (Uruguay, ±1 ton) en glyptodonten; (3) gestapelde tonnen op de rug.
+- **Besloten (Jordi, 23 nov):** "nee ik weet het, wanneer die evolved, evolved het hout ook en wordt het een soort houten autotje, dus krijgt de capybara een soort van kart vorm waar delen van zijn lichaam uitsteken". - **Jordi (23 nov), type evolutie:** "normal plus niks". Besloten: de kart is puur Normal ("gewoon normal").
+- **Jordi (23 nov):** "en ja 2 fases". Besloten: lijn van 2 fases (Capybarrel → kart).
+- Open: welke lichaamsdelen uitsteken, wielen, naam.
+- Let op: Cacnea is al de bolcactus (barrel cactus); Cuyby/Cuychu zijn de cavia-lijn (familie van de capibara); Zapacha is de electric rodent.
+- **Frontsprite af (24 nov):** `docs/concept/sprites/capybarrel/af/` (Jordi: "akkoord, ... r6b"). Volgende: fase 2 (kart).

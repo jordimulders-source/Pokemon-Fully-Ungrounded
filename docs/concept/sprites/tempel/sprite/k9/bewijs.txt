@@ -1,0 +1,17 @@
+alpha diff: 0
+oog x13-16 y38-42 diff: 0
+oog x22-25 y38-42 diff: 0
+deurgat (62 px) diff: 0
+kleuren gebruikt (incl. transparant): 16
+pixels veranderd t.o.v. k8: 95
+palet gelijk aan k8: True
+mos gewijzigd: 0
+goud gewijzigd: 0
+voeglijnen (7) in k8 gewijzigd: 0
+buitenlijn (1) in k8 gewijzigd: 0
+wijzigingen bergwand (x48-60,y20-56): 43, alle binnen 6/f/e: True
+  overgangen wand: 14->15: 16, 15->6: 9, 15->14: 18
+wijzigingen poortlijnen (x10-26,y43-61): 52; 2->1: 27, 2->7: 25
+wijzigingen elders: 0
+clusters <3 px hele sprite (4-/8-samenhang): k6 115/43 | k8 114/43 | k9 114/43
+clusters <3 px x>=40 (4-/8-samenhang): k6 37/11 | k8 37/11 | k9 37/11

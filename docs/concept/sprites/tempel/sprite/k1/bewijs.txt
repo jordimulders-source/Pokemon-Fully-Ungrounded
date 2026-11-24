@@ -1,0 +1,6 @@
+alpha diff: 0
+oog x13-16 y38-42 diff: 0
+oog x22-25 y38-42 diff: 0
+deurgat (62 px) diff: 0
+kleuren gebruikt (incl. transparant): 16
+pixels veranderd t.o.v. af: 1496

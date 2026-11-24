@@ -60,7 +60,7 @@
 
 - r15, Jordi: "ja de hele sprite moet goed gekeurd woren, hij moet consistent zijn met andere sprites".
 
-- r16 (keuring PASS op getallen), Jordi: "ik kan me er toch niet aan ontlenen dat het lijnen en kleurengebruik anders is dan bij andere sprites" · "gen 1 t/m 3 he" (alleen Gen 1–3 als maatstaf; Bibarel zelf is Gen 4).
+- r16 (keuring PASS op getallen), Jordi: "ik kan me er toch niet aan ontlenen dat het lijnen en kleurengebruik anders is dan bij andere sprites" · "gen 1 t/m 3 he" (alleen Gen 1–3 als maatstaf; Bibarel zelf is Gen 4) · "dat is geen goed vergelijkingsmateriaal, pak er 1 met een buikvlak" → hoofdreferentie Kangaskhan (Claude koos).
 
 ## Open
 - Welke suggesties (Claude, 23 nov): 1 oranje beiteltanden, 2 staart als troffel, 3 schepklauwen, 4 sjouwt tak/stam of modder tegen de borst, 5 knagend aan een stam, 6 waarschuwingskleuren (geel-zwarte staart), 7 helm van modderkorst/twijgjes.

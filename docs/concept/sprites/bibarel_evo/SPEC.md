@@ -43,6 +43,7 @@
 - r5: "ik zie al dat die afgekeurd mag worden vanwege dat de tuinbroek nog niet goed is" · "kijk maar beter naar het model" (vergelijking `sprite_r5/tuinbroek_model_vs_r5.png`).
 - Jordi daarna: "o wacht ik zie het al" · "het model doet het ook niet goed" · over Gemini r5 (`gemini/r5.png`): "hier wel de juiste vorm, maar niet de juiste kleuren".
 - Keuzes (24 nov): benen "Zoals r5" (tuinbroek tot kruis/bovenbeen, benen bruin; enkels vervalt), kleuren "Kleuren van r10".
+- "en let op kleurtinten en schaduw" (24 nov, bij r6).
 - Tanden wit; ogen zoals Bibarel; neus rood.
 
 ## Open

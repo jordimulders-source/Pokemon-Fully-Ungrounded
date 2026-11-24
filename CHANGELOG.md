@@ -3121,3 +3121,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.754] - Capykart: start fase 2 Capybarrel-lijn
 - Fase 2 heet **Capykart** (Jordi): hoofd iets volgroeider, steekt uit een houten speelgoedwagentje, achterop drie of vier gestapelde houten blokken; puur Normal.
 - Nieuwe map `docs/concept/sprites/capykart/` met `SPEC.md` en Gemini-prompt r1 (`gemini/PROMPTS.md`).
+
+### [v0.0.755] - Capykart: r1 en prompt r2
+- r1 werd een mijnkar met de capibara erin; Jordi: houten speelgoedautotje, de capibara ís de auto, alleen het hoofd steekt uit, blokken opgestapeld. Prompt r2 in `docs/concept/sprites/capykart/gemini/PROMPTS.md`.

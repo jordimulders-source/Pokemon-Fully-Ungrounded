@@ -76,3 +76,14 @@ De opknapronde (19 nov) maakte niet alles Gen 3-iger: Palpaca, Llamauler en Soul
 - **C. Na de modelreductie een vaste "Gen 3-stap"** (alleen kleur, binnen het bevroren silhouet, dus geen hertekenen): lijn aan de lichtkant in de donkerste eigen tint, en de bandjes langs de rand omzetten naar sikkel + textuur zoals de best scorende sprites (Princadee, Rufflet, Cuychu).
 - **D. Vaste naastlegger**: elke eindkeuring op 4× naast twee echte Gen 3-sprites van hetzelfde bouwtype (`gen3_ref.png`-stijl), zoals bovenaan dit document.
 - **E. Herstel van wat al af is**: niet alles. Kandidaten met de grootste winst voor de minste moeite zijn de sprites waar alleen de lijn zwart rondom is (selout-stap is pure kleur): wingsuit-colugo, Pincurchin, Krickestro, Bandolingo, bloedmaan, Krassault, Moonkey, Oricorio tango, fruitvampier, Abra. Dustly, Cryomet en DJ Rotom wijken grotendeels af door hun ontwerp (gas, gloed, machine) en kunnen blijven.
+
+## Blur en "te schoon" (Jordi, 24 nov)
+Jordi: "de blur die sunflora evoluties hoofd en vigiloot op het lichaam hebben, zie ik in de huidige sessies steeds meer voorbij komen, met capykart die nu helemaal de verkeerde kant op gaat" · "maar bijv de gnomini lijn ook, vind ik prima sprites, maar als je ze naast gen 3 pokemon sprites zet, vallen ze meteen op". Vellen: `blur_naast_gen3.png`, `capykart_rondes.png` (model, af r7, r8, r12, r15 van branch jolly-shannon).
+
+Wat er op pixelniveau gebeurt (op 4× bekeken):
+1. **Ringen langs de rand (Sunflora-evolutie gezicht, Capykart-auto r12–r15):** schaduw als 3–4 dicht bij elkaar liggende tinten die de rand volgen, van buiten naar binnen. Leest als airbrush/kussen. Gen 3 (Sunflora, Ursaring): één schaduwvorm aan de rechteronderkant met een harde grens, en de rest één vlak.
+2. **Gemêleerde middentonen (Vigiloot-lijf):** veel bruingrijzen van bijna dezelfde helderheid door elkaar. Gen 3 (Linoone, Ursaring): duidelijke lichte en donkere zones met groot contrast; textuur als streepjes in de richting van de vacht.
+3. **Te schoon (Gnomini-lijn):** perfect gladde curven, pastel, dezelfde zwarte lijn rondom, zachte schaduw. Gen 3 (Jigglypuff, Makuhita): lijn aan de lichtkant in een donkere eigen kleur, iets onregelmatige omtrek, verzadigder kleur, harde tintgrenzen.
+4. **Capykart r7 → r15:** na "weinig tint, vrijwel geen schaduw" kwamen er per ronde tinten bij als overlopen; het hout van het model (bruin, nerf) werd glad oranje, en de zwarte lijnen werden dikker. Meer tint ≠ meer volume: volume komt van waar de schaduw ligt (sikkel aan de schaduwkant, licht op de bolling), niet van het aantal tinten.
+
+Gemeenschappelijke oorzaak: op "meer volume/tint" of "rustiger" voegt de maker tussentinten toe of strijkt hij vlakken glad. Gen 3 doet het omgekeerde: weinig tinten met grote stappen en harde grenzen, en detail als losse streepjes.

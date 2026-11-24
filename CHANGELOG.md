@@ -3168,3 +3168,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.766] - Gen 3-studie: kanttekening Dundragoon
 - Jordi vindt Dundragoon echt Gen 3; score 1,44 valt binnen het bereik van echte Gen 3-sprites. Conclusie in de studie: totaalscore en rangorde zeggen niet of een sprite op Gen 3 lijkt; alleen de losse metingen (zwart aan de lichtkant, effen vlakken) tellen, naast een Gen 3-sprite van hetzelfde soort ontwerp. Vel `dundragoon_naast_gen3.png` erbij.
+
+### [v0.0.767] - Gen 3-studie: blur en "te schoon"
+- Sectie over de blur (Sunflora-evolutie, Vigiloot, Capykart r7→r15) en de Gnomini-lijn naast Gen 3, met vellen. Voorstel voor een regel ligt bij Jordi.

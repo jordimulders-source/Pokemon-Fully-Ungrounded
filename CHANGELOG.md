@@ -3156,3 +3156,10 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.763] - Levende Inca-tempel: topgevels
 - Jordi: bovenste lijn "volledig horizontaal" (bovenin de sprite): linkerpunt en dal van de topgevels als silhouet (k15). `tempel/af/tempel.png` = k15; overzichtsvel bijgewerkt. Jordi: "geen probleem".
+
+### [v0.0.764] - Mr. Prime: frontsprite af
+- Eindvorm van de regionale Mime-lijn (Mime Jr. → bokser-Mr. Mime → Mr. Prime), Fighting/Psychic: oude gentleman in schermuitval met wandelstok.
+- Ontwerp: 10 Gemini-rondes (`docs/concept/sprites/mr_prime/gemini/`), model r9 gekozen (pose, snor, armpose, lijf).
+- Sprite: 16 rondes + eindkeuring (Dragonfly Cave). Hoed, haarvleugels en zijhaar 1-op-1 van Mr. Rime, ogen van Gen 3 Mr. Mime (monocle geschrapt), ronde kop met de Mr. Mime-boog, koel blauwgrijs palet naar Alphyena, achterbeen gestrekt in uitval; niets opnieuw getekend.
+- `docs/concept/sprites/mr_prime/af/`, op het overzichtsvel (Regional forms); alles in `mr_prime/SPEC.md`.
+- Les in `docs/lessen/GEMINI.md`: latere Pokémon in vormen beschrijven, niet bij naam.

@@ -28,6 +28,7 @@
 - Jordi: "akkoord" (r10 bevroren: `referenties/gemini_gekozen_r10.png`; geen prompt meer, staart als los onderdeel 8 natieve px achter het lijf geschoven: `model/r10_k8.png` (script `model/compact.py`), figuur 90×81 → factor 0,71; vergelijking `model/vergelijk_compact.png`). Jordi: "pylonstaart achter het lijf is geen enkel issue" → Claude koos eerst k12 zonder het te tonen; Jordi: "o dit is wel heel veel" · "meer dan je liet zien" · "de staart erachter" · "8 px naar binnen doen" → **werkmodel `model/r10_k8.png`** (90×81, factor 0,71).
 
 - Frontsprite r1 (`sprite_r1/`, maker): tuinbroek A (tot de enkels) / B (halve dij); Jordi: "A maar moet netter"; "geen rechte lijnen". Vachtkraag (valt uiteen bij 0,71): Jordi: "ja kraag van bibarel overnemen" (pixel voor pixel uit de Bibarel-sprite op de kraagplek).
+- r2 (`sprite_r2/`), Jordi: "het patroon van het bovenlichaam en de kleur van het onderlichaam zijn niet meer goed in r2 en de kraag is in r2 helemaal verknald, blurry mess. Het moeten geen effen vlakken zijn". Ronde 3 vanaf r1: bovenlichaam r1, broek crème van r1 met relatieve modeltonen, kraag als losse proef.
 
 ## Open
 - Welke suggesties (Claude, 23 nov): 1 oranje beiteltanden, 2 staart als troffel, 3 schepklauwen, 4 sjouwt tak/stam of modder tegen de borst, 5 knagend aan een stam, 6 waarschuwingskleuren (geel-zwarte staart), 7 helm van modderkorst/twijgjes.

@@ -84,3 +84,18 @@ Zwakke punten, eerlijk:
 2 Kop: de lichte B4-bolling op voorhoofd en snuitrug is groot en geelachtig; Jordi zei eerder "beige werkt niet". B4 is geen beige, maar dit is het punt om eerst naar te kijken.
 3 Hout: was na de eerste versie "krasserig" op de kap (eigen blik); gerepareerd met stap 2c (nerf alleen als streep >= 3 px, zoals de planken in het model). Blijft drukker dan Dundragoon/Skinguin omdat het model hout met nerf is; de nek houdt zijn modelvachtlijnen.
 4 Blokken: alleen het blauwe blok heeft in het model een zichtbare bovenkant (2 px); geel en rood krijgen hun derde tint uit de slagschaduw. Geen bovenvlakken verzonnen.
+
+==================== Variant b (coördinator, 24 nov) ====================
+Bestanden: capykart_b.png, capykart_b_8x.png, vel_b.png (a | b | model | Dundragoon | Skinguin; kop/toren 12x a|b|model; 1x licht/donker), controle_b.txt.
+Bouwen: python3 eindkeuring_dc/bouw_b.py && python3 eindkeuring_dc/vel_b.py && python3 eindkeuring_dc/controle_b.py > eindkeuring_dc/controle_b.txt
+bouw_b.py draait bouw.py en past daarna alleen deze drie punten toe:
+1 Binnenlijnen (r17-zwart, niet buitenrand, niet oog/neusgaten/mond): 182 px.
+  - 152 -> donkerste eigen tint: hout/vacht B0; grenzend aan een hoepel HD (de hoepel ligt ervoor); onderrand van een blok = selout van het blok erboven (dak GD, geel B2, rood B0, blauw BD).
+  - 9 blijven zwart waar ze 4-buur zijn van zwarte buitenlijn (aansluiting aan de schaduwkant; daarmee lopen ze taps van zwart naar eigen tint).
+  - 21 blijven zwart in de diepe spleet onder kin/nek (x22-47, y29-42, modelhelderheid < 50).
+  Gids: "we take the base outlining shade for every color and color all of the outline except the shadows in that color" (r.421-422); "place pixels of the outline highlight color on the inside of the outline" (r.453-455).
+  Zwart in de hele sprite: 357 -> 212 px.
+2 Tanden wit (240,240,232) zoals r17b. Slot: index 9 (creme) had na het schrappen van de glans op het gele blok alleen nog de tanden als rol; die kleur is nu wit. Tandpixels zelf ongewijzigd.
+3 Kop: licht alleen op één compacte bolling op het voorhoofd (ellips rond (27,16), x25-31, y15-18) en een smalle strook op de snuitrug (eerste 1-2 vulpixels onder de bovenlijn, x16-24), samen 37 px. Rest middentint B3; schaduw B2 alleen waar hij aan de rand/nek raakt (sikkel rechts/onder), losse donkere stukjes -> midden. B4 minder geel: (238,174,104) -> (236,166,108), hue 31 -> 27. Daardoor 48 kop-px van tint veranderd. Geen losse lichte vlekjes (vlekjesronde in de kop).
+Controles b: silhouet-diff 0 (assert); gezicht (beschermde pixels) ongewijzigd (assert); 16 kleuren; om-en-om 0; geen lichte kleur op de buitenrand; buitenrand per richting gelijk aan a. Tintvlekjes < 3 px: 14, allemaal lijnpixels (B0-uiteinden van taps lopende binnenlijnen) plus dezelfde toren- en tandpixels als in a.
+Eigen blik b naast Dundragoon: de auto is duidelijk lichter van lijn (planken en naden in B0 in plaats van zwart), de hoepels lezen als band met donkere rand. De kop heeft één lichte bolling linksboven met een smalle snuitrug, verder rustig middentint met sikkel. Wat blijft: de verticale donkere lijn van de snuitbox (x18, uit het model) en de vachtlijnen in de nek; de hoepelrand in HD is minder scherp tegen het hout dan zwart was.

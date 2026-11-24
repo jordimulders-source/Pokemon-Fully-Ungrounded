@@ -50,3 +50,25 @@ Op 8× (`vergelijk_gen3_8x.png`) en op 1× (licht en donker, onderaan `sprite_r1
 - `meet.py`: meting r13/r14 en `kop_model_r13_r14.png` (model geprojecteerd op het spriteraster | r13 | r14, 16×).
 - `vergelijk_gen3_8x.png`: r14 naast Bibarel, Linoone, Ursaring, Swampert en Furret.
 - `../sprite_r14/`: `sprite.png`, `sprite_8x.png`, `vel.png` (r14 | r13 | model 8×; kop 12× met de gewijzigde pixels gemarkeerd; staartonderkant 12×; Gen 3; 1× licht/donker) en `bouw.py`.
+
+## Aanvulling r15: vachtvlekjes (Jordi: "maar kloppen de vlekjes op het lichaam ook met de dragonflycave regels?")
+Gids r. 1459–1465: "Fur is shaded by making the outline between the shades, especially the base and shadow colors, jagged and fuzzy like the outline of the fur itself. The jagged outlines often continue into the shading. There is often dithering (blending two colors in a crosshatch pattern) and short lines of the other color near the border between the shades. Don't overdo this, though, or it will look messy, and keep all lines running in the direction of the hairs."
+Toets per vlek: blijft alleen als hij aan een tintgrens ligt (kort, spaarzaam, in de haarrichting) of geen vachtvlek is (lijn, poot, mond, tuinbroekrand). Vergeleken met de kale modelreductie (`sprite_r13/reductie.py`).
+
+| Vlek (r14) | Oordeel | Reden |
+|---|---|---|
+| c (28,26) | blijft | Mondhoek: taps eind van de mondlijn naast de tand (model: lijn). Gezicht, geen vacht. |
+| c (27,27) | blijft | Taps eind van de zwarte tandonderlijn, tegen de b-lijn. Mond, geen vacht. |
+| d (29,27) | **weg → c** | Lichte pixel ingesloten door lijnen midden in de slagschaduw onder de snuit; licht tegen de lichtrichting in (model: lijn/donker). Opgenomen in die schaduw. |
+| c (17,27) | blijft | Op de grens hand/arm; schaduw onder de hand; staat zo in het model. |
+| c (49,27), (50,28) | blijft | Geen vlek: diagonale rand (8-verbonden met (48,26), (51,29), (51,30)) van de schouder tegen de staart. |
+| c (21,31) | blijft | Smalle reep flank tussen de armlijn en het tuinbroekbandje, aan een tintgrens; opnemen kan alleen in lijn of crème (dan verandert de tuinbroekvorm). |
+| c (18,34), (19,35) | blijft | Taps eind van de onderlijn van de arm waar die op de flank/crème stuit (model: lijn). |
+| c (26,34), (27,34), (28,35) | blijft | Korte diagonale schaduwrand (3 px) op de grens bruin/crème tussen de bandjes: precies de "short lines ... near the border" uit de gids, in de haarrichting (omlaag). Bruin of crème maken verandert de tuinbroekrand (bevroren). |
+| e (45,38) | **weg → d** | Pootkleur midden in de bruine onderarm, naast een armlijn die al doorloopt ((45,37)→(44,38)): verkeerde kleurgroep, maakt een lijnklont. Wordt onderarmvulling d, zoals (46,38). |
+| e (51,42) | blijft | Lijf/staart-grenslijn (model: e). |
+| e (49,43), (50,44), (50,45) | blijft | Klauwtjes van de poot op de heup tegen de staart, 1-op-1 uit het model (e c e). Poot = eigen kleurgroep, geen vacht. |
+| e (43,44)… (43,45), (44,45) | blijft | Onderkant van de poot (poot e/L), geen vacht. |
+
+Schaduwvlakken als geheel volgen de vorm (licht linksboven): schouder f linksboven, onderarm f boven, dijen f linksboven met een c-sikkel rechts/onder, armholte c links van de onderarm (x40–44, y34–39, staat zo in het model). Geen vlakjes midden in een vlak meer.
+**r15 = r14 + 2 px** (`../sprite_r15/bouw.py`): diff alleen (29,27) en (45,38), silhouet en lijnen 0 (assert). Vel: `../sprite_r15/vel.png` (r15 | r14 8×, vacht 12×).

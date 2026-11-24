@@ -747,3 +747,4 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - Context (Claude): in de dex zitten al Deerling → Sawsbuck (voorstel regional pudú/huemul, `DEX_NOMINATIES.md` §5) en Stantler → Wyrdeer; officiële antilope-Pokémon bestaan niet.
 - **Jordi (24 nov), na een lijst antilopen en voorstellen voor 3 fases:** "oryx naar kudu of andersom werkt niet echt he" (Claude: klopt, rechte vs. spiraalhoorns, zelfde formaat). Daarna: "dikdik - impala - kudu zou ik wel tof vinden". Open: type(s), namen, of het definitief 3 fases wordt.
 - **Besloten (Jordi, 24 nov):** "ik wil ze alle 3 normal type geven, want dat missen we nog, maar we moeten nog bedenken hoe we ze uniek maken". Alle drie Normal. Direct daarna: "een dual type kan zeker". Open: tweede type(s), wat ze uniek maakt, namen.
+- **Besloten (Jordi, 24 nov):** "de dikdik sowieso puur normal". Impala en kudu: Normal, tweede type open.

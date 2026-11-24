@@ -43,6 +43,7 @@ Samengevat uit alle spritelessen (5 nov, Jordi: "vat de lessen echt enorm samen 
 - **Snavel en dunne delen niet vóór een donker vlak** (picapau-evo, 7 nov: 6 snavelrondes faalden doordat de snavel vóór de donkere verre vleugel lag; echte sprites zetten hem tegen lucht of een licht vlak). Bij twijfel: een vel met 4–6 probeersels van alleen het hoofd ("doe wat probeersels en toon me"), Jordi kiest.
 
 ## Hoe een Gen 3-sprite eruitziet (meetbaar)
+- **Gen 3-referentie = `anim_front_gba.png` + `normal_gba.pal`** (Bibarel-evo, 24 nov): met `P_GBA_STYLE_SPECIES_GFX FALSE` zijn `graphics/pokemon/<naam>/anim_front.png` + `normal.pal` de Gen 4/5-stijl sprites van de expansion. Een keuring tegen die bestanden gaf PASS terwijl Jordi zag: "ik kan me er toch niet aan ontlenen dat het lijnen en kleurengebruik anders is dan bij andere sprites" · "gen 1 t/m 3 he". Vergelijk alleen met Gen 1–3-soorten in hun `_gba`-versie, en kies een referentie met hetzelfde bouwtype (Jordi: "pak er 1 met een buikvlak" → Kangaskhan).
 - 3/4 naar links-voor, kop draait meer naar de kijker dan het lijf; ronde kop als eigen vorm; één oog bij een snavel/snuit opzij.
 - **Netheid**: per kleurgroep ≤ 3 tinten + omlijning; geen tintvlakjes < 3 px (clusterscript) behalve glans; grenzen als vloeiende curven, geen trapjes, geen banding (tinten parallel aan de rand), geen pillow shading; licht linksboven, schaduw als sikkel die de vorm volgt.
 - **Contrast**: helderheidsstappen meten tegen Taillow (±30–40 per tint).

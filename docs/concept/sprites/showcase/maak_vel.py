@@ -91,6 +91,7 @@ SECTIES=[
 ("oricorio_dansen/tango/af/tango.png",'Oricorio (tango)',"dark/flying"),
 ("oricorio_dansen/samba/af/samba.png",'Oricorio (samba)',"grass/flying"),
 ("pincurchin_regional/af/pincurchin_regional.png",'Pincurchin (regional)',"poison/rock"),
+("mr_prime/af/mr_prime.png",'"Mr. Prime"',"fight/psychic"),
 ("dj_rotom/af/dj_rotom.png",'"DJ Rotom"',"electric/steel"),
 ]),
 ]

@@ -39,3 +39,44 @@ Style: official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 
 
 AVOID: mine cart, wagon, open box or tub the capybara sits in, paws resting on the edge, a real car or go-kart with an engine, a driver sitting in a car, a cartoon vehicle with a face, blocks placed side by side, letters or numbers on the blocks, realistic animal look, plush toy / Neopets look, beaver look, water.
 ```
+
+## Ronde 2 (24 nov)
+- `r2/capykart_r2.png`: houten speelgoedauto als lijf, hoofd steekt vooraan uit, blokken in twee stapels naast elkaar. Jordi: "beter, alleen de toyblocks moeten opgestapeld, misschien leuk om de vorm iets meer een derby car te maken, of een van de andere foto's, dat het net wat natuurlijker is dat het hoofd zo eruit komt". Foto's: `referenties/` (derby car, open geel autootje, houten autootjes met pinnetjespoppetjes).
+
+## r3 (nieuw gesprek, zonder bijlage; prompt r2 als basis, alleen blokken + autovorm veranderd). A = derby car, B = open autootje
+
+### r3A
+```
+Design an original Pokemon called CAPYKART. Type: Normal. Second and final stage of a two-stage line of early-route rodent Pokemon.
+
+Concept: a capybara Pokemon whose body IS a small wooden toy car. Only its head sticks out of the toy car; the toy car is its body. It is one creature, not an animal sitting or riding in a vehicle.
+
+- The body is a small wooden derby car (a hand-made wooden pinewood-derby style toy car): a long, low, smooth wooden body with rounded edges, warm brown wood with darker grain lines, four round wooden wheels. It is NOT a mine cart, wagon, crate, tub or open box.
+- Only the capybara's head sticks up out of a round cockpit opening in the top of the car, the way the round wooden peg head sits in the cockpit of a toy derby car. No paws, arms or legs stick out; the wheels are its legs.
+- The head looks a bit more grown-up than a first-stage baby Pokemon, but is still stylized and Pokemon-like.
+- On the back of the toy car, three or four wooden toy blocks are stacked on top of each other in ONE single vertical tower: each block sits directly on top of the block below it. No blocks next to each other.
+
+Make it look like a real Pokemon, at the same level of stylization as the rodent Pokemon of the main games, but do not copy any of them: simple, clean shapes with few details, no realistic fur texture. It must still read as a capybara: blunt square muzzle, big flat nose, small rounded ears, heavy calm build. Fur: warm reddish-brown.
+
+Style: official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 colors, dark outline, facing 3/4 to the left, compact composition. White background, no ground, no shadow, no effects, no motion lines.
+
+AVOID: mine cart, wagon, open box or tub the capybara sits in, paws resting on the edge, a real car or go-kart with an engine, a driver sitting in a car, a cartoon vehicle with a face, blocks placed side by side, letters or numbers on the blocks, realistic animal look, plush toy / Neopets look, beaver look, water.
+```
+
+### r3B
+```
+Design an original Pokemon called CAPYKART. Type: Normal. Second and final stage of a two-stage line of early-route rodent Pokemon.
+
+Concept: a capybara Pokemon whose body IS a small wooden toy car. Only its head sticks out of the toy car; the toy car is its body. It is one creature, not an animal sitting or riding in a vehicle.
+
+- The body is a small open wooden toy car (a classic wooden children's convertible): smooth rounded wooden shapes with a low open seat, warm brown wood with darker grain lines, four round wooden wheels. It is NOT a mine cart, wagon, crate, tub or open box.
+- Only the capybara's head sticks up out of the open seat of the car, the way the round wooden peg figure sits in a wooden toy car. No paws, arms or legs stick out; the wheels are its legs.
+- The head looks a bit more grown-up than a first-stage baby Pokemon, but is still stylized and Pokemon-like.
+- On the back of the toy car, three or four wooden toy blocks are stacked on top of each other in ONE single vertical tower: each block sits directly on top of the block below it. No blocks next to each other.
+
+Make it look like a real Pokemon, at the same level of stylization as the rodent Pokemon of the main games, but do not copy any of them: simple, clean shapes with few details, no realistic fur texture. It must still read as a capybara: blunt square muzzle, big flat nose, small rounded ears, heavy calm build. Fur: warm reddish-brown.
+
+Style: official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 colors, dark outline, facing 3/4 to the left, compact composition. White background, no ground, no shadow, no effects, no motion lines.
+
+AVOID: mine cart, wagon, open box or tub the capybara sits in, paws resting on the edge, a real car or go-kart with an engine, a driver sitting in a car, a cartoon vehicle with a face, blocks placed side by side, letters or numbers on the blocks, realistic animal look, plush toy / Neopets look, beaver look, water.
+```

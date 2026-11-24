@@ -3124,3 +3124,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.755] - Capykart: r1 en prompt r2
 - r1 werd een mijnkar met de capibara erin; Jordi: houten speelgoedautotje, de capibara ís de auto, alleen het hoofd steekt uit, blokken opgestapeld. Prompt r2 in `docs/concept/sprites/capykart/gemini/PROMPTS.md`.
+
+### [v0.0.756] - Capykart: r2 en prompts r3A/r3B
+- r2: houten speelgoedauto als lijf ("beter"); blokken stonden nog in twee stapels. Prompts r3A (derby car) en r3B (open houten autootje) met één blokkentoren; Jordi's foto's in `docs/concept/sprites/capykart/referenties/`.

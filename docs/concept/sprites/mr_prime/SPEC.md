@@ -41,3 +41,5 @@ Middenfase en alle rondes daarvan: `docs/concept/sprites/mrmime_regional/SPEC.md
 - Uitleg Claude: "like a bat wing" stond letterlijk in prompt r7 (eigen vergelijking voor de gekartelde vorm); "hat crown with a wide brim" beschrijft een hoed, dus tekent Gemini een hoed, en "grow out of the brim" zegt niet dat er geen naad/kleurverschil mag zijn.
 - r8 bijsturen (zelfde gesprek als r7): `gemini/PROMPT_r8_bijsturen.md`; lijf blijft; (1) pose naar de man links, ingekort; (2) haar + hoed één vorm, geen vleugels. Ogen later in de sprite.
 - Jordi (erna): "en de snor mag iets groter, iets meer cartoony" → punt 3 in de r8-bijsturing.
+- r8 (`gemini/r8.png`; krulsnor, stok schuin omhoog, bolhoed met grijze golvende lokken erachter, benen onveranderd), Jordi: "haren en hoed niet goed, snor en arm pose wel, lichaamspose niet, stok te klein".
+- r9 bijsturen (zelfde gesprek): `gemini/PROMPT_r9_bijsturen.md`, alleen lichaamspose (benen) + stok groter. Hoed/haar: voorstel Claude in de sprite (zie chat).

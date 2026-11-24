@@ -29,6 +29,15 @@
 
 - Frontsprite r1 (`sprite_r1/`, maker): tuinbroek A (tot de enkels) / B (halve dij); Jordi: "A maar moet netter"; "geen rechte lijnen". Vachtkraag (valt uiteen bij 0,71): Jordi: "ja kraag van bibarel overnemen" (pixel voor pixel uit de Bibarel-sprite op de kraagplek).
 - r2 (`sprite_r2/`), Jordi: "het patroon van het bovenlichaam en de kleur van het onderlichaam zijn niet meer goed in r2 en de kraag is in r2 helemaal verknald, blurry mess. Het moeten geen effen vlakken zijn". Ronde 3 vanaf r1: bovenlichaam r1, broek crème van r1 met relatieve modeltonen, kraag als losse proef.
+- r3 (`sprite_r3/`, broek met modeltonen, kraagproeven); Jordi: "moet ik elke keer dezelfde kritiek gaan geven". Claude: r3 had nog rechte lijnen (onderkant borststuk, zijkanten broek), effen crème vlakken en een kraag die niet leest. Vanaf nu elke ronde vóór Jordi toetsen aan de checklist hieronder.
+
+## Checklist (alle kritiek van Jordi, elke ronde toetsen)
+- "geen rechte lijnen" (tuinbroekgrenzen, borststuk, broekspijpen volgen de ronding).
+- "Het moeten geen effen vlakken zijn" (crème en bruin met vorm en schaduw).
+- "A maar moet netter" (tuinbroek tot de enkels).
+- Kraag: "ja kraag van bibarel overnemen"; geen "blurry mess".
+- Bovenlichaam-patroon en broekkleur van r1 ("niet meer goed in r2").
+- Tanden wit; ogen zoals Bibarel; neus rood.
 
 ## Open
 - Welke suggesties (Claude, 23 nov): 1 oranje beiteltanden, 2 staart als troffel, 3 schepklauwen, 4 sjouwt tak/stam of modder tegen de borst, 5 knagend aan een stam, 6 waarschuwingskleuren (geel-zwarte staart), 7 helm van modderkorst/twijgjes.

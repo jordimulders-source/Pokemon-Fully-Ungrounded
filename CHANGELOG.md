@@ -3162,3 +3162,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Uitkomst: onze sprites zijn vanaf het begin vlakker en vaker rondom zwart omlijnd dan Gen 3 (zwart aan de lichtkant 55 % tegen 28 %; detailpixels binnenin 12 % tegen 19 %); sinds de Gemini-werkwijze licht erger (mediaanscore 1,12 → 1,39).
 - Meest Gen 3: regionale Rufflet, Uyuni-Silicobra, Cuychu, Princadee, Palpaca. Meest afwijkend: Dustly, DJ Rotom, bloedmaan, Cryomet, Bandolingo, Gengas.
 - Voorstellen A–E (meetgetallen in de eindkeuring, regel over kleine vlakjes, vaste Gen 3-kleurstap, naastlegger, herstel van zwart-rondom-sprites) wachten op Jordi.
+
+### [v0.0.765] - Gen 3-studie: kanttekening Skinguin
+- Jordi vindt Skinguin juist erg Gen 3. Kanttekening in `gen3_studie/STUDIE.md`: de score meet textuur en lijn en straft gladde ontwerpen te hard af; de afwijkende lijst is een kijklijst, geen oordeel. Vel `skinguin_naast_gen3.png` erbij.

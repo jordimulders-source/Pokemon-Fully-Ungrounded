@@ -39,12 +39,14 @@ Regionale Rufflet 0,5 · Uyuni-Silicobra 0,6 · Cuychu 0,6 · Princadee 0,6 · P
 | Cryomet | 2,5 | lichte gloeirand i.p.v. lijn (ijs/gloei; deels ontwerp) |
 | Bandolingo | 2,5 | effen bruin in 2–3 banden, zwart rondom |
 | Gengas | 2,4 | zachte overloop (pillow) op een grote bol, weinig detail; Gengar heeft harde vlekken |
-| Globsnail, Skinguin | 2,2 | grote effen vlakken |
+| Globsnail, Skinguin | 2,2 | grote effen vlakken (Skinguin: zie de kanttekening hieronder) |
 | blobfish winegum, Oricorio tango, Wagogogon | 2,1 | effen, weinig contrast; tango en winegum zwart rondom |
 | blobfish pudding, Picapau, mate-kalebas, Capybarrel | 2,0 | gladde banden langs de rand, weinig binnendetail |
 | Picaraio | 1,9 | grootste effen vlakken van alle vogels |
 
 Voor 30 van de 85 sprites geldt: verder van Gen 3 af dan 90 % van de echte Gen 3-sprites.
+
+**Kanttekening Skinguin (Jordi, 24 nov: "Ik vind Skinguin juist heel erg op een gen 3 sprite lijken").** De score meet textuur, en een gladde pinguïn heeft van nature weinig textuur; ook echte gladde Gen 3-sprites hebben grote vlakken (Pelipper: clustergrootte 5,1, Latias 3,9). Skinguin heeft wel veel Gen 3: helder silhouet, hoog contrast (228, boven de Gen 3-mediaan), Delibird-palet, leest goed op 1× (`skinguin_naast_gen3.png`). Wat de meting wel echt laat zien: het rode lijf is grotendeels twee effen tinten (Delibird heeft meer tintstappen die de bolling tekenen) en de lijn is aan de lichtkant voor 75 % zwart. **Les: de score zegt iets over textuur en lijn, niet over "lijkt het op Gen 3"; bij gladde ontwerpen weegt hij te zwaar.** De lijst hierboven is daarom een lijst om naar te kijken, geen oordeel.
 
 ## Wijken we steeds meer af?
 Ja, licht. Mediaanscore per periode (datums uit Stand van zaken; de git-geschiedenis vóór 22 nov is er niet meer):

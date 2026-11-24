@@ -64,6 +64,8 @@
 
 - r17: palet en overgangen naar Gen 3 Kangaskhan (`_gba`; eerdere keuringen gebruikten de Gen 4/5-bestanden). Open: lange binnenlijnen zoals Kangaskhan = nieuwe lijnen, keuze Jordi.
 
+- r17, Jordi: "de lijnen mogen ook iets harder, iets donkerder, kijk naar kangaskhan en ivm daarmee hoe weinig belijnd onze sprite is" → r18: meer binnenlijnen (plek uit het model) en donkerdere lijntinten.
+
 ## Open
 - Welke suggesties (Claude, 23 nov): 1 oranje beiteltanden, 2 staart als troffel, 3 schepklauwen, 4 sjouwt tak/stam of modder tegen de borst, 5 knagend aan een stam, 6 waarschuwingskleuren (geel-zwarte staart), 7 helm van modderkorst/twijgjes.
 - Spritefilter (Claude, 23 nov): over 1 (zonder slijtage), 2 (alleen de vorm), 4 (alleen tak/stam), 6 (alleen 1–2 brede banden); af 3 (klauwen 1–2 px), 5 (snuit achter de stam, spaanders = details), 7 (twijgjes te klein, korst leest als muts), modder tegen de borst (bruin op bruin).

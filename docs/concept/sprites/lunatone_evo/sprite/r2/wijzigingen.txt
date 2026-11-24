@@ -1,0 +1,15 @@
+Ronde 2: pixels afwijkend van de kale reductie (../kaal.png), per zone (index-verschil; paletkleur telt niet)
+oog  :   30 van 184
+naad :   39 van 147
+neus :   63 van 228
+lijf :  253 van 1143
+puin :   78 van 232
+totaal: 463
+alpha-diff (silhouet): 0
+Wat er gebeurde:
+- oog: puntmonster uit het model (oog is bijna natief, 12,08 vs 13 px), fase +0,3 px verticaal; lichte resten van de plakcirkel in de zwarte rand -> zwart.
+- naad: binnen de oude v11-oogellips (in plak2.py opgevuld met verschoven textuur) en de donkere boog rechts: lijnen -> steentint van de buren.
+- omlijning: elke randpixel lijn; lichtkant (linksboven) selout donker steenrood, rest zwart.
+- barsten: onderbroken modelbarsten verbonden waar het model >= 20 % zwart heeft (lijnkaart), losse lijnpixels weg.
+- ontkorrelen: tintvlekjes < 3 px die 1 stap van de buren afwijken -> buurtint.
+- tint 6 opgeheven (naar 7/5 volgens modelhelderheid): steen = 4 tinten + selout + zwart.

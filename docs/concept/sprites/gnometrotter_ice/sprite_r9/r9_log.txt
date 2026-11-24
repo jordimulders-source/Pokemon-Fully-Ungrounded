@@ -1,0 +1,69 @@
+rugijs (46,9) 5 -> 4
+rugijs (47,9) 5 -> 4
+muts (44,10) 4 -> 2
+rugijs (46,10) 5 -> 4
+muts (44,11) 4 -> 2
+rugijs (45,11) 4 -> 3
+rugijs (46,11) 5 -> 4
+muts (44,12) 4 -> 2
+rugijs (45,12) 4 -> 3
+rugijs (47,12) 4 -> 3
+haar L (16,13) E -> D
+muts (44,13) 4 -> 2
+rugijs (45,13) 4 -> 3
+rugijs (47,13) 4 -> 3
+haar L (15,14) E -> D
+muts (44,14) 4 -> 2
+rugijs (45,14) 4 -> 3
+rugijs (47,14) 4 -> 3
+haar L (14,15) E -> D
+haar L (15,15) E -> D
+haar R (35,15) D -> E
+haar R (37,15) D -> E
+muts (43,15) 4 -> 2
+rugijs (44,15) 4 -> 3
+rugijs (45,15) 4 -> 3
+rugijs (47,15) 4 -> 3
+haar L (12,16) D -> E
+haar L (15,16) E -> D
+haar R (35,16) D -> E
+haar R (36,16) D -> E
+muts (43,16) 4 -> 2
+rugijs (44,16) 4 -> 3
+rugijs (45,16) 4 -> 3
+haar R (35,17) E -> D
+haar R (36,17) E -> D
+haar R (37,17) E -> D
+haar R (38,17) E -> D
+haar R (39,17) E -> C
+haar R (40,17) D -> C
+muts (43,17) 4 -> 2
+rugijs (44,17) 4 -> 3
+rugijs (45,17) 3 -> 4
+rugijs (47,17) 4 -> 3
+rugijs (48,17) 4 -> 3
+haar L (14,18) C -> D
+haar R (38,18) D -> C
+rugijs (43,18) 4 -> 3
+rugijs (45,18) 3 -> 4
+rugijs (47,18) 4 -> 3
+rugijs (48,18) 4 -> 3
+rugijs (49,18) 4 -> 3
+haar R (36,19) D -> C
+rugijs (45,19) 3 -> 4
+rugijs (48,19) 4 -> 3
+rugijs (49,19) 4 -> 3
+rugijs (45,20) 3 -> 4
+rugijs (47,20) 4 -> 3
+rugijs (48,20) 4 -> 3
+rugijs (49,20) 4 -> 3
+rugijs (49,21) 4 -> 3
+rugijs (49,22) 4 -> 3
+romp (46,30) 7 -> 8
+romp (44,31) 7 -> 8
+romp (45,31) 7 -> 8
+romp (42,32) 7 -> 8
+romp (43,32) 7 -> 8
+romp (40,33) 7 -> 8
+romp (41,33) 7 -> 8
+romp (39,34) 7 -> 8

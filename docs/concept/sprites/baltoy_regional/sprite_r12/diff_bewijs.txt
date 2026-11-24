@@ -1,0 +1,4 @@
+r12 t.o.v. r11: 8 px gewijzigd
+stekel (klassen y30..34, x15..19): 6 px [(31, 15), (31, 16), (31, 17), (31, 18), (33, 16), (34, 17)]
+mond (klassen y15): 2 px [(15, 12), (15, 14)]
+overig: 0 px; transparantie gelijk: True; zwart gelijk: True

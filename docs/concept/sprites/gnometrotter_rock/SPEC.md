@@ -1,0 +1,54 @@
+# Gnometrotter (Rock-vorm, Fairy/Rock, grot), fase 3 van de gnome-lijn (Gnomini → Gnomad → Gnometrotter)
+
+## Jordi (letterlijk)
+- Uit IDEEEN.md → Gnome-lijn: "hij past zich volledig aan aan de omgeving, dus zijn lichaam verandert mee"; "niet in een stuk vervoer"; "Rock, Flying en Steel doen we"; "wat we kunnen doen is iig met de rock variant beginnen, die weet ik zeker dat ik die wil".
+- Basis: Gnomad `../gnomad/af/gnomad.png` (Gnomini `../gnomini/af/gnomini.png`).
+- 22 nov: "allereerst is gnometrotter nog wat groter dan gnomad, hij is echt een ervaren wandelaar, logisch doorgegroeid zoals gnomad uit gnomini is gegroeid. Dan met kernmerken van steen erin, omdat die volledig aan de omgeving is aangepast"
+- 22 nov: "een baard zou goed werken, maar wil hem eigenlijk niet nu opeens een mond geven. Hij krijgt sowieso wat meer snor en wat meer haar. Benen en armen wat langer, handen en voeten blijven dzelfde vorm maar iets groter. De basis kleuren van het lichaam blijven, het is de rest wat verandert, snor, haren, hoed etc, heb je nog een suggestie voor een ander kenmerk wat we per type kunnen veranderen?"
+- Claude vroeg: baard die onder de snor begint en de mondplek bedekt; per-type-kenmerken: (1) mutspunt, (2) gesp, (3) uitgroeisels op schouders/rug.
+- 22 nov: "ja goed idee, dan doen we een baard, 1 en 3 goed, 2 kan je niet zien op sprite niveau" → baard (mond blijft onzichtbaar); per type veranderen: snor, haar, baard, muts, mutspunt, schouders/rug; gesp niet.
+- Claude stelde per onderdeel voor (muts steen, mutspunt kristal/stalactiet, snor/baard/haar gruis met kristalpunten, kristallen uit schouders/rug) + kleur A/B/C.
+- 22 nov: "doe maar meerdere prompts, ik moet het eerst voor me zien" → `gemini/PROMPTS.md` (A amethist/geode, B lavendel steen, C druipsteen).
+- r1 (`r1/gemini_A.png`, `_B`, `_C`; prompts v1): "bij alle drie is er iets van een oog zichtbaar, dat hoort niet. Verder vind ik hem nog teveel opgnomad lijken en zit er niet heel veel verschil in het design"
+- Claude stelde knoppen voor: (1) silhouet muts als rots, (2) postuur zwaarder/voorovergebogen, (3) steen in het lijf zelf, (4) grotere kristallen/rotspunten, (5) baard en snor als één rotsmassa; oog = donkere spleet onder de muts.
+- 22 nov: "1 prima, maar het moet wel een muts blijven. 2 mag wel wat meer leeftijd in zitten idd. 3 akkoord maar wat gemini doet met hier en daar een klein rotsje erop geplakt is niet mooi. 4 misschien ook wel een idee en 5 sowieso goed"
+- Claude vroeg: muts a zwaar/breed, b hoog/spits, c vorm Gnomad; leeftijd; steen in lijf a handen, b voeten, c schouders/rug overgang; materiaal A/B/C.
+- 22 nov: "ik zat meer aan ruwer gesteente te denken dan echt smooth"
+- 22 nov: "1 wel vergelijkbare vorm, te hoog en spits zou teveel van de sprite innemen. 2 voorovergebogen met zware stap, misschien een wandelstok geven die per vorm anders is 3 misschien wat rotsen die uit het lichaam groeien 4 ruwer geteente, dus geen druipsteen, gemini maakt toch niet veel onderscheid, teveel detail vertaalt niet naar een sprite"
+- 22 nov (op Claude's vraag of de wandelstok botst met "niet in een stuk vervoer"): "een wandelstok is toch geen boot" → wandelstok mag.
+- 23 nov (stok, kristallen, kleur): "ja een stuk rots, geen kristal erop, het is geen patser, ik zat alleen gewoon grijze rotsen te denken" → stok = stuk rots; grijze rotsen (prompt v2 zonder kristallen).
+- r2 (`r2/gemini_r2.png`, prompt v2): "de ogen zijn teveel zichtbaar en hij heeft een beetje een saaie veilige look?"
+- 23 nov: "misschien moeten niet alle rotsen hetzelfde"
+- 23 nov: "en die op zijn rug zijn gewoon erop geplakt"
+- Claude stelde voor (r2): 1 twee soorten gesteente, 2 verschil in vorm (blok vs brokjes), 3 rots groeit uit de huid (bergrug), 4 muts groter en zwaarder; oog oplossen in de sprite.
+- 23 nov: "ja hij moet nog meer rock worden, misschien dat de stenen onderdeel van hem zijn geworden en dat zijn vuist daarom ook is doorgegroeid tot een wandelstok, doe verder ook nog wat suggesties om er echt een tof design van te maken, dat het een rock gnome/golem wordt, maar wel nog herkenbaar evolutie van gnomad"
+- Claude stelde voor: herkenbaar houden (neus, muts over ogen, lijf roze/blauw, riem, wandelhouding) + 1 stokarm versteend, 2 muts en rug één rotsmassa, 3 rots breekt door de huid, 4 golem-postuur, 5 baard als steenlawine, 6 twee soorten grijs, 7 stenen zolen/tenen.
+- 23 nov: "probeer allemaal maar" → prompt v3.
+- r3 (`r3/gemini_r3.png`, prompt v3): "hij is beter, maar te buff denk ik, te gespierd. De stok is niet los van de hand en de voeten zijn gewoon stenen geworden"
+- 23 nov: "en de ogen zijn nog steeds zichtbaar" · "de neus mag rond blijven"
+- 23 nov: "de vuist zit niet vast aan de stok hier" → vuist en stok moeten één stuk zijn.
+- Prompt v4: lijf rond en niet gespierd ("te buff"), voeten weer de blauwe Gnomad-voeten iets groter ("voeten blijven dzelfde vorm maar iets groter", r3 "gewoon stenen geworden"), neus rond, muts valt over de bovenkant van de neus (oog).
+- 23 nov: "jij wilde toch een soort stenen schoenen onder de voeten?" → v4 aangepast: blauwe ronde voeten met een dunne stenen zool.
+- 23 nov: "en laten we de rotsen op de rug overgaan naar de riem, dus dat die omringt wordt met stenen die uit het lichaam groeien, dus rug en riem" → in v4.
+- r4 (`r4/gemini_r4.png`, prompt v4): "iets beter al maar de hele beltsectie moet van steen, plus de haren en baard zijn niet meer van steen" → prompt v5.
+- 23 nov: "en de schoenzolen lezen niet goed" → v5: dikke, duidelijke stenen zool.
+- r5 (`r5/gemini_r5.png`, prompt v5): "beter, we kunnen ook doen dat hij helemaal van stenen is geworden, maar dat we de kleurenpatronen wel behouden" → prompt v6 (alles steen, kleuren per vlak behouden).
+- r6 (`r6/gemini_r6.png`, prompt v6): "muts is nu weg en hij is niet duidelijk van steen" → prompt v7 = v5 + alles steen in eigen kleur.
+- r7 (`r7/gemini_r7.png`, prompt v7): "dit vind ik wel een erg geinig design, alleen gemini doet alleen barsten om het steen aan te tonen en niet vormen"
+- Claude: A nog een Gemini-ronde (steen in de vorm) of B r7 bevriezen + kleine pixelreparaties; eerlijk: echte gehakte steenvlakken tekenen kan Claude niet betrouwbaar.
+- 23 nov: "regirock zou een goede inspiratie kunnen zijn" → prompt v8.
+- r8 (`r8/gemini_r8.png`, prompt v8): "dit is het beste wat we gaan krijgen denk ik"
+- 23 nov (oogstrook in de sprite dichten; stok; bevriezen?): "1 akkoord en 2 maakt niet meer uit omdat het hele lichaam van steen is. Voordat je het bevriest, nu gaan we ook de grass en ice vorm maken, zelfde idee, alleen dan wordt gras bladeren en hout en ijs wordt allerlei vormen van ijs" → r8 nog niet bevroren; prompts Grass en Ice in `../gnometrotter_grass/` en `../gnometrotter_ice/`.
+- 23 nov (bij Grass/Ice r1): "de stok moet bij alle 3 in dezelfde hand" (Rock r8 en Ice r1: voorste arm, links in beeld; Grass r1: achterste arm).
+
+## Voorgelegd door Claude (22 nov, nog niet gekozen)
+- A geode (muts = geode met amethist in een barst, snor/plukjes = kwartskristal, neus = rozenkwarts); B druipsteen (muts = stalactiet, kalksteen met lagen); C ertsader (riem = ader, gesp = goudklomp, korstmos op de snor).
+
+## Open (overleggen vóór de Gemini-prompt)
+- Welke steenkenmerken, en waar (muts, snor, plukjes, riem/gesp, handen, huid).
+- Wat "logisch doorgegroeid" verder inhoudt naast groter.
+- Kleuren.
+- 23 nov (alle drie de vormen): "en we moeten zorgen dat ze allemaal even groot worden de sprites"
+- 23 nov: "zoals bij wormadam" → in de spritefase: zelfde hoogte, voetlijn en lijfmaat voor alle drie; alleen het materiaal verschilt.
+- 23 nov: "hooguit paar pixels afwijking"
+- 23 nov (Jordi, opdracht voor de nacht): "nee ik wil toch kijken of het lukt om een hybride vorm te maken. Dus je doet het volgende, je maakt eerst rock, dan doe je ijs en grass met dezelfde pose. Daarna ga je kijken of het lukt om alleen de onderdelen die in de hybride versies anders moeten te verplaatsen, zo netjes mogelijk. Ik ga nu slapen en wil morgen 5 eindsprites zien"

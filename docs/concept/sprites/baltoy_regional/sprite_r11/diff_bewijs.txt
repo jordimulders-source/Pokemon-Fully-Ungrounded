@@ -1,0 +1,5 @@
+gewijzigd t.o.v. r10B: 75 px; per zone: {'keurderpunten': 8, 'linkerarm': 27, 'rechterarm': 28, 'punt': 12}
+hoofd en band (klassen y 0..16): 0 px gewijzigd
+lijfvoor-/zijvlak patroon B (klassen y 20..28, x 11..23, zonder keurderpunten en de rechter armaanzet x23-24 rij 20-21): 0 px gewijzigd
+buiten de zones: 0 px; transparantie gelijk: True; zwarte omlijning gelijk: True
+keurderpunten (bewust, binnen opdracht 3): nekbalk y17-18 x11-14 (8 px), ribbe x20 rij 21 (1 px), zijvlak lijf rij 28 x21-22 (2 px; rij 28 hoort niet bij patroon B)

@@ -1,0 +1,84 @@
+pixels anders dan r1: 83 per zone {'trap links': 4, 'vlekjes': 7, 'chakana': 21, 'trap rechts': 4, 'rechteroog': 12, 'rood': 1, 'rechterarm': 27, 'punt-schaduw': 7}
+trap links (4,14) canvas(x22,y19) d->D
+vlekjes (4,15) canvas(x23,y19) h->l
+vlekjes (4,16) canvas(x24,y19) h->l
+chakana (4,17) canvas(x25,y19) d->D
+vlekjes (4,22) canvas(x30,y19) h->l
+vlekjes (4,23) canvas(x31,y19) h->l
+trap links (5,12) canvas(x20,y20) d->D
+trap links (5,13) canvas(x21,y20) d->D
+trap links (5,14) canvas(x22,y20) d->D
+chakana (5,17) canvas(x25,y20) d->D
+chakana (5,19) canvas(x27,y20) l->h
+chakana (6,14) canvas(x22,y21) m->D
+chakana (6,15) canvas(x23,y21) m->D
+chakana (6,16) canvas(x24,y21) m->D
+chakana (6,17) canvas(x25,y21) m->D
+chakana (6,18) canvas(x26,y21) l->h
+chakana (6,19) canvas(x27,y21) l->h
+chakana (7,14) canvas(x22,y22) m->D
+chakana (7,17) canvas(x25,y22) l->h
+chakana (7,19) canvas(x27,y22) l->h
+chakana (7,20) canvas(x28,y22) l->h
+chakana (7,21) canvas(x29,y22) l->h
+vlekjes (8,11) canvas(x19,y23) h->l
+chakana (8,18) canvas(x26,y23) l->h
+chakana (8,19) canvas(x27,y23) l->h
+trap rechts (8,24) canvas(x32,y23) d->D
+trap rechts (8,25) canvas(x33,y23) d->D
+vlekjes (9,10) canvas(x18,y24) h->l
+chakana (9,18) canvas(x26,y24) l->h
+chakana (9,19) canvas(x27,y24) l->h
+chakana (9,21) canvas(x29,y24) l->D
+trap rechts (9,24) canvas(x32,y24) d->D
+vlekjes (10,10) canvas(x18,y25) h->l
+chakana (10,18) canvas(x26,y25) l->h
+chakana (10,19) canvas(x27,y25) l->h
+trap rechts (10,24) canvas(x32,y25) d->D
+rechteroog (14,26) canvas(x34,y29) d->R
+rood (15,15) canvas(x23,y30) r->R
+rechteroog (15,26) canvas(x34,y30) l->d
+rechteroog (15,28) canvas(x36,y30) d->R
+rechteroog (16,28) canvas(x36,y31) l->d
+rechteroog (16,29) canvas(x37,y31) d->R
+rechteroog (17,28) canvas(x36,y32) D->d
+rechteroog (17,29) canvas(x37,y32) d->r
+rechteroog (18,28) canvas(x36,y33) l->d
+rechteroog (18,29) canvas(x37,y33) d->l
+rechteroog (19,27) canvas(x35,y34) l->d
+rechteroog (19,28) canvas(x36,y34) d->l
+rechteroog (20,27) canvas(x35,y35) d->l
+rechterarm (32,38) canvas(x46,y47) d->K
+rechterarm (35,39) canvas(x47,y50) K->.
+rechterarm (35,42) canvas(x50,y50) l->m
+rechterarm (35,45) canvas(x53,y50) K->l
+rechterarm (35,46) canvas(x54,y50) .->K
+rechterarm (36,40) canvas(x48,y51) .->K
+rechterarm (36,41) canvas(x49,y51) K->m
+rechterarm (36,43) canvas(x51,y51) m->l
+rechterarm (37,40) canvas(x48,y52) .->K
+rechterarm (37,41) canvas(x49,y52) K->m
+rechterarm (37,43) canvas(x51,y52) m->l
+rechterarm (38,40) canvas(x48,y53) .->K
+rechterarm (38,41) canvas(x49,y53) .->m
+rechterarm (38,42) canvas(x50,y53) K->m
+rechterarm (38,43) canvas(x51,y53) m->l
+rechterarm (38,44) canvas(x52,y53) m->l
+rechterarm (38,45) canvas(x53,y53) K->l
+rechterarm (38,46) canvas(x54,y53) .->K
+rechterarm (39,40) canvas(x48,y54) .->K
+rechterarm (39,41) canvas(x49,y54) .->m
+rechterarm (39,42) canvas(x50,y54) K->m
+rechterarm (39,44) canvas(x52,y54) m->l
+rechterarm (39,45) canvas(x53,y54) K->l
+rechterarm (39,46) canvas(x54,y54) .->K
+rechterarm (40,41) canvas(x49,y55) .->K
+rechterarm (40,42) canvas(x50,y55) K->m
+rechterarm (41,45) canvas(x53,y56) K->.
+punt-schaduw (43,23) canvas(x31,y58) l->m
+punt-schaduw (43,24) canvas(x32,y58) l->m
+punt-schaduw (44,24) canvas(x32,y59) l->m
+punt-schaduw (44,25) canvas(x33,y59) l->m
+punt-schaduw (45,25) canvas(x33,y60) l->m
+punt-schaduw (45,26) canvas(x34,y60) l->m
+punt-schaduw (46,26) canvas(x34,y61) l->m

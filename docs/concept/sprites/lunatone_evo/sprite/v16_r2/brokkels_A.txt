@@ -1,0 +1,5 @@
+schaal r5->v16 1.015; r5 c=(39.0,29.5) R=23.7; v16 c=(35.2,30.5) R=24.0
+hap rechtsboven: r5-gebied x46-63 y2-20 -> v16 x42-60 y3-21; 61 px uit r5 overgenomen
+hap linksonder (onder de neus): r5-gebied x11-25 y37-50 -> v16 x7-21 y38-51; 28 px uit r5 overgenomen
+opening rechtsonder + losse plaat: r5-gebied x41-63 y35-60 -> v16 x37-60 y36-61; 198 px uit r5 overgenomen
+snippers weg: 0 px; randpixels in de knipzone naar zwart: 0

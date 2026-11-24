@@ -2833,54 +2833,282 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Gemini v1–v7 (`solrock_evo/gemini/PROMPT.md`, `r1/`–`r7/`); v5 gekozen als model (losse afgebroken stenen, gebarsten zwarte kern, eclipsrand, Solrocks gezichtsplaat). Lava en olivijnkristal (eigen voorstellen Claude) geschrapt; diagonale baan werd in Gemini een Saturnusring.
 - Sprite: r1–r3 met Jordi's breuk in de plaat (varianten A/B, Solrock-ogen letterlijk/aangepast) → Jordi: "ze zijn geen van allen mooi, probeer maar het model na te maken" (zonder breuk). r4–r8: model trouw, ogen per pixel naar het model (pupil aan het lid), linker plaatrand ronder (Jordi); keurder PASS. Eindkeuring Dragonfly Cave (r9), "blurry" → meer tinten en schaduwopbouw in de kern (r10–r11), Jordi koos kleurvariant B (koele schaduw, warm licht), eindkeuring B (r12), barsten in de plaat lichter (r13).
 - Af: `docs/concept/sprites/solrock_evo/af/solrock_evo.png` (+ `_8x`); op het overzichtsvel (Evolutions of existing Pokémon, nu 9; teller 72; type op het vel = Solrocks huidige type, eigen type open). Naam en evolutiemethode open.
+### [v0.0.678] - Lunatone-evolutie: Gemini-prompts (22 nov)
+- `docs/concept/sprites/lunatone_evo/gemini/PROMPT.md` (v1) + bijlage `bijlage_lunatone_gen3.png`: bloedmaan als tegenhanger van de Solrock-corona (fervent-hamilton), met de lessen uit die rondes.
+- Rondes v1–v13 (`lunatone_evo/r*/`): sikkel bleef terugkomen zolang de Lunatone-bijlage of -naam in de prompt stond; v10 (pure beschrijving, geen bijlage) + v11 (meer uitgebrokkeld) gaf de vorm.
 
-### [v0.0.678] - Idee Capybarrel
+### [v0.0.679] - Lunatone-evolutie "bloedmaan": frontsprite-kandidaat
+- Model (Jordi): Gemini v11 met oog en neus van v5 geplakt, kleinste puin weg (`lunatone_evo/referenties/model.png`, `model/script/plak2.py`); SPEC met Jordi letterlijk.
+- Sprite r1–r5 (`lunatone_evo/sprite/`): verkleining van het model, niets hertekend; plaknaden rond het oog weggewerkt (toegestaan). Keuring r3: barsten te druk, tinten ongelijk → r4 lange modelbarsten, tinten 48/79/113/147; eindkeuring r4 PASS op beide eisen. r5 = r4 + klein hooglicht op de bolling (keurder, optioneel).
+- Kleurvariant B (dieper bloedrood, dichter bij het model): `sprite/r5/sprite_B_bloedrood.png`. Jordi kiest. Vellen: `lunatone_evo_8x.png`, `lunatone_evo_B_bloedrood_8x.png`, `sprite/r5/vel.png`.
+
+### [v0.0.680] - Lunatone-evolutie: nieuw model v16 (driekwart) en sprite-kandidaat
+- Gemini v14–v17: pose met perspectief; Jordi koos v16 ("voor mijn gevoel is deze beter"); rechterkant rond gemaakt en brokkels uit r5 terug (Jordi akkoord).
+- Sprite `lunatone_evo/sprite/v16_r1`–`v16_r7`: Jordi koos r2A om de driekwart van de donkere rechterband; daarna schaduw over het hele lijf voor perspectief (r5), twee donkerdere roodtinten rechts in het oog (r6, Jordi), keuringsreparaties (r7). Keuring r5: trouw PASS, techniek bijna PASS; r7 lost de resterende punten op.
+- Vel: `lunatone_evo/lunatone_evo_v16_8x.png` (naast Lunatone). Vorige kandidaat (model v11) blijft in `sprite/r5/`.
+
+### [v0.0.681] - Lunatone-evolutie "bloedmaan": frontsprite af
+- r8: neusaansluiting netter, pupil 1 px lager (kijkt niet meer omhoog), oog op 0/2/4 px naar rechts × iris zoals r7/donkerder; Jordi: "midden onder is goed" (2 px, donkere iris).
+- r9: losgekomen barstjes rechts van het oog taps laten uitlopen (3 px).
+- Af: `lunatone_evo/af/bloedmaan.png` (+ 8×), op het overzichtsvel onder "Evolutions of existing Pokémon" als "Bloedmaan (Lunatone)", rock/cosmic. Naam en evolutiemethode open.
+
+### [v0.0.682] - Idee: Gnome-lijn
+- Jordi: "Ik denk aan een Gnome fairy lijn. Het woord gnome laat ook veel woordgrappen toe". Vastgelegd in `IDEEEN.md` → "Gnome-lijn", met voorstellen voor woordgrappen en open vragen.
+
+### [v0.0.683] - Gnome-lijn: neus en muts
+- Jordi: "Iig een grote ronde neus en een muts die de ogen blokkeert". Toegevoegd aan `IDEEEN.md` → "Gnome-lijn".
+
+### [v0.0.684] - Gnome-lijn: fases en voorstellen
+- Jordi: tuinkabouter; fase 1 Gnomini, fase 2 Gnomad (loopt veel), meerdere fase 3-vormen aangepast aan klimaat of vervoer (Fairy/Ground, Fairy/Flying enz.). Claude stelde naam (Gnometrotter), evolutie (stappen + plek bepaalt vorm) en vormen voor; alles in `IDEEEN.md` → "Gnome-lijn".
+
+### [v0.0.685] - Gnome-lijn: naam fase 3
+- Jordi: "Ik dacht aan Gnomigration maar Gnometrotter bekt wat lekkerder". In `IDEEEN.md` → "Gnome-lijn".
+- Jordi: "en hij gaat niet in een stuk vervoer want dan is het gweoon een mannetje in tools"; vervoer-voorstellen vervallen.
+- Jordi: "hij past zich volledig aan aan de omgeving, dus zijn lichaam verandert mee".
+- Jordi: "Rock, Flying en Steel doen we" (drie Gnometrotter-vormen).
+
+### [v0.0.686] - Gnomini: frontsprite af
+- Gnome-lijn fase 1 (Fairy): Gemini-prompts v1/v2 (`gnomini/gemini/`), Jordi koos r2 als model ("de muts is uitstekend"). Sprite in 4 makerrondes: r1 A (lijf als model; B "compleet mislukt, dat is niet rond"), r2 keurderreparaties, r3 gebogen roze/blauw-grens + donkerblauwe streep (B gekozen) en rond linkerarmpje, r4 lijf smoother (A gekozen). Eindkeuring PASS, 5 pixels gerepareerd → `docs/concept/sprites/gnomini/af/gnomini.png`; op het overzichtsvel onder New. Les in GEMINI.md ("ronder" = echt rond).
+
+### [v0.0.687] - Gnomad: frontsprite af
+- Gnome-lijn fase 2 (Fairy), naar Gemini r1 (r2 "too much qua details"). Sprite in 7 makerrondes: snor rafeliger, riem als Machoke (zwarte lijnen boven/onder, bruine band), gesp naar Jordi's vormfoto (crème, afgeronde hoeken, staand gat, in driekwart links), riem sluit op zichzelf aan en volgt de bol. Eindkeuring PASS na 7 lijnreparaties (zwart 21,4 → 18,2 %) → `docs/concept/sprites/gnomad/af/gnomad.png`; op het overzichtsvel. Gnome-lijn: Steel-vorm = urban areas, ijsvorm overwogen (IDEEEN.md); geslacht open.
+
+### [v0.0.688] - Gnomad: omlijning volgens Dragonfly Cave
+- Na Jordi's feedback over te veel zwart: r8 (zwart in snor, haarpluk, armen naar tinten), r9 (snorrand bruin i.p.v. roze: "dat moet een kleur zijn die bij de snor past juist"), r10 (hele sprite volgens de Dragonfly Cave-gids: eigen outline base per onderdeel, zwart alleen aan de schaduwkant), r11-A (geen zwart meer onder neus en snor) + 1 verdwaalde pixel. Zwart 18,2 → 12,3 %. `gnomad/af/gnomad.png` en overzichtsvel bijgewerkt. Les in GEMINI.md: omlijning in de eigen tint, DC-regel citeren.
+
+### [v0.0.689] - Merge naar main
+- Main (Lunatone-evolutie bloedmaan, Solrock-corona, Krickestro, vuurduivel fase 2) samengevoegd met de gnome-lijn (Gnomini, Gnomad); onze secties hernummerd naar v0.0.682–688. Overzichtsvel opnieuw gegenereerd.
+
+### [v0.0.690] - Gnomini: omlijning volgens Dragonfly Cave
+- Jordi: "Gnomini mag trouwens ook nog wel een dragonflycave keuring ja". r6-A (binnenlijnen in de eigen tint, zwart alleen aan de schaduwkant/buitenrand; zwart 14,8 → 8,4 %); varianten B/C met zwart bij de neus afgewezen; vergeleken met de Grumpig-snuit. `gnomini/af/gnomini.png` en overzichtsvel bijgewerkt. Werkwijze: Dragonfly Cave-omlijning verplicht in de eindkeuring (SPRITE_WERKWIJZE stap 7); les in SPRITE_KERN: eerst meten, dan beweren.
+- Neus nagemeten op Popplio (lijn rondom donkerste eigen tint, zwart alleen aan de buitenrand): af = r6-A. Les in SPRITE_KERN.
+- Correctie: Jordi wil de Gnomini met zwarte omlijning terug ("daarna is alles fout gegaan"); alleen de neuslijn aangepast zoals Popplio (zwart aan de buitenrand, donkerroze tegen muts/lijf, 27 px). af = `sprite_r9/gnomini.png`; r6–r8 vervallen.
+- Gnomini r10: neusomlijning precies zoals Popplio (zwart van linksmidden via linksonder tot onder-midden, donkerroze bovenom en rechts, 1 px). Jordi: "kijk eindelijk" → af = `sprite_r10/gnomini.png`.
+
+### [v0.0.691] - Regional Baltoy-lijn: besluiten + Gemini-prompt Baltoy r1
+- Besloten (Jordi, 22 nov): inspiratie Tiwanaku-monoliet; Rock/Psychic voor Baltoy en Claydol (de levende tempel krijgt een andere typing); "moet herkenbaar zijn vanwege de ogen, het silhouet mag veranderen". `docs/concept/sprites/baltoy_regional/SPEC.md`, IDEEEN.md bijgewerkt.
+- Startprompt Baltoy r1: `docs/concept/sprites/baltoy_regional/gemini/PROMPT_baltoy_r1.md` (frontaal, spleetogen in rode band + rond borstoog).
+
+### [v0.0.692] - Regional Baltoy r1 afgekeurd
+- r1 bewaard (`docs/concept/sprites/baltoy_regional/gemini/baltoy_r1.png`). Jordi: "dit is geen pokemon sprite, niet driekwart, geen goede vorm en totaal geen baltoy". Keuzes voor r2 (vorm deels monoliet, alleen tekst) in SPEC.md.
+- Jordi: wat van Baltoy blijft = "die ronde ogen met een streep erin met het rode patroon erboven". Prompt r2: `docs/concept/sprites/baltoy_regional/gemini/PROMPT_baltoy_r2.md`.
+- r2 (`baltoy_regional/gemini/baltoy_r2.png`): Jordi "nu is die herkenbaar baltoy"; maattest 64/48 px in `baltoy_regional/maattest/`.
+- Jordi over r2: "dus dan moet de vorm veranderen en dan moet de band robuuster" → prompt r3 (`baltoy_regional/gemini/PROMPT_baltoy_r3.md`).
+- r3 (`baltoy_regional/gemini/baltoy_r3.png`): Jordi "hij is nog herkenbaar baltoy".
+- Prompt r4 (trapmotief in de band, pijlerlijf): `baltoy_regional/gemini/PROMPT_baltoy_r4.md`.
+- r4 (`baltoy_regional/gemini/baltoy_r4.png`).
+- Prompt r5 (levendiger): `baltoy_regional/gemini/PROMPT_baltoy_r5.md`.
+- r5 (`baltoy_regional/gemini/baltoy_r5.png`).
+
+### [v0.0.693] - Regional Baltoy: frontsprite r1–r3
+- Jordi: "ga maar bouwen dan" → model r5 bevroren (`baltoy_regional/referenties/gemini_gekozen_r5.png`), punt mag in de sprite aan het lijf.
+- r1 (maker, schrappen naar 47×48), keuring BIJNA; r2 (5 benoemde reparaties), keuring BIJNA + eindkeuring PASS; r3 = r2 + 6 lijnpixels (Claude). Kandidaat: `baltoy_regional/sprite_r3/naast_model.png`.
+- r4A (34×34) te veel hertekend (Jordi: "ik zie dat heel veel opnieuw getekend is" · "niet de bedoeling"); r5 vanaf de kale 2×-reductie. Les in GEMINI.md.
+- r5 (kale 2×-reductie + 48 px): Jordi "hij is best prima" + punten voor r6 (lijnen, kleur/schaduw, hoofd 1 px langer).
+
+### [v0.0.694] - Regional Baltoy: frontsprite r5–r13
+- r5: opnieuw vanaf de kale 2×-reductie (34×35) met alleen technische reparaties uit de bronpixels; Jordi: "hij is best prima" + afwerkpunten.
+- r6–r8: hoofd 1 px langer, zachtere lijnen, steenramp na een studie van blokvormige Pokémon (`sprite_r7/studie.md`), lijnen wisselen van tint.
+- r9–r10: lijfreliëf naar Tiwanaku (A handen/kero/staf, B getrapte gordel, C chakana), in driekwart; Jordi koos B.
+- r11–r12: armen en stekel met volume, stekel weer leesbaar, mondpixels weg. Eindkeuring BIJNA → 31 pixels → r13 (kandidaat).
+
+### [v0.0.695] - Regional Baltoy: stekel en eindkeuring (r14–r19)
+- Stekel: vormprobeersels (r14), tolpunt per laag uit het model (r15–r16); Jordi: "anders gewoon van de originele baltoy pakken" → r17 = r13 + de tolpunt van de Gen 3-Baltoy 1-op-1 in steentinten; Jordi koos 1 px naar links (r18).
+- Eindkeuring Dragonfly Cave r18: PASS met 1 pixel → r19 (`docs/concept/sprites/baltoy_regional/sprite_r19/baltoy_r19.png`, kandidaat). Lessen in GEMINI.md.
+### [v0.0.696] - Idee: Emolga-evolutie (wingsuit)
+- Jordi's idee voor een Emolga-evolutie gebaseerd op wingsuit flying vastgelegd in `docs/concept/IDEEEN.md`.
+
+### [v0.0.697] - Emolga-evolutie: besluiten + Gemini-prompt r1
+- Jordi's besluiten in `docs/concept/sprites/emolga_evo/SPEC.md`; Gemini-prompt r1 in `emolga_evo/gemini/PROMPT_r1.md`.
+
+### [v0.0.698] - Emolga-evolutie: Gemini-prompt r2
+- Feedback op r1 in `emolga_evo/SPEC.md`; prompt r2 zonder bijlage, super groot wingsuit, aerodynamisch, steilere duik, Emolga's echte kleurpatroon.
+
+### [v0.0.699] - Emolga-evolutie: Gemini-prompt r3
+- Feedback op r2 in `emolga_evo/SPEC.md`; prompt r3: langere puntoren, langwerpig lijf vastgegroeid aan de vleugels, langere poten, aerodynamisch buikpatroon, visorkleur rond de ogen i.p.v. wangen.
+
+### [v0.0.700] - Emolga-evolutie: aanpak r4
+- r3 afgekeurd; r4 vertrekt van r2 als bijlage met max. 2 wijzigingen per ronde (`emolga_evo/gemini/PROMPT_r4.md`).
+
+### [v0.0.701] - Emolga-evolutie: prompt r4 naar het Skinguin-voorbeeld
+- `emolga_evo/gemini/PROMPT_r4.md` herschreven als nieuwe startprompt in Skinguin-opbouw (geen bijlage); les in `docs/lessen/GEMINI.md`.
+
+### [v0.0.702] - Emolga-evolutie: prompt r5
+- Feedback r4 in SPEC; `PROMPT_r5.md`: verhoudingen in maten, oogpatroon als vachttekening.
+
+### [v0.0.703] - Emolga-evolutie: prompt r6 (colugo) + fruitvampier-idee
+- `emolga_evo/gemini/PROMPT_r6.md`: colugo als anatomie. Jordi's idee fruitvampier als 3e vorm van de Emolga-lijn in IDEEEN.md.
+
+### [v0.0.704] - Emolga-evolutie: prompt r7 (reuzenvliegende eekhoorn)
+- r6 (colugo) "vrij ok"; `PROMPT_r7.md` met Petaurista als anatomie.
+
+### [v0.0.705] - Emolga-evolutie: r7 + idee fase 3
+- r7 (Petaurista) minder goed; fase 3 fruitvampier op zijn kop met gesloten vleugels voorgesteld door Jordi (IDEEEN.md).
+
+### [v0.0.706] - Emolga-lijn fase 3: Gemini-prompt r1
+- `docs/concept/sprites/emolga_evo_fase3/` (SPEC + prompt r1: fruitvampier op zijn kop, vleugels gesloten).
+
+### [v0.0.707] - Emolga-lijn fase 3: prompt r2
+- r1 te compact; r2 lang en slank.
+
+### [v0.0.708] - Emolga-lijn: 2 evoluties
+- Fase 3 fruitvampier r2 "gaat lukken"; Emolga krijgt 2 evoluties (Jordi).
+
+### [v0.0.709] - Emolga-lijn fase 2: r6 gekozen
+- r6 (colugo) is het design voor fase 2; draaiproeven en bijstuurprompt voor de duik. Fase 3 = fruitvampier.
+
+### [v0.0.710] - Vleermuislijn vervalt
+- Fruitvampier = fase 3 van de Emolga-lijn (Electric/Flying); POKEMON.md, IDEEEN.md en SPEC bijgewerkt.
+
+### [v0.0.711] - Emolga-lijn fase 2 (wingsuit-colugo): twee frontsprites af
+- Model Gemini r6b (duikvlucht). Gebouwd als het model 1-op-1 (`emolga_evo/af/model.png`) en met alleen de kop 1,4× vergroot (`af/kop14.png`, Jordi: "bouw maar het originele gemini model en A net allebei"; overlap met het lijf mag zoals bij de Sunflora-evolutie).
+- Maker r1, keurder (A0 BIJNA, A PASS), r2 (zebra gezicht, vachttint), eindkeuring Dragonfly Cave r2 → r3 (oog/pupil zwart, hand, tint): beide PASS.
+- Ter info (eindkeuring): voorste vleugel bijna egaal geel en zwarte binnenlijnen, trouw aan het model; gezicht leest beter in de versie met de grote kop.
+
+### [v0.0.712] - Emolga-lijn fase 2: keuze
+- Jordi kiest de versie met de originele kop (`emolga_evo/af/model.png`); vergelijking naast het model in `af/naast_model.png`.
+
+### [v0.0.713] - Emolga-lijn fase 2: buikonderrand
+- 5 pixels van de buikonderrand naar de curve van het model (Jordi: "hele subtiele wijzigingen"); `af/model.png` = sprite_r4.
+
+### [v0.0.714] - Emolga-lijn fase 2: terug naar r3
+- r4 (buikrand) gaf te dikke hoekjes; `af/model.png` weer r3. Rastervergelijking model | r3 | r4 in `sprite_r5/raster_buik.png`.
+
+### [v0.0.715] - Emolga-lijn fase 2: 3 pixels van Jordi
+- Buik: (40,41) zwart, (31,50) lichtgrijs, (28,52) donkergrijs zoals in het model; `af/model.png` = sprite_r6.
+
+### [v0.0.716] - Emolga-lijn fase 2: eindkeuring
+- Eindkeuring r6 BIJNA (open rand); (31,51) zwart (ook Jordi's idee) → r7 PASS. `af/model.png` = sprite_r7.
+
+### [v0.0.717] - Emolga-lijn fase 2 (wingsuit-colugo): frontsprite af
+- Kleurrondes r8–r12 na Jordi's feedback ("klopt die echt al aan de kleurtinten?", "erg effen", "nog steeds een effen vlak"): donkere ramp 38/64/98 koel, volume in kop, oor, lijf, donkere band en bovenbuik (glans + index 10 (140,152,172)), schaduw op de gele vleugel; r12 haalt het donkere zilver onder het handje weg. Vorm/omlijning sinds r3 ongewijzigd (op Jordi's 4 buikpixels na).
+- `emolga_evo/af/model.png` = r12; op het overzichtsvel bij "Evolutions" als "Wingsuit-colugo (Emolga)" (naam open).
+
+
+### [v0.0.718] - Merge naar main
+- Emolga-lijn (fase 2 af, fase 3-prompts) samengevoegd met main (Gnomini-omlijning, regional Baltoy); onze secties hernummerd naar v0.0.696–717. Overzichtsvel opnieuw gemaakt.
+### [v0.0.719] - Gnometrotter: drie vormen (Rock, Ice, Grass) + twee hybrides, 5 eindsprites
+- Gnome-lijn fase 3 besloten: Gnometrotter met 3 vormen, Fairy/Rock (rock gnome), Fairy/Ice (deep gnome), Fairy/Grass (forest gnome); Flying en Steel vervallen; BG3 als kleine referentie (IDEEEN.md → Gnome-lijn).
+- Ontwerp Rock via Gemini r1–r8: hele lichaam van steen met behoud van de kleurpatronen, opbouw uit losse rotsstukken (Regirock-idee), voorovergebogen oude wandelaar met stok, stenen baard/muts/riem/rugkam/zolen. Model `gnometrotter_rock/r8/`.
+- Ice en Grass met Rock r8 als bijlage (zelfde pose en maat, Wormadam-principe), plus hybride modellen: het ijs-/houtlijf uit de eerste versies geknipt en geplakt binnen de omtrek (`*/hybride/`).
+- 5 frontsprites (64×64, zelfde verkleining en palet voor zwart/roze/blauw, zelfde voetlijn): Rock `gnometrotter_rock/sprite_r4/`, Ice `gnometrotter_ice/sprite_r3/`, Grass `gnometrotter_grass/sprite_r3/`, Ice hybride `gnometrotter_ice/sprite_hybride_r2/`, Grass hybride `gnometrotter_grass/sprite_hybride_r2/`; alle vijf met eindkeuring (Dragonfly Cave-omlijning) en reparaties. Overzicht: `gnometrotter_rock/eindsprites/vijf_eindsprites.png`.
+- Ice: het gat bij de mutspunt is dichtgemaakt (open las als oog); open variant in `gnometrotter_ice/sprite_r2/gnometrotter_ice.png`.
+
+### [v0.0.720] - Gnometrotter Rock: frontsprite af
+- Gnometrotter (Rock-vorm, Fairy/Rock): frontsprite af (`docs/concept/sprites/gnometrotter_rock/af/gnometrotter_rock.png` = sprite_r15), op het overzichtsvel (New, na Gnomad). Model Gemini r8; vormen bevroren op r7b; daarna alleen belijning/tinten/schaduw (r8–r11, eindkeuring PASS), ronde neus (r12) en Jordi's krabbel per pixel (r15). Ice en Grass volgen op dezelfde manier.
+- Definitieve eindkeuring Gnometrotter Rock r15: PASS zonder reparaties (`gnometrotter_rock/keuring_r15/`). Overdracht voor Ice/Grass: `gnometrotter_rock/OVERDRACHT_ICE_GRASS.md`.
+- Gnometrotter Rock toch nog niet af (Jordi: "nee die is nog niet af" · "dat is nog niet mooi"); laatste stand sprite_r16.
+
+### [v0.0.721] - Gnometrotter Rock af (r17)
+- Na r15: neusboog 1 px (r16) en in zeer donker roze i.p.v. zwart (r17; index 12, blauw hooglicht → 11). Jordi: "links is af nu". In `af/` en op het overzichtsvel.
+
+### [v0.0.722] - Merge naar main
+- Branch `ccr-e4619ef4-kb7349` (gnome-lijn, Gnometrotter Rock) naar main; conflicten in CHANGELOG/CLAUDE.md/GEMINI.md samengevoegd, overzichtsvel opnieuw gemaakt.
+
+### [v0.0.723] - Emolga-lijn fase 3 (fruitvampier): frontsprite af
+- Gemini r1–r9 (`emolga_evo_fase3/gemini/`): Moche vervalt ("gewoon een normale fruitvampier. maar wel duidelijk maken dat die in de emolga lijn zit"); vleugels openvallen (r7–r9) was fout, r4/r6 "de beste qua vorm"; "het moet niet geel worden om maar geel te hebben".
+- Model = r6 met het lijf per script 25% breder (`model/model.png`, ±26×64 px); sprite via verkleining (maker r1–r3), keuring r2 BIJNA → r3, eindkeuring (Dragonfly Cave, A_geel) BIJNA → 35 px belijning → r4.
+- Jordi koos A_geel: leigrijze oogvlek (fase 2), zwarte kap met V, geel voorhoofdvlekje. `af/fruitvampier.png`, lijnoverzicht `af/lijn.png`; op het overzichtsvel als "Fruitvampier (Emolga)" (naam open).
+- Jordi: "de designs zijn tof, het enige waar ik over twijfel is of fase 2 evolved in 3 of naast elkar komen te staan, maar dat is iets voor mij om te bedenken."
+
+### [v0.0.724] - Gnometrotter Ice af, Rock met Ice-neus
+- Ice en Grass niet op de Rock-sprites gebouwd ("want alle rock versies vertalen niet goed"), geen knip- en plakwerk: Ice vanaf `gnometrotter_ice/sprite_r3`, Grass vanaf `gnometrotter_grass/sprite_hybride_r2` (Jordi).
+- Gnometrotter Ice: r4–r9 (gesp weg, rechterschouder rond, linkerhand = Rock, lijf ijsfacetten uit het model, benen rustig met één barst per dij, muts los van het rugijs, haar), eindkeuring r9 BIJNA → r10 met 13 lijnpixels; frontsprite af (`gnometrotter_ice/af/`), op het overzichtsvel.
+- Gnometrotter Rock: neus van Ice r9 1-op-1 overgenomen (Jordi: "mag direct gecopy paste worden naar rock") → sprite_r18 = af.
+- Gnometrotter Grass: r4–r13 (neus/schouder/linkerhand = Rock, romp 2 gebogen plankennaden, benen met volume, stok/muts/baard herkleurd, groenpalet 5/12–14 herverdeeld, muts-bladeren naar een studie van Sewaddle/Shiftry/Chikorita e.a.); nog niet af.
+
+### [v0.0.725] - Merge naar main
+- Branch `claude/gallant-allen-ifpm5k` (Gnometrotter Ice af, Rock-neus, Grass tussenstand) naar main; conflicten in CHANGELOG/CLAUDE.md/GEMINI.md naar de main-versie, overzichtsvel opnieuw gemaakt.
+
+### [v0.0.726] - Gnometrotter Grass af; gnome-lijn af
+- Gnometrotter Grass: r14–r16 muts (grote blad bevroren, overige bladeren opnieuw uit de lijnen van het model; onderblad naar Jordi's krabbel), eindkeuring r16 BIJNA → r17 met 11 lijnpixels; frontsprite af (`gnometrotter_grass/af/`), op het overzichtsvel (Jordi: "akkoord").
+- Daarmee is de hele gnome-lijn af: Gnomini, Gnomad, Gnometrotter Rock/Ice/Grass.
+
+### [v0.0.727] - Merge naar main
+- Branch `claude/gallant-allen-ifpm5k` naar main.
+
+### [v0.0.728] - Regionale Claydol: frontsprite af
+- Ontwerp via Gemini (r1–r10, `docs/concept/sprites/baltoy_regional/gemini/`): Zonnepoort/Stafgod-figuur → Claydol-schotelkop met oogring → krans van oogbolletjes; Jordi koos r3 als basis.
+- Sprite: Gemini r3 ongewijzigd omgebouwd (`claydol_gemini_r3/`), onderkop terug na "rustiger = pixelblur", tinten onderin warmer (palet B), krans . - . - (stipjes uit r6), eindkeuring Dragonfly Cave.
+- Twee ogen (Jordi: drie ogen staan van voren gek): samengestelde koppen werden een lappendeken; Gemini-bewerkingen van de eigen sprite tekenden alles opnieuw; doorbraak = de kop van Gemini r10 (één bron) op ons r3-ontwerp (`claydol_r10kop/`), daarna neus en ogen uit de 3-ogenversie, rode lijn om het rechteroog, kop- en lijfshading, eindkeuring (alleen tinten), voeten met eigen ronding, rechtervoet 1 rij korter.
+- Af: `docs/concept/sprites/baltoy_regional/claydol_af/claydol_regional.png` (+ `_8x`), op het overzichtsvel (Regional forms).
+- Les bovenaan `docs/lessen/SPRITE_KERN.md`: "rustiger maken" = pixelblur; lessen in `GEMINI.md`.
+
+### [v0.0.729] - Regionale Pincurchin: ontwerpkeuzes en Gemini-prompt
+- Jordi (23 nov): Poison/Rock; "hybride, lijkend op een soort onderwater mijn" (pencil urchin + zeemijn); Pincurchins gezicht.
+- `docs/concept/sprites/pincurchin_regional/SPEC.md` en `gemini/PROMPT.md` (v1, bijlage = Pincurchins sprite 8× voor het gezicht). IDEEEN.md en POKEMON.md bijgewerkt.
+
+### [v0.0.730] - Regionale Pincurchin: frontsprite af (+ merge main)
+- Model: Gemini v8 (v1–v8 met Jordi: bruin lijf, donkerrode gladde potloodstaafjes, dicht en lang, zeemijn met 3 contacthoorns en een naad). Gezicht = Pincurchins eigen ogen en mond, 1-op-1 uit zijn sprite: linkeroog smaller (kolom geschrapt, pupil heel), rechteroog 1 px lager, mond 115 % bovenop de naad met lijf tussen mond en ogen (V1).
+- Eindkeuring Dragonfly Cave (schaduw, kleurtinten, belijning): 29 px gerepareerd, middenrood iets lichter (B). Af: `docs/concept/sprites/pincurchin_regional/af/pincurchin_regional.png`; op het overzichtsvel (Regional forms). Alles in `pincurchin_regional/SPEC.md`.
+
+### [v0.0.731] - Regionale Pincurchin: naam en evolutie
+- Jordi: "blijft pincurchin, geen evolutie". Vastgelegd in `pincurchin_regional/SPEC.md`, POKEMON.md en Stand van zaken.
+### [v0.0.732] - Ontwerplijst opgeschoond
+- Geschrapt (Jordi, 23 nov): wilde lijn vicuña → guanaco, carnavalspauw.
+- Fire/Water-Pokémon van de lijst: gedaan (onderwater-Oddish-lijn).
+- Bijgewerkt in `TODO.md`, `IDEEEN.md`, `POKEMON.md`.
+
+### [v0.0.733] - Steel/Cosmic-lijn (satelliet): concept + prompt fase 1
+- Besloten met Jordi (23 nov): pure machines met één oog; Spoetnik-bolletje → satelliet → ruimtestation (groter en complexer, zoals Magneton); geen Zuid-Amerika-link nodig; nu alleen designs.
+- `docs/concept/sprites/satelliet_lijn/SPEC.md` en Gemini-prompt fase 1 r1.
+
+### [v0.0.734] - Satelliet-lijn fase 1 (Spoetnik): frontsprite af
+- Steel/Cosmic-lijn (Jordi, 23 nov): pure machines met één oog; Spoetnik-bolletje → satelliet → ruimtestation; fase 1 wordt onderdeel van fase 2 en 3.
+- Gemini-model r7 gekozen (r1–r7 in `satelliet_lijn/fase1/gemini/`), in het model korte 5e antenne weggehaald en onderste antenne verlengd (`fase1/model/`).
+- Sprite: r1–r3 (1548 px, eindkeuring PASS), daarna op Jordi's verzoek verkleind naar ±985 px (r4, eindkeuring PASS). Bol rond (≤0,71 px), geen onnodig zwart, antennes ≥2 px.
+- `fase1/af/satelliet_fase1.png`; op het overzichtsvel (sectie New).
+
+### [v0.0.735] - Merge naar main
+- Branch `claude/fervent-euler-uckbbn` (ontwerplijst opgeschoond, satelliet-lijn fase 1 af, prompt fase 2) samengevoegd met main; conflicten in CHANGELOG/CLAUDE/TODO/GEMINI/overzichtsvel opgelost (beide kanten behouden, versies hernummerd naar 0.0.732–734).
+
+### [v0.0.736] - Idee Capybarrel
 - `docs/concept/IDEEEN.md`: nieuw kopje "Capybarrel" met Jordi's idee en de eerste voorstellen (alles open).
 
-### [v0.0.679] - Capybarrel: niet Normal/Water
+### [v0.0.737] - Capybarrel: niet Normal/Water
 - `IDEEEN.md`: Jordi wil Normal/Water vermijden (Bibarel, die nog een evolutie krijgt).
 
-### [v0.0.680] - Capybarrel: Normal
+### [v0.0.738] - Capybarrel: Normal
 - `IDEEEN.md`: Capybarrel begint als puur Normal (Jordi); evolutie open.
 
-### [v0.0.681] - Capybarrel: ook evolutie niet Normal/Water
+### [v0.0.739] - Capybarrel: ook evolutie niet Normal/Water
 - `IDEEEN.md`: Jordi's correctie vastgelegd.
 
-### [v0.0.682] - Capybarrel: geen Water
+### [v0.0.740] - Capybarrel: geen Water
 - `IDEEEN.md`: geen Water-type in de Capybarrel-lijn (Jordi).
 
-### [v0.0.683] - Capybarrel: geen water als thema
+### [v0.0.741] - Capybarrel: geen water als thema
 - `IDEEEN.md`: ook geen water-concepten; nieuwe voorstellen (candombe-trommel, buskruitvat, wijnvat).
 
-### [v0.0.684] - Capybarrel: evolutie groeit uit de ton
+### [v0.0.742] - Capybarrel: evolutie groeit uit de ton
 - `IDEEEN.md`: Jordi's idee dat de evolutie uit de ton groeit.
 
-### [v0.0.685] - Capybarrel: nieuwe evolutie-ideeën
+### [v0.0.743] - Capybarrel: nieuwe evolutie-ideeën
 - `IDEEEN.md`: Jordi's citaten (ton gaat kapot, niet overtuigd) en vier nieuwe voorstellen.
 
-### [v0.0.686] - Capybarrel: visuele evolutie-ideeën
+### [v0.0.744] - Capybarrel: visuele evolutie-ideeën
 - `IDEEEN.md`: drie voorstellen die als design werken.
 
-### [v0.0.687] - Capybarrel: evolutie wordt een houten kart
+### [v0.0.745] - Capybarrel: evolutie wordt een houten kart
 - `IDEEEN.md`: Jordi's besluit (het hout evolueert mee tot een houten autotje, lichaamsdelen steken uit).
 
-### [v0.0.688] - Capybarrel-evolutie: puur Normal
+### [v0.0.746] - Capybarrel-evolutie: puur Normal
 - `IDEEEN.md`: de kart-evolutie is puur Normal (Jordi).
 
-### [v0.0.689] - Capybarrel: 2 fases
+### [v0.0.747] - Capybarrel: 2 fases
 - `IDEEEN.md`: lijn van 2 fases (Jordi).
 
-### [v0.0.690] - Capybarrel: Gemini-prompts r1
+### [v0.0.748] - Capybarrel: Gemini-prompts r1
 - `docs/concept/sprites/capybarrel/gemini/PROMPTS.md`: twee varianten (lijf ís de ton / zit in de ton).
 
-### [v0.0.691] - Capybarrel: r1-feedback en prompt r2
+### [v0.0.749] - Capybarrel: r1-feedback en prompt r2
 - `capybarrel/gemini/`: r1 variant B bewaard, Jordi's feedback en prompt r2 (lopend op vier poten, ton om het lijf).
 
-### [v0.0.692] - Capybarrel: prompt r3
+### [v0.0.750] - Capybarrel: prompt r3
 - `capybarrel/gemini/`: r2 bewaard, Jordi's feedback ("meer pokemon stijl, kijk naar andere regional rodents") en prompt r3.
 
-### [v0.0.693] - Capybarrel: r3 op het oog na goed
+### [v0.0.751] - Capybarrel: r3 op het oog na goed
 - `capybarrel/gemini/r3/`: r3 bewaard; Jordi: "ok op oog na vind ik hem prima".
 
-### [v0.0.694] - Capybarrel: prompt r4 (oog)
+### [v0.0.752] - Capybarrel: prompt r4 (oog)
 - `capybarrel/gemini/PROMPTS.md`: Jordi's oogwens en een prompt die alleen het oog verandert.

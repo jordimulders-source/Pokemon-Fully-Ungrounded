@@ -26,5 +26,7 @@ Lijnbesluiten: `docs/concept/IDEEEN.md` → "Capybarrel"; fase 1: `docs/concept/
 
 - 24 nov: "Waarom? je hebt ze nog geen enkele keer goed ingekleurd", "ik kan 20000 ontwerpen tonen maar als jij weigert ze goed in te kleuren", "nu zie ik het, de blokken zijn opnieuw getekend", "en helemaal niet overgenomen vanuit het model" → r17: hele sprite opnieuw volgens de Dundragoon-methode (kale reductie per materiaal uit model_r5, tinten uit de modelhelderheid), toren 100 % uit het model.
 
+- 24 nov: "probeer maar zoveel mogelijk het model over te nemen, vergeet wat we eerder zeiden" → r17 = kale reductie van model_r5 met modeltonen, ook gezicht en toren; eerdere keuzes (Capybarrel-gezicht, morrillo, Bibarel-tanden, kleurverschuivingen) vervallen.
+
 ## Open (niet door Jordi gezegd)
 - Evolutiemethode/level.

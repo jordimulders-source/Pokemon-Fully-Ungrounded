@@ -27,3 +27,4 @@ r8 (24 nov), Jordi: "r8 p2, het lijf is iets te lavender idd, bovenop is het nog
 - r15 (24 nov), Jordi: "de vorm klopt gewoon nog niet"; "ja want de vorm wijkt echt flink af, dat zie je ook wel toch he"; "op meerdere vlakken, het oog stuk, het bovenste bolletje waar de antenne opt komt, de gladde vormen etc". r16 opnieuw vanaf het modelraster.
 - Jordi (24 nov): "ja en de antennes die waren goed (iets dikker dan in het model) en dat is prima, alleen de bol onder de grootste antenne mag meer zoals het model"
 - r16 (24 nov), Jordi: "alleen de paarse lijn boven het hoofd klopt niet helemaal, verder is die een stuk beter. alleen kleurtinten, lijnen, schaduw is nog niet goed"
+- r18 (24 nov), Jordi: "de lijn rechts naast het paneel golft niet genoeg, kijk naar het model"

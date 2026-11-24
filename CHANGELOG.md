@@ -3136,3 +3136,8 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.759] - Capykart: model r5
 - Gemini r5 (hoofd gaat over in de houten auto, twee grijze hoepels, toren van vier blokken met groene driehoek): Jordi "als silhouet prima". Model in `docs/concept/sprites/capykart/referenties/model_r5.png`; volgroeider hoofd volgt in de spritefase.
+
+### [v0.0.760] - Capykart: frontsprite af
+- Capykart (Normal, fase 2 van de Capybarrel-lijn): frontsprite af in `docs/concept/sprites/capykart/af/` (64×64 + 8×). Naar Gemini r5; vacht B (dieper bruin), snuit uit het model, blije oog + wenkbrauw van Capybarrel, morrillo, tanden uit Bibarel, hout en hoepels in Capybarrel-kleuren, blauw blok met blauwgrijze zijkant.
+- Rondes: maker r1–r6 (palet, kopvolume, wielen, kopvarianten V1–V3, tandvarianten T1–T3), keurder PASS (r3b), Dragonfly Cave-eindkeuring (r7, omlijning, silhouet diff 0).
+- Op het overzichtsvel (sectie New). Daarmee is de Capybarrel-lijn af.

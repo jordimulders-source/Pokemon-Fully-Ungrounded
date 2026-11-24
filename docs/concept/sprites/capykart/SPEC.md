@@ -16,5 +16,8 @@ Lijnbesluiten: `docs/concept/IDEEEN.md` → "Capybarrel"; fase 1: `docs/concept/
 
 - 24 nov (op r3b): "nee beige werkt niet, het hoofd is nog wel iets teveel een kopie van capybarrel" → vacht B (dieper); kopvarianten V1–V3 (gezicht meer uit het model) in sprite/r4/.
 
+- 24 nov: "v2 maar de tanden zijn teveel rechthoekjes, mogen ook net wat groter" → tanden uit Bibarel (T1; "t1"); blok: "wat het beste uitkomt" → blauwgrijs.
+- **Frontsprite af (24 nov):** `af/capykart.png` = `eindkeuring/capykart_r7.png` (r6 + Dragonfly Cave-omlijning).
+
 ## Open (niet door Jordi gezegd)
-- Hoe het hoofd volgroeider wordt (Jordi's idee beige + ronder; voorstellen Claude 24 nov: morrillo, grotere tanden, oog met ooglid, kleurvarianten).
+- Evolutiemethode/level.

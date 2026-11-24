@@ -40,6 +40,7 @@
 - Bovenlichaam-patroon en broekkleur van r1 ("niet meer goed in r2").
 - "het moet gewoon een tuinbroekvorm zijn, niet met volledig rechte lijnen, het bovenlichaam moet geen pixelblur zijn, gewoon nette vormen, kijk naar het model en zorg voor genoeg kleurtinten en schaduw" (24 nov).
 - "ja als de tuinbroek niet zoals het model nagemaakt wordt qua vorm is de sprite niet geslaagd" (24 nov): borststuk, zakje en bandjes 1-op-1 uit het model; alleen de broek over de benen is inkleuren.
+- r5: "ik zie al dat die afgekeurd mag worden vanwege dat de tuinbroek nog niet goed is" · "kijk maar beter naar het model" (vergelijking `sprite_r5/tuinbroek_model_vs_r5.png`).
 - Tanden wit; ogen zoals Bibarel; neus rood.
 
 ## Open

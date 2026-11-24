@@ -750,3 +750,5 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - **Besloten (Jordi, 24 nov):** "de dikdik sowieso puur normal". Impala en kudu: Normal, tweede type open.
 - **Jordi (24 nov):** "want we kunnen iets leuks met lichaamspatroon en hoorns doen en die heeft de dikdik nog niet veel". Open: wat er met patroon en hoorns gebeurt.
 - **Jordi (24 nov), op voorstellen met aguayo/charango:** "het hoeft niet allemaal zuid amerikaans te zijn".
+- Claude (24 nov): in de repo bestaan Normal/Ice, Normal/Steel en Normal/Rock nog niet; Normal/Grass is al Deerling/Sawsbuck.
+- **Jordi (24 nov):** "ja steel of fighting en dan idd zwaarden, speren oid, gevechtswapens". Tweede type impala/kudu: Steel of Fighting (open); hoorns als gevechtswapens.

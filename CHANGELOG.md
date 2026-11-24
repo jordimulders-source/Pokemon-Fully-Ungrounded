@@ -3175,3 +3175,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - `docs/concept/IDEEEN.md`: nieuwe sectie "Impala-lijn" met Jordi's idee (impala → kudu of iets soortgelijks); alles open.
 - Impala-lijn: Jordi's voorkeur dikdik → impala → kudu toegevoegd aan `IDEEEN.md`.
 - Impala-lijn: alle drie Normal, dual type kan; dikdik puur Normal (Jordi).
+- Impala-lijn: tweede type Steel of Fighting, hoorns als gevechtswapens (Jordi).

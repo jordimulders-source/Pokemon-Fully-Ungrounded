@@ -3,8 +3,8 @@
 import numpy as np, sys; from PIL import Image, ImageDraw
 SP=sys.argv[1]; UIT=sys.argv[2]; VORIG=sys.argv[3] if len(sys.argv)>3 else None
 spr=Image.open(SP).convert('RGBA')
-M=Image.open('../model.png').convert('RGB')
-X0,Y0=46,143; s=(978-46)/64; TOP=7   # figuur begint op rij 7
+from cfg import MODEL, X0, Y0, s, TOP, oudrij, oudkol
+M=Image.open(MODEL).convert('RGB')
 mm=M.crop((X0,int(round(Y0-TOP*s)),int(round(X0+64*s)),int(round(Y0+(64-TOP)*s)))).resize((64,64),Image.BOX)
 def big(im,f): return im.resize((im.width*f,im.height*f),Image.NEAREST)
 def on(im,bg):
@@ -16,6 +16,7 @@ def mcrop(x0,y0,x1,y1,f):   # model zelf (1024) op dezelfde uitsnede, raster ero
     for j in range(y1-y0+1): d.line([(0,j*f),(c.width,j*f)],fill=(255,0,0))
     return c
 CL=[((12,22,30,40),'oog'),((38,14,58,32),'paneel'),((24,7,50,20),'antennes')]
+CL=[((max(0,oudkol(a)),max(0,oudrij(b-7)+TOP),min(64,oudkol(c)),min(64,oudrij(d-7)+TOP)),n) for (a,b,c,d),n in CL]
 hs=[(y1-y0)*12 for (x0,y0,x1,y1),_ in CL]
 Wd=max(1064 if not VORIG else 1616,max(2*(x1-x0)*12+30 for (x0,y0,x1,y1),_ in CL))
 out=Image.new('RGB',(Wd,530+sum(h+30 for h in hs)+90),(205,205,205)); d=ImageDraw.Draw(out)

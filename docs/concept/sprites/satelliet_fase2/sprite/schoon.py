@@ -11,7 +11,8 @@ prot=(o!=base)               # door oog.py/antennes.py gezet
 import os
 ap=sys.argv[1].replace('.npy','_ant.npy')
 if os.path.exists(ap): prot|=np.load(ap)
-yy,xx=np.mgrid[0:H,0:W]; prot|=np.hypot(xx+.5-20,yy+.5-24)<6.3
+yy,xx=np.mgrid[0:H,0:W]; from cfg import EYE
+prot|=np.hypot(xx+.5-EYE[0],yy+.5-EYE[1])<EYE[2]
 nb4=lambda j,i:[(j+dy,i+dx) for dy,dx in ((-1,0),(1,0),(0,-1),(0,1)) if 0<=j+dy<H and 0<=i+dx<W]
 groei=[];zw=[]
 def randpas(eye_ook):

@@ -3,6 +3,10 @@
 import subprocess, sys, numpy as np
 R=sys.argv[1]
 run=lambda *a: subprocess.run(['python3',*a],check=True)
+import os
+if os.environ.get('SAT_MODEL'):   # r5: ander model -> zones en klassen eerst opnieuw (klassen zonder zone -> zones -> klassen met zone)
+    subprocess.run(['python3','klassen.py'],check=True,env={**os.environ,'SAT_NOZONE':'1'})
+    run('zones.py'); run('klassen.py'); run('klassen2.py')
 run('kaal.py','0.5','0.34',R+'/k')
 run('oog.py',R+'/k.npy',R+'/e.npy')
 run('beschermd.py',R+'/e.npy',R+'/a.npy')

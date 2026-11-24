@@ -10,6 +10,13 @@ S=[(39.76,10.71),(40.72,10.37),(41.68,9.99),(42.64,9.65),(43.61,9.68),(44.57,9.5
 # bollen: middelpunt, straal (incl. omlijning, gemeten), vulkleur, glans. A/B = antennebolletjes, J = kogelgewrichten
 BALLS=[((34.78,1.41),1.33,8,7),((46.56,2.95),1.58,7,6)]
 JOINTS=[((29.84,10.16),2.06,7,6),((38.08,12.53),1.5,7,6)]
+BALL3=[((34.78,1.41),7,6),((46.56,2.95),6,3)]
+# r5: alle metingen exact omrekenen naar het raster van het gekozen model (lijf/antennes staan op dezelfde modelplek)
+from cfg import T, F
+L=[T(*p) for p in L]; R=[T(*p) for p in R]; S=[T(*p) for p in S]
+BALLS=[(T(*c),r*F,a,b) for c,r,a,b in BALLS]; JOINTS=[(T(*c),r*F,a,b) for c,r,a,b in JOINTS]; BALL3=[(T(*c),a,b) for c,a,b in BALL3]
+# antennezone r1-r4: rijen 0-11, kolommen 24-49 (oud raster) -> omgerekend
+AJ0,AJ1=0,int(round(T(0,12)[1])); AI0,AI1=int(round(T(24,0)[0])),int(round(T(50,0)[0]))
 # r4: vloeiende lijn i.p.v. stukjes tussen meetpunten (gelijke trapjes): L en S recht (graad 1), R gebogen (graad 2), kleinste kwadraten
 FIT={}
 def yc(P,x):
@@ -24,8 +31,8 @@ def rods(o,Zs):
     o=o.copy()
     H,W=o.shape
     # 1) wissen: alles van de blokreductie binnen 1,8 px van een staaf/bol (buiten paneel/lijf/gewricht-zone Zs)
-    for j in range(0,12):
-        for i in range(24,50):
+    for j in range(AJ0,AJ1):
+        for i in range(AI0,AI1):
             if Zs[j,i]: continue
             x=i+.5; y=j+.5; d=9
             for P in (L,R,S):
@@ -33,10 +40,12 @@ def rods(o,Zs):
             for (cx,cy),r,_,_ in BALLS: d=min(d,np.hypot(x-cx,y-cy)-r+0.6)
             if d<1.8: o[j,i]=0
     # 2) staven: per kolom 2 px: rij round(yc-1) = kern, rij eronder = omlijning
+    # r5: staaf loopt door tot vlak voor de linkerpixel van zijn bolletje (int(cx)-2), zodat er geen gat tussen staaf en bol valt
+    eind={id(L):int(BALL3[0][0][0])-2,id(R):int(BALL3[1][0][0])-2,id(S):-99}
     for P,core in ((L,KERN['L']),(R,KERN['R']),(S,KERN['S'])):
-        for i in range(int(np.floor(P[0][0])),int(np.ceil(P[-1][0]))):
+        for i in range(int(np.floor(P[0][0])),max(int(np.ceil(P[-1][0])),eind[id(P)]+1)):
             x=i+.5
-            if not (P[0][0]-0.3<=x<=P[-1][0]+0.3): continue
+            if not (P[0][0]-0.3<=x<=P[-1][0]+0.3 or i<=eind[id(P)]): continue
             r=int(round(yc(P,x)-1))
             for jj,v in ((r,core),(r+1,ONDER)):
                 if not Zs[jj,i]: o[jj,i]=v
@@ -44,14 +53,14 @@ def rods(o,Zs):
     #    binnen vulkleur, glans op de binnenpixel linksboven (herbelicht: model heeft de glans rechtsboven, gespiegeld)
     # r4 antennebolletjes: 3x3 zonder hoeken linksboven/rechtsboven/linksonder (rond, 6 px) rond de pixel die het gemeten middelpunt
     # bevat; boven+links = vulkleur (staafkleur), midden = glans, rechts/onder/rechtsonder = schaduwrand 8
-    for (cx,cy),col,gl in (((34.78,1.41),7,6),((46.56,2.95),6,3)):
+    for (cx,cy),col,gl in BALL3:
         ci,cj=int(cx),int(cy)
         for dj,di,v in ((-1,0,col),(0,-1,col),(0,0,gl),(0,1,ONDER),(1,0,ONDER),(1,1,ONDER)):
             o[cj+dj,ci+di]=v
         for dj,di in ((-1,-1),(-1,1),(1,-1)):
             if o[cj+dj,ci+di] in (1,7,8,6): o[cj+dj,ci+di]=0
     for (cx,cy),rad,col,gl in JOINTS:
-        pix=[(j,i) for j in range(0,16) for i in range(24,50) if np.hypot(i+.5-cx,j+.5-cy)<=rad+0.25]
+        pix=[(j,i) for j in range(0,H) for i in range(0,W) if np.hypot(i+.5-cx,j+.5-cy)<=rad+0.25]
         S_=set(pix)
         binnen=[p for p in pix if all(q in S_ for q in ((p[0]-1,p[1]),(p[0]+1,p[1]),(p[0],p[1]-1),(p[0],p[1]+1)))]
         for j,i in pix:

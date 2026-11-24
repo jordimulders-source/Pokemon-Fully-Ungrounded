@@ -16,6 +16,7 @@ oog=(xx-345)**2+(yy-492)**2<=112**2
 Z[(Z==1)&oog]=0
 Image.fromarray(Z).save('zones.png')  # zones.py gebruikt de eerste klassen.npy (klassen.py zonder zone-uitsluiting); bewaard als png
 from PIL import Image
-a=np.asarray(Image.open('../model.png').convert('RGB')).astype(float)
+from cfg import MODEL
+a=np.asarray(Image.open(MODEL).convert('RGB')).astype(float)
 a[Z==1]=a[Z==1]*0.6+np.array([255,0,0])*0.4; a[Z==2]=a[Z==2]*0.6+np.array([0,200,0])*0.4
 Image.fromarray(a.astype('uint8')).resize((512,512)).save('zones_check.png')

@@ -2,8 +2,8 @@
 # Gebruik: python3 raster.py SPRITE.npy i0 i1 j0 j1 UIT   (i = kolom, j = rij in het gereduceerde 64x50 raster)
 import numpy as np, sys; from PIL import Image, ImageDraw
 o=np.load(sys.argv[1]); i0,i1,j0,j1=map(int,sys.argv[2:6]); UIT=sys.argv[6]
-PAL=np.load('pal.npy'); M=Image.open('../model.png').convert('RGB')
-X0,Y0=46,143; s=(978-46)/64; Z=24
+PAL=np.load('pal.npy'); from cfg import MODEL, X0, Y0, s
+M=Image.open(MODEL).convert('RGB'); Z=24
 w,h=i1-i0,j1-j0
 crop=M.crop((int(X0+i0*s),int(Y0+j0*s),int(X0+i1*s),int(Y0+j1*s))).resize((w*Z,h*Z),Image.LANCZOS)
 d=ImageDraw.Draw(crop)

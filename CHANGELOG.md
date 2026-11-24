@@ -3117,3 +3117,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Capybarrel (Normal, fase 1 van 2): frontsprite af in `docs/concept/sprites/capybarrel/af/` (64×64 + 8×). Naar Gemini r3 (capibara op vier poten met een liggende houten ton om het lijf), blije oog overgenomen uit Flareon met zwart rondje (Jordi: "doe maar het blije oog"), vacht r6b (Jordi: "akkoord ... r6b").
 - Rondes: maker r1–r6 (oogstudie, keurderreparaties, hoepels 3 px), keurder PASS (r5), Dragonfly Cave-eindkeuring (r6: belijning, schaduw poten/romp, sprite lichter); vachtkleur r6b door Claude bruiner gemaakt (r6 werd zalmroze).
 - Op het overzichtsvel (sectie New). Fase 2 (houten kart, puur Normal) nog te ontwerpen.
+
+### [v0.0.754] - Capykart: start fase 2 Capybarrel-lijn
+- Fase 2 heet **Capykart** (Jordi): hoofd iets volgroeider, steekt uit een houten speelgoedwagentje, achterop drie of vier gestapelde houten blokken; puur Normal.
+- Nieuwe map `docs/concept/sprites/capykart/` met `SPEC.md` en Gemini-prompt r1 (`gemini/PROMPTS.md`).

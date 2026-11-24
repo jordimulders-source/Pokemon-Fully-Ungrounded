@@ -20,3 +20,4 @@ Kandidaat r7 (24 nov), Jordi:
 
 r8 (24 nov), Jordi: "r8 p2, het lijf is iets te lavender idd, bovenop is het nog steeds een slordig geheel, waar de bol en het paneel links samenkomen is slordig tov het model, afgekapt, mijn vragen van de vorige ronde staan ook nog steeds"
 - Jordi (24 nov): "het is helemaal niet erg als het hoofd de linkerantenne een stukje overlapt he"
+- r10 (24 nov), Jordi: "hij heeft nu een zeer aanwezig paars stuk wat ik in het model niet kan plaatsen bovenop het hoofd". (In het model: een dunne lichtpaarse rand op de bovenrand van het lijf tussen paneelhoek en gewricht; in r10 een dikke band.) Koepel/oog: "wat betreft oog en lens, doe maar varianten".

@@ -33,9 +33,10 @@
 
 ## Checklist (alle kritiek van Jordi, elke ronde toetsen)
 - "geen rechte lijnen" (tuinbroekgrenzen, borststuk, broekspijpen volgen de ronding).
-- "Het moeten geen effen vlakken zijn" (crème en bruin met vorm en schaduw).
+- "Het moeten geen effen vlakken zijn" (gezegd bij de r2-kraag).
 - "A maar moet netter" (tuinbroek tot de enkels).
-- Kraag: "ja kraag van bibarel overnemen"; geen "blurry mess".
+- Kraag: "kraag van r1 was prima" (na de Bibarel-kraagproeven; eerder "ja kraag van bibarel overnemen" en r2 "blurry mess").
+- Broek: "broek weer precies hetzelfde fout" (r3: extra modelschaduw, zoals r2) → tinten en verdeling van r1, alleen netter en zonder rechte lijnen.
 - Bovenlichaam-patroon en broekkleur van r1 ("niet meer goed in r2").
 - Tanden wit; ogen zoals Bibarel; neus rood.
 

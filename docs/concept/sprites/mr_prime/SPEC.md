@@ -79,3 +79,4 @@ Middenfase en alle rondes daarvan: `docs/concept/sprites/mrmime_regional/SPEC.md
 - Jordi: "en het hoofd is weer rond"; "en wat niet kan is dat het linkeroog niet in perspectief is"; "waardoor die heel clownesk eruit ziet". → r12: verre oog ±½–⅔ van het nabije, verhouding gemeten aan Mr. Mime/Rime. Kop: vraag aan Jordi.
 - Jordi: "hoofd is weer niet rond bedoel ik" → r12: kop aan beide kanten rond (Mr. Mime-boog rechts zoals r8, gespiegeld/Rime links), geen rechte zijkanten > 3 px.
 - Sprite r12 (`sprite_r12/ogen_vel.png`): O1–O4 zonder monocle, verre oog ±0,6 van het nabije (gemeten: Rime 0,67, Hitmonchan 0,6; Mr. Mime 1,0 met hoogteverschil), kop aan beide kanten rond (max 3 px recht). Maker koos O4. Naar Jordi ter keuze.
+- Jordi bij r12: "stuur o3 maar naar de eindkeuring, kijk streng naar kleur, schaduw, tinten en lijnen, dragonflycave, of die goed een evolutie is van een mr mime form en specifiek de onze". Eindkeuring op `sprite_r12/oog_O3.png`.

@@ -27,6 +27,8 @@
 - Jordi: "het is meer een pet dan een helm, maar dat kunnen we in de afwerking fixen".
 - Jordi: "akkoord" (r10 bevroren: `referenties/gemini_gekozen_r10.png`; geen prompt meer, staart als los onderdeel 8 natieve px achter het lijf geschoven: `model/r10_k8.png` (script `model/compact.py`), figuur 90×81 → factor 0,71; vergelijking `model/vergelijk_compact.png`). Jordi: "pylonstaart achter het lijf is geen enkel issue" → Claude koos eerst k12 zonder het te tonen; Jordi: "o dit is wel heel veel" · "meer dan je liet zien" · "de staart erachter" · "8 px naar binnen doen" → **werkmodel `model/r10_k8.png`** (90×81, factor 0,71).
 
+- Frontsprite r1 (`sprite_r1/`, maker): tuinbroek A (tot de enkels) / B (halve dij); Jordi: "A maar moet netter". Vachtkraag (valt uiteen bij 0,71): vraag of de Bibarel-sprite-rand mag, nog geen antwoord.
+
 ## Open
 - Welke suggesties (Claude, 23 nov): 1 oranje beiteltanden, 2 staart als troffel, 3 schepklauwen, 4 sjouwt tak/stam of modder tegen de borst, 5 knagend aan een stam, 6 waarschuwingskleuren (geel-zwarte staart), 7 helm van modderkorst/twijgjes.
 - Spritefilter (Claude, 23 nov): over 1 (zonder slijtage), 2 (alleen de vorm), 4 (alleen tak/stam), 6 (alleen 1–2 brede banden); af 3 (klauwen 1–2 px), 5 (snuit achter de stam, spaanders = details), 7 (twijgjes te klein, korst leest als muts), modder tegen de borst (bruin op bruin).

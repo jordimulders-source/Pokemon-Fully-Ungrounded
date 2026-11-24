@@ -82,7 +82,7 @@ AVOID: mine cart, wagon, open box or tub the capybara sits in, paws resting on t
 ```
 
 ## Ronde 3 (24 nov)
-- `r3/capykart_r3.png`: één toren van 3 blokken (blauw, rood, geel), hoofd uit een open zitplaats. Jordi: "ja het enige wat ik nog mis is een driehoekig toyblock op de bovenste"; "en de blauwe mag dezelfde vorm zijn als de andere twee".
+- `r3/capykart_r3.png`: één toren van 3 blokken (blauw, rood, geel), hoofd uit een open zitplaats. Jordi: "ja het enige wat ik nog mis is een driehoekig toyblock op de bovenste"; "en de blauwe mag dezelfde vorm zijn als de andere twee"; "een groene driehoek erbovenop".
 
 ## r4 (bijsturen in hetzelfde gesprek; "keep everything, change ONLY" werkte bij Alphyena)
 ```
@@ -90,7 +90,7 @@ Keep everything exactly the same: the capybara head, the eye, the wooden toy car
 
 Change ONLY these two things:
 1. The bottom blue block gets exactly the same cube shape and size as the red and yellow blocks above it.
-2. Add one triangular wooden toy block (a triangular prism, like a roof piece from a wooden block set) on top of the yellow top block, so the tower has four blocks.
+2. Add one green triangular wooden toy block (a triangular prism, like a roof piece from a wooden block set) on top of the yellow top block, so the tower has four blocks.
 
 Style: official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 colors, dark outline, white background.
 ```

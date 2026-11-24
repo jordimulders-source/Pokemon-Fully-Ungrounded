@@ -3129,4 +3129,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - r2: houten speelgoedauto als lijf ("beter"); blokken stonden nog in twee stapels. Prompts r3A (derby car) en r3B (open houten autootje) met één blokkentoren; Jordi's foto's in `docs/concept/sprites/capykart/referenties/`.
 
 ### [v0.0.757] - Capykart: r3 en bijstuurprompt r4
-- r3 goedgekeurd op één punt na: een driehoekig blok bovenop de toren en het blauwe blok dezelfde vorm als de andere twee (Jordi). Bijstuurprompt r4 in `docs/concept/sprites/capykart/gemini/PROMPTS.md`.
+- r3 goedgekeurd op één punt na: een groen driehoekig blok bovenop de toren en het blauwe blok dezelfde vorm als de andere twee (Jordi). Bijstuurprompt r4 in `docs/concept/sprites/capykart/gemini/PROMPTS.md`.

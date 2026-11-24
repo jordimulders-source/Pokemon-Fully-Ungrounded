@@ -14,6 +14,11 @@ ond = [(x, y) for x in range(64) for y in range(64)
        if vp[x, y] != np_[x, y] and vp[x, y] in (8, 9, 10, 11, 12, 13, 14, 15)]
 diff = [(x, y) for x in range(64) for y in range(64) if vp[x, y] != np_[x, y]]
 print('alfa-diff', alfa, '| gezicht-diff', gez, '| palet gelijk', pal, '| onderdelen (8-F) gewijzigd', len(ond), '| totaal', len(diff))
+# variant B: alleen paletkleur 5 donkerder; index-diff t.o.v. na.png moet 0 zijn
+b = Image.open(D + 'na_variant_palet5.png'); bp = b.load()
+print('variant B index-diff t.o.v. na', sum(bp[x, y] != np_[x, y] for x in range(64) for y in range(64)),
+      '| B andere paletkleuren', [i for i in range(16) if b.getpalette()[3*i:3*i+3] != n.getpalette()[3*i:3*i+3]],
+      '| index 5 in masker/ogen/neus (x9-25, y8-17)', sum(bp[x, y] == 5 for x in range(9, 26) for y in range(8, 18)))
 # vel
 refs = ['linoone', 'zigzagoon', 'ursaring', 'kangaskhan']
 def rgba(im):
@@ -23,7 +28,7 @@ def rgba(im):
             i = px[x, y]
             if i: oo[x, y] = tuple(p[3*i:3*i+3])
     return o
-ims = [rgba(v), rgba(n)] + [rgba(Image.open(f'graphics/pokemon/{s}/anim_front_gba.png').crop((0, 0, 64, 64))) for s in refs]
+ims = [rgba(v), rgba(n), rgba(Image.open(D + 'na_variant_palet5.png'))] + [rgba(Image.open(f'graphics/pokemon/{s}/anim_front_gba.png').crop((0, 0, 64, 64))) for s in refs]
 k = 6; g = 8
 W = len(ims) * (64*k + g) + g
 vel = Image.new('RGB', (W, 64*k + 64 + 3*g), (232, 232, 224))

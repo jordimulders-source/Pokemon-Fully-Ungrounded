@@ -1,0 +1,310 @@
+[
+[
+"r3_lijn",
+25,
+48,
+"0",
+"keurder 1: buitenlijn voorwiel dicht (beeld 26,48)"
+],
+[
+"r3_kop",
+30,
+14,
+"A",
+"keurder 2: achterhoofd licht->midden (boog)"
+],
+[
+"r3_kop",
+31,
+14,
+"A",
+"keurder 2: achterhoofd licht->midden (boog)"
+],
+[
+"r3_kop",
+32,
+14,
+"A",
+"keurder 2: achterhoofd licht->midden (boog)"
+],
+[
+"r3_kop",
+33,
+14,
+"A",
+"keurder 2: achterhoofd licht->midden (boog)"
+],
+[
+"r3_kop",
+34,
+14,
+"A",
+"keurder 2: achterhoofd licht->midden (boog)"
+],
+[
+"r3_kop",
+31,
+15,
+"A",
+"keurder 2: achterhoofd licht->midden (boog)"
+],
+[
+"r3_kop",
+32,
+15,
+"A",
+"keurder 2: achterhoofd licht->midden (boog)"
+],
+[
+"r3_kop",
+33,
+15,
+"A",
+"keurder 2: achterhoofd licht->midden (boog)"
+],
+[
+"r3_kop",
+31,
+16,
+"A",
+"keurder 2: achterhoofd licht->midden (boog)"
+],
+[
+"r3_kop",
+32,
+16,
+"A",
+"keurder 2: achterhoofd licht->midden (boog)"
+],
+[
+"r3_kop",
+33,
+16,
+"A",
+"keurder 2: achterhoofd licht->midden (boog)"
+],
+[
+"r3_kop",
+34,
+16,
+"A",
+"keurder 2: achterhoofd licht->midden (boog)"
+],
+[
+"r3_kop",
+32,
+17,
+"A",
+"keurder 2: achterhoofd licht->midden (boog)"
+],
+[
+"r3_kop",
+33,
+17,
+"A",
+"keurder 2: achterhoofd licht->midden (boog)"
+],
+[
+"r3_kop",
+34,
+17,
+"A",
+"keurder 2: achterhoofd licht->midden (boog)"
+],
+[
+"r3_kop",
+32,
+18,
+"A",
+"keurder 2: achterhoofd licht->midden (boog)"
+],
+[
+"r3_kop",
+33,
+18,
+"A",
+"keurder 2: achterhoofd licht->midden (boog)"
+],
+[
+"r3_kop",
+34,
+18,
+"A",
+"keurder 2: achterhoofd licht->midden (boog)"
+],
+[
+"r3_kop",
+35,
+18,
+"A",
+"keurder 2: achterhoofd licht->midden (boog)"
+],
+[
+"r3_kop",
+36,
+18,
+"A",
+"keurder 2: achterhoofd licht->midden (boog)"
+],
+[
+"r3_kop",
+33,
+19,
+"A",
+"keurder 2: achterhoofd licht->midden (boog)"
+],
+[
+"r3_kop",
+34,
+19,
+"A",
+"keurder 2: achterhoofd licht->midden (boog)"
+],
+[
+"r3_kop",
+35,
+19,
+"A",
+"keurder 2: achterhoofd licht->midden (boog)"
+],
+[
+"r3_kop",
+36,
+19,
+"A",
+"keurder 2: achterhoofd licht->midden (boog)"
+],
+[
+"r3_kop",
+33,
+20,
+"A",
+"keurder 2: achterhoofd licht->midden (boog)"
+],
+[
+"r3_kop",
+34,
+20,
+"A",
+"keurder 2: achterhoofd licht->midden (boog)"
+],
+[
+"r3_kop",
+35,
+20,
+"A",
+"keurder 2: achterhoofd licht->midden (boog)"
+],
+[
+"r3_kop",
+36,
+20,
+"A",
+"keurder 2: achterhoofd licht->midden (boog)"
+],
+[
+"r3_kop",
+34,
+21,
+"A",
+"keurder 2: achterhoofd licht->midden (boog)"
+],
+[
+"r3_kop",
+35,
+21,
+"A",
+"keurder 2: achterhoofd licht->midden (boog)"
+],
+[
+"r3_kop",
+36,
+21,
+"A",
+"keurder 2: achterhoofd licht->midden (boog)"
+],
+[
+"r3_kop",
+35,
+22,
+"A",
+"keurder 2: achterhoofd licht->midden (boog)"
+],
+[
+"r3_kop",
+36,
+22,
+"A",
+"keurder 2: achterhoofd licht->midden (boog)"
+],
+[
+"r3_lijn",
+20,
+15,
+"D",
+"keurder 4: bovenrand kop zwart->D"
+],
+[
+"r3_lijn",
+21,
+14,
+"D",
+"keurder 4: bovenrand kop zwart->D"
+],
+[
+"r3_lijn",
+22,
+14,
+"D",
+"keurder 4: bovenrand kop zwart->D"
+],
+[
+"r3_wiel",
+53,
+46,
+"D",
+"keurder 5: wielring uit model (donkerfractie >=0.4)"
+],
+[
+"r3_wiel",
+53,
+47,
+"D",
+"keurder 5: wielring uit model (donkerfractie >=0.4)"
+],
+[
+"r3_wiel",
+53,
+48,
+"D",
+"keurder 5: wielring uit model (donkerfractie >=0.4)"
+],
+[
+"r3_wiel",
+53,
+49,
+"D",
+"keurder 5: wielring uit model (donkerfractie >=0.4)"
+],
+[
+"r3_wiel",
+53,
+51,
+"D",
+"keurder 5: wielring uit model (donkerfractie >=0.4)"
+],
+[
+"r3_hout",
+45,
+41,
+"7",
+"keurder 6: naar middentint hout"
+],
+[
+"r3_hout",
+46,
+41,
+"7",
+"keurder 6: naar middentint hout"
+]
+]

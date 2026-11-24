@@ -2,7 +2,7 @@
 from PIL import Image
 import os
 D = os.path.dirname(os.path.abspath(__file__))
-a = Image.open(os.path.join(D,'../../../gnomad/af/gnomad.png')); b = Image.open(os.path.join(D,'na.png'))
+a = Image.open(os.path.join(D,'../../../gnomad/af/gnomad.png')); b = Image.open(os.path.join(D,os.environ.get('NA','na.png')))
 assert a.size == b.size == (64,64) and b.mode == 'P'
 ap, bp = a.load(), b.load()
 ar, br = a.convert('RGB').load(), b.convert('RGB').load()
@@ -33,4 +33,4 @@ for y in range(64):
         if ap[x,y]: mp[x,y] = (200,200,200)
         if (x,y) in face: mp[x,y] = (60,160,60)
         if ap[x,y] != bp[x,y]: mp[x,y] = (220,30,30)
-m.resize((384,384),0).save(os.path.join(D,'diffmasker.png'))
+m.resize((384,384),0).save(os.path.join(D,os.environ.get('NA','na.png').replace('na','diffmasker')))

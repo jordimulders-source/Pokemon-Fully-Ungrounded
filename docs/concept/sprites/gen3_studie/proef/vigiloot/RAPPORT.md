@@ -37,3 +37,44 @@ variant B index-diff t.o.v. na 0 | B andere paletkleuren [5] | index 5 in masker
 - Ik heb geen plooilijntjes van 1 px toegevoegd zoals Kangaskhan die heeft (bijvoorbeeld tussen de bovenarm en de borst). Die zouden een nieuwe vorm suggereren die niet in het model staat. Daardoor blijft de borst één groot vlak zonder vormaanduiding.
 - De lichtzone van de nabije dij ligt als een band langs de linker buitenlijn. Dat volgt de cilindervorm, maar het grenst aan banding.
 - De verre heup is maar licht aangepast. De wig van 7 ligt nog vlak naast de plooilijn, dus ook daar is er wat randlicht.
+
+---
+# Ronde 2: variant C (`na_C.png`, vel `voor_na_C.png`)
+Opdracht van de coördinator: til de vachtramp op naar de afstanden van Ursaring (grijsbruin houden), zet 4 en 5 verder uit elkaar, maak de grondtint de grootste massa met licht als zone, haal de 3-in-7-in-6-kern weg en leg het licht op de dij op de bolling. A en B zijn blijven staan. C bouwt voort op A (`maak_C.py`), het bewijs staat in `bewijs_C.py` en het vel toont voor | A | C | Ursaring | Linoone op 6× en 1×.
+
+## Palet (helderheid voor → C)
+| Index | Voor | C | Helderheid |
+|---|---|---|---|
+| 4 (lijn/plooi) | (68,55,48) | (58,46,40) | 58 → 49 |
+| 5 (schaduw) | (100,82,68) | (110,92,78) | 85 → 96 |
+| 6 (grond) | (130,110,90) | (146,126,106) | 113 → 130 |
+| 7 (licht) | (162,142,116) | (180,160,134) | 145 → 163 |
+| 3 (glans/draagband) | (198,180,152) | ongewijzigd | 182 |
+
+De stappen zijn nu 47 / 34 / 33 / 19 (Ursaring: 33 / 35 / 32). De kleur blijft grijsbruin (R−G ≈ G−B ≈ 20). Masker en ogen gebruiken 1, 2, 4, E en F; daarvan is alleen 4 veranderd, en die is donkerder geworden. Kleur 3 heb ik niet lichter gemaakt, omdat hij dan samenvalt met crème 9 (214,198,166).
+
+## Pixels (C t.o.v. A: 39; C t.o.v. origineel: 111)
+| Zone | px t.o.v. A | Wat |
+|---|---|---|
+| Schouder/borst | 11 | Eén lichtzone 7 (rij 21–27, wig van linksboven). De glanskern 3 is weg, en de lichtzone loopt door op de bovenborst. |
+| Nabije dij | 11 | Het licht 7 ligt als wig op de bolling bovenaan (rij 39–43) en loopt niet meer als band langs de rand naar beneden. Daaronder grond 6 en een sikkel 5 onder en tegen de plooi. |
+| Verre dij | 17 | De schaduwsikkel 5 aan de rechterkant is 2 px smaller geworden (rij 36–44), dus de grondtint 6 is groter. |
+
+Verdeling op het lijf (rij 20–51), voor → C: licht 7 50 → 88, grond 6 169 → 176, schaduw 5 204 → 162. De grondtint is nu de grootste massa en de schaduw niet meer.
+
+## Bewijs (uitvoer `bewijs_C.py`)
+```
+mode/size/kleuren P (64, 64) 16
+alfa-diff 0
+gezicht index-diff (kop rij 0-19, x 9-33) 0
+onderdelen (index 8-F) gewijzigd 0
+andere paletkleuren [4, 5, 6, 7]  (zie tabel)
+pixeldiff C t.o.v. origineel 111 | t.o.v. A 39
+```
+
+## Wat ik aan C zelf nog zwak vind
+- De lichtzone op de borst is een grote, vrij rechte wig. Ursaring breekt zijn licht op door spierplooien, en hier zijn geen plooilijntjes toegevoegd, omdat die niet in het model staan.
+- De stap 7 → 3 is maar 19. De resten van 3 (voorhoofd, draagband) springen daardoor minder uit dan eerst.
+- Door het nieuwe palet zijn ook de kop (voorhoofd, oren, glimpje op de neus) en de draagband lichter geworden. De indexen daar zijn diff 0, maar de kleur is wel anders.
+- Er zit nog veel 5 in het onderbeen en onder de buidel (slagschaduw). Dat is bewust gebleven, maar het maakt de onderkant zwaar.
+- De lichte wig op de verre heup ligt nog naast de plooilijn (zelfde punt als bij A).

@@ -53,3 +53,4 @@ Rondes in `sprite/rN/`.
 - Jordi: "dus puur kleurtinten, schaduw, lijnen". Kleurronde k4 (verse maker).
 - k4 (zijvlakken per vlak + stenen) → keurder FAIL (mozaïek, zijvlak en bergwand gelijk); k5: drie toonzones uit het model (lichte bovenranden, middengrijze zijvlakken met grote stenen, gladde donkere bergwand), gevelplaten met lichte nok → keurder PASS; k6 = k5 + voegen in f-vlakken in e (26 px, optionele keurderreparatie, door Claude). `af/tempel.png` = `sprite/k6/`.
 - Jordi over k6 (24 nov): "de lijnen zijn een goede toevoeging, maar zijn de vakjes nog steeds niet te effen?" → Claude: ja, elke steen is één vlakke tint; kleurronde k7: volume per steen binnen het toonbereik van het vlak.
+- k7–k8 (afschuining 2 px per steen, vlekjes uit het model, banding onderblok weg) → keurder PASS op k8 ("k8 kan naar Jordi"). `af/tempel.png` = `sprite/k8/`.

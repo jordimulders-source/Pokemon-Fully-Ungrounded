@@ -3054,3 +3054,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.733] - Levende Inca-tempel: zijvlakken en perspectief
 - Op Jordi's omcirkelde zones ("teveel effen vlakken ... lijkt gewoon willekeurig gedaan ... daardoor leest het perspectief niet goed"; "dus puur kleurtinten, schaduw, lijnen"): kleurrondes k4–k6. Rechts nu de drie toonzones uit het model (lichte bovenranden, middengrijze zijvlakken met grote stenen, gladde donkere bergwand), gevelplaten met lichte nok, streep naast de deur als doorlopende steenlaag. Keurder PASS (k5); vorm, ogen, deur, mos en linkerhelft diff 0.
 - `tempel/af/tempel.png` vervangen; overzichtsvel bijgewerkt; les in SPRITE_KERN.
+
+### [v0.0.734] - Levende Inca-tempel: volume per steen
+- Op Jordi's vraag "zijn de vakjes nog steeds niet te effen?": kleurrondes k7–k8, elke steen licht linksboven en sikkel rechtsonder (2 px bij grote stenen) binnen het toonbereik van zijn vlak, vlekjes uit het model, banding in het onderblok weg. Toonzones, lijnen, mos, ogen en deur diff 0. Keurder PASS.
+- `tempel/af/tempel.png` = k8; overzichtsvel bijgewerkt.

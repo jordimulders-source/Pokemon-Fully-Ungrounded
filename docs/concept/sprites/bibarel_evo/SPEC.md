@@ -38,6 +38,7 @@
 - Kraag: "kraag van r1 was prima" (na de Bibarel-kraagproeven; eerder "ja kraag van bibarel overnemen" en r2 "blurry mess").
 - Broek: "broek weer precies hetzelfde fout" (r3: extra modelschaduw, zoals r2) → tinten en verdeling van r1, alleen netter en zonder rechte lijnen.
 - Bovenlichaam-patroon en broekkleur van r1 ("niet meer goed in r2").
+- "het moet gewoon een tuinbroekvorm zijn, niet met volledig rechte lijnen, het bovenlichaam moet geen pixelblur zijn, gewoon nette vormen, kijk naar het model en zorg voor genoeg kleurtinten en schaduw" (24 nov).
 - Tanden wit; ogen zoals Bibarel; neus rood.
 
 ## Open

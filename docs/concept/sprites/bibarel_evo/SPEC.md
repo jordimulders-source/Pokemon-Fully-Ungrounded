@@ -60,6 +60,8 @@
 
 - r15, Jordi: "ja de hele sprite moet goed gekeurd woren, hij moet consistent zijn met andere sprites".
 
+- r16 (keuring PASS op getallen), Jordi: "ik kan me er toch niet aan ontlenen dat het lijnen en kleurengebruik anders is dan bij andere sprites" · "gen 1 t/m 3 he" (alleen Gen 1–3 als maatstaf; Bibarel zelf is Gen 4).
+
 ## Open
 - Welke suggesties (Claude, 23 nov): 1 oranje beiteltanden, 2 staart als troffel, 3 schepklauwen, 4 sjouwt tak/stam of modder tegen de borst, 5 knagend aan een stam, 6 waarschuwingskleuren (geel-zwarte staart), 7 helm van modderkorst/twijgjes.
 - Spritefilter (Claude, 23 nov): over 1 (zonder slijtage), 2 (alleen de vorm), 4 (alleen tak/stam), 6 (alleen 1–2 brede banden); af 3 (klauwen 1–2 px), 5 (snuit achter de stam, spaanders = details), 7 (twijgjes te klein, korst leest als muts), modder tegen de borst (bruin op bruin).

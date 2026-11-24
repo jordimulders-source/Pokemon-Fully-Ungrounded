@@ -54,6 +54,8 @@ SECTIES=[
 ("gnometrotter_rock/af/gnometrotter_rock.png",'"Gnometrotter" (Rock)',"fairy/rock"),
 ("gnometrotter_ice/af/gnometrotter_ice.png",'"Gnometrotter" (Ice)',"fairy/ice"),
 ("gnometrotter_grass/af/gnometrotter_grass.png",'"Gnometrotter" (Grass)',"fairy/grass"),
+("satelliet_lijn/fase1/af/satelliet_fase1.png",'Satelliet fase 1 (Spoetnik)',"steel/cosmic"),
+("capybarrel/af/capybarrel.png",'"Capybarrel"',"normal"),
 ("tempel/af/tempel.png",'Levende tempel',"ghost/rock"),
 ]),
 ("Evolutions of existing Pokémon",[
@@ -90,6 +92,7 @@ SECTIES=[
 ("oricorio_dansen/cumbia/af/cumbia.png",'Oricorio (cumbia)',"water/flying"),
 ("oricorio_dansen/tango/af/tango.png",'Oricorio (tango)',"dark/flying"),
 ("oricorio_dansen/samba/af/samba.png",'Oricorio (samba)',"grass/flying"),
+("pincurchin_regional/af/pincurchin_regional.png",'Pincurchin (regional)',"poison/rock"),
 ("dj_rotom/af/dj_rotom.png",'"DJ Rotom"',"electric/steel"),
 ]),
 ]

@@ -1,0 +1,162 @@
+mond (3,17) 9->W  tanden naar model
+mond (1,18) 0->.  tanden naar model
+mond (2,18) 3->0  tanden naar model
+mond (3,18) D->W  tanden naar model
+mond (4,18) .->D  tanden naar model
+mond (2,19) 0->.  tanden naar model
+mond (4,19) .->D  tanden naar model
+mond (5,19) 9->0  tanden naar model
+mond (3,20) 0->.  tanden naar model
+neus (2,13) 3->n  philtrumlijn model
+neus (2,14) 3->n  philtrumlijn model
+neus (2,15) 3->n  philtrumlijn model
+neus (2,16) 3->n  philtrumlijn model
+oog (13,7) 0->A  modeloog weg
+oog (14,7) 0->A  modeloog weg
+oog (15,7) 0->A  modeloog weg
+oog (16,7) 0->A  modeloog weg
+oog (12,8) 0->A  modeloog weg
+oog (13,8) .->A  modeloog weg
+oog (14,8) 0->A  modeloog weg
+oog (15,8) D->A  modeloog weg
+oog (16,8) D->A  modeloog weg
+oog (12,9) 0->A  modeloog weg
+oog (13,9) 0->A  modeloog weg
+oog (14,9) 0->A  modeloog weg
+oog (15,9) .->A  modeloog weg
+oog (16,9) 5->A  modeloog weg
+oog (13,10) 0->A  modeloog weg
+oog (14,10) 0->A  modeloog weg
+poten (21,32) s->A  tenen naar model
+poten (22,32) C->A  tenen naar model
+poten (23,32) A->s  tenen naar model
+poten (25,33) .->0  tenen naar model
+poten (39,31) s->A  tenen/onderlijn naar model
+poten (41,31) s->A  tenen/onderlijn naar model
+poten (42,32) 0->A  tenen/onderlijn naar model
+poten (43,32) .->0  tenen/onderlijn naar model
+poten (39,33) .->0  tenen/onderlijn naar model
+poten (40,33) .->0  tenen/onderlijn naar model
+poten (41,33) .->0  tenen/onderlijn naar model
+poten (42,33) .->0  tenen/onderlijn naar model
+poten (12,29) s->5  verre voorpoot: teen uit model (zwartgelopen in reductie)
+poten (15,29) s->5  verre voorpoot: teen uit model
+neus (1,10) 3->9  Gen 3-volume: hooglicht linksboven (model heeft lichte vlek rij 9-10)
+neus (2,10) 3->9  Gen 3-volume: hooglicht linksboven
+neus (4,16) 3->n  Gen 3-volume: sikkelschaduw onder
+neus (5,16) 3->n  sikkelschaduw
+neus (6,16) 3->n  sikkelschaduw
+neus (7,16) 3->n  sikkelschaduw
+neus (7,15) 3->n  sikkelschaduw
+neus (7,14) 3->n  sikkelschaduw
+neus (5,17) 3->n  sikkelschaduw
+neus (6,17) 3->n  sikkelschaduw
+neus (7,17) 3->n  sikkelschaduw
+oog (12,7) A->s  oog uit camerupt (x18-22,y39-43)
+oog (14,7) A->s  oog uit camerupt (x18-22,y39-43)
+oog (15,7) A->s  oog uit camerupt (x18-22,y39-43)
+oog (16,7) A->D  oog uit camerupt (x18-22,y39-43)
+oog (12,8) A->s  oog uit camerupt (x18-22,y39-43)
+oog (13,8) A->s  oog uit camerupt (x18-22,y39-43)
+oog (14,8) A->0  oog uit camerupt (x18-22,y39-43)
+oog (15,8) A->D  oog uit camerupt (x18-22,y39-43)
+oog (16,8) A->D  oog uit camerupt (x18-22,y39-43)
+oog (12,9) A->s  oog uit camerupt (x18-22,y39-43)
+oog (13,9) A->W  oog uit camerupt (x18-22,y39-43)
+oog (14,9) A->W  oog uit camerupt (x18-22,y39-43)
+oog (15,9) A->W  oog uit camerupt (x18-22,y39-43)
+oog (16,9) A->D  oog uit camerupt (x18-22,y39-43)
+oog (13,10) A->s  oog uit camerupt (x18-22,y39-43)
+oog (14,10) A->W  oog uit camerupt (x18-22,y39-43)
+oog (15,10) A->W  oog uit camerupt (x18-22,y39-43)
+oog (16,10) A->s  oog uit camerupt (x18-22,y39-43)
+oog (14,11) A->s  oog uit camerupt (x18-22,y39-43)
+oog (15,11) A->s  oog uit camerupt (x18-22,y39-43)
+ontkorrel (17,2) C->A  tintvlakje <3 px naar buurtint
+ontkorrel (25,5) 7->B  tintvlakje <3 px naar buurtint
+ontkorrel (3,7) A->C  tintvlakje <3 px naar buurtint
+ontkorrel (21,7) 7->4  tintvlakje <3 px naar buurtint
+ontkorrel (22,7) 4->B  tintvlakje <3 px naar buurtint
+ontkorrel (23,7) 4->B  tintvlakje <3 px naar buurtint
+ontkorrel (31,7) 7->B  tintvlakje <3 px naar buurtint
+ontkorrel (34,7) 3->9  tintvlakje <3 px naar buurtint
+ontkorrel (34,8) 3->9  tintvlakje <3 px naar buurtint
+ontkorrel (35,7) B->s  losse houtpixel naar donkerste houttint
+ontkorrel (21,8) 4->B  tintvlakje <3 px naar buurtint
+ontkorrel (36,8) 4->B  tintvlakje <3 px naar buurtint
+ontkorrel (34,10) 3->9  tintvlakje <3 px naar buurtint
+ontkorrel (23,12) 7->B  tintvlakje <3 px naar buurtint
+ontkorrel (37,12) 4->B  tintvlakje <3 px naar buurtint
+ontkorrel (37,13) B->7  tintvlakje <3 px naar buurtint
+ontkorrel (13,21) 4->s  losse houtpixel naar donkerste houttint
+ontkorrel (21,21) 7->4  tintvlakje <3 px naar buurtint
+ontkorrel (20,22) 7->s  losse houtpixel naar donkerste houttint
+ontkorrel (36,22) 4->7  tintvlakje <3 px naar buurtint
+ontkorrel (36,23) 4->7  tintvlakje <3 px naar buurtint
+ontkorrel (15,23) 4->s  losse houtpixel naar donkerste houttint
+ontkorrel (23,23) 7->4  tintvlakje <3 px naar buurtint
+ontkorrel (35,24) 4->s  losse houtpixel naar donkerste houttint
+ontkorrel (21,25) 5->A  tintvlakje <3 px naar buurtint
+ontkorrel (21,7) 4->B  tintvlakje <3 px naar buurtint
+lijn (11,1) 5->0  buitenlijn dicht
+lijn (18,1) C->0  buitenlijn dicht
+lijn (19,1) C->0  buitenlijn dicht
+lijn (10,2) 5->0  buitenlijn dicht
+lijn (7,4) C->0  buitenlijn dicht
+lijn (6,5) C->0  buitenlijn dicht
+lijn (23,5) 3->0  buitenlijn dicht
+lijn (25,5) B->0  buitenlijn dicht
+lijn (26,5) B->0  buitenlijn dicht
+lijn (27,5) B->0  buitenlijn dicht
+lijn (28,5) B->0  buitenlijn dicht
+lijn (29,5) B->0  buitenlijn dicht
+lijn (3,7) C->0  buitenlijn dicht
+lijn (42,10) C->0  buitenlijn dicht
+lijn (43,10) C->0  buitenlijn dicht
+lijn (44,14) 5->0  buitenlijn dicht
+lijn (11,19) 5->0  buitenlijn dicht
+lijn (6,20) 5->0  buitenlijn dicht
+lijn (7,20) 5->0  buitenlijn dicht
+lijn (8,20) 5->0  buitenlijn dicht
+lijn (44,26) 5->0  buitenlijn dicht
+lijn (17,27) 5->0  buitenlijn dicht
+lijn (44,27) 5->0  buitenlijn dicht
+lijn (22,29) 5->0  buitenlijn dicht
+lijn (14,30) 5->0  buitenlijn dicht
+lijn (31,30) 5->0  buitenlijn dicht
+lijn (32,30) 5->0  buitenlijn dicht
+lijn (33,30) 5->0  buitenlijn dicht
+lijn (38,31) A->0  buitenlijn dicht
+lijn (11,1) 0->s  selout lichtkant
+lijn (12,1) 0->s  selout lichtkant
+lijn (17,1) 0->s  selout lichtkant
+lijn (13,2) 0->s  selout lichtkant
+lijn (14,2) 0->s  selout lichtkant
+lijn (15,2) 0->s  selout lichtkant
+lijn (16,2) 0->s  selout lichtkant
+lijn (7,4) 0->s  selout lichtkant
+lijn (6,5) 0->s  selout lichtkant
+lijn (21,5) 0->s  selout lichtkant
+lijn (22,5) 0->s  selout lichtkant
+lijn (26,5) 0->s  selout lichtkant
+lijn (27,5) 0->s  selout lichtkant
+lijn (28,5) 0->s  selout lichtkant
+lijn (29,5) 0->s  selout lichtkant
+lijn (30,5) 0->s  selout lichtkant
+lijn (31,5) 0->s  selout lichtkant
+lijn (4,6) 0->s  selout lichtkant
+lijn (39,9) 0->s  selout lichtkant
+lijn (40,10) 0->s  selout lichtkant
+lijn (42,10) 0->s  selout lichtkant
+lijn (43,10) 0->s  selout lichtkant
+lijn (13,24) 0->s  selout lichtkant
+lijn (21,27) 0->s  selout lichtkant
+lijn (22,28) 0->s  selout lichtkant
+lijn (21,30) 0->s  selout lichtkant
+lijn (38,31) 0->s  selout lichtkant
+lijn (20,32) 0->s  selout lichtkant
+lijn (1,17) s->0  onderrand zwart
+lijn (21,27) s->0  onderrand zwart
+lijn (12,30) s->0  onderrand zwart
+lijn (15,30) s->0  onderrand zwart
+lijn (20,32) s->0  onderrand zwart

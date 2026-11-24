@@ -1,0 +1,185 @@
+kop (13,3) C->A  kopvolume: bolling (model-lum 151)
+kop (14,3) C->A  kopvolume: bolling (model-lum 154)
+kop (14,4) A->C  kopvolume: bolling (model-lum 142)
+kop (13,5) A->C  kopvolume: bolling (model-lum 136)
+kop (14,5) A->C  kopvolume: bolling (model-lum 134)
+kop (15,5) A->C  kopvolume: bolling (model-lum 135)
+kop (11,6) A->C  kopvolume: bolling (model-lum 139)
+kop (12,6) A->C  kopvolume: bolling (model-lum 133)
+kop (13,6) A->C  kopvolume: bolling (model-lum 133)
+kop (14,6) A->C  kopvolume: bolling (model-lum 136)
+kop (15,6) A->C  kopvolume: bolling (model-lum 137)
+kop (4,7) C->A  kopvolume: bolling (model-lum 147)
+kop (5,7) C->A  kopvolume: bolling (model-lum 153)
+kop (10,7) A->C  kopvolume: bolling (model-lum 135)
+kop (11,7) A->C  kopvolume: bolling (model-lum 134)
+kop (12,7) A->C  kopvolume: bolling (model-lum -)
+kop (13,7) A->C  kopvolume: bolling (model-lum -)
+kop (14,7) A->C  kopvolume: bolling (model-lum -)
+kop (5,8) C->A  kopvolume: bolling (model-lum 140)
+kop (6,8) C->A  kopvolume: bolling (model-lum 146)
+kop (8,8) A->C  kopvolume: bolling (model-lum 137)
+kop (9,8) A->C  kopvolume: bolling (model-lum 134)
+kop (10,8) A->C  kopvolume: bolling (model-lum 134)
+kop (11,8) A->C  kopvolume: bolling (model-lum 134)
+kop (12,8) A->C  kopvolume: bolling (model-lum -)
+kop (13,8) A->C  kopvolume: bolling (model-lum -)
+kop (14,8) 5->A  kopvolume: bolling (model-lum -)
+kop (15,8) 0->A  kopvolume: bolling (model-lum -)
+kop (16,8) s->A  kopvolume: bolling (model-lum -)
+kop (13,9) 5->A  kopvolume: bolling (model-lum -)
+kop (14,9) 0->A  kopvolume: bolling (model-lum -)
+kop (15,9) W->A  kopvolume: bolling (model-lum -)
+kop (16,9) W->A  kopvolume: bolling (model-lum -)
+kop (17,9) s->A  kopvolume: bolling (model-lum -)
+kop (12,10) 5->A  kopvolume: bolling (model-lum -)
+kop (13,10) s->A  kopvolume: bolling (model-lum -)
+kop (14,10) W->A  kopvolume: bolling (model-lum -)
+kop (15,10) 0->A  kopvolume: bolling (model-lum -)
+kop (16,10) W->A  kopvolume: bolling (model-lum -)
+kop (17,10) W->A  kopvolume: bolling (model-lum -)
+kop (18,10) s->A  kopvolume: bolling (model-lum 135)
+kop (16,17) A->5  kopvolume: bolling (model-lum 114)
+oog (14,7) C->5  oog uit sealeo (x21-22,y14-17): 5 zwart->0, donkere lid 1->s, schaduw 3->5, witte glans (linksboven) -> zwart
+oog (15,7) A->s  oog uit sealeo (x21-22,y14-17): 5 zwart->0, donkere lid 1->s, schaduw 3->5, witte glans (linksboven) -> zwart
+oog (14,8) A->0  oog uit sealeo (x21-22,y14-17): 5 zwart->0, donkere lid 1->s, schaduw 3->5, witte glans (linksboven) -> zwart
+oog (15,8) A->0  oog uit sealeo (x21-22,y14-17): 5 zwart->0, donkere lid 1->s, schaduw 3->5, witte glans (linksboven) -> zwart
+oog (14,9) A->0  oog uit sealeo (x21-22,y14-17): 5 zwart->0, donkere lid 1->s, schaduw 3->5, witte glans (linksboven) -> zwart
+oog (15,9) A->0  oog uit sealeo (x21-22,y14-17): 5 zwart->0, donkere lid 1->s, schaduw 3->5, witte glans (linksboven) -> zwart
+oog (14,10) A->5  oog uit sealeo (x21-22,y14-17): 5 zwart->0, donkere lid 1->s, schaduw 3->5, witte glans (linksboven) -> zwart
+oog (15,10) A->5  oog uit sealeo (x21-22,y14-17): 5 zwart->0, donkere lid 1->s, schaduw 3->5, witte glans (linksboven) -> zwart
+tanden (3,17) W->0  tanden naar model
+tanden (5,18) 0->W  tanden naar model
+tanden (2,19) .->0  tanden naar model
+tanden (3,19) 0->W  tanden naar model
+tanden (5,19) 0->D  tanden naar model
+tanden (3,20) .->0  tanden naar model
+oren (10,0) .->s  oorvorm/binnenoor/deuk naar model
+oren (11,0) .->s  oorvorm/binnenoor/deuk naar model
+oren (11,1) s->5  oorvorm/binnenoor/deuk naar model
+oren (12,1) s->0  oorvorm/binnenoor/deuk naar model
+oren (11,2) s->5  oorvorm/binnenoor/deuk naar model
+oren (12,2) s->5  oorvorm/binnenoor/deuk naar model
+oren (16,2) s->.  oorvorm/binnenoor/deuk naar model
+oren (16,3) A->s  oorvorm/binnenoor/deuk naar model
+oren (18,0) .->s  oorvorm/binnenoor/deuk naar model
+oren (19,0) .->s  oorvorm/binnenoor/deuk naar model
+oren (18,1) s->C  oorvorm/binnenoor/deuk naar model
+oren (19,1) s->A  oorvorm/binnenoor/deuk naar model
+oren (20,1) .->0  oorvorm/binnenoor/deuk naar model
+oren (17,2) A->s  oorvorm/binnenoor/deuk naar model
+oren (18,2) s->A  oorvorm/binnenoor/deuk naar model
+oren (19,2) s->5  oorvorm/binnenoor/deuk naar model
+oren (20,2) s->0  oorvorm/binnenoor/deuk naar model
+hoepel (31,26) h->4  oude hoepelpixel buiten modelhoepel
+hoepel (32,26) h->4  oude hoepelpixel buiten modelhoepel
+hoepel (23,6) h->9  hoepelkern (model)
+hoepel (24,6) h->9  hoepelkern (model)
+hoepel (22,6) B->0  hoepelrand zwart (model)
+hoepel (24,7) h->9  hoepelkern (model)
+hoepel (23,7) B->0  hoepelrand zwart (model)
+hoepel (24,8) h->9  hoepelkern (model)
+hoepel (23,8) B->0  hoepelrand zwart (model)
+hoepel (24,9) B->0  hoepelrand zwart (model)
+hoepel (24,10) B->0  hoepelrand zwart (model)
+hoepel (24,11) B->0  hoepelrand zwart (model)
+hoepel (25,12) B->0  hoepelrand zwart (model)
+hoepel (25,13) 7->0  hoepelrand zwart (model)
+hoepel (25,14) 7->0  hoepelrand zwart (model)
+hoepel (25,15) 7->0  hoepelrand zwart (model)
+hoepel (25,16) 7->0  hoepelrand zwart (model)
+hoepel (24,18) 7->0  hoepelrand zwart (model)
+hoepel (24,19) 7->0  hoepelrand zwart (model)
+hoepel (24,20) s->0  hoepelrand zwart (model)
+hoepel (23,22) 4->0  hoepelrand zwart (model)
+hoepel (34,6) s->h  hoepelkern (model)
+hoepel (35,6) s->0  hoepelrand zwart (model)
+hoepel (32,7) B->0  hoepelrand zwart (model)
+hoepel (34,8) h->9  hoepelkern (model)
+hoepel (35,8) h->9  hoepelkern (model)
+hoepel (33,8) s->0  hoepelrand zwart (model)
+hoepel (33,9) B->0  hoepelrand zwart (model)
+hoepel (33,10) B->0  hoepelrand zwart (model)
+hoepel (34,20) 0->h  hoepelkern (model)
+hoepel (33,20) 4->0  hoepelrand zwart (model)
+hoepel (33,21) 4->0  hoepelrand zwart (model)
+hoepel (35,22) 0->h  hoepelkern (model)
+hoepel (33,22) s->0  hoepelrand zwart (model)
+hoepel (36,22) s->0  hoepelrand zwart (model)
+hoepel (33,23) 0->h  hoepelkern (model)
+hoepel (32,23) 4->0  hoepelrand zwart (model)
+hoepel (32,24) 4->0  hoepelrand zwart (model)
+hoepel (31,25) 4->0  hoepelrand zwart (model)
+plank (27,7) s->4  planklijn op gemeten modelrij 7 (M)
+plank (28,7) s->4  planklijn op gemeten modelrij 7 (M)
+plank (29,7) s->4  planklijn op gemeten modelrij 7 (M)
+plank (30,7) s->4  planklijn op gemeten modelrij 7 (M)
+plank (31,7) B->4  planklijn op gemeten modelrij 7 (M)
+plank (36,7) s->4  oude lijn niet op gemeten modelrij
+plank (37,8) s->4  planklijn op gemeten modelrij 8 (R)
+plank (37,9) s->4  oude lijn niet op gemeten modelrij
+plank (37,10) s->4  oude lijn niet op gemeten modelrij
+plank (22,11) B->4  planklijn op gemeten modelrij 11 (L)
+plank (23,11) B->4  planklijn op gemeten modelrij 11 (L)
+plank (28,11) B->4  planklijn op gemeten modelrij 11 (M)
+plank (29,11) B->4  planklijn op gemeten modelrij 11 (M)
+plank (30,11) B->4  planklijn op gemeten modelrij 11 (M)
+plank (31,11) B->4  planklijn op gemeten modelrij 11 (M)
+plank (32,11) B->4  planklijn op gemeten modelrij 11 (M)
+plank (33,11) B->4  planklijn op gemeten modelrij 11 (M)
+plank (23,17) s->4  oude lijn niet op gemeten modelrij
+plank (24,17) s->4  oude lijn niet op gemeten modelrij
+plank (23,20) 7->s  planklijn op gemeten modelrij 20 (L)
+plank (37,20) s->4  oude lijn niet op gemeten modelrij
+plank (21,21) s->4  oude lijn niet op gemeten modelrij
+plank (22,21) s->4  oude lijn niet op gemeten modelrij
+plank (23,21) s->4  oude lijn niet op gemeten modelrij
+plank (20,22) s->4  oude lijn niet op gemeten modelrij
+plank (21,22) s->4  oude lijn niet op gemeten modelrij
+plank (27,22) 4->s  planklijn op gemeten modelrij 22 (M)
+plank (36,23) s->4  oude lijn niet op gemeten modelrij
+staart (41,10) s->0  staartbultje naar model
+staart (44,10) s->.  staartbultje naar model
+staart (44,11) C->0  staartbultje naar model
+staart (45,11) s->.  staartbultje naar model
+staart (42,12) s->A  staartbultje naar model
+fix (18,1) C->A  oorvulling aaneen (model licht)
+fix (17,3) A->5  binnenoor aaneen
+fix (17,4) s->5  binnenoor aaneen (los lijnpixel weg)
+fix (42,12) A->C  idem
+fix (23,17) 4->7  geen planklijn op deze rij in het model (links)
+fix (24,17) 4->7  idem
+fix (36,7) 4->s  houtvlakje <3 px
+fix (37,20) 4->s  houtvlakje <3 px
+fix (36,23) 4->s  houtvlakje <3 px
+fix (31,26) 4->s  houtvlakje <3 px
+fix (32,26) 4->s  houtvlakje <3 px
+fix (37,9) 4->s  smal tonrandje tussen hoepelzwart en buitenlijn: lijn (zoals r2)
+fix (37,10) 4->s  smal tonrandje tussen hoepelzwart en buitenlijn: lijn (zoals r2)
+fix (37,8) 4->s  hout op de rand -> lijn
+lijn (12,1) 0->s  buitenlijn lichtkant selout / schaduwkant zwart
+lijn (20,1) 0->s  buitenlijn lichtkant selout / schaduwkant zwart
+lijn (35,6) 0->s  buitenlijn lichtkant selout / schaduwkant zwart
+lijn (37,8) s->0  buitenlijn lichtkant selout / schaduwkant zwart
+lijn (41,10) 0->s  buitenlijn lichtkant selout / schaduwkant zwart
+lijn (44,11) 0->s  buitenlijn lichtkant selout / schaduwkant zwart
+lijn (45,12) 0->s  buitenlijn lichtkant selout / schaduwkant zwart
+lijn (2,18) 0->n  buitenlijn lichtkant selout / schaduwkant zwart
+lijn (13,22) s->0  buitenlijn lichtkant selout / schaduwkant zwart
+lijn (44,25) 0->s  buitenlijn lichtkant selout / schaduwkant zwart
+lijn (11,28) s->0  buitenlijn lichtkant selout / schaduwkant zwart
+lijn (22,28) s->0  buitenlijn lichtkant selout / schaduwkant zwart
+lijn (30,28) s->0  buitenlijn lichtkant selout / schaduwkant zwart
+lijn (39,28) s->0  buitenlijn lichtkant selout / schaduwkant zwart
+lijn (11,29) s->0  buitenlijn lichtkant selout / schaduwkant zwart
+lijn (22,29) s->0  buitenlijn lichtkant selout / schaduwkant zwart
+lijn (29,29) s->0  buitenlijn lichtkant selout / schaduwkant zwart
+lijn (39,29) s->0  buitenlijn lichtkant selout / schaduwkant zwart
+lijn (21,30) s->0  buitenlijn lichtkant selout / schaduwkant zwart
+lijn (38,30) s->0  buitenlijn lichtkant selout / schaduwkant zwart
+lijn (20,31) s->0  buitenlijn lichtkant selout / schaduwkant zwart
+lijn (38,31) s->0  buitenlijn lichtkant selout / schaduwkant zwart
+lijn (37,8) 0->s  om-en-om weg
+lijn (2,18) n->0  om-en-om weg
+lijn (13,22) 0->s  om-en-om weg
+lijn (44,25) s->0  om-en-om weg

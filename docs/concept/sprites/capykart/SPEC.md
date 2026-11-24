@@ -14,5 +14,7 @@ Lijnbesluiten: `docs/concept/IDEEEN.md` → "Capybarrel"; fase 1: `docs/concept/
 
 - 24 nov (op r5): "dit is als silhouet prima" → model `referenties/model_r5.png`, silhouet bevroren.
 
+- 24 nov (op r3b): "nee beige werkt niet, het hoofd is nog wel iets teveel een kopie van capybarrel" → vacht B (dieper); kopvarianten V1–V3 (gezicht meer uit het model) in sprite/r4/.
+
 ## Open (niet door Jordi gezegd)
 - Hoe het hoofd volgroeider wordt (Jordi's idee beige + ronder; voorstellen Claude 24 nov: morrillo, grotere tanden, oog met ooglid, kleurvarianten).

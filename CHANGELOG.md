@@ -3041,3 +3041,8 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.730] - Levende Inca-tempel: frontsprite-kandidaat
 - Ontwerp via Gemini r1–r7 (tempel gelaagd tegen een bergwand naar Jordi's Inca Trail-foto's, ingang = mond, lichtende raampjes = ogen); r7 bevroren als model.
 - Frontsprite r1–r7 in `docs/concept/sprites/tempel/sprite/`; keurder- en eindkeuring (Dragonfly Cave) verwerkt. Kandidaat `sprite/r7/tempel.png`, wacht op Jordi.
+
+### [v0.0.731] - Levende Inca-tempel: frontsprite af
+- Ogen op Jordi's aanwijzing ("teveel vierkantjes die niet mee gaan met het perspectief"): trapeziumvormig raampje in de donkere steentint, donkere diepte links, licht rechts, lichtkleur goud (Jordi's keuze uit geel/goud/groen/cyaan/paars).
+- `docs/concept/sprites/tempel/af/tempel.png`; op het overzichtsvel (sectie New). Naam, data en plek nog open.
+- Lessen in `docs/lessen/GEMINI.md` (gebouw-Pokémon, ogen van een gebouw).

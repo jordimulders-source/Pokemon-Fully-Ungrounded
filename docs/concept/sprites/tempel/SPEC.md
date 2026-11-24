@@ -45,3 +45,4 @@ Rondes in `sprite/rN/`.
 - Jordi over r7: "de ogen zijn niet mooi, voor de rest is alles goed behalve de eindkeuring" / "de ogen zijn teveel vierkantjes die niet mee gaan met het perspectief". Oogvarianten met de diepte (dagkant) van het model: `sprite/r8_ogen/varianten.png` (A/B/C).
 - Jordi: "het gaat om de super rechthoekige zwartgelijnde vorm" → varianten zonder zwart rechthoekig kader: `sprite/r8_ogen/varianten2.png` (D geen kader, E trapezium in donkere steentint, F trapezium met zwart alleen aan de schaduwkant).
 - Jordi: "beter maar de verlichting moet duidelijker geel, als de spirit die erin zit, of misschien zelfs een andere kleur" → lichtkleuren op variant E: `sprite/r8_ogen/lichtkleur.png` (geel, goud, groen, cyaan, paars).
+- Jordi koos "goud" (op variant E). Af: `af/tempel.png` (= `sprite/r8_ogen/tempel_E_goud.png`, basis r7). Op het overzichtsvel (sectie New).

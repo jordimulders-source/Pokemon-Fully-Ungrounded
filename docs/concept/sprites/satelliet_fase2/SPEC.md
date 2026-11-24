@@ -29,3 +29,4 @@ r8 (24 nov), Jordi: "r8 p2, het lijf is iets te lavender idd, bovenop is het nog
 - r16 (24 nov), Jordi: "alleen de paarse lijn boven het hoofd klopt niet helemaal, verder is die een stuk beter. alleen kleurtinten, lijnen, schaduw is nog niet goed"
 - r18 (24 nov), Jordi: "de lijn rechts naast het paneel golft niet genoeg, kijk naar het model"
 - Jordi (24 nov, met markering `vorm_check/jordi_rechte_lijn_r18.png`, verticale zwarte lijn ±x37, rij 26–32): "dit is een rechte lijn die in het model niet recht is"
+- r19 (24 nov), Jordi: "rechts is beter, maar links is nu een rechte lijn getrokken bij het oog, waarom?" → r20 = r19 rechts + r18 links.

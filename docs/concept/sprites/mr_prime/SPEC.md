@@ -54,3 +54,4 @@ Middenfase en alle rondes daarvan: `docs/concept/sprites/mrmime_regional/SPEC.md
 - Basis: `gemini/r9.png` (pose, snor, armpose, lijf goed volgens Jordi).
 - In de sprite te doen: stok dikker/echte wandelstok; monocle op één oog (r9 heeft ringen om beide); ogen minder geschokt, serieuzer dan Mr. Rime (oogstudie, Jordi kiest); formaat (64×55 kaal, achterbeen naar binnen?).
 - Open vraag aan Jordi: hoed/haar A (sprite, uit Mr. Rime-pixels, vleugels plat naar achteren) of B (Gemini-ronde). Nog geen antwoord: niet beginnen aan hoed/haar.
+- Jordi (24 nov): "ok je mag afwijken van het model maar teken niks opnieuw, je mag dingen baseren op mr rime en daar dingen in aanpassen, maar nooit iets opnieuw tekenen". → hoed/haar = route A (Mr. Rime-pixels aanpassen). Sprite r1 gestart (`sprite_r1/`, één maker).

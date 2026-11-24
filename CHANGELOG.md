@@ -3156,3 +3156,9 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.763] - Levende Inca-tempel: topgevels
 - Jordi: bovenste lijn "volledig horizontaal" (bovenin de sprite): linkerpunt en dal van de topgevels als silhouet (k15). `tempel/af/tempel.png` = k15; overzichtsvel bijgewerkt. Jordi: "geen probleem".
+
+### [v0.0.764] - Studie: hoe Gen 3 zijn onze frontsprites?
+- Alle 85 frontsprites van het overzichtsvel gemeten tegen 385 originele Gen 3-frontsprites (`docs/concept/sprites/gen3_studie/STUDIE.md`, vellen en scripts erbij).
+- Uitkomst: onze sprites zijn vanaf het begin vlakker en vaker rondom zwart omlijnd dan Gen 3 (zwart aan de lichtkant 55 % tegen 28 %; detailpixels binnenin 12 % tegen 19 %); sinds de Gemini-werkwijze licht erger (mediaanscore 1,12 → 1,39).
+- Meest Gen 3: regionale Rufflet, Uyuni-Silicobra, Cuychu, Princadee, Palpaca. Meest afwijkend: Dustly, DJ Rotom, bloedmaan, Cryomet, Bandolingo, Gengas.
+- Voorstellen A–E (meetgetallen in de eindkeuring, regel over kleine vlakjes, vaste Gen 3-kleurstap, naastlegger, herstel van zwart-rondom-sprites) wachten op Jordi.

@@ -43,3 +43,4 @@ Middenfase en alle rondes daarvan: `docs/concept/sprites/mrmime_regional/SPEC.md
 - Jordi (erna): "en de snor mag iets groter, iets meer cartoony" → punt 3 in de r8-bijsturing.
 - r8 (`gemini/r8.png`; krulsnor, stok schuin omhoog, bolhoed met grijze golvende lokken erachter, benen onveranderd), Jordi: "haren en hoed niet goed, snor en arm pose wel, lichaamspose niet, stok te klein".
 - r9 bijsturen (zelfde gesprek): `gemini/PROMPT_r9_bijsturen.md`, alleen lichaamspose (benen) + stok groter. Hoed/haar: voorstel Claude in de sprite (zie chat).
+- r9 (`gemini/r9.png`; uitval: voorbeen gebogen, achterbeen gestrekt ver naar rechts; stok dikker en iets langer; kop/snor/armen gelijk aan r8). Wacht op Jordi.

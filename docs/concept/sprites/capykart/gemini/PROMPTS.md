@@ -94,3 +94,6 @@ Change ONLY these two things:
 
 Style: official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 colors, dark outline, white background.
 ```
+
+## Ronde 4 (24 nov)
+- `r4/capykart_r4.png`: groene driehoek bovenop, blauw blok gelijk. Jordi: "prima, leest die genoeg als een pokemon en niet alleen als een capybara in een houten auto? en genoeg als een evo van capybarrel". Claude's beoordeling + voorstellen (open): zie het antwoord van 24 nov; kern: hoofd los in een zitopening, hout en vacht dezelfde tint, gezicht en hout/hoepels van Capybarrel ontbreken.

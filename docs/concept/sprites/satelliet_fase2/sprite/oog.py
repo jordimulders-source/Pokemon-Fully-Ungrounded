@@ -13,7 +13,7 @@ C2=(20.60,24.30,7.23)
 C3=(23.09,24.75,6.57)
 boog=[];boog3=[]
 WIN=50   # hoekvenster (graden); r1: 30 gaf flikkerende tinten in de ringen
-R=[1.25,2.35,3.25,4.3,5.35,6.3]   # pixelstralen (middelpunt-afstand) voor de 6 ringen
+R=[1.25,2.0,3.25,4.3,5.35,6.3]   # r4: iris-buitenstraal 2,35 -> 2,0: hoekpixels van de 4x4 naar de donkere ring (ronde iris)   # pixelstralen (middelpunt-afstand) voor de 6 ringen
 MB=[(0,1.25),(1.25,2.45),(2.45,3.45),(3.45,4.85),(4.85,5.25),(5.25,6.2)]
 KL=[[9],[12,13,14],[9,8,15,14],[6,7,8],[1],[2,3,4]]
 yy,xx=np.mgrid[0:1024,0:1024]; mr=np.hypot(xx-340,yy-492.5)/s; ma=np.degrees(np.arctan2(yy-492.5,xx-340))
@@ -27,7 +27,8 @@ def eye(o):
             a=np.degrees(np.arctan2(j+.5-CY,i+.5-CX)); da=np.abs((ma-a+180)%360-180)
             m=(mr>=MB[b][0])&(mr<MB[b][1])&(da<=(25 if b==1 else WIN))   # iris: smaller venster zodat de lichte bovenkant (12) blijft
             c=np.bincount(k[m],minlength=16); o[j,i]=KL[b][int(np.argmax(c[KL[b]]))]
-    o[22,21]=2
+    o[22,19]=12  # r4: lichte iristint bovenaan, gemeten: modelsector -90 graden is 12 (147) > 3 (105) > 13
+    o[22,20]=2   # r4: glans op de dichtstbijzijnde irispixel bij het modelzwaartepunt (21,2/22,7); (21,22) is nu donkere ring
     # lenshuis (ringen rond de irisschijf, dunner dan 1 spritepx): donkere lijn als donker (1/8/9) >= 0,22 van het blok,
     # anders meest voorkomende lichte/paarse klasse. Alleen buiten de irisschijf, binnen 9,5 px, niet in het kleine paneel.
     X0,Y0=46,143

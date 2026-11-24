@@ -10,4 +10,6 @@ for j in range(o.shape[0]):
     b=k[y0:y1,x0:x1]; z=Z[y0:y1,x0:x1]
     if (z==2).mean()>0.5 or np.isin(b,[2,3,4,5]).mean()>0.35: Zs[j,i]=True
 np.save('Zs.npy',Zs)
-o=rods(o,Zs); np.save(sys.argv[2],o)
+o2=rods(o,Zs); np.save(sys.argv[2],o2)
+# r4: antennezone (niet-beschermd lijf/paneel, rijen 0-11, kolommen 24-49) beschermen tegen de losse-pixelopschoning
+A=np.zeros_like(Zs); A[0:12,24:50]=~Zs[0:12,24:50]; np.save(sys.argv[2].replace('.npy','_ant.npy'),A)

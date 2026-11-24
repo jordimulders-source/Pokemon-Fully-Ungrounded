@@ -8,6 +8,9 @@ o=np.load(sys.argv[1]).copy(); base=np.load(sys.argv[2]); UIT=sys.argv[3]
 F=np.load(sys.argv[4])      # blokfracties per klasse (kaal.py)
 H,W=o.shape
 prot=(o!=base)               # door oog.py/antennes.py gezet
+import os
+ap=sys.argv[1].replace('.npy','_ant.npy')
+if os.path.exists(ap): prot|=np.load(ap)
 yy,xx=np.mgrid[0:H,0:W]; prot|=np.hypot(xx+.5-20,yy+.5-24)<6.3
 nb4=lambda j,i:[(j+dy,i+dx) for dy,dx in ((-1,0),(1,0),(0,-1),(0,1)) if 0<=j+dy<H and 0<=i+dx<W]
 groei=[];zw=[]

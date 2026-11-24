@@ -1,0 +1,72 @@
+rand (34,6) h->s  hoepelpixel aan transparant -> lijnindex 2 zoals tonbovenrand
+tanden (4,18) D->9  twee tanden even hoog, scheiding modelgrijs (model 157)
+tanden (4,19) D->9  twee tanden even hoog, scheiding modelgrijs (model 157)
+tanden (5,19) D->W  twee tanden even hoog, scheiding modelgrijs (model 157)
+hoepel2 (32,7) 4->h  hoepel 2 één px naar links
+hoepel2 (34,7) h->0  zwarte rand schaduwkant
+hoepel2 (35,7) 0->4  hout achter hoepel 2 (rijtint ernaast; model 1,3-1,9 px)
+hoepel2 (36,7) s->4  hout achter hoepel 2 (rijtint ernaast; model 1,3-1,9 px)
+hoepel2 (33,8) B->9  hoepel 2 één px naar links
+hoepel2 (35,8) 9->0  zwarte rand schaduwkant
+hoepel2 (36,8) 0->B  hout achter hoepel 2 (rijtint ernaast; model 1,3-1,9 px)
+hoepel2 (33,9) B->9  hoepel 2 één px naar links
+hoepel2 (35,9) 9->0  zwarte rand schaduwkant
+hoepel2 (36,9) 0->B  hout achter hoepel 2 (rijtint ernaast; model 1,3-1,9 px)
+hoepel2 (37,9) s->B  hout achter hoepel 2 (rijtint ernaast; model 1,3-1,9 px)
+hoepel2 (33,10) B->9  hoepel 2 één px naar links
+hoepel2 (35,10) 9->0  zwarte rand schaduwkant
+hoepel2 (36,10) 0->B  hout achter hoepel 2 (rijtint ernaast; model 1,3-1,9 px)
+hoepel2 (37,10) s->B  hout achter hoepel 2 (rijtint ernaast; model 1,3-1,9 px)
+hoepel2 (34,11) 4->h  hoepel 2 één px naar links
+hoepel2 (36,11) h->0  zwarte rand schaduwkant
+hoepel2 (37,11) 0->4  hout achter hoepel 2 (rijtint ernaast; model 1,3-1,9 px)
+hoepel2 (34,12) 7->h  hoepel 2 één px naar links
+hoepel2 (36,12) h->0  zwarte rand schaduwkant
+hoepel2 (37,12) 0->7  hout achter hoepel 2 (rijtint ernaast; model 1,3-1,9 px)
+hoepel2 (34,13) 7->h  hoepel 2 één px naar links
+hoepel2 (36,13) h->0  zwarte rand schaduwkant
+hoepel2 (37,13) 0->7  hout achter hoepel 2 (rijtint ernaast; model 1,3-1,9 px)
+hoepel2 (34,14) 7->h  hoepel 2 één px naar links
+hoepel2 (36,14) h->0  zwarte rand schaduwkant
+hoepel2 (37,14) 0->7  hout achter hoepel 2 (rijtint ernaast; model 1,3-1,9 px)
+hoepel2 (34,15) 7->h  hoepel 2 één px naar links
+hoepel2 (36,15) h->0  zwarte rand schaduwkant
+hoepel2 (37,15) 0->7  hout achter hoepel 2 (rijtint ernaast; model 1,3-1,9 px)
+hoepel2 (34,16) 7->h  hoepel 2 één px naar links
+hoepel2 (36,16) h->0  zwarte rand schaduwkant
+hoepel2 (37,16) 0->7  hout achter hoepel 2 (rijtint ernaast; model 1,3-1,9 px)
+hoepel2 (34,17) s->h  hoepel 2 één px naar links
+hoepel2 (36,17) h->0  zwarte rand schaduwkant
+hoepel2 (37,17) 0->s  hout achter hoepel 2 (rijtint ernaast; model 1,3-1,9 px)
+hoepel2 (34,18) 7->h  hoepel 2 één px naar links
+hoepel2 (36,18) h->0  zwarte rand schaduwkant
+hoepel2 (37,18) 0->7  hout achter hoepel 2 (rijtint ernaast; model 1,3-1,9 px)
+hoepel2 (34,19) 7->h  hoepel 2 één px naar links
+hoepel2 (36,19) h->0  zwarte rand schaduwkant
+hoepel2 (37,19) 0->7  hout achter hoepel 2 (rijtint ernaast; model 1,3-1,9 px)
+hoepel2 (33,20) 4->h  hoepel 2 één px naar links
+hoepel2 (35,20) h->0  zwarte rand schaduwkant
+hoepel2 (36,20) 0->4  hout achter hoepel 2 (rijtint ernaast; model 1,3-1,9 px)
+hoepel2 (37,20) s->4  hout achter hoepel 2 (rijtint ernaast; model 1,3-1,9 px)
+hoepel2 (33,21) 4->h  hoepel 2 één px naar links
+hoepel2 (35,21) h->0  zwarte rand schaduwkant
+hoepel2 (36,21) 0->4  hout achter hoepel 2 (rijtint ernaast; model 1,3-1,9 px)
+hoepel2 (33,22) s->h  hoepel 2 één px naar links
+hoepel2 (35,22) h->0  zwarte rand schaduwkant
+hoepel2 (36,22) 0->s  hout achter hoepel 2 (rijtint ernaast; model 1,3-1,9 px)
+hoepel2 (32,23) 4->h  hoepel 2 één px naar links
+hoepel2 (34,23) h->0  zwarte rand schaduwkant
+hoepel2 (35,23) 0->4  hout achter hoepel 2 (rijtint ernaast; model 1,3-1,9 px)
+hoepel2 (36,23) s->4  hout achter hoepel 2 (rijtint ernaast; model 1,3-1,9 px)
+hoepel2 (32,24) 4->h  hoepel 2 één px naar links
+hoepel2 (34,24) h->0  zwarte rand schaduwkant
+hoepel2 (35,24) 0->4  hout achter hoepel 2 (rijtint ernaast; model 1,3-1,9 px)
+hoepel2 (31,25) 4->h  hoepel 2 één px naar links
+hoepel2 (33,25) h->0  zwarte rand schaduwkant
+hoepel2 (34,25) 0->4  hout achter hoepel 2 (rijtint ernaast; model 1,3-1,9 px)
+hoepel2 (35,7) 4->B  houtvlakje <3 px -> buurtint
+hoepel2 (36,7) 4->B  houtvlakje <3 px -> buurtint
+hoepel2 (37,11) 4->7  houtvlakje <3 px -> buurtint
+hoepel2 (37,18) 7->4  houtvlakje <3 px -> buurtint
+hoepel2 (37,19) 7->4  houtvlakje <3 px -> buurtint
+hoepel2 (34,25) 4->s  los houtpixel onderin: sluit aan op tonrand (34,26)

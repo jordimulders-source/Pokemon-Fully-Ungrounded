@@ -1,0 +1,11 @@
+modus P, transparantie-index 0, kleuren gebruikt 16
+palet gelijk aan k14: True
+alpha gewijzigd: 15 px (15 weg, 0 erbij), bereik x39-46 y3-6
+alpha buiten x30-46 y0-10: 0
+pixels gewijzigd totaal: 23; buiten x30-46 y0-14: 0
+oog x13-16 y38-42 diff: 0
+oog x22-25 y38-42 diff: 0
+gewijzigde px: (41,3) 7->., (42,3) 7->., (43,3) 7->., (44,3) 7->., (45,3) 7->., (46,3) 7->., (40,4) 7->., (41,4) f->., (42,4) f->., (43,4) f->., (44,4) 6->., (45,4) 2->7, (46,4) 3->7, (39,5) 7->., (40,5) f->7, (41,5) f->7, (42,5) f->., (43,5) f->., (44,5) 2->7, (42,6) 6->1, (43,6) 6->., (44,6) 2->7, (43,7) 6->1
+clusters <3 px hele sprite (4-samenhang): k14 114 | k15 119
+clusters <3 px hele sprite (8-samenhang): k14 43 | k15 43
+nieuwe kleine clusters (4-samenhang): [(7, [(45, 4), (46, 4)]), (3, [(47, 4)]), (7, [(40, 5), (41, 5)]), (7, [(44, 5), (44, 6)]), (7, [(39, 6), (39, 7)]), (1, [(42, 6)]), (1, [(43, 7)]), (2, [(44, 7)])]

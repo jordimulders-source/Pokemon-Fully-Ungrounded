@@ -1,0 +1,12 @@
+formaat (64, 64) P transp 0 kleuren incl. transp. 16
+bbox x1-62 y2-62, 2295 px
+zwart 21.2% van de figuur
+  tint 2 (2): 11 vlekjes <3 px op [(35, 13), (27, 14), (24, 15), (35, 28), (32, 30), (38, 30), (39, 32), (5, 41), (34, 42), (20, 56), (58, 56)]
+  tint 3 (3): 4 vlekjes <3 px op [(51, 35), (33, 36), (34, 51), (8, 57)]
+  tint 4 (4): 1 vlekjes <3 px op [(16, 35)]
+  tint 5 (5): 2 vlekjes <3 px op [(29, 17), (30, 21)]
+  tint 6 (6): 2 vlekjes <3 px op [(29, 18), (17, 34)]
+  tint H (8): 6 vlekjes <3 px op [(22, 35), (48, 35), (22, 38), (25, 39), (27, 40), (28, 41)]
+  tint R (11): 1 vlekjes <3 px op [(47, 19)]
+lichte kleur op de buitenrand: []
+losse zwarte pixels: [(20, 23), (18, 29), (20, 30)]

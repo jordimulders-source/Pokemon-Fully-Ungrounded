@@ -52,7 +52,7 @@
 
 - r11, Jordi: "tanden goed, helm beter, alleen is teveel 1 rechte horizontale lijn. Evenals aan de rechterkant van de wollen kraag, ook iets teevel 1 verticale lijn. Aan de linkerkant zie ik trouwens dat de bollen ook ietwat afgekapt zijn. De onderkant van het lichaam is nu prima, het zakje ziet er nog een beetje gek uit, dus misschien kan die ook iets minder rechte lijnen en een tint donkerder? Dan heb je aan de bovenkant van de tuinbroek een paar pixels die naar beneden gaan, zou je dat stuk 1 pixel naar links kunnen verschuiven, weet je wat ik bedoel?". Bevroren: tanden, onderkant lichaam (A+B), potlood, staart.
 
-- r12, Jordi: "ja beter, alleen zijn de bollen links opnieuw getekend ipv gewoon bollen zoals in het model, de klep van de helm mag net iets breder".
+- r12, Jordi: "ja beter, alleen zijn de bollen links opnieuw getekend ipv gewoon bollen zoals in het model, de klep van de helm mag net iets breder" · "en het is niet erg als die klep een klein beetje overlapt".
 
 ## Open
 - Welke suggesties (Claude, 23 nov): 1 oranje beiteltanden, 2 staart als troffel, 3 schepklauwen, 4 sjouwt tak/stam of modder tegen de borst, 5 knagend aan een stam, 6 waarschuwingskleuren (geel-zwarte staart), 7 helm van modderkorst/twijgjes.

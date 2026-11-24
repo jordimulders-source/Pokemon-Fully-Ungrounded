@@ -65,7 +65,7 @@ SECTIES=[
 ('mightyena_evo/af/alphyena.png', '"Alphyena" (Mightyena)', 'dark/fight'),
 ('sunflora_evo/af/sunflora_evo.png', 'Sunflora-evolutie (Sunflora)', 'grass/cosmic'),
 ('kricketune_evo/af/krickestro.png', '"Krickestro" (Kricketune)', 'bug/fairy'),
-('solrock_evo/af/solrock_evo.png', 'Solrock-evolutie (Solrock)', 'rock/psychic'),
+('solrock_evo/af/solrock_evo.png', 'Solrock-evolutie (Solrock)', 'rock/cosmic'),
 ('lunatone_evo/af/bloedmaan.png', 'Bloedmaan (Lunatone)', 'rock/cosmic'),
 ('emolga_evo/af/model.png', 'Wingsuit-colugo (Emolga)', 'electric/flying'),
 ('emolga_evo_fase3/af/fruitvampier.png', 'Fruitvampier (Emolga)', 'electric/flying'),

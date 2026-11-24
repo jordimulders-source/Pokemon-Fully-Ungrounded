@@ -24,3 +24,6 @@ Bezig (Jordi, 20 nov): hoatzin. Af: vlieg → mug (21 nov), harpij-arend + regio
 - **Legendaries:** trio Hanan Pacha (condor, de enige condor), Kay Pacha (poema), Uku Pacha (slang); Pachamama (Ground/Fairy).
 - **Brainstorm:** evoluties voor Ledian, Sunflora, Shuckle, Ninjask, Sableye, Mawile, Manectric, Absol, Glalie; regionale Tropius; nog een Mr. Mime-vorm.
 - Geschrapt (Jordi, 23 nov): vicuña → guanaco, carnavalspauw; Fire/Water-Pokémon is gedaan (onderwater-Oddish-lijn). Geschrapt (Jordi, 20 nov): regionale vogel die eindigt als condor, Lanturn-evolutie, brandweerhond-Growlithe, opossum (verwerkt in Abra).
+
+## Sprites opknappen (Jordi, 24 nov)
+- "dundragoon doet dat het beste van alle sprites die we gemaakt hebben, princadee en zapacha ook, zijn helaas nog wel wat meer sprites waar we het niet goed gedaan hebben en die mogelijk verbeterd moeten worden, maar dat is voor een ander moment." Maatstaf belijning: Dundragoon, Princadee, Zapacha + echte Gen 3 (`anim_front_gba.png`).

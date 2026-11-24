@@ -1,4 +1,4 @@
-# Mr. Prime – startprompt r4 (24 nov, NIEUW gesprek, GEEN bijlage); basis = r3 (iets beter), alleen Jordi's punten bij r3 veranderd
+# Mr. Prime – startprompt r4 (24 nov, NIEUW gesprek, GEEN bijlage); basis = r3 (iets beter), alleen Jordi's punten bij r3 veranderd; + Jordi: "ogen te klein", "het is geen pokemon"
 
 ```
 Design a brand-new Pokémon: an old English gentleman who fights with his walking cane (bartitsu, the Victorian gentleman's martial art). Fighting/Psychic type. It is a fully evolved Pokémon in the style of Mr. Rime.
@@ -9,11 +9,15 @@ BODY (built like Mr. Rime)
 - A big, round, egg-shaped torso.
 - Thin legs of normal length, about as long as the torso. NOT long stilts. Small shoes.
 - Thin arms with white hands.
-- A white mime face with a round head.
+- A white mime face with a round head and BIG eyes, like Mr. Rime's eyes: large and clearly readable, NOT small dots.
 - HAT AND HAIR ARE ONE: its hat IS its hair, exactly like Mr. Rime's hat. A dark top-hat shape on its head, with two hair spikes slicked backwards that grow out of the hat as one single connected shape. No separate hat sitting on the head, no separate hair spikes.
 - A dark moustache, a bit bigger than a very small pencil moustache.
 - A MONOCLE over one eye.
 - The gentleman look comes ONLY from the shape and color of its own body, like Mr. Mime's body that only resembles a costume. NO clothing details at all: no collar, no bow tie, no buttons, no lapels, no vest, no jacket, no trousers.
+
+POKÉMON PROPORTIONS (it must read as a Pokémon, like Mr. Rime, Hitmonchan or Machamp, not as a cartoon man)
+- The head (with the hat) is big: about one third of the total height.
+- Simple, rounded Pokémon shapes; stubby rounded hands and feet. No human anatomy, no human limbs.
 
 COLORS
 Black-and-white palette, like an old photo and like a classic mime: white, greys and black.

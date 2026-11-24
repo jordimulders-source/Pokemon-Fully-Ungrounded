@@ -739,3 +739,4 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - **Jordi (23 nov):** "en ja 2 fases". Besloten: lijn van 2 fases (Capybarrel → kart).
 - Open: welke lichaamsdelen uitsteken, wielen, naam.
 - Let op: Cacnea is al de bolcactus (barrel cactus); Cuyby/Cuychu zijn de cavia-lijn (familie van de capibara); Zapacha is de electric rodent.
+- **Frontsprite af (24 nov):** `docs/concept/sprites/capybarrel/af/` (Jordi: "akkoord, ... r6b"). Volgende: fase 2 (kart).

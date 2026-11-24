@@ -3112,3 +3112,8 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.752] - Capybarrel: prompt r4 (oog)
 - `capybarrel/gemini/PROMPTS.md`: Jordi's oogwens en een prompt die alleen het oog verandert.
+
+### [v0.0.753] - Capybarrel: frontsprite af
+- Capybarrel (Normal, fase 1 van 2): frontsprite af in `docs/concept/sprites/capybarrel/af/` (64×64 + 8×). Naar Gemini r3 (capibara op vier poten met een liggende houten ton om het lijf), blije oog overgenomen uit Flareon met zwart rondje (Jordi: "doe maar het blije oog"), vacht r6b (Jordi: "akkoord ... r6b").
+- Rondes: maker r1–r6 (oogstudie, keurderreparaties, hoepels 3 px), keurder PASS (r5), Dragonfly Cave-eindkeuring (r6: belijning, schaduw poten/romp, sprite lichter); vachtkleur r6b door Claude bruiner gemaakt (r6 werd zalmroze).
+- Op het overzichtsvel (sectie New). Fase 2 (houten kart, puur Normal) nog te ontwerpen.

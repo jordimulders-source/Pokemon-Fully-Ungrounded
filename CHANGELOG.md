@@ -3061,3 +3061,10 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.735] - Merge naar main
 - Branch `claude/fervent-euler-uckbbn` (ontwerplijst opgeschoond, satelliet-lijn fase 1 af, prompt fase 2) samengevoegd met main; conflicten in CHANGELOG/CLAUDE/TODO/GEMINI/overzichtsvel opgelost (beide kanten behouden, versies hernummerd naar 0.0.732–734).
+
+### [v0.0.736] - Bibarel-evolutie: frontsprite af; regionale Baltoy af; overzichtsvel
+- **Bibarel-evolutie** (Water/Fighting, bouwvakker-bever, fase 3): ontwerp via Gemini r1–r10 (bouwvakker alleen via lichaam: helm = kop, tuinbroek = vachtpatroon, potloodstam, pylonstaart oranje/wit, kraag van Bibarel, witte tanden); model r10 bevroren, staart 8 natieve px achter het lijf; tuinbroekvorm uit Gemini r5 in de kleuren van r10. Frontsprite r1–r19: keuringen, eindkeuring Dragonfly Cave, studie Gen 3 (Kangaskhan, `_gba`) en de beste vier eigen sprites (Dundragoon, Princadee, Zapacha, Skinguin). Af: `docs/concept/sprites/bibarel_evo/af/bibarel_evo.png` (= r19), op het overzichtsvel. Naam en evolutiemethode open.
+- **Regionale Baltoy** af (`baltoy_regional/af/`, = r19) en op het overzichtsvel.
+- Overzichtsvel: Solrock-evolutie als Rock/Cosmic (Solrock zelf is Rock/Cosmic sinds 21 nov).
+- TODO: opknapronde sprites met de beste vier als maatstaf.
+- Lessen: Gen 3-referentie = `anim_front_gba.png` + `normal_gba.pal` (SPRITE_KERN); kritiek van Jordi als checklist per ronde; eindkeuring toetst ook textuur; "kijk hoe die sprites het doen" = overgangen en lijntinten, niet palet of lijnposities (GEMINI.md).

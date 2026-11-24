@@ -75,3 +75,4 @@
 - Spritefilter (Claude, 23 nov): over 1 (zonder slijtage), 2 (alleen de vorm), 4 (alleen tak/stam), 6 (alleen 1–2 brede banden); af 3 (klauwen 1–2 px), 5 (snuit achter de stam, spaanders = details), 7 (twijgjes te klein, korst leest als muts), modder tegen de borst (bruin op bruin).
 - Herkenbaar Bibarel (gezicht, kleuren)?
 - Naam, evolutiemethode.
+- **Af** (24 nov, Jordi: "helemaal prima, commit maar en push naar main"): `af/bibarel_evo.png` (= `sprite_r19/sprite.png`), op het overzichtsvel. Gaat mee in de opknapronde (TODO "Sprites opknappen").

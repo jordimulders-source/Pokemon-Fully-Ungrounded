@@ -572,7 +572,7 @@ Galápagos (alles opties):
 
 Overig:
 - **Mierenleger als losse lijn** (Durant is de enige mier-Pokémon).
-- **Bibarel-evolutie:** bouwvakker-bever, **Water/Fighting** (Bibarel nu Normal/Water). Haakje Claude: in Vuurland zijn in 1946 Canadese bevers uitgezet die nu de bossen van Patagonië slopen (systeem-thema).
+- **Bibarel-evolutie:** bouwvakker-bever, **Water/Fighting** (Bibarel nu Normal/Water). **Frontsprite af (24 nov):** `sprites/bibarel_evo/af/`; alles in `sprites/bibarel_evo/SPEC.md`. Haakje Claude: in Vuurland zijn in 1946 Canadese bevers uitgezet die nu de bossen van Patagonië slopen (systeem-thema).
 - **Abra-regional, Dark/Psychic trickster/goochelaar:** "lijkt me tof".
 - **Een Pokémon gebaseerd op hannya** (Japans demonmasker).
 - **Baltoy/Claydol: Andes-vorm** (zie het huaco-retratovoorstel in `DEX_NOMINATIES.md` §5).

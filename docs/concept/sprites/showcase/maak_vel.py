@@ -63,6 +63,7 @@ SECTIES=[
 ('skinguin/af/skinguin.png', '"Skinguin" (Delibird)', 'ice/water'),
 ('dundragoon/af/dundragoon.png', '"Dundragoon" (Dunsparce)', 'dragon/normal'),
 ('mightyena_evo/af/alphyena.png', '"Alphyena" (Mightyena)', 'dark/fight'),
+('bibarel_evo/af/bibarel_evo.png', 'Bibarel-evolutie (Bibarel)', 'water/fight'),
 ('sunflora_evo/af/sunflora_evo.png', 'Sunflora-evolutie (Sunflora)', 'grass/cosmic'),
 ('kricketune_evo/af/krickestro.png', '"Krickestro" (Kricketune)', 'bug/fairy'),
 ('solrock_evo/af/solrock_evo.png', 'Solrock-evolutie (Solrock)', 'rock/cosmic'),

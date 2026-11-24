@@ -46,3 +46,4 @@ Rondes in `sprite/rN/`.
 - Jordi: "het gaat om de super rechthoekige zwartgelijnde vorm" → varianten zonder zwart rechthoekig kader: `sprite/r8_ogen/varianten2.png` (D geen kader, E trapezium in donkere steentint, F trapezium met zwart alleen aan de schaduwkant).
 - Jordi: "beter maar de verlichting moet duidelijker geel, als de spirit die erin zit, of misschien zelfs een andere kleur" → lichtkleuren op variant E: `sprite/r8_ogen/lichtkleur.png` (geel, goud, groen, cyaan, paars).
 - Jordi koos "goud" (op variant E). Af: `af/tempel.png` (= `sprite/r8_ogen/tempel_E_goud.png`, basis r7). Op het overzichtsvel (sectie New).
+- Jordi over af-versie (24 nov): "ok het mos ziet er wel vet uit, misschien kan je dat nog wat meer doen, verder is het alleen nog maar inkleuren wat beter moet, ik zie veel effen vlakken, weinig kleurtinten, schaduw is niet goed, belijning kan nog net wat beter, eigenlijk dragonflycave, maar dat is eindkeuring". Kleurronde in `sprite/k1/` e.v.

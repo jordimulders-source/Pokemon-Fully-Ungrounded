@@ -3,15 +3,14 @@ oog x13-16 y38-42 diff: 0
 oog x22-25 y38-42 diff: 0
 deurgat (64 px) diff: 0
 kleuren gebruikt (incl. transparant): 16
-pixels veranderd t.o.v. k9: 100
+pixels veranderd t.o.v. k9: 102
 palet gelijk aan k9: True
-mos gewijzigd: 0
-goud gewijzigd: 0
-voeglijnen (7) in k9 gewijzigd: 0
-buitenlijn (1) in k9 gewijzigd: 0
-wijzigingen bergwand (x48-61,y15-56): 100, alle binnen 6/f/e: True
-  overgangen wand: 6->15: 6, 14->6: 7, 14->15: 36, 15->6: 10, 15->14: 41
-wijzigingen poortlijnen (x10-26,y43-61): 0; 
-wijzigingen elders: 0
-clusters <3 px hele sprite (4-/8-samenhang): k6 115/43 | k9 114/43 | k10 114/43
-clusters <3 px x>=40 (4-/8-samenhang): k6 37/11 | k9 37/11 | k10 37/11
+wijzigingen t.o.v. k9 buiten bergwand (x48-61,y15-56) en lateioverstek (x25-27,y45-49): 0
+poort (x10-26,y43-61) t.o.v. k9 buiten de overstek: 0
+bergwand t.o.v. k8: 79 px, alle binnen 6/f/e (oud en nieuw): True
+  overgangen k8->k10 in de wand: 14->6: 1, 14->15: 21, 15->6: 18, 15->14: 39
+mos/voeg(7)/buitenlijn(1) in de wand gewijzigd t.o.v. k8: 0
+lateioverstek: (26,45) 4->7, (27,45) 4->1, (25,46) 1->5, (26,46) 3->6, (27,46) 3->1, (25,47) 1->6, (26,47) 3->6, (27,47) 3->1, (26,48) 3->1, (27,48) 3->1, (26,49) 3->5
+alpha diff t.o.v. k9: 0 (overstek valt binnen het silhouet)
+clusters <3 px hele sprite (4-/8-samenhang): k6 115/43 | k8 114/43 | k9 114/43 | k10 114/43
+clusters <3 px x>=40 (4-/8-samenhang): k6 37/11 | k8 37/11 | k9 37/11 | k10 37/11

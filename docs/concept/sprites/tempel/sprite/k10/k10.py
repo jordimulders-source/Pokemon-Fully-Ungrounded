@@ -1,56 +1,73 @@
-# k10 = k9 + bergwand met de hand in facetten: donkere band (e), lichte facet (f) met hooglichtrand (6) linksboven, putje (e)
+# k10 = k9 (poort) + bergwand terug op de k8-structuur, daarna per steen behandeld zoals de voorvlakken:
+# licht linksboven (6), schaduwsikkel rechtsonder (e), putje (e, 3 px). Grenzen horizontaal/verticaal.
 import sys, numpy as np
 sys.path.insert(0,'../k1')
 from gereedschap import *
 a8,_=laad('../k8/tempel.png'); a9,pal=laad('../k9/tempel.png'); a=a9.copy()
-C={'h':6,'f':15,'e':14}
-# per rij: lijst van (x, tekens) ; elk teken is één pixel vanaf x
-ONTWERP={
- # boven (x48-57, y19-26): band rechtsboven, facetrand schuin van (55,21) naar (52,23), putje linksonder
- 19:[(48,'ffff'),(53,'eee')],
- 20:[(48,'ffff'),(55,'ee')],
- 21:[(50,'f'),(53,'hhhe')],
- 22:[(48,'fffffhhfe')],
- 23:[(48,'feefhhffe')],
- 24:[(48,'fefffffffe')[:1] if False else (48,'feffffffe')],
- 25:[(48,'ffffffffee')],
- 26:[(53,'ffeee')],
- # midden (x49-59, y29-39)
- 29:[(52,'ffeeee')],
- 30:[(49,'ff'),(52,'ffeeeee')],
- 31:[(50,'f'),(52,'feeeehh')],
- 32:[(53,'eeehhf')],
- 33:[(50,'fffeehhff')],
- 34:[(49,'ffffeeffff')],
- 35:[(49,'ffffeeffffe')],
- 36:[(49,'feffeeefffe')[:0] or (49,'feffeeefffe')],
- 37:[(49,'feefffeefffe'[:0] or 'feeffeefffe')],
- 38:[(49,'ffffffeeffe')],
- 39:[(49,'ffffffe'),(59,'e')],
- # onder (x49-61, y42-56)
- 42:[(56,'eeeee')],
- 43:[(56,'eeeee')],
- 44:[(56,'ehhee')],
- 45:[(55,'ehhf'),(60,'ee')],
- 46:[(54,'eeefff'),(60,'ee')],
- 47:[(53,'eeefffff'),(60,'ee')],
- 48:[(55,'efffff'),(61,'e')],
- 49:[(53,'ef'),(58,'fff')],
- 50:[(52,'fefff'[:3]),(58,'fff')],
- 51:[(52,'feefff'[:0] or 'feeff'[:3]),(58,'ff')],
- 52:[(49,'fhffeeffff'[:0] or 'f'),(51,'ffeeffff'[:0] or 'ffffeeff')],
- 53:[(49,'fffffffee'[:0] or 'ffffffee')],
- 54:[(49,'ffefff')],
- 55:[(49,'feeff')],
- 56:[(49,'fff')],
+# 1. diagonale barsten/facetten van k9 weg: bergwand terug naar k8
+box=np.zeros_like(a,bool); box[15:57,48:62]=True
+a[box]=a8[box]
+assert ((a!=a8)&box).sum()==0
+C={'h':6,'f':15,'e':14,'.':None}
+ONTWERP={  # rij: (x-start, tekens); '.' = k8 laten staan
+ # steen boven (x48-57, y22-26): licht linksboven, putje, sikkel onder/rechts; e-streep x50 weg
+ 22:(48,'hhhffffef'),
+ 23:(48,'hfeeffffe'),
+ 24:(48,'ffe.fffee'),
+ 25:(48,'fffffffeee'),
+ 26:(53,'eeeee'),
+ # midden links (x49-52, y33-39)
+ 33:(50,'hh.'),
+ 34:(50,'h'),
+ 36:(49,'.ee'),
+ 37:(49,'.e.e'),
+ 38:(52,'e'),
+ 39:(50,'eee'),
+ # midden rechts (x54-59, y32-39): streep e x56-58 opgenomen in de steen
 }
-ver=[]
-for y,lst in ONTWERP.items():
-    for x0,s in lst:
+ONTWERP2={
+ 32:(54,'hhfff'),
+ 33:(54,'hfffe'),
+ 34:(54,'ffffe'),
+ 35:(54,'feefee'),
+ 36:(54,'fefaee'.replace('a','f')),
+ 37:(54,'ffffee'),
+ 38:(54,'feeeee'),
+ 39:(54,'ee'),
+ # onder rechts boven (x55-61, y42-48)
+ 42:(56,'hhffe'),
+ 43:(56,'hfffe'),
+ 44:(56,'feefe'),
+ 45:(56,'fef'),
+ 46:(56,'fff'),
+ 47:(56,'ffff'),
+ 48:(55,'eeeeeee'),
+ # onder (x49-60, y49-56): links van de voeg-schaduw x53 en rechts ervan
+ 49:(54,'h'),
+ 50:(54,'hh'),
+ 51:(50,'hh'),
+ 52:(50,'h'),
+ 53:(50,'ee'),
+ 54:(50,'e'),
+ 55:(51,'ee'),
+ 56:(50,'ee'),
+}
+ONTWERP3={52:(56,'eee'),53:(56,'e')}
+ONTWERP4={49:(60,'e'),50:(59,'ee'),51:(59,'e')}
+fout=[]
+for O in (ONTWERP,ONTWERP2,ONTWERP3,ONTWERP4):
+    for y,(x0,s) in O.items():
         for i,ch in enumerate(s):
             x=x0+i
-            ok = a9[y,x] in (14,15) or (a9[y,x]==6 and a8[y,x]==15)
-            if not ok: ver.append((x,y,int(a9[y,x]))); continue
+            if C[ch] is None: continue
+            if a8[y,x] not in (6,14,15): fout.append((x,y,int(a8[y,x]))); continue
             a[y,x]=C[ch]
-print('overgeslagen (geen muurpixel):',ver)
-np.save('wand.npy',a); bewaar(a,pal,'tempel.png')
+print('geen muurpixel, overgeslagen:',fout)
+# 2. latei steekt rechts 2 px uit voorbij de rechterstijl (Jordi; model)
+LATEI={(25,46):5,          # oude stijllijn wordt lateivlak
+       (26,45):7,                    # bovenkant (lichtkant) in de voegtint
+       (26,46):6,(26,47):6,(25,47):6, # kopse kant/onderkant in de donkere eigen tint
+       (26,49):5,                    # schaduw onder de overstek
+       (27,45):1,(27,46):1,(27,47):1,(26,48):1,(27,48):1}  # zwart aan de schaduwkant (rechts en onder)
+for (x,y),c in LATEI.items(): a[y,x]=c
+bewaar(a,pal,'tempel.png')

@@ -32,3 +32,5 @@ Middenfase en alle rondes daarvan: `docs/concept/sprites/mrmime_regional/SPEC.md
 - r4 (`gemini/r4.png`; schermstand met stok naar voren, wit eivormig lijf, losse bolhoed met pieken opzij), Jordi: "pose is goed, maar het lichaam is nu een kaal ei geworden".
 - Jordi (erna): "vertaalt nog niet voldoende naar een sprite ook".
 - Jordi (erna): "en het is ook nog net niet genoeg de mr mime lijn". Drie punten = te veel voor bijsturen (`PROMPT_r5_bijsturen.md` vervalt): startprompt r5 (`gemini/PROMPT_r5.md`, nieuw gesprek) = r4 + pak als lijfvorm, Mr. Mime-gezicht met wangcirkels en ronde schouders (bokser had ze ook), spritemaat.
+- r5 (`gemini/r5.png`; pose als r4, donkere rokpanden, ronde schouderbal, grijze wang, pieken opzij, losse hoed), Jordi: "pak wat beter, maar hij is teveel mr mime nog, het moet een counterpart van mr rime zijn".
+- Prompt r6: `gemini/PROMPT_r6.md` (nieuw gesprek): "counterpart/broer van Mr. Rime" als kader; Claude's eigen Mr. Mime-toevoegingen van r5 (schouders, wangcirkels) eruit; pieken naar achteren.

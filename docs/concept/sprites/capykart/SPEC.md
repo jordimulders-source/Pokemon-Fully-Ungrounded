@@ -22,5 +22,7 @@ Lijnbesluiten: `docs/concept/IDEEEN.md` → "Capybarrel"; fase 1: `docs/concept/
 - 24 nov (op r7, "af"): "Je kan me niet vertellen dat deze door de eindkeuring is, weinig tint, vrijwel geen schaduw, vooral niet op de blokken, de lijnen op de auto, dit moet echt nog beter, dragonflycave" → schaduwrondes r8–r12.
 - 24 nov (op r12): "het is nu niet echt een geheel meer, beetje blurry, de zwarte barrel lines zijn nog niet goed, de blokken staan niet echt in goed perspectief en lijken niet daadwerkelijk opgestapeld op de auto" → r13 (blokken mogen van vorm veranderen).
 
+- 24 nov (op r15b): "ik vind niet dat mijn punten verwerkt zijn", "blokken kloppen niet, de lijnen van de capybara kloppen niet met gen 3 sprites, het kleurwerk in de auto is dramaitsch", "zoveel rechte lijnen nog", "het lijkt net alsof elke spritesessie eerst op dezeldfe manier fout moet gaan", "en de blokken kloppen niet qua kleuren waardoor ze volledig 2d lijken" → r16: auto + kop opnieuw uit de modelhelderheid; toren via een nieuw Gemini-model.
+
 ## Open (niet door Jordi gezegd)
 - Evolutiemethode/level.

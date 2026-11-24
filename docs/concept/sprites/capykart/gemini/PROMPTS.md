@@ -114,3 +114,13 @@ Style: official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 
 
 ## Ronde 5 (24 nov)
 - `r5/capykart_r5.png` (= `referenties/model_r5.png`): zitopening weg, twee grijze hoepels. Jordi: "dit is als silhouet prima, hoe wil je de capybara zelf iets volgroeider laten lijken dan?". Silhouet bevroren; volgroeider hoofd binnen het silhouet uitwerken in de spritefase (voorstellen Claude 24 nov, open).
+
+## Blokkentoren apart (24 nov; nieuw gesprek, zonder bijlage)
+Jordi op r15b: "blokken kloppen niet", "de blokken kloppen niet qua kleuren waardoor ze volledig 2d lijken". Alleen de toren als model; Claude plakt hem op de auto.
+```
+Pixel art in the style of an official Gen 3 Pokemon front sprite (Ruby/Sapphire/Emerald): a small tower of three wooden toy blocks stacked on top of each other, with a green triangular roof block on top. From bottom to top: a blue cube, a red cube, a yellow cube, then the green triangular prism roof. The blocks are slightly offset from each other, as if stacked by hand.
+
+View: 3/4 view facing to the left, seen slightly from above, so for every cube you clearly see three faces: the top face (lightest, where visible), the front face turned to the left (medium, lit from the top left), and the right side face (darkest). Each color has its own light, medium and dark shade with a slight hue shift, so the blocks look solid and 3D, not flat. Painted wood, small rounded edges.
+
+Size: the whole tower about 14 pixels wide and 32 pixels tall on a 64x64 canvas, max 16 colors, dark 1-pixel outline (black on the shadow side, darker own color on the lit side). White background, no ground, no shadow, no other objects.
+```

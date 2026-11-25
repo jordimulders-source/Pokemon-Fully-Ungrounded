@@ -58,3 +58,21 @@ Style: official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 
 
 AVOID: insects, antennae, mandibles, wings, symbols or characters on the body, readable text, screens or computers, robots, pixel noise, static, scattered loose pixels, Porygon, Unown, MissingNo.
 ```
+
+## Ronde 3 (25 nov)
+- `r3/r3.png`. Jordi: "hij is te evil, niet sinister, de corruption is slecht uitgebeeld, die vlakken moeten veel groter zijn".
+
+## r4 (nieuw gesprek, zonder bijlage): prompt r3, alleen gezicht en grootte van de corruptie aangepast
+```
+Design an original Pokemon. Type: Electric/Bug. It is the middle stage of a three-stage line. It is a purely digital creature: a glitch that has become sentient. The Bug typing is purely conceptual (a bug in the computer sense, an error in the code); the creature is NOT an insect and has no insect features.
+
+The line: stage 1 is a formless glitch, a corrupted shape with only a vague face. THIS stage 2 has taken more shape and has evil intentions, but it is NOT sinister and NOT scary or monstrous: a clear, compact creature. Stage 3 will be several of these combined, like Magneton.
+
+Look: it is made of GAME BOY ADVANCE GRAPHICS CORRUPTION, the way a corrupted sprite looks in an old handheld game. The corrupted areas are BIG: large rectangular chunks of the body, each about a quarter to a third of the body, are shifted sideways, cut off, repeated or swapped to the wrong place, and one large chunk is drawn in a wrong palette (wrong colors, like a palette error). Few, big, hard-edged blocks, not many small ones. All of it with clean hard edges and a dark outline, NOT noise, NOT a small pattern, NOT dissolving pixels, NOT blur.
+
+Colors: one main body color, with magenta and cyan as the "error" colors in the corrupted parts. Yellow eyes (color only, no glow effect).
+
+Style: official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 colors, dark outline, clean shapes with shading, facing 3/4 to the left, compact composition. White background, no ground, no shadow, no effects, no glow.
+
+AVOID: insects, antennae, mandibles, wings, symbols or characters on the body, readable text, screens or computers, robots, a muscular brute or monster, sharp teeth, pixel noise, static, small camouflage-like patches, scattered loose pixels, Porygon, Unown, MissingNo.
+```

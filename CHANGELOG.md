@@ -3343,3 +3343,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Jordi: look in alle fases digitaal, fase 1 meer MissingNo-achtig.
 - Jordi: opbouw per fase (vaag gezicht vanaf fase 1, fase 2 gevormd en evil, fase 3 combinatie van fase 2-en zoals Magneton).
 - Jordi: GBA-corruptie als beeldtaal; prompt r3 fase 2.
+- Ronde 3: te evil, corruptievlakken te klein; prompt r4.

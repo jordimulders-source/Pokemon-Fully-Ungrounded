@@ -3305,32 +3305,69 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.805] - Overzichtsvel: Capykart na Capybarrel
 - `showcase/maak_vel.py`: Capykart direct na Capybarrel (Jordi); vel opnieuw gemaakt.
 
-### [v0.0.806] - Regionale Poliwag-lijn: eindvorm Poliwrath
+### [v0.0.806] - Typeverdeling hele dex
+- `DEX_IN_ROM.md`: telling van de typeverdeling over de hele dex (behouden soorten + nieuwe designs + Cosmic-besluiten), met aannames.
+
+### [v0.0.807] - Typeverdeling: regionale vormen erbij
+- `DEX_IN_ROM.md`: telling opnieuw; regionale vormen vervangen niets (Jordi: "als ze al erin zaten, gaan ze niet eruit"). 542 soorten.
+
+### [v0.0.808] - Cosmic: Dottler en Orbeetle
+- `CONCEPT.md`: Dottler en Orbeetle worden Bug/Cosmic in plaats van Bug/Psychic (Jordi). Blipbug-lijn staat nog als geschrapt in DEX_IN_ROM.
+
+### [v0.0.809] - Blipbug-lijn terug in de dex
+- `species_enabled.h`: `P_FAMILY_BLIPBUG` weer aan (Jordi: "komt terug in de dex"); `DEX_IN_ROM.md` bijgewerkt. Cosmic-type bestaat nog niet in de code, dus Dottler/Orbeetle zijn in de ROM voorlopig Bug/Psychic. `make` slaagt.
+### [v0.0.810] - Idee: impala-lijn
+- `docs/concept/IDEEEN.md`: nieuwe sectie "Impala-lijn" met Jordi's idee (impala → kudu of iets soortgelijks); alles open.
+- Impala-lijn: Jordi's voorkeur dikdik → impala → kudu toegevoegd aan `IDEEEN.md`.
+- Impala-lijn: alle drie Normal, dual type kan; dikdik puur Normal (Jordi).
+- Impala-lijn: lichaamskleur brons → zilver → goud; hoorns dof ijzer → gepolijst staal → spiegelglans met slijprand; dikdik Normal, impala en kudu Normal/Steel met hoorns echt van metaal (dikdik niet); hoorns als gevechtswapens, hoornvorm blijft kloppen (Jordi). Besloten punten in `POKEMON.md` → Impala-lijn.
+
+### [v0.0.811] - Dikdik (impala-lijn fase 1): frontsprite af
+- Ontwerp via Gemini r1–r3b (`docs/concept/sprites/impala_lijn/dikdik/gemini/PROMPTS.md`): kleine dikdik met korte houten speren met dof ijzeren punt, grote kop, lange hangende snuit, donkere vlek voor het oog, nieuwsgierig; model r3b.
+- Sprite r1–r7: model verkleind naar 52 px (maat als Vulpix/Growlithe), 2 keuringen + eindkeuring Dragonfly Cave; oog als ronde vorm uit het model (dunne ring, grote iris), ver oog, kuif, kin terug; donker brons (Jordi koos dit boven een lichtere variant), oog variant B (glimlicht linksonder).
+- Af: `docs/concept/sprites/impala_lijn/dikdik/af/dikdik.png`, op het overzichtsvel (New). Naam open.
+- Concept impala-lijn (dikdik → impala → kudu; Normal → Normal/Steel; brons → zilver → goud; hoorns als wapens) in `IDEEEN.md` en `POKEMON.md`; vakjes en staaltest in `docs/concept/sprites/impala_lijn/`.
+
+### [v0.0.812] - Gaucho-Lotad-lijn: besluiten en eerste prompt
+- Nieuwe regional Lotad-lijn (Lotad → Lombre → Ludicolo, geen vierde fase): een plant die gaucho is, geen kleding, geen accessoires. Grass en Water eruit: Lotad Ground, vanaf Lombre Fighting.
+- `docs/concept/sprites/lotad_regional/SPEC.md` (Jordi letterlijk) en Gemini-startprompt v1 in `gemini/PROMPT.md`.
+
+### [v0.0.813] - Gaucho-Lotad: ronde 1
+- Gemini r1 bewaard (`lotad_regional/r1/`); Jordi akkoord met het idee, hoed wordt per evolutie steeds meer een gauchohoed. Lijf te groot vergeleken met Lotad: varianten 100/85/75/65 % gemaakt.
+
+### [v0.0.814] - Gaucho-Lotad: model gekozen
+- Na 8 Gemini-rondes (v1–v7; bijlagen en "dicht bij Lotad" gaven palette swaps, poten bijsturen/plakken lukte niet) koos Jordi `lotad_regional/r8/gemini_r8_1.png` als model, op 4 poten in plaats van 6.
+
+### [v0.0.815] - Gaucho-Lotad: frontsprite af
+- Regionale Lotad (Ground, fase 1 van de gaucho-lijn): frontsprite af in `docs/concept/sprites/lotad_regional/af/lotad_gaucho.png` (43×41, 14 kleuren). Model Gemini r8-1 (sombrero-blad, rafelkraag, 4 poten) overgenomen, kleuren van r1, Lotad-ogen met lijftint, blik oog G (driekwart), DC-eindkeuring (schaduw kraag, belijning, kleurtinten). Op het overzichtsvel (Regional forms).
+- Lessen in `GEMINI.md`: geen bijlagen; "dicht bij de basisvorm" geeft een palette swap; omkleuren pas in de spritefase.
+
+### [v0.0.816] - Regionale Poliwag-lijn: eindvorm Poliwrath
 - Eindvorm van de Ice/Poison-Poliwag-lijn is een regionale Poliwrath (Ice/Poison); Politoed blijft gewoon (Jordi). Evolutiemethode later. `IDEEEN.md`, `POKEMON.md`, `TODO.md` bijgewerkt.
 
-### [v0.0.807] - Regionale Poliwag: besluiten en Gemini-prompt v1
+### [v0.0.817] - Regionale Poliwag: besluiten en Gemini-prompt v1
 - Jordi: harlekijnpad, ijs met cinnaber, beetje kristal, spiraal als venster, hoofdkleur als de harlekijnpad. Vastgelegd in `docs/concept/sprites/poliwag_regional/SPEC.md`; Gemini-prompt v1 + bijlage in `poliwag_regional/gemini/`.
 
-### [v0.0.808] - Regionale Poliwag: Gemini-prompt v2
+### [v0.0.818] - Regionale Poliwag: Gemini-prompt v2
 - Na v1 (geen staart, te veel kleur/detail): zuignap van het harlekijnpad-kikkervisje als buikvenster, Poliwags staart, 2–3 kristallen, spiraal in één kleur, één ijstint. `poliwag_regional/SPEC.md`, `gemini/PROMPT.md`.
 
-### [v0.0.809] - Regionale Poliwag: Gemini v2 bewaard
+### [v0.0.819] - Regionale Poliwag: Gemini v2 bewaard
 - `poliwag_regional/gemini/r2/gemini_v2.png`; Jordi: "kleuren vind ik goed".
 
-### [v0.0.810] - Regionale Poliwag: Gemini v2 gekozen
+### [v0.0.820] - Regionale Poliwag: Gemini v2 gekozen
 - v2 is het model (`poliwag_regional/referenties/gemini_gekozen_v2.png`); alleen de mondkleur mag anders (Jordi).
 
-### [v0.0.811] - Regionale Poliwag: mondkleur rood, sprite r1 gestart
+### [v0.0.821] - Regionale Poliwag: mondkleur rood, sprite r1 gestart
 - Mond rood (Jordi); maker-agent bouwt r1 uit Gemini v2 (`poliwag_regional/sprite_r1/`).
 
-### [v0.0.812] - Regionale Poliwag: frontsprite af
+### [v0.0.822] - Regionale Poliwag: frontsprite af
 - `docs/concept/sprites/poliwag_regional/af/poliwag_regional.png` = r1 (Jordi: "helemaal goed", eindkeuring overgeslagen). Op het overzichtsvel (Regional forms). CLAUDE.md, POKEMON.md, TODO.md en lessen (GEMINI.md) bijgewerkt.
 
-### [v0.0.813] - Regionale Poliwhirl: besluiten en Gemini-prompt v1
+### [v0.0.823] - Regionale Poliwhirl: besluiten en Gemini-prompt v1
 - Jordi: hybride, herkenbaar Poliwhirl maar slanker/scherper, grotere kristallen, kleur hele lijn gelijk, twee poten, geen zuignap, handschoenen, ogen bovenop, spiraal. `docs/concept/sprites/poliwhirl_regional/`.
 
-### [v0.0.814] - Regionale Poliwhirl: Gemini v1 gekozen, sprite gestart
+### [v0.0.824] - Regionale Poliwhirl: Gemini v1 gekozen, sprite gestart
 - Model `poliwhirl_regional/referenties/gemini_gekozen_v1.png`; spiraal van Poliwhirl, ogen fixen (Jordi).
 
-### [v0.0.815] - Regionale Poliwhirl: frontsprite af
+### [v0.0.825] - Regionale Poliwhirl: frontsprite af
 - `docs/concept/sprites/poliwhirl_regional/af/poliwhirl_regional.png` (Gemini v1, Poliwhirl-ogen 6×6 op modelplek, linkeroog variant B, spiraal van de regionale Poliwag, DC-eindkeuring). Op het overzichtsvel; CLAUDE.md, TODO, POKEMON.md, lessen bijgewerkt.

@@ -1,0 +1,9 @@
+S1 kraag 6->7 (model midden)                  53
+B1 klonter in binnenhoek -> eigen donker      26
+S1b los 7-eilandje terug naar 6               9
+B2 buitenrand: om-en-om opgeheven             4
+B3 binnenlijn hoed zwart -> eigen donker      1
+B4 snavellijn doorlopend                      3
+B5 outline highlight hoed (2->3)              3
+B5 outline highlight kraagpunt (6->7)         2
+totaal gewijzigde pixels 83 | alpha-diff 0 | oog-diff 0 | kleuren incl. transparant 14

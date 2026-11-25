@@ -1,0 +1,44 @@
+1 oorrand (12,15) 0->D  D loopt door tot (13,16); zwart vanaf (13,17)
+2 borstrand (25,38) 0->D  selout lichtkant, geen om-en-om
+2 borstrand (28,45) D->0  onderkant borst zwart, geen om-en-om
+3 oor (14,11) L->M  tint kale reductie
+3 oor (13,12) L->M  tint kale reductie
+3 oor (14,12) L->M  tint kale reductie
+3 oor (15,12) L->M  tint kale reductie
+3 oor (13,13) L->M  tint kale reductie
+3 oor (16,13) L->M  tint kale reductie
+3 oor (13,14) L->M  tint kale reductie
+3 oor (16,14) L->M  tint kale reductie
+3 oor (17,14) L->M  tint kale reductie
+3 oor (13,15) L->M  tint kale reductie
+3 oor (14,16) L->M  tint kale reductie
+3 oor (16,16) L->M  tint kale reductie
+3 oor (16,17) L->M  tint kale reductie
+3 oor (17,15) L->S  tint kale reductie
+4 kuif (21,17) L->M  streng uit kale reductie/model
+4 kuif (22,17) L->M  streng uit kale reductie/model
+4 kuif (23,17) L->M  streng uit kale reductie/model
+4 kuif (26,17) D->M  streng uit kale reductie/model
+4 kuif (27,17) S->M  streng uit kale reductie/model
+4 kuif (20,18) L->M  streng uit kale reductie/model
+4 kuif (21,18) L->M  streng uit kale reductie/model
+4 kuif (25,18) L->M  streng uit kale reductie/model
+4 kuif (26,18) L->M  streng uit kale reductie/model
+4 kuif (27,18) S->M  streng uit kale reductie/model
+4 kuif (20,19) L->M  streng uit kale reductie/model
+4 kuif (24,19) L->M  streng uit kale reductie/model
+4 kuif (25,19) L->M  streng uit kale reductie/model
+4 kuif (26,19) S->M  streng uit kale reductie/model
+KAN toppen (50,29) 0->D  staarttopje lichtkant: selout
+KAN toppen (13,9) 0->D  oortopje lichtkant: selout
+KAN schacht (22,13) D->w  linkerlijn schacht in donker hout
+KAN schacht (21,14) D->w  linkerlijn schacht in donker hout
+KAN schacht (20,15) D->w  linkerlijn schacht in donker hout
+KAN schacht (20,16) D->w  linkerlijn schacht in donker hout
+KAN schacht (32,15) D->w  linkerlijn schacht in donker hout
+KAN schacht (32,16) D->w  linkerlijn schacht in donker hout
+KAN schacht (31,17) D->w  linkerlijn schacht in donker hout
+KAN schacht (30,18) D->w  linkerlijn schacht in donker hout
+KAN schacht (29,19) D->w  linkerlijn schacht in donker hout
+KAN schacht (28,20) D->w  linkerlijn schacht in donker hout
+KAN schacht (27,21) D->w  linkerlijn schacht in donker hout

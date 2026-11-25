@@ -1,0 +1,33 @@
+oog (19,21) C->M  oog: dunne ring 1 px / grote iris (model); vacht/traanvlek naar model
+oog (19,22) C->M  oog: dunne ring 1 px / grote iris (model); vacht/traanvlek naar model
+oog (19,23) C->M  oog: dunne ring 1 px / grote iris (model); vacht/traanvlek naar model
+oog (12,24) C->D  oog: dunne ring 1 px / grote iris (model); vacht/traanvlek naar model
+oog (13,24) C->D  oog: dunne ring 1 px / grote iris (model); vacht/traanvlek naar model
+oog (14,24) S->D  oog: dunne ring 1 px / grote iris (model); vacht/traanvlek naar model
+oog (15,24) S->0  oog: dunne ring 1 px / grote iris (model); vacht/traanvlek naar model
+oog (16,24) S->0  oog: dunne ring 1 px / grote iris (model); vacht/traanvlek naar model
+oog (17,24) C->D  oog: dunne ring 1 px / grote iris (model); vacht/traanvlek naar model
+oog (19,24) C->M  oog: dunne ring 1 px / grote iris (model); vacht/traanvlek naar model
+oog (18,25) C->M  oog: dunne ring 1 px / grote iris (model); vacht/traanvlek naar model
+oog (12,26) D->L  oog: dunne ring 1 px / grote iris (model); vacht/traanvlek naar model
+oog (14,26) C->L  oog: dunne ring 1 px / grote iris (model); vacht/traanvlek naar model
+oog (15,26) C->L  oog: dunne ring 1 px / grote iris (model); vacht/traanvlek naar model
+oog (16,26) C->L  oog: dunne ring 1 px / grote iris (model); vacht/traanvlek naar model
+oog (17,26) C->L  oog: dunne ring 1 px / grote iris (model); vacht/traanvlek naar model
+veroog (5,17) D->0  ver oog: zwart ovaal (model 0)
+veroog (6,18) C->L  ver oog: creme weg, kopkleur (model L)
+veroog (6,20) L->0  ver oog: zwart ovaal (model 0 39)
+veroog (6,21) D->0  ver oog: zwart ovaal (model 0 39)
+veroog (5,20) D->0  ver oog: zwart ovaal (model 0 55-70)
+veroog (5,21) D->0  ver oog: zwart ovaal (model 0 55-70)
+veroog (5,22) D->0  ver oog: zwart ovaal (model 0 55-70)
+kammetje (10,16) D->L  stipje weg, kopkleur (model L50)
+kammetje (10,17) D->L  stipje weg, kopkleur (model L50)
+contour (4,12) D->0  onderrand ver oor: zwart doorlopend (geen om-en-om)
+borst (19,39) C->c  borst: schaduwrand onder (model tan creme)
+borst (23,39) C->c  borst: schaduwrand onder (model tan creme)
+borst (20,40) C->c  borst: schaduwrand onder (model tan creme)
+borst (21,40) C->c  borst: schaduwrand onder (model tan creme)
+borst (22,40) C->c  borst: schaduwrand onder (model tan creme)
+borst (22,41) C->c  borst: schaduwrand onder (model tan creme)
+borst (23,41) C->c  borst: schaduwrand onder (model tan creme)

@@ -754,3 +754,27 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - Kleurvoorstellen Claude (25 nov): 1 vaas (vogelhelft terracotta met zwarte tekening, gezicht wit zoals vrouwen op vazen), 2 fresco (Egyptisch blauw + okergoud), 3 donker (zwart + terracotta + purperrood).
 - Jordi (25 nov): **voorstel 1**, maar "het haar en de lippen wil ik juist een andere kleur, maar we het gezicht qua vorm wel, het haar mag best in een andere stijl, wat meer past bij een sirene". Dus: gezichtsvorm van Jynx blijft; haar en lippen een andere kleur dan bij Jynx (welke: open); haarstijl mag anders.
 - Jordi (25 nov): "haren bruin". Lipkleur en haarstijl niet gekozen; in prompt v1 Claudes voorstel (purperrode lippen, lange golvende lokken), zie `sprites/jynx_regional/PROMPT.md`.
+
+
+## Impala-lijn (Jordi, 24 nov)
+- **Jordi (24 nov):** "ik overweeg een impala lijn, ik weet dat die niet zuid amerikaans zijn overigens, die kan dan evolueren in een kudu of iets soortgelijks". Nog niets besloten (type, aantal fases, naam open).
+- Context (Claude): in de dex zitten al Deerling → Sawsbuck (voorstel regional pudú/huemul, `DEX_NOMINATIES.md` §5) en Stantler → Wyrdeer; officiële antilope-Pokémon bestaan niet.
+- **Jordi (24 nov), na een lijst antilopen en voorstellen voor 3 fases:** "oryx naar kudu of andersom werkt niet echt he" (Claude: klopt, rechte vs. spiraalhoorns, zelfde formaat). Daarna: "dikdik - impala - kudu zou ik wel tof vinden". Open: type(s), namen, of het definitief 3 fases wordt.
+- **Besloten (Jordi, 24 nov):** "ik wil ze alle 3 normal type geven, want dat missen we nog, maar we moeten nog bedenken hoe we ze uniek maken". Alle drie Normal. Direct daarna: "een dual type kan zeker". Open: tweede type(s), wat ze uniek maakt, namen.
+- **Besloten (Jordi, 24 nov):** "de dikdik sowieso puur normal". Impala en kudu: Normal, tweede type open.
+- **Jordi (24 nov):** "want we kunnen iets leuks met lichaamspatroon en hoorns doen en die heeft de dikdik nog niet veel". Open: wat er met patroon en hoorns gebeurt.
+- **Jordi (24 nov), op voorstellen met aguayo/charango:** "het hoeft niet allemaal zuid amerikaans te zijn".
+- Claude (24 nov): in de repo bestaan Normal/Ice, Normal/Steel en Normal/Rock nog niet; Normal/Grass is al Deerling/Sawsbuck.
+- **Jordi (24 nov):** "ja steel of fighting en dan idd zwaarden, speren oid, gevechtswapens". Tweede type impala/kudu: Steel of Fighting (open); hoorns als gevechtswapens.
+- **Jordi (24 nov):** "ja het belangrijkste is dat de vorm van de hoorns blijft kloppen". Eis: de hoornvorm van het echte dier (dikdik, impala, kudu) blijft kloppen.
+- **Jordi (24 nov):** "steel is wel tof, dat bestaat nog niet, wel erg zwak tegen fighting mar geen ramp". Impala en kudu: Normal/Steel. Claude (repo-typetabel): Fighting 4×, Fire en Ground 2×; immuun voor Ghost en Poison.
+- **Besloten (Jordi, 25 nov):** "beide steel, hoorns echt van metaal, alleen de dikdik niet". Samengevat in `POKEMON.md` → Impala-lijn.
+- Claude (25 nov): hoorns in een 64×64-sprite: impala-lier goed haalbaar maar dikker dan echt (≥ 2–3 px voor metaalglans); kudu-spiraal kan met licht/donker per draai, groot t.o.v. het lijf, driekwart, 2–2,5 draai.
+- **Jordi (25 nov):** "ja overdrijven graag zelfs, zodat ze een beetje afwijken van de dieren ook, maar de inspiratie wel nog kenbaar is".
+- **Besloten (Jordi, 25 nov):** "de dikdik krijgt dan korte houten speren met een metalen uiteinde, niet genoeg om steel te worden". Daarna: "Wat voor kleuren zullen we voor gaan?" (open).
+- **Jordi (25 nov), op voorstellen met natuurlijke kleuren (roodbruin/zand + staal, brons/goud, donker + staal):** "nee we moeten nu al een pokemon kleur bedenken".
+- **Jordi (25 nov), bij de kleurvakjes A–E (`sprites/impala_lijn/kleurvakjes.png`):** "brons -> zilver -> goud zou ook wel vet zijn, de vraag is alleen of de zilvere variant dan goed overkomt".
+- **Jordi (25 nov)**, op Claudes zorg dat zilver als "gewoon staal" leest: "Dit is niet erg, mawile is ook steel, empoleon ook, perrserker ook". Op de vraag of het dikdik brons, impala zilver, kudu goud is: "Ik bedoel dat ja, lichaamskleur he". Besloten: lichaamskleur dikdik brons → impala zilver → kudu goud. Open: kleur van de hoorns, tekening en buik.
+- **Jordi (25 nov):** "is het in kleur uit te drukken dat het staal sterker wordt? Damascus steel is tof maar ik vraag me af of dat in een sprite te zien is, helemaal met de vormen die we gaan maken". Claude: test `sprites/impala_lijn/staal_test.png` (hoornstrook 5 px): damascus wordt ruis; dof → gepolijst → spiegelglans met slijprand leest wel.
+- **Besloten (Jordi, 25 nov: "akkoord"):** hoorns worden per fase sterker staal via glans en contrast, geen damascus: dikdik-speerpunt dof ijzer → impala gepolijst staal → kudu spiegelglans met witte slijprand.
+- **Besloten (Jordi, 25 nov: "akkoord, echte tekening houden, kom maar met de dikdik"):** lichaamspatroon = echte tekening, overdreven, groeit per fase: dikdik bijna effen (traan voor het oog, kuif), impala scherpe tweedeling rug/flank/buik + zwarte M + plukjes, kudu witte verticale strepen + witte V tussen de ogen (wit = slijprand-wit).

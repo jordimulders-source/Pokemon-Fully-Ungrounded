@@ -3328,3 +3328,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.813] - Regionale Poliwhirl: besluiten en Gemini-prompt v1
 - Jordi: hybride, herkenbaar Poliwhirl maar slanker/scherper, grotere kristallen, kleur hele lijn gelijk, twee poten, geen zuignap, handschoenen, ogen bovenop, spiraal. `docs/concept/sprites/poliwhirl_regional/`.
+
+### [v0.0.814] - Regionale Poliwhirl: Gemini v1 gekozen, sprite gestart
+- Model `poliwhirl_regional/referenties/gemini_gekozen_v1.png`; spiraal van Poliwhirl, ogen fixen (Jordi).

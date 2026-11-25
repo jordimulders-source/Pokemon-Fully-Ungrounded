@@ -1,0 +1,26 @@
+palet byte-gelijk aan r2_E2M1: ja
+alpha-diff 0
+bevroren zone diff 0 van 664 px
+materiaalwissels buiten lijn->outline base: 0
+gewijzigd totaal 94
+  kop (r0-22) 29
+  romp/armen (r23-40) 25
+  benen/voeten (r41-63) 40
+  1->7: 8
+  1->b: 7
+  5->6: 41
+  5->7: 5
+  6->7: 33
+kleuren gebruikt (incl. transparant): 16 / palet 16
+zwart (1): 258 -> 243 = 11.2 % van 2171
+ geel licht (5): 380 -> 334
+ geel (6): 192 -> 200
+ geel donker (7): 72 -> 118
+lichte pixels (5,6,8,9,a,c,d) op de buitenrand: 0 []
+  (ter vergelijking r2_E2M1: 0 )
+eenlingen (geen 8-buur met dezelfde index, buiten bevroren): 67 [(53, 6, 8), (48, 7, 10), (9, 9, 8), (10, 9, 10), (13, 9, 9), (46, 11, 3), (29, 12, 7), (27, 13, 7), (47, 13, 7), (52, 13, 4), (18, 16, 6), (23, 16, 6), (55, 16, 11), (21, 17, 6), (54, 19, 9), (54, 20, 11), (11, 21, 7), (20, 21, 7), (40, 21, 7), (9, 22, 9), (13, 22, 7), (22, 22, 7), (45, 22, 10), (47, 22, 10), (12, 23, 11), (46, 23, 9), (56, 23, 7), (12, 24, 9), (40, 24, 11), (7, 25, 10), (9, 25, 9), (14, 25, 11), (47, 25, 10), (55, 25, 11), (57, 25, 2), (60, 25, 9), (11, 26, 9), (60, 26, 8), (10, 27, 2), (54, 27, 9), (58, 27, 8), (47, 28, 10), (53, 30, 9), (61, 31, 9), (51, 33, 9), (56, 33, 11), (59, 33, 10), (58, 34, 7), (11, 35, 2), (44, 35, 11), (52, 35, 11), (44, 36, 2), (13, 43, 8), (50, 43, 10), (52, 43, 9), (15, 44, 8), (48, 44, 8), (52, 45, 9), (14, 46, 3), (47, 46, 9), (14, 47, 2), (48, 47, 8), (51, 48, 8), (51, 52, 2), (55, 57, 7), (48, 58, 2), (55, 59, 2)]
+  (r2_E2M1: 73 )
+zwarte binnenpixels buiten bevroren: []
+zwarte eenling tussen outline base op de rand (om-en-om): []
+nieuwe 6-clusters <3 px (8-verbonden) door de ronde: [[(np.int64(45), np.int64(11))]]
+nieuwe 7-clusters <3 px (8-verbonden) door de ronde: [[(np.int64(11), np.int64(21))]]

@@ -3364,3 +3364,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.814] - Glitch-lijn fase 1: MissingNo-studie en Gen 3-glitchtests
 - Studie hoe MissingNo aan zijn sprite komt en wat de Gen 3-tegenhanger is: `docs/concept/sprites/glitch_lijn/fase1_glitch/STUDIE.md`.
 - Drie testscripts in `docs/concept/sprites/glitch_lijn/gereedschap/` (willekeurige ROM-data, pointer naast een sprite, echte sprite met verkeerde afmeting); de derde werkt (`fase1_glitch/gen3_afmeting/vel.png`).
+- Test 4 (getrouw): trainerdata uit de ROM als sprite (`fase1_glitch/gen3_trainerdata/vel.png`).

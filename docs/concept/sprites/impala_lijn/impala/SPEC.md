@@ -23,3 +23,4 @@ Alle citaten en lijnbesluiten: `docs/concept/IDEEEN.md` → "Impala-lijn"; samen
 - Oogvarianten op r2 (25 nov): `oog/oog_varianten.png` (A model-reductie, B Rapidash, C Absol, D Stantler; `oog/varianten.py`, pixels 1-op-1 uit de `_gba`-sprite, alleen omgekleurd). Wacht op Jordi's keuze.
 - Oogvarianten op r5: `oog/oog_varianten_r5.png` (`python3 oog/varianten.py r5`; A model, B Rapidash, C Absol, D Stantler).
 - Jordi (25 nov), op de oogvarianten r5: "a is het vetst maar mag ietsjepietsie doortastender qua blik, en loopt de kuif/maan genoeg door op de hals?" → blikvarianten A1–A3 (`oog/blik_varianten.png`, `oog/blik.py`; alleen bestaande oogpixels omgekleurd); manen in r6.
+- Jordi: "nee moet niet groter, maar iets zelfverzekerder" ("nee he toog") → B1–B3 zonder extra donker (`oog/blik_varianten2.png`).

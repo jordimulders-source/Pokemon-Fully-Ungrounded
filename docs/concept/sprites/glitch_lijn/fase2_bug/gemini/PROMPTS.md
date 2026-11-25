@@ -93,3 +93,6 @@ Style: official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 
 
 AVOID: legs, insects, antennae, wings, symbols or characters on the body, readable text, screens, robots, glitch effects, pixel noise, Porygon, Unown, MissingNo, Gengar, Haunter.
 ```
+
+## Ronde 5 stap 1 (25 nov)
+- `r5/r5_stap1.png`. Jordi: "gemini snapt er weinig van he".

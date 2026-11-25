@@ -3256,16 +3256,88 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.789] - Merge naar main: Capykart
 - Branch met de Capybarrel-lijn fase 2 (Capykart) naar main gemerged; overzichtsvel opnieuw gemaakt.
 
-### [v0.0.790] - Gaucho-Lotad-lijn: besluiten en eerste prompt
+### [v0.0.790] - Idee: regionale Jynx als sirene
+- `docs/concept/IDEEEN.md`: Jordi's idee voor een regionale Jynx naar de sirenes uit de Odyssee, met open vragen (vorm, type, Smoochum, band met de regio/Iara).
+
+### [v0.0.791] - Regionale Jynx: keuzes; regel over de regio-link
+- `IDEEEN.md`: regionale Jynx wordt een vogelvrouw zoals in de Odyssee, type Fairy (tweede type open); Smoochum blijft gewoon.
+- `CLAUDE.md`: vaste regel dat niet elke Pokémon een link met Zuid-Amerika hoeft te hebben (Jordi).
+
+### [v0.0.792] - Regionale Jynx: Fairy/Dark
+- `IDEEEN.md`: type van de regionale Jynx (sirene) is Fairy/Dark (Jordi).
+
+### [v0.0.793] - Regionale Jynx: kleurrichting
+- `IDEEEN.md`: Jordi's kleurrichting voor de sirene-Jynx (mix van Jynx en oud-Griekse kleuren; Jynx herkenbaar maar echt anders).
+
+### [v0.0.794] - Regionale Jynx: kleur voorstel 1
+- `IDEEEN.md`: Jordi kiest kleurvoorstel 1 (vaas); haar en lippen een andere kleur dan Jynx, gezichtsvorm blijft, haarstijl mag passender bij een sirene.
+
+### [v0.0.795] - Regionale Jynx: Gemini-prompt v1
+- `docs/concept/sprites/jynx_regional/PROMPT.md`: eerste Gemini-prompt voor de sirene-Jynx (bruin haar; lipkleur, haarstijl en pose als voorstel van Claude gemarkeerd).
+
+### [v0.0.796] - Regionale Jynx: r1 afgekeurd, prompt v2
+- `jynx_regional/gemini/r1.png` afgekeurd (vogel met mensenhoofd, geen Jynx). Prompt v2 in `PROMPT.md`: Jynx-bouw als basis met de Gen 3-sprite als bijlage, sirene-elementen erin. Les in `docs/lessen/GEMINI.md`.
+
+### [v0.0.797] - Regionale Jynx: prompt v3
+- `jynx_regional/PROMPT.md`: r2 bewaard; prompt v3 = v2 + zingend/lokkende blik, rustig verenkleed zonder borstmotief, weinig detail (Jordi akkoord; onderlijf-als-vogel afgewezen).
+
+### [v0.0.798] - Regionale Jynx: prompt v4
+- r3 bewaard; prompt v4 zonder vaasverwijzingen, kleuren als hexcodes (Jordi). Les in `docs/lessen/GEMINI.md`.
+
+### [v0.0.799] - Regionale Jynx: r4 (design ok), prompt v5
+- r4: design ok volgens Jordi; prompt v5 draait naar driekwart en maakt de blik minder slaperig (r4 als bijlage).
+
+### [v0.0.800] - Regionale Jynx: model gekozen
+- `jynx_regional/gemini/r5.png` is het model (driekwart, wakkerder blik); `SPEC.md` met Jordi's besluiten. Spritewerk gestart.
+
+### [v0.0.801] - Regionale Jynx: frontsprite kandidaat (r3)
+- `jynx_regional/sprite_r1–r3`: verkleining van Gemini-model r5 (Dundragoon-methode, silhouet-diff 0), keuring BIJNA → reparaties (haarvolume, lijnen, onderlip, rok) → eindkeuring Dragonfly Cave PASS. Ter keuze: variant kinschaduw; klauwen nu haar-donker (model grijsbruin).
+
+### [v0.0.802] - Regionale Jynx: r4/r5
+- r4: rokvouw rechts naar het modelpad; Jordi koos variant B (dwarslijn weg): "rechts beter". r5 = r4 B, verse eindkeuring (schaduw/tinten/lijnen) PASS zonder wijzigingen.
+
+### [v0.0.803] - Regionale Jynx: frontsprite af
+- `docs/concept/sprites/jynx_regional/af/jynx_regional.png` (= r5) af volgens Jordi ("zijn non issues"); op het overzichtsvel onder Regional forms (Fairy/Dark). Stand van zaken: 92 frontsprites af. Les in `GEMINI.md`.
+
+### [v0.0.804] - Regionale Mr. Mime: Fighting/Psychic
+- Bokser-Mr. Mime is Fighting/Psychic (Jordi): `mrmime_regional/SPEC.md`, CLAUDE.md en overzichtsvel bijgewerkt.
+
+### [v0.0.805] - Overzichtsvel: Capykart na Capybarrel
+- `showcase/maak_vel.py`: Capykart direct na Capybarrel (Jordi); vel opnieuw gemaakt.
+
+### [v0.0.806] - Typeverdeling hele dex
+- `DEX_IN_ROM.md`: telling van de typeverdeling over de hele dex (behouden soorten + nieuwe designs + Cosmic-besluiten), met aannames.
+
+### [v0.0.807] - Typeverdeling: regionale vormen erbij
+- `DEX_IN_ROM.md`: telling opnieuw; regionale vormen vervangen niets (Jordi: "als ze al erin zaten, gaan ze niet eruit"). 542 soorten.
+
+### [v0.0.808] - Cosmic: Dottler en Orbeetle
+- `CONCEPT.md`: Dottler en Orbeetle worden Bug/Cosmic in plaats van Bug/Psychic (Jordi). Blipbug-lijn staat nog als geschrapt in DEX_IN_ROM.
+
+### [v0.0.809] - Blipbug-lijn terug in de dex
+- `species_enabled.h`: `P_FAMILY_BLIPBUG` weer aan (Jordi: "komt terug in de dex"); `DEX_IN_ROM.md` bijgewerkt. Cosmic-type bestaat nog niet in de code, dus Dottler/Orbeetle zijn in de ROM voorlopig Bug/Psychic. `make` slaagt.
+### [v0.0.810] - Idee: impala-lijn
+- `docs/concept/IDEEEN.md`: nieuwe sectie "Impala-lijn" met Jordi's idee (impala → kudu of iets soortgelijks); alles open.
+- Impala-lijn: Jordi's voorkeur dikdik → impala → kudu toegevoegd aan `IDEEEN.md`.
+- Impala-lijn: alle drie Normal, dual type kan; dikdik puur Normal (Jordi).
+- Impala-lijn: lichaamskleur brons → zilver → goud; hoorns dof ijzer → gepolijst staal → spiegelglans met slijprand; dikdik Normal, impala en kudu Normal/Steel met hoorns echt van metaal (dikdik niet); hoorns als gevechtswapens, hoornvorm blijft kloppen (Jordi). Besloten punten in `POKEMON.md` → Impala-lijn.
+
+### [v0.0.811] - Dikdik (impala-lijn fase 1): frontsprite af
+- Ontwerp via Gemini r1–r3b (`docs/concept/sprites/impala_lijn/dikdik/gemini/PROMPTS.md`): kleine dikdik met korte houten speren met dof ijzeren punt, grote kop, lange hangende snuit, donkere vlek voor het oog, nieuwsgierig; model r3b.
+- Sprite r1–r7: model verkleind naar 52 px (maat als Vulpix/Growlithe), 2 keuringen + eindkeuring Dragonfly Cave; oog als ronde vorm uit het model (dunne ring, grote iris), ver oog, kuif, kin terug; donker brons (Jordi koos dit boven een lichtere variant), oog variant B (glimlicht linksonder).
+- Af: `docs/concept/sprites/impala_lijn/dikdik/af/dikdik.png`, op het overzichtsvel (New). Naam open.
+- Concept impala-lijn (dikdik → impala → kudu; Normal → Normal/Steel; brons → zilver → goud; hoorns als wapens) in `IDEEEN.md` en `POKEMON.md`; vakjes en staaltest in `docs/concept/sprites/impala_lijn/`.
+
+### [v0.0.812] - Gaucho-Lotad-lijn: besluiten en eerste prompt
 - Nieuwe regional Lotad-lijn (Lotad → Lombre → Ludicolo, geen vierde fase): een plant die gaucho is, geen kleding, geen accessoires. Grass en Water eruit: Lotad Ground, vanaf Lombre Fighting.
 - `docs/concept/sprites/lotad_regional/SPEC.md` (Jordi letterlijk) en Gemini-startprompt v1 in `gemini/PROMPT.md`.
 
-### [v0.0.791] - Gaucho-Lotad: ronde 1
+### [v0.0.813] - Gaucho-Lotad: ronde 1
 - Gemini r1 bewaard (`lotad_regional/r1/`); Jordi akkoord met het idee, hoed wordt per evolutie steeds meer een gauchohoed. Lijf te groot vergeleken met Lotad: varianten 100/85/75/65 % gemaakt.
 
-### [v0.0.792] - Gaucho-Lotad: model gekozen
+### [v0.0.814] - Gaucho-Lotad: model gekozen
 - Na 8 Gemini-rondes (v1–v7; bijlagen en "dicht bij Lotad" gaven palette swaps, poten bijsturen/plakken lukte niet) koos Jordi `lotad_regional/r8/gemini_r8_1.png` als model, op 4 poten in plaats van 6.
 
-### [v0.0.793] - Gaucho-Lotad: frontsprite af
+### [v0.0.815] - Gaucho-Lotad: frontsprite af
 - Regionale Lotad (Ground, fase 1 van de gaucho-lijn): frontsprite af in `docs/concept/sprites/lotad_regional/af/lotad_gaucho.png` (43×41, 14 kleuren). Model Gemini r8-1 (sombrero-blad, rafelkraag, 4 poten) overgenomen, kleuren van r1, Lotad-ogen met lijftint, blik oog G (driekwart), DC-eindkeuring (schaduw kraag, belijning, kleurtinten). Op het overzichtsvel (Regional forms).
 - Lessen in `GEMINI.md`: geen bijlagen; "dicht bij de basisvorm" geeft een palette swap; omkleuren pas in de spritefase.

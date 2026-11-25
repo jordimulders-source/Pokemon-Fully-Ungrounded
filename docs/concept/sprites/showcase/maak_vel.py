@@ -57,8 +57,9 @@ SECTIES=[
 ("satelliet_lijn/fase1/af/satelliet_fase1.png",'Satelliet fase 1 (Spoetnik)',"steel/cosmic"),
 ("satelliet_fase2/af/satelliet.png",'Satelliet fase 2',"steel/cosmic"),
 ("capybarrel/af/capybarrel.png",'"Capybarrel"',"normal"),
-("tempel/af/tempel.png",'Levende tempel',"ghost/rock"),
 ("capykart/af/capykart.png",'"Capykart"',"normal"),
+("tempel/af/tempel.png",'Levende tempel',"ghost/rock"),
+("impala_lijn/dikdik/af/dikdik.png",'Dikdik (impala-lijn fase 1)',"normal"),
 ]),
 ("Evolutions of existing Pokémon",[
 ('hitmontop_evo/af/hitmongroove.png', '"Hitmongroove" (Hitmontop)', 'fight/ground'),
@@ -98,8 +99,9 @@ SECTIES=[
 ("oricorio_dansen/samba/af/samba.png",'Oricorio (samba)',"grass/flying"),
 ("pincurchin_regional/af/pincurchin_regional.png",'Pincurchin (regional)',"poison/rock"),
 ("lotad_regional/af/lotad_gaucho.png",'Lotad (gaucho)',"ground"),
-("mrmime_regional/bokser/af/bokser.png",'Mr. Mime (regional)',"fight"),
+("mrmime_regional/bokser/af/bokser.png",'Mr. Mime (regional)',"fight/psychic"),
 ("mr_prime/af/mr_prime.png",'"Mr. Prime"',"fight/psychic"),
+("jynx_regional/af/jynx_regional.png",'Jynx (regional)',"fairy/dark"),
 ("dj_rotom/af/dj_rotom.png",'"DJ Rotom"',"electric/steel"),
 ]),
 ]

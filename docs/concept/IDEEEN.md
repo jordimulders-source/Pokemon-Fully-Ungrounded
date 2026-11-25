@@ -805,4 +805,5 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - **Jordi na r9 (25 nov):** "de corruptie maakt de sprite uniek. figuurtje met kop en lijf prima, maar wat we nu hebben is een soort broodrooster die niet chaotic evil genoeg is, geen wtf gevoel geeft als je de sprite voor het eerst ziet, hij moet echt ogen alsof er iets mis is".
 - **Corruptietest (Claude):** `sprites/glitch_lijn/fase2_bug/corruptietest_r9.png` (r9 met verwisselde/gespiegelde 8x8-tegels, verschoven band, tegels in verkeerde kleuren; script `sprites/glitch_lijn/gereedschap/corruptietest.py`), alleen om de techniek te laten zien.
 - **Jordi na r10 (25 nov):** referentie `zwart_rood_figuurtje.png`: "deze komt ook al wat dichter in de buurt, onze poppetjes zijn telkens veel te comic-like met hele blije menselijke ogen". Daarna: "en dat maakt het niet digitaal genoeg".
+- **Jordi:** "we proberen eerst fase 1 wel" (prompts in `sprites/glitch_lijn/fase1_glitch/gemini/PROMPTS.md`).
 - **Open:** kleur, aantal in fase 3.

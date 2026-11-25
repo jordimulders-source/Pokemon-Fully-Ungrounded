@@ -794,4 +794,6 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
   - "fase 1 is een glitch met weinig vorm, er is wel het een en ander in af te lezen, maar erg missingno achtig. Hij glitcht ook als die zou bewegen, zoals porygon-z dat ook doet bijv"
   - "fase 2 is meer gevormd en krijgt meer evil intenties"
   - "fase 3 is volledig virus en is zoals een magneton een combinatie van fase 2's, misschien wel meer dan 3"
-- **Open:** digitale beeldtaal en kleur (vraag Jordi: "wat zou goed bij een gevisualiseerde bug passen?"); anker; verder ontwerp.
+- **Beeldtaal:** Claude stelde GBA-corruptie voor (grove blokken, verschoven/herhaalde/verwisselde stukken, een stuk in een "verkeerd palet"; geen oplossende pixels, hapereffect à la Porygon-Z in frame 2). Jordi: "dat is tof om GBA corruptie te visualiseren omdat het een gba romhack is".
+- **Voorstel Claude, nog niet bevestigd:** één vaste basiskleur + magenta en cyaan als foutkleuren, Electric-geel in de ogen (vage gezicht = anker); fase 3 liefst 3 (max. 4 als ze in elkaar overlopen).
+- **Open:** kleur, lijfvorm, aantal in fase 3.

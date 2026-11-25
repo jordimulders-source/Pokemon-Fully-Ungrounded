@@ -42,3 +42,19 @@ AVOID: insects, beetles, legs like an insect, antennae, mandibles, wings, symbol
 
 ## Ronde 2 (25 nov)
 - `r2/r2.png`. Jordi: "hmm ik weet het nog niet, volgens mij hebben we nog helemaal niet gedefinieerd hoe het eruit moet zien dus doet gemini maar wat". Eerst de look samen vastleggen, dan pas een nieuwe prompt.
+
+## r3 (nieuw gesprek, zonder bijlage): GBA-corruptie
+Jordi: opbouw per fase en GBA-corruptie als beeldtaal (`IDEEEN.md`). Eigen invulling Claude (niet bevestigd): kleuren (basiskleur + magenta/cyaan, gele ogen); lijfvorm laat Gemini nog vrij.
+```
+Design an original Pokemon. Type: Electric/Bug. It is the middle stage of a three-stage line. It is a purely digital creature: a glitch that has become sentient. The Bug typing is purely conceptual (a bug in the computer sense, an error in the code); the creature is NOT an insect and has no insect features.
+
+The line: stage 1 is a formless glitch, a corrupted shape with only a vague face. THIS stage 2 has taken more shape and has evil intentions: a clear, compact creature with a sinister face. Stage 3 will be several of these combined, like Magneton.
+
+Look: it is made of GAME BOY ADVANCE GRAPHICS CORRUPTION, the way a corrupted sprite looks in an old handheld game: hard-edged rectangular blocks and tiles, some horizontal bands of the body shifted sideways, a few tiles repeated or swapped to the wrong place, and one part of the body drawn in a wrong palette (wrong colors, like a palette error). All of it with clean hard edges and a dark outline, NOT noise, NOT dissolving pixels, NOT blur.
+
+Colors: one main body color, with magenta and cyan as the "error" colors in the corrupted parts. Glowing yellow eyes are allowed as color only (no glow effect).
+
+Style: official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 colors, dark outline, clean shapes with shading, facing 3/4 to the left, compact composition. White background, no ground, no shadow, no effects, no glow.
+
+AVOID: insects, antennae, mandibles, wings, symbols or characters on the body, readable text, screens or computers, robots, pixel noise, static, scattered loose pixels, Porygon, Unown, MissingNo.
+```

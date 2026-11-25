@@ -3265,3 +3265,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.792] - Regionale Jynx: Fairy/Dark
 - `IDEEEN.md`: type van de regionale Jynx (sirene) is Fairy/Dark (Jordi).
+
+### [v0.0.793] - Regionale Jynx: kleurrichting
+- `IDEEEN.md`: Jordi's kleurrichting voor de sirene-Jynx (mix van Jynx en oud-Griekse kleuren; Jynx herkenbaar maar echt anders).

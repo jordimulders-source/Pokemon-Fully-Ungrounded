@@ -94,3 +94,14 @@ AVOID
 - Not a human, not a person in a plant costume.
 - No glossy 3D render, no plush or mascot look.
 ```
+
+# Bijstuurprompt v4 (25 nov), na r3
+Jordi over r3 (v3): "dit klopt niet, het is nu gewoon een semi pallette swap, er zit geen gaucho meer in". "Lotads verhoudingen" in tekst of bijlage trekt Gemini naar een kopie. Daarom: r1 als basis (in het r1-gesprek, of nieuw gesprek met `r1/gemini_r1.png` als bijlage), alleen 2 wijzigingen (les GEMINI.md: max. 1–2 per bijlageronde).
+
+```
+The attached image is my design. Keep EVERYTHING exactly the same: the hat-shaped leaf with the curled brim, the colors, the stern face, the bill, the style.
+Change ONLY these two things:
+1. Remove the two arms. It has no arms at all.
+2. It stands on SIX short stubby legs (three on each side), close under the body.
+Keep it a 64x64 Gen 3 front sprite on a plain white background.
+```

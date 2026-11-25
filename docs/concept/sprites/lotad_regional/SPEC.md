@@ -15,6 +15,7 @@ Lijn: Lotad → Lombre → Ludicolo (drie fases, geen vierde).
 - `r1/gemini_r1.png` (startprompt v1). Jordi: "ja tof idee, dit gaat werken, en dan wordt het steeds meer een cowboy hoed per evo. Alleen het lichaam is net iets te groot denk ik"; "vergeleken met lotad"; "ofja steeds meer gaucho hoed"; "die lijken op cowboy hoeden".
 - `r1/lijf_varianten.png`: lijf door Claude geschaald onder de hoed (100/85/75/65 %), naast de Gen 3-Lotad; hoed onaangeroerd.
 - `r2/gemini_r2.png` (v2, Lotad-bijlage): Jordi "veel minder op alle fronten".
+- `r3/gemini_r3.png` (v3): Jordi "dit klopt niet, het is nu gewoon een semi pallette swap, er zit geen gaucho meer in".
 
 ## Open
 - Welke hoed (plat met brede rand, boina, anders).

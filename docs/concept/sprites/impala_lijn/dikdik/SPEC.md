@@ -10,6 +10,8 @@ Alle citaten en lijnbesluiten: `docs/concept/IDEEEN.md` → "Impala-lijn"; samen
 - Uitstraling: "nieuwsgierig".
 - Poten: "een dikdik heeft sws hele dunne pootjes, dus dit is prima, ga maar bouwen".
 
+- Bij de start van de sprite (Jordi, 25 nov): "en idd meer brons kleur en de speren ook het juiste staal" (= speerpunt dof ijzer volgens de besloten staalopbouw; zie `../staal_test.png` strook 1).
+
 ## Model
 - **`referenties/model_r3b.png`** (Gemini r3 + bijsturen gezicht). Jordi: "dit is prima, ga maar bouwen".
 - Kleur mag afwijken van het model (SPRITE_KERN): het model is donker kastanje (#9A552F); Jordi wil brons. Claude zei bij r2/r3: brons = dieper, voller, met donkere warme schaduwen. Richtvakje (voorstel Claude, niet door Jordi gekozen): `../lichaamskleur.png` rij "dikdik: brons".

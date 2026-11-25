@@ -97,7 +97,7 @@ SECTIES=[
 ("oricorio_dansen/tango/af/tango.png",'Oricorio (tango)',"dark/flying"),
 ("oricorio_dansen/samba/af/samba.png",'Oricorio (samba)',"grass/flying"),
 ("pincurchin_regional/af/pincurchin_regional.png",'Pincurchin (regional)',"poison/rock"),
-("mrmime_regional/bokser/af/bokser.png",'Mr. Mime (regional)',"fight"),
+("mrmime_regional/bokser/af/bokser.png",'Mr. Mime (regional)',"fight/psychic"),
 ("mr_prime/af/mr_prime.png",'"Mr. Prime"',"fight/psychic"),
 ("jynx_regional/af/jynx_regional.png",'Jynx (regional)',"fairy/dark"),
 ("dj_rotom/af/dj_rotom.png",'"DJ Rotom"',"electric/steel"),

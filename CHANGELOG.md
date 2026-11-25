@@ -3298,3 +3298,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.803] - Regionale Jynx: frontsprite af
 - `docs/concept/sprites/jynx_regional/af/jynx_regional.png` (= r5) af volgens Jordi ("zijn non issues"); op het overzichtsvel onder Regional forms (Fairy/Dark). Stand van zaken: 92 frontsprites af. Les in `GEMINI.md`.
+
+### [v0.0.804] - Regionale Mr. Mime: Fighting/Psychic
+- Bokser-Mr. Mime is Fighting/Psychic (Jordi): `mrmime_regional/SPEC.md`, CLAUDE.md en overzichtsvel bijgewerkt.

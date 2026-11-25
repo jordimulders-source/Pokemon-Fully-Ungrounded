@@ -114,3 +114,41 @@ Good, keep this exactly. Now it looks like something is missing below the body. 
 It must have SIX legs in total, all the same short stubby size, spread evenly in a ring around the bottom of its round body, like a small beetle or like Lotad: two at the front, two in the middle, two at the back. The legs fill the space under the body so nothing looks cut off.
 Keep everything else exactly the same.
 ```
+
+# Startprompt v6 (25 nov), na r5
+Jordi: "we kunnen r1 doen, maar dat ontwerp heeft teveel detail voor een sprite"; "nieuwe prompt maar dan? Anders vertaalt dat niet". Basis = v1 (gaf r1), met r1's ontwerp in eenvoudige woorden + weinig detail + 6 poten zonder armen. Nieuw gesprek, geen bijlage.
+Keuze Claude (schrappen bij twijfel): het rafelige "bastkraagje" van r1 als één effen donkerdere onderhelft beschreven, zonder zigzag/rafels; krulletjes/barsten/textuur verboden.
+
+```
+Design a regional form of the Pokémon LOTAD and draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art).
+
+CONCEPT
+- A plant that IS a gaucho (the cowboy of the South American pampas, known for his wide hat).
+- Type: Ground. It is NOT a Water or Grass type and does not live in water.
+- The gaucho look comes only from the plant's own body parts. The leaf on its head forms the gaucho hat.
+- This is the first, smallest stage of its line: small, simple, still mostly a little plant creature.
+
+DESIGN
+- On its head: a big, flat, round leaf in terracotta / clay-brown with a raised rim, so it reads clearly as a wide-brimmed hat. Wider than the body.
+- Under it: a small round body in warm red-brown with a yellow duck bill and stern, frowning eyes (a tough little cowboy look).
+- The lower half of the body is a plain, darker earthy olive-brown.
+- It stands on SIX short stubby legs (three on each side) close under the body. No arms.
+
+SIMPLE, FEW DETAILS (important)
+- Big clear shapes that read well at 64x64, like Lotad's own sprite.
+- Smooth flat surfaces with simple Gen 3 shading only: no cracks or veins on the leaf, no curls on the rim, no fringe, no zigzag pattern, no bark or fur texture.
+
+POSE
+- Three-quarter view facing left, like official Gen 3 front sprites.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, clean shading like official Game Freak Gen 3 sprites.
+- Compact silhouette, limbs close to the body.
+- Plain white background. No floor, rock, soil, shadow, water, glow, sparkles or effects. One single creature, no extra views.
+
+AVOID
+- No arms, no hands, not four legs.
+- NO clothing and NO accessories: no poncho, scarf, belt, boots, spurs, knife, whip, lasso, bolas, mate cup, no real hat on top of the leaf.
+- Not green and blue like the normal Lotad. Not a human, not a person in a plant costume.
+- No glossy 3D render, no plush or mascot look.
+```

@@ -1,0 +1,109 @@
+verschuiving PB [-1.5  -0.83] spritepx, PF [-1.5 -0.6] spritepx
+x y oud->nieuw onderdeel reden (t.o.v. r11/sprite.png)
+33 13 0->2 PB PB symmetrisch om de stok (naar links)
+33 14 0->2 PB PB symmetrisch om de stok (naar links)
+34 14 2->12 PB recept opnieuw (rand/lichte rand verschuift mee)
+33 15 0->2 PB PB symmetrisch om de stok (naar links)
+34 15 2->12 PB recept opnieuw (rand/lichte rand verschuift mee)
+33 16 0->2 PB PB symmetrisch om de stok (naar links)
+34 16 2->12 PB recept opnieuw (rand/lichte rand verschuift mee)
+35 16 12->14 PB recept opnieuw (rand/lichte rand verschuift mee)
+38 16 12->1 PB recept opnieuw (rand/lichte rand verschuift mee)
+33 17 0->2 PB PB symmetrisch om de stok (naar links)
+34 17 2->12 PB recept opnieuw (rand/lichte rand verschuift mee)
+35 17 12->14 PB recept opnieuw (rand/lichte rand verschuift mee)
+38 17 14->1 PB recept opnieuw (rand/lichte rand verschuift mee)
+33 18 0->2 PB PB symmetrisch om de stok (naar links)
+34 18 2->12 PB recept opnieuw (rand/lichte rand verschuift mee)
+38 18 14->1 PB recept opnieuw (rand/lichte rand verschuift mee)
+33 19 0->2 PB PB symmetrisch om de stok (naar links)
+34 19 2->12 PB recept opnieuw (rand/lichte rand verschuift mee)
+35 19 12->13 PB recept opnieuw (rand/lichte rand verschuift mee)
+38 19 12->1 PB recept opnieuw (rand/lichte rand verschuift mee)
+33 20 0->2 PB PB symmetrisch om de stok (naar links)
+34 20 2->12 PB recept opnieuw (rand/lichte rand verschuift mee)
+35 20 12->13 PB recept opnieuw (rand/lichte rand verschuift mee)
+38 20 13->1 PB recept opnieuw (rand/lichte rand verschuift mee)
+34 21 2->12 PB recept opnieuw (rand/lichte rand verschuift mee)
+35 21 12->13 PB recept opnieuw (rand/lichte rand verschuift mee)
+38 21 13->1 PB recept opnieuw (rand/lichte rand verschuift mee)
+33 22 12->2 PB PB symmetrisch om de stok (naar links)
+34 22 2->12 PB recept opnieuw (rand/lichte rand verschuift mee)
+38 22 13->1 PB recept opnieuw (rand/lichte rand verschuift mee)
+33 23 11->2 PB PB symmetrisch om de stok (naar links)
+34 23 2->12 PB recept opnieuw (rand/lichte rand verschuift mee)
+35 23 12->13 PB recept opnieuw (rand/lichte rand verschuift mee)
+38 23 13->1 PB recept opnieuw (rand/lichte rand verschuift mee)
+33 24 14->2 PB PB symmetrisch om de stok (naar links)
+34 24 2->12 PB recept opnieuw (rand/lichte rand verschuift mee)
+35 24 12->13 PB recept opnieuw (rand/lichte rand verschuift mee)
+38 24 12->1 PB recept opnieuw (rand/lichte rand verschuift mee)
+33 25 11->1 PB PB symmetrisch om de stok (naar links)
+34 25 2->13 PB recept opnieuw (rand/lichte rand verschuift mee)
+35 25 12->13 PB recept opnieuw (rand/lichte rand verschuift mee)
+38 25 13->1 PB recept opnieuw (rand/lichte rand verschuift mee)
+38 26 13->1 PB recept opnieuw (rand/lichte rand verschuift mee)
+58 32 11->12 PC recept opnieuw (rand/lichte rand verschuift mee)
+59 32 1->11 PC recept opnieuw (rand/lichte rand verschuift mee)
+60 32 0->1 PC PC compleet (lege pixel binnen het parallellogram)
+58 33 1->11 PC recept opnieuw (rand/lichte rand verschuift mee)
+58 34 0->1 PC PC compleet (lege pixel binnen het parallellogram)
+34 47 13->12 PE recept opnieuw (rand/lichte rand verschuift mee)
+40 49 1->11 PE recept opnieuw (rand/lichte rand verschuift mee)
+41 49 0->1 PE PE compleet (lege pixel binnen het parallellogram)
+36 54 1->11 PE recept opnieuw (rand/lichte rand verschuift mee)
+36 55 0->1 PE PE compleet (lege pixel binnen het parallellogram)
+35 43 12->14 PF recept opnieuw (rand/lichte rand verschuift mee)
+38 43 12->1 PF recept opnieuw (rand/lichte rand verschuift mee)
+35 44 12->14 PF recept opnieuw (rand/lichte rand verschuift mee)
+38 44 14->1 PF recept opnieuw (rand/lichte rand verschuift mee)
+38 45 14->1 PF recept opnieuw (rand/lichte rand verschuift mee)
+35 46 12->13 PF recept opnieuw (rand/lichte rand verschuift mee)
+38 46 12->1 PF recept opnieuw (rand/lichte rand verschuift mee)
+38 47 13->1 PF recept opnieuw (rand/lichte rand verschuift mee)
+38 54 11->1 PF recept opnieuw (rand/lichte rand verschuift mee)
+39 16 2->0 leeg paneelpixel buiten het nieuwe parallellogram -> transparant
+39 17 1->0 leeg paneelpixel buiten het nieuwe parallellogram -> transparant
+39 18 1->0 leeg paneelpixel buiten het nieuwe parallellogram -> transparant
+39 19 1->0 leeg paneelpixel buiten het nieuwe parallellogram -> transparant
+39 20 1->0 leeg paneelpixel buiten het nieuwe parallellogram -> transparant
+39 21 1->0 leeg paneelpixel buiten het nieuwe parallellogram -> transparant
+39 22 1->0 leeg paneelpixel buiten het nieuwe parallellogram -> transparant
+39 23 1->0 leeg paneelpixel buiten het nieuwe parallellogram -> transparant
+39 24 1->0 leeg paneelpixel buiten het nieuwe parallellogram -> transparant
+39 25 1->0 leeg paneelpixel buiten het nieuwe parallellogram -> transparant
+39 26 1->0 leeg paneelpixel buiten het nieuwe parallellogram -> transparant
+36 41 2->0 leeg paneelpixel buiten het nieuwe parallellogram -> transparant
+37 41 2->0 leeg paneelpixel buiten het nieuwe parallellogram -> transparant
+39 43 2->0 leeg paneelpixel buiten het nieuwe parallellogram -> transparant
+40 43 2->0 leeg paneelpixel buiten het nieuwe parallellogram -> transparant
+39 44 12->0 leeg paneelpixel buiten het nieuwe parallellogram -> transparant
+40 44 1->0 leeg paneelpixel buiten het nieuwe parallellogram -> transparant
+39 45 14->0 leeg paneelpixel buiten het nieuwe parallellogram -> transparant
+40 45 1->0 leeg paneelpixel buiten het nieuwe parallellogram -> transparant
+39 46 14->0 leeg paneelpixel buiten het nieuwe parallellogram -> transparant
+40 46 1->0 leeg paneelpixel buiten het nieuwe parallellogram -> transparant
+39 47 12->0 leeg paneelpixel buiten het nieuwe parallellogram -> transparant
+40 47 1->0 leeg paneelpixel buiten het nieuwe parallellogram -> transparant
+39 52 11->0 leeg paneelpixel buiten het nieuwe parallellogram -> transparant
+40 52 2->0 leeg paneelpixel buiten het nieuwe parallellogram -> transparant
+39 53 11->0 leeg paneelpixel buiten het nieuwe parallellogram -> transparant
+40 53 1->0 leeg paneelpixel buiten het nieuwe parallellogram -> transparant
+39 54 11->0 leeg paneelpixel buiten het nieuwe parallellogram -> transparant
+40 54 1->0 leeg paneelpixel buiten het nieuwe parallellogram -> transparant
+39 55 1->0 leeg paneelpixel buiten het nieuwe parallellogram -> transparant
+40 55 1->0 leeg paneelpixel buiten het nieuwe parallellogram -> transparant
+39 27 15->2 omlijning romprand grenst nu aan transparant
+
+TELLING
+PB        PB symmetrisch om de stok (naar links)                       12
+PB        recept opnieuw (rand/lichte rand verschuift mee)             31
+PC        PC compleet (lege pixel binnen het parallellogram)           2
+PC        recept opnieuw (rand/lichte rand verschuift mee)             3
+PE        PE compleet (lege pixel binnen het parallellogram)           2
+PE        recept opnieuw (rand/lichte rand verschuift mee)             3
+PF        recept opnieuw (rand/lichte rand verschuift mee)             9
+leeg      paneelpixel buiten het nieuwe parallellogram -> transparant  31
+omlijning romprand grenst nu aan transparant                           1
+totaal 94
+kleuren 16 (incl. transparant)

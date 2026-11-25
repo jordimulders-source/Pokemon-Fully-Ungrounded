@@ -67,3 +67,4 @@ Open: aantal ogen, naam, evolutiemethode.
 - Jordi over r11: "ik vind de ogen nu goed anders. Bovenste paneel moet alleen ietsje naar links, omdat het nu op een vlag lijkt, maar de stok moet in het midden zitten ipv helemaal links, zelfde voor onderste paneel. Verder lijkt onderste en rechtsboven allebei nog lichtjes afgekapt he. Ik snap dat ze overlappen, maar zijn nog een paar pixels leeg waar ze niet overlappen" → r12.
 - r12 (`sprite/r12/`): PB/PF gecentreerd om de stok, PC/PE-punten compleet; PF nu bijna geheel achter voorbuis en PE (strook 3 px). Keuze Jordi: PF vóór de voorbuis?
 - Jordi over r12: "rechtsboven paneel opgelost, boven is nu juist te ver doorgecschoven en onder heb je nu bijna helemaal weggehaald" → r13 varianten PB −1,5/−2, PF r11-positie/−1,5.
+- Jordi over PF: "hij moet overlapt worden maar op een goede manier".

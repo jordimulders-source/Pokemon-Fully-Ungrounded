@@ -3042,13 +3042,184 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Model: Gemini v8 (v1–v8 met Jordi: bruin lijf, donkerrode gladde potloodstaafjes, dicht en lang, zeemijn met 3 contacthoorns en een naad). Gezicht = Pincurchins eigen ogen en mond, 1-op-1 uit zijn sprite: linkeroog smaller (kolom geschrapt, pupil heel), rechteroog 1 px lager, mond 115 % bovenop de naad met lijf tussen mond en ogen (V1).
 - Eindkeuring Dragonfly Cave (schaduw, kleurtinten, belijning): 29 px gerepareerd, middenrood iets lichter (B). Af: `docs/concept/sprites/pincurchin_regional/af/pincurchin_regional.png`; op het overzichtsvel (Regional forms). Alles in `pincurchin_regional/SPEC.md`.
 
-### [v0.0.731] - Satelliet (Steel/Cosmic-lijn fase 2): frontsprite kandidaat
+### [v0.0.731] - Regionale Pincurchin: naam en evolutie
+- Jordi: "blijft pincurchin, geen evolutie". Vastgelegd in `pincurchin_regional/SPEC.md`, POKEMON.md en Stand van zaken.
+### [v0.0.732] - Ontwerplijst opgeschoond
+- Geschrapt (Jordi, 23 nov): wilde lijn vicuña → guanaco, carnavalspauw.
+- Fire/Water-Pokémon van de lijst: gedaan (onderwater-Oddish-lijn).
+- Bijgewerkt in `TODO.md`, `IDEEEN.md`, `POKEMON.md`.
+
+### [v0.0.733] - Steel/Cosmic-lijn (satelliet): concept + prompt fase 1
+- Besloten met Jordi (23 nov): pure machines met één oog; Spoetnik-bolletje → satelliet → ruimtestation (groter en complexer, zoals Magneton); geen Zuid-Amerika-link nodig; nu alleen designs.
+- `docs/concept/sprites/satelliet_lijn/SPEC.md` en Gemini-prompt fase 1 r1.
+
+### [v0.0.734] - Satelliet-lijn fase 1 (Spoetnik): frontsprite af
+- Steel/Cosmic-lijn (Jordi, 23 nov): pure machines met één oog; Spoetnik-bolletje → satelliet → ruimtestation; fase 1 wordt onderdeel van fase 2 en 3.
+- Gemini-model r7 gekozen (r1–r7 in `satelliet_lijn/fase1/gemini/`), in het model korte 5e antenne weggehaald en onderste antenne verlengd (`fase1/model/`).
+- Sprite: r1–r3 (1548 px, eindkeuring PASS), daarna op Jordi's verzoek verkleind naar ±985 px (r4, eindkeuring PASS). Bol rond (≤0,71 px), geen onnodig zwart, antennes ≥2 px.
+- `fase1/af/satelliet_fase1.png`; op het overzichtsvel (sectie New).
+
+### [v0.0.735] - Merge naar main
+- Branch `claude/fervent-euler-uckbbn` (ontwerplijst opgeschoond, satelliet-lijn fase 1 af, prompt fase 2) samengevoegd met main; conflicten in CHANGELOG/CLAUDE/TODO/GEMINI/overzichtsvel opgelost (beide kanten behouden, versies hernummerd naar 0.0.732–734).
+
+### [v0.0.736] - Idee Capybarrel
+- `docs/concept/IDEEEN.md`: nieuw kopje "Capybarrel" met Jordi's idee en de eerste voorstellen (alles open).
+
+### [v0.0.737] - Capybarrel: niet Normal/Water
+- `IDEEEN.md`: Jordi wil Normal/Water vermijden (Bibarel, die nog een evolutie krijgt).
+
+### [v0.0.738] - Capybarrel: Normal
+- `IDEEEN.md`: Capybarrel begint als puur Normal (Jordi); evolutie open.
+
+### [v0.0.739] - Capybarrel: ook evolutie niet Normal/Water
+- `IDEEEN.md`: Jordi's correctie vastgelegd.
+
+### [v0.0.740] - Capybarrel: geen Water
+- `IDEEEN.md`: geen Water-type in de Capybarrel-lijn (Jordi).
+
+### [v0.0.741] - Capybarrel: geen water als thema
+- `IDEEEN.md`: ook geen water-concepten; nieuwe voorstellen (candombe-trommel, buskruitvat, wijnvat).
+
+### [v0.0.742] - Capybarrel: evolutie groeit uit de ton
+- `IDEEEN.md`: Jordi's idee dat de evolutie uit de ton groeit.
+
+### [v0.0.743] - Capybarrel: nieuwe evolutie-ideeën
+- `IDEEEN.md`: Jordi's citaten (ton gaat kapot, niet overtuigd) en vier nieuwe voorstellen.
+
+### [v0.0.744] - Capybarrel: visuele evolutie-ideeën
+- `IDEEEN.md`: drie voorstellen die als design werken.
+
+### [v0.0.745] - Capybarrel: evolutie wordt een houten kart
+- `IDEEEN.md`: Jordi's besluit (het hout evolueert mee tot een houten autotje, lichaamsdelen steken uit).
+
+### [v0.0.746] - Capybarrel-evolutie: puur Normal
+- `IDEEEN.md`: de kart-evolutie is puur Normal (Jordi).
+
+### [v0.0.747] - Capybarrel: 2 fases
+- `IDEEEN.md`: lijn van 2 fases (Jordi).
+
+### [v0.0.748] - Capybarrel: Gemini-prompts r1
+- `docs/concept/sprites/capybarrel/gemini/PROMPTS.md`: twee varianten (lijf ís de ton / zit in de ton).
+
+### [v0.0.749] - Capybarrel: r1-feedback en prompt r2
+- `capybarrel/gemini/`: r1 variant B bewaard, Jordi's feedback en prompt r2 (lopend op vier poten, ton om het lijf).
+
+### [v0.0.750] - Capybarrel: prompt r3
+- `capybarrel/gemini/`: r2 bewaard, Jordi's feedback ("meer pokemon stijl, kijk naar andere regional rodents") en prompt r3.
+
+### [v0.0.751] - Capybarrel: r3 op het oog na goed
+- `capybarrel/gemini/r3/`: r3 bewaard; Jordi: "ok op oog na vind ik hem prima".
+
+### [v0.0.752] - Capybarrel: prompt r4 (oog)
+- `capybarrel/gemini/PROMPTS.md`: Jordi's oogwens en een prompt die alleen het oog verandert.
+
+### [v0.0.753] - Capybarrel: frontsprite af
+- Capybarrel (Normal, fase 1 van 2): frontsprite af in `docs/concept/sprites/capybarrel/af/` (64×64 + 8×). Naar Gemini r3 (capibara op vier poten met een liggende houten ton om het lijf), blije oog overgenomen uit Flareon met zwart rondje (Jordi: "doe maar het blije oog"), vacht r6b (Jordi: "akkoord ... r6b").
+- Rondes: maker r1–r6 (oogstudie, keurderreparaties, hoepels 3 px), keurder PASS (r5), Dragonfly Cave-eindkeuring (r6: belijning, schaduw poten/romp, sprite lichter); vachtkleur r6b door Claude bruiner gemaakt (r6 werd zalmroze).
+- Op het overzichtsvel (sectie New). Fase 2 (houten kart, puur Normal) nog te ontwerpen.
+
+### [v0.0.754] - Levende Inca-tempel: start ontwerp
+- Nieuwe ontwerpmap `docs/concept/sprites/tempel/` met `SPEC.md`: Jordi's idee letterlijk (static encounter, groot zoals Snorlax, Ghost/Rock, fake-out als ingang) en zijn keuzes: trapeziumdeur + nissen, deur = mond, geen ledematen, ogen = licht uit gaten in de architectuur.
+- Gemini-prompt v1 in `tempel/gemini/PROMPT.md`; `IDEEEN.md` bijgewerkt.
+
+### [v0.0.755] - Levende Inca-tempel: frontsprite-kandidaat
+- Ontwerp via Gemini r1–r7 (tempel gelaagd tegen een bergwand naar Jordi's Inca Trail-foto's, ingang = mond, lichtende raampjes = ogen); r7 bevroren als model.
+- Frontsprite r1–r7 in `docs/concept/sprites/tempel/sprite/`; keurder- en eindkeuring (Dragonfly Cave) verwerkt. Kandidaat `sprite/r7/tempel.png`, wacht op Jordi.
+
+### [v0.0.756] - Levende Inca-tempel: frontsprite af
+- Ogen op Jordi's aanwijzing ("teveel vierkantjes die niet mee gaan met het perspectief"): trapeziumvormig raampje in de donkere steentint, donkere diepte links, licht rechts, lichtkleur goud (Jordi's keuze uit geel/goud/groen/cyaan/paars).
+- `docs/concept/sprites/tempel/af/tempel.png`; op het overzichtsvel (sectie New). Naam, data en plek nog open.
+- Lessen in `docs/lessen/GEMINI.md` (gebouw-Pokémon, ogen van een gebouw).
+
+### [v0.0.757] - Levende Inca-tempel: kleurronde (Dragonfly Cave)
+- Op Jordi's feedback ("meer mos", "veel effen vlakken, weinig kleurtinten, schaduw is niet goed, belijning kan nog net wat beter"): kleurrondes k1–k3, vorm/ogen/deur diff 0. Mos verdubbeld (3 tinten), steen 6 tinten van warm naar koel, tint per steen, slagschaduw, bergwandfacet; gebroken ruïneblok naast de middelste gevel gelijnd als de gevel (Jordi). Eindkeuring PASS na k3.
+- `tempel/af/tempel.png` vervangen; overzichtsvel bijgewerkt.
+
+### [v0.0.758] - Levende Inca-tempel: zijvlakken en perspectief
+- Op Jordi's omcirkelde zones ("teveel effen vlakken ... lijkt gewoon willekeurig gedaan ... daardoor leest het perspectief niet goed"; "dus puur kleurtinten, schaduw, lijnen"): kleurrondes k4–k6. Rechts nu de drie toonzones uit het model (lichte bovenranden, middengrijze zijvlakken met grote stenen, gladde donkere bergwand), gevelplaten met lichte nok, streep naast de deur als doorlopende steenlaag. Keurder PASS (k5); vorm, ogen, deur, mos en linkerhelft diff 0.
+- `tempel/af/tempel.png` vervangen; overzichtsvel bijgewerkt; les in SPRITE_KERN.
+
+### [v0.0.759] - Levende Inca-tempel: volume per steen
+- Op Jordi's vraag "zijn de vakjes nog steeds niet te effen?": kleurrondes k7–k8, elke steen licht linksboven en sikkel rechtsonder (2 px bij grote stenen) binnen het toonbereik van zijn vlak, vlekjes uit het model, banding in het onderblok weg. Toonzones, lijnen, mos, ogen en deur diff 0. Keurder PASS.
+- `tempel/af/tempel.png` = k8; overzichtsvel bijgewerkt.
+
+### [v0.0.760] - Levende Inca-tempel: bergwand, poort en latei
+- Jordi's punten na k8: donkere bergwandvlakken niet meer effen (volume per steen binnen de donkere zone, geen diagonalen, kleine stenen zonder putje), poort volgens de regels (selout aan de lichtkant, zwart alleen rechts/onder), latei steekt rechts 2 px uit zoals in het model. Keurder PASS (k11).
+- `tempel/af/tempel.png` = k11; overzichtsvel bijgewerkt.
+
+### [v0.0.761] - Levende Inca-tempel: poort rechts
+- Jordi: "de rechterkant van de mondpoort iets teveel gedaan ... met rechte lijnen" en "horen die lijnen ... nog zwart te zijn?": rechterstijl schuin zoals het model, parallelle voegen ernaast weg, poortlijnen (binnenlijnen) niet meer zwart maar de donkerste warme steentint. Keurder PASS (k13).
+- `tempel/af/tempel.png` = k13; overzichtsvel bijgewerkt.
+
+### [v0.0.762] - Levende Inca-tempel: latei schuin
+- Jordi: "de bovenste lijn volledig horizontaal": latei in perspectief zoals het model (2 px daling naar rechts, onderlijn en overstek mee). `tempel/af/tempel.png` = k14; overzichtsvel bijgewerkt.
+
+### [v0.0.763] - Levende Inca-tempel: topgevels
+- Jordi: bovenste lijn "volledig horizontaal" (bovenin de sprite): linkerpunt en dal van de topgevels als silhouet (k15). `tempel/af/tempel.png` = k15; overzichtsvel bijgewerkt. Jordi: "geen probleem".
+
+### [v0.0.764] - Bibarel-evolutie: frontsprite af; regionale Baltoy af; overzichtsvel
+- **Bibarel-evolutie** (Water/Fighting, bouwvakker-bever, fase 3): ontwerp via Gemini r1–r10 (bouwvakker alleen via lichaam: helm = kop, tuinbroek = vachtpatroon, potloodstam, pylonstaart oranje/wit, kraag van Bibarel, witte tanden); model r10 bevroren, staart 8 natieve px achter het lijf; tuinbroekvorm uit Gemini r5 in de kleuren van r10. Frontsprite r1–r19: keuringen, eindkeuring Dragonfly Cave, studie Gen 3 (Kangaskhan, `_gba`) en de beste vier eigen sprites (Dundragoon, Princadee, Zapacha, Skinguin). Af: `docs/concept/sprites/bibarel_evo/af/bibarel_evo.png` (= r19), op het overzichtsvel. Naam en evolutiemethode open.
+- **Regionale Baltoy** af (`baltoy_regional/af/`, = r19) en op het overzichtsvel.
+- Overzichtsvel: Solrock-evolutie als Rock/Cosmic (Solrock zelf is Rock/Cosmic sinds 21 nov).
+- TODO: opknapronde sprites met de beste vier als maatstaf.
+- Lessen: Gen 3-referentie = `anim_front_gba.png` + `normal_gba.pal` (SPRITE_KERN); kritiek van Jordi als checklist per ronde; eindkeuring toetst ook textuur; "kijk hoe die sprites het doen" = overgangen en lijntinten, niet palet of lijnposities (GEMINI.md).
+
+### [v0.0.765] - Mr. Prime: frontsprite af
+- Eindvorm van de regionale Mime-lijn (Mime Jr. → bokser-Mr. Mime → Mr. Prime), Fighting/Psychic: oude gentleman in schermuitval met wandelstok.
+- Ontwerp: 10 Gemini-rondes (`docs/concept/sprites/mr_prime/gemini/`), model r9 gekozen (pose, snor, armpose, lijf).
+- Sprite: 16 rondes + eindkeuring (Dragonfly Cave). Hoed, haarvleugels en zijhaar 1-op-1 van Mr. Rime, ogen van Gen 3 Mr. Mime (monocle geschrapt), ronde kop met de Mr. Mime-boog, koel blauwgrijs palet naar Alphyena, achterbeen gestrekt in uitval; niets opnieuw getekend.
+- `docs/concept/sprites/mr_prime/af/`, op het overzichtsvel (Regional forms); alles in `mr_prime/SPEC.md`.
+- Les in `docs/lessen/GEMINI.md`: latere Pokémon in vormen beschrijven, niet bij naam.
+
+### [v0.0.766] - Regionale (jiujitsu-)Mr. Mime: ontwerp gestart
+- Keuzes Jordi: Fighting/Psychic; gezicht + rode wangen, blauwe haarpieken en roze ballen blijven; blauwe gi met band; eerst alleen Mr. Mime, Mr. Prime later.
+- `docs/concept/sprites/mrmime_regional/SPEC.md` en Gemini-startprompt r1 (`gemini/PROMPT.md`).
+
+### [v0.0.767] - Regionale Mr. Mime: Gemini r1 afgekeurd, prompt r2
+- r1 opgeslagen (`gemini/r1.png`); Jordi: geen willekeurige roze ballen, "mag echt wel wat anders", "zie galar mr mime". Nieuwe startprompt `gemini/PROMPT_r2.md`.
+
+### [v0.0.768] - Regionale Mr. Mime: r3 en prompt r4
+- r3 opgeslagen; Jordi: op zijn rug in driekwart, met de handen "get into my guard" gebaren, rode huid en kop, lichtblauwe vingertoppen en voeten, gele wangen, paarse "oren" blijven, zwarte band. Prompt `gemini/PROMPT_r4.md`; Jordi denkt nog na over het design.
+
+### [v0.0.769] - Regionale Mr. Mime: r4 en prompt r5
+- r4 opgeslagen (kleuren goed, ligt nog op zijn zij). Prompt `gemini/PROMPT_r5.md`: pose concreet (op de rug als een schildpad, kijker = tegenstander aan zijn voeten); huid terug naar de normale Mr. Mime-tint (Jordi: anders klopt Mr. Prime niet).
+
+### [v0.0.770] - Regionale Mr. Mime: r5 en prompt r6 (de gi is het lijf)
+- r5 opgeslagen (vogelvlucht, hoofd ondersteboven); les in `GEMINI.md`. Jordi twijfelt over "een Mr. Mime in een pak"; prompt r6: de gi is zijn eigen lijf, zoals bij Mr. Mime en Mr. Rime.
+
+### [v0.0.771] - Regionale Mr. Mime: r6 en aanpak in twee stappen
+- r6 opgeslagen (twee figuren). Prompt r7 stap A: eerst alleen het ontwerp in een staande pose, daarna de guard-pose met dat plaatje als bijlage.
+
+### [v0.0.772] - Regionale Mr. Mime: idee geschrapt
+- r7a (staand) had weer gewoon een gi aan; Jordi: "ik denk dat dit ontwerp het niet gaat worden". Daarna: "het hele idee bedoel ik". Geschrapt in SPEC, TODO en IDEEEN; Mr. Prime open. Les in `GEMINI.md`: geen bijlagen voorstellen.
+
+### [v0.0.773] - Bokser-Mr. Mime: nieuw idee voor Mr. Prime, prompt r1
+- Jordi koos de ouderwetse bokser ("rocky marciano achtig", heel anders dan Hitmonchan, niet Mr. Mime met handschoenen). Gedrongen silhouet met Mr. Mime-hoofd, crouch; prompt `mrmime_regional/bokser/PROMPT.md`.
+
+### [v0.0.774] - Bokser-Mr. Mime: r1 en prompt r2
+- r1 "best aardig idee"; r2: meer gentlemanly, zwart-wit palet, oren ver achterover, houding van Jordi's 19e-eeuwse boksersfoto (rechtop, één vuist vooruit, de andere tegen de borst).
+
+### [v0.0.775] - Bokser-Mr. Mime: rondes r2–r4, posepoppetje en prompt r6
+- r2 (zwart-wit, verkeerde pose), r3 (minder Mr. Mime, stoot), r4 (met Jordi's foto: mensenlichaam). Posepoppetje `bokser/pose_stickman.png` (grote kop, tonlijf, korte benen) als bijlage + Hitmongroove-verhoudingen in `bokser/PROMPT_r6.md`.
+
+### [v0.0.776] - Bokser-Mr. Mime: r6–r10 en prompt r11
+- Posepoppetje gaf de pose maar een plat poppetje (r6–r7); r9 palette swap; r10 (Mr. Mime niet genoemd) pose goed. Jordi: verschil via een V-patroon op de torso (borstspieren, geen mensenlijf), getapete vingers (5), haren iets meer achterover, heel klein snorretje, minder stocky. Prompt `bokser/PROMPT_r11.md`.
+
+### [v0.0.777] - Bokser-Mr. Mime: frontsprite af
+- Regionale Mr. Mime als ouderwetse gentleman-bokser (zwart-wit), fase 2 van Mime Jr. → bokser-Mr. Mime → Mr. Prime. Gemini-model r12 (pose naar Jordi's boksersfoto), daarna 24 spriterondes: kop op Mr. Mime-formaat met twee achterovergekamde kuiven, ronde Mr. Mime-romp en -schouderballen, armen en getapete vuisten uit r9, boksbroek, donkergrijze V rekenkundig 20° gedraaid voor de driekwarthoek (Jordi's idee).
+- `docs/concept/sprites/mrmime_regional/bokser/af/bokser.png`; op het overzichtsvel bij de regional forms. Tweede type, naam en evolutiemethode open; Mr. Prime volgt in een nieuw gesprek.
+- Lessen in `docs/lessen/GEMINI.md`: ligposes lukken niet met tekst, geen bijlagen voorstellen, geen half werk naar Jordi, makerrapport op "zelf getekend" lezen.
+
+### [v0.0.778] - Merge naar main: Mr. Prime en bokser-Mr. Mime
+- Branches `claude/loving-bell-swhg2l` (Mr. Prime af) en `claude/funny-ptolemy-meuol6` (bokser-Mr. Mime af) samengevoegd in main (Jordi: "ik zie mr mime nog niet, die is akkoord"). Changelogsecties van de bokser-branch hernummerd naar v0.0.766–777; overzichtsvel opnieuw gemaakt (bokser vóór Mr. Prime).
+
+### [v0.0.779] - Satelliet (Steel/Cosmic-lijn fase 2): frontsprite kandidaat
 - Model: Gemini r1 (Jordi: "best oke"), gespiegeld naar driekwart links, oog 1,5× door Claude. Gemini r2–r7 (kleinere panelen, driekwart, groter oog, lijf groter, panelen hoger, vanaf nul) afgekeurd; gemeten veranderde Gemini nooit de lijfmaat.
 - Panelen zelf kleiner geschaald rond hun aansluitpunt (`paneel_varianten/`); 75 % kapte het lijf af, 80 % met ander anker (80b) niet.
 - Sprite r1–r7: maker (model overnemen), keuring (BIJNA → 6 reparaties), eindkeuring Dragonfly Cave met omlijningsronde (PASS). Kandidaat met twee oogvarianten (a = model, b = één ring minder): `docs/concept/sprites/satelliet_fase2/voor_jordi_r7.png`, bestanden in `eindkeuring_r6/r7/`. Wacht op Jordi.
 - Lessen in `docs/lessen/GEMINI.md` (verhoudingen, onderdeel kleiner zonder afkappen, spiegelen).
 
-### [v0.0.732] - Satelliet (Steel/Cosmic-lijn fase 2): frontsprite af
+### [v0.0.780] - Satelliet (Steel/Cosmic-lijn fase 2): frontsprite af
 - Na de kandidaat r7: oog b (één ring minder) en pupil p2 (kijkt naar de driekwart) gekozen; r8–r15 per onderdeel bijgewerkt, waarbij de vorm van het hoofd wegdreef (lens te groot, kap te bol); r16 het hoofd opnieuw vanaf het model op het 64-raster (`sprite/r16/modelraster.py`), antennes van r15 gehouden; r17–r18 paarse rand (= bovenrand van het kleine paneel) en tinten/schaduw uit het model; r19–r20 golvende rechtercontour; eindkeuring Dragonfly Cave (r21–r22: lijftintladder zoals Glalie, lenslijnen aan de lichtkant in eigen donkere tint, paneelrand doorlopend, kaprand schuin), PASS.
-- Af: `docs/concept/sprites/satelliet_fase2/af/satelliet.png` (+ `_8x`), op het overzichtsvel (New). Naam, type van deze fase en fase 1/3 nog open.
+- Af: `docs/concept/sprites/satelliet_fase2/af/satelliet.png` (+ `_8x`), op het overzichtsvel (New). Naam en type van deze fase open; fase 1 (Spoetnik) is in een andere sessie af (`satelliet_lijn/fase1/af/`); palet nog niet afgestemd op fase 1.
 - Lessen in `docs/lessen/GEMINI.md`: vorm na elke ronde toetsen op hetzelfde 64-raster als het model; "het gaat niet zo zeer erom dat elke pixel klopt, maar dat de vorm klopt".

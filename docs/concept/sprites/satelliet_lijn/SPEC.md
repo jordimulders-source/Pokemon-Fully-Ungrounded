@@ -1,0 +1,45 @@
+# Steel/Cosmic-lijn (satelliet) – ontwerp
+Citaten en besluiten (Jordi, 23 nov); het overzicht staat ook in `docs/concept/IDEEEN.md`.
+- 17 nov: "een Steel/Cosmic lijn met o.a. een satelliet erin" · 20 nov: "Steel/Cosmic-lijn waarin één Pokémon een satelliet is".
+- "satelliet is fase 2 of 3, ruimtestation misschien 3 en dan nog iets ervoor".
+- "de zuid amerika link is niet nodig hier".
+- "ja eens met groter en complexer maken" (voorstel Claude: Spoetnik-bolletje → satelliet → ruimtestation, zoals Magnemite → Magneton).
+- "ik wil er machines van maken ja" → keuze **B: pure machine met eigen persoonlijkheid** (Klink, Magnemite, Porygon), geen machine in dierenvorm.
+- Voorstel Claude, Jordi "dat klinkt goed": fase 1 klein Spoetnik-bolletje met antennes en één oog → fase 2 satelliet met zonnepanelen en een telescoopoog → fase 3 ruimtestation uit gekoppelde modules waarin de satellieten herkenbaar blijven (groter en complexer, zoals Magneton).
+- **1 oog** (Jordi).
+- "we doen nu alleen de designs": evolutiemethode, lore, namen later.
+- Open: kleuren (niet besproken; in r1 laat Claude Gemini kiezen).
+
+## Fase 1 rondes
+- r1 (`fase1/gemini/r1.png`): "conceptueel prima idee, maar dit is teveel detail". Claude: paneelnaden, koperen vlekken, schoteltjes op de antennepunten, 4e korte antenne, drie ringen rond het oog → r2 nieuwe startprompt zonder die details. Jordi erbij: "en het mag nog net iets meer pokemon qua kleur gebruik" → kleurregel in r2, vaste kleuren (zilvergrijs, geel oog, koper) eruit zodat Gemini Pokémon-kleuren kiest.
+- r2 (`fase1/gemini/r2.png`, blauwe bol, rood/geel oog): Jordi: "ik zou graag voor wit paars willen gaan, bijna een beetje de mewtwo kleuren, maar wel wat smoother en meer cyber qua look. Daarnaast vind ik deze pose iets te recht, mag wat meer driekwart, ik vond het ontwerp net wat beter, qua detail mogen we een beetje ertussenin zitten, deze heeft weer net te weinig detail en de inspiratie is niet meer herkenbaar. Belangrijk is ook vooral dat de pootjes iets groter worden zodat het geen 1 pixel lijnen worden". Claude: r2 kijkt naar rechts (oog rechts); "ontwerp net wat beter" gelezen als r1. → r3 nieuwe startprompt: wit/paars à la Mewtwo, smooth/cyber, meer driekwart naar links, detail tussen r1 en r2 met herkenbare Spoetnik-kenmerken (evenaarnaad, antennevoetjes), dikkere antennes (≥2–3 px).
+- r3 (`fase1/gemini/r3.png`): wit/paars, driekwart links, Spoetnik herkenbaar, antennes dik genoeg. Claude: antennes ongelijk en alle kanten op, oog zonder blik (ringen), weinig contrast; voorstel A (r3 = model) of B (r4: antennes gelijk naar achteren, oog met pupil). Wacht op Jordi.
+- Jordi over r3: "oog oneens, dat hoeft niet per se, mag best robotisch zijn, alleen de glans op het oog vertaalt niet naar een sprite, je mag wel prompten voor de andere 2 punten" → r4 nieuwe startprompt: r3 + antennes gelijk en naar achteren, meer contrast (diepere paarse schaduw), oog robotische lens zoals r3 maar zonder glans.
+- r4 (`fase1/gemini/r4.png`): antennes gelijk, paars en naar achteren, oog zonder glans. Claude: bol nog licht en linksboven geen donkere buitenlijn (oplosbaar in de spritefase); voorstel r4 = model. Wacht op Jordi.
+- Jordi over r4: "lijkt een beetje op een pokebal bijna haha maar dat vind ik niet erg".
+- Jordi over r4: "is deze pose alleen genoeg driekwart? met de rechte lijn ook?" → Claude: nee, rechte naad + oog op de rand = bijna profiel → r5 (prompt in chat, alleen kijkhoek).
+- r5 (`fase1/gemini/r5.png`): Jordi "ik weet niet of ik deze sterker vind, wat vind jij?". Claude: kijkhoek beter (gebogen naad, volume, verkorte antennes), maar antennes dunner (op 64 px ±1–2 px), voetjes wit, naad op 64 px bijna weg. Wacht op Jordi.
+- r6 (`fase1/gemini/r6.png`, r6-prompt = r5-kijkhoek + r4-antennes/voetjes/naad): Jordi "de mooiste tot nu denk ik, maar de poten zijn wat kort" · "en het is niet echt een oog meer". Claude: ook 5 antennes i.p.v. 4; oog klein naast de grote bol. → r7 = r6 + antennes lang (± bol-diameter), precies 4, oog groter (±1/3 van de bol) zodat het als oog leest, nog steeds robotisch zonder glans.
+- r7 (`fase1/gemini/r7.png`): Claude: oog leest weer als oog (pupil + iris), antennes lang, naad gebogen; weer 5 antennes (korte 4e tussen middelste en onderste), antennes op 64 px ±2 px. Voorstel: r7 = model, korte 5e antenne weg in het model (afwijking, Jordi beslist). Wacht op Jordi.
+- Jordi: "dan haal je die kleine 5e weg, zitten de andere wel op een logische plek? Ik heb het gevoel dat de lengte van de onderste te kort is, maar ik weet niet of jij dat logisch kan verlengen" → `fase1/model/model_r7b.png` (natief raster r7 via `model/natief.py`, pitch 10,24; `bewerk_r7.py`: 5e antenne weg, onderste +15 px verlengd door het eigen pixelpatroon (stap 3,1) te herhalen, punt verplaatst). Wacht op Jordi.
+- Jordi (met foto van de echte Spoetnik): "op zich klopt het wel zo te zien he". Claude: ja, ook bij Spoetnik lopen twee antennes ongeveer parallel en waaieren de andere uit.
+- **Model bevroren (Jordi, 23 nov: "begin maar met bouwen om 19:01")**: `fase1/model/model_gekozen.png` (= r7b; natief 99 px: `model_gekozen_natief.png`). Spritefase start 19:01.
+- Jordi (spritefase, 23 nov): "let erop dat de bol mooi rond blijft".
+- Jordi (spritefase): "let op onnodige zwarte pixels ook".
+- Spritefase: r1 (maker) → keuring r1 (eis 1 PASS, eis 2 BIJNA, rondheid ≤0,86 px) → r2 (23 px + palet) → eindkeuring DFC r2 (21 onnodige zwarte pixels) → **r3** (`fase1/sprite_r3/`, rondheid ≤0,78 px, 0 open randen). Naar Jordi; wacht op oordeel. Ter info: linksonder (kol 2–8, rij 37–47) zwart volgens Gnomini-regel; Voltorb/Electrode gebruiken daar de eigen donkerste tint.
+- Jordi over r3: "nice, ga maar naar de eindkeuring" → eindkeuring_r3 (verse DFC-keurder).
+- Eindkeuring r3: **PASS** (eis 1 en 2; rondheid 0,78 px, geen onnodige zwarte pixels). Optioneel 1 px (33,55) P→p. Ter info: formaat 1548 px is ruim voor fase 1 (checklist 700–950), weinig ruimte voor fase 2/3 "groter en complexer". Vraag aan Jordi.
+- Jordi: "hoeveel fase 1s hebben dezelfde grootte?" · "en groter is perspectief natuurlijk he, anders zou wailord neit op het scherm passen". Gemeten (125 Gen 1–3 eerste fases, anim_front_gba): mediaan 796 px, 90% < 1131; groter dan onze 1548 alleen Gastly 1658, Rhyhorn 1702, Exeggcute 1762 (Drowzee 1486 erbij).
+- **Jordi: "A, verklein maar naar ±950 px, maar alleen als alles er dan nog mooi uitziet".** r3 (PASS, 1548 px) blijft de terugvaloptie. r4 = model ×±0,617.
+- **Jordi (23 nov):** "wat er ook gebeurt, de fase 1 wordt onderdeel van 2 en 3 toch? want die groeitd aaruit, dus die wordt toch een steeds kleiner onderdeel van het geheel dan". → Fase 1 (bol met oog) is onderdeel van fase 2 en 3; de lijn groeit eruit en fase 1 wordt een steeds kleiner deel van het geheel.
+  - Jordi erbij: "awt niet erg is" (= wat niet erg is).
+- r4 (`fase1/sprite_r4/`, 985 px, factor 0,617): meetbaar in orde (rond ≤0,71 px, 0 open randen), maar oog armer (binnenring past niet, iris 1 px) en voetje linksboven bijna weg → voorwaarde "alles mooi" niet gehaald volgens maker en Claude. Opties: r3 houden of tussenmaat ±0,68 (±1150 px).
+- Jordi over r4: "zet er zeker nog mooi uit, alleen de pootjes hebben allemaal maar 2 kleurtinten toch?" · "ik vind klein goed" → **r4 gekozen (klein)**. Claude: antennes = 2 vultinten (midden- en lichtpaars) + donkerpaarse lijn + zwart aan de schaduwkant, ook in r3.
+- Jordi: "zo laten, doe de eindkeuring maar" (antennes 2 vultinten blijven) → eindkeuring_r4.
+
+## Fase 2
+- Jordi (23 nov): "ja, schrijf de prompt voor fase 2 en dan in nieuw gesprek verder neem ik aan?" → `fase2/gemini/PROMPT_r1.md`; overdracht `OVERDRACHT_FASE2.md`.
+- Keuze Claude (voor te leggen): oog van fase 2 = het oog van fase 1 in de kernbol (fase 1 is onderdeel), i.p.v. het "telescoopoog" uit het eerdere voorstel.
+
+## Fase 2 (andere sessie, 23–25 nov)
+Fase 2 is in een parallelle sessie ontworpen en af: `docs/concept/sprites/satelliet_fase2/` (model = Gemini r1 gespiegeld, oog 1,5×, panelen 80 %; sprite `satelliet_fase2/af/satelliet.png`; alle citaten in `satelliet_fase2/SPEC.md`). De startprompt `fase2/gemini/PROMPT_r1.md` hieronder is daarmee niet meer nodig. Nog open: palet afstemmen op fase 1 (de eis "consistent palet met fase 1" uit OVERDRACHT_FASE2.md is in die sessie niet getoetst).

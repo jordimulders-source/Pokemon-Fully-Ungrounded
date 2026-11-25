@@ -1,0 +1,10 @@
+alpha diff: 0
+oog x13-16 y38-42 diff: 0
+oog x22-25 y38-42 diff: 0
+deurgat (64 px) diff: 0
+kleuren gebruikt (incl. transparant): 16
+pixels veranderd t.o.v. k10: 12
+palet gelijk aan k10: True
+gewijzigd: alle in bergwand x48-61 y15-56: True ; alle e->f: True
+clusters <3 px hele sprite (4-/8-samenhang): k6 115/43 | k10 114/43 | k11 114/43
+clusters <3 px x>=40 (4-/8-samenhang): k6 37/11 | k10 37/11 | k11 37/11

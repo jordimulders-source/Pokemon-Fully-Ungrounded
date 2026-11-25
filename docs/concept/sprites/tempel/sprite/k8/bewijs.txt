@@ -1,0 +1,19 @@
+alpha diff: 0
+oog x13-16 y38-42 diff: 0
+oog x22-25 y38-42 diff: 0
+deurgat (62 px) diff: 0
+kleuren gebruikt (incl. transparant): 16
+pixels veranderd t.o.v. k6: 318
+palet gelijk aan k6: True
+buitenlijn (1): posities gewijzigd 0, pixels gewijzigd binnen 0
+donkere lijn (2): posities gewijzigd 0, pixels gewijzigd binnen 0
+voeglijn (7): posities gewijzigd 0, pixels gewijzigd binnen 0
+mos (8,9,13): posities gewijzigd 0, pixels gewijzigd binnen 0
+goud (10,11): posities gewijzigd 0, pixels gewijzigd binnen 0
+deur (12): posities gewijzigd 0, pixels gewijzigd binnen 0
+bergwand/gevelschaduw (e,f in k6) gewijzigd: 0
+gewijzigde pixels: 318, waarvan meer dan 1 toonstap van k6: 20
+overgangen (k6->nieuw): 3->4: 9, 4->3: 78, 4->5: 89, 5->3: 4, 5->4: 12, 5->6: 1, 6->3: 2, 6->4: 14, 6->5: 43, 6->15: 66
+clusters <3 px (hele sprite): k6 115 -> nieuw 114 (4-samenhang) | k6 43 -> nieuw 43 (8-samenhang)
+clusters <3 px (x>=40): k6 37 -> nieuw 37 (4-samenhang) | k6 11 -> nieuw 11 (8-samenhang)
+  waarvan buiten de steen onderblok (x37-49,y45-52): 0

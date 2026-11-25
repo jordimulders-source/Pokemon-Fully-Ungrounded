@@ -1,0 +1,17 @@
+alpha diff: 0
+oog x13-16 y38-42 diff: 0
+oog x22-25 y38-42 diff: 0
+deurgat (62 px) diff: 0
+kleuren gebruikt (incl. transparant): 16
+pixels veranderd t.o.v. af: 407
+palet gelijk aan af: True
+buitenlijn (index 1) posities gewijzigd: 0
+mos gewijzigd: 0
+  gevel G1 (x22-29,y19-26): 8 px
+  gevel G2 (x35-41,y20-26): 13 px
+  gevel G3 (x32-36,y9-14): 6 px
+  bovenste blok, gevelplaten + zijvlak (x41-51,y6-9): 12 px
+  bergwand + zijvlakken + bovenvlak blok (x40-61,y11-60): 356 px
+  voeg naast de deur rechts (x26-31,y49-59): 12 px
+wijzigingen buiten deze zones: 0
+  []

@@ -4,7 +4,63 @@ import sys, numpy as np; from PIL import Image
 from half2t import reduceer, plaats, LIJN
 from gemeen import opslaan, PAL, NAAM
 OY,OX=1,1
-o,mat,oogb=reduceer(OY,OX); (o,mat,oogb),info=plaats(o,mat,oogb)
+o,mat,oogb=reduceer(OY,OX)
+# ---- r2-reparaties in reductiecoordinaten (spritepixel (j,i) = modelblok rijen 2j+1..2j+2, kolommen 2i+1..2i+2) ----
+import half2t as H2
+c_,t_=H2.c,H2.t; r2tel={}
+def nat2spr(v,u): return (v-1)//2,(u-1)//2
+# R3 onder de snavel: in fase OY=1 vallen mondlijn (modelrijen 70-71) en kinlijn (74-75) met de kop ertussen (72-73) over
+#    elkaars blokken -> 2 px zwart. In de zone rij 34-37 / kolom 42-58 de blokken van fase OY=0 (rijen 2j..2j+1) nemen:
+#    rij 35 = mondlijn, 36 = kop, 37 = kinlijn; elke pixel blijft een 2x2-modelblok.
+o0,mat0,_=reduceer(0,OX); v_=o.copy()
+for j in range(34,38):
+    for i in range(42,59):
+        if o0[j,i]>0 and o[j,i]>0: o[j,i]=o0[j,i]; mat[j,i]=mat0[j,i]
+r2tel['R3 mond/kin (fase-0-blokken)']=int((o!=v_).sum())
+# R4 hoedrand links: lijnpixels in de zone vervangen door de gemeten modellijnen (zwart of hoed-lijntoon, natief u76-104, v36-47),
+#    elk naar zijn eigen spritepixel; tussenpixels die geen modellijn hebben krijgen de meest voorkomende hoedtoon uit de buren.
+v_=o.copy(); zone=[(j,i) for j in range(18,24) for i in range(37,52)]
+lijnnat=[(v,u) for v in range(36,48) for u in range(76,105) if c_[v,u]==1 or (c_[v,u]==2 and t_[v,u]==2)]
+doel={nat2spr(v,u) for v,u in lijnnat}; DUN=False
+# Waar lijn A (kroon -> linksonder) en lijn B (randlijn vanaf de linkerpunt) samenkomen, ligt B 2 px dik (rij 32 x13-16 boven
+# rij 33 x15-24). Alleen de hoekpixel x15,y32 (reductie j21,i42) weg: B wordt een doorlopende trap 2-2-10, A eindigt op x16,y32.
+doel.discard((21,42))
+def ncomp(P):
+    P=set(P); n=0
+    while P:
+        n+=1; st=[P.pop()]
+        while st:
+            y,x=st.pop()
+            for dy in (-1,0,1):
+                for dx in (-1,0,1):
+                    q=(y+dy,x+dx)
+                    if q in P: P.remove(q); st.append(q)
+    return n
+def samenhangend(P,_n=[None]): return ncomp(P)==ncomp(doel)
+# 1 px dik (Dundragoon-boor): hoekpixel met een horizontale en een verticale lijnbuur weg zolang de lijn samenhangend blijft
+for p in sorted(doel):
+    y,x=p; h=[(y,x+d) for d in (-1,1) if (y,x+d) in doel]; vv=[(y+d,x) for d in (-1,1) if (y+d,x) in doel]
+    if DUN and h and vv and samenhangend(doel-{p}): doel=doel-{p}
+def rand(j,i): return any(not(0<=j+dy<o.shape[0] and 0<=i+dx<o.shape[1]) or o[j+dy,i+dx]==0 for dy,dx in ((-1,0),(1,0),(0,-1),(0,1)))
+for j,i in zone:
+    if o[j,i] in (1,2) and mat[j,i] in (1,2) and not rand(j,i) and (j,i) not in doel:
+        nb=[o[j+dy,i+dx] for dy in (-1,0,1) for dx in (-1,0,1) if (dy or dx) and o[j+dy,i+dx] in (3,4,5)]
+        if nb: o[j,i]=max(set(nb),key=nb.count)
+for j,i in doel:
+    if (j,i) in zone and o[j,i]>0 and not rand(j,i): o[j,i]=2; mat[j,i]=2
+r2tel['R4 hoedrandlijn (modelpixels)']=int((o!=v_).sum())
+# R2a kraag: scheidingslijnen tussen de bladpunten uit de lijnkaart van het model (lijnkaart.py: kraagpixel >= 22 donkerder dan
+#    de mediaan van zijn 5x5-kraagomgeving, dun), alleen strepen van >= 3 samenhangende modelpixels (kortere = textuur);
+#    elke modellijnpixel naar zijn eigen spritepixel als 1 px binnenlijn in de donkere kraagtint (6), alleen op kraagvlak, niet op de rand.
+from lijnkaart import lijnkaart
+_,lk=lijnkaart(); lab_,n_=H2.clusters(lk); gr_=np.bincount(lab_.ravel())
+v_=o.copy()
+for v,u in zip(*np.where(lk&(gr_[lab_]>=3))):
+    j,i=nat2spr(v,u)
+    if 0<=j<o.shape[0] and 0<=i<o.shape[1] and o[j,i] in (7,8,9) and not rand(j,i): o[j,i]=6
+r2tel['R2a kraaglijnen (modelpixels)']=int((o!=v_).sum())
+print('r2-reparaties:',r2tel)
+(o,mat,oogb),info=plaats(o,mat,oogb)
 KLEIN=len(sys.argv)>2 and sys.argv[2]=='klein'
 if KLEIN:
     from schrap import schrap
@@ -100,6 +156,6 @@ print('nabij oog midden',(cx,cy),'ver oog',(fx,fy))
 stap('ogen (Lotad)',v)
 if __name__=='__main__':
     uit=sys.argv[1] if len(sys.argv)>1 else 'lotad_gaucho.png'
-    opslaan(o,uit)
+    opslaan(o,uit); print("plaats (y0,x0,Y0,X0):",info)
     ys,xs=np.where(o>0); print(uit,'maat',xs.max()-xs.min()+1,'x',ys.max()-ys.min()+1,'px',(o>0).sum(),'kleuren incl. transparant',len(set(o.ravel())))
     print('afwijkingen van de kale reductie per stap:',tel,'totaal verschil',int((o!=kaal).sum()))

@@ -20,9 +20,9 @@ PAL=[(152,208,160),(20,16,18),
      (111,59,33),(156,90,59),(188,113,78),(213,137,101),   # terracotta: lijn, donker, midden*, licht (r1 hoed/kop/poten)
      (88,68,46),(120,108,77),(161,132,92),(223,195,127),   # kraag r1: donker, midden, licht, hooglicht
      (179,155,90),(228,199,123),                           # snavel r1
-     (255,255,255),(148,180,222),                          # Lotad-oog: wit, lichtblauw (Lotad pal 14, 11)
+     (255,255,255),(228,180,156),                          # Lotad-oog: wit; oogrand = Lotads lichtblauw-verhouding op terra licht (r2)
      (105,81,57)]                                           # pootonderkant r1 (tweede tint)
-NAAM={1:'zwart',2:'terra lijn',3:'terra donker',4:'terra midden',5:'terra licht',6:'bruin donker',7:'kraag midden',8:'kraag licht',9:'kraag hooglicht',10:'snavel midden',11:'snavel licht',12:'wit',13:'Lotad lichtblauw',14:'poot onder 2'}
+NAAM={1:'zwart',2:'terra lijn',3:'terra donker',4:'terra midden',5:'terra licht',6:'bruin donker',7:'kraag midden',8:'kraag licht',9:'kraag hooglicht',10:'snavel midden',11:'snavel licht',12:'wit',13:'oogrand (licht terra)',14:'poot onder 2'}
 def opslaan(o,pad):
     im=Image.fromarray(o.astype('uint8'),'P'); p=[]
     for c in PAL: p+=list(c)

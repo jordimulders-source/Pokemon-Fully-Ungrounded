@@ -16,6 +16,12 @@ def toonkaart(rondes=1):
         for x in range(W):
             if c[y,x]>=2: t[y,x]=tint(c[y,x],L[y,x])
             elif c[y,x]==1: t[y,x]=1
+    # r2: kraag op cumulatief oppervlak (zoals r8/kleur_r1.py): percentiel van de modelhelderheid binnen de kraag
+    # -> r1-kraagkleur op hetzelfde oppervlaktepercentiel. r1-kraag (r1_tinten.py, k=5): (87,66,43) 203 + (104,82,55) 89 -> 6,
+    # (120,108,77) 168 -> 7, (161,132,92) 418 -> 8, (223,195,127) 38 -> 9; samen 916 px.
+    kr=c==5; P=np.cumsum([292,168,418])/916.0
+    drempel=np.percentile(L[kr],100*P)
+    t[kr]=np.where(L[kr]<drempel[0],6,np.where(L[kr]<drempel[1],7,np.where(L[kr]<drempel[2],8,9)))
     for _ in range(rondes):
         t2=t.copy()
         for y in range(1,H-1):

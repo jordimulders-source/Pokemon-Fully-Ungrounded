@@ -1,9 +1,10 @@
 # Ruimtestation (fase 3), Gemini-prompt r8 – NIEUW gesprek, geen bijlage
 r7 (`r7.png`), Jordi: "nu zijn er teveel panelen weg" (r7: 4 panelen, allemaal aan de voorste arm).
-Basis = prompt r7, alleen het panelenblok: een gespiegeld paar op elk van de vier armen (8 panelen), haaks op de arm, alle in één horizontaal vlak (aantal en plaatsing = keuze Claude). Alternatief (voorgelegd): r6 als model en de panelen zelf rechtzetten + rechter zijbol spiegelen.
+Basis = prompt r7, alleen het panelenblok: een gespiegeld paar op elk van de vier armen (8 panelen), haaks op de arm, alle in één horizontaal vlak (aantal en plaatsing = keuze Claude). Jordi over r7: "en dit is teveel sugimori art" · "ik wil een sprite" → pixel-art-eis bovenaan + in DO NOT. Alternatief (voorgelegd): r6 als model en de panelen zelf rechtzetten + rechter zijbol spiegelen.
 
 ```
 Design a Pokémon: an official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64×64 pixels, max 16 colors, clean dark outline, plain white background, no ground, no shadow, no effects or glow.
+IMPORTANT: the result must be a real PIXEL ART SPRITE as it appears in the game: visible square pixels, a small flat palette, hard pixel edges, no smooth gradients, no anti-aliasing. NOT official artwork, NOT a smooth illustration.
 
 WHAT IT IS: a big living space station, the final evolution of a small one-eyed satellite. It is a pure machine with its own personality, the way Magneton, Metagross and Porygon are Pokémon: no animal parts, no arms, no legs, no mouth.
 
@@ -21,5 +22,5 @@ DETAIL LEVEL: it must translate well to a 64×64 sprite: big readable shapes, th
 
 COLORS: pearly white with lavender shading, purple accents (collars, bands, rods, eye rings), dark navy-purple solar panels with lighter purple grid lines, turquoise iris as the only accent. Light from the upper left. Nothing else.
 
-DO NOT: all panels bunched on one arm, arms without panels, panels in different directions or angles, upright panels, panels overlapping each other, antennae, more or fewer than four eye-spheres, eyes with many rings, a single satellite with two panels, one straight line of modules, a small creature with empty space around it, a ring or wheel, thin orbit lines, starfield or galaxy patterns, stars or Earth around it, a space shuttle, a flat front view or side view, realistic NASA/ISS hardware, a robot with a face screen, arms or legs, cute plush/Neopets style.
+DO NOT: Sugimori-style official artwork or any smooth/vector illustration, all panels bunched on one arm, arms without panels, panels in different directions or angles, upright panels, panels overlapping each other, antennae, more or fewer than four eye-spheres, eyes with many rings, a single satellite with two panels, one straight line of modules, a small creature with empty space around it, a ring or wheel, thin orbit lines, starfield or galaxy patterns, stars or Earth around it, a space shuttle, a flat front view or side view, realistic NASA/ISS hardware, a robot with a face screen, arms or legs, cute plush/Neopets style.
 ```

@@ -25,3 +25,4 @@ Open: aantal ogen, naam, evolutiemethode.
 - r6 (`gemini/r6.png`), Jordi: "de panelen kloppen niet" → r7: `gemini/PROMPT_r7.md` (alleen panelen: 3 gespiegelde paren aan de lange arm, één vlak, parallel).
 - Jordi: "linkeroog zit ook niet goed, rechts wel, maar rechts zou gespiegeld kunnen worden" → in r7 de zijbollen als spiegelbeeld.
 - r7 (`gemini/r7.png`), Jordi: "nu zijn er teveel panelen weg" → r8: `gemini/PROMPT_r8.md` (paar panelen op elke arm, 8 totaal).
+- Jordi over r7: "en dit is teveel sugimori art" · "ik wil een sprite" → pixel-art-eis in r8.

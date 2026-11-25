@@ -162,3 +162,6 @@ STYLE: real pixel art, max 16 colors, dark outline, facing slightly to the left.
 
 AVOID: legs, a smooth or organic body, a cartoon face, eyelids, teeth, insects, screens, robots, text or symbols, glitch effects, loose pixels, Porygon, Unown, MissingNo, Gengar.
 ```
+
+## Ronde 9 (25 nov)
+- `r9/r9.png`. Jordi: "nee totaal niet, wat is er nog niet duidelijk?"

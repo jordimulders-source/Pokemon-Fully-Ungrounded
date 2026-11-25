@@ -21,3 +21,19 @@ AVOID: plush toy / Neopets look, Bambi or fawn look, Deerling, Stantler, Sawsbuc
 ## Ronde 1 (25 nov)
 - `r1/dikdik_r1.png`. Jordi: "ik vind de speren te lang sowieso, is het lichaam wel brons? en de speerkleur klopt die?"
 - Gemeten: lijf #D7874E/#EBA05C (licht oranje-reebruin; brons is dieper, bijv. #CD7F32 met donkere schaduw), schacht #A27D4A, punt #9A928E (dof warmgrijs).
+- Jordi: "A, en neem je punten mee": speren ± zo lang als het hoofd; lijf dieper brons; punt koeler/donkerder ijzer; lange beweeglijke snuit; traan voor het oog zichtbaar; kleiner en gedrongener (geen Bambi).
+
+## r2 (nieuw gesprek, zonder bijlage; prompt r1 + alleen deze punten)
+```
+Design an original Pokemon. Type: Normal. First stage of a three-stage line (it later evolves into an impala and then a kudu).
+
+Concept: a dik-dik, the tiny African antelope, in Pokemon style. Its two horns ARE short wooden spears: straight spear shafts of wood growing from its head, each ending in a dull iron spearhead. Each spear is short: about as long as the head itself, no longer. The horns are part of its body, it does not hold or carry anything. The horns are exaggerated: thicker than a real dik-dik's horns, so the design is clearly stylized, but it must still be recognizable as a dik-dik.
+
+Anatomy: a real Kirk's dik-dik (Madoqua kirkii): a very small, compact antelope with a short rounded body, short slender legs with tiny hooves, short stubby tail, large ears, big dark eyes with a pale ring around them, a tuft of hair (crest) on the forehead between the horns. The most important features of the head: a long, soft, mobile snout that clearly sticks out and droops slightly at the tip (the typical dik-dik nose), and a clearly visible dark tear-like gland spot in front of each eye. Drawn as a Pokemon designed by Ken Sugimori: stylized, simplified shapes and clean forms, NOT a realistic animal.
+
+Colors: the fur is a deep, rich bronze color (like the metal bronze: saturated warm brown-orange with dark warm shadows), but it is normal fur, not metal. Almost no pattern: only the dark tear spot in front of each eye and the crest. Lighter cream belly. Horns: wooden shafts in light brown, spearheads in dull, cool dark iron grey without shine (iron, not stone or flint).
+
+Style: official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 colors, dark outline, facing 3/4 to the left, compact composition with the legs close to the body. White background, no ground, no shadow, no effects, no glow.
+
+AVOID: plush toy / Neopets look, Bambi or fawn look, a deer face with a short muzzle, long thin legs, long spears or antenna-like horns, Deerling, Stantler, Sawsbuck, a deer with antlers, armor plates, a metal body, holding or carrying weapons, shiny or glowing metal.
+```

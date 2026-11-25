@@ -70,3 +70,4 @@ Prompts in `gemini/PROMPT.md`.
 - Jordi plakte r1 zelf terug ("omdat ik dat de beste vond"); bijstuur "lijf als poncho-mantel" niet gebruikt. Jordi: "kijk dit is gewoon goed alleen dit lichaam moet gewoon iets meer natuurlijk als een poncho vallen".
 - Volgende: bijstuur "lijf valt als een poncho" (smal bij de hals, schuin over de bovenarmen, punt voor, zachte plooien) op r1, met r1 als bijlage.
 - `ludicolo/r4/gemini_r4.png` (bijstuur poncho-val op r1, r1 als bijlage): Jordi "hij valt iets teveel over het lichaam heen denk ik, plus de rest van de sprite is nu minder geworden".
+- `ludicolo/r5/gemini_r5.png` (bijstuur korte poncho op r1): Jordi "wat vind je hiervan? Het blad moet wel anders".

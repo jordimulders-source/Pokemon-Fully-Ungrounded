@@ -3286,3 +3286,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.799] - Regionale Jynx: r4 (design ok), prompt v5
 - r4: design ok volgens Jordi; prompt v5 draait naar driekwart en maakt de blik minder slaperig (r4 als bijlage).
+
+### [v0.0.800] - Regionale Jynx: model gekozen
+- `jynx_regional/gemini/r5.png` is het model (driekwart, wakkerder blik); `SPEC.md` met Jordi's besluiten. Spritewerk gestart.

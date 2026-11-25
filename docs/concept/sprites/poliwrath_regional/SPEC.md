@@ -7,12 +7,13 @@ Eindvorm van de regionale Poliwag-lijn (harlekijnpad, ijs met cinnaber); pre-evo
 - "kleur zou ik voor de hele lijn hetzelfde blijven houden" (bij Poliwhirl, 25 nov).
 
 ## Jordi, letterlijk (Poliwrath)
-- 25 nov: "tijd voor de ice/poison poliwrath" (nog geen ontwerpwensen).
+- 25 nov: "tijd voor de ice/poison poliwrath".
+- 25 nov: "hij moet als een logisch vervolg van deze lijn zien, maar iets meer een pad, dezelfde boze ogen als poliwrath, blijft ice/poison, meer en grotere kristallen, laten we eerst aan gemini. iets meer gevechtspose, maar ik vind het tot nu toe een hele logisch lopende lijn"
 
 ## Keuzes Claude in de conceptprompt (mag Jordi schrappen)
 - Bijlage: gewone Poliwrath (Gen 3, 8×, `gemini/bijlage_poliwrath.png`); pre-evoluties niet als bijlage of naam (les Emolga, GEMINI.md).
-- Kleuren en kristallen in woorden zoals bij Poliwhirl; kristallen weer groter.
-- Houding zoals de bijlage (vechtpose).
+- Kleuren in woorden zoals bij Poliwhirl; plek van de kristallen vrij gelaten.
+- "Logisch vervolg" niet in de prompt als pre-evolutie-bijlage (les Emolga); wel hetzelfde lijnpalet en dezelfde behouden kenmerken.
 
 ## Rondes
-- Conceptprompt v1: `gemini/PROMPT.md` (wacht op Jordi's wensen).
+- Prompt v1: `gemini/PROMPT.md` (bijlage `gemini/bijlage_poliwrath.png`).

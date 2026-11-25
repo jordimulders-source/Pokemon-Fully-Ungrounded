@@ -1,4 +1,4 @@
-# Gemini-prompt: regionale Poliwrath, CONCEPT v1 (25 nov, wacht op Jordi)
+# Gemini-prompt: regionale Poliwrath, startprompt v1 (25 nov)
 Bijlage: `bijlage_poliwrath.png` (gewone Poliwrath, Gen 3, 8×). Besluiten: `../SPEC.md`.
 
 ```
@@ -7,14 +7,15 @@ Design a regional form of the Pokémon POLIWRATH and draw it as an official Gen 
 THE ATTACHED SPRITE IS THE NORMAL POLIWRATH. The new design must still be clearly recognizable as Poliwrath.
 
 KEEP FROM POLIWRATH
-- Standing on two legs in the same fighting pose and view as the attached sprite.
+- Standing on two legs, same view as the attached sprite, but in a slightly more aggressive fighting pose.
 - The gloves on the hands.
-- The eyes on top of the head.
+- The eyes on top of the head, with the same angry eyes as the attached Poliwrath.
 - A spiral on the belly.
 - No tail.
 
 CONCEPT
 - Type Ice/Poison. Based on the harlequin toad (Atelopus), a very poisonous toad from cold mountain streams in the Andes.
+- A bit more toad-like than the normal Poliwrath.
 
 COLORS (fixed for this whole evolution line)
 - Bright yellow and black in large harlequin-toad patches.
@@ -22,7 +23,7 @@ COLORS (fixed for this whole evolution line)
 - Red for the cinnabar, the spiral and the mouth.
 
 CRYSTALS
-- The biggest crystals of the line: clear ice with red cinnabar inside, growing out of the skin. The animal comes first, the crystals second.
+- More and bigger crystals: clear ice with red cinnabar inside, growing out of the skin. The animal comes first, the crystals second.
 
 STYLE AND FORMAT
 - 64x64 pixel sprite, max 16 colors, 1 px dark outline, clean shading like official Game Freak Gen 3 sprites.

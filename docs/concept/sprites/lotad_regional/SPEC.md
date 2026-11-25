@@ -67,4 +67,5 @@ Prompts in `gemini/PROMPT.md`.
 - `ludicolo/r2/gemini_r2.png` (bijstuur poncho): Jordi "ok maar hoe zouden we de poncho meer onderdeel van zijn lichaam kunnen maken".
 - Jordi over de poncho: "ik weet niet of ik met de leaf kleur het eens ben gezien de typing"; "maar het moet geen kledingstuk zijn he".
 - `ludicolo/r3/gemini_r3.png` (bijstuur: bladflappen in lijfkleur): Jordi "nu doet die alsnog bladeren". (Fout Claude: prompt vroeg zelf om bladflappen en nerven.)
-- Bijstuur "lijf als poncho-mantel, terug naar r1": Gemini gaf r1 pixel voor pixel terug (niet bewaard). Jordi: "kijk dit is gewoon goed alleen dit lichaam moet gewoon iets meer natuurlijk als een poncho vallen".
+- Jordi plakte r1 zelf terug ("omdat ik dat de beste vond"); bijstuur "lijf als poncho-mantel" niet gebruikt. Jordi: "kijk dit is gewoon goed alleen dit lichaam moet gewoon iets meer natuurlijk als een poncho vallen".
+- Volgende: bijstuur "lijf valt als een poncho" (smal bij de hals, schuin over de bovenarmen, punt voor, zachte plooien) op r1, met r1 als bijlage.

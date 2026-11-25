@@ -758,3 +758,4 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - Claude (25 nov): hoorns in een 64×64-sprite: impala-lier goed haalbaar maar dikker dan echt (≥ 2–3 px voor metaalglans); kudu-spiraal kan met licht/donker per draai, groot t.o.v. het lijf, driekwart, 2–2,5 draai.
 - **Jordi (25 nov):** "ja overdrijven graag zelfs, zodat ze een beetje afwijken van de dieren ook, maar de inspiratie wel nog kenbaar is".
 - **Besloten (Jordi, 25 nov):** "de dikdik krijgt dan korte houten speren met een metalen uiteinde, niet genoeg om steel te worden". Daarna: "Wat voor kleuren zullen we voor gaan?" (open).
+- **Jordi (25 nov), op voorstellen met natuurlijke kleuren (roodbruin/zand + staal, brons/goud, donker + staal):** "nee we moeten nu al een pokemon kleur bedenken".

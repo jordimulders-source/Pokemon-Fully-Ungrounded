@@ -48,3 +48,4 @@ Open: aantal ogen, naam, evolutiemethode.
 - Sprite r3 (`sprite/r3/`, vanaf kale reductie, 256 afwijkingen met reden in log): vorm volgt het model; ogen en paneelraster nog zwak → r4.
 - Sprite r4 (`sprite/r4/`, 240 afwijkingen van kaal, alle besproken): ogen ring+iris+pupil, panelen 4/3 vakken, zwart alleen schaduwkant → keurder.
 - Sprite r5 (`sprite/r5/`, 23 MOET-reparaties keuring_r4) → eindkeuring DFC r5 **PASS** (`eindkeuring_r5/`, 28 indexwissels, silhouet gelijk). Ter info: panelen donkerder dan fase 2; op 1× kleiner/luchtiger dan fase 2 (`check/lijn_fase1_2_3.png`); stang tweeling open. Naar Jordi.
+- Jordi na eindresultaat r5: "is nog heel erg blurry" · "en dat komt denk ik door het model" · "dat die het vak niet vult" · "ben bang weer een niewue gemini ronde" → compacte modelvarianten A/B/C (maker) + reserveprompt `gemini/PROMPT_r10.md`.

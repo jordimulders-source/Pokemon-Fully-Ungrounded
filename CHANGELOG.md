@@ -3047,3 +3047,8 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Panelen zelf kleiner geschaald rond hun aansluitpunt (`paneel_varianten/`); 75 % kapte het lijf af, 80 % met ander anker (80b) niet.
 - Sprite r1–r7: maker (model overnemen), keuring (BIJNA → 6 reparaties), eindkeuring Dragonfly Cave met omlijningsronde (PASS). Kandidaat met twee oogvarianten (a = model, b = één ring minder): `docs/concept/sprites/satelliet_fase2/voor_jordi_r7.png`, bestanden in `eindkeuring_r6/r7/`. Wacht op Jordi.
 - Lessen in `docs/lessen/GEMINI.md` (verhoudingen, onderdeel kleiner zonder afkappen, spiegelen).
+
+### [v0.0.732] - Satelliet (Steel/Cosmic-lijn fase 2): frontsprite af
+- Na de kandidaat r7: oog b (één ring minder) en pupil p2 (kijkt naar de driekwart) gekozen; r8–r15 per onderdeel bijgewerkt, waarbij de vorm van het hoofd wegdreef (lens te groot, kap te bol); r16 het hoofd opnieuw vanaf het model op het 64-raster (`sprite/r16/modelraster.py`), antennes van r15 gehouden; r17–r18 paarse rand (= bovenrand van het kleine paneel) en tinten/schaduw uit het model; r19–r20 golvende rechtercontour; eindkeuring Dragonfly Cave (r21–r22: lijftintladder zoals Glalie, lenslijnen aan de lichtkant in eigen donkere tint, paneelrand doorlopend, kaprand schuin), PASS.
+- Af: `docs/concept/sprites/satelliet_fase2/af/satelliet.png` (+ `_8x`), op het overzichtsvel (New). Naam, type van deze fase en fase 1/3 nog open.
+- Lessen in `docs/lessen/GEMINI.md`: vorm na elke ronde toetsen op hetzelfde 64-raster als het model; "het gaat niet zo zeer erom dat elke pixel klopt, maar dat de vorm klopt".

@@ -82,3 +82,7 @@ Aantal soortconstanten met data in de ROM: 582 (incl. vormen); verschillende Nat
 - **Overworld-sprites van Pokémon** zaten al alleen in de ROM voor soorten die ergens gebruikt worden (`ow_species_keep.py`, alleen nog Bulbasaur, nu ook weg); `event_object_movement.o` (0,7 MB) is NPC-graphics en verandert niet.
 - **De National Dex toont nog alle 1025 nummers**; uitgezette soorten blijven `----------`. Een eigen regionale dex is een aparte stap.
 - **Kleurvarianten:** `tools/grounded/variants/variants.py` neemt de `FU_*`-schakelaars nu zelf mee bij het genereren van `variant_palettes.h`.
+
+## Typeverdeling hele dex (25 nov, telling Claude)
+Telling per soort (dubbeltype telt bij beide), ±530 soorten: behouden lijnen hierboven (types uit de repo, Dudunsparce eruit) + Cosmic-besluiten (Lunatone/Solrock Rock/Cosmic, Clefairy-lijn Fairy/Cosmic, Elgyem-lijn Cosmic) + alle 92 afgemaakte frontsprites (types van het overzichtsvel; regionale Abra-, Oddish-, Swablu-, Baltoy-lijn, Silicobra en Rufflet vervangen de gewone vorm (aanname), Smoochum en Mime Jr. erbij). Tussen haakjes: met de regionale Lotad-lijn Ground/Fighting (3 soorten, aanname).
+Water 96 (93) · Bug 57 · Flying 56 · Dark 54 · Grass 54 (51) · Ground 50 (53) · Ghost 50 · Poison 49 · Normal 49 · Electric 46 · Psychic 43 · Steel 41 · Fire 39 · Dragon 34 · Ice 33 · Rock 33 · Fairy 32 · Fighting 30 (33) · Cosmic 17. Normal/Steel- en Grass/Ghost-lijn nog niet meegeteld (aantal fases open).

@@ -24,7 +24,7 @@ def comps(m):
 # gat in het linkerkristal: wit facet dat via een kier met de achtergrond verbonden was (lucht-floodfill) -> ijs
 for y in (8,9,10): cls[y,10]=3; lum[y,10]=238
 # r2: geel voorrang. Cellen die als 'donker' gelezen werden maar >= 40 % geel modelmateriaal hebben en niet op de
-# buitenrand liggen, krijgen geel (tint = gemiddelde helderheid van de gele modelpixels in die cel).
+# buitenrand liggen, krijgen geel (drempel 0,30: de dunne diagonale gele strepen op armen en benen halen 30-40 %) (tint = gemiddelde helderheid van de gele modelpixels in die cel).
 from PIL import Image as _I
 _a=np.asarray(_I.open('../referenties/gemini_gekozen_v1.png').convert('RGB')).astype(int)
 _R,_G,_B=_a[...,0],_a[...,1],_a[...,2]; _L=(_R*299+_G*587+_B*114)/1000
@@ -34,7 +34,7 @@ def _buitenrand(y,x): return any(not(0<=y+a<H and 0<=x+b<W) or cls[y+a,x+b]==0 f
 GEELVOORRANG=[]
 for y in range(H):
     for x in range(W):
-        if cls[y,x]==4 and frac[y,x,1]>=0.40 and not _buitenrand(y,x):
+        if cls[y,x]==4 and frac[y,x,1]>=0.30 and not _buitenrand(y,x):
             sl=(slice(int(YS[y]),int(YS[y+1])),slice(int(XS[x]),int(XS[x+1])))
             cls[y,x]=1; lum[y,x]=_L[sl][_Ym[sl]].mean(); GEELVOORRANG.append((x,y))
 ICE=(cls==2)|(cls==3)

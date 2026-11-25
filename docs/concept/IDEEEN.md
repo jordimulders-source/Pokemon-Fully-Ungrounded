@@ -789,4 +789,5 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - **Jordi (type fase 1):** "denk dat alleen electric logisch zou zijn". Fase 1 Electric; fase 2 Electric + Bug ("erbij").
 - **Jordi (wat het is):** "het is een puur digitaal wezen, een glitch die sentient wordt".
 - **Jordi (type fase 3):** "3 blijft ook bug".
+- **Jordi (look):** "de look moet in alle 3 de fases dan ook digitaal zijn, dus bijv 1 gewoon wat meer missingno achtig".
 - **Open:** vorm; anker; verder ontwerp.

@@ -3441,3 +3441,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.x] - Glitch-lijn fase 2 af, fase 3-prompt (25 nov)
 - Fase 2 frontsprite af: `docs/concept/sprites/glitch_lijn/fase2_bug/af/glitch_fase2.png` (Electric/Bug), op het overzichtsvel. Gemini r12 terug naar het natieve raster, armen omgekleurd naar het hoofd, verschoven pixelrijen op 5 plekken buiten ogen en mond, naar 15 kleuren (`gereedschap/fase2_natief.py`, `fase2_armen.py`, `fase2_trainer.py`, `fase2_plekken.py`, `fase2_sprite.py`).
 - Fase 3: Gemini-prompt r1 met fase 2 als bijlage (`glitch_lijn/fase3_virus/gemini/PROMPTS.md`).
+
+### [v0.0.x] - Glitch-lijn fase 3 af (25 nov)
+- Fase 3 frontsprite af: `docs/concept/sprites/glitch_lijn/fase3_virus/af/glitch_fase3.png` (Electric/Bug), op het overzichtsvel. Gemini r1 (vijf fase 2-koppen), hoofden uit r2, magneten en tussenruimte ingekleurd met fase 2-data en foutkleurbalkjes (`gereedschap/fase3_glitch.py`), 3 randkolommen links en 1 rechts weg, 15 kleuren. Glitch-lijn compleet; namen open.

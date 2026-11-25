@@ -209,3 +209,12 @@ STYLE: real pixel art, max 16 colors, dark outline, facing slightly to the left.
 
 AVOID: human eyes, eyelids, an insect, a robot, a TV or a monitor as a body, text or symbols, Porygon, MissingNo.
 ```
+
+## Ronde 11 (25 nov)
+- `r11/r11.png`. Jordi: "kijk, we komen ergens! vind alleen de armen nog net iets teveel afwijken in stijl".
+
+## r12 (zelfde gesprek als r11, vervolgbericht): alleen de armen
+Eigen invulling Claude (schrappen bij twijfel): de zin over gladde buizen/metaal is Claudes eigen waarneming van wat er afwijkt.
+```
+This is very close. Keep everything exactly the same: the head, the face, the colors, the loose blocks and the glitch blocks. Change ONLY the two arms: right now they differ too much in style from the rest of the creature. Draw the arms in exactly the same style as the head: the same pixel size, the same blocky mottled dark and grey material, the same outline. (Now they look like smooth shaded tubes, more like metal than like the head.)
+```

@@ -28,3 +28,4 @@ Open: aantal ogen, naam, evolutiemethode.
 - Jordi over r7: "en dit is teveel sugimori art" · "ik wil een sprite" → pixel-art-eis in r8.
 - r8 (`gemini/r8.png`), Jordi: "nee dit is geen ruimtestation meer". Voorstel Claude: stoppen met prompten, beste eerdere ronde als model (r5 of r6) en zelf bewerken.
 - Jordi: "dan ligt het aan de prompt, de zijkanten moeten niet zo groot zijn als de voor en achterkant, doe nog even een sterke prompt maken" → r9: `gemini/PROMPT_r9.md` (basis r5 + alle besluiten erna).
+- r9 (`gemini/r9.png`), Jordi: "ok deze vind ik goed op 2 dingen na, 1 paneel linksboven moet gespiegeld worden zodat er 2 zitten en het linkeroog heft weer een perspectief dat net niet goed genoeg is, kan je deze 2 dingen fixen?" · "ah en het onderste paneel is korter dan de bovenste" · "en vertaalt die goed naar een sprite?" (check: `check/r9_64_8x.png`; plaatsing tweeling: `check/r9_paneel_opties.png`).

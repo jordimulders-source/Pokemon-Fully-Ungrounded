@@ -9,7 +9,7 @@ for k in range(2,16):
     lab,n=label(o==k,acht=(k in (2,6,11,14,15))); klein=[(lab==i).sum() for i in range(1,n+1) if (lab==i).sum()<3]
     pts=[tuple(np.argwhere(lab==i)[0][::-1]) for i in range(1,n+1) if (lab==i).sum()<3]
     if klein: print('  tint %s (%d): %d vlekjes <3 px op %s'%(CH[k],k,len(klein),pts))
-licht={5,8,10,13}
+licht={5,8,10,13,15}
 rand=[(X,Y,CH[o[Y,X]]) for Y,X in zip(yy,xx) if o[Y,X] in licht and (not fg[Y,X-1] or not fg[Y,X+1] or not fg[Y-1,X] or not fg[Y+1,X])]
 print('lichte kleur op de buitenrand:',rand)
 los=[(X,Y) for Y,X in zip(*np.where(o==1)) if all(o[Y+dy,X+dx] not in (0,1) for dy in (-1,0,1) for dx in (-1,0,1) if dy or dx)]

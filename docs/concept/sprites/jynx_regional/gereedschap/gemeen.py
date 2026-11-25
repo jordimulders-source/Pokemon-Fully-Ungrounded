@@ -44,7 +44,7 @@ def label(mask,acht=True):
                 yy,xx=cy+dy,cx+dx
                 if 0<=yy<mask.shape[0] and 0<=xx<mask.shape[1] and mask[yy,xx] and not lab[yy,xx]: lab[yy,xx]=n; st.append((yy,xx))
     return lab,n
-CH='.Klsm+DSHgWMRpec'
+CH='.Klsm+DSHgWMRpeL'
 def toon(o,y0=8,y1=56,x0=4,x1=60):
     print('   '+''.join(str(x%10) for x in range(x0,x1)))
     for y in range(y0,y1): print('%2d '%y+''.join(CH[v] for v in o[y,x0:x1]))

@@ -744,3 +744,8 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - **Frontsprite af (24 nov):** `docs/concept/sprites/capybarrel/af/` (Jordi: "akkoord, ... r6b"). Volgende: fase 2 (kart).
 - **Jordi (24 nov):** "volgende, capykart, de evolutie van capybarrel. Dat is de fase 2 dus het hoofd is iets volgroeider en hij steekt uit een houten speelgoedwagentje, op de achterkant staan drie of vier toy blocks van hout opgestapeld". Naam fase 2: **Capykart**. Map: `docs/concept/sprites/capykart/`.
 - **Capykart frontsprite af (25 nov):** `docs/concept/sprites/capykart/af/` (Gemini r5 overgenomen in modeltonen, Capybarrel-oog; tanden en morrillo op Jordi's verzoek weggehaald). Daarmee is de Capybarrel-lijn af.
+
+## Regionale Jynx: sirene uit de Odyssee (Jordi, 25 nov)
+- Jordi: "wat dacht je van een regional form van jynx, gebaseerd op sirenes uit de odyssee".
+- Gegevens uit de repo: Jynx is Ice/Psychic; Smoochum → Jynx zit in de dex (DEX_NOMINATIES: "Geen band").
+- Open vragen aan Jordi (nog niets besloten): sirene als vogelvrouw (Odyssee) of als zeemeermin (latere beeldvorming); type; Smoochum mee als regional; band met de regio (MYTHOLOGIE.md noemt de Iara, een Braziliaanse rivier-sirene, als Water/Psychic-kandidaat).

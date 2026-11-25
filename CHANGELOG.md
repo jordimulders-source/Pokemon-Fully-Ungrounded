@@ -3255,3 +3255,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.789] - Merge naar main: Capykart
 - Branch met de Capybarrel-lijn fase 2 (Capykart) naar main gemerged; overzichtsvel opnieuw gemaakt.
+
+### [v0.0.790] - Idee: regionale Jynx als sirene
+- `docs/concept/IDEEEN.md`: Jordi's idee voor een regionale Jynx naar de sirenes uit de Odyssee, met open vragen (vorm, type, Smoochum, band met de regio/Iara).

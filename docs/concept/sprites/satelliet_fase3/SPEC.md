@@ -51,3 +51,4 @@ Open: aantal ogen, naam, evolutiemethode.
 - Jordi na eindresultaat r5: "is nog heel erg blurry" · "en dat komt denk ik door het model" · "dat die het vak niet vult" · "ben bang weer een niewue gemini ronde" → compacte modelvarianten A/B/C (maker) + reserveprompt `gemini/PROMPT_r10.md`.
 - Jordi: "eindeloos fixen gaat meestal niet goed" → prompt r10 naar Jordi.
 - r10 (`gemini/r10.png`), Jordi: "niet gelukt". → terug naar r13b met compacte varianten (maker).
+- Compacte varianten (`model/compact_*`, alleen hele vakken weg): A 3/3 mast 3 → 64×46, B mast 2 → 64×42, C 2/2 mast 3 → 64×52 (oog ±8 px). Breedte begrenst overal.

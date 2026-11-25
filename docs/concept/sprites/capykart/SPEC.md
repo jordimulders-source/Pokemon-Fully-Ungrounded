@@ -17,7 +17,8 @@ Lijnbesluiten: `docs/concept/IDEEEN.md` → "Capybarrel"; fase 1: `docs/concept/
 - 24 nov (op r3b): "nee beige werkt niet, het hoofd is nog wel iets teveel een kopie van capybarrel" → vacht B (dieper); kopvarianten V1–V3 (gezicht meer uit het model) in sprite/r4/.
 
 - 24 nov: "v2 maar de tanden zijn teveel rechthoekjes, mogen ook net wat groter" → tanden uit Bibarel (T1; "t1"); blok: "wat het beste uitkomt" → blauwgrijs.
-- **Frontsprite af (24 nov):** `af/capykart.png` = `eindkeuring/capykart_r7.png` (r6 + Dragonfly Cave-omlijning).
+- ~~Frontsprite af (24 nov): r7~~ (door Jordi afgekeurd).
+- **Frontsprite af (25 nov, Jordi "ja"):** `af/capykart.png` = `eindkeuring_dc/capykart_e.png`: kale reductie van model_r5 (Dundragoon-methode, r17) + DC-eindkeuring (schaduw, tinten, lijnen) + Capybarrel-oog; geen tanden, geen morrillo.
 
 - 24 nov (op r7, "af"): "Je kan me niet vertellen dat deze door de eindkeuring is, weinig tint, vrijwel geen schaduw, vooral niet op de blokken, de lijnen op de auto, dit moet echt nog beter, dragonflycave" → schaduwrondes r8–r12.
 - 24 nov (op r12): "het is nu niet echt een geheel meer, beetje blurry, de zwarte barrel lines zijn nog niet goed, de blokken staan niet echt in goed perspectief en lijken niet daadwerkelijk opgestapeld op de auto" → r13 (blokken mogen van vorm veranderen).

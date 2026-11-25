@@ -3141,3 +3141,9 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Capykart (Normal, fase 2 van de Capybarrel-lijn): frontsprite af in `docs/concept/sprites/capykart/af/` (64×64 + 8×). Naar Gemini r5; vacht B (dieper bruin), snuit uit het model, blije oog + wenkbrauw van Capybarrel, morrillo, tanden uit Bibarel, hout en hoepels in Capybarrel-kleuren, blauw blok met blauwgrijze zijkant.
 - Rondes: maker r1–r6 (palet, kopvolume, wielen, kopvarianten V1–V3, tandvarianten T1–T3), keurder PASS (r3b), Dragonfly Cave-eindkeuring (r7, omlijning, silhouet diff 0).
 - Op het overzichtsvel (sectie New). Daarmee is de Capybarrel-lijn af.
+
+### [v0.0.761] - Capykart: frontsprite opnieuw af
+- r7 (24 nov) door Jordi afgekeurd (weinig tint/schaduw, lijnen, blokken). Schaduwrondes r8–r16 met de hand werkten niet (rechte lijnen, plat, blurry, blokken hertekend).
+- Opnieuw gebouwd volgens de Dundragoon-methode (r17: kale reductie van Gemini r5 in modeltonen, toren 100 % uit het model), daarna volledige Dragonfly Cave-eindkeuring (schaduw, kleurtinten, belijning; varianten a–e in `eindkeuring_dc/`).
+- Kop: Capybarrel-oog; tanden en morrillo op verzoek van Jordi weggehaald; snuitplaat uit het model.
+- `docs/concept/sprites/capykart/af/` vervangen en overzichtsvel bijgewerkt. Lessen: vast foutpatroon in `SPRITE_KERN.md`, eindkeuring = schaduw + belijning + kleurtinten in `SPRITE_WERKWIJZE.md`, maatstaf-sprites (Skinguin, Dundragoon, Zapacha, Princadee).

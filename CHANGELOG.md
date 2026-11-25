@@ -3258,3 +3258,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.790] - Oddish-plantvoorstellen geschrapt
 - `IDEEEN.md`: de vijf voorstellen voor regionale Oddish-planten (Brugmansia, pijpbloem, passiebloem, bromelia/Puya, frailejón) doorgestreept; Jordi (25 nov): "Oddish heeft al een regional lijn, mag je schrappen."
+
+### [v0.0.791] - Creepy guaraná: besluiten en eerste Gemini-prompt
+- Jordi (25 nov): creepy guaraná wordt een lijn van 2 fases, Grass/Ghost; lichaam = kruipende liaan; fase 1 dichte rode tros met barstjes waar ogen door kijken, fase 2 opengebarsten vol ogen; toon onbehaaglijk; fase 1 eerst.
+- `IDEEEN.md` bijgewerkt; nieuw `docs/concept/sprites/guarana/SPEC.md` en startprompt `guarana/gemini/PROMPT_r1.md`.

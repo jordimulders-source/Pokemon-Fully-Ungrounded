@@ -19,3 +19,4 @@ Alle citaten en lijnbesluiten: `docs/concept/IDEEEN.md` → "Impala-lijn"; samen
 
 ## Sprite
 - Rondes in `sprite/rN/`.
+- Sprite r1–r6 (maker, 2 keuringen, eindkeuring Dragonfly Cave). Keuze brons (Jordi, 25 nov, `sprite/r6/keuze.png`): "ik vind links juist mooier, rechts is wat generiek qua kleur" → `r6/dikdik_r6.png` (donker brons), niet r6_licht.

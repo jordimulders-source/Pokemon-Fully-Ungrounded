@@ -64,3 +64,11 @@ AVOID: realistic animal proportions, a small head on a long body, long thin legs
 ## Ronde 3 (25 nov)
 - `r3/dikdik_r3.png`. Gemeten: lijf #9A552F, licht #B06D3D (donker kastanje), punt #848A9D.
 - Claude: veel meer Pokémon (grote kop, grote oren, compacter); maar snuit weer kort (reekalf), "traan" is een blauwe druppel onder het oog (leest als huilen), houding nog vrij neutraal; kleur nu te donker/bruin, brons later in de spritefase.
+
+## r3b (bijsturen in hetzelfde gesprek)
+```
+Keep everything exactly the same (pose, body, head size, ears, horns, colors). Change ONLY the face:
+1. Make the snout longer: a long, soft dik-dik nose that clearly sticks out forward and droops slightly at the tip.
+2. Remove the blue tear drop under the eye. Instead, add a dark brown spot directly in front of the eye (towards the snout), in the fur color, not a drop, not blue.
+```
+- `r3b/dikdik_r3b.png`: rest gelijk gebleven; snuit langer met donkere bolle neuspunt; donkere vlek voor het oog. Jordi: "beter?"

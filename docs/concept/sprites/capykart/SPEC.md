@@ -28,5 +28,7 @@ Lijnbesluiten: `docs/concept/IDEEEN.md` → "Capybarrel"; fase 1: `docs/concept/
 
 - 24 nov: "probeer maar zoveel mogelijk het model over te nemen, vergeet wat we eerder zeiden" → r17 = kale reductie van model_r5 met modeltonen, ook gezicht en toren; daarna: "behalve de speecifieke wijzigingen die we besproken hebben he", "tanden etc", "dan doen we daarna nog een laatste eindkeuring" ; "het Capybarrel-gezicht, de morrillo, de Bibarel-tanden — deze blijven" → die drie blijven; kleuren = modeltonen.
 
+- 25 nov (op c): "het oog is heel raaar, de neus is effen ... oren zijn ook anders dan het model en grijze streep is ook weg", "de morrillo is anders dan je eerst deed toch? oog is nog steeds slecht, snuit nergens als in het model", "De tanden zitten ook helemaal niet meer vast aan de mond", "doe maar gewoon hetzelfde oog als capybarrel" → d = c + Capybarrel-oog exact (E3), tanden 2 rijen omhoog vast onder de snuit, philtrum donkerbruin (`eindkeuring_dc/capykart_d.png`, `kop_keuze/`).
+
 ## Open (niet door Jordi gezegd)
 - Evolutiemethode/level.

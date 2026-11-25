@@ -43,3 +43,4 @@ Citaten en besluiten (Jordi, 23 nov); het overzicht staat ook in `docs/concept/I
 
 ## Fase 2 (andere sessie, 23–25 nov)
 Fase 2 is in een parallelle sessie ontworpen en af: `docs/concept/sprites/satelliet_fase2/` (model = Gemini r1 gespiegeld, oog 1,5×, panelen 80 %; sprite `satelliet_fase2/af/satelliet.png`; alle citaten in `satelliet_fase2/SPEC.md`). De startprompt `fase2/gemini/PROMPT_r1.md` hieronder is daarmee niet meer nodig. Nog open: palet afstemmen op fase 1 (de eis "consistent palet met fase 1" uit OVERDRACHT_FASE2.md is in die sessie niet getoetst).
+- Type (Jordi, 25 nov): "hele lijn cosmic/steel he" (alle fases Cosmic/Steel).

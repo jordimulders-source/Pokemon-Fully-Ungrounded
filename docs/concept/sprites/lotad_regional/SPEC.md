@@ -47,3 +47,4 @@ Prompts in `gemini/PROMPT.md`.
 ## Lombre (fase 2)
 - Jordi (25 nov): "de regional lombre, lotad is al af". Startprompt v1 in `lombre/gemini/PROMPT.md` (opzet Lotad-v7; keuzes van Claude daar vermeld).
 - `lombre/r1/gemini_r1.png` (v1): Jordi "vind deze alweer vrij prima".
+- Jordi op r1: "1 hoeft ook geen blad meer te zijn, ik vind de kleding ook echt lichaamsonderdelen, tas of riem zie ik ook niet. rechtop is prima want hij wordt fighting. de mond past niet bij lombre alleen, die is bij hem geen snavel, de ogen zoals lombre maar dan wat bozer zoals hier is prima". Alleen de mond verandert; bijstuurprompt v2 in `lombre/gemini/PROMPT.md`.

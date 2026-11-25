@@ -38,3 +38,12 @@ AVOID
 - Not green and blue like the normal Lombre.
 - No glossy 3D render, no plush or mascot look.
 ```
+
+# Bijstuurprompt v2 (25 nov), in het r1-gesprek
+Jordi over r1: alleen de mond, "die is bij hem geen snavel"; ogen, hoed, lijf en handen blijven. Eén wijziging (les GEMINI.md: max. 1–2). Lukt het niet: mond in de spritefase uit de Gen 3-Lombre halen.
+
+```
+Great, keep this design exactly: the hat, the eyes, the body, the colors, the fighting pose and the hands.
+Change ONLY the mouth: it is not a duck bill. Give it LOMBRE's mouth: a wide, flat, soft lipped mouth with a broad upper lip, slightly open, not a hard pointed beak.
+Keep it a 64x64 Gen 3 front sprite on a plain white background.
+```

@@ -59,3 +59,4 @@ Open: aantal ogen, naam, evolutiemethode.
 - Jordi over r7: "rechts het beste, maar de twee kleinere bollen hebben nog steeds amper ogen en de panelen zijn allemaal net wat te smal denk ik" → r8 vanaf r7 ×1,3: zijbollen ×1,6/×1,8, panelen breder ×1,3/×1,5.
 - r8 (`sprite/r8/`): 4 varianten s16p13, s16p15, s18p13, s18p15; zij-ogen nu ring+iris+pupil. Naar Jordi.
 - Jordi over r8: "ze zijn allemaal nog niet super afgewerkt, dus het grootste kan gewoon, probeer de vormen goed te herstellen, rond rond, rechthoekig rechthoek, de panelen in het midden groeien niet mee, het oog netjes erin zetten, maar ik denk dat we er wel komen" → r9 vanaf s18p15 (verse maker).
+- r9 (`sprite/r9/`): bollen rond (≤0,5 px), ogen ring 8/6 + iris + pupil 2×2, panelen als parallellogrammen met fase 2-recept; mast PB ×2,0 en PF ×2,5 (keuze maker, = ×1,5 zichtbare breedte). Naar Jordi.

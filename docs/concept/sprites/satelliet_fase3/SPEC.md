@@ -72,3 +72,4 @@ Open: aantal ogen, naam, evolutiemethode.
 - Jordi over r13: "bovenste zie ik geen verschil tussen c en d, dus een van de twee, de onderste heb je precies hetgene wat goed zou zijn geen enkele keer gedaan, dezelfde breedte als boven, 4 pixels tussen de lijnen in" → r14: PB −2, PF = PB-breedte en vakmaat 4 px.
 - r14 (`sprite/r14/`): PB −2; PF zelfde breedte (6 px) en vakmaat (4 px) als PB, 5 vakken, achter voorbuis en PE, onder PE een heel vak; onderkant sprite y 61. Naar Jordi.
 - Jordi over r14 (met rode lijnen, `sprite/r14/jordi_afkappingen.png`): "hier kappen de twee panelen onnodig af toch?"
+- Jordi: "hopelijk nu eindelijk eens goed" · "ja en keur ze en stuur pas als ze echt goed zijn, het doel is duidelijk" → na r15: keurder + eindkeuring, rondes tot PASS, pas dan naar Jordi.

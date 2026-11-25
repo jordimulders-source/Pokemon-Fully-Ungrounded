@@ -34,3 +34,4 @@ Bron: pret/pokered en pret/pokeemerald (broncode zelf gelezen door een onderzoek
 - **Jordi over test 11:** "nee dit werkt ook niet helemaal".
 - **Jordi:** "het leest niet echt als een glitch". Analyse Claude: de nette, doorlopende omlijning maakt er een voorwerp met een patroon van; een glitch leest als de vorm zelf kapot is. Test 11b (`eigen_missingno_kapot.py`, `eigen_missingno/kapot/vel.png`): m04/m08/m10 met omlijning onderbroken of weg, banen verschoven, stukken herhaald, rommel die buiten de vorm lekt, en (kolom 2–3) een baan in een verkeerd palet.
 - **Jordi over 11b:** "he kijk, dit is een stap vooruit, alleen de willekeurige gearceerde lijnen werken niet, midden onderin komt het dichtst in de buurt" (= k3_2). Varianten `kapot/k3_2_varianten.png`: origineel, zonder kleurbaan, zonder zwarte streepjes, zonder beide.
+- **Jordi:** "de gele baan moet weg" → beste tot nu toe: `kapot/beste_tot_nu.png` (= k3_2 zonder kleurbaan; zwarte streepjes blijven).

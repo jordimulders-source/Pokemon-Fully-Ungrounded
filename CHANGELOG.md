@@ -3374,3 +3374,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Variant 3 uitgewerkt: onregelmatiger vorm; gezicht uit het materiaal zelf (`fase1_glitch/banen_3b/vel.png`); les in `GRAPHICS.md`.
 - Lijn gepauzeerd (Jordi: "stop maar we komen echt nergens"); stand in `IDEEEN.md` en CLAUDE.md.
 - Nieuwe poging: Gemini-silhouet gevuld met eigen MissingNo-rommeldata, ogen uit de rommel (`fase1_glitch/eigen_missingno/vel.png`).
+- Vorm zelf kapot gemaakt (verschoven banen, onderbroken omlijning, lekkende rommel); beste tot nu toe `fase1_glitch/eigen_missingno/kapot/beste_tot_nu.png`.

@@ -42,3 +42,4 @@ Prompts in `gemini/PROMPT.md`.
 - Jordi op r3: "nee, te klein" → `sprite/r3/oog_ABC.png`: A = r3, B = 2 px breed (zwarte stip + wit + lijftint, rechterdeel van het nabije oog), C = volledig Lotad-oog 3×3.
 - Jordi: "de blik klopt nog niet, hij kijkt niet goed driekwart" → `sprite/r3/oog_DEF.png`: pupillen 1 px naar links (kijkrichting); D = ver oog 2 px, E = ver oog 3×3, F = ver oog 2 px 1 kolom verder naar de rand.
 - Jordi: "ze kijken nu niet driekwart maar zijwaarts" → `sprite/r3/oog_GHI.png`: pupillen naar rechts (naar de kijker); G = nabij midden + ver 2 px stip rechts, H = beide stip rechts, I = nabij midden + ver 3×3 stip rechts.
+- Jordi: "G" → basis voor de eindkeuring: `sprite/r3/lotad_gaucho_oogG.png`.

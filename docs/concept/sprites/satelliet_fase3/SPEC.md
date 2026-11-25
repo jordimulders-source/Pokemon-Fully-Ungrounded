@@ -26,3 +26,4 @@ Open: aantal ogen, naam, evolutiemethode.
 - Jordi: "linkeroog zit ook niet goed, rechts wel, maar rechts zou gespiegeld kunnen worden" → in r7 de zijbollen als spiegelbeeld.
 - r7 (`gemini/r7.png`), Jordi: "nu zijn er teveel panelen weg" → r8: `gemini/PROMPT_r8.md` (paar panelen op elke arm, 8 totaal).
 - Jordi over r7: "en dit is teveel sugimori art" · "ik wil een sprite" → pixel-art-eis in r8.
+- r8 (`gemini/r8.png`), Jordi: "nee dit is geen ruimtestation meer". Voorstel Claude: stoppen met prompten, beste eerdere ronde als model (r5 of r6) en zelf bewerken.

@@ -144,3 +144,5 @@ AVOID: deer, roe deer, gazelle, realistic animal proportions, a small head on a 
 ```
 Keep this exact design: same pose, proportions, horns, crest, colors and pattern. Change ONLY the art style: redraw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style), pixel art, 64x64, max 16 colors, dark outline. White background, no ground, no shadow.
 ```
+- `r5b/impala_r5b.png`: ontwerp gelijk, maar fijne pseudo-pixels zonder vast raster (gemeten: geen pixelpitch te vinden), dus niet over te nemen als natief raster. Jordi: "lukt hem niet".
+- Gevolg: r5 blijft het ontwerp; de sprite komt uit eigen reductie van r5 (zie `../test/snelle_reductie.png`) + opschonen (lijn, strepen, oog).

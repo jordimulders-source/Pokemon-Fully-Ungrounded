@@ -3354,3 +3354,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.820] - Impala: Gemini r5 (illustratie), reductietest, bijsturing r5b naar pixelart
 - `impala_lijn/impala/gemini/r5/impala_r5.png`, test `impala_lijn/impala/test/snelle_reductie.png` (`snelle_reductie.py`), bijstuurprompt r5b in `PROMPTS.md`.
+
+### [v0.0.821] - Impala: r5b (pixelart lukt Gemini niet), r5 wordt het ontwerp
+- `impala_lijn/impala/gemini/r5b/impala_r5b.png`; geen vast pixelraster. Sprite komt uit eigen reductie van r5.

@@ -3377,3 +3377,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Vorm zelf kapot gemaakt (verschoven banen, onderbroken omlijning, lekkende rommel); beste tot nu toe `fase1_glitch/eigen_missingno/kapot/beste_tot_nu.png`.
 - Variaties met vaag de fase 2-vorm erin, kleiner (`fase1_glitch/wezen/vel.png`).
 - Beste tot nu toe met een hap linksonder (MissingNo-achtig): `fase1_glitch/eigen_missingno/kapot/beste_hap_linksonder.png`.
+- Kleinere maten (100/80/70/60 %), met en zonder hap (`fase1_glitch/klein/vel.png`).

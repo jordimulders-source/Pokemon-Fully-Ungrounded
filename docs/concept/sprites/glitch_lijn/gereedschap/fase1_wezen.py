@@ -13,7 +13,7 @@ kapot=ns['kapot']
 TD=[(40,40,48),(58,58,68),(78,78,90)]; TG=[(96,98,104),(136,140,146),(176,180,186),(212,214,218)]; LIJN=(16,16,20)
 def vorm(r,armen,tilt,breed,sc=1.0):
     """masker: 0 leeg, 1 lijf, 2 gezichtsvlak, 3 arm"""
-    m=[[0]*64 for _ in range(64)]; cx,cy=32,40; rx,ry=breed*sc,15*sc
+    m=[[0]*64 for _ in range(64)]; cx,cy=32,(38 if OUD else 40); rx,ry=breed*sc,15*sc
     for y in range(64):
         for x in range(64):
             if ((x-cx)/rx)**2+((y-cy)/ry)**2<1: m[y][x]=1
@@ -42,7 +42,7 @@ def vul(m,r,base,ogen):
             if not z: continue
             # omlijning: rand van het masker
             rand=any(not (0<=x+a<64 and 0<=y+b<64) or m[y+b][x+a]==0 for a,b in ((1,0),(-1,0),(0,1),(0,-1)))
-            if z==3: px[x,y]=(TD[0] if (x+y)%3 else TD[1])+(255,); continue
+            if z==3 and not OUD: px[x,y]=(TD[0] if (x+y)%3 else TD[1])+(255,); continue
             if rand: px[x,y]=LIJN+(255,); continue
             bt=rom[base+(y*32+x//4)%4096]; v=(bt>>((x%4)*2))&3
             if z==2:
@@ -60,11 +60,12 @@ ARMEN=[ [((15,38),(8,24)),((49,38),(56,24))],      # beide omhoog
         [((15,38),(7,26)),((49,42),(58,48))],      # een omhoog, een omlaag
         [((16,36),(10,22)),((48,36),(55,30))] ]
 SC=float(sys.argv[3]) if len(sys.argv)>3 else 1.0
+OUD=len(sys.argv)>4 and sys.argv[4]=='oud'   # eerste vel (100 %, armen als omlijning)
 ims=[]
 for i in range(8):
     r=random.Random(100+i); breed=r.choice([15,17,18]); tilt=r.choice([-4,-2,2,4,6])
     m=vorm(r,ARMEN[i%4],tilt,breed,SC); base=0x300000+r.randrange(0,0x4000)*4
-    ogen=[(round(32-6*SC),round(40-5*SC)+r.choice([0,1])),(round(32+6*SC),round(40-5*SC))]
+    ogen=[(26,33+r.choice([0,1])),(38,33)] if OUD else [(round(32-6*SC),round(40-5*SC)+r.choice([0,1])),(round(32+6*SC),round(40-5*SC))]
     im=vul(m,r,base,ogen); im=kapot(im,21+i,'breek',True,False); ims.append(im); im.save(f'{uit}/w{i+1}.png')
 sh=Image.new('RGB',(4*68+4,2*68+4),(255,255,255))
 for i,im in enumerate(ims): sh.paste(im,(4+(i%4)*68,4+(i//4)*68),im)

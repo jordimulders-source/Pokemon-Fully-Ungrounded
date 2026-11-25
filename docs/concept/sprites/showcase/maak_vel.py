@@ -60,6 +60,7 @@ SECTIES=[
 ("capykart/af/capykart.png",'"Capykart"',"normal"),
 ("tempel/af/tempel.png",'Levende tempel',"ghost/rock"),
 ("impala_lijn/dikdik/af/dikdik.png",'Dikdik (impala-lijn fase 1)',"normal"),
+("glitch_lijn/fase1_glitch/af/glitch_fase1.png",'Glitch (glitch-lijn fase 1)',"electric"),
 ]),
 ("Evolutions of existing Pokémon",[
 ('hitmontop_evo/af/hitmongroove.png', '"Hitmongroove" (Hitmontop)', 'fight/ground'),

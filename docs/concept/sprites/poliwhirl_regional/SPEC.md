@@ -23,3 +23,4 @@ Fase 2 van de regionale Poliwag-lijn (harlekijnpad, ijs met cinnaber); pre-evolu
 - **r4 (Jordi):** "linkeroog moet nog iets meer omlijnd worden, die creeert een bolling, vorm is verder goed" → r5: 4 omlijningspixels (index 1) links om het linkeroog (Claude, (20,15) (19,16) (19,17) (20,18)).
 - **r5 (Jordi):** "ofnee wacht" / "nu is het te bol" / "het oog" → eindkeuring gestopt; r6-varianten linkeroog: A = rand recht (2 oogwitpixels → omlijning), B = alleen (20,15) en (20,18), C = A + 1 px bolling.
 - **Linkeroog: B** (Jordi: "B correct") = `sprite_r6/poliwhirl_regional_r6_B.png`; basis voor de eindkeuring.
+- **AF (25 nov):** eindkeuring (DC: omlijning aan de lichtkant in eigen donkerste tint, schaduwsikkel geel 7) → `af/poliwhirl_regional.png`; Jordi: "commit en push naar main". Op het overzichtsvel.

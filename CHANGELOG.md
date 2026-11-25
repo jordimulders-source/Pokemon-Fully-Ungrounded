@@ -3331,3 +3331,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.814] - Regionale Poliwhirl: Gemini v1 gekozen, sprite gestart
 - Model `poliwhirl_regional/referenties/gemini_gekozen_v1.png`; spiraal van Poliwhirl, ogen fixen (Jordi).
+
+### [v0.0.815] - Regionale Poliwhirl: frontsprite af
+- `docs/concept/sprites/poliwhirl_regional/af/poliwhirl_regional.png` (Gemini v1, Poliwhirl-ogen 6×6 op modelplek, linkeroog variant B, spiraal van de regionale Poliwag, DC-eindkeuring). Op het overzichtsvel; CLAUDE.md, TODO, POKEMON.md, lessen bijgewerkt.

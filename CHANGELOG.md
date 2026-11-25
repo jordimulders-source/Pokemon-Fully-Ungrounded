@@ -3357,3 +3357,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.821] - Impala: r5b (pixelart lukt Gemini niet), r5 wordt het ontwerp
 - `impala_lijn/impala/gemini/r5b/impala_r5b.png`; geen vast pixelraster. Sprite komt uit eigen reductie van r5.
+
+### [v0.0.822] - Impala: sprite r1–r2 en oogvarianten
+- Spritefase gestart op model r5 (eigen reductie, strepen volgens Jordi). Rondes in `impala_lijn/impala/sprite/r1`, `r2`; oogvarianten uit Gen 3 (Rapidash, Absol, Stantler) in `impala_lijn/impala/oog/oog_varianten.png`.

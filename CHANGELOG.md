@@ -3327,3 +3327,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Sprite r1–r7: model verkleind naar 52 px (maat als Vulpix/Growlithe), 2 keuringen + eindkeuring Dragonfly Cave; oog als ronde vorm uit het model (dunne ring, grote iris), ver oog, kuif, kin terug; donker brons (Jordi koos dit boven een lichtere variant), oog variant B (glimlicht linksonder).
 - Af: `docs/concept/sprites/impala_lijn/dikdik/af/dikdik.png`, op het overzichtsvel (New). Naam open.
 - Concept impala-lijn (dikdik → impala → kudu; Normal → Normal/Steel; brons → zilver → goud; hoorns als wapens) in `IDEEEN.md` en `POKEMON.md`; vakjes en staaltest in `docs/concept/sprites/impala_lijn/`.
+
+### [v0.0.812] - Impala (impala-lijn fase 2): eerste Gemini-prompt
+- `docs/concept/sprites/impala_lijn/impala/gemini/PROMPTS.md`: prompt r1 (Normal/Steel, liervormige hoorns van gepolijst staal, zilveren vacht met scherpe drieslag rug/flank/buik, zwarte M, plukjes). Eigen invulling van Claude staat er apart bij.

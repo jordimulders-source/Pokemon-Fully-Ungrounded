@@ -6,7 +6,7 @@ from collections import Counter
 from PIL import Image
 RN=sys.argv[1] if len(sys.argv)>1 else 'r1'
 PAL={'.':(0,0,0),'0':(24,16,20),
-     'D':(64,32,16),'S':(104,56,26),'M':(156,90,38),'L':(204,132,66),   # brons (vacht)
+     'D':(66,34,18),'S':(108,58,26),'M':(160,92,40),'L':(194,120,56),   # brons (vacht)
      'C':(244,221,190),'c':(212,174,132),                                 # creme
      'N':(106,76,64),'n':(140,110,94),                                    # neus
      'H':(132,102,70),'h':(184,148,106),                                  # licht hout

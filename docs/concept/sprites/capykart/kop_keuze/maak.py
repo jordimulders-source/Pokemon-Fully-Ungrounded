@@ -41,3 +41,21 @@ for i,(k,im) in enumerate(items):
     x=i*(w+12); cr=im.crop(box).resize((w,h),Image.NEAREST); vel.paste(cr,(x,18),cr); d.text((x,2),k,fill=(0,0,0,255))
     one=im.resize((128,128),Image.NEAREST); vel.paste(one,(x,h+20),one)
 vel.save('kop_keuze/vel.png')
+
+# Tanden vast aan de mond (Jordi: "De tanden zitten ook helemaal niet meer vast aan de mond"): blok x18-23, y32-35 twee rijen omhoog
+def tanden(A):
+    B=A.copy()
+    blk=A[32:36,18:24].copy()
+    B[30:34,18:24]=blk
+    B[34,18:23]=5; B[35,18:23]=5
+    B[32,17]=1; B[33,17]=1
+    return B
+for k in list(var):
+    A=tanden(var[k]); im=Image.fromarray(A.astype('uint8'),'P'); im.putpalette(P); im.save(f'kop_keuze/{k}.png',transparency=0)
+items=[('model',m)]+[(k,Image.open(f'kop_keuze/{k}.png').convert('RGBA')) for k in var]+[('c (oud)',c.convert('RGBA'))]
+box=(10,9,42,38);h=(box[3]-box[1])*W
+vel=Image.new('RGBA',(len(items)*(w+12),h+150),(225,225,225,255)); d=ImageDraw.Draw(vel)
+for i,(k,im) in enumerate(items):
+    x=i*(w+12); cr=im.crop(box).resize((w,h),Image.NEAREST); vel.paste(cr,(x,18),cr); d.text((x,2),k,fill=(0,0,0,255))
+    one=im.resize((128,128),Image.NEAREST); vel.paste(one,(x,h+20),one)
+vel.save('kop_keuze/vel.png')

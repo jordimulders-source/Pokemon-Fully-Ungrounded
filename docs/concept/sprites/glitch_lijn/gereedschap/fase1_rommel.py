@@ -59,7 +59,7 @@ def data_brok(r,w,h):
     d=rom[r.randrange(0,len(rom)-4096)//4*4:][:2048]
     big=lees(d,pal,8,0); x,y=r.randrange(0,64-w+1),r.randrange(0,64-h+1)
     return big.crop((x,y,x+w,y+h))
-def rommel(seed,sigma=9.0,n=70):
+def rommel(seed,sigma=9.0,n=70,kernvul=0):
     r=random.Random(seed); out=Image.new('RGBA',(64,64),(0,0,0,0)); cx,cy=32,33
     for k in range(n):
         x=int(r.gauss(cx,sigma)); y=int(r.gauss(cy,sigma*0.9))
@@ -70,6 +70,13 @@ def rommel(seed,sigma=9.0,n=70):
         soort=r.choices(['ts','ui','data'],[0.45,0.3,0.25])[0]
         b={'ts':ts_brok,'ui':ui_brok,'data':data_brok}[soort](r,w,h)
         out.alpha_composite(b,(max(0,min(64-w,x-w//2)),max(0,min(64-h,y-h//2))))
+    # extra dichtheid: kern opvullen met brokken tot hij (bijna) dicht is
+    for k in range(kernvul):
+        x=int(r.gauss(cx,sigma*0.6)); y=int(r.gauss(cy,sigma*0.55)); w,h=r.choice([(8,8),(16,8),(8,16),(12,12)])
+        soort=r.choices(['ts','ui','data'],[0.45,0.3,0.25])[0]
+        b={'ts':ts_brok,'ui':ui_brok,'data':data_brok}[soort](r,w,h)
+        tmp=Image.new('RGBA',(64,64),(0,0,0,0)); tmp.alpha_composite(b,(max(0,min(64-w,x-w//2)),max(0,min(64-h,y-h//2))))
+        tmp.alpha_composite(out); out=tmp   # onder de bestaande laag: vult alleen de gaten
     # glitch: banen verschuiven en een brok herhalen
     for _ in range(3):
         y0=r.randrange(14,50); hh=r.choice([1,2,3,4]); dx=r.choice([-6,-4,-3,3,4,6])
@@ -87,7 +94,7 @@ def rommel(seed,sigma=9.0,n=70):
             if f and r.random()<0.8: px[x,y]=(0,0,0,0)
     al=out.getchannel('A'); q=out.convert('RGB').quantize(colors=15).convert('RGBA'); q.putalpha(al)
     return q
-ims=[rommel(s) for s in range(1,11)]
+ims=[rommel(s,9.5,140,90) for s in range(1,11)]
 sh=Image.new('RGB',(5*68+4,2*68+4),(255,255,255))
 for i,im in enumerate(ims): sh.paste(im,(4+(i%5)*68,4+(i//5)*68),im); im.save(f'{uit}/r{i+1:02d}.png')
 sh.resize((sh.size[0]*3,sh.size[1]*3),Image.NEAREST).save(f'{uit}/vel.png')

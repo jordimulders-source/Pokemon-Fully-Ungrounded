@@ -28,3 +28,7 @@
 - r3 (prompt r3): Jordi "hij lijkt nu wel minder te kruipen dan bij 1"; tros werd een bloem met één oog. Terug naar r2 als basis, bijsturen met 2 wijzigingen (groene rank, ranken i.p.v. pootjes).
 - r4a (gesprek r1) en r4b (gesprek r2): Jordi "ik vind het nu teveel detail in de vine". 64 px-test r4b (`gemini/r4b_test64_8x.png`): de kleine krulletjes worden ruis.
 - r5 (bijgestuurd in het r4b-gesprek: simpele ranken, gladde rank): 64 px-test op 56 en 44 px (`gemini/r5_test64_56en44_8x.png`): leest goed; op 44 px wordt het bovenste oog krap.
+
+## Model en maat (bevroren, Jordi 25 nov)
+- "ok 44 px, r5 is het model, maak de sprite, 56 is iets te groot denk ik". Model = `model.png` (= `gemini/r5.png`). Breedte 44 px (voorstel Claude: 44×37, ±810 px, zoals Hoppip/Ekans/Bellsprout).
+- Voorstellen van Claude waar Jordi niet expliciet ja op zei (dus als variant/vraag, niet stil doorvoeren): ogen groter maken op 44 px; zwarte puntjes op de vruchten weghalen. Het zwarte raster tussen de vruchten wordt binnenlijn in eigen donkere tint (Gen 3-belijning).

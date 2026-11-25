@@ -165,3 +165,24 @@ AVOID: legs, a smooth or organic body, a cartoon face, eyelids, teeth, insects, 
 
 ## Ronde 9 (25 nov)
 - `r9/r9.png`. Jordi: "nee totaal niet, wat is er nog niet duidelijk?"
+- Jordi: "broodrooster die niet chaotic evil genoeg is, geen wtf gevoel", figuurtje met kop en lijf prima (IDEEEN.md).
+
+## r10 (nieuw gesprek, zonder bijlage): figuurtje met kop en lijf, meer chaotic evil
+Eigen invulling Claude (schrappen bij twijfel): scheef asymmetrisch gezicht (één oog half dicht, één wijd open), grijns breder dan het gezicht, kop scheef op het lijf, onnatuurlijk dunne nek, schokkerige houding.
+```
+Design an original Pokemon as an official Gen 3 front sprite (Pokemon Ruby/Sapphire/Emerald), 64x64. Type: Electric/Bug. It is a purely digital creature: a glitch that has become sentient. "Bug" means a bug in the computer sense; it is NOT an insect. Drawn intact, without glitch effects (the corruption is added later by hand).
+
+FEELING (most important): when you see it for the first time you think "what is THAT?". Something is clearly wrong with it. It is unsettling and chaotic evil, a laughing madman, not cute, not a mascot, not a Halloween decoration.
+
+BUILD: a small figure with a head and a body. The head is big and blocky, with a pointed top, and sits crooked on a thin neck. The body is small and narrow and has no legs: it tapers off and floats. Two long, thin, stick-like arms with blocky hands and long square fingers. Hard, stepped pixel edges, no smooth round shapes.
+
+POSE: cackling with laughter in a jerky, unnatural way: the head tilted sideways, the body twisted, one arm thrown up and the other bent in a wrong-looking angle.
+
+FACE: graphic, made of blocks, and asymmetric: one eye half-closed, the other eye wide open and staring. A huge zig-zag grin in a bright color that is wider than the face itself.
+
+COLORS: a dark main color with 2 to 3 shades, plus one bright color for the grin and eyes.
+
+STYLE: real pixel art, max 16 colors, dark outline, facing slightly to the left. White background, no ground, no shadow, no effects, no glow.
+
+AVOID: a box, a toaster, a blob, a ghost, a cute or friendly look, legs, a cartoon face, eyelids, teeth, insects, screens, robots, text or symbols, glitch effects, Porygon, Unown, MissingNo, Gengar.
+```

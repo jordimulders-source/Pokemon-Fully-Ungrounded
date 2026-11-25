@@ -3348,3 +3348,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.818] - Impala: Gemini r4 bekeken, bijsturing r4b (kuif over de hals)
 - `impala_lijn/impala/gemini/r4/impala_r4.png`; bijstuurprompt r4b in `PROMPTS.md`.
+
+### [v0.0.819] - Impala: r4b bekeken, prompt r5
+- `impala_lijn/impala/gemini/r4b/impala_r4b.png` (kuif loopt onduidelijk over in de hals, "beetje jotaro"); prompt r5 (kuif als korte manen met eigen omlijning) in `PROMPTS.md`.

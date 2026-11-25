@@ -114,3 +114,25 @@ AVOID: deer, roe deer, gazelle, realistic animal proportions, a small head on a 
 ```
 Keep everything exactly the same (pose, body, head, eye, horns, colors, pattern). Change ONLY the crest: let the tuft of darker fur continue a bit further from the forehead down over the back of the neck.
 ```
+- `r4b/impala_r4b.png`: kuif loopt als donkere band over de hals zonder duidelijk einde.
+- Jordi: "ziet er een beetje gek uit, beetje jotaro uit jojo, dat het overgaat maar je niet kan zien waar".
+
+## r5 (nieuw gesprek, zonder bijlage; prompt r4 + kuif over de hals als eigen vorm)
+- Eigen invulling Claude: de kuif als één vorm van plukkerige donkere vacht met eigen omlijning en een duidelijk eindpunt (korte manen), zodat te zien is waar de kuif stopt.
+```
+Design an original Pokemon. Type: Normal/Steel. Second stage of a three-stage line (it evolves from a dik-dik and later evolves into a kudu).
+
+Concept: a male impala, the African antelope, in Pokemon style. Its horns are real metal: polished steel, growing from its head as part of its body. They must have the real impala horn shape, NOT deer or gazelle horns: from the base they rise up and lean back, then spread wide outward to the sides, then the tips turn up and forward again. Seen from the front the pair forms a wide lyre; seen from the side each horn is an S-curve. The horns are clearly exaggerated (bigger, wider and more dramatic than a real impala's), so the design is stylized, but it must still be recognizable as an impala. It does not hold or carry anything.
+
+PROPORTIONS AND PERSONALITY (most important): this is a Pokemon, not a realistic animal and not a recolored animal. Drawn as a Pokemon designed by Ken Sugimori: stylized, simplified, bold shapes. Big head with big expressive eyes, ears clearly bigger than a real impala's, short thick neck, compact athletic body, legs slender but not long and stilt-like. Middle stage: more athletic than a cute first stage, but clearly a Pokemon. Personality: stoic. Calm, serious, unmoved expression. Pose: a protector stance, as if it stands guard in front of something it protects: legs planted firmly and wide, chest out, head held high.
+
+Anatomy: based on a real male impala (Aepyceros melampus), not a deer: compact, muscular antelope body with a deep chest and a slightly raised rump, small hooves, big dark eyes, slim muzzle.
+
+Crest: a tuft of darker fur (a forelock) on the forehead between the horns, bigger and more pronounced than a dik-dik's crest, clearly visible as a design feature. The crest continues a bit down over the back of the neck as one clear shape of tufted darker fur with its own outline and a clear end point (a short mane), so you can see exactly where the crest stops and the neck fur begins.
+
+Colors and pattern: the fur is silver (normal fur, matte, not metal), with the real impala pattern made sharper and bolder: three clearly different bands with hard clean edges: dark silver back (a saddle), much lighter silver flank, pure white belly. On the rear: three separate, parallel black vertical stripes, one down the middle of the tail and one down the back edge of each thigh (no letter, no M shape drawn on the side). Black tufts of hair on the back of the hind legs just above the hooves. Horns: polished steel, clearly different from the fur: brighter, with hard shine, strong white highlights and dark reflections.
+
+Style: official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 colors, dark outline, facing 3/4 to the left with the body turned so the hindquarters with the black stripes are visible, compact composition that fills a square. White background, no ground, no shadow, no effects, no glow.
+
+AVOID: deer, roe deer, gazelle, realistic animal proportions, a small head on a long neck, long stilt legs, a recolored real animal, straight or upright horns, horns bending forward, a letter M on the side, a cute or playful pose, an aggressive charging pose, Deerling, Sawsbuck, Stantler, Wyrdeer, armor plates, a metal body, robot parts, holding or carrying weapons, glowing metal, horns in the same grey as the fur.
+```

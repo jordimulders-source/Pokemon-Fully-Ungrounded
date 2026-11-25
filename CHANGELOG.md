@@ -3283,3 +3283,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.798] - Regionale Jynx: prompt v4
 - r3 bewaard; prompt v4 zonder vaasverwijzingen, kleuren als hexcodes (Jordi). Les in `docs/lessen/GEMINI.md`.
+
+### [v0.0.799] - Regionale Jynx: r4 (design ok), prompt v5
+- r4: design ok volgens Jordi; prompt v5 draait naar driekwart en maakt de blik minder slaperig (r4 als bijlage).

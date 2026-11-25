@@ -104,3 +104,18 @@ No purple skin, no golden hair, no pink lips, no red dress.
 
 DO NOT: a realistic bird with a human head, a beak, a mermaid tail, an angel, jewellery, a crown, a lyre, plush style, detailed individual feathers.
 ```
+
+## r4 (25 nov, prompt v4)
+`gemini/r4.png`. Jordi: "het design is ok, ze lijkt te slaperig, verder is het geen driekwart".
+
+# Prompt v5 (25 nov): nieuw gesprek, alleen r4 als bijlage (GEMINI.md: eigen design + "same pose, only angle"), 2 wijzigingen
+
+```
+The attached image is my Pokémon design. Keep the design exactly the same: same head, face shape, lips, brown hair, feathered dress, wings, talons, same colors, same simple Gen 3 sprite style and level of detail (64x64, max 16 colors, white background, no shadow, no effects).
+
+Change ONLY these two things:
+1. VIEW: turn it to a 3/4 view facing left, like most Gen 3 front sprites. The far side (its left wing, left side of the hair) is on the left of the image, partly hidden behind the body and drawn smaller; the near side (its right wing) is on the right, larger. The face is turned toward the left, both eyes still visible, the far eye slightly narrower.
+2. EYES: less sleepy. The eyes are more open, with an alluring, tempting gaze, as if luring you in with its song. Mouth stays open, singing.
+
+Exactly two wings, two feet, no beak, no extra arms.
+```

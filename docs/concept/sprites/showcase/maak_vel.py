@@ -57,6 +57,7 @@ SECTIES=[
 ("satelliet_lijn/fase1/af/satelliet_fase1.png",'Satelliet fase 1 (Spoetnik)',"steel/cosmic"),
 ("capybarrel/af/capybarrel.png",'"Capybarrel"',"normal"),
 ("tempel/af/tempel.png",'Levende tempel',"ghost/rock"),
+("impala_lijn/dikdik/af/dikdik.png",'Dikdik (impala-lijn fase 1)',"normal"),
 ]),
 ("Evolutions of existing Pokémon",[
 ('hitmontop_evo/af/hitmongroove.png', '"Hitmongroove" (Hitmontop)', 'fight/ground'),

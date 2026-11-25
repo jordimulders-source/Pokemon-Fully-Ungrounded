@@ -3176,3 +3176,9 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Impala-lijn: Jordi's voorkeur dikdik → impala → kudu toegevoegd aan `IDEEEN.md`.
 - Impala-lijn: alle drie Normal, dual type kan; dikdik puur Normal (Jordi).
 - Impala-lijn: lichaamskleur brons → zilver → goud; hoorns dof ijzer → gepolijst staal → spiegelglans met slijprand; dikdik Normal, impala en kudu Normal/Steel met hoorns echt van metaal (dikdik niet); hoorns als gevechtswapens, hoornvorm blijft kloppen (Jordi). Besloten punten in `POKEMON.md` → Impala-lijn.
+
+### [v0.0.767] - Dikdik (impala-lijn fase 1): frontsprite af
+- Ontwerp via Gemini r1–r3b (`docs/concept/sprites/impala_lijn/dikdik/gemini/PROMPTS.md`): kleine dikdik met korte houten speren met dof ijzeren punt, grote kop, lange hangende snuit, donkere vlek voor het oog, nieuwsgierig; model r3b.
+- Sprite r1–r7: model verkleind naar 52 px (maat als Vulpix/Growlithe), 2 keuringen + eindkeuring Dragonfly Cave; oog als ronde vorm uit het model (dunne ring, grote iris), ver oog, kuif, kin terug; donker brons (Jordi koos dit boven een lichtere variant), oog variant B (glimlicht linksonder).
+- Af: `docs/concept/sprites/impala_lijn/dikdik/af/dikdik.png`, op het overzichtsvel (New). Naam open.
+- Concept impala-lijn (dikdik → impala → kudu; Normal → Normal/Steel; brons → zilver → goud; hoorns als wapens) in `IDEEEN.md` en `POKEMON.md`; vakjes en staaltest in `docs/concept/sprites/impala_lijn/`.

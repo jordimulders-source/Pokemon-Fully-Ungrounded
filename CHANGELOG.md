@@ -3330,3 +3330,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.813] - Regel: Pokémon hoeven niet bij een plek te passen
 - `CLAUDE.md`: de regio-regel geldt ook voor gyms en plekken (Jordi).
+
+### [v0.0.814] - Ontwerpprioriteit: Ground, Poison, Bug
+- `TODO.md`: meer nieuwe Ground-, Poison- en Bug-designs als prioriteit (Jordi).

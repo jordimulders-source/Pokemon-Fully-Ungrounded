@@ -17,6 +17,7 @@
 - **Afronding goedgekeurde frontsprites** (kolibrie, olinguito v2, Coathief, wasbeer): frame 2, rugsprite, icoon, shiny-palet (skins-regel), naam/data. Coathief daarnaast: A/B-test kleine kleurreparaties (zie `docs/concept/sprites/coathief/SPEC.md`). Frame 2/icoon/shiny bouwen op het goedgekeurde frame 1; de rugsprite is een nieuwe pose (overtrekvel gebruiken).
 
 ## Ontwerpen (overzicht 20 nov; bron: `docs/concept/POKEMON.md` en `IDEEEN.md`)
+- **Prioriteit (Jordi, 25 nov): "er moet nog meer ground, meer poison en meer bug bij"** (gyms 1 Ground, 5 Poison en 8 Bug hebben nog weinig keus uit de nieuwe designs).
 Bezig (Jordi, 20 nov): hoatzin. Af: vlieg → mug (21 nov), harpij-arend + regionale Rufflet, vuurwerk-, spooktrein- en koningstiran-lijn (met namen).
 - **Nieuwe evoluties:** Kecleon → leguaan (Galápagos), Pinsir → tor/kaiju, Flamigo-evolutie.
 - **Regional forms:** Tiwanaku-Golett/Golurk, Venomoth-vuurvlieg (Electric/Fire), Heliamphora-Bellsprout-lijn, Oricorio samba/tango/cumbia, onderwater-Oddish-lijn (bron + anemonen; kokerworm geschrapt), Combee als carpenter bee, Poliwag/Poliwhirl Ice/Poison (eindvorm open), bokser-Mr. Mime → Mr. Prime (Mr. Prime frontsprite af, 24 nov), Yanma/Yanmega Dragon, Lotad-lijn (*Victoria amazonica* en/of gaucho met hoed), yareta/Copiapoa (Rock-Cacnea?), Spheal/Sealeo + zeeleeuw-eindvorm (neiging), Natu/Xatu Nazca-kolibrie (genomineerd), Galápagos-vormen.

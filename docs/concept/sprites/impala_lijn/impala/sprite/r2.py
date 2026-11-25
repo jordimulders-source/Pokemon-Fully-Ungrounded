@@ -99,7 +99,7 @@ inner=[(x,y) for y in range(H) for x in range(W) if g[y][x]=='0' and not inbox(O
        and all(opaque(x+dx,y+dy) for dx,dy in ((1,0),(-1,0),(0,1),(0,-1),(1,1),(-1,-1),(1,-1),(-1,1)))]
 for x,y in inner: put('binnenlijn',x,y,DARK[buurzone(x,y)],'binnenlijn in donkerste eigen tint')
 # --- hoorns als band langs de modelmiddellijn ---
-SK=json.load(open('hoornskelet.json'))
+SK=json.load(open('hoornskelet_r2.json'))   # skelet zoals in r2 (r3 gebruikt hoornskelet.json)
 def nearest(P,px,py):
     best=(1e9,0,0,0,0)
     for k in range(len(P)-1):

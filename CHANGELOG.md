@@ -3295,3 +3295,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.802] - Regionale Jynx: r4/r5
 - r4: rokvouw rechts naar het modelpad; Jordi koos variant B (dwarslijn weg): "rechts beter". r5 = r4 B, verse eindkeuring (schaduw/tinten/lijnen) PASS zonder wijzigingen.
+
+### [v0.0.803] - Regionale Jynx: frontsprite af
+- `docs/concept/sprites/jynx_regional/af/jynx_regional.png` (= r5) af volgens Jordi ("zijn non issues"); op het overzichtsvel onder Regional forms (Fairy/Dark). Stand van zaken: 92 frontsprites af. Les in `GEMINI.md`.

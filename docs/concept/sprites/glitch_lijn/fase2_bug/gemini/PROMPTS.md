@@ -95,4 +95,7 @@ AVOID: legs, insects, antennae, wings, symbols or characters on the body, readab
 ```
 
 ## Ronde 5 stap 1 (25 nov)
-- `r5/r5_stap1.png`. Jordi: "gemini snapt er weinig van he".
+- `r5/r5_stap1.png`. Jordi: "gemini snapt er weinig van he", "maar je prompt is ook niet gedetailleerd genoeg".
+
+## r6 stap 1 (CONCEPT, wacht op Jordi): gedetailleerde prompt
+Jordi's woorden + invulling Claude, ter goedkeuring: druppel/ui-vorm, achterover gebogen schaterpose, één arm om de buik en één omhoog, wijd open mond met tanden, zware oogleden, zweeft, vingers, maat ±2/3 van het vlak, Gen 3-belichting. Kleur open.

@@ -19,4 +19,14 @@ while st:
     y,x=st.pop()
     if 0<=y<H and 0<=x<W and bg[y,x] and not uit[y,x]: uit[y,x]=1; st+=[(y+1,x),(y-1,x),(y,x+1),(y,x-1)]
 gat=bg&~uit; print('ingesloten achtergrond',gat.sum(),list(zip(*np.where(gat))))
-q[gat]=15; np.save('kwant.npy',q)
+q[gat]=15
+# Context: de donkere olijf-clusters (50,35,23) en (72,63,42) komen ook voor als donkerbruine lijnpixels in het rode lijf/de poncho.
+# Is in een 5x5-venster het rood (2-7) duidelijk in de meerderheid (>= 3x olijf 10/11), dan is het een lijn van het rode deel:
+# (50,35,23) -> zwart (1), (72,63,42) -> rode lijn (2). Niet in het gezicht (oogmasker).
+q0=q.copy(); n=0
+for y,x in zip(*np.where(np.isin(q0,[8,9]))):
+    if y<=42: continue   # oogmasker (olijf rond de ogen, natief rij 33-42) blijft olijf
+    w=q0[max(0,y-2):y+3,max(0,x-2):x+3]; r=np.isin(w,[2,3,4,5,6,7]).sum(); o=np.isin(w,[10,11]).sum()
+    if r>=3*max(o,1) and o<=2: q[y,x]=1 if q0[y,x]==8 else 2; n+=1
+print('olijf-lijnpixels in rood omgezet',n)
+np.save('kwant.npy',q)

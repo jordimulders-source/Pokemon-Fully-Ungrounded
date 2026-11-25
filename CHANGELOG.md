@@ -3313,3 +3313,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.808] - Cosmic: Dottler en Orbeetle
 - `CONCEPT.md`: Dottler en Orbeetle worden Bug/Cosmic in plaats van Bug/Psychic (Jordi). Blipbug-lijn staat nog als geschrapt in DEX_IN_ROM.
+
+### [v0.0.809] - Blipbug-lijn terug in de dex
+- `species_enabled.h`: `P_FAMILY_BLIPBUG` weer aan (Jordi: "komt terug in de dex"); `DEX_IN_ROM.md` bijgewerkt. Cosmic-type bestaat nog niet in de code, dus Dottler/Orbeetle zijn in de ROM voorlopig Bug/Psychic. `make` slaagt.

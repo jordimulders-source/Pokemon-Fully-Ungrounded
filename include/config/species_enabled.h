@@ -411,7 +411,7 @@
 #define P_FAMILY_SOBBLE                  FALSE // FU: niet in de dex (was P_GEN_8_POKEMON)
 #define P_FAMILY_SKWOVET                 FALSE // FU: niet in de dex (was P_GEN_8_POKEMON)
 #define P_FAMILY_ROOKIDEE                FALSE // FU: niet in de dex (was P_GEN_8_POKEMON)
-#define P_FAMILY_BLIPBUG                 FALSE // FU: niet in de dex (was P_GEN_8_POKEMON)
+#define P_FAMILY_BLIPBUG                 P_GEN_8_POKEMON // FU: terug (Jordi, 25 nov; Dottler en Orbeetle worden Cosmic)
 #define P_FAMILY_NICKIT                  P_GEN_8_POKEMON
 #define P_FAMILY_GOSSIFLEUR              FALSE // FU: niet in de dex (was P_GEN_8_POKEMON)
 #define P_FAMILY_WOOLOO                  P_GEN_8_POKEMON

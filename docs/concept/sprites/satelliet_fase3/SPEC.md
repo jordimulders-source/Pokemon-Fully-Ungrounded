@@ -15,3 +15,4 @@ Open: aantal ogen, naam, evolutiemethode.
 - r1: `gemini/PROMPT_r1.md` (nieuw gesprek, geen bijlage).
 - r1 (`gemini/r1.png`), Jordi: "het leest nog niet echt als een ruimtestation" · "die cirkel is te prominent" · "ik wil meer een ruimtestation".
 - r2: `gemini/PROMPT_r2.md` (ring klein en op de achtergrond, modules + grote panelen, kern = fase 2-capsule; uitwerking Claude).
+- Jordi: "de bal moet geen losse bal meer zijn maar onderdeel van een groter geheel" · "en misschien moeten we meerdere ballen doen" → r3: `gemini/PROMPT_r3.md`.

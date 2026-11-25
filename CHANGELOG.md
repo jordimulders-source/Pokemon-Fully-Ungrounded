@@ -3378,3 +3378,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Variaties met vaag de fase 2-vorm erin, kleiner (`fase1_glitch/wezen/vel.png`).
 - Beste tot nu toe met een hap linksonder (MissingNo-achtig): `fase1_glitch/eigen_missingno/kapot/beste_hap_linksonder.png`.
 - Kleinere maten (100/80/70/60 %), met en zonder hap (`fase1_glitch/klein/vel.png`).
+- 80 % zonder hap met dezelfde vage ogen (`fase1_glitch/klein_ogen/klein_80_ogen.png`).

@@ -7,6 +7,7 @@ Gebruik: python3 fase1_klein.py GEMINI.png ROM UITMAP schaal1 schaal2 ..."""
 import sys, os, random, math
 from collections import Counter
 from PIL import Image
+VAST_OOG=os.environ.get("VAST_OOG")=="1"   # ogen even groot als op de grote versie
 G=sys.argv[1]; rom=open(sys.argv[2],'rb').read(); uit=sys.argv[3]; schalen=[float(a) for a in sys.argv[4:]]
 os.makedirs(uit,exist_ok=True)
 ns={}; exec(open(os.path.join(os.path.dirname(__file__),'eigen_missingno_kapot.py')).read().split('ims=[]')[0].replace("uit=sys.argv[1]; os.makedirs(uit,exist_ok=True); bases=[Image.open(p).convert('RGBA') for p in sys.argv[2:]]",""),ns)
@@ -45,7 +46,7 @@ def verklein(s):
 def maak(s,hap=True):
     z,c,w,h=verklein(s); r=random.Random(9); base=0x100000+r.randrange(0,0x400)*4
     im=Image.new('RGBA',(64,64),(0,0,0,0)); po=im.load(); ox,oy=(64-w)//2,64-h-1
-    ogen=[(ex*s,ey*s) for ex,ey in OGEN]; rad=3.2*1.1*max(0.7,s)
+    ogen=[(ex*s,ey*s) for ex,ey in OGEN]; rad=3.2*1.1*(1 if VAST_OOG else max(0.7,s))
     for j in range(h):
         for i in range(w):
             k=z[j][i]
@@ -61,7 +62,21 @@ def maak(s,hap=True):
                         q=1-d/rad
                         if r.random()<0.35+0.65*q: col=TINT['grijs'][min(3,1+int(q*3)+(v>1))]
             po[ox+i,oy+j]=col+(255,)
-    if not hap: return kapot(im,21,'breek',True,False)
+    if not hap:
+        im=kapot(im,21,'breek',True,False)
+        if VAST_OOG:   # ogen na het kapotmaken nog eens op dezelfde manier oplichten, zodat de verschuivingen ze niet uitwissen
+            q=im.load(); r3=random.Random(5); D=set(TINT['donker'])
+            for ex,ey in ogen:
+                for yy in range(int(oy+ey-5),int(oy+ey+6)):
+                    for xx in range(int(ox+ex-5),int(ox+ex+6)):
+                        if not (0<=xx<64 and 0<=yy<64): continue
+                        pp=q[xx,yy]
+                        if pp[3]==0 or pp[:3] not in D: continue
+                        d=math.hypot(xx-(ox+ex),(yy-(oy+ey))*1.15)
+                        if d<rad:
+                            k=1-d/rad; v=TINT['donker'].index(pp[:3])
+                            if r3.random()<0.35+0.65*k: q[xx,yy]=TINT['grijs'][min(3,1+int(k*3)+(v>1))]+(255,)
+        return im
     # hap linksonder (op het silhouet zelf, vóór het kapotmaken): vanaf middenlinks, zelfde verhouding als op de grote (x tot 47 %, y vanaf 54 %)
     bb=im.getbbox(); hx=bb[0]+int((bb[2]-bb[0])*0.47); hy=bb[1]+int((bb[3]-bb[1])*0.54)
     p=im.load(); rr=random.Random(4); ZW=(16,16,20,255); KL=[(60,220,230,255),(232,60,200,255),(240,220,40,255)]

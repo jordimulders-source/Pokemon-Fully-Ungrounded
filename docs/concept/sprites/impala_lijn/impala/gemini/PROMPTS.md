@@ -23,3 +23,26 @@ Style: official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 
 
 AVOID: realistic animal proportions, a deer with antlers, Deerling, Sawsbuck, Stantler, Wyrdeer, armor plates, a metal body, robot parts, holding or carrying weapons, glowing metal, horns that blend into the fur.
 ```
+
+## Ronde 1 (25 nov)
+- `r1/impala_r1.png`. Gemeten: vacht #82888D–#B2B6BC (grijs, weinig verschil tussen de banden), hoorns #59636B (zelfde grijs als de vacht, nauwelijks glans).
+- Jordi: "not bad, maar het is iets teveel een gekleurd dier, nog niet genoeg pokemon, ook meer een hert dan echt impala denk ik, wat betreft lichaam en hoorns, genoeg verschil denk je?"; daarna: "misschien de oren ietsje groter".
+- Claude: niet genoeg verschil. Hoorns staan bijna recht omhoog met een kleine knik (gazelle/hert), geen lier; kop klein op een lange hals, lijf als een ree; drieslag nauwelijks zichtbaar (geen witte buik, geen harde randen); de M staat als letter op de dij; hoorns grijs als de vacht.
+
+## r2 (nieuw gesprek, zonder bijlage; prompt r1 + alleen deze punten)
+- Eigen invulling Claude: hoe de lier eruitziet (beschrijving van een echte impalahoorn), de M als strepen in plaats van letter, meer Pokémon via verhoudingen zoals bij dikdik r3 (grote kop, grote ogen, compacter lijf), alleen pose/uitstraling niet ingevuld.
+```
+Design an original Pokemon. Type: Normal/Steel. Second stage of a three-stage line (it evolves from a dik-dik and later evolves into a kudu).
+
+Concept: a male impala, the African antelope, in Pokemon style. Its horns are real metal: polished steel, growing from its head as part of its body. They must have the real impala horn shape, NOT deer or gazelle horns: from the base they rise up and lean back, then spread wide outward to the sides, then the tips turn up and forward again. Seen from the front the pair forms a wide lyre; seen from the side each horn is an S-curve. The horns are clearly exaggerated (bigger, wider and more dramatic than a real impala's), so the design is stylized, but it must still be recognizable as an impala. It does not hold or carry anything.
+
+PROPORTIONS (most important): this is a Pokemon, not a realistic animal and not a recolored animal. Drawn as a Pokemon designed by Ken Sugimori: stylized, simplified, bold shapes. Big head with big expressive eyes and large ears, short neck, compact athletic body, legs slender but not long and stilt-like. Middle stage: more athletic than a cute first stage, but clearly a Pokemon.
+
+Anatomy: based on a real male impala (Aepyceros melampus), not a deer: compact, muscular antelope body with a deep chest and a slightly raised rump, small hooves, large ears, big dark eyes, slim muzzle.
+
+Colors and pattern: the fur is silver (normal fur, matte, not metal), with the real impala pattern made sharper and bolder: three clearly different bands with hard clean edges: dark silver back (a saddle), much lighter silver flank, pure white belly. The black "M" is NOT a letter: it is three black vertical stripes, one down the middle of the tail and one down the back edge of each thigh, which together read as an M from behind. Black tufts of hair on the back of the hind legs just above the hooves. Horns: polished steel, clearly different from the fur: brighter, with hard shine, strong white highlights and dark reflections.
+
+Style: official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 colors, dark outline, facing 3/4 to the left with the body turned so the hindquarters with the black stripes are visible, compact composition that fills a square. White background, no ground, no shadow, no effects, no glow.
+
+AVOID: deer, roe deer, gazelle, realistic animal proportions, a small head on a long neck, long stilt legs, a recolored real animal, straight or upright horns, a letter M, Deerling, Sawsbuck, Stantler, Wyrdeer, armor plates, a metal body, robot parts, holding or carrying weapons, glowing metal, horns in the same grey as the fur.
+```

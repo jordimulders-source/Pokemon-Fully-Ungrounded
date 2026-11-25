@@ -3330,3 +3330,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.812] - Impala (impala-lijn fase 2): eerste Gemini-prompt
 - `docs/concept/sprites/impala_lijn/impala/gemini/PROMPTS.md`: prompt r1 (Normal/Steel, liervormige hoorns van gepolijst staal, zilveren vacht met scherpe drieslag rug/flank/buik, zwarte M, plukjes). Eigen invulling van Claude staat er apart bij.
+
+### [v0.0.813] - Impala: Gemini r1 bekeken, prompt r2
+- `impala_lijn/impala/gemini/r1/impala_r1.png` met Jordi's punten (te veel gekleurd dier, hert i.p.v. impala, oren groter); prompt r2 in `PROMPTS.md`.

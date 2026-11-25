@@ -19,6 +19,7 @@ Lijn: Lotad → Lombre → Ludicolo (drie fases, geen vierde).
 - `r4/gemini_r4.png` (bijstuur v4 in r1-gesprek): armen weg, 4 poten; Jordi "nu is die geamputeerd".
 - `r5/gemini_r5.png` (bijstuur v5): Jordi "nee dit werkt ook niet, we kunnen r1 doen, maar dat ontwerp heeft teveel detail voor een sprite".
 - `r6/gemini_r6.png` (v6, r1 in woorden + weinig detail): Jordi "nee weer veel minder mooi".
+- Jordi daarna: "ik vind het ontwerp nu prima dat die maar op 4 poten staat".
 
 ## Open
 - Welke hoed (plat met brede rand, boina, anders).

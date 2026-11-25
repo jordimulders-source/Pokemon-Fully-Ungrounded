@@ -5,7 +5,10 @@
 # Basis = Gemini r1 (natief). Beschermd = de gezichten (clusters van gekleurde pixels + rand van 3 px).
 # Al het andere binnen het silhouet krijgt glitchvulling uit fase 1 (rijen van fase 1 zonder doorzichtige
 # pixels achter elkaar geplakt = onze eigen MissingNo-data), met varianten.
-# Gebruik: IN UITMAP
+# Jordi daarna: "er is teveel aan de hoofden gezeten, ook waar de magneten de hoofden overlapten mag je
+# onderdeel van de hoofden maken" -> beschermd = hele hoofden (ellips om elk gezicht), en de hoofdpixels komen
+# uit Gemini r2 (daar zijn de hoofden heel, zonder magneten ervoor).
+# Gebruik: IN UITMAP [R2]
 import sys, os, random; from PIL import Image; import numpy as np
 IN, UIT = sys.argv[1], sys.argv[2]; os.makedirs(UIT, exist_ok=True)
 a = np.asarray(Image.open(IN).convert('RGB')).astype(int); H, W, _ = a.shape
@@ -22,6 +25,25 @@ gez = np.zeros_like(kl)
 for y, x in zip(*np.where(dicht)):
     gez[max(0, y-3):y+4, max(0, x-3):x+4] = True
 gez &= fg
+if len(sys.argv) > 3:
+    r2 = np.asarray(Image.open(sys.argv[3]).convert('RGB')).astype(int); fg2 = r2.mean(2) < 235
+    # gezichtsclusters (flood fill op 'dicht', buren binnen 3 px)
+    rest = set(zip(*np.where(dicht))); hoofd = np.zeros_like(kl)
+    while rest:
+        st = [rest.pop()]; cl = list(st)
+        while st:
+            y, x = st.pop()
+            for q in [p for p in rest if abs(p[0]-y) <= 3 and abs(p[1]-x) <= 3]:
+                rest.discard(q); st.append(q); cl.append(q)
+        if len(cl) < 10: continue
+        cy = np.array([c[0] for c in cl]); cx = np.array([c[1] for c in cl])
+        my, mx = (cy.min() + cy.max()) / 2 - 1.5, (cx.min() + cx.max()) / 2
+        ry, rx = (cy.max() - cy.min()) / 2 + 5.5, (cx.max() - cx.min()) / 2 + 3.5
+        yy, xx = np.mgrid[0:H, 0:W]
+        hoofd |= ((yy - my) / ry) ** 2 + ((xx - mx) / rx) ** 2 <= 1
+    hoofd &= fg2 & ~((r2.mean(2) > 110) & ((r2.max(2) - r2.min(2)) < 45) & ~gez)   # lichte staafresten in r2 niet
+    gez = hoofd | gez
+    a = a.copy(); a[hoofd] = r2[hoofd]; fg = fg | hoofd
 glitch = fg & ~gez
 # fase 1 als data
 f1 = Image.open(os.path.join(os.path.dirname(os.path.abspath(__file__)), '../fase1_glitch/af/glitch_fase1.png')).convert('RGBA')

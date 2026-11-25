@@ -39,3 +39,6 @@ Style: official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 
 
 AVOID: insects, beetles, legs like an insect, antennae, mandibles, wings, symbols or characters printed on the body, readable text, screens or computers, robots, pixel noise or blurry static, Porygon, Unown, MissingNo.
 ```
+
+## Ronde 2 (25 nov)
+- `r2/r2.png`. Jordi: "hmm ik weet het nog niet, volgens mij hebben we nog helemaal niet gedefinieerd hoe het eruit moet zien dus doet gemini maar wat". Eerst de look samen vastleggen, dan pas een nieuwe prompt.

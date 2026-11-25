@@ -37,3 +37,7 @@ Style: official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 
 
 AVOID: plush toy / Neopets look, Bambi or fawn look, a deer face with a short muzzle, long thin legs, long spears or antenna-like horns, Deerling, Stantler, Sawsbuck, a deer with antlers, armor plates, a metal body, holding or carrying weapons, shiny or glowing metal.
 ```
+
+## Ronde 2 (25 nov)
+- `r2/dikdik_r2.png`. Gemeten: lijf #E28638, schaduw #CC7728 (te weinig diepte), punt #989CAF (koel ijzer), schacht #CA9F70.
+- Claude: speren (± kop) en ijzer goed, snuit langer, traan zichtbaar; lijf nog lang op lange poten en kop kleiner dan r1; brons = feller oranje maar mist donkere schaduw (kan in de spritefase).

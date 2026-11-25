@@ -82,3 +82,5 @@ Keep everything exactly the same (pose, body, horns, colors, pattern). Change ON
 3. The rear stripes: remove the stripes on the side of the haunch. Instead: one black stripe down the middle of the tail and one black stripe along the back edge of the thigh only.
 4. The horns: same steel, but shaped as a wide lyre: from the base up and back, then spreading wide outward, then the tips turn up and forward.
 ```
+- Verstuurd met regels 1–4. `r3b/impala_r3b.png`: oog groter en rond (anime-achtig), staartstreep goed; kop niet groter, hoorns onveranderd (zie GEMINI.md: bijsturen werkt hooguit 1–2 keer).
+- Jordi: "niet beter"; "anders moeten wij maar een oog maken".

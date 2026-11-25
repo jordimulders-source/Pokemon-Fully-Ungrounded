@@ -3339,3 +3339,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.815] - Impala: Gemini r3 bekeken, bijsturing r3b
 - `impala_lijn/impala/gemini/r3/impala_r3.png`; Jordi: nog te veel dier, "misschien door het oog?". Bijstuurprompt r3b (oog + voorstellen kop/strepen/hoorns) in `PROMPTS.md`.
+
+### [v0.0.816] - Impala: r3b bekeken, oog zelf maken
+- `impala_lijn/impala/gemini/r3b/impala_r3b.png`; Jordi: "niet beter", "anders moeten wij maar een oog maken". Bronvel Gen 3-viervoeters voor het oog: `impala_lijn/impala/oog/bronnen.png` (`bronnen_vel.py`).

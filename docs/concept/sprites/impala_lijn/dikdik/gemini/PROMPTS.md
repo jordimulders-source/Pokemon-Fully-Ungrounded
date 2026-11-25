@@ -60,3 +60,7 @@ Style: official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 
 AVOID: realistic animal proportions, a small head on a long body, long thin legs, a neutral standing pose, plush toy / Neopets look, Bambi or fawn look, a deer face with a short muzzle, long spears or antenna-like horns, Deerling, Stantler, Sawsbuck, a deer with antlers, armor plates, a metal body, holding or carrying weapons, shiny or glowing metal.
 ```
 - Eigen invulling Claude bij "nieuwsgierig": kop vooruit/schuin, oren naar voren, ogen wijd, snuit snuffelt.
+
+## Ronde 3 (25 nov)
+- `r3/dikdik_r3.png`. Gemeten: lijf #9A552F, licht #B06D3D (donker kastanje), punt #848A9D.
+- Claude: veel meer Pokémon (grote kop, grote oren, compacter); maar snuit weer kort (reekalf), "traan" is een blauwe druppel onder het oog (leest als huilen), houding nog vrij neutraal; kleur nu te donker/bruin, brons later in de spritefase.

@@ -3319,3 +3319,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.810] - Regionale Poliwag: Gemini v2 gekozen
 - v2 is het model (`poliwag_regional/referenties/gemini_gekozen_v2.png`); alleen de mondkleur mag anders (Jordi).
+
+### [v0.0.811] - Regionale Poliwag: mondkleur rood, sprite r1 gestart
+- Mond rood (Jordi); maker-agent bouwt r1 uit Gemini v2 (`poliwag_regional/sprite_r1/`).

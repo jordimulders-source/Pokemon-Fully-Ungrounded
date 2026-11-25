@@ -21,7 +21,7 @@ Welke bestaande Pokémon in de ROM zitten en welke eruit zijn (22 okt). Bron: `t
 | Overworld-sprites (`src/event_object_movement.o`, vooral NPC's) | 0.69 MB | 0.69 MB | +0.00 MB |
 | **Vrij in de ROM** | 11.47 MB | 18.55 MB | +7.09 MB |
 
-## Behouden (213 lijnen uit DEX_NOMINATIES + Hitmontop, Mew, Mewtwo, Zarude)
+## Behouden (212 lijnen (213 − Barboach − Slowpoke + Blipbug, 25 nov) uit DEX_NOMINATIES + Hitmontop, Mew, Mewtwo, Zarude)
 
 Per lijn de leden zoals in `out.json`; vormen (Unown-letters, Rotom-vormen, Vivillon-patronen, Castform, Oricorio, Flabébé-kleuren enz.) komen mee.
 
@@ -90,5 +90,5 @@ Aantal soortconstanten met data in de ROM: 582 (incl. vormen); verschillende Nat
 
 ## Typeverdeling hele dex (25 nov, telling Claude)
 Regel (Jordi, 25 nov): regionale vormen komen erbij; "als ze al erin zaten, gaan ze niet eruit" · "als ze niet erin zaten, komen de originele niet erin" (dus geen gewone Jynx, Mr. Mime of Pincurchin).
-Telling per soort (dubbeltype telt bij beide), 542 soorten: behouden lijnen hierboven (types uit de repo, Dudunsparce eruit) + Cosmic-besluiten (Lunatone/Solrock Rock/Cosmic, Clefairy-lijn Fairy/Cosmic, Elgyem-lijn Cosmic) + alle 92 afgemaakte frontsprites (types van het overzichtsvel) + Smoochum en Mime Jr. Tussen haakjes: met de regionale Lotad-lijn Ground/Fighting erbij (3 soorten, aanname).
-Water 96 · Flying 59 · Bug 57 · Grass 57 · Dark 54 · Ground 53 (56) · Poison 52 · Normal 51 · Ghost 50 · Psychic 48 · Electric 46 · Steel 41 · Fire 39 · Dragon 35 · Ice 33 · Rock 33 · Fairy 32 · Fighting 30 (33) · Cosmic 17. Normal/Steel- en Grass/Ghost-lijn nog niet meegeteld (aantal fases open).
+Telling per soort (dubbeltype telt bij beide), 540 soorten: behouden lijnen hierboven (types uit de repo; Dudunsparce, Barboach-lijn en gewone Slowpoke-lijn eruit, Blipbug-lijn erbij met Dottler/Orbeetle Bug/Cosmic) + Cosmic-besluiten (Lunatone/Solrock Rock/Cosmic, Clefairy-lijn Fairy/Cosmic, Elgyem-lijn Cosmic) + alle 92 afgemaakte frontsprites (types van het overzichtsvel) + Smoochum en Mime Jr. Tussen haakjes: met de regionale Lotad-lijn Ground/Fighting erbij (3 soorten, aanname).
+Water 91 · Bug 60 · Flying 59 · Grass 57 · Dark 54 · Poison 52 · Ground 51 (54) · Normal 51 · Ghost 50 · Psychic 45 · Electric 46 · Steel 41 · Fire 39 · Dragon 35 · Ice 33 · Rock 33 · Fairy 32 · Fighting 30 (33) · Cosmic 19.

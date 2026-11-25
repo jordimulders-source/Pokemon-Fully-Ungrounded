@@ -3321,3 +3321,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - `species_enabled.h`: `P_FAMILY_BARBOACH` uit; nieuwe schakelaar `FU_SLOWPOKE_KANTO` (FALSE) haalt gewone Slowpoke, Slowbro en Slowking eruit, zoals `FU_MEOWTH_KANTO` (Jordi: "haal de Barboach lijn maar eruit en de slowpoke lijn (maar behouden de galar slowpoke lijn)"). Galar-Slowpoke wordt de basisvorm; Galar-Slowbro/-Slowking houden de kreten van Slowbro/Slowking (die blijven dus staan), alleen de Slowpoke-kreet gaat eruit.
 - Verwijzingen vervangen: Interviewer-teams Slowking → Slowking-Galar; FRLG-trainers en FRLG-wilde Pokémon Slowpoke/Slowbro → Galar-vorm; testkaart (hengelen) Barboach/Whiscash → Wooper/Quagsire; Trainer Tower Slowbro → Galar-Slowbro; ruilhandel (LeafGreen-tak) Slowbro → Galar-Slowbro; e-Reader-team Whiscash → Quagsire; vistoernooi: opschepper Whiscash → Gyarados, Barboach/Whiscash uit de vislijst.
 - `DEX_IN_ROM.md` bijgewerkt. `make` slaagt.
+
+### [v0.0.811] - Typeverdeling bijgewerkt
+- `DEX_IN_ROM.md`: telling na Blipbug erbij en Barboach/Slowpoke eruit (Water 91, Bug 60, Cosmic 19); Skrelp-lijn blijft (Jordi).

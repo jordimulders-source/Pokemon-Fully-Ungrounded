@@ -40,3 +40,4 @@ Open: aantal ogen, naam, evolutiemethode.
 - Jordi: "maar nu is de stang weg, positie 6px is beter. Ga anders maar een sprite bouwen, dan passen we het daarna wel aan" → **model bevroren = r13b** (`model/model_gekozen.png`, 231×159, echt raster); open: stang van het tweelingpaneel weer zichtbaar maken (in de spritefase). Spritefase gestart 25 nov.
 - Sprite r1 (`sprite/r1/`, maker): 63×42, 12 kleuren; Claude: nog niet naar Jordi (hobbelige buizen, banden half, vlekkerig wit, rommelige panelen) → r2.
 - Jordi over r1: "prima schets, alleen de bol onderin is nog niet rond".
+- Jordi: "nu beter maken" · "laat maar eindresultaat pas zien" → maker-rondes, keurder en Dragonfly Cave-eindkeuring eerst, daarna pas naar Jordi.

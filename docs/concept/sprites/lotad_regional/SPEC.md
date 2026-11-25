@@ -23,6 +23,7 @@ Lijn: Lotad → Lombre → Ludicolo (drie fases, geen vierde).
 - `r7/gemini_r7.png` (v7 = v1 + één regel eenvoud): Jordi "is dit echt een vergelijkbare prompt als r1 ja?".
 - `r8/gemini_r8_{1,2,3}.png` (v7 nog 3×): Jordi "Hij doet elke keer iets heel anders, de eerste vind ik wel erg tof, maar die mist 2 poten". `r8/poten_B.png`: Claude plakte 2 kopieën van de linkerpoot erachter (tussen de bestaande poten); verder niets veranderd.
 - Jordi daarop: "nee extra poten toevoegen gaat niet lukken".
+- Jordi: "anders schrappen we die 2 poten, zelfs ik wist niet dat lotad 4 poten had" → **model = `r8/gemini_r8_1.png`, op 4 poten** (bevroren).
 
 ## Open
 - Welke hoed (plat met brede rand, boina, anders).

@@ -3262,3 +3262,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.791] - Gaucho-Lotad: ronde 1
 - Gemini r1 bewaard (`lotad_regional/r1/`); Jordi akkoord met het idee, hoed wordt per evolutie steeds meer een gauchohoed. Lijf te groot vergeleken met Lotad: varianten 100/85/75/65 % gemaakt.
+
+### [v0.0.792] - Gaucho-Lotad: model gekozen
+- Na 8 Gemini-rondes (v1–v7; bijlagen en "dicht bij Lotad" gaven palette swaps, poten bijsturen/plakken lukte niet) koos Jordi `lotad_regional/r8/gemini_r8_1.png` als model, op 4 poten in plaats van 6.

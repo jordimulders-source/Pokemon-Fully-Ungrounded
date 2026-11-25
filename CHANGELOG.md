@@ -3301,3 +3301,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.804] - Regionale Mr. Mime: Fighting/Psychic
 - Bokser-Mr. Mime is Fighting/Psychic (Jordi): `mrmime_regional/SPEC.md`, CLAUDE.md en overzichtsvel bijgewerkt.
+
+### [v0.0.805] - Overzichtsvel: Capykart na Capybarrel
+- `showcase/maak_vel.py`: Capykart direct na Capybarrel (Jordi); vel opnieuw gemaakt.

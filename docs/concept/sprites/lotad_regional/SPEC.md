@@ -71,3 +71,5 @@ Prompts in `gemini/PROMPT.md`.
 - Volgende: bijstuur "lijf valt als een poncho" (smal bij de hals, schuin over de bovenarmen, punt voor, zachte plooien) op r1, met r1 als bijlage.
 - `ludicolo/r4/gemini_r4.png` (bijstuur poncho-val op r1, r1 als bijlage): Jordi "hij valt iets teveel over het lichaam heen denk ik, plus de rest van de sprite is nu minder geworden".
 - `ludicolo/r5/gemini_r5.png` (bijstuur korte poncho op r1): Jordi "wat vind je hiervan? Het blad moet wel anders".
+- Jordi over r5: "is die nu te kort? of leest het wel"; "misschien bij het lichaam iets langer dan?" → bijstuur langer.
+- `ludicolo/r6/gemini_r6.png` (bijstuur iets langer): Jordi "kan jij die poncho nu in de bladeren over laten lopen? en misschien de vorm iets bij poetsen zodat die meer poncho dan bladeren lijkt? Zo ja, dan kan je bouwen". Claude vroeg: A (basis r6) of B (basis r5).

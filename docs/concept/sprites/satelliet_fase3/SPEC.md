@@ -50,3 +50,4 @@ Open: aantal ogen, naam, evolutiemethode.
 - Sprite r5 (`sprite/r5/`, 23 MOET-reparaties keuring_r4) → eindkeuring DFC r5 **PASS** (`eindkeuring_r5/`, 28 indexwissels, silhouet gelijk). Ter info: panelen donkerder dan fase 2; op 1× kleiner/luchtiger dan fase 2 (`check/lijn_fase1_2_3.png`); stang tweeling open. Naar Jordi.
 - Jordi na eindresultaat r5: "is nog heel erg blurry" · "en dat komt denk ik door het model" · "dat die het vak niet vult" · "ben bang weer een niewue gemini ronde" → compacte modelvarianten A/B/C (maker) + reserveprompt `gemini/PROMPT_r10.md`.
 - Jordi: "eindeloos fixen gaat meestal niet goed" → prompt r10 naar Jordi.
+- r10 (`gemini/r10.png`), Jordi: "niet gelukt". → terug naar r13b met compacte varianten (maker).

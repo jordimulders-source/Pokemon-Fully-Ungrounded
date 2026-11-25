@@ -9,7 +9,7 @@ fg = a.mean(2) < 235
 out = np.full_like(a, 255)
 out[fg] = a[fg]
 # zones: (x0, x1, y0, y1, richting van de buitenrand) – linkerkant en linksonder, zoals bij de trainer
-zones = [(0, 22, 33, 52, 'links'), (14, 30, 12, 30, 'links'), (40, 56, 44, 52, 'onder')]
+zones = [(0, 22, 33, 52, 'links'), (40, 56, 44, 52, 'onder')]   # zoals 4, zonder de hoofdzone
 for x0, x1, y0, y1, r in zones:
     for y in range(y0, y1):
         for x in range(x0, x1):

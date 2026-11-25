@@ -96,6 +96,7 @@ for y in range(H):
         if len(same)>=2: out[y,x]=max(set(same),key=same.count); ruis.append((x,y))
 # oogzones van het model: het hele modeloog (wit, pupil en zwarte oogring) wordt eerst opgevuld met de kop eromheen;
 # de ogen komen daarna 1-op-1 uit een bestaande sprite (varianten.py). Silhouetrand (pixel naast lucht) blijft staan.
+MODELOOG=out.copy()   # r2: kop met het modeloog nog erin (de rand rond de Poliwhirl-ogen komt hieruit)
 OOGC=[(16,4.5),(29,4.5)]; OOGRAD=2.7
 oogzone=np.zeros((H,W),bool)
 for cx,cy in OOGC: oogzone|=((ii-cx)**2+(jj-cy)**2<=OOGRAD**2)

@@ -3258,3 +3258,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.790] - Idee: regionale Jynx als sirene
 - `docs/concept/IDEEEN.md`: Jordi's idee voor een regionale Jynx naar de sirenes uit de Odyssee, met open vragen (vorm, type, Smoochum, band met de regio/Iara).
+
+### [v0.0.791] - Regionale Jynx: keuzes; regel over de regio-link
+- `IDEEEN.md`: regionale Jynx wordt een vogelvrouw zoals in de Odyssee, type Fairy (tweede type open); Smoochum blijft gewoon.
+- `CLAUDE.md`: vaste regel dat niet elke Pokémon een link met Zuid-Amerika hoeft te hebben (Jordi).

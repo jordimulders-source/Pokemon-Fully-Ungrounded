@@ -6,25 +6,26 @@ Gebruik: python3 eigen_missingno_kapot.py UITMAP basis1.png basis2.png ..."""
 import sys, os, random
 from PIL import Image
 uit=sys.argv[1]; os.makedirs(uit,exist_ok=True); bases=[Image.open(p).convert('RGBA') for p in sys.argv[2:]]
-def kapot(im,seed,omlijning='breek',lek=True,palet=True):
-    r=random.Random(seed); im=im.copy(); px=im.load()
+def kapot(im,seed,omlijning='breek',lek=True,palet=True,sterkte=1.0):
+    r=random.Random(seed); r2=random.Random(seed+7); im=im.copy(); px=im.load()
     if omlijning in ('weg','breek'):
         for y in range(64):
             for x in range(64):
                 p=px[x,y]
-                if p[3] and max(p[:3])<30 and (omlijning=='weg' or r.random()<0.5 or y%8<3):
+                if p[3] and max(p[:3])<30 and (omlijning=='weg' or r.random()<0.5 or y%8<3) and (sterkte>=1 or r2.random()<sterkte):
                     px[x,y]=(0,0,0,0)
     out=Image.new('RGBA',(64,64),(0,0,0,0))
     y=0
     while y<64:   # banen van wisselende hoogte, elk eigen verschuiving
         h=r.choice([2,3,4,6,8]); dx=r.choice([0,0,0,-2,2,-4,4,-6,6,8])
+        if sterkte<1: dx=int(round(dx*sterkte)) if r2.random()<sterkte+0.2 else 0
         out.alpha_composite(im.crop((0,y,64,y+h)),(max(0,dx),y),(max(0,-dx),0)); y+=h
     for _ in range(2):   # stuk herhalen op een verkeerde plek
         w,h=r.choice([(8,4),(16,4),(8,8)]); sx,sy=r.randrange(8,48),r.randrange(8,52)
         out.alpha_composite(out.crop((sx,sy,sx+w,sy+h)),(min(56,max(0,sx+r.choice([-16,-8,8,16]))),min(60,max(0,sy+r.choice([-8,0,8])))))
     if lek:   # rommel lekt buiten de vorm, MissingNo-achtig in blokjes aan één kant
         kant=r.choice(['links','rechts']); bron=im
-        for _ in range(r.randrange(4,8)):
+        for _ in range(int(r.randrange(4,8)*min(1,sterkte))):
             w,h=r.choice([(4,4),(8,2),(4,8),(8,4)]); sx,sy=r.randrange(10,50),r.randrange(30,58)
             tx=r.randrange(0,6) if kant=='links' else r.randrange(54,60)
             out.alpha_composite(bron.crop((sx,sy,sx+w,sy+h)),(tx,r.randrange(20,60)))

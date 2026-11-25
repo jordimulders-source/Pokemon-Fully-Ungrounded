@@ -60,13 +60,14 @@ ARMEN=[ [((15,38),(8,24)),((49,38),(56,24))],      # beide omhoog
         [((15,38),(7,26)),((49,42),(58,48))],      # een omhoog, een omlaag
         [((16,36),(10,22)),((48,36),(55,30))] ]
 SC=float(sys.argv[3]) if len(sys.argv)>3 else 1.0
-OUD=len(sys.argv)>4 and sys.argv[4]=='oud'   # eerste vel (100 %, armen als omlijning)
+OUD=len(sys.argv)>4 and sys.argv[4]=='oud'
+STERKTE=float(sys.argv[5]) if len(sys.argv)>5 else 1.0   # eerste vel (100 %, armen als omlijning)
 ims=[]
 for i in range(8):
     r=random.Random(100+i); breed=r.choice([15,17,18]); tilt=r.choice([-4,-2,2,4,6])
     m=vorm(r,ARMEN[i%4],tilt,breed,SC); base=0x300000+r.randrange(0,0x4000)*4
     ogen=[(26,33+r.choice([0,1])),(38,33)] if OUD else [(round(32-6*SC),round(40-5*SC)+r.choice([0,1])),(round(32+6*SC),round(40-5*SC))]
-    im=vul(m,r,base,ogen); im=kapot(im,21+i,'breek',True,False); ims.append(im); im.save(f'{uit}/w{i+1}.png')
+    im=vul(m,r,base,ogen); im=kapot(im,21+i,'breek',True,False,STERKTE); ims.append(im); im.save(f'{uit}/w{i+1}.png')
 sh=Image.new('RGB',(4*68+4,2*68+4),(255,255,255))
 for i,im in enumerate(ims): sh.paste(im,(4+(i%4)*68,4+(i//4)*68),im)
 sh.resize((sh.size[0]*4,sh.size[1]*4),Image.NEAREST).save(f'{uit}/vel.png')

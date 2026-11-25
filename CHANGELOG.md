@@ -3452,3 +3452,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.x] - Sneeuwmonster-lijn besloten (25 nov)
 - `docs/concept/IDEEEN.md`: Ice/Fire-lijn wordt een sneeuwmonster (Flurry-geïnspireerd sneeuwmannetje → met emmer en gloeiende steen → sauna-yeti), Ice → Ice/Fire → Ice/Fire; early game en in de gym.
 - Sneeuwmonster-lijn: yeti = variant a; de knopen van fase 1 worden per fase steeds grotere gloeiende stenen.
+- Sneeuwmonster fase 1: Gemini-prompt r1 in `docs/concept/sprites/sneeuwmonster/gemini/PROMPTS.md`.

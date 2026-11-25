@@ -32,3 +32,4 @@ r8 (24 nov), Jordi: "r8 p2, het lijf is iets te lavender idd, bovenop is het nog
 - r19 (24 nov), Jordi: "rechts is beter, maar links is nu een rechte lijn getrokken bij het oog, waarom?" → r20 = r19 rechts + r18 links.
 - Jordi: "het gaat niet zo zeer erom dat elke pixel klopt, maar dat de vorm klopt"
 - r21 (24 nov, eindkeuring PASS), Jordi over de vier ter-info-punten: "fix allemaal"
+- Type (Jordi, 25 nov): "hele lijn cosmic/steel he"

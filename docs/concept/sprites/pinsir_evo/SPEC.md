@@ -36,3 +36,4 @@
 - Jordi eens met Claudes punten bij r1 (hoorns ongelijk/geen Golofa-haak, kleur modderig, lijf rotsgolem, vuist, kattenkop): "ja eens, doe eerst hoorns en kleur". Bijstuurprompt r2 (zelfde gesprek): `gemini/PROMPT_r2_bijsturen.md`.
 - r2: `gemini/r2.png` (kleur warm bruin + grijswitte hoorns gelukt; hoorns nog gevorkt, geen enkele haak).
 - Jordi koos A: "ja doe A, nieuwe prompt" → startprompt v2 (nieuw gesprek): `gemini/PROMPT_v2_nieuw.md`.
+- v2_r1 (`gemini/v2_r1.png`), Jordi: "niet best". Claude: hoorns nu een gewei (erger), haar naar de kop, lijf een schildpad/Koopa-schild ("big rounded shell"), stripgezicht ("jaw with small teeth"). r1/r2 waren beter. Startprompt v3 (nieuw gesprek) = r1-prompt + kleur r2 + hoorn als sikkel/slagtand: `gemini/PROMPT_v3_nieuw.md`.

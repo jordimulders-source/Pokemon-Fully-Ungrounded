@@ -105,3 +105,12 @@ Style: official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 
 
 AVOID: deer, roe deer, gazelle, realistic animal proportions, a small head on a long neck, long stilt legs, a recolored real animal, straight or upright horns, horns bending forward, a letter M on the side, a cute or playful pose, an aggressive charging pose, Deerling, Sawsbuck, Stantler, Wyrdeer, armor plates, a metal body, robot parts, holding or carrying weapons, glowing metal, horns in the same grey as the fur.
 ```
+
+## Ronde 4 (25 nov)
+- `r4/impala_r4.png`: kuif als lok tussen de hoorns; hoorns wijder; strepen weer op de zijkant van de bil.
+- Jordi: "misschien de kuif nog iets meer over de hals laten komen".
+
+## r4b (bijsturen in hetzelfde gesprek, één wijziging)
+```
+Keep everything exactly the same (pose, body, head, eye, horns, colors, pattern). Change ONLY the crest: let the tuft of darker fur continue a bit further from the forehead down over the back of the neck.
+```

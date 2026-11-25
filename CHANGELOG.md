@@ -3345,3 +3345,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.817] - Impala: prompt r4 met de kuif uit fase 1
 - Jordi: de kuif van de dikdik "iets meer mee evolved". Prompt r4 (r3 + kuif) in `impala_lijn/impala/gemini/PROMPTS.md`.
+
+### [v0.0.818] - Impala: Gemini r4 bekeken, bijsturing r4b (kuif over de hals)
+- `impala_lijn/impala/gemini/r4/impala_r4.png`; bijstuurprompt r4b in `PROMPTS.md`.

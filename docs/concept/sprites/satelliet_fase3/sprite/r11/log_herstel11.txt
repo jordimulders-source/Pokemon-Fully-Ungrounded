@@ -1,0 +1,214 @@
+x y oud->nieuw onderdeel reden (t.o.v. r10/sprite.png)
+48 33 13->3 bol_rechts volle cirkel voor PC/buis: tint uit de kale reductie
+58 35 1->5 bol_rechts volle cirkel voor PC/buis: tint uit de kale reductie
+56 43 1->5 bol_rechts volle cirkel voor PC/buis: tint uit de kale reductie
+50 32 5->2 bol_rechts cirkelrand (zwart schaduwkant, navy lichtkant)
+51 32 3->2 bol_rechts cirkelrand (zwart schaduwkant, navy lichtkant)
+52 32 12->2 bol_rechts cirkelrand (zwart schaduwkant, navy lichtkant)
+53 32 3->2 bol_rechts cirkelrand (zwart schaduwkant, navy lichtkant)
+54 32 5->2 bol_rechts cirkelrand (zwart schaduwkant, navy lichtkant)
+55 32 2->1 bol_rechts cirkelrand (zwart schaduwkant, navy lichtkant)
+48 33 3->2 bol_rechts cirkelrand (zwart schaduwkant, navy lichtkant)
+49 33 5->2 bol_rechts cirkelrand (zwart schaduwkant, navy lichtkant)
+56 33 3->1 bol_rechts cirkelrand (zwart schaduwkant, navy lichtkant)
+47 34 5->2 bol_rechts cirkelrand (zwart schaduwkant, navy lichtkant)
+57 34 2->1 bol_rechts cirkelrand (zwart schaduwkant, navy lichtkant)
+47 35 5->2 bol_rechts cirkelrand (zwart schaduwkant, navy lichtkant)
+58 35 5->1 bol_rechts cirkelrand (zwart schaduwkant, navy lichtkant)
+47 36 5->2 bol_rechts cirkelrand (zwart schaduwkant, navy lichtkant)
+56 43 5->1 bol_rechts cirkelrand (zwart schaduwkant, navy lichtkant)
+52 38 2->5 bol_rechts oude lijn binnen de cirkel -> boltint van binnen
+51 39 2->5 bol_rechts oude lijn binnen de cirkel -> boltint van binnen
+52 39 2->5 bol_rechts oude lijn binnen de cirkel -> boltint van binnen
+34 13 0->2 PB eindkap: punt linksboven zoals de kale reductie (rij 13)
+39 52 0->11 PF mast PF volle lengte 47: recept (rand/vak/lijn) zoals herstel10
+40 52 0->2 PF mast PF volle lengte 47: recept (rand/vak/lijn) zoals herstel10
+39 53 0->11 PF mast PF volle lengte 47: recept (rand/vak/lijn) zoals herstel10
+40 53 0->1 PF mast PF volle lengte 47: recept (rand/vak/lijn) zoals herstel10
+38 54 0->11 PF mast PF volle lengte 47: recept (rand/vak/lijn) zoals herstel10
+39 54 0->11 PF mast PF volle lengte 47: recept (rand/vak/lijn) zoals herstel10
+40 54 0->1 PF mast PF volle lengte 47: recept (rand/vak/lijn) zoals herstel10
+38 55 0->1 PF mast PF volle lengte 47: recept (rand/vak/lijn) zoals herstel10
+39 55 0->1 PF mast PF volle lengte 47: recept (rand/vak/lijn) zoals herstel10
+40 55 0->1 PF mast PF volle lengte 47: recept (rand/vak/lijn) zoals herstel10
+18 48 7->5 oog_voor oude oogpixel buiten de nieuwe oogvorm -> boltint van de buur
+18 49 7->5 oog_voor oude oogpixel buiten de nieuwe oogvorm -> boltint van de buur
+18 50 6->5 oog_voor oude oogpixel buiten de nieuwe oogvorm -> boltint van de buur
+18 51 6->5 oog_voor oude oogpixel buiten de nieuwe oogvorm -> boltint van de buur
+13 45 15->7 oog_voor oog uit het model (dekking ring/iris/pupil, modeltint)
+14 45 15->7 oog_voor oog uit het model (dekking ring/iris/pupil, modeltint)
+15 45 15->7 oog_voor oog uit het model (dekking ring/iris/pupil, modeltint)
+11 46 5->8 oog_voor oog uit het model (dekking ring/iris/pupil, modeltint)
+12 46 5->8 oog_voor oog uit het model (dekking ring/iris/pupil, modeltint)
+15 46 7->8 oog_voor oog uit het model (dekking ring/iris/pupil, modeltint)
+16 46 7->8 oog_voor oog uit het model (dekking ring/iris/pupil, modeltint)
+11 47 5->8 oog_voor oog uit het model (dekking ring/iris/pupil, modeltint)
+12 47 8->9 oog_voor oog uit het model (dekking ring/iris/pupil, modeltint)
+14 47 9->10 oog_voor oog uit het model (dekking ring/iris/pupil, modeltint)
+16 47 10->8 oog_voor oog uit het model (dekking ring/iris/pupil, modeltint)
+17 47 7->8 oog_voor oog uit het model (dekking ring/iris/pupil, modeltint)
+10 48 5->8 oog_voor oog uit het model (dekking ring/iris/pupil, modeltint)
+12 48 10->9 oog_voor oog uit het model (dekking ring/iris/pupil, modeltint)
+16 48 10->8 oog_voor oog uit het model (dekking ring/iris/pupil, modeltint)
+17 48 10->7 oog_voor oog uit het model (dekking ring/iris/pupil, modeltint)
+10 49 5->7 oog_voor oog uit het model (dekking ring/iris/pupil, modeltint)
+11 49 8->7 oog_voor oog uit het model (dekking ring/iris/pupil, modeltint)
+13 49 10->2 oog_voor oog uit het model (dekking ring/iris/pupil, modeltint)
+15 49 2->10 oog_voor oog uit het model (dekking ring/iris/pupil, modeltint)
+16 49 10->9 oog_voor oog uit het model (dekking ring/iris/pupil, modeltint)
+17 49 9->7 oog_voor oog uit het model (dekking ring/iris/pupil, modeltint)
+10 50 5->7 oog_voor oog uit het model (dekking ring/iris/pupil, modeltint)
+13 50 10->2 oog_voor oog uit het model (dekking ring/iris/pupil, modeltint)
+15 50 2->10 oog_voor oog uit het model (dekking ring/iris/pupil, modeltint)
+16 50 10->9 oog_voor oog uit het model (dekking ring/iris/pupil, modeltint)
+17 50 9->7 oog_voor oog uit het model (dekking ring/iris/pupil, modeltint)
+16 51 10->9 oog_voor oog uit het model (dekking ring/iris/pupil, modeltint)
+17 51 10->7 oog_voor oog uit het model (dekking ring/iris/pupil, modeltint)
+11 52 4->8 oog_voor oog uit het model (dekking ring/iris/pupil, modeltint)
+15 52 10->7 oog_voor oog uit het model (dekking ring/iris/pupil, modeltint)
+16 52 9->7 oog_voor oog uit het model (dekking ring/iris/pupil, modeltint)
+17 52 6->7 oog_voor oog uit het model (dekking ring/iris/pupil, modeltint)
+12 53 4->7 oog_voor oog uit het model (dekking ring/iris/pupil, modeltint)
+15 53 6->7 oog_voor oog uit het model (dekking ring/iris/pupil, modeltint)
+16 53 6->7 oog_voor oog uit het model (dekking ring/iris/pupil, modeltint)
+18 28 7->15 oog_links oude oogpixel buiten de nieuwe oogvorm -> boltint van de buur
+19 28 7->15 oog_links oude oogpixel buiten de nieuwe oogvorm -> boltint van de buur
+19 29 10->15 oog_links oude oogpixel buiten de nieuwe oogvorm -> boltint van de buur
+20 29 7->15 oog_links oude oogpixel buiten de nieuwe oogvorm -> boltint van de buur
+20 30 7->15 oog_links oude oogpixel buiten de nieuwe oogvorm -> boltint van de buur
+22 30 6->5 oog_links oude oogpixel buiten de nieuwe oogvorm -> boltint van de buur
+20 31 6->15 oog_links oude oogpixel buiten de nieuwe oogvorm -> boltint van de buur
+22 31 6->5 oog_links oude oogpixel buiten de nieuwe oogvorm -> boltint van de buur
+20 32 6->15 oog_links oude oogpixel buiten de nieuwe oogvorm -> boltint van de buur
+19 33 6->4 oog_links oude oogpixel buiten de nieuwe oogvorm -> boltint van de buur
+16 28 8->6 oog_links oog uit het model (dekking ring/iris/pupil, modeltint)
+17 28 8->6 oog_links oog uit het model (dekking ring/iris/pupil, modeltint)
+15 29 8->7 oog_links oog uit het model (dekking ring/iris/pupil, modeltint)
+16 29 10->6 oog_links oog uit het model (dekking ring/iris/pupil, modeltint)
+17 29 10->8 oog_links oog uit het model (dekking ring/iris/pupil, modeltint)
+18 29 10->8 oog_links oog uit het model (dekking ring/iris/pupil, modeltint)
+15 30 8->7 oog_links oog uit het model (dekking ring/iris/pupil, modeltint)
+17 30 2->10 oog_links oog uit het model (dekking ring/iris/pupil, modeltint)
+18 30 2->8 oog_links oog uit het model (dekking ring/iris/pupil, modeltint)
+19 30 9->7 oog_links oog uit het model (dekking ring/iris/pupil, modeltint)
+15 31 7->9 oog_links oog uit het model (dekking ring/iris/pupil, modeltint)
+16 31 10->2 oog_links oog uit het model (dekking ring/iris/pupil, modeltint)
+18 31 2->9 oog_links oog uit het model (dekking ring/iris/pupil, modeltint)
+19 31 10->6 oog_links oog uit het model (dekking ring/iris/pupil, modeltint)
+15 32 7->9 oog_links oog uit het model (dekking ring/iris/pupil, modeltint)
+16 32 10->2 oog_links oog uit het model (dekking ring/iris/pupil, modeltint)
+18 32 10->9 oog_links oog uit het model (dekking ring/iris/pupil, modeltint)
+19 32 10->6 oog_links oog uit het model (dekking ring/iris/pupil, modeltint)
+16 33 7->9 oog_links oog uit het model (dekking ring/iris/pupil, modeltint)
+17 33 7->10 oog_links oog uit het model (dekking ring/iris/pupil, modeltint)
+18 33 6->7 oog_links oog uit het model (dekking ring/iris/pupil, modeltint)
+50 36 8->15 oog_rechts oude oogpixel buiten de nieuwe oogvorm -> boltint van de buur
+51 36 8->15 oog_rechts oude oogpixel buiten de nieuwe oogvorm -> boltint van de buur
+52 36 7->15 oog_rechts oude oogpixel buiten de nieuwe oogvorm -> boltint van de buur
+53 36 7->15 oog_rechts oude oogpixel buiten de nieuwe oogvorm -> boltint van de buur
+53 37 10->15 oog_rechts oude oogpixel buiten de nieuwe oogvorm -> boltint van de buur
+54 37 7->15 oog_rechts oude oogpixel buiten de nieuwe oogvorm -> boltint van de buur
+47 38 8->4 oog_rechts oude oogpixel buiten de nieuwe oogvorm -> boltint van de buur
+53 38 10->15 oog_rechts oude oogpixel buiten de nieuwe oogvorm -> boltint van de buur
+54 38 7->15 oog_rechts oude oogpixel buiten de nieuwe oogvorm -> boltint van de buur
+47 39 6->4 oog_rechts oude oogpixel buiten de nieuwe oogvorm -> boltint van de buur
+53 39 9->15 oog_rechts oude oogpixel buiten de nieuwe oogvorm -> boltint van de buur
+54 39 6->15 oog_rechts oude oogpixel buiten de nieuwe oogvorm -> boltint van de buur
+53 40 9->15 oog_rechts oude oogpixel buiten de nieuwe oogvorm -> boltint van de buur
+54 40 6->15 oog_rechts oude oogpixel buiten de nieuwe oogvorm -> boltint van de buur
+53 41 6->15 oog_rechts oude oogpixel buiten de nieuwe oogvorm -> boltint van de buur
+49 36 5->8 oog_rechts oog uit het model (dekking ring/iris/pupil, modeltint)
+48 37 4->8 oog_rechts oog uit het model (dekking ring/iris/pupil, modeltint)
+51 37 10->8 oog_rechts oog uit het model (dekking ring/iris/pupil, modeltint)
+52 37 10->8 oog_rechts oog uit het model (dekking ring/iris/pupil, modeltint)
+48 38 4->8 oog_rechts oog uit het model (dekking ring/iris/pupil, modeltint)
+49 38 8->10 oog_rechts oog uit het model (dekking ring/iris/pupil, modeltint)
+51 38 2->10 oog_rechts oog uit het model (dekking ring/iris/pupil, modeltint)
+52 38 5->8 oog_rechts oog uit het model (dekking ring/iris/pupil, modeltint)
+48 39 4->7 oog_rechts oog uit het model (dekking ring/iris/pupil, modeltint)
+49 39 7->10 oog_rechts oog uit het model (dekking ring/iris/pupil, modeltint)
+50 39 10->2 oog_rechts oog uit het model (dekking ring/iris/pupil, modeltint)
+51 39 5->9 oog_rechts oog uit het model (dekking ring/iris/pupil, modeltint)
+52 39 5->7 oog_rechts oog uit het model (dekking ring/iris/pupil, modeltint)
+48 40 4->8 oog_rechts oog uit het model (dekking ring/iris/pupil, modeltint)
+49 40 7->2 oog_rechts oog uit het model (dekking ring/iris/pupil, modeltint)
+51 40 10->9 oog_rechts oog uit het model (dekking ring/iris/pupil, modeltint)
+52 40 10->7 oog_rechts oog uit het model (dekking ring/iris/pupil, modeltint)
+48 41 4->8 oog_rechts oog uit het model (dekking ring/iris/pupil, modeltint)
+49 41 4->7 oog_rechts oog uit het model (dekking ring/iris/pupil, modeltint)
+50 41 7->10 oog_rechts oog uit het model (dekking ring/iris/pupil, modeltint)
+51 41 7->10 oog_rechts oog uit het model (dekking ring/iris/pupil, modeltint)
+52 41 6->7 oog_rechts oog uit het model (dekking ring/iris/pupil, modeltint)
+49 42 4->8 oog_rechts oog uit het model (dekking ring/iris/pupil, modeltint)
+50 42 4->7 oog_rechts oog uit het model (dekking ring/iris/pupil, modeltint)
+51 42 4->7 oog_rechts oog uit het model (dekking ring/iris/pupil, modeltint)
+16 45 15->7 oog_voor opschonen (ringdikte/pupil naar het model)
+11 46 8->7 oog_voor opschonen (ringdikte/pupil naar het model)
+17 46 5->7 oog_voor opschonen (ringdikte/pupil naar het model)
+11 47 8->7 oog_voor opschonen (ringdikte/pupil naar het model)
+18 47 5->7 oog_voor opschonen (ringdikte/pupil naar het model)
+10 48 8->5 oog_voor opschonen (ringdikte/pupil naar het model)
+11 48 8->7 oog_voor opschonen (ringdikte/pupil naar het model)
+17 48 7->8 oog_voor opschonen (ringdikte/pupil naar het model)
+18 48 5->7 oog_voor opschonen (ringdikte/pupil naar het model)
+10 49 7->5 oog_voor opschonen (ringdikte/pupil naar het model)
+18 49 5->7 oog_voor opschonen (ringdikte/pupil naar het model)
+10 50 7->5 oog_voor opschonen (ringdikte/pupil naar het model)
+14 50 2->9 oog_voor opschonen (ringdikte/pupil naar het model)
+18 50 5->7 oog_voor opschonen (ringdikte/pupil naar het model)
+17 51 7->6 oog_voor opschonen (ringdikte/pupil naar het model)
+18 51 5->7 oog_voor opschonen (ringdikte/pupil naar het model)
+11 52 8->7 oog_voor opschonen (ringdikte/pupil naar het model)
+16 52 7->6 oog_voor opschonen (ringdikte/pupil naar het model)
+16 28 6->7 oog_links opschonen (ringdikte/pupil naar het model)
+17 28 6->7 oog_links opschonen (ringdikte/pupil naar het model)
+18 28 15->7 oog_links opschonen (ringdikte/pupil naar het model)
+16 29 6->10 oog_links opschonen (ringdikte/pupil naar het model)
+17 29 8->10 oog_links opschonen (ringdikte/pupil naar het model)
+19 29 15->7 oog_links opschonen (ringdikte/pupil naar het model)
+15 30 7->9 oog_links opschonen (ringdikte/pupil naar het model)
+18 30 8->7 oog_links opschonen (ringdikte/pupil naar het model)
+15 31 9->10 oog_links opschonen (ringdikte/pupil naar het model)
+17 31 2->10 oog_links opschonen (ringdikte/pupil naar het model)
+18 31 9->7 oog_links opschonen (ringdikte/pupil naar het model)
+19 31 6->7 oog_links opschonen (ringdikte/pupil naar het model)
+15 32 9->10 oog_links opschonen (ringdikte/pupil naar het model)
+17 32 10->9 oog_links opschonen (ringdikte/pupil naar het model)
+18 32 9->6 oog_links opschonen (ringdikte/pupil naar het model)
+19 32 6->7 oog_links opschonen (ringdikte/pupil naar het model)
+16 33 9->7 oog_links opschonen (ringdikte/pupil naar het model)
+17 33 10->7 oog_links opschonen (ringdikte/pupil naar het model)
+49 36 8->7 oog_rechts opschonen (ringdikte/pupil naar het model)
+50 36 15->7 oog_rechts opschonen (ringdikte/pupil naar het model)
+51 36 15->7 oog_rechts opschonen (ringdikte/pupil naar het model)
+48 37 8->7 oog_rechts opschonen (ringdikte/pupil naar het model)
+50 37 9->8 oog_rechts opschonen (ringdikte/pupil naar het model)
+52 37 8->7 oog_rechts opschonen (ringdikte/pupil naar het model)
+48 38 8->7 oog_rechts opschonen (ringdikte/pupil naar het model)
+53 38 15->7 oog_rechts opschonen (ringdikte/pupil naar het model)
+51 39 9->10 oog_rechts opschonen (ringdikte/pupil naar het model)
+53 39 15->7 oog_rechts opschonen (ringdikte/pupil naar het model)
+48 40 8->7 oog_rechts opschonen (ringdikte/pupil naar het model)
+49 40 2->10 oog_rechts opschonen (ringdikte/pupil naar het model)
+50 40 10->2 oog_rechts opschonen (ringdikte/pupil naar het model)
+53 40 15->7 oog_rechts opschonen (ringdikte/pupil naar het model)
+48 41 8->7 oog_rechts opschonen (ringdikte/pupil naar het model)
+49 41 7->9 oog_rechts opschonen (ringdikte/pupil naar het model)
+51 41 10->9 oog_rechts opschonen (ringdikte/pupil naar het model)
+52 41 7->6 oog_rechts opschonen (ringdikte/pupil naar het model)
+53 41 15->7 oog_rechts opschonen (ringdikte/pupil naar het model)
+49 42 8->7 oog_rechts opschonen (ringdikte/pupil naar het model)
+52 42 3->7 oog_rechts opschonen (ringdikte/pupil naar het model)
+
+TELLING (anders dan r10, per onderdeel)
+PB 1
+PF 10
+bol_rechts 13
+oog_links 28
+oog_rechts 42
+oog_voor 40
+totaal 134
+kleuren 16 (incl. transparant)
+voor {'model_iris_c': (np.float64(54.9), np.float64(131.4)), 'sprite_iris_c': (np.float64(14.14), np.float64(49.83)), 'schaal': 0.37, 'kx': 1.0, 'maat': '8x9', 'pixels': 59, 'pupil': 4, 'maat_schoon': '9x9', 'pupil_schoon': 3}
+links {'model_iris_c': (np.float64(70.0), np.float64(67.1)), 'sprite_iris_c': (np.float64(17.0), np.float64(31.88)), 'schaal': 0.512, 'kx': 0.75, 'maat': '5x6', 'pixels': 24, 'pupil': 3, 'maat_schoon': '5x6', 'pupil_schoon': 2}
+rechts {'model_iris_c': (np.float64(184.1), np.float64(94.1)), 'sprite_iris_c': (np.float64(50.5), np.float64(39.44)), 'schaal': 0.512, 'kx': 0.75, 'maat': '5x7', 'pixels': 29, 'pupil': 2, 'maat_schoon': '6x7', 'pupil_schoon': 2}

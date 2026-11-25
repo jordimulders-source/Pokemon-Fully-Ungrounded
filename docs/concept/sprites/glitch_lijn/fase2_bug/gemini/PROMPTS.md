@@ -124,4 +124,22 @@ AVOID: a smooth body, a cartoon face, drawn teeth, eyelids, a mascot or emoji lo
 ```
 
 ## Ronde 7 (25 nov)
-- `r7/r7.png`. Jordi: "echt verschrikkelijk weer".
+- `r7/r7.png`. Jordi: "echt verschrikkelijk weer", "totaal niet waar we naar op zoek zijn", "totaal niet digitaal genoeg".
+
+## r8 (nieuw gesprek, zonder bijlage): digitaal via GBA-tegels
+Eigen invulling Claude (schrappen bij twijfel): het lijf als raster van 8x8-tegels (zo werkt GBA-graphics echt), tegels met rommeldata-textuur, verwisselde/gespiegelde tegels, vlakke kleuren zonder ronde schaduw, harde rechte hoeken overal.
+```
+Design an original Pokemon as an official Gen 3 front sprite (Pokemon Ruby/Sapphire/Emerald), 64x64. Type: Electric/Bug. It is a purely digital creature: a glitch that has become sentient, made of corrupted Game Boy Advance graphics data. "Bug" means a bug in the computer sense; it is NOT an insect and NOT an organic creature.
+
+DIGITAL (most important): the creature looks like raw broken video game graphics, not like an animal or a monster drawn with pixels. Its body is made of square 8x8-pixel TILES on a strict grid, the way Game Boy Advance graphics are stored. Every edge is a hard straight horizontal or vertical line with right angles; there are no curves and no diagonal or organic outlines anywhere. Some tiles are filled with garbage data: messy stripes and broken checker patterns, like a corrupted tileset. Some tiles are in the wrong place, repeated or mirrored, and a few tiles float loose next to the body.
+
+SHAPE: no legs, floating. A rough blocky mass of tiles that steps up into a point at the top. Two thin arms, each a single line of tiles, thrown up as if it is cackling with laughter.
+
+FACE: graphic, made of tiles: two half-closed eyes as flat horizontal bars, and a huge zig-zag grin in a bright error color. Chaotic evil.
+
+COLORS: flat colors like a video game palette, one main body color and two bright error colors in the garbage tiles and the grin. No soft round shading, no gradients.
+
+STYLE: real pixel art, max 16 colors, dark outline around the tile groups, facing slightly to the left. White background, no ground, no shadow, no effects, no glow.
+
+AVOID: an organic or rounded body, curved outlines, a blob, a ghost, a slime, a monster with a normal sprite body, a cartoon face, eyelids, teeth, insects, screens, robots, text or symbols, Porygon, Unown, MissingNo, Gengar.
+```

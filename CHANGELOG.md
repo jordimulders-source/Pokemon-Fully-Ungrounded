@@ -3348,3 +3348,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Jordi definieert de vorm van fase 2; prompt r5 stap 1 (intacte vorm).
 - Ronde 5 afgekeurd; gedetailleerde prompt r6; referenties (fan-art van anderen) in `sprites/glitch_lijn/referenties/`.
 - Ronde 6 afgekeurd; Jordi kiest grove pixelblokken + grafisch gezicht; prompt r7.
+- Ronde 7: "totaal niet digitaal genoeg"; prompt r8 (GBA-tegels).

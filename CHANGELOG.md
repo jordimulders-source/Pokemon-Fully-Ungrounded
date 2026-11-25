@@ -3313,3 +3313,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.808] - Regionale Poliwag: Gemini-prompt v2
 - Na v1 (geen staart, te veel kleur/detail): zuignap van het harlekijnpad-kikkervisje als buikvenster, Poliwags staart, 2–3 kristallen, spiraal in één kleur, één ijstint. `poliwag_regional/SPEC.md`, `gemini/PROMPT.md`.
+
+### [v0.0.809] - Regionale Poliwag: Gemini v2 bewaard
+- `poliwag_regional/gemini/r2/gemini_v2.png`; Jordi: "kleuren vind ik goed".

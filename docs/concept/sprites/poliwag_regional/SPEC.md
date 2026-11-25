@@ -17,3 +17,4 @@ Lijn: regionale Poliwag → regionale Poliwhirl → regionale Poliwrath, alle Ic
 ## Rondes
 - Prompt v1: `gemini/PROMPT.md` (bijlage `gemini/bijlage_poliwag.png`).
 - v1 (`gemini/r1/gemini_v1.png`): geen staart, te veel kleur/detail. Daarna (Jordi akkoord): zuignap van het *Atelopus*-kikkervisje + plattere bouw, zuignap = buikvenster met de kring als rand; staart = die van Poliwag (kern lijfkleur, lichte/ijzige vin); max 2–3 kristallen; spiraal één kleur (welke: open); één ijstint. Prompt v2 in `gemini/PROMPT.md`.
+- v2 (`gemini/r2/gemini_v2.png`): Jordi "kleuren vind ik goed" (geel/zwart, ijsblauw, rode spiraal en staartkern).

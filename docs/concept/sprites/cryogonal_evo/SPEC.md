@@ -18,3 +18,4 @@ Rondes: `gemini/`.
 - Zeven nieuwe vormen geschetst (`schetsen_vormen2.png`; eerste vier in `schetsen_vormen1.png`). Jordi: "tesseract, schrijf de Gemini-prompt maar" → `gemini/PROMPT_r2_tesseract.md`.
 - Gemini r2 (tesseract van ijsbalken): "vorm ok, maar het moet veel meer cryogonal zijn"; "hij is totaal niet herkenbaar toch? Ik wilde van cryogonal een complexere vorm maken". → r3: tesseract opgebouwd uit Cryogonal zelf (`gemini/PROMPT_r3_tesseract.md`).
 - Gemini r3: "neeeeee dat bedoelde ik niet, de kubus is opgebouwd uit de stukjes die cryogonal nu de huidige vorm geven, dit is gewoon een kubus met een cryogonal erin" → r4 (`gemini/PROMPT_r4_tesseract.md`).
+- Gemini r4: "ziet er niet uit", "echt zo slecht". Gemini tekent na r2–r4 telkens een kubus met (een stuk) Cryogonal erin; tekst alleen haalt de opbouw niet. Volgende stap (open): vormschets als bijlage, of stoppen en Cryogonal reviseren.

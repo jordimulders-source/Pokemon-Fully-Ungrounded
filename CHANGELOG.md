@@ -3304,3 +3304,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.805] - Overzichtsvel: Capykart na Capybarrel
 - `showcase/maak_vel.py`: Capykart direct na Capybarrel (Jordi); vel opnieuw gemaakt.
+
+### [v0.0.806] - Regionale Poliwag-lijn: eindvorm Poliwrath
+- Eindvorm van de Ice/Poison-Poliwag-lijn is een regionale Poliwrath (Ice/Poison); Politoed blijft gewoon (Jordi). Evolutiemethode later. `IDEEEN.md`, `POKEMON.md`, `TODO.md` bijgewerkt.

@@ -62,3 +62,35 @@ AVOID
 - Not green and blue like the normal Lotad. Not a human, not a person in a plant costume.
 - No glossy 3D render, no plush or mascot look.
 ```
+
+# Startprompt v3 (25 nov), na r2
+Jordi over r2 (v2 met Lotad-bijlage): "veel minder op alle fronten". Terug naar v1 (gaf r1, "tof idee"), alleen de twee punten erbij: dichter bij Lotads verhoudingen en 6 poten zonder armen. Geen bijlage.
+
+```
+Design a regional form of the Pokémon LOTAD and draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art).
+
+CONCEPT
+- A plant that IS a gaucho (the cowboy of the South American pampas, known for his wide hat).
+- Type: Ground. It is NOT a Water or Grass type and does not live in water.
+- The gaucho look comes only from the plant's own body parts. The leaf on its head forms the gaucho hat.
+- This is the first, smallest stage of its line: small, simple, cute, still mostly a little plant creature.
+
+DESIGN
+- Keep Lotad's basic build and proportions: a small, low body almost hidden under a large leaf that is much wider than the body.
+- It stands on SIX short stubby legs, like Lotad. No arms.
+- Design the rest freely so that it reads as a small plant-gaucho.
+
+POSE
+- Three-quarter view facing left, like official Gen 3 front sprites.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, clean shading like official Game Freak Gen 3 sprites.
+- Compact silhouette, limbs close to the body.
+- Plain white background. No floor, rock, soil, shadow, water, glow, sparkles or effects. One single creature, no extra views.
+
+AVOID
+- No arms, no hands, not four legs.
+- NO clothing and NO accessories: no poncho, scarf, belt, boots, spurs, knife, whip, lasso, bolas, mate cup, no real hat on top of the leaf.
+- Not a human, not a person in a plant costume.
+- No glossy 3D render, no plush or mascot look.
+```

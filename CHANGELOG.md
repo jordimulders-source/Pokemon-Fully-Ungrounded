@@ -3307,3 +3307,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.806] - Typeverdeling hele dex
 - `DEX_IN_ROM.md`: telling van de typeverdeling over de hele dex (behouden soorten + nieuwe designs + Cosmic-besluiten), met aannames.
+
+### [v0.0.807] - Typeverdeling: regionale vormen erbij
+- `DEX_IN_ROM.md`: telling opnieuw; regionale vormen vervangen niets (Jordi: "als ze al erin zaten, gaan ze niet eruit"). 542 soorten.

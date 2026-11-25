@@ -1,0 +1,47 @@
+r5: afwijkingen t.o.v. de kale reductie (kaal gemapt = modelreductie met alleen de Gen 3-tintkeuze per zone)
+Basis r2: per cel lijn (>=50% zwarte modellijn) of meerderheids-toonklasse van het model (celklas.py); flank: relatieve helderheid flankpixels.
+
+hoorns       131 van  191 px  (hoorn 67, lijn 44, binnenlijn 14, glans 4, oor 1, kuif 1)
+kop+hals      73 van  264 px  (lijn 31, oor 17, binnenlijn 12, ontkorrel 9, kuif 4)
+lijf+staart  114 van  411 px  (lijn 37, ontkorrel 28, flank 16, staart 9, strepen_weg 8, dijschaduw 6, streep_dij 4, binnenlijn 4, streep_staart 2)
+poten         83 van  226 px  (lijn 61, ontkorrel 7, plukjes 5, poot 5, binnenlijn 5)
+totaal       401 van 1092 px
+
+Uitleg stappen: lijn = 1-px buitenlijn dicht + gekleurde selout op randen die naar boven/linksboven wijzen;
+binnenlijn = modellijn binnen het silhouet -> donkerste eigen tint (D of 1), geen zwart;
+hoorngrens = modellijn tussen hoorn en kuif/kop (valt bij de reductie weg) uit de zonegrens van de modelsegmentatie;
+ontkorrel = tintvlakje <3 px -> meest voorkomende buurtint (niet in hoorns/oog/neus);
+strepen_weg = de vier bilstrepen (Jordi) -> vachttint van het model naast de streep (helderheid van de lijfpixels in die cel).
+
+ZELF GEZETTE PIXELS (niet uit het model; Jordi's toegestane afwijking), 64x64-coordinaten:
+  streep_dij: (44,37) -> zwart
+  streep_dij: (44,38) -> zwart
+  streep_dij: (45,39) -> zwart
+  streep_dij: (45,40) -> zwart
+  streep_dij: (45,41) -> zwart
+  streep_dij: (45,42) -> zwart
+  streep_dij: (44,43) -> zwart
+  streep_staart: (46,32) -> zwart
+  streep_staart: (46,33) -> zwart
+
+OOGZONE (wordt later vervangen door een Gen 3-oog): 64x64 x 18-25, y 21-27 (beschermd: niet ontkorreld/omgelijnd).
+Huidige oogpixels (64x64-coordinaten, rij voor rij x 18-25):
+  y21 DLHLLLNN
+  y22 LHHWWLNN
+  y23 LHW00WNN
+  y24 LW000WLM
+  y25 NW0DWWNM
+  y26 WWWWWLNM
+  y27 LLLLNNMM
+
+Kleuren: 12 + transparant = 13 (0 3 4 5 A D H L M N S W)
+
+r5 (keuring r4 punten 1-7, r5.py = r4.py + blok 'r5'); diff r4->r5 = 73 px, oogzone 0, strepen ongewijzigd. Lokaal, 64x64 = +10,+1.
+1 staal alleen tinten (aanpassing Claude: niet zo blauw als r3): A 283040, 3 424B5B (diepere reflectie), 4 8D96A6, 5 D3D9E3, glans W;
+  B-R 16-25 (vacht 11-18); onderscheid via contrast (3 lum ±74 direct tegen 5/W).
+2 binnenlijnen hoornvoeten (19 px, 0/1) -> A, alleen waar geen transparante 4-buur.
+3 staart: rechts L (37,30-32), witte franje W (37,33), links/onder M (34-36,32-34) uit het staartvlak van het model; streep blijft.
+4 flankband H (x18-21, y35-41) -> L; tapse schouderpunt N op (18,35),(18,36),(19,36) (model 157-184).
+5 kuif M -> S (donker S/D + lichte streng N op modelrij 16); oor: (18,18),(18,21) M, (17,19),(20,19),(22,18) L, (5,18) M.
+6 poten (29,53),(30,53),(41,54),(40,56),(38,58) zwart -> D.
+7 rechterhoorn (25,3-5) erbij op het masker (model 1 px naar links, begin S); staal 2 px op die rijen, rechterrand blijft x28.

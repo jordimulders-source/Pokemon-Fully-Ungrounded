@@ -110,3 +110,6 @@ COLORS: only 3 or 4 colors in total, like MissingNo.
 
 AVOID: many colors, clear eyes, a clear mouth, a drawn face, shapes, triangles, spikes, fragments, a cartoon or mascot face, a ghost, a blob, rubble, a robot, a box, a neat or symmetric shape, a rectangle, square tiles, a copy of MissingNo, Porygon, Unown, Rotom.
 ```
+
+## Ronde 6 (25 nov)
+- `r6/r6.png`. Jordi: "vind deze ook eigenlijk niet goed, ik denk dat gemini dit gewoon niet kan".

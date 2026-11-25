@@ -16,3 +16,4 @@ Rondes: `gemini/`.
 - Vier vormen geschetst (ster-veelvlak, gyroscoop, Metatron-kubus, afgeknot achtvlak). Metatron: "het vetst", maar vereenvoudigd "net teveel cryogonal nog"; Jordi: "hij moet afwijken van de typische sneeuwvlok vorm" en daarna "dan maar geen metatron".
 - Eisen tot nu toe (Jordi): strakke geometrische vormen, zweeft, geen dier of humane Pokémon, complexe geometrie, wijkt af van de typische sneeuwvlokvorm.
 - Zeven nieuwe vormen geschetst (`schetsen_vormen2.png`; eerste vier in `schetsen_vormen1.png`). Jordi: "tesseract, schrijf de Gemini-prompt maar" → `gemini/PROMPT_r2_tesseract.md`.
+- Gemini r2 (tesseract van ijsbalken): "vorm ok, maar het moet veel meer cryogonal zijn"; "hij is totaal niet herkenbaar toch? Ik wilde van cryogonal een complexere vorm maken". → r3: tesseract opgebouwd uit Cryogonal zelf (`gemini/PROMPT_r3_tesseract.md`).

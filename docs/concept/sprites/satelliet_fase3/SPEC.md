@@ -35,3 +35,4 @@ Open: aantal ogen, naam, evolutiemethode.
 - Jordi (r10, met uitsnede linkeroog variant a): "wacht we kunnen ook de zijwaartse ogen dezelfde kant op laten kijken als het voorste oog, zodat je nu met links doet, bij deze" → r11: beide zij-ogen naar voren-links zoals variant a, bol/licht van r10.
 - r11 (`model/r11_natief.png`): beide zij-ogen naar voren-links (oog van r10a), bol/licht van r10.
 - r11, Jordi: "rechtse oog is nog niet netjes, het oog zou ook iets groter moeten zijn vanwege de pose, plus ik zie daar gekke zwarte pixels, je kan het niet zomaar kopieren" → r12: rechteroog opgebouwd uit het grote voorste oog, verkleind naar de bolmaat.
+- r12 (`model/r12_natief.png`): rechteroog uit het voorste oog ×0,571 (13×14 px; links 13×12, voor 22×24), restpixels r9-oog weg.

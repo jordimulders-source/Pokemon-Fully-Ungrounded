@@ -778,3 +778,9 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - **Jordi (25 nov):** "is het in kleur uit te drukken dat het staal sterker wordt? Damascus steel is tof maar ik vraag me af of dat in een sprite te zien is, helemaal met de vormen die we gaan maken". Claude: test `sprites/impala_lijn/staal_test.png` (hoornstrook 5 px): damascus wordt ruis; dof → gepolijst → spiegelglans met slijprand leest wel.
 - **Besloten (Jordi, 25 nov: "akkoord"):** hoorns worden per fase sterker staal via glans en contrast, geen damascus: dikdik-speerpunt dof ijzer → impala gepolijst staal → kudu spiegelglans met witte slijprand.
 - **Besloten (Jordi, 25 nov: "akkoord, echte tekening houden, kom maar met de dikdik"):** lichaamspatroon = echte tekening, overdreven, groeit per fase: dikdik bijna effen (traan voor het oog, kuif), impala scherpe tweedeling rug/flank/buik + zwarte M + plukjes, kudu witte verticale strepen + witte V tussen de ogen (wit = slijprand-wit).
+
+## Glitch → bug → virus (Jordi, 25 nov)
+- **Jordi:** "ik dacht eerst aan glitch -> bug -> virus maar dat was dus niet logisch". Claude: als computerlijn klopt het wel (glitch = wat je ziet, bug = de fout in de code, virus = programma dat zich verspreidt); Bug houden in alle fases is dan logisch, "bug" is de woordgrap die de lijn draagt.
+- **Voorstel Claude (open):** fase 1 glitch-insect (kapotte sprite: ontbrekende pixels, verschoven stukken), Bug; fase 2 de eerste "computer bug" (de mot die het team van Grace Hopper in 1947 in een relais van de Harvard Mark II vond en in het logboek plakte), Bug/Electric of Bug/Steel; fase 3 virus (dezelfde mot, kwaadaardig, kopieën van zichzelf), Bug/Poison of Bug/Dark.
+- **Jordi:** "soort digitale bug lijkt me tof".
+- **Open:** tweede type fase 2 en 3; verder ontwerp.

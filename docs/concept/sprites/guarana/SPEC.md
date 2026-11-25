@@ -19,3 +19,7 @@
 ## Open
 - Kleuren buiten rood/wit/zwart (blad, rank): niet besproken, Gemini kiest.
 - Naam, ability, evolutiemethode.
+
+## Ronde 2 (Gemini r2, `gemini/r2.png`)
+- Claudes twijfels: rank werd bruine houtstam met krul (slak/zeepaardje), ranken werden vier stokpootjes, vruchten met zwart raster en stekeltjes. Jordi: "verder akkoord om jouw twijfels aan te pakken" → prompt r3.
+- Jordi vroeg of de ogen naar een sprite passen: test op 64 px (`gemini/r2_test64_8x.png`, langste zijde 56 px): ogen ±4–5 px, wit + pupil leesbaar. Bij een kleinere fase 1 (±40 px) worden ze ±3 px: krap.

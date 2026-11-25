@@ -3265,3 +3265,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.792] - Guaraná fase 1: Gemini r1 besproken, prompt r2
 - Jordi over r1: kruipende tak blijft ("lekker creepy", alleen de ogen zijn dierlijk); beter naar een sprite te vertalen en meer guaraná. Prompt r2 in `docs/concept/sprites/guarana/gemini/PROMPT_r2.md`; SPEC bijgewerkt.
+
+### [v0.0.793] - Guaraná fase 1: Gemini r2 besproken, prompt r3
+- Ogen getest op 64 px (leesbaar bij ±56 px hoogte). Prompt r3: groene buigzame rank, grijpranken i.p.v. pootjes, gladde vruchten zonder raster/stekeltjes, ogen iets groter.

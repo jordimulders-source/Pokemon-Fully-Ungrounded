@@ -15,3 +15,7 @@ ims=[]
 for n,(dc,dr) in V.items():
     v=sluit(plak(o,klein(dc,dr),17,4)); opslaan(v,'lombre_gaucho_%s.png'%n)
     print(n,'mondpixels',int((v!=o).sum()))
+
+# Jordi: "a1 is de vorm van het mond het beste, a2 sluit die beter aan maar is de hele vorm van de mond weg"
+# -> A5 = vorm A1, 1 px naar rechts (de punt staat dan waar die van A2 staat).
+v=sluit(plak(o,klein((5,),()),18,4)); opslaan(v,'lombre_gaucho_A5.png'); print('A5 mondpixels',int((v!=o).sum()))

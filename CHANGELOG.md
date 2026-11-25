@@ -3358,3 +3358,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Jordi: oorsprong computerscherm, keuze A (gemaakt van schermbeeld); prompt r4; les over de AVOID-regel.
 - Fase 1 r4 (Gemini) afgekeurd; MissingNo-referentie; eerste eigen test fase 1 (3 varianten van rommeltegels met vaag gezicht).
 - Fase 1 prompt r5 from scratch.
+- Fase 1 ronde 5: te veel kleur, gezicht te duidelijk, van vormen; prompt r6.

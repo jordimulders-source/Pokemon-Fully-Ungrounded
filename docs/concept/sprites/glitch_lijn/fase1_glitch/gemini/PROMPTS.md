@@ -91,3 +91,22 @@ COLORS: a limited palette like old game graphics.
 
 AVOID: a cartoon, comic or mascot face, human or happy eyes, a ghost, a blob, a slime, rubble, stone, trash, a robot, a golem, a box, a toaster, a neat or symmetric shape, a rectangle, square tiles, a copy of MissingNo, Porygon, Unown, Rotom.
 ```
+
+## Ronde 5 (25 nov)
+- `r5/r5.png`. Jordi: "teveel kleur, ogen en mond te duidelijk en ook weer van vormen gemaakt, het moet glitch zijn, nog meer missingno".
+
+## r6 (nieuw gesprek, zonder bijlage): prompt r5, alleen kleur, gezicht en "geen vormen" aangepast
+Eigen invulling: "3 or 4 colors" (zoals MissingNo).
+```
+Design an original Pokemon: an official Gen 3 front sprite (Pokemon Ruby/Sapphire/Emerald), 64x64 pixels, white background.
+
+WHAT IT IS: Type Electric. The first stage of a three-stage line (glitch, then bug, then virus). It is a purely digital creature: a glitch that lived inside a computer screen and has become sentient. It is made of what is shown on a screen: broken, corrupted video game graphics data. It is not a physical object, not made of any material, and no monitor or screen frame is visible.
+
+THE LOOK (most important): it is pure glitch, very close to MissingNo, the famous glitch Pokemon of the first games: nothing but scrambled pixel data, garbled pixel patterns and noise, where you can hardly tell what it is. It is NOT made of shapes: no triangles, spikes, fragments, panels or drawn objects, only scrambled pixels. But it is its own design: NOT a rectangle, NOT a column, NOT an L-shape and NOT built from square tiles. It has an irregular, unpredictable outline.
+
+FACE: almost invisible. Somewhere in the scrambled pixels you can only just make out something like two eyes and a mouth, as if by accident. They are NOT drawn, NOT clear, NOT outlined.
+
+COLORS: only 3 or 4 colors in total, like MissingNo.
+
+AVOID: many colors, clear eyes, a clear mouth, a drawn face, shapes, triangles, spikes, fragments, a cartoon or mascot face, a ghost, a blob, rubble, a robot, a box, a neat or symmetric shape, a rectangle, square tiles, a copy of MissingNo, Porygon, Unown, Rotom.
+```

@@ -1,0 +1,9 @@
+Capykart r15b (24 nov) - maker-log. Basis: sprite/r15 (crème en wit). Script: maak_r15b.py (assert op oude index per pixel), vel: vel_r15b.py.
+1. Voorste hoepel, begin dalende boog: houtpixel direct boven de band -> 1: (21,35),(22,35),(23,35) 5->1; (24,36),(25,36) 5->1; (26,37),(27,37) 5->1.
+   Zo blijft de band 2 px en de lijn 1 px dik. Bovenlijn loopt nu als trap 8-3-2-2-1-1-1-1-1 van (14,34) tot (33,43).
+   Extra (bij de controle gevonden): (32,42) was een open bovenrand (r15-reparatie zette (32,41) op 6) -> (32,42) 8->1 en (33,42) 1->6,
+   zodat de lijn diagonaal (31,41)-(32,42)-(33,43) loopt en de band 2 px blijft (geen dubbel zwart).
+2. Achterste hoepel op het dek: (48,34),(48,35) 5->1; glanspixel (49,35) 9->8 (plakte anders tegen zwart links en onder).
+CONTROLES (controle.txt): 12 px anders dan r15, alle genoemd; gezicht diff 0; silhouet 0; 16 kleuren (crème en wit).
+Open-randcheck (hoepelband 8 grenzend aan hout 5/6/D): alleen (18,33),(22,33) = tandschaduw in de bevroren tanden (geen hoepel) en (49,34),(50,34) = band die onder de contactschaduw van de voet verdwijnt (bedoeld).
+EIGEN BLIK: beide hoepels zijn nu banden van 2 px met aan beide kanten een 1 px lijn; de trap van de dalende boog loopt gelijkmatig. Toren ongewijzigd t.o.v. r15.

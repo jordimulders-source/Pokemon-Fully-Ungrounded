@@ -1,0 +1,50 @@
+Capykart r13 (24 nov) – maker-log. Basis: sprite/r12/r12_creme.png. Script: maak_r13.py (bouwt beide paletten + controles), vel: vel_r13.py.
+
+ZONES
+1 Geheel / niet blurry
+- Kop: losse E-hooglichtpixels (diagonale streep + 4 losse stukjes onder het oog) weg; E nu één sikkel langs de lichte bovenrand van het voorhoofd (rij 14-18, raakt de omlijning zoals bij Zapacha). Losse 3 op (22,21) -> 2. Verder kop = r12 (19 px anders).
+- Motorkap: één groot licht vlak (5), alleen achter/rechts 6, 1 rij 6 als schaduw direct onder de hoepel; schaduw onder kin/hoepel als één D-blok (x18-23).
+- Neus: 6-basis, lichte rand 5 links (x2-3), nerf = 2 lange rechte D-lijnen (x7, x12, rij 45-50), onderkant één D-sikkel (rij 51-52) + 4 onderzijde. Alle losse D/5-vlekjes en korte streepjes weg.
+- Hoek/voorspatbord: verticale lichtstrook x17-18 (5, onderaan 6->D), randlijn 4 op x16, zijpaneel 6 met D tegen het wiel.
+- Middenpaneel: lichte rand (5) diagonaal, daaronder 6-band, één groef (4), dan één D-vlak (rij 44-49); losse DD/DDDD-vlekjes weg.
+- Kofferbak-zijkant: boven 6, onder D, rechts 4-sikkel; ruis weg.
+- Wielen: met de hand opnieuw opgezet als schone schijf: lichte sikkel (5) linksboven, 6-vlak, D-sikkel rechtsonder, 4 onderrand, naaf = ring 4 met 5-kern. Linkerbuitenlijn voorwiel aangevuld (ontbrak), dubbele lijnen weg.
+- Ver voorwiel onder de neus: D met 4 onderkant.
+2 Hoepels
+- Voorste hoepel: band 2 px (8) over de hele boog, regelmatige trapjes (runs 1,2,9,3,2,2,1,1,1,1 en dan verticaal), zwarte lijn 1 px onder (bovenstuk) en rechts (verticale stuk), in de bocht beide. Glans 3 px (9) op de kruin. Eindigt nu achter het voorwiel.
+- Achterste hoepel: band 2 px (8) + zwart rechts, komt onder het blauwe blok vandaan over het dek en loopt recht omlaag tot achter het achterwiel.
+- Lichtkant: geen extra lijn; de band zelf (8, donkerste eigen tint) is daar de rand, zoals bij Capybarrel. Palet is vol (16), dus een lichtere hoepeltint + 8 als lijn kon niet.
+3 Blokkentoren (enige vormwijziging)
+- Drie gelijke kubussen in hetzelfde 3/4 als de auto: links een licht vlak van 5 px (naar links-voor, randen stijgen 1 px per 2 naar links, zoals de neus) en rechts een donker vlak van 6 px (horizontale randen, zoals de lange zijkant). Verticale ribben evenwijdig, blokken recht boven elkaar, voegen zwart.
+- Bovenvlak van het bovenste blok zichtbaar als crème/witte rand onder de driehoek (L-vorm langs beide voorranden).
+- Groene driehoek = piramide in hetzelfde perspectief (licht vlak links F, donker vlak rechts B, zoals model/r12), 1 px overstek links en rechts.
+- Toren staat op het dek van de achterbak: dek (5) zichtbaar vóór, links en rechts van de voet, contactschaduw D direct onder de onderlijn en rechts van het blok; rechterachterrand dek met 4-lijn zoals r12.
+- Lichtkant toren in eigen donkere tint (zoals r12): geel 4, rood 7, blauw 8, driehoek B; schaduwkant zwart.
+- Verschuiving: toren x43-57 -> x45-59 (+2/3 px naar rechts), top van rij 1 naar rij 3, voet van rij 31 naar 33.
+
+MAATSTAF (Zapacha, Dundragoon; Skinguin/Princadee gemeten)
+- Tinten: per kleurgroep basis + 1 schaduw + 1 licht + donkerste; basis is het grootste vlak (Zapacha 5: 414 px). r13 hout: 6=419 (grootste), D=299, 5=190 (r12: 6=387, D=263, 5=136, 4 veel groter). Overgenomen: basis dominant, schaduw als groot aaneengesloten vlak.
+- Schaduwvlakken: groot en aaneengesloten (Zapacha: sikkels 3-4 px breed rechts/onder). Overgenomen: D-sikkels op neus, wielen, panelen, geen losse stukjes.
+- Zwart vs gekleurd: zwart onder/rechts, donkere eigen tint op de lichte boven/linkerrand (Zapacha 2, Dundragoon idem). Overgenomen: hout 4 linksboven, toren eigen tinten links, zwart rechts/onder.
+- Binnenlijnen: weinig, lang, alleen waar vorm over vorm valt. Overgenomen: 1 groef middenpaneel, 2 nerflijnen neus, randlijn neus/hoek.
+- Losse pixels: maatstaf heeft vrijwel alleen kleine stukjes in lijnen/ogen. r13: overgebleven <3px-clusters zijn lijnsegmenten, oog/tanden (bevroren) en contactschaduw.
+- Zwart: maatstaf 13,7-17,5 %; r13 12,1 % (r12 12,9 %).
+- Hooglicht mag de omlijning raken (Zapacha rij 29) -> kop-E zo gelegd.
+
+CONTROLES
+silhouet buiten torenzone (x>=42,y<=35): 0 px verschil
+silhouet in torenzone: 141 px verschil (53 erbij, 88 weg)
+bevroren (oog, tanden, morrillo, neusgaten/mond; 66 px): creme diff 0, wit diff 0
+creme: 16 kleuren incl. transparant
+wit: 16 kleuren incl. transparant
+zone kop/vacht (y<30, x<42): 19 px anders dan r12_creme
+zone toren+dek (x>=42,y<=35): 360 px anders dan r12_creme
+zone voorste hoepel + motorkap/neus (x<36, y>=34): 240 px anders dan r12_creme
+zone midden/achterhoepel/kofferbak/achterwiel (x>=36,y>=36): 179 px anders dan r12_creme
+- Wit = exact dezelfde pixels als crème; alleen: vacht-E -> 2 (geen hooglicht in wit, zoals r12_wit), geel voorvlak blok 9 -> E (geel), palet van r12_wit.
+- Silhouet: 0 px verschil buiten de torenzone; 141 px in de torenzone (53 erbij: dek + verschoven/smallere toren + overstek driehoek; 88 weg: oude toren links/boven en brede oude driehoek). Meer dan "minimaal", door de verschuiving die nodig was om op het dek te staan.
+
+ZWAK / OPEN (eerlijk)
+- Driehoek is kleiner dan in r12/model (overstek 1 px i.p.v. ±3); breder maakte hem een ruit (piramide van boven). Ter keuze aan Jordi.
+- Voorste hoepel heeft in de bocht kort zwart aan beide kanten (overgang onder->rechts).
+- Kop: buiten de E-sikkel nog r12-schaduw (3/4-vlakken, neuslijn x18) ongewijzigd.

@@ -1,0 +1,171 @@
+Capykart r4 - drie kopvarianten op vacht B (A vervalt, Jordi 24 nov: "nee beige werkt niet, het hoofd is nog wel iets teveel een kopie van capybarrel").
+Basis = r3b B (zelfde pijplijn: build4.py met KOP=V1/V2/V3). Gridcoordinaten (beeld-x = grid-x + 1).
+Snuit (x14-22, y20-30) komt in alle varianten uit de kale reductie van het model in vachttinten (neusgaten, philtrum, mond = modelpixels)
+en is beschermd tegen ontkorrelen (anders verdwijnen neusgat (19,22) en mondpixels (16,28),(16,29),(18,29), zoals in de eerste poging).
+Geen Capybarrel-blokneus meer in V1-V3.
+
+
+== V1 == afwijkingen t.o.v. kale reductie: 224 px {'ruis': 82, 'oog': 11, 'wenkbrauw': 3, 'ruis2': 1, 'lijn': 87, 'r3_lijn': 1, 'r3_kop': 33, 'r3_wiel': 3, 'r3_hout': 2, 'r3b_wiel': 1}; silhouet-diff []
+Niet uit het model:
+  oog 11 (Capybarrel-oog, incl. 5 px modeloog weg), wenkbrauw 3 (D)
+  overig = technisch (ruis/lijn) en de keurdertintwissels uit r3/r3b (r3_kop, r3_hout, r3_wiel, r3b_wiel, r3_lijn)
+  oog (28,17) C->D  pixelkopie Capybarrel (23,33)
+  oog (29,17) C->D  pixelkopie Capybarrel (24,33)
+  oog (30,17) C->A  pixelkopie Capybarrel (25,33)
+  oog (27,18) C->D  pixelkopie Capybarrel (22,34)
+  oog (28,18) C->0  pixelkopie Capybarrel (23,34)
+  oog (27,19) C->D  pixelkopie Capybarrel (22,35)
+  oog (28,19) 0->D  pixelkopie Capybarrel (23,35)
+  oog (29,19) 9->0  pixelkopie Capybarrel (24,35)
+  oog (27,20) C->D  pixelkopie Capybarrel (22,36)
+  oog (28,20) 0->A  pixelkopie Capybarrel (23,36)
+  oog (30,20) C->0  pixelkopie Capybarrel (25,36)
+  wenkbrauw (28,16) C->D  wenkbrauw (Jordi akkoord): donkerste vachttint
+  wenkbrauw (29,16) C->D  wenkbrauw
+  wenkbrauw (30,16) C->D  wenkbrauw
+
+== V2 == afwijkingen t.o.v. kale reductie: 244 px {'ruis': 82, 'tanden': 16, 'oog': 11, 'morrillo': 6, 'wenkbrauw': 3, 'ruis2': 2, 'lijn': 81, 'r3_lijn': 4, 'r3_kop': 33, 'r3_wiel': 3, 'r3_hout': 2, 'r3b_wiel': 1}; silhouet-diff [(16, 31)]
+Niet uit het model:
+  oog 11 (Capybarrel-oog, incl. 5 px modeloog weg), wenkbrauw 3 (D), morrillo 6 (neusgrijs), tanden 16 (Capybarrel, +1 px, = r3b)
+  overig = technisch (ruis/lijn) en de keurdertintwissels uit r3/r3b (r3_kop, r3_hout, r3_wiel, r3b_wiel, r3_lijn)
+  tanden (17,30) A->W  pixelkopie Capybarrel (12,44)
+  tanden (18,30) A->9  pixelkopie Capybarrel (13,44)
+  tanden (19,30) 0->W  pixelkopie Capybarrel (14,44)
+  tanden (20,30) D->0  pixelkopie Capybarrel (15,44)
+  tanden (16,31) .->0  pixelkopie Capybarrel (11,45)
+  tanden (17,31) 0->W  pixelkopie Capybarrel (12,45)
+  tanden (18,31) 0->9  pixelkopie Capybarrel (13,45)
+  tanden (19,31) 0->W  pixelkopie Capybarrel (14,45)
+  tanden (20,31) 0->D  pixelkopie Capybarrel (15,45)
+  oog (28,17) C->D  pixelkopie Capybarrel (23,33)
+  oog (29,17) C->D  pixelkopie Capybarrel (24,33)
+  oog (30,17) C->A  pixelkopie Capybarrel (25,33)
+  oog (27,18) C->D  pixelkopie Capybarrel (22,34)
+  oog (28,18) C->0  pixelkopie Capybarrel (23,34)
+  oog (27,19) C->D  pixelkopie Capybarrel (22,35)
+  oog (28,19) 0->D  pixelkopie Capybarrel (23,35)
+  oog (29,19) 9->0  pixelkopie Capybarrel (24,35)
+  oog (27,20) C->D  pixelkopie Capybarrel (22,36)
+  oog (28,20) 0->A  pixelkopie Capybarrel (23,36)
+  oog (30,20) C->0  pixelkopie Capybarrel (25,36)
+  tanden (17,32) 0->W  tand 1 px doorgetrokken (Capybarrel rij 45)
+  tanden (18,32) 0->9  tand 1 px doorgetrokken (Capybarrel rij 45)
+  tanden (19,32) 0->W  tand 1 px doorgetrokken (Capybarrel rij 45)
+  tanden (17,33) B->0  onderlijn tanden (Capybarrel rij 46) 1 px lager
+  tanden (18,33) B->0  onderlijn tanden (Capybarrel rij 46) 1 px lager
+  tanden (19,33) B->0  onderlijn tanden (Capybarrel rij 46) 1 px lager
+  tanden (20,33) B->0  onderlijn tanden (Capybarrel rij 46) 1 px lager
+  morrillo (21,15) C->3  morrillo (Jordi akkoord): neusgrijs, op de neusrug onder de bovenlijn
+  morrillo (22,15) C->3  morrillo
+  morrillo (23,15) C->3  morrillo
+  morrillo (20,16) C->3  morrillo
+  morrillo (21,16) C->3  morrillo
+  morrillo (22,16) C->3  morrillo
+  wenkbrauw (28,16) C->D  wenkbrauw (Jordi akkoord): donkerste vachttint
+  wenkbrauw (29,16) C->D  wenkbrauw
+  wenkbrauw (30,16) C->D  wenkbrauw
+
+== V3 == afwijkingen t.o.v. kale reductie: 299 px {'ruis': 82, 'tanden': 16, 'oog': 11, 'neusV3': 64, 'morrillo': 6, 'wenkbrauw': 3, 'ruis2': 2, 'lijn': 72, 'r3_lijn': 4, 'r3_kop': 33, 'r3_wiel': 3, 'r3_hout': 2, 'r3b_wiel': 1}; silhouet-diff [(16, 31)]
+Niet uit het model:
+  oog 11 (Capybarrel-oog, incl. 5 px modeloog weg), wenkbrauw 3 (D), morrillo 6 (neusgrijs), tanden 16 (Capybarrel, +1 px, = r3b), neusV3 64: VORM uit het model (snuitplaat x14-21 y20-28), alleen KLEUR grijs (label M->9, snuit->3, neusgaten/philtrum/mond/lijn->0)
+  overig = technisch (ruis/lijn) en de keurdertintwissels uit r3/r3b (r3_kop, r3_hout, r3_wiel, r3b_wiel, r3_lijn)
+  tanden (17,30) A->W  pixelkopie Capybarrel (12,44)
+  tanden (18,30) A->9  pixelkopie Capybarrel (13,44)
+  tanden (19,30) 0->W  pixelkopie Capybarrel (14,44)
+  tanden (20,30) D->0  pixelkopie Capybarrel (15,44)
+  tanden (16,31) .->0  pixelkopie Capybarrel (11,45)
+  tanden (17,31) 0->W  pixelkopie Capybarrel (12,45)
+  tanden (18,31) 0->9  pixelkopie Capybarrel (13,45)
+  tanden (19,31) 0->W  pixelkopie Capybarrel (14,45)
+  tanden (20,31) 0->D  pixelkopie Capybarrel (15,45)
+  oog (28,17) C->D  pixelkopie Capybarrel (23,33)
+  oog (29,17) C->D  pixelkopie Capybarrel (24,33)
+  oog (30,17) C->A  pixelkopie Capybarrel (25,33)
+  oog (27,18) C->D  pixelkopie Capybarrel (22,34)
+  oog (28,18) C->0  pixelkopie Capybarrel (23,34)
+  oog (27,19) C->D  pixelkopie Capybarrel (22,35)
+  oog (28,19) 0->D  pixelkopie Capybarrel (23,35)
+  oog (29,19) 9->0  pixelkopie Capybarrel (24,35)
+  oog (27,20) C->D  pixelkopie Capybarrel (22,36)
+  oog (28,20) 0->A  pixelkopie Capybarrel (23,36)
+  oog (30,20) C->0  pixelkopie Capybarrel (25,36)
+  tanden (17,32) 0->W  tand 1 px doorgetrokken (Capybarrel rij 45)
+  tanden (18,32) 0->9  tand 1 px doorgetrokken (Capybarrel rij 45)
+  tanden (19,32) 0->W  tand 1 px doorgetrokken (Capybarrel rij 45)
+  tanden (17,33) B->0  onderlijn tanden (Capybarrel rij 46) 1 px lager
+  tanden (18,33) B->0  onderlijn tanden (Capybarrel rij 46) 1 px lager
+  tanden (19,33) B->0  onderlijn tanden (Capybarrel rij 46) 1 px lager
+  tanden (20,33) B->0  onderlijn tanden (Capybarrel rij 46) 1 px lager
+  neusV3 (14,20) A->9  modelneus label 22 in neusgrijs
+  neusV3 (15,20) A->9  modelneus label 22 in neusgrijs
+  neusV3 (16,20) C->9  modelneus label 22 in neusgrijs
+  neusV3 (17,20) C->9  modelneus label 22 in neusgrijs
+  neusV3 (18,20) C->9  modelneus label 22 in neusgrijs
+  neusV3 (19,20) C->9  modelneus label 22 in neusgrijs
+  neusV3 (20,20) A->3  modelneus label 19 in neusgrijs
+  neusV3 (21,20) C->3  modelneus label 20 in neusgrijs
+  neusV3 (15,21) A->3  modelneus label 19 in neusgrijs
+  neusV3 (16,21) A->3  modelneus label 19 in neusgrijs
+  neusV3 (17,21) A->3  modelneus label 19 in neusgrijs
+  neusV3 (18,21) A->3  modelneus label 19 in neusgrijs
+  neusV3 (19,21) A->3  modelneus label 19 in neusgrijs
+  neusV3 (20,21) A->3  modelneus label 19 in neusgrijs
+  neusV3 (21,21) A->3  modelneus label 19 in neusgrijs
+  neusV3 (16,22) A->3  modelneus label 19 in neusgrijs
+  neusV3 (17,22) A->3  modelneus label 19 in neusgrijs
+  neusV3 (18,22) A->3  modelneus label 19 in neusgrijs
+  neusV3 (19,22) D->0  modelneus label 4 in neusgrijs
+  neusV3 (20,22) A->3  modelneus label 19 in neusgrijs
+  neusV3 (21,22) A->3  modelneus label 19 in neusgrijs
+  neusV3 (14,23) C->9  modelneus label 22 in neusgrijs
+  neusV3 (15,23) A->9  modelneus label 22 in neusgrijs
+  neusV3 (16,23) A->3  modelneus label 19 in neusgrijs
+  neusV3 (17,23) A->3  modelneus label 19 in neusgrijs
+  neusV3 (18,23) A->3  modelneus label 19 in neusgrijs
+  neusV3 (19,23) A->3  modelneus label 19 in neusgrijs
+  neusV3 (20,23) A->3  modelneus label 19 in neusgrijs
+  neusV3 (21,23) A->3  modelneus label 19 in neusgrijs
+  neusV3 (14,24) C->9  modelneus label 22 in neusgrijs
+  neusV3 (15,24) A->3  modelneus label 19 in neusgrijs
+  neusV3 (16,24) A->3  modelneus label 19 in neusgrijs
+  neusV3 (17,24) D->0  modelneus label 8 in neusgrijs
+  neusV3 (18,24) A->3  modelneus label 19 in neusgrijs
+  neusV3 (19,24) A->3  modelneus label 19 in neusgrijs
+  neusV3 (20,24) A->3  modelneus label 19 in neusgrijs
+  neusV3 (21,24) A->3  modelneus label 19 in neusgrijs
+  neusV3 (15,25) A->3  modelneus label 19 in neusgrijs
+  neusV3 (16,25) A->3  modelneus label 19 in neusgrijs
+  neusV3 (17,25) D->0  modelneus label 4 in neusgrijs
+  neusV3 (18,25) A->3  modelneus label 19 in neusgrijs
+  neusV3 (19,25) A->3  modelneus label 19 in neusgrijs
+  neusV3 (20,25) A->3  modelneus label 19 in neusgrijs
+  neusV3 (21,25) A->3  modelneus label 19 in neusgrijs
+  neusV3 (15,26) A->3  modelneus label 19 in neusgrijs
+  neusV3 (16,26) A->3  modelneus label 19 in neusgrijs
+  neusV3 (17,26) D->0  modelneus label 8 in neusgrijs
+  neusV3 (18,26) A->3  modelneus label 19 in neusgrijs
+  neusV3 (19,26) A->3  modelneus label 19 in neusgrijs
+  neusV3 (20,26) A->3  modelneus label 19 in neusgrijs
+  neusV3 (21,26) A->3  modelneus label 19 in neusgrijs
+  neusV3 (14,27) C->9  modelneus label 22 in neusgrijs
+  neusV3 (15,27) A->3  modelneus label 19 in neusgrijs
+  neusV3 (16,27) A->3  modelneus label 19 in neusgrijs
+  neusV3 (17,27) D->0  modelneus label 8 in neusgrijs
+  neusV3 (18,27) A->3  modelneus label 19 in neusgrijs
+  neusV3 (19,27) A->3  modelneus label 19 in neusgrijs
+  neusV3 (20,27) A->3  modelneus label 19 in neusgrijs
+  neusV3 (21,27) A->3  modelneus label 19 in neusgrijs
+  neusV3 (15,28) A->3  modelneus label 19 in neusgrijs
+  neusV3 (16,28) D->0  modelneus label 4 in neusgrijs
+  neusV3 (19,28) A->3  modelneus label 19 in neusgrijs
+  neusV3 (20,28) A->3  modelneus label 19 in neusgrijs
+  neusV3 (21,28) A->3  modelneus label 19 in neusgrijs
+  morrillo (21,15) C->3  morrillo (Jordi akkoord): neusgrijs, op de neusrug onder de bovenlijn
+  morrillo (22,15) C->3  morrillo
+  morrillo (23,15) C->3  morrillo
+  morrillo (20,16) C->3  morrillo
+  morrillo (21,16) C->3  morrillo
+  morrillo (22,16) C->3  morrillo
+  wenkbrauw (28,16) C->D  wenkbrauw (Jordi akkoord): donkerste vachttint
+  wenkbrauw (29,16) C->D  wenkbrauw
+  wenkbrauw (30,16) C->D  wenkbrauw

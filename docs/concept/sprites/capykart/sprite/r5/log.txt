@@ -1,0 +1,129 @@
+Capykart r5 = r4 V2 met tanden uit echte sprites (frame 1). Gridcoordinaten (beeld-x = grid-x + 1).
+Alles buiten de tandzone pixel-identiek aan V2.
+
+T1 weg (17,30) W->A  oude V2-tand terug naar V1 (model)
+T1 weg (18,30) 9->A  oude V2-tand terug naar V1 (model)
+T1 weg (19,30) W->0  oude V2-tand terug naar V1 (model)
+T1 weg (20,30) 0->D  oude V2-tand terug naar V1 (model)
+T1 weg (16,31) 0->.  oude V2-tand terug naar V1 (model)
+T1 weg (17,31) W->0  oude V2-tand terug naar V1 (model)
+T1 weg (18,31) 9->0  oude V2-tand terug naar V1 (model)
+T1 weg (19,31) W->0  oude V2-tand terug naar V1 (model)
+T1 weg (20,31) D->0  oude V2-tand terug naar V1 (model)
+T1 weg (16,32) 0->D  oude V2-tand terug naar V1 (model)
+T1 weg (17,32) W->0  oude V2-tand terug naar V1 (model)
+T1 weg (18,32) 9->0  oude V2-tand terug naar V1 (model)
+T1 weg (19,32) W->0  oude V2-tand terug naar V1 (model)
+T1 weg (16,33) 7->B  oude V2-tand terug naar V1 (model)
+T1 weg (17,33) 0->B  oude V2-tand terug naar V1 (model)
+T1 weg (18,33) 0->B  oude V2-tand terug naar V1 (model)
+T1 weg (19,33) 0->B  oude V2-tand terug naar V1 (model)
+T1 weg (20,33) 0->B  oude V2-tand terug naar V1 (model)
+T1 tand (17,30) A->0  uit bibarel/anim_front.png (18,22) index 3
+T1 tand (18,30) A->9  uit bibarel/anim_front.png (19,22) index 7
+T1 tand (19,30) 0->9  uit bibarel/anim_front.png (20,22) index 7
+T1 tand (20,30) D->9  uit bibarel/anim_front.png (21,22) index 7
+T1 tand (21,30) D->0  uit bibarel/anim_front.png (22,22) index 3
+T1 tand (16,31) .->0  uit bibarel/anim_front.png (17,23) index 3
+T1 tand (17,31) 0->W  uit bibarel/anim_front.png (18,23) index 8
+T1 tand (18,31) 0->W  uit bibarel/anim_front.png (19,23) index 8
+T1 tand (19,31) 0->9  uit bibarel/anim_front.png (20,23) index 7
+T1 tand (20,31) 0->W  uit bibarel/anim_front.png (21,23) index 8
+T1 tand (21,31) 0->W  uit bibarel/anim_front.png (22,23) index 8
+T1 tand (16,32) D->0  uit bibarel/anim_front.png (17,24) index 3
+T1 tand (17,32) 0->W  uit bibarel/anim_front.png (18,24) index 8
+T1 tand (18,32) 0->W  uit bibarel/anim_front.png (19,24) index 8
+T1 tand (19,32) 0->9  uit bibarel/anim_front.png (20,24) index 7
+T1 tand (20,32) 0->W  uit bibarel/anim_front.png (21,24) index 8
+T1 tand (21,32) D->W  uit bibarel/anim_front.png (22,24) index 8
+T1 tand (22,32) D->0  uit bibarel/anim_front.png (23,24) index 3
+T1 tand (17,33) B->9  uit bibarel/anim_front.png (18,25) index 7
+T1 tand (18,33) B->W  uit bibarel/anim_front.png (19,25) index 8
+T1 tand (19,33) B->9  uit bibarel/anim_front.png (20,25) index 7
+T1 tand (20,33) B->W  uit bibarel/anim_front.png (21,25) index 8
+T1 tand (21,33) D->9  uit bibarel/anim_front.png (22,25) index 7
+T1 tand (18,34) 7->0  uit bibarel/anim_front.png (19,26) index 3
+T1 tand (19,34) 7->0  uit bibarel/anim_front.png (20,26) index 3
+T1 tand (20,34) B->0  uit bibarel/anim_front.png (21,26) index 3
+T2 weg (17,30) W->A  oude V2-tand terug naar V1 (model)
+T2 weg (18,30) 9->A  oude V2-tand terug naar V1 (model)
+T2 weg (19,30) W->0  oude V2-tand terug naar V1 (model)
+T2 weg (20,30) 0->D  oude V2-tand terug naar V1 (model)
+T2 weg (16,31) 0->.  oude V2-tand terug naar V1 (model)
+T2 weg (17,31) W->0  oude V2-tand terug naar V1 (model)
+T2 weg (18,31) 9->0  oude V2-tand terug naar V1 (model)
+T2 weg (19,31) W->0  oude V2-tand terug naar V1 (model)
+T2 weg (20,31) D->0  oude V2-tand terug naar V1 (model)
+T2 weg (16,32) 0->D  oude V2-tand terug naar V1 (model)
+T2 weg (17,32) W->0  oude V2-tand terug naar V1 (model)
+T2 weg (18,32) 9->0  oude V2-tand terug naar V1 (model)
+T2 weg (19,32) W->0  oude V2-tand terug naar V1 (model)
+T2 weg (16,33) 7->B  oude V2-tand terug naar V1 (model)
+T2 weg (17,33) 0->B  oude V2-tand terug naar V1 (model)
+T2 weg (18,33) 0->B  oude V2-tand terug naar V1 (model)
+T2 weg (19,33) 0->B  oude V2-tand terug naar V1 (model)
+T2 weg (20,33) 0->B  oude V2-tand terug naar V1 (model)
+T2 tand (16,30) 0->9  uit bidoof/anim_front.png (21,43) index 12
+T2 tand (17,30) A->9  uit bidoof/anim_front.png (22,43) index 12
+T2 tand (18,30) A->9  uit bidoof/anim_front.png (23,43) index 12
+T2 tand (19,30) 0->9  uit bidoof/anim_front.png (24,43) index 12
+T2 tand (20,30) D->9  uit bidoof/anim_front.png (25,43) index 12
+T2 tand (21,30) D->9  uit bidoof/anim_front.png (26,43) index 12
+T2 tand (22,30) A->9  uit bidoof/anim_front.png (27,43) index 12
+T2 tand (16,31) .->0  uit bidoof/anim_front.png (21,44) index 5
+T2 tand (17,31) 0->9  uit bidoof/anim_front.png (22,44) index 12
+T2 tand (18,31) 0->9  uit bidoof/anim_front.png (23,44) index 12
+T2 tand (19,31) 0->3  uit bidoof/anim_front.png (24,44) index 13
+T2 tand (20,31) 0->9  uit bidoof/anim_front.png (25,44) index 12
+T2 tand (21,31) 0->9  uit bidoof/anim_front.png (26,44) index 12
+T2 tand (16,32) D->0  uit bidoof/anim_front.png (21,45) index 5
+T2 tand (17,32) 0->W  uit bidoof/anim_front.png (22,45) index 8
+T2 tand (18,32) 0->W  uit bidoof/anim_front.png (23,45) index 8
+T2 tand (19,32) 0->3  uit bidoof/anim_front.png (24,45) index 13
+T2 tand (20,32) 0->W  uit bidoof/anim_front.png (25,45) index 8
+T2 tand (21,32) D->W  uit bidoof/anim_front.png (26,45) index 8
+T2 tand (22,32) D->0  uit bidoof/anim_front.png (27,45) index 5
+T2 tand (17,33) B->0  uit bidoof/anim_front.png (22,46) index 5
+T2 tand (18,33) B->0  uit bidoof/anim_front.png (23,46) index 5
+T2 tand (19,33) B->0  uit bidoof/anim_front.png (24,46) index 5
+T2 tand (20,33) B->0  uit bidoof/anim_front.png (25,46) index 5
+T2 tand (21,33) D->0  uit bidoof/anim_front.png (26,46) index 5
+T3 weg (17,30) W->A  oude V2-tand terug naar V1 (model)
+T3 weg (18,30) 9->A  oude V2-tand terug naar V1 (model)
+T3 weg (19,30) W->0  oude V2-tand terug naar V1 (model)
+T3 weg (20,30) 0->D  oude V2-tand terug naar V1 (model)
+T3 weg (16,31) 0->.  oude V2-tand terug naar V1 (model)
+T3 weg (17,31) W->0  oude V2-tand terug naar V1 (model)
+T3 weg (18,31) 9->0  oude V2-tand terug naar V1 (model)
+T3 weg (19,31) W->0  oude V2-tand terug naar V1 (model)
+T3 weg (20,31) D->0  oude V2-tand terug naar V1 (model)
+T3 weg (16,32) 0->D  oude V2-tand terug naar V1 (model)
+T3 weg (17,32) W->0  oude V2-tand terug naar V1 (model)
+T3 weg (18,32) 9->0  oude V2-tand terug naar V1 (model)
+T3 weg (19,32) W->0  oude V2-tand terug naar V1 (model)
+T3 weg (16,33) 7->B  oude V2-tand terug naar V1 (model)
+T3 weg (17,33) 0->B  oude V2-tand terug naar V1 (model)
+T3 weg (18,33) 0->B  oude V2-tand terug naar V1 (model)
+T3 weg (19,33) 0->B  oude V2-tand terug naar V1 (model)
+T3 weg (20,33) 0->B  oude V2-tand terug naar V1 (model)
+T3 tand (18,30) A->W  uit raticate/anim_front.png (14,41) index 1
+T3 tand (19,30) 0->W  uit raticate/anim_front.png (15,41) index 1
+T3 tand (20,30) D->3  uit raticate/anim_front.png (16,41) index 14
+T3 tand (21,30) D->0  uit raticate/anim_front.png (17,41) index 15
+T3 tand (16,31) .->0  uit raticate/anim_front.png (12,42) index 15
+T3 tand (17,31) 0->W  uit raticate/anim_front.png (13,42) index 1
+T3 tand (18,31) 0->W  uit raticate/anim_front.png (14,42) index 1
+T3 tand (19,31) 0->W  uit raticate/anim_front.png (15,42) index 1
+T3 tand (20,31) 0->9  uit raticate/anim_front.png (16,42) index 13
+T3 tand (16,32) D->0  uit raticate/anim_front.png (12,43) index 15
+T3 tand (17,32) 0->3  uit raticate/anim_front.png (13,43) index 14
+T3 tand (18,32) 0->W  uit raticate/anim_front.png (14,43) index 1
+T3 tand (19,32) 0->W  uit raticate/anim_front.png (15,43) index 1
+T3 tand (20,32) 0->W  uit raticate/anim_front.png (16,43) index 1
+T3 tand (21,32) D->0  uit raticate/anim_front.png (17,43) index 15
+T3 tand (17,33) B->0  uit raticate/anim_front.png (13,44) index 15
+T3 tand (18,33) B->9  uit raticate/anim_front.png (14,44) index 13
+T3 tand (19,33) B->3  uit raticate/anim_front.png (15,44) index 14
+T3 tand (20,33) B->W  uit raticate/anim_front.png (16,44) index 1
+T3 tand (21,33) D->0  uit raticate/anim_front.png (17,44) index 15
+T3 tand (17,34) 7->0  uit raticate/anim_front.png (13,45) index 15

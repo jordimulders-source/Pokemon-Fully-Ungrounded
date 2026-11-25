@@ -1,0 +1,29 @@
+Capykart r14 (24 nov) - maker-log. Basis: sprite/r13/capykart_creme.png en capykart_wit.png. Script: maak_r14.py (bouwt beide + controles -> controle.txt), vel: vel_r14.py.
+Alleen torenzone (x>=42, y<=35) gewijzigd; achterste hoepel onder rij 35 = r13 (valt buiten de zone, niet aangeraakt).
+
+TOREN (opdracht 1)
+- Drie gelijke blokken, x46-57 (12 breed incl. lijn; 1 px smaller dan r13 zodat rechts dek zichtbaar is), elk 6 rijen + 1 naad = 7 hoog: breder dan hoog, voorvlak 6x6 (vierkant) + zijvlak 4 breed (verkort), verhouding voor:zij ~ model (6,7 : 5,4).
+- Naden zijn rechte horizontale zwarte lijnen over de hele breedte (zoals het model; alle naden evenwijdig), geen zigzag meer. Naad loopt ook door de linker omlijning (inkeping) zodat elk blok los leest.
+- Bevel: rij direct onder elke naad = licht bovenrandje. Voorvlak: rood 14 (crème, perzik) / 9 (wit), blauw 9, geel 9 (wit: 9 wit boven geel 14; crème: geel voorvlak is zelf al 9, daar valt het randje op het voorvlak weg). Zijvlak: randje in de voorvlaktint (geel 5, rood 12, blauw 10) boven het donkere zijvlak (6/7/8).
+- Licht voorvlak links, donker zijvlak rechts; lichtkant-omlijning in eigen donkere tint (geel 4, rood 7, blauw 8), schaduwkant en naden zwart.
+- Dakje: 2 px overstek links en rechts (x44-59), top rij 2, nok boven de voor/zij-hoek (x52|53): licht vlak F links, donker B rechts, zwarte eavelijn rij 11. Rechts onderaan 2 rijen recht (dakrand). Leest als dakje.
+- Toren staat op de voet rij 32 (r13: voet rij 33, links schuin).
+
+HOEPEL (opdracht 2)
+- Geen hoepel meer boven/op het dek tegen de voet: rij 33 onder de voet is contactschaduw (D), de band komt daar onder vandaan op rij 34, loopt over de dekrand (glanspixel 9 op (49,35), zoals de kruinglans van de voorste hoepel) en gaat dan als r13 omlaag langs de voorkant van de achterbak.
+- Variant getest waarin de band tot tegen de voetlijn doorloopt (rij 33): leest weer als paal onder de toren; verworpen.
+
+DEK (opdracht 3)
+- Dek rondom de voet: voor de voet rijen 34-35 licht (5), rechts x58-60 (rij 31-35, schuine rechterrand gelijk aan r13), links x44-45 lichte rand (r13).
+- Contactschaduw: rij 33 x47-58 D en x58 rij 32 (schaduw valt rechtsonder).
+
+CONTROLES (controle.txt)
+pixels anders dan r13 buiten torenzone: 0 (crème), 0 (wit)
+silhouet: 30 px verschil, alle in de torenzone (11 erbij: dakje-top/overstek, dek; 19 weg: oude torenrand rechts x58, oude driehoek)
+bevroren gezicht (66 px): crème diff 0, wit diff 0
+crème 16 kleuren, wit 16 kleuren (incl. transparant)
+pixels anders in torenzone: 175
+
+EIGEN BLIK OP 1x
+- Leest als drie losse speelgoedblokken met dakje, gestapeld op de achterbak; dek en contactschaduw maken dat hij erop staat. Geen kleurpotlood meer.
+- Zwak/eerlijk: (a) crème: geel blok heeft geen zichtbaar randje op het voorvlak (palet vol, geen lichtere geel); alleen op het zijvlak. (b) Blokken zijn vlak frontaal (zoals het model), geen zichtbaar bovenvlak in perspectief; het bevel-randje doet dat werk. (c) Wit: het witte randje is fel; ter keuze. (d) Hoepel staat nog steeds verticaal onder het blauwe voorvlak (positie r13, buiten de zone); de onderbreking door schaduw + licht dek + glans maakt hem tot band om de bak, maar hij lijnt nog uit met de toren.

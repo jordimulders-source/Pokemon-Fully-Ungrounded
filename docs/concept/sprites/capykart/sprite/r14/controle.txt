@@ -1,0 +1,6 @@
+pixels anders dan r13 buiten torenzone (x>=42,y<=35): 0 (crème), 0 (wit)
+silhouet: 30 px verschil, alle in torenzone: True (11 erbij, 19 weg)
+bevroren gezicht (66 px): crème diff 0, wit diff 0
+crème: 16 kleuren incl. transparant
+wit: 16 kleuren incl. transparant
+pixels anders in torenzone: 175

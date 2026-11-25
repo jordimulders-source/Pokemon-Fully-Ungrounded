@@ -1,0 +1,113 @@
+Capykart eindkeuring_dc (Dragonfly Cave: schaduw, belijning, kleurtinten), 24 nov
+Aanleiding (Jordi, letterlijk): "nou geen goede eindkeuring dan, schaduw, belijning, kleurtinten, dragonflycave".
+Bron: eindkeuring_r17/capykart.png (silhouet, lijnposities, blokvlakken, gezicht) + referenties/model_r5.png (helderheid per pixel, gemeten op spriteschaal).
+Bouwen (vanuit capykart/): python3 eindkeuring_dc/bouw.py && python3 eindkeuring_dc/vel.py && python3 eindkeuring_dc/controle.py > eindkeuring_dc/controle.txt
+Scripts: delen.py (onderdelenkaart, alleen indelen), bouw.py (tinten + lijnen + palet), controle.py, vel.py, kijk.py (uitsnede nieuw|vorige|model).
+
+== Wat NIET veranderd is ==
+- Silhouet: diff 0 t.o.v. eindkeuring_r17 (assert in bouw.py; controle.txt: "silhouet-diff t.o.v. eindkeuring_r17: 0").
+- Geen pixel hertekend: elke vulpixel houdt zijn plek; alleen de tint (paletindex) is gekozen. Lijnposities = die van r17 (alleen zwart <-> eigen donkerste tint).
+- Oog + wenkbrauw, tanden + tandenkader, morrillo, neusgaten, mond: pixels 1-op-1 (rol behouden: zwart, lijnbruin, grijs, wit->creme). Alleen de paletkleur van hun lijn-/grijstint schuift mee.
+- Blokvlakken (welke pixel licht/donker vlak is) en het dak: uit r17 = kale reductie van het model.
+
+== Palet (16 incl. transparant) en rollen ==
+idx  kleur            L   hue  rol
+0    (152,208,160)    -   -    transparant
+1    (24,17,28)       20  -    zwart: buitenlijn schaduwkant + binnenlijnen ("outline shadows are always black (or ever-so-slightly off-black)", r.96)
+2    B0 (98,44,42)    59  2    bruine lijn/selout (vacht, hout, rood blok); naden in het hout
+3    B1 (158,62,54)   89  4    schaduw hout + nek; donkere zijkant rood blok
+4    B2 (190,102,64)  123 18   midden hout; schaduw vacht; selout geel blok
+5    B3 (216,134,78)  152 24   licht hout; midden vacht; zijkant geel blok
+6    B4 (238,174,104) 185 31   licht vacht (bolling kop); slagschaduw dak op geel
+7    HL (150,158,176) 157 221  hoepel licht; bovenkant blauw blok
+8    HD (78,76,94)    78  246  hoepel donker; morrillo; tandschaduw
+9    CR (250,238,184) 235 49   tanden
+10   GE (240,202,72)  198 46   geel blok
+11   RO (232,90,82)   131 3    rood blok licht vlak
+12   BL (90,144,210)  135 213  blauw licht vlak
+13   BD (58,94,164)   91  219  blauw donker vlak + selout
+14   GL (104,174,92)  143 111  dak licht vlak
+15   GD (56,122,84)   97  145  dak donker vlak + selout
+Bruinramp: 5 tinten, stappen 31/34/29/33 in L (maatstaf Zapacha 85/128/158/190, Skinguin rood 52/74/110/154: 30-45), hue 2->4->18->24->31: licht warmer/geler, schaduw roder ("change the hue ... or possibly something slightly in the blue direction from there for shadows", r.144-145; in bruin = naar rood, zoals Zapacha 20->36 en Skinguin 349->7).
+"the relative luminosity of the shades on the original sprite should always be maintained" (r.106-107): volgorde licht/donker per vlak = die van het model.
+
+== Vacht en hout los van elkaar (opdracht 2) ==
+Het model zelf: kop lichter (214,125,77)/(221,145,95), auto donkerder (164,88,56)/(183,107,67). Dus: vacht = B2/B3/B4 (oranjer, lichter), hout = B1/B2/B3 (roder, donkerder); ze delen B2 en B3, maar de hoofdtoon verschilt (kop B3, auto B2). Op 1x (vel onderaan) komt de kop los van de auto; de nek zit in de schaduw onder de kop (B1/B2, zoals het model hem donkerder heeft).
+
+== Werkwijze per stap (bouw.py) ==
+1 Volume per onderdeel: koepel uit de afstand tot de rand van het onderdeel (vorm loopt onder hoepel/binnenlijn door), normaal -> lambert met licht linksboven-voor; gemengd met de modelhelderheid van die pixel (z-score binnen het onderdeel). Per onderdeel 3 niveaus (schaduw/midden/licht) op kwantielen. Zo komt licht op de bolling linksboven en een sikkel rechts/onder die de omtrek volgt, en blijven de modelvlakken (lichte kapbovenkant, donkere nek, wielbolling) staan.
+  "all Pokémon sprites have their light source in the top left" (r.508); "If you imagine the light is a can of spray paint ... the shadows should be the parts the paint doesn't reach" (r.510-513); "Pikachu is mostly made of curved surfaces, which means that the shading should also curve around the shape of the body" (r.515-516).
+  Gewicht koepel/model: kop .75/1.0, nek .8/.7, kap .55/1.0 (model heeft hier een duidelijk bovenvlak en voorvlak), midden/achter .9/.8-.7, wielen 1.5/.45 (rond: koepel leidt).
+2 Tintvlekjes < 3 px binnen een onderdeel -> meest voorkomende buurtint (geen middelen, alleen een bestaande buurtint).
+2b Nerf/plankranden/wielnaaf alleen waar het model ze heeft (r17-index 2 = modeldonker, of lokaal >28 L donkerder dan de 5x5-mediaan): één tintstap donkerder; alleen in kap/midden/achter waar het model < L78 is: B0-naad. In de vacht nooit onder de schaduwtint. Wielen: alleen één tintstap (opdracht: "Nerf rustig: één tintstap").
+3 Toren: vlakken uit r17; per kubus de vlakken die het model toont:
+  geel: voorkant GE, zijkant B3 (model kleurt die zijkant houtbruin), slagschaduw van het dak 1 rij B4 op de voorkant / B2 op de zijkant, selout B2.
+  rood: licht vlak RO, donker vlak B1, bovenkant onder het gele blok B1 (schaduw), onderrand B0.
+  blauw: bovenstrook HL (model: lichte bovenkant, 2 px), licht vlak BL, donker vlak BD.
+  dak: licht vlak GL, donker vlak GD; zwarte lijn onder de dakrand blijft zwart (model).
+4 Belijning. Buitenrand (230 px): richting naar de achtergrond gemeten; lichtkant (boven, linksboven, links in de bovenhelft van het onderdeel) -> eigen donkerste tint (SEL), anders zwart.
+  "we take the base outlining shade for every color and color all of the outline except the shadows in that color, and remove the clusters so that the outline is always one pixel wide" (r.421-423); "The outlines must be reasonably dark" (r.117).
+  Binnenlijnen (200 r17-zwart): blijven zwart (193), behalve 7 in hout/vacht die geheel tussen lichte vlakken liggen -> B0. Toren en hoepel houden hun zwarte lijnen (model).
+5 Laatste vlekjesronde hout/vacht: 37 px.
+2c (na eigen blik) hout: nerf alleen als streep van >= 3 px; korte krasjes op de kap vervallen.
+
+== Resultaat per zone (px per tint, incl. eigen buitenrand) ==
+kop 331 {'B3': 164, 'B4': 73, 'B2': 72, 'B0': 22}
+nek 174 {'B1': 93, 'B2': 54, 'B3': 27}
+kap 416 {'B2': 167, 'B3': 107, 'B0': 70, 'B1': 70, 'K': 2}
+midden 188 {'B2': 57, 'B0': 53, 'B1': 40, 'B3': 38}
+achter 104 {'B1': 30, 'B0': 28, 'B3': 23, 'B2': 23}
+wiel_v 135 {'B2': 45, 'B1': 42, 'B3': 30, 'B0': 18}
+wiel_a 123 {'B2': 39, 'B1': 39, 'B3': 26, 'B0': 19}
+wiel_ver 14 {'B0': 14}
+hoepel 91 {'HL': 54, 'HD': 37}
+geel 70 {'GE': 27, 'B3': 22, 'B2': 14, 'B4': 6, 'K': 1}
+rood 96 {'B1': 45, 'RO': 35, 'B0': 12, 'K': 4}
+blauw 71 {'BD': 49, 'BL': 20, 'HL': 2}
+dak 78 {'GL': 41, 'GD': 36, 'K': 1}
+gezicht 55 {'K': 22, 'HD': 14, 'CR': 10, 'B0': 9}
+buitenrand 230 zwart 164
+binnenlijnen r17-zwart 200 -> blijft zwart 193 -> eigen donkerste tint 7
+vlekjesronde px 37
+
+== Controles (controle.txt) ==
+- silhouet-diff 0; 16 kleuren incl. transparant.
+- om-en-om zwart/selout op de buitenrand: 0. Lichte kleur op de buitenrand: geen.
+- zwart op de buitenrand per richting: boven 0/22, linksboven 3/27, links 23/40, rechtsboven 17/20, rechts 50/50, rechtsonder 16/16, onder 36/36, linksonder 19/19.
+  Maatstaf Dundragoon: boven 6/28, linksboven 0/28, links 19/35.
+- tintvlekjes < 3 px: 11, allemaal lijn/naad (B0 op de rand), de rode inkeping (45,18) en (45-46,25) uit het model, de onderrand van het gele blok (46-47,17) en (53-54,17), de blauwe bovenstrook (44-45,26) en de 2 tandschaduwpixels (beschermd).
+
+== Eigen blik (8x en 1x naast Dundragoon en Skinguin) ==
+Beter dan eindkeuring_r17: elk groot vlak heeft nu licht/midden/schaduw (kop: B4-bolling linksboven, sikkel B2 langs kaak en achterkop; nek in de schaduw; kap: licht bovenvlak, voorvlak midden met de verticale planken van het model; wielen: lichte bolling linksboven, donkere sikkel rechtsonder; achterbak: planken met lichte bovenkant). Lijnen: bovenkant/linksboven in eigen bruin, schaduwkant zwart, zoals Dundragoon. Vacht en hout lopen op 1x niet meer in elkaar over.
+Zwakke punten, eerlijk:
+1 Rood blok: de donkere zijkant is B1 (158,62,54), gedeeld met de houtschaduw (palet vol). Leest als donkerrood, maar iets bruiner dan het model (205,61,65).
+2 Kop: de lichte B4-bolling op voorhoofd en snuitrug is groot en geelachtig; Jordi zei eerder "beige werkt niet". B4 is geen beige, maar dit is het punt om eerst naar te kijken.
+3 Hout: was na de eerste versie "krasserig" op de kap (eigen blik); gerepareerd met stap 2c (nerf alleen als streep >= 3 px, zoals de planken in het model). Blijft drukker dan Dundragoon/Skinguin omdat het model hout met nerf is; de nek houdt zijn modelvachtlijnen.
+4 Blokken: alleen het blauwe blok heeft in het model een zichtbare bovenkant (2 px); geel en rood krijgen hun derde tint uit de slagschaduw. Geen bovenvlakken verzonnen.
+
+==================== Variant b (coördinator, 24 nov) ====================
+Bestanden: capykart_b.png, capykart_b_8x.png, vel_b.png (a | b | model | Dundragoon | Skinguin; kop/toren 12x a|b|model; 1x licht/donker), controle_b.txt.
+Bouwen: python3 eindkeuring_dc/bouw_b.py && python3 eindkeuring_dc/vel_b.py && python3 eindkeuring_dc/controle_b.py > eindkeuring_dc/controle_b.txt
+bouw_b.py draait bouw.py en past daarna alleen deze drie punten toe:
+1 Binnenlijnen (r17-zwart, niet buitenrand, niet oog/neusgaten/mond): 182 px.
+  - 152 -> donkerste eigen tint: hout/vacht B0; grenzend aan een hoepel HD (de hoepel ligt ervoor); onderrand van een blok = selout van het blok erboven (dak GD, geel B2, rood B0, blauw BD).
+  - 9 blijven zwart waar ze 4-buur zijn van zwarte buitenlijn (aansluiting aan de schaduwkant; daarmee lopen ze taps van zwart naar eigen tint).
+  - 21 blijven zwart in de diepe spleet onder kin/nek (x22-47, y29-42, modelhelderheid < 50).
+  Gids: "we take the base outlining shade for every color and color all of the outline except the shadows in that color" (r.421-422); "place pixels of the outline highlight color on the inside of the outline" (r.453-455).
+  Zwart in de hele sprite: 357 -> 212 px.
+2 Tanden wit (240,240,232) zoals r17b. Slot: index 9 (creme) had na het schrappen van de glans op het gele blok alleen nog de tanden als rol; die kleur is nu wit. Tandpixels zelf ongewijzigd.
+3 Kop: licht alleen op één compacte bolling op het voorhoofd (ellips rond (27,16), x25-31, y15-18) en een smalle strook op de snuitrug (eerste 1-2 vulpixels onder de bovenlijn, x16-24), samen 37 px. Rest middentint B3; schaduw B2 alleen waar hij aan de rand/nek raakt (sikkel rechts/onder), losse donkere stukjes -> midden. B4 minder geel: (238,174,104) -> (236,166,108), hue 31 -> 27. Daardoor 48 kop-px van tint veranderd. Geen losse lichte vlekjes (vlekjesronde in de kop).
+Controles b: silhouet-diff 0 (assert); gezicht (beschermde pixels) ongewijzigd (assert); 16 kleuren; om-en-om 0; geen lichte kleur op de buitenrand; buitenrand per richting gelijk aan a. Tintvlekjes < 3 px: 14, allemaal lijnpixels (B0-uiteinden van taps lopende binnenlijnen) plus dezelfde toren- en tandpixels als in a.
+Eigen blik b naast Dundragoon: de auto is duidelijk lichter van lijn (planken en naden in B0 in plaats van zwart), de hoepels lezen als band met donkere rand. De kop heeft één lichte bolling linksboven met een smalle snuitrug, verder rustig middentint met sikkel. Wat blijft: de verticale donkere lijn van de snuitbox (x18, uit het model) en de vachtlijnen in de nek; de hoepelrand in HD is minder scherp tegen het hout dan zwart was.
+
+==================== Variant c (24 nov): vanuit b, alleen in de kop ====================
+Jordi over b: "het oog is heel raaar, de neus is effen, hadden we dat afgesproken? oren zijn ook anders dan het model en grijze streep is ook weg, is niet bewust neem ik aan?"
+Bestanden: capykart_c.png, capykart_c_8x.png, vel_c.png (kop 16x: r15b | r17b | b | c | model; 8x b | c | model | Dundragoon | Skinguin; 1x), controle_c.txt. Bouwen: python3 eindkeuring_dc/bouw_c.py && python3 eindkeuring_dc/vel_c.py
+Tabellen: snuit r17b 1->B0, 2->B1, 3->B2, 4->B3, 5->B4 (plaat = r17b-3 in B2, snuitlijn/philtrum = r17b-2 in B1); oren r17b 2->B0, 3->B1, 4->B3, 5->B4, zwart op de rand blijft zwart, zwart binnen -> B0; oog r15b 1->K, 4->B1, 3->B2, 2->B3, 14->B4; morrillo: HD = (76,74,84) zoals r17b (HD is ook hoepel donker + tandschaduw).
+Beschermd en ongewijzigd: neusgaten (16,23) (20,23), mond (18,29) (20,30), tanden, morrillo-pixels. Silhouet-diff 0 (assert); geen pixel buiten x15-40, y11-31 anders dan b (assert).
+Per punt (x,y) oud>nieuw:
+silhouet-diff 0 kleuren 16 px anders dan b 113
+1 snuit 71 (18,19)B4>B2 (23,19)B3>B4 (17,20)B4>B2 (18,20)B4>B2 (19,20)B4>B2 (20,20)B3>B2 (21,20)B3>B2 (22,20)B3>B4 (23,20)B3>B4 (16,21)B4>B2 (17,21)B3>B2 (18,21)B3>B2 (19,21)B3>B2 (20,21)B3>B2 (21,21)B3>B2 (22,21)B3>B2 (23,21)B3>B4 (16,22)B3>B2 (17,22)B3>B2 (18,22)B3>B2 (19,22)B3>B2 (20,22)B3>B2 (21,22)B3>B2 (22,22)B3>B2 (17,23)B3>B2 (18,23)B3>B2 (19,23)B3>B2 (21,23)B3>B2 (22,23)B3>B2 (16,24)B3>B2 (17,24)B3>B2 (18,24)B3>B2 (19,24)B3>B2 (20,24)B3>B2 (21,24)B3>B2 (22,24)B3>B2 (16,25)B3>B2 (17,25)B3>B2 (18,25)B2>B1 (19,25)B3>B2 (20,25)B3>B2 (21,25)B3>B2 (22,25)B3>B2 (16,26)B3>B2 (17,26)B3>B2 (18,26)B2>B1 (19,26)B3>B2 (20,26)B3>B2 (21,26)B3>B2 (22,26)B3>B2 (16,27)B3>B2 (17,27)B3>B2 (18,27)B2>B1 (19,27)B3>B2 (20,27)B3>B2 (21,27)B3>B2 (22,27)B3>B2 (16,28)B3>B2 (17,28)B3>B2 (18,28)B2>B1 (19,28)B3>B2 (20,28)B3>B2 (21,28)B3>B2 (17,29)B2>B1 (19,29)B2>B1 (20,29)B3>B2 (19,30)B2>B1 (23,30)B2>B1 (20,31)B2>B1 (21,31)B2>B1 (22,31)B2>B1
+2 oren 29 (26,11)B0>K (27,11)B0>K (25,12)B0>K (26,12)B3>B1 (27,12)B2>B1 (25,13)B0>K (26,13)B3>B1 (27,13)B2>B1 (25,14)B0>K (26,14)B3>B1 (27,14)B2>B0 (28,14)B2>B4 (25,15)B4>B1 (26,15)B4>B1 (36,12)B0>K (37,12)B0>K (37,14)B2>B0 (38,14)B2>B0 (33,15)B0>K (36,15)B2>B0 (37,15)B2>B0 (38,15)B2>B0 (35,16)B2>B0 (36,16)B2>B0 (37,16)B2>B0 (38,16)B2>B0 (35,17)B2>B3 (36,17)B2>B0 (37,17)B2>B0
+4 oog+wenkbrauw 13 (29,17)B4>B3 (30,17)B0>B1 (31,17)B0>B1 (32,17)B0>B1 (29,18)B4>B3 (30,18)B0>B1 (31,18)B0>B1 (32,18)B3>B2 (29,19)B0>B1 (29,20)B0>B1 (30,20)B0>B1 (29,21)B0>B1 (30,21)B3>B2
+3 morrillo: in b stonden de 6 morrillo-pixels (22-24,16) (21-23,17) al op hun plek in HD (78,76,94); nu exact r17b (76,74,84). Als Jordi met 'grijze streep' iets anders bedoelt (bv. de zwarte hoepelranden die in b HD werden), is dat nog open.

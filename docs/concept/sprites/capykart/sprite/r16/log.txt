@@ -1,0 +1,69 @@
+Capykart r16 (24 nov) - maker-log. Basis: r15b/capykart_creme.png. Bouw: python3 r16.py (leest lum_s4.npy uit lum.py; voert kop.py,
+toren.py, opschonen.py uit); controle.py, recht.py (rechte stukken), vel.py. Details per pixel: ops.txt.
+
+CONTROLES (controle.py): silhouet 0 px anders; gezicht 0 px anders (index 3 -> D, zie palet); toren: alleen indices binnen de
+blokken (64 px), geen zwart/transparant verschoven (vorm r15b); hoepels (8/9/1) ongewijzigd; 16 kleuren incl. transparant.
+
+PALET (16): 0 transparant | 1 zwart (32,20,28) | vacht: E (236,186,146) licht, 2 (216,158,116), D (176,106,74), 4 (122,72,50)
+| hout (Capybarrel gemeten: 246,170,102 / 214,128,76 / 174,98,64 / 122,72,50): 5 (246,170,102), 6 (214,128,76), D (176,106,74), 4
+| 9 crème (252,232,150) hoepelglans + bevel geel/blauw/dak | 8 blauwgrijs (88,96,128) hoepelband + blauw donker
+| 3 = NIEUW geel (240,200,72) | C rood (240,92,84) | 7 donkerrood (178,44,56) | A blauw (100,156,232) | F groen licht (96,180,84) | B groen donker (60,140,72).
+Om ruimte te maken voor geel: vachttint 3 (180,122,88) en houttint D zijn samengevoegd tot D (176,106,74) (Capybarrel heeft 166,106,80
+en 174,98,64, dus bijna gelijk). Gevolg: ook de 3-pixels in het (bevroren) gezicht staan nu in D (zelfde plek, iets oranjer).
+Hout is nu het Capybarrel-hout (r15b was 252,186,98 / 238,140,64 / 198,98,50 / 140,72,52: veel feller). Helderheidsstappen hout 185-148-122-84
+(maatstaf viscacha 191-158-129-107-85, Capybarrel 185-148-117-84).
+
+1 AUTO-KLEURWERK UIT HET MODEL
+- Modelhelderheid per spritepixel: lum.py (luminantie model_r5, wit genegeerd via genormaliseerde gauss sigma 4 modelpx, gemeten in
+  het midden van elke spritecel; mapping van px.py: x0=133, p=12.0645, sprite = modelgrid +1 in x; best passend, 112 px silhouetverschil).
+  Getest: sigma 4/5/6/8 en de natieve pixel zelf (49x49, pitch 20,48). Natieve pixel = 1,7x opgeblazen blokjes (rijen dubbel, trappen
+  2-1-2); sigma 4 houdt de nerf en volgt de modelvormen met vloeiende grenzen, sigma 6-8 werd vlak/wazig.
+- Houtgebied = r15b-pixels 5/6/D + aangrenzende/aaneengesloten 4-vlakken onder de kop (niet de buitenrand, niet de kop, niet de toren).
+- Tint per pixel: kwantielen van de modelhelderheid in het houtgebied 18/45/82 % -> drempels 80/101/133: <80 = 4, <101 = D, <133 = 6, rest 5.
+  (Eerst vaste drempels op de modeltinten geprobeerd: 42 % werd de donkerste tint, alles modderig; kleur mag afwijken van het model,
+  de volgorde/vormen blijven die van het model.) Verdeling nu 5/6/D/4 ongeveer 20/37/22/21 %.
+- r15b-lijnpixels (4) zijn alleen gebleven waar het model zelf een donkere lijn heeft (natieve pixel lum<100) en ze 1 px dik zijn: 67 px
+  (wielranden, naden).
+- Opschonen: 133 px (clusters <3 px naar de meest voorkomende buurtint, zelfde groep) en 31 px dubbele lijn langs de hoepels
+  (4 direct naast de 1 px hoepellijn -> buurtint; het model legt zijn eigen hoepellijn net anders).
+- Geen eigen vormen getekend. Hoepels: band + lijnen exact r15b.
+
+2 LIJNEN VAN DE CAPIBARA (gemeten, frame 1)
+- viscacha/af (maatstaf, knaagdier), oor r16-25 x10-13: "2541" = selout 2 (128,72,42, donkerste eigen tint) links, 5/4 vlak, 1 zwart rechts;
+  achterhoofd r28-29: bovenrand "22222" (eigen donker); kin r26 "5555555555111": zwart onder de kop tegen de borst;
+  achterkant kop r29-31: "...55433 88A 1" = geleidelijk 5 -> 4 -> 3, dan pas zwart; nooit twee keer de donkerste tint naast zwart.
+- capybarrel/af r26-31: oren "252"/"2442"/"2451": selout 2 links/boven, zwart 1 rechts; achterhoofd "445551": schaduw 5 (166,106,80) direct
+  naast zwart, geen 2; kop tegen de ton: zwarte kolom 1 (x32).
+- raticate/anim_front r19-31: bovenrand kop C (106,57,0) = donkerste eigen tint; onder/linksonder F = zwart; binnenlijnen (snorhaar,
+  oorrand) in eigen donkere tint.
+- Toegepast (kop.py, alles in ops.txt):
+  a) rechterrand kop en oor: r15b had "4 4 1" (2 px donkerste tint + zwart, x36-38 r11-25) -> binnenste 4 naar D: 12 px
+     ((36,11),(37,13),(37,14),(36,16),(36,17),(37,19)-(37,22),(38,23)-(38,25)), nu "D 4 1" zoals viscacha/capybarrel.
+  b) kaaklijn r29-30 x30-39 (rechte 4-lijn van 10 px, 2 rijen): het model heeft daar geen lijn maar schaduwtint (lum 98-118) -> D: 16 px;
+     kop en nek scheiden nu door de schaduwsikkel van het model (diagonaal x31-38 r23-28). Onder de snuit blijft de donkere lijn (model 47-87).
+  c) snuitlijn x18 r24-27: bovenste pixel (18,24) -> D (taps).
+  Buitenrand kop: lichtkant 4 (bovenrand, snuitvoorkant), schaduwkant 1 - stond al zo in r15b, ongewijzigd. Silhouet niet aangeraakt.
+3 VACHT: model-toewijzing getest (VACHT=model): gaf lichte vlekken op snuit en wang, want de spritekop is groter/anders dan de modelkop;
+  daarom vachttinten van r15b gehouden (E licht linksboven, 2 basis, D sikkel rechts/onder, 4 lijn).
+
+4 TOREN (opdracht coördinator; vorm r15b, toren.py). Gemeten porygon/anim_front: vlakken scheiden door tint, niet door zwart;
+  bovenvlak 4/5 licht, voorvlak 3 midden, schaduwvlak 1 donker; bovenrand selout in donkere eigen tint, rechts/onder zwart.
+  Per kubus: bovenrij = smalle bevel licht (links 3 px), rechts daarvan contactschaduw van het blok erboven (middentint), voorvlak midden,
+  zijvlak donker, linkerkolom gekleurde selout (donkere eigen tint), rechts/onder zwart (r15b).
+  geel 9 / 3 / 6 (hue shift naar oranje hout) | rood E / C / 7 | blauw 9 / A / 8 | dak: F linkervlak, B rechtervlak + selout, 9 als lichte ribbe
+  langs de linker dakrand. Zwarte scheidingsrijen tussen de blokken gebleven (= onderrand van elk blok).
+
+RECHTE STUKKEN >= 4 px buiten de toren (recht.py; binnenkant, buitenrand = silhouet niet meegeteld):
+  r15b: 118 stukken (lijnen h 38 / v 28, tintgrenzen h 31 / v 21), samen 714 px
+  r16 :  72 stukken (lijnen h 21 / v 12, tintgrenzen h 23 / v 16), samen 371 px
+  Wat overblijft: verticale hoepellijnen achter (x49/x51, horen recht), de verticale nerf op de voorkant van de motorkap (x4-17 r45-53,
+  staat zo recht in het model), de plankenranden van het achterblok (x52-61, model) en de bovenrand van de kop (silhouet).
+
+EIGEN BLIK (vel.png): de auto leest nu als het hout van het model (planken, nerf, licht op de motorkap en de linkerkant van de wielen,
+donker onder de borst) i.p.v. de gladde fel-oranje plastic vlakken van r15b; geheel rustiger van tint maar niet wazig (harde grenzen).
+Zwakke punten die blijven (niet zelf getekend, want dan zou ik vormen verzinnen):
+- naaf van het voorwiel leest als een krul/"G" (modelvierkant op 1,7x); naaf achterwiel nauwelijks zichtbaar.
+- nerf op de voorkant van de motorkap staat recht verticaal zoals in het model; volgens Jordi's "zoveel rechte lijnen" zou die mee
+  moeten buigen met de neus, maar dat is tekenen -> keuze voor Claude/Jordi.
+- vacht D is iets oranjer dan r15b-3 (samenvoeging voor het geel); kopschaduw sluit daardoor dichter aan op het hout.
+- blokken: 3 tinten per kubus, maar de bevel is 1 rij; naast porygon nog vrij plat.

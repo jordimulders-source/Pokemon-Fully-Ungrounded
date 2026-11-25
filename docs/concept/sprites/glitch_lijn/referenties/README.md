@@ -1,0 +1,5 @@
+# Referenties glitch-lijn (fan-art van anderen, alleen inspiratie, niet nabouwen)
+Jordi (25 nov): "deze gaan allemaal al wat meer de juiste kant op".
+- `memorix.webp`: Memorix (Stable/Corrupted Forme).
+- `cryptobit_crashabit.webp`: Cryptobit → Crashabit.
+- `bitbyte_lijn.png`: Bitbyte → Gigabite → Terrorbyte (Plassie_Artist, "Pokémon Abyss"); ligt dicht bij ons concept (3 fases, Electric, glitch), dus ons ontwerp moet duidelijk eigen zijn.

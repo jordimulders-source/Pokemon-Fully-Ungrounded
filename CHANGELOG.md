@@ -3344,3 +3344,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.816] - Gaucho-Lombre: startprompt
 - Regionale Lombre (Fighting, fase 2 van de gaucho-lijn): Gemini-startprompt v1 in `docs/concept/sprites/lotad_regional/lombre/gemini/PROMPT.md` (opzet van de Lotad-prompt v7; gauchohoed met platte bol en vlakke rand, kleuren van de Lotad-sprite).
+
+### [v0.0.817] - Gaucho-Lombre: frontsprite af
+- Regionale Lombre (Fighting, fase 2 van de gaucho-lijn): frontsprite af in `docs/concept/sprites/lotad_regional/lombre/af/lombre_gaucho.png` (42×57, 15 kleuren). Model Gemini r1 (gauchohoed met platte bol, vechthouding) overgenomen; mond A5 = Gen 3-Lombre-mond (1 kolom geschrapt) in de snaveltinten van de gaucho-Lotad; ogen naar de Lombre-artwork (r3 A); keuring + DC-eindkeuring (schaduw hoedband, belijning olijf, kleurramps). Op het overzichtsvel (Regional forms).

@@ -84,6 +84,6 @@ Aantal soortconstanten met data in de ROM: 582 (incl. vormen); verschillende Nat
 - **Kleurvarianten:** `tools/grounded/variants/variants.py` neemt de `FU_*`-schakelaars nu zelf mee bij het genereren van `variant_palettes.h`.
 
 ## Typeverdeling hele dex (25 nov, telling Claude)
-Regel (Jordi, 25 nov): regionale vormen komen erbij; "als ze al erin zaten, gaan ze niet eruit".
+Regel (Jordi, 25 nov): regionale vormen komen erbij; "als ze al erin zaten, gaan ze niet eruit" · "als ze niet erin zaten, komen de originele niet erin" (dus geen gewone Jynx, Mr. Mime of Pincurchin).
 Telling per soort (dubbeltype telt bij beide), 542 soorten: behouden lijnen hierboven (types uit de repo, Dudunsparce eruit) + Cosmic-besluiten (Lunatone/Solrock Rock/Cosmic, Clefairy-lijn Fairy/Cosmic, Elgyem-lijn Cosmic) + alle 92 afgemaakte frontsprites (types van het overzichtsvel) + Smoochum en Mime Jr. Tussen haakjes: met de regionale Lotad-lijn Ground/Fighting erbij (3 soorten, aanname).
 Water 96 · Flying 59 · Bug 57 · Grass 57 · Dark 54 · Ground 53 (56) · Poison 52 · Normal 51 · Ghost 50 · Psychic 48 · Electric 46 · Steel 41 · Fire 39 · Dragon 35 · Ice 33 · Rock 33 · Fairy 32 · Fighting 30 (33) · Cosmic 17. Normal/Steel- en Grass/Ghost-lijn nog niet meegeteld (aantal fases open).

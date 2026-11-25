@@ -17,3 +17,4 @@ Open: aantal ogen, naam, evolutiemethode.
 - r2: `gemini/PROMPT_r2.md` (ring klein en op de achtergrond, modules + grote panelen, kern = fase 2-capsule; uitwerking Claude).
 - Jordi: "de bal moet geen losse bal meer zijn maar onderdeel van een groter geheel" · "en misschien moeten we meerdere ballen doen" → r3: `gemini/PROMPT_r3.md`.
 - r3 (`gemini/r3a.png`, `r3b.png`), Jordi: "allebei niet groot genoeg, het leest niet als een evolutie" → r4: `gemini/PROMPT_r4.md` (oogbol klein deel van het geheel, centrale balk met 3 bollen, 4 panelen, vult het vak, ring weg).
+- r4 (`gemini/r4.png`), Jordi: "dat is al wat beter, maar ik vind hem nog iets te simpel".

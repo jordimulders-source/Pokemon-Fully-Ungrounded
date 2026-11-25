@@ -3333,3 +3333,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.813] - Impala: Gemini r1 bekeken, prompt r2
 - `impala_lijn/impala/gemini/r1/impala_r1.png` met Jordi's punten (te veel gekleurd dier, hert i.p.v. impala, oren groter); prompt r2 in `PROMPTS.md`.
+
+### [v0.0.814] - Impala: Gemini r2 bekeken, prompt r3
+- `impala_lijn/impala/gemini/r2/impala_r2.png`; Jordi: stoïcijns, protectorhouding. Prompt r3 in `PROMPTS.md`.

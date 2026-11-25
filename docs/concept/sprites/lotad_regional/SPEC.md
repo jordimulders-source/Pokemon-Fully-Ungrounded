@@ -46,3 +46,4 @@ Prompts in `gemini/PROMPT.md`.
 
 ## Lombre (fase 2)
 - Jordi (25 nov): "de regional lombre, lotad is al af". Startprompt v1 in `lombre/gemini/PROMPT.md` (opzet Lotad-v7; keuzes van Claude daar vermeld).
+- `lombre/r1/gemini_r1.png` (v1): Jordi "vind deze alweer vrij prima".

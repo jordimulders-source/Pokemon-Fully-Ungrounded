@@ -2,9 +2,9 @@
 import sys, numpy as np; from PIL import Image, ImageDraw
 sys.path.insert(0,'gereedschap'); from gemeen import *
 x0,y0,x1,y1=map(int,sys.argv[1:5]); z=24
-M=Image.open(MODEL).convert('RGB'); f=lambda u,ph:ph+0.5+10.24*u
+M=Image.open(MODEL).convert('RGB'); f=lambda u,ph:ph+0.5+P*u
 u0=(x0-X0)/S+U0; u1=(x1-X0)/S+U0; v0=(y0-Y0)/S+V0; v1=(y1-Y0)/S+V0
-a=M.crop((int(f(u0,9.25)),int(f(v0,9.20)),int(f(u1,9.25)),int(f(v1,9.20)))).resize(((x1-x0)*z,(y1-y0)*z),Image.NEAREST)
+a=M.crop((int(f(u0,FX)),int(f(v0,FY)),int(f(u1,FX)),int(f(v1,FY)))).resize(((x1-x0)*z,(y1-y0)*z),Image.NEAREST)
 d=ImageDraw.Draw(a)
 for i,x in enumerate(range(0,a.width,z)):
     d.line([(x,0),(x,a.height)],fill=(0,160,255)); d.text((x+2,2),str(x0+i),fill=(0,90,200))

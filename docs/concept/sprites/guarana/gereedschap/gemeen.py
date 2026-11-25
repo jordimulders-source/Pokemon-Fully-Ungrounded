@@ -1,21 +1,22 @@
-# Gedeelde hulpjes Dundragoon: schaal, overlap natief->sprite, palet, model op spriteschaal, opslaan, labels.
+# Gedeelde hulpjes guarana fase 1: schaal, overlap natief->sprite, palet, model op spriteschaal, opslaan, labels.
 import numpy as np; from PIL import Image
-# natief raster 99x99 (pitch 10,24), figuur x5-90, y6-91 (86x86). Schaal 61/86: figuur 61x61 op x1-61, y1-61.
-S=61/86; U0,V0=5,6; X0,Y0=1,1
-MODEL='referenties/gemini_gekozen_r7.png'; NATIEF='gereedschap/natief.png'
-# 0 transp | 1 zwart | 2-5 geel (olijf lijn/selout, schaduw, midden, licht) | 6-8 blauw (donker, midden, licht) | 9-11 vleugel (donker, midden, licht)
-PAL=[(152,208,160),(16,16,24),
-     (124,112,56),(200,184,96),(236,224,140),(248,244,184),
-     (36,84,116),(62,126,160),(96,164,204),
-     (112,148,172),(180,210,224),(228,244,248)]
-GEEL={2,3,4,5}; BLAUW={6,7,8}; VLEUGEL={9,10,11}
+# natief raster 99x99 (pitch 10,24; fase x 9,25 / y 9,35), figuur x14-84, y19-78 (71x60).
+# Schaal 44/71 (0,620): figuur 44 breed op x10-53 (gecentreerd zoals Bellsprout/Ekans/Hoppip, midden x 31-32), onderkant y51 (Ekans 51).
+S=44/71; U0,V0=14,19; X0,Y0=10,15
+MODEL='model.png'; NATIEF='gereedschap/natief.png'; FX,FY,P=9.25,9.35,10.24
+# 0 transp | 1 zwart | 2-5 rood (donker lijn/selout, schaduw, midden, licht) | 6-9 groen (donker lijn/selout, schaduw, midden, licht) | 10 oogwit 11 oogwit-schaduw
+PAL=[(152,208,160),(16,16,16),
+     (112,32,32),(176,56,48),(224,80,56),(240,136,104),
+     (48,72,48),(96,124,72),(122,154,88),(150,182,108),
+     (248,248,248),(196,200,204)]
+ROOD={2,3,4,5}; GROEN={6,7,8,9}; WIT={10,11}
 def overlap(X,Y,W=99,H=99):
     ua=(X-X0)/S+U0; ub=ua+1/S; va=(Y-Y0)/S+V0; vb=va+1/S
     for v in range(int(np.floor(va)),int(np.ceil(vb))):
         for u in range(int(np.floor(ua)),int(np.ceil(ub))):
             w=max(0,min(ub,u+1)-max(ua,u))*max(0,min(vb,v+1)-max(va,v))*S*S
             if w>1e-9 and 0<=u<W and 0<=v<H: yield u,v,w
-def model_op_schaal():
+def model_op_schaal(bg=(255,255,255)):
     a=np.asarray(Image.open(NATIEF).convert('RGB')).astype(float); out=np.full((64,64,3),255.)
     for Y in range(64):
         for X in range(64):
@@ -41,7 +42,7 @@ def label(mask,acht=True):
                 yy,xx=cy+dy,cx+dx
                 if 0<=yy<mask.shape[0] and 0<=xx<mask.shape[1] and mask[yy,xx] and not lab[yy,xx]: lab[yy,xx]=n; st.append((yy,xx))
     return lab,n
-CH='.KosmlBbcWwv?????'
-def toon(o,y0=8,y1=56,x0=4,x1=60):
+CH='.Krsml6gGhWw?????'
+def toon(o,y0=12,y1=54,x0=6,x1=58):
     print('   '+''.join(str(x%10) for x in range(x0,x1)))
     for y in range(y0,y1): print('%2d '%y+''.join(CH[v] for v in o[y,x0:x1]))

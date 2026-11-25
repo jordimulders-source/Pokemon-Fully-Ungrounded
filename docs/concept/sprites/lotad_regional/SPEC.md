@@ -78,3 +78,4 @@ Prompts in `gemini/PROMPT.md`.
 - Sprite r1 (maker, `ludicolo/sprite/r1/`): 0 = kale reductie (51×62), A/B/C = alleen ponchobladlijnen omgekleurd (38–44 px, 0 verschoven); `vel.png`.
 - Jordi: "stuur de eerste maar naar de eindkeuring en let op de zwarte lange verticale lijn in de poncho" → variant 0 naar keuring + DC-eindkeuring (`ludicolo/eindkeuring/`).
 - Jordi: "het geel moet zoals de rest van de lijn, afwijken van model" → geel = tinten van de Lotad-snavel/Lombre-mond.
+- Jordi: "en het rechteroog heeft nog niet de perfecte vorm"; "mag iets ovaler" → doorgegeven aan de eindkeuring (2 oogvarianten).

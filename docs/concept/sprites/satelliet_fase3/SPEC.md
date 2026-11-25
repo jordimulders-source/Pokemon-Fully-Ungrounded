@@ -19,3 +19,4 @@ Open: aantal ogen, naam, evolutiemethode.
 - r3 (`gemini/r3a.png`, `r3b.png`), Jordi: "allebei niet groot genoeg, het leest niet als een evolutie" → r4: `gemini/PROMPT_r4.md` (oogbol klein deel van het geheel, centrale balk met 3 bollen, 4 panelen, vult het vak, ring weg).
 - r4 (`gemini/r4.png`), Jordi: "dat is al wat beter, maar ik vind hem nog iets te simpel".
 - Inspiratie Jordi (`inspiratie/`): "Deze komen dichter in de buurt, maar we moeten het wel zo maken dat het goed naar een sprite vertaalt" → r5: `gemini/PROMPT_r5.md` (kruisvorm, modules met banden, 3 paar lange panelen).
+- r5 (`gemini/r5.png`), Jordi: "ok dit is qua vorm prima, de antennes vind ik wel lelijk, te groot. Zijn die nog nodig? En misschien kunnen we die ballen met ogen op alle hoeken zetten (waarvan je er 1 natuurlijk niet het oog ziet) Vertaalt het verder goed naar een sprite denk je?" Check op 64 px: `check/r5_64_8x.png`.

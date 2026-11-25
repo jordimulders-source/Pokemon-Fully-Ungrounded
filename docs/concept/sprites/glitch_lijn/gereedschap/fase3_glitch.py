@@ -46,9 +46,13 @@ if len(sys.argv) > 3:
     a = a.copy(); a[hoofd] = r2[hoofd]; fg = fg | hoofd
 glitch = fg & ~gez
 # fase 1 als data
-f1 = Image.open(os.path.join(os.path.dirname(os.path.abspath(__file__)), '../fase1_glitch/af/glitch_fase1.png')).convert('RGBA')
-f = np.asarray(f1).astype(int)
-data = np.concatenate([f[y][f[y, :, 3] > 0, :3] for y in range(64)])
+# Jordi: "en liever dat je fase 2 glitch dan fase 1 glitch gebruikt" -> data uit fase 2 (zonder de gekleurde
+# gezichtspixels, anders lijken er extra ogen/monden te ontstaan)
+BRON = os.environ.get('BRON', 'fase2')
+f1 = Image.open(os.path.join(os.path.dirname(os.path.abspath(__file__)),
+     '../fase2_bug/af/glitch_fase2.png' if BRON == 'fase2' else '../fase1_glitch/af/glitch_fase1.png')).convert('RGBA')
+f = np.asarray(f1).astype(int); fs = f[..., :3].max(2) - f[..., :3].min(2)
+data = np.concatenate([f[y][(f[y, :, 3] > 0) & (fs[y] < 45), :3] for y in range(64) if ((f[y, :, 3] > 0) & (fs[y] < 45)).any()])
 FOUT = {'c': (16, 240, 248), 'C': (140, 246, 246), 'p': (230, 40, 220), 'P': (240, 140, 240), 'y': (248, 240, 64)}
 def vul(seed, stap):
     rnd = random.Random(seed); out = a.copy(); off = rnd.randrange(len(data))

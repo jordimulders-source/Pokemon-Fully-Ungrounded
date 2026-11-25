@@ -52,3 +52,4 @@ Prompts in `gemini/PROMPT.md`.
 - Jordi: model = r1 (mond niet via Gemini). Mondkleur: "de kleur die de snavel van lotad heeft". Mondvorm uit de Gen 3-Lombre, in varianten ter keuze; spritefase gestart (`lombre/sprite/r1/`).
 - Sprite r1 (maker): mondvarianten A/B/C (`lombre/sprite/r1/`). Jordi: "A is het beste maar mag iets kleiner" → `kleiner.py`: A1 (1 kolom geschrapt), A2 (2 kolommen), A3 (1 kolom + 1 rij), A4 (2 kolommen + 1 rij), uit de Lombre-mond geschrapt, niets hertekend; `mond_kleiner_vel.png`.
 - Jordi: "a1 is de vorm van het mond het beste, a2 sluit die beter aan maar is de hele vorm van de mond weg" → A5 = vorm A1, 1 px naar rechts (`mond_A1_A2_A5_vel.png`).
+- Jordi: "A5 akkkord maar zorg dat het hoofd verder consistent is, daarnaast valt het linkeroog nu teveel weg en is het rechteroog nog net niet genoeg lombre maar dan bozer" → sprite r2 (maker).

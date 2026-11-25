@@ -21,3 +21,4 @@ Open: aantal ogen, naam, evolutiemethode.
 - Inspiratie Jordi (`inspiratie/`): "Deze komen dichter in de buurt, maar we moeten het wel zo maken dat het goed naar een sprite vertaalt" → r5: `gemini/PROMPT_r5.md` (kruisvorm, modules met banden, 3 paar lange panelen).
 - r5 (`gemini/r5.png`), Jordi: "ok dit is qua vorm prima, de antennes vind ik wel lelijk, te groot. Zijn die nog nodig? En misschien kunnen we die ballen met ogen op alle hoeken zetten (waarvan je er 1 natuurlijk niet het oog ziet) Vertaalt het verder goed naar een sprite denk je?" Check op 64 px: `check/r5_64_8x.png`.
 - Jordi: "antennes weg, ogen op alle vier, schrijf r6, het oog kleiner is niet erg, maar dan moeten we gewoon zorgen dat we slim designen, dus met wat minder detail dan fase 2 bijv" → r6: `gemini/PROMPT_r6.md`.
+- Jordi: "iris en pupil blijven wel".

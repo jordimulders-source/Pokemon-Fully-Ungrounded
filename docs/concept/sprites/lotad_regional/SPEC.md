@@ -63,3 +63,5 @@ Prompts in `gemini/PROMPT.md`.
 - `ludicolo/r1/gemini_r1.png` (v1).
 - Jordi op r1: "op zich wel leuk deze vorm van de hoed, zolang het maar herkenbaar een gaucho hoed is. Waar lombre wat meer boos is, is deze heel comfortabel, misschien dat we nog 1 specifiek design kenmerk moeten toevoegen om deze ludicolo te laten opvallen en ietsje anders te maken dan de base versie". Voorstellen Claude: gauchosnor van bladeren, bombacha-benen, halfdichte ogen (keuze open).
 - Jordi: "rode punt rechtsonder is de staart".
+- Jordi: "meh we hebben al veel snorren gegeven aan pokemon, misschien wat meer een poncho?" → bijstuur poncho (blad over de schouders).
+- `ludicolo/r2/gemini_r2.png` (bijstuur poncho): Jordi "ok maar hoe zouden we de poncho meer onderdeel van zijn lichaam kunnen maken".

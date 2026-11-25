@@ -3173,3 +3173,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.766] - Cryogonal-evolutie: idee en eerste Gemini-prompt
 - Gekozen idee: "capped column" (zeshoekige ijszuil met sneeuwvlokplaten aan beide uiteinden), compositie A. Besluiten in `docs/concept/sprites/cryogonal_evo/SPEC.md`, prompt r1 in `gemini/PROMPT_r1.md`, regel in `IDEEEN.md`.
+- (25 nov) Cryogonal-evolutie: capped column en Metatron vervallen; Jordi koos de tesseract. Schetsen en prompt r2 in `docs/concept/sprites/cryogonal_evo/`.

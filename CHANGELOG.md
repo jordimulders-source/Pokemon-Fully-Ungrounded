@@ -3292,3 +3292,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.801] - Regionale Jynx: frontsprite kandidaat (r3)
 - `jynx_regional/sprite_r1–r3`: verkleining van Gemini-model r5 (Dundragoon-methode, silhouet-diff 0), keuring BIJNA → reparaties (haarvolume, lijnen, onderlip, rok) → eindkeuring Dragonfly Cave PASS. Ter keuze: variant kinschaduw; klauwen nu haar-donker (model grijsbruin).
+
+### [v0.0.802] - Regionale Jynx: r4/r5
+- r4: rokvouw rechts naar het modelpad; Jordi koos variant B (dwarslijn weg): "rechts beter". r5 = r4 B, verse eindkeuring (schaduw/tinten/lijnen) PASS zonder wijzigingen.

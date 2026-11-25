@@ -3325,3 +3325,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.812] - Regionale Poliwag: frontsprite af
 - `docs/concept/sprites/poliwag_regional/af/poliwag_regional.png` = r1 (Jordi: "helemaal goed", eindkeuring overgeslagen). Op het overzichtsvel (Regional forms). CLAUDE.md, POKEMON.md, TODO.md en lessen (GEMINI.md) bijgewerkt.
+
+### [v0.0.813] - Regionale Poliwhirl: besluiten en Gemini-prompt v1
+- Jordi: hybride, herkenbaar Poliwhirl maar slanker/scherper, grotere kristallen, kleur hele lijn gelijk, twee poten, geen zuignap, handschoenen, ogen bovenop, spiraal. `docs/concept/sprites/poliwhirl_regional/`.

@@ -68,6 +68,20 @@ def maak(seed,onr=0.0,oog=0,vseed=0):
                     if px[xx,yy][3] and r.random()<0.7: px[xx,yy]=donker
         for xx in range(29,36):
             if px[xx,39][3] and r.random()<0.6: px[xx,39]=donker
+    elif oog==3:  # gezicht UIT het materiaal: donkere stukjes uit de bronnen op oog- en mondplek, net scheef
+        def donkerstuk(w,h):
+            best=None
+            for _ in range(200):
+                b=r2.choice(bronnen); x,y=r2.randrange(0,64-w),r2.randrange(0,64-h); c=b.crop((x,y,x+w,y+h))
+                pp=[q for q in c.getdata() if q[3]]
+                if len(pp)<w*h*0.9: continue
+                l=sum(q[0]+q[1]+q[2] for q in pp)/len(pp)
+                if best is None or l<best[0]: best=(l,c)
+            return best[1]
+        ow,oh=r2.choice([(4,4),(4,5),(5,4),(3,5)])
+        for ex,ey in ((24+r2.randrange(-1,2),28+r2.randrange(-1,2)),(38+r2.randrange(-1,2),28+r2.randrange(-1,2))):
+            out.alpha_composite(donkerstuk(ow,oh),(ex,ey))
+        mw=r2.choice([8,10,12]); out.alpha_composite(donkerstuk(mw,2),(32-mw//2+r2.randrange(-2,3),39+r2.randrange(-1,2)))
     else:  # duidelijker maar vaag en neutraal: ogen 3x5 / 4x6 met lichtpuntje, mond als korte lage boog
         ow,oh=(3,5) if oog==1 else (4,6)
         for ex,ey in ((25,28),(39,28)):
@@ -80,7 +94,9 @@ def maak(seed,onr=0.0,oog=0,vseed=0):
             if r2.random()<0.85: px[xx,yy]=donker
     al=out.getchannel('A'); q=out.convert('RGB').quantize(colors=15,method=Image.Quantize.MEDIANCUT).convert('RGBA'); q.putalpha(al)
     return q
-if len(sys.argv)>3 and sys.argv[3]=='drie':
+if len(sys.argv)>3 and sys.argv[3]=='materiaal':
+    ims=[maak(3,o,3,v) for o in (1.3,1.8) for v in range(5)]
+elif len(sys.argv)>3 and sys.argv[3]=='drie':
     combos=[(o,g,v) for o in (1.0,1.6) for g in (1,2) for v in (0,1)]+[(2.2,1,2),(2.2,2,3)]
     ims=[maak(3,o,g,v) for o,g,v in combos]
 else: ims=[maak(s) for s in range(1,11)]

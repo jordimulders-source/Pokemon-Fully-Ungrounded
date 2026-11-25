@@ -3371,3 +3371,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Test 8 (collage van assets): Jordi "betere kant op, maar meer dichtheid"; test 8b dichter (`fase1_glitch/rommel_dicht/vel.png`).
 - Test 9: herkenbare kaartstukken (eigen renderer `kaartbrok.py`), menu-graphics en data, half in elkaar geschoven (`fase1_glitch/assets/vel.png`).
 - Test 10: banen uit grover gepixelde kaartstukken en data, net niet aansluitend, neutraal gezicht (`fase1_glitch/banen/vel.png`).
+- Variant 3 uitgewerkt: onregelmatiger vorm; gezicht uit het materiaal zelf (`fase1_glitch/banen_3b/vel.png`); les in `GRAPHICS.md`.

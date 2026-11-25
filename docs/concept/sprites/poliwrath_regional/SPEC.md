@@ -17,4 +17,4 @@ Eindvorm van de regionale Poliwag-lijn (harlekijnpad, ijs met cinnaber); pre-evo
 
 ## Rondes
 - Prompt v1: `gemini/PROMPT.md` (bijlage `gemini/bijlage_poliwrath.png`).
-- v1 (`gemini/r1/gemini_v1.png`): Jordi "het is iets teveel de originele poliwrath tov de poliwhirl die we gemaakt hebben". Bijsturen in hetzelfde gesprek met de bouw van onze Poliwhirl in woorden (slanker, scherper, langere dunnere ledematen, hoekiger), naam/bijlage trekken Gemini naar de gewone soort (GEMINI.md).
+- v1 (`gemini/r1/gemini_v1.png`): Jordi "het is iets teveel de originele poliwrath tov de poliwhirl die we gemaakt hebben". Bijsturen in hetzelfde gesprek met de bouw van onze Poliwhirl in woorden (slanker, scherper, langere dunnere ledematen, hoekiger), naam/bijlage trekken Gemini naar de gewone soort (GEMINI.md). Jordi: "en de mond ziet er gek uit".

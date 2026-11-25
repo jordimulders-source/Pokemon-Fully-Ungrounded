@@ -18,3 +18,4 @@ Fase 2 van de regionale Poliwag-lijn (harlekijnpad, ijs met cinnaber); pre-evolu
 - **r1 (Jordi, 25 nov):** "ogen veel kleiner, spiraal is geen spiraal, is gewoon opnieuw getekend". Vragen aan Jordi: spiraal A (1-op-1 compleet, groter) / B (verkleind) / C; ogen A (Poliwhirl verkleind) / B (modelogen) / C.
 - **Ogen (Jordi):** "de ogen moetten de grootte van de normale poliwhirl" → Poliwhirls Gen 3-oogpixels op exacte maat, geen extra ring.
 - **Spiraal (Jordi):** "je kan de gemini vorm spiraal pakken, maar dan in de poliwhirl vorm" / "of gewoon die van poliwag maar dan de andere kant op" / "nee niet de andere kant op, hij stopt iets hoger". Varianten r2: S1 = modelspiraal in Poliwhirls verloop; S2 = spiraal van de regionale Poliwag, zelfde draairichting, einde iets hoger.
+- **r2 (Jordi):** "ogen zijn nog steeds te groot, spiraal prima" (basis S2); "ogen moeten poliwhirl grootte zijn" → "naar verhouding ja" (oog/kop zoals bij de gewone Poliwhirl).

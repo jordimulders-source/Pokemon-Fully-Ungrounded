@@ -110,7 +110,7 @@ Modeltekeningen in `docs/concept/ontwerp/<soort>/` (concept A/B/C + ONTWERP.md).
 
 ### Impala-lijn (Jordi, 24–25 nov)
 - **Dikdik → impala → kudu** (3 fases). Dikdik puur Normal; impala en kudu Normal/Steel (Normal/Steel bestaat nog niet; Fighting 4×).
-- Uniek via lichaamspatroon en hoorns; hoorns als gevechtswapens (zwaarden, speren), bij impala en kudu "echt van metaal"; de dikdik heeft "korte houten speren met een metalen uiteinde, niet genoeg om steel te worden". Eis: de hoornvorm van het echte dier blijft kloppen. Hoeft niet Zuid-Amerikaans te zijn. Overdrijven (Jordi, 25 nov): "zodat ze een beetje afwijken van de dieren ook, maar de inspiratie wel nog kenbaar is". Namen en ontwerp open; hele gesprek in `IDEEEN.md` → Impala-lijn.
+- Uniek via lichaamspatroon en hoorns; hoorns als gevechtswapens (zwaarden, speren), bij impala en kudu "echt van metaal"; de dikdik heeft "korte houten speren met een metalen uiteinde, niet genoeg om steel te worden". Eis: de hoornvorm van het echte dier blijft kloppen. Hoeft niet Zuid-Amerikaans te zijn. Overdrijven (Jordi, 25 nov): "zodat ze een beetje afwijken van de dieren ook, maar de inspiratie wel nog kenbaar is". Lichaamskleur (Jordi, 25 nov): dikdik brons → impala zilver → kudu goud. Namen en ontwerp open; hele gesprek in `IDEEEN.md` → Impala-lijn.
 
 ### Octillery-evolutie (Jordi, 10 nov)
 - Remoraid → Octillery → **kraken met wapens**, Water/Steel. Geen oorlogsschip ("bij een warship [zijn] de kanonnen niet pronounced genoeg"); de lijn gaat om afschieten.

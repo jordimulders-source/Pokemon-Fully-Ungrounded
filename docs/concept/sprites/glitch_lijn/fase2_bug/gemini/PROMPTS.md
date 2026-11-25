@@ -76,3 +76,6 @@ Style: official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 
 
 AVOID: insects, antennae, mandibles, wings, symbols or characters on the body, readable text, screens or computers, robots, a muscular brute or monster, sharp teeth, pixel noise, static, small camouflage-like patches, scattered loose pixels, Porygon, Unown, MissingNo.
 ```
+
+## Ronde 4 (25 nov)
+- `r4/r4.png`. Jordi: "ook dit is te willekeurig". Conclusie Claude: zonder vastgelegde basisvorm is corruptie willekeurig; eerst de intacte vorm bepalen.

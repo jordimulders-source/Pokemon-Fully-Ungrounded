@@ -13,3 +13,4 @@ Fase 2 van de regionale Poliwag-lijn (harlekijnpad, ijs met cinnaber); pre-evolu
 
 ## Rondes
 - Prompt v1: `gemini/PROMPT.md` (bijlage `gemini/bijlage_poliwhirl.png`).
+- v1 (`gemini/r1/gemini_v1.png`): Jordi "negeer de ogen want die kan je fixen". Claude: spiraal is ringen + bliksemtekentje, 8–9 kristallen (schouders lezen als vleugels), zwarte borstvlek, iets richting Toxicroak.

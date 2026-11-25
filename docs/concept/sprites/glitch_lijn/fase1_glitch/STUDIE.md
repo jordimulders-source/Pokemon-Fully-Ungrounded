@@ -1,0 +1,16 @@
+# Studie: hoe MissingNo aan zijn sprite komt, en de Gen 3-tegenhanger (25 nov)
+Bron: pret/pokered en pret/pokeemerald (broncode zelf gelezen door een onderzoeksagent); Bulbapedia, Glitch City Wiki en TCRF alleen via zoeksamenvattingen.
+
+## Gen 1: MissingNo
+- MissingNo heeft dexnummer 0; de game leest dan basisgegevens ver voorbij de tabel (trainerdata). Daaruit komen een spritepointer en een maatbyte die nergens op slaan.
+- De decompressor pakt data uit die geen sprite is (Gen 1: RLE per bitvlak, kolomsgewijs, 2 pixels breed) → patronen van strepen en blokjes.
+- **De vorm (omgekeerde L) komt uit een rekenfout, niet uit de data:** de maat (8x8 tegels) past niet in de buffer van 7x7; de centreerformule loopt over in 8 bits, waardoor de rommel alleen in de rechterkolommen en een blok linksonder landt. De rest van de buffer is leeg.
+- Kleuren: Super Game Boy kiest het palet op dexnummer; nummer 0 krijgt het palet van index 0 (dat van Mew): wit, zalm, grijspaars, zwart. Vandaar de bekende kleuren.
+- Ghost en de fossielen hebben wel echte spritedata en een goede maat, dus die zien er normaal uit.
+
+## Gen 3: wat zou er gebeuren
+- In Emerald heeft elke opzoeking een grenscontrole: een ongeldige soort krijgt de "?"-sprite (Decamark) met het ?-palet. Echte rommelsprites bestaan in Gen 3 dus niet; we doen alsof die controle ontbreekt.
+- Gen 3-frontsprite: 64x64 = 8x8 tegels, 4bpp, LZ77, palet van 16 kleuren, kleur 0 doorzichtig.
+- **Test 1 (`gen3_missingno.py`, `gen3_missingno_rom/`):** pointer naar willekeurige ROM-data van Ungrounded 1.0 en die met LZ77 uitpakken. Resultaat: fijne ruis in een vol vierkant. Valt af.
+- **Test 2 (`gen3_missingno_scheef.py`, `gen3_scheef/`):** pointer een paar bytes naast een echte gecomprimeerde sprite. Ook ruis. Valt af.
+- **Test 3 (`gen3_afmeting.py`, `gen3_afmeting/vel.png`): de echte tegenhanger van MissingNo's maatfout.** Een echte sprite met de verkeerde afmeting uitgelezen (7, 6 of 9 tegels per rij in plaats van 8) of vanaf een verschoven startadres. Daarbij blijft de doorzichtigheid echt, dus een onregelmatige omtrek met stukjes die je nog net herkent (een oog, een grijns). Met het ?-palet (index 0, net als MissingNo met index 0) wordt het zwart/grijs/wit, MissingNo-achtig.

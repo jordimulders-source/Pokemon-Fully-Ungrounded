@@ -3360,3 +3360,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Fase 1 prompt r5 from scratch.
 - Fase 1 ronde 5: te veel kleur, gezicht te duidelijk, van vormen; prompt r6.
 - Fase 1 ronde 6 afgekeurd; Jordi: Gemini kan dit niet (les in `GEMINI.md`).
+
+### [v0.0.814] - Glitch-lijn fase 1: MissingNo-studie en Gen 3-glitchtests
+- Studie hoe MissingNo aan zijn sprite komt en wat de Gen 3-tegenhanger is: `docs/concept/sprites/glitch_lijn/fase1_glitch/STUDIE.md`.
+- Drie testscripts in `docs/concept/sprites/glitch_lijn/gereedschap/` (willekeurige ROM-data, pointer naast een sprite, echte sprite met verkeerde afmeting); de derde werkt (`fase1_glitch/gen3_afmeting/vel.png`).

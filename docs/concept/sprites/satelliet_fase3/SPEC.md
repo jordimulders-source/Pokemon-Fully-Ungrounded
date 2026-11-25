@@ -23,3 +23,4 @@ Open: aantal ogen, naam, evolutiemethode.
 - Jordi: "antennes weg, ogen op alle vier, schrijf r6, het oog kleiner is niet erg, maar dan moeten we gewoon zorgen dat we slim designen, dus met wat minder detail dan fase 2 bijv" → r6: `gemini/PROMPT_r6.md`.
 - Jordi: "iris en pupil blijven wel".
 - r6 (`gemini/r6.png`), Jordi: "de panelen kloppen niet" → r7: `gemini/PROMPT_r7.md` (alleen panelen: 3 gespiegelde paren aan de lange arm, één vlak, parallel).
+- Jordi: "linkeroog zit ook niet goed, rechts wel, maar rechts zou gespiegeld kunnen worden" → in r7 de zijbollen als spiegelbeeld.

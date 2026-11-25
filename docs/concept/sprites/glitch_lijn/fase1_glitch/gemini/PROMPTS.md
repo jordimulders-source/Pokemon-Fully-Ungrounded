@@ -72,3 +72,6 @@ STYLE: real pixel art, max 16 colors, no gradients. White background, no ground,
 
 AVOID: a monitor, a TV or a frame around it, a physical object, stone, rubble, trash, clay, 3D blocks, square eyes, round eyes, human eyes, a cartoon or comic face, a cute mascot, a blob, a ghost, a robot or golem figure, legs, insects, text or symbols, MissingNo's exact shape, Porygon, Unown, Rotom.
 ```
+
+## Ronde 4 (25 nov)
+- `r4/r4.png`. Jordi: "wat is dit? Dit is toch totaal niet wat we besproken hebben". Claude: prompt vroeg een vormloze "shape of screen image" en hield MissingNo in de AVOID; afgesproken was "bijna missingno achtig".

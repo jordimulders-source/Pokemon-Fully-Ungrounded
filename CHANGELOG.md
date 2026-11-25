@@ -3339,3 +3339,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Jordi: Bug komt er vanaf fase 2 bij, puur conceptueel (`IDEEEN.md`).
 - Jordi: fase 1 Electric.
 - Jordi: "een puur digitaal wezen, een glitch die sentient wordt"; prompt r2 (alleen zijn woorden) in PROMPTS.md.
+- Jordi: fase 3 blijft ook Bug.

@@ -29,3 +29,13 @@ AVOID: readable text or words, lines of code, letters, screens or computers, rob
 ## Ronde 1 (25 nov)
 - `r1/r1_a.png`, `r1/r1_b.png`. Jordi: "dit ziet er echt stom uit, gewoon een insect met tekens erop, we zouden er toch geen insect van maken?"
 - Oorzaak (Claude): de prompts vroegen zelf om poten en kaken (A) en een keverbouwplan (B), met "Type: Bug" erbij; dat is een insect.
+
+## r2 (nieuw gesprek, zonder bijlage): alleen Jordi's woorden, Gemini ontwerpt
+Jordi na r1: Bug "puur conceptueel" vanaf fase 2; fase 1 Electric; "een puur digitaal wezen, een glitch die sentient wordt". Geen eigen lichaamsdelen van Claude (les r1, robotmug-aanpak).
+```
+Design an original Pokemon. Type: Electric/Bug. It is the middle stage of a three-stage line: glitch, then bug, then virus. It is a purely digital creature: a glitch that has become sentient. The Bug typing is purely conceptual (a bug in the computer sense, an error in the code); the creature is NOT an insect and has no insect features. Design its shape yourself: it should be a clear, readable creature with a face and a personality, made of the visual language of digital errors, with a clean silhouette.
+
+Style: official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 colors, dark outline, clean shapes with shading, facing 3/4 to the left, compact composition. White background, no ground, no shadow, no effects, no glow.
+
+AVOID: insects, beetles, legs like an insect, antennae, mandibles, wings, symbols or characters printed on the body, readable text, screens or computers, robots, pixel noise or blurry static, Porygon, Unown, MissingNo.
+```

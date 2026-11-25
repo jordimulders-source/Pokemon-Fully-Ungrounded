@@ -3338,3 +3338,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Ronde 1 afgekeurd (insect met tekens erop); les in `GEMINI.md`.
 - Jordi: Bug komt er vanaf fase 2 bij, puur conceptueel (`IDEEEN.md`).
 - Jordi: fase 1 Electric.
+- Jordi: "een puur digitaal wezen, een glitch die sentient wordt"; prompt r2 (alleen zijn woorden) in PROMPTS.md.

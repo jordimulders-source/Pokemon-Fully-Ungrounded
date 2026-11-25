@@ -787,4 +787,5 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - **Voorstel Claude (open):** elke fase één richting, één stap dieper: glitch = C (beeldscheuring, wat je ziet), bug = B (lijf van code, de oorzaak), virus = A (corruptie die zich verspreidt, kopieën). Tegen blur: harde blokken en vlakken in plaats van ruis per pixel, een vast anker dat in alle fases gelijk blijft (bijv. dezelfde ogen) en een helder silhouet; MissingNo alleen als knipoog.
 - **Jordi (25 nov, na Gemini-test fase 2: insect met tekens, afgekeurd):** "het concept van deze lijn is dat vanaf fase 2 het type bug erbij komt maar puur conceptueel". Dus fase 1 geen Bug (vervangt dat deel van Claudes voorstel).
 - **Jordi (type fase 1):** "denk dat alleen electric logisch zou zijn". Fase 1 Electric; fase 2 Electric + Bug ("erbij").
-- **Open:** type fase 3; wat het wezen is; anker; verder ontwerp.
+- **Jordi (wat het is):** "het is een puur digitaal wezen, een glitch die sentient wordt".
+- **Open:** type fase 3; vorm; anker; verder ontwerp.

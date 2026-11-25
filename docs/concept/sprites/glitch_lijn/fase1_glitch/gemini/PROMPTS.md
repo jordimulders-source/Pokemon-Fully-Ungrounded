@@ -75,3 +75,19 @@ AVOID: a monitor, a TV or a frame around it, a physical object, stone, rubble, t
 
 ## Ronde 4 (25 nov)
 - `r4/r4.png`. Jordi: "wat is dit? Dit is toch totaal niet wat we besproken hebben". Claude: prompt vroeg een vormloze "shape of screen image" en hield MissingNo in de AVOID; afgesproken was "bijna missingno achtig".
+
+## r5 (nieuw gesprek, zonder bijlage): from scratch (Jordi: "maak nu eens een goede prompt, from scratch")
+Alleen Jordi's besluiten; geen eigen lichaamsdelen (geen kop/armstompjes/benen-regels meer), geen concept in de AVOID. Eigen invulling: kleurbeperking "like old game graphics".
+```
+Design an original Pokemon: an official Gen 3 front sprite (Pokemon Ruby/Sapphire/Emerald), 64x64 pixels, max 16 colors, white background.
+
+WHAT IT IS: Type Electric. The first stage of a three-stage line (glitch, then bug, then virus). It is a purely digital creature: a glitch that lived inside a computer screen and has become sentient. It is made of what is shown on a screen: broken, corrupted video game graphics data. It is not a physical object, not made of any material, and no monitor or screen frame is visible.
+
+THE LOOK (most important): it is the same kind of thing as MissingNo, the famous glitch Pokemon of the first games: a heap of scrambled pixel data with garbled patterns inside, where you can hardly tell what it is. But it is clearly its own design: NOT a rectangle, NOT a column, NOT an L-shape and NOT built from square tiles. It has an irregular, unpredictable outline. It has very little shape; only a few things can just be made out in it, above all a vague face.
+
+FACE: vague and digital, part of the scrambled data, not a drawn cartoon face. The eyes are NOT human, NOT happy, NOT round and NOT square. A clearly visible mouth, not tiny.
+
+COLORS: a limited palette like old game graphics.
+
+AVOID: a cartoon, comic or mascot face, human or happy eyes, a ghost, a blob, a slime, rubble, stone, trash, a robot, a golem, a box, a toaster, a neat or symmetric shape, a rectangle, square tiles, a copy of MissingNo, Porygon, Unown, Rotom.
+```

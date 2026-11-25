@@ -65,3 +65,5 @@ Prompts in `gemini/PROMPT.md`.
 - Jordi: "rode punt rechtsonder is de staart".
 - Jordi: "meh we hebben al veel snorren gegeven aan pokemon, misschien wat meer een poncho?" → bijstuur poncho (blad over de schouders).
 - `ludicolo/r2/gemini_r2.png` (bijstuur poncho): Jordi "ok maar hoe zouden we de poncho meer onderdeel van zijn lichaam kunnen maken".
+- Jordi over de poncho: "ik weet niet of ik met de leaf kleur het eens ben gezien de typing"; "maar het moet geen kledingstuk zijn he".
+- `ludicolo/r3/gemini_r3.png` (bijstuur: bladflappen in lijfkleur): Jordi "nu doet die alsnog bladeren". (Fout Claude: prompt vroeg zelf om bladflappen en nerven.)

@@ -108,6 +108,10 @@ Modeltekeningen in `docs/concept/ontwerp/<soort>/` (concept A/B/C + ONTWERP.md).
   - **Purakkusu** (#234).
   - Voor ons gebruik: ze opnieuw als Gen 3-sprite tekenen in onze stijl (niet de beta-sprites zelf gebruiken), met een plek in de regio (Raitora als Electric-tijger is een mooie Zuid-Amerikaanse Electric-kat naast de jaguar-idee; Octillery-tank kan in een havenstad of militaire basis).
 
+### Impala-lijn (Jordi, 24–25 nov)
+- **Dikdik → impala → kudu** (3 fases). Dikdik puur Normal; impala en kudu Normal/Steel (Normal/Steel bestaat nog niet; Fighting 4×).
+- Uniek via lichaamspatroon en hoorns; hoorns als gevechtswapens (zwaarden, speren), bij impala en kudu "echt van metaal", bij de dikdik niet. Eis: de hoornvorm van het echte dier blijft kloppen. Hoeft niet Zuid-Amerikaans te zijn. Namen en ontwerp open; hele gesprek in `IDEEEN.md` → Impala-lijn.
+
 ### Octillery-evolutie (Jordi, 10 nov)
 - Remoraid → Octillery → **kraken met wapens**, Water/Steel. Geen oorlogsschip ("bij een warship [zijn] de kanonnen niet pronounced genoeg"); de lijn gaat om afschieten.
 - Eisen (Jordi): "het moet wel pokemon blijven, dus niet te overdesigned en het moet overduidelijk een evolutie van octillery zijn"; "sterkere look, meer kraken"; duidelijk groter en zwaarder; metaal organisch; max. 3 kanonnen ("of 1 gatling gun en 2 kanonnen"); driekwart. De beta-tank (#210) valt af.

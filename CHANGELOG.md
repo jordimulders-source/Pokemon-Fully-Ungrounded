@@ -3170,3 +3170,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Sprite: 16 rondes + eindkeuring (Dragonfly Cave). Hoed, haarvleugels en zijhaar 1-op-1 van Mr. Rime, ogen van Gen 3 Mr. Mime (monocle geschrapt), ronde kop met de Mr. Mime-boog, koel blauwgrijs palet naar Alphyena, achterbeen gestrekt in uitval; niets opnieuw getekend.
 - `docs/concept/sprites/mr_prime/af/`, op het overzichtsvel (Regional forms); alles in `mr_prime/SPEC.md`.
 - Les in `docs/lessen/GEMINI.md`: latere Pokémon in vormen beschrijven, niet bij naam.
+
+### [v0.0.766] - Cryogonal-evolutie: idee en eerste Gemini-prompt
+- Gekozen idee: "capped column" (zeshoekige ijszuil met sneeuwvlokplaten aan beide uiteinden), compositie A. Besluiten in `docs/concept/sprites/cryogonal_evo/SPEC.md`, prompt r1 in `gemini/PROMPT_r1.md`, regel in `IDEEEN.md`.

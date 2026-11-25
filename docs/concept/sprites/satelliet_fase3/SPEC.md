@@ -33,3 +33,4 @@ Open: aantal ogen, naam, evolutiemethode.
 - Claude: eens met voor/achter 4 en boven/onder 3. Model = r9 natief (`model/r9_natief.png`, 99 px, pitch 10,24), bewerkingen door een maker-agent in `model/`.
 - r10 (maker-agent, `model/r10_natief.png` = linkeroog variant b, `r10a_natief.png` = variant a; echt raster r9 = 5,12 px pitch, `r9_natief200.png`): alle panelen 4/4/4/4 en mast 3/3, tweeling achter de rechter zijarm, LF met staafje, geen wit in de ogen. Canvas 231×159: op 64 px wordt hij 64×42 (`check/r10_b_a_64_6x.png`).
 - Jordi (r10, met uitsnede linkeroog variant a): "wacht we kunnen ook de zijwaartse ogen dezelfde kant op laten kijken als het voorste oog, zodat je nu met links doet, bij deze" → r11: beide zij-ogen naar voren-links zoals variant a, bol/licht van r10.
+- r11 (`model/r11_natief.png`): beide zij-ogen naar voren-links (oog van r10a), bol/licht van r10.

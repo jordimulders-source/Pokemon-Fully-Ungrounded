@@ -50,3 +50,4 @@ Prompts in `gemini/PROMPT.md`.
 - Jordi op r1: "1 hoeft ook geen blad meer te zijn, ik vind de kleding ook echt lichaamsonderdelen, tas of riem zie ik ook niet. rechtop is prima want hij wordt fighting. de mond past niet bij lombre alleen, die is bij hem geen snavel, de ogen zoals lombre maar dan wat bozer zoals hier is prima". Alleen de mond verandert; bijstuurprompt v2 in `lombre/gemini/PROMPT.md`.
 - `lombre/r2/gemini_r2.png` (bijstuur v2, mond): Jordi "dit kan die niet".
 - Jordi: model = r1 (mond niet via Gemini). Mondkleur: "de kleur die de snavel van lotad heeft". Mondvorm uit de Gen 3-Lombre, in varianten ter keuze; spritefase gestart (`lombre/sprite/r1/`).
+- Sprite r1 (maker): mondvarianten A/B/C (`lombre/sprite/r1/`). Jordi: "A is het beste maar mag iets kleiner" → `kleiner.py`: A1 (1 kolom geschrapt), A2 (2 kolommen), A3 (1 kolom + 1 rij), A4 (2 kolommen + 1 rij), uit de Lombre-mond geschrapt, niets hertekend; `mond_kleiner_vel.png`.

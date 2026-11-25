@@ -31,7 +31,7 @@ AVOID
 ```
 
 # Startprompt v2 (25 nov), na r1
-Jordi over r1: "tof idee, dit gaat werken"; "hij wijkt iets teveel van lotad af"; "Hij heeft ook 2 armen en 4 poten". Nieuw gesprek, bijlage `bijlage_lotad.png` (Lotads eigen Gen 3-sprite, 8×; voor bouw en gezicht). Hoedbeschrijving = wat r1 had (plat blad met opstaande rand); aantal pootjes niet genoemd, alleen "zoals Lotad".
+Jordi over r1: "tof idee, dit gaat werken"; "hij wijkt iets teveel van lotad af"; "Hij heeft ook 2 armen en 4 poten"; daarna: "lotad heeft 6 poten", "wist ik niet", "dan zeg ik niks" (ledematen dus geen punt meer). Nieuw gesprek, bijlage `bijlage_lotad.png` (Lotads eigen Gen 3-sprite, 8×; voor bouw en gezicht). Hoedbeschrijving = wat r1 had (plat blad met opstaande rand); ledematen: alleen "zoals Lotad".
 
 ```
 Design a regional form of the Pokémon LOTAD and draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art).
@@ -46,7 +46,7 @@ CONCEPT
 
 BUILD (most important)
 - Exactly Lotad's build: the big leaf-hat covers most of the creature; the small body sits underneath it and only a little of it shows.
-- NO arms. Only Lotad's own small stubby feet under the body, like in the attached sprite.
+- Lotad's own short legs under the body, like in the attached sprite.
 - The leaf is clearly wider than the body, like Lotad's.
 
 POSE
@@ -57,7 +57,6 @@ STYLE AND FORMAT
 - Plain white background. No floor, rock, soil, shadow, water, glow, sparkles or effects. One single creature, no extra views.
 
 AVOID
-- NO arms, no hands, no extra legs.
 - NO clothing and NO accessories: no poncho, scarf, belt, boots, spurs, knife, whip, lasso, bolas, mate cup, no real hat on top of the leaf.
 - Not green and blue like the normal Lotad. Not a human, not a person in a plant costume.
 - No glossy 3D render, no plush or mascot look.

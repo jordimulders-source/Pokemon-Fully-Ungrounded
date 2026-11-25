@@ -3259,3 +3259,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.790] - Gaucho-Lotad-lijn: besluiten en eerste prompt
 - Nieuwe regional Lotad-lijn (Lotad → Lombre → Ludicolo, geen vierde fase): een plant die gaucho is, geen kleding, geen accessoires. Grass en Water eruit: Lotad Ground, vanaf Lombre Fighting.
 - `docs/concept/sprites/lotad_regional/SPEC.md` (Jordi letterlijk) en Gemini-startprompt v1 in `gemini/PROMPT.md`.
+
+### [v0.0.791] - Gaucho-Lotad: ronde 1
+- Gemini r1 bewaard (`lotad_regional/r1/`); Jordi akkoord met het idee, hoed wordt per evolutie steeds meer een gauchohoed. Lijf te groot vergeleken met Lotad: varianten 100/85/75/65 % gemaakt.

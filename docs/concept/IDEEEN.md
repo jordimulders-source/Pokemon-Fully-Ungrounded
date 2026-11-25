@@ -782,5 +782,5 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 ## Glitch → bug → virus (Jordi, 25 nov)
 - **Jordi:** "ik dacht eerst aan glitch -> bug -> virus maar dat was dus niet logisch". Claude: als computerlijn klopt het wel (glitch = wat je ziet, bug = de fout in de code, virus = programma dat zich verspreidt); Bug houden in alle fases is dan logisch, "bug" is de woordgrap die de lijn draagt.
 - **Voorstel Claude (open):** fase 1 glitch-insect (kapotte sprite: ontbrekende pixels, verschoven stukken), Bug; fase 2 de eerste "computer bug" (de mot die het team van Grace Hopper in 1947 in een relais van de Harvard Mark II vond en in het logboek plakte), Bug/Electric of Bug/Steel; fase 3 virus (dezelfde mot, kwaadaardig, kopieën van zichzelf), Bug/Poison of Bug/Dark.
-- **Jordi:** "soort digitale bug lijkt me tof".
+- **Jordi:** "soort digitale bug lijkt me tof" en "meer een soort conceptuele bug dan echt een typisch insect".
 - **Open:** tweede type fase 2 en 3; verder ontwerp.

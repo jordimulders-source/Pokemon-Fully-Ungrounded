@@ -25,3 +25,7 @@ Style: official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 
 
 AVOID: readable text or words, lines of code, letters, screens or computers, robots, glowing, green-on-black Matrix look, pixel noise or blurry static, a realistic beetle, Porygon, Unown, MissingNo.
 ```
+
+## Ronde 1 (25 nov)
+- `r1/r1_a.png`, `r1/r1_b.png`. Jordi: "dit ziet er echt stom uit, gewoon een insect met tekens erop, we zouden er toch geen insect van maken?"
+- Oorzaak (Claude): de prompts vroegen zelf om poten en kaken (A) en een keverbouwplan (B), met "Type: Bug" erbij; dat is een insect.

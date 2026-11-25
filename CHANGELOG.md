@@ -3335,3 +3335,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.813] - Glitch-lijn fase 2: Gemini-test
 - Twee testprompts (vrij wezen van codesymbolen / keverbouwplan van codesymbolen) in `docs/concept/sprites/glitch_lijn/fase2_bug/gemini/PROMPTS.md`.
+- Ronde 1 afgekeurd (insect met tekens erop); les in `GEMINI.md`.

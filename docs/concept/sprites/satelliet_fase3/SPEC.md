@@ -68,3 +68,4 @@ Open: aantal ogen, naam, evolutiemethode.
 - r12 (`sprite/r12/`): PB/PF gecentreerd om de stok, PC/PE-punten compleet; PF nu bijna geheel achter voorbuis en PE (strook 3 px). Keuze Jordi: PF vóór de voorbuis?
 - Jordi over r12: "rechtsboven paneel opgelost, boven is nu juist te ver doorgecschoven en onder heb je nu bijna helemaal weggehaald" → r13 varianten PB −1,5/−2, PF r11-positie/−1,5.
 - Jordi over PF: "hij moet overlapt worden maar op een goede manier".
+- r13 (`sprite/r13/`): varianten A–D (PB −1,5/−2; PF lang 61 modelpx, r11-plek of −1,5). Naar Jordi.

@@ -2,7 +2,10 @@
 #   (PC/PE compleet zoals r12; ogen niet aangeraakt).
 # Jordi over r12: "rechtsboven paneel opgelost, boven is nu juist te ver doorgeschoven en onder heb je nu bijna helemaal weggehaald"
 # Variant = PB-verschuiving en PF-verschuiving in spritepx naar links (langs de breedterichting, zoals r12; r12 = -3,01 / -3,20).
-# Gebruik: python3 herstel13.py <naam> <PB px> <PF px>
+# Jordi (over PF): "hij moet overlapt worden maar op een goede manier": PF achter voorbuis en PE, maar als een doorlopend
+#   paneel dat er aan beide kanten met minstens een heel vak uitkomt. Met lengte 47 (r11) is het stuk onder PE een snipper
+#   (12 px, 3 breed); daarom PF-lengte instelbaar: 61 modelpx, 3 vakken (besluit mast 3/3 blijft), vak 20,3 i.p.v. 15,7.
+# Gebruik: python3 herstel13.py <naam> <PB px> <PF px> <PF lengte model>
 # Jordi over r11: "ik vind de ogen nu goed anders. Bovenste paneel moet alleen ietsje naar links, omdat het nu op een vlag
 #   lijkt, maar de stok moet in het midden zitten ipv helemaal links, zelfde voor onderste paneel. Verder lijkt onderste en
 #   rechtsboven allebei nog lichtjes afgekapt he. Ik snap dat ze overlappen, maar zijn nog een paar pixels leeg waar ze niet
@@ -18,7 +21,7 @@ import os, sys, numpy as np
 from PIL import Image
 from collections import Counter
 H0=os.path.dirname(os.path.abspath(__file__))
-NAAM,DXB,DXF=sys.argv[1],float(sys.argv[2]),float(sys.argv[3])
+NAAM,DXB,DXF,LPF=sys.argv[1],float(sys.argv[2]),float(sys.argv[3]),float(sys.argv[4])
 H=os.path.join(H0,NAAM); os.makedirs(H,exist_ok=True)
 sys.path.insert(0,os.path.join(H0,'..','r10','pijp')); from geo10 import GEO10
 sys.path.insert(0,H0); import recept
@@ -28,7 +31,7 @@ P0=np.load(os.path.join(H0,'..','r11','P_r11.npy'),allow_pickle=True).astype(obj
 LOG=[]
 def zet(x,y,c,deel,reden):
     if B[y,x]!=c: LOG.append((x,y,int(B[y,x]),int(c),deel,reden)); B[y,x]=c
-G=dict(GEO10); G['PF']=((123.0,100.0),(123.0,147.0),(145.46913591942328,108.98765436776931))   # r11: PF volle lengte 47
+G=dict(GEO10); G['PF']=((123.0,100.0),(123.0,100.0+LPF),(145.46913591942328,108.98765436776931))   # r11: PF volle lengte 47
 def schuif(g,px):
     T,R,L=map(np.array,g); dv=-(L-T)/2*(px/(abs((L-T)[0])/2/recept.S)) if px else np.zeros(2)      # halve breedte terug langs de breedterichting: stok (v=0) wordt middellijn,
     return tuple(tuple(p+dv) for p in (T,R,L)), dv   # en waar de stok het paneel raakt blijft op dezelfde hoogte
@@ -46,7 +49,7 @@ for y,x in zip(*np.where(ID['PE']&((P=='')|(P=='PF')))): P[y,x]='PE'       # PE 
 for y,x in zip(*np.where((P=='PA')&(P0!='PA'))):
     if sum(1 for dy,dx in ((-1,0),(1,0),(0,-1),(0,1)) if P[y+dy,x+dx]=='PA')<=1: P[y,x]=''
 REDEN={'PA':'vrijgekomen achter PB (PB naar links)','PB':'PB symmetrisch om de stok (naar links)','PC':'PC compleet (lege pixel binnen het parallellogram)',
-       'PE':'PE compleet (lege pixel binnen het parallellogram)','PF':'PF symmetrisch om de stok (naar links)'}
+       'PE':'PE compleet (lege pixel binnen het parallellogram)','PF':'PF verlengd / verschoven (doorlopend achter voorbuis en PE)'}
 for k in ('PA','PB','PC','PE','PF'):
     for (x,y),c in recept.recept(k,G[k],P).items():
         r=REDEN[k] if P0[y,x]!=k else 'recept opnieuw (rand/lichte rand verschuift mee)'
@@ -84,5 +87,19 @@ with open(os.path.join(H,'log.txt'),'w') as f:
 print('PB',np.round(dxb/recept.S,2),'PF',np.round(dxf/recept.S,2))
 print('anders dan r11:',len(fin)); print(sorted(Counter((l[4],l[5]) for l in fin).items()))
 
+from collections import deque
+u,_=recept.uvf(G['PF'],recept.MX,recept.MY); m=(P=='PF'); lab=np.zeros((64,64),int); n=0; STUK=[]
+for y,x in zip(*np.where(m)):
+    if lab[y,x]: continue
+    n+=1; q=deque([(y,x)]); lab[y,x]=n; px=[]
+    while q:
+        a,b=q.popleft(); px.append((a,b))
+        for dy,dx2 in ((1,0),(-1,0),(0,1),(0,-1)):
+            yy,xx=a+dy,b+dx2
+            if 0<=yy<64 and 0<=xx<64 and m[yy,xx] and not lab[yy,xx]: lab[yy,xx]=n; q.append((yy,xx))
+    ys=[p[0] for p in px]; xs=[p[1] for p in px]
+    STUK.append('%d px, x %d-%d, y %d-%d, u %.2f-%.2f'%(len(px),min(xs),max(xs),min(ys),max(ys),min(u[p] for p in px),max(u[p] for p in px)))
+open(os.path.join(H,'log.txt'),'a').write('\nPF zichtbare stukken (u: 0 boven, 1 onder; vakgrenzen 1/3, 2/3):\n'+'\n'.join(STUK)+'\n')
+print(NAAM,'PF stukken:',' | '.join(STUK))
 pf=int(((P=='PF')).sum()); pf11=int((P0=='PF').sum())
 print(NAAM,'PF zichtbaar',pf,'(r11:',pf11,')  PB',int((P=='PB').sum()))

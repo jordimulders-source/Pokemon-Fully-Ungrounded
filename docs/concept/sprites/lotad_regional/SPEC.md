@@ -80,3 +80,4 @@ Prompts in `gemini/PROMPT.md`.
 - Jordi: "het geel moet zoals de rest van de lijn, afwijken van model" → geel = tinten van de Lotad-snavel/Lombre-mond.
 - Jordi: "en het rechteroog heeft nog niet de perfecte vorm"; "mag iets ovaler" → doorgegeven aan de eindkeuring (2 oogvarianten).
 - Keuring + DC-eindkeuring (`ludicolo/eindkeuring/`, 127 px, alleen indexwissels/palet): zwarte ponchobinnenlijnen (o.a. x19 y40–50) → rode lijn, dubbele lijnen 1 px, rood uit elkaar getrokken, geel = Lotad/Lombre. Rechteroog los: `oog_A`/`oog_B` (2 px elk), keuze Jordi.
+- Jordi: "de ogen moeten nog wit" → `eindkeuring/oog_{A,B}_wit.png` (irispixels → wit, `oog_wit.py`).

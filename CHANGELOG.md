@@ -3327,3 +3327,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Sprite r1–r7: model verkleind naar 52 px (maat als Vulpix/Growlithe), 2 keuringen + eindkeuring Dragonfly Cave; oog als ronde vorm uit het model (dunne ring, grote iris), ver oog, kuif, kin terug; donker brons (Jordi koos dit boven een lichtere variant), oog variant B (glimlicht linksonder).
 - Af: `docs/concept/sprites/impala_lijn/dikdik/af/dikdik.png`, op het overzichtsvel (New). Naam open.
 - Concept impala-lijn (dikdik → impala → kudu; Normal → Normal/Steel; brons → zilver → goud; hoorns als wapens) in `IDEEEN.md` en `POKEMON.md`; vakjes en staaltest in `docs/concept/sprites/impala_lijn/`.
+
+### [v0.0.x] - Pinsir-evolutie gestart (25 nov)
+- Nieuwe ontwerpmap `docs/concept/sprites/pinsir_evo/` (Golofa-kever / kaiju, Pinsir-evolutie): `SPEC.md` met Jordi's woorden en referentiefoto `referenties/golofa_hoorns_jordi.webp` ("de scharen worden zoals deze vorm"). Type, kaiju-invulling, kleur en naam nog open.

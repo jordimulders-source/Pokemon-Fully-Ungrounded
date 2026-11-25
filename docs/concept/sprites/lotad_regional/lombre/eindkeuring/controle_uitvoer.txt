@@ -1,0 +1,27 @@
+formaat (64, 64) P | transparant index 0
+alpha-diff (silhouet) 0
+  diff mond A5 (x17-29, y26-35)                       0
+  diff ver oog (x20-23, y23-27)                       0
+  diff nabij oog (x28-36, y23-29)                     0
+  diff kopcontour/kaak (x17-38, y22-35, heel kopvak)  0
+  zwart/wit in het palet ongewijzigd: True
+  gewijzigd hoed (y<=21)                         34 van 486
+  gewijzigd romp/armen (y22-47, buiten kopvak)   28 van 504
+  gewijzigd benen/voeten (y>=48)                 13 van 294
+totaal gewijzigd 75 | kleuren incl. transparant 15 | indexen [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14, 15]
+rood (lijn, schaduw, midden, licht)
+    2 was (118, 48, 31)   nu (108, 44, 30)   L 67 ->  62  hue 11
+    3 was (159, 69, 46)   nu (160, 74, 50)   L 93 ->  97  hue 13
+    4 was (201, 111, 77)  nu (204, 114, 80)  L134 -> 137  hue 16
+    5 was (211, 125, 90)  nu (230, 154, 112) L147 -> 172  hue 21
+olijf (lijn, donker, midden, licht)
+    6 was (46, 36, 22)    nu (66, 56, 30)    L 37 ->  56  hue 43
+    7 was (92, 80, 48)    nu (110, 98, 58)   L 80 ->  97  hue 46
+    9 was (145, 130, 78)  nu (156, 142, 86)  L129 -> 140  hue 48
+   10 was (174, 157, 100) nu (194, 180, 114) L156 -> 177  hue 50
+hoedband (schaduw, licht)
+   14 was (88, 68, 46)    nu (88, 68, 50)    L 71 ->  72  hue 28
+    8 was (118, 99, 65)   nu (128, 100, 72)  L101 -> 105  hue 30
+mond/nagels
+   12 was (179, 155, 90)  nu (180, 150, 86)  L155 -> 152  hue 41
+   13 was (228, 199, 123) nu (232, 204, 124) L199 -> 203  hue 44

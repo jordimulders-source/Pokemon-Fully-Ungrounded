@@ -1,0 +1,15 @@
+S1 hoedband schaduw 7->14 (model grijsbruin)                   14
+S2 nagel rechtervuist 10->12 (model geel)                      1
+B1 lichtkant olijf 7->6 (outline base)                         32
+B2 binnenlijn in rood -> rode lijn (2)                         9
+B2 binnenlijn in olijf -> olijflijn (6)                        8
+B3 dubbele lijn arm|band: band-kant -> bandtint (9)            4
+B3 dubbele lijn arm|band: grens zwart (vorm over vorm)         2
+B3 dubbele lijn kraag: bovenste lijn -> vlaktint (7)           2
+B3 dubbele lijn onder vuist links -> vuisttint (3)             2
+B3 dubbele lijn vest|dij: bovenste lijn -> vesttint (7)        2
+B3 dubbele lijn vest|dij: grens zwart (vorm over vorm, schaduwkant) 3
+B3 dubbele buitenlijn rechts been: binnenste -> vlaktint (7)   2
+B3 dubbele lijn voet rechts -> voettint (3)                    1
+B4 hoedbandlijn olijflijn -> zwart (één lijn, één kleur)       2
+totaal gewijzigde pixels 75 | alpha-diff 0 | kopvak-diff 0 | kleuren incl. transparant 15

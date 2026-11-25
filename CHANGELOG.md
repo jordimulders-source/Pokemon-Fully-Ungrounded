@@ -3342,32 +3342,38 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Regionale Lotad (Ground, fase 1 van de gaucho-lijn): frontsprite af in `docs/concept/sprites/lotad_regional/af/lotad_gaucho.png` (43×41, 14 kleuren). Model Gemini r8-1 (sombrero-blad, rafelkraag, 4 poten) overgenomen, kleuren van r1, Lotad-ogen met lijftint, blik oog G (driekwart), DC-eindkeuring (schaduw kraag, belijning, kleurtinten). Op het overzichtsvel (Regional forms).
 - Lessen in `GEMINI.md`: geen bijlagen; "dicht bij de basisvorm" geeft een palette swap; omkleuren pas in de spritefase.
 
-### [v0.0.816] - Regionale Poliwag-lijn: eindvorm Poliwrath
+### [v0.0.816] - Gaucho-Lombre: startprompt
+- Regionale Lombre (Fighting, fase 2 van de gaucho-lijn): Gemini-startprompt v1 in `docs/concept/sprites/lotad_regional/lombre/gemini/PROMPT.md` (opzet van de Lotad-prompt v7; gauchohoed met platte bol en vlakke rand, kleuren van de Lotad-sprite).
+
+### [v0.0.817] - Gaucho-Lombre: frontsprite af
+- Regionale Lombre (Fighting, fase 2 van de gaucho-lijn): frontsprite af in `docs/concept/sprites/lotad_regional/lombre/af/lombre_gaucho.png` (42×57, 15 kleuren). Model Gemini r1 (gauchohoed met platte bol, vechthouding) overgenomen; mond A5 = Gen 3-Lombre-mond (1 kolom geschrapt) in de snaveltinten van de gaucho-Lotad; ogen naar de Lombre-artwork (r3 A); keuring + DC-eindkeuring (schaduw hoedband, belijning olijf, kleurramps). Op het overzichtsvel (Regional forms).
+
+### [v0.0.818] - Regionale Poliwag-lijn: eindvorm Poliwrath
 - Eindvorm van de Ice/Poison-Poliwag-lijn is een regionale Poliwrath (Ice/Poison); Politoed blijft gewoon (Jordi). Evolutiemethode later. `IDEEEN.md`, `POKEMON.md`, `TODO.md` bijgewerkt.
 
-### [v0.0.817] - Regionale Poliwag: besluiten en Gemini-prompt v1
+### [v0.0.819] - Regionale Poliwag: besluiten en Gemini-prompt v1
 - Jordi: harlekijnpad, ijs met cinnaber, beetje kristal, spiraal als venster, hoofdkleur als de harlekijnpad. Vastgelegd in `docs/concept/sprites/poliwag_regional/SPEC.md`; Gemini-prompt v1 + bijlage in `poliwag_regional/gemini/`.
 
-### [v0.0.818] - Regionale Poliwag: Gemini-prompt v2
+### [v0.0.820] - Regionale Poliwag: Gemini-prompt v2
 - Na v1 (geen staart, te veel kleur/detail): zuignap van het harlekijnpad-kikkervisje als buikvenster, Poliwags staart, 2–3 kristallen, spiraal in één kleur, één ijstint. `poliwag_regional/SPEC.md`, `gemini/PROMPT.md`.
 
-### [v0.0.819] - Regionale Poliwag: Gemini v2 bewaard
+### [v0.0.821] - Regionale Poliwag: Gemini v2 bewaard
 - `poliwag_regional/gemini/r2/gemini_v2.png`; Jordi: "kleuren vind ik goed".
 
-### [v0.0.820] - Regionale Poliwag: Gemini v2 gekozen
+### [v0.0.822] - Regionale Poliwag: Gemini v2 gekozen
 - v2 is het model (`poliwag_regional/referenties/gemini_gekozen_v2.png`); alleen de mondkleur mag anders (Jordi).
 
-### [v0.0.821] - Regionale Poliwag: mondkleur rood, sprite r1 gestart
+### [v0.0.823] - Regionale Poliwag: mondkleur rood, sprite r1 gestart
 - Mond rood (Jordi); maker-agent bouwt r1 uit Gemini v2 (`poliwag_regional/sprite_r1/`).
 
-### [v0.0.822] - Regionale Poliwag: frontsprite af
+### [v0.0.824] - Regionale Poliwag: frontsprite af
 - `docs/concept/sprites/poliwag_regional/af/poliwag_regional.png` = r1 (Jordi: "helemaal goed", eindkeuring overgeslagen). Op het overzichtsvel (Regional forms). CLAUDE.md, POKEMON.md, TODO.md en lessen (GEMINI.md) bijgewerkt.
 
-### [v0.0.823] - Regionale Poliwhirl: besluiten en Gemini-prompt v1
+### [v0.0.825] - Regionale Poliwhirl: besluiten en Gemini-prompt v1
 - Jordi: hybride, herkenbaar Poliwhirl maar slanker/scherper, grotere kristallen, kleur hele lijn gelijk, twee poten, geen zuignap, handschoenen, ogen bovenop, spiraal. `docs/concept/sprites/poliwhirl_regional/`.
 
-### [v0.0.824] - Regionale Poliwhirl: Gemini v1 gekozen, sprite gestart
+### [v0.0.826] - Regionale Poliwhirl: Gemini v1 gekozen, sprite gestart
 - Model `poliwhirl_regional/referenties/gemini_gekozen_v1.png`; spiraal van Poliwhirl, ogen fixen (Jordi).
 
-### [v0.0.825] - Regionale Poliwhirl: frontsprite af
+### [v0.0.827] - Regionale Poliwhirl: frontsprite af
 - `docs/concept/sprites/poliwhirl_regional/af/poliwhirl_regional.png` (Gemini v1, Poliwhirl-ogen 6×6 op modelplek, linkeroog variant B, spiraal van de regionale Poliwag, DC-eindkeuring). Op het overzichtsvel; CLAUDE.md, TODO, POKEMON.md, lessen bijgewerkt.

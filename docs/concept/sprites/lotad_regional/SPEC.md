@@ -43,3 +43,17 @@ Prompts in `gemini/PROMPT.md`.
 - Jordi: "de blik klopt nog niet, hij kijkt niet goed driekwart" → `sprite/r3/oog_DEF.png`: pupillen 1 px naar links (kijkrichting); D = ver oog 2 px, E = ver oog 3×3, F = ver oog 2 px 1 kolom verder naar de rand.
 - Jordi: "ze kijken nu niet driekwart maar zijwaarts" → `sprite/r3/oog_GHI.png`: pupillen naar rechts (naar de kijker); G = nabij midden + ver 2 px stip rechts, H = beide stip rechts, I = nabij midden + ver 3×3 stip rechts.
 - Jordi: "G" → basis voor de eindkeuring: `sprite/r3/lotad_gaucho_oogG.png`.
+
+## Lombre (fase 2)
+- Jordi (25 nov): "de regional lombre, lotad is al af". Startprompt v1 in `lombre/gemini/PROMPT.md` (opzet Lotad-v7; keuzes van Claude daar vermeld).
+- `lombre/r1/gemini_r1.png` (v1): Jordi "vind deze alweer vrij prima".
+- Jordi op r1: "1 hoeft ook geen blad meer te zijn, ik vind de kleding ook echt lichaamsonderdelen, tas of riem zie ik ook niet. rechtop is prima want hij wordt fighting. de mond past niet bij lombre alleen, die is bij hem geen snavel, de ogen zoals lombre maar dan wat bozer zoals hier is prima". Alleen de mond verandert; bijstuurprompt v2 in `lombre/gemini/PROMPT.md`.
+- `lombre/r2/gemini_r2.png` (bijstuur v2, mond): Jordi "dit kan die niet".
+- Jordi: model = r1 (mond niet via Gemini). Mondkleur: "de kleur die de snavel van lotad heeft". Mondvorm uit de Gen 3-Lombre, in varianten ter keuze; spritefase gestart (`lombre/sprite/r1/`).
+- Sprite r1 (maker): mondvarianten A/B/C (`lombre/sprite/r1/`). Jordi: "A is het beste maar mag iets kleiner" → `kleiner.py`: A1 (1 kolom geschrapt), A2 (2 kolommen), A3 (1 kolom + 1 rij), A4 (2 kolommen + 1 rij), uit de Lombre-mond geschrapt, niets hertekend; `mond_kleiner_vel.png`.
+- Jordi: "a1 is de vorm van het mond het beste, a2 sluit die beter aan maar is de hele vorm van de mond weg" → A5 = vorm A1, 1 px naar rechts (`mond_A1_A2_A5_vel.png`).
+- Jordi: "A5 akkkord maar zorg dat het hoofd verder consistent is, daarnaast valt het linkeroog nu teveel weg en is het rechteroog nog net niet genoeg lombre maar dan bozer" → sprite r2 (maker).
+- Jordi bij r2: "ah excuses die sprite helpt niet, hier zie je hoe lombre er uit ziet" + 3 plaatjes (`lombre/referenties/`: anime, 3D, artwork). Ogen opnieuw naar deze Lombre-ogen (r3).
+- Jordi op r3: "a is het beste maar de blik is niet naar driekwart" → r4: alleen pupilplaatsen, lid van A blijft.
+- Jordi: "behoud hem maar, anders klopt die niet meer"; tussen r3 A en r4 A: "links" → **r3 A** (ver oog 2 px) is de basis voor de keuring en eindkeuring.
+- Keuring + DC-eindkeuring (`lombre/eindkeuring/KEURING.md`, 75 px). Jordi: "commit en push naar main" → **af**: `lombre/af/lombre_gaucho.png`. Ter info open: vest/laarzen één olijftint, Lombre roder dan Lotads terra (palet kan), Ground/Fighting of puur Fighting.

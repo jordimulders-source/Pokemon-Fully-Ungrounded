@@ -11,17 +11,18 @@ def gba(n):
     im=Image.open(G+n+'/anim_front_gba.png').crop((0,0,64,64))
     pal=[int(v) for l in open(G+n+'/normal_gba.pal').read().split('\n')[3:19] for v in l.split()]
     im.putpalette(pal); im.info['transparency']=0; return im.convert('RGBA')
-sp=rgba(f'{RN}/impala_{RN}.png')
+sp=rgba(f'{RN}/impala_{RN}.png'); VORIG=sys.argv[2] if len(sys.argv)>2 else None
 meta=json.load(open(f'{RN}/grid.json')); OX,OY=meta['OX'],meta['OY']; km=json.load(open('kaal_meta.json'))
 kaal=Image.new('RGBA',(64,64)); k=Image.open('kaal.png').convert('RGBA'); kaal.paste(k,(OX,OY),k)
 m0=Image.open('../referenties/model_r5.png').convert('RGB'); m=Image.new('RGB',(3072,3072),(255,255,255)); m.paste(m0,(1024,1024))
 p=km['p']; bx0=km['x0']+1024-OX*p; by0=km['y0']+1024-OY*p
 mod=m.crop((int(bx0),int(by0),int(bx0+64*p),int(by0+64*p))).resize((512,512),Image.LANCZOS)
-BG=(236,236,236,255); V=Image.new('RGBA',(3*522+10,522+300),BG); d=ImageDraw.Draw(V)
-for i,im in enumerate([kaal,sp]):
+PANELS=[sp]+([rgba(f'{VORIG}/impala_{VORIG}.png')] if VORIG else [])+[kaal]; NAMES=[RN]+([VORIG] if VORIG else [])+['kaal (modelkleuren)','model r5']
+BG=(236,236,236,255); V=Image.new('RGBA',((len(PANELS)+1)*522+10,522+300),BG); d=ImageDraw.Draw(V)
+for i,im in enumerate(PANELS):
     t=Image.new('RGBA',(64,64),(255,255,255,255)); t.paste(im,(0,0),im); V.paste(t.resize((512,512),Image.NEAREST),(10+i*522,10))
-V.paste(mod,(10+2*522,10))
-for i,s in enumerate(['kaal (modelkleuren)',RN,'model r5']): d.text((14+i*522,12),s,fill=(200,0,0))
+V.paste(mod,(10+len(PANELS)*522,10))
+for i,s in enumerate(NAMES): d.text((14+i*522,12),s,fill=(200,0,0))
 yy=532; xx=10
 for bg in [(248,248,248,255),(40,40,48,255)]:
     t=Image.new('RGBA',(72,72),bg); t.paste(sp,(4,4),sp); V.paste(t,(xx,yy)); xx+=80

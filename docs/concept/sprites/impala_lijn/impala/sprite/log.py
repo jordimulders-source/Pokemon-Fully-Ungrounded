@@ -5,7 +5,7 @@ from PIL import Image
 RN=sys.argv[1]; m=json.load(open(f'{RN}/grid.json')); OX,OY=m['OX'],m['OY']; g=m['grid']; k=m['kaal']; H=len(g); W=len(g[0])
 Z=np.load('kaal_zone.npy')
 def anat(x,y):
-    if Z[y,x]==1: return 'hoorns'
+    if Z[y,x]==1 or (y<=17 and 'hoorn' in str(steps.get((x,y),''))): return 'hoorns'
     if y<=30 and x<=24: return 'kop+hals'
     if y<=45: return 'lijf+staart'
     return 'poten'
@@ -19,7 +19,7 @@ for y in range(H):
         npx[anat(x,y)]+=1
         if g[y][x]!=k[y][x]: tot[anat(x,y)]+=1; per[anat(x,y)][steps[(x,y)][-1] if steps[(x,y)] else '?']+=1
 L=[f'{RN}: afwijkingen t.o.v. de kale reductie (kaal gemapt = modelreductie met alleen de Gen 3-tintkeuze per zone)',
-   'Basis: per cel lijn (>=50% zwarte modellijn) of vlakkleur onder de lijn (gemiddelde, niet-lijnpixels) -> tint via modelhelderheid.','']
+   ('Basis r2: per cel lijn (>=50% zwarte modellijn) of meerderheids-toonklasse van het model (celklas.py); flank: relatieve helderheid flankpixels.' if RN!='r1' else 'Basis: per cel lijn (>=50% zwarte modellijn) of vlakkleur onder de lijn (gemiddelde, niet-lijnpixels) -> tint via modelhelderheid.'),'']
 for z in ['hoorns','kop+hals','lijf+staart','poten']:
     L.append(f'{z:12s} {tot[z]:3d} van {npx[z]:4d} px  ({", ".join(f"{s} {n}" for s,n in per[z].most_common())})')
 L.append(f'totaal       {sum(tot.values()):3d} van {sum(npx.values())} px')
@@ -29,7 +29,8 @@ L+=['','Uitleg stappen: lijn = 1-px buitenlijn dicht + gekleurde selout op rande
     'ontkorrel = tintvlakje <3 px -> meest voorkomende buurtint (niet in hoorns/oog/neus);',
     'strepen_weg = de vier bilstrepen (Jordi) -> vachttint van het model naast de streep (helderheid van de lijfpixels in die cel).','',
     'ZELF GEZETTE PIXELS (niet uit het model; Jordi\'s toegestane afwijking), 64x64-coordinaten:']
-for zn,x,y,c,why in json.load(open(f'extra_{RN}.json')):
+for e in json.load(open(f'extra_{RN}.json')):
+    zn,x,y=e[:3]
     L.append(f'  {zn}: ({x+OX},{y+OY}) -> zwart')
 L+=['','OOGZONE (wordt later vervangen door een Gen 3-oog): 64x64 x %d-%d, y %d-%d (beschermd: niet ontkorreld/omgelijnd).'%(8+OX,15+OX,20+OY,26+OY),
     'Huidige oogpixels (64x64-coordinaten, rij voor rij x %d-%d):'%(8+OX,15+OX)]

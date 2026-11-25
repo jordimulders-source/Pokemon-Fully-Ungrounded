@@ -17,3 +17,7 @@ Style: official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 
 
 AVOID: plush toy / Neopets look, Bambi or fawn look, Deerling, Stantler, Sawsbuck, a deer with antlers, armor plates, a metal body, holding or carrying weapons, shiny or glowing metal.
 ```
+
+## Ronde 1 (25 nov)
+- `r1/dikdik_r1.png`. Jordi: "ik vind de speren te lang sowieso, is het lichaam wel brons? en de speerkleur klopt die?"
+- Gemeten: lijf #D7874E/#EBA05C (licht oranje-reebruin; brons is dieper, bijv. #CD7F32 met donkere schaduw), schacht #A27D4A, punt #9A928E (dof warmgrijs).

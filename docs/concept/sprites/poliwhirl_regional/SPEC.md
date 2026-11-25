@@ -21,3 +21,4 @@ Fase 2 van de regionale Poliwag-lijn (harlekijnpad, ijs met cinnaber); pre-evolu
 - **r2 (Jordi):** "ogen zijn nog steeds te groot, spiraal prima" (basis S2); "ogen moeten poliwhirl grootte zijn" → "naar verhouding ja" (oog/kop zoals bij de gewone Poliwhirl).
 - **r3 (Jordi):** "E6 grootte goed maar de positie niet" / "kijk ook naar het model, die heeft de positie wel goed" → r4: E6-ogen op de modelpositie.
 - **r4 (Jordi):** "linkeroog moet nog iets meer omlijnd worden, die creeert een bolling, vorm is verder goed" → r5: 4 omlijningspixels (index 1) links om het linkeroog (Claude, (20,15) (19,16) (19,17) (20,18)).
+- **r5 (Jordi):** "ofnee wacht" / "nu is het te bol" / "het oog" → eindkeuring gestopt; r6-varianten linkeroog: A = rand recht (2 oogwitpixels → omlijning), B = alleen (20,15) en (20,18), C = A + 1 px bolling.

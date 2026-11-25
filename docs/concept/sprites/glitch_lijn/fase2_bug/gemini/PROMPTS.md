@@ -122,3 +122,6 @@ PIXEL ART: real pixel art, 64x64 canvas, max 16 colors, light from the top-left,
 
 AVOID: a smooth body, a cartoon face, drawn teeth, eyelids, a mascot or emoji look, a black silhouette, insects, antennae, wings, symbols or text, screens, robots, fine pixel noise or static, Porygon, Unown, MissingNo, Gengar.
 ```
+
+## Ronde 7 (25 nov)
+- `r7/r7.png`. Jordi: "echt verschrikkelijk weer".

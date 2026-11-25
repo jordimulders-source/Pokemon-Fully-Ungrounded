@@ -43,3 +43,6 @@ Prompts in `gemini/PROMPT.md`.
 - Jordi: "de blik klopt nog niet, hij kijkt niet goed driekwart" → `sprite/r3/oog_DEF.png`: pupillen 1 px naar links (kijkrichting); D = ver oog 2 px, E = ver oog 3×3, F = ver oog 2 px 1 kolom verder naar de rand.
 - Jordi: "ze kijken nu niet driekwart maar zijwaarts" → `sprite/r3/oog_GHI.png`: pupillen naar rechts (naar de kijker); G = nabij midden + ver 2 px stip rechts, H = beide stip rechts, I = nabij midden + ver 3×3 stip rechts.
 - Jordi: "G" → basis voor de eindkeuring: `sprite/r3/lotad_gaucho_oogG.png`.
+
+## Lombre (fase 2)
+- Jordi (25 nov): "de regional lombre, lotad is al af". Startprompt v1 in `lombre/gemini/PROMPT.md` (opzet Lotad-v7; keuzes van Claude daar vermeld).

@@ -3271,3 +3271,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.794] - Regionale Jynx: kleur voorstel 1
 - `IDEEEN.md`: Jordi kiest kleurvoorstel 1 (vaas); haar en lippen een andere kleur dan Jynx, gezichtsvorm blijft, haarstijl mag passender bij een sirene.
+
+### [v0.0.795] - Regionale Jynx: Gemini-prompt v1
+- `docs/concept/sprites/jynx_regional/PROMPT.md`: eerste Gemini-prompt voor de sirene-Jynx (bruin haar; lipkleur, haarstijl en pose als voorstel van Claude gemarkeerd).

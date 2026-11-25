@@ -61,3 +61,5 @@ Prompts in `gemini/PROMPT.md`.
 ## Ludicolo (fase 3)
 - Jordi (25 nov): "tijd voor gaucho ludicolo". Startprompt v1 in `ludicolo/gemini/PROMPT.md` (opzet Lombre-v1; keuzes van Claude daar vermeld).
 - `ludicolo/r1/gemini_r1.png` (v1).
+- Jordi op r1: "op zich wel leuk deze vorm van de hoed, zolang het maar herkenbaar een gaucho hoed is. Waar lombre wat meer boos is, is deze heel comfortabel, misschien dat we nog 1 specifiek design kenmerk moeten toevoegen om deze ludicolo te laten opvallen en ietsje anders te maken dan de base versie". Voorstellen Claude: gauchosnor van bladeren, bombacha-benen, halfdichte ogen (keuze open).
+- Jordi: "rode punt rechtsonder is de staart".

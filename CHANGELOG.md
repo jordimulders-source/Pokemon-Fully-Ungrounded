@@ -3324,3 +3324,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.811] - Typeverdeling bijgewerkt
 - `DEX_IN_ROM.md`: telling na Blipbug erbij en Barboach/Slowpoke eruit (Water 91, Bug 60, Cosmic 19); Skrelp-lijn blijft (Jordi).
+
+### [v0.0.812] - Les: oude content niet opknappen bij soortverwijdering
+- `docs/lessen/TRAINERS.md`: bij het schrappen van soorten oude FRLG-/Trainer Tower-content alleen mechanisch laten bouwen (Jordi).

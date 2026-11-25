@@ -55,3 +55,4 @@ Lees vóór werk aan trainers, flags/vars, levelcurve of balans. Opgesplitst uit
 - **Beschrijving van een nieuwe TM/move-item** (`.description` in `src/data/items.h`): het tasvak is smal, dus 3 regels van max. ±17 tekens (zoals U-turn: "Attacks, then / swaps places with / a party Pokémon.").
 - Eigen tests staan in `test/battle/grounded/`.
 
+- **Soort uit de ROM halen: oude content (FRLG-teams/-kaarten, Trainer Tower, e-Reader, Interviewer) alleen mechanisch laten bouwen, geen werk in passende vervangers** (Jordi, 25 nov, na de Slowpoke/Barboach-verwijdering: "onnodig werk geweest, die teams komen er wss niet eens in"). Eén zoek-en-vervang naar een soort die in de dex zit is genoeg.

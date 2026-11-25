@@ -84,3 +84,24 @@ Keep everything exactly the same (pose, body, horns, colors, pattern). Change ON
 ```
 - Verstuurd met regels 1–4. `r3b/impala_r3b.png`: oog groter en rond (anime-achtig), staartstreep goed; kop niet groter, hoorns onveranderd (zie GEMINI.md: bijsturen werkt hooguit 1–2 keer).
 - Jordi: "niet beter"; "anders moeten wij maar een oog maken".
+
+## r4 (nieuw gesprek, zonder bijlage; prompt r3 + alleen de kuif)
+- Jordi (25 nov): "misschien kunnen we nog iets met de kuif uit fase 1, dat die iets meer mee evolved ook". Het oog maken we zelf in de spritefase (Jordi), dus dat staat niet extra in de prompt.
+- Eigen invulling Claude bij "iets meer mee evolved": groter en duidelijker dan bij de dikdik, donkerder vacht, als lok tussen de hoorns.
+```
+Design an original Pokemon. Type: Normal/Steel. Second stage of a three-stage line (it evolves from a dik-dik and later evolves into a kudu).
+
+Concept: a male impala, the African antelope, in Pokemon style. Its horns are real metal: polished steel, growing from its head as part of its body. They must have the real impala horn shape, NOT deer or gazelle horns: from the base they rise up and lean back, then spread wide outward to the sides, then the tips turn up and forward again. Seen from the front the pair forms a wide lyre; seen from the side each horn is an S-curve. The horns are clearly exaggerated (bigger, wider and more dramatic than a real impala's), so the design is stylized, but it must still be recognizable as an impala. It does not hold or carry anything.
+
+PROPORTIONS AND PERSONALITY (most important): this is a Pokemon, not a realistic animal and not a recolored animal. Drawn as a Pokemon designed by Ken Sugimori: stylized, simplified, bold shapes. Big head with big expressive eyes, ears clearly bigger than a real impala's, short thick neck, compact athletic body, legs slender but not long and stilt-like. Middle stage: more athletic than a cute first stage, but clearly a Pokemon. Personality: stoic. Calm, serious, unmoved expression. Pose: a protector stance, as if it stands guard in front of something it protects: legs planted firmly and wide, chest out, head held high.
+
+Anatomy: based on a real male impala (Aepyceros melampus), not a deer: compact, muscular antelope body with a deep chest and a slightly raised rump, small hooves, big dark eyes, slim muzzle.
+
+Crest: a tuft of darker fur (a forelock) on the forehead between the horns, bigger and more pronounced than a dik-dik's crest, clearly visible as a design feature.
+
+Colors and pattern: the fur is silver (normal fur, matte, not metal), with the real impala pattern made sharper and bolder: three clearly different bands with hard clean edges: dark silver back (a saddle), much lighter silver flank, pure white belly. On the rear: three separate, parallel black vertical stripes, one down the middle of the tail and one down the back edge of each thigh (no letter, no M shape drawn on the side). Black tufts of hair on the back of the hind legs just above the hooves. Horns: polished steel, clearly different from the fur: brighter, with hard shine, strong white highlights and dark reflections.
+
+Style: official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 colors, dark outline, facing 3/4 to the left with the body turned so the hindquarters with the black stripes are visible, compact composition that fills a square. White background, no ground, no shadow, no effects, no glow.
+
+AVOID: deer, roe deer, gazelle, realistic animal proportions, a small head on a long neck, long stilt legs, a recolored real animal, straight or upright horns, horns bending forward, a letter M on the side, a cute or playful pose, an aggressive charging pose, Deerling, Sawsbuck, Stantler, Wyrdeer, armor plates, a metal body, robot parts, holding or carrying weapons, glowing metal, horns in the same grey as the fur.
+```

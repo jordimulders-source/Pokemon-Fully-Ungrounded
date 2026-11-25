@@ -40,3 +40,4 @@ Prompts in `gemini/PROMPT.md`.
 - r1–r2 maker (`sprite/r1`, `sprite/r2`). Jordi over het oog: "houd er rekening mee dat het lotad oog lichtblauwe pixels heeft omdat het op een blauw lijf is gebouwd, dus die maak jij een tint van het bruin van het lichaam, zoals de originele lotad het doet".
 - Jordi op r2: "linkeroog valt iets teveel weg, verder vind ik hem goed" → r3 = r2 + ver oog wit met zwarte stip (2×2: wit|zwart boven, lichte lijftint eronder).
 - Jordi op r3: "nee, te klein" → `sprite/r3/oog_ABC.png`: A = r3, B = 2 px breed (zwarte stip + wit + lijftint, rechterdeel van het nabije oog), C = volledig Lotad-oog 3×3.
+- Jordi: "de blik klopt nog niet, hij kijkt niet goed driekwart" → `sprite/r3/oog_DEF.png`: pupillen 1 px naar links (kijkrichting); D = ver oog 2 px, E = ver oog 3×3, F = ver oog 2 px 1 kolom verder naar de rand.

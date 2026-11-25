@@ -73,3 +73,34 @@ COLORS (ancient Greek black-figure vase painting): feathers terracotta orange wi
 
 DO NOT: a realistic bird with a human head, a beak, a mermaid tail, an angel, jewellery, a crown, a lyre, plush style, detailed individual feathers.
 ```
+
+## r3 (25 nov, prompt v3)
+`gemini/r3.webp`. Jordi: "verwijzen naar de vaas stijl zorgt voor deze vormen, je moet de kleuren beschrijven met kleurcodes en verder niet naar de vaas verwijzen".
+
+# Prompt v4 (25 nov) = v3 zonder elke vaasverwijzing, kleuren als hexcodes (tinten gekozen door Claude)
+
+```
+The attached image is JYNX, a Gen 3 Pokémon sprite. Design a REGIONAL FORM of Jynx: it must still be instantly recognizable as Jynx, but clearly different. Its theme: a siren from Homer's Odyssey (half woman, half bird, luring sailors with its song). Fairy/Dark type.
+
+Output: a simple, clean official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64 pixels, max 16 colors, flat colors with 2-3 shades per color, few lines, the same low level of detail as the attached Jynx. White background, no ground, no shadow, no effects, no music notes.
+
+KEEP FROM JYNX (most important): the overall silhouette and proportions: the big head with the same face shape (wide face, huge full lips, small heavy-lidded eyes, no nose), hair falling down both sides of the body like a cape, the wide bell-shaped dress body that hides the legs, both arms raised in the same pose. Same front-facing view as the attachment.
+
+CHANGE INTO A SIREN:
+- It is singing: mouth open in song, with an alluring, tempting look in its eyes (not bored).
+- The two raised arms are bird wings (exactly two wings, no extra arms).
+- The dress is made of feathers, like a bird's plumage: calm, large areas of color with only a few lines. No pattern or round shapes on the chest.
+- Two bird feet with talons peek out under the feathered dress.
+- No beak: the face stays Jynx's face.
+- Hair: long and wavy.
+
+COLORS (exact hex codes):
+- Feathers: #E07A3C (light), #C4612A (base), #8E3F1A (shadow)
+- Face: #FFFFFF (light), #E8E2DA (shadow)
+- Lips: #8E2A4A (base), #5E1A30 (shadow)
+- Hair: #8A5A34 (light), #6B4226 (base), #45291A (shadow)
+- Outline: #1A1210
+No purple skin, no golden hair, no pink lips, no red dress.
+
+DO NOT: a realistic bird with a human head, a beak, a mermaid tail, an angel, jewellery, a crown, a lyre, plush style, detailed individual feathers.
+```

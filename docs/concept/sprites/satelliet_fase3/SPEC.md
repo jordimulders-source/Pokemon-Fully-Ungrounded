@@ -46,3 +46,4 @@ Open: aantal ogen, naam, evolutiemethode.
 - Jordi: "model volgen" · "er wordt van alles opnieuw getekend" → r3 vanaf de kale modelreductie, alleen pixelreparaties, diffkaart verplicht.
 - Jordi: "enige wat mag afwijken is wat we besproken hebben, maar dat kan prima zonder opnieuw te tekenen".
 - Sprite r3 (`sprite/r3/`, vanaf kale reductie, 256 afwijkingen met reden in log): vorm volgt het model; ogen en paneelraster nog zwak → r4.
+- Sprite r4 (`sprite/r4/`, 240 afwijkingen van kaal, alle besproken): ogen ring+iris+pupil, panelen 4/3 vakken, zwart alleen schaduwkant → keurder.

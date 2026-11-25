@@ -825,3 +825,13 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - **Jordi (na het overzicht van de 3 fases):** "kan je fase 2 iets hoger zetten in het vlak, alsof die zweeft? Daarnaast zijn de ogen en mond in 3 wat minder duidelijk dan in 2, die mogen precies dezelfde kleuren gebruiken, nu lijken ze wat doffer"; "fase 1 mag ook wat hoger zweven". → hoogtes +4/+8/+12 px voor fase 1 en 2 (`glitch_lijn/vel_hoger.png`); fase 3 gezichtskleuren 1-op-1 naar het palet van fase 2 (`gereedschap/fase3_kleuren.py`, `fase3_virus/sprite/glitch_fase3_kleur.png`, vergelijk `fase3_virus/sprite/vergelijk_kleur.png`). Jordi: "hij mist de pupillen die fase 2 heeft, probeer die netjes voor elk hoofd te doen, passend bij de vorm en het perspectief" → ogen van fase 2 als blok overgenomen op de 3 hoofden die naar voren kijken (klein hoofd: twee keer het smalle oog, gespiegeld); de 2 gedraaide hoofden houden hun spleetogen (fase 2-oog past daar niet; pupil per pixel toevoegen en ogen opnieuw uit het grote r1-beeld halen maakten de ogen doffer, verworpen). `gereedschap/fase3_pupillen.py`, `fase3_virus/sprite/glitch_fase3_pupil.png`, vergelijk `vergelijk_pupil.png`. Jordi: "veel beter" → nieuwe `fase3_virus/af/glitch_fase3.png` (oude versie bewaard als `sprite/glitch_fase3_voor_kleur.png`).
 - **Zweefhoogte (Jordi, 25 nov):** "fase 1 +4 en fase 2 +8" → beide `af/`-bestanden 4 resp. 8 px hoger in het vlak. Hele lijn op main.
 - **Open:** namen van alle drie de fases.
+
+## Extra Ice-lijn: Ice/Fire (Jordi, 25 nov)
+- **Jordi:** "we hebben nog een extra ijs lijn nodig en ik wil graag voor ice/fire gaan ondanks de vele zwaktes"; "kom met wat ideeën"; "geen zuid amerika link".
+- **Voorstellen Claude (open):**
+  1. **Baked Alaska:** ijsbolletje → gefrituurd ijs (krokant korstje) → flambé-taart met blauwe vlam; dessertlijn zoals Alcremie.
+  2. **Brandend ijs (methaanhydraat):** ijsklomp die echt brandt; vlammetje bovenop dat nooit smelt wat eronder zit. Past bij "diepe zee als mysterieus gebied".
+  3. **Ijsvogel:** de vogel heeft al ijsblauw en vuuroranje; duikt in ijswater, buik gloeit; kuiken → duiker → fel gloeiende eindvorm.
+  4. **Sauna-yeti:** wisselt sauna en wak af; klein harig ventje met een emmertje → yeti met dampende stenen op de rug.
+  5. **Droogijs-geest:** koude rook die brandt bij aanraking (vriesbrand); laag kruipende nevel met ogen → wolk met witte "vlammen".
+  6. **IJslantaarn:** kaarsvlam in een holle ijsbol; lantaarn → kroonluchter van ijspegels (wel dicht bij de Litwick-lijn).

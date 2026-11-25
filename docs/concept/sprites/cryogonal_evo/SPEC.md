@@ -20,3 +20,4 @@ Rondes: `gemini/`.
 - Gemini r3: "neeeeee dat bedoelde ik niet, de kubus is opgebouwd uit de stukjes die cryogonal nu de huidige vorm geven, dit is gewoon een kubus met een cryogonal erin" → r4 (`gemini/PROMPT_r4_tesseract.md`).
 - Gemini r4: "ziet er niet uit", "echt zo slecht". Gemini tekent na r2–r4 telkens een kubus met (een stuk) Cryogonal erin; tekst alleen haalt de opbouw niet. Volgende stap (open): vormschets als bijlage, of stoppen en Cryogonal reviseren.
 - Prompt r5 (`gemini/PROMPT_r5_tesseract.md`) na Jordi: "maak dan eens een goede prompt".
+- Gemini r5: Jordi "nee, we stoppenm dit gaat niet lukken." → **Cryogonal-evolutie gestopt (25 nov).**

@@ -17,3 +17,6 @@ Per cel het meerderheidsmateriaal van de modelpixels (`modeloog.py`: zwart L<70 
 1. Het linkeroog ligt in het model op de silhouetrand. Bij E6 en E5 komt Poliwhirls witte ring daardoor tegen de lucht: lichte randpixels (14,5) en (14,6) bij E6, (14,4) en (14,5) bij E5. Niet veranderd, omdat het oog 1-op-1 moet blijven.
 2. E5 (15 px) leest als ruitje; E6 is nog een rond Poliwhirl-oog.
 3. EM is grof en ongelijk links/rechts (meerderheid per cel van een fijner getekend oog).
+
+## Oogmaat naar verhouding (Jordi: "naar verhouding" even groot als bij de gewone Poliwhirl)
+Kopbreedte zonder kristallen en ogen, op de oogrijen en net eronder: Poliwhirl gba 28 px (y 14–19; met rij 20 gem. 28,2), oog 7 px (25 %). r3: 20–21 px (y 3–7), met de rijen eronder (y 8–9: 23) gem. 21,3. Doel = 7 × 21,3 / 28,2 = 5,3 → **5 px**. **E5 haalt de maat** (5×5); E6 is 1 px te groot; EM is ±5–6 breed maar onregelmatig. Doel ≥ 5, dus geen E4 gemaakt.

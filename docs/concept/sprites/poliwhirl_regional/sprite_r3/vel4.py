@@ -22,8 +22,9 @@ def rij(ims,gap=16):
     for i in ims: c.paste(i,(x,0)); x+=i.size[0]+gap
     return c
 pw=gba('poliwhirl')
-rows=[('8x: E6 | E5 | EM | model',rij([rgb(a).resize((W*8,H*8),Image.NEAREST) for a in R]+[mc(0,W-1,0,H-1,8)])),
- ('kop 12x: E6 | E5 | EM | model | Poliwhirl gba (zelfde schaal)',rij([rgb(a[0:12,10:36]).resize((26*12,12*12),Image.NEAREST) for a in R]+[mc(10,35,0,11,12),pw.crop((15,9,51,22)).resize((36*12,13*12),Image.NEAREST)])),
+MEET='Oogmaat naar verhouding: kopbreedte Poliwhirl gba 28 px (ooghoogte y 14-19; met de rij eronder gem. 28,2), r3 20,4 px (ooghoogte y 3-7; met de rijen eronder gem. 21,3), zonder kristallen. Doel = 7 x 21,3/28,2 = 5,3 -> 5 px. HAALT DE MAAT: E5 (5x5). E6 = 6, EM = +/-5-6 breed maar onregelmatig.'
+rows=[(MEET,Image.new('RGB',(10,4),'white')),('8x: E6 | E5 (doelmaat) | EM | model',rij([rgb(a).resize((W*8,H*8),Image.NEAREST) for a in R]+[mc(0,W-1,0,H-1,8)])),
+ ('kop 12x: E6 | E5 (doelmaat) | EM | model | Poliwhirl gba (zelfde schaal)',rij([rgb(a[0:12,10:36]).resize((26*12,12*12),Image.NEAREST) for a in R]+[mc(10,35,0,11,12),pw.crop((15,9,51,22)).resize((36*12,13*12),Image.NEAREST)])),
  ('4x: E6 | E5 | EM | regionale Poliwag | Poliwhirl gba',rij([png('poliwhirl_regional_r3_%s.png'%v).resize((256,256),Image.NEAREST) for v in ('E6','E5','EM')]+[png('../../poliwag_regional/af/poliwag_regional.png').resize((256,256),Image.NEAREST),pw.resize((256,256),Image.NEAREST)]))]
 Wt=max(i.size[0] for _,i in rows); Ht=sum(i.size[1]+30 for _,i in rows)
 v=Image.new('RGB',(Wt,Ht),'white'); d=ImageDraw.Draw(v); y=0

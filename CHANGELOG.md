@@ -3307,3 +3307,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.806] - Regionale Poliwag-lijn: eindvorm Poliwrath
 - Eindvorm van de Ice/Poison-Poliwag-lijn is een regionale Poliwrath (Ice/Poison); Politoed blijft gewoon (Jordi). Evolutiemethode later. `IDEEEN.md`, `POKEMON.md`, `TODO.md` bijgewerkt.
+
+### [v0.0.807] - Regionale Poliwag: besluiten en Gemini-prompt v1
+- Jordi: harlekijnpad, ijs met cinnaber, beetje kristal, spiraal als venster, hoofdkleur als de harlekijnpad. Vastgelegd in `docs/concept/sprites/poliwag_regional/SPEC.md`; Gemini-prompt v1 + bijlage in `poliwag_regional/gemini/`.

@@ -3274,3 +3274,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.795] - Regionale Jynx: Gemini-prompt v1
 - `docs/concept/sprites/jynx_regional/PROMPT.md`: eerste Gemini-prompt voor de sirene-Jynx (bruin haar; lipkleur, haarstijl en pose als voorstel van Claude gemarkeerd).
+
+### [v0.0.796] - Regionale Jynx: r1 afgekeurd, prompt v2
+- `jynx_regional/gemini/r1.png` afgekeurd (vogel met mensenhoofd, geen Jynx). Prompt v2 in `PROMPT.md`: Jynx-bouw als basis met de Gen 3-sprite als bijlage, sirene-elementen erin. Les in `docs/lessen/GEMINI.md`.

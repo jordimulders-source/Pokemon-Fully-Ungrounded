@@ -73,3 +73,4 @@ Open: aantal ogen, naam, evolutiemethode.
 - r14 (`sprite/r14/`): PB −2; PF zelfde breedte (6 px) en vakmaat (4 px) als PB, 5 vakken, achter voorbuis en PE, onder PE een heel vak; onderkant sprite y 61. Naar Jordi.
 - Jordi over r14 (met rode lijnen, `sprite/r14/jordi_afkappingen.png`): "hier kappen de twee panelen onnodig af toch?"
 - Jordi: "hopelijk nu eindelijk eens goed" · "ja en keur ze en stuur pas als ze echt goed zijn, het doel is duidelijk" → na r15: keurder + eindkeuring, rondes tot PASS, pas dan naar Jordi.
+- r15 (`sprite/r15/`): PA loopt rechts van PB door tot de achterarm; PF links boven PE zichtbaar (witte driehoek was modelachtergrond); gaatje 2×2 (30–31,44–45). → keurder.

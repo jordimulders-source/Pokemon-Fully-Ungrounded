@@ -68,3 +68,17 @@ Style: official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 
 
 AVOID: deer, roe deer, gazelle, realistic animal proportions, a small head on a long neck, long stilt legs, a recolored real animal, straight or upright horns, horns bending forward, a letter M on the side, a cute or playful pose, an aggressive charging pose, Deerling, Sawsbuck, Stantler, Wyrdeer, armor plates, a metal body, robot parts, holding or carrying weapons, glowing metal, horns in the same grey as the fur.
 ```
+
+## Ronde 3 (25 nov)
+- `r3/impala_r3.png`. Claude: hoorns nu echt staal met glans; drieslag en houding (stoïcijns, poten geplant) beter; maar oog klein en realistisch (amandelvorm, geen glimlicht), kop nog klein t.o.v. het lijf, hoorns nog geen wijde lier, de M is nu 4 strepen op de zijkant van de bil (leest als kudu/zebra).
+- Jordi: "is nog net iets teveel een dier en geen pokemon he, misschien door het oog?"
+
+## r3b (bijsturen in hetzelfde gesprek, zoals dikdik r3b)
+- Regel 1 = Jordi (oog). Regels 2–4 = voorstel Claude, alleen meesturen als Jordi ze wil.
+```
+Keep everything exactly the same (pose, body, horns, colors, pattern). Change ONLY:
+1. The eye: make it a Pokemon eye, not a realistic animal eye: clearly bigger, rounder, a large dark iris that fills most of the eye, a clear white highlight, and a bold dark outline. Keep the calm, serious, stoic expression.
+2. The head: make it bigger relative to the body (Pokemon proportions).
+3. The rear stripes: remove the stripes on the side of the haunch. Instead: one black stripe down the middle of the tail and one black stripe along the back edge of the thigh only.
+4. The horns: same steel, but shaped as a wide lyre: from the base up and back, then spreading wide outward, then the tips turn up and forward.
+```

@@ -60,3 +60,4 @@ Prompts in `gemini/PROMPT.md`.
 
 ## Ludicolo (fase 3)
 - Jordi (25 nov): "tijd voor gaucho ludicolo". Startprompt v1 in `ludicolo/gemini/PROMPT.md` (opzet Lombre-v1; keuzes van Claude daar vermeld).
+- `ludicolo/r1/gemini_r1.png` (v1).

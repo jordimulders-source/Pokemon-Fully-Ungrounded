@@ -3262,3 +3262,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.791] - Regionale Jynx: keuzes; regel over de regio-link
 - `IDEEEN.md`: regionale Jynx wordt een vogelvrouw zoals in de Odyssee, type Fairy (tweede type open); Smoochum blijft gewoon.
 - `CLAUDE.md`: vaste regel dat niet elke Pokémon een link met Zuid-Amerika hoeft te hebben (Jordi).
+
+### [v0.0.792] - Regionale Jynx: Fairy/Dark
+- `IDEEEN.md`: type van de regionale Jynx (sirene) is Fairy/Dark (Jordi).

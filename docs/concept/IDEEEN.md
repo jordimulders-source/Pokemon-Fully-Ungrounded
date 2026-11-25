@@ -748,5 +748,5 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 ## Regionale Jynx: sirene uit de Odyssee (Jordi, 25 nov)
 - Jordi: "wat dacht je van een regional form van jynx, gebaseerd op sirenes uit de odyssee".
 - Gegevens uit de repo: Jynx is Ice/Psychic; Smoochum → Jynx zit in de dex (DEX_NOMINATIES: "Geen band").
-- Besloten (Jordi, 25 nov): **vogelvrouw zoals in de Odyssee**; type **Fairy** ("sowieso"), tweede type nog niet bedacht; **Smoochum blijft gewoon** (geen regional, evolueert in deze Jynx).
+- Besloten (Jordi, 25 nov): **vogelvrouw zoals in de Odyssee**; type **Fairy/Dark** (Fairy "sowieso"; Dark gekozen uit de voorstellen van Claude, 25 nov); **Smoochum blijft gewoon** (geen regional, evolueert in deze Jynx).
 - Een link met Zuid-Amerika is niet nodig (zie CLAUDE.md, Vaste regels).

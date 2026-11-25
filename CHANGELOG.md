@@ -3368,3 +3368,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Test 5: kaarttegels (tilesets) als sprite (`fase1_glitch/gen3_tileset/vel.png`).
 - Test 6: Gengar +13 dichter, geconcentreerd middenstuk met vonkjes eromheen (`fase1_glitch/concentratie/vel.png`).
 - Test 7: Gastly-achtige wolk van gemengde ROM-rommel met vaag gezicht (`fase1_glitch/wolk/vel.png`).
+- Test 8 (gekleurde wolk, collage van assets): afgekeurd; conclusie in STUDIE.md.

@@ -69,3 +69,4 @@ Open: aantal ogen, naam, evolutiemethode.
 - Jordi over r12: "rechtsboven paneel opgelost, boven is nu juist te ver doorgecschoven en onder heb je nu bijna helemaal weggehaald" → r13 varianten PB −1,5/−2, PF r11-positie/−1,5.
 - Jordi over PF: "hij moet overlapt worden maar op een goede manier".
 - r13 (`sprite/r13/`): varianten A–D (PB −1,5/−2; PF lang 61 modelpx, r11-plek of −1,5). Naar Jordi.
+- Jordi over r13: "bovenste zie ik geen verschil tussen c en d, dus een van de twee, de onderste heb je precies hetgene wat goed zou zijn geen enkele keer gedaan, dezelfde breedte als boven, 4 pixels tussen de lijnen in" → r14: PB −2, PF = PB-breedte en vakmaat 4 px.

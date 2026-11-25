@@ -30,5 +30,7 @@ Lijnbesluiten: `docs/concept/IDEEEN.md` → "Capybarrel"; fase 1: `docs/concept/
 
 - 25 nov (op c): "het oog is heel raaar, de neus is effen ... oren zijn ook anders dan het model en grijze streep is ook weg", "de morrillo is anders dan je eerst deed toch? oog is nog steeds slecht, snuit nergens als in het model", "De tanden zitten ook helemaal niet meer vast aan de mond", "doe maar gewoon hetzelfde oog als capybarrel" → d = c + Capybarrel-oog exact (E3), tanden 2 rijen omhoog vast onder de snuit, philtrum donkerbruin (`eindkeuring_dc/capykart_d.png`, `kop_keuze/`).
 
+- 25 nov: "tanden moeten verder naar links", "Tanden staan alleen in l2 goed, maar lijken wel een beetje knullig nog, haal ze maar helemaal weg", "snuitplaat prima", morrillo: "ja die morrilo is amper te zien, weet niet of dat klopt zo", "nee de morrillo is te klein toch? als je hem zou draaien zou die alleen links van de neus zitten, klopt toch niet?", op de neusrug: "ja dit slaat ook nergens op" → e = d zonder tanden (kin uit de kale reductie) en zonder morrillo (`eindkeuring_dc/capykart_e.png`).
+
 ## Open (niet door Jordi gezegd)
 - Evolutiemethode/level.

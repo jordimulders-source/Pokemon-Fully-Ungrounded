@@ -3268,3 +3268,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.793] - Regionale Jynx: kleurrichting
 - `IDEEEN.md`: Jordi's kleurrichting voor de sirene-Jynx (mix van Jynx en oud-Griekse kleuren; Jynx herkenbaar maar echt anders).
+
+### [v0.0.794] - Regionale Jynx: kleur voorstel 1
+- `IDEEEN.md`: Jordi kiest kleurvoorstel 1 (vaas); haar en lippen een andere kleur dan Jynx, gezichtsvorm blijft, haarstijl mag passender bij een sirene.

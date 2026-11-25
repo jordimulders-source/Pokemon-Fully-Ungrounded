@@ -751,3 +751,5 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - Besloten (Jordi, 25 nov): **vogelvrouw zoals in de Odyssee**; type **Fairy/Dark** (Fairy "sowieso"; Dark gekozen uit de voorstellen van Claude, 25 nov); **Smoochum blijft gewoon** (geen regional, evolueert in deze Jynx).
 - Een link met Zuid-Amerika is niet nodig (zie CLAUDE.md, Vaste regels).
 - Kleuren (Jordi, 25 nov): "laten we voor kleuren een beetje gaan voor een mix van jynx en oud griekse kleuren uit hoe ze geportreteerd waren, belangrijk is dat jynx nog te herkennen is, maar ook echt anders is".
+- Kleurvoorstellen Claude (25 nov): 1 vaas (vogelhelft terracotta met zwarte tekening, gezicht wit zoals vrouwen op vazen), 2 fresco (Egyptisch blauw + okergoud), 3 donker (zwart + terracotta + purperrood).
+- Jordi (25 nov): **voorstel 1**, maar "het haar en de lippen wil ik juist een andere kleur, maar we het gezicht qua vorm wel, het haar mag best in een andere stijl, wat meer past bij een sirene". Dus: gezichtsvorm van Jynx blijft; haar en lippen een andere kleur dan bij Jynx (welke: open); haarstijl mag anders.

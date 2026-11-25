@@ -3265,3 +3265,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.792] - Gaucho-Lotad: model gekozen
 - Na 8 Gemini-rondes (v1–v7; bijlagen en "dicht bij Lotad" gaven palette swaps, poten bijsturen/plakken lukte niet) koos Jordi `lotad_regional/r8/gemini_r8_1.png` als model, op 4 poten in plaats van 6.
+
+### [v0.0.793] - Gaucho-Lotad: frontsprite af
+- Regionale Lotad (Ground, fase 1 van de gaucho-lijn): frontsprite af in `docs/concept/sprites/lotad_regional/af/lotad_gaucho.png` (43×41, 14 kleuren). Model Gemini r8-1 (sombrero-blad, rafelkraag, 4 poten) overgenomen, kleuren van r1, Lotad-ogen met lijftint, blik oog G (driekwart), DC-eindkeuring (schaduw kraag, belijning, kleurtinten). Op het overzichtsvel (Regional forms).
+- Lessen in `GEMINI.md`: geen bijlagen; "dicht bij de basisvorm" geeft een palette swap; omkleuren pas in de spritefase.

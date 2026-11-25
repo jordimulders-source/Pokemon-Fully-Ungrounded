@@ -3353,3 +3353,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Ronde 9 afgekeurd ("broodrooster"); corruptietest op r9 + script; prompt r10.
 - Ronde 10 afgekeurd; Gemini-lus gestopt (les in `GEMINI.md`).
 - Referentie zwart-rood figuurtje (Jordi: te comic-achtige menselijke ogen); fase 1 eerst, prompt r1.
+- Fase 1 ronde 1: te blokkerig, mond te klein, ogen te vierkant; prompt r2.

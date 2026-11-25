@@ -6,3 +6,4 @@ Jordi (25 nov): "deze gaan allemaal al wat meer de juiste kant op".
 - `corruptie_trainer_red.png`: echte corruptie in een Gen 1/2-gevecht ("Wild ■ appeared"), linksonder een kapotte trainer-Red-sprite. Jordi: "corruptie gaat gemini niet kunnen maken, dat moeten wij maar doen, zoals de trainer red hier links onder".
 - `zwart_rood_figuurtje.png` (herkomst onbekend). Jordi: "deze komt ook al wat dichter in de buurt, onze poppetjes zijn telkens veel te comic-like met hele blije menselijke ogen".
 - `missingno.png`: MissingNo. Jordi: "dit is missingno, zo'n type pokemon wil ik, maar dan anders".
+- `gastly_gen1.png`: Gen 1-Gastly. Jordi: "de dichheid moet in het midden het grootst zijn, beetje zoals gen 1 gastly, maar dan glitchy en verschillende soorten assets, zoals bij missingno en daar komt dan heel vaag 2 ogen en een mond uit die creepy lijken".

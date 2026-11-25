@@ -8,8 +8,9 @@ Wx=kaal.overlap(64,X0,s,a.shape[1]); Wy=kaal.overlap(OH,Y0,s,a.shape[0])
 def cov(m): return Wy@m.astype(float)@Wx.T/(s*s)
 nonbg=cov(~bg)
 pan=(((a-np.array((40,38,70)))**2).sum(2)<14**2)|lijn|(((a-np.array((28,24,45)))**2).sum(2)<10**2)
-from common import KF,KS
-BOLLEN=[((62.1,128.0),20.6*KF),((182.0,36.1),14.8),((74.9,64.7),11.2*KS),((189.0,91.0),11.2*KS*1.07),((128.0,72.0),20.5)]   # r7: oogbollen x K (rechts: straal 11,98 gefit)  # r2-metingen, alleen om oog/bolpixels uit te sluiten
+from common import KF,KS,VAR as _V
+_LX=79+(74.9-79)*KS if _V.startswith('s') else 74.9   # r8: linkerbol geschaald vanuit de kraagkant x=79
+BOLLEN=[((62.1,128.0),20.6*KF),((182.0,36.1),14.8),((_LX,64.7),11.2*KS),((189.0,91.0),11.2*KS*1.07),((128.0,72.0),20.5)]   # r7: oogbollen x K (rechts: straal 11,98 gefit)  # r2-metingen, alleen om oog/bolpixels uit te sluiten
 inbol=np.zeros_like(bg)
 for (cx,cy),r in BOLLEN: inbol|=(X-cx)**2+(Y-cy)**2<=(r+1.5)**2
 pan&=~inbol

@@ -88,10 +88,16 @@ if VAR!='100':
         inz=lambda x,y,m=0.0: np.hypot(x+.5-cx,y+.5-cy)<=R+m
         # (a) pupil: voorste oog 2x2 op het blok met de meeste modelpupil (r4: 'pupil 2x2 op de modelplek'); zij-ogen: >=1 px
         P=ogen7.PUPC[nm]
-        if nm=='voor':
+        groot=(nm=='voor') or (VAR.startswith('s') and 2*ogen7.INFO[nm]['iris_r']/s_>=3.3)   # r8: zij-oog met iris >=3,3 px -> pupil 2x2
+        if groot:
             bx=max(((x,y) for y in range(OH-1) for x in range(63) if inz(x+.5,y+.5)),key=lambda q:P[q[1]:q[1]+2,q[0]:q[0]+2].sum())
             for y in range(bx[1],bx[1]+2):
                 for x in range(bx[0],bx[0]+2): zet(x,y,2,'oog_'+nm,'pupil 2x2 op de modelplek')
+            if VAR.startswith('s'):
+                for y in range(OH):
+                    for x in range(64):
+                        if spr[y,x]==2 and np.hypot(x+.5-cx,y+.5-cy)<=0.75*R and not(bx[0]<=x<=bx[0]+1 and bx[1]<=y<=bx[1]+1):
+                            zet(x,y,10,'oog_'+nm,'pupil 2x2: losse pupilpixel -> iris')
         else:   # zij-ogen: 1 pupilpixel op de plek met de meeste modelpupil (r4: links/rechts op de modelplek)
             y,x=np.unravel_index(P.argmax(),P.shape); zet(x,y,2,'oog_'+nm,'pupil op de modelplek (max modeldekking)')
         # (b) iris/pupil op de silhouetrand: rand naar buiten als het model daar >=40% bol heeft, anders wordt de irispixel ring
@@ -127,7 +133,7 @@ if VAR!='100':
             for x,y,c in todo: zet(x,y,c,'oog_'+nm,'ring gesloten (geen wit/bol tussen iris en bol)')
     for nm,x,y,c in ogen7.EXTRA.get(VAR,[]): zet(x,y,c,'oog_'+nm,'handreparatie: '+('ring links/boven (r4-regel ring rondom)' if nm=='rechts' else 'iris 2x2 zoals r6'))
 # 5c. staafje romp->PE: gat (24,36) dicht (modeldekking 0,48 tussen (23,36) 0,63 en (25,36) 1,0)
-for x,y in (((24,36),) if VAR=='100' else ogen7.STAAF[VAR]): zet(x,y,1,'staafje_PE','staafje doorlopend (gat in reductie)')
+for x,y in (((24,36),) if VAR=='100' else ogen7.STAAF.get(VAR,[])): zet(x,y,1,'staafje_PE','staafje doorlopend (gat in reductie)')
 # 6. palet: index 5 = gemeten lijnkleur van het paneelraster in het model (mediaan 116,99,143; kaal.py had 106,88,130)
 PAL=list(kaal.PAL); PAL[5]=(116,99,143)
 TOP=(64-OH)//2+3

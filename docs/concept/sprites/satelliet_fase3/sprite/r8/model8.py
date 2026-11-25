@@ -46,11 +46,10 @@ def dil(m,n=1):
         o=o|np.roll(o,1,0)|np.roll(o,-1,0)|np.roll(o,1,1)|np.roll(o,-1,1)
     return o
 PMASK={}
+paneelkleur=~bg&~inbol&(a.min(2)<150)&((af[:,:,0]-af[:,:,1])<30)   # navy vak, lavendel lijn, donkere rand; geen wit en geen paarse kraag (R-G>=30)
 for k in ORDE:
-    u,v=uvm(k,PX,PY); box=(u>-0.06)&(u<1.06)&(v>-0.3)&(v<1.3)
-    c=kern&box&~inbol
-    donker=(a.sum(2)<200)&~bg&box&~inbol&dil(c,2)&~dil(licht,1)   # paneelomlijning: donker, tegen paneel, niet tegen lichte romp
-    PMASK[k]=c|donker
+    u,v=uvm(k,PX,PY); box=(u>-0.04)&(u<1.04)&(v>-0.12)&(v<1.12)
+    PMASK[k]=paneelkleur&box
 PAN=np.zeros_like(bg)
 for m in PMASK.values(): PAN|=m
 def panelen(f):
@@ -85,6 +84,8 @@ def bollen(base,al,kf,ks):
     out=base.copy(); al=al.copy()
     for nm,k in (('rechts',ks),('links',ks),('voor',kf)):
         cx,cy,r=BOL[nm]; Rr=(r+0.5)*k+1
+        if nm=='links':   # r8: schalen vanuit de kraagkant (x=79, kraagrand) i.p.v. het middelpunt: de snede achter de kraag blijft
+            ox=79.0; Rr=(r+0.5+(ox-cx))*k+1; cx=ox   # bij de kraag; anders steekt de bol boven/onder de kraag als blok naar rechts uit
         sx=np.floor(cx+(PX-cx)/k).astype(int); sy=np.floor(cy+(PY-cy)/k).astype(int)
         ok=(np.hypot(PX-cx,PY-cy)<=Rr)&(sx>=0)&(sx<Ww)&(sy>=0)&(sy<Hh)
         ok[ok]&=MASK[nm][sy[ok],sx[ok]]

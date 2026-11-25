@@ -1,0 +1,257 @@
+x y oud->nieuw stap onderdeel reden (volle spritecoordinaten)
+46 21 1->2 r5 fix5 MOET-reparatie keuring_r4 (ongewijzigd overgenomen)
+38 26 1->2 r5 fix5 MOET-reparatie keuring_r4 (ongewijzigd overgenomen)
+39 26 1->2 r5 fix5 MOET-reparatie keuring_r4 (ongewijzigd overgenomen)
+40 26 1->2 r5 fix5 MOET-reparatie keuring_r4 (ongewijzigd overgenomen)
+33 28 1->2 r5 fix5 MOET-reparatie keuring_r4 (ongewijzigd overgenomen)
+27 35 1->2 r5 fix5 MOET-reparatie keuring_r4 (ongewijzigd overgenomen)
+24 37 1->2 r5 fix5 MOET-reparatie keuring_r4 (ongewijzigd overgenomen)
+27 34 1->2 r5 fix5 MOET-reparatie keuring_r4 (ongewijzigd overgenomen)
+26 20 5->2 r5 fix5 MOET-reparatie keuring_r4 (ongewijzigd overgenomen)
+30 21 5->2 r5 fix5 MOET-reparatie keuring_r4 (ongewijzigd overgenomen)
+52 29 5->2 r5 fix5 MOET-reparatie keuring_r4 (ongewijzigd overgenomen)
+56 30 5->2 r5 fix5 MOET-reparatie keuring_r4 (ongewijzigd overgenomen)
+36 42 2->1 r5 fix5 MOET-reparatie keuring_r4 (ongewijzigd overgenomen)
+37 43 2->1 r5 fix5 MOET-reparatie keuring_r4 (ongewijzigd overgenomen)
+37 23 5->1 r5 fix5 MOET-reparatie keuring_r4 (ongewijzigd overgenomen)
+38 28 1->3 ek5 ek5 mastvoetring: 8/1/8-dambord, holte in donkerste eigen tint (model L58)
+33 40 1->12 ek5 ek5 zwart cluster 2 rijen onder de hub; model hier licht (L181) = buis
+34 40 1->2 ek5 ek5 zwart cluster onder de hub -> bovenkant mast in eigen navy (model L78)
+35 40 1->2 ek5 ek5 idem (model L66)
+41 32 1->3 ek5 ek5 zwart tussen twee kragen (6 boven en onder) -> binnenlijn 3 (model L75)
+42 33 1->2 ek5 ek5 bovenrand rechterarm = lichtkant, cluster 2 rijen zwart -> navy
+43 33 1->2 ek5 ek5 idem
+38 35 1->6 ek5 ek5 losse zwarte pixel tussen hub en kraag -> kraagpaars (model 126,86,143)
+46 28 1->12 ek5 ek5 zwart in de buis; model licht (L162)
+47 28 1->3 ek5 ek5 binnenlijn buis/module niet zwart (model L59)
+58 37 2->1 bol bol_rechts bolomlijning r4-regel: schaduwkant zwart
+46 39 2->1 bol bol_rechts bolomlijning r4-regel: schaduwkant zwart
+49 43 2->1 bol bol_rechts bolomlijning r4-regel: schaduwkant zwart
+24 50 2->1 bol bol_voor bolomlijning r4-regel: schaduwkant zwart
+34 22 1->2 PB PB mastpaneel PB voor PA (model): lichte rand
+36 22 11->1 PB PB mastpaneel PB voor PA (model): schaduwrand zwart
+34 23 11->2 PB PB mastpaneel PB voor PA (model): lichte rand
+36 23 12->1 PB PB mastpaneel PB voor PA (model): schaduwrand zwart
+34 24 11->2 PB PB mastpaneel PB voor PA (model): lichte rand
+36 24 11->1 PB PB mastpaneel PB voor PA (model): schaduwrand zwart
+34 25 11->2 PB PB mastpaneel PB voor PA (model): lichte rand
+35 25 2->11 PB PB mastpaneel PB voor PA (model): vak
+35 15 11->14 paneel PB vak 1: tint licht
+35 16 11->14 paneel PB vak 1: tint licht
+36 16 11->14 paneel PB vak 1: tint licht
+35 17 11->14 paneel PB vak 1: tint licht
+36 17 11->14 paneel PB vak 1: tint licht
+35 19 11->13 paneel PB vak 2: tint midden
+36 19 11->13 paneel PB vak 2: tint midden
+23 20 11->13 paneel PA vak 1: tint midden
+24 20 11->13 paneel PA vak 1: tint midden
+25 20 11->13 paneel PA vak 1: tint midden
+26 20 11->13 paneel PA vak 1: tint midden
+27 20 11->13 paneel PA vak 2: tint midden
+35 20 11->13 paneel PB vak 2: tint midden
+36 20 11->13 paneel PB vak 2: tint midden
+21 21 11->13 paneel PA vak 1: tint midden
+22 21 11->13 paneel PA vak 1: tint midden
+23 21 11->13 paneel PA vak 1: tint midden
+24 21 11->13 paneel PA vak 1: tint midden
+26 21 11->13 paneel PA vak 2: tint midden
+27 21 11->13 paneel PA vak 2: tint midden
+28 21 11->13 paneel PA vak 2: tint midden
+29 21 11->13 paneel PA vak 2: tint midden
+30 21 11->13 paneel PA vak 2: tint midden
+36 21 11->13 paneel PB vak 2: tint midden
+20 22 11->13 paneel PA vak 1: tint midden
+21 22 11->13 paneel PA vak 1: tint midden
+22 22 11->13 paneel PA vak 1: tint midden
+23 22 11->13 paneel PA vak 1: tint midden
+25 22 11->13 paneel PA vak 2: tint midden
+26 22 11->13 paneel PA vak 2: tint midden
+27 22 11->13 paneel PA vak 2: tint midden
+28 22 11->13 paneel PA vak 2: tint midden
+29 22 12->14 paneel PA rasterlijn lichter dan het vak (B op donker vak, fase 2)
+33 22 11->13 paneel PB vak 3: tint midden
+24 23 11->13 paneel PA vak 2: tint midden
+25 23 11->13 paneel PA vak 2: tint midden
+26 23 11->13 paneel PA vak 2: tint midden
+28 23 12->14 paneel PA rasterlijn lichter dan het vak (B op donker vak, fase 2)
+32 23 12->14 paneel PA rasterlijn lichter dan het vak (B op donker vak, fase 2)
+33 23 11->13 paneel PB vak 3: tint midden
+35 23 11->13 paneel PB vak 3: tint midden
+25 24 11->13 paneel PA vak 2: tint midden
+31 24 12->14 paneel PA rasterlijn lichter dan het vak (B op donker vak, fase 2)
+33 24 11->13 paneel PB vak 3: tint midden
+35 24 11->13 paneel PB vak 3: tint midden
+30 25 12->14 paneel PA rasterlijn lichter dan het vak (B op donker vak, fase 2)
+33 25 11->13 paneel PB vak 3: tint midden
+35 25 11->13 paneel PB vak 3: tint midden
+36 25 11->13 paneel PB vak 3: tint midden
+33 26 11->13 paneel PB vak 3: tint midden
+49 29 11->13 paneel PC vak 1: tint midden
+49 30 11->13 paneel PC vak 1: tint midden
+50 30 11->13 paneel PC vak 1: tint midden
+52 30 11->13 paneel PC vak 2: tint midden
+46 31 11->13 paneel PC vak 1: tint midden
+48 31 11->13 paneel PC vak 1: tint midden
+49 31 11->13 paneel PC vak 1: tint midden
+52 31 11->13 paneel PC vak 2: tint midden
+53 31 11->13 paneel PC vak 2: tint midden
+45 32 11->13 paneel PC vak 1: tint midden
+46 32 11->13 paneel PC vak 1: tint midden
+47 32 11->13 paneel PC vak 1: tint midden
+48 32 11->13 paneel PC vak 1: tint midden
+59 32 12->14 paneel PC rasterlijn lichter dan het vak (B op donker vak, fase 2)
+58 33 12->14 paneel PC rasterlijn lichter dan het vak (B op donker vak, fase 2)
+6 37 11->14 paneel PD vak 1: tint licht
+3 38 11->14 paneel PD vak 1: tint licht
+7 38 11->13 paneel PD vak 2: tint midden
+9 38 11->13 paneel PD vak 2: tint midden
+1 39 11->14 paneel PD vak 1: tint licht
+2 39 11->14 paneel PD vak 1: tint licht
+3 39 11->14 paneel PD vak 1: tint licht
+6 39 11->13 paneel PD vak 2: tint midden
+10 39 11->13 paneel PD vak 3: tint midden
+11 39 11->13 paneel PD vak 3: tint midden
+12 39 11->13 paneel PD vak 3: tint midden
+14 39 12->14 paneel PD rasterlijn lichter dan het vak (B op donker vak, fase 2)
+4 40 11->13 paneel PD vak 2: tint midden
+5 40 11->13 paneel PD vak 2: tint midden
+6 40 11->13 paneel PD vak 2: tint midden
+9 40 11->13 paneel PD vak 3: tint midden
+10 40 11->13 paneel PD vak 3: tint midden
+11 40 11->13 paneel PD vak 3: tint midden
+12 40 12->14 paneel PD rasterlijn lichter dan het vak (B op donker vak, fase 2)
+7 41 11->13 paneel PD vak 3: tint midden
+8 41 11->13 paneel PD vak 3: tint midden
+9 41 11->13 paneel PD vak 3: tint midden
+11 41 12->14 paneel PD rasterlijn lichter dan het vak (B op donker vak, fase 2)
+35 41 11->14 paneel PF vak 1: tint licht
+9 42 12->14 paneel PD rasterlijn lichter dan het vak (B op donker vak, fase 2)
+35 42 11->14 paneel PF vak 1: tint licht
+35 43 11->14 paneel PF vak 1: tint licht
+36 43 11->14 paneel PF vak 1: tint licht
+28 47 11->14 paneel PE vak 1: tint licht
+29 47 11->14 paneel PE vak 1: tint licht
+34 47 11->13 paneel PE vak 2: tint midden
+36 47 11->13 paneel PE vak 3: tint midden
+27 48 11->14 paneel PE vak 1: tint licht
+28 48 11->14 paneel PE vak 1: tint licht
+30 48 11->13 paneel PE vak 2: tint midden
+31 48 11->13 paneel PE vak 2: tint midden
+32 48 11->13 paneel PE vak 2: tint midden
+33 48 11->13 paneel PE vak 2: tint midden
+35 48 11->13 paneel PE vak 3: tint midden
+36 48 11->13 paneel PE vak 3: tint midden
+37 48 11->13 paneel PE vak 3: tint midden
+25 49 11->14 paneel PE vak 1: tint licht
+26 49 11->14 paneel PE vak 1: tint licht
+27 49 11->14 paneel PE vak 1: tint licht
+29 49 11->13 paneel PE vak 2: tint midden
+30 49 11->13 paneel PE vak 2: tint midden
+31 49 11->13 paneel PE vak 2: tint midden
+32 49 11->13 paneel PE vak 2: tint midden
+34 49 11->13 paneel PE vak 3: tint midden
+35 49 11->13 paneel PE vak 3: tint midden
+36 49 11->13 paneel PE vak 3: tint midden
+25 50 11->14 paneel PE vak 1: tint licht
+26 50 11->14 paneel PE vak 1: tint licht
+28 50 11->13 paneel PE vak 2: tint midden
+29 50 11->13 paneel PE vak 2: tint midden
+30 50 11->13 paneel PE vak 2: tint midden
+31 50 11->13 paneel PE vak 2: tint midden
+33 50 11->13 paneel PE vak 3: tint midden
+34 50 11->13 paneel PE vak 3: tint midden
+35 50 11->13 paneel PE vak 3: tint midden
+27 51 11->13 paneel PE vak 2: tint midden
+28 51 11->13 paneel PE vak 2: tint midden
+29 51 11->13 paneel PE vak 2: tint midden
+30 51 11->13 paneel PE vak 2: tint midden
+32 51 11->13 paneel PE vak 3: tint midden
+33 51 11->13 paneel PE vak 3: tint midden
+34 51 11->13 paneel PE vak 3: tint midden
+31 52 11->13 paneel PE vak 3: tint midden
+32 52 11->13 paneel PE vak 3: tint midden
+33 52 11->13 paneel PE vak 3: tint midden
+32 53 11->13 paneel PE vak 3: tint midden
+33 53 11->13 paneel PE vak 3: tint midden
+34 53 12->14 paneel PE rasterlijn lichter dan het vak (B op donker vak, fase 2)
+35 15 14->12 paneel PB lichte rand langs de lichtkant (fase 2)
+35 16 14->12 paneel PB lichte rand langs de lichtkant (fase 2)
+36 16 14->12 paneel PB lichte rand langs de lichtkant (fase 2)
+35 19 13->12 paneel PB lichte rand langs de lichtkant (fase 2)
+23 20 13->12 paneel PA lichte rand langs de lichtkant (fase 2)
+24 20 13->12 paneel PA lichte rand langs de lichtkant (fase 2)
+26 20 13->12 paneel PA lichte rand langs de lichtkant (fase 2)
+35 20 13->12 paneel PB lichte rand langs de lichtkant (fase 2)
+21 21 13->12 paneel PA lichte rand langs de lichtkant (fase 2)
+22 21 13->12 paneel PA lichte rand langs de lichtkant (fase 2)
+28 21 13->12 paneel PA lichte rand langs de lichtkant (fase 2)
+29 21 13->12 paneel PA lichte rand langs de lichtkant (fase 2)
+31 22 11->12 paneel PA lichte rand langs de lichtkant (fase 2)
+32 22 11->12 paneel PA lichte rand langs de lichtkant (fase 2)
+33 22 13->12 paneel PB lichte rand langs de lichtkant (fase 2)
+35 25 13->12 paneel PB lichte rand langs de lichtkant (fase 2)
+49 30 13->12 paneel PC lichte rand langs de lichtkant (fase 2)
+52 30 13->12 paneel PC lichte rand langs de lichtkant (fase 2)
+48 31 13->12 paneel PC lichte rand langs de lichtkant (fase 2)
+52 31 13->12 paneel PC lichte rand langs de lichtkant (fase 2)
+56 31 11->12 paneel PC lichte rand langs de lichtkant (fase 2)
+56 32 11->12 paneel PC lichte rand langs de lichtkant (fase 2)
+57 32 11->12 paneel PC lichte rand langs de lichtkant (fase 2)
+58 32 11->12 paneel PC lichte rand langs de lichtkant (fase 2)
+59 32 14->12 paneel PC lichte rand langs de lichtkant (fase 2)
+60 33 11->12 paneel PC lichte rand langs de lichtkant (fase 2)
+58 34 11->12 paneel PC lichte rand langs de lichtkant (fase 2)
+3 38 14->12 paneel PD lichte rand langs de lichtkant (fase 2)
+12 39 13->12 paneel PD lichte rand langs de lichtkant (fase 2)
+35 43 14->12 paneel PF lichte rand langs de lichtkant (fase 2)
+28 47 14->12 paneel PE lichte rand langs de lichtkant (fase 2)
+27 48 14->12 paneel PE lichte rand langs de lichtkant (fase 2)
+31 48 13->12 paneel PE lichte rand langs de lichtkant (fase 2)
+32 48 13->12 paneel PE lichte rand langs de lichtkant (fase 2)
+26 49 14->12 paneel PE lichte rand langs de lichtkant (fase 2)
+39 50 11->12 paneel PE lichte rand langs de lichtkant (fase 2)
+
+OVERGESLAGEN (bolzone of pixel al anders)
+fix5 50 35 rechts
+fix5 17 41 voor
+fix5 17 29 links
+fix5 34 17 pixel anders dan r4
+fix5 22 50 voor
+fix5 37 47 pixel anders dan r4
+fix5 49 39 rechts
+fix5 50 40 rechts
+ek5 1 38 oud 1, nu 2
+ek5 13 43 voor
+ek5 14 43 voor
+ek5 14 42 voor
+ek5 15 42 voor
+ek5 16 42 voor
+ek5 17 42 voor
+ek5 21 45 voor
+ek5 22 45 voor
+ek5 22 47 voor
+ek5 22 48 voor
+ek5 24 46 voor
+ek5 12 50 voor
+ek5 13 51 voor
+ek5 14 52 voor
+ek5 16 51 voor
+ek5 16 52 voor
+ek5 44 33 oud 1, nu 5
+
+TELLING per stap/onderdeel
+PB      PB         8
+bol     bol_rechts 3
+bol     bol_voor   1
+ek5     ek5        10
+paneel  PA         40
+paneel  PB         26
+paneel  PC         26
+paneel  PD         26
+paneel  PE         51
+paneel  PF         5
+r5      fix5       15
+
+RONDHEID (aantal randpixels, min/max afwijking t.o.v. cirkel r-0,5 in px): {'voor': (20, np.float64(-0.34), np.float64(0.45), 0.04), 'links': (16, np.float64(-0.75), np.float64(0.5), -0.06), 'rechts': (13, np.float64(-0.34), np.float64(0.5), 0.08)}
+kleuren 16 (incl. transparant)
+stap 4 (r6-kleurregels) indexwissels: 561 [((2, 11), 183), ((4, 3), 9), ((5, 3), 13), ((5, 12), 54), ((11, 4), 6), ((12, 4), 129), ((13, 5), 18), ((14, 5), 149)]

@@ -1,3 +1,4 @@
+# r8 (kopie van r7/maak7.py; varianten via pijp/common.CFG, PB-voor-PA algemeen i.p.v. vaste rijen)
 # r7: van bouw7-uitvoer (= r4-regels op het model met vergrote oogbollen) naar de eindsprite.
 #   stap 2  r5-MOET-fixes (sprite/r5/fix5.py)      alleen buiten de bolzones en alleen als de pixel nog gelijk is aan r4
 #   stap 3  r5-eindkeuring DFC (eindkeuring_r5/ek5.py) idem, alleen als de pixel nog de 'oud'-waarde heeft
@@ -10,9 +11,11 @@ import os, sys, numpy as np
 from PIL import Image
 from collections import Counter
 H=os.path.dirname(os.path.abspath(__file__)); R=os.path.normpath(os.path.join(H,'..','..'))
-VAR=sys.argv[1]; K=float(VAR)/100
-WD=os.path.join(H,'bol'+VAR) if VAR!='100' else sys.argv[2]
+VAR=sys.argv[1]
+WD=os.path.join(H,'w_'+VAR) if VAR.startswith('s') else sys.argv[2]
 sys.path.insert(0,os.path.join(H,'pijp')); os.environ['VAR']=VAR
+from common import KF,KS,KP
+KB={'voor':KF,'links':KS,'rechts':KS}
 S=3.515625; TOP=13
 A=np.array(Image.open(os.path.join(WD,'sprite.png'))).astype(int)      # bouw7 (r4-equivalent)
 KAAL=np.array(Image.open(os.path.join(WD,'kaal.png'))).astype(int)
@@ -23,7 +26,9 @@ def zet(B,x,y,c,stap,deel,reden):
     if B[y,x]!=c: LOG.append((x,y,int(B[y,x]),int(c),stap,deel,reden)); B[y,x]=c
 # bolzones (spritecoordinaten): middelpunt en buitenstraal van de vergrote bollen (+1 px marge)
 BOLM={'voor':(62.16,127.95,21.12),'links':(75.01,64.28,11.25),'rechts':(188.46,91.70,12.48)}
-ZONE={n:((cx-3)/S,(cy-3)/S+TOP,r*K/S) for n,(cx,cy,r) in BOLM.items()}
+def bolc(n,cx):   # r8: linkerbol geschaald vanuit x=79 (kraagkant), zie model8.py
+    return 79+(cx-79)*KS if (n=='links' and VAR.startswith('s')) else cx
+ZONE={n:((bolc(n,cx)-3)/S,(cy-3)/S+TOP,r*KB[n]/S) for n,(cx,cy,r) in BOLM.items()}
 def inzone(x,y,m=1.0):
     if VAR=='100': return None
     for n,(cx,cy,r) in ZONE.items():
@@ -61,7 +66,8 @@ if VAR!='100':
 # ---- stap 4: kleur6
 from PIL import Image as _I
 import importlib.util
-m=np.array(_I.open(os.path.join(H,'model_bol%s.png'%VAR) if VAR!='100' else os.path.join(R,'model','model_gekozen.png')).convert('RGB')).astype(float)
+from common import M as _M
+m=np.array(_I.open(_M).convert('RGB')).astype(float)
 import kaal
 OH=KAAL.shape[0]
 Wx=kaal.overlap(64,3,S,m.shape[1]); Wy=kaal.overlap(64-TOP,3,S,m.shape[0])
@@ -90,16 +96,23 @@ from lijnen import uv
 def puv(k,x,y): return uv(k,3+(x+.5)*S,3+(y-TOP+.5)*S)
 D=C.copy()
 if VAR!='100':
-    for y in range(21,26):
-        for x,rol in ((34,2),(35,11),(36,1)):
+    # algemeen (r8, panelen breder): elke PA-pixel binnen PB (uv in [0,1]) wordt PB: kolom zonder PB links = lichte rand (navy),
+    # zonder PB rechts = schaduwrand (zwart), anders vak; dwarslijnen van PB op u=1/3 en 2/3 (zelfde grens als bouw stap 3)
+    def inPB(x,y):
+        u,v=puv('PB',x,y); return -0.02<=u<=1.02 and 0<=v<=1
+    def inPA(x,y):
+        u,v=puv('PA',x,y); return -0.02<=u<=1.02 and -0.05<=v<=1.05
+    lim=S/47/2*1.0
+    for y in range(TOP,64):
+        for x in range(64):
+            if OWNK[y,x] not in ('PA','PB') or not (inPB(x,y) and inPA(x,y)): continue
             u,v=puv('PB',x,y)
-            if not(0<=u<=1 and 0<=v<=1): continue
-            c=rol
-            if rol==11 and abs(u-2/3)<=0.04: c=12          # 2e dwarslijn PB (modelpositie u=2/3)
-            if y==21 and rol!=11: continue                  # rij 21 is al PB (2B1)
-            zet(D,x,y,c,'PB','PB','mastpaneel PB voor PA (model): '+{2:'lichte rand',11:'vak',1:'schaduwrand zwart',12:'dwarslijn 2'}[c])
+            if not inPB(x-1,y): c=2
+            elif not inPB(x+1,y): c=1
+            elif min(abs(u-1/3),abs(u-2/3))<=lim+0.005: c=12
+            else: c=11
+            zet(D,x,y,c,'PB','PB','mastpaneel PB voor PA (model): '+{2:'lichte rand',11:'vak',1:'schaduwrand zwart',12:'dwarslijn'}[c])
             OWNK[y,x]='PB'
-    # PA-pixel direct rechts van PB in rij 22 (x37) blijft PA
 # ---- stap 6: paneelrecept fase 2 (exacte fase 2-paneelkleuren)
 PAL=dict(PAL6); PAL[11]=(44,34,84); PAL[13]=(84,76,150); PAL[14]=(112,104,182); PAL[12]=(170,158,222)
 # vaktint per vak (tussen de dwarslijnen), licht -> donker langs het paneel van linksboven naar rechtsonder.
@@ -135,19 +148,21 @@ assert ((A>0)!=(OUT>0)).sum()==0 or VAR=='100'
 def save(arr,pal,path):
     im=Image.fromarray(arr.astype(np.uint8),'P'); flat=[c for i in range(16) for c in pal[i]]; im.putpalette(flat); im.save(path,transparency=0)
 if VAR=='100':
-    save(R6,PAL6,os.path.join(WD,'r6_check.png'))
     r6=np.array(Image.open(os.path.join(R,'kleur_r6','sprite.png')))
     print('controle VAR=100: verschil met kleur_r6/sprite.png =',int((r6!=R6).sum()),'pixels'); sys.exit()
+if VAR=='130':
+    r7=np.array(Image.open(os.path.join(R,'sprite','r7','sprite_bol130.png')))
+    print('controle VAR=130: verschil met r7/sprite_bol130.png =',int((r7!=OUT).sum()),'pixels',[(x,y,r7[y,x],OUT[y,x]) for y,x in zip(*np.where(r7!=OUT))]); sys.exit()
 tag=VAR
-save(OUT,PAL,os.path.join(H,'sprite_bol%s.png'%tag))
+save(OUT,PAL,os.path.join(H,'sprite_%s.png'%tag))
 P=np.array([PAL[i] for i in range(16)],np.uint8)
 def rgb(arr,bg=(235,240,235)):
     r=P[arr]; r[arr==0]=bg; return Image.fromarray(r)
-rgb(OUT).resize((512,512),Image.NEAREST).save(os.path.join(H,'sprite_bol%s_8x.png'%tag))
+rgb(OUT).resize((512,512),Image.NEAREST).save(os.path.join(H,'sprite_%s_8x.png'%tag))
 save(R6,PAL6,os.path.join(WD,'stap4_r6regels.png')); save(D,PAL6,os.path.join(WD,'stap5_pb.png'))
 # ---- rondheid bollen: buitenrand (pixel grenst aan transparant) binnen de bolsector tegen de achtergrond
 RND={}
-SECT={'voor':((30,200),),'links':((90,300),),'rechts':((340,360),(0,120))}   # (300-340 = onderrand paneel PC) vrije bolrand tegen de achtergrond (y omlaag: 90 = onder)
+SECT={'voor':((30,200),),'links':((90,265),),'rechts':((350,360),(0,120))}   # r8: links boven 265 = onderrand PA, rechts 300-350 = paneel PC
 for n,(cx,cy,r) in ZONE.items():
     dev=[]
     for y in range(64):
@@ -160,7 +175,7 @@ for n,(cx,cy,r) in ZONE.items():
             if abs(d-r)<=2.5: dev.append(d-(r-0.5))
     RND[n]=(len(dev),round(min(dev),2),round(max(dev),2),round(float(np.mean(dev)),2))
 # ---- log
-with open(os.path.join(WD,'log_maak7.txt'),'w') as f:
+with open(os.path.join(WD,'log_maak8.txt'),'w') as f:
     f.write('x y oud->nieuw stap onderdeel reden (volle spritecoordinaten)\n')
     for l in LOG: f.write('%d %d %d->%d %s %s %s\n'%l)
     f.write('\nOVERGESLAGEN (bolzone of pixel al anders)\n')

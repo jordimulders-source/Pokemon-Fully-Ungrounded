@@ -3310,3 +3310,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.807] - Typeverdeling: regionale vormen erbij
 - `DEX_IN_ROM.md`: telling opnieuw; regionale vormen vervangen niets (Jordi: "als ze al erin zaten, gaan ze niet eruit"). 542 soorten.
+
+### [v0.0.808] - Cosmic: Dottler en Orbeetle
+- `CONCEPT.md`: Dottler en Orbeetle worden Bug/Cosmic in plaats van Bug/Psychic (Jordi). Blipbug-lijn staat nog als geschrapt in DEX_IN_ROM.

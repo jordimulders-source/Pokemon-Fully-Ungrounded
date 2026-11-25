@@ -21,3 +21,4 @@ Lijn: regionale Poliwag → regionale Poliwhirl → regionale Poliwrath, alle Ic
 - **v2 gekozen als model (Jordi, 25 nov):** "vorm mond is goed imo, kleur veranderen prima, roze past niet echt denk ik, de bouw ook prima, de staart is een veer, maar dat is bij het origineel ook". Toegestane afwijking in de sprite: alleen de kleur van de mond (welke kleur: open). Zwart gladmaken = technische opschoning.
 - **Mondkleur: rood** (Jordi, 25 nov).
 - **r1/r2 (Jordi, 25 nov):** "de ogen vind ik in r1 erg goed, sterker nog, zeldzaam maar ik ben met r1 al helemaal tevreden denk ik".
+- **AF (Jordi, 25 nov): r1** ("nee ik vind hem helemaal geoed, zelfs de eindkeuring mag je skippen"), dus met de hoekige spiraal en de ogen van r1; r2 (ronde spiraal, ogen cel voor cel uit het model) niet gekozen. `af/poliwag_regional.png` (+ `_8x`). Op het overzichtsvel.

@@ -3255,3 +3255,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.789] - Merge naar main: Capykart
 - Branch met de Capybarrel-lijn fase 2 (Capykart) naar main gemerged; overzichtsvel opnieuw gemaakt.
+
+### [v0.0.790] - Oddish-plantvoorstellen geschrapt
+- `IDEEEN.md`: de vijf voorstellen voor regionale Oddish-planten (Brugmansia, pijpbloem, passiebloem, bromelia/Puya, frailejón) doorgestreept; Jordi (25 nov): "Oddish heeft al een regional lijn, mag je schrappen."

@@ -3171,13 +3171,158 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - `docs/concept/sprites/mr_prime/af/`, op het overzichtsvel (Regional forms); alles in `mr_prime/SPEC.md`.
 - Les in `docs/lessen/GEMINI.md`: latere Pokémon in vormen beschrijven, niet bij naam.
 
-### [v0.0.766] - Idee: impala-lijn
+### [v0.0.766] - Regionale (jiujitsu-)Mr. Mime: ontwerp gestart
+- Keuzes Jordi: Fighting/Psychic; gezicht + rode wangen, blauwe haarpieken en roze ballen blijven; blauwe gi met band; eerst alleen Mr. Mime, Mr. Prime later.
+- `docs/concept/sprites/mrmime_regional/SPEC.md` en Gemini-startprompt r1 (`gemini/PROMPT.md`).
+
+### [v0.0.767] - Regionale Mr. Mime: Gemini r1 afgekeurd, prompt r2
+- r1 opgeslagen (`gemini/r1.png`); Jordi: geen willekeurige roze ballen, "mag echt wel wat anders", "zie galar mr mime". Nieuwe startprompt `gemini/PROMPT_r2.md`.
+
+### [v0.0.768] - Regionale Mr. Mime: r3 en prompt r4
+- r3 opgeslagen; Jordi: op zijn rug in driekwart, met de handen "get into my guard" gebaren, rode huid en kop, lichtblauwe vingertoppen en voeten, gele wangen, paarse "oren" blijven, zwarte band. Prompt `gemini/PROMPT_r4.md`; Jordi denkt nog na over het design.
+
+### [v0.0.769] - Regionale Mr. Mime: r4 en prompt r5
+- r4 opgeslagen (kleuren goed, ligt nog op zijn zij). Prompt `gemini/PROMPT_r5.md`: pose concreet (op de rug als een schildpad, kijker = tegenstander aan zijn voeten); huid terug naar de normale Mr. Mime-tint (Jordi: anders klopt Mr. Prime niet).
+
+### [v0.0.770] - Regionale Mr. Mime: r5 en prompt r6 (de gi is het lijf)
+- r5 opgeslagen (vogelvlucht, hoofd ondersteboven); les in `GEMINI.md`. Jordi twijfelt over "een Mr. Mime in een pak"; prompt r6: de gi is zijn eigen lijf, zoals bij Mr. Mime en Mr. Rime.
+
+### [v0.0.771] - Regionale Mr. Mime: r6 en aanpak in twee stappen
+- r6 opgeslagen (twee figuren). Prompt r7 stap A: eerst alleen het ontwerp in een staande pose, daarna de guard-pose met dat plaatje als bijlage.
+
+### [v0.0.772] - Regionale Mr. Mime: idee geschrapt
+- r7a (staand) had weer gewoon een gi aan; Jordi: "ik denk dat dit ontwerp het niet gaat worden". Daarna: "het hele idee bedoel ik". Geschrapt in SPEC, TODO en IDEEEN; Mr. Prime open. Les in `GEMINI.md`: geen bijlagen voorstellen.
+
+### [v0.0.773] - Bokser-Mr. Mime: nieuw idee voor Mr. Prime, prompt r1
+- Jordi koos de ouderwetse bokser ("rocky marciano achtig", heel anders dan Hitmonchan, niet Mr. Mime met handschoenen). Gedrongen silhouet met Mr. Mime-hoofd, crouch; prompt `mrmime_regional/bokser/PROMPT.md`.
+
+### [v0.0.774] - Bokser-Mr. Mime: r1 en prompt r2
+- r1 "best aardig idee"; r2: meer gentlemanly, zwart-wit palet, oren ver achterover, houding van Jordi's 19e-eeuwse boksersfoto (rechtop, één vuist vooruit, de andere tegen de borst).
+
+### [v0.0.775] - Bokser-Mr. Mime: rondes r2–r4, posepoppetje en prompt r6
+- r2 (zwart-wit, verkeerde pose), r3 (minder Mr. Mime, stoot), r4 (met Jordi's foto: mensenlichaam). Posepoppetje `bokser/pose_stickman.png` (grote kop, tonlijf, korte benen) als bijlage + Hitmongroove-verhoudingen in `bokser/PROMPT_r6.md`.
+
+### [v0.0.776] - Bokser-Mr. Mime: r6–r10 en prompt r11
+- Posepoppetje gaf de pose maar een plat poppetje (r6–r7); r9 palette swap; r10 (Mr. Mime niet genoemd) pose goed. Jordi: verschil via een V-patroon op de torso (borstspieren, geen mensenlijf), getapete vingers (5), haren iets meer achterover, heel klein snorretje, minder stocky. Prompt `bokser/PROMPT_r11.md`.
+
+### [v0.0.777] - Bokser-Mr. Mime: frontsprite af
+- Regionale Mr. Mime als ouderwetse gentleman-bokser (zwart-wit), fase 2 van Mime Jr. → bokser-Mr. Mime → Mr. Prime. Gemini-model r12 (pose naar Jordi's boksersfoto), daarna 24 spriterondes: kop op Mr. Mime-formaat met twee achterovergekamde kuiven, ronde Mr. Mime-romp en -schouderballen, armen en getapete vuisten uit r9, boksbroek, donkergrijze V rekenkundig 20° gedraaid voor de driekwarthoek (Jordi's idee).
+- `docs/concept/sprites/mrmime_regional/bokser/af/bokser.png`; op het overzichtsvel bij de regional forms. Tweede type, naam en evolutiemethode open; Mr. Prime volgt in een nieuw gesprek.
+- Lessen in `docs/lessen/GEMINI.md`: ligposes lukken niet met tekst, geen bijlagen voorstellen, geen half werk naar Jordi, makerrapport op "zelf getekend" lezen.
+
+### [v0.0.778] - Merge naar main: Mr. Prime en bokser-Mr. Mime
+- Branches `claude/loving-bell-swhg2l` (Mr. Prime af) en `claude/funny-ptolemy-meuol6` (bokser-Mr. Mime af) samengevoegd in main (Jordi: "ik zie mr mime nog niet, die is akkoord"). Changelogsecties van de bokser-branch hernummerd naar v0.0.766–777; overzichtsvel opnieuw gemaakt (bokser vóór Mr. Prime).
+
+### [v0.0.779] - Satelliet (Steel/Cosmic-lijn fase 2): frontsprite kandidaat
+- Model: Gemini r1 (Jordi: "best oke"), gespiegeld naar driekwart links, oog 1,5× door Claude. Gemini r2–r7 (kleinere panelen, driekwart, groter oog, lijf groter, panelen hoger, vanaf nul) afgekeurd; gemeten veranderde Gemini nooit de lijfmaat.
+- Panelen zelf kleiner geschaald rond hun aansluitpunt (`paneel_varianten/`); 75 % kapte het lijf af, 80 % met ander anker (80b) niet.
+- Sprite r1–r7: maker (model overnemen), keuring (BIJNA → 6 reparaties), eindkeuring Dragonfly Cave met omlijningsronde (PASS). Kandidaat met twee oogvarianten (a = model, b = één ring minder): `docs/concept/sprites/satelliet_fase2/voor_jordi_r7.png`, bestanden in `eindkeuring_r6/r7/`. Wacht op Jordi.
+- Lessen in `docs/lessen/GEMINI.md` (verhoudingen, onderdeel kleiner zonder afkappen, spiegelen).
+
+### [v0.0.780] - Satelliet (Steel/Cosmic-lijn fase 2): frontsprite af
+- Na de kandidaat r7: oog b (één ring minder) en pupil p2 (kijkt naar de driekwart) gekozen; r8–r15 per onderdeel bijgewerkt, waarbij de vorm van het hoofd wegdreef (lens te groot, kap te bol); r16 het hoofd opnieuw vanaf het model op het 64-raster (`sprite/r16/modelraster.py`), antennes van r15 gehouden; r17–r18 paarse rand (= bovenrand van het kleine paneel) en tinten/schaduw uit het model; r19–r20 golvende rechtercontour; eindkeuring Dragonfly Cave (r21–r22: lijftintladder zoals Glalie, lenslijnen aan de lichtkant in eigen donkere tint, paneelrand doorlopend, kaprand schuin), PASS.
+- Af: `docs/concept/sprites/satelliet_fase2/af/satelliet.png` (+ `_8x`), op het overzichtsvel (New). Naam en type van deze fase open; fase 1 (Spoetnik) is in een andere sessie af (`satelliet_lijn/fase1/af/`); palet nog niet afgestemd op fase 1.
+- Lessen in `docs/lessen/GEMINI.md`: vorm na elke ronde toetsen op hetzelfde 64-raster als het model; "het gaat niet zo zeer erom dat elke pixel klopt, maar dat de vorm klopt".
+### [v0.0.781] - Capykart: start fase 2 Capybarrel-lijn
+- Fase 2 heet **Capykart** (Jordi): hoofd iets volgroeider, steekt uit een houten speelgoedwagentje, achterop drie of vier gestapelde houten blokken; puur Normal.
+- Nieuwe map `docs/concept/sprites/capykart/` met `SPEC.md` en Gemini-prompt r1 (`gemini/PROMPTS.md`).
+
+### [v0.0.782] - Capykart: r1 en prompt r2
+- r1 werd een mijnkar met de capibara erin; Jordi: houten speelgoedautotje, de capibara ís de auto, alleen het hoofd steekt uit, blokken opgestapeld. Prompt r2 in `docs/concept/sprites/capykart/gemini/PROMPTS.md`.
+
+### [v0.0.783] - Capykart: r2 en prompts r3A/r3B
+- r2: houten speelgoedauto als lijf ("beter"); blokken stonden nog in twee stapels. Prompts r3A (derby car) en r3B (open houten autootje) met één blokkentoren; Jordi's foto's in `docs/concept/sprites/capykart/referenties/`.
+
+### [v0.0.784] - Capykart: r3 en bijstuurprompt r4
+- r3 goedgekeurd op één punt na: een groen driehoekig blok bovenop de toren en het blauwe blok dezelfde vorm als de andere twee (Jordi). Bijstuurprompt r4 in `docs/concept/sprites/capykart/gemini/PROMPTS.md`.
+
+### [v0.0.785] - Capykart: r4 en bijstuurprompt r5
+- r4 akkoord als basis. Jordi koos: gezicht en palet van Capybarrel (spritefase), hoepels terug, hoofd netjes laten overgaan in de auto. Bijstuurprompt r5 (overgang + hoepels); volgroeider hoofd (beige, ronder) nog in overweging.
+
+### [v0.0.786] - Capykart: model r5
+- Gemini r5 (hoofd gaat over in de houten auto, twee grijze hoepels, toren van vier blokken met groene driehoek): Jordi "als silhouet prima". Model in `docs/concept/sprites/capykart/referenties/model_r5.png`; volgroeider hoofd volgt in de spritefase.
+
+### [v0.0.787] - Capykart: frontsprite af
+- Capykart (Normal, fase 2 van de Capybarrel-lijn): frontsprite af in `docs/concept/sprites/capykart/af/` (64×64 + 8×). Naar Gemini r5; vacht B (dieper bruin), snuit uit het model, blije oog + wenkbrauw van Capybarrel, morrillo, tanden uit Bibarel, hout en hoepels in Capybarrel-kleuren, blauw blok met blauwgrijze zijkant.
+- Rondes: maker r1–r6 (palet, kopvolume, wielen, kopvarianten V1–V3, tandvarianten T1–T3), keurder PASS (r3b), Dragonfly Cave-eindkeuring (r7, omlijning, silhouet diff 0).
+- Op het overzichtsvel (sectie New). Daarmee is de Capybarrel-lijn af.
+
+### [v0.0.788] - Capykart: frontsprite opnieuw af
+- r7 (24 nov) door Jordi afgekeurd (weinig tint/schaduw, lijnen, blokken). Schaduwrondes r8–r16 met de hand werkten niet (rechte lijnen, plat, blurry, blokken hertekend).
+- Opnieuw gebouwd volgens de Dundragoon-methode (r17: kale reductie van Gemini r5 in modeltonen, toren 100 % uit het model), daarna volledige Dragonfly Cave-eindkeuring (schaduw, kleurtinten, belijning; varianten a–e in `eindkeuring_dc/`).
+- Kop: Capybarrel-oog; tanden en morrillo op verzoek van Jordi weggehaald; snuitplaat uit het model.
+- `docs/concept/sprites/capykart/af/` vervangen en overzichtsvel bijgewerkt. Lessen: vast foutpatroon in `SPRITE_KERN.md`, eindkeuring = schaduw + belijning + kleurtinten in `SPRITE_WERKWIJZE.md`, maatstaf-sprites (Skinguin, Dundragoon, Zapacha, Princadee).
+
+### [v0.0.789] - Merge naar main: Capykart
+- Branch met de Capybarrel-lijn fase 2 (Capykart) naar main gemerged; overzichtsvel opnieuw gemaakt.
+
+### [v0.0.790] - Idee: regionale Jynx als sirene
+- `docs/concept/IDEEEN.md`: Jordi's idee voor een regionale Jynx naar de sirenes uit de Odyssee, met open vragen (vorm, type, Smoochum, band met de regio/Iara).
+
+### [v0.0.791] - Regionale Jynx: keuzes; regel over de regio-link
+- `IDEEEN.md`: regionale Jynx wordt een vogelvrouw zoals in de Odyssee, type Fairy (tweede type open); Smoochum blijft gewoon.
+- `CLAUDE.md`: vaste regel dat niet elke Pokémon een link met Zuid-Amerika hoeft te hebben (Jordi).
+
+### [v0.0.792] - Regionale Jynx: Fairy/Dark
+- `IDEEEN.md`: type van de regionale Jynx (sirene) is Fairy/Dark (Jordi).
+
+### [v0.0.793] - Regionale Jynx: kleurrichting
+- `IDEEEN.md`: Jordi's kleurrichting voor de sirene-Jynx (mix van Jynx en oud-Griekse kleuren; Jynx herkenbaar maar echt anders).
+
+### [v0.0.794] - Regionale Jynx: kleur voorstel 1
+- `IDEEEN.md`: Jordi kiest kleurvoorstel 1 (vaas); haar en lippen een andere kleur dan Jynx, gezichtsvorm blijft, haarstijl mag passender bij een sirene.
+
+### [v0.0.795] - Regionale Jynx: Gemini-prompt v1
+- `docs/concept/sprites/jynx_regional/PROMPT.md`: eerste Gemini-prompt voor de sirene-Jynx (bruin haar; lipkleur, haarstijl en pose als voorstel van Claude gemarkeerd).
+
+### [v0.0.796] - Regionale Jynx: r1 afgekeurd, prompt v2
+- `jynx_regional/gemini/r1.png` afgekeurd (vogel met mensenhoofd, geen Jynx). Prompt v2 in `PROMPT.md`: Jynx-bouw als basis met de Gen 3-sprite als bijlage, sirene-elementen erin. Les in `docs/lessen/GEMINI.md`.
+
+### [v0.0.797] - Regionale Jynx: prompt v3
+- `jynx_regional/PROMPT.md`: r2 bewaard; prompt v3 = v2 + zingend/lokkende blik, rustig verenkleed zonder borstmotief, weinig detail (Jordi akkoord; onderlijf-als-vogel afgewezen).
+
+### [v0.0.798] - Regionale Jynx: prompt v4
+- r3 bewaard; prompt v4 zonder vaasverwijzingen, kleuren als hexcodes (Jordi). Les in `docs/lessen/GEMINI.md`.
+
+### [v0.0.799] - Regionale Jynx: r4 (design ok), prompt v5
+- r4: design ok volgens Jordi; prompt v5 draait naar driekwart en maakt de blik minder slaperig (r4 als bijlage).
+
+### [v0.0.800] - Regionale Jynx: model gekozen
+- `jynx_regional/gemini/r5.png` is het model (driekwart, wakkerder blik); `SPEC.md` met Jordi's besluiten. Spritewerk gestart.
+
+### [v0.0.801] - Regionale Jynx: frontsprite kandidaat (r3)
+- `jynx_regional/sprite_r1–r3`: verkleining van Gemini-model r5 (Dundragoon-methode, silhouet-diff 0), keuring BIJNA → reparaties (haarvolume, lijnen, onderlip, rok) → eindkeuring Dragonfly Cave PASS. Ter keuze: variant kinschaduw; klauwen nu haar-donker (model grijsbruin).
+
+### [v0.0.802] - Regionale Jynx: r4/r5
+- r4: rokvouw rechts naar het modelpad; Jordi koos variant B (dwarslijn weg): "rechts beter". r5 = r4 B, verse eindkeuring (schaduw/tinten/lijnen) PASS zonder wijzigingen.
+
+### [v0.0.803] - Regionale Jynx: frontsprite af
+- `docs/concept/sprites/jynx_regional/af/jynx_regional.png` (= r5) af volgens Jordi ("zijn non issues"); op het overzichtsvel onder Regional forms (Fairy/Dark). Stand van zaken: 92 frontsprites af. Les in `GEMINI.md`.
+
+### [v0.0.804] - Regionale Mr. Mime: Fighting/Psychic
+- Bokser-Mr. Mime is Fighting/Psychic (Jordi): `mrmime_regional/SPEC.md`, CLAUDE.md en overzichtsvel bijgewerkt.
+
+### [v0.0.805] - Overzichtsvel: Capykart na Capybarrel
+- `showcase/maak_vel.py`: Capykart direct na Capybarrel (Jordi); vel opnieuw gemaakt.
+
+### [v0.0.806] - Typeverdeling hele dex
+- `DEX_IN_ROM.md`: telling van de typeverdeling over de hele dex (behouden soorten + nieuwe designs + Cosmic-besluiten), met aannames.
+
+### [v0.0.807] - Typeverdeling: regionale vormen erbij
+- `DEX_IN_ROM.md`: telling opnieuw; regionale vormen vervangen niets (Jordi: "als ze al erin zaten, gaan ze niet eruit"). 542 soorten.
+
+### [v0.0.808] - Cosmic: Dottler en Orbeetle
+- `CONCEPT.md`: Dottler en Orbeetle worden Bug/Cosmic in plaats van Bug/Psychic (Jordi). Blipbug-lijn staat nog als geschrapt in DEX_IN_ROM.
+
+### [v0.0.809] - Blipbug-lijn terug in de dex
+- `species_enabled.h`: `P_FAMILY_BLIPBUG` weer aan (Jordi: "komt terug in de dex"); `DEX_IN_ROM.md` bijgewerkt. Cosmic-type bestaat nog niet in de code, dus Dottler/Orbeetle zijn in de ROM voorlopig Bug/Psychic. `make` slaagt.
+### [v0.0.810] - Idee: impala-lijn
 - `docs/concept/IDEEEN.md`: nieuwe sectie "Impala-lijn" met Jordi's idee (impala → kudu of iets soortgelijks); alles open.
 - Impala-lijn: Jordi's voorkeur dikdik → impala → kudu toegevoegd aan `IDEEEN.md`.
 - Impala-lijn: alle drie Normal, dual type kan; dikdik puur Normal (Jordi).
 - Impala-lijn: lichaamskleur brons → zilver → goud; hoorns dof ijzer → gepolijst staal → spiegelglans met slijprand; dikdik Normal, impala en kudu Normal/Steel met hoorns echt van metaal (dikdik niet); hoorns als gevechtswapens, hoornvorm blijft kloppen (Jordi). Besloten punten in `POKEMON.md` → Impala-lijn.
 
-### [v0.0.767] - Dikdik (impala-lijn fase 1): frontsprite af
+### [v0.0.811] - Dikdik (impala-lijn fase 1): frontsprite af
 - Ontwerp via Gemini r1–r3b (`docs/concept/sprites/impala_lijn/dikdik/gemini/PROMPTS.md`): kleine dikdik met korte houten speren met dof ijzeren punt, grote kop, lange hangende snuit, donkere vlek voor het oog, nieuwsgierig; model r3b.
 - Sprite r1–r7: model verkleind naar 52 px (maat als Vulpix/Growlithe), 2 keuringen + eindkeuring Dragonfly Cave; oog als ronde vorm uit het model (dunne ring, grote iris), ver oog, kuif, kin terug; donker brons (Jordi koos dit boven een lichtere variant), oog variant B (glimlicht linksonder).
 - Af: `docs/concept/sprites/impala_lijn/dikdik/af/dikdik.png`, op het overzichtsvel (New). Naam open.

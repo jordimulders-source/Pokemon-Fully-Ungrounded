@@ -1,0 +1,222 @@
+This is the first thing you should learn, as you should know how it works before
+attempting anything else - you'll need to know the basics of this if you're going to be any
+good at all.
+
+https://www.dragonflycave.com/spriting-guide/ 3/55
+23-10-2026, 11:38 Spriting Guide | The Cave of Dragonflies
+
+a
+shadows/Outline highlights
+Outline base
+
+‘Dutline shadows
+
+What you see here is a Ruby and Sapphire Scyther sprite - a very typical sprite color-wise
+- with its color palette beside it. Each of the green shades has been given a name; most
+sprites' colors include analogous shades, and this guide will use the names given here to
+refer to these shades. The "outline shadows" are always black (or ever-so-slightly off-
+black) on Pokémon sprites - remember this if you want your sprites to look like they
+could really be in an actual Pokémon game.
+
+The Rules of Recoloring
+
+1. There is a reason it has all those shades of green. It's called shading, and it's
+supposed to be there. Do not recolor two different shades with the same
+shade, barring a few exceptional cases where the original sprite has too many
+shades for the color scheme you're going to give it. Even worse, don't recolor, say,
+the highlight color to be darker than the base color; the relative luminosity of the
+shades on the original sprite should always be maintained on the new one.
+
+2. There is a reason all the shades on the main body are green, too. Don't make the
+highlights blue and the base color red; it makes no sense and is eye-hurting.
+
+3. The outline base and outline highlight colors are also colors. When you're
+recoloring, you must also recolor the outlines. It isn't always very noticeable when
+the sprite isn't zoomed in, but a trained eye will see it and it looks extremely
+unprofessional once you do zoom in.
+
+4. The outlines must be reasonably dark. If you're recoloring a sprite in a relatively
+light color, be careful to make the outline base color sufficiently dark to make the
+outlines clear. If the sprite you're recoloring has considerable use of the shadow
+color as an outline highlight color, then recoloring it to be very light may look odd;
+in such cases, you should either stick with the outline base color in all but the very
+lightest areas or create a separate outline highlight color that's darker than the
+shadow color.
+
+5. Do not use the Paint default colors to recolor under any circumstances. If you're
+using paint, go to Colors > Edit Colors > Define Custom Colors... and there you can
+make your own color. Be very careful not to make it too bright. Your best bet is in
+fact usually to find yourself some other sprite of a normal or shiny Pokémon that
+has approximately the color you're looking for - that will ensure the colors look
+decent.
+
+https://www.dragonflycave.com/spriting-guide/
+
+4/55
+23-10-2026, 11:38 Spriting Guide | The Cave of Dragonflies
+If you can't find any other sprite that has quite the right color, pick the sprite's base color
+with the color picker. Go to the advanced color selection menu (in Paint, it's Colors > Edit
+Colors > Define Custom Colors... as | said earlier; in Photoshop or ImageReady, you just
+click the foreground color in the toolbar). Now play around with the Hue value until
+you've found the color you want; remember or write down the current value. You can
+also raise or lower the Brightness/Luminosity or Saturation values, but if you do,
+remember how much you raise or lower them. Paint a pixel or small square of this color
+somewhere beside the sprite, and then do the same for the other colors in the sprite -
+change the hue to the same value as you changed the first color to (or possibly
+something slightly in the blue direction from there for shadows) and lower/raise the
+brightness/luminosity by the same number as you did for the first color, if you did at all.
+Then put a pixel/square of it next to the previous color. If the color doesn't look quite
+right after doing this, you can tweak it slightly. Of course, you won't have to do this for
+the black, and | recommend not raising the brightness of the base outline color if you've
+been doing that for the other colors, since like | mentioned above, most of the outline
+should generally be quite dark.
+
+Obviously, if you're taking the colors from another Pokémon, you can take them straight
+from the other sprite and don't need to make a color palette.
+
+When you've picked all your colors, move on to recolor the sprite accordingly. In better
+paint programs, it is possible to set the Paint Bucket tool so that it paints all pixels of the
+same color (in Photoshop or ImageReady, you check off the Contiguous option). In Paint,
+there is a rather complicated trick. First, select the color picker and left-click the
+highlight color on the sprite you're recoloring. Then, again with the color picker, right-
+click the highlight color you're going to use. Next select the Eraser tool, make it the
+biggest it can get and right-click and drag over the whole sprite. The old highlight color
+will magically be replaced with the new one everywhere you touched it with the eraser,
+while all other colors will be unchanged. Repeat this for the other shades too. As per rule
+3, make sure not to forget the outline base.
+
+And... that's it. Really. To demonstrate the process, I'm going to screenshot how | recolor
+that very Scyther sprite, both in Paint and ImageReady 3.0.
+
+ImageReady
+you can move on to the next part.
+
+Revamps
+
+What you will learn: Shading, spriting style, outline shading
+
+Revamping is basically the art of taking a sprite from one of the pre-Advance games and
+recoloring/shading it to resemble its post-Advance counterparts. Newbies in the field do
+this simply as if they were doing a slightly more complicated version of a recolor - they
+
+replace the colors, if expanding the palette a little bit, save it and call it a revamp. It isn't.
+
+R/B/Y sprites had four-shade monochromatic palettes and G/S/C sprites had four-color
+palettes, while the later games have sixteen-color palettes. But revamping is not about
+the colors themselves. It's easy to look at the limited older sprites next to the brightly-
+colored newer sprites and think the main difference is those pretty bright colors the GBA
+and DS can produce, but that's not the case. Revamping is about style. Because the older
+sprites were so limited, certain stylistic choices were made, and without accounting for
+that, a revamp can never look genuinely like it was taken from a newer game. This
+makes revamping very fundamentally different from recoloring - it calls for thinking
+about and working with stylistic aspects instead of just replacing colors with other
+colors.
+
+The Rules of Revamping
+
+https://www.dragonflycave.com/spriting-guide/ 11/55
+23-10-2026, 11:38 Spriting Guide | The Cave of Dragonflies
+
+1. Don't stick to the original sprite's shading unless it genuinely results in the sprite
+looking stylistically similar to the newer sprites.
+
+2. Don't stick to the original sprite's outlining under any circumstances, ever.
+
+3. Especially don't stick to the possible manual anti-aliasing on the outside edges of
+the outline in the original sprite. They worked on the originals because they were
+only ever shown on a white background in the game; in the newer games, and on
+the Internet where you may be showing off your sprites on various backgrounds,
+this results in very visible, horrendously ugly colored "dots" around the outline.
+
+4. In general, mimic the newer sprites’ style in one and all.
+
+So say I'm going to revamp the Yellow version Scyther, since I'm being Scyther-obsessed
+in this guide. Here it is:
+
+It doesn't look that bad for a sprite with only four colors, does it? However, if we make
+the background black instead of white...
+
+..not anymore. See those dots around the outline? That's because of the manual anti-
+aliasing | mentioned above - lighter pixels were placed on the outside of the outline in
+order to make it look smoother on the original white background. This is especially a
+problem in Yellow, hence why | chose the Yellow sprite for this tutorial - the artist for the
+Yellow sprites really loved anti-aliasing.
+
+Let's put it on a white background again to make it clearer what I'm doing, but knowing
+this, we'll of course fix those dots at a later stage. I'll make it a little larger, too:
+
+https://www.dragonflycave.com/spriting-guide/ 12/55
+23-10-2026, 11:38 Spriting Guide | The Cave of Dragonflies
+In the magnified version you can clearly see the lighter pixels on the outside of the
+outline that produce that ugly dotted effect on dark backgrounds. On the white
+background, they look fine - but Pokémon sprites are no longer exclusively on white
+backgrounds, so this will have to be remedied.
+
+Now, as it happens this particular sprite has pretty good shading in its original form. It
+uses white for the highlights, the lighter shade of green for the base color, the darker
+shade of green for the shadows and outline highlights, and black for the outline and the
+very deepest shadows. It has a consistent light source and the shading is reasonably
+placed. All in all, this means we can use the original shading here as a basis, rather than
+having to make up most of it as with many other sprites.
+
+This means we can now go and color the Scyther to be shaded exactly like the original
+Yellow version sprite, but with post-Advance colors, here Ruby and Sapphire colors
+because this guide is old. First of all, however, the outline will have to be completely
+redone, as is the case with all revamps. We color the whole outline black pixel by pixel,
+including the anti-aliasing, and then change the colors to the R/S colors (it's best to do
+that pixel by pixel with the Pencil tool, not with the Paint bucket tool - otherwise you may
+inadvertently fill in areas that should be a different hue altogether, like the wings here).
+Let's see how it looks now...
+
+With the outlining all-black, it looks very 2D and cartoony - not how we want the end
+result to look. There are also some clusters of black where the anti-aliasing was blacked
+out. To fix that, we take the base outlining shade for every color and color all of the
+outline except the shadows in that color, and remove the clusters so that the outline is
+always one pixel wide.
+
+Now, you may notice that the R/S sprite actually also features some anti-aliasing on the
+outside of the outline. This is a bad idea and only makes the sprite look worse; you
+should avoid this in your revamp. On the other hand, lighter pixels on the inside of the
+outline are a far better idea and can make the sprite look smoother against dark
+
+https://www.dragonflycave.com/spriting-guide/ 13/55
+23-10-2026, 11:38 Spriting Guide | The Cave of Dragonflies
+backgrounds while giving the same overall stylistic effect as the occasional outside anti-
+aliasing in the official sprites.
+
+Let's see how our Scyther looks now with this applied to it...
+
+Hmm, technically it doesn't look too bad. But what if we compare it to the R/S sprite?
+
+.
+
+Notice how the revamp just looks different from the R/S one. This is a quintessential
+stylistic difference that should be fixed when we make a revamp. The wings on the R/S
+sprite are shaded differently - the wing "shadow color" is really used where the front
+wing overlaps the back wing - and the R/S one seems overall lighter. Why? Well, the
+original Yellow version Scyther had white highlights, which contrasted much more with
+the green main color. The highlights were really used to apply shine, so very little of
+them was used. The R/S Scyther, on the other hand, has a whole lot of the highlighting
+color all over the place. Because there is so little of the lighter highlighting color on the
+revamp compared to the R/S sprite, it looks darker overall. To make them seem to match
+up, we need to change the shading to the style of the official Scyther.
+
+We've also yet to do the outline highlighting at this point. Put some of the
+shadow/outline highlight color on the outlines in the very most highlighted parts, trying
+to keep the overall quantity of this color similar to how it is in the R/S sprite. Again, place
+pixels of the outline highlight color on the inside of the outline rather than the outside.
+
+We can also look at the FR/LG sprite for reference for some more edits, such as in the
+face, since even though we're coloring it R/S style, the pose is a lot more similar to the
+FR/LG sprite (in fact, the FR/LG sprite is probably a rough remake of the Yellow pose).
+Conveniently, that's also where | got the red in the mouth from.
+
+https://www.dragonflycave.com/spriting-guide/ 14/55
+23-10-2026, 11:38 Spriting Guide | The Cave of Dragonflies
+Note that when | revamp, | often alter the Pokémon's actual shape to conform better to
+its modern-day design; there is no requirement that you do this, if you prefer how the
+design looks in the older sprite or just don't think you could do it well.
+
+=
+
+And it's finished. Let's see it with a transparent background at actual size - try looking at

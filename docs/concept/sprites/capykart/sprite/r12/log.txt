@@ -1,0 +1,41 @@
+creme: (25,20) 2->E  1 vacht-hooglicht linksboven op de wang
+creme: (24,21) 2->E  1 vacht-hooglicht linksboven op de wang
+creme: (25,21) 2->E  1 vacht-hooglicht linksboven op de wang
+creme: (24,22) 2->E  1 vacht-hooglicht linksboven op de wang
+creme: (17,20) overgeslagen (index 2)  2 snuit-voorvlak licht (lichtkant)
+creme: (18,20) overgeslagen (index 2)  2 snuit-voorvlak licht (lichtkant)
+creme: (19,20) overgeslagen (index 2)  2 snuit-voorvlak licht (lichtkant)
+creme: (20,20) overgeslagen (index 2)  2 snuit-voorvlak licht (lichtkant)
+creme: (21,20) 3->2  2 snuit-voorvlak licht (lichtkant)
+creme: (17,21) 3->2  2 snuit-voorvlak licht (lichtkant)
+creme: (18,21) 3->2  2 snuit-voorvlak licht (lichtkant)
+creme: (19,21) 3->2  2 snuit-voorvlak licht (lichtkant)
+creme: (20,21) 3->2  2 snuit-voorvlak licht (lichtkant)
+creme: (21,21) 3->2  2 snuit-voorvlak licht (lichtkant)
+creme: (45,15) 9->5  3 onderkant geel voorvlak
+creme: (46,15) 9->5  3 onderkant geel voorvlak
+creme: (47,15) 9->5  3 onderkant geel voorvlak
+creme: (48,15) 9->5  3 onderkant geel voorvlak
+creme: (49,15) 9->5  3 onderkant geel voorvlak
+creme: (30,48) 6->1  4 lijn onder de hoepel
+creme: (31,48) 6->1  4 lijn onder de hoepel
+creme: (32,48) 6->1  4 lijn onder de hoepel
+wit: (25,20) overgeslagen (index 2)  1 wang linksboven 3->2 (alleen waar 3; hier al 2)
+wit: (24,21) overgeslagen (index 2)  1 wang linksboven 3->2 (alleen waar 3; hier al 2)
+wit: (25,21) overgeslagen (index 2)  1 wang linksboven 3->2 (alleen waar 3; hier al 2)
+wit: (24,22) overgeslagen (index 2)  1 wang linksboven 3->2 (alleen waar 3; hier al 2)
+wit: (17,20) overgeslagen (index 2)  2 snuit-voorvlak licht
+wit: (18,20) overgeslagen (index 2)  2 snuit-voorvlak licht
+wit: (19,20) overgeslagen (index 2)  2 snuit-voorvlak licht
+wit: (20,20) overgeslagen (index 2)  2 snuit-voorvlak licht
+wit: (21,20) 3->2  2 snuit-voorvlak licht
+wit: (17,21) 3->2  2 snuit-voorvlak licht
+wit: (18,21) 3->2  2 snuit-voorvlak licht
+wit: (19,21) 3->2  2 snuit-voorvlak licht
+wit: (20,21) 3->2  2 snuit-voorvlak licht
+wit: (21,21) 3->2  2 snuit-voorvlak licht
+wit: (30,48) 6->1  4 lijn onder de hoepel
+wit: (31,48) 6->1  4 lijn onder de hoepel
+wit: (32,48) 6->1  4 lijn onder de hoepel
+r12_creme.png: alpha-diff t.o.v. r7 0; bevroren index-diff t.o.v. r11 0
+r12_wit.png: alpha-diff t.o.v. r7 0; bevroren index-diff t.o.v. r10 0

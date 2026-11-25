@@ -1,4 +1,5 @@
 # Overdracht: satelliet-lijn fase 2 (nieuwe sessie)
+> **Achterhaald (25 nov):** fase 2 is in een parallelle sessie af, zie `satelliet_lijn/SPEC.md` onderaan en `satelliet_fase2/`.
 Start hier. Lees eerst `CLAUDE.md`, dan `docs/lessen/SPRITE_KERN.md`, `docs/lessen/GEMINI.md` en `satelliet_lijn/SPEC.md` (alle besluiten van Jordi letterlijk).
 
 ## Stand (23 nov)

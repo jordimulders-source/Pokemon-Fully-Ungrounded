@@ -40,3 +40,7 @@ Citaten en besluiten (Jordi, 23 nov); het overzicht staat ook in `docs/concept/I
 ## Fase 2
 - Jordi (23 nov): "ja, schrijf de prompt voor fase 2 en dan in nieuw gesprek verder neem ik aan?" → `fase2/gemini/PROMPT_r1.md`; overdracht `OVERDRACHT_FASE2.md`.
 - Keuze Claude (voor te leggen): oog van fase 2 = het oog van fase 1 in de kernbol (fase 1 is onderdeel), i.p.v. het "telescoopoog" uit het eerdere voorstel.
+
+## Fase 2 (andere sessie, 23–25 nov)
+Fase 2 is in een parallelle sessie ontworpen en af: `docs/concept/sprites/satelliet_fase2/` (model = Gemini r1 gespiegeld, oog 1,5×, panelen 80 %; sprite `satelliet_fase2/af/satelliet.png`; alle citaten in `satelliet_fase2/SPEC.md`). De startprompt `fase2/gemini/PROMPT_r1.md` hieronder is daarmee niet meer nodig. Palet t.o.v. fase 1: Jordi (25 nov) "nee het verschil is amper te zien en niet erg"; niet afgestemd.
+- Type (Jordi, 25 nov): "hele lijn cosmic/steel he" (alle fases Cosmic/Steel).

@@ -1,0 +1,96 @@
+Capykart r7 -> r8: schaduwronde (Dragonfly Cave). Alleen tinttoewijzing per pixel + 1 paletwaarde.
+alpha-diff t.o.v. r7: 0  (silhouet identiek)
+bevroren zones (pixeldiff t.o.v. r7): oog 0, tanden 0, morrillo 0, neusgaten 0, mond 0, kinlijn 0
+gewijzigde pixels: 342; kleuren in gebruik: 16 (incl. transparant)
+
+PALET (index: rgb; rol, gedeeld waar het kan)
+ 1: (32, 20, 28)   294 px  zwart: buitenlijn schaduwkant, binnenlijnen schaduwkant
+ 2: (216, 158, 116)   151 px  vacht basis; nerf op licht hout (5) (een stap)
+ 3: (180, 122, 88)   235 px  vacht midden/schaduw; nerf op hout (6) (een stap); spaak achterwiel
+ 4: (156, 94, 64)   512 px  vacht diepe schaduw + hout schaduw (sikkels) + outline base hout/vacht + naafring
+ 5: (244, 178, 116)  (r7: (246, 170, 102))   213 px  hout licht (bovenvlakken, wielrand, naafknop) = vacht-hooglicht (voorhoofd/snuitrug) = bovenbevel zijvlak geel blok = bovenbevel rood blok (warme hue shift)
+ 6: (214, 128, 76)   497 px  hout midden = zijvlak geel blok (schaduw, oker)
+ 7: (132, 126, 132)    63 px  hoepel basis, tandschaduw
+ 8: (80, 88, 120)   102 px  hoepel schaduw + outline base hoepel, zijvlak blauw blok + outline base blauw, morrillo
+ 9: (255, 255, 255)    30 px  tanden + glans hoepels + bovenbevel geel en blauw blok
+10: (100, 156, 232)    23 px  blauw voorvlak + bovenbevel blauw zijvlak
+11: (60, 140, 72)    43 px  groen schaduwvlak + outline base driehoek
+12: (240, 92, 84)    32 px  rood voorvlak + bovenbevel rood zijvlak
+13: (178, 44, 56)    41 px  rood zijvlak + outline base rood blok + onderbevel rood
+14: (248, 212, 72)    29 px  geel voorvlak
+15: (96, 180, 84)    38 px  groen lichtvlak
+Geen vrije slot: een extra houttint of crème-hooglicht zou een andere functie kosten. Gekozen voor delen: vacht 2/3 doen dienst als "een-stap"-nerf op het hout,
+5 (iets minder verzadigd: (246,170,102)->(244,178,116)) is hout-licht, vacht-hooglicht en blokbevel tegelijk, 6 is ook de schaduwzijde van het gele blok.
+
+== groene driehoek: 6 px
+   waarom: twee harde vlakken (licht links, schaduw rechts); rechterschuinte = schaduwkant -> zwart, zodat het schaduwvlak een rand heeft
+   gids:   gids r.1311-1321 (Shading Flat Surfaces): "each surface simply has one shade, proportional to the angle at which the light hits the surface" + r.96 "The \"outline shadows\" are always black"
+   (52,2) B->1 (53,3) B->1 (54,4) B->1 (55,5) B->1 (56,6) B->1 (57,7) B->1
+== geel blok: 23 px
+   waarom: kubus: voorvlak geel met witte bovenbevel (rand vangt licht, zoals Porygon), zijvlak in de schaduw (6, warm hout-oker) met lichte bovenbevel (5)
+   gids:   gids r.1311-1321: top/links meest belicht, rechts minder; r.1344-1346: afgeronde ribbe = "cut all the corners and edges off" -> smalle lichte bevel
+   (45,9) E->9 (46,9) E->9 (47,10) E->9 (48,10) E->9 (49,10) E->9 (51,12) 5->6 (52,12) 5->6 (53,12) 5->6 (54,12) 5->6 (51,13) 5->6 (52,13) 5->6 (53,13) 5->6 (54,13) 5->6 (51,14) 5->6 (52,14) 5->6 (53,14) 5->6 (54,14) 5->6 (51,15) 5->6 (52,15) 5->6 (53,15) 5->6 (54,15) 5->6 (51,16) 5->6 (52,16) 5->6
+== rood blok: 12 px
+   waarom: kubus: voorvlak rood met lichte bovenbevel (5, warme hue shift), zijvlak donkerrood met rode bovenbevel, onderbevel donker
+   gids:   gids r.1311-1321 (zie geel blok); r.1344-1346 bevel
+   (46,17) C->5 (47,17) C->5 (53,17) D->C (54,17) D->C (45,18) C->5 (48,18) C->5 (49,18) C->5 (52,18) D->C (46,24) C->D (47,24) C->D (48,24) C->D (49,24) C->D
+== blauw blok: 18 px
+   waarom: kubus: voorvlak blauw met witte bovenbevel, zijvlak blauwgrijs met blauwe bovenbevel; bovenrand zijvlak in de schaduw onder het rode blok -> zwart
+   gids:   gids r.1311-1321; r.1379-1381 "Shadows cast by other objects ... should always be fully colored with the shadow color" (bovenrand onder het rode blok)
+   (44,25) A->9 (45,25) A->9 (52,25) 8->1 (53,25) 8->1 (54,25) 8->1 (55,25) 8->1 (56,25) 8->1 (46,26) A->9 (47,26) A->9 (48,26) A->9 (49,26) A->9 (50,26) 8->A (51,26) 8->A (52,26) 8->A (53,26) 8->A (54,26) 8->A (55,26) 8->A (56,26) 8->A
+== rechterhoepel: 6 px
+   waarom: metaal: witte glans bovenaan de boog en op het bovenste stuk van de band, onderaan donker
+   gids:   gids r.1423-1425 shine op glanzend materiaal, "Don't overdo shine": kort, alleen boven en op de bolling; r.506-513 licht linksboven
+   (44,30) 7->9 (45,30) 7->9 (49,35) 7->9 (49,36) 7->9 (49,44) 7->8 (49,45) 7->8
+== linkerhoepel: 5 px
+   waarom: metaal: witte glans op de kruin van de boog (lichtkant), dalend deel rechts donker
+   gids:   gids r.1423-1425 shine; r.506-513 licht linksboven
+   (15,36) 7->9 (16,36) 7->9 (17,36) 7->9 (18,36) 7->9 (19,36) 7->9
+== kop hooglicht: 19 px
+   waarom: bolling voorhoofd/snuitbovenkant in het lichtste (5), zoals Capybarrel af; licht linksboven
+   gids:   gids r.1376-1378 "The highlighting color should be used on those areas that are lit and are the absolute closest to being perpendicular" (voorhoofd/snuitrug), klein houden
+   (24,14) 2->5 (25,14) 2->5 (26,14) 2->5 (27,14) 2->5 (28,14) 2->5 (25,15) 2->5 (26,15) 2->5 (27,15) 2->5 (28,15) 2->5 (24,16) 2->5 (25,16) 2->5 (26,16) 2->5 (21,17) 2->5 (22,17) 2->5 (23,17) 2->5 (24,17) 2->5 (19,18) 2->5 (20,18) 2->5 (21,18) 2->5
+== kop sikkel: 16 px
+   waarom: sikkelschaduw achter/onder: rechterrand van de kop een tint donkerder, dikker naar onder; wang rond afgesloten met 3
+   gids:   gids r.515-516 "the shading should also curve around the shape of the body"; r.1374-1376 grens basis/schaduw op de "equator"
+   (38,19) 3->4 (38,20) 3->4 (38,21) 3->4 (38,22) 3->4 (38,23) 3->4 (39,23) 3->4 (38,24) 3->4 (39,24) 3->4 (38,25) 3->4 (39,25) 3->4 (31,27) 2->3 (32,27) 2->3 (28,28) 2->3 (29,28) 2->3 (30,28) 2->3 (31,28) 2->3
+== kaak/nek: 24 px
+   waarom: onderkant kaak en slagschaduw op de nek in 4; nek links (lichtkant) een tint lichter
+   gids:   gids r.1379-1381 slagschaduw van de kop op de nek "fully colored with the shadow color"; r.506-513
+   (20,29) 3->4 (21,29) 3->4 (22,29) 3->4 (30,29) 3->4 (31,29) 3->4 (32,29) 3->4 (33,29) 3->4 (34,29) 3->4 (35,29) 3->4 (36,29) 3->4 (37,29) 3->4 (31,30) 3->4 (32,30) 3->4 (33,30) 3->4 (34,30) 3->4 (35,30) 3->4 (36,30) 3->4 (37,30) 3->4 (30,32) 3->2 (31,32) 3->2 (31,33) 3->2 (32,33) 3->2 (31,34) 3->2 (32,34) 3->2
+== schouder in kart: 6 px
+   waarom: groot effen 4-vlak: bovenlinks (dicht bij de lichte nek) een tint lichter
+   gids:   SPRITE_KERN Coathief-les: elk groot vlak volume; gids r.1374-1376 equator
+   (34,36) 4->3 (35,36) 4->3 (36,36) 4->3 (37,36) 4->3 (34,37) 4->3 (35,37) 4->3
+== kart neus bovenvlak: 18 px
+   waarom: nerf op het lichte vlak een stap van het vlak (2 i.p.v. 4/6)
+   gids:   opdracht: nerf een stap van het vlak; gids r.1311-1321 bovenvlak meest belicht (5 blijft)
+   (21,39) 5->6 (22,39) 5->6 (23,39) 5->6 (24,39) 5->6 (9,40) 5->2 (10,40) 5->2 (11,40) 5->2 (12,40) 5->2 (13,40) 5->2 (20,40) 5->6 (21,40) 5->6 (22,40) 5->6 (21,41) 4->2 (22,41) 4->2 (13,42) 5->2 (14,42) 5->2 (15,42) 5->2 (16,42) 5->2
+== kart neus voorvlak: 29 px
+   waarom: verticale nerf in 3 (een stap van 6) en korter; hooglicht op de ronde linkerhoek
+   gids:   gids r.1311-1321 linkervlak belicht; nerf een stap (3 op 6) i.p.v. 4: minder hard, korter
+   (2,45) 6->5 (3,45) 6->5 (4,45) 4->3 (16,45) 4->3 (2,46) 6->5 (3,46) 6->5 (4,46) 4->3 (7,46) 4->3 (8,46) 4->3 (16,46) 4->3 (3,47) 4->3 (7,47) 4->3 (11,47) 4->3 (12,47) 4->3 (15,47) 4->3 (3,48) 4->3 (6,48) 4->3 (12,48) 4->3 (15,48) 4->3 (16,48) 4->3 (3,49) 4->3 (6,49) 4->3 (12,49) 4->3 (15,49) 4->3 (6,50) 4->3 (12,50) 4->3 (15,50) 4->3 (6,51) 4->3 (12,51) 4->3
+== kart neus sikkel: 25 px
+   waarom: sikkelschaduw onderlangs, dunner links en dikker rechts (naar het wiel)
+   gids:   gids r.515-516 + r.1374-1376: schaduw onderlangs (van het licht af), dikker naar rechts/onder
+   (4,51) 6->4 (5,51) 6->4 (4,52) 6->4 (5,52) 6->4 (14,52) 6->4 (15,52) 6->4 (17,52) 6->4 (18,52) 5->4 (19,52) 6->4 (20,52) 6->4 (21,52) 6->4 (14,53) 6->4 (15,53) 6->4 (17,53) 6->4 (19,53) 6->4 (20,53) 6->4 (21,53) 6->4 (13,54) 6->4 (14,54) 6->4 (15,54) 6->4 (17,54) 6->4 (19,54) 6->4 (20,54) 6->4 (21,54) 6->4 (19,55) 6->4
+== kart neus zijvlak: 7 px
+   waarom: horizontale nerf in 3; lichte hoekstrook in de sikkel een tint terug
+   gids:   nerf een stap; gids r.1374-1376
+   (19,49) 4->3 (20,49) 4->3 (21,49) 4->3 (22,49) 4->3 (18,53) 5->6 (18,54) 5->6 (18,55) 4->6
+== voorwiel: 41 px
+   waarom: bolling: rand linksboven licht (5 bestaat al), sikkel rechtsonder in 4, naaf als een knop (ring 4, kern 5/6)
+   gids:   gids r.1350-1374 bol: licht linksboven (rand 5), schaduwvlak rechtsonder vanaf de equator, naaf als een knop
+   (26,51) 4->6 (26,52) 4->6 (34,52) 6->4 (35,52) 6->4 (34,53) 6->4 (35,53) 6->4 (30,54) 6->5 (31,54) 6->5 (33,54) 6->4 (34,54) 6->4 (35,54) 6->4 (30,55) 6->5 (31,55) 6->5 (33,55) 6->4 (34,55) 6->4 (35,55) 6->4 (32,56) 6->4 (33,56) 6->4 (34,56) 6->4 (35,56) 6->4 (29,57) 6->4 (30,57) 6->4 (31,57) 6->4 (32,57) 6->4 (33,57) 6->4 (34,57) 6->4 (28,58) 6->4 (29,58) 6->4 (30,58) 6->4 (31,58) 6->4 (32,58) 6->4 (33,58) 6->4 (34,58) 6->4 (29,59) 6->4 (30,59) 6->4 (31,59) 6->4 (32,59) 6->4 (33,59) 6->4 (29,60) 6->4 (30,60) 6->4 (31,60) 6->4
+== kart midden: 43 px
+   waarom: nerf in 3 en korter; slagschaduw van het voorwiel rechts ervan; onderrand sikkel
+   gids:   gids r.1379-1381 slagschaduw van het voorwiel; r.1374-1376 onderrand in schaduw; nerf een stap
+   (43,41) 4->3 (44,41) 4->3 (36,42) 4->6 (37,42) 4->6 (41,42) 4->3 (42,42) 4->3 (43,42) 4->3 (44,42) 4->3 (40,48) 4->3 (41,48) 4->3 (42,48) 4->3 (37,49) 4->3 (38,49) 4->3 (39,49) 4->3 (40,49) 4->3 (36,50) 6->4 (37,50) 6->4 (38,50) 6->4 (39,50) 6->4 (40,50) 6->4 (41,50) 6->4 (42,50) 6->4 (43,50) 6->4 (44,50) 6->4 (45,50) 6->4 (46,50) 6->4 (36,51) 6->4 (37,51) 6->4 (38,51) 6->4 (39,51) 6->4 (40,51) 6->4 (41,51) 6->4 (42,51) 6->4 (43,51) 6->4 (44,51) 6->4 (45,51) 6->4 (46,51) 6->4 (37,52) 6->4 (38,52) 6->4 (39,52) 6->4 (40,52) 6->4 (41,52) 6->4 (37,53) 6->4
+== kart achterbak: 25 px
+   waarom: lange lijnen in 3 en korter; rechterkant en boven het wiel sikkel in 4
+   gids:   gids r.1311-1321 rechterzijde minder belicht; nerf een stap, korter
+   (56,35) 4->3 (55,36) 4->3 (56,36) 4->3 (57,36) 4->3 (58,36) 4->3 (59,36) 4->3 (60,36) 4->3 (61,37) 6->4 (61,38) 6->4 (60,39) 6->4 (53,41) 4->6 (54,41) 4->3 (55,41) 4->3 (56,41) 4->3 (57,41) 4->3 (58,41) 4->3 (58,42) 4->3 (59,42) 4->3 (60,43) 6->4 (61,43) 6->4 (61,44) 6->4 (61,45) 6->4 (61,46) 6->4 (61,47) 6->4 (61,48) 6->4
+== achterwiel: 19 px
+   waarom: naaf als een vorm met glans linksboven; spaak in 3; sikkel rechtsonder in 4
+   gids:   gids r.1350-1374 (zie voorwiel)
+   (55,49) 6->5 (56,49) 6->5 (59,49) 6->4 (58,50) 6->4 (59,50) 6->4 (58,51) 6->4 (59,51) 6->4 (58,52) 6->4 (59,52) 6->4 (58,53) 6->4 (59,53) 6->4 (54,54) 4->3 (58,54) 6->4 (54,55) 4->3 (55,55) 6->4 (56,55) 6->4 (57,55) 6->4 (55,56) 6->4 (56,56) 6->4

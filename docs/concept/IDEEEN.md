@@ -60,6 +60,7 @@ Bovenaan gehouden zodat de stand in één oogopslag te zien is. Details in de se
   - **Fase 1, 2 en 3 af** (Jordi, 20 nov: "lopende lijnen zijn allemaal af"). Bestanden van fase 2 staan nog niet in de repo.
 - **Steel/Cosmic-lijn waarin één Pokémon een satelliet is** (Jordi, 20 nov).
   - **23 nov (Jordi):** "satelliet is fase 2 of 3, ruimtestation misschien 3 en dan nog iets ervoor". Vicuña/guanaco en carnavalspauw zijn dezelfde dag geschrapt. Ook (Jordi, 23 nov): "de zuid amerika link is niet nodig hier". Op Claudes voorstel (CubeSat/Spoetnik-bolletje → satelliet → ruimtestation, de lijn wordt groter en complexer zoals Magnemite → Magneton): "ja eens met groter en complexer maken". Op de vraag hoe het een Pokémon wordt en geen stukken staal (opties Claude: wezen dat zijn huis van schroot bouwt, satelliet als dier/insect, moederdier met jongen in een baan, ruimtehond): "ik wil er machines van maken ja". Keuze (Jordi, 23 nov): **B, pure machine met eigen persoonlijkheid** (zoals Klink, Magnemite, Porygon), geen machine in dierenvorm. Voorstel Claude, Jordi "dat klinkt goed, 1 oog ook. we doen nu alleen de designs": Spoetnik-bolletje → satelliet → ruimtestation uit gekoppelde modules (zoals Magneton). SPEC en prompts: `sprites/satelliet_lijn/`.
+  - Fase 2 = satelliet (Jordi, 23 nov): Gemini r1 "best oke"; r2-prompt met kleinere panelen in `docs/concept/sprites/satelliet_fase2/gemini/`; r2 "wat te klein, het lijkt niet alsof deze echt een evolutie van fase 1 is", "de eerste was beter"; r3 (prompt vanaf nul voor driekwart) werd zijaanzicht ("heel anders opeens"); model = r1 gespiegeld (`r1_gespiegeld.png`, "best tof"), oog "mag idd wat groter", Claude vergroot het oog zelf (r4 van Gemini maakte er een oogbal van, "gemini kan dit niet"); gekozen: oog 150 % ("150 is prima, kan er idd nog goed een witte en paarse ring omheen"), model = `satelliet_fase2/model.png`. Sprite r1–r4 (maker); lijf groter t.o.v. panelen als knipproef (`lijf_varianten/`): "puur het hoofd vergroten lukt nie" ("want dan sluit het niet meer aan op de panelen"). Gemini r5 (bijlage, lijf 1,3×) en r6 (panelen groter/hoger): lijf gemeten steeds even groot, alleen panelen veranderd; r7 (vanaf nul): "nee dit gaat weer fout". Daarna panelen zelf kleiner (Jordi: "ga op die manier maar allerlei dingen proberen, als je twijfelt, maak gewoon maar meerdere versies"; "het allerbelangrijkste is dat de verhoudingen kloppen en niks afgekapt is, overlappen is niet erg, afkappen wel"): sprite r5–r7 op `paneel_varianten/panelen_80b.png`, keuring + eindkeuring PASS; oog a/b ter keuze in `satelliet_fase2/voor_jordi_r7.png`. Fase 1 en 3 nog niet besproken.
 - **Pachamama Ground/Fairy.**
 - **Tiwanaku-vorm van Golett/Golurk** (type: nog niets bedacht, Jordi 8 nov).
 - **Iets met mate:** een vorm van Poltchageist/Sinistcha óf een originele Pokémon (Jordi, 8 nov: weet het nog niet zeker).
@@ -85,7 +86,7 @@ Bovenaan gehouden zodat de stand in één oogopslag te zien is. Details in de se
 - **Venomoth-vuurvlieg** (Electric/Fire): Venonat wordt de nieuwe Venomoth **met een move die hij leert**; conceptueel een insect dat tot vuurvlieg evolueert (zoals Volbeat). **Ontwerp opnieuw met Gemini** (Jordi, 9 nov: "Het design was prima, maar kunnen we denk ik nu veel beter maken met Gemini").
 - **Banette-evolutie** ("nog meer marionet").
   - **Jordi (17 nov):** Ghost/Dark puppetmaster die uit Banettes geopende ritsmond is geklommen; Banette zit als kledingstuk om hem heen (rits om zijn middel), handen = marionettenkruizen van donkere ghost-vorm, bestuurt twee mini-Shuppets (zoals Dragapult zijn Dreepy). Letterlijk citaat en open vragen: `sprites/banette_evo/SPEC.md`.
-- **Mime-lijn:** Mime Jr. blijft → regionale jiujitsu-Mr. Mime → **Mr. Prime** (zie sectie hieronder en `POKEMON.md`).
+- **Mime-lijn:** ~~regionale jiujitsu-Mr. Mime~~ geschrapt (Jordi, 22 nov: "het hele idee"); **Mr. Prime** open. Oud: Mime Jr. blijft → regionale jiujitsu-Mr. Mime → **Mr. Prime** (zie sectie hieronder en `POKEMON.md`).
 - **Blobfish-lijn, 2 fases** (voorstel Claude, Jordi 9 nov "goed idee": fase 1 een gewone diepzeevis, fase 2 "naar boven gehaald" en ingezakt).
   - **Typing (Jordi, 16 nov): Water → Water.** Eerst ideeën bespreken vóór een Gemini-prompt (Jordi, 16 nov).
   - **Jordi (16 nov):** "we moeten er een pokemon van maken, dus hoe gaan we afwijken van dat het gewoon een dier is"; geen link met Zuid-Amerika, algemene concepten. Uit 7 voorstellen (theatermasker, lavalamp, waterballon, spons, boetseerklei, zitzak, drukvat) koos hij boetseerklei voor fase 1.
@@ -741,6 +742,19 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - Open: welke lichaamsdelen uitsteken, wielen, naam.
 - Let op: Cacnea is al de bolcactus (barrel cactus); Cuyby/Cuychu zijn de cavia-lijn (familie van de capibara); Zapacha is de electric rodent.
 - **Frontsprite af (24 nov):** `docs/concept/sprites/capybarrel/af/` (Jordi: "akkoord, ... r6b"). Volgende: fase 2 (kart).
+- **Jordi (24 nov):** "volgende, capykart, de evolutie van capybarrel. Dat is de fase 2 dus het hoofd is iets volgroeider en hij steekt uit een houten speelgoedwagentje, op de achterkant staan drie of vier toy blocks van hout opgestapeld". Naam fase 2: **Capykart**. Map: `docs/concept/sprites/capykart/`.
+- **Capykart frontsprite af (25 nov):** `docs/concept/sprites/capykart/af/` (Gemini r5 overgenomen in modeltonen, Capybarrel-oog; tanden en morrillo op Jordi's verzoek weggehaald). Daarmee is de Capybarrel-lijn af.
+
+## Regionale Jynx: sirene uit de Odyssee (Jordi, 25 nov)
+- Jordi: "wat dacht je van een regional form van jynx, gebaseerd op sirenes uit de odyssee".
+- Gegevens uit de repo: Jynx is Ice/Psychic; Smoochum → Jynx zit in de dex (DEX_NOMINATIES: "Geen band").
+- Besloten (Jordi, 25 nov): **vogelvrouw zoals in de Odyssee**; type **Fairy/Dark** (Fairy "sowieso"; Dark gekozen uit de voorstellen van Claude, 25 nov); **Smoochum blijft gewoon** (geen regional, evolueert in deze Jynx).
+- Een link met Zuid-Amerika is niet nodig (zie CLAUDE.md, Vaste regels).
+- Kleuren (Jordi, 25 nov): "laten we voor kleuren een beetje gaan voor een mix van jynx en oud griekse kleuren uit hoe ze geportreteerd waren, belangrijk is dat jynx nog te herkennen is, maar ook echt anders is".
+- Kleurvoorstellen Claude (25 nov): 1 vaas (vogelhelft terracotta met zwarte tekening, gezicht wit zoals vrouwen op vazen), 2 fresco (Egyptisch blauw + okergoud), 3 donker (zwart + terracotta + purperrood).
+- Jordi (25 nov): **voorstel 1**, maar "het haar en de lippen wil ik juist een andere kleur, maar we het gezicht qua vorm wel, het haar mag best in een andere stijl, wat meer past bij een sirene". Dus: gezichtsvorm van Jynx blijft; haar en lippen een andere kleur dan bij Jynx (welke: open); haarstijl mag anders.
+- Jordi (25 nov): "haren bruin". Lipkleur en haarstijl niet gekozen; in prompt v1 Claudes voorstel (purperrode lippen, lange golvende lokken), zie `sprites/jynx_regional/PROMPT.md`.
+
 
 ## Impala-lijn (Jordi, 24 nov)
 - **Jordi (24 nov):** "ik overweeg een impala lijn, ik weet dat die niet zuid amerikaans zijn overigens, die kan dan evolueren in een kudu of iets soortgelijks". Nog niets besloten (type, aantal fases, naam open).

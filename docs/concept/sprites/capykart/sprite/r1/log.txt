@@ -1,0 +1,255 @@
+Capykart r1 - afwijkingen t.o.v. de kale reductie (A en B pixel-identiek, alleen vachtpalet verschilt)
+Kale reductie: model_r5.png (1024) -> k-means 28 modelkleuren -> 62x62 cellen (pitch 12,06 px), per cel wint de meest voorkomende
+modelkleur (geen gemiddelde), alpha >= 0,45 (reduce.py). Daarna per zone gemapt op het 16-kleurenpalet (build.py; vacht/hout/
+hoepel/blokken; vacht-hout-grens = modellijnen onder de kin en links/onder de nek). Die mapping is kleur, geen vorm, en telt hieronder niet mee.
+Silhouet = kale reductie, alpha-diff 1 px: (16,31) wordt dekkend = lijnpixel links van de 1 px langere tand (Capybarrel-tandlijn doorgetrokken).
+
+Per zone (van 2303 dekkende px):
+  neus        69  pixelkopie Capybarrel af x9-16 y33-43 (waarden 1,6,7,8), verschoven +5,-14 naar de modelsnuit
+  tanden      16  pixelkopie Capybarrel af x11-15 y44-45, +1 px doorgetrokken (rij 45 herhaald) + onderlijn 1 rij lager
+  oog         11  modeloog weg (5 px naar vacht A) + pixelkopie Capybarrel-oog x22-25 y33-36, verschoven +5,-16 naar de modeloogplek
+  morrillo     6  TOEVOEGING (Jordi akkoord): 6 px neusgrijs op de neusrug, net onder de bovenlijn
+  wenkbrauw    3  TOEVOEGING (Jordi akkoord): 3 px donkerste vachttint F direct boven het oog
+  ruis        74  tintvlakjes <3 px naar de buurtint uit dezelfde kleurgroep (technisch)
+  ruis2       10  idem na het gezicht + 4 losse houtpixels zonder houtbuur naar s
+  lijn        46  buitenlijn dicht / gekleurde selout lichtkant / zwart onder- en rechterrand (technisch)
+  totaal     235
+
+Pixels die niet uit het model of uit Capybarrel komen: alleen morrillo (6) en wenkbrauw (3); plus de technische
+ruis/lijn-pixels (kleur van een buur of lijnkleur, geen nieuwe vorm). Volledige lijst per pixel hieronder.
+
+ruis (25,11) A->F  tintvlakje <3 px naar buurtint
+ruis (35,12) A->C  tintvlakje <3 px naar buurtint
+ruis (24,13) F->C  tintvlakje <3 px naar buurtint
+ruis (27,13) F->C  tintvlakje <3 px naar buurtint
+ruis (28,13) F->C  tintvlakje <3 px naar buurtint
+ruis (33,13) F->A  tintvlakje <3 px naar buurtint
+ruis (35,13) C->A  tintvlakje <3 px naar buurtint
+ruis (23,14) A->C  tintvlakje <3 px naar buurtint
+ruis (32,14) F->A  tintvlakje <3 px naar buurtint
+ruis (17,17) F->C  tintvlakje <3 px naar buurtint
+ruis (18,17) F->C  tintvlakje <3 px naar buurtint
+ruis (28,17) C->A  tintvlakje <3 px naar buurtint
+ruis (29,17) C->A  tintvlakje <3 px naar buurtint
+ruis (36,17) A->F  tintvlakje <3 px naar buurtint
+ruis (28,18) F->A  tintvlakje <3 px naar buurtint
+ruis (31,18) F->A  tintvlakje <3 px naar buurtint
+ruis (31,19) F->A  tintvlakje <3 px naar buurtint
+ruis (36,18) F->A  tintvlakje <3 px naar buurtint
+ruis (27,19) F->A  tintvlakje <3 px naar buurtint
+ruis (27,20) F->A  tintvlakje <3 px naar buurtint
+ruis (30,20) F->A  tintvlakje <3 px naar buurtint
+ruis (17,24) F->A  tintvlakje <3 px naar buurtint
+ruis (17,26) F->A  tintvlakje <3 px naar buurtint
+ruis (17,27) F->A  tintvlakje <3 px naar buurtint
+ruis (49,26) 9->3  tintvlakje <3 px naar buurtint
+ruis (14,27) C->A  tintvlakje <3 px naar buurtint
+ruis (22,28) F->A  tintvlakje <3 px naar buurtint
+ruis (16,29) F->A  tintvlakje <3 px naar buurtint
+ruis (21,30) F->A  tintvlakje <3 px naar buurtint
+ruis (22,30) A->F  tintvlakje <3 px naar buurtint
+ruis (44,31) 3->9  tintvlakje <3 px naar buurtint
+ruis (46,32) 3->9  tintvlakje <3 px naar buurtint
+ruis (57,32) 7->B  tintvlakje <3 px naar buurtint
+ruis (15,33) 7->B  tintvlakje <3 px naar buurtint
+ruis (14,34) B->7  tintvlakje <3 px naar buurtint
+ruis (15,34) B->7  tintvlakje <3 px naar buurtint
+ruis (47,34) 3->9  tintvlakje <3 px naar buurtint
+ruis (22,35) 7->B  tintvlakje <3 px naar buurtint
+ruis (23,35) 7->B  tintvlakje <3 px naar buurtint
+ruis (28,35) 7->B  tintvlakje <3 px naar buurtint
+ruis (11,36) 9->3  tintvlakje <3 px naar buurtint
+ruis (26,36) 7->B  tintvlakje <3 px naar buurtint
+ruis (27,36) 7->B  tintvlakje <3 px naar buurtint
+ruis (21,37) 3->9  tintvlakje <3 px naar buurtint
+ruis (28,37) 7->B  tintvlakje <3 px naar buurtint
+ruis (46,37) 7->B  tintvlakje <3 px naar buurtint
+ruis (9,38) B->7  tintvlakje <3 px naar buurtint
+ruis (10,38) B->7  tintvlakje <3 px naar buurtint
+ruis (11,38) 7->B  tintvlakje <3 px naar buurtint
+ruis (12,38) 7->B  tintvlakje <3 px naar buurtint
+ruis (24,38) 3->9  tintvlakje <3 px naar buurtint
+ruis (42,38) 7->B  tintvlakje <3 px naar buurtint
+ruis (6,39) 7->B  tintvlakje <3 px naar buurtint
+ruis (9,39) 7->B  tintvlakje <3 px naar buurtint
+ruis (10,39) 7->B  tintvlakje <3 px naar buurtint
+ruis (23,39) 7->B  tintvlakje <3 px naar buurtint
+ruis (23,40) 7->B  tintvlakje <3 px naar buurtint
+ruis (25,39) 3->9  tintvlakje <3 px naar buurtint
+ruis (4,40) 7->B  tintvlakje <3 px naar buurtint
+ruis (8,40) 7->B  tintvlakje <3 px naar buurtint
+ruis (3,41) 7->B  tintvlakje <3 px naar buurtint
+ruis (6,41) 7->B  tintvlakje <3 px naar buurtint
+ruis (25,42) 7->B  tintvlakje <3 px naar buurtint
+ruis (21,43) B->7  tintvlakje <3 px naar buurtint
+ruis (22,43) B->7  tintvlakje <3 px naar buurtint
+ruis (29,43) 3->9  tintvlakje <3 px naar buurtint
+ruis (20,44) B->7  tintvlakje <3 px naar buurtint
+ruis (51,44) 7->B  tintvlakje <3 px naar buurtint
+ruis (20,45) 7->B  tintvlakje <3 px naar buurtint
+ruis (48,50) 7->B  tintvlakje <3 px naar buurtint
+ruis (35,12) C->A  tintvlakje <3 px naar buurtint
+ruis (36,12) C->A  tintvlakje <3 px naar buurtint
+ruis (9,38) 7->B  tintvlakje <3 px naar buurtint
+ruis (10,38) 7->B  tintvlakje <3 px naar buurtint
+neus (16,19) C->0  pixelkopie Capybarrel (11,33)
+neus (17,19) A->0  pixelkopie Capybarrel (12,33)
+neus (15,20) C->0  pixelkopie Capybarrel (10,34)
+neus (16,20) C->3  pixelkopie Capybarrel (11,34)
+neus (17,20) C->3  pixelkopie Capybarrel (12,34)
+neus (18,20) C->3  pixelkopie Capybarrel (13,34)
+neus (15,21) A->9  pixelkopie Capybarrel (10,35)
+neus (16,21) A->9  pixelkopie Capybarrel (11,35)
+neus (17,21) A->9  pixelkopie Capybarrel (12,35)
+neus (18,21) A->3  pixelkopie Capybarrel (13,35)
+neus (19,21) A->3  pixelkopie Capybarrel (14,35)
+neus (20,21) A->3  pixelkopie Capybarrel (15,35)
+neus (15,22) 0->9  pixelkopie Capybarrel (10,36)
+neus (16,22) A->9  pixelkopie Capybarrel (11,36)
+neus (17,22) A->3  pixelkopie Capybarrel (12,36)
+neus (18,22) A->3  pixelkopie Capybarrel (13,36)
+neus (19,22) s->3  pixelkopie Capybarrel (14,36)
+neus (20,22) A->3  pixelkopie Capybarrel (15,36)
+neus (21,22) A->3  pixelkopie Capybarrel (16,36)
+neus (14,23) C->0  pixelkopie Capybarrel (9,37)
+neus (15,23) C->3  pixelkopie Capybarrel (10,37)
+neus (16,23) A->3  pixelkopie Capybarrel (11,37)
+neus (17,23) A->3  pixelkopie Capybarrel (12,37)
+neus (18,23) A->0  pixelkopie Capybarrel (13,37)
+neus (19,23) A->0  pixelkopie Capybarrel (14,37)
+neus (20,23) A->3  pixelkopie Capybarrel (15,37)
+neus (21,23) A->3  pixelkopie Capybarrel (16,37)
+neus (14,24) C->0  pixelkopie Capybarrel (9,38)
+neus (15,24) A->3  pixelkopie Capybarrel (10,38)
+neus (16,24) A->3  pixelkopie Capybarrel (11,38)
+neus (17,24) A->3  pixelkopie Capybarrel (12,38)
+neus (18,24) A->3  pixelkopie Capybarrel (13,38)
+neus (19,24) A->3  pixelkopie Capybarrel (14,38)
+neus (20,24) A->3  pixelkopie Capybarrel (15,38)
+neus (21,24) A->3  pixelkopie Capybarrel (16,38)
+neus (15,25) A->3  pixelkopie Capybarrel (10,39)
+neus (16,25) A->0  pixelkopie Capybarrel (11,39)
+neus (17,25) s->3  pixelkopie Capybarrel (12,39)
+neus (18,25) A->3  pixelkopie Capybarrel (13,39)
+neus (19,25) A->3  pixelkopie Capybarrel (14,39)
+neus (20,25) A->3  pixelkopie Capybarrel (15,39)
+neus (21,25) A->3  pixelkopie Capybarrel (16,39)
+neus (15,26) A->3  pixelkopie Capybarrel (10,40)
+neus (16,26) A->0  pixelkopie Capybarrel (11,40)
+neus (17,26) A->3  pixelkopie Capybarrel (12,40)
+neus (18,26) A->3  pixelkopie Capybarrel (13,40)
+neus (19,26) A->3  pixelkopie Capybarrel (14,40)
+neus (20,26) A->3  pixelkopie Capybarrel (15,40)
+neus (21,26) A->0  pixelkopie Capybarrel (16,40)
+neus (14,27) A->0  pixelkopie Capybarrel (9,41)
+neus (15,27) A->3  pixelkopie Capybarrel (10,41)
+neus (16,27) A->0  pixelkopie Capybarrel (11,41)
+neus (17,27) A->3  pixelkopie Capybarrel (12,41)
+neus (18,27) A->3  pixelkopie Capybarrel (13,41)
+neus (19,27) A->3  pixelkopie Capybarrel (14,41)
+neus (20,27) A->3  pixelkopie Capybarrel (15,41)
+neus (21,27) A->0  pixelkopie Capybarrel (16,41)
+neus (15,28) A->3  pixelkopie Capybarrel (10,42)
+neus (16,28) s->0  pixelkopie Capybarrel (11,42)
+neus (17,28) 0->3  pixelkopie Capybarrel (12,42)
+neus (19,28) A->0  pixelkopie Capybarrel (14,42)
+neus (20,28) A->0  pixelkopie Capybarrel (15,42)
+neus (21,28) A->0  pixelkopie Capybarrel (16,42)
+neus (16,29) A->0  pixelkopie Capybarrel (11,43)
+neus (17,29) A->0  pixelkopie Capybarrel (12,43)
+neus (18,29) A->0  pixelkopie Capybarrel (13,43)
+neus (19,29) A->0  pixelkopie Capybarrel (14,43)
+neus (20,29) A->0  pixelkopie Capybarrel (15,43)
+neus (21,29) A->0  pixelkopie Capybarrel (16,43)
+tanden (17,30) A->W  pixelkopie Capybarrel (12,44)
+tanden (18,30) A->9  pixelkopie Capybarrel (13,44)
+tanden (19,30) 0->W  pixelkopie Capybarrel (14,44)
+tanden (20,30) s->0  pixelkopie Capybarrel (15,44)
+tanden (16,31) .->0  pixelkopie Capybarrel (11,45)
+tanden (17,31) 0->W  pixelkopie Capybarrel (12,45)
+tanden (18,31) 0->9  pixelkopie Capybarrel (13,45)
+tanden (19,31) 0->W  pixelkopie Capybarrel (14,45)
+tanden (20,31) 0->F  pixelkopie Capybarrel (15,45)
+oog (27,17) A->C  pixelkopie Capybarrel (22,33)
+oog (28,17) A->s  pixelkopie Capybarrel (23,33)
+oog (29,17) A->s  pixelkopie Capybarrel (24,33)
+oog (27,18) A->s  pixelkopie Capybarrel (22,34)
+oog (28,18) A->0  pixelkopie Capybarrel (23,34)
+oog (27,19) A->s  pixelkopie Capybarrel (22,35)
+oog (28,19) 0->s  pixelkopie Capybarrel (23,35)
+oog (29,19) 9->0  pixelkopie Capybarrel (24,35)
+oog (27,20) A->s  pixelkopie Capybarrel (22,36)
+oog (28,20) 0->A  pixelkopie Capybarrel (23,36)
+oog (30,20) A->0  pixelkopie Capybarrel (25,36)
+tanden (17,32) 0->W  tand 1 px doorgetrokken (Capybarrel rij 45)
+tanden (18,32) 0->9  tand 1 px doorgetrokken (Capybarrel rij 45)
+tanden (19,32) 0->W  tand 1 px doorgetrokken (Capybarrel rij 45)
+tanden (17,33) B->0  onderlijn tanden (Capybarrel rij 46) 1 px lager
+tanden (18,33) B->0  onderlijn tanden (Capybarrel rij 46) 1 px lager
+tanden (19,33) B->0  onderlijn tanden (Capybarrel rij 46) 1 px lager
+tanden (20,33) B->0  onderlijn tanden (Capybarrel rij 46) 1 px lager
+morrillo (21,15) C->3  morrillo (Jordi akkoord): neusgrijs, op de neusrug onder de bovenlijn
+morrillo (22,15) C->3  morrillo
+morrillo (23,15) C->3  morrillo
+morrillo (20,16) C->3  morrillo
+morrillo (21,16) C->3  morrillo
+morrillo (22,16) C->3  morrillo
+wenkbrauw (28,16) A->F  wenkbrauw (Jordi akkoord): donkerste vachttint
+wenkbrauw (29,16) A->F  wenkbrauw
+wenkbrauw (30,16) A->F  wenkbrauw
+ruis2 (18,19) A->C  tintvlakje <3 px naar buurtint
+ruis2 (19,19) A->C  tintvlakje <3 px naar buurtint
+ruis2 (19,20) C->A  tintvlakje <3 px naar buurtint
+ruis2 (21,30) A->F  tintvlakje <3 px naar buurtint
+ruis2 (15,33) B->7  tintvlakje <3 px naar buurtint
+ruis2 (16,33) B->7  tintvlakje <3 px naar buurtint
+ruis2 (43,9) 7->s  losse houtpixel zonder houtbuur naar donkerste houttint
+ruis2 (50,34) 7->s  losse houtpixel zonder houtbuur naar donkerste houttint
+ruis2 (33,50) 7->s  losse houtpixel zonder houtbuur naar donkerste houttint
+ruis2 (7,56) 7->s  losse houtpixel zonder houtbuur naar donkerste houttint
+lijn (47,2) g->0  buitenlijn dicht
+lijn (54,10) 7->0  buitenlijn dicht
+lijn (54,11) 7->0  buitenlijn dicht
+lijn (54,12) 7->0  buitenlijn dicht
+lijn (28,13) C->0  buitenlijn dicht
+lijn (33,13) A->0  buitenlijn dicht
+lijn (54,13) 7->0  buitenlijn dicht
+lijn (54,14) 7->0  buitenlijn dicht
+lijn (54,15) 7->0  buitenlijn dicht
+lijn (54,16) 7->0  buitenlijn dicht
+lijn (17,17) C->0  buitenlijn dicht
+lijn (18,17) C->0  buitenlijn dicht
+lijn (14,20) C->0  buitenlijn dicht
+lijn (57,32) B->0  buitenlijn dicht
+lijn (4,40) B->0  buitenlijn dicht
+lijn (35,11) 0->s  selout lichtkant
+lijn (36,11) 0->s  selout lichtkant
+lijn (28,13) 0->s  selout lichtkant
+lijn (32,13) 0->s  selout lichtkant
+lijn (33,13) 0->s  selout lichtkant
+lijn (17,17) 0->s  selout lichtkant
+lijn (18,17) 0->s  selout lichtkant
+lijn (15,32) 0->s  selout lichtkant
+lijn (57,32) 0->s  selout lichtkant
+lijn (58,32) 0->s  selout lichtkant
+lijn (14,33) 0->s  selout lichtkant
+lijn (59,33) 0->s  selout lichtkant
+lijn (60,34) 0->s  selout lichtkant
+lijn (6,38) 0->s  selout lichtkant
+lijn (7,38) 0->s  selout lichtkant
+lijn (5,39) 0->s  selout lichtkant
+lijn (3,40) 0->s  selout lichtkant
+lijn (4,40) 0->s  selout lichtkant
+lijn (2,42) 0->s  selout lichtkant
+lijn (1,44) 0->s  selout lichtkant
+lijn (0,46) 0->s  selout lichtkant
+lijn (0,47) 0->s  selout lichtkant
+lijn (0,48) 0->s  selout lichtkant
+lijn (0,49) 0->s  selout lichtkant
+lijn (58,32) s->0  rechterrand zwart
+lijn (59,33) s->0  rechterrand zwart
+lijn (60,34) s->0  rechterrand zwart
+lijn (39,53) s->0  onderrand zwart
+lijn (40,53) s->0  onderrand zwart
+lijn (41,53) s->0  onderrand zwart
+lijn (13,56) s->0  onderrand zwart

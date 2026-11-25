@@ -34,3 +34,4 @@
 - Prompt r1: `gemini/PROMPT.md` (nieuw gesprek, geen bijlage).
 - r1: `gemini/r1.png`.
 - Jordi eens met Claudes punten bij r1 (hoorns ongelijk/geen Golofa-haak, kleur modderig, lijf rotsgolem, vuist, kattenkop): "ja eens, doe eerst hoorns en kleur". Bijstuurprompt r2 (zelfde gesprek): `gemini/PROMPT_r2_bijsturen.md`.
+- r2: `gemini/r2.png` (kleur warm bruin + grijswitte hoorns gelukt; hoorns nog gevorkt, geen enkele haak).

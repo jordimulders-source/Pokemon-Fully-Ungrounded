@@ -52,3 +52,4 @@ Open: aantal ogen, naam, evolutiemethode.
 - Jordi: "eindeloos fixen gaat meestal niet goed" → prompt r10 naar Jordi.
 - r10 (`gemini/r10.png`), Jordi: "niet gelukt". → terug naar r13b met compacte varianten (maker).
 - Compacte varianten (`model/compact_*`, alleen hele vakken weg): A 3/3 mast 3 → 64×46, B mast 2 → 64×42, C 2/2 mast 3 → 64×52 (oog ±8 px). Breedte begrenst overal.
+- Jordi: "maar met 2 panelen is het niet echt ruimtestation meer he" · "maar gaat A wel echt beter worden dan?" · "ja, doe die kleurronde maar" → r13b/4 vakken blijft; kleurronde r6 (minder tinten, harder contrast, silhouet gelijk) in `kleur_r6/`.

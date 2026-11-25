@@ -790,4 +790,8 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - **Jordi (wat het is):** "het is een puur digitaal wezen, een glitch die sentient wordt".
 - **Jordi (type fase 3):** "3 blijft ook bug".
 - **Jordi (look):** "de look moet in alle 3 de fases dan ook digitaal zijn, dus bijv 1 gewoon wat meer missingno achtig".
-- **Open:** vorm; anker; verder ontwerp.
+- **Jordi (na Gemini r2 fase 2, "doet gemini maar wat"):** "fase 1 is al sentient ondanks dat het een pure glitch is. Ik wil juist wel al vaag een gezicht erin hebben. Fase 3 kan dan een optelsom van fase 2's zijn." Opbouw (Jordi):
+  - "fase 1 is een glitch met weinig vorm, er is wel het een en ander in af te lezen, maar erg missingno achtig. Hij glitcht ook als die zou bewegen, zoals porygon-z dat ook doet bijv"
+  - "fase 2 is meer gevormd en krijgt meer evil intenties"
+  - "fase 3 is volledig virus en is zoals een magneton een combinatie van fase 2's, misschien wel meer dan 3"
+- **Open:** digitale beeldtaal en kleur (vraag Jordi: "wat zou goed bij een gevisualiseerde bug passen?"); anker; verder ontwerp.

@@ -13,3 +13,12 @@ STYLE: real pixel art in exactly the same style as the attached image, max 16 co
 
 AVOID: human eyes, an insect, a robot, a TV or a monitor, text or symbols, Porygon, MissingNo.
 ```
+
+## Ronde 1 (25 nov)
+- `r1/r1.png` (natief: 10,25 px per pixel, figuur 68×62, `sprite/r1_natief.png`). Jordi: "kijk nice, kan je hier iets mee? beetje oppoetsen?", daarna: "hij heeft er iets teveel een magneton van gemaakt, dus al die magneten moeten weg, maar de gezichten kloppen".
+- Zelf weghalen kan niet netjes: de grijze magneten lopen tot in het midden tussen de koppen, dus weghalen laat gaten die ingetekend moeten worden. Eerst Gemini laten weghalen.
+
+## r2 (zelfde gesprek als r1, vervolgbericht): magneten weg
+```
+Very good, keep this. Only one change: you made it too much like Magneton. Remove ALL the light grey magnet-like prongs and bars that stick out of it and sit between the heads. Keep the heads and the faces exactly as they are: same eyes, same mouths, same colors, same positions. Where the magnets were, the heads simply touch each other or there is empty space; do not add anything new.
+```

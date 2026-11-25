@@ -3310,3 +3310,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.807] - Regionale Poliwag: besluiten en Gemini-prompt v1
 - Jordi: harlekijnpad, ijs met cinnaber, beetje kristal, spiraal als venster, hoofdkleur als de harlekijnpad. Vastgelegd in `docs/concept/sprites/poliwag_regional/SPEC.md`; Gemini-prompt v1 + bijlage in `poliwag_regional/gemini/`.
+
+### [v0.0.808] - Regionale Poliwag: Gemini-prompt v2
+- Na v1 (geen staart, te veel kleur/detail): zuignap van het harlekijnpad-kikkervisje als buikvenster, Poliwags staart, 2–3 kristallen, spiraal in één kleur, één ijstint. `poliwag_regional/SPEC.md`, `gemini/PROMPT.md`.

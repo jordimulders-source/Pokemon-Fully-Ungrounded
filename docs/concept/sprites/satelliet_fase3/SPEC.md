@@ -13,3 +13,5 @@ Open: aantal ogen, naam, evolutiemethode.
 
 ## Gemini-rondes
 - r1: `gemini/PROMPT_r1.md` (nieuw gesprek, geen bijlage).
+- r1 (`gemini/r1.png`), Jordi: "het leest nog niet echt als een ruimtestation" · "die cirkel is te prominent" · "ik wil meer een ruimtestation".
+- r2: `gemini/PROMPT_r2.md` (ring klein en op de achtergrond, modules + grote panelen, kern = fase 2-capsule; uitwerking Claude).

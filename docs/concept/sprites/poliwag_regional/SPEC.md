@@ -20,3 +20,4 @@ Lijn: regionale Poliwag → regionale Poliwhirl → regionale Poliwrath, alle Ic
 - v2 (`gemini/r2/gemini_v2.png`): Jordi "kleuren vind ik goed" (geel/zwart, ijsblauw, rode spiraal en staartkern).
 - **v2 gekozen als model (Jordi, 25 nov):** "vorm mond is goed imo, kleur veranderen prima, roze past niet echt denk ik, de bouw ook prima, de staart is een veer, maar dat is bij het origineel ook". Toegestane afwijking in de sprite: alleen de kleur van de mond (welke kleur: open). Zwart gladmaken = technische opschoning.
 - **Mondkleur: rood** (Jordi, 25 nov).
+- **r1/r2 (Jordi, 25 nov):** "de ogen vind ik in r1 erg goed, sterker nog, zeldzaam maar ik ben met r1 al helemaal tevreden denk ik".

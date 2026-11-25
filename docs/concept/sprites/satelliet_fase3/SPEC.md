@@ -41,3 +41,4 @@ Open: aantal ogen, naam, evolutiemethode.
 - Sprite r1 (`sprite/r1/`, maker): 63×42, 12 kleuren; Claude: nog niet naar Jordi (hobbelige buizen, banden half, vlekkerig wit, rommelige panelen) → r2.
 - Jordi over r1: "prima schets, alleen de bol onderin is nog niet rond".
 - Jordi: "nu beter maken" · "laat maar eindresultaat pas zien" → maker-rondes, keurder en Dragonfly Cave-eindkeuring eerst, daarna pas naar Jordi.
+- Sprite r2 (`sprite/r2/`): bollen rond (≤0,5 px), banden/kragen over de hele buis; panelen nog vlekkerig → r3 (verse maker) op de panelen.

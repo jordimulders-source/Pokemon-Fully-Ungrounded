@@ -100,7 +100,7 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Slowpoke
+Slowpoke-Galar
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -1291,7 +1291,7 @@ Cubone
 Level: 20
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
-Slowpoke
+Slowpoke-Galar
 Level: 20
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
@@ -1304,15 +1304,15 @@ Music: Suspicious
 Double Battle: No
 AI: Check Bad Move
 
-Slowpoke
+Slowpoke-Galar
 Level: 20
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
-Slowpoke
+Slowpoke-Galar
 Level: 20
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
-Slowpoke
+Slowpoke-Galar
 Level: 20
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
@@ -1342,7 +1342,7 @@ Music: Suspicious
 Double Battle: No
 AI: Check Bad Move
 
-Slowpoke
+Slowpoke-Galar
 Level: 25
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
@@ -1380,7 +1380,7 @@ Cubone
 Level: 23
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
-Slowpoke
+Slowpoke-Galar
 Level: 23
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
@@ -3535,7 +3535,7 @@ Kadabra
 Level: 31
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
-Slowpoke
+Slowpoke-Galar
 Level: 31
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
@@ -3573,15 +3573,15 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Slowpoke
+Slowpoke-Galar
 Level: 33
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
-Slowpoke
+Slowpoke-Galar
 Level: 33
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
-Slowbro
+Slowbro-Galar
 Level: 33
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
@@ -3594,7 +3594,7 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Slowbro
+Slowbro-Galar
 Level: 38
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
@@ -6090,7 +6090,7 @@ Items: Full Restore
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Slowpoke
+Slowpoke-Galar
 Level: 42
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Headbutt
@@ -6857,7 +6857,7 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Hail
 - Dive
 
-Slowbro
+Slowbro-Galar
 Level: 52
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Ice Beam
@@ -8985,7 +8985,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Future Sight
 - Wish
 
-Slowbro
+Slowbro-Galar
 Level: 48
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Psychic
@@ -10653,7 +10653,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Rock Blast
 - Scary Face
 
-Slowbro
+Slowbro-Galar
 Level: 48
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Psychic
@@ -11554,7 +11554,7 @@ Marowak
 Level: 29
 IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
 
-Slowbro
+Slowbro-Galar
 Level: 29
 IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
 
@@ -11571,7 +11571,7 @@ Marowak
 Level: 54
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
-Slowbro
+Slowbro-Galar
 Level: 54
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
@@ -12849,7 +12849,7 @@ IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
 - Future Sight
 - Wish
 
-Slowbro
+Slowbro-Galar
 Level: 52
 IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
 - Psychic
@@ -13168,7 +13168,7 @@ IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
 - Rock Blast
 - Scary Face
 
-Slowbro
+Slowbro-Galar
 Level: 54
 IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
 - Psychic

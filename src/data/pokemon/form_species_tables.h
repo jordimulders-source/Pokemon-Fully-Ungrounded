@@ -346,7 +346,9 @@ static const u16 sRapidashFormSpeciesIdTable[] = {
 
 #if P_FAMILY_SLOWPOKE
 static const u16 sSlowpokeFormSpeciesIdTable[] = {
+#if FU_SLOWPOKE_KANTO
     SPECIES_SLOWPOKE,
+#endif //FU_SLOWPOKE_KANTO
 #if P_GALARIAN_FORMS
     SPECIES_SLOWPOKE_GALAR,
 #endif
@@ -354,7 +356,9 @@ static const u16 sSlowpokeFormSpeciesIdTable[] = {
 };
 
 static const u16 sSlowbroFormSpeciesIdTable[] = {
+#if FU_SLOWPOKE_KANTO
     SPECIES_SLOWBRO,
+#endif //FU_SLOWPOKE_KANTO
 #if P_MEGA_EVOLUTIONS
     SPECIES_SLOWBRO_MEGA,
 #endif
@@ -366,7 +370,9 @@ static const u16 sSlowbroFormSpeciesIdTable[] = {
 
 #if P_GEN_2_CROSS_EVOS
 static const u16 sSlowkingFormSpeciesIdTable[] = {
+#if FU_SLOWPOKE_KANTO
     SPECIES_SLOWKING,
+#endif //FU_SLOWPOKE_KANTO
 #if P_GALARIAN_FORMS
     SPECIES_SLOWKING_GALAR,
 #endif

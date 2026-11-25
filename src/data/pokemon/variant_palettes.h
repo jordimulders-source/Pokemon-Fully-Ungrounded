@@ -4482,13 +4482,19 @@ const struct VariantPalettes gVariantPalettes[] =
 #endif //FU_PONYTA_GALAR
 #endif
 #if (P_FAMILY_SLOWPOKE)
+#if FU_SLOWPOKE_KANTO
     {gMonPalette_Slowpoke, sVariants_Slowpoke, sVariantNames_slowpoke},
+#endif //FU_SLOWPOKE_KANTO
 #endif
 #if (P_FAMILY_SLOWPOKE)
+#if FU_SLOWPOKE_KANTO
     {gMonPalette_Slowbro, sVariants_Slowbro, sVariantNames_slowpoke},
+#endif //FU_SLOWPOKE_KANTO
 #endif
 #if (P_FAMILY_SLOWPOKE) && (P_GEN_2_CROSS_EVOS)
+#if FU_SLOWPOKE_KANTO
     {gMonPalette_Slowking, sVariants_Slowking, sVariantNames_slowpoke},
+#endif //FU_SLOWPOKE_KANTO
 #endif
 #if (P_FAMILY_SLOWPOKE) && (P_GALARIAN_FORMS)
     {gMonPalette_SlowpokeGalar, sVariants_SlowpokeGalar, sVariantNames_slowpoke_galar},

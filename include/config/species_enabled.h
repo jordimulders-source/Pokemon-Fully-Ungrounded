@@ -216,7 +216,7 @@
 #define P_FAMILY_SEVIPER                 P_GEN_3_POKEMON
 #define P_FAMILY_LUNATONE                P_GEN_3_POKEMON
 #define P_FAMILY_SOLROCK                 P_GEN_3_POKEMON
-#define P_FAMILY_BARBOACH                P_GEN_3_POKEMON
+#define P_FAMILY_BARBOACH                FALSE // FU: niet in de dex (was P_GEN_3_POKEMON; Jordi, 25 nov)
 #define P_FAMILY_CORPHISH                FALSE // FU: niet in de dex (was P_GEN_3_POKEMON)
 #define P_FAMILY_BALTOY                  P_GEN_3_POKEMON
 #define P_FAMILY_LILEEP                  FALSE // FU: niet in de dex (was P_GEN_3_POKEMON)
@@ -498,6 +498,7 @@
 #define FU_FLOETTE_ETERNAL               FALSE // Eternal Floette (eventvorm)
 #define FU_RAICHU_ALOLA                  FALSE // Alolan Raichu
 #define FU_MEOWTH_KANTO                  FALSE // gewone Meowth en Persian (Galar-Meowth en Perrserker blijven; Galar-Meowth wordt de basisvorm)
+#define FU_SLOWPOKE_KANTO                FALSE // gewone Slowpoke, Slowbro en Slowking (Galar-Slowpoke-lijn blijft; Galar-Slowpoke wordt de basisvorm) (Jordi, 25 nov)
 #define FU_MEOWTH_ALOLA                  FALSE // Alolan Meowth en Persian
 #define FU_GROWLITHE_HISUI               FALSE // Hisuian Growlithe en Arcanine
 #define FU_GEODUDE_ALOLA                 FALSE // Alolan Geodude-lijn

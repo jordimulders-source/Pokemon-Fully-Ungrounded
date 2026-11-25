@@ -226,7 +226,7 @@ static const struct TrainerTowerFloor sTrainerTowerFloor_Single_4 =
                     .friendship = MAX_FRIENDSHIP
                 },
                 {
-                    .species = SPECIES_SLOWBRO,
+                    .species = SPECIES_SLOWBRO_GALAR,
                     .heldItem = ITEM_SITRUS_BERRY,
                     .moves = {MOVE_SUNNY_DAY, MOVE_YAWN, MOVE_FLAMETHROWER, MOVE_CONFUSION},
                     .hpEV = 100,
@@ -2419,7 +2419,7 @@ static const struct TrainerTowerFloor sTrainerTowerFloor_Single_5 = {
                     .friendship = MAX_FRIENDSHIP
                 },
                 {
-                    .species = SPECIES_SLOWBRO,
+                    .species = SPECIES_SLOWBRO_GALAR,
                     .heldItem = ITEM_MYSTIC_WATER,
                     .moves = {MOVE_AMNESIA, MOVE_PSYCHIC, MOVE_SURF, MOVE_ICE_BEAM},
                     .hpEV = 84,
@@ -4654,7 +4654,7 @@ static const struct TrainerTowerFloor sTrainerTowerFloor_Single_6 = {
                     .friendship = MAX_FRIENDSHIP
                 },
                 {
-                    .species = SPECIES_SLOWBRO,
+                    .species = SPECIES_SLOWBRO_GALAR,
                     .heldItem = ITEM_QUICK_CLAW,
                     .moves = {MOVE_SURF, MOVE_CONFUSION, MOVE_AMNESIA, MOVE_DISABLE},
                     .hpEV = 0,

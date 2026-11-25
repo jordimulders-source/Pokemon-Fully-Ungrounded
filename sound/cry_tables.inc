@@ -197,7 +197,9 @@ gCryTable::
 	cry Cry_Rapidash
 .endif @ P_FAMILY_PONYTA
 .if P_FAMILY_SLOWPOKE == TRUE
+.if FU_SLOWPOKE_KANTO == TRUE
 	cry Cry_Slowpoke
+.endif @ FU_SLOWPOKE_KANTO
 	cry Cry_Slowbro
 .if P_GEN_2_CROSS_EVOS == TRUE
 	cry Cry_Slowking
@@ -2771,7 +2773,9 @@ gCryTable_Reverse::
 	cry_reverse Cry_Rapidash
 .endif @ P_FAMILY_PONYTA
 .if P_FAMILY_SLOWPOKE == TRUE
+.if FU_SLOWPOKE_KANTO == TRUE
 	cry_reverse Cry_Slowpoke
+.endif @ FU_SLOWPOKE_KANTO
 	cry_reverse Cry_Slowbro
 .if P_GEN_2_CROSS_EVOS == TRUE
 	cry_reverse Cry_Slowking

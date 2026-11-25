@@ -1069,11 +1069,13 @@ Cry_Rapidash::
 .endif @ P_FAMILY_PONYTA
 
 .if P_FAMILY_SLOWPOKE == TRUE
+.if FU_SLOWPOKE_KANTO == TRUE
 	.align 2
 Cry_Slowpoke::
 .if TESTING == FALSE
 	.incbin "sound/direct_sound_samples/cries/slowpoke.bin"
 .endif
+.endif @ FU_SLOWPOKE_KANTO
 
 	.align 2
 Cry_Slowbro::

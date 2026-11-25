@@ -1178,7 +1178,7 @@ static const struct InGameTrade sIngameTrades[] =
 #if defined(FIRERED)
         .requestedSpecies = SPECIES_GOLDUCK
 #else
-        .requestedSpecies = SPECIES_SLOWBRO
+        .requestedSpecies = SPECIES_SLOWBRO_GALAR
 #endif
     },
     [INGAME_TRADE_ELECTRODE] = 

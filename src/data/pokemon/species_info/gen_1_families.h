@@ -10408,6 +10408,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 #endif //P_FAMILY_PONYTA
 
 #if P_FAMILY_SLOWPOKE
+#if FU_SLOWPOKE_KANTO
     [SPECIES_SLOWPOKE] =
     {
         .baseHP        = 90,
@@ -10553,8 +10554,10 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .formSpeciesIdTable = sSlowbroFormSpeciesIdTable,
         .formChangeTable = sSlowbroFormChangeTable,
     },
+#endif //FU_SLOWPOKE_KANTO
 
 #if P_GEN_2_CROSS_EVOS
+#if FU_SLOWPOKE_KANTO
     [SPECIES_SLOWKING] =
     {
         .baseHP        = 95,
@@ -10623,6 +10626,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .teachableLearnset = sSlowkingTeachableLearnset,
         .formSpeciesIdTable = sSlowkingFormSpeciesIdTable,
     },
+#endif //FU_SLOWPOKE_KANTO
 #endif //P_GEN_2_CROSS_EVOS
 
 #if P_MEGA_EVOLUTIONS

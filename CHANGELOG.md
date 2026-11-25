@@ -3351,3 +3351,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Ronde 7: "totaal niet digitaal genoeg"; prompt r8 (GBA-tegels).
 - Jordi: corruptie doen wij zelf, Gigabite-richting; referentie toegevoegd; prompt r9 (intacte vorm).
 - Ronde 9 afgekeurd ("broodrooster"); corruptietest op r9 + script; prompt r10.
+- Ronde 10 afgekeurd; Gemini-lus gestopt (les in `GEMINI.md`).

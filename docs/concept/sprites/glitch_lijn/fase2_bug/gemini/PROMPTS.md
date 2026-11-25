@@ -186,3 +186,6 @@ STYLE: real pixel art, max 16 colors, dark outline, facing slightly to the left.
 
 AVOID: a box, a toaster, a blob, a ghost, a cute or friendly look, legs, a cartoon face, eyelids, teeth, insects, screens, robots, text or symbols, glitch effects, Porygon, Unown, MissingNo, Gengar.
 ```
+
+## Ronde 10 (25 nov)
+- `r10/r10.png`. Jordi: "weer verschrikkelijlk". Gemini-lus gestopt na 10 rondes.

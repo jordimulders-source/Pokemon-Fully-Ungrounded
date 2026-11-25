@@ -189,3 +189,23 @@ AVOID: a box, a toaster, a blob, a ghost, a cute or friendly look, legs, a carto
 
 ## Ronde 10 (25 nov)
 - `r10/r10.png`. Jordi: "weer verschrikkelijlk". Gemini-lus gestopt na 10 rondes.
+
+## r11 (nieuw gesprek, MET bijlage `r11/bijlage_fase1.png` = fase 1 af, 8× vergroot)
+Jordi (25 nov): fase 2 = fase 1 "wat meer gedefineerd ... een beetje zoals gigabite"; "een bug die sentient is en controle krijgt over het scherm waar hij in zit"; "nog steeds blokken/pixels die los zitten"; "er mag nog wel iets van glitch in zitten, zoals de trainer in de bijlage, maar hooguit paar blokjes"; "geen mensenoog, het wordt een hoofd met 2 armen"; "de ogen en mond mogen nu kleur krijgen, maar digitaal eruit blijven zien". Eerder: Electric/Bug, "meer gevormd en krijgt meer evil intenties". Gigabite niet als bijlage of naam (Gemini kopieert dan). Eigen invulling Claude (schrappen bij twijfel): alleen de stijlregel en de AVOID-regel.
+```
+The attached image is stage 1 of an original Pokemon line: a sentient glitch, Electric type. Design its evolution, stage 2, as an official Gen 3 front sprite (Pokemon Ruby/Sapphire/Emerald), 64x64. Type: Electric/Bug. "Bug" means a bug in the computer sense; it is NOT an insect.
+
+Stage 2 is the same creature, but much more defined and formed, with more evil intentions. It is a bug that has become sentient and is taking control of the screen it lives in.
+
+SHAPE: a head with two arms.
+
+LOOSE BLOCKS: it still has some loose blocks and pixels that float apart from it.
+
+GLITCH: only a few small glitch blocks, like a few tiles of a corrupted sprite in an old handheld game, at most a few blocks. The rest of the creature is clean.
+
+FACE: no human eyes. The eyes and the mouth have color now, but they still look digital.
+
+STYLE: real pixel art, max 16 colors, dark outline, facing slightly to the left. White background, no ground, no shadow, no effects, no glow.
+
+AVOID: human eyes, eyelids, an insect, a robot, a TV or a monitor as a body, text or symbols, Porygon, MissingNo.
+```

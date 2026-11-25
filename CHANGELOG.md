@@ -3433,3 +3433,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.831] - Glitch-lijn fase 1: frontsprite af
 - Eigen MissingNo: Gemini-silhouet op 80 % gevuld met ROM-data als 2-bitspatroon, vorm kapotgemaakt (verschoven banen, rafelige zwarte randen met hier en daar een kleurpixel), ogen 1-op-1 uit de grote versie, losse zwarte pixels; 13 kleuren + doorzichtig.
 - Af: `docs/concept/sprites/glitch_lijn/fase1_glitch/af/glitch_fase1.png`, op het overzichtsvel (New). Naam open. Werkwijze en alle tests: `glitch_lijn/fase1_glitch/STUDIE.md`.
+
+### [v0.0.x] - Glitch-lijn fase 2: Gemini-prompt r11 (25 nov)
+- Jordi's nieuwe richting voor fase 2 (fase 1 meer gedefinieerd, hoofd met 2 armen, losse blokken, hooguit een paar glitchblokjes, gekleurde digitale ogen/mond, geen mensenoog) in `docs/concept/IDEEEN.md`.
+- Prompt r11 met fase 1 als bijlage: `docs/concept/sprites/glitch_lijn/fase2_bug/gemini/PROMPTS.md` en `r11/bijlage_fase1.png`. Zelf getekende test afgekeurd en weggegooid; les in `docs/lessen/GEMINI.md`.

@@ -112,4 +112,4 @@ AVOID: many colors, clear eyes, a clear mouth, a drawn face, shapes, triangles, 
 ```
 
 ## Ronde 6 (25 nov)
-- `r6/r6.png`. Jordi: "vind deze ook eigenlijk niet goed, ik denk dat gemini dit gewoon niet kan".
+- `r6/r6.png`. Jordi: "vind deze ook eigenlijk niet goed, ik denk dat gemini dit gewoon niet kan". Daarna: "wel het dichtste bij tot nu toe".

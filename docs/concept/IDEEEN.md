@@ -809,5 +809,5 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - **Jordi na fase 1 r2 (25 nov):** "echt geen enkel ontwerp is nog goed digitaal geweest", "kijk eens goed naar de prompt", "hij moet oorspronkelijk in het computerscherm zitten". (Claude: elke prompt had "screens/computers" in de AVOID-regel.)
 - **Jordi (hoe het scherm terugkomt):** A = "hij is gemaakt van wat er op een scherm staat (beeldpunten, scanlijnen, het licht van een scherm); geen scherm te zien, maar duidelijk beeld en geen ding".
 - **Jordi na fase 1 r4 (Gemini):** "dit is missingno, zo'n type pokemon wil ik, maar dan anders" (referentie `missingno.png`). Claude bouwt fase 1 zelf als test: hoop 8x8-rommeltegels met vaag gezicht (`sprites/glitch_lijn/fase1_glitch/eigen/`, script `gereedschap/fase1_bouw.py`). Jordi daarna: "en geen 8x8 tegels, het moet geen rechthoek worden" (test v1–3 was op 8x8-tegels gebouwd, dus vervalt).
-- **Gemini (Jordi, 25 nov, na fase 1 r6):** "ik denk dat gemini dit gewoon niet kan".
+- **Gemini (Jordi, 25 nov, na fase 1 r6):** "ik denk dat gemini dit gewoon niet kan". Over r6: "wel het dichtste bij tot nu toe" (`sprites/glitch_lijn/fase1_glitch/gemini/r6/r6.png`).
 - **Open:** kleur, aantal in fase 3.

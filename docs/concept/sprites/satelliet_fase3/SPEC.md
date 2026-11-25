@@ -38,3 +38,4 @@ Open: aantal ogen, naam, evolutiemethode.
 - r12 (`model/r12_natief.png`): rechteroog uit het voorste oog ×0,571 (13×14 px; links 13×12, voor 22×24), restpixels r9-oog weg.
 - r12, Jordi: "rechtsboven paneel moet nog wat hoger" → r13a (+3 px) en r13b (+6 px) in `model/` (staafje valt nu achter de achterarm).
 - Jordi: "maar nu is de stang weg, positie 6px is beter. Ga anders maar een sprite bouwen, dan passen we het daarna wel aan" → **model bevroren = r13b** (`model/model_gekozen.png`, 231×159, echt raster); open: stang van het tweelingpaneel weer zichtbaar maken (in de spritefase). Spritefase gestart 25 nov.
+- Sprite r1 (`sprite/r1/`, maker): 63×42, 12 kleuren; Claude: nog niet naar Jordi (hobbelige buizen, banden half, vlekkerig wit, rommelige panelen) → r2.

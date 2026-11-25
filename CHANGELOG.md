@@ -3345,3 +3345,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Jordi: GBA-corruptie als beeldtaal; prompt r3 fase 2.
 - Ronde 3: te evil, corruptievlakken te klein, niet glitchy genoeg; prompt r4.
 - Ronde 4: te willekeurig; les in `GEMINI.md`.
+- Jordi definieert de vorm van fase 2; prompt r5 stap 1 (intacte vorm).

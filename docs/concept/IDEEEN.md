@@ -796,4 +796,6 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
   - "fase 3 is volledig virus en is zoals een magneton een combinatie van fase 2's, misschien wel meer dan 3"
 - **Beeldtaal:** Claude stelde GBA-corruptie voor (grove blokken, verschoven/herhaalde/verwisselde stukken, een stuk in een "verkeerd palet"; geen oplossende pixels, hapereffect à la Porygon-Z in frame 2). Jordi: "dat is tof om GBA corruptie te visualiseren omdat het een gba romhack is".
 - **Voorstel Claude, nog niet bevestigd:** één vaste basiskleur + magenta en cyaan als foutkleuren, Electric-geel in de ogen (vage gezicht = anker); fase 3 liefst 3 (max. 4 als ze in elkaar overlopen).
-- **Open:** kleur, lijfvorm, aantal in fase 3.
+- **Vorm fase 2 (Jordi, na r4 "te willekeurig", "we moeten beter definieren"):** "ik zou misschien willen gaan voor een vorm zonder benen, chaotic evil gezicht, simpele ronde vorm maar niet volledig rond, bovenkant wat puntiger. Grote grijs en halfdichte ogen, heeft wel twee armen maar die zijn wat aan de dunne kant, misschien is het hele lichaam wel een schaterlach pose en dan zit er door de hele sprite heen corruptie, niet per se in kleur maar meer dat vlakken anders zitten dan ze normaal zouden moeten zitten". ("grijs" gelezen als "grijns"; navragen als het anders bedoeld is.)
+- **Werkwijze (Claude):** Gemini in twee stappen: eerst de intacte vorm, dan die als bijlage corrumperen.
+- **Open:** kleur, aantal in fase 3.

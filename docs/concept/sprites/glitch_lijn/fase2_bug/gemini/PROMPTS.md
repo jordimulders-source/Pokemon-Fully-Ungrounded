@@ -79,3 +79,17 @@ AVOID: insects, antennae, mandibles, wings, symbols or characters on the body, r
 
 ## Ronde 4 (25 nov)
 - `r4/r4.png`. Jordi: "ook dit is te willekeurig". Conclusie Claude: zonder vastgelegde basisvorm is corruptie willekeurig; eerst de intacte vorm bepalen.
+
+## r5 stap 1 (nieuw gesprek, zonder bijlage): intacte vorm, nog zonder corruptie
+Jordi's vorm (IDEEEN.md). Kleur niet besloten: niet in de prompt.
+```
+Design an original Pokemon. Type: Electric/Bug. It is a purely digital creature, a glitch that has become sentient, but in THIS image it is drawn clean and intact, without any glitch or corruption (the corruption will be added in a later step). It is NOT an insect and has no insect features.
+
+Body: no legs. A simple round body shape, but not completely round: the top is somewhat pointed. Two arms, rather thin. The whole body is in a cackling, laughing pose.
+
+Face: chaotic evil. A big grin and large half-closed eyes.
+
+Style: official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 colors, dark outline, clean shapes with shading, facing 3/4 to the left, compact composition. White background, no ground, no shadow, no effects, no glow.
+
+AVOID: legs, insects, antennae, wings, symbols or characters on the body, readable text, screens, robots, glitch effects, pixel noise, Porygon, Unown, MissingNo, Gengar, Haunter.
+```

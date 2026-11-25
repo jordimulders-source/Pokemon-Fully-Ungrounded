@@ -7,6 +7,7 @@
 - 25 nov, met foto `referenties/golofa_hoorns_jordi.webp`: "de scharen worden zoals deze vorm"
 - 25 nov: "en de poten hybride, te lang zou niet vertalen"
 - 25 nov, op Claudes beschrijving dat de grote hoorn uit het borststuk groeit: "nee de hoorn komt uit de kop"
+- 25 nov: "ja type blijft hetzelfde"
 
 ## Besloten
 - Pinsir-evolutie, gebaseerd op de Golofa-kever, kaiju.
@@ -14,6 +15,7 @@
 
 - Poten: hybride ("te lang zou niet vertalen").
 - De hoorn komt uit de kop.
+- Type **Bug/Ground** (zelfde als Pinsir).
 
 ## Open
-- Type (Pinsir in de repo: Bug/Ground), wat "kaiju" in het ontwerp is, kleur, evolutiemethode, naam.
+- Eén of twee hoorns, wat "kaiju" in het ontwerp is, kleur, evolutiemethode, naam.

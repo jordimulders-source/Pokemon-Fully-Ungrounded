@@ -74,3 +74,5 @@ Prompts in `gemini/PROMPT.md`.
 - Jordi over r5: "is die nu te kort? of leest het wel"; "misschien bij het lichaam iets langer dan?" → bijstuur langer.
 - `ludicolo/r6/gemini_r6.png` (bijstuur iets langer): Jordi "kan jij die poncho nu in de bladeren over laten lopen? en misschien de vorm iets bij poetsen zodat die meer poncho dan bladeren lijkt? Zo ja, dan kan je bouwen". Claude vroeg: A (basis r6) of B (basis r5).
 - Jordi: "imo is het niet plakken maar alleen inkleuren"; "de poncho". → **model = `ludicolo/r6/gemini_r6.png`**; spritefase gestart (`ludicolo/sprite/r1/`, maker): silhouet = model, alleen de inkleuring van de poncho mag zo dat hij bovenaan als poncho leest en onderaan in de bladpunten overloopt; varianten ter keuze.
+- Jordi: "het enige waar je in afwijkt van het model is het lijnenwerk van de poncho, om het iets meer af te laten wijken van de bladeren, let op, dit betekent niet opnieuw tekenen, hooguit de bladervorm met wat pixels schuiven omzetten en anders inkleuren".
+- Sprite r1 (maker, `ludicolo/sprite/r1/`): 0 = kale reductie (51×62), A/B/C = alleen ponchobladlijnen omgekleurd (38–44 px, 0 verschoven); `vel.png`.

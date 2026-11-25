@@ -50,3 +50,26 @@ DO NOT: a realistic bird with a human head, a beak, a mermaid tail, an angel, je
 
 ## r2 (25 nov, prompt v2)
 `gemini/r2.webp`. Jordi: "beter maar het is geen sprite, herken je er genoeg sirene in? hij heeft teveel detail ook".
+Claude stelde voor: 1 zingend + lokkende blik, 2 onderlijf meer vogel (staartveren), 3 borstmotief weg en rustig verenkleed, 4 weinig detail. Jordi: "2 mee oneens, dan gaat gemini een vogel met een mensenhoofd bouwen. voor de rest akkoord".
+
+# Prompt v3 (25 nov) = v2 + punten 1, 3, 4 (nieuw gesprek, bijlage `gemini/bijlage_jynx_gen3.png`)
+
+```
+The attached image is JYNX, a Gen 3 Pokémon sprite. Design a REGIONAL FORM of Jynx: it must still be instantly recognizable as Jynx, but clearly different. Its theme: a siren from Homer's Odyssey (half woman, half bird, luring sailors with its song). Fairy/Dark type.
+
+Output: a simple, clean official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64 pixels, max 16 colors, flat colors with 2-3 shades per color, few lines, the same low level of detail as the attached Jynx. White background, no ground, no shadow, no effects, no music notes.
+
+KEEP FROM JYNX (most important): the overall silhouette and proportions: the big head with the same face shape (wide face, huge full lips, small heavy-lidded eyes, no nose), hair falling down both sides of the body like a cape, the wide bell-shaped dress body that hides the legs, both arms raised in the same pose. Same front-facing view as the attachment.
+
+CHANGE INTO A SIREN:
+- It is singing: mouth open in song, with an alluring, tempting look in its eyes (not bored).
+- The two raised arms are bird wings (exactly two wings, no extra arms).
+- The dress is made of feathers, like a bird's plumage: calm, large areas of color with only a few black lines, like a Greek vase painting. No pattern or round shapes on the chest.
+- Two bird feet with talons peek out under the feathered dress.
+- No beak: the face stays Jynx's face.
+- Hair: brown, long and wavy.
+
+COLORS (ancient Greek black-figure vase painting): feathers terracotta orange with black lines; face white, the way women's skin was painted on Greek vases; lips deep purple-red; hair brown. No purple skin, no golden hair, no pink lips, no red dress.
+
+DO NOT: a realistic bird with a human head, a beak, a mermaid tail, an angel, jewellery, a crown, a lyre, plush style, detailed individual feathers.
+```

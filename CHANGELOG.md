@@ -3277,3 +3277,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.796] - Regionale Jynx: r1 afgekeurd, prompt v2
 - `jynx_regional/gemini/r1.png` afgekeurd (vogel met mensenhoofd, geen Jynx). Prompt v2 in `PROMPT.md`: Jynx-bouw als basis met de Gen 3-sprite als bijlage, sirene-elementen erin. Les in `docs/lessen/GEMINI.md`.
+
+### [v0.0.797] - Regionale Jynx: prompt v3
+- `jynx_regional/PROMPT.md`: r2 bewaard; prompt v3 = v2 + zingend/lokkende blik, rustig verenkleed zonder borstmotief, weinig detail (Jordi akkoord; onderlijf-als-vogel afgewezen).

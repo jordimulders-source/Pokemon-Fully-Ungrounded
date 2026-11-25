@@ -72,3 +72,4 @@ Keep everything exactly the same (pose, body, head size, ears, horns, colors). C
 2. Remove the blue tear drop under the eye. Instead, add a dark brown spot directly in front of the eye (towards the snout), in the fur color, not a drop, not blue.
 ```
 - `r3b/dikdik_r3b.png`: rest gelijk gebleven; snuit langer met donkere bolle neuspunt; donkere vlek voor het oog. Jordi: "beter?"
+- **Model = r3b** (Jordi, 25 nov): "vulpix heeft dikkere poten maar niet korter, maar een dikdik heeft sws hele dunne pootjes, dus dit is prima, ga maar bouwen". Poten blijven dun; brons en evt. neuspunt in de spritefase.

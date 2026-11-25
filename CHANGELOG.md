@@ -3327,3 +3327,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.812] - Les: oude content niet opknappen bij soortverwijdering
 - `docs/lessen/TRAINERS.md`: bij het schrappen van soorten oude FRLG-/Trainer Tower-content alleen mechanisch laten bouwen (Jordi).
+
+### [v0.0.813] - Regel: Pokémon hoeven niet bij een plek te passen
+- `CLAUDE.md`: de regio-regel geldt ook voor gyms en plekken (Jordi).

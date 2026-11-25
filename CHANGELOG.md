@@ -3448,3 +3448,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.x] - Ideeën Ice/Fire-lijn (25 nov)
 - `docs/concept/IDEEEN.md`: nieuwe sectie "Extra Ice-lijn: Ice/Fire" met Jordi's wens en zes voorstellen (zonder Zuid-Amerika-link).
+
+### [v0.0.x] - Sneeuwmonster-lijn besloten (25 nov)
+- `docs/concept/IDEEEN.md`: Ice/Fire-lijn wordt een sneeuwmonster (Flurry-geïnspireerd sneeuwmannetje → met emmer en gloeiende steen → sauna-yeti), Ice → Ice/Fire → Ice/Fire; early game en in de gym.

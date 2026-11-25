@@ -3223,3 +3223,35 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Na de kandidaat r7: oog b (één ring minder) en pupil p2 (kijkt naar de driekwart) gekozen; r8–r15 per onderdeel bijgewerkt, waarbij de vorm van het hoofd wegdreef (lens te groot, kap te bol); r16 het hoofd opnieuw vanaf het model op het 64-raster (`sprite/r16/modelraster.py`), antennes van r15 gehouden; r17–r18 paarse rand (= bovenrand van het kleine paneel) en tinten/schaduw uit het model; r19–r20 golvende rechtercontour; eindkeuring Dragonfly Cave (r21–r22: lijftintladder zoals Glalie, lenslijnen aan de lichtkant in eigen donkere tint, paneelrand doorlopend, kaprand schuin), PASS.
 - Af: `docs/concept/sprites/satelliet_fase2/af/satelliet.png` (+ `_8x`), op het overzichtsvel (New). Naam en type van deze fase open; fase 1 (Spoetnik) is in een andere sessie af (`satelliet_lijn/fase1/af/`); palet nog niet afgestemd op fase 1.
 - Lessen in `docs/lessen/GEMINI.md`: vorm na elke ronde toetsen op hetzelfde 64-raster als het model; "het gaat niet zo zeer erom dat elke pixel klopt, maar dat de vorm klopt".
+### [v0.0.781] - Capykart: start fase 2 Capybarrel-lijn
+- Fase 2 heet **Capykart** (Jordi): hoofd iets volgroeider, steekt uit een houten speelgoedwagentje, achterop drie of vier gestapelde houten blokken; puur Normal.
+- Nieuwe map `docs/concept/sprites/capykart/` met `SPEC.md` en Gemini-prompt r1 (`gemini/PROMPTS.md`).
+
+### [v0.0.782] - Capykart: r1 en prompt r2
+- r1 werd een mijnkar met de capibara erin; Jordi: houten speelgoedautotje, de capibara ís de auto, alleen het hoofd steekt uit, blokken opgestapeld. Prompt r2 in `docs/concept/sprites/capykart/gemini/PROMPTS.md`.
+
+### [v0.0.783] - Capykart: r2 en prompts r3A/r3B
+- r2: houten speelgoedauto als lijf ("beter"); blokken stonden nog in twee stapels. Prompts r3A (derby car) en r3B (open houten autootje) met één blokkentoren; Jordi's foto's in `docs/concept/sprites/capykart/referenties/`.
+
+### [v0.0.784] - Capykart: r3 en bijstuurprompt r4
+- r3 goedgekeurd op één punt na: een groen driehoekig blok bovenop de toren en het blauwe blok dezelfde vorm als de andere twee (Jordi). Bijstuurprompt r4 in `docs/concept/sprites/capykart/gemini/PROMPTS.md`.
+
+### [v0.0.785] - Capykart: r4 en bijstuurprompt r5
+- r4 akkoord als basis. Jordi koos: gezicht en palet van Capybarrel (spritefase), hoepels terug, hoofd netjes laten overgaan in de auto. Bijstuurprompt r5 (overgang + hoepels); volgroeider hoofd (beige, ronder) nog in overweging.
+
+### [v0.0.786] - Capykart: model r5
+- Gemini r5 (hoofd gaat over in de houten auto, twee grijze hoepels, toren van vier blokken met groene driehoek): Jordi "als silhouet prima". Model in `docs/concept/sprites/capykart/referenties/model_r5.png`; volgroeider hoofd volgt in de spritefase.
+
+### [v0.0.787] - Capykart: frontsprite af
+- Capykart (Normal, fase 2 van de Capybarrel-lijn): frontsprite af in `docs/concept/sprites/capykart/af/` (64×64 + 8×). Naar Gemini r5; vacht B (dieper bruin), snuit uit het model, blije oog + wenkbrauw van Capybarrel, morrillo, tanden uit Bibarel, hout en hoepels in Capybarrel-kleuren, blauw blok met blauwgrijze zijkant.
+- Rondes: maker r1–r6 (palet, kopvolume, wielen, kopvarianten V1–V3, tandvarianten T1–T3), keurder PASS (r3b), Dragonfly Cave-eindkeuring (r7, omlijning, silhouet diff 0).
+- Op het overzichtsvel (sectie New). Daarmee is de Capybarrel-lijn af.
+
+### [v0.0.788] - Capykart: frontsprite opnieuw af
+- r7 (24 nov) door Jordi afgekeurd (weinig tint/schaduw, lijnen, blokken). Schaduwrondes r8–r16 met de hand werkten niet (rechte lijnen, plat, blurry, blokken hertekend).
+- Opnieuw gebouwd volgens de Dundragoon-methode (r17: kale reductie van Gemini r5 in modeltonen, toren 100 % uit het model), daarna volledige Dragonfly Cave-eindkeuring (schaduw, kleurtinten, belijning; varianten a–e in `eindkeuring_dc/`).
+- Kop: Capybarrel-oog; tanden en morrillo op verzoek van Jordi weggehaald; snuitplaat uit het model.
+- `docs/concept/sprites/capykart/af/` vervangen en overzichtsvel bijgewerkt. Lessen: vast foutpatroon in `SPRITE_KERN.md`, eindkeuring = schaduw + belijning + kleurtinten in `SPRITE_WERKWIJZE.md`, maatstaf-sprites (Skinguin, Dundragoon, Zapacha, Princadee).
+
+### [v0.0.789] - Merge naar main: Capykart
+- Branch met de Capybarrel-lijn fase 2 (Capykart) naar main gemerged; overzichtsvel opnieuw gemaakt.

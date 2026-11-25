@@ -1,0 +1,101 @@
+1 oranje vlekjes rood -> rood: (46,17) 5->C
+1 oranje vlekjes rood -> rood: (47,17) 5->C
+1 oranje vlekjes rood -> rood: (45,18) 5->C
+1 oranje vlekjes rood -> rood: (48,18) 5->C
+1 oranje vlekjes rood -> rood: (49,18) 5->C
+1 bovenste rij rood blok = slagschaduw onder geel: (45,18) C->7
+1 bovenste rij rood blok = slagschaduw onder geel: (46,18) C->7
+1 bovenste rij rood blok = slagschaduw onder geel: (47,18) C->7
+1 bovenste rij rood blok = slagschaduw onder geel: (48,18) C->7
+1 bovenste rij rood blok = slagschaduw onder geel: (49,18) C->7
+1 bovenste rij rood blok = slagschaduw onder geel: (50,18) C->7
+1 bovenste rij rood blok = slagschaduw onder geel: (51,18) C->7
+1 bovenste rij rood blok = slagschaduw onder geel: (52,18) C->7
+2 geel rechtervlak onder overhang: (51,11) 5->D
+2 geel rechtervlak onder overhang: (52,11) 5->D
+2 geel rechtervlak onder overhang: (53,11) 5->D
+2 geel rechtervlak onder overhang: (54,11) 5->D
+3 geen wit direct onder rood: (46,26) 9->A
+3 geen wit direct onder rood: (47,26) 9->A
+3 geen wit direct onder rood: (48,26) 9->A
+3 geen wit direct onder rood: (49,26) 9->A
+3 slagschaduw van rood op blauwe zijkant: (50,26) A->8
+3 slagschaduw van rood op blauwe zijkant: (51,26) A->8
+3 slagschaduw van rood op blauwe zijkant: (52,26) A->8
+3 slagschaduw van rood op blauwe zijkant: (53,26) A->8
+3 slagschaduw van rood op blauwe zijkant: (54,26) A->8
+4 sikkel wang rechtsonder: (35,22) 2->3
+4 sikkel wang rechtsonder: (35,23) 2->3
+4 sikkel wang rechtsonder: (36,23) 2->3
+4 sikkel wang rechtsonder: (34,24) 2->3
+4 sikkel wang rechtsonder: (35,24) 2->3
+4 sikkel wang rechtsonder: (32,25) 2->3
+4 sikkel wang rechtsonder: (33,25) 2->3
+4 sikkel wang rechtsonder: (34,25) 2->3
+4 sikkel wang rechtsonder: (30,26) 2->3
+4 sikkel wang rechtsonder: (31,26) 2->3
+4 sikkel wang rechtsonder: (32,26) 2->3
+4 sikkel wang rechtsonder: (33,26) 2->3
+4 sikkel wang rechtsonder: (27,27) 2->3
+4 sikkel wang rechtsonder: (28,27) 2->3
+4 sikkel wang rechtsonder: (29,27) 2->3
+4 sikkel wang rechtsonder: (30,27) 2->3
+4 binnenrand rechts: (37,18) 3->4
+4 binnenrand rechts: (37,19) 3->4
+4 binnenrand rechts: (37,20) 3->4
+4 binnenrand rechts: (37,21) 3->4
+4 binnenrand rechts: (37,22) 3->4
+6 strepen x3/4, x6/7 weg: (4,45) D->6
+6 strepen x3/4, x6/7 weg: (4,46) D->6
+6 strepen x3/4, x6/7 weg: (7,46) D->6
+6 strepen x3/4, x6/7 weg: (3,47) D->6
+6 strepen x3/4, x6/7 weg: (7,47) D->6
+6 strepen x3/4, x6/7 weg: (3,48) D->6
+6 strepen x3/4, x6/7 weg: (6,48) D->6
+6 strepen x3/4, x6/7 weg: (3,49) D->6
+6 strepen x3/4, x6/7 weg: (6,49) D->6
+6 strepen x3/4, x6/7 weg: (6,50) D->6
+6 strepen x3/4, x6/7 weg: (4,51) D->6
+6 strepen x3/4, x6/7 weg: (6,51) D->6
+6 sikkel boven onderlijn: (5,50) 6->D
+6 sikkel boven onderlijn: (6,50) 6->D
+6 sikkel boven onderlijn: (7,50) 6->D
+6 sikkel boven onderlijn: (8,50) 6->D
+6 sikkel boven onderlijn: (9,50) 6->D
+6 sikkel boven onderlijn: (10,50) 6->D
+6 sikkel boven onderlijn: (11,50) 6->D
+6 sikkel boven onderlijn: (13,50) 6->D
+6 sikkel boven onderlijn: (14,50) 6->D
+6 sikkel boven onderlijn: (6,51) 6->D
+6 sikkel boven onderlijn: (7,51) 6->D
+6 sikkel boven onderlijn: (8,51) 6->D
+6 sikkel boven onderlijn: (9,51) 6->D
+6 sikkel boven onderlijn: (10,51) 6->D
+6 sikkel boven onderlijn: (11,51) 6->D
+6 sikkel boven onderlijn: (13,51) 6->D
+6 sikkel boven onderlijn: (14,51) 6->D
+6 sikkel boven onderlijn: (15,51) 6->D
+7 middenpaneel r47-49 4->13: (44,47) 4->D
+7 middenpaneel r47-49 4->13: (45,47) 4->D
+7 middenpaneel r47-49 4->13: (46,47) 4->D
+7 middenpaneel r47-49 4->13: (40,48) 4->D
+7 middenpaneel r47-49 4->13: (41,48) 4->D
+7 middenpaneel r47-49 4->13: (42,48) 4->D
+7 middenpaneel r47-49 4->13: (36,49) 4->D
+7 middenpaneel r47-49 4->13: (37,49) 4->D
+7 middenpaneel r47-49 4->13: (38,49) 4->D
+7 middenpaneel r47-49 4->13: (39,49) 4->D
+7 middenpaneel r47-49 4->13: (40,49) 4->D
+8: (13,40) D->6
+8: (18,44) 6->D
+8: (56,35) D->6
+8 achterbak r43: (53,43) 4->D
+8 achterbak r43: (54,43) 4->D
+8 achterbak r43: (55,43) 4->D
+8 achterbak r43: (56,43) 4->D
+AFWIJKEND niet gewijzigd: ('6 strepen x3/4, x6/7 weg', 3, 45, 5)
+AFWIJKEND niet gewijzigd: ('6 strepen x3/4, x6/7 weg', 3, 46, 5)
+AFWIJKEND niet gewijzigd: ('6 strepen x3/4, x6/7 weg', 3, 51, 4)
+AFWIJKEND niet gewijzigd: ('8 achterbak r43', 52, 43, 1)
+hooglicht-variant 2->5: [(25, 14), (26, 14), (27, 14), (25, 15), (26, 15), (24, 16), (25, 16)]
+Gekozen: zonder hooglicht (index 5 op de kop leest op 1x als oranje houtvlek in de vacht).

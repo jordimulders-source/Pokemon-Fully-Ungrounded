@@ -1,0 +1,4 @@
+palet 16 kleuren incl. transp.; pixels met andere kleur dan r17: 168
+  bruin-midden -> bruin-schaduw: 158
+  tanden geel -> wit: 10 [(18, 33), (19, 33), (21, 33), (22, 33), (18, 34), (19, 34), (21, 34), (22, 34), (19, 35), (21, 35)]
+  overig: 0

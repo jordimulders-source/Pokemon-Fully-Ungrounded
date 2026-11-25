@@ -3255,3 +3255,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.789] - Merge naar main: Capykart
 - Branch met de Capybarrel-lijn fase 2 (Capykart) naar main gemerged; overzichtsvel opnieuw gemaakt.
+
+### [v0.0.790] - Gaucho-Lotad-lijn: besluiten en eerste prompt
+- Nieuwe regional Lotad-lijn (Lotad → Lombre → Ludicolo, geen vierde fase): een plant die gaucho is, geen kleding, geen accessoires. Grass en Water eruit: Lotad Ground, vanaf Lombre Fighting.
+- `docs/concept/sprites/lotad_regional/SPEC.md` (Jordi letterlijk) en Gemini-startprompt v1 in `gemini/PROMPT.md`.

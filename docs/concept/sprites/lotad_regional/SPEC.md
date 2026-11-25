@@ -20,6 +20,7 @@ Lijn: Lotad → Lombre → Ludicolo (drie fases, geen vierde).
 - `r5/gemini_r5.png` (bijstuur v5): Jordi "nee dit werkt ook niet, we kunnen r1 doen, maar dat ontwerp heeft teveel detail voor een sprite".
 - `r6/gemini_r6.png` (v6, r1 in woorden + weinig detail): Jordi "nee weer veel minder mooi".
 - Jordi daarna: "ik vind het ontwerp nu prima dat die maar op 4 poten staat".
+- `r7/gemini_r7.png` (v7 = v1 + één regel eenvoud): Jordi "is dit echt een vergelijkbare prompt als r1 ja?".
 
 ## Open
 - Welke hoed (plat met brede rand, boina, anders).

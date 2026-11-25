@@ -1,12 +1,12 @@
-# Ruimtestation (fase 3), Gemini-prompt r10 – NIEUW gesprek, geen bijlage (RESERVE)
+# Ruimtestation (fase 3), Gemini-prompt r10 – NIEUW gesprek, geen bijlage 
 Na de spritefase (eindkeuring PASS), Jordi: "is nog heel erg blurry" · "en dat komt denk ik door het model" · "dat die het vak niet vult" · "ben bang weer een niewue gemini ronde".
-Basis = prompt r9 (Jordi: "ok deze vind ik goed op 2 dingen na"); alleen gewijzigd: compact, vierkant silhouet dat het vak vult, korte brede panelen dicht op het lijf. Reserve naast de compacte modelvarianten (`model/compact_*`).
+Basis = prompt r9 (Jordi: "ok deze vind ik goed op 2 dingen na"); alleen gewijzigd: compact, vierkant silhouet dat het vak vult, korte brede panelen dicht op het lijf. Jordi erbij: "eindeloos fixen gaat meestal niet goed" → deze prompt is de volgende stap.
 
 ```
 Design a Pokémon: an official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64×64 pixels, max 16 colors, clean dark outline, plain white background, no ground, no shadow, no effects or glow.
 IMPORTANT: the result must be a real PIXEL ART SPRITE as it appears in the game: visible square pixels, a small flat palette, hard pixel edges, no smooth gradients, no anti-aliasing. NOT official artwork, NOT a smooth illustration.
 
-WHAT IT IS: a big living space station, the final evolution of a small one-eyed satellite. It is a pure machine with its own personality, the way Magneton, Metagross and Porygon are Pokémon: no animal parts, no arms, no legs, no mouth. At a glance it must read as a SPACE STATION, like a compact cartoon version of a real modular space station: modules docked together in a cross, with long solar panel wings.
+WHAT IT IS: a big living space station, the final evolution of a small one-eyed satellite. It is a pure machine with its own personality, the way Magneton, Metagross and Porygon are Pokémon: no animal parts, no arms, no legs, no mouth. At a glance it must read as a SPACE STATION, like a compact cartoon version of a real modular space station: modules docked together in a cross, with short solar panel wings close to the body.
 
 SIZE AND COMPOSITION (most important): this is a LARGE, heavy, final-stage Pokémon, clearly more complex than a single satellite. It must FILL THE SQUARE 64×64 frame in BOTH width and height, like Metagross or Claydol do: a COMPACT, almost square silhouette, not a wide flat shape. Keep all parts close to the body, so every part is big and readable at 64×64. Each eye-sphere is only a small part of the whole creature, but the front eye-sphere is big enough to show its eye clearly.
 

@@ -23,3 +23,7 @@
 ## Ronde 2 (Gemini r2, `gemini/r2.png`)
 - Claudes twijfels: rank werd bruine houtstam met krul (slak/zeepaardje), ranken werden vier stokpootjes, vruchten met zwart raster en stekeltjes. Jordi: "verder akkoord om jouw twijfels aan te pakken" → prompt r3.
 - Jordi vroeg of de ogen naar een sprite passen: test op 64 px (`gemini/r2_test64_8x.png`, langste zijde 56 px): ogen ±4–5 px, wit + pupil leesbaar. Bij een kleinere fase 1 (±40 px) worden ze ±3 px: krap.
+
+## Ronde 3–4
+- r3 (prompt r3): Jordi "hij lijkt nu wel minder te kruipen dan bij 1"; tros werd een bloem met één oog. Terug naar r2 als basis, bijsturen met 2 wijzigingen (groene rank, ranken i.p.v. pootjes).
+- r4a (gesprek r1) en r4b (gesprek r2): Jordi "ik vind het nu teveel detail in de vine". 64 px-test r4b (`gemini/r4b_test64_8x.png`): de kleine krulletjes worden ruis.

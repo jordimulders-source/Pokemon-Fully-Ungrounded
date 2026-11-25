@@ -100,3 +100,25 @@ AVOID: legs, insects, antennae, wings, symbols or characters on the body, readab
 ## r6 stap 1 (CONCEPT, wacht op Jordi): gedetailleerde prompt
 Jordi's woorden + invulling Claude, ter goedkeuring: druppel/ui-vorm, achterover gebogen schaterpose, één arm om de buik en één omhoog, wijd open mond met tanden, zware oogleden, zweeft, vingers, maat ±2/3 van het vlak, Gen 3-belichting. Kleur open.
 - r6 gedraaid met de gedetailleerde prompt uit de chat (afbeelding niet opgeslagen: kwam niet als bestand binnen). Geel druppellijf, grijze trollgrijns, losse oog-tegel op de buik. Jordi: "vreselijk design weer".
+
+## r7 (nieuw gesprek, zonder bijlage): lijf van grove pixelblokken
+Jordi: 1a (grove pixelblokken), grafisch gezicht van blokjes, fase 1 veel meer MissingNo-achtig. Eigen invulling Claude (schrappen bij twijfel): blokken 3-4 sprite-pixels, armen als rij blokken, ogen als balkjes, grijns in foutkleur, pose achterover met armen omhoog, "geen zwart lijf" (afstand tot de Bitbyte-lijn).
+```
+Design an original Pokemon as an official Gen 3 front sprite (Pokemon Ruby/Sapphire/Emerald). Type: Electric/Bug. It is a purely digital creature: a glitch that has become sentient. "Bug" means a bug in the computer sense, an error in the code; it is NOT an insect.
+
+The line: stage 1 is an almost shapeless, messy heap of blocks, like the famous glitch block from the old games, with only a vague face. THIS is stage 2: more formed. Stage 3 will be several of these combined, like Magneton.
+
+MATERIAL (most important): the whole body is built from big, chunky square pixel blocks, much bigger than the sprite's own pixels (each block about 3 to 4 sprite pixels wide), like a very low-resolution graphic. No smooth curves anywhere. Some blocks are loose and float slightly apart with small gaps, and a few rows of blocks are shifted sideways, so the creature looks like it barely holds itself together.
+
+SHAPE: no legs, it floats. A roughly round, blocky mass whose top steps up into a point. Two thin arms, each just one row of blocks, with hands of a few blocks.
+
+POSE: it is cackling with laughter: the body tilts back and both arms are thrown up.
+
+FACE: graphic, made of blocks, not a cartoon face: two half-closed eyes drawn as flat bars of blocks, and a huge zig-zag grin made of blocks in a bright error color. Chaotic evil, mischievous.
+
+COLORS: one main body color (not black) with 3 to 4 shades, plus one or two bright error colors in the grin and in a few loose blocks.
+
+PIXEL ART: real pixel art, 64x64 canvas, max 16 colors, light from the top-left, a dark outline around every block group, no anti-aliasing, no gradients. Facing 3/4 to the left. White background, no ground, no shadow, no effects, no glow.
+
+AVOID: a smooth body, a cartoon face, drawn teeth, eyelids, a mascot or emoji look, a black silhouette, insects, antennae, wings, symbols or text, screens, robots, fine pixel noise or static, Porygon, Unown, MissingNo, Gengar.
+```

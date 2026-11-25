@@ -47,3 +47,6 @@ COLORS (ancient Greek black-figure vase painting): feathers terracotta orange wi
 
 DO NOT: a realistic bird with a human head, a beak, a mermaid tail, an angel, jewellery, a crown, a lyre, plush style.
 ```
+
+## r2 (25 nov, prompt v2)
+`gemini/r2.webp`. Jordi: "beter maar het is geen sprite, herken je er genoeg sirene in? hij heeft teveel detail ook".

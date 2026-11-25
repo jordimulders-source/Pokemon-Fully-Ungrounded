@@ -16,6 +16,7 @@ Lijn: Lotad → Lombre → Ludicolo (drie fases, geen vierde).
 - `r1/lijf_varianten.png`: lijf door Claude geschaald onder de hoed (100/85/75/65 %), naast de Gen 3-Lotad; hoed onaangeroerd.
 - `r2/gemini_r2.png` (v2, Lotad-bijlage): Jordi "veel minder op alle fronten".
 - `r3/gemini_r3.png` (v3): Jordi "dit klopt niet, het is nu gewoon een semi pallette swap, er zit geen gaucho meer in".
+- `r4/gemini_r4.png` (bijstuur v4 in r1-gesprek): armen weg, 4 poten; Jordi "nu is die geamputeerd".
 
 ## Open
 - Welke hoed (plat met brede rand, boina, anders).

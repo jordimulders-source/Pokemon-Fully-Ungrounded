@@ -105,3 +105,12 @@ Change ONLY these two things:
 2. It stands on SIX short stubby legs (three on each side), close under the body.
 Keep it a 64x64 Gen 3 front sprite on a plain white background.
 ```
+
+# Bijstuurprompt v5 (25 nov), na r4
+Jordi over r4 (armen weg, nog 4 poten): "nu is die geamputeerd". Zelfde gesprek, nog één bijsturing; lukt het niet, dan plakt Claude twee bestaande poten bij in het model.
+
+```
+Good, keep this exactly. Now it looks like something is missing below the body. Fix ONLY the legs:
+It must have SIX legs in total, all the same short stubby size, spread evenly in a ring around the bottom of its round body, like a small beetle or like Lotad: two at the front, two in the middle, two at the back. The legs fill the space under the body so nothing looks cut off.
+Keep everything else exactly the same.
+```

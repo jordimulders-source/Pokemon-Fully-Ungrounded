@@ -800,4 +800,6 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - **Werkwijze (Claude):** Gemini in twee stappen: eerst de intacte vorm, dan die als bijlage corrumperen.
 - **Referenties (Jordi, 25 nov, na Gemini r5):** drie fan-designs van anderen, "deze gaan allemaal al wat meer de juiste kant op"; in `sprites/glitch_lijn/referenties/`.
 - **Materiaal en gezicht (Jordi, 25 nov):** grove pixelblokken (zoals Bitbyte/Cryptobit), "ja grafisch gezicht van blokjes"; "houd er rekening mee dat fase 1 wel veel meer missingno achtig wordt dan de fandesigns die ik stuurde".
+- **Werkwijze (Jordi, 25 nov, na r8):** "corruptie gaat gemini niet kunnen maken, dat moeten wij maar doen, zoals de trainer red hier links onder" (referentie `sprites/glitch_lijn/referenties/corruptie_trainer_red.png`). Dus: Gemini maakt de intacte vorm, wij corrumperen de sprite zelf.
+- **Richting (Jordi):** "gigabite zit qua design er het dichtst in de buurt, fase 1 is bijna missingno achtig en 2 wordt dan meer gevormd, qua vorm en gelaat is gigabite ook al redelijk de goede richting op". Eigen blijven t.o.v. Gigabite (fan-design van een ander): Jordi's punten (geen benen, puntige bovenkant, schaterlach, halfdichte ogen) houden.
 - **Open:** kleur, aantal in fase 3.

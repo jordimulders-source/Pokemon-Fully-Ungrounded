@@ -143,3 +143,22 @@ STYLE: real pixel art, max 16 colors, dark outline around the tile groups, facin
 
 AVOID: an organic or rounded body, curved outlines, a blob, a ghost, a slime, a monster with a normal sprite body, a cartoon face, eyelids, teeth, insects, screens, robots, text or symbols, Porygon, Unown, MissingNo, Gengar.
 ```
+- r8 gedraaid (afbeelding niet in de repo). Jordi: corruptie doen wij zelf, Gigabite-richting (zie IDEEEN.md).
+
+## r9 (nieuw gesprek, zonder bijlage): intacte vorm in Gigabite-richting, zonder corruptie
+Geen Gigabite als bijlage of naam (Gemini kopieert dan). Eigen invulling Claude: beschrijving van Gigabites opbouw (blokkerig pixellijf, dunne armen met blokhanden, grafische mond) in eigen woorden; kleur vrij.
+```
+Design an original Pokemon as an official Gen 3 front sprite (Pokemon Ruby/Sapphire/Emerald), 64x64. Type: Electric/Bug. It is a purely digital creature: a glitch that has become sentient. "Bug" means a bug in the computer sense; it is NOT an insect. In THIS image it is drawn intact: no glitches, no corruption, no loose pixels (the corruption is added later by hand).
+
+BUILD: it looks like a creature made of chunky, blocky pixels, like a very low-resolution video game graphic: edges in hard steps, no smooth curves. A big rounded-blocky head-body in one piece, whose top steps up into a point. No legs: it floats. Two thin, stick-like arms made of a single line of blocks, ending in blocky hands with a few square fingers.
+
+POSE: cackling with laughter: the body tilts back a little and both arms are thrown up.
+
+FACE: graphic, not a cartoon face: two large half-closed eyes as flat blocky shapes, and a huge zig-zag grin drawn as a bright colored zig-zag line of blocks across the face. Chaotic evil, mischievous.
+
+COLORS: a dark main body color with 2 to 3 shades, plus one bright color for the grin and eyes.
+
+STYLE: real pixel art, max 16 colors, dark outline, facing slightly to the left. White background, no ground, no shadow, no effects, no glow.
+
+AVOID: legs, a smooth or organic body, a cartoon face, eyelids, teeth, insects, screens, robots, text or symbols, glitch effects, loose pixels, Porygon, Unown, MissingNo, Gengar.
+```

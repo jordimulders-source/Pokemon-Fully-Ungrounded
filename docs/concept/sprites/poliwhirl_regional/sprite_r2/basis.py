@@ -23,6 +23,20 @@ def comps(m):
     return lab,n
 # gat in het linkerkristal: wit facet dat via een kier met de achtergrond verbonden was (lucht-floodfill) -> ijs
 for y in (8,9,10): cls[y,10]=3; lum[y,10]=238
+# r2: geel voorrang. Cellen die als 'donker' gelezen werden maar >= 40 % geel modelmateriaal hebben en niet op de
+# buitenrand liggen, krijgen geel (tint = gemiddelde helderheid van de gele modelpixels in die cel).
+from PIL import Image as _I
+_a=np.asarray(_I.open('../referenties/gemini_gekozen_v1.png').convert('RGB')).astype(int)
+_R,_G,_B=_a[...,0],_a[...,1],_a[...,2]; _L=(_R*299+_G*587+_B*114)/1000
+_Ym=(_R>140)&(_G>110)&(_B<120)&(_R-_B>50)
+frac=z['frac']; XS,YS=z['xs'],z['ys']
+def _buitenrand(y,x): return any(not(0<=y+a<H and 0<=x+b<W) or cls[y+a,x+b]==0 for a,b in ((1,0),(-1,0),(0,1),(0,-1)))
+GEELVOORRANG=[]
+for y in range(H):
+    for x in range(W):
+        if cls[y,x]==4 and frac[y,x,1]>=0.40 and not _buitenrand(y,x):
+            sl=(slice(int(YS[y]),int(YS[y+1])),slice(int(XS[x]),int(XS[x+1])))
+            cls[y,x]=1; lum[y,x]=_L[sl][_Ym[sl]].mean(); GEELVOORRANG.append((x,y))
 ICE=(cls==2)|(cls==3)
 lab,n=comps(ICE)
 sz={k:(lab==k).sum() for k in range(1,n+1)}
@@ -44,7 +58,7 @@ red=(cls==2); out[red]=np.select([lum[red]>=125,lum[red]>=95],[12,13],14)
 rest=(cls==3)&~glove&~crys; out[rest]=np.select([lum[rest]>=222,lum[rest]>=200,lum[rest]>=170],[8,9,10],11)
 # B: omlijning (rand = naast lucht); normaal uit de 3x3-luchtburen, licht van linksboven
 def lucht(y,x): return y<0 or x<0 or y>=H or x>=W or out[y,x]==0
-o=out.copy()
+o=out.copy(); NAARBUITEN=[]
 for y in range(H):
     for x in range(W):
         v=out[y,x]
@@ -53,7 +67,12 @@ for y in range(H):
         sx=sum(dx for dy in (-1,0,1) for dx in (-1,0,1) if lucht(y+dy,x+dx)); sy_=sum(dy for dy in (-1,0,1) for dx in (-1,0,1) if lucht(y+dy,x+dx))
         schaduw=(sx+sy_)>0
         if v in (2,3,4): o[y,x]=1
-        elif v in (5,6,7): o[y,x]=1 if schaduw else 7
+        elif v in (5,6,7):
+            # r2: toont het model aan de buitenkant een (deels) donkere cel, dan komt de omlijning daar (1 px naar buiten) en blijft deze pixel geel
+            buit=[(y+a,x+b) for a,b in ((1,0),(-1,0),(0,1),(0,-1)) if 0<=y+a<H and 0<=x+b<W and out[y+a,x+b]==0 and frac[y+a,x+b,4]>=0.20]
+            if buit:
+                for q in buit: o[q]=1; NAARBUITEN.append((q[1],q[0]))
+            else: o[y,x]=1 if schaduw else 7
         elif glove[y,x]: o[y,x]=1 if schaduw else 11
         elif crys[y,x] or v in (8,9,10,11): o[y,x]=15 if schaduw else 11
         elif v in (12,13,14): o[y,x]=1 if schaduw else 14

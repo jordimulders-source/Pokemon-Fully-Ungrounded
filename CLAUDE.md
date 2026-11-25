@@ -124,6 +124,7 @@ Algemene lessen staan hieronder; de rest is per onderwerp opgesplitst. **Lees he
 - **Dundragoon (Dunsparce-evolutie, Dragon/Normal): frontsprite af** (21 nov, `dundragoon/af/`; op het overzichtsvel). Keuzes en citaten in `dundragoon/SPEC.md`.
 - **Onderwater-Oddish-lijn (Water/Grass → Water/Fire → Water/Fire, modellen bevroren 20 nov):** Gloom-frontsprite af (`oddish_regional/gloom_sprite/af/`, 20 nov, r4; lava bevroren). Vileplume af (`vileplume_sprite/af/`, 21 nov).
 - **Sprites opknappen (Jordi, 24 nov):** de beste vier (Dundragoon, Princadee, Zapacha, Skinguin) zijn de maatstaf; later een opknapronde voor alle sprites (`TODO.md`). Gen 3-referentie = `anim_front_gba.png` (`anim_front.png` is Gen 4/5-stijl).
+- **Glitch-lijn (Electric → Electric/Bug → Electric/Bug, glitch → bug → virus): gepauzeerd** (25 nov, "we komen echt nergens"); Gemini kan het niet, eigen bouw met ROM-assets kwam het dichtst bij; alles in `IDEEEN.md` en `docs/concept/sprites/glitch_lijn/`.
 - Feedback: `docs/concept/sprites/FEEDBACK.md`.
 - **Ideeënronde 8–10 nov:** wat besloten is staat in `POKEMON.md` → "Besloten in de ideeënronde"; het overzicht "sowieso doen / brainstormfase" bovenaan `IDEEEN.md`. Dudunsparce uit de ROM (`FU_DUDUNSPARCE`), Pincurchin terug in de dex.
 - **Muziek staat op pauze** (feedback in `docs/concept/MUZIEK.md`; instrumentenset `fu_samples.py`, schetsen songs 611–616).

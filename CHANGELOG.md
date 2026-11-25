@@ -3372,3 +3372,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Test 9: herkenbare kaartstukken (eigen renderer `kaartbrok.py`), menu-graphics en data, half in elkaar geschoven (`fase1_glitch/assets/vel.png`).
 - Test 10: banen uit grover gepixelde kaartstukken en data, net niet aansluitend, neutraal gezicht (`fase1_glitch/banen/vel.png`).
 - Variant 3 uitgewerkt: onregelmatiger vorm; gezicht uit het materiaal zelf (`fase1_glitch/banen_3b/vel.png`); les in `GRAPHICS.md`.
+- Lijn gepauzeerd (Jordi: "stop maar we komen echt nergens"); stand in `IDEEEN.md` en CLAUDE.md.

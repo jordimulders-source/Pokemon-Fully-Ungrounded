@@ -45,3 +45,4 @@ Open: aantal ogen, naam, evolutiemethode.
 - Jordi: "maar niks opnieuw tekenen he?" → maker r3: panelen uit de modelreductie, alleen pixelreparaties. (Let op: r2 bouwde bollen/buizen uit gemeten modelgeometrie i.p.v. de pixels over te nemen.)
 - Jordi: "model volgen" · "er wordt van alles opnieuw getekend" → r3 vanaf de kale modelreductie, alleen pixelreparaties, diffkaart verplicht.
 - Jordi: "enige wat mag afwijken is wat we besproken hebben, maar dat kan prima zonder opnieuw te tekenen".
+- Sprite r3 (`sprite/r3/`, vanaf kale reductie, 256 afwijkingen met reden in log): vorm volgt het model; ogen en paneelraster nog zwak → r4.

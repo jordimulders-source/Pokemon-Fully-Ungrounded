@@ -3331,3 +3331,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.812] - Idee: glitch → bug → virus-lijn
 - Jordi's idee (glitch → bug → virus) met voorstel van Claude (digitale bug, Grace Hoppers mot uit 1947, Bug in alle fases) in `IDEEEN.md`; typen nog open.
 - Jordi: "meer een soort conceptuele bug dan echt een typisch insect" toegevoegd.
+- Jordi over blur en evolutie + voorstel indeling per fase (C → B → A) toegevoegd.

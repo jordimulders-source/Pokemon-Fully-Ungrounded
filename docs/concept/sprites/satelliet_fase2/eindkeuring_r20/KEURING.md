@@ -47,3 +47,25 @@ Controle: silhouet-diff 0; pixels <3 die over zijn: glanspixels in de bolletjes 
 
 ## Bestanden
 `repareer.py`, `vel.py`, `r21/sprite.png`, `r21/sprite_8x.png`, `vel.png` (r20 8× | r21 8×, omgetinte pixels rood omrand | model op spriteraster; r21 2× naast Glalie, Magneton, Claydol, Metang, Lunatone; 1× r21/r20 op licht en donker).
+
+---
+
+# Ronde r22 (25 nov): Jordi over de vier ter-info-punten: "fix allemaal"
+Reproduceerbaar: `python3 repareer_r22.py` (op `r21/sprite.png`, asserts per pixel, silhouet-diff 0), daarna `python3 vel_r22.py`.
+Vorm alleen lokaal en naar het model; 40 pixels gewijzigd, palet gelijk aan r21. `vel_r22.png`: r21 8× | r22 8× (rood = gewijzigd) | model; close-ups 16× van de vier plekken (r21 | r22 | model); 1× licht/donker.
+
+| Punt | Wijziging | Meting / reden |
+|---|---|---|
+| P1 linkerrand groot paneel (13 px) | Framelijn doorlopend van (37,34) tot (29,47): C in het glansvlak (rij 34–37, net als de rasterlijnen daar), B eronder (net als de onderste framelijn). Na zwart is de eerste paneelpixel frame; na het lijf is de eerste pixel de paneel-outline 9 (lichtkant, zoals r6) en de volgende frame. Rij 43: lijfbult (31–32,43) → 9; paneelrand per rij nu 33,32,32,31,30,30,29,29 i.p.v. 33,32,32,33,30,... | Model: licht frame loopt direct binnen de buitenlijn langs de hele linkerrand. De losse B (31,44) zit nu in de lijn; geen losse lijnpixel meer. |
+| P2 lenslijnen lichtkant (23 px) | Zwart → 8 (donkerste eigen paars) voor de lenshuislijn en de binnenlijn (wit/paarse ring) boven het lensmidden en links van de diagonaal: van (22,30) over de bovenkant tot linksmidden (13,34). Daaronder en rechts blijft zwart. Oog (iris, pupil, glans, donkere ring) niet aangeraakt. | Claydol: de ogen hebben rondom de eigen donkerste tint (9, Y63), geen zwart; de ring op het lijf linksboven in eigen donker (5), rechts zwart. SPRITE_KERN (Popplio, door Jordi goedgekeurd): zwart als boog van linksmidden via linksonder naar onder, aan de schaduwkant. Eén overgang 8→zwart per kant, nergens om en om (script). Zwart aandeel 12,1 → 10,7 %. |
+| P3 lensrand links (4 px) | (13,31) en (13,32) → lijn, (14,31) en (14,32) → ring 7 | Buitencontour van de lens per rij nu 14,13,13,13,13,... (rond, 1 px), zoals rij 30 en 33+. Model: één lijn tussen paneel en lens. |
+| P4 kaprand (3 px) | (34,27) → 4, (35,28) en (36,28) → 4 | Model, kolomprofiel in stappen van ¼ px: donkere streep x30–33 op y 27,3–27,5, x34 27,75, x35 28,25, x36 28,5; links van x30 geen streep. Dus rij 27 x30–34, rij 28 x35–36, sluit aan op de buitenlijn. In het model daalt hij naar rechts (vijf om één, dan twee); geen recht stukje meer dat los in het vlak eindigt. Een eerste versie die tot x28 doorliep is teruggedraaid (gemeten: daar geen streep). |
+
+## Eindkeuring r22 (geheel): **PASS**
+- **Tinten**: lijfladder 255/227/196/166/127, panelen 43/87/115/169, gewrichten 75/112/168: geen bijna-gelijke tinten in één groep. Geen nieuwe tinten.
+- **Schaduw/volume**: zoals r21; de kaprand en het paneelframe volgen nu de modelvorm. Geen nieuwe tintvlakjes < 3 px (alleen de bestaande glans/bolschaduw in de gewrichten).
+- **Lijnen**: 1 px; lichtkant van de lens in eigen 8, schaduwkant zwart; paneelrand links doorlopend met outline 9 + frame; geen losse lijnpixels; geen zwart/8 om en om.
+- **1×** (licht en donker): lens, panelen en antennes lezen; de lens oogt aan de linkerkant iets zachter tegen het kleine paneel (zie hieronder).
+
+## Ter info voor Jordi (niet uitgevoerd)
+- Linkerkant van de lens (x13, rij 30–34): de lijn is nu 8 (Y75) tussen paneel A (Y87) en ring 7 (Y112). Hij scheidt vooral door de kleur, niet door helderheid, en is op 1× zachter dan het zwart van r21. In het model is die lijn zwart. Als je hem scherper wilt: alleen dat stuk zwart houden (5 px).

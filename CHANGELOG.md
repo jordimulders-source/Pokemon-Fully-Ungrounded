@@ -3262,3 +3262,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.791] - Creepy guaraná: besluiten en eerste Gemini-prompt
 - Jordi (25 nov): creepy guaraná wordt een lijn van 2 fases, Grass/Ghost; lichaam = kruipende liaan; fase 1 dichte rode tros met barstjes waar ogen door kijken, fase 2 opengebarsten vol ogen; toon onbehaaglijk; fase 1 eerst.
 - `IDEEEN.md` bijgewerkt; nieuw `docs/concept/sprites/guarana/SPEC.md` en startprompt `guarana/gemini/PROMPT_r1.md`.
+
+### [v0.0.792] - Guaraná fase 1: Gemini r1 besproken, prompt r2
+- Jordi over r1: kruipende tak blijft ("lekker creepy", alleen de ogen zijn dierlijk); beter naar een sprite te vertalen en meer guaraná. Prompt r2 in `docs/concept/sprites/guarana/gemini/PROMPT_r2.md`; SPEC bijgewerkt.

@@ -36,7 +36,7 @@ Design an original Pokemon. Type: Normal/Steel. Second stage of a three-stage li
 
 Concept: a male impala, the African antelope, in Pokemon style. Its horns are real metal: polished steel, growing from its head as part of its body. They must have the real impala horn shape, NOT deer or gazelle horns: from the base they rise up and lean back, then spread wide outward to the sides, then the tips turn up and forward again. Seen from the front the pair forms a wide lyre; seen from the side each horn is an S-curve. The horns are clearly exaggerated (bigger, wider and more dramatic than a real impala's), so the design is stylized, but it must still be recognizable as an impala. It does not hold or carry anything.
 
-PROPORTIONS (most important): this is a Pokemon, not a realistic animal and not a recolored animal. Drawn as a Pokemon designed by Ken Sugimori: stylized, simplified, bold shapes. Big head with big expressive eyes and large ears, short neck, compact athletic body, legs slender but not long and stilt-like. Middle stage: more athletic than a cute first stage, but clearly a Pokemon.
+PROPORTIONS (most important): this is a Pokemon, not a realistic animal and not a recolored animal. Drawn as a Pokemon designed by Ken Sugimori: stylized, simplified, bold shapes. Big head with big expressive eyes, ears a bit bigger than a real impala's, short neck, compact athletic body, legs slender but not long and stilt-like. Middle stage: more athletic than a cute first stage, but clearly a Pokemon.
 
 Anatomy: based on a real male impala (Aepyceros melampus), not a deer: compact, muscular antelope body with a deep chest and a slightly raised rump, small hooves, large ears, big dark eyes, slim muzzle.
 

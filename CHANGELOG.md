@@ -3268,3 +3268,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.793] - Guaraná fase 1: Gemini r2 besproken, prompt r3
 - Ogen getest op 64 px (leesbaar bij ±56 px hoogte). Prompt r3: groene buigzame rank, grijpranken i.p.v. pootjes, gladde vruchten zonder raster/stekeltjes, ogen iets groter.
+
+### [v0.0.794] - Guaraná fase 1: frontsprite kandidaat
+- Sprite naar Gemini r5 (model), 44×37 px, 809 px; maker r1–r4, keurder (BIJNA → BIJNA), DC-eindkeuring PASS (schaduw tros, groen contrastrijker). Twee oogversies ter keuze: Psyduck-oogwit met pupil in de modelkijkrichting, of Weepinbell-ogen (groter). In `docs/concept/sprites/guarana/eindkeuring/`; vel `guarana/voor_jordi_ek.png`.

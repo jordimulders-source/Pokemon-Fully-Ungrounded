@@ -54,3 +54,4 @@ Prompts in `gemini/PROMPT.md`.
 - Jordi: "a1 is de vorm van het mond het beste, a2 sluit die beter aan maar is de hele vorm van de mond weg" → A5 = vorm A1, 1 px naar rechts (`mond_A1_A2_A5_vel.png`).
 - Jordi: "A5 akkkord maar zorg dat het hoofd verder consistent is, daarnaast valt het linkeroog nu teveel weg en is het rechteroog nog net niet genoeg lombre maar dan bozer" → sprite r2 (maker).
 - Jordi bij r2: "ah excuses die sprite helpt niet, hier zie je hoe lombre er uit ziet" + 3 plaatjes (`lombre/referenties/`: anime, 3D, artwork). Ogen opnieuw naar deze Lombre-ogen (r3).
+- Jordi op r3: "a is het beste maar de blik is niet naar driekwart" → r4: alleen pupilplaatsen, lid van A blijft.

@@ -43,3 +43,4 @@ Open: aantal ogen, naam, evolutiemethode.
 - Jordi: "nu beter maken" · "laat maar eindresultaat pas zien" → maker-rondes, keurder en Dragonfly Cave-eindkeuring eerst, daarna pas naar Jordi.
 - Sprite r2 (`sprite/r2/`): bollen rond (≤0,5 px), banden/kragen over de hele buis; panelen nog vlekkerig → r3 (verse maker) op de panelen.
 - Jordi: "maar niks opnieuw tekenen he?" → maker r3: panelen uit de modelreductie, alleen pixelreparaties. (Let op: r2 bouwde bollen/buizen uit gemeten modelgeometrie i.p.v. de pixels over te nemen.)
+- Jordi: "model volgen" · "er wordt van alles opnieuw getekend" → r3 vanaf de kale modelreductie, alleen pixelreparaties, diffkaart verplicht.

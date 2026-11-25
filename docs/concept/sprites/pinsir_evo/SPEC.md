@@ -8,6 +8,7 @@
 - 25 nov: "en de poten hybride, te lang zou niet vertalen"
 - 25 nov, op Claudes beschrijving dat de grote hoorn uit het borststuk groeit: "nee de hoorn komt uit de kop"
 - 25 nov: "ja type blijft hetzelfde"
+- 25 nov: "de vorige keer ging het helemaal fout op complex design, we moeten zorgen voor een hybride vorm, dus t-tar is bijv ook een kaiju, we kunnen niet te complexe patronen maken of stekels overal, dat gaat weer fout. Hij wordt een logge vooroverleunende kever. Wel anders dan heracross, gepantserd qua kleur, wel vergelijkbaar met pinsir, maar sterker ogend"
 
 ## Besloten
 - Pinsir-evolutie, gebaseerd op de Golofa-kever, kaiju.
@@ -16,6 +17,9 @@
 - Poten: hybride ("te lang zou niet vertalen").
 - De hoorn komt uit de kop.
 - Type **Bug/Ground** (zelfde als Pinsir).
+- Hybride vorm (kaiju zoals Tyranitar); geen te complexe patronen, geen stekels overal.
+- Logge, vooroverleunende kever.
+- Anders dan Heracross; gepantserd qua kleur; vergelijkbaar met Pinsir, maar sterker ogend.
 
 ## Open
-- Eén of twee hoorns, wat "kaiju" in het ontwerp is, kleur, evolutiemethode, naam.
+- Eén of twee hoorns, evolutiemethode, naam.

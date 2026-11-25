@@ -21,3 +21,4 @@ Alle citaten en lijnbesluiten: `docs/concept/IDEEEN.md` → "Impala-lijn"; samen
 ## Sprite
 - Rondes in `sprite/rN/`.
 - Oogvarianten op r2 (25 nov): `oog/oog_varianten.png` (A model-reductie, B Rapidash, C Absol, D Stantler; `oog/varianten.py`, pixels 1-op-1 uit de `_gba`-sprite, alleen omgekleurd). Wacht op Jordi's keuze.
+- Oogvarianten op r5: `oog/oog_varianten_r5.png` (`python3 oog/varianten.py r5`; A model, B Rapidash, C Absol, D Stantler).

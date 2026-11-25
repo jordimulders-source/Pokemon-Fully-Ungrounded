@@ -1,0 +1,113 @@
+basis (20,28) 2->1  voorkant lip: de omtrek loopt nu in één zwarte lijn van de lippunt naar de kaak (was rest oude kopcontour, rood lijn)
+basis (21,27) 4->1  bovenlijn van de lip sluit aan op de kopomtrek (was een los stukje gezicht tussen omtrek en lijn)
+basis (21,26) 2->4  dubbele rode lijn naast het verre oog -> gezicht (de omtrek is x20)
+basis (23,33) 4->3  schaduwsikkel onderaan de kaak in rood donker, zoals de rest van de kop (kaak was één vlak midden)
+basis (24,33) 4->3  schaduwsikkel onderaan de kaak in rood donker, zoals de rest van de kop (kaak was één vlak midden)
+basis (25,33) 4->3  schaduwsikkel onderaan de kaak in rood donker, zoals de rest van de kop (kaak was één vlak midden)
+basis (26,33) 4->3  schaduwsikkel onderaan de kaak in rood donker, zoals de rest van de kop (kaak was één vlak midden)
+basis (27,33) 4->3  schaduwsikkel onderaan de kaak in rood donker, zoals de rest van de kop (kaak was één vlak midden)
+basis (28,33) 4->3  schaduwsikkel onderaan de kaak in rood donker, zoals de rest van de kop (kaak was één vlak midden)
+basis (29,33) 4->3  schaduwsikkel onderaan de kaak in rood donker, zoals de rest van de kop (kaak was één vlak midden)
+basis (30,33) 4->3  schaduwsikkel onderaan de kaak in rood donker, zoals de rest van de kop (kaak was één vlak midden)
+basis (27,34) 2->1  kinlijn één doorlopende zwarte lijn (was zwart en rood lijn om en om)
+basis (28,34) 2->1  kinlijn één doorlopende zwarte lijn (was zwart en rood lijn om en om)
+basis (29,34) 2->1  kinlijn één doorlopende zwarte lijn (was zwart en rood lijn om en om)
+basis (21,24) 1->4  zwart boven het verre oog -> gezicht, zodat het oog niet in de zwarte omtrek verdwijnt
+basis (21,25) 15->15  ver oog wit (was al wit, model)
+basis (21,26) 2->15  ver oog wit, 2e pixel (nieuw)
+basis (22,25) 1->1  ver oog stip (was al zwart, model)
+A (21,24) 1->4
+A (29,25) 2->4
+A (30,25) 2->4
+A (31,25) 11->4
+A (32,25) 11->15
+A (33,25) 11->15
+A (34,25) 11->1
+A (21,26) 2->15
+A (29,26) 11->1
+A (30,26) 1->15
+A (32,26) 15->1
+A (33,26) 15->1
+A (34,26) 15->1
+A (21,27) 4->1
+A (31,27) 15->1
+A (34,27) 15->4
+A (20,28) 2->1
+A (33,28) 11->4
+A (34,28) 2->4
+A (23,33) 4->3
+A (24,33) 4->3
+A (25,33) 4->3
+A (26,33) 4->3
+A (27,33) 4->3
+A (28,33) 4->3
+A (29,33) 4->3
+A (30,33) 4->3
+A (27,34) 2->1
+A (28,34) 2->1
+A (29,34) 2->1
+B (21,24) 1->4
+B (29,25) 2->4
+B (30,25) 2->4
+B (31,25) 11->4
+B (32,25) 11->15
+B (33,25) 11->15
+B (34,25) 11->1
+B (21,26) 2->15
+B (29,26) 11->1
+B (31,26) 15->4
+B (32,26) 15->1
+B (33,26) 15->1
+B (34,26) 15->1
+B (21,27) 4->1
+B (31,27) 15->1
+B (34,27) 15->4
+B (20,28) 2->1
+B (33,28) 11->4
+B (34,28) 2->4
+B (23,33) 4->3
+B (24,33) 4->3
+B (25,33) 4->3
+B (26,33) 4->3
+B (27,33) 4->3
+B (28,33) 4->3
+B (29,33) 4->3
+B (30,33) 4->3
+B (27,34) 2->1
+B (28,34) 2->1
+B (29,34) 2->1
+C (21,24) 1->4
+C (29,24) 3->2
+C (30,24) 3->2
+C (31,24) 3->2
+C (32,24) 6->2
+C (29,25) 2->4
+C (30,25) 2->4
+C (31,25) 11->4
+C (32,25) 11->15
+C (33,25) 11->15
+C (34,25) 11->1
+C (21,26) 2->15
+C (29,26) 11->1
+C (30,26) 1->4
+C (31,26) 15->4
+C (32,26) 15->1
+C (33,26) 15->1
+C (34,26) 15->1
+C (21,27) 4->1
+C (31,27) 15->1
+C (34,27) 15->4
+C (20,28) 2->1
+C (33,28) 11->4
+C (34,28) 2->4
+C (23,33) 4->3
+C (24,33) 4->3
+C (25,33) 4->3
+C (26,33) 4->3
+C (27,33) 4->3
+C (28,33) 4->3
+C (29,33) 4->3
+C (30,33) 4->3
+C (27,34) 2->1
+C (28,34) 2->1
+C (29,34) 2->1

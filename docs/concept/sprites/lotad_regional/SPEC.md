@@ -76,3 +76,5 @@ Prompts in `gemini/PROMPT.md`.
 - Jordi: "imo is het niet plakken maar alleen inkleuren"; "de poncho". → **model = `ludicolo/r6/gemini_r6.png`**; spritefase gestart (`ludicolo/sprite/r1/`, maker): silhouet = model, alleen de inkleuring van de poncho mag zo dat hij bovenaan als poncho leest en onderaan in de bladpunten overloopt; varianten ter keuze.
 - Jordi: "het enige waar je in afwijkt van het model is het lijnenwerk van de poncho, om het iets meer af te laten wijken van de bladeren, let op, dit betekent niet opnieuw tekenen, hooguit de bladervorm met wat pixels schuiven omzetten en anders inkleuren".
 - Sprite r1 (maker, `ludicolo/sprite/r1/`): 0 = kale reductie (51×62), A/B/C = alleen ponchobladlijnen omgekleurd (38–44 px, 0 verschoven); `vel.png`.
+- Jordi: "stuur de eerste maar naar de eindkeuring en let op de zwarte lange verticale lijn in de poncho" → variant 0 naar keuring + DC-eindkeuring (`ludicolo/eindkeuring/`).
+- Jordi: "het geel moet zoals de rest van de lijn, afwijken van model" → geel = tinten van de Lotad-snavel/Lombre-mond.

@@ -3369,3 +3369,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Test 6: Gengar +13 dichter, geconcentreerd middenstuk met vonkjes eromheen (`fase1_glitch/concentratie/vel.png`).
 - Test 7: Gastly-achtige wolk van gemengde ROM-rommel met vaag gezicht (`fase1_glitch/wolk/vel.png`).
 - Test 8 (collage van assets): Jordi "betere kant op, maar meer dichtheid"; test 8b dichter (`fase1_glitch/rommel_dicht/vel.png`).
+- Test 9: herkenbare kaartstukken (eigen renderer `kaartbrok.py`), menu-graphics en data, half in elkaar geschoven (`fase1_glitch/assets/vel.png`).

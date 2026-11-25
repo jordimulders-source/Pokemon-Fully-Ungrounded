@@ -3379,3 +3379,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Beste tot nu toe met een hap linksonder (MissingNo-achtig): `fase1_glitch/eigen_missingno/kapot/beste_hap_linksonder.png`.
 - Kleinere maten (100/80/70/60 %), met en zonder hap (`fase1_glitch/klein/vel.png`).
 - 80 % zonder hap met de ogen van de grote versie 1-op-1 erin geplakt (`fase1_glitch/klein_ogen/klein_80_ogen_geplakt.png`).
+
+### [v0.0.815] - Glitch-lijn fase 1: frontsprite af
+- Eigen MissingNo: Gemini-silhouet op 80 % gevuld met ROM-data als 2-bitspatroon, vorm kapotgemaakt (verschoven banen, rafelige zwarte randen met hier en daar een kleurpixel), ogen 1-op-1 uit de grote versie, losse zwarte pixels; 13 kleuren + doorzichtig.
+- Af: `docs/concept/sprites/glitch_lijn/fase1_glitch/af/glitch_fase1.png`, op het overzichtsvel (New). Naam open. Werkwijze en alle tests: `glitch_lijn/fase1_glitch/STUDIE.md`.

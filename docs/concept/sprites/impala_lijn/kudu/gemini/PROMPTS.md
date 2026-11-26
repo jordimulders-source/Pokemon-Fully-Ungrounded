@@ -22,3 +22,6 @@ Style: official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 
 
 AVOID: deer, antlers, realistic animal proportions, a small head on a long neck, long stilt legs, a recolored real animal, straight horns, ram horns curling around the ears, tightly coiled screw horns without open twists, Deerling, Sawsbuck, Stantler, Wyrdeer, armor plates, a metal body, a gold metal body, robot parts, a crown or jewelry, holding or carrying weapons, glowing metal, sparkles, horns in the same color as the fur.
 ```
+
+## Ronde 1 (26 nov)
+- `r1/kudu_r1.png`. Vacht #D4B252–#E9C964 (mosterdgeel). Claude: goed = manen + keelfranje, strepen goed zichtbaar, V tussen de ogen, kalme uitstraling, grote oren. Minder = hoorns golven plat als linten (geen open kurkentrekker), staal lila-grijs zonder spiegelglans of slijprand; verhoudingen dier (kleine kop, klein realistisch oog, lange hals en stelpoten, zelfde probleem als impala r1); geen vol vierkant; goud leest als mosterd.

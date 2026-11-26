@@ -54,3 +54,4 @@ Fase 1 (af): `../guarana/` (SPEC daar = alle eerdere besluiten).
 - Voorstel Claude: fase 1-oog 1-op-1 op de oogplekken van het model; past bij r10 (losse vruchten), niet bij r2. Jordi: "prima, r10 was sowieso de beste, meeste guarana toch?"
 - **Model = `model.png` (= `plak/a.png`: r10 met elke tros verschoven nog eens erachter).** Oog = het oog van fase 1. Maat: ±64 px (vol kader). Losse plakrestjes gaan eruit bij de sprite.
 - Nog open: de klauwachtige grijpranken onder (sinds r4; Claude noemde ze, Jordi heeft er niets over gezegd).
+- Jordi (26 nov): "en pupillen ietsje kleiner en andere hoek is niet erg, zie de glitch/bug/virus lijn, is daaar ook gelukt." en "r10 mag je verder 1 op 1 overnemen" (antwoord op de vraag over de klauwachtige grijpranken → blijven zoals in het model).

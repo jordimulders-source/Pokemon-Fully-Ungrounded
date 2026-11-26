@@ -3539,3 +3539,8 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.x] - Werknaam Missingraph. (26 nov)
 - Glitch-lijn fase 1 heet Missingraph. (met punt; Jordi: "glitch fase 1 mag Missingraph. heten"). 12 tekens, precies de maximale naamlengte (`POKEMON_NAME_LENGTH` 12). POKEMON.md, CLAUDE.md en het overzichtsvel.
+
+### [v0.0.x] - Sneeuwmonster fase 2 frontsprite af (26 nov)
+- Fase 2 van de sneeuwmonster-lijn (Ice/Fire): groter, ruige sneeuwvacht met armen, houten saunaemmer op de kop, tevreden dichte ogen, twee grotere gloeiende stenen op de knoopplekken (Jordi: houten saunaemmer, twee grotere stenen, groter met armen, tevreden/ontspannen).
+- Model: Gemini r1a met de ruwe donkere gloeistenen van r3a erop geplakt (70 px, lager onder de baard). Prompts en rondes in `docs/concept/sprites/sneeuwmonster_fase2/gemini/PROMPTS.md`.
+- Frontsprite `docs/concept/sprites/sneeuwmonster_fase2/af/sneeuwmonster2.png` (+ `_8x`, 48×56 px, 16 kleuren): kale reductie, golvende mond, doorlopende duignaden, eindkeuring Dragonfly Cave (lijntint en sneeuwtinten gelijk aan fase 1), ooglid gebogen, stenen met grijze facetten en gloed in scheuren en rand (variant A), rechte randen vloeiender naar het model. Op het overzichtsvel. Naam open.

@@ -17,3 +17,7 @@ Besluiten lijn: `docs/concept/IDEEEN.md` → "Extra Ice-lijn: Ice/Fire". Fase 1:
 ## Model (26 nov)
 - `model.png` = Gemini `gemini/r1/r1a.png` met de stenen van `gemini/r3/r3a.png` geplakt (`gemini/plak/plak_r3.py 70 340 418`). Jordi: "nu zijn de stenen goed, maar blijf voor de rest het eerste ontwerp het leukste vinden"; "r1a moeten de stenen iets lager, de bovenste overlapt met de baard, 70px breed goed".
 - r1a wijkt af van de prompt (mondje, dichte ogen, één band, bijna frontaal); Jordi koos r1a zo.
+
+## Af (26 nov)
+- `af/sneeuwmonster2.png` (+ `_8x`) = `eindkeuring/ek6`. Rondes: maker r1–r4 (mond golvend, emmerduigen doorlopend, stenen), eindkeuring ek–ek6 (`eindkeuring/KEURING.md`).
+- Jordi: ooglid gebogen en stenen herkenbaar als steen (ek2–ek3); "ek4 leest het beste", variant A (ronde steenomtrek); gloed ook links, rechteroog boven rond (ek4); "alles wat rood is mag iets smoother, kijk naar hoe het model dat doet" (ek6, `referenties/jordi_ek5_rechte_lijnen.png`); "commit en push naar main".

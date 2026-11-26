@@ -97,3 +97,22 @@ No effects, no glow, no sparkles, no shadow; draw no ground under the hourglass.
 ```
 
 **Jordi over r5:** "best prima design alleen ben ik bang dat het veel te veel detail is voor een sprite" (`r5.webp`). Snelle test: kale verkleining naar 64 px (`r5_test64.png`, 6× `r5_test64_x6.png`): hersenwindingen, ogen, spierlijnen en de apparatuur op de rug worden ruis; zandloper, boeien en staart lezen goed.
+
+## r6 – r5 versimpeld (Jordi: "graag")
+```
+Design an original Pokémon as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64 pixels, max 16 colors, white background, facing 3/4 to the left.
+
+Concept: a sand djinn (Ground/Psychic) that has escaped from its hourglass, like a genie that escaped its lamp. It must clearly read as a genie/djinn.
+- Source: at the bottom, an hourglass lies on its side, opened in the middle (at the narrow waist). No loose glass shards.
+- Tail: the sand visibly pours OUT of that opening in the middle of the hourglass and rises up in a thick sand tail, like genie smoke, with only 2 or 3 big swirl bands.
+- Body: a big, heavy, broad upper body with wide shoulders, tapering in a V-shape down into the tail. Smooth, simple masses of golden sand: NO muscle lines, no abs, no pecs.
+- Pose: arms folded across the chest, the classic genie pose. Arms end in rounded sand stumps without fingers.
+- Wrists: big cuffs made of glass (same glass as the hourglass), broken open, showing it escaped.
+- Head: the head IS a brain made of sand, with only 3 or 4 big, bold brain folds. Big, clear Pokémon eyes that stand out from the brain. On top of the brain one curling tuft of sand like a genie's topknot.
+- Glass science apparatus is part of its body on the shoulders/back: only 2 pieces (for example one big flask and one big funnel), each large and clearly defined. No springs, coils or tiny tubes.
+- Flat sand colors with simple Gen 3 shading: no speckles, no grain texture, no dithering.
+It must NOT look human: no human face, no nose, no ears, no beard, no human hands.
+Keep it simple and readable at 64x64: big clear shapes, few details, like a real Gen 3 sprite. Compact silhouette that fits a square.
+
+No effects, no glow, no sparkles, no shadow; draw no ground under the hourglass. AVOID: a realistic hourglass with a face, a human in a costume, a bodybuilder, a plush toy, Neopets style.
+```

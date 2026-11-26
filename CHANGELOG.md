@@ -3469,3 +3469,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Zandloper: opbouw besloten (zandloper met ogen → brein breekt uit → djinn uit geopende zandloper); prompt r3 met varianten brein als hoofd/core.
 - Zandloper fase 3: r3 binnen (nog geen djinn), prompt r4 met djinn-kenmerken.
 - Zandloper fase 3: r4 "begint ergens op te lijken"; prompt r5 (glazen boeien, zand uit het midden).
+- Zandloper fase 3: r5 "best prima design", verkleiningstest, prompt r6 (versimpeld).

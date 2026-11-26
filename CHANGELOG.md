@@ -3457,3 +3457,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Model bevroren = r9 met fixes r10–r13b (panelen 4 vakken voor/achter, mast 3, tweelingpaneel, ogen zonder wit, zij-ogen naar voren-links, rechteroog uit het voorste oog).
 - Sprite: r1–r2 afgekeurd (hertekend); vanaf r3 kale modelreductie + benoemde reparaties; kleurronde (3 romptinten), panelen in het fase 2-recept, oogbollen groter (voor ×1,3, zij ×1,8), panelen breder, ogen in driekwart uit het model, mastpanelen gecentreerd op de stok en gelijk (3 vakken, 6 px). Eindkeuring r15 en r16 PASS.
 - `docs/concept/sprites/satelliet_fase3/af/ruimtestation.png`; op het overzichtsvel. Naam open. Alles in `satelliet_fase3/SPEC.md`; lessen in `docs/lessen/GEMINI.md` (pitch meten, geometrie = ook tekenen, begrenzende as, afgesproken aantallen natellen).
+
+### [v0.0.835] - Originele Ground-lijn: kandidaten verzameld (26 nov)
+- `IDEEEN.md`: Jordi merkt op dat een originele Ground-lijn ontbreekt; bestaande kandidaten uit FAKEMON_PITCH op een rij. Keuze open.

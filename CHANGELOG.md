@@ -3448,3 +3448,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.832] - Regionale Poliwrath: frontsprite af (25 nov)
 - `docs/concept/sprites/poliwrath_regional/af/poliwrath_regional.png` (Ice/Poison, eindvorm van de regionale Poliwag-lijn). Model = Gemini v2 gespiegeld (r1 te veel de gewone Poliwrath; bijgestuurd slanker/hoekiger), natief raster 75→62 geschrapt; hele Poliwrath-oog met lid in modelkleuren op ware grootte (E2), mond = 1-px boog met hoeken omlaag (M1), modelspiraal (S1); palet = regionale Poliwhirl; DC-eindkeuring. Op het overzichtsvel (Regional forms). Alles in `poliwrath_regional/SPEC.md`.
+
+### [v0.0.833] - Gaucho-Ludicolo: frontsprite af (26 nov)
+- `docs/concept/sprites/lotad_regional/ludicolo/af/ludicolo_gaucho.png` (Fighting, eindvorm van de gaucho-Lotad-lijn; 51×62, 14 kleuren). Model = Gemini r6 (r1 + poncho als deel van het lijf, iets langer); kale reductie (variant 0), eindkeuring 1 (zwarte ponchobinnenlijnen → rode lijn, dubbele lijnen 1 px, rood uit elkaar, geel = Lotad/Lombre), ogen wit (oog B), snavel omlijnd met zwarte onderkant, eindkeuring 2 (snavelrand). Op het overzichtsvel (Regional forms). Lijn Lotad → Lombre → Ludicolo af. Alles in `lotad_regional/SPEC.md`.

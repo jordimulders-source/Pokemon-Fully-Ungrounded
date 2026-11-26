@@ -84,3 +84,4 @@ Prompts in `gemini/PROMPT.md`.
 - Jordi: "de mond moet nog wel wat duidelijker omlijnd worden zodat duidelijk is dat die ietwat uitsteekt, heeft het model wss ook, rechts is beter trouwens" → oog B (wit); `eindkeuring/mond_V1.png` (rode lijn om de snavel, 22 px) en `mond_V2.png` (idem, onderkant zwart), `mond_lijn.py`.
 - Jordi: "ja rechts is goed" (V2) → `ludicolo/af/ludicolo_gaucho.png` (voorlopig); "stuur die maar naar de eindkeuring" → eindkeuring ronde 2 (`ludicolo/eindkeuring2/`).
 - Eindkeuring ronde 2 (`ludicolo/eindkeuring2/`, 15 px snavelrand: zijkanten rode lijn, onderkant doorlopend zwart, clusters weg). Ter info: donkere band van 3 px boven de ogen.
+- Jordi: "commit en push naar main" → **af**: `ludicolo/af/ludicolo_gaucho.png` = eindkeuring2. Ter info open: band boven de ogen (3 px), snavelrand rechts rood i.p.v. zwart (Gen 3-Ludicolo), Ground/Fighting of puur Fighting.

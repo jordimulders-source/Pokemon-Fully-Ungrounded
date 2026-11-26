@@ -33,3 +33,6 @@ Fase 1 (af): `../guarana/` (SPEC daar = alle eerdere besluiten).
 
 ## Ronde 6 (`gemini/r6.png`, nieuw gesprek)
 - Blad nu groot; trossen 2 ogen + 2–3 dichte vruchten. Jordi: "hij is wat kaal, de trossen he", "daar is echt ruimte voor meer" → bijsturen r7 (`gemini/PROMPT_r7_bijsturen.md`).
+
+## Ronde 7 (`gemini/r7.png`, bijgestuurd in het r6-gesprek)
+- Jordi: "ik weet niet het zijn niet eceht trosjes en hij heeft het nu druk gemaakt, zonder de open ruimte op de takken in te vullen".

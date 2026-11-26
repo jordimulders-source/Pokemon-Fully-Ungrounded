@@ -2,7 +2,7 @@
 # Model 1024x559, natief raster 4,27 px (1024/240; pitch.py), stenen geplakt op ±3,7 px. Figuur x290-725, y24-533.
 # Schaal: 510 modelrijen -> 56 spriterijen (9,107 modelpx per spritepx); figuur 48x56 op x8-55, y3-58.
 import numpy as np; from PIL import Image
-MODEL='model.png'
+import os; MODEL=os.path.join(os.path.dirname(os.path.abspath(__file__)),'..','model.png')
 F=510/56.0; MX0,MY0=290-8*F+ (0), 24-3*F   # modelcoord van spritepixel (0,0) linksboven
 PAL=[(152,208,160),(24,32,56),
      (72,108,136),(118,158,186),(160,194,214),(204,228,240),(240,250,252),   # 2-6 sneeuw: lijn, schaduw, midden, licht, hoog

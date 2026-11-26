@@ -16,3 +16,4 @@ Lijn (Jordi, 26 nov): fase 1 zandloper met levend zand en alleen ogen → fase 2
 - **Jordi over sprite r2 (26 nov):** "ja zijn nog best wat reparaties nodig"; "linkerarm, breinlijnen, wenkbrauw is 1 grote horizontale lijn, borst en armen eronder is slordig".
 - Jordi: "ogen wat te groot voor het hoofd en daardoor derpy look".
 - **Jordi over de oogvarianten r3:** "jezus wat is die rechtse in hemelsnaam. Alle 3 de ogen zijn niet goed, links heeft als enige de goede grootte in verhouding, maar geen pupillen. Moet het hoofd niet iets groter?"
+- **Jordi over r4 (26 nov):** "1,25 akkoord, alleen moeten de breinlijnen en de ogen nu wel aangepast worden. Rechterschouder is niet mooi rond, omdat daar eerst dingen achter zaten. linkerarm is heel hoekig en niet zoals het model, kijk naar de vorm, de handen mogen nog wat netter, voor de rest begint het zeker ergens op te lijken, ik denk dat het gaat lukken, maar nog veel aanpassingen nodig, kleine dingen vooral".

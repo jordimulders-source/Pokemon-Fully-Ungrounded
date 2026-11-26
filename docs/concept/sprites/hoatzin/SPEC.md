@@ -118,3 +118,4 @@ Opdracht: `sprite/OPDRACHT.md`.
 - **r6** (`sprite/r6/`): snavel opnieuw uit het model (lichte kegel tegen donkere kop, ±5 px aan de basis, afhangende punt; dikker kan alleen door af te wijken van het model), kuifvarianten K1 volledig, K2 ⅓, K3 ½ (= r6), K4 ⅔ (`vel_kuif.png`); teken-variant in `hoatzin_r6_variant_teken.png`.
 - Jordi op r6: "K1, snavel r6, maar de afwerking mag iets beter, onderkant is een horizontaal streepje. Het teken tussen de 2 voorbeeldne in". Naar r7.
 - **r7** (`sprite/r7/`): K1 + snavelpunt rond afgesloten (onderste rij van de punt 2 px i.p.v. 4) + teken halverwege (−1,+1). Rechte lijn onder de kaak (y20, x14–20) staat er nog: het model is daar zelf recht.
+- Jordi op r7: "poh uitstekend, eindelijk, toch de hoatzin gelukt. Linkerpoot moet je nog even naar kijken, de klauw is een beetje een rechthoek geworden". Naar r8 (alleen de linkervoet).

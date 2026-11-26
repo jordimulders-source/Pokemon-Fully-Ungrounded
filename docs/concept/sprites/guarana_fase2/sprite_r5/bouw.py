@@ -87,13 +87,32 @@ FASE1=['..OOO..','.OWWWK.','OWWWWWK','OWKKWWK','OWKKWWK','.KWWWK.','..KKK..']   
 # 4 pixel pupil als dat beter past"; "Half dicht is prima, dan kan je makkelijker wegkomen met een kleiner pupil, overlap geen probleem").
 # Tekens: O = geen lijn (vrucht), W wit, w grijs (oogwit-schaduw onder het lid, rond maken), K rand (lijnrood in A, zwart in B), P pupil (zwart).
 # Witvorm = fase 1-oog (3-5-5-3 rond); pupil linksonder raakt de onderrand (overlap mag).
+# r5: Jordi: "de ogen zien er nu niet goed uit omdat ze allemaal precies dezelfde richting hebben, kijk naar hoe de eerste fase het deed".
+# Elk oog een eigen pupilplek (zoals fase 1: drie ogen, drie richtingen), uit de kijkrichting van dat oog in het model (kijkrichting.py);
+# buren nooit gelijk. Witvorm en pupilgrootte zoals r4 (2x2 groot, L van 3 px middel, 1-2 px klein/half dicht).
 STEMPEL={
- 'groot':['..OOO..','.OwWwK.','OWWWWWK','OPPWWWK','.PPWWK.','..KKK..'],
- 'middel':['.OOOO.','OWWWwK','OPWWWK','.PPWK.','..KK..'],
- 'lid':['.LLLL.','LPPWWK','.KKKK.'],      # r4: ooglid = rode boog (L = schaduwrood 3, in A en B), pupil linksonder
- 'lidk':['.LLL.','LPWWK','.KKK.'],
- 'klein':['.OO.','OWWK','OPWK','.KK.'],
+ 'groot':['..OOO..','.OwWwK.','OWWWWWK','OWWWWWK','.KWWWK.','..KKK..'],
+ 'middel':['.OOOO.','OWWWwK','OWWWWK','OWWWWK','.KKKK.'],
+ 'lid':['.LLLL.','LWWWWK','.KKKK.'],      # r4: ooglid = rode boog (L = schaduwrood 3, in A en B)
+ 'lidk':['.LLL.','LWWWK','.KKK.'],
+ 'klein':['.OO.','OWWK','OWWK','.KK.'],
 }
+def _v(c0,r0): return [(c0,r0),(c0+1,r0),(c0,r0+1),(c0+1,r0+1)]
+PUPOPT={
+ 'groot':{'l':_v(1,2),'lo':_v(2,3),'lh':_v(2,1),'m':_v(2,2),'mo':_v(3,3),'r':_v(4,2),'rh':_v(3,1)},
+ 'middel':{'l':[(1,1),(1,2),(2,2)],'lo':[(1,2),(1,3),(2,3)],'lh':[(1,1),(2,1),(1,2)],'m':[(2,2),(3,2),(2,3)],
+           'mo':[(2,3),(3,3),(2,2)],'r':[(4,1),(4,2),(3,2)],'ro':[(4,2),(4,3),(3,3)],'rh':[(3,1),(4,1),(4,2)]},
+ 'klein':{'lo':[(1,2)],'lh':[(1,1)],'ro':[(2,2)],'rh':[(2,1)]},
+ 'lid':{'l':[(1,1),(2,1)],'m':[(2,1),(3,1)],'r':[(3,1),(4,1)]},
+ 'lidk':{'l':[(1,1)],'m':[(2,1)],'r':[(3,1)]},
+}
+# kijkrichting per oog: gemeten offset pupil t.o.v. oogmidden in het model (dx, dy; + = rechts/onder), zie NOTITIES; '-' = niet meetbaar (half dicht/verstopt)
+# Jordi (r5): "ja zorg dat er iets meer ogen naar linksonder kijken maar idd verschillende richtingen": 12 van 15 kijken links/linksonder/onder
+# (in gradaties), 3 een andere kant op (M1 rechts, M2 midden, R1 rechtsboven = de modelrichting); buren nooit gelijk.
+# Model gemeten (dx,dy): M1 -0,09/+0,06  M4 +0,31/+0,15  R1 +0,37/-0,23  L2 -0,04/-0,11  R2 +0,09/-0,03  L1 -0,39/+0,52  R3 -0,33/-1,00
+#   R5 -0,19/+0,05  L4 +0,32/+0,05  R6 -0,32/+0,04  L5 +0,32/+0,05; L3, M2, M3, R4 niet meetbaar.
+KIJK={'L1':'l','L2':'lo','L3':'lh','L4':'l','L5':'mo','M1':'r','M2':'m','M3':'l','M4':'lo',
+      'R1':'rh','R2':'mo','R3':'lh','R4':'l','R5':'l','R6':'lo'}   # niet meetbaar: gevarieerd t.o.v. de buren
 PUP={}
 # naam: (soort, kijk, x, y)
 OGEN={'L3':('klein','l',16,25),'R3':('klein','m',42,25),'M3':('lidk','l',20,19),'R4':('lidk','r',49,26),
@@ -109,6 +128,7 @@ def stempel_ogen(o,OOG,PUPIL):
         if n in SKIP: continue
         soort,kijk,X,Y=OGEN[n]
         st=[list(r) for r in STEMPEL[soort]]
+        for (pc,pr) in PUPOPT[soort][KIJK[n]]: st[pr][pc]='P'
         for dy,rij in enumerate(st):
             for dx,ch in enumerate(rij):
                 if ch=='.' or not ok(Y+dy,X+dx) or not fg[Y+dy,X+dx]: continue   # silhouet bevroren: niets buiten de reductie

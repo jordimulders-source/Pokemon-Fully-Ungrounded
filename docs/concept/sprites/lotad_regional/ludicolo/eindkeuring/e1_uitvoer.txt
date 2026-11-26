@@ -1,0 +1,9 @@
+S1 slagschaduw als lijntint gestemd 2->3 (model L>=66)             64
+B1 zwarte binnenlijn in de poncho -> rode lijn (2)                 40
+B2 schouderlijn rechts: strook naast de lijn -> vlaktint (ML)      4
+B2 bladlijn links (x17-19): 2x2-knoop -> vlaktint (ML)             1
+B2 bladlijn links langs de armgrens (x13-16) -> vlaktint (ML)      4
+B2 bladlijn midden (x31-35): tweede lijn -> vlaktint (ML)          3
+B3 onder de hoedband: tweede zwarte rij -> vlaktint (ML)           5
+B3 onderkant hoedrand rechts: tweede zwarte rij -> rood diep (3)   12
+totaal gewijzigde pixels 127 | alpha-diff 0 | gezicht-diff 0 | kleuren incl. transparant 14

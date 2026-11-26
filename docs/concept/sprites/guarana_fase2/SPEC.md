@@ -55,3 +55,7 @@ Fase 1 (af): `../guarana/` (SPEC daar = alle eerdere besluiten).
 - **Model = `model.png` (= `plak/a.png`: r10 met elke tros verschoven nog eens erachter).** Oog = het oog van fase 1. Maat: ±64 px (vol kader). Losse plakrestjes gaan eruit bij de sprite.
 - Nog open: de klauwachtige grijpranken onder (sinds r4; Claude noemde ze, Jordi heeft er niets over gezegd).
 - Jordi (26 nov): "en pupillen ietsje kleiner en andere hoek is niet erg, zie de glitch/bug/virus lijn, is daaar ook gelukt." en "r10 mag je verder 1 op 1 overnemen" (antwoord op de vraag over de klauwachtige grijpranken → blijven zoals in het model).
+
+## Sprite r2 (Jordi, 26 nov)
+- "ja de ogen gaan werken, soms mag je afwijken van de 4 pixel pupil als dat beter past, voor de rest is de hele sprite volledig 2d en kijken de ogen eigenlijk vrijwel nergens echt naar linksonder. De hele sprite is hoekig, niet goed ingekleurd, geen enkele schaduw zie ik ook."
+- "1 is lastig te zeggen omdat alles zo hoekig is" (oogrand lijnrood/zwart: nog open). "Half dicht is prima, dan kan je makkelijker wegkomen met een kleiner pupil, overlap geen probleem".

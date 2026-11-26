@@ -118,3 +118,24 @@ No effects, no glow, no sparkles, no shadow; draw no ground under the hourglass.
 ```
 
 **Jordi over r6:** "deze vind ik wel een stuk minder" (`r6.png`). Claude: zes versimpelingen tegelijk = te veel (zelfde les als spooktrein, GEMINI.md); lijf plat en slap, staart als los krulletje opzij, zand komt uit het uiteinde i.p.v. het midden.
+
+**Jordi:** "maar kan jij A wel voldoende dan, misschien nog heel gedetailleerd prompten, het glaswerk moet er ook niet achterhangen, maar leuk als het echt verbonden is aan het lijf". Claude: spikkels/spierlijnen wegwerken kan bij het verkleinen; het glaswerk anders aan het lijf zetten is een ontwerpwijziging en hoort in het model (Gemini), dus r7 = r5 met 2 wijzigingen.
+
+## r7 – r5 + glaswerk verbonden met het lijf + vlakke kleuren
+```
+Design an original Pokémon as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64 pixels, max 16 colors, white background, facing 3/4 to the left.
+
+Concept: a sand djinn (Ground/Psychic) that has escaped from its hourglass, like a genie that escaped its lamp. It must clearly read as a genie/djinn.
+- Source: at the bottom, an hourglass lies on its side, opened in the middle (at the narrow waist): the glass is open right there. No loose glass shards.
+- Tail: the sand visibly pours OUT of that opening in the middle of the hourglass and rises up in a thick, curling sand tail, like genie smoke. The tail starts exactly at the opening in the middle of the hourglass, not at its ends or beside it.
+- Body: a big, heavy, broad upper body with wide shoulders, tapering in a V-shape down into the tail. Made of golden sand.
+- Pose: arms folded across the chest, the classic genie pose. Arms end in rounded sand stumps without fingers.
+- Wrists: big cuffs made of GLASS (same glass as the hourglass), broken open, showing it escaped. No gold.
+- Head: the head IS a brain made of sand, with simple Pokémon eyes; brain folds shown with only a few clear lines. On top of the brain a curling tuft of sand like a genie's topknot.
+- Glass science apparatus is truly connected to the body, NOT hanging behind it or strapped to its back. It grows out of the body and the sand flows through it: for example a big glass flask sits on the front of one shoulder with its neck sunk into the sand body, filled with the creature's own sand; on the other shoulder a big glass funnel, with sand from the body pouring through it back into the body. Only 2 pieces, each large and clearly defined, in front of or on the body, visible from the front.
+- Colors: flat sand colors with simple Gen 3 shading: no speckles, no grain texture, no muscle lines.
+It must NOT look human: no human face, no nose, no ears, no beard, no human hands.
+Keep it simple and readable at 64x64: big clear shapes, like a real Gen 3 sprite. Compact silhouette that fits a square.
+
+No effects, no glow, no sparkles, no shadow; draw no ground under the hourglass. AVOID: a realistic hourglass with a face, a human in a costume, a plush toy, Neopets style.
+```

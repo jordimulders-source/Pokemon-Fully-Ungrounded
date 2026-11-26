@@ -74,3 +74,7 @@ Style: official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 
 
 AVOID: the Flurry from Mario, Snorunt, Vanillite, Abomasnow, a classic three-ball snowman, a carrot nose, a scarf, stick arms, big black oval hole eyes, gold or shiny buttons, plush toy / Neopets look, flames.
 ```
+
+## Ronde 3 (26 nov)
+- `r3/r3a.png`. Jordi: "nu zijn de stenen goed, maar blijf voor de rest het eerste ontwerp het leukste vinden".
+- Claude: stenen van r3a op r1a geplakt (`plak/plak_r3.py`, oude stenen weg met sneeuw ertussen geïnterpoleerd): `plak/r3_70.png` (70 px breed) en `plak/r3_60.png` (60 px), vel `plak/vel_r3.png`.

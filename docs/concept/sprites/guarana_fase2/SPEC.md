@@ -36,3 +36,4 @@ Fase 1 (af): `../guarana/` (SPEC daar = alle eerdere besluiten).
 
 ## Ronde 7 (`gemini/r7.png`, bijgestuurd in het r6-gesprek)
 - Jordi: "ik weet niet het zijn niet eceht trosjes en hij heeft het nu druk gemaakt, zonder de open ruimte op de takken in te vullen".
+- Jordi koos route B (nieuwe prompt, echte guaraná-tros: vruchten aan korte steeltjes langs het laatste stuk van de tak) boven A (r5-trossen op r6 plakken) → `gemini/PROMPT_r8.md`.

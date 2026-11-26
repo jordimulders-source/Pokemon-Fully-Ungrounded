@@ -97,7 +97,7 @@ Bovenaan gehouden zodat de stand in één oogopslag te zien is. Details in de se
   - **Fase 1 frontsprite af** (16 nov): `sprites/blobfish/af/blobfish.png` (winegum, oog v4, lichtronde B).
   - Gemini-prompts: `sprites/blobfish/gemini/PROMPT.md` (fase 1), `sprites/blobfish_fase2/gemini/PROMPT.md` (fase 2). Evolutiemethode nog open.
 - **Kricketune-evolutie die echt een dirigent wordt.**
-- **Hoatzin-Pokémon** (Jordi neigt momenteel juist niet naar een Archeops-variant).
+- **Hoatzin-Pokémon** (Jordi neigt momenteel juist niet naar een Archeops-variant). **Geschrapt voor nu (Jordi, 26 nov).**
 - **Galápagos-regional forms.**
 - **Delibird-evolutie** (Jordi, 9 nov: "Delibird gaan we een evo geven dan"); Delibird-familie moet terug in de dex; ontgimmicken (haakje: de beta-cadeauvogel Gifuto #225).
   - **Skinguin** (Jordi, 19 nov): "een pinguin met voeten als ski's"; "De voeten zijn ski's. Ik dacht licht aan een Delibird evolutie, maar weet niet of dat echt past". Rood/wit houden; "een soort van skimuts/santa muts vast te maken aan zijn hoofd, dus geen accessoire, maar echt zijn hoofdvorm". Pose: "alsof die echt razendsnel van een piste afvliegt".

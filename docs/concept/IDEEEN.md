@@ -841,3 +841,4 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - **Besloten (Jordi, 25 nov):** sneeuwmonster-lijn in 3 fases, **Ice → Ice/Fire → Ice/Fire** ("ja"); emmer op de kop vanaf fase 2 ("de emmer vanaf fase 2 is humor ook"); "ik wil die early game available maken plus in de gym, dus deze was echt nodig". Open: welke variant voor de yeti (a/b/c), namen.
 - **Yeti (Jordi, 25 nov):** variant a ("ja"; advies Claude: 3–4 stenen, één in de borst, b en c te complex voor een sprite). Jordi: "wat we dan doen is waar de knopen in fase 1 zitten worden steeds grotere gloeiende stenen".
 - **Fase 1-knopen (Jordi, 25 nov):** "koude donkere steentjes"; ze gloeien pas vanaf fase 2.
+- **Fase 2 (Jordi, 26 nov, meerkeuze):** houten saunaemmer; twee grotere gloeiende stenen; groter, met armen; tevreden/ontspannen. Map `docs/concept/sprites/sneeuwmonster_fase2/`.

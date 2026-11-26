@@ -111,3 +111,4 @@ AVOID: clothing, hat, cloak or any accessory; a seam or line where a beak meets 
 Opdracht: `sprite/OPDRACHT.md`.
 - **r1** (`sprite/r1/`, maker): kale reductie + 371 px opschoning; Claude: te grijs/vlak t.o.v. het bijna zwarte model, veerlijnen in de vleugels weg; reparaties naar r2.
 - **r2** (`sprite/r2/`): donkerder toonverdeling naar het model, veerlijnen uit het model, snavelrug. Naar de keurder.
+- **r3** (`sprite/r3/`): 6 keurderpunten; Claude: oog nu te groot (7×7 met zwarte ring) en leest als blauw met een rode U.

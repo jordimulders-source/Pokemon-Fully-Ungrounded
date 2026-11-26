@@ -53,3 +53,4 @@ MOOD: ugly in a Pokémon way, something you don't trust. Simple, readable design
 
 AVOID: clothing, hat, cloak or any accessory; brown or chestnut colors; a fat or round belly; a stocky body; polka dots or round spots; dripping liquid; glow; a normal curved bird beak; not a crow or raven.
 ```
+- **r2** (`gemini/fase2_r2.png`, prompt v2). Jordi: "beter maar hij heeft nu geen poten meer, ik vind het ook nog net niet genoeg plague mask, de kroon mag wat meer gekleurd nog, de vleugels ook en misschien nog iets van een patroon op de buik, maar we zijn nu al verder dan we ooit warne". Volgende stap: bijsturen in hetzelfde gesprek, max. 2 wijzigingen per keer (GEMINI.md): eerst poten + meer zuurkleur op kroon/vleugels.

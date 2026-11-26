@@ -3466,3 +3466,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Hoatzin-lijn: `sprites/hoatzin/SPEC.md` met alle besluiten en Gemini-prompt fase 2 v1.
 - Hoatzin fase 2: Gemini r1 opgeslagen met Jordi's feedback.
 - Hoatzin fase 2: keuzes 1a/3c, prompt v2.
+- Hoatzin fase 2: Gemini r2 + feedback.

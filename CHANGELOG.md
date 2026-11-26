@@ -3476,3 +3476,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Zandloper fase 3: r9 fout (tweede staart); prompt r10: onderkant als los onderdeel, daarna samenvoegen met r8.
 - Zandloper fase 3: onderkant r10 los gemaakt en samengevoegd met r8 (r11).
 - Zandloper fase 3: r11 slordig; prompt r12 (collage als bijlage, Gemini tekent hem als één geheel).
+- Zandloper fase 3: besluiten model in `sprites/zandloper/fase3/SPEC.md` (r5 + barst midden + glaswerk uit r7/r8; brein open).

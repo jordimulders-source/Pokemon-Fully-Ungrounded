@@ -48,3 +48,9 @@ Fase 1 (af): `../guarana/` (SPEC daar = alle eerdere besluiten).
 - Plaktest (`plak/dubbel.py`, `plak/a.png`): elke r10-tros nog eens verschoven erachter geplakt (alleen Gemini-pixels). Voller, maar op 64 px (`plak/a_test64_8x.png`) worden de ogen weer ruis, net als bij r2: met 3 volle trossen in 64 px is er geen plek voor grote ogen.
 - Jordi: "toon eens snel hoe het eruit zou zien, zo'n stuk fruit met oog" → `plak/vrucht_maten.png`: één r10-oogvrucht automatisch verkleind tot ±6 px (3 trossen), ±9 px (2 trossen) en ±14 px (1 tros).
 - Jordi: "maar dit is blurry, hier kan ik niks mee", "dit zegt niet hoe het eruit gaat zien" → hele-sprite-mock op 64 px (`plak/mock_vergelijk_64.png`, automatisch, geen echte sprite). Jordi: "ik denk dat het wel mee gaat vallen namelijk" (de ooggrootte).
+
+## Model (Jordi, 26 nov)
+- Jordi over de ooggrootte: "ik denk dat het wel mee gaat vallen namelijk", "want het is wit en zwart". Op 64 px: r10-vrucht ±6–7 px, oog ±4–5; fase 1-oog = 6×5 met pupil 2×2.
+- Voorstel Claude: fase 1-oog 1-op-1 op de oogplekken van het model; past bij r10 (losse vruchten), niet bij r2. Jordi: "prima, r10 was sowieso de beste, meeste guarana toch?"
+- **Model = `model.png` (= `plak/a.png`: r10 met elke tros verschoven nog eens erachter).** Oog = het oog van fase 1. Maat: ±64 px (vol kader). Losse plakrestjes gaan eruit bij de sprite.
+- Nog open: de klauwachtige grijpranken onder (sinds r4; Claude noemde ze, Jordi heeft er niets over gezegd).

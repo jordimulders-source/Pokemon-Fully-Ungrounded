@@ -202,3 +202,5 @@ Make it one drawing: the same pixel size and the same dark outline everywhere, t
 
 No effects, no glow, no shadow, no ground.
 ```
+
+**Jordi (26 nov), met r5 opnieuw:** "dit is tot nu toe met afstand het beste model, valt hier niet iets mee te doen nog?" (r12 niet gebruikt).

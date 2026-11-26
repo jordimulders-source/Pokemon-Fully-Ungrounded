@@ -3,13 +3,14 @@
 # donker (neus/hoef): lum<118, b>=42 | manen: b<42 en r>=130 (haar is blauwarm: 156,120,24 / 180,144,36 / 192,156,36) | vacht: rest
 import numpy as np
 ZN=['vacht','manen','staal','wit','roze','donker']
-def pixzones(A,fg):
+def pixzones(A,fg,haar=None):
     A=A.astype(int); r,g,b=A[...,0],A[...,1],A[...,2]; lum=(A*[.299,.587,.114]).sum(2); sat=A.max(2)-A.min(2)
     yy=np.mgrid[:A.shape[0],:A.shape[1]][0]
     z=np.zeros(A.shape[:2],int)                       # 0 vacht
     xx=np.mgrid[:A.shape[0],:A.shape[1]][1]
     z[(b<42)&(r>=130)]=1
     z[(xx>=200)&(xx<345)&(yy>=440)&(yy<740)]=1     # keelfranje (lichtere lokken, zelfde vlak als in r3b)
+    if haar is not None: z[haar]=1                  # manenmasker van een bewerkt model (verschoven/gespiegelde lokken)
     dk=(lum<118)&(b>=42)&(sat<75)
     z[dk&(((xx<330)&(yy>=380)&(yy<470))|(yy>=900))]=5     # alleen neus en hoeven; elders is donker een schaduw van het eigen vlak
     z[((r-g)>=40)&(b>=60)&(r>=130)&(g<150)&(yy<400)]=4     # oor binnen (licht en donker roze), alleen bij de oren

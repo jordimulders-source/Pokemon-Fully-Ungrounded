@@ -54,3 +54,23 @@ MOOD: ugly in a Pokémon way, something you don't trust. Simple, readable design
 AVOID: clothing, hat, cloak or any accessory; brown or chestnut colors; a fat or round belly; a stocky body; polka dots or round spots; dripping liquid; glow; a normal curved bird beak; not a crow or raven.
 ```
 - **r2** (`gemini/fase2_r2.png`, prompt v2). Jordi: "beter maar hij heeft nu geen poten meer, ik vind het ook nog net niet genoeg plague mask, de kroon mag wat meer gekleurd nog, de vleugels ook en misschien nog iets van een patroon op de buik, maar we zijn nu al verder dan we ooit warne". Volgende stap: bijsturen in hetzelfde gesprek, max. 2 wijzigingen per keer (GEMINI.md): eerst poten + meer zuurkleur op kroon/vleugels.
+- **r3** (`gemini/fase2_r3.png`, bijsturen: poten + meer zuur). Jordi: "amper beter." Masker: "zit hem vooral in de vorm, hij is nog te scherp, het is echt een snavel doordat er een aansluitingslijn zit en dat moet niet". Buik: "eens wat betreft geelgroen, qua patroon op de buik misschien het radioactiviteit teken, weet niet of dat past". Volgende: nieuwe startprompt v3 in een nieuw gesprek (bijsturen werkt niet); buikpatroon eerst overleggen.
+
+## Prompt fase 2 (v3, Engels; nieuw gesprek, zonder bijlage)
+Eigen toevoegingen Claude: "rounded, blunt tip", "one smooth continuous shape", "the whole bird fits inside a square canvas with margin", kuif met zuurpunten, "not a crow or raven".
+
+```
+Design an original Pokémon, drawn as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 colors, white background, no ground, no shadow, no effects. The whole creature, including both feet, fits inside a square canvas with white margin on all sides; nothing is cut off.
+
+POSE (most important): a tall, slender bird standing upright on two long thin legs with clearly visible clawed feet, body turned 3/4 to the left. Exactly two wings: the near wing (right side of the image) is raised and spread wide in an attacking pose, the far wing (left) is half open. Long S-curved neck, long tail. Not stocky, thin belly.
+
+HEAD (important): the head IS a plague doctor's mask, not a bird head with a beak. Head and beak are ONE smooth continuous shape with no line, seam or joint between them: the forehead flows straight into the long beak, like a stitched leather plague doctor mask. The beak is long, cone-shaped and soft in outline, with a rounded, blunt tip that bends slightly downward. Not sharp, not hooked, no separate bill. Same blackish color as the body, shaded smoothly like the mask. The eye is the eyehole of the mask: one bright red eye with a patch of blue bare skin around it, like a real hoatzin face. A spiky, messy hoatzin crest on top of the head, large and simple so it reads clearly at sprite size.
+
+WHAT IT IS: an evolved hoatzin (the Amazon "stinkbird"). TYPE: Poison/Dark. Its poison is acid: about half of every wing feather, tail feather and crest feather is soaked in yellow-green acid, seeping from the tip inward as a gradient. No dots or spots, no dripping.
+
+COLORS: blackish body and head (not brown, not chestnut). Few colors, clean simple shading: blackish feathers, red eye, blue face patch, yellow-green acid.
+
+MOOD: ugly in a Pokémon way, something you don't trust. Simple, readable design, not complex.
+
+AVOID: clothing, hat, cloak or any accessory; a seam or line where a beak meets a head; a sharp or hooked beak; brown or chestnut; a fat or round belly; a stocky body; polka dots; dripping liquid; glow; cut-off legs; not a crow or raven.
+```

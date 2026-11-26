@@ -3377,3 +3377,74 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.827] - Regionale Poliwhirl: frontsprite af
 - `docs/concept/sprites/poliwhirl_regional/af/poliwhirl_regional.png` (Gemini v1, Poliwhirl-ogen 6×6 op modelplek, linkeroog variant B, spiraal van de regionale Poliwag, DC-eindkeuring). Op het overzichtsvel; CLAUDE.md, TODO, POKEMON.md, lessen bijgewerkt.
+
+### [v0.0.828] - Idee: glitch → bug → virus-lijn
+- Jordi's idee (glitch → bug → virus) met voorstel van Claude (digitale bug, Grace Hoppers mot uit 1947, Bug in alle fases) in `IDEEEN.md`; typen nog open.
+- Jordi: "meer een soort conceptuele bug dan echt een typisch insect" toegevoegd.
+- Jordi over blur en evolutie + voorstel indeling per fase (C → B → A) toegevoegd.
+
+### [v0.0.829] - Glitch-lijn fase 2: Gemini-test
+- Twee testprompts (vrij wezen van codesymbolen / keverbouwplan van codesymbolen) in `docs/concept/sprites/glitch_lijn/fase2_bug/gemini/PROMPTS.md`.
+- Ronde 1 afgekeurd (insect met tekens erop); les in `GEMINI.md`.
+- Jordi: Bug komt er vanaf fase 2 bij, puur conceptueel (`IDEEEN.md`).
+- Jordi: fase 1 Electric.
+- Jordi: "een puur digitaal wezen, een glitch die sentient wordt"; prompt r2 (alleen zijn woorden) in PROMPTS.md.
+- Jordi: fase 3 blijft ook Bug.
+- Jordi: look in alle fases digitaal, fase 1 meer MissingNo-achtig.
+- Jordi: opbouw per fase (vaag gezicht vanaf fase 1, fase 2 gevormd en evil, fase 3 combinatie van fase 2-en zoals Magneton).
+- Jordi: GBA-corruptie als beeldtaal; prompt r3 fase 2.
+- Ronde 3: te evil, corruptievlakken te klein, niet glitchy genoeg; prompt r4.
+- Ronde 4: te willekeurig; les in `GEMINI.md`.
+- Jordi definieert de vorm van fase 2; prompt r5 stap 1 (intacte vorm).
+- Ronde 5 afgekeurd; gedetailleerde prompt r6; referenties (fan-art van anderen) in `sprites/glitch_lijn/referenties/`.
+- Ronde 6 afgekeurd; Jordi kiest grove pixelblokken + grafisch gezicht; prompt r7.
+- Ronde 7: "totaal niet digitaal genoeg"; prompt r8 (GBA-tegels).
+- Jordi: corruptie doen wij zelf, Gigabite-richting; referentie toegevoegd; prompt r9 (intacte vorm).
+- Ronde 9 afgekeurd ("broodrooster"); corruptietest op r9 + script; prompt r10.
+- Ronde 10 afgekeurd; Gemini-lus gestopt (les in `GEMINI.md`).
+- Referentie zwart-rood figuurtje (Jordi: te comic-achtige menselijke ogen); fase 1 eerst, prompt r1.
+- Fase 1 ronde 1: te blokkerig, mond te klein, ogen te vierkant; prompt r2.
+- Fase 1 ronde 2: "crumbled afvalpoppetje"; prompt r3 (plat grafisch, geen materiaal).
+- Jordi: oorsprong computerscherm, keuze A (gemaakt van schermbeeld); prompt r4; les over de AVOID-regel.
+- Fase 1 r4 (Gemini) afgekeurd; MissingNo-referentie; eerste eigen test fase 1 (3 varianten van rommeltegels met vaag gezicht).
+- Fase 1 prompt r5 from scratch.
+- Fase 1 ronde 5: te veel kleur, gezicht te duidelijk, van vormen; prompt r6.
+- Fase 1 ronde 6 afgekeurd; Jordi: Gemini kan dit niet (les in `GEMINI.md`).
+
+### [v0.0.830] - Glitch-lijn fase 1: MissingNo-studie en Gen 3-glitchtests
+- Studie hoe MissingNo aan zijn sprite komt en wat de Gen 3-tegenhanger is: `docs/concept/sprites/glitch_lijn/fase1_glitch/STUDIE.md`.
+- Drie testscripts in `docs/concept/sprites/glitch_lijn/gereedschap/` (willekeurige ROM-data, pointer naast een sprite, echte sprite met verkeerde afmeting); de derde werkt (`fase1_glitch/gen3_afmeting/vel.png`).
+- Test 4 (getrouw): trainerdata uit de ROM als sprite (`fase1_glitch/gen3_trainerdata/vel.png`).
+- Test 5: kaarttegels (tilesets) als sprite (`fase1_glitch/gen3_tileset/vel.png`).
+- Test 6: Gengar +13 dichter, geconcentreerd middenstuk met vonkjes eromheen (`fase1_glitch/concentratie/vel.png`).
+- Test 7: Gastly-achtige wolk van gemengde ROM-rommel met vaag gezicht (`fase1_glitch/wolk/vel.png`).
+- Test 8 (collage van assets): Jordi "betere kant op, maar meer dichtheid"; test 8b dichter (`fase1_glitch/rommel_dicht/vel.png`).
+- Test 9: herkenbare kaartstukken (eigen renderer `kaartbrok.py`), menu-graphics en data, half in elkaar geschoven (`fase1_glitch/assets/vel.png`).
+- Test 10: banen uit grover gepixelde kaartstukken en data, net niet aansluitend, neutraal gezicht (`fase1_glitch/banen/vel.png`).
+- Variant 3 uitgewerkt: onregelmatiger vorm; gezicht uit het materiaal zelf (`fase1_glitch/banen_3b/vel.png`); les in `GRAPHICS.md`.
+- Lijn gepauzeerd (Jordi: "stop maar we komen echt nergens"); stand in `IDEEEN.md` en CLAUDE.md.
+- Nieuwe poging: Gemini-silhouet gevuld met eigen MissingNo-rommeldata, ogen uit de rommel (`fase1_glitch/eigen_missingno/vel.png`).
+- Vorm zelf kapot gemaakt (verschoven banen, onderbroken omlijning, lekkende rommel); beste tot nu toe `fase1_glitch/eigen_missingno/kapot/beste_tot_nu.png`.
+- Variaties met vaag de fase 2-vorm erin, kleiner (`fase1_glitch/wezen/vel.png`).
+- Beste tot nu toe met een hap linksonder (MissingNo-achtig): `fase1_glitch/eigen_missingno/kapot/beste_hap_linksonder.png`.
+- Kleinere maten (100/80/70/60 %), met en zonder hap (`fase1_glitch/klein/vel.png`).
+- 80 % zonder hap met de ogen van de grote versie 1-op-1 erin geplakt (`fase1_glitch/klein_ogen/klein_80_ogen_geplakt.png`).
+
+### [v0.0.831] - Glitch-lijn fase 1: frontsprite af
+- Eigen MissingNo: Gemini-silhouet op 80 % gevuld met ROM-data als 2-bitspatroon, vorm kapotgemaakt (verschoven banen, rafelige zwarte randen met hier en daar een kleurpixel), ogen 1-op-1 uit de grote versie, losse zwarte pixels; 13 kleuren + doorzichtig.
+- Af: `docs/concept/sprites/glitch_lijn/fase1_glitch/af/glitch_fase1.png`, op het overzichtsvel (New). Naam open. Werkwijze en alle tests: `glitch_lijn/fase1_glitch/STUDIE.md`.
+
+### [v0.0.x] - Glitch-lijn fase 2: Gemini-prompt r11 (25 nov)
+- Jordi's nieuwe richting voor fase 2 (fase 1 meer gedefinieerd, hoofd met 2 armen, losse blokken, hooguit een paar glitchblokjes, gekleurde digitale ogen/mond, geen mensenoog) in `docs/concept/IDEEEN.md`.
+- Prompt r11 met fase 1 als bijlage: `docs/concept/sprites/glitch_lijn/fase2_bug/gemini/PROMPTS.md` en `r11/bijlage_fase1.png`. Zelf getekende test afgekeurd en weggegooid; les in `docs/lessen/GEMINI.md`.
+
+### [v0.0.x] - Glitch-lijn fase 2 af, fase 3-prompt (25 nov)
+- Fase 2 frontsprite af: `docs/concept/sprites/glitch_lijn/fase2_bug/af/glitch_fase2.png` (Electric/Bug), op het overzichtsvel. Gemini r12 terug naar het natieve raster, armen omgekleurd naar het hoofd, verschoven pixelrijen op 5 plekken buiten ogen en mond, naar 15 kleuren (`gereedschap/fase2_natief.py`, `fase2_armen.py`, `fase2_trainer.py`, `fase2_plekken.py`, `fase2_sprite.py`).
+- Fase 3: Gemini-prompt r1 met fase 2 als bijlage (`glitch_lijn/fase3_virus/gemini/PROMPTS.md`).
+
+### [v0.0.x] - Glitch-lijn fase 3 af (25 nov)
+- Fase 3 frontsprite af: `docs/concept/sprites/glitch_lijn/fase3_virus/af/glitch_fase3.png` (Electric/Bug), op het overzichtsvel. Gemini r1 (vijf fase 2-koppen), hoofden uit r2, magneten en tussenruimte ingekleurd met fase 2-data en foutkleurbalkjes (`gereedschap/fase3_glitch.py`), 3 randkolommen links en 1 rechts weg, 15 kleuren. Glitch-lijn compleet; namen open.
+- Fase 3 gezichten in de kleuren van fase 2, met de ogen (pupillen) van fase 2 op de drie naar voren kijkende hoofden (`gereedschap/fase3_kleuren.py`, `fase3_pupillen.py`). Fase 1 zweeft 4 px hoger, fase 2 8 px hoger in het vlak.
+
+### [v0.0.832] - Regionale Poliwrath: frontsprite af (25 nov)
+- `docs/concept/sprites/poliwrath_regional/af/poliwrath_regional.png` (Ice/Poison, eindvorm van de regionale Poliwag-lijn). Model = Gemini v2 gespiegeld (r1 te veel de gewone Poliwrath; bijgestuurd slanker/hoekiger), natief raster 75→62 geschrapt; hele Poliwrath-oog met lid in modelkleuren op ware grootte (E2), mond = 1-px boog met hoeken omlaag (M1), modelspiraal (S1); palet = regionale Poliwhirl; DC-eindkeuring. Op het overzichtsvel (Regional forms). Alles in `poliwrath_regional/SPEC.md`.

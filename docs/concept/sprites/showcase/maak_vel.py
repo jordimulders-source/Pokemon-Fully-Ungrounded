@@ -60,6 +60,9 @@ SECTIES=[
 ("capykart/af/capykart.png",'"Capykart"',"normal"),
 ("tempel/af/tempel.png",'Levende tempel',"ghost/rock"),
 ("impala_lijn/dikdik/af/dikdik.png",'Dikdik (impala-lijn fase 1)',"normal"),
+("glitch_lijn/fase1_glitch/af/glitch_fase1.png",'Glitch (glitch-lijn fase 1)',"electric"),
+("glitch_lijn/fase2_bug/af/glitch_fase2.png",'Bug (glitch-lijn fase 2)',"electric/bug"),
+("glitch_lijn/fase3_virus/af/glitch_fase3.png",'Virus (glitch-lijn fase 3)',"electric/bug"),
 ]),
 ("Evolutions of existing Pokémon",[
 ('hitmontop_evo/af/hitmongroove.png', '"Hitmongroove" (Hitmontop)', 'fight/ground'),
@@ -106,6 +109,7 @@ SECTIES=[
 ("jynx_regional/af/jynx_regional.png",'Jynx (regional)',"fairy/dark"),
 ("poliwag_regional/af/poliwag_regional.png",'Poliwag (regional)',"ice/poison"),
 ("poliwhirl_regional/af/poliwhirl_regional.png",'Poliwhirl (regional)',"ice/poison"),
+("poliwrath_regional/af/poliwrath_regional.png",'Poliwrath (regional)',"ice/poison"),
 ("dj_rotom/af/dj_rotom.png",'"DJ Rotom"',"electric/steel"),
 ]),
 ]

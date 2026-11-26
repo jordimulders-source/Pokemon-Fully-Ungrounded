@@ -15,3 +15,4 @@ Lijn (Jordi, 26 nov): fase 1 zandloper met levend zand en alleen ogen → fase 2
 - Type: **Ground/Psychic** (bevestigd).
 - **Jordi over sprite r2 (26 nov):** "ja zijn nog best wat reparaties nodig"; "linkerarm, breinlijnen, wenkbrauw is 1 grote horizontale lijn, borst en armen eronder is slordig".
 - Jordi: "ogen wat te groot voor het hoofd en daardoor derpy look".
+- **Jordi over de oogvarianten r3:** "jezus wat is die rechtse in hemelsnaam. Alle 3 de ogen zijn niet goed, links heeft als enige de goede grootte in verhouding, maar geen pupillen. Moet het hoofd niet iets groter?"

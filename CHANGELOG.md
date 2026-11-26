@@ -3464,3 +3464,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Hoatzin-lijn: Jordi's eisen genoteerd in IDEEEN.md (2 fases, kuiken → snavelmasker, Poison/Dark, zuur op de vleugels, rood oog, blauw in het masker, niet stocky, simpel palet).
 - Hoatzin-lijn: antwoorden van Jordi + postuurreferentie (andermans Hoatzirit) toegevoegd.
 - Hoatzin-lijn: `sprites/hoatzin/SPEC.md` met alle besluiten en Gemini-prompt fase 2 v1.
+- Hoatzin fase 2: Gemini r1 opgeslagen met Jordi's feedback.

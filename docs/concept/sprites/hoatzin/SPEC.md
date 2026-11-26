@@ -30,3 +30,6 @@ MOOD: ugly in a Pokémon way, something you don't trust. Simple, readable design
 
 AVOID: clothing, hat, cloak or any accessory; brown or chestnut colors; a fat or round belly; a stocky body; many tones or gradients; dripping liquid; glow; not a crow or raven.
 ```
+
+## Rondes fase 2
+- **r1** (`gemini/fase2_r1.png`, prompt v1). Jordi: "postuur is best ok, maar ik lees hier geen poison uit, het hoofd is niet echt een plague mask en de kuif moeten we misschien een andere kleur geven. Het zijn vlekjes op de vleugel maar het ziet er niet uit alsof dat door zuur/poison komt"

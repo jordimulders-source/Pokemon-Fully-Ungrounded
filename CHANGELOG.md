@@ -3453,3 +3453,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - `docs/concept/IDEEEN.md`: Ice/Fire-lijn wordt een sneeuwmonster (Flurry-geïnspireerd sneeuwmannetje → met emmer en gloeiende steen → sauna-yeti), Ice → Ice/Fire → Ice/Fire; early game en in de gym.
 - Sneeuwmonster-lijn: yeti = variant a; de knopen van fase 1 worden per fase steeds grotere gloeiende stenen.
 - Sneeuwmonster fase 1: Gemini-prompt r1 in `docs/concept/sprites/sneeuwmonster/gemini/PROMPTS.md`.
+
+### [v0.0.x] - Sneeuwmonster fase 1 frontsprite af (26 nov)
+- Nieuwe lijn (Ice → Ice/Fire → Ice/Fire, early game en in de gym): fase 1 = wandelend sneeuwmannetje, geïnspireerd op de Flurry, met koude donkere steentjes als knopen; naar Gemini r1c, zonder mond (Jordi).
+- Frontsprite `docs/concept/sprites/sneeuwmonster/af/sneeuwmonster.png` (+ `_8x`): kale reductie van het model, ogen rond 4×4 met glans onder (variant c), knopen verkleind uit de natieve modelknopen (r9 v1), hoofdrand en kuif afgerond, schaduw linksonder uit het model, eindkeuring Dragonfly Cave (donkerder lijntint, enkele rand, taps), buiklijn bij de linkerarm lichter. Op het overzichtsvel. Naam open.

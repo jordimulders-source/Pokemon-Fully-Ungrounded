@@ -28,3 +28,4 @@ Alle citaten en lijnbesluiten: `docs/concept/IDEEEN.md` → "Impala-lijn"; samen
 - Jordi (26 nov), op r8: "pak de binnenkant ook aan, links bij het witte stuk vacht was al goed, dat hoefde niet aangepast te worden" → r9: borstbolling links terug naar r7, tintgrenzen binnenin gebogen naar het model.
 - Jordi (26 nov), na r10 (= r9): "nee je mag nu gaan beginnen met de eindkeuring, dus netter maken". Geen overdrijven/anti-aliasing. Oog nog open (A, B1–B3).
 - **Oog (Jordi, 26 nov): "b3"** = oog A (model) met wit boven de pupil → lichte kopvacht en witte onderrand weg (`oog/blik.py` B3). Wordt na de eindkeuring toegepast.
+- Jordi (26 nov), op r12: "de poten zijn effen vlakken, controleer die opnieuw" → r13.

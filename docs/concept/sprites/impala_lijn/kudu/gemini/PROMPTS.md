@@ -109,7 +109,7 @@ HEAD: big, about one third of the body length. Long and narrow, shaped like a lo
 
 EARS: huge, broad and round like satellite dishes or big cups, each almost as big as the face, sticking out sideways from the top of the head behind the horns, open side facing forward, pink-brown inside.
 
-NECK AND MANE: thick, strong neck. A full mane of long, darker gold hair starts behind the ears. Describe what we see: the mane hangs DOWN over the side of the neck that faces us and drapes over the near shoulder (the shoulder on the right side of the image), like a shawl lying on the body, and ends in a few tufts on that shoulder. It does not stand up as a crest on the top line of the neck. Drawn in Pokemon style: a few big, smooth, clean locks with clear shapes and a clean outline, like the hair of a Pokemon, not many thin messy strands. The chest stays smooth.
+NECK AND MANE: thick, strong neck. A full mane of long, darker gold hair starts behind the ears. As seen from our viewpoint: the mane hangs DOWN over the side of the neck that faces us and drapes over the near shoulder (the shoulder on the right side of the image), like a shawl lying on the body, and ends in a few tufts on that shoulder. It does not stand up as a crest on the top line of the neck. Drawn in Pokemon style: a few big, smooth, clean locks with clear shapes and a clean outline, like the hair of a Pokemon, not many thin messy strands. The chest stays smooth.
 
 THROAT FRINGE: separate from the mane, with smooth fur between them: a narrow fringe of long darker gold hair that hangs straight down from under the chin along the underside of the neck to the top of the chest, like a beard along the throat. NOT a big round ball of hair on the chest.
 

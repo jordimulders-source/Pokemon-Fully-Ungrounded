@@ -99,3 +99,7 @@ MOOD: ugly in a Pokémon way, something you don't trust. Simple, readable design
 AVOID: clothing, hat, cloak or any accessory; a seam or line where a beak meets a head; a sharp or hooked beak; brown or chestnut; a fat or round belly; a stocky body; polka dots; dripping liquid; glow; cut-off legs; a round badge or sticker; not a crow or raven.
 ```
 - **r6** (`gemini/fase2_r6.png`, prompt v4). Jordi: "de vleugels zijn nu beter, het patroon prima alleen staat niet goed in perspectief, hoofd is nu een stuk minder". Voorstel Claude: model combineren (r6 lijf/vleugels + r4 hoofd, teken in perspectief zetten) in plaats van verder prompten.
+
+## Model (combinatie, 26 nov; Jordi "akkoord")
+- r6 (lijf, vleugels, staart, poten, teken) + r4-hoofd (incl. kuif met zuurpunten), naad bij de nek. Hoofdmaten: `model/comb_s1.0|1.1|1.2.png` (`comb_vel.png`), canvas 120 px hoger zodat de kuif past.
+- Teken in perspectief (op s1.1): oud teken weggepoetst en opnieuw gezet, A smal 75 %, B 75 % + 15° links, C 75 % + 15° rechts, D 60 % (`model/teken_*.png`, `teken_vel.png`; `gereedschap/teken.py`). Jordi: "het radioactiviteits teken ga je in een ander perspectief dus niet helemaal zien, dat is niet erg, het is toch herkenbaar".

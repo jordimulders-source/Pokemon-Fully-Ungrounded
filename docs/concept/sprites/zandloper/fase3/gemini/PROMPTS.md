@@ -95,3 +95,5 @@ Keep it simple and readable at 64x64: big clear shapes, like a real Gen 3 sprite
 
 No effects, no glow, no sparkles, no shadow; draw no ground under the hourglass. AVOID: a realistic hourglass with a face, a human in a costume, a plush toy, Neopets style.
 ```
+
+**Jordi over r5:** "best prima design alleen ben ik bang dat het veel te veel detail is voor een sprite" (`r5.webp`). Snelle test: kale verkleining naar 64 px (`r5_test64.png`, 6× `r5_test64_x6.png`): hersenwindingen, ogen, spierlijnen en de apparatuur op de rug worden ruis; zandloper, boeien en staart lezen goed.

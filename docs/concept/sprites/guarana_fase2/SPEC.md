@@ -61,3 +61,4 @@ Fase 1 (af): `../guarana/` (SPEC daar = alle eerdere besluiten).
 - "1 is lastig te zeggen omdat alles zo hoekig is" (oogrand lijnrood/zwart: nog open). "Half dicht is prima, dan kan je makkelijker wegkomen met een kleiner pupil, overlap geen probleem".
 - Sprite r4: Jordi "de ogen zien er nu niet goed uit omdat ze allemaal precies dezelfde richting heebben, kijk naar hoe de eerste fase het deed" → r5 pupillen gevarieerd. Daarna: "links is wat netter, moet nog steeds wel wat meer afgewerkt worden, kijk naar hoe fase 1 kleuren en schaduwen etc doet" → oogrand **A (lijnrood)**; afwerking naar fase 1.
 - Jordi over de pupillen: "ja zorg dat er iets meer ogen naar linksonder kijken maar idd verschillende richtingen".
+- Sprite r5: Jordi "grotendeels prima, maar hier en op andere plekken heb je horizontale lijnen getrokken over de hele plant heen" (`sprite_r5/jordi_horizontale_lijnen.png`, middelste tros, half dichte ogen).

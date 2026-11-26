@@ -62,3 +62,4 @@ Fase 1 (af): `../guarana/` (SPEC daar = alle eerdere besluiten).
 - Sprite r4: Jordi "de ogen zien er nu niet goed uit omdat ze allemaal precies dezelfde richting heebben, kijk naar hoe de eerste fase het deed" → r5 pupillen gevarieerd. Daarna: "links is wat netter, moet nog steeds wel wat meer afgewerkt worden, kijk naar hoe fase 1 kleuren en schaduwen etc doet" → oogrand **A (lijnrood)**; afwerking naar fase 1.
 - Jordi over de pupillen: "ja zorg dat er iets meer ogen naar linksonder kijken maar idd verschillende richtingen".
 - Sprite r5: Jordi "grotendeels prima, maar hier en op andere plekken heb je horizontale lijnen getrokken over de hele plant heen" (`sprite_r5/jordi_horizontale_lijnen.png`, middelste tros, half dichte ogen).
+- Sprite r6: Jordi "er is geen enkel oog dat echte driekwart kijkt", "laat in elk geval de grote ogen dat doen" → r7: grote ogen in driekwart, varianten V1 (alleen pupil tegen linker(onder)rand) en V2 (ook oogvorm gedraaid).

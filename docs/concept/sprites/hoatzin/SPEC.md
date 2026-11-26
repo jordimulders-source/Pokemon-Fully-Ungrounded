@@ -125,3 +125,4 @@ Opdracht: `sprite/OPDRACHT.md`.
 - **r10** (`sprite/r10/`, verse maker): A (r9-donkerte) en B (Murkrow-bereik) met volume. Claude: vleugels kussenvlakken, snavel schuine banden; reparaties naar r11.
 - **r11** (`sprite/r11/`): kussens weg (lichte randen per veergroep), snavel één rugstrook, kop lichte sikkel. Naar keurder.
 - **r12** (`sprite/r12/`): B-lijn met keurderpunten (tintverdeling 31/39/26/4 %, blauwgrijs, achterhoofd rond, kuifnaad gebroken, één borstbolling, schouderhooglicht). Naar Jordi.
+- **r13** (`sprite/r13/`): DC-eindkeuring op r12, 14 px (4 zwarte binnenlijnen → eigen tint, veerlijnen en voorrand in de opgeheven vleugel uit het model, borsthooglicht als druppel), alpha-diff 0. Naar Jordi.

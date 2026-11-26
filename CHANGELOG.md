@@ -3476,3 +3476,8 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Hoatzin fase 2: sprite r2–r5 (keurder BIJNA → reparaties, oog, DC-eindkeuring); r5 naar Jordi.
 - Hoatzin fase 2: sprite r6–r9 (snavel, kuif K1, teken halverwege, linkervoet, eindkeuring); Jordi over r7: "uitstekend".
 - Hoatzin fase 2: kleurrondes r10–r12 (volume, minder donker).
+
+### [v0.0.836] - Hoatzin fase 2: frontsprite af (26 nov)
+- Originele Poison-lijn = hoatzin-lijn (Poison/Dark, kuiken → pestmasker-hoatzin). Fase 2 frontsprite af: `docs/concept/sprites/hoatzin/af/hoatzin_fase2.png` (= r13; model Gemini r6 + hoofd r4, kuif K1, teken halverwege, kleurronde naar Murkrow, twee DC-eindkeuringen). Op het overzichtsvel (New). Naam open.
+- Kuiken (fase 1) nog te doen: `hoatzin/OVERDRACHT_KUIKEN.md`.
+- Les in GEMINI.md: veerlijnen in een donker vlak vinden via de fractie zeer donkere modelpixels.

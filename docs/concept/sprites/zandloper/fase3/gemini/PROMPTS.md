@@ -26,7 +26,7 @@ No effects, no glow, no sparkles, no ground or shadow under it. AVOID: a realist
 
 **Jordi over r1:** "idee 1 bevalt me beter dan 2. Maar hij is iets te menselijk en zoveel detail vertaalt niet goed naar een sprite denk ik" (`r1_A.webp`, `r1_B.png`). Volgorde 1 (zandloper → zand eruit → systeem) lijkt daarmee de richting.
 
-## r2 A – minder menselijk, minder detail
+## r2 A – minder menselijk, minder detail (NIET gebruikt; Jordi 26 nov: "wacht even met een nieuwe prompt, eerst sparren")
 Zelfde prompt als r1 A; alleen het gezicht/de handen en de hoeveelheid glas veranderd. "Geen vingers" en "2–3 bollen" zijn invulling van Claude.
 ```
 Design an original Pokémon as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64 pixels, max 16 colors, white background, facing 3/4 to the left.

@@ -3533,3 +3533,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.x] - Overzichtsvel: Hoenn-Grimer/Muk, gaucho-typen (26 nov)
 - Regionale Grimer en Muk (uit Ungrounded, Poison/Ground; `graphics/pokemon/{grimer,muk}/hoenn/`, frame 1 met normal.pal als `docs/concept/sprites/{grimer,muk}_hoenn/af/`) op het overzichtsvel bij Regional forms (Jordi: "die zijn technisch gezien ook origineel").
 - Gaucho-Lombre en -Ludicolo zijn Ground/Fighting (Jordi: "lombre en ludicolo zijn ground/fight"); SPEC, POKEMON.md, CLAUDE.md en het vel bijgewerkt.
+
+### [v0.0.x] - Werknaam Gumfish (26 nov)
+- Blobfish fase 1 heet Gumfish (Jordi: "blobfish fase 1 mag gumfish heten"); POKEMON.md, CLAUDE.md en het overzichtsvel.

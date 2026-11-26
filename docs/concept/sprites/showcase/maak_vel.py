@@ -33,7 +33,7 @@ SECTIES=[
 ("ijskomeet/af/ijskomeet.png",'"Cryomet"',"ice/cosmic"),
 ("steenmozaiek/af/welp.png",'Steenjaguar-welp',"rock"),
 ("steenmozaiek/af/steenjaguar.png",'"Mosaguar"',"rock"),
-("blobfish/af/blobfish.png",'Blobfish (winegum)',"water"),
+("blobfish/af/blobfish.png",'"Gumfish"',"water"),
 ("blobfish_fase2/af/blobfish_fase2.png",'Blobfish (pudding)',"water"),
 ("spooktrein_fase1/af/spooktrein_fase1.png",'"Scrapstack"',"steel"),
 ("spooktrein_fase2/af/spooktrein_fase2.png",'"Wagogogon"',"steel/ghost"),

@@ -165,3 +165,8 @@ VIEW: facing 3/4 to the left (the far horn, far ear and far legs are on the left
 
 DO NOT: horns standing straight up, a mane hanging like a beard from the cheeks or in front of the neck, impala, gazelle, deer, antlers, a small head on a long neck, a short cute face, small ears, long stilt legs, a slender graceful body, a small figure in an empty frame, a lion mane or a ball of hair on the chest, flat wavy zigzag horns, ram horns, Deerling, Sawsbuck, Stantler, Wyrdeer, armor plates, a metal body, a gold metal body, robot parts, a crown or jewelry, holding or carrying weapons, glowing metal, sparkles, horns in the same color as the fur.
 ```
+
+## Ronde 5 (26 nov)
+- `r5/kudu_r5.png`: illustratie i.p.v. sprite; hoorns als lange vlakke zwepen naar achteren; manen weer een pluizige slab voor de hals.
+- Jordi: "geen sprite, hoorns niet in verhouding en de manen zien er weer gek uit".
+- Claude: de manen zijn in alle 5 rondes mislukt; nieuwe startprompts drijven af. Volgens GEMINI.md (na gelijke uitkomsten stoppen, beste model kiezen; bijsturen werkt 1–2 keer) voorgesteld: terug naar het r3/r3b-gesprek.

@@ -3256,18 +3256,219 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.789] - Merge naar main: Capykart
 - Branch met de Capybarrel-lijn fase 2 (Capykart) naar main gemerged; overzichtsvel opnieuw gemaakt.
 
-### [v0.0.790] - Oddish-plantvoorstellen geschrapt
+### [v0.0.790] - Idee: regionale Jynx als sirene
+- `docs/concept/IDEEEN.md`: Jordi's idee voor een regionale Jynx naar de sirenes uit de Odyssee, met open vragen (vorm, type, Smoochum, band met de regio/Iara).
+
+### [v0.0.791] - Regionale Jynx: keuzes; regel over de regio-link
+- `IDEEEN.md`: regionale Jynx wordt een vogelvrouw zoals in de Odyssee, type Fairy (tweede type open); Smoochum blijft gewoon.
+- `CLAUDE.md`: vaste regel dat niet elke Pokémon een link met Zuid-Amerika hoeft te hebben (Jordi).
+
+### [v0.0.792] - Regionale Jynx: Fairy/Dark
+- `IDEEEN.md`: type van de regionale Jynx (sirene) is Fairy/Dark (Jordi).
+
+### [v0.0.793] - Regionale Jynx: kleurrichting
+- `IDEEEN.md`: Jordi's kleurrichting voor de sirene-Jynx (mix van Jynx en oud-Griekse kleuren; Jynx herkenbaar maar echt anders).
+
+### [v0.0.794] - Regionale Jynx: kleur voorstel 1
+- `IDEEEN.md`: Jordi kiest kleurvoorstel 1 (vaas); haar en lippen een andere kleur dan Jynx, gezichtsvorm blijft, haarstijl mag passender bij een sirene.
+
+### [v0.0.795] - Regionale Jynx: Gemini-prompt v1
+- `docs/concept/sprites/jynx_regional/PROMPT.md`: eerste Gemini-prompt voor de sirene-Jynx (bruin haar; lipkleur, haarstijl en pose als voorstel van Claude gemarkeerd).
+
+### [v0.0.796] - Regionale Jynx: r1 afgekeurd, prompt v2
+- `jynx_regional/gemini/r1.png` afgekeurd (vogel met mensenhoofd, geen Jynx). Prompt v2 in `PROMPT.md`: Jynx-bouw als basis met de Gen 3-sprite als bijlage, sirene-elementen erin. Les in `docs/lessen/GEMINI.md`.
+
+### [v0.0.797] - Regionale Jynx: prompt v3
+- `jynx_regional/PROMPT.md`: r2 bewaard; prompt v3 = v2 + zingend/lokkende blik, rustig verenkleed zonder borstmotief, weinig detail (Jordi akkoord; onderlijf-als-vogel afgewezen).
+
+### [v0.0.798] - Regionale Jynx: prompt v4
+- r3 bewaard; prompt v4 zonder vaasverwijzingen, kleuren als hexcodes (Jordi). Les in `docs/lessen/GEMINI.md`.
+
+### [v0.0.799] - Regionale Jynx: r4 (design ok), prompt v5
+- r4: design ok volgens Jordi; prompt v5 draait naar driekwart en maakt de blik minder slaperig (r4 als bijlage).
+
+### [v0.0.800] - Regionale Jynx: model gekozen
+- `jynx_regional/gemini/r5.png` is het model (driekwart, wakkerder blik); `SPEC.md` met Jordi's besluiten. Spritewerk gestart.
+
+### [v0.0.801] - Regionale Jynx: frontsprite kandidaat (r3)
+- `jynx_regional/sprite_r1–r3`: verkleining van Gemini-model r5 (Dundragoon-methode, silhouet-diff 0), keuring BIJNA → reparaties (haarvolume, lijnen, onderlip, rok) → eindkeuring Dragonfly Cave PASS. Ter keuze: variant kinschaduw; klauwen nu haar-donker (model grijsbruin).
+
+### [v0.0.802] - Regionale Jynx: r4/r5
+- r4: rokvouw rechts naar het modelpad; Jordi koos variant B (dwarslijn weg): "rechts beter". r5 = r4 B, verse eindkeuring (schaduw/tinten/lijnen) PASS zonder wijzigingen.
+
+### [v0.0.803] - Regionale Jynx: frontsprite af
+- `docs/concept/sprites/jynx_regional/af/jynx_regional.png` (= r5) af volgens Jordi ("zijn non issues"); op het overzichtsvel onder Regional forms (Fairy/Dark). Stand van zaken: 92 frontsprites af. Les in `GEMINI.md`.
+
+### [v0.0.804] - Regionale Mr. Mime: Fighting/Psychic
+- Bokser-Mr. Mime is Fighting/Psychic (Jordi): `mrmime_regional/SPEC.md`, CLAUDE.md en overzichtsvel bijgewerkt.
+
+### [v0.0.805] - Overzichtsvel: Capykart na Capybarrel
+- `showcase/maak_vel.py`: Capykart direct na Capybarrel (Jordi); vel opnieuw gemaakt.
+
+### [v0.0.806] - Typeverdeling hele dex
+- `DEX_IN_ROM.md`: telling van de typeverdeling over de hele dex (behouden soorten + nieuwe designs + Cosmic-besluiten), met aannames.
+
+### [v0.0.807] - Typeverdeling: regionale vormen erbij
+- `DEX_IN_ROM.md`: telling opnieuw; regionale vormen vervangen niets (Jordi: "als ze al erin zaten, gaan ze niet eruit"). 542 soorten.
+
+### [v0.0.808] - Cosmic: Dottler en Orbeetle
+- `CONCEPT.md`: Dottler en Orbeetle worden Bug/Cosmic in plaats van Bug/Psychic (Jordi). Blipbug-lijn staat nog als geschrapt in DEX_IN_ROM.
+
+### [v0.0.809] - Blipbug-lijn terug in de dex
+- `species_enabled.h`: `P_FAMILY_BLIPBUG` weer aan (Jordi: "komt terug in de dex"); `DEX_IN_ROM.md` bijgewerkt. Cosmic-type bestaat nog niet in de code, dus Dottler/Orbeetle zijn in de ROM voorlopig Bug/Psychic. `make` slaagt.
+### [v0.0.810] - Idee: impala-lijn
+- `docs/concept/IDEEEN.md`: nieuwe sectie "Impala-lijn" met Jordi's idee (impala → kudu of iets soortgelijks); alles open.
+- Impala-lijn: Jordi's voorkeur dikdik → impala → kudu toegevoegd aan `IDEEEN.md`.
+- Impala-lijn: alle drie Normal, dual type kan; dikdik puur Normal (Jordi).
+- Impala-lijn: lichaamskleur brons → zilver → goud; hoorns dof ijzer → gepolijst staal → spiegelglans met slijprand; dikdik Normal, impala en kudu Normal/Steel met hoorns echt van metaal (dikdik niet); hoorns als gevechtswapens, hoornvorm blijft kloppen (Jordi). Besloten punten in `POKEMON.md` → Impala-lijn.
+
+### [v0.0.811] - Dikdik (impala-lijn fase 1): frontsprite af
+- Ontwerp via Gemini r1–r3b (`docs/concept/sprites/impala_lijn/dikdik/gemini/PROMPTS.md`): kleine dikdik met korte houten speren met dof ijzeren punt, grote kop, lange hangende snuit, donkere vlek voor het oog, nieuwsgierig; model r3b.
+- Sprite r1–r7: model verkleind naar 52 px (maat als Vulpix/Growlithe), 2 keuringen + eindkeuring Dragonfly Cave; oog als ronde vorm uit het model (dunne ring, grote iris), ver oog, kuif, kin terug; donker brons (Jordi koos dit boven een lichtere variant), oog variant B (glimlicht linksonder).
+- Af: `docs/concept/sprites/impala_lijn/dikdik/af/dikdik.png`, op het overzichtsvel (New). Naam open.
+- Concept impala-lijn (dikdik → impala → kudu; Normal → Normal/Steel; brons → zilver → goud; hoorns als wapens) in `IDEEEN.md` en `POKEMON.md`; vakjes en staaltest in `docs/concept/sprites/impala_lijn/`.
+
+### [v0.0.812] - Gaucho-Lotad-lijn: besluiten en eerste prompt
+- Nieuwe regional Lotad-lijn (Lotad → Lombre → Ludicolo, geen vierde fase): een plant die gaucho is, geen kleding, geen accessoires. Grass en Water eruit: Lotad Ground, vanaf Lombre Fighting.
+- `docs/concept/sprites/lotad_regional/SPEC.md` (Jordi letterlijk) en Gemini-startprompt v1 in `gemini/PROMPT.md`.
+
+### [v0.0.813] - Gaucho-Lotad: ronde 1
+- Gemini r1 bewaard (`lotad_regional/r1/`); Jordi akkoord met het idee, hoed wordt per evolutie steeds meer een gauchohoed. Lijf te groot vergeleken met Lotad: varianten 100/85/75/65 % gemaakt.
+
+### [v0.0.814] - Gaucho-Lotad: model gekozen
+- Na 8 Gemini-rondes (v1–v7; bijlagen en "dicht bij Lotad" gaven palette swaps, poten bijsturen/plakken lukte niet) koos Jordi `lotad_regional/r8/gemini_r8_1.png` als model, op 4 poten in plaats van 6.
+
+### [v0.0.815] - Gaucho-Lotad: frontsprite af
+- Regionale Lotad (Ground, fase 1 van de gaucho-lijn): frontsprite af in `docs/concept/sprites/lotad_regional/af/lotad_gaucho.png` (43×41, 14 kleuren). Model Gemini r8-1 (sombrero-blad, rafelkraag, 4 poten) overgenomen, kleuren van r1, Lotad-ogen met lijftint, blik oog G (driekwart), DC-eindkeuring (schaduw kraag, belijning, kleurtinten). Op het overzichtsvel (Regional forms).
+- Lessen in `GEMINI.md`: geen bijlagen; "dicht bij de basisvorm" geeft een palette swap; omkleuren pas in de spritefase.
+
+### [v0.0.816] - Gaucho-Lombre: startprompt
+- Regionale Lombre (Fighting, fase 2 van de gaucho-lijn): Gemini-startprompt v1 in `docs/concept/sprites/lotad_regional/lombre/gemini/PROMPT.md` (opzet van de Lotad-prompt v7; gauchohoed met platte bol en vlakke rand, kleuren van de Lotad-sprite).
+
+### [v0.0.817] - Gaucho-Lombre: frontsprite af
+- Regionale Lombre (Fighting, fase 2 van de gaucho-lijn): frontsprite af in `docs/concept/sprites/lotad_regional/lombre/af/lombre_gaucho.png` (42×57, 15 kleuren). Model Gemini r1 (gauchohoed met platte bol, vechthouding) overgenomen; mond A5 = Gen 3-Lombre-mond (1 kolom geschrapt) in de snaveltinten van de gaucho-Lotad; ogen naar de Lombre-artwork (r3 A); keuring + DC-eindkeuring (schaduw hoedband, belijning olijf, kleurramps). Op het overzichtsvel (Regional forms).
+
+### [v0.0.818] - Regionale Poliwag-lijn: eindvorm Poliwrath
+- Eindvorm van de Ice/Poison-Poliwag-lijn is een regionale Poliwrath (Ice/Poison); Politoed blijft gewoon (Jordi). Evolutiemethode later. `IDEEEN.md`, `POKEMON.md`, `TODO.md` bijgewerkt.
+
+### [v0.0.819] - Regionale Poliwag: besluiten en Gemini-prompt v1
+- Jordi: harlekijnpad, ijs met cinnaber, beetje kristal, spiraal als venster, hoofdkleur als de harlekijnpad. Vastgelegd in `docs/concept/sprites/poliwag_regional/SPEC.md`; Gemini-prompt v1 + bijlage in `poliwag_regional/gemini/`.
+
+### [v0.0.820] - Regionale Poliwag: Gemini-prompt v2
+- Na v1 (geen staart, te veel kleur/detail): zuignap van het harlekijnpad-kikkervisje als buikvenster, Poliwags staart, 2–3 kristallen, spiraal in één kleur, één ijstint. `poliwag_regional/SPEC.md`, `gemini/PROMPT.md`.
+
+### [v0.0.821] - Regionale Poliwag: Gemini v2 bewaard
+- `poliwag_regional/gemini/r2/gemini_v2.png`; Jordi: "kleuren vind ik goed".
+
+### [v0.0.822] - Regionale Poliwag: Gemini v2 gekozen
+- v2 is het model (`poliwag_regional/referenties/gemini_gekozen_v2.png`); alleen de mondkleur mag anders (Jordi).
+
+### [v0.0.823] - Regionale Poliwag: mondkleur rood, sprite r1 gestart
+- Mond rood (Jordi); maker-agent bouwt r1 uit Gemini v2 (`poliwag_regional/sprite_r1/`).
+
+### [v0.0.824] - Regionale Poliwag: frontsprite af
+- `docs/concept/sprites/poliwag_regional/af/poliwag_regional.png` = r1 (Jordi: "helemaal goed", eindkeuring overgeslagen). Op het overzichtsvel (Regional forms). CLAUDE.md, POKEMON.md, TODO.md en lessen (GEMINI.md) bijgewerkt.
+
+### [v0.0.825] - Regionale Poliwhirl: besluiten en Gemini-prompt v1
+- Jordi: hybride, herkenbaar Poliwhirl maar slanker/scherper, grotere kristallen, kleur hele lijn gelijk, twee poten, geen zuignap, handschoenen, ogen bovenop, spiraal. `docs/concept/sprites/poliwhirl_regional/`.
+
+### [v0.0.826] - Regionale Poliwhirl: Gemini v1 gekozen, sprite gestart
+- Model `poliwhirl_regional/referenties/gemini_gekozen_v1.png`; spiraal van Poliwhirl, ogen fixen (Jordi).
+
+### [v0.0.827] - Regionale Poliwhirl: frontsprite af
+- `docs/concept/sprites/poliwhirl_regional/af/poliwhirl_regional.png` (Gemini v1, Poliwhirl-ogen 6×6 op modelplek, linkeroog variant B, spiraal van de regionale Poliwag, DC-eindkeuring). Op het overzichtsvel; CLAUDE.md, TODO, POKEMON.md, lessen bijgewerkt.
+
+### [v0.0.828] - Idee: glitch → bug → virus-lijn
+- Jordi's idee (glitch → bug → virus) met voorstel van Claude (digitale bug, Grace Hoppers mot uit 1947, Bug in alle fases) in `IDEEEN.md`; typen nog open.
+- Jordi: "meer een soort conceptuele bug dan echt een typisch insect" toegevoegd.
+- Jordi over blur en evolutie + voorstel indeling per fase (C → B → A) toegevoegd.
+
+### [v0.0.829] - Glitch-lijn fase 2: Gemini-test
+- Twee testprompts (vrij wezen van codesymbolen / keverbouwplan van codesymbolen) in `docs/concept/sprites/glitch_lijn/fase2_bug/gemini/PROMPTS.md`.
+- Ronde 1 afgekeurd (insect met tekens erop); les in `GEMINI.md`.
+- Jordi: Bug komt er vanaf fase 2 bij, puur conceptueel (`IDEEEN.md`).
+- Jordi: fase 1 Electric.
+- Jordi: "een puur digitaal wezen, een glitch die sentient wordt"; prompt r2 (alleen zijn woorden) in PROMPTS.md.
+- Jordi: fase 3 blijft ook Bug.
+- Jordi: look in alle fases digitaal, fase 1 meer MissingNo-achtig.
+- Jordi: opbouw per fase (vaag gezicht vanaf fase 1, fase 2 gevormd en evil, fase 3 combinatie van fase 2-en zoals Magneton).
+- Jordi: GBA-corruptie als beeldtaal; prompt r3 fase 2.
+- Ronde 3: te evil, corruptievlakken te klein, niet glitchy genoeg; prompt r4.
+- Ronde 4: te willekeurig; les in `GEMINI.md`.
+- Jordi definieert de vorm van fase 2; prompt r5 stap 1 (intacte vorm).
+- Ronde 5 afgekeurd; gedetailleerde prompt r6; referenties (fan-art van anderen) in `sprites/glitch_lijn/referenties/`.
+- Ronde 6 afgekeurd; Jordi kiest grove pixelblokken + grafisch gezicht; prompt r7.
+- Ronde 7: "totaal niet digitaal genoeg"; prompt r8 (GBA-tegels).
+- Jordi: corruptie doen wij zelf, Gigabite-richting; referentie toegevoegd; prompt r9 (intacte vorm).
+- Ronde 9 afgekeurd ("broodrooster"); corruptietest op r9 + script; prompt r10.
+- Ronde 10 afgekeurd; Gemini-lus gestopt (les in `GEMINI.md`).
+- Referentie zwart-rood figuurtje (Jordi: te comic-achtige menselijke ogen); fase 1 eerst, prompt r1.
+- Fase 1 ronde 1: te blokkerig, mond te klein, ogen te vierkant; prompt r2.
+- Fase 1 ronde 2: "crumbled afvalpoppetje"; prompt r3 (plat grafisch, geen materiaal).
+- Jordi: oorsprong computerscherm, keuze A (gemaakt van schermbeeld); prompt r4; les over de AVOID-regel.
+- Fase 1 r4 (Gemini) afgekeurd; MissingNo-referentie; eerste eigen test fase 1 (3 varianten van rommeltegels met vaag gezicht).
+- Fase 1 prompt r5 from scratch.
+- Fase 1 ronde 5: te veel kleur, gezicht te duidelijk, van vormen; prompt r6.
+- Fase 1 ronde 6 afgekeurd; Jordi: Gemini kan dit niet (les in `GEMINI.md`).
+
+### [v0.0.830] - Glitch-lijn fase 1: MissingNo-studie en Gen 3-glitchtests
+- Studie hoe MissingNo aan zijn sprite komt en wat de Gen 3-tegenhanger is: `docs/concept/sprites/glitch_lijn/fase1_glitch/STUDIE.md`.
+- Drie testscripts in `docs/concept/sprites/glitch_lijn/gereedschap/` (willekeurige ROM-data, pointer naast een sprite, echte sprite met verkeerde afmeting); de derde werkt (`fase1_glitch/gen3_afmeting/vel.png`).
+- Test 4 (getrouw): trainerdata uit de ROM als sprite (`fase1_glitch/gen3_trainerdata/vel.png`).
+- Test 5: kaarttegels (tilesets) als sprite (`fase1_glitch/gen3_tileset/vel.png`).
+- Test 6: Gengar +13 dichter, geconcentreerd middenstuk met vonkjes eromheen (`fase1_glitch/concentratie/vel.png`).
+- Test 7: Gastly-achtige wolk van gemengde ROM-rommel met vaag gezicht (`fase1_glitch/wolk/vel.png`).
+- Test 8 (collage van assets): Jordi "betere kant op, maar meer dichtheid"; test 8b dichter (`fase1_glitch/rommel_dicht/vel.png`).
+- Test 9: herkenbare kaartstukken (eigen renderer `kaartbrok.py`), menu-graphics en data, half in elkaar geschoven (`fase1_glitch/assets/vel.png`).
+- Test 10: banen uit grover gepixelde kaartstukken en data, net niet aansluitend, neutraal gezicht (`fase1_glitch/banen/vel.png`).
+- Variant 3 uitgewerkt: onregelmatiger vorm; gezicht uit het materiaal zelf (`fase1_glitch/banen_3b/vel.png`); les in `GRAPHICS.md`.
+- Lijn gepauzeerd (Jordi: "stop maar we komen echt nergens"); stand in `IDEEEN.md` en CLAUDE.md.
+- Nieuwe poging: Gemini-silhouet gevuld met eigen MissingNo-rommeldata, ogen uit de rommel (`fase1_glitch/eigen_missingno/vel.png`).
+- Vorm zelf kapot gemaakt (verschoven banen, onderbroken omlijning, lekkende rommel); beste tot nu toe `fase1_glitch/eigen_missingno/kapot/beste_tot_nu.png`.
+- Variaties met vaag de fase 2-vorm erin, kleiner (`fase1_glitch/wezen/vel.png`).
+- Beste tot nu toe met een hap linksonder (MissingNo-achtig): `fase1_glitch/eigen_missingno/kapot/beste_hap_linksonder.png`.
+- Kleinere maten (100/80/70/60 %), met en zonder hap (`fase1_glitch/klein/vel.png`).
+- 80 % zonder hap met de ogen van de grote versie 1-op-1 erin geplakt (`fase1_glitch/klein_ogen/klein_80_ogen_geplakt.png`).
+
+### [v0.0.831] - Glitch-lijn fase 1: frontsprite af
+- Eigen MissingNo: Gemini-silhouet op 80 % gevuld met ROM-data als 2-bitspatroon, vorm kapotgemaakt (verschoven banen, rafelige zwarte randen met hier en daar een kleurpixel), ogen 1-op-1 uit de grote versie, losse zwarte pixels; 13 kleuren + doorzichtig.
+- Af: `docs/concept/sprites/glitch_lijn/fase1_glitch/af/glitch_fase1.png`, op het overzichtsvel (New). Naam open. Werkwijze en alle tests: `glitch_lijn/fase1_glitch/STUDIE.md`.
+
+### [v0.0.x] - Glitch-lijn fase 2: Gemini-prompt r11 (25 nov)
+- Jordi's nieuwe richting voor fase 2 (fase 1 meer gedefinieerd, hoofd met 2 armen, losse blokken, hooguit een paar glitchblokjes, gekleurde digitale ogen/mond, geen mensenoog) in `docs/concept/IDEEEN.md`.
+- Prompt r11 met fase 1 als bijlage: `docs/concept/sprites/glitch_lijn/fase2_bug/gemini/PROMPTS.md` en `r11/bijlage_fase1.png`. Zelf getekende test afgekeurd en weggegooid; les in `docs/lessen/GEMINI.md`.
+
+### [v0.0.x] - Glitch-lijn fase 2 af, fase 3-prompt (25 nov)
+- Fase 2 frontsprite af: `docs/concept/sprites/glitch_lijn/fase2_bug/af/glitch_fase2.png` (Electric/Bug), op het overzichtsvel. Gemini r12 terug naar het natieve raster, armen omgekleurd naar het hoofd, verschoven pixelrijen op 5 plekken buiten ogen en mond, naar 15 kleuren (`gereedschap/fase2_natief.py`, `fase2_armen.py`, `fase2_trainer.py`, `fase2_plekken.py`, `fase2_sprite.py`).
+- Fase 3: Gemini-prompt r1 met fase 2 als bijlage (`glitch_lijn/fase3_virus/gemini/PROMPTS.md`).
+
+### [v0.0.x] - Glitch-lijn fase 3 af (25 nov)
+- Fase 3 frontsprite af: `docs/concept/sprites/glitch_lijn/fase3_virus/af/glitch_fase3.png` (Electric/Bug), op het overzichtsvel. Gemini r1 (vijf fase 2-koppen), hoofden uit r2, magneten en tussenruimte ingekleurd met fase 2-data en foutkleurbalkjes (`gereedschap/fase3_glitch.py`), 3 randkolommen links en 1 rechts weg, 15 kleuren. Glitch-lijn compleet; namen open.
+- Fase 3 gezichten in de kleuren van fase 2, met de ogen (pupillen) van fase 2 op de drie naar voren kijkende hoofden (`gereedschap/fase3_kleuren.py`, `fase3_pupillen.py`). Fase 1 zweeft 4 px hoger, fase 2 8 px hoger in het vlak.
+
+### [v0.0.832] - Regionale Poliwrath: frontsprite af (25 nov)
+- `docs/concept/sprites/poliwrath_regional/af/poliwrath_regional.png` (Ice/Poison, eindvorm van de regionale Poliwag-lijn). Model = Gemini v2 gespiegeld (r1 te veel de gewone Poliwrath; bijgestuurd slanker/hoekiger), natief raster 75→62 geschrapt; hele Poliwrath-oog met lid in modelkleuren op ware grootte (E2), mond = 1-px boog met hoeken omlaag (M1), modelspiraal (S1); palet = regionale Poliwhirl; DC-eindkeuring. Op het overzichtsvel (Regional forms). Alles in `poliwrath_regional/SPEC.md`.
+
+### [v0.0.833] - Gaucho-Ludicolo: frontsprite af (26 nov)
+- `docs/concept/sprites/lotad_regional/ludicolo/af/ludicolo_gaucho.png` (Fighting, eindvorm van de gaucho-Lotad-lijn; 51×62, 14 kleuren). Model = Gemini r6 (r1 + poncho als deel van het lijf, iets langer); kale reductie (variant 0), eindkeuring 1 (zwarte ponchobinnenlijnen → rode lijn, dubbele lijnen 1 px, rood uit elkaar, geel = Lotad/Lombre), ogen wit (oog B), snavel omlijnd met zwarte onderkant, eindkeuring 2 (snavelrand). Op het overzichtsvel (Regional forms). Lijn Lotad → Lombre → Ludicolo af. Alles in `lotad_regional/SPEC.md`.
+
+### [v0.0.834] - Ruimtestation (satelliet-lijn fase 3): frontsprite af
+- Ontwerp via Gemini (r1–r9): van ringstation via "te simpel" naar een kruisvormig station met vier oogbollen (achterste oog onzichtbaar), zijarmen kleiner, geen antennes, drie paar panelen; inspiratie Tiangong/ISS van Jordi. Gemini r10 (compact) mislukte.
+- Model bevroren = r9 met fixes r10–r13b (panelen 4 vakken voor/achter, mast 3, tweelingpaneel, ogen zonder wit, zij-ogen naar voren-links, rechteroog uit het voorste oog).
+- Sprite: r1–r2 afgekeurd (hertekend); vanaf r3 kale modelreductie + benoemde reparaties; kleurronde (3 romptinten), panelen in het fase 2-recept, oogbollen groter (voor ×1,3, zij ×1,8), panelen breder, ogen in driekwart uit het model, mastpanelen gecentreerd op de stok en gelijk (3 vakken, 6 px). Eindkeuring r15 en r16 PASS.
+- `docs/concept/sprites/satelliet_fase3/af/ruimtestation.png`; op het overzichtsvel. Naam open. Alles in `satelliet_fase3/SPEC.md`; lessen in `docs/lessen/GEMINI.md` (pitch meten, geometrie = ook tekenen, begrenzende as, afgesproken aantallen natellen).
+### [v0.0.835] - Oddish-plantvoorstellen geschrapt
 - `IDEEEN.md`: de vijf voorstellen voor regionale Oddish-planten (Brugmansia, pijpbloem, passiebloem, bromelia/Puya, frailejón) doorgestreept; Jordi (25 nov): "Oddish heeft al een regional lijn, mag je schrappen."
 
-### [v0.0.791] - Creepy guaraná: besluiten en eerste Gemini-prompt
+### [v0.0.836] - Creepy guaraná: besluiten en eerste Gemini-prompt
 - Jordi (25 nov): creepy guaraná wordt een lijn van 2 fases, Grass/Ghost; lichaam = kruipende liaan; fase 1 dichte rode tros met barstjes waar ogen door kijken, fase 2 opengebarsten vol ogen; toon onbehaaglijk; fase 1 eerst.
 - `IDEEEN.md` bijgewerkt; nieuw `docs/concept/sprites/guarana/SPEC.md` en startprompt `guarana/gemini/PROMPT_r1.md`.
 
-### [v0.0.792] - Guaraná fase 1: Gemini r1 besproken, prompt r2
+### [v0.0.837] - Guaraná fase 1: Gemini r1 besproken, prompt r2
 - Jordi over r1: kruipende tak blijft ("lekker creepy", alleen de ogen zijn dierlijk); beter naar een sprite te vertalen en meer guaraná. Prompt r2 in `docs/concept/sprites/guarana/gemini/PROMPT_r2.md`; SPEC bijgewerkt.
 
-### [v0.0.793] - Guaraná fase 1: Gemini r2 besproken, prompt r3
+### [v0.0.838] - Guaraná fase 1: Gemini r2 besproken, prompt r3
 - Ogen getest op 64 px (leesbaar bij ±56 px hoogte). Prompt r3: groene buigzame rank, grijpranken i.p.v. pootjes, gladde vruchten zonder raster/stekeltjes, ogen iets groter.
 
-### [v0.0.794] - Guaraná fase 1: frontsprite kandidaat
+### [v0.0.839] - Guaraná fase 1: frontsprite kandidaat
 - Sprite naar Gemini r5 (model), 44×37 px, 809 px; maker r1–r4, keurder (BIJNA → BIJNA), DC-eindkeuring PASS (schaduw tros, groen contrastrijker). Twee oogversies ter keuze: Psyduck-oogwit met pupil in de modelkijkrichting, of Weepinbell-ogen (groter). In `docs/concept/sprites/guarana/eindkeuring/`; vel `guarana/voor_jordi_ek.png`.

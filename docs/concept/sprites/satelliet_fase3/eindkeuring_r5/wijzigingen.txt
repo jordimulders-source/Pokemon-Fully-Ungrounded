@@ -1,0 +1,28 @@
+(1,38) 1 -> 2  zwart aan de lichtkant (punt paneel PD) -> outline base navy
+(38,28) 1 -> 3  mastvoetring: 8/1/8-dambord, holte in donkerste eigen tint (model L58)
+(33,40) 1 -> c  zwart cluster 2 rijen onder de hub; model hier licht (L181) = buis
+(34,40) 1 -> 2  zwart cluster onder de hub -> bovenkant mast in eigen navy (model L78)
+(35,40) 1 -> 2  idem (model L66)
+(13,43) 5 -> 2  bovenrand grote oogbol (lichtkant): lila paneellijn -> outline base navy
+(14,43) 5 -> f  binnen de omlijning van de oogbol; model wit (L227)
+(14,42) f -> 2  losse witte pixel boven de omlijning -> outline base navy (1 px rand)
+(15,42) 1 -> 2  zwart op de lichtkant (bovenkant oogbol) -> navy
+(16,42) 1 -> 2  idem
+(17,42) 5 -> 2  lila paneellijn op de bolrand -> navy
+(21,45) 1 -> c  binnenlijn 2 px dik; model hier bol (L179)
+(22,45) 1 -> 3  binnenlijn bol/kraag: zwart/3/zwart om en om -> 3 (model L52)
+(22,47) 1 -> 3  idem (model L54)
+(22,48) 1 -> 3  idem
+(24,46) 1 -> 3  binnenlijn kraag/buis niet zwart (model L94)
+(12,50) 5 -> 6  oogring: lila 5 (andere tint, lichter dan 6) -> ringpaars 6 (model 111,72,127)
+(13,51) 5 -> 6  idem
+(14,52) 5 -> 6  idem; 5/6/5 om en om
+(16,51) 5 -> 6  idem
+(16,52) 5 -> c  model hier bol (L185) -> c
+(41,32) 1 -> 3  zwart tussen twee kragen (6 boven en onder) -> binnenlijn 3 (model L75)
+(42,33) 1 -> 2  bovenrand rechterarm = lichtkant, cluster 2 rijen zwart -> navy
+(43,33) 1 -> 2  idem
+(44,33) 1 -> 2  idem (sluit aan op navy (45,34))
+(38,35) 1 -> 6  losse zwarte pixel tussen hub en kraag -> kraagpaars (model 126,86,143)
+(46,28) 1 -> c  zwart in de buis; model licht (L162)
+(47,28) 1 -> 3  binnenlijn buis/module niet zwart (model L59)

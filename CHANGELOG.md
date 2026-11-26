@@ -3446,6 +3446,75 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Fase 3 frontsprite af: `docs/concept/sprites/glitch_lijn/fase3_virus/af/glitch_fase3.png` (Electric/Bug), op het overzichtsvel. Gemini r1 (vijf fase 2-koppen), hoofden uit r2, magneten en tussenruimte ingekleurd met fase 2-data en foutkleurbalkjes (`gereedschap/fase3_glitch.py`), 3 randkolommen links en 1 rechts weg, 15 kleuren. Glitch-lijn compleet; namen open.
 - Fase 3 gezichten in de kleuren van fase 2, met de ogen (pupillen) van fase 2 op de drie naar voren kijkende hoofden (`gereedschap/fase3_kleuren.py`, `fase3_pupillen.py`). Fase 1 zweeft 4 px hoger, fase 2 8 px hoger in het vlak.
 
+### [v0.0.832] - Regionale Poliwrath: frontsprite af (25 nov)
+- `docs/concept/sprites/poliwrath_regional/af/poliwrath_regional.png` (Ice/Poison, eindvorm van de regionale Poliwag-lijn). Model = Gemini v2 gespiegeld (r1 te veel de gewone Poliwrath; bijgestuurd slanker/hoekiger), natief raster 75→62 geschrapt; hele Poliwrath-oog met lid in modelkleuren op ware grootte (E2), mond = 1-px boog met hoeken omlaag (M1), modelspiraal (S1); palet = regionale Poliwhirl; DC-eindkeuring. Op het overzichtsvel (Regional forms). Alles in `poliwrath_regional/SPEC.md`.
+
+### [v0.0.833] - Gaucho-Ludicolo: frontsprite af (26 nov)
+- `docs/concept/sprites/lotad_regional/ludicolo/af/ludicolo_gaucho.png` (Fighting, eindvorm van de gaucho-Lotad-lijn; 51×62, 14 kleuren). Model = Gemini r6 (r1 + poncho als deel van het lijf, iets langer); kale reductie (variant 0), eindkeuring 1 (zwarte ponchobinnenlijnen → rode lijn, dubbele lijnen 1 px, rood uit elkaar, geel = Lotad/Lombre), ogen wit (oog B), snavel omlijnd met zwarte onderkant, eindkeuring 2 (snavelrand). Op het overzichtsvel (Regional forms). Lijn Lotad → Lombre → Ludicolo af. Alles in `lotad_regional/SPEC.md`.
+
+### [v0.0.834] - Ruimtestation (satelliet-lijn fase 3): frontsprite af
+- Ontwerp via Gemini (r1–r9): van ringstation via "te simpel" naar een kruisvormig station met vier oogbollen (achterste oog onzichtbaar), zijarmen kleiner, geen antennes, drie paar panelen; inspiratie Tiangong/ISS van Jordi. Gemini r10 (compact) mislukte.
+- Model bevroren = r9 met fixes r10–r13b (panelen 4 vakken voor/achter, mast 3, tweelingpaneel, ogen zonder wit, zij-ogen naar voren-links, rechteroog uit het voorste oog).
+- Sprite: r1–r2 afgekeurd (hertekend); vanaf r3 kale modelreductie + benoemde reparaties; kleurronde (3 romptinten), panelen in het fase 2-recept, oogbollen groter (voor ×1,3, zij ×1,8), panelen breder, ogen in driekwart uit het model, mastpanelen gecentreerd op de stok en gelijk (3 vakken, 6 px). Eindkeuring r15 en r16 PASS.
+- `docs/concept/sprites/satelliet_fase3/af/ruimtestation.png`; op het overzichtsvel. Naam open. Alles in `satelliet_fase3/SPEC.md`; lessen in `docs/lessen/GEMINI.md` (pitch meten, geometrie = ook tekenen, begrenzende as, afgesproken aantallen natellen).
+### [v0.0.835] - Oddish-plantvoorstellen geschrapt
+- `IDEEEN.md`: de vijf voorstellen voor regionale Oddish-planten (Brugmansia, pijpbloem, passiebloem, bromelia/Puya, frailejón) doorgestreept; Jordi (25 nov): "Oddish heeft al een regional lijn, mag je schrappen."
+
+### [v0.0.836] - Creepy guaraná: besluiten en eerste Gemini-prompt
+- Jordi (25 nov): creepy guaraná wordt een lijn van 2 fases, Grass/Ghost; lichaam = kruipende liaan; fase 1 dichte rode tros met barstjes waar ogen door kijken, fase 2 opengebarsten vol ogen; toon onbehaaglijk; fase 1 eerst.
+- `IDEEEN.md` bijgewerkt; nieuw `docs/concept/sprites/guarana/SPEC.md` en startprompt `guarana/gemini/PROMPT_r1.md`.
+
+### [v0.0.837] - Guaraná fase 1: Gemini r1 besproken, prompt r2
+- Jordi over r1: kruipende tak blijft ("lekker creepy", alleen de ogen zijn dierlijk); beter naar een sprite te vertalen en meer guaraná. Prompt r2 in `docs/concept/sprites/guarana/gemini/PROMPT_r2.md`; SPEC bijgewerkt.
+
+### [v0.0.838] - Guaraná fase 1: Gemini r2 besproken, prompt r3
+- Ogen getest op 64 px (leesbaar bij ±56 px hoogte). Prompt r3: groene buigzame rank, grijpranken i.p.v. pootjes, gladde vruchten zonder raster/stekeltjes, ogen iets groter.
+
+### [v0.0.839] - Guaraná fase 1: frontsprite kandidaat
+- Sprite naar Gemini r5 (model), 44×37 px, 809 px; maker r1–r4, keurder (BIJNA → BIJNA), DC-eindkeuring PASS (schaduw tros, groen contrastrijker). Twee oogversies ter keuze: Psyduck-oogwit met pupil in de modelkijkrichting, of Weepinbell-ogen (groter). In `docs/concept/sprites/guarana/eindkeuring/`; vel `guarana/voor_jordi_ek.png`.
+
+### [v0.0.840] - Guaraná fase 1: frontsprite af
+- Jordi koos variant B (Weepinbell-ogen): "ja rechts is veel beter". `docs/concept/sprites/guarana/af/guarana.png` (+ `normal.pal`, 8×), op het overzichtsvel (sectie New, Grass/Ghost). Naam open.
+- Opengebarsten schil om de ogen en gladde bolletjes komen in fase 2 (nieuw gesprek); overdracht in `guarana/SPEC.md`. TODO, Stand van zaken en lessen (GEMINI.md, SPRITE_WERKWIJZE.md) bijgewerkt.
+
+### [v0.0.841] - Impala (impala-lijn fase 2): eerste Gemini-prompt
+- `docs/concept/sprites/impala_lijn/impala/gemini/PROMPTS.md`: prompt r1 (Normal/Steel, liervormige hoorns van gepolijst staal, zilveren vacht met scherpe drieslag rug/flank/buik, zwarte M, plukjes). Eigen invulling van Claude staat er apart bij.
+
+### [v0.0.842] - Impala: Gemini r1 bekeken, prompt r2
+- `impala_lijn/impala/gemini/r1/impala_r1.png` met Jordi's punten (te veel gekleurd dier, hert i.p.v. impala, oren groter); prompt r2 in `PROMPTS.md`.
+
+### [v0.0.843] - Impala: Gemini r2 bekeken, prompt r3
+- `impala_lijn/impala/gemini/r2/impala_r2.png`; Jordi: stoïcijns, protectorhouding. Prompt r3 in `PROMPTS.md`.
+
+### [v0.0.844] - Impala: Gemini r3 bekeken, bijsturing r3b
+- `impala_lijn/impala/gemini/r3/impala_r3.png`; Jordi: nog te veel dier, "misschien door het oog?". Bijstuurprompt r3b (oog + voorstellen kop/strepen/hoorns) in `PROMPTS.md`.
+
+### [v0.0.845] - Impala: r3b bekeken, oog zelf maken
+- `impala_lijn/impala/gemini/r3b/impala_r3b.png`; Jordi: "niet beter", "anders moeten wij maar een oog maken". Bronvel Gen 3-viervoeters voor het oog: `impala_lijn/impala/oog/bronnen.png` (`bronnen_vel.py`).
+
+### [v0.0.846] - Impala: prompt r4 met de kuif uit fase 1
+- Jordi: de kuif van de dikdik "iets meer mee evolved". Prompt r4 (r3 + kuif) in `impala_lijn/impala/gemini/PROMPTS.md`.
+
+### [v0.0.847] - Impala: Gemini r4 bekeken, bijsturing r4b (kuif over de hals)
+- `impala_lijn/impala/gemini/r4/impala_r4.png`; bijstuurprompt r4b in `PROMPTS.md`.
+
+### [v0.0.848] - Impala: r4b bekeken, prompt r5
+- `impala_lijn/impala/gemini/r4b/impala_r4b.png` (kuif loopt onduidelijk over in de hals, "beetje jotaro"); prompt r5 (kuif als korte manen met eigen omlijning) in `PROMPTS.md`.
+
+### [v0.0.849] - Impala: Gemini r5 (illustratie), reductietest, bijsturing r5b naar pixelart
+- `impala_lijn/impala/gemini/r5/impala_r5.png`, test `impala_lijn/impala/test/snelle_reductie.png` (`snelle_reductie.py`), bijstuurprompt r5b in `PROMPTS.md`.
+
+### [v0.0.850] - Impala: r5b (pixelart lukt Gemini niet), r5 wordt het ontwerp
+- `impala_lijn/impala/gemini/r5b/impala_r5b.png`; geen vast pixelraster. Sprite komt uit eigen reductie van r5.
+
+### [v0.0.851] - Impala: sprite r1–r2 en oogvarianten
+- Spritefase gestart op model r5 (eigen reductie, strepen volgens Jordi). Rondes in `impala_lijn/impala/sprite/r1`, `r2`; oogvarianten uit Gen 3 (Rapidash, Absol, Stantler) in `impala_lijn/impala/oog/oog_varianten.png`.
+
+### [v0.0.852] - Impala: sprite r3–r12, eindkeuring en oog B3
+- Rondes r3–r10 (hoorns taps en glad, staal, kuif, manen over de hals, rechte lijnen gemeten op het model), eindkeuring DC r11 (PASS: belijning, schaduw, staalpalet naar Steelix), r12 = r11 + oog B3 (Jordi). Kandidaat: `impala_lijn/impala/sprite/r12/impala_r12.png`.
+
+### [v0.0.853] - Impala (impala-lijn fase 2): frontsprite af
+- Jordi (26 nov): "nja goed, prima". `docs/concept/sprites/impala_lijn/impala/af/impala.png` (= `sprite/r15`): r13–r14 poten volgens Kirlia (tinten in de lengte), r15 borstgrens gebogen naar het model. Op het overzichtsvel (sectie New, na de dikdik). POKEMON.md, Stand van zaken en lessen (`GEMINI.md`) bijgewerkt.
 ### [v0.0.x] - Ideeën Ice/Fire-lijn (25 nov)
 - `docs/concept/IDEEEN.md`: nieuwe sectie "Extra Ice-lijn: Ice/Fire" met Jordi's wens en zes voorstellen (zonder Zuid-Amerika-link).
 

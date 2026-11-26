@@ -1,0 +1,66 @@
+x y oud->nieuw onderdeel reden (t.o.v. r14/sprite.png)
+38 23 0->2 PA PA doorgelopen tot de achterarm (verlengd binnen-einde)
+39 23 0->2 PA PA doorgelopen tot de achterarm (verlengd binnen-einde)
+38 24 0->12 PA PA doorgelopen tot de achterarm (verlengd binnen-einde)
+39 24 0->12 PA PA doorgelopen tot de achterarm (verlengd binnen-einde)
+40 24 0->2 PA PA doorgelopen tot de achterarm (verlengd binnen-einde)
+41 24 0->2 PA PA doorgelopen tot de achterarm (verlengd binnen-einde)
+42 24 0->1 PA PA doorgelopen tot de achterarm (verlengd binnen-einde)
+38 25 0->11 PA PA doorgelopen tot de achterarm (verlengd binnen-einde)
+39 25 0->11 PA PA doorgelopen tot de achterarm (verlengd binnen-einde)
+33 26 1->11 PA recept opnieuw (rand/vak schuift mee)
+38 26 0->11 PA PA doorgelopen tot de achterarm (verlengd binnen-einde)
+39 26 0->1 PA PA doorgelopen tot de achterarm (verlengd binnen-einde)
+28 46 14->2 PE PE-rand: grenst nu aan de lege driehoek
+29 46 14->2 PE PE-rand: grenst nu aan de lege driehoek
+30 46 14->2 PE PE-rand: grenst nu aan de lege driehoek
+27 47 14->2 PE PE-rand: grenst nu aan de lege driehoek
+28 47 14->12 PE PE-rand: grenst nu aan de lege driehoek
+29 47 14->12 PE PE-rand: grenst nu aan de lege driehoek
+31 47 13->2 PE PE-rand: grenst nu aan de lege driehoek
+32 47 13->12 PE PE-rand: grenst nu aan de lege driehoek
+27 48 14->12 PE PE-rand: grenst nu aan de lege driehoek
+31 48 13->12 PE PE-rand: grenst nu aan de lege driehoek
+32 42 15->2 PF PF zichtbaar onder de voorbuis (driehoek was ingesloten achtergrond)
+33 42 15->12 PF PF zichtbaar onder de voorbuis (driehoek was ingesloten achtergrond)
+34 42 2->12 PF recept opnieuw (rand/vak schuift mee)
+32 43 15->2 PF PF zichtbaar onder de voorbuis (driehoek was ingesloten achtergrond)
+33 43 15->12 PF PF zichtbaar onder de voorbuis (driehoek was ingesloten achtergrond)
+34 43 2->14 PF recept opnieuw (rand/vak schuift mee)
+32 44 15->2 PF PF zichtbaar onder de voorbuis (driehoek was ingesloten achtergrond)
+33 44 15->12 PF PF zichtbaar onder de voorbuis (driehoek was ingesloten achtergrond)
+34 44 2->12 PF recept opnieuw (rand/vak schuift mee)
+32 45 15->2 PF PF zichtbaar onder de voorbuis (driehoek was ingesloten achtergrond)
+33 45 15->12 PF PF zichtbaar onder de voorbuis (driehoek was ingesloten achtergrond)
+34 45 2->13 PF recept opnieuw (rand/vak schuift mee)
+32 46 15->2 PF PF zichtbaar onder de voorbuis (driehoek was ingesloten achtergrond)
+33 46 15->13 PF PF zichtbaar onder de voorbuis (driehoek was ingesloten achtergrond)
+32 41 4->1 buis onderrand voorbuis tegen PF/achtergrond (zwart, schaduwkant)
+33 41 15->1 buis onderrand voorbuis tegen PF/achtergrond (zwart, schaduwkant)
+31 42 15->1 buis onderrand voorbuis tegen PF/achtergrond (zwart, schaduwkant)
+30 43 15->1 buis onderrand voorbuis tegen PF/achtergrond (zwart, schaduwkant)
+28 44 4->1 buis onderrand voorbuis tegen PF/achtergrond (zwart, schaduwkant)
+29 44 15->1 buis onderrand voorbuis tegen PF/achtergrond (zwart, schaduwkant)
+27 45 4->1 buis onderrand voorbuis tegen PF/achtergrond (zwart, schaduwkant)
+26 46 4->1 buis onderrand voorbuis tegen PF/achtergrond (zwart, schaduwkant)
+31 43 0->1 driehoek los gaatje van 1 px -> buisrand (zwart)
+30 44 15->0 driehoek ingesloten achtergrond onder de voorbuis -> transparant
+31 44 15->0 driehoek ingesloten achtergrond onder de voorbuis -> transparant
+28 45 0->1 driehoek los gaatje van 1 px -> buisrand (zwart)
+29 45 0->1 driehoek los gaatje van 1 px -> buisrand (zwart)
+30 45 15->0 driehoek ingesloten achtergrond onder de voorbuis -> transparant
+31 45 15->0 driehoek ingesloten achtergrond onder de voorbuis -> transparant
+27 46 0->1 driehoek los gaatje van 1 px -> buisrand (zwart)
+31 46 0->1 driehoek los gaatje van 1 px -> buisrand (zwart)
+
+TELLING
+PA        PA doorgelopen tot de achterarm (verlengd binnen-einde)                11
+PA        recept opnieuw (rand/vak schuift mee)                                  1
+PE        PE-rand: grenst nu aan de lege driehoek                                10
+PF        PF zichtbaar onder de voorbuis (driehoek was ingesloten achtergrond)   10
+PF        recept opnieuw (rand/vak schuift mee)                                  4
+buis      onderrand voorbuis tegen PF/achtergrond (zwart, schaduwkant)           8
+driehoek  ingesloten achtergrond onder de voorbuis -> transparant                4
+driehoek  los gaatje van 1 px -> buisrand (zwart)                                5
+totaal 53
+kleuren 16

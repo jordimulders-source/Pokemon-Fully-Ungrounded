@@ -57,3 +57,31 @@ Prompts in `gemini/PROMPT.md`.
 - Jordi op r3: "a is het beste maar de blik is niet naar driekwart" → r4: alleen pupilplaatsen, lid van A blijft.
 - Jordi: "behoud hem maar, anders klopt die niet meer"; tussen r3 A en r4 A: "links" → **r3 A** (ver oog 2 px) is de basis voor de keuring en eindkeuring.
 - Keuring + DC-eindkeuring (`lombre/eindkeuring/KEURING.md`, 75 px). Jordi: "commit en push naar main" → **af**: `lombre/af/lombre_gaucho.png`. Ter info open: vest/laarzen één olijftint, Lombre roder dan Lotads terra (palet kan), Ground/Fighting of puur Fighting.
+
+## Ludicolo (fase 3)
+- Jordi (25 nov): "tijd voor gaucho ludicolo". Startprompt v1 in `ludicolo/gemini/PROMPT.md` (opzet Lombre-v1; keuzes van Claude daar vermeld).
+- `ludicolo/r1/gemini_r1.png` (v1).
+- Jordi op r1: "op zich wel leuk deze vorm van de hoed, zolang het maar herkenbaar een gaucho hoed is. Waar lombre wat meer boos is, is deze heel comfortabel, misschien dat we nog 1 specifiek design kenmerk moeten toevoegen om deze ludicolo te laten opvallen en ietsje anders te maken dan de base versie". Voorstellen Claude: gauchosnor van bladeren, bombacha-benen, halfdichte ogen (keuze open).
+- Jordi: "rode punt rechtsonder is de staart".
+- Jordi: "meh we hebben al veel snorren gegeven aan pokemon, misschien wat meer een poncho?" → bijstuur poncho (blad over de schouders).
+- `ludicolo/r2/gemini_r2.png` (bijstuur poncho): Jordi "ok maar hoe zouden we de poncho meer onderdeel van zijn lichaam kunnen maken".
+- Jordi over de poncho: "ik weet niet of ik met de leaf kleur het eens ben gezien de typing"; "maar het moet geen kledingstuk zijn he".
+- `ludicolo/r3/gemini_r3.png` (bijstuur: bladflappen in lijfkleur): Jordi "nu doet die alsnog bladeren". (Fout Claude: prompt vroeg zelf om bladflappen en nerven.)
+- Jordi plakte r1 zelf terug ("omdat ik dat de beste vond"); bijstuur "lijf als poncho-mantel" niet gebruikt. Jordi: "kijk dit is gewoon goed alleen dit lichaam moet gewoon iets meer natuurlijk als een poncho vallen".
+- Volgende: bijstuur "lijf valt als een poncho" (smal bij de hals, schuin over de bovenarmen, punt voor, zachte plooien) op r1, met r1 als bijlage.
+- `ludicolo/r4/gemini_r4.png` (bijstuur poncho-val op r1, r1 als bijlage): Jordi "hij valt iets teveel over het lichaam heen denk ik, plus de rest van de sprite is nu minder geworden".
+- `ludicolo/r5/gemini_r5.png` (bijstuur korte poncho op r1): Jordi "wat vind je hiervan? Het blad moet wel anders".
+- Jordi over r5: "is die nu te kort? of leest het wel"; "misschien bij het lichaam iets langer dan?" → bijstuur langer.
+- `ludicolo/r6/gemini_r6.png` (bijstuur iets langer): Jordi "kan jij die poncho nu in de bladeren over laten lopen? en misschien de vorm iets bij poetsen zodat die meer poncho dan bladeren lijkt? Zo ja, dan kan je bouwen". Claude vroeg: A (basis r6) of B (basis r5).
+- Jordi: "imo is het niet plakken maar alleen inkleuren"; "de poncho". → **model = `ludicolo/r6/gemini_r6.png`**; spritefase gestart (`ludicolo/sprite/r1/`, maker): silhouet = model, alleen de inkleuring van de poncho mag zo dat hij bovenaan als poncho leest en onderaan in de bladpunten overloopt; varianten ter keuze.
+- Jordi: "het enige waar je in afwijkt van het model is het lijnenwerk van de poncho, om het iets meer af te laten wijken van de bladeren, let op, dit betekent niet opnieuw tekenen, hooguit de bladervorm met wat pixels schuiven omzetten en anders inkleuren".
+- Sprite r1 (maker, `ludicolo/sprite/r1/`): 0 = kale reductie (51×62), A/B/C = alleen ponchobladlijnen omgekleurd (38–44 px, 0 verschoven); `vel.png`.
+- Jordi: "stuur de eerste maar naar de eindkeuring en let op de zwarte lange verticale lijn in de poncho" → variant 0 naar keuring + DC-eindkeuring (`ludicolo/eindkeuring/`).
+- Jordi: "het geel moet zoals de rest van de lijn, afwijken van model" → geel = tinten van de Lotad-snavel/Lombre-mond.
+- Jordi: "en het rechteroog heeft nog niet de perfecte vorm"; "mag iets ovaler" → doorgegeven aan de eindkeuring (2 oogvarianten).
+- Keuring + DC-eindkeuring (`ludicolo/eindkeuring/`, 127 px, alleen indexwissels/palet): zwarte ponchobinnenlijnen (o.a. x19 y40–50) → rode lijn, dubbele lijnen 1 px, rood uit elkaar getrokken, geel = Lotad/Lombre. Rechteroog los: `oog_A`/`oog_B` (2 px elk), keuze Jordi.
+- Jordi: "de ogen moeten nog wit" → `eindkeuring/oog_{A,B}_wit.png` (irispixels → wit, `oog_wit.py`).
+- Jordi: "de mond moet nog wel wat duidelijker omlijnd worden zodat duidelijk is dat die ietwat uitsteekt, heeft het model wss ook, rechts is beter trouwens" → oog B (wit); `eindkeuring/mond_V1.png` (rode lijn om de snavel, 22 px) en `mond_V2.png` (idem, onderkant zwart), `mond_lijn.py`.
+- Jordi: "ja rechts is goed" (V2) → `ludicolo/af/ludicolo_gaucho.png` (voorlopig); "stuur die maar naar de eindkeuring" → eindkeuring ronde 2 (`ludicolo/eindkeuring2/`).
+- Eindkeuring ronde 2 (`ludicolo/eindkeuring2/`, 15 px snavelrand: zijkanten rode lijn, onderkant doorlopend zwart, clusters weg). Ter info: donkere band van 3 px boven de ogen.
+- Jordi: "commit en push naar main" → **af**: `ludicolo/af/ludicolo_gaucho.png` = eindkeuring2. Ter info open: band boven de ogen (3 px), snavelrand rechts rood i.p.v. zwart (Gen 3-Ludicolo), Ground/Fighting of puur Fighting.

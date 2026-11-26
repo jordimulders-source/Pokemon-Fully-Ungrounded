@@ -1,0 +1,57 @@
+r7: afwijkingen t.o.v. de kale reductie (kaal gemapt = modelreductie met alleen de Gen 3-tintkeuze per zone)
+Basis r2: per cel lijn (>=50% zwarte modellijn) of meerderheids-toonklasse van het model (celklas.py); flank: relatieve helderheid flankpixels.
+
+hoorns       131 van  191 px  (hoorn 67, lijn 44, binnenlijn 14, glans 4, oor 1, kuif 1)
+kop+hals      83 van  268 px  (lijn 27, oor 17, manen 15, binnenlijn 12, ontkorrel 8, kuif 4)
+lijf+staart  121 van  415 px  (lijn 33, ontkorrel 28, flank 16, staart 9, strepen_weg 8, r7 6, dijschaduw 6, manen 5, streep_dij 4, binnenlijn 4, streep_staart 2)
+poten         82 van  224 px  (lijn 60, ontkorrel 7, poot 5, binnenlijn 5, plukjes 4, r7 1)
+totaal       417 van 1098 px
+
+Uitleg stappen: lijn = 1-px buitenlijn dicht + gekleurde selout op randen die naar boven/linksboven wijzen;
+binnenlijn = modellijn binnen het silhouet -> donkerste eigen tint (D of 1), geen zwart;
+hoorngrens = modellijn tussen hoorn en kuif/kop (valt bij de reductie weg) uit de zonegrens van de modelsegmentatie;
+ontkorrel = tintvlakje <3 px -> meest voorkomende buurtint (niet in hoorns/oog/neus);
+strepen_weg = de vier bilstrepen (Jordi) -> vachttint van het model naast de streep (helderheid van de lijfpixels in die cel).
+
+ZELF GEZETTE PIXELS (niet uit het model; Jordi's toegestane afwijking), 64x64-coordinaten:
+  streep_dij: (44,37) -> zwart
+  streep_dij: (44,38) -> zwart
+  streep_dij: (45,39) -> zwart
+  streep_dij: (45,40) -> zwart
+  streep_dij: (45,41) -> zwart
+  streep_dij: (45,42) -> zwart
+  streep_dij: (44,43) -> zwart
+  streep_staart: (46,32) -> zwart
+  streep_staart: (46,33) -> zwart
+
+OOGZONE (wordt later vervangen door een Gen 3-oog): 64x64 x 18-25, y 21-27 (beschermd: niet ontkorreld/omgelijnd).
+Huidige oogpixels (64x64-coordinaten, rij voor rij x 18-25):
+  y21 DLHLLLNN
+  y22 LHHWWLNN
+  y23 LHW00WNN
+  y24 LW000WLM
+  y25 NW0DWWNM
+  y26 WWWWWLNM
+  y27 LLLLNNMM
+
+Kleuren: 12 + transparant = 13 (0 3 4 5 A D H L M N S W)
+
+r7 (Jordi 26 nov: rechte lijnen minder recht waar het model golft; r7.py = r6.py + blok 'r7'). Diff r6->r7 = 12 px (64x64):
+  rug: (39,32),(40,32),(41,32) erbij (D, selout), (39-41,33) D->S; rugband (31-33,35) S->L; poot (21,50) weg, (22,50) M->D; poot (40,56) weg.
+  Oogzone 0, strepen ongewijzigd, silhouet +3/-2 px (rug +3; poten -2).
+Meting: modelcontour = rand van het voorgrondvlak en skelet van de zwarte modellijn op 1024 px (zones/curve.py), per pixel
+  dekking op rij- en kolommidden (zones/cmp.py). Uitkomst: in alle zones valt de sprite binnen 0,5 px op de modelcurve;
+  de meeste lange runs zijn in het model zelf recht op deze schaal (gemeten bereik <0,5 px). Alleen echte golven aangepast:
+  - rug bovenrand x37-43 (64x64): model 33,3/33,0/32,8/32,7/32,8/33,0/33,2 = bult -> 2-3-2 boog;
+  - rugband onderrand x30-38: model 36,1/35,6/35,6/35,8/36,1/36,2 = deuk bij x31-33 -> grens 1 px omhoog;
+  - poot voor-ver linkerrand y44-56: model 20,6..21,7..20,5 (holle boog); sprite zigzagde 21-22-21-22 -> 21x4, 22x5, 21x4;
+  - poot achter-ver rechterrand y56: model 39,6 -> pixel 40 had 10% dekking.
+  Niet veranderd (model recht op deze schaal): oorbovenranden (model 17,8 constant links; 18,0-18,4 rechts), onder de hoorns
+  (oorrand/hoornonderkant: hoorns zelf niet in de opdracht), manen hals (r6, gemeten), poot midden rechterrand x33 y48-55 (model 34,0-34,4).
+Langste rechte run per zone (r6 -> r7):
+onder de hoorns  langste rechte run buitenrand  6 ->  6 | tintgrens  4 ->  4
+oor links        langste rechte run buitenrand  5 ->  5 | tintgrens  4 ->  4
+oor rechts       langste rechte run buitenrand  6 ->  6 | tintgrens  4 ->  4
+rug              langste rechte run buitenrand  7 ->  4 | tintgrens 10 ->  8
+manen hals       langste rechte run buitenrand  4 ->  4 | tintgrens  7 ->  7
+poten            langste rechte run buitenrand  8 ->  8 | tintgrens  6 ->  6

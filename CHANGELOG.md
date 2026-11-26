@@ -3512,3 +3512,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.852] - Impala: sprite r3–r12, eindkeuring en oog B3
 - Rondes r3–r10 (hoorns taps en glad, staal, kuif, manen over de hals, rechte lijnen gemeten op het model), eindkeuring DC r11 (PASS: belijning, schaduw, staalpalet naar Steelix), r12 = r11 + oog B3 (Jordi). Kandidaat: `impala_lijn/impala/sprite/r12/impala_r12.png`.
+
+### [v0.0.853] - Impala (impala-lijn fase 2): frontsprite af
+- Jordi (26 nov): "nja goed, prima". `docs/concept/sprites/impala_lijn/impala/af/impala.png` (= `sprite/r15`): r13–r14 poten volgens Kirlia (tinten in de lengte), r15 borstgrens gebogen naar het model. Op het overzichtsvel (sectie New, na de dikdik). POKEMON.md, Stand van zaken en lessen (`GEMINI.md`) bijgewerkt.

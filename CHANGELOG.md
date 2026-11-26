@@ -3457,8 +3457,95 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Model bevroren = r9 met fixes r10–r13b (panelen 4 vakken voor/achter, mast 3, tweelingpaneel, ogen zonder wit, zij-ogen naar voren-links, rechteroog uit het voorste oog).
 - Sprite: r1–r2 afgekeurd (hertekend); vanaf r3 kale modelreductie + benoemde reparaties; kleurronde (3 romptinten), panelen in het fase 2-recept, oogbollen groter (voor ×1,3, zij ×1,8), panelen breder, ogen in driekwart uit het model, mastpanelen gecentreerd op de stok en gelijk (3 vakken, 6 px). Eindkeuring r15 en r16 PASS.
 - `docs/concept/sprites/satelliet_fase3/af/ruimtestation.png`; op het overzichtsvel. Naam open. Alles in `satelliet_fase3/SPEC.md`; lessen in `docs/lessen/GEMINI.md` (pitch meten, geometrie = ook tekenen, begrenzende as, afgesproken aantallen natellen).
+### [v0.0.835] - Oddish-plantvoorstellen geschrapt
+- `IDEEEN.md`: de vijf voorstellen voor regionale Oddish-planten (Brugmansia, pijpbloem, passiebloem, bromelia/Puya, frailejón) doorgestreept; Jordi (25 nov): "Oddish heeft al een regional lijn, mag je schrappen."
 
-### [v0.0.835] - Hoatzin geschrapt, nieuwe Poison-lijn gezocht (26 nov)
+### [v0.0.836] - Creepy guaraná: besluiten en eerste Gemini-prompt
+- Jordi (25 nov): creepy guaraná wordt een lijn van 2 fases, Grass/Ghost; lichaam = kruipende liaan; fase 1 dichte rode tros met barstjes waar ogen door kijken, fase 2 opengebarsten vol ogen; toon onbehaaglijk; fase 1 eerst.
+- `IDEEEN.md` bijgewerkt; nieuw `docs/concept/sprites/guarana/SPEC.md` en startprompt `guarana/gemini/PROMPT_r1.md`.
+
+### [v0.0.837] - Guaraná fase 1: Gemini r1 besproken, prompt r2
+- Jordi over r1: kruipende tak blijft ("lekker creepy", alleen de ogen zijn dierlijk); beter naar een sprite te vertalen en meer guaraná. Prompt r2 in `docs/concept/sprites/guarana/gemini/PROMPT_r2.md`; SPEC bijgewerkt.
+
+### [v0.0.838] - Guaraná fase 1: Gemini r2 besproken, prompt r3
+- Ogen getest op 64 px (leesbaar bij ±56 px hoogte). Prompt r3: groene buigzame rank, grijpranken i.p.v. pootjes, gladde vruchten zonder raster/stekeltjes, ogen iets groter.
+
+### [v0.0.839] - Guaraná fase 1: frontsprite kandidaat
+- Sprite naar Gemini r5 (model), 44×37 px, 809 px; maker r1–r4, keurder (BIJNA → BIJNA), DC-eindkeuring PASS (schaduw tros, groen contrastrijker). Twee oogversies ter keuze: Psyduck-oogwit met pupil in de modelkijkrichting, of Weepinbell-ogen (groter). In `docs/concept/sprites/guarana/eindkeuring/`; vel `guarana/voor_jordi_ek.png`.
+
+### [v0.0.840] - Guaraná fase 1: frontsprite af
+- Jordi koos variant B (Weepinbell-ogen): "ja rechts is veel beter". `docs/concept/sprites/guarana/af/guarana.png` (+ `normal.pal`, 8×), op het overzichtsvel (sectie New, Grass/Ghost). Naam open.
+- Opengebarsten schil om de ogen en gladde bolletjes komen in fase 2 (nieuw gesprek); overdracht in `guarana/SPEC.md`. TODO, Stand van zaken en lessen (GEMINI.md, SPRITE_WERKWIJZE.md) bijgewerkt.
+
+### [v0.0.841] - Impala (impala-lijn fase 2): eerste Gemini-prompt
+- `docs/concept/sprites/impala_lijn/impala/gemini/PROMPTS.md`: prompt r1 (Normal/Steel, liervormige hoorns van gepolijst staal, zilveren vacht met scherpe drieslag rug/flank/buik, zwarte M, plukjes). Eigen invulling van Claude staat er apart bij.
+
+### [v0.0.842] - Impala: Gemini r1 bekeken, prompt r2
+- `impala_lijn/impala/gemini/r1/impala_r1.png` met Jordi's punten (te veel gekleurd dier, hert i.p.v. impala, oren groter); prompt r2 in `PROMPTS.md`.
+
+### [v0.0.843] - Impala: Gemini r2 bekeken, prompt r3
+- `impala_lijn/impala/gemini/r2/impala_r2.png`; Jordi: stoïcijns, protectorhouding. Prompt r3 in `PROMPTS.md`.
+
+### [v0.0.844] - Impala: Gemini r3 bekeken, bijsturing r3b
+- `impala_lijn/impala/gemini/r3/impala_r3.png`; Jordi: nog te veel dier, "misschien door het oog?". Bijstuurprompt r3b (oog + voorstellen kop/strepen/hoorns) in `PROMPTS.md`.
+
+### [v0.0.845] - Impala: r3b bekeken, oog zelf maken
+- `impala_lijn/impala/gemini/r3b/impala_r3b.png`; Jordi: "niet beter", "anders moeten wij maar een oog maken". Bronvel Gen 3-viervoeters voor het oog: `impala_lijn/impala/oog/bronnen.png` (`bronnen_vel.py`).
+
+### [v0.0.846] - Impala: prompt r4 met de kuif uit fase 1
+- Jordi: de kuif van de dikdik "iets meer mee evolved". Prompt r4 (r3 + kuif) in `impala_lijn/impala/gemini/PROMPTS.md`.
+
+### [v0.0.847] - Impala: Gemini r4 bekeken, bijsturing r4b (kuif over de hals)
+- `impala_lijn/impala/gemini/r4/impala_r4.png`; bijstuurprompt r4b in `PROMPTS.md`.
+
+### [v0.0.848] - Impala: r4b bekeken, prompt r5
+- `impala_lijn/impala/gemini/r4b/impala_r4b.png` (kuif loopt onduidelijk over in de hals, "beetje jotaro"); prompt r5 (kuif als korte manen met eigen omlijning) in `PROMPTS.md`.
+
+### [v0.0.849] - Impala: Gemini r5 (illustratie), reductietest, bijsturing r5b naar pixelart
+- `impala_lijn/impala/gemini/r5/impala_r5.png`, test `impala_lijn/impala/test/snelle_reductie.png` (`snelle_reductie.py`), bijstuurprompt r5b in `PROMPTS.md`.
+
+### [v0.0.850] - Impala: r5b (pixelart lukt Gemini niet), r5 wordt het ontwerp
+- `impala_lijn/impala/gemini/r5b/impala_r5b.png`; geen vast pixelraster. Sprite komt uit eigen reductie van r5.
+
+### [v0.0.851] - Impala: sprite r1–r2 en oogvarianten
+- Spritefase gestart op model r5 (eigen reductie, strepen volgens Jordi). Rondes in `impala_lijn/impala/sprite/r1`, `r2`; oogvarianten uit Gen 3 (Rapidash, Absol, Stantler) in `impala_lijn/impala/oog/oog_varianten.png`.
+
+### [v0.0.852] - Impala: sprite r3–r12, eindkeuring en oog B3
+- Rondes r3–r10 (hoorns taps en glad, staal, kuif, manen over de hals, rechte lijnen gemeten op het model), eindkeuring DC r11 (PASS: belijning, schaduw, staalpalet naar Steelix), r12 = r11 + oog B3 (Jordi). Kandidaat: `impala_lijn/impala/sprite/r12/impala_r12.png`.
+
+### [v0.0.853] - Impala (impala-lijn fase 2): frontsprite af
+- Jordi (26 nov): "nja goed, prima". `docs/concept/sprites/impala_lijn/impala/af/impala.png` (= `sprite/r15`): r13–r14 poten volgens Kirlia (tinten in de lengte), r15 borstgrens gebogen naar het model. Op het overzichtsvel (sectie New, na de dikdik). POKEMON.md, Stand van zaken en lessen (`GEMINI.md`) bijgewerkt.
+### [v0.0.x] - Ideeën Ice/Fire-lijn (25 nov)
+- `docs/concept/IDEEEN.md`: nieuwe sectie "Extra Ice-lijn: Ice/Fire" met Jordi's wens en zes voorstellen (zonder Zuid-Amerika-link).
+
+### [v0.0.x] - Sneeuwmonster-lijn besloten (25 nov)
+- `docs/concept/IDEEEN.md`: Ice/Fire-lijn wordt een sneeuwmonster (Flurry-geïnspireerd sneeuwmannetje → met emmer en gloeiende steen → sauna-yeti), Ice → Ice/Fire → Ice/Fire; early game en in de gym.
+- Sneeuwmonster-lijn: yeti = variant a; de knopen van fase 1 worden per fase steeds grotere gloeiende stenen.
+- Sneeuwmonster fase 1: Gemini-prompt r1 in `docs/concept/sprites/sneeuwmonster/gemini/PROMPTS.md`.
+
+### [v0.0.x] - Sneeuwmonster fase 1 frontsprite af (26 nov)
+- Nieuwe lijn (Ice → Ice/Fire → Ice/Fire, early game en in de gym): fase 1 = wandelend sneeuwmannetje, geïnspireerd op de Flurry, met koude donkere steentjes als knopen; naar Gemini r1c, zonder mond (Jordi).
+- Frontsprite `docs/concept/sprites/sneeuwmonster/af/sneeuwmonster.png` (+ `_8x`): kale reductie van het model, ogen rond 4×4 met glans onder (variant c), knopen verkleind uit de natieve modelknopen (r9 v1), hoofdrand en kuif afgerond, schaduw linksonder uit het model, eindkeuring Dragonfly Cave (donkerder lijntint, enkele rand, taps), buiklijn bij de linkerarm lichter. Op het overzichtsvel. Naam open.
+
+### [v0.0.x] - Werknamen (26 nov)
+- Jordi: Scrapstack (spooktrein fase 1), Impyre (vuurduivel fase 1), Bibuilder (Bibarel-evolutie), Impalar (impala). In `POKEMON.md` → Werknamen, `CLAUDE.md` en op het overzichtsvel.
+
+### [v0.0.x] - Overzichtsvel: Hoenn-Grimer/Muk, gaucho-typen (26 nov)
+- Regionale Grimer en Muk (uit Ungrounded, Poison/Ground; `graphics/pokemon/{grimer,muk}/hoenn/`, frame 1 met normal.pal als `docs/concept/sprites/{grimer,muk}_hoenn/af/`) op het overzichtsvel bij Regional forms (Jordi: "die zijn technisch gezien ook origineel").
+- Gaucho-Lombre en -Ludicolo zijn Ground/Fighting (Jordi: "lombre en ludicolo zijn ground/fight"); SPEC, POKEMON.md, CLAUDE.md en het vel bijgewerkt.
+
+### [v0.0.x] - Werknaam Gumfish (26 nov)
+- Blobfish fase 1 heet Gumfish (Jordi: "blobfish fase 1 mag gumfish heten"); POKEMON.md, CLAUDE.md en het overzichtsvel.
+
+### [v0.0.x] - Werknaam Missingraph. (26 nov)
+- Glitch-lijn fase 1 heet Missingraph. (met punt; Jordi: "glitch fase 1 mag Missingraph. heten"). 12 tekens, precies de maximale naamlengte (`POKEMON_NAME_LENGTH` 12). POKEMON.md, CLAUDE.md en het overzichtsvel.
+
+### [v0.0.x] - Sneeuwmonster fase 2 frontsprite af (26 nov)
+- Fase 2 van de sneeuwmonster-lijn (Ice/Fire): groter, ruige sneeuwvacht met armen, houten saunaemmer op de kop, tevreden dichte ogen, twee grotere gloeiende stenen op de knoopplekken (Jordi: houten saunaemmer, twee grotere stenen, groter met armen, tevreden/ontspannen).
+- Model: Gemini r1a met de ruwe donkere gloeistenen van r3a erop geplakt (70 px, lager onder de baard). Prompts en rondes in `docs/concept/sprites/sneeuwmonster_fase2/gemini/PROMPTS.md`.
+- Frontsprite `docs/concept/sprites/sneeuwmonster_fase2/af/sneeuwmonster2.png` (+ `_8x`, 48×56 px, 16 kleuren): kale reductie, golvende mond, doorlopende duignaden, eindkeuring Dragonfly Cave (lijntint en sneeuwtinten gelijk aan fase 1), ooglid gebogen, stenen met grijze facetten en gloed in scheuren en rand (variant A), rechte randen vloeiender naar het model. Op het overzichtsvel. Naam open.
+
+### [v0.0.854] - Hoatzin geschrapt, nieuwe Poison-lijn gezocht (26 nov)
 - Hoatzin geschrapt voor nu (Jordi). Nieuw: een originele Poison-lijn; bestaande ideeën "niet overtuigend genoeg". Nieuwe voorstellen (Chinchorro-mummie, curare-liaan, kwik-blob, zombieschimmel, gifbeker) voorgelegd; nog open. TODO, IDEEEN en stand van zaken bijgewerkt.
 - Ronde 3 (niet-dieren/planten) voorgelegd; Jordi kiest kwik als beste idee, gasmasker kan (maar doet denken aan Pokémon Clover); hoatzin misschien toch, met plaagmasker; eerst overleggen.
 - Hoatzin-lijn: Jordi's eisen genoteerd in IDEEEN.md (2 fases, kuiken → snavelmasker, Poison/Dark, zuur op de vleugels, rood oog, blauw in het masker, niet stocky, simpel palet).
@@ -3477,7 +3564,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Hoatzin fase 2: sprite r6–r9 (snavel, kuif K1, teken halverwege, linkervoet, eindkeuring); Jordi over r7: "uitstekend".
 - Hoatzin fase 2: kleurrondes r10–r12 (volume, minder donker).
 
-### [v0.0.836] - Hoatzin fase 2: frontsprite af (26 nov)
+### [v0.0.855] - Hoatzin fase 2: frontsprite af (26 nov)
 - Originele Poison-lijn = hoatzin-lijn (Poison/Dark, kuiken → pestmasker-hoatzin). Fase 2 frontsprite af: `docs/concept/sprites/hoatzin/af/hoatzin_fase2.png` (= r13; model Gemini r6 + hoofd r4, kuif K1, teken halverwege, kleurronde naar Murkrow, twee DC-eindkeuringen). Op het overzichtsvel (New). Naam open.
 - Kuiken (fase 1) nog te doen: `hoatzin/OVERDRACHT_KUIKEN.md`.
 - Les in GEMINI.md: veerlijnen in een donker vlak vinden via de fractie zeer donkere modelpixels.

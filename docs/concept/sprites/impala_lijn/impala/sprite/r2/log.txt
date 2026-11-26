@@ -1,0 +1,49 @@
+r2: afwijkingen t.o.v. de kale reductie (kaal gemapt = modelreductie met alleen de Gen 3-tintkeuze per zone)
+Basis r2: per cel lijn (>=50% zwarte modellijn) of meerderheids-toonklasse van het model (celklas.py); flank: relatieve helderheid flankpixels.
+
+hoorns       148 van  214 px  (hoorn 86, lijn 43, binnenlijn 17, hoorngrens 2)
+kop+hals      52 van  267 px  (ontkorrel 20, lijn 19, binnenlijn 12, hoorngrens 1)
+lijf+staart   96 van  417 px  (ontkorrel 40, lijn 32, strepen_weg 12, streep_dij 6, binnenlijn 4, streep_staart 2)
+poten         77 van  228 px  (lijn 59, ontkorrel 7, plukjes 6, binnenlijn 5)
+totaal       373 van 1126 px
+
+Uitleg stappen: lijn = 1-px buitenlijn dicht + gekleurde selout op randen die naar boven/linksboven wijzen;
+binnenlijn = modellijn binnen het silhouet -> donkerste eigen tint (D of 1), geen zwart;
+hoorngrens = modellijn tussen hoorn en kuif/kop (valt bij de reductie weg) uit de zonegrens van de modelsegmentatie;
+ontkorrel = tintvlakje <3 px -> meest voorkomende buurtint (niet in hoorns/oog/neus);
+strepen_weg = de vier bilstrepen (Jordi) -> vachttint van het model naast de streep (helderheid van de lijfpixels in die cel).
+
+ZELF GEZETTE PIXELS (niet uit het model; Jordi's toegestane afwijking), 64x64-coordinaten:
+  streep_dij: (45,37) -> zwart
+  streep_dij: (45,38) -> zwart
+  streep_dij: (45,39) -> zwart
+  streep_dij: (45,40) -> zwart
+  streep_dij: (45,41) -> zwart
+  streep_dij: (45,42) -> zwart
+  streep_dij: (45,43) -> zwart
+  streep_staart: (46,32) -> zwart
+  streep_staart: (46,33) -> zwart
+
+OOGZONE (wordt later vervangen door een Gen 3-oog): 64x64 x 18-25, y 21-27 (beschermd: niet ontkorreld/omgelijnd).
+Huidige oogpixels (64x64-coordinaten, rij voor rij x 18-25):
+  y21 DLHLLLNN
+  y22 LHHWWLNN
+  y23 LHW00WNN
+  y24 LW000WLM
+  y25 NW0DWWNM
+  y26 WWWWWLNM
+  y27 LLLLNNMM
+
+Kleuren: 12 + transparant = 13 (0 1 3 4 5 D H L M N S W)
+
+r2-stappen (opdracht Claude):
+hoorn = band langs de middellijn van de modelhoorn (hoornskelet.py: Zhang-Suen op het modelhoornvlak): 2 px staal (afstand <=1,0
+  tot de middellijn, laatste 12% taps naar 0,5), 1 px lijn eromheen; lichte kant (normaal naar boven/links) 5, glinster W waar
+  >35% van het modelhoornvlak in die cel wit is (>240), andere kant 3 (donkere reflectie). Oude hoornresten buiten band+ring
+  weg (alleen vanaf de rand, geen gaten). Linkerhoorn niet over de kuif/kop (ligt erachter in het model).
+lijn = selout D (donkerste vachttint, ook op de hoorns) op randen waarvan de normaal naar boven/links wijst; zwart naar
+  rechts/onder; kuif/manen zwart (selout 1 zou om en om met zwart staan).
+plukjes = cellen in de plukvakken boven de achterhoeven met >=45% zwart in het model -> zwart (ook buiten het oude silhouet).
+toon = meerderheids-toonklasse van het model per cel (harde grenzen zadel/flank/wit); flank N (<p20) / L / H (>p85, nieuwe tint
+  #DEE5ED) uit de helderheid van alleen de flankpixels: schouder, bil boven, onder de kaak, buiklijn.
+oog = de donkere oogpixels uit r1 bevroren (21 t/m 25 lokaal); de vacht eromheen kreeg de gewone r2-kop-tinten.

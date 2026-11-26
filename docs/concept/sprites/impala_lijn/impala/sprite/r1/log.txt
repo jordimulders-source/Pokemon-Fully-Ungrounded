@@ -1,0 +1,38 @@
+r1: afwijkingen t.o.v. de kale reductie (kaal gemapt = modelreductie met alleen de Gen 3-tintkeuze per zone)
+Basis: per cel lijn (>=50% zwarte modellijn) of vlakkleur onder de lijn (gemiddelde, niet-lijnpixels) -> tint via modelhelderheid.
+
+hoorns        61 van  177 px  (lijn 51, hoorngrens 9, binnenlijn 1)
+kop+hals      54 van  270 px  (ontkorrel 25, lijn 15, binnenlijn 10, hoorngrens 4)
+lijf+staart   69 van  417 px  (lijn 21, ontkorrel 20, strepen_weg 15, streep_dij 6, binnenlijn 4, streep_staart 3)
+poten         48 van  223 px  (lijn 40, ontkorrel 5, binnenlijn 3)
+totaal       232 van 1087 px
+
+Uitleg stappen: lijn = 1-px buitenlijn dicht + gekleurde selout op randen die naar boven/linksboven wijzen;
+binnenlijn = modellijn binnen het silhouet -> donkerste eigen tint (D of 1), geen zwart;
+hoorngrens = modellijn tussen hoorn en kuif/kop (valt bij de reductie weg) uit de zonegrens van de modelsegmentatie;
+ontkorrel = tintvlakje <3 px -> meest voorkomende buurtint (niet in hoorns/oog/neus);
+strepen_weg = de vier bilstrepen (Jordi) -> vachttint van het model naast de streep (helderheid van de lijfpixels in die cel).
+
+ZELF GEZETTE PIXELS (niet uit het model; Jordi's toegestane afwijking), 64x64-coordinaten:
+  streep_staart: (47,31) -> zwart
+  streep_staart: (46,32) -> zwart
+  streep_staart: (46,33) -> zwart
+  streep_dij: (45,37) -> zwart
+  streep_dij: (45,38) -> zwart
+  streep_dij: (45,39) -> zwart
+  streep_dij: (45,40) -> zwart
+  streep_dij: (45,41) -> zwart
+  streep_dij: (45,42) -> zwart
+  streep_dij: (45,43) -> zwart
+
+OOGZONE (wordt later vervangen door een Gen 3-oog): 64x64 x 18-25, y 21-27 (beschermd: niet ontkorreld/omgelijnd).
+Huidige oogpixels (64x64-coordinaten, rij voor rij x 18-25):
+  y21 MLLLLLNL
+  y22 LLLWWLLL
+  y23 LLW00LLL
+  y24 LW000WLN
+  y25 LW0DLWLN
+  y26 WWWWWLLM
+  y27 LLLLLLNM
+
+Kleuren: 11 + transparant = 12 (0 1 3 4 5 D L M N S W)

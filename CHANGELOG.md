@@ -3475,3 +3475,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Hoatzin fase 2: sprite r1 (maker).
 - Hoatzin fase 2: sprite r2–r5 (keurder BIJNA → reparaties, oog, DC-eindkeuring); r5 naar Jordi.
 - Hoatzin fase 2: sprite r6–r9 (snavel, kuif K1, teken halverwege, linkervoet, eindkeuring); Jordi over r7: "uitstekend".
+- Hoatzin fase 2: kleurrondes r10–r12 (volume, minder donker).

@@ -56,6 +56,7 @@ SECTIES=[
 ("gnometrotter_grass/af/gnometrotter_grass.png",'"Gnometrotter" (Grass)',"fairy/grass"),
 ("satelliet_lijn/fase1/af/satelliet_fase1.png",'Satelliet fase 1 (Spoetnik)',"steel/cosmic"),
 ("satelliet_fase2/af/satelliet.png",'Satelliet fase 2',"steel/cosmic"),
+("satelliet_fase3/af/ruimtestation.png",'Ruimtestation (satelliet fase 3)',"steel/cosmic"),
 ("capybarrel/af/capybarrel.png",'"Capybarrel"',"normal"),
 ("capykart/af/capykart.png",'"Capykart"',"normal"),
 ("tempel/af/tempel.png",'Levende tempel',"ghost/rock"),

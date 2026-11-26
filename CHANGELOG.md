@@ -3448,3 +3448,8 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.832] - Regionale Poliwrath: frontsprite af (25 nov)
 - `docs/concept/sprites/poliwrath_regional/af/poliwrath_regional.png` (Ice/Poison, eindvorm van de regionale Poliwag-lijn). Model = Gemini v2 gespiegeld (r1 te veel de gewone Poliwrath; bijgestuurd slanker/hoekiger), natief raster 75→62 geschrapt; hele Poliwrath-oog met lid in modelkleuren op ware grootte (E2), mond = 1-px boog met hoeken omlaag (M1), modelspiraal (S1); palet = regionale Poliwhirl; DC-eindkeuring. Op het overzichtsvel (Regional forms). Alles in `poliwrath_regional/SPEC.md`.
+### [v0.0.833] - Ruimtestation (satelliet-lijn fase 3): frontsprite af
+- Ontwerp via Gemini (r1–r9): van ringstation via "te simpel" naar een kruisvormig station met vier oogbollen (achterste oog onzichtbaar), zijarmen kleiner, geen antennes, drie paar panelen; inspiratie Tiangong/ISS van Jordi. Gemini r10 (compact) mislukte.
+- Model bevroren = r9 met fixes r10–r13b (panelen 4 vakken voor/achter, mast 3, tweelingpaneel, ogen zonder wit, zij-ogen naar voren-links, rechteroog uit het voorste oog).
+- Sprite: r1–r2 afgekeurd (hertekend); vanaf r3 kale modelreductie + benoemde reparaties; kleurronde (3 romptinten), panelen in het fase 2-recept, oogbollen groter (voor ×1,3, zij ×1,8), panelen breder, ogen in driekwart uit het model, mastpanelen gecentreerd op de stok en gelijk (3 vakken, 6 px). Eindkeuring r15 en r16 PASS.
+- `docs/concept/sprites/satelliet_fase3/af/ruimtestation.png`; op het overzichtsvel. Naam open. Alles in `satelliet_fase3/SPEC.md`; lessen in `docs/lessen/GEMINI.md` (pitch meten, geometrie = ook tekenen, begrenzende as, afgesproken aantallen natellen).

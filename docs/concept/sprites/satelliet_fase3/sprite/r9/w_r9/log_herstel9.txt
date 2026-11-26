@@ -1,0 +1,408 @@
+x y oud->nieuw onderdeel reden (t.o.v. pijplijnuitvoer sprite_r9.png = r8-pijplijn op het r9-model)
+34 13 2->0 paneelrand buiten het modelparallellogram / losse pixel -> transparant
+35 13 2->0 paneelrand buiten het modelparallellogram / losse pixel -> transparant
+35 14 12->2 PB paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+38 15 0->2 PB paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+37 16 14->12 PB paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+38 16 2->1 PB paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+37 17 2->14 PB paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+38 17 14->1 PB paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+39 17 2->0 paneelrand buiten het modelparallellogram / losse pixel -> transparant
+37 18 6->14 PB paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+38 18 2->1 PB paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+39 18 1->0 paneelrand buiten het modelparallellogram / losse pixel -> transparant
+27 19 12->2 PA paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+28 19 3->2 PA paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+35 19 13->12 PB paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+36 19 2->13 PB paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+37 19 6->12 PB paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+38 19 12->1 PB paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+39 19 1->0 paneelrand buiten het modelparallellogram / losse pixel -> transparant
+21 20 2->0 paneelrand buiten het modelparallellogram / losse pixel -> transparant
+27 20 13->12 PA paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+28 20 13->12 PA paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+31 20 12->2 PA paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+32 20 2->0 paneelrand buiten het modelparallellogram / losse pixel -> transparant
+36 20 12->13 PB paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+37 20 2->13 PB paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+38 20 13->1 PB paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+39 20 1->0 paneelrand buiten het modelparallellogram / losse pixel -> transparant
+21 21 12->2 PA paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+31 21 11->12 PA paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+32 21 12->2 PA paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+33 21 12->2 PA paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+37 21 6->13 PB paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+38 21 2->1 PB paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+39 21 1->0 paneelrand buiten het modelparallellogram / losse pixel -> transparant
+32 22 11->12 PA paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+33 22 13->12 PA paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+39 22 1->0 paneelrand buiten het modelparallellogram / losse pixel -> transparant
+18 23 1->0 paneelrand buiten het modelparallellogram / losse pixel -> transparant
+20 23 13->1 PA paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+21 23 13->1 PA paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+33 23 13->14 PA paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+35 23 13->12 PB paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+38 23 6->1 PB paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+39 23 1->0 paneelrand buiten het modelparallellogram / losse pixel -> transparant
+19 24 0->1 romp romp waar het model romp heeft (kleur kale reductie)
+33 24 13->11 PA paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+37 24 1->13 PB paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+39 24 1->0 paneelrand buiten het modelparallellogram / losse pixel -> transparant
+22 25 0->1 romp romp waar het model romp heeft (kleur kale reductie)
+28 25 11->1 PA paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+33 25 13->11 PA paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+37 25 1->13 PB paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+38 25 13->1 PB paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+39 25 1->0 paneelrand buiten het modelparallellogram / losse pixel -> transparant
+28 26 1->0 paneelrand buiten het modelparallellogram / losse pixel -> transparant
+30 26 6->1 PA paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+31 26 2->1 PA paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+32 26 11->1 PA paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+33 26 13->1 PA paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+38 26 2->1 romp romp waar het model romp heeft (kleur kale reductie)
+39 26 2->1 romp romp waar het model romp heeft (kleur kale reductie)
+30 27 1->0 paneelrand buiten het modelparallellogram / losse pixel -> transparant
+31 27 1->0 paneelrand buiten het modelparallellogram / losse pixel -> transparant
+32 27 1->0 paneelrand buiten het modelparallellogram / losse pixel -> transparant
+50 28 0->1 romp romp waar het model romp heeft (kleur kale reductie)
+49 29 13->2 PC paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+52 29 2->0 paneelrand buiten het modelparallellogram / losse pixel -> transparant
+47 30 13->2 PC paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+48 30 2->12 PC paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+49 30 2->12 PC paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+50 30 13->12 PC paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+52 30 12->2 PC paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+56 30 2->0 paneelrand buiten het modelparallellogram / losse pixel -> transparant
+45 31 1->2 PC paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+46 31 12->2 PC paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+47 31 2->12 PC paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+48 31 4->13 PC paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+49 31 4->13 PC paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+50 31 3->12 PC paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+51 31 2->13 PC paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+52 31 12->13 PC paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+54 31 2->13 PC paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+56 31 12->2 PC paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+45 32 12->2 PC paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+46 32 13->12 PC paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+48 32 2->13 PC paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+49 32 3->12 PC paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+56 32 12->11 PC paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+59 32 12->14 PC paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+22 33 0->1 romp romp waar het model romp heeft (kleur kale reductie)
+44 33 2->3 romp romp waar het model romp heeft (kleur kale reductie)
+45 33 2->1 PC paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+46 33 2->13 PC paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+47 33 2->13 PC paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+48 33 3->12 PC paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+58 34 12->11 PC paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+7 35 2->0 paneelrand buiten het modelparallellogram / losse pixel -> transparant
+58 35 2->11 PC paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+7 36 14->2 PD paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+9 36 12->2 PD paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+10 36 3->2 PD paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+6 37 14->12 PD paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+9 37 13->12 PD paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+10 37 13->12 PD paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+12 37 3->2 PD paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+13 37 0->2 PD paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+4 38 14->12 PD paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+12 38 13->12 PD paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+13 38 2->12 PD paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+15 38 1->2 PD paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+0 39 1->0 paneelrand buiten het modelparallellogram / losse pixel -> transparant
+1 39 2->0 paneelrand buiten het modelparallellogram / losse pixel -> transparant
+2 39 12->1 PD paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+17 39 2->0 paneelrand buiten het modelparallellogram / losse pixel -> transparant
+1 40 1->0 paneelrand buiten het modelparallellogram / losse pixel -> transparant
+2 40 1->0 paneelrand buiten het modelparallellogram / losse pixel -> transparant
+4 40 13->1 PD paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+5 40 13->1 PD paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+14 40 2->11 PD paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+15 40 2->1 PD paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+16 40 2->1 PD paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+17 40 1->0 paneelrand buiten het modelparallellogram / losse pixel -> transparant
+34 40 2->1 romp romp waar het model romp heeft (kleur kale reductie)
+4 41 1->0 paneelrand buiten het modelparallellogram / losse pixel -> transparant
+5 41 1->0 paneelrand buiten het modelparallellogram / losse pixel -> transparant
+7 41 13->1 PD paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+13 41 2->11 PD paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+34 41 1->2 PF paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+36 41 1->2 PF paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+37 41 0->2 PF paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+7 42 1->0 paneelrand buiten het modelparallellogram / losse pixel -> transparant
+9 42 14->1 PD paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+10 42 11->1 PD paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+34 42 1->2 PF paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+35 42 6->12 PF paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+36 42 1->2 PF paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+9 43 1->0 paneelrand buiten het modelparallellogram / losse pixel -> transparant
+10 43 11->2 romp romp waar het model romp heeft (kleur kale reductie)
+29 43 2->3 romp romp waar het model romp heeft (kleur kale reductie)
+34 43 1->2 PF paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+35 43 6->12 PF paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+36 43 2->12 PF paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+37 43 1->12 PF paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+38 43 3->12 PF paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+40 43 1->2 PF paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+34 44 1->2 PF paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+35 44 6->12 PF paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+37 44 2->14 PF paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+38 44 4->14 PF paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+39 44 2->12 PF paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+40 44 14->1 PF paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+41 44 2->0 paneelrand buiten het modelparallellogram / losse pixel -> transparant
+34 45 1->2 PF paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+35 45 2->12 PF paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+37 45 1->12 PF paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+38 45 2->12 PF paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+39 45 13->14 PF paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+40 45 14->1 PF paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+41 45 1->0 paneelrand buiten het modelparallellogram / losse pixel -> transparant
+28 46 2->14 PE paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+29 46 2->14 PE paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+30 46 2->14 PE paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+34 46 1->2 PF paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+35 46 6->12 PF paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+36 46 12->13 PF paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+37 46 1->13 PF paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+38 46 4->13 PF paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+39 46 2->12 PF paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+40 46 12->1 PF paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+41 46 2->0 paneelrand buiten het modelparallellogram / losse pixel -> transparant
+27 47 2->14 PE paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+28 47 12->14 PE paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+31 47 2->13 PE paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+32 47 2->13 PE paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+33 47 2->13 PE paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+35 47 1->2 PE paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+36 47 13->2 PE paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+37 47 1->2 PE paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+38 47 1->13 PF paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+39 47 12->13 PF paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+40 47 11->1 PF paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+41 47 1->0 paneelrand buiten het modelparallellogram / losse pixel -> transparant
+25 48 1->2 PE paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+26 48 2->12 PE paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+27 48 12->14 PE paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+31 48 12->13 PE paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+32 48 12->13 PE paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+35 48 13->12 PE paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+36 48 13->12 PE paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+37 48 13->12 PE paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+38 48 12->2 PE paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+39 48 11->2 PE paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+40 48 11->2 PE paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+41 48 1->0 paneelrand buiten het modelparallellogram / losse pixel -> transparant
+24 49 1->2 PE paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+25 49 14->12 PE paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+26 49 12->14 PE paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+38 49 11->12 PE paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+39 49 11->12 PE paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+40 49 11->1 PE paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+41 49 1->0 paneelrand buiten het modelparallellogram / losse pixel -> transparant
+24 50 12->1 PE paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+40 50 11->1 PE paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+41 50 1->0 paneelrand buiten het modelparallellogram / losse pixel -> transparant
+26 51 12->1 PE paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+27 51 13->1 PE paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+36 51 4->11 PE paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+37 51 2->11 PE paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+38 51 12->11 PE paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+39 51 11->1 PE paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+40 51 11->0 paneelrand buiten het modelparallellogram / losse pixel -> transparant
+41 51 1->0 paneelrand buiten het modelparallellogram / losse pixel -> transparant
+26 52 1->0 paneelrand buiten het modelparallellogram / losse pixel -> transparant
+27 52 1->0 paneelrand buiten het modelparallellogram / losse pixel -> transparant
+29 52 13->1 PE paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+30 52 12->1 PE paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+36 52 2->11 PE paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+37 52 12->11 PE paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+38 52 11->1 PE paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+39 52 11->0 paneelrand buiten het modelparallellogram / losse pixel -> transparant
+40 52 11->0 paneelrand buiten het modelparallellogram / losse pixel -> transparant
+41 52 1->0 paneelrand buiten het modelparallellogram / losse pixel -> transparant
+29 53 1->0 paneelrand buiten het modelparallellogram / losse pixel -> transparant
+30 53 1->0 paneelrand buiten het modelparallellogram / losse pixel -> transparant
+31 53 13->1 PE paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+32 53 13->1 PE paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+33 53 13->1 PE paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+36 53 12->11 PE paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+38 53 11->1 PE paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+39 53 1->0 paneelrand buiten het modelparallellogram / losse pixel -> transparant
+40 53 1->0 paneelrand buiten het modelparallellogram / losse pixel -> transparant
+41 53 1->0 paneelrand buiten het modelparallellogram / losse pixel -> transparant
+31 54 1->0 paneelrand buiten het modelparallellogram / losse pixel -> transparant
+32 54 1->0 paneelrand buiten het modelparallellogram / losse pixel -> transparant
+33 54 14->1 PE paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+34 54 11->1 PE paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+35 54 11->1 PE paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+36 54 11->1 PE paneel uit modelparallellogram (rand/vak/lijn volgens recept)
+38 54 1->0 paneelrand buiten het modelparallellogram / losse pixel -> transparant
+33 55 1->0 paneelrand buiten het modelparallellogram / losse pixel -> transparant
+34 55 1->0 paneelrand buiten het modelparallellogram / losse pixel -> transparant
+35 55 1->0 paneelrand buiten het modelparallellogram / losse pixel -> transparant
+36 55 1->0 paneelrand buiten het modelparallellogram / losse pixel -> transparant
+15 26 2->0 bol_links cirkel: pixelmidden buiten r=5.51 -> transparant
+23 27 0->1 bol_links cirkel: pixelmidden binnen r=5.51 -> bol
+14 28 0->1 bol_links cirkel: pixelmidden binnen r=5.51 -> bol
+24 28 0->1 bol_links cirkel: pixelmidden binnen r=5.51 -> bol
+22 34 0->1 bol_links cirkel: pixelmidden binnen r=5.51 -> bol
+22 27 1->5 bol_links oude rand ligt nu binnen de cirkel: tint van de buur naar binnen
+15 28 2->10 bol_links oude rand ligt nu binnen de cirkel: tint van de buur naar binnen
+23 28 1->4 bol_links oude rand ligt nu binnen de cirkel: tint van de buur naar binnen
+16 32 2->9 bol_links oude rand ligt nu binnen de cirkel: tint van de buur naar binnen
+21 33 1->4 bol_links oude rand ligt nu binnen de cirkel: tint van de buur naar binnen
+22 33 1->4 bol_links oude rand ligt nu binnen de cirkel: tint van de buur naar binnen
+21 34 1->4 bol_links oude rand ligt nu binnen de cirkel: tint van de buur naar binnen
+56 43 0->1 bol_rechts cirkel: pixelmidden binnen r=6.51 -> bol
+54 44 0->1 bol_rechts cirkel: pixelmidden binnen r=6.51 -> bol
+56 42 1->5 bol_rechts oude rand ligt nu binnen de cirkel: tint van de buur naar binnen
+54 43 1->4 bol_rechts oude rand ligt nu binnen de cirkel: tint van de buur naar binnen
+47 19 0->1 bol_achter cirkel: pixelmidden binnen r=4.51 -> bol
+13 45 6->15 oog_voor oude oogpixel buiten de nieuwe oogvorm -> boltint van de buur
+14 45 6->15 oog_voor oude oogpixel buiten de nieuwe oogvorm -> boltint van de buur
+15 45 6->15 oog_voor oude oogpixel buiten de nieuwe oogvorm -> boltint van de buur
+11 46 8->5 oog_voor oude oogpixel buiten de nieuwe oogvorm -> boltint van de buur
+12 46 8->5 oog_voor oude oogpixel buiten de nieuwe oogvorm -> boltint van de buur
+11 47 8->5 oog_voor oude oogpixel buiten de nieuwe oogvorm -> boltint van de buur
+10 48 8->5 oog_voor oude oogpixel buiten de nieuwe oogvorm -> boltint van de buur
+10 49 6->5 oog_voor oude oogpixel buiten de nieuwe oogvorm -> boltint van de buur
+10 50 6->5 oog_voor oude oogpixel buiten de nieuwe oogvorm -> boltint van de buur
+15 46 8->7 oog_voor ring (licht linksboven, schaduw rechtsonder)
+16 46 8->7 oog_voor ring (licht linksboven, schaduw rechtsonder)
+12 47 9->8 oog_voor ring (licht linksboven, schaduw rechtsonder)
+14 47 10->9 oog_voor iris (tint uit model)
+16 47 8->10 oog_voor iris (tint uit model)
+17 47 8->7 oog_voor ring (licht linksboven, schaduw rechtsonder)
+16 48 8->10 oog_voor iris (tint uit model)
+17 48 6->10 oog_voor iris (tint uit model)
+18 48 5->7 oog_voor ring (licht linksboven, schaduw rechtsonder)
+11 49 10->8 oog_voor ring (licht linksboven, schaduw rechtsonder)
+13 49 2->10 oog_voor iris (tint uit model)
+15 49 10->2 oog_voor pupil 2x2 in het midden
+16 49 9->10 oog_voor iris (tint uit model)
+17 49 6->9 oog_voor iris (tint uit model)
+18 49 5->7 oog_voor ring (licht linksboven, schaduw rechtsonder)
+11 50 10->7 oog_voor ring (licht linksboven, schaduw rechtsonder)
+13 50 2->10 oog_voor iris (tint uit model)
+15 50 10->2 oog_voor pupil 2x2 in het midden
+16 50 9->10 oog_voor iris (tint uit model)
+17 50 6->9 oog_voor iris (tint uit model)
+18 50 4->6 oog_voor ring (licht linksboven, schaduw rechtsonder)
+11 51 6->7 oog_voor ring (licht linksboven, schaduw rechtsonder)
+17 51 6->10 oog_voor iris (tint uit model)
+18 51 4->6 oog_voor ring (licht linksboven, schaduw rechtsonder)
+12 52 6->7 oog_voor ring (licht linksboven, schaduw rechtsonder)
+15 52 9->10 oog_voor iris (tint uit model)
+16 52 6->9 oog_voor iris (tint uit model)
+13 53 6->7 oog_voor ring (licht linksboven, schaduw rechtsonder)
+14 53 6->7 oog_voor ring (licht linksboven, schaduw rechtsonder)
+16 53 3->6 oog_voor ring (licht linksboven, schaduw rechtsonder)
+15 28 10->15 oog_links oude oogpixel buiten de nieuwe oogvorm -> boltint van de buur
+17 34 6->4 oog_links oude oogpixel buiten de nieuwe oogvorm -> boltint van de buur
+18 34 7->4 oog_links oude oogpixel buiten de nieuwe oogvorm -> boltint van de buur
+17 28 4->8 oog_links ring (licht linksboven, schaduw rechtsonder)
+18 28 15->7 oog_links ring (licht linksboven, schaduw rechtsonder)
+19 28 15->7 oog_links ring (licht linksboven, schaduw rechtsonder)
+15 29 6->8 oog_links ring (licht linksboven, schaduw rechtsonder)
+16 29 10->8 oog_links ring (licht linksboven, schaduw rechtsonder)
+17 29 8->10 oog_links iris (tint uit model)
+18 29 8->10 oog_links iris (tint uit model)
+19 29 3->7 oog_links ring (licht linksboven, schaduw rechtsonder)
+20 29 5->7 oog_links ring (licht linksboven, schaduw rechtsonder)
+15 30 7->8 oog_links ring (licht linksboven, schaduw rechtsonder)
+17 30 10->2 oog_links pupil 2x2 in het midden
+18 30 8->2 oog_links pupil 2x2 in het midden
+19 30 8->9 oog_links iris (tint uit model)
+20 30 5->7 oog_links ring (licht linksboven, schaduw rechtsonder)
+15 31 10->7 oog_links ring (licht linksboven, schaduw rechtsonder)
+16 31 2->10 oog_links iris (tint uit model)
+18 31 9->2 oog_links pupil 2x2 in het midden
+19 31 8->10 oog_links iris (tint uit model)
+20 31 4->6 oog_links ring (licht linksboven, schaduw rechtsonder)
+15 32 10->7 oog_links ring (licht linksboven, schaduw rechtsonder)
+16 32 9->7 oog_links ring (licht linksboven, schaduw rechtsonder)
+17 32 2->10 oog_links iris (tint uit model)
+19 32 7->6 oog_links ring (licht linksboven, schaduw rechtsonder)
+20 32 4->6 oog_links ring (licht linksboven, schaduw rechtsonder)
+16 33 6->7 oog_links ring (licht linksboven, schaduw rechtsonder)
+17 33 10->7 oog_links ring (licht linksboven, schaduw rechtsonder)
+18 33 10->6 oog_links ring (licht linksboven, schaduw rechtsonder)
+19 33 7->6 oog_links ring (licht linksboven, schaduw rechtsonder)
+47 38 8->4 oog_rechts oude oogpixel buiten de nieuwe oogvorm -> boltint van de buur
+47 39 6->4 oog_rechts oude oogpixel buiten de nieuwe oogvorm -> boltint van de buur
+48 41 6->5 oog_rechts oude oogpixel buiten de nieuwe oogvorm -> boltint van de buur
+49 42 6->5 oog_rechts oude oogpixel buiten de nieuwe oogvorm -> boltint van de buur
+50 42 6->5 oog_rechts oude oogpixel buiten de nieuwe oogvorm -> boltint van de buur
+51 42 6->5 oog_rechts oude oogpixel buiten de nieuwe oogvorm -> boltint van de buur
+49 36 7->8 oog_rechts ring (licht linksboven, schaduw rechtsonder)
+50 36 6->8 oog_rechts ring (licht linksboven, schaduw rechtsonder)
+51 36 8->7 oog_rechts ring (licht linksboven, schaduw rechtsonder)
+52 36 15->7 oog_rechts ring (licht linksboven, schaduw rechtsonder)
+49 37 6->8 oog_rechts ring (licht linksboven, schaduw rechtsonder)
+52 37 8->7 oog_rechts ring (licht linksboven, schaduw rechtsonder)
+53 37 5->7 oog_rechts ring (licht linksboven, schaduw rechtsonder)
+48 38 10->8 oog_rechts ring (licht linksboven, schaduw rechtsonder)
+49 38 2->10 oog_rechts iris (tint uit model)
+51 38 10->2 oog_rechts pupil 2x2 in het midden
+53 38 6->7 oog_rechts ring (licht linksboven, schaduw rechtsonder)
+48 39 10->7 oog_rechts ring (licht linksboven, schaduw rechtsonder)
+49 39 2->10 oog_rechts iris (tint uit model)
+51 39 10->2 oog_rechts pupil 2x2 in het midden
+48 40 10->7 oog_rechts ring (licht linksboven, schaduw rechtsonder)
+49 40 10->7 oog_rechts ring (licht linksboven, schaduw rechtsonder)
+52 40 9->6 oog_rechts ring (licht linksboven, schaduw rechtsonder)
+49 41 6->7 oog_rechts ring (licht linksboven, schaduw rechtsonder)
+50 41 10->7 oog_rechts ring (licht linksboven, schaduw rechtsonder)
+51 41 10->6 oog_rechts ring (licht linksboven, schaduw rechtsonder)
+47 19 1->2 omlijning randpixel tegen transparant: navy (lichtkant)
+14 28 1->2 omlijning randpixel tegen transparant: navy (lichtkant)
+14 31 6->2 omlijning randpixel tegen transparant: navy (lichtkant)
+14 32 6->1 omlijning randpixel tegen transparant: zwart (schaduwkant)
+15 33 6->2 omlijning randpixel tegen transparant: navy (lichtkant)
+47 40 6->2 omlijning randpixel tegen transparant: navy (lichtkant)
+17 41 5->2 omlijning randpixel tegen transparant: navy (lichtkant)
+
+TELLING (pixels anders dan de pijplijnuitvoer, laatste reden telt)
+PA          paneel uit modelparallellogram (rand/vak/lijn volgens recept)               21
+PB          paneel uit modelparallellogram (rand/vak/lijn volgens recept)               22
+PC          paneel uit modelparallellogram (rand/vak/lijn volgens recept)               28
+PD          paneel uit modelparallellogram (rand/vak/lijn volgens recept)               22
+PE          paneel uit modelparallellogram (rand/vak/lijn volgens recept)               50
+PF          paneel uit modelparallellogram (rand/vak/lijn volgens recept)               34
+bol_links   cirkel: pixelmidden binnen r=5.51 -> bol                                    3
+bol_links   cirkel: pixelmidden buiten r=5.51 -> transparant                            1
+bol_links   oude rand ligt nu binnen de cirkel: tint van de buur naar binnen            5
+bol_rechts  cirkel: pixelmidden binnen r=6.51 -> bol                                    2
+bol_rechts  oude rand ligt nu binnen de cirkel: tint van de buur naar binnen            2
+omlijning   randpixel tegen transparant: navy (lichtkant)                               6
+omlijning   randpixel tegen transparant: zwart (schaduwkant)                            1
+oog_links   iris (tint uit model)                                                       6
+oog_links   oude oogpixel buiten de nieuwe oogvorm -> boltint van de buur               3
+oog_links   pupil 2x2 in het midden                                                     3
+oog_links   ring (licht linksboven, schaduw rechtsonder)                                19
+oog_rechts  iris (tint uit model)                                                       2
+oog_rechts  oude oogpixel buiten de nieuwe oogvorm -> boltint van de buur               6
+oog_rechts  pupil 2x2 in het midden                                                     2
+oog_rechts  ring (licht linksboven, schaduw rechtsonder)                                16
+oog_voor    iris (tint uit model)                                                       13
+oog_voor    oude oogpixel buiten de nieuwe oogvorm -> boltint van de buur               9
+oog_voor    pupil 2x2 in het midden                                                     2
+oog_voor    ring (licht linksboven, schaduw rechtsonder)                                15
+paneelrand  buiten het modelparallellogram / losse pixel -> transparant                 57
+romp        romp waar het model romp heeft (kleur kale reductie)                        9
+totaal 359
+
+RONDHEID (randpixels in de vrije sector, afwijking d-(R-0,5) in px)
+voor {'r8': {'n': 25, 'min': np.float64(-0.37), 'max': np.float64(1.56), 'R': 7.84, 'vrij_graden': 204}, 'r9': {'n': 24, 'min': np.float64(-0.37), 'max': np.float64(0.42), 'R': 7.84, 'vrij_graden': 204}}
+links {'r8': {'n': 23, 'min': np.float64(-1.38), 'max': np.float64(2.0), 'R': 5.51, 'vrij_graden': 258}, 'r9': {'n': 20, 'min': np.float64(-0.11), 'max': np.float64(0.47), 'R': 5.51, 'vrij_graden': 258}}
+rechts {'r8': {'n': 18, 'min': np.float64(-0.46), 'max': np.float64(0.38), 'R': 6.51, 'vrij_graden': 183}, 'r9': {'n': 18, 'min': np.float64(-0.29), 'max': np.float64(0.5), 'R': 6.51, 'vrij_graden': 183}}
+achter {'r8': {'n': 16, 'min': np.float64(-0.43), 'max': np.float64(0.5), 'R': 4.51, 'vrij_graden': 258}, 'r9': {'n': 17, 'min': np.float64(-0.43), 'max': np.float64(0.5), 'R': 4.51, 'vrij_graden': 258}}
+knoop {'r8': None, 'r9': None}
+
+BOLLEN {'voor': {'c': (16.83, 48.54), 'R': 7.84, 'vrij': 204}, 'links': {'c': (19.57, 30.43), 'R': 5.51, 'vrij': 258}, 'rechts': {'c': (52.75, 38.23), 'R': 6.51, 'vrij': 183}, 'achter': {'c': (50.92, 22.42), 'R': 4.51, 'vrij': 258}, 'knoop': None}
+OGEN {'voor': {'vorm': 'ring 8, iris 6, pupil 2x2', 'plek': (11, 46), 'verschuiving': (np.float64(0.74), np.float64(0.13))}, 'links': {'vorm': 'ring 6, iris 4, pupil 2x2', 'plek': (15, 28), 'verschuiving': (np.float64(1.04), np.float64(-0.85))}, 'rechts': {'vorm': 'ring 6, iris 4, pupil 2x2', 'plek': (48, 36), 'verschuiving': (np.float64(0.39), np.float64(-0.47))}}
+
+PANELEN {'PC': {'eigen_buiten_parallellogram': 1, 'leeg_binnen_parallellogram': 1, 'trap': {'boven': [1, 1, 1, 1, 4, 4, 4, 3], 'onder': [2, 4, 4, 3, 1, 2, 1, 1, 1]}}, 'PA': {'eigen_buiten_parallellogram': 0, 'leeg_binnen_parallellogram': 1, 'trap': {'boven': [1, 2, 1, 1, 2, 3, 3, 3, 4], 'onder': [3, 3, 4, 3, 1, 1, 2, 1, 1, 1]}}, 'PB': {'eigen_buiten_parallellogram': 0, 'leeg_binnen_parallellogram': 1, 'trap': {'links': [14, 1, 1], 'rechts': [1, 1, 14]}}, 'PD': {'eigen_buiten_parallellogram': 0, 'leeg_binnen_parallellogram': 5, 'trap': {'boven': [2, 1, 2, 2, 1, 3, 3, 2, 3], 'onder': [3, 3, 2, 3, 1, 2, 1, 2, 2]}}, 'PF': {'eigen_buiten_parallellogram': 2, 'leeg_binnen_parallellogram': 3, 'trap': {'links': [10, 1, 1], 'rechts': [1, 1, 10]}}, 'PE': {'eigen_buiten_parallellogram': 2, 'leeg_binnen_parallellogram': 2, 'trap': {'boven': [1, 1, 1, 1, 1, 1, 1, 2, 3, 3, 3, 1], 'onder': [2, 3, 3, 3, 2, 1, 1, 1, 1, 1, 1]}}}
+kleuren 16 (incl. transparant)

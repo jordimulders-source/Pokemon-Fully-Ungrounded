@@ -3529,3 +3529,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.x] - Werknamen (26 nov)
 - Jordi: Scrapstack (spooktrein fase 1), Impyre (vuurduivel fase 1), Bibuilder (Bibarel-evolutie), Impalar (impala). In `POKEMON.md` → Werknamen, `CLAUDE.md` en op het overzichtsvel.
+
+### [v0.0.x] - Overzichtsvel: Hoenn-Grimer/Muk, gaucho-typen (26 nov)
+- Regionale Grimer en Muk (uit Ungrounded, Poison/Ground; `graphics/pokemon/{grimer,muk}/hoenn/`, frame 1 met normal.pal als `docs/concept/sprites/{grimer,muk}_hoenn/af/`) op het overzichtsvel bij Regional forms (Jordi: "die zijn technisch gezien ook origineel").
+- Gaucho-Lombre en -Ludicolo zijn Ground/Fighting (Jordi: "lombre en ludicolo zijn ground/fight"); SPEC, POKEMON.md, CLAUDE.md en het vel bijgewerkt.

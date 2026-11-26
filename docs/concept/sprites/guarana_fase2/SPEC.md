@@ -59,3 +59,4 @@ Fase 1 (af): `../guarana/` (SPEC daar = alle eerdere besluiten).
 ## Sprite r2 (Jordi, 26 nov)
 - "ja de ogen gaan werken, soms mag je afwijken van de 4 pixel pupil als dat beter past, voor de rest is de hele sprite volledig 2d en kijken de ogen eigenlijk vrijwel nergens echt naar linksonder. De hele sprite is hoekig, niet goed ingekleurd, geen enkele schaduw zie ik ook."
 - "1 is lastig te zeggen omdat alles zo hoekig is" (oogrand lijnrood/zwart: nog open). "Half dicht is prima, dan kan je makkelijker wegkomen met een kleiner pupil, overlap geen probleem".
+- Sprite r4: Jordi "de ogen zien er nu niet goed uit omdat ze allemaal precies dezelfde richting heebben, kijk naar hoe de eerste fase het deed" → r5 pupillen gevarieerd. Daarna: "links is wat netter, moet nog steeds wel wat meer afgewerkt worden, kijk naar hoe fase 1 kleuren en schaduwen etc doet" → oogrand **A (lijnrood)**; afwerking naar fase 1.

@@ -139,3 +139,23 @@ Keep it simple and readable at 64x64: big clear shapes, like a real Gen 3 sprite
 
 No effects, no glow, no sparkles, no shadow; draw no ground under the hourglass. AVOID: a realistic hourglass with a face, a human in a costume, a plush toy, Neopets style.
 ```
+
+**Jordi over r7:** "ook niet beter he" (`r7.png`). Claude: glas in de schouders en zand uit het midden lukten; maar net als r6 slap en zacht (geen kracht, schattige oogjes). Gemeen in r6 en r7: de versimpelwoorden (flat colors, no muscle lines, simple).
+
+## r8 – r5 woordelijk + alleen het glaswerk uit r7
+```
+Design an original Pokémon as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64 pixels, max 16 colors, white background, facing 3/4 to the left.
+
+Concept: a sand djinn (Ground/Psychic) that has escaped from its hourglass, like a genie that escaped its lamp. It must clearly read as a genie/djinn.
+- Source: at the bottom, an hourglass lies on its side, opened in the middle (at the narrow waist): the glass is open right there. No loose glass shards.
+- Tail: the sand visibly pours OUT of that opening in the middle of the hourglass and rises up in a thick, curling sand tail, like genie smoke. The tail starts exactly at the opening in the middle of the hourglass, not at its ends or beside it.
+- Body: a big, heavy, broad upper body with wide shoulders, tapering in a V-shape down into the tail. Made of golden sand.
+- Pose: arms folded across the chest, the classic genie pose. Arms end in rounded sand stumps without fingers.
+- Wrists: big cuffs made of GLASS (same glass as the hourglass), broken open, showing it escaped. No gold.
+- Head: the head IS a brain made of sand, with simple Pokémon eyes; brain folds shown with only a few clear lines. On top of the brain a curling tuft of sand like a genie's topknot.
+- Glass science apparatus is truly connected to the body, NOT hanging behind it or strapped to its back. It grows out of the body and the sand flows through it: for example a big glass flask sits on the front of one shoulder with its neck sunk into the sand body, filled with the creature's own sand; on the other shoulder a big glass funnel, with sand from the body pouring through it back into the body. Only 2 pieces, each large and clearly defined, in front of or on the body, visible from the front.
+It must NOT look human: no human face, no nose, no ears, no beard, no human hands.
+Keep it simple and readable at 64x64: big clear shapes, like a real Gen 3 sprite. Compact silhouette that fits a square.
+
+No effects, no glow, no sparkles, no shadow; draw no ground under the hourglass. AVOID: a realistic hourglass with a face, a human in a costume, a plush toy, Neopets style.
+```

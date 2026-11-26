@@ -7,8 +7,9 @@ Lijn (Jordi, 26 nov): fase 1 zandloper met levend zand en alleen ogen → fase 2
 - **Onderkant:** Jordi: "r5 komt juist wel uit de zandloper, alleen de barst zit op de verkeerde plek." → barst naar het midden, waar het zand eruit komt.
 - **Glaswerk:** Jordi: "r7 en later doen het wel goed om het glaswerk in het lichaam te stoppen, dus dat kan je misschien daarvan nemen, en dan het spul erachter maar laten." Over r8: "hoofd prima, ook hoe die glazen dingen uit het lichaam komen".
 - **Detail:** Jordi: "Teveel detail namaken gaat sowieso fout weet ik uit eerdere sessies".
-- **Open:** spierbundels r5 laten of rustiger; boeien lichtblauw glas; type Ground/Psychic bevestigen.
 - **Brein (Jordi, 26 nov):** "ik vind de vorm van r5 mooier dan r8, maar hoe het brein van de binnenkant eruit ziet is bij r8 zeker prima" → vorm hoofd r5, windingen r8.
 - Jordi: "als je de windingen minder kan maken in r5 is dat ook een optie" → in de spritefase beide tonen: r5 met minder windingen en r5-vorm met r8-windingen.
 - **Glaswerk achter de rug (Jordi):** "het glaswerk achter de rug van r5 vertaalt niet naar een sprite denk ik" → weg. Ogen r5 of r8: als varianten tonen.
 - **Gezicht (Jordi):** "r8 heeft weer net wat meer pokemon ogen denk ik, maar r5 een betere 'mond'" → ogen r8, mond r5.
+- **Jordi (26 nov) op de laatste punten:** "spierbundels mogen wat minder, maar rustiger wordt bij jou vaak blurry, en daar moet je voor waken, een djinn heeft sws een beetje een menselijke vorm, dat is geen ramp." "Boeien lichtblauw prima, type ja. Brein en lijf dezelfde tinten is helemaal niet erg, hij is helemaal van zand." Staart: 2–3 duidelijke banden ("5 ja"). **"Het belangrijkste is dat het geen pixelblur wordt, het mag simplistischer maar moet echt gedefinieerd blijven".**
+- Type: **Ground/Psychic** (bevestigd).

@@ -25,3 +25,4 @@ Alle citaten en lijnbesluiten: `docs/concept/IDEEEN.md` → "Impala-lijn"; samen
 - Keelfranje: op de vraag of die als baard/sik leest, Jordi: "nee hoor ik zie daar echt ruimte tussen" → blijft zoals in r3b.
 - Open: grootte (Jordi r4: "lijkt wat klein").
 - **Manen (Jordi, 26 nov): variant A** (`sprite/r1/model_A.png`: manen van r3b naar achteren/omlaag over de schouder): "A is goed, alleen houd er rekening mee dat gemini die boog had gedaan omdat er een schouder zat, dus die boog hoeft geen boog meer te zijn".
+- **Model manen = `sprite/r3/model_A3.png`** (keelfranjelokken van r3b gespiegeld over de schouder, kamlokken erboven). Jordi (26 nov): "klopt wel nu dat je de nek niet helemaal goed ziet in de sprite, dat moet duidelijker".

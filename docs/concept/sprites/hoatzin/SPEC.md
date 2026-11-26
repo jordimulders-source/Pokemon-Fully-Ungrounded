@@ -74,3 +74,4 @@ MOOD: ugly in a Pokémon way, something you don't trust. Simple, readable design
 
 AVOID: clothing, hat, cloak or any accessory; a seam or line where a beak meets a head; a sharp or hooked beak; brown or chestnut; a fat or round belly; a stocky body; polka dots; dripping liquid; glow; cut-off legs; not a crow or raven.
 ```
+- **r4** (`gemini/fase2_r4.png`, prompt v3, nieuw gesprek). Jordi: "hij doet vrijwel niks anders, behalve dat we poten hebben, het teken op de buik hebben we nog niet en verder ook niks veranderd". Les: de snavelvorm verandert niet via tekst (3 rondes). Voorstel Claude: lijf/pose van r4 als basis houden, kop apart via Gemini maken en in de modelfase erop plakken (zoals Sunflora-evolutie/mate-kano); buikteken nog open (radioactief of eigen bijtend teken).

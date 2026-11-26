@@ -3468,3 +3468,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Hoatzin fase 2: keuzes 1a/3c, prompt v2.
 - Hoatzin fase 2: Gemini r2 + feedback.
 - Hoatzin fase 2: Gemini r3 + feedback, prompt v3 (kop = één doorlopend masker zonder aansluitingslijn).
+- Hoatzin fase 2: Gemini r4 + feedback; voorstel kop apart.

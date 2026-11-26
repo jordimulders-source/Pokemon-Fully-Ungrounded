@@ -77,3 +77,24 @@ AVOID: clothing, hat, cloak or any accessory; a seam or line where a beak meets 
 - **r4** (`gemini/fase2_r4.png`, prompt v3, nieuw gesprek). Jordi: "hij doet vrijwel niks anders, behalve dat we poten hebben, het teken op de buik hebben we nog niet en verder ook niks veranderd" + "behalve dat het gezicht nu wat beter klopt". Voorstel Claude (kop apart maken) afgewezen: Jordi "nee het hoofd is juist prima". Jordi daarna: "de rest moet beter". r4-hoofd = basis; buikteken: Jordi "waar is het radioactiviteits teken?" (Claude had het bewust uit v3 gelaten en a/b voorgelegd; nu radioactief, geelgroen).
 - Buikteken = dit teken (Jordi: "deze"): `referenties/radioactief_teken.png` (zwart klaverblad met middenstip op een ronde schijf met zwarte rand); schijf in geelgroen (Jordi eerder: "eens wat betreft geelgroen").
 - **r5** (`gemini/fase2_r5.png`, bijsturen r4 + teken als bijlage): teken klein op de dij geplakt, rest gelijk. Jordi: "manmanman" + "alleen die zwarte stukken hoeven erop" (dus geen schijf/rand, alleen de drie bladen en de stip).
+
+## Prompt fase 2 (v4, Engels; nieuw gesprek, from scratch op Jordi's verzoek)
+= v3 + buikteken (alleen de drie bladen + stip, zonder schijf/rand). Eigen toevoegingen Claude: teken in geelgroen (zwart valt weg op het zwarte lijf), "large, centered on the belly".
+
+```
+Design an original Pokémon, drawn as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 colors, white background, no ground, no shadow, no effects. The whole creature, including both feet, fits inside a square canvas with white margin on all sides; nothing is cut off.
+
+POSE (most important): a tall, slender bird standing upright on two long thin legs with clearly visible clawed feet, body turned 3/4 to the left. Exactly two wings: the near wing (right side of the image) is raised and spread wide in an attacking pose, the far wing (left) is half open. Long S-curved neck, long tail. Not stocky, thin belly.
+
+HEAD (important): the head IS a plague doctor's mask, not a bird head with a beak. Head and beak are ONE smooth continuous shape with no line, seam or joint between them: the forehead flows straight into the long beak, like a stitched leather plague doctor mask. The beak is long, cone-shaped and soft in outline, with a rounded, blunt tip that bends slightly downward. Not sharp, not hooked, no separate bill. Same blackish color as the body, shaded smoothly like the mask. The eye is the eyehole of the mask: one bright red eye with a patch of blue bare skin around it, like a real hoatzin face. A spiky, messy hoatzin crest on top of the head, large and simple so it reads clearly at sprite size.
+
+BELLY MARKING: a radiation trefoil grows as a natural feather marking on its belly: only the three blades and the center dot, in yellow-green, directly on the black feathers. No circle, no disc, no outline ring around it, not a sticker or badge. Large, centered on the belly.
+
+WHAT IT IS: an evolved hoatzin (the Amazon "stinkbird"). TYPE: Poison/Dark. Its poison is acid: about half of every wing feather, tail feather and crest feather is soaked in yellow-green acid, seeping from the tip inward as a gradient. No dots or spots, no dripping.
+
+COLORS: blackish body and head (not brown, not chestnut). Few colors, clean simple shading: blackish feathers, red eye, blue face patch, yellow-green acid and belly marking.
+
+MOOD: ugly in a Pokémon way, something you don't trust. Simple, readable design, not complex.
+
+AVOID: clothing, hat, cloak or any accessory; a seam or line where a beak meets a head; a sharp or hooked beak; brown or chestnut; a fat or round belly; a stocky body; polka dots; dripping liquid; glow; cut-off legs; a round badge or sticker; not a crow or raven.
+```

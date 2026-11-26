@@ -16,3 +16,4 @@ Alle citaten en lijnbesluiten: `docs/concept/IDEEEN.md` → "Impala-lijn"; samen
 - Pre-evolutie: **niet noemen** in de prompt.
 - Grootte (Jordi, 26 nov): "mag echt een grote sprite zijn ook".
 - Strepen (Jordi, 26 nov): "de kudu strepen moeten we wel erop doen ook indien mogelijk".
+- Manen (Jordi, 26 nov, meerkeuze): over de hals/schouders (vanaf achter de oren over de bovenkant van de hals naar beide kanten over de schouders, voller dan paardenmanen, eindigen op de schouder).

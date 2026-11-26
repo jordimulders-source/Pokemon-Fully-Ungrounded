@@ -120,3 +120,4 @@ Opdracht: `sprite/OPDRACHT.md`.
 - **r7** (`sprite/r7/`): K1 + snavelpunt rond afgesloten (onderste rij van de punt 2 px i.p.v. 4) + teken halverwege (−1,+1). Rechte lijn onder de kaak (y20, x14–20) staat er nog: het model is daar zelf recht.
 - Jordi op r7: "poh uitstekend, eindelijk, toch de hoatzin gelukt. Linkerpoot moet je nog even naar kijken, de klauw is een beetje een rechthoek geworden". Naar r8 (alleen de linkervoet).
 - **r8** (`sprite/r8/`): linkervoet met twee losse tenen uit het model (13 px, diff 0 erbuiten).
+- **r9** (`sprite/r9/`): DC-eindkeuring op r8, 4 px (linkervoet 2, kuif 1, teken 1), alpha-diff 0. Naar Jordi.

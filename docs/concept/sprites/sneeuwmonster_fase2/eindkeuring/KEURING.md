@@ -68,3 +68,20 @@ Oogvorm, maat, plek en de kas zelf zijn hetzelfde gebleven.
 Resultaat: licht facet linksboven, donker naar rechtsonder, steen nu K 16 / steen 24 / g 8 / G 2 / gloed 39.
 
 **Ter info voor Jordi (ek2):** de stenen zijn 5–6 px breed; hun omtrek is rond omdat de rand tegen de vacht ligt, en de vacht en het silhouet waren bevroren. Een hoekiger brokvorm (zoals in het model) kan alleen als er een paar vachtpixels rond de stenen mogen veranderen. Op 1× lezen ze nu als donkere brokken met een licht facet en een gloeiende rand. Of dat genoeg "steen" is, moet Jordi beoordelen.
+
+## Ronde ek3 (26 nov): alleen de stenen, twee varianten
+Opdracht: de gloed overheerste in ek2 (rechterhelft van elke steen oranje/geel/rood). Bron `ek2/sneeuwmonster2_ek2.png` (het ooglid van ek2 blijft), script `ek3/bouw.py`, palet ongewijzigd. Uitvoer: `ek3/sneeuwmonster2_ek3A.png`, `ek3/sneeuwmonster2_ek3B.png` (+ `_8x`), `ek3/vel.png` (stenen 16× ek2 | A | B | model; hele sprite 8×; 1× en 2× op licht en donker naast fase 1, Skinguin, Zapacha).
+Steen per rij als tekstraster in `bouw.py` (K rand/diepste schaduw, steen, g licht facet, G lichte facetrand, r/o/y gloed), gelegd op de modelbrokken (16×-uitsnede met sprite-raster):
+- **Boven:** lichte facetten linksboven (x22–25, r35–36) en een middengrijs facet onder de scheur (x23–24, r38); donker rechtsonder. De scheur loopt doorlopend over rij 37 (x23 r, x24 **geel**, x25 o) en via (26,36) o en (27,35) r naar de rand. Dunne gloedrand rechts (x28 r37–38, (27,39)) en onder ((26,40), rij 41).
+- **Onder:** lichte facetten links (x21–23, r44–46). De scheur loopt van (22,44) r via (23,45) **geel** en (24,45) o naar (25,46) r. Dunne gloedrand rechts (x26–27, r44–48) en onder ((24–25,49)).
+
+| variant | gewijzigd t.o.v. ek2 | steen px | gloed | geel | K / steen / g / G |
+|---|---|---|---|---|---|
+| ek2 | – | 89 | 39 (44 %) | 6 | – |
+| **A** (zelfde omtrek) | 47 px, alleen binnen de stenen | 89 | 23 (26 %) | 2 | 34 / 19 / 11 / 2 |
+| **B** (hoekige omtrek) | 54 px; vacht → steen: boven (26,34) (28,36) (28,39) (21,40), onder (20,47) (27,48) (22,49) | 96 | 26 (27 %) | 2 | 38 / 19 / 11 / 2 |
+
+B volgt de modelbrok: boven een vlakke top tot x26, een rechte rechterflank op x28 (r36–39) en een scharpe hoek linksonder; onder een rechte linkerflank op x20 (r45–47), een vlakke onderkant (x22–25, r49) en een vierkante hoek rechtsonder (27,48). Dat is 4 en 3 px per steen (maximaal 6). Geen pixel steen → vacht.
+Asserts: silhouet gelijk; alle wijzigingen binnen x19–29, y33–50; de nieuwe steenpixels grenzen direct aan de steen; ogen, mond, emmer (y ≤ 26) en de overige vacht hebben index-diff 0.
+
+**Ter info voor Jordi:** in het model ligt de gloedrand deels buiten de zwarte rand en loopt hij rondom rechts. In A/B is hij 1 px dun en zit hij binnen de omtrek, zodat de steenmassa domineert. B leest op 1× het meest als een hoekige brok.

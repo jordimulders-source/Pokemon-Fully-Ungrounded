@@ -123,3 +123,4 @@ Opdracht: `sprite/OPDRACHT.md`.
 - **r9** (`sprite/r9/`): DC-eindkeuring op r8, 4 px (linkervoet 2, kuif 1, teken 1), alpha-diff 0. Naar Jordi.
 - Jordi op r9: "het kleurgebruik, schaduw, tinten zijn nog niet top. Snavel is effen, kop die in de kuif overgaat lijkt gewoon bijna een vierkant vlak. Hij leest erg 2d, kan je dat nog fixen, kijk ook of die niet te donker is". Kleurronde r10 (verse maker).
 - **r10** (`sprite/r10/`, verse maker): A (r9-donkerte) en B (Murkrow-bereik) met volume. Claude: vleugels kussenvlakken, snavel schuine banden; reparaties naar r11.
+- **r11** (`sprite/r11/`): kussens weg (lichte randen per veergroep), snavel één rugstrook, kop lichte sikkel. Naar keurder.

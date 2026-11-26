@@ -103,3 +103,4 @@ AVOID: clothing, hat, cloak or any accessory; a seam or line where a beak meets 
 ## Model (combinatie, 26 nov; Jordi "akkoord")
 - r6 (lijf, vleugels, staart, poten, teken) + r4-hoofd (incl. kuif met zuurpunten), naad bij de nek. Hoofdmaten: `model/comb_s1.0|1.1|1.2.png` (`comb_vel.png`), canvas 120 px hoger zodat de kuif past.
 - Teken in perspectief (op s1.1): oud teken weggepoetst en opnieuw gezet, A smal 75 %, B 75 % + 15° links, C 75 % + 15° rechts, D 60 % (`model/teken_*.png`, `teken_vel.png`; `gereedschap/teken.py`). Jordi: "het radioactiviteits teken ga je in een ander perspectief dus niet helemaal zien, dat is niet erg, het is toch herkenbaar".
+- Jordi: "het valt deels weg door de driekwart pose". Varianten E/F/G: teken naar de buikrand geschoven en door de omlijning afgesneden (E 20 px, F 35 px, G 35 px + linkerhelft samengedrukt als om een ronding); `teken_vel2.png`, `gereedschap/teken2.py`. Wegpoetsen nu met gladde invulling (A–D opnieuw gemaakt).

@@ -12,17 +12,15 @@ reg=base[y0:y1,x0:x1].copy()
 r,g,b=reg[...,0],reg[...,1],reg[...,2]
 M=(g>110)&(r>90)&(b<130)&(g-b>50)
 Mclr=binary_dilation((g-b>18)&(g>60)|M,iterations=3)
-clean=reg.copy()
-for yy in range(reg.shape[0]):
-    row=Mclr[yy]
-    if not row.any(): continue
-    good=np.nonzero(~row)[0]
-    for xx in np.nonzero(row)[0]:
-        L=good[good<xx]; R=good[good>xx]
-        if len(L) and len(R):
-            l,rr=L[-1],R[0]; t=(xx-l)/(rr-l); clean[yy,xx]=(1-t)*reg[yy,l]+t*reg[yy,rr]
-        elif len(L) or len(R): clean[yy,xx]=reg[yy,(L[-1] if len(L) else R[0])]
-cleaned=base.copy(); cleaned[y0:y1,x0:x1]=clean
+clean=reg.astype(float).copy()
+known=~Mclr
+clean[Mclr]=np.array([50,52,48])
+for _ in range(400):
+    pad=np.pad(clean,((1,1),(1,1),(0,0)),mode='edge')
+    avg=(pad[:-2,1:-1]+pad[2:,1:-1]+pad[1:-1,:-2]+pad[1:-1,2:])/4
+    clean[Mclr]=avg[Mclr]
+cleaned=base.copy(); cleaned[y0:y1,x0:x1]=clean.round()
+Mfull=np.zeros(base.shape[:2],bool); Mfull[y0:y1,x0:x1]=Mclr
 Mp=binary_dilation(M,iterations=1)
 tc=Image.fromarray(reg.astype('uint8')); tm=Image.fromarray((Mp*255).astype('uint8'))
 cx,cy=(x0+x1)//2,(y0+y1)//2

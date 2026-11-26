@@ -13,3 +13,7 @@ Besluiten lijn: `docs/concept/IDEEEN.md` → "Extra Ice-lijn: Ice/Fire". Fase 1:
 
 ## Open
 - Mond (fase 1 heeft er geen), naam, evolutielevel.
+
+## Model (26 nov)
+- `model.png` = Gemini `gemini/r1/r1a.png` met de stenen van `gemini/r3/r3a.png` geplakt (`gemini/plak/plak_r3.py 70 340 418`). Jordi: "nu zijn de stenen goed, maar blijf voor de rest het eerste ontwerp het leukste vinden"; "r1a moeten de stenen iets lager, de bovenste overlapt met de baard, 70px breed goed".
+- r1a wijkt af van de prompt (mondje, dichte ogen, één band, bijna frontaal); Jordi koos r1a zo.

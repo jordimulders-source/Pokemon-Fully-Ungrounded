@@ -50,3 +50,27 @@ Style: official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 
 
 AVOID: the Flurry from Mario, Snorunt, Vanillite, Abomasnow, a classic three-ball snowman, a carrot nose, a scarf, stick arms, big black oval hole eyes, gold or shiny buttons, plush toy / Neopets look, flames.
 ```
+
+## Ronde 2 (26 nov)
+- `r2/r2a.png`. Jordi: "stenen goed, rest minder"; "ofja de vorm"; "ik weet niet of het echt gloeiende lava/saunastenen zijn".
+- Claude: plaktest r2a-stenen op r1a (`plak/plak.py`, `plak/vel.png`: 100 % en 85 %) werkt.
+
+## r3 (nieuw gesprek, zonder bijlage) = r2, alleen de stenen als ruwe donkere steen met gloeiende scheuren; alleen de stenen gebruiken (plakken op r1a)
+Eigen invulling Claude: donker (sluit aan op de koude donkere steentjes van fase 1), gloeiende scheuren en randen.
+```
+Design an original Pokemon. Type: Ice/Fire. Middle stage of a three-stage line (the final stage will be a yeti).
+
+Concept: a living snow creature, halfway between a snowman and a small yeti. One single rounded body of packed snow (no separate head ball, no stacked snowballs), bigger and bulkier than a snowman, with rough, shaggy snow on the surface like fur. Two short but real arms of shaggy snow (not stick arms), and two short stubby feet underneath. It stands upright, compact and a bit chunky.
+
+Head: an old wooden sauna bucket sits upside down on top of its head like a hat, made of wooden staves held together by two dark metal bands. The bucket is part of its look the way a bucket hat is on a snowman.
+
+Face: two small dark pebbles pressed into the snow as eyes, with a tiny highlight, eyes half closed. No mouth. Expression: content and relaxed, like someone enjoying a sauna.
+
+Stones: on its belly, exactly two hot sauna stones pressed into the snow, placed one ABOVE the other in a vertical line down the middle of the belly, like the buttons of a snowman, with a clear gap of snow between them. Each stone is large: about one quarter of the body width. They are rough, irregular, lumpy rocks (not round, not smooth, not gems, not crystals, not shiny): dark charcoal-black volcanic rock, heated until they glow, with bright orange and yellow glowing cracks running through them and glowing orange edges, like lava rock or red-hot sauna stones. Only the stones themselves glow; no halo, no light rays. NOT side by side.
+
+Colors: snow in white with cool light blue and grey-blue shading. Bucket in warm brown wood with dark grey bands. Eyes in dark charcoal. Stones in dark charcoal with orange and yellow glowing cracks.
+
+Style: official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 colors, dark outline, facing 3/4 to the left (far arm on the left, smaller; near arm on the right), compact composition that fills a square, limbs close to the body. White background, no ground, no shadow, no effects, no steam, no fire, no falling snowflakes.
+
+AVOID: the Flurry from Mario, Snorunt, Vanillite, Abomasnow, a classic three-ball snowman, a carrot nose, a scarf, stick arms, big black oval hole eyes, gold or shiny buttons, plush toy / Neopets look, flames.
+```

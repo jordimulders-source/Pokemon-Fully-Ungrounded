@@ -3536,3 +3536,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.x] - Werknaam Gumfish (26 nov)
 - Blobfish fase 1 heet Gumfish (Jordi: "blobfish fase 1 mag gumfish heten"); POKEMON.md, CLAUDE.md en het overzichtsvel.
+
+### [v0.0.x] - Werknaam Missingraph. (26 nov)
+- Glitch-lijn fase 1 heet Missingraph. (met punt; Jordi: "glitch fase 1 mag Missingraph. heten"). 12 tekens, precies de maximale naamlengte (`POKEMON_NAME_LENGTH` 12). POKEMON.md, CLAUDE.md en het overzichtsvel.

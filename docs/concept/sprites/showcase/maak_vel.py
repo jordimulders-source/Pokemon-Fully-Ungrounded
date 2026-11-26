@@ -62,7 +62,7 @@ SECTIES=[
 ("tempel/af/tempel.png",'Levende tempel',"ghost/rock"),
 ("impala_lijn/dikdik/af/dikdik.png",'Dikdik (impala-lijn fase 1)',"normal"),
 ("impala_lijn/impala/af/impala.png",'"Impalar"',"normal/steel"),
-("glitch_lijn/fase1_glitch/af/glitch_fase1.png",'Glitch (glitch-lijn fase 1)',"electric"),
+("glitch_lijn/fase1_glitch/af/glitch_fase1.png",'"Missingraph."',"electric"),
 ("glitch_lijn/fase2_bug/af/glitch_fase2.png",'Bug (glitch-lijn fase 2)',"electric/bug"),
 ("glitch_lijn/fase3_virus/af/glitch_fase3.png",'Virus (glitch-lijn fase 3)',"electric/bug"),
 ("guarana/af/guarana.png",'Guaraná fase 1',"grass/ghost"),

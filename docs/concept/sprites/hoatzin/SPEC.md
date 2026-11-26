@@ -105,3 +105,7 @@ AVOID: clothing, hat, cloak or any accessory; a seam or line where a beak meets 
 - Teken in perspectief (op s1.1): oud teken weggepoetst en opnieuw gezet, A smal 75 %, B 75 % + 15° links, C 75 % + 15° rechts, D 60 % (`model/teken_*.png`, `teken_vel.png`; `gereedschap/teken.py`). Jordi: "het radioactiviteits teken ga je in een ander perspectief dus niet helemaal zien, dat is niet erg, het is toch herkenbaar".
 - Jordi: "het valt deels weg door de driekwart pose". Varianten E/F/G: teken naar de buikrand geschoven en door de omlijning afgesneden (E 20 px, F 35 px, G 35 px + linkerhelft samengedrukt als om een ronding); `teken_vel2.png`, `gereedschap/teken2.py`. Wegpoetsen nu met gladde invulling (A–D opnieuw gemaakt).
 - Jordi: "B is het beste, maar stel hij draait zich naar ons toe, zou het teken dan midden op zijn buik staan?" Claude: nee, in driekwart naar links ligt het echte midden van de buik dichter bij de voorrand; B staat midden in het zichtbare deel. Varianten H/I = B 12/22 px naar de buikrand (`teken_vel3.png`, `gereedschap/teken3.py`).
+- Jordi: "ga anders maar gewoon bouwen, dan fixen we dat in de sprite wel" / "want dat vertaalt ook weer anders". **Model = `model/model.png`** (= hoofdmaat 1,1 + teken B, Jordi's "B is het beste"); plek van het teken (midden op de buik, deels weg in driekwart) en hoofdmaat zo nodig in de sprite.
+
+## Sprite fase 2
+Opdracht: `sprite/OPDRACHT.md`.

@@ -189,3 +189,16 @@ An old hourglass lying on its side, with brown wooden end caps and light blue gl
 
 ## r11 – samengevoegd door Claude (geen prompt)
 Bovenlijf r8 tot y=680 (oude staartkrul weg), onderkant r10 vanaf y=60 geschaald ×0,85 (breedte straal = breedte lijf), zand en lijnen naar de r8-kleuren (`r11_samengevoegd.png`, test 64 px `r11_test64.png`, naast elkaar `r11_vergelijk.png`). Bekend: de straal heeft geen zwarte omlijning zoals r8, naad bij de aansluiting, zandloper fijner gepixeld dan het lijf.
+
+**Jordi over r11:** "slordig knip en plak werk".
+
+## r12 – collage r11 als bijlage, Gemini tekent hem als één geheel
+Bijlage: `r11_samengevoegd.png`. Nieuw gesprek.
+```
+The attached image is a rough collage of my Pokémon design: a sand djinn that escaped from a broken hourglass. The top half and the bottom half come from two different drawings, so the style does not match. Redraw it as ONE clean, cohesive official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64 pixels, max 16 colors, white background, facing 3/4 to the left.
+
+Keep the design exactly: the brain head with eyes and the curling topknot, the arms folded across the chest with the broken glass cuffs, the glass flask and funnel growing out of the shoulders, the broad V-shaped upper body, and at the bottom the hourglass lying on its side, cracked open in the middle, with the sand stream coming out of that crack and rising up into the body.
+Make it one drawing: the same pixel size and the same dark outline everywhere, the sand stream as thick as needed to flow smoothly into the body without a seam, the hourglass in proportion to the body.
+
+No effects, no glow, no shadow, no ground.
+```

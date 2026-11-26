@@ -27,3 +27,6 @@ Fase 1 (af): `../guarana/` (SPEC daar = alle eerdere besluiten).
 ## Ronde 4 (`gemini/r4.png`, nieuw gesprek)
 - 64 px-test (`gemini/r4_test64_8x.png`, 58×64): ogen lezen nu als wit oog met pupil. Wel: onderkant werd een knoestige bult, grijpranken werden hand-/klauwachtige voeten.
 - Jordi: "waar ik nu over twijfel is dat het fruit is ook is afgenomen. Misschien iets meer fruit maar niet alle ogen geopend, zoals fase 1?" (wijkt af van het eerdere "alle vruchten open"; Jordi's nieuwe woorden gelden). Bijsturen r5: `gemini/PROMPT_r5_bijsturen.md` (2–3 gesloten, kleinere vruchten per tros erbij; voorstel Claude) + Jordi: "en de bladeren zijn te klein nu" (blad groter).
+
+## Ronde 5 (`gemini/r5.png`, bijgestuurd in het r4-gesprek)
+- Gesloten vruchten erbij; blad niet groter geworden. Jordi: "links is niet mooi, de andere 2 gaan wel, we doen er nog 1 from scratch" → startprompt r6 (`gemini/PROMPT_r6.md`).

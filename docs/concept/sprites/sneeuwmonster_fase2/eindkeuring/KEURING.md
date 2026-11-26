@@ -85,3 +85,9 @@ B volgt de modelbrok: boven een vlakke top tot x26, een rechte rechterflank op x
 Asserts: silhouet gelijk; alle wijzigingen binnen x19–29, y33–50; de nieuwe steenpixels grenzen direct aan de steen; ogen, mond, emmer (y ≤ 26) en de overige vacht hebben index-diff 0.
 
 **Ter info voor Jordi:** in het model ligt de gloedrand deels buiten de zwarte rand en loopt hij rondom rechts. In A/B is hij 1 px dun en zit hij binnen de omtrek, zodat de steenmassa domineert. B leest op 1× het meest als een hoekige brok.
+
+## Ronde ek4 (26 nov): gloed links + rechteroog
+Jordi: "kan je ze nog een klein beetje meer omringen, paar pixels aan de linkerkant van het steen zoals in het model? het rechteroog is boven nog een beetje puntig, verder vind ik hem goed". Niet gekozen tussen A en B, dus beide. Script `ek4/bouw.py`, start ek3 A/B, palet ongewijzigd. Uitvoer `ek4/sneeuwmonster2_ek4A.png`, `ek4/sneeuwmonster2_ek4B.png` (+ `_8x`), `ek4/vel.png` (stenen en rechteroog 16×: ek3 A | ek4 A | ek3 B | ek4 B | model; hele sprite 8×; 1× op licht en donker). 7 px per variant.
+- **Gloed links (5 px, zwarte randpixels → gloed, geen geel; ≥ 50 % modelgloed oranje, anders rood).** Gemeten gloedaandeel van het model per pixel: boven (21,36) r 33 %, (21,39) o 81 %, (22,40) o 79 %; onder (21,44) r 30 %, plus in A (21,47) r (11 %, de rand ligt in A binnen de omtrek; het model gloeit net links ervan) en in B (20,47) o 52 % (de randpixel die B al toevoegde). Gloed nu A 28 van 89 (31 %), B 31 van 96 (32 %); geel blijft 2.
+- **Rechteroog (2 px).** De punt bovenop waren twee losse donkere lijnpixels direct boven het oog, (31,19) s en (32,19) l. Het model is daar wit (L245/246), dus → w. Het oog is nu boven 3 px breed op 5 px, met afgeronde hoeken zoals het linkeroog (2 op 4). Maat, kas en lidlijn van ek2 zijn niet veranderd.
+Asserts: silhouet gelijk, precies 7 px verschil per variant. De rest (andere ogenpixels, mond, emmer, vacht, overige steenpixels) heeft index-diff 0.

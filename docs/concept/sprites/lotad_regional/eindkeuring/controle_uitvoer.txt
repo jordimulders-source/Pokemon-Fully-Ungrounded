@@ -1,0 +1,12 @@
+formaat (64, 64) P | transparant index 0
+alpha-diff (silhouet) 0
+oog-diff x18-33 y39-41 0
+  gewijzigd hoed    13 van 462
+  gewijzigd kop     5 van 185
+  gewijzigd snavel  0 van 40
+  gewijzigd kraag   53 van 272
+  gewijzigd poten   11 van 100
+totaal gewijzigd 83 | kleuren incl. transparant 14 | palet-indexen gebruikt [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+terra (hoed/kop/poten) 2 (108, 52, 34) L67 H15 S0.69 | 3 (156, 86, 58) L104 H17 S0.63 | 4 (192, 118, 80) L136 H20 S0.58 | 5 (222, 152, 106) L168 H24 S0.52
+kraag 6 (86, 62, 44) L67 H26 S0.49 | 7 (124, 104, 74) L107 H36 S0.40 | 8 (164, 137, 92) L140 H37 S0.44 | 9 (223, 195, 127) L196 H42 S0.43
+snavel 10 (180, 150, 86) L152 H41 S0.52 | 11 (232, 204, 124) L203 H44 S0.47

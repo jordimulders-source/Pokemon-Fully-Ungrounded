@@ -1,0 +1,20 @@
+# Regionale Poliwhirl – sprite r2 (maker)
+Basis = r1 variant a1 (`../sprite_r1/`), met drie wijzigingen. Uitvoer: `poliwhirl_regional_r2_S1.png`, `poliwhirl_regional_r2_S2.png` (64×64, geïndexeerd, 16 kleuren incl. transparant, palet regionale Poliwag), `vel.png`. Bouwen: `python3 uitvoer3.py && python3 vel3.py`.
+
+## 1. Geel/zwart (coördinator: sprite te zwart)
+- `basis.py`: cellen die als donker gelezen werden maar ≥ 30 % geel modelmateriaal hebben en niet op de buitenrand liggen → geel (tint = helderheid van de gele modelpixels in de cel). 37 cellen: (30,1) (21,3) (21,4) (20,5) (24,5) (17,6) (13,10) (32,10) (32,11) (14,12) (32,12) (24,13) (16,14) (26,14) (34,14) (12,15) (36,15) (11,16) (13,16) (18,16) (38,16) (10,17) (12,17) (19,17) (27,19) (33,19) (17,20) (41,20) (17,21) (16,24) (20,29) (17,30) (27,30) (17,31) (34,36) (14,39) (40,44). Drempel 0,30 i.p.v. 0,40: de dunne diagonale gele strepen op armen (en een bovenbeen) halen per cel 30–40 %; bij 0,40 waren het er maar 17.
+- Omlijning naar buiten: een gele randpixel blijft geel als de buitencel in het model ≥ 20 % donker is; de omlijning komt dan in die buitencel (15 px: (15,19) (24–26,31) (18,38) (9–10,40) (16,43) (33,42) (14,44) (33,43) (38,45) (41,45) (35,46) (34,45)).
+- Geel/zwart (HSV-meting, sprite op wit, `ratio.py`/`zones.py`): r1 0,66 → r2 **0,94** (model 1,20). Zonder oogzone: r2 1,00 (model 1,17). Kop zonder ogen 2,03 (model 1,89). Rest van het verschil: de 1 px omlijning op 64 px weegt zwaarder dan de dunne modellijn (sprite zonder index 1: 1,75). Rechterbeen blijft 0,69 (model 1,00): het scheenbeen is in het model echt zwart; de gele streep zit alleen op het bovenbeen.
+
+## 2. Ogen (Jordi: "ogen veel kleiner", "de grootte van de normale poliwhirl")
+Ogen van `graphics/pokemon/poliwhirl/anim_front_gba.png` op eigen pixelmaat: per oog het samenhangende oog (witte ring + pupil, indices 1/2/3/8/9/zwart), **37 px in de bron, 37 px in r2** (links gba x 20–26 y 13–19 → x 13–19 y 1–7; rechts gba x 38–44 y 13–19 → x 26–32 y 1–7). Geen extra ring, geen kopbult. Rond het oog: de kop uit het model (r1-basis vóór het opvullen van het modeloog); modelwit dat niet onder het nieuwe oog valt → meest voorkomende buurtint uit de kop. Kleuren omgezet: wit → 8, 222 → 9, 189 → 10, 123 → 4, 82 → 3, zwart → 1.
+
+## 3. Spiraal
+- **S1** (Jordi: "je kan de gemini vorm spiraal pakken, maar dan in de poliwhirl vorm"): `pw_spiraal.py` fit Poliwhirls zwarte band als Archimedesspiraal (fout 0,29 px): midden (30,5; 31,5), straal groeit met de klok mee, spoed 3,1 px, fase 110°, binnenbegin φ 110°, buiteneinde φ 1200° (3 windingen). `s1.py`: zelfde draairichting, fase, binnenbegin en eindhoek, spoed 2 px (1 px rood 13 + 1 px geel), midden op de modelspiraal (22,5; 23,5); buiteneinde 1 winding eerder (φ 840°, straal 4,7) zodat hij de modelmaat houdt → 9×9 px (model 11×10; één winding meer zou 13×13 worden). 27 px, alle 27 uit het afgeronde geschaalde pad (hoekpixels weggesnoeid tot een 8-verbonden lijn van 1 px; niets toegevoegd). Modelrood eerst terug naar buikgeel.
+- **S2** (Jordi: "nee niet de andere kant op, hij stopt iets hoger"): de 51 rode spiraalpixels van `poliwag_regional/af/poliwag_regional.png` 1-op-1, zelfde draairichting, verschoven (+13, −1); de 2 donkerrode staartpixels van het buiteneinde weg (Poliwag-r1 (12,31) en (13,30), op het vel magenta): het einde stopt nu 2 rijen hoger, op Poliwag (14,29) = r2 (27,28). 49 px; 0 px buiten het buikgeel, niets bijgeknipt.
+- Bewijs: S1–S2 verschillen 42 px, alle in de spiraalzone, **0 erbuiten**. r1 → r2 (S1): 168 px, waarvan 32 oogzone, 68 spiraalzone, 68 rest (geel/omlijning hierboven).
+
+## Zwakke punten
+1. S1 is 9×9, kleiner dan de modelspiraal (11×10): de spoed van 2 px en Poliwhirls eindhoek laten alleen 9 of 13 px toe.
+2. Tussen de ogen staat nu een geel stukje ((20–21, 3–5)) uit de geel-voorrang (cellen 30–40 % geel; het model heeft daar de gele rand van de oogbult naast de grijze streep).
+3. Rechterbeen blijft donkerder dan de verhouding van het model (zie boven), conform het model.

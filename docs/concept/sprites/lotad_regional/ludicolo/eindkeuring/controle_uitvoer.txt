@@ -1,0 +1,27 @@
+formaat (64, 64) P | transparant index 0
+alpha-diff (silhouet) 0
+  diff linkeroog (x19-23, y24-28)               0
+  diff rechteroog (x26-30, y24-29)              0
+  diff snavel/mond (x15-35, y27-34)             0
+  diff heel gezichtsvak (x15-35, y22-34)        0
+  zwart/olijf/rode lijn/oog-licht in het palet ongewijzigd: True
+  gewijzigd hoed (y<=25)                               20 van 593
+  gewijzigd poncho (masker)                            93 van 513
+  gewijzigd romp/armen/benen buiten poncho (y>=26)     14 van 591
+totaal gewijzigd 127 | kleuren incl. transparant 14 | indexen [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+zwart-aandeel 18.6% -> 15.7%
+rood (lijn, diep, donker, mdonker, midden, licht)
+    2 was (108, 44, 30)   nu (108, 44, 30)   L 62 ->  62  hue 11  n=185
+    3 was (136, 60, 42)   nu (128, 54, 38)   L 81 ->  74  hue 11  n=300
+    4 was (160, 74, 50)   nu (160, 74, 50)   L 97 ->  97  hue 13  n=172
+    5 was (186, 94, 64)   nu (192, 98, 66)   L118 -> 122  hue 15  n=157
+    6 was (204, 114, 80)  nu (214, 126, 88)  L137 -> 148  hue 18  n=441
+    7 was (230, 154, 112) nu (230, 154, 112) L172 -> 172  hue 21  n=5
+olijf (lijn, diep, donker, midden)
+    8 was (66, 56, 30)    nu (66, 56, 30)    L 56 ->  56  hue 43  n=34
+    9 was (86, 76, 44)    nu (86, 76, 44)    L 75 ->  75  hue 46  n=32
+   10 was (110, 98, 58)   nu (110, 98, 58)   L 97 ->  97  hue 46  n=60
+   11 was (156, 142, 86)  nu (156, 142, 86)  L140 -> 140  hue 48  n=167
+geel (donker, licht)
+   12 was (193, 143, 41)  nu (180, 150, 86)  L146 -> 152  hue 41  n=26
+   13 was (240, 200, 73)  nu (232, 204, 124) L197 -> 203  hue 44  n=70

@@ -1,0 +1,333 @@
+x y kaal->r3 onderdeel reden  (y = rij in de 43-hoge uitsnede; in sprite.png +13)
+35 1 5->2 PB paneel: vak navy / DC-rand
+36 2 5->2 PB paneel: vak navy / DC-rand
+37 3 5->2 PB paneel: vak navy / DC-rand
+37 4 5->1 PB paneel: rand schaduwkant zwart
+37 5 5->1 PB paneel: rand schaduwkant zwart
+25 6 5->2 PA paneel: vak navy / DC-rand
+26 6 5->2 PA paneel: vak navy / DC-rand
+27 6 5->2 PA paneel: vak navy / DC-rand
+36 6 11->2 PB paneel: vak navy / DC-rand
+21 7 5->2 PA paneel: vak navy / DC-rand
+29 7 5->2 PA paneel: vak navy / DC-rand
+37 7 5->1 PB paneel: rand schaduwkant zwart
+20 8 1->2 PA paneel: vak navy / DC-rand
+31 8 5->2 PA paneel: vak navy / DC-rand
+32 8 5->2 PA paneel: vak navy / DC-rand
+33 8 5->2 PA paneel: vak navy / DC-rand
+37 8 5->1 PB paneel: rand schaduwkant zwart
+19 9 5->1 PA paneel: rand schaduwkant zwart
+21 10 5->1 PA paneel: rand schaduwkant zwart
+22 10 5->1 PA paneel: rand schaduwkant zwart
+37 10 5->2 PB paneel: vak navy / DC-rand
+38 10 5->1 PB paneel: rand schaduwkant zwart
+24 11 5->1 PA paneel: rand schaduwkant zwart
+25 11 5->2 PA paneel: vak navy / DC-rand
+35 11 5->2 PB paneel: vak navy / DC-rand
+37 11 5->1 PB paneel: rand schaduwkant zwart
+27 12 2->1 PA paneel: rand schaduwkant zwart
+35 12 1->2 PB paneel: vak navy / DC-rand
+31 13 5->1 PA paneel: rand schaduwkant zwart
+34 13 5->2 PB paneel: vak navy / DC-rand
+51 16 5->2 PC paneel: vak navy / DC-rand
+52 16 5->2 PC paneel: vak navy / DC-rand
+51 17 5->2 PC paneel: vak navy / DC-rand
+55 17 5->2 PC paneel: vak navy / DC-rand
+56 17 1->2 PC paneel: vak navy / DC-rand
+49 18 11->2 PC paneel: vak navy / DC-rand
+50 18 4->2 PC paneel: vak navy / DC-rand
+58 18 5->2 PC paneel: vak navy / DC-rand
+59 18 5->2 PC paneel: vak navy / DC-rand
+45 19 5->2 PC paneel: vak navy / DC-rand
+60 19 5->2 PC paneel: vak navy / DC-rand
+61 19 5->2 PC paneel: vak navy / DC-rand
+62 19 5->2 PC paneel: vak navy / DC-rand
+47 20 5->2 PC paneel: vak navy / DC-rand
+48 20 5->2 PC paneel: vak navy / DC-rand
+62 20 2->1 PC paneel: rand schaduwkant zwart
+59 22 2->1 PC paneel: rand schaduwkant zwart
+60 22 5->1 PC paneel: rand schaduwkant zwart
+5 23 5->2 PD paneel: vak navy / DC-rand
+7 23 5->2 PD paneel: vak navy / DC-rand
+8 24 5->2 PD paneel: vak navy / DC-rand
+10 24 5->2 PD paneel: vak navy / DC-rand
+1 25 5->2 PD paneel: vak navy / DC-rand
+6 25 11->2 PD paneel: vak navy / DC-rand
+11 25 11->2 PD paneel: vak navy / DC-rand
+12 25 5->2 PD paneel: vak navy / DC-rand
+13 25 5->2 PD paneel: vak navy / DC-rand
+1 26 5->2 PD paneel: vak navy / DC-rand
+14 26 5->2 PD paneel: vak navy / DC-rand
+15 26 5->2 PD paneel: vak navy / DC-rand
+3 27 5->1 PD paneel: rand schaduwkant zwart
+10 27 5->2 PD paneel: vak navy / DC-rand
+16 27 5->2 PD paneel: vak navy / DC-rand
+17 27 5->2 PD paneel: vak navy / DC-rand
+5 28 2->1 PD paneel: rand schaduwkant zwart
+6 28 2->1 PD paneel: rand schaduwkant zwart
+34 28 5->2 PF paneel: vak navy / DC-rand
+35 28 5->2 PF paneel: vak navy / DC-rand
+8 29 2->1 PD paneel: rand schaduwkant zwart
+29 30 4->2 PE paneel: vak navy / DC-rand
+37 30 1->2 PF paneel: vak navy / DC-rand
+37 31 2->1 PF paneel: rand schaduwkant zwart
+37 33 1->2 PE paneel: vak navy / DC-rand
+34 34 5->2 PE paneel: vak navy / DC-rand
+37 35 1->2 PE paneel: vak navy / DC-rand
+38 35 1->2 PE paneel: vak navy / DC-rand
+40 36 5->2 PE paneel: vak navy / DC-rand
+33 37 5->2 PE paneel: vak navy / DC-rand
+41 37 5->1 PE paneel: rand schaduwkant zwart
+36 38 11->2 PE paneel: vak navy / DC-rand
+40 38 5->1 PE paneel: rand schaduwkant zwart
+29 39 5->1 PE paneel: rand schaduwkant zwart
+30 39 5->2 PE paneel: vak navy / DC-rand
+38 39 5->2 PE paneel: vak navy / DC-rand
+31 40 2->1 PE paneel: rand schaduwkant zwart
+38 40 5->2 PE paneel: vak navy / DC-rand
+34 41 2->1 PE paneel: rand schaduwkant zwart
+37 41 5->1 PE paneel: rand schaduwkant zwart
+36 42 4->1 PE paneel: rand schaduwkant zwart
+27 6 5->5 PA dwarslijn 1 (doorlopend, modelpositie)
+26 7 2->5 PA dwarslijn 1 (doorlopend, modelpositie)
+25 8 2->5 PA dwarslijn 1 (doorlopend, modelpositie)
+24 9 2->5 PA dwarslijn 1 (doorlopend, modelpositie)
+23 10 2->5 PA dwarslijn 1 (doorlopend, modelpositie)
+30 8 2->5 PA dwarslijn 2 (doorlopend, modelpositie)
+29 9 2->5 PA dwarslijn 2 (doorlopend, modelpositie)
+27 10 2->5 PA dwarslijn 2 (doorlopend, modelpositie)
+28 10 2->5 PA dwarslijn 2 (doorlopend, modelpositie)
+26 11 2->5 PA dwarslijn 2 (doorlopend, modelpositie)
+32 10 2->5 PA dwarslijn 3 (doorlopend, modelpositie)
+31 11 2->5 PA dwarslijn 3 (doorlopend, modelpositie)
+30 12 2->5 PA dwarslijn 3 (doorlopend, modelpositie)
+52 16 5->5 PC dwarslijn 1 (doorlopend, modelpositie)
+51 17 5->5 PC dwarslijn 1 (doorlopend, modelpositie)
+50 18 4->5 PC dwarslijn 1 (doorlopend, modelpositie)
+49 19 2->5 PC dwarslijn 1 (doorlopend, modelpositie)
+48 20 5->5 PC dwarslijn 1 (doorlopend, modelpositie)
+56 17 1->5 PC dwarslijn 2 (doorlopend, modelpositie)
+55 18 2->5 PC dwarslijn 2 (doorlopend, modelpositie)
+59 19 2->5 PC dwarslijn 3 (doorlopend, modelpositie)
+58 20 2->5 PC dwarslijn 3 (doorlopend, modelpositie)
+7 24 2->5 PD dwarslijn 1 (doorlopend, modelpositie)
+8 24 5->5 PD dwarslijn 1 (doorlopend, modelpositie)
+6 25 11->5 PD dwarslijn 1 (doorlopend, modelpositie)
+4 26 2->5 PD dwarslijn 1 (doorlopend, modelpositie)
+10 25 2->5 PD dwarslijn 2 (doorlopend, modelpositie)
+11 25 11->5 PD dwarslijn 2 (doorlopend, modelpositie)
+9 26 2->5 PD dwarslijn 2 (doorlopend, modelpositie)
+7 27 2->5 PD dwarslijn 2 (doorlopend, modelpositie)
+8 27 2->5 PD dwarslijn 2 (doorlopend, modelpositie)
+13 26 2->5 PD dwarslijn 3 (doorlopend, modelpositie)
+14 26 5->5 PD dwarslijn 3 (doorlopend, modelpositie)
+12 27 2->5 PD dwarslijn 3 (doorlopend, modelpositie)
+10 28 2->5 PD dwarslijn 3 (doorlopend, modelpositie)
+11 28 2->5 PD dwarslijn 3 (doorlopend, modelpositie)
+9 29 2->5 PD dwarslijn 3 (doorlopend, modelpositie)
+30 34 2->5 PE dwarslijn 1 (doorlopend, modelpositie)
+29 35 2->5 PE dwarslijn 1 (doorlopend, modelpositie)
+28 36 2->5 PE dwarslijn 1 (doorlopend, modelpositie)
+27 37 2->5 PE dwarslijn 1 (doorlopend, modelpositie)
+36 33 2->5 PE dwarslijn 2 (doorlopend, modelpositie)
+34 35 2->5 PE dwarslijn 2 (doorlopend, modelpositie)
+33 36 2->5 PE dwarslijn 2 (doorlopend, modelpositie)
+32 37 2->5 PE dwarslijn 2 (doorlopend, modelpositie)
+31 38 2->5 PE dwarslijn 2 (doorlopend, modelpositie)
+30 39 5->5 PE dwarslijn 2 (doorlopend, modelpositie)
+38 35 1->5 PE dwarslijn 3 (doorlopend, modelpositie)
+37 36 2->5 PE dwarslijn 3 (doorlopend, modelpositie)
+36 37 2->5 PE dwarslijn 3 (doorlopend, modelpositie)
+35 38 2->5 PE dwarslijn 3 (doorlopend, modelpositie)
+34 39 2->5 PE dwarslijn 3 (doorlopend, modelpositie)
+34 40 2->5 PE dwarslijn 3 (doorlopend, modelpositie)
+35 5 2->5 PB dwarslijn 1 (doorlopend, modelpositie)
+36 5 2->5 PB dwarslijn 1 (doorlopend, modelpositie)
+35 9 2->5 PB dwarslijn 2 (doorlopend, modelpositie)
+36 10 2->5 PB dwarslijn 2 (doorlopend, modelpositie)
+37 10 5->5 PB dwarslijn 2 (doorlopend, modelpositie)
+34 31 2->5 PF dwarslijn 1 (doorlopend, modelpositie)
+35 31 2->5 PF dwarslijn 1 (doorlopend, modelpositie)
+36 31 2->5 PF dwarslijn 1 (doorlopend, modelpositie)
+34 1 11->2 romp omlijning: lichtkant navy
+34 2 11->2 romp omlijning: lichtkant navy
+34 3 11->2 romp omlijning: lichtkant navy
+34 5 11->2 romp omlijning: lichtkant navy
+49 5 11->2 romp omlijning: lichtkant navy
+50 5 14->2 romp omlijning: lichtkant navy
+51 5 14->2 romp omlijning: lichtkant navy
+52 5 11->1 romp omlijning: schaduwkant zwart
+34 6 11->2 romp omlijning: lichtkant navy
+48 6 15->2 romp omlijning: lichtkant navy
+53 6 14->1 romp omlijning: schaduwkant zwart
+34 7 11->2 romp omlijning: lichtkant navy
+47 7 14->2 romp omlijning: lichtkant navy
+54 7 12->1 romp omlijning: schaduwkant zwart
+54 8 12->1 romp omlijning: schaduwkant zwart
+37 9 6->1 romp omlijning: schaduwkant zwart
+45 9 11->2 romp omlijning: lichtkant navy
+54 9 12->1 romp omlijning: schaduwkant zwart
+44 10 5->2 romp omlijning: lichtkant navy
+54 10 12->1 romp omlijning: schaduwkant zwart
+54 11 12->1 romp omlijning: schaduwkant zwart
+17 12 11->2 romp omlijning: lichtkant navy
+18 12 15->2 romp omlijning: lichtkant navy
+19 12 14->2 romp omlijning: lichtkant navy
+20 12 14->2 romp omlijning: lichtkant navy
+21 12 11->1 romp omlijning: schaduwkant zwart
+41 12 4->2 romp omlijning: lichtkant navy
+42 12 15->2 romp omlijning: lichtkant navy
+53 12 12->1 romp omlijning: schaduwkant zwart
+15 13 11->2 romp omlijning: lichtkant navy
+16 13 15->2 romp omlijning: lichtkant navy
+22 13 13->1 romp omlijning: schaduwkant zwart
+15 14 14->2 romp omlijning: lichtkant navy
+22 14 14->1 romp omlijning: schaduwkant zwart
+32 14 5->1 romp omlijning: schaduwkant zwart
+15 15 14->2 romp omlijning: lichtkant navy
+14 16 3->2 romp omlijning: lichtkant navy
+24 16 5->2 romp omlijning: lichtkant navy
+25 16 14->2 romp omlijning: lichtkant navy
+26 16 5->1 romp omlijning: schaduwkant zwart
+32 16 14->2 romp omlijning: lichtkant navy
+14 17 6->2 romp omlijning: lichtkant navy
+27 17 14->2 romp omlijning: lichtkant navy
+28 17 14->2 romp omlijning: lichtkant navy
+29 17 8->2 romp omlijning: lichtkant navy
+30 17 8->2 romp omlijning: lichtkant navy
+31 17 14->2 romp omlijning: lichtkant navy
+22 19 6->1 romp omlijning: schaduwkant zwart
+15 20 10->2 romp omlijning: lichtkant navy
+21 20 12->1 romp omlijning: schaduwkant zwart
+25 20 12->1 romp omlijning: schaduwkant zwart
+26 20 12->1 romp omlijning: schaduwkant zwart
+16 21 4->1 romp omlijning: schaduwkant zwart
+21 21 12->1 romp omlijning: schaduwkant zwart
+26 23 15->2 romp omlijning: lichtkant navy
+3 24 6->2 romp omlijning: lichtkant navy
+25 24 4->2 romp omlijning: lichtkant navy
+39 24 12->1 romp omlijning: schaduwkant zwart
+40 24 6->1 romp omlijning: schaduwkant zwart
+23 25 15->2 romp omlijning: lichtkant navy
+38 25 12->1 romp omlijning: schaduwkant zwart
+44 25 12->1 romp omlijning: schaduwkant zwart
+45 25 12->1 romp omlijning: schaduwkant zwart
+21 26 15->2 romp omlijning: lichtkant navy
+22 26 15->2 romp omlijning: lichtkant navy
+20 27 14->2 romp omlijning: lichtkant navy
+47 27 5->2 romp omlijning: lichtkant navy
+18 28 14->2 romp omlijning: lichtkant navy
+19 28 14->2 romp omlijning: lichtkant navy
+48 29 5->1 romp omlijning: schaduwkant zwart
+50 30 5->1 romp omlijning: schaduwkant zwart
+54 30 5->1 romp omlijning: schaduwkant zwart
+10 31 5->2 romp omlijning: lichtkant navy
+10 32 14->2 romp omlijning: lichtkant navy
+9 33 5->2 romp omlijning: lichtkant navy
+9 34 4->2 romp omlijning: lichtkant navy
+9 35 12->2 romp omlijning: lichtkant navy
+9 36 13->2 romp omlijning: lichtkant navy
+9 37 12->1 romp omlijning: schaduwkant zwart
+10 38 12->2 romp omlijning: lichtkant navy
+23 38 12->1 romp omlijning: schaduwkant zwart
+11 40 5->1 romp omlijning: schaduwkant zwart
+20 41 12->1 romp omlijning: schaduwkant zwart
+21 41 12->1 romp omlijning: schaduwkant zwart
+15 42 12->1 romp omlijning: schaduwkant zwart
+16 42 12->1 romp omlijning: schaduwkant zwart
+17 42 12->1 romp omlijning: schaduwkant zwart
+18 42 12->1 romp omlijning: schaduwkant zwart
+35 42 3->1 romp omlijning: schaduwkant zwart
+49 26 10->2 oog pupil uit model (>=29% dekking)
+14 36 10->2 oog pupil uit model (>=29% dekking)
+14 37 10->2 oog pupil uit model (>=29% dekking)
+12 34 4->9 oog_voor oog leesbaar: ring/pupil (modelkleuren)
+10 35 14->8 oog_voor oog leesbaar: ring/pupil (modelkleuren)
+11 35 4->8 oog_voor oog leesbaar: ring/pupil (modelkleuren)
+12 35 12->10 oog_voor oog leesbaar: ring/pupil (modelkleuren)
+16 35 2->8 oog_voor oog leesbaar: ring/pupil (modelkleuren)
+14 36 10->10 oog_voor oog leesbaar: ring/pupil (modelkleuren)
+10 37 2->6 oog_voor oog leesbaar: ring/pupil (modelkleuren)
+11 37 2->10 oog_voor oog leesbaar: ring/pupil (modelkleuren)
+14 37 10->10 oog_voor oog leesbaar: ring/pupil (modelkleuren)
+15 39 5->9 oog_voor oog leesbaar: ring/pupil (modelkleuren)
+16 39 5->6 oog_voor oog leesbaar: ring/pupil (modelkleuren)
+13 40 5->6 oog_voor oog leesbaar: ring/pupil (modelkleuren)
+14 40 1->6 oog_voor oog leesbaar: ring/pupil (modelkleuren)
+16 16 4->10 oog_links oog leesbaar: ring/pupil (modelkleuren)
+17 16 4->8 oog_links oog leesbaar: ring/pupil (modelkleuren)
+14 18 1->6 oog_links oog leesbaar: ring/pupil (modelkleuren)
+18 18 4->9 oog_links oog leesbaar: ring/pupil (modelkleuren)
+15 20 10->10 oog_links oog leesbaar: ring/pupil (modelkleuren)
+16 20 4->10 oog_links oog leesbaar: ring/pupil (modelkleuren)
+50 23 15->6 oog_rechts oog leesbaar: ring/pupil (modelkleuren)
+50 24 6->10 oog_rechts oog leesbaar: ring/pupil (modelkleuren)
+47 25 12->8 oog_rechts oog leesbaar: ring/pupil (modelkleuren)
+52 25 5->10 oog_rechts oog leesbaar: ring/pupil (modelkleuren)
+47 26 12->6 oog_rechts oog leesbaar: ring/pupil (modelkleuren)
+48 27 5->10 oog_rechts oog leesbaar: ring/pupil (modelkleuren)
+49 28 10->6 oog_rechts oog leesbaar: ring/pupil (modelkleuren)
+52 28 5->6 oog_rechts oog leesbaar: ring/pupil (modelkleuren)
+49 29 1->6 oog_rechts oog leesbaar: ring/pupil (modelkleuren)
+50 29 5->6 oog_rechts oog leesbaar: ring/pupil (modelkleuren)
+14 36 10->2 oog_voor pupil 2x2 op de modelplek
+14 37 10->2 oog_voor pupil 2x2 op de modelplek
+11 38 4->6 oog_voor ring gesloten (geen wit/bol tussen iris en bol)
+17 18 10->2 oog_links pupil 2x2 op de modelplek
+14 19 2->6 oog_links iris op de rand -> ring
+15 20 10->6 oog_links iris op de rand -> ring
+15 17 10->7 oog_links ring tussen buitenlijn en iris
+16 20 4->6 oog_links ring tussen buitenlijn en iris
+16 15 4->8 oog_links ring gesloten (geen wit/bol tussen iris en bol)
+17 21 12->6 oog_links ring gesloten (geen wit/bol tussen iris en bol)
+18 21 12->7 oog_links ring gesloten (geen wit/bol tussen iris en bol)
+49 25 10->2 oog_rechts pupil 2x2 op de modelplek
+50 25 10->2 oog_rechts pupil 2x2 op de modelplek
+47 27 5->6 oog_rechts iris op de rand -> ring
+51 23 15->8 oog_rechts ring gesloten (geen wit/bol tussen iris en bol)
+48 28 1->6 oog_rechts ring gesloten (geen wit/bol tussen iris en bol)
+
+TELLING (pixels afwijkend van kaal, laatste reden telt)
+PA         dwarslijn 1 (doorlopend, modelpositie)        4
+PA         dwarslijn 2 (doorlopend, modelpositie)        5
+PA         dwarslijn 3 (doorlopend, modelpositie)        3
+PA         paneel: rand schaduwkant zwart                6
+PA         paneel: vak navy / DC-rand                    9
+PB         dwarslijn 1 (doorlopend, modelpositie)        2
+PB         dwarslijn 2 (doorlopend, modelpositie)        2
+PB         paneel: rand schaduwkant zwart                6
+PB         paneel: vak navy / DC-rand                    7
+PC         dwarslijn 1 (doorlopend, modelpositie)        2
+PC         dwarslijn 2 (doorlopend, modelpositie)        2
+PC         dwarslijn 3 (doorlopend, modelpositie)        2
+PC         paneel: rand schaduwkant zwart                3
+PC         paneel: vak navy / DC-rand                    10
+PD         dwarslijn 1 (doorlopend, modelpositie)        3
+PD         dwarslijn 2 (doorlopend, modelpositie)        5
+PD         dwarslijn 3 (doorlopend, modelpositie)        5
+PD         paneel: rand schaduwkant zwart                4
+PD         paneel: vak navy / DC-rand                    11
+PE         dwarslijn 1 (doorlopend, modelpositie)        4
+PE         dwarslijn 2 (doorlopend, modelpositie)        5
+PE         dwarslijn 3 (doorlopend, modelpositie)        6
+PE         paneel: rand schaduwkant zwart                7
+PE         paneel: vak navy / DC-rand                    9
+PF         dwarslijn 1 (doorlopend, modelpositie)        3
+PF         paneel: rand schaduwkant zwart                1
+PF         paneel: vak navy / DC-rand                    3
+oog        pupil uit model (>=29% dekking)               1
+oog_links  iris op de rand -> ring                       2
+oog_links  oog leesbaar: ring/pupil (modelkleuren)       4
+oog_links  pupil 2x2 op de modelplek                     1
+oog_links  ring gesloten (geen wit/bol tussen iris en bol) 3
+oog_links  ring tussen buitenlijn en iris                2
+oog_rechts iris op de rand -> ring                       1
+oog_rechts oog leesbaar: ring/pupil (modelkleuren)       10
+oog_rechts pupil 2x2 op de modelplek                     2
+oog_rechts ring gesloten (geen wit/bol tussen iris en bol) 2
+oog_voor   oog leesbaar: ring/pupil (modelkleuren)       11
+oog_voor   pupil 2x2 op de modelplek                     2
+oog_voor   ring gesloten (geen wit/bol tussen iris en bol) 1
+romp       omlijning: lichtkant navy                     49
+romp       omlijning: schaduwkant zwart                  38
+totaal 258 van 1248 sprite-pixels

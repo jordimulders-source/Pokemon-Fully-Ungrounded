@@ -81,3 +81,13 @@ VIEW: facing 3/4 to the left (the far horn, far ear and far legs are on the left
 
 DO NOT: impala, gazelle, deer, antlers, a small head on a long neck, a short cute face, small ears, long stilt legs, a slender graceful body, a small figure in an empty frame, a lion mane or a ball of hair on the chest, flat wavy zigzag horns, ram horns, Deerling, Sawsbuck, Stantler, Wyrdeer, armor plates, a metal body, a gold metal body, robot parts, a crown or jewelry, holding or carrying weapons, glowing metal, sparkles, horns in the same color as the fur.
 ```
+
+## Ronde 3 (26 nov)
+- `r3/kudu_r3.png`: kop langer en meer kudu, oren groot en rond, half dichte ogen, figuur groter in het vak; manen staan als kam op de bovenlijn van de hals, keelfranje wordt weer een brede baard.
+- Jordi: "waarom vallen de manen aan onze kant niet over de schouder heen?"
+- Claude: "runs along the top of the neck" zette Gemini vast op de bovenlijn (kam), en "to both sides" zegt niet wat er aan onze kant te zien is. Beschrijven vanuit de kijker.
+
+## r3b (bijsturen in hetzelfde gesprek, één wijziging)
+```
+Keep everything exactly the same (pose, head, ears, horns, body, stripes, colors, size). Change ONLY the mane: the long darker gold hair must hang DOWN over the side of the neck that faces us and drape over the near shoulder (the shoulder on the right side of the image), like a shawl lying on the body, ending in a few tufts on that shoulder. It should not stand up as a crest on the top line of the neck.
+```

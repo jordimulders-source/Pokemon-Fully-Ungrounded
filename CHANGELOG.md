@@ -3445,3 +3445,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.x] - Glitch-lijn fase 3 af (25 nov)
 - Fase 3 frontsprite af: `docs/concept/sprites/glitch_lijn/fase3_virus/af/glitch_fase3.png` (Electric/Bug), op het overzichtsvel. Gemini r1 (vijf fase 2-koppen), hoofden uit r2, magneten en tussenruimte ingekleurd met fase 2-data en foutkleurbalkjes (`gereedschap/fase3_glitch.py`), 3 randkolommen links en 1 rechts weg, 15 kleuren. Glitch-lijn compleet; namen open.
 - Fase 3 gezichten in de kleuren van fase 2, met de ogen (pupillen) van fase 2 op de drie naar voren kijkende hoofden (`gereedschap/fase3_kleuren.py`, `fase3_pupillen.py`). Fase 1 zweeft 4 px hoger, fase 2 8 px hoger in het vlak.
+
+### [v0.0.x] - Werknamen Impyre en Scrapstack (26 nov)
+- Vuurduivel fase 1 heet **Impyre**, spooktrein fase 1 **Scrapstack** (Jordi); op het overzichtsvel. Nieuwe naamvoorstellen voor de Bibarel-evolutie (Bi-) en Sunflora-evolutie (Sun-) in `docs/concept/POKEMON.md`.

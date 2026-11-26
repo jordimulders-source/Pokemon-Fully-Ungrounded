@@ -19,3 +19,12 @@ Style: official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 
 
 AVOID: the Flurry from Mario, Shy Guy, Snorunt, Vanillite, a classic three-ball snowman, a carrot nose, a hat or scarf, stick arms, big black oval hole eyes, gold or shiny buttons, plush toy / Neopets look, glowing or warm colors.
 ```
+
+## Ronde 1 (26 nov)
+- `r1/r1a.png`, `r1b.png`, `r1c.png` (drie gesprekken, vrij consistent). Jordi: "ik denk dat ik rechts wel tof vind, maar weet nog niet of ik er ook een mond bij wil, misschien een heel klein neutraal mondje" (rechts = r1c).
+- Claude: alle drie hebben toch kleine armstompjes (prompt zei "no arms"); r1a heeft al een klein mondje (licht glimlachend).
+
+## r1c-mond (bijsturen in het gesprek van r1c)
+```
+Keep everything exactly the same (pose, body, feet, snow tuft, eyes, pebbles, colors, size). Change ONLY the face: add a very small, neutral mouth below and between the eyes: a short straight line of 2-3 pixels in a soft grey-blue, not a smile, not open, not black.
+```

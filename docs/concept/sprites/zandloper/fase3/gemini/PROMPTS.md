@@ -57,3 +57,21 @@ No effects, no glow, no sparkles, no shadow; draw no ground under the hourglass.
 (Gebruik A óf B: verwijder de andere regel.)
 
 **Jordi over r3:** "ik vind ze allebei nog niet heel mooi, maar met het brein leest nu wel iets beter, alleen het zijn allebei niet echt djinns toch" (`r3_A_brein_hoofd.png`, `r3_B_brein_core.png`).
+
+## r4 – djinn-kenmerken (Jordi "akkoord" op: V-silhouet + dikke krullende staart, armen over elkaar, open/kapotte gouden boeien, zandkuif op het brein; brein als hoofd)
+```
+Design an original Pokémon as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64 pixels, max 16 colors, white background, facing 3/4 to the left.
+
+Concept: a sand djinn (Ground/Psychic) that has escaped from its hourglass, like a genie that escaped its lamp. It must clearly read as a genie/djinn.
+- Source: at the bottom, an hourglass lies on its side, opened in the middle (at the narrow waist). No loose glass shards.
+- Tail: sand pours out of that opening and rises up in a thick, curling sand tail, like genie smoke, still connected to the hourglass.
+- Body: a big, heavy, broad upper body with wide shoulders, tapering in a V-shape down into the tail. Made of golden sand.
+- Pose: arms folded across the chest, the classic genie pose. Arms end in rounded sand stumps without fingers.
+- Wrists: big golden shackle cuffs that are broken open, showing it escaped.
+- Head: the head IS a brain made of sand, with simple Pokémon eyes; brain folds shown with only a few clear lines. On top of the brain a curling tuft of sand like a genie's topknot.
+- Glass science apparatus (flasks, tubes, funnels) is part of its body (shoulders, back), not carried: only 2 or 3 pieces, each large and clearly defined, nothing tiny.
+It must NOT look human: no human face, no nose, no ears, no beard, no human hands.
+Keep it simple and readable at 64x64: big clear shapes, like a real Gen 3 sprite. Compact silhouette that fits a square.
+
+No effects, no glow, no sparkles, no shadow; draw no ground under the hourglass. AVOID: a realistic hourglass with a face, a human in a costume, a plush toy, Neopets style.
+```

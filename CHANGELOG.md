@@ -3462,3 +3462,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Hoatzin geschrapt voor nu (Jordi). Nieuw: een originele Poison-lijn; bestaande ideeën "niet overtuigend genoeg". Nieuwe voorstellen (Chinchorro-mummie, curare-liaan, kwik-blob, zombieschimmel, gifbeker) voorgelegd; nog open. TODO, IDEEEN en stand van zaken bijgewerkt.
 - Ronde 3 (niet-dieren/planten) voorgelegd; Jordi kiest kwik als beste idee, gasmasker kan (maar doet denken aan Pokémon Clover); hoatzin misschien toch, met plaagmasker; eerst overleggen.
 - Hoatzin-lijn: Jordi's eisen genoteerd in IDEEEN.md (2 fases, kuiken → snavelmasker, Poison/Dark, zuur op de vleugels, rood oog, blauw in het masker, niet stocky, simpel palet).
+- Hoatzin-lijn: antwoorden van Jordi + postuurreferentie (andermans Hoatzirit) toegevoegd.

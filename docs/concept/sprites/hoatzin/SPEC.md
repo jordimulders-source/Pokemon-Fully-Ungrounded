@@ -98,3 +98,4 @@ MOOD: ugly in a Pokémon way, something you don't trust. Simple, readable design
 
 AVOID: clothing, hat, cloak or any accessory; a seam or line where a beak meets a head; a sharp or hooked beak; brown or chestnut; a fat or round belly; a stocky body; polka dots; dripping liquid; glow; cut-off legs; a round badge or sticker; not a crow or raven.
 ```
+- **r6** (`gemini/fase2_r6.png`, prompt v4). Jordi: "de vleugels zijn nu beter, het patroon prima alleen staat niet goed in perspectief, hoofd is nu een stuk minder". Voorstel Claude: model combineren (r6 lijf/vleugels + r4 hoofd, teken in perspectief zetten) in plaats van verder prompten.

@@ -112,3 +112,18 @@ Gecontroleerd en goed: geen zwart binnen de figuur buiten ogen, stenen en de emm
 **Ter info voor Jordi (niet veranderd):**
 - Emmer: donker hout (7, L90) is outline base links én vulling rechts; links is het contrast met het middenhout (L115) klein. Een donkerdere outline base kan alleen met een vrije paletplek (palet vol).
 - De voeten lezen via wit tegen het lichtblauwe onderlijf, zonder binnenlijn erboven; het model heeft daar op spriteschaal ook geen donkere lijn (gemeten L≥165).
+
+## Ronde ek6 (26 nov): rechte lijnen smoother
+Jordi: "ik zie nog iets teveel rechte lijnen toch, alles wat rood is mag iets smoother, kijk naar hoe het model dat doet" (markering `../referenties/jordi_ek5_rechte_lijnen.png`; rood in de stenen = gloed, telt niet). Bron `ek5/sneeuwmonster2_ek5.png`, script `ek6/bouw.py`, uitvoer `ek6/sneeuwmonster2_ek6.png`, `ek6/sneeuwmonster2_ek6_8x.png`, `ek6/vel.png` (ek5 | ek6 | model 8× met de vijf zones rood omkaderd; 1× en 2× op licht en donker naast fase 1, Skinguin, Dundragoon). Palet ongewijzigd.
+Werkwijze: per zone de modelrand of -lijn gemeten in het natieve model (eerste/laatste figuurpixel L<238, of lijnpixels L<110/150, per halve spriterij of -kolom), dan als Gen 3-trap gezet met oplopende/aflopende runs, ≤ 1 px van de modelrand. Binnenkant die vrijkomt krijgt de tint van de buurpixel.
+
+| zone | px | ek5 → ek6 (runs) | model |
+|---|---|---|---|
+| Z1 linkerarm buitenrand | 4 | x8 r36–38, x9 r39–43 (5 recht) → x8 r36–39 (4), x9 r40–42 (3), x10 r43–44 (2): runs 1-1-4-3-2. (8,39) erbij (l), (9,39) l→s, (9,43) weg, (10,43) s→l | x8,0 r37–38 · 8,4/9,3 r39 · 8,9 r40–43 · 9,3 r44 |
+| Z2 links van de nek | 5 | verticale baardlijn x21 r28–30 → streng (19,28) (20,29) (20,30) (21,31), sluit aan op de zigzag (22,30) (23,31). (21,28–30) l→w, (20,29–30) w→l | streng x19,3 r28 → 19,7–20,1 r29–30,5 → 20,5 r31 → 21 r31,5 |
+| Z3 hand rechts | 4 | rechte hoek x41 r42–47 + r47 x41–47 → x41 r43–45, (42,46), r47 x43–47 (ronde hoek). (41,46) l→s, (42,46) s→l, (41,47) (42,47) l→m | x41 r44–46,5, (41,3–43 r47), (43,6–46,3 r47,5) |
+| Z4 rechterflank | 16 | x55 r37–39, x53 r40–50 (11 recht), x51 r51, x50 r52–53 → x55 r37–39 (3), x54 r40–43 (4), x53 r44–48 (5), x52 r49–51 (3), x51 r52, x50 r53: bolling 3-4-5-3-1-1. Erbij K (54,40–43) (52,51) (51,52); weg (53,49) (53,50); (53,40–42) (54,39) K→m, (53,43) K→s, (52,49) s→K, (51,51) K→s, (50,52) K→s | r37–39 55,8 · r40–42 54,3 · r43–45 53,9 · r46–48 53,5 · r49–50 53,9 · r51 53,0/51,5 · r52 51,0 · r53 50,6 |
+| Z5 onderkant | 9 | r54 x30–36 (7 recht), x37 r55, x38 r56 → r54 x30–33 (4), r55 x34–36 (3), r56 x37–38 (2), r57 x39–41 (3), r58 x42–46 (5). Erbij K (34–36,55) (37,56); (34–36,54) K→m, (37,55) K→m, (37,54) s→m | x30,5–34 54,6 · x34,5–36,5 55,2 · x37 55,6 · x37,5 56,6 · x38–39,5 57,5 |
+
+Totaal 38 px, waarvan 14 silhouetpixels (10 erbij, 4 weg), allemaal binnen de zones (assert). Ogen, mond, stenen, emmer en de rest van de sprite: index-diff 0 (assert). Geen lichte tint op de buitenrand, geen nieuw 2×2-lijnblok (assert). De lijntinten blijven als in ek5: l aan de lichtkant (arm, nek), K aan de schaduwkant (flank, onderkant), binnenlijn hand in l.
+**Ter info:** het model is op deze plekken zelf ook vrij recht (Gemini-pixelstijl; flank 53,5–53,9 over r43–50, armrand 8,9 over r40–43); de trappen hierboven volgen zijn subpixelrand, met de bolling iets duidelijker dan het model op r49–50 (1 px naar binnen).

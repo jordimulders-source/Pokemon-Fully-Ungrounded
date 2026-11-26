@@ -116,3 +116,5 @@ Keep it simple and readable at 64x64: big clear shapes, few details, like a real
 
 No effects, no glow, no sparkles, no shadow; draw no ground under the hourglass. AVOID: a realistic hourglass with a face, a human in a costume, a bodybuilder, a plush toy, Neopets style.
 ```
+
+**Jordi over r6:** "deze vind ik wel een stuk minder" (`r6.png`). Claude: zes versimpelingen tegelijk = te veel (zelfde les als spooktrein, GEMINI.md); lijf plat en slap, staart als los krulletje opzij, zand komt uit het uiteinde i.p.v. het midden.

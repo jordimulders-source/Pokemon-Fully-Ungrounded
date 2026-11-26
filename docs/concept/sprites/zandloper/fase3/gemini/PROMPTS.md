@@ -23,3 +23,18 @@ Face: simple Pokémon face in the sand, between the shards, eyes that feel old a
 Compact silhouette that fits a square, limbs close to the body.
 
 No effects, no glow, no sparkles, no ground or shadow under it. AVOID: a realistic hourglass with a face, a human in a costume, a plush toy, Neopets style.
+
+**Jordi over r1:** "idee 1 bevalt me beter dan 2. Maar hij is iets te menselijk en zoveel detail vertaalt niet goed naar een sprite denk ik" (`r1_A.webp`, `r1_B.png`). Volgorde 1 (zandloper → zand eruit → systeem) lijkt daarmee de richting.
+
+## r2 A – minder menselijk, minder detail
+Zelfde prompt als r1 A; alleen het gezicht/de handen en de hoeveelheid glas veranderd. "Geen vingers" en "2–3 bollen" zijn invulling van Claude.
+```
+Design an original Pokémon as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64 pixels, max 16 colors, white background, facing 3/4 to the left.
+
+Concept: the final evolution of an hourglass Pokémon (Ground/Psychic). The sand has left the hourglass and became the creature's body: a large, heavy, upright creature made of flowing golden sand, with two thick arms and no legs (the lower body pours down into a mound of sand). The original hourglass is now inside its chest as its core/heart, visible through the sand.
+Around its body runs a simple system of glass: only 2 or 3 small glass bulbs connected by one tube, with sand trickling from one bulb into the next. The glass parts ARE its body (shoulders, back, crown), not objects it carries.
+It must NOT look human: no human face, no nose, no human head shape, no human hands or fists. The head is a rounded mound of sand with simple Pokémon eyes and a small mouth; the arms end in rounded sand stumps without fingers.
+Keep it simple and readable at 64x64: big clear shapes, few details, like a real Gen 3 sprite.
+Compact silhouette that fits a square, limbs close to the body.
+
+No effects, no glow, no sparkles, no ground or shadow under it. AVOID: a realistic hourglass with a face, a human in a costume, a plush toy, Neopets style.

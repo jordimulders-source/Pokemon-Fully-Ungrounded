@@ -149,7 +149,7 @@ EARS: huge, broad and round like satellite dishes or big cups, each almost as bi
 
 NECK AND MANE: thick, strong neck. A full mane of long, darker gold hair starts behind the ears. The long hair hangs DOWN over the side of the neck that faces us and drapes over the near shoulder (the shoulder on the right side of the image), like a shawl lying on the body, ending in a few tufts on that shoulder. It should not stand up as a crest on the top line of the neck, and it does not hang down in front of the neck or from the cheeks (it is not a beard). The chest stays smooth.
 
-THROAT FRINGE: separate from the mane: a narrow fringe of long darker gold hair that hangs straight down from under the chin along the underside of the neck to the top of the chest, like a beard along the throat. NOT a big round ball of hair on the chest.
+THROAT FRINGE: separate from the mane: a narrow fringe of long darker gold hair that hangs straight down from under the chin along the underside of the neck to the top of the chest, thin like a narrow tassel line along the throat. NOT a big round ball of hair on the chest.
 
 BODY: big, heavy and powerful, deep chest, a slight hump at the shoulders, the back slopes a little down to the hips, short tail with a white underside. Several thin, clean white vertical stripes run down the side of the body from the back to the belly, clearly visible (a key feature).
 

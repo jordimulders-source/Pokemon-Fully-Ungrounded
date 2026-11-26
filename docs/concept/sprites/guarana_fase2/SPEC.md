@@ -46,3 +46,4 @@ Fase 1 (af): `../guarana/` (SPEC daar = alle eerdere besluiten).
 - Hangende trossen en peervormige vruchten gelukt, maar ±5–6 vruchten met 1–2 ogen per tros. Jordi: "zijn er geen 6-8. Hij lijkt daarom telkens kaler dan fase 1" → bijsturen r10 (`gemini/PROMPT_r10_bijsturen.md`, "twice as many").
 - r10 (`gemini/r10.png`): zelfde aantal vruchten, alleen 2 extra ogen open. Jordi: "gemini luistert niet".
 - Plaktest (`plak/dubbel.py`, `plak/a.png`): elke r10-tros nog eens verschoven erachter geplakt (alleen Gemini-pixels). Voller, maar op 64 px (`plak/a_test64_8x.png`) worden de ogen weer ruis, net als bij r2: met 3 volle trossen in 64 px is er geen plek voor grote ogen.
+- Jordi: "toon eens snel hoe het eruit zou zien, zo'n stuk fruit met oog" → `plak/vrucht_maten.png`: één r10-oogvrucht automatisch verkleind tot ±6 px (3 trossen), ±9 px (2 trossen) en ±14 px (1 tros).

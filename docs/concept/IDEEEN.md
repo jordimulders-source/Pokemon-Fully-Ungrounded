@@ -831,3 +831,6 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - Ronde 1 (Claude): Chinchorro-mummie ("te luguber"), curare-blaaspijp (vraag: tool of plant? Claude: gif uit lianen, blaaspijp is mensenwerk), kwik-blob Poison/Steel ("een optie"), zombieschimmel ("tof maar wel precies parasect"), gifbeker van een alchemist.
 - Ronde 2 (Claude): teerput, kegelslak, zeenaaktslak, manchineel, fluweelworm, zwavelfumarool, lithium/batterij ("zou kunnen maar dan maken we weer een electric/poison"), gifvat.
 - Jordi: "Ik wil meer richting non-dieren/planten inspiratie merk ik".
+- Ronde 3 (Claude, niet-dieren/planten): spuitbus, gifgroen behang, sproeivliegtuigje, gasmasker, pil/capsule, loden soldaatje, verfbad van de leerlooierij, kwikthermometer.
+- Jordi: "ik vind kwik het beste idee, gasmasker kan ook, maar dan zit ik al snel aan pokemon clover te denken die dat goed deed."
+- **Hoatzin terug als optie (Jordi, 26 nov):** "Ik wil misschien toch nog een hoatzin poging doen, laten we eerst goed overleggen voordat we gaan prompten. Ik blijf telkens aan het plaagmasker denken dat ik goed vind passen". Eerst overleggen, nog niet prompten.

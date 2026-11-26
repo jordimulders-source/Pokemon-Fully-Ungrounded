@@ -91,3 +91,24 @@ Jordi: "kan je ze nog een klein beetje meer omringen, paar pixels aan de linkerk
 - **Gloed links (5 px, zwarte randpixels → gloed, geen geel; ≥ 50 % modelgloed oranje, anders rood).** Gemeten gloedaandeel van het model per pixel: boven (21,36) r 33 %, (21,39) o 81 %, (22,40) o 79 %; onder (21,44) r 30 %, plus in A (21,47) r (11 %, de rand ligt in A binnen de omtrek; het model gloeit net links ervan) en in B (20,47) o 52 % (de randpixel die B al toevoegde). Gloed nu A 28 van 89 (31 %), B 31 van 96 (32 %); geel blijft 2.
 - **Rechteroog (2 px).** De punt bovenop waren twee losse donkere lijnpixels direct boven het oog, (31,19) s en (32,19) l. Het model is daar wit (L245/246), dus → w. Het oog is nu boven 3 px breed op 5 px, met afgeronde hoeken zoals het linkeroog (2 op 4). Maat, kas en lidlijn van ek2 zijn niet veranderd.
 Asserts: silhouet gelijk, precies 7 px verschil per variant. De rest (andere ogenpixels, mond, emmer, vacht, overige steenpixels) heeft index-diff 0.
+
+## Eindkeuring ek4A (26 nov)
+Jordi: "ek4 leest het beste en mag naar de eindkeuring" (variant A). Bron `ek4/sneeuwmonster2_ek4A.png`, script `ek5/bouw.py`, uitvoer `ek5/sneeuwmonster2_ek5.png`, `ek5/sneeuwmonster2_ek5_8x.png`, `ek5/vel.png` (ek4A | ek5 | model 8×; 1× en 2× op licht en donker naast fase 1, Skinguin, Dundragoon). Vers en onafhankelijk gekeurd naast de maatstaf (Skinguin, Dundragoon, Zapacha, Princadee) en Gen 3 `_gba` (Absol, Seel, Glalie, Ursaring). Palet ongewijzigd.
+Bevroren (assert index-diff 0): silhouet, ogen, mond, stenen (rand + gloed); de emmer is ook niet aangeraakt.
+
+**Kleurtinten: PASS.** Sneeuw w 248 / h 222 / m 185 / s 149 / l 90 / K: stappen 26/37/36/59, gelijk aan Absol (255/223/198/150/outline base 93) en aan fase 1 (zelfde l en tint). Modellijnen in de vacht meten ±(90,120,140) L≈115: l (L90) is iets donkerder, "reasonably dark" (DC regel 4) en gelijk aan fase 1. Hout 90/115/155 met hue shift naar rood in het donker; geen lichte kleur op de buitenrand, geen anti-aliasing buiten de lijn.
+**Schaduw: PASS.** Volgt het model per vlak: licht linksboven (kop, linkerarm), lichte band h rechts op de kop (model L190–200), sikkel s rechts en onder, onderlijf m (model L167–172), witte voeten. Grenzen gebogen, geen pillow shading; losse s/h-pixels in de vacht zijn taps uitlopende strengen en baardpunten uit het model (bewust laten staan, geen "rustiger maken").
+**Belijning: BIJNA → PASS na 12 px.** Buitenlijn: l aan de lichtkant, K aan de schaduwkant, outline highlights s op kop linksboven en schouder (DC: "on the outlines in the very most highlighted parts"). Restpunten: lijnklontjes in de binnenhoek van trapjes, één K tussen twee l (om en om), en l direct binnen de buitenlijn (rand 2 px) op vier plekken onderaan/rechts.
+
+| stap | px | wat (model-L per spritepixel) |
+|---|---|---|
+| E1 | 4 | trapjes in de buitenlijn, lijntint in de binnenhoek → s ("so that the outline is always one pixel wide"): kop linksboven (20,17) 150, kop links (18,23) 161, linkerarm (9,38) 143, flank linksonder (17,50) 131 |
+| E2 | 1 | (17,51) K → l: enkele zwarte pixel tussen twee l op de linkerflank (zwart en lijntint om en om); model 148 |
+| E3 | 7 | dubbele rand l → s: voet links (19,52) 141; kruis tussen de benen (27,53) 107, (28,53) 81, (30,53) 143 (de binnenlijn loopt nu via (26,53) in de zwarte buitenlijn, de inkeping (29,53) K blijft); rechtsonder (49,52) 129, (49,53) 143; hand rechts (52,44) 128 (de handlijn (51–52,45) blijft) |
+
+Diff per zone: silhouet, ogen, mond, stenen, emmer 0 px (assert). Overige 12 px: kop 2, linkerarm 1, flank/voet links 3, onderkant 3, rechtsonder 3.
+Gecontroleerd en goed: geen zwart binnen de figuur buiten ogen, stenen en de emmernaad x44; geen lichte kleur op de buitenrand; geen om-en-om meer; de drie L-hoekjes in de zwarte buitenlijn ((55,38–39), (53,49–50), kop (19,16)) horen bij het bevroren silhouet.
+
+**Ter info voor Jordi (niet veranderd):**
+- Emmer: donker hout (7, L90) is outline base links én vulling rechts; links is het contrast met het middenhout (L115) klein. Een donkerdere outline base kan alleen met een vrije paletplek (palet vol).
+- De voeten lezen via wit tegen het lichtblauwe onderlijf, zonder binnenlijn erboven; het model heeft daar op spriteschaal ook geen donkere lijn (gemeten L≥165).

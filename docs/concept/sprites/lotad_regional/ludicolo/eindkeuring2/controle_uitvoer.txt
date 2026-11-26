@@ -1,0 +1,7 @@
+alpha-diff 0 | gewijzigd 15 | ogen (x19-31,y24-29) diff 0
+voor 2x2-lijnclusters in gezichtsvak: [(23, 23), (24, 23), (25, 23), (26, 23), (23, 24), (24, 24), (25, 24), (34, 24), (17, 27)]
+na 2x2-lijnclusters in gezichtsvak: [(23, 23), (24, 23), (25, 23), (26, 23), (23, 24), (24, 24), (25, 24), (34, 24)]
+voor onder geel: zwart 27 rood 9 | zijkant: zwart 0 rood 14
+na onder geel: zwart 34 rood 2 | zijkant: zwart 0 rood 14
+zwart-aandeel 16.2% -> 16.6%
+gebruikte indexen [0, 1, 2, 3, 4, 5, 6, 8, 9, 10, 11, 12, 13, 15]

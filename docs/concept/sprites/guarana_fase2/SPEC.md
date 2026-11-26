@@ -19,3 +19,4 @@ Fase 1 (af): `../guarana/` (SPEC daar = alle eerdere besluiten).
 ## Ronde 2 (`gemini/r2.png`, bijgestuurd met 1 + 3)
 - 64 px-test (`gemini/r2_test64_8x.png`, 64×51): liaan en blad lezen; de ±8 ogen per tros worden 2–3 px en vervagen tot ruis. Aantal ogen per tros is nooit door Jordi bepaald → als vraag voorgelegd.
 - Jordi: "hebben we niet genoeg ruimte om de ogen te vergroten?" Ruwe test (`test_ogen/`, trossen 1,35× en 1,5× geplakt over het blad, daarna naar 64 px): bij 1,35× ogen ±4 px, trossen raken elkaar; bij 1,5× één rode massa, blad weg, ogen nog ±4 px. Grens = aantal vruchten op de breedte (3 trossen × 3 vruchten in 64 px → ±6–7 px per vrucht).
+- Jordi: "maar dat vragen we aan gemini dan toch om te vergroten" → bijsturen r3 (`gemini/PROMPT_r3_bijsturen.md`): alleen ogen veel groter; aantal niet genoemd.

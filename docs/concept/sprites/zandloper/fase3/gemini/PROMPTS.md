@@ -161,3 +161,18 @@ No effects, no glow, no sparkles, no shadow; draw no ground under the hourglass.
 ```
 
 **Jordi over r8:** "hoofd prima, ook hoe die glazen dingen uit het lichaam komen, maar nu gaat het onderin helemaal fout" (`r8.png`).
+
+**Jordi over de onderkant van r7/r5:** "zandloper is niet kapot en hij komt er niet echt uit".
+
+## r9 – r8 als bijlage, alleen de onderkant
+Bijlage: `r8.png`. Nieuw gesprek.
+```
+The attached image is my Pokémon design (a sand djinn escaped from an hourglass), as a Gen 3 front sprite. Keep everything from the waist up EXACTLY the same: the brain head with the topknot, the eyes, the folded arms, the broken glass cuffs, the glass flask and funnel growing out of the shoulders, the colors and the pixel style.
+
+Change ONLY the bottom part:
+- The hourglass lies on its side under the djinn and is clearly BROKEN in the middle: at the narrow waist the glass is cracked open with a jagged hole facing up.
+- The sand gushes OUT of that hole: one thick stream of sand rises straight up from the hole, twists once like genie smoke and widens into the djinn's lower body. The tail starts in the hole and is one continuous shape with the body, no gaps, no separate thin curl.
+- No loose shards flying around.
+
+Same size, same 64x64 Gen 3 style, max 16 colors, white background, no effects, no shadow, no ground.
+```

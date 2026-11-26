@@ -3472,3 +3472,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Zandloper fase 3: r5 "best prima design", verkleiningstest, prompt r6 (versimpeld).
 - Zandloper fase 3: r6 minder; prompt r7 (r5 + glaswerk verbonden met het lijf, vlakke kleuren).
 - Zandloper fase 3: r7 ook niet beter; prompt r8 (r5 + alleen het glaswerk); les in GEMINI.md.
+- Zandloper fase 3: r8 bovenkant goed, onderkant fout; prompt r9 (r8 als bijlage, alleen de onderkant).

@@ -67,3 +67,4 @@ Fase 1 (af): `../guarana/` (SPEC daar = alle eerdere besluiten).
 - Sprite r8: Jordi "hij is nog wat blurry maar dat zit puur in de omlijning van de fruittrossen, de vormen lijken van een afstandje afgekapt, alsof het rechte lijnen zijn ipv rondere vruchten".
 - Sprite r10: Jordi "ik zie vrijwel geen verschil, a, maar ik zal nog even omcirkelen wat beter moet" → variant **a** (pupil midden bij L2/R2).
 - Jordi omcirkelde plekken op r10a (`sprite_r10/jordi_omcirkeld.png`): "dit zijn plekken waar ogen niet goed zitten of waar de vorm van het fruit niet klopt, waardoor die op afstand niet goed leest. Ook rechtsbovenin de meest rechtse".
+- Sprite r12: Jordi "je maakt er een zooiitje van, alles wat ik omlijnd heb zijn vierkanten, waarom? Fix dat, en blijf telkens kijken naar de verhouding, zodat het een stuk fruit aan de tros lijkt" (`sprite_r12/jordi_vierkanten.png`: 10 ogen, vooral de half dichte, omlijnd).

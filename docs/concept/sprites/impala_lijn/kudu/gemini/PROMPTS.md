@@ -131,3 +131,37 @@ DO NOT: a mane standing up as a crest, messy hair made of many thin strands, man
 ## Ronde 4 (26 nov)
 - `r4/kudu_r4.png`. Jordi: "vind deze toch weer minder mooi, lijkt wat klein"; "en de manen zijn minder goed". Beste tot nu toe: r3b (manen) / r3.
 - Claude (gemeten): elke ronde vult de volle hoogte; hij lijkt klein omdat de hoorns (± zo hoog als het lijf, Jordi's keuze) steil omhoog staan en de bovenste helft opeten, zodat kop en lijf in de onderste helft passen.
+
+- Jordi: "nu bijna een soort baard" (manen r4). Keuzes (meerkeuze): **hoorns naar achteren** (even groot, schuin over de rug naar de lege hoek rechtsboven, zodat kop en lijf meer hoogte krijgen); beste manen: **r3b**.
+
+## r5 (nieuw gesprek, zonder bijlage; prompt r3 + manen in de woorden van r3b + hoorns naar achteren)
+- Eigen invulling Claude: indeling (kop hoog links, hoorns in de hoek rechtsboven); "niet voor de hals of vanaf de wangen (geen baard)"; de 'grote gladde lokken' van r4 weggelaten (mogelijk oorzaak van de baard).
+```
+Design an original Pokemon. Type: Normal/Steel. Final stage of a three-stage line. Official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 colors, dark outline.
+
+WHAT IT IS: a big, heavy, regal male greater kudu (Tragelaphus strepsiceros) as a Pokemon. Not an impala, gazelle or deer: the three things that make it a kudu are its long narrow face, its huge round ears, and its giant open corkscrew horns. Its horns are part of its body and made of mirror-polished steel. It does not hold or carry anything.
+
+SIZE AND LAYOUT IN THE 64x64 SQUARE (very important): the Pokemon is BIG and fills the square. The head and body are large and take most of the height of the square; the head is high, near the top on the left. The huge horns sweep BACKWARD over the back and fill the upper right corner of the square, above the back. The body is wide and heavy and reaches from near the left edge to near the right edge. Hooves touch the bottom edge. No empty space around it. It must NOT look like a small slender animal standing in a big empty frame, and the horns must NOT stand straight up above the head.
+
+HEAD: big, about one third of the body length. Long and narrow, shaped like a long wedge: wide at the forehead between the ears, tapering in a straight line down to a long muzzle with a rounded nose. The face from eyes to nose is clearly longer than the forehead. Big Pokemon eyes, calm and half-lidded, set high on the head. A white V (chevron) on the bridge of the nose between the eyes, a small white spot on each cheek, a white upper lip. NOT a short, cute impala or gazelle face.
+
+EARS: huge, broad and round like satellite dishes or big cups, each almost as big as the face, sticking out sideways from the top of the head behind the horns, open side facing forward, pink-brown inside.
+
+NECK AND MANE: thick, strong neck. A full mane of long, darker gold hair starts behind the ears. The long hair hangs DOWN over the side of the neck that faces us and drapes over the near shoulder (the shoulder on the right side of the image), like a shawl lying on the body, ending in a few tufts on that shoulder. It should not stand up as a crest on the top line of the neck, and it does not hang down in front of the neck or from the cheeks (it is not a beard). The chest stays smooth.
+
+THROAT FRINGE: separate from the mane: a narrow fringe of long darker gold hair that hangs straight down from under the chin along the underside of the neck to the top of the chest, like a beard along the throat. NOT a big round ball of hair on the chest.
+
+BODY: big, heavy and powerful, deep chest, a slight hump at the shoulders, the back slopes a little down to the hips, short tail with a white underside. Several thin, clean white vertical stripes run down the side of the body from the back to the belly, clearly visible (a key feature).
+
+LEGS: strong and fairly short, thick at the top, with small dark hooves. NOT long thin stilt legs.
+
+HORNS: two very large horns, together about as tall as the body. Each horn is an open corkscrew spiral, like a stretched spring: it starts at the top of the head and grows strongly BACKWARD and up, at an angle over the back (as on a real kudu), toward the upper right corner, twisting around itself in 2 to 2.5 full round turns, the two horns spreading apart from each other, the tips pointing up. You can see each turn going around: the front of each turn light, the back dark. A ridge (keel) runs along the spiral. NOT straight up above the head, NOT flat wavy zigzag ribbons, not ram horns curling around the ears.
+
+POSE AND EXPRESSION: regal and calm. Standing still and proud on all four legs, chest out, head held high, horns carried like a crown, the face calm and dignified.
+
+COLORS: fur gold (normal fur, matte and warm, not metal); mane and throat fringe a slightly darker gold; white stripes, chevron, cheek spots and upper lip. Horns mirror-polished steel, cool silver-white, clearly different from the fur: very hard shine, strong white highlights, dark reflections, and a bright white sharpened edge along the keel.
+
+VIEW: facing 3/4 to the left (the far horn, far ear and far legs are on the left, the near ones on the right). White background, no ground, no shadow, no effects, no glow.
+
+DO NOT: horns standing straight up, a mane hanging like a beard from the cheeks or in front of the neck, impala, gazelle, deer, antlers, a small head on a long neck, a short cute face, small ears, long stilt legs, a slender graceful body, a small figure in an empty frame, a lion mane or a ball of hair on the chest, flat wavy zigzag horns, ram horns, Deerling, Sawsbuck, Stantler, Wyrdeer, armor plates, a metal body, a gold metal body, robot parts, a crown or jewelry, holding or carrying weapons, glowing metal, sparkles, horns in the same color as the fur.
+```

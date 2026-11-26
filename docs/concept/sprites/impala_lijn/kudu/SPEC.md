@@ -17,3 +17,4 @@ Alle citaten en lijnbesluiten: `docs/concept/IDEEEN.md` → "Impala-lijn"; samen
 - Grootte (Jordi, 26 nov): "mag echt een grote sprite zijn ook".
 - Strepen (Jordi, 26 nov): "de kudu strepen moeten we wel erop doen ook indien mogelijk".
 - Manen (Jordi, 26 nov, meerkeuze): over de hals/schouders (vanaf achter de oren over de bovenkant van de hals naar beide kanten over de schouders, voller dan paardenmanen, eindigen op de schouder).
+- Hoorns (Jordi, 26 nov, meerkeuze): naar achteren, even groot, schuin over de rug naar de hoek rechtsboven (zodat kop en lijf groter in het vak staan). Beste manen tot nu toe: r3b.

@@ -74,3 +74,4 @@ Open: aantal ogen, naam, evolutiemethode.
 - Jordi over r14 (met rode lijnen, `sprite/r14/jordi_afkappingen.png`): "hier kappen de twee panelen onnodig af toch?"
 - Jordi: "hopelijk nu eindelijk eens goed" · "ja en keur ze en stuur pas als ze echt goed zijn, het doel is duidelijk" → na r15: keurder + eindkeuring, rondes tot PASS, pas dan naar Jordi.
 - r15 (`sprite/r15/`): PA loopt rechts van PB door tot de achterarm; PF links boven PE zichtbaar (witte driehoek was modelachtergrond); gaatje 2×2 (30–31,44–45). → keurder.
+- Eindkeuring r15 (`eindkeuring_r15/`): **PASS** na 36 indexwissels (PB/PF-rasterlijnen gelijk trapje, PE-bovenrand, buisrand 1 px, ruis, zwart lichtkant 0). Mastvakken: 3 px tussen de lijnen (lijnafstand 4); voorgelegd aan Jordi. Naar Jordi.

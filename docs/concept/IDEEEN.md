@@ -839,3 +839,8 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
   - (C) *Het frame groeit mee:* fase 1 los glas zonder frame (kwetsbaar), fase 2 houten frame, fase 3 versierd frame van steen of goud (oud tempelinstrument).
   - Gimmick (los te combineren): omdraaien als vormwissel (zoals Aegislash/Minior): bol boven vol = aanval, bol onder vol = verdediging; past bij het pitch-idee "move die altijd laatst gaat maar sterker wordt per beurt".
   - Open vragen: waar zit het gezicht (in het zand, in het glas of in het frame); ledematen of niet; Ground/Psychic voor de hele lijn.
+- **Jordi (26 nov) op A–C:** "het is niet onderscheidend genoeg om alleen het zand aan te passen. Wat kan is dat 1 vorm de zandloper zelf is en bij een andere vorm het zand eruit gaat, of een heel systeem".
+- **Voorstellen volgorde (Claude, 26 nov, open):**
+  - (1) zandloper → zand eruit → systeem: fase 1 de zandloper zelf; fase 2 het zand komt naar buiten en vormt een lijf, de zandloper zit erin als kern (hart/hoofd); fase 3 het zand stroomt door een heel stelsel van glazen bollen, buizen en trechters om het lijf, als een uurwerk.
+  - (2) zandloper → systeem → zand eruit: fase 2 meerdere zandlopers aan elkaar (gestapeld of vertakt), fase 3 het glas breekt en het zand is vrij: een zandwezen met scherven als pantser.
+  - (3) twee fases: zandloper → zand eruit, of zandloper → systeem.

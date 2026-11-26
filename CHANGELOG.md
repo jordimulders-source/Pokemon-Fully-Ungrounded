@@ -3472,3 +3472,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Hoatzin fase 2: r5 + prompt v4 (buikteken alleen bladen + stip).
 - Hoatzin fase 2: Gemini r6 + feedback.
 - Hoatzin fase 2: model = r6 + r4-hoofd (3 maten) en teken in perspectief (4 varianten).
+- Hoatzin fase 2: sprite r1 (maker).

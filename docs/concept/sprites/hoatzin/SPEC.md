@@ -114,3 +114,4 @@ Opdracht: `sprite/OPDRACHT.md`.
 - **r3** (`sprite/r3/`): 6 keurderpunten; Claude: oog nu te groot (7×7 met zwarte ring) en leest als blauw met een rode U.
 - **r4** (`sprite/r4/`): oog terug op modelmaat (diff 0 buiten het oogvak). Naar de DC-eindkeuring.
 - **r5** (`sprite/r5/`): DC-eindkeuring (133 px belijning: selout aan de lichtkant, hue shift in 6 tinten; alpha-diff 0). Ter info van de keurder: lijf donkerder dan Murkrow (meer volume = lichter), nabije vleugel vlak zoals het model, oog één roodtint. Naar Jordi.
+- Jordi op r5: "de vorm van de plague mask snavel is verloren gegaan, de kuif mag het gifgroen wat verder gekleurd, zit het radioactieve teken nu goed?" Teken: staat als model B (midden van het zichtbare buikdeel, niet het echte midden); variant naar de buikrand voorgelegd.

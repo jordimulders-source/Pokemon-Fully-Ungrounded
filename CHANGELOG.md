@@ -3465,3 +3465,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Zandloper-lijn: Jordi wil grotere sprongen (zandloper zelf / zand eruit / systeem); volgordevoorstellen in IDEEEN.
 - Zandloper fase 3: twee Gemini-prompts (systeem / zand vrij) in `sprites/zandloper/fase3/gemini/PROMPTS.md`.
 - Zandloper fase 3: r1 binnen (Jordi kiest idee 1, te menselijk en te veel detail), prompt r2.
+- Zandloper: sparren over het wezen (Psychic); voorstellen in IDEEEN.

@@ -18,3 +18,8 @@ Alle citaten en lijnbesluiten: `docs/concept/IDEEEN.md` → "Impala-lijn"; samen
 - Strepen (Jordi, 26 nov): "de kudu strepen moeten we wel erop doen ook indien mogelijk".
 - Manen (Jordi, 26 nov, meerkeuze): over de hals/schouders (vanaf achter de oren over de bovenkant van de hals naar beide kanten over de schouders, voller dan paardenmanen, eindigen op de schouder).
 - Hoorns (Jordi, 26 nov, meerkeuze): naar achteren, even groot, schuin over de rug naar de hoek rechtsboven (zodat kop en lijf groter in het vak staan). Beste manen tot nu toe: r3b.
+
+## Model (Jordi, 26 nov)
+- Gemini r1–r5 (+ r3b/r3c bijgestuurd), zie `gemini/PROMPTS.md`. Jordi: "ik denk dat we met gemini niet verder gaan komen"; "kan jij niet gaan bouwen en de manen in de sprite aanpassen desnoods?"; "het moet namelijk geen baard of sik worden, maar echt nekhaar dat over de schouders valt"; **"r3b zit het dichtste bij mijn visie"**.
+- **Model = `referenties/model_r3b.png`** (Gemini r3b). Afwijking die Jordi toestaat: de manen in de sprite aanpassen tot nekhaar dat over de schouders valt (geen baard of sik).
+- Open: keelfranje (haar onder de kin/langs de keel in r3b) houden of niet; grootte (Jordi r4: "lijkt wat klein").

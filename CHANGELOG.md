@@ -3460,3 +3460,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.835] - Originele Ground-lijn: kandidaten verzameld (26 nov)
 - `IDEEEN.md`: Jordi merkt op dat een originele Ground-lijn ontbreekt; bestaande kandidaten uit FAKEMON_PITCH op een rij. Keuze open.
+- Fossielen: Jordi denkt aan Glyptodon; lijst met andere uitgestorven dieren in IDEEEN; zandloper "tof idee".

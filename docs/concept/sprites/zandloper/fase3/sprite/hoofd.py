@@ -66,3 +66,30 @@ def oog_r8(f,box=(80,52,107,63)):
             else: row.append(0)
         out.append(row)
     return np.array(out)
+
+# --- ronde 5: alleen gekozen lijnen houden (op modelniveau), de rest krijgt zand uit de buurt ---
+def schone_bron(n_krul=3, wenkbrauw=((71,44,82,48),(88,43,101,48)), mond=(74,54,106,63)):
+    import lijnweg as lw
+    a=bewerk.zonder_rugglas(bewerk.R5).astype('uint8')
+    lm,M,L=lw.lijnmasker(a,100)
+    z=np.zeros((201,201),bool)
+    for y,(l,r) in bewerk.HOOFD.items(): z[y,l:r+1]=True
+    comps=sorted([c for c in schoon.comps(lm&z)],key=len,reverse=True)[:n_krul]
+    houd=np.zeros((201,201),bool)
+    for c in comps:
+        for p in c: houd[p]=True
+    hm=masker(); rand=np.zeros_like(hm)
+    for y in range(201):
+        for x in range(201):
+            if hm[y,x] and (not hm[max(0,y-2):y+3,max(0,x-2):x+3].all() or (M[max(0,y-2):y+3,max(0,x-2):x+3]==0).any()): rand[y,x]=True
+    houd|=rand
+    for (x0,y0,x1,y1) in list(wenkbrauw)+[mond]: houd[y0:y1+1,x0:x1+1]=True
+    weg=lm&hm&~houd
+    # r5-oogwit (en pupil) weg: wit/glas in de oogvakken
+    ogen=np.zeros_like(hm); ogen[47:54,72:82]=True; ogen[47:54,87:99]=True
+    weg|=ogen&((M==3)|lm)&~rand
+    b=a.copy()
+    for y,x in zip(*np.where(weg)):
+        win=a[max(0,y-3):y+4,max(0,x-3):x+4].reshape(-1,3); ok=~(weg[max(0,y-3):y+4,max(0,x-3):x+4].ravel())&(M[max(0,y-3):y+4,max(0,x-3):x+4].ravel()==2)&(L[max(0,y-3):y+4,max(0,x-3):x+4].ravel()>=100)
+        if ok.any(): b[y,x]=np.median(win[ok],axis=0)
+    return b,int(weg.sum())

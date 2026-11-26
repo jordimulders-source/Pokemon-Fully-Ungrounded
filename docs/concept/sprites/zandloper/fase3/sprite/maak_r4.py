@@ -20,8 +20,9 @@ def r8_ogen(hl,s):
             if 0<=j<hl.shape[0] and 0<=i<hl.shape[1] and hl[j,i]!=0:
                 hl[j,i]={1:2,23:3,10:10}[v]; gezet.append((j,i))
     log('r8-ogen',gezet); return hl
+SCHOON=False
 def hoofd_labels(s):
-    a,_=hoofd.bron(3); f=3/s; hl=hoofd.reduceer(a,f)
+    a=hoofd.schone_bron()[0] if SCHOON else hoofd.bron(3)[0]; f=3/s; hl=hoofd.reduceer(a,f)
     hl=schoon.tintclusters(hl,5)
     wit=[(y,x) for y,x in np.argwhere((hl>=20)&(hl<30))]
     for p in wit: hl[tuple(p)]=m3.zand(hl,tuple(p))

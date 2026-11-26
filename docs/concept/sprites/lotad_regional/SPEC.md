@@ -82,3 +82,4 @@ Prompts in `gemini/PROMPT.md`.
 - Keuring + DC-eindkeuring (`ludicolo/eindkeuring/`, 127 px, alleen indexwissels/palet): zwarte ponchobinnenlijnen (o.a. x19 y40–50) → rode lijn, dubbele lijnen 1 px, rood uit elkaar getrokken, geel = Lotad/Lombre. Rechteroog los: `oog_A`/`oog_B` (2 px elk), keuze Jordi.
 - Jordi: "de ogen moeten nog wit" → `eindkeuring/oog_{A,B}_wit.png` (irispixels → wit, `oog_wit.py`).
 - Jordi: "de mond moet nog wel wat duidelijker omlijnd worden zodat duidelijk is dat die ietwat uitsteekt, heeft het model wss ook, rechts is beter trouwens" → oog B (wit); `eindkeuring/mond_V1.png` (rode lijn om de snavel, 22 px) en `mond_V2.png` (idem, onderkant zwart), `mond_lijn.py`.
+- Jordi: "ja rechts is goed" (V2) → `ludicolo/af/ludicolo_gaucho.png` (voorlopig); "stuur die maar naar de eindkeuring" → eindkeuring ronde 2 (`ludicolo/eindkeuring2/`).

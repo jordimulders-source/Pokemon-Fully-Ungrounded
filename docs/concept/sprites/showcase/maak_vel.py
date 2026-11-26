@@ -100,6 +100,7 @@ SECTIES=[
 ("pincurchin_regional/af/pincurchin_regional.png",'Pincurchin (regional)',"poison/rock"),
 ("lotad_regional/af/lotad_gaucho.png",'Lotad (gaucho)',"ground"),
 ("lotad_regional/lombre/af/lombre_gaucho.png",'Lombre (gaucho)',"fight"),
+("lotad_regional/ludicolo/af/ludicolo_gaucho.png",'Ludicolo (gaucho)',"fight"),
 ("mrmime_regional/bokser/af/bokser.png",'Mr. Mime (regional)',"fight/psychic"),
 ("mr_prime/af/mr_prime.png",'"Mr. Prime"',"fight/psychic"),
 ("jynx_regional/af/jynx_regional.png",'Jynx (regional)',"fairy/dark"),

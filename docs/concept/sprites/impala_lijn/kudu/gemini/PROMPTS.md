@@ -127,3 +127,7 @@ VIEW: facing 3/4 to the left (the far horn, far ear and far legs are on the left
 
 DO NOT: a mane standing up as a crest, messy hair made of many thin strands, mane and throat fringe merging into one big mass, impala, gazelle, deer, antlers, a small head on a long neck, a short cute face, small ears, long stilt legs, a slender graceful body, a small figure in an empty frame, a lion mane or a ball of hair on the chest, flat wavy zigzag horns, ram horns, Deerling, Sawsbuck, Stantler, Wyrdeer, armor plates, a metal body, a gold metal body, robot parts, a crown or jewelry, holding or carrying weapons, glowing metal, sparkles, horns in the same color as the fur.
 ```
+
+## Ronde 4 (26 nov)
+- `r4/kudu_r4.png`. Jordi: "vind deze toch weer minder mooi, lijkt wat klein"; "en de manen zijn minder goed". Beste tot nu toe: r3b (manen) / r3.
+- Claude (gemeten): elke ronde vult de volle hoogte; hij lijkt klein omdat de hoorns (± zo hoog als het lijf, Jordi's keuze) steil omhoog staan en de bovenste helft opeten, zodat kop en lijf in de onderste helft passen.

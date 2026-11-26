@@ -11,3 +11,6 @@ Fase 1 (af): `../guarana/` (SPEC daar = alle eerdere besluiten).
 
 ## Gemini
 - r1: `gemini/PROMPT_r1.md` (nieuw gesprek, geen bijlage).
+
+## Ronde 1 (`gemini/r1.png`)
+- Jordi (26 nov): "de vorm werkt goed, alleen ik vind de liaan net iets te basic en onderdesigned, wat zouden we daar evt nog mee kunnen?"

@@ -3515,3 +3515,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.853] - Impala (impala-lijn fase 2): frontsprite af
 - Jordi (26 nov): "nja goed, prima". `docs/concept/sprites/impala_lijn/impala/af/impala.png` (= `sprite/r15`): r13–r14 poten volgens Kirlia (tinten in de lengte), r15 borstgrens gebogen naar het model. Op het overzichtsvel (sectie New, na de dikdik). POKEMON.md, Stand van zaken en lessen (`GEMINI.md`) bijgewerkt.
+
+### [v0.0.854] - Kudu (impala-lijn fase 3): keuzes en Gemini-prompt r1
+- Jordi (26 nov): uitstraling koninklijk en kalm, manen + keelfranje, hoorns heel groot, pre-evolutie niet noemen, "mag echt een grote sprite zijn ook", kudustrepen erop "indien mogelijk". `docs/concept/sprites/impala_lijn/kudu/SPEC.md`, prompt in `kudu/gemini/PROMPTS.md`.

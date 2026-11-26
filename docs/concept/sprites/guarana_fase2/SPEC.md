@@ -30,3 +30,6 @@ Fase 1 (af): `../guarana/` (SPEC daar = alle eerdere besluiten).
 
 ## Ronde 5 (`gemini/r5.png`, bijgestuurd in het r4-gesprek)
 - Gesloten vruchten erbij; blad niet groter geworden. Jordi: "links is niet mooi, de andere 2 gaan wel, we doen er nog 1 from scratch" → startprompt r6 (`gemini/PROMPT_r6.md`).
+
+## Ronde 6 (`gemini/r6.png`, nieuw gesprek)
+- Blad nu groot; trossen 2 ogen + 2–3 dichte vruchten. Jordi: "hij is wat kaal, de trossen he" → bijsturen r7 (`gemini/PROMPT_r7_bijsturen.md`).

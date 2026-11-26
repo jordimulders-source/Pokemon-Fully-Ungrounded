@@ -26,3 +26,4 @@ Alle citaten en lijnbesluiten: `docs/concept/IDEEEN.md` → "Impala-lijn"; samen
 - Jordi: "nee moet niet groter, maar iets zelfverzekerder" ("nee he toog") → B1–B3 zonder extra donker (`oog/blik_varianten2.png`).
 - Jordi (26 nov), op r6: "ik zie nog wel onnodig veel lange rechte lijnen. Onder de hoorns, de oren, de rug, de manen op de rug, de poten, hij is heel houterig, de hele sprite mag wel wat smoother. Je verandert niks behalve dat je rechte lijnen wat minder recht maakt wanneer nodig, meet met het model, niet met een raster, maar waar er golven zitten en waar niet" → r7.
 - Jordi (26 nov), op r8: "pak de binnenkant ook aan, links bij het witte stuk vacht was al goed, dat hoefde niet aangepast te worden" → r9: borstbolling links terug naar r7, tintgrenzen binnenin gebogen naar het model.
+- Jordi (26 nov), na r10 (= r9): "nee je mag nu gaan beginnen met de eindkeuring, dus netter maken". Geen overdrijven/anti-aliasing. Oog nog open (A, B1–B3).

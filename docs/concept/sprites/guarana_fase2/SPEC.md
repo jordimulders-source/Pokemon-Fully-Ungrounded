@@ -15,3 +15,6 @@ Fase 1 (af): `../guarana/` (SPEC daar = alle eerdere besluiten).
 ## Ronde 1 (`gemini/r1.png`)
 - Jordi (26 nov): "de vorm werkt goed, alleen ik vind de liaan net iets te basic en onderdesigned, wat zouden we daar evt nog mee kunnen?"
 - Claude stelde 6 opties voor (getwijnde liaan, gegroefde stengel, echt guaraná-blad, rood in het jonge groen, dichte knopjes, grijpranken). Jordi: "we doen 1 en 3" = getwijnde liaan + echt guaraná-blad (samengesteld, 5 getande blaadjes; minder maar groter). Bijsturen in hetzelfde gesprek: `gemini/PROMPT_r2_bijsturen.md`.
+
+## Ronde 2 (`gemini/r2.png`, bijgestuurd met 1 + 3)
+- 64 px-test (`gemini/r2_test64_8x.png`, 64×51): liaan en blad lezen; de ±8 ogen per tros worden 2–3 px en vervagen tot ruis. Aantal ogen per tros is nooit door Jordi bepaald → als vraag voorgelegd.

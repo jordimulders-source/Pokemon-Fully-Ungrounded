@@ -13,3 +13,4 @@ Lijn (Jordi, 26 nov): fase 1 zandloper met levend zand en alleen ogen → fase 2
 - **Gezicht (Jordi):** "r8 heeft weer net wat meer pokemon ogen denk ik, maar r5 een betere 'mond'" → ogen r8, mond r5.
 - **Jordi (26 nov) op de laatste punten:** "spierbundels mogen wat minder, maar rustiger wordt bij jou vaak blurry, en daar moet je voor waken, een djinn heeft sws een beetje een menselijke vorm, dat is geen ramp." "Boeien lichtblauw prima, type ja. Brein en lijf dezelfde tinten is helemaal niet erg, hij is helemaal van zand." Staart: 2–3 duidelijke banden ("5 ja"). **"Het belangrijkste is dat het geen pixelblur wordt, het mag simplistischer maar moet echt gedefinieerd blijven".**
 - Type: **Ground/Psychic** (bevestigd).
+- **Jordi over sprite r2 (26 nov):** "ja zijn nog best wat reparaties nodig"; "linkerarm, breinlijnen, wenkbrauw is 1 grote horizontale lijn, borst en armen eronder is slordig".

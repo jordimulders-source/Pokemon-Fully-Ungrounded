@@ -186,3 +186,6 @@ Draw only one object as a Gen 3 Pokémon sprite part (Ruby/Sapphire/Emerald pixe
 
 An old hourglass lying on its side, with brown wooden end caps and light blue glass, seen slightly from above at a 3/4 angle. It is clearly BROKEN in the middle: at the narrow waist the glass is cracked open, with a jagged hole facing up. Golden sand gushes OUT of that hole: one thick stream of sand rises straight up from the hole, twists once like genie smoke, and gets wider as it goes up. The stream is cut off flat at the top of the image (it will connect to a body later). Some sand is still inside both bulbs. No loose shards, no creature, no face.
 ```
+
+## r11 – samengevoegd door Claude (geen prompt)
+Bovenlijf r8 tot y=680 (oude staartkrul weg), onderkant r10 vanaf y=60 geschaald ×0,85 (breedte straal = breedte lijf), zand en lijnen naar de r8-kleuren (`r11_samengevoegd.png`, test 64 px `r11_test64.png`, naast elkaar `r11_vergelijk.png`). Bekend: de straal heeft geen zwarte omlijning zoals r8, naad bij de aansluiting, zandloper fijner gepixeld dan het lijf.

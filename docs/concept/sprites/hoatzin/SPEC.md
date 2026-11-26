@@ -121,3 +121,4 @@ Opdracht: `sprite/OPDRACHT.md`.
 - Jordi op r7: "poh uitstekend, eindelijk, toch de hoatzin gelukt. Linkerpoot moet je nog even naar kijken, de klauw is een beetje een rechthoek geworden". Naar r8 (alleen de linkervoet).
 - **r8** (`sprite/r8/`): linkervoet met twee losse tenen uit het model (13 px, diff 0 erbuiten).
 - **r9** (`sprite/r9/`): DC-eindkeuring op r8, 4 px (linkervoet 2, kuif 1, teken 1), alpha-diff 0. Naar Jordi.
+- Jordi op r9: "het kleurgebruik, schaduw, tinten zijn nog niet top. Snavel is effen, kop die in de kuif overgaat lijkt gewoon bijna een vierkant vlak. Hij leest erg 2d, kan je dat nog fixen, kijk ook of die niet te donker is". Kleurronde r10 (verse maker).

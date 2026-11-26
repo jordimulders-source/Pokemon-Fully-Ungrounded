@@ -53,3 +53,18 @@ Geen zwart binnen de figuur buiten ogen, stenen en de emmernaad x44; geen lichte
 - Losse s-pixels in de vacht (o.a. (40,34), (41,36), (39,40)) zijn taps uitlopende strengen uit het model; bewust laten staan.
 
 Bestanden: `sneeuwmonster2_ek.png`, `sneeuwmonster2_8x.png`, `vel.png` (r4 | ek | model 8×; daaronder 1× en 2× op licht en donker naast fase 1, Skinguin, Dundragoon, Zapacha, Glalie `_gba`), `bouw.py`.
+
+## Ronde ek2 (26 nov): ooglid + stenen
+Jordi: "bijna helemaal tevreden, ooglid is een horizontale lijn en de stenen zijn nog niet helemaal herkenbaar als stenen". Bron `sneeuwmonster2_ek.png`, script `ek2/bouw.py`, uitvoer `ek2/sneeuwmonster2_ek2.png`, `ek2/sneeuwmonster2_ek2_8x.png`, `ek2/vel.png` (ek | ek2 | model 8×; ogen en stenen 12× naast het model; 1× en 2× op licht en donker naast fase 1 en de maatstaf). Palet ongewijzigd. Assert: silhouet, mond, emmer (7–9), vacht (2–6) index-diff 0; alleen pixels in de oogvakken en het steeninterieur (1/10/11/12) mogen wijzigen. Totaal 18 px.
+
+**1. Ooglid (7 px).** Per kolom het donkergewogen zwaartepunt van de lidlijn in het model (L<70, binnen het oog, buiten de kasrand), in spriterijen: linkeroog x21 21,74 · x22–24 21,37–21,39; rechteroog x30 21,91 · x31 21,71 · x32 21,99 · x33 22,42 · x34 22,73. Het lid zakt dus naar de buitenhoek: links 1 px aan de buitenkant, rechts loopt het van rij 21 (x30–31) naar rij 22 (x32–34).
+- O1 (6 px): linkeroog (21,22) → K, oude lidpixel (21,21) → g; rechteroog (30,21) (31,21) → K, oude (30,22) (31,22) → g (kas, model L79–109).
+- O2 (1 px): (31,20) g → G: het licht van de kas boven het lid schuift mee (model L136).
+Oogvorm, maat, plek en de kas zelf zijn hetzelfde gebleven.
+
+**2. Stenen (11 px).** Per binnenpixel van de steen (rand blijft zwart, gloed blijft op de gemeten scheur- en randplekken: 39 px, ongewijzigd) de gemiddelde modelhelderheid van de niet-gloeiende steenpixels, met hergebruikte grijzen: ≥78 → G (160,166,176), lichte facetrand; 56–78 → g (88,92,104), licht facet; 30–56 → steen (52,50,58); <30 → K (scheur/diepste schaduw). Het model is gemeten mediaan L44 (p25 36, p75 64), dus de steentint 12 klopt en is niet aangepast.
+- Boven: (24,35) G (model 79), (23,35) (24,36) (23,38) g (66/70/59), (22,38) K (28).
+- Onder: (22,44) G (81), (23,44) (21,45) (22,46) (23,46) (25,46) g (66/72/76/61/57).
+Resultaat: licht facet linksboven, donker naar rechtsonder, steen nu K 16 / steen 24 / g 8 / G 2 / gloed 39.
+
+**Ter info voor Jordi (ek2):** de stenen zijn 5–6 px breed; hun omtrek is rond omdat de rand tegen de vacht ligt, en de vacht en het silhouet waren bevroren. Een hoekiger brokvorm (zoals in het model) kan alleen als er een paar vachtpixels rond de stenen mogen veranderen. Op 1× lezen ze nu als donkere brokken met een licht facet en een gloeiende rand. Of dat genoeg "steen" is, moet Jordi beoordelen.

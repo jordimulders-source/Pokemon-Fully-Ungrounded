@@ -3463,3 +3463,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Fossielen: Jordi denkt aan Glyptodon; lijst met andere uitgestorven dieren in IDEEEN; zandloper "tof idee".
 - Terreurvogel en glyptodon komen sowieso (regionale fossielen, in TODO); zandloper-lijn wordt gebouwd, voorstellen voor de ontwikkeling in IDEEEN.
 - Zandloper-lijn: Jordi wil grotere sprongen (zandloper zelf / zand eruit / systeem); volgordevoorstellen in IDEEEN.
+- Zandloper fase 3: twee Gemini-prompts (systeem / zand vrij) in `sprites/zandloper/fase3/gemini/PROMPTS.md`.

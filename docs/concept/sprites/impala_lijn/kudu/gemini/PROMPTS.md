@@ -170,3 +170,11 @@ DO NOT: horns standing straight up, a mane hanging like a beard from the cheeks 
 - `r5/kudu_r5.png`: illustratie i.p.v. sprite; hoorns als lange vlakke zwepen naar achteren; manen weer een pluizige slab voor de hals.
 - Jordi: "geen sprite, hoorns niet in verhouding en de manen zien er weer gek uit".
 - Claude: de manen zijn in alle 5 rondes mislukt; nieuwe startprompts drijven af. Volgens GEMINI.md (na gelijke uitkomsten stoppen, beste model kiezen; bijsturen werkt 1–2 keer) voorgesteld: terug naar het r3/r3b-gesprek.
+
+## r3c (tweede bijsturing in het r3-gesprek)
+```
+Keep everything exactly the same (pose, head, ears, horns, body, stripes, colors, size, mane position). Change ONLY the look of the mane: make it neater, with fewer and bigger locks of hair that each have a clear shape and outline, still hanging over the side of the neck and the near shoulder like now.
+```
+- `r3c/kudu_r3c.png`: grotere lokken (bijna dreadlocks), nog plukken bovenop; hangen voor de hals.
+- Jordi: "valt ook niet genoeg over de schouder".
+- Snelle reductie naar 64 px van r3/r3b/r3c: `../test/snelle_reductie_r3_r3b_r3c.png` (kop/oren/hoorns/strepen lezen; lijf ±60 % van de hoogte).

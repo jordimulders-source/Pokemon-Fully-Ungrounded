@@ -159,3 +159,5 @@ Keep it simple and readable at 64x64: big clear shapes, like a real Gen 3 sprite
 
 No effects, no glow, no sparkles, no shadow; draw no ground under the hourglass. AVOID: a realistic hourglass with a face, a human in a costume, a plush toy, Neopets style.
 ```
+
+**Jordi over r8:** "hoofd prima, ook hoe die glazen dingen uit het lichaam komen, maar nu gaat het onderin helemaal fout" (`r8.png`).

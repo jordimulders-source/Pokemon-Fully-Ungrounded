@@ -3360,3 +3360,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.822] - Impala: sprite r1–r2 en oogvarianten
 - Spritefase gestart op model r5 (eigen reductie, strepen volgens Jordi). Rondes in `impala_lijn/impala/sprite/r1`, `r2`; oogvarianten uit Gen 3 (Rapidash, Absol, Stantler) in `impala_lijn/impala/oog/oog_varianten.png`.
+
+### [v0.0.823] - Impala: sprite r3–r12, eindkeuring en oog B3
+- Rondes r3–r10 (hoorns taps en glad, staal, kuif, manen over de hals, rechte lijnen gemeten op het model), eindkeuring DC r11 (PASS: belijning, schaduw, staalpalet naar Steelix), r12 = r11 + oog B3 (Jordi). Kandidaat: `impala_lijn/impala/sprite/r12/impala_r12.png`.

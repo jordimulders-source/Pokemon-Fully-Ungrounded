@@ -176,3 +176,13 @@ Change ONLY the bottom part:
 
 Same size, same 64x64 Gen 3 style, max 16 colors, white background, no effects, no shadow, no ground.
 ```
+
+**Jordi over r9:** "dit gaat ook weer fout" (`r9.png`). Claude: Gemini hield r8 en zette er een tweede straal bij (nu twee staarten); zandloper nog heel.
+
+## r10 – alleen de onderkant als los onderdeel (assetmethode; daarna plakt Claude hem onder het bovenlijf van r8)
+Nieuw gesprek, geen bijlage.
+```
+Draw only one object as a Gen 3 Pokémon sprite part (Ruby/Sapphire/Emerald pixel style), white background, max 16 colors, no effects, no shadow, no ground:
+
+An old hourglass lying on its side, with brown wooden end caps and light blue glass, seen slightly from above at a 3/4 angle. It is clearly BROKEN in the middle: at the narrow waist the glass is cracked open, with a jagged hole facing up. Golden sand gushes OUT of that hole: one thick stream of sand rises straight up from the hole, twists once like genie smoke, and gets wider as it goes up. The stream is cut off flat at the top of the image (it will connect to a body later). Some sand is still inside both bulbs. No loose shards, no creature, no face.
+```

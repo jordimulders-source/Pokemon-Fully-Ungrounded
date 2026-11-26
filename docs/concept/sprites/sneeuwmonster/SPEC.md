@@ -12,6 +12,7 @@ Besluiten en citaten: `docs/concept/IDEEEN.md` → "Extra Ice-lijn: Ice/Fire". P
 - Armstompjes staan in het model (prompt vroeg "no arms"); Jordi koos r1c zo.
 
 ## Open
-- Mond (klein, neutraal): varianten ter keuze, ogen/mond-regel SPRITE_KERN (gezicht uit een bestaande Gen 3-sprite, niet zelf verzinnen).
+- ~~Mond~~: besloten, geen mond.
 - Naam.
 - **Ogen (Jordi, 26 nov):** "probeer de ogen rond te maken"; keuze "c glans onder, want dan kijkt die naar driekwart" (beide 4×4 rond, linkeroog 1 px naar rechts, glans in de onderhoek). Ook: "Bovenste knoop is ook niet rond, linkerstukje van de kuif ook niet en linkerkant van het hoofd is ook hoekig" → ronde 5.
+- **Mond (Jordi, 26 nov):** "doe maar zonder mond" (na de varianten Shroomish en Chinchou, `sprite_r5/monden_vel.png`). Geen mond.

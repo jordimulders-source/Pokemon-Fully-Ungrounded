@@ -35,7 +35,7 @@ def bouw(lv,gl):
     o=r2.copy(); rand=[]
     for Y in range(64):
         for X in range(64):
-            if invak(X,Y) and (o[Y,X] in (1,6,7,8) or (X,Y) in GL2): o[Y,X]=snee(o,X,Y)
+            if invak(X,Y) and (o[Y,X] in (1,6,7,8) or (X,Y) in GL2) and not any(r2[Y+dy,X+dx]==0 for dy,dx in ((-1,0),(1,0),(0,-1),(0,1))): o[Y,X]=snee(o,X,Y)   # buitenlijn blijft
     for pat,x0,y0,xs in (RECHTS['R'],LINKS[lv]):
         V=vorm(pat,x0,y0)
         for X,Y in V:

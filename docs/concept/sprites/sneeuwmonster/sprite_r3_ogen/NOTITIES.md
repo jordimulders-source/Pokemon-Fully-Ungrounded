@@ -16,7 +16,7 @@ Tinten per pixel uit het 1024-model (< 48 zwart, < 76 steen donker, anders steen
   - b: 4×4 op x22–25, **raakt de gezichtsrand**.
   - c: b 1 px naar rechts (x23–26), raakt de rand niet; tussenruimte 3 px (model ±4).
 - Glans "onder" (SPRITE_KERN, vuurduivel): zelfde kolom, één rij lager, op een pixel die niet aan de rand grenst.
-Diff t.o.v. r2 (alleen oogvakken): a 6/10, a1 14/15, b 8/12, c 17/18 px (glans lb/onder).
+Diff t.o.v. r2 (alleen oogvakken): zie de uitvoer van bouw.py. Fix 26 nov: de eerste versie maakte de buitenlijnpixel (21,27) per ongeluk sneeuw (de oogreset controleerde de buitenrand niet); hersteld, (21,27) is weer zwart zoals in r2.
 
 ## Twijfels
 - a1 is een ovaal, rond als het Delcatty-ver-oog. Als Jordi echt twee gelijke rondjes wil, is c de ronde versie zonder randcontact (ogen dan 1 px dichter bij elkaar dan in het model).

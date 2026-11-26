@@ -55,3 +55,5 @@ Keep it simple and readable at 64x64: big clear shapes, like a real Gen 3 sprite
 No effects, no glow, no sparkles, no shadow; draw no ground under the hourglass. AVOID: a realistic hourglass with a face, a human in a costume, a plush toy, Neopets style.
 ```
 (Gebruik A óf B: verwijder de andere regel.)
+
+**Jordi over r3:** "ik vind ze allebei nog niet heel mooi, maar met het brein leest nu wel iets beter, alleen het zijn allebei niet echt djinns toch" (`r3_A_brein_hoofd.png`, `r3_B_brein_core.png`).

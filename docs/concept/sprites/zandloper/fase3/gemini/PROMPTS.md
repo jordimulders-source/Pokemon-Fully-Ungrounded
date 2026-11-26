@@ -206,3 +206,4 @@ No effects, no glow, no shadow, no ground.
 **Jordi (26 nov), met r5 opnieuw:** "dit is tot nu toe met afstand het beste model, valt hier niet iets mee te doen nog?" (r12 niet gebruikt).
 
 **Jordi over r12** (`r12.png`): "onderin prima, maar wat is het lichaam opeens lelijk".
+- **Jordi (26 nov):** "r5 komt juist wel uit de zandloper, alleen de barst zit op de verkeerde plek." (r5 = model; barst naar het midden, waar het zand eruit komt.)

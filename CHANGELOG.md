@@ -3463,3 +3463,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Ronde 3 (niet-dieren/planten) voorgelegd; Jordi kiest kwik als beste idee, gasmasker kan (maar doet denken aan Pokémon Clover); hoatzin misschien toch, met plaagmasker; eerst overleggen.
 - Hoatzin-lijn: Jordi's eisen genoteerd in IDEEEN.md (2 fases, kuiken → snavelmasker, Poison/Dark, zuur op de vleugels, rood oog, blauw in het masker, niet stocky, simpel palet).
 - Hoatzin-lijn: antwoorden van Jordi + postuurreferentie (andermans Hoatzirit) toegevoegd.
+- Hoatzin-lijn: `sprites/hoatzin/SPEC.md` met alle besluiten en Gemini-prompt fase 2 v1.

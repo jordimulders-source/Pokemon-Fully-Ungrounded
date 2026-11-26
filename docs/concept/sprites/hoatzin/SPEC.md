@@ -33,3 +33,23 @@ AVOID: clothing, hat, cloak or any accessory; brown or chestnut colors; a fat or
 
 ## Rondes fase 2
 - **r1** (`gemini/fase2_r1.png`, prompt v1). Jordi: "postuur is best ok, maar ik lees hier geen poison uit, het hoofd is niet echt een plague mask en de kuif moeten we misschien een andere kleur geven. Het zijn vlekjes op de vleugel maar het ziet er niet uit alsof dat door zuur/poison komt"
+- Keuzes na r1 (Jordi): kop = **1a** (lange rechte kegelsnavel die pas aan het eind omlaag buigt, zoals het echte masker); zuur = **3c** (geelgroen loopt als verloop van de veerpunten naar binnen, alsof het erin trekt); kuifkleur: "twijfel ik over, wat er mooi uit zou zijn". Voorstel Claude: kuif zwartig met dezelfde geelgroene punten als de veren (geen extra kleurgroep, kuif leest tegen wit).
+
+## Prompt fase 2 (v2, Engels; nieuw gesprek, zonder bijlage)
+Eigen toevoegingen Claude: kuif met zuurpunten (voorstel, Jordi twijfelde), "slender, long S-curved neck, long tail, long legs", "not a crow or raven".
+
+```
+Design an original Pokémon, drawn as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 colors, white background, no ground, no shadow, no effects.
+
+POSE (most important): a tall, slender bird standing upright, body turned 3/4 to the left. Exactly two wings: the near wing (right side of the image) is raised and spread wide in an attacking pose, the far wing (left) is folded or half open. Long S-curved neck, long tail, long thin legs. Not stocky, thin belly.
+
+WHAT IT IS: an evolved hoatzin (the Amazon "stinkbird") whose whole head IS a plague doctor's beak mask. The mask is not worn: it is the head itself, the same blackish color as the body but shaded so it clearly reads as a plague doctor mask. The beak is long, straight and cone-shaped, and only bends downward at the very end, exactly like a real plague doctor mask (not a normal curved bird beak). The eye is simply the eyehole of the mask: one bright red eye, with a patch of blue bare skin around it, like a real hoatzin face. A spiky, messy hoatzin crest on top of the head, large and simple so it reads clearly at sprite size.
+
+TYPE: Poison/Dark. Its poison is acid. The tips of its wing feathers, tail feathers and crest feathers are soaked in yellow-green acid: the color seeps from the tip inward into each feather as a gradient, as if the acid is soaking into it. No dots or spots, no dripping.
+
+COLORS: blackish body and head (not brown, not chestnut). Few colors, clean simple shading: blackish feathers, red eye, blue face patch, yellow-green acid seeping into the feather tips.
+
+MOOD: ugly in a Pokémon way, something you don't trust. Simple, readable design, not complex.
+
+AVOID: clothing, hat, cloak or any accessory; brown or chestnut colors; a fat or round belly; a stocky body; polka dots or round spots; dripping liquid; glow; a normal curved bird beak; not a crow or raven.
+```

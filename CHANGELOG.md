@@ -3448,3 +3448,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.x] - Werknamen Impyre en Scrapstack (26 nov)
 - Vuurduivel fase 1 heet **Impyre**, spooktrein fase 1 **Scrapstack** (Jordi); op het overzichtsvel. Nieuwe naamvoorstellen voor de Bibarel-evolutie (Bi-) en Sunflora-evolutie (Sun-) in `docs/concept/POKEMON.md`.
+- Bibarel-evolutie heet **Bibuilder** (Jordi, 26 nov); op het overzichtsvel.

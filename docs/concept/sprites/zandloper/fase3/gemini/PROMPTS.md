@@ -38,3 +38,20 @@ Keep it simple and readable at 64x64: big clear shapes, few details, like a real
 Compact silhouette that fits a square, limbs close to the body.
 
 No effects, no glow, no sparkles, no ground or shadow under it. AVOID: a realistic hourglass with a face, a human in a costume, a plush toy, Neopets style.
+
+## r3 – na het sparren (26 nov), varianten brein als hoofd (A) / brein in de core (B)
+Besluiten Jordi: zandloper ligt op de grond, in het midden geopend, zand loopt eruit en vormt de djinn; geen scherven; onderlijf = zandstaart die vastzit aan de zandloper (de bron); stelsel van glazen wetenschapsapparatuur, niet te klein, alles goed gedefinieerd; brein: "misschien alleen met wat belijning". Invulling Claude: twee armen met ronde stompen zonder vingers, 2–3 grote stukken glas.
+```
+Design an original Pokémon as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64 pixels, max 16 colors, white background, facing 3/4 to the left.
+
+Concept: a sand djinn (Ground/Psychic) that has escaped from an hourglass. At the bottom, an hourglass lies on its side, broken open in the middle (at the narrow waist). Sand pours out of that opening and rises up into the djinn: its lower body is a sand tail that stays connected to the hourglass, like a genie rising from its lamp. The hourglass is the source.
+Upper body: made of golden sand, with two arms that end in rounded sand stumps without fingers.
+[A] Its head IS a brain made of sand, with simple Pokémon eyes; show the brain folds with only a few clear lines, no fine detail.
+[B] Its head is a rounded mound of sand with simple Pokémon eyes; in its chest sits a brain made of sand as its core, shown with only a few clear lines, no fine detail.
+Around its body: glass science apparatus (flasks, tubes, funnels) that is part of its body, not carried. Only 2 or 3 pieces, each large and clearly defined, nothing tiny.
+It must NOT look human: no human face, no nose, no human hands.
+Keep it simple and readable at 64x64: big clear shapes, like a real Gen 3 sprite. Compact silhouette that fits a square.
+
+No effects, no glow, no sparkles, no shadow; draw no ground under the hourglass. AVOID: a realistic hourglass with a face, a human in a costume, a plush toy, Neopets style.
+```
+(Gebruik A óf B: verwijder de andere regel.)

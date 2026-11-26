@@ -32,3 +32,12 @@
 ## Model en maat (bevroren, Jordi 25 nov)
 - "ok 44 px, r5 is het model, maak de sprite, 56 is iets te groot denk ik". Model = `model.png` (= `gemini/r5.png`). Breedte 44 px (voorstel Claude: 44×37, ±810 px, zoals Hoppip/Ekans/Bellsprout).
 - Voorstellen van Claude waar Jordi niet expliciet ja op zei (dus als variant/vraag, niet stil doorvoeren): ogen groter maken op 44 px; zwarte puntjes op de vruchten weghalen. Het zwarte raster tussen de vruchten wordt binnenlijn in eigen donkere tint (Gen 3-belijning).
+
+## Fase 1 af (26 nov)
+- Jordi over de twee oogversies: "ja rechts is veel beter" → variant B (Weepinbell-ogen, pupil 2×2 in de kijkrichting van het model). Zwarte puntjes blijven (zoals het model).
+- Guaraná-gevoel: de opengebarsten rode schil om het oog en gladde bolletjes vertalen niet naar 44 px; Jordi: "akkoord", komen in fase 2 ("fase 2 doe ik in nieuw gesprek").
+- Sprite: `af/guarana.png` (+ `normal.pal`, `guarana_8x.png`) = `eindkeuring/guarana_ek_ogen_groter.png`. Rondes: maker `sprite_r1`–`r4`, keurder r2/r3 BIJNA, DC-eindkeuring PASS (`eindkeuring/EINDKEURING.md`; groen contrastrijker gemaakt).
+
+## Voor fase 2 (overdracht)
+- Fase 2 = opengebarsten struik vol witte ogen met zwarte pupillen; Claude stelde voor: de rode schil splijt als lipjes om elk oog (echte guaraná), gladde glanzende bolletjes. Maat 56–64 px (fase 1 = 44×37, 809 px).
+- Wat bij fase 1 werkte in Gemini: startprompt `gemini/PROMPT_r2.md` + bijsturen in hetzelfde gesprek met max. 1–2 wijzigingen ("Keep everything exactly the same. Change ONLY ..."); een nieuwe startprompt met 3 wijzigingen (r3) dreef af.

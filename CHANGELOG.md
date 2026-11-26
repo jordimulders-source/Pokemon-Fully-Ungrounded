@@ -3472,3 +3472,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.839] - Guaraná fase 1: frontsprite kandidaat
 - Sprite naar Gemini r5 (model), 44×37 px, 809 px; maker r1–r4, keurder (BIJNA → BIJNA), DC-eindkeuring PASS (schaduw tros, groen contrastrijker). Twee oogversies ter keuze: Psyduck-oogwit met pupil in de modelkijkrichting, of Weepinbell-ogen (groter). In `docs/concept/sprites/guarana/eindkeuring/`; vel `guarana/voor_jordi_ek.png`.
+
+### [v0.0.840] - Guaraná fase 1: frontsprite af
+- Jordi koos variant B (Weepinbell-ogen): "ja rechts is veel beter". `docs/concept/sprites/guarana/af/guarana.png` (+ `normal.pal`, 8×), op het overzichtsvel (sectie New, Grass/Ghost). Naam open.
+- Opengebarsten schil om de ogen en gladde bolletjes komen in fase 2 (nieuw gesprek); overdracht in `guarana/SPEC.md`. TODO, Stand van zaken en lessen (GEMINI.md, SPRITE_WERKWIJZE.md) bijgewerkt.

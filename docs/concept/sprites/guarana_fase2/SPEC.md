@@ -40,3 +40,4 @@ Fase 1 (af): `../guarana/` (SPEC daar = alle eerdere besluiten).
 
 ## Ronde 8 (`gemini/r8.png`, nieuw gesprek)
 - Rechtopstaande, dichte aren (hyacint/maïskolf-achtig). Jordi: "is dit hoe guarana trossen eruit zien?" Bronnen: bloei/vrucht in trossen (racemen) aan de bladoksels of ranken; vrucht peervormig, driezijdig, geeloranje tot oranjerood, hele tros rijpt tegelijk ([worldagroforestry](https://apps.worldagroforestry.org/treedb/AFTPDFS/Paullinia_cupana.PDF), [USC Scalar](https://scalar.usc.edu/works/plants-and-people/guaran-paullinia-cupana-fruits)). Dat trossen hangen/overbuigen is uit Claudes geheugen, niet in die bronnen bevestigd.
+- Jordi: "nieuwe prompt dan maar echt duidelijker beschrijven, anders zijn we uren bezig" → `gemini/PROMPT_r9.md` (opbouw stap voor stap, hangende losse trossen, peervormige vruchten).

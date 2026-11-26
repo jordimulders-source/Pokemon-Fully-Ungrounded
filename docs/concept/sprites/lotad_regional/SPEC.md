@@ -10,6 +10,7 @@ Lijn: Lotad → Lombre → Ludicolo (drie fases, geen vierde).
 - "nee geen vierde fase".
 - "Gras en water gaat eruit".
 - "lotad ground, vanaf lombre fighting" (Lombre en Ludicolo: Ground/Fighting of puur Fighting nog open).
+- **Type besloten (Jordi, 26 nov):** "lombre en ludicolo zijn ground/fight" → Lotad Ground, Lombre en Ludicolo Ground/Fighting.
 
 ## Ronde 1 (25 nov)
 - `r1/gemini_r1.png` (startprompt v1). Jordi: "ja tof idee, dit gaat werken, en dan wordt het steeds meer een cowboy hoed per evo. Alleen het lichaam is net iets te groot denk ik"; "vergeleken met lotad"; "ofja steeds meer gaucho hoed"; "die lijken op cowboy hoeden".

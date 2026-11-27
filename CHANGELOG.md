@@ -3621,3 +3621,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.865] - Regionale Hitmonlee: tweede eindkeuring ek2 (27 nov)
 - Verse DC-keurder: PASS, 1 px gewijzigd (`hitmonlee_regional/eindkeuring/ek2.png`). Open punt: linkerwand van de romp rechter dan de koepel in het model.
+
+### [v0.0.866] - Regionale Hitmonlee: rechte lijnen gefixt (r15 / ek3) (27 nov)
+- Jordi: benen, arm en bovenkant kop hadden slordige rechte lijnen. Benen nu per ring gebouwd zoals de Gen 3-Hitmonlee, koepel rond, arm taps; rest gelijk aan ek2. Eindkeuring ek3 PASS (`hitmonlee_regional/eindkeuring/ek3.png`).
+- Lessen in `GEMINI.md`: rijen schrappen maakt rondingen recht; geribbelde ledematen per ring van 3 rijen.

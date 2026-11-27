@@ -59,3 +59,4 @@ AVOID: orange plastic or clay look, opaque body, a human in a glass costume, a g
 - Jordi (27 nov): "ok nog even een rechte lijnen check doen, de benen hebben slordige rechte lijnen ipv de vorm die hitmonlee hoort te hebben, is opnieuw getekend? arm ook, kijk naar de oorspronkelijke hitmonlee hiervoor. Bovenop hoofd ook een lange rechte lijn"
 - Claude: niet hertekend, maar (a) rijen/kolommen schrappen maakte rondingen recht (koepel, linkerwand) en (b) de maker zette de ringen met de hand als rechte banden (zijn eigen twijfelpunt 3). → reparatieronde r14.
 - Jordi (27 nov): "het ziet er iig niet uit, dat moet nog gefixed worden, verder is de sprite goed" → r14 repareert alleen de rechte lijnen (koepel, linkerwand, benen/ringen, arm); rest blijft ek2.
+- r15 (benen per ring als Gen 3-Hitmonlee, koepel rond, arm taps; 138 px t.o.v. ek2, rest gelijk) → eindkeuring ek3 PASS, 0 px (`eindkeuring/ek3.png`). Ter beoordeling bij Jordi.

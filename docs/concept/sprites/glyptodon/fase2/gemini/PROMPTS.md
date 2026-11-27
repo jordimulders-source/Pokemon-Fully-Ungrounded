@@ -114,3 +114,4 @@ No effects, no glow, no sparkles, no ground or shadow under it. AVOID: a turtle,
 ```
 
 **Jordi over r6 (`r6.png`, gele stekel met beige band):** "prima, alleen is het nu wel voldoende een 2e fase?" Vergelijking: `vergelijk_fase1_r6.png`.
+- **Jordi (27 nov):** "of kan je die stekel copy/pasten?"; r4: "deze klopt helemaal behalve stekel en staart"; "staart van dzee" (r3_3) "en de nieuwe stekel" (r6). Plakmodel `plak_r4_staart_r3_3_stekel_r6.png` (`../gereedschap/plak_r4.py 196 -10 -5 0 760 <uit>`): alleen gekopieerd, niets getekend; gat onder de oude stekel gevuld met de schildpixel eronder, lichte randruis weg.

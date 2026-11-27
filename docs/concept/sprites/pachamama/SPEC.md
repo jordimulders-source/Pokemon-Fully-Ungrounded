@@ -1,0 +1,14 @@
+# Pachamama (opper-legendary, Ground/Fairy)
+
+## Jordi letterlijk
+- 8 nov: Ground/Fairy "ook een goede ja".
+- 27 nov, op Claudes voorstellen A (berg-moeder, *Virgen del Cerro*), B (viervoeter met akkers), C (moederfiguur), 2 (trio erin), offers, kleuren: "A en 2 zijn tof, maar is dat te doen in een 64x64 sprite?"; "B is ook mogelijk, maar je wil erg veel merk ik in een kleine sprite stoppen. Offers kan gewoon niet."; "Een abstracte vorm van moeder aarde vind ik wel tof, zolang het maar levend is, want elke pokemon is levend en heeft ogen".
+- 27 nov: gekozen richting **1** ("1"): Claudes voorstel "de berg die leeft: berg-mantelvorm, gezicht in de top met grote ogen, eventueel sneeuw als haar/kap, twee armen als bergkammen die naar voren komen".
+
+## Open
+- Ogen open of dicht/slapend (gevraagd, nog geen antwoord) → prompt heeft variant A/B.
+- Kleuren, naam, rol.
+- Trio niet in het ontwerp (Claude advies "te veel"; Jordi niet expliciet besloten).
+
+## Eigen invulling Claude in prompt r1 (schrappen als Jordi het niet wil)
+- Sneeuw als kap ("eventueel" in het voorstel), aardetinten van een berg, "gentle/ancient" als uitstraling.

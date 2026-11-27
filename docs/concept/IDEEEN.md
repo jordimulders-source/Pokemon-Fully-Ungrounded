@@ -29,8 +29,8 @@ Bovenaan gehouden zodat de stand in één oogopslag te zien is. Details in de se
   - **Vierde en vijfde referentie Jordi (16 nov), "of deze" (twee keer; bestanden niet beschikbaar, andermans fakemon):** (4) cursedeye.mon (Faketober): een opgerold slangenlijf met een kroon van vlampunten, omringd door vonkendruppels en -naalden die als een explosie naar buiten vliegen; kleine pre-evo met een vlam als staart. (5) "Fyron" (Dragon/Fire, Flash Fire): een slang in een ring (als een vuurrad), elk segment een andere kleur (roze, paars, turquoise), met sterbarsten langs het lijf.
   - **Jordi (16 nov):** "we doen nog 1 stekelvarken prompt, als ik dan niet tevreden ben gaan we switchen naar wat meer slang/draak/mythologisch". Prompt v4: `sprites/vuurwerk/gemini/PROMPT_v4.md`.
   - **Gemini v4** (`sprites/vuurwerk/r2/gemini_v4.webp`), Jordi (16 nov): "nee we schrappen het, de sprite is wel mooier, maar stekelvarken is geen goed dier hiervoor, beetje te puny". **Stekelvarken geschrapt**; volgens afspraak nu richting slang/draak/mythologisch.
-  - **Voorstellen Claude (16 nov, open):** (1) slang/draak (sterretje = slangetje rechtop op zijn staart als stokje; wondertol = opgerolde slang die in zijn staart bijt en tolt; vuurpijl = lange slangdraak die als vuurpijlspoor omhoog schiet); (2) Amaru (Inca-slangdraak, al genoemd bij de Dragon-gym in Cuzco); (3) wachterleeuw/komainu (mythologische geestenverjager; de bal in de poot als wondertol); (4) vuurvogel/feniks (risico Moltres/Ho-Oh).
-  - **Jordi (16 nov):** "ik vind amaru wel een goede, hadden we nog geen legendary idee voor toch? Welke gym was dragon ook alweer"; "zou fire/fairy werken voor een amaru vuurwerk pokemon?"; "anders moeten we naar slang". (Claude: het trio heeft al een Uku Pacha-slang (type/naam open), en Amaru staat als thema bij gym 4 Dragon (Cuzco); Amaru past bij regenboog/water/onderwereld, vuur is een stap.)
+  - **Voorstellen Claude (16 nov, open):** (1) slang/draak (sterretje = slangetje rechtop op zijn staart als stokje; wondertol = opgerolde slang die in zijn staart bijt en tolt; vuurpijl = lange slangdraak die als vuurpijlspoor omhoog schiet); (2) Amaru (Inca-slangdraak); (3) wachterleeuw/komainu (mythologische geestenverjager; de bal in de poot als wondertol); (4) vuurvogel/feniks (risico Moltres/Ho-Oh).
+  - **Jordi (16 nov):** "ik vind amaru wel een goede, hadden we nog geen legendary idee voor toch? Welke gym was dragon ook alweer"; "zou fire/fairy werken voor een amaru vuurwerk pokemon?"; "anders moeten we naar slang". (Claude: het trio heeft al een Uku Pacha-slang (type/naam open), [correctie 27 nov: Amaru als gymthema was een voorstel van Claude, nooit van Jordi]; Amaru past bij regenboog/water/onderwereld, vuur is een stap.)
   - **Besloten (Jordi, 16 nov): vuurwerkslang, geen Amaru.** "voor een vuurwerkslang wordt de staart 1 vuurpijl, die richt naar boven, of half naar boven. Verder prima idee". Armen (eerder "2 handen die vuurpijlen zijn") nog open. Prompt v5: `sprites/vuurwerk/gemini/PROMPT_v5_slang.md`.
   - **Gemini v5** (`sprites/vuurwerk/r3/gemini_v5.png`), Jordi (16 nov): "het is wel oke, maar zo saaitjes". (Analyse Claude: gewone S-slang met een sterkraag als manen; één effen buis als lijf, kleine losse pijl aan de staart, rustige pose.)
   - **Jordi (16 nov):** "1, 2 en 4, maak v6" (spiraal omhoog, kleinere barsten langs de rug, print van vuurpijlpapier). Prompt v6: `sprites/vuurwerk/gemini/PROMPT_v6_slang.md`.
@@ -297,7 +297,7 @@ La Paz (start), Cuzco, Rio de Janeiro, Lima, San Pedro de Atacama, Mendoza, Buen
 1. Ground – Uyuni (zoutvlakte)
 2. Ice – Lípez (besneeuwde pas bij de Licancabur)
 3. Fire – San Pedro de Atacama (geisers, vulkanen; van sneeuw naar woestijn)
-4. Dragon – Cuzco (Amaru, de Inca-slangdraak; eerste bezoek aan Cuzco; jonge draken: onconventioneel vroeg)
+4. Dragon – Cuzco (eerste bezoek aan Cuzco; jonge draken: onconventioneel vroeg)
 5. Dark – Potosí (El Tío, de duivel van de zilvermijn)
 6. Poison – Buenos Aires (industriële haven, de vervuilde Riachuelo: het systeem-thema)
 7. Grass – Rio de Janeiro (Tijuca, het grootste stadsbos ter wereld: Grass in een metropool)
@@ -911,3 +911,12 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - Raakt aan "Ruimte en diepe zee als mysterieuze gebieden" (12 nov).
 - Repo: alle bestaande Regi's zijn monotype (Rock, Ice, Steel, Normal, Electric, Dragon).
 - **Besloten (Jordi, 27 nov):** Regicosmo-stippen = B (kaart van zijn eigen lichaam), hemellichamen vormen een golem; Regiaqua: armen zweven los ("yes precies"), "de stippen moeten echt stippen zijn, liefste ook niet in de hoofdkleur", "stippen van regi's lichten altijd op, maar je mag ze wel zo'n kleur geven". Verder in `sprites/regicosmo/SPEC.md` en `sprites/regiaqua/SPEC.md`.
+## Kay Pacha-poema: lore (Claude, 27 nov, ter info)
+- Het schema condor–poema–slang voor de drie werelden is grotendeels een moderne/populaire lezing; de poema zelf is wel oud en overal (Chavín, Tiwanaku, Inca).
+- Cuzco als poema (Pachacútec): Sacsayhuamán = kop, zigzagmuren = tanden, rivieren Saphy en Tullumayo = flanken, Pumachupan ("staart van de poema") bij de samenvloeiing.
+- Puma Punku ("poort van de poema", Tiwanaku, bij La Paz): precies gehouwen stenen met H-blokken.
+- Titicaca: vaak gelezen als "rots van de (grijze) poema" (Titi Khar'ka op Isla del Sol); populair: het meer heeft de vorm van een jagende poema.
+- Tiwanaku: chachapuma's (poema-krijgers), poemakoppen op het steenwerk.
+- Inca: heersers en krijgers droegen poemahuiden; de poema = kracht, geduld, aardse macht van het hier en nu.
+- Ccoa/Qoa: mythische vliegende Andeskat (grijs, zwarte strepen), stormgeest bij Illapa: hagel uit de ogen, bliksem; gevreesd en met offers gesust.
+- Echte poema: grootste verspreiding van alle zoogdieren van Amerika (Canada–Patagonië), van zeeniveau tot boven 4000 m; kan niet brullen (blaast, gilt, spint).

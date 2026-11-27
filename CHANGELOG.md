@@ -3736,3 +3736,42 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Versierd koekje (paars glazuur, witte zigzag, hagelslag, paars juweel) op een koekster met chips, naar Gemini r4; alle tien punten afgestompt naar de Gen 3-Starmie (r6 licht), bovenpunt 1 rij terug (r8 A), keuring + DC-eindkeuring PASS (r7, r9). `docs/concept/sprites/staryu_regional/starmie/af/` (+ `normal.pal`, 8×); op het overzichtsvel (Fairy/Psychic). Regionale Staryu-lijn af.
 ### [v0.0.907] - Regionale Starmie: afwerking (27 nov)
 - Jordi omcirkelde twee plekken ("nog niet netjes afgewerkt"): achterpunt rechtsboven opgeschoond (licht/donker vlak, chips, nette binnenlijn) en rechter voortip even stomp als links (r10, r11 B; "smoother", "rechts is de punt puntiger"). `starmie/af/` = r11 B; overzichtsvel bijgewerkt.
+### [v0.0.881] - Pacha-kwartet: start sparren (27 nov)
+- `POKEMON.md` → Legendaries: Jordi's uitgangspunten voor het kwartet (Hanan Pacha, Kay Pacha, Uku Pacha, Pachamama): niet in gym-/E4-teams, geen Cosmic ("ze zijn juist aards"), moeten ogen als box legendaries; eerst sparren over ontwerp en types, daarna één voor één designen.
+- Correctie: Amaru als thema van de Dragon-gym in Cuzco was een voorstel van Claude, nooit van Jordi; weggehaald uit `CONCEPT.md`, `ROUTEPLAN.md` en `IDEEEN.md`.
+
+### [v0.0.882] - Pacha-kwartet: wezens, geen godenbeelden (27 nov)
+- `POKEMON.md`: Jordi: het kwartet wordt Pokémon als mythische wezens (zoals Groudon/behemoth en Kyogre/leviathan), geen godenbeelden; typenvoorstel Claude (driehoek Fire/Flying, Grass/Fighting, Water/Ghost) genoteerd als open.
+
+### [v0.0.883] - Hanan Pacha: Fire/Flying (27 nov)
+- `POKEMON.md`: condor (Hanan Pacha) wordt Fire/Flying (Jordi); poema, slang en Pachamama-wezen nog open.
+
+### [v0.0.884] - Kay Pacha: Grass/Psychic (27 nov)
+- `POKEMON.md`: poema (Kay Pacha) wordt Grass/Psychic (Jordi); poema-lore in `IDEEEN.md`. Slang en Pachamama-wezen nog open.
+
+### [v0.0.885] - Uku Pacha: Water/Ghost (27 nov)
+- `POKEMON.md`/`TODO.md`: slang (Uku Pacha) wordt Water/Ghost (Jordi); typen van het trio rond. Pachamama-wezen nog open.
+
+### [v0.0.886] - Hanan Pacha: ontwerpbrief (27 nov)
+- `docs/concept/sprites/hanan_pacha/SPEC.md`: Jordi's eisen voor de condor-legendary (machtig, vleugels gespreid bijna als zon, niet te horizontaal, duidelijk condorhoofd, heroïsch, kraag, zwart/wit/goud/vuur, geen vlammen, geen Inca-patroon).
+
+### [v0.0.887] - Hanan Pacha: Gemini-prompt v1 (27 nov)
+- Jordi's antwoorden (shinen = felheid/kleur, driekwart links met de hele vorm zichtbaar, vuur niet zichtbaar) in `hanan_pacha/SPEC.md`; prompt v1 in `hanan_pacha/gemini/PROMPT.md`.
+
+### [v0.0.888] - Hanan Pacha: r1 + prompt v2 (27 nov)
+- Gemini r1 bewaard met Jordi's feedback (te zwart-wit, losse ring, geen legendary, kalkoenkop); prompt v2: vleugels vormen de kring, goud als hoofdkleur + vuurtinten, sierveren/massief/heroïsch, gierenkop zonder lel.
+
+### [v0.0.889] - Hanan Pacha: r2 + prompt v3 (27 nov)
+- Gemini r2 bewaard met Jordi's feedback (te veel Ho-Oh en zwart, kop klein en hangend, kraag kalkoen, niet heroïsch, staart ook naar links en tussen de klauwen); prompt v3.
+
+### [v0.0.890] - Hanan Pacha: prompt v4 (27 nov)
+- Keuzes na r3 (karmijnrode kop, losse vingerpennen, witte vleugelband + donkere punten, V-pose met pennen als zonnestralen) in SPEC; prompt v4.
+
+### [v0.0.891] - Hanan Pacha: r4 + prompt v5 (27 nov)
+- Gemini r4 bewaard ("beter, nog net niet majestueus"); Jordi's staartreferentie in `hanan_pacha/referentie/`; prompt v5 = v4 met een lange, omlaag hangende waaier van losse lansvormige staartveren.
+
+### [v0.0.892] - Hanan Pacha: prompt v6 (27 nov)
+- v5 (staart naar referentie, alleen vorm en richting) + kroonkam (K-a): grote vlezige kam die als natuurlijke kroon omhoog rijst.
+
+### [v0.0.893] - Hanan Pacha: r5, bijsturen, prompt v7 (27 nov)
+- r5 (ontwerp goed, pose te horizontaal) en het mislukte bijsturen bewaard; prompt v7 = v6 met steil opgeheven vleugels en expliciet vierkant beeldformaat (brede Gemini-beelden gaven brede poses).

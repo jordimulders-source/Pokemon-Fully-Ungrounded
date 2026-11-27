@@ -35,3 +35,6 @@ Jordi: "ja staryu is goed, zet maar in af". `staryu/af/staryu_regional.png` (= s
 ## Starmie: ook de voorpunten (27 nov)
 Jordi na r5: "de punten van de voorkant moeten ook minder puntig van starmie".
 Jordi (27 nov), met uitsnede `referenties/jordi_starmie_punten.png` (Gen 3 Starmie, de twee punten rechts): "meet desnoods de hoek van de originele starmie sprite op deze twee".
+
+## Starmie r6 gekozen (27 nov)
+Uit licht | sterk | naar Jordi's twee Gen 3-punten: "ik vind 1 het beste" = `starmie/sprite_r6/starmie_r6_licht.png` (alle tien punten afgesneden waar ze 4 px breed zijn).

@@ -107,14 +107,14 @@ DO NOT: blood moon, red moon, moon craters on the torso, parts touching, extra p
 
 
 # r6 (nieuw gesprek, geen bijlage)
-Na Jordi op r5: "mars is nu een paasei". Alleen het romp-blok en DO NOT aangepast. Daarna Jordi: "ik herken mars helemaal niet aan een poolkap" → poolkap eruit.
+Na Jordi op r5: "mars is nu een paasei". Alleen het romp-blok en DO NOT aangepast. Daarna Jordi: "ik herken mars helemaal niet aan een poolkap" → poolkap eruit. Daarna Jordi stuurde een Mars-foto: "zo herken ik mars" (`referenties/mars_jordi.png`) → romp beschreven naar die foto.
 ```
 Design a new legendary Pokémon as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style): pixel art, 64x64, max 16 colors, dark outline, light from top-left, plain white background, no ground, no shadow, no effects. Few, big shapes so it reads at 64x64.
 
 WHAT IT IS: a new member of the Regi family of golem legendaries. A big faceless golem with no eyes, no mouth and no separate head; its only "face" is a pattern of glowing dots on its chest. The overall silhouette reads as a Regi golem: big torso, broad shoulders, heavy hands hanging beside the body, short legs.
 
 BODY: 7 separate celestial bodies that FLOAT apart from each other: clear empty white space between every part (at least 2-3 pixels at 64x64), nothing touches or overlaps.
-- TORSO: the biggest body in the center: the planet MARS as a PERFECTLY ROUND SPHERE (a circle, exactly as wide as tall, NOT oval, NOT egg-shaped), shaded like a planet in space: lit from the top-left, a clear dark shadow side on the right (the night side), so it reads as a 3D ball. Instantly recognizable as Mars and NOT as a red moon: rust-orange color (not blood red, not pale pastel), a few large darker brown surface regions, and one long dark canyon (Valles Marineris) across the middle. No round moon craters, no small speckles.
+- TORSO: the biggest body in the center: the planet MARS as a PERFECTLY ROUND SPHERE (a circle, exactly as wide as tall, NOT oval, NOT egg-shaped), lit from the top-left with darker shading toward the lower right edge, so it reads as a 3D ball. It looks like the classic photo of Mars: saturated red-orange; the upper half lighter peach-orange and mottled; a wide, ragged DARK brown-grey band running across the middle from left to right (the dark Valles Marineris region), with a slightly lighter orange zone below it; some small shallow craters scattered over the surface; the lower edge slightly paler. Not blood red, not pale pastel.
 - SHOULDERS: LEFT a pale icy blue planet, RIGHT an orange-banded gas giant with a tilted ring. They sit LOW: their centers at the height of the upper third of the torso, beside it, not above it.
 - HANDS: LEFT a craggy brown asteroid, RIGHT a grey cratered moon. They hang LOW: their centers at or just below the bottom edge of the torso, under the shoulders.
 - FEET: two small different bodies under the torso, one dark blue-grey, one tan rocky.
@@ -129,5 +129,5 @@ That is 2 + 1 + 2 + 2 = 7 dots, nothing else glowing.
 
 POSE: 3/4 view facing left, upright and imposing.
 
-DO NOT: white polar ice cap, oval or egg shape for the torso, Easter egg look, pastel colors, speckles, blood moon, red moon, moon craters on the torso, parts touching, extra planets or debris, more or fewer than 7 dots, lines between dots, starfield or galaxy texture, nebula, sparkles, eyes, mouth, head, orbit lines, effects.
+DO NOT: white polar ice cap, oval or egg shape for the torso, Easter egg look, pastel colors, blood moon, red moon, parts touching, extra planets or debris, more or fewer than 7 dots, lines between dots, starfield or galaxy texture, nebula, sparkles, eyes, mouth, head, orbit lines, effects.
 ```

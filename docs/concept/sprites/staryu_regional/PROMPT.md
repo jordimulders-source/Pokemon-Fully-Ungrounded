@@ -261,3 +261,5 @@ BACK STAR (plain cookie): golden-brown cookie dough (#d6893f), darker toasted br
 
 DO NOT: a flat star seen straight from the front, long sharp spikes, fewer than 10 points, back points hidden or bunched on one side, a realistic photo, a plate, starfield or galaxy patterns, sparkles, plush style.
 ```
+
+`gemini/r8_starmie.png` (prompt v8). Jordi: "gemini blijft moeite hebben met het achterstuk". Voorste ster wel driekwart (bovenarm naar rechts, dikte rechtsonder zichtbaar).

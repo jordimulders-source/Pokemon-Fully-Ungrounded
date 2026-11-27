@@ -3905,3 +3905,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.958] - Gemini frame 2-prompts voor zwakke script-soorten (27 nov)
 - 11 soorten (Cryomet, Purrpillar, Spoetnik, satelliet, ruimtestation, guaraná 1, Shuppetto, Swablu, Pincurchin, Muk, DJ Rotom) kregen een frame 2-prompt in hun pakket (batch 03, 06, 08, 10, 13–16); tabelkolom → G.
+
+### [v0.0.959] - Overworld: legendaries en tempel (27 nov)
+- Jordi: overworldsprites sowieso voor de legendaries en de levende tempel; legendaries mogen groter (zoals Rayquaza), de tempel heel groot, "alsof het een echte poort is naar een gebouw". In `OVERWORLD_WERKWIJZE.md` en `graphics_proef/PLAN.md`.

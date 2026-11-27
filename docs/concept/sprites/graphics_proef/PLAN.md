@@ -16,3 +16,6 @@ Overworld: pas na rug (prompt heeft front + rug nodig); voor welke soorten is no
 - Eigenlijk Gemini (lokale pose): Muk regional, Shuppetto; eventueel ruimtestation. Prompts toevoegen aan de pakketten als Jordi dat wil.
 
 - Jordi (27 nov): "Je kan gifs gaan maken voor designs waarbij dat goed past. Maar weet dat Gemini heel goed is in frame 2 maken dus dat wordt het issue niet" → zwakke script-soorten (+ Muk, Shuppetto) krijgen een Gemini frame 2-prompt in de pakketten.
+
+## Overworld
+- Jordi, 27 nov: "Voor overworld sprite moet je sowieso de legendaries en de ghost tempel. Rayquaza is vgm ook groter dan een normale sprite dus dat mag je met deze ook doen. De tempel mag zelfs zeer groot, dat men erin zou trappen alsof het een echte poort is naar een gebouw".

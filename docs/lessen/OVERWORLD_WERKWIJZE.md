@@ -28,6 +28,7 @@ Wat het verschil maakte met r1 (Raichu): beide battle-sprites als bijlage in pla
 "ik vind hem ook gewoon af, de overworld sprites hoeven allemaal niet perfect te zijn, ze moeten herkenbaar zijn en consistent". Dus weinig rondes: zodra hij herkenbaar is en consistent met de bestaande overworldsprites, is hij af.
 
 ## Wanneer
+- **Sowieso: de legendaries en de levende tempel** (Jordi, 27 nov: "Voor overworld sprite moet je sowieso de legendaries en de ghost tempel. Rayquaza is vgm ook groter dan een normale sprite dus dat mag je met deze ook doen. De tempel mag zelfs zeer groot, dat men erin zou trappen alsof het een echte poort is naar een gebouw"). Legendaries mogen groter dan een gewone overworldsprite (zoals Rayquaza, `graphics/object_events/pics/pokemon_old/rayquaza_still.png`); de tempel heel groot, als een echte poort naar een gebouw.
 Alleen voor soorten die in de wereld staan (`OBJ_EVENT_GFX_SPECIES`); volgers blijven uit (Jordi). Drie aanzichten (voor, achter, opzij naar links), elk stil + lopen.
 
 ## Stappen

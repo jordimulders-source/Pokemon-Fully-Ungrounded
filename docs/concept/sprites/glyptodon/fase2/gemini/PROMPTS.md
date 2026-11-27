@@ -54,3 +54,20 @@ No effects, no glow, no sparkles, no ground or shadow under it. AVOID: a turtle,
 ```
 
 **r3-resultaten:** `r3_1_zonder_keuze.png` (Jordi: "bij de eerste was ik vergeten a/b en x/y te vervangen"; geen stekels, stompe staart, oranje oog onder het vizier), `r3_2_X_B.png` (veel stekels + knots), `r3_3_Y_A.png` (één grote stekel + drill met stekelpunt, zandkleurig schild).
+- **Jordi over r3:** "Ik neig naar het ontwerp van 1, met de staart en de spike van 3, maar misschien de spike nog wat meer onderdeel van het schild en groter".
+
+## r4 (27 nov)
+Ontwerp r3_1 in woorden (kleuren, banden, vizier, oranje oog, zuilpoten) + staart en stekel van r3_3; stekel groter en uit het schild gegroeid. Geen bijlage (les GEMINI.md). Staartkleur niet genoemd.
+```
+Design an original Pokémon as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64 pixels, max 16 colors, white background, facing 3/4 to the left.
+
+Concept: a fully evolved fossil Pokémon (Rock/Normal) based on Glyptodon, the extinct giant armadillo of South America: a four-legged animal under a huge, tall domed shell. It is a defensive wall Pokémon: massive, heavy and threatening, clearly armored.
+Body and legs: dark grey, rocky. Legs: thick, straight pillar legs like an elephant's, carrying the heavy shell; NOT short bent legs.
+Shell: smooth and brown, NOT divided into many small tiles or hexagons, with a beige rim and two beige bands that follow the curve of the shell. The front rim of the shell sticks out forward like a visor over its head.
+Spike: one very large cone-shaped spike on top of the shell. It grows out of the shell itself, made of the same material and color, widening smoothly into the shell at its base, not a separate horn stuck on top.
+Pose: it is bracing itself behind its shell, ready to take a hit. The head is still out, but ducked down low under the visor rim; a threatening orange eye glares out from the shadow under the visor.
+Tail: a thick, curved tail made of stacked rings of rounded, knobby bony plates, like a blunt drill, ending in a pointed spike tip. NOT a smooth spiral drill.
+Compact silhouette that fits a square.
+
+No effects, no glow, no sparkles, no ground or shadow under it. AVOID: a turtle, Shieldon or Bastiodon, a modern armadillo, Dunsparce, a plush toy, Neopets style.
+```

@@ -36,3 +36,4 @@ Prompt: `PROMPT.md`.
 - Jordi (27 nov): "bij r4a en b staat saturnus te ver weg" → r5a/r5b (`sprite/r5/`): Saturnus 2 px naar links, nu 1 px van Mars zoals het ijs.
 - Jordi (27 nov): "r5b is goed, ik wil alleen nog even kijken wat er gebeurt als je nog de maan iets gaat verschuiven naar boven, naar links en naar linksboven" → 8 maanvarianten in `sprite/r6/` (`vel_maan.png`).
 - Jordi (27 nov): "linksboven 2 mag naar de eindkeuring" → `sprite/r6/regicosmo_r6.png` (= r5b met de maan 2 px linksboven). Silhouet/posities bevroren.
+- Eindkeuring DC (r6 → r7, BIJNA → PASS): Mars-outline base in nieuwe donkerste tint (120,36,36), tussentint in de schaduwsikkel, zuidpoolvlek een tint omlaag; asteroïdeglans deelt een tint met de zandvoet. Ter info: ijsschaduw verzadigder dan het model (gedeelde stipkleur), maan 2 grijzen, ringrand bruin.

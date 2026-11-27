@@ -42,3 +42,4 @@ Lees vóór werk aan sprites, trainerfoto's, overworld-sprites, vormen of kleurv
 - **Goud met apart manen-goud (kudu, 27 nov):** één gedeelde warme lijnkleur voor vacht en manen (zoals Stantler #7B4100) werkt; de donkerste manentint is als lijn te licht, dan vloeien manen weg in hals en lijf.
 - **Binnenlijnscript en haren** (hoatzin kuiken r9, 28 nov): een test "geen transparante buur = binnenlijn" ziet haarwortels op de buitenlijn als binnenlijn; neem eerst het haarmasker apart. Slagschaduw naast een teruggezette lijn in dezelfde tint leest als lijn van 2 px.
 - Keurder Regiaqua: zwart op een richelonderkant aan de lichte buitenrand = verboden zwart/selout om en om; scan op zwart met transparante buur links/boven.
+- Vol palet bij eindkeuring (Regicosmo): even heldere, bijna gelijke tinten van verschillende delen samenvoegen om een plek vrij te maken voor de donkerste outline-tint van het hoofddeel.

@@ -118,3 +118,4 @@ Eigen invulling Claude: halfopen, zware oogleden.
 ```
 Keep everything exactly the same (pose, body, size, stones, bucket, colors, style, the calm smile). Change ONLY the eyes: it is awake now, eyes open, but still relaxed: half-open eyes with heavy, lazy eyelids, a calm and content look, like someone enjoying the warmth of the sauna. Not wide open, not surprised, not sleepy-closed.
 ```
+- `s3/s3b.png` (ogen halfopen). Jordi: "ga maar bouwen" → `../model.png`.

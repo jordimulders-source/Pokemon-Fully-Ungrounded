@@ -7,3 +7,7 @@ Besluiten lijn: `docs/concept/IDEEEN.md` → "Extra Ice-lijn: Ice/Fire". Fase 1:
 
 ## Open
 - Naam, evolutielevel.
+
+## Model (27 nov)
+- `model.png` = Gemini `gemini/s3/s3b.png` (s2a → lengte (s3a) → ogen halfopen (s3b)). Jordi: "ga maar bouwen".
+- Eerdere punten van Jordi die in het model zo zijn gebleven: emmer ("de emmer klopt niet", s2a); Jordi koos daarna dit model om te bouwen.

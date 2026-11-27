@@ -349,3 +349,4 @@ AVOID: copying or tracing the sketch; smooth vector shapes; hands or fingers; fe
 - **r1** (`sprite_fase1/r1/`, maker): kale reductie 40×44 (735 px) + Jordi's wijzigingen op het natieve raster; oog 4×4; haren A (6×2 px) en B (7×3 px). Claude: vleugels gespikkeld (losse zwarte resten), lijf vlak, tenen onderbroken, onderkant rechts (poot/vleugel/staart) één grijze massa. Naar r2.
 - **r2** (`sprite_fase1/r2/`): lijnronde (zwart 41→32 %), tenen, lijf 3 tinten + geelplukjes, haren B onregelmatig. Claude: veel schoner; rechtsonder (onderarm/dij/staart) nog vloeiend. Naar de keurder.
 - Keurder op r2: FAIL (trouw = in orde; Gen 3: zwart 32 %, haren lezen als vuil, buikrand schaakbord, binnenlijnen zwart, staart/dij ruis, snavel vlak, verre voet balk). 8 punten naar r3.
+- **r3** (`sprite_fase1/r3/`): 8 keurderpunten (zwart 32→28 %), haren vast aan de buitenlijn (A 3/vleugel, B 4/vleugel). Claude: duidelijk beter, staart/dij lezen. Naar DC-eindkeuring (r4).

@@ -10,12 +10,16 @@ Hn,Wn=m.shape; H,W=44,40
 L=nat[...,:3].mean(2); line=(L<20)&m
 # aandeel lijn per spritevlak (8x oversampling, zoals kaal.py)
 up=8; Lu=np.repeat(np.repeat(line,up,0),up,1); Mu=np.repeat(np.repeat(m,up,0),up,1)
-frac=np.zeros((64,64)); hit=np.zeros((64,64),int)
+frac=np.zeros((64,64)); hit=np.zeros((64,64),int); lum=np.zeros((64,64))
+Nu=np.repeat(np.repeat(nat[...,:3].mean(2),up,0),up,1)
 for y in range(H):
   for x in range(W):
     y0,y1=round(y*Hn*up/H),round((y+1)*Hn*up/H); x0,x1=round(x*Wn*up/W),round((x+1)*Wn*up/W)
     mm=Mu[y0:y1,x0:x1]
-    if mm.any(): frac[y+20,x+12]=Lu[y0:y1,x0:x1][mm].mean()
+    if mm.any():
+        frac[y+20,x+12]=Lu[y0:y1,x0:x1][mm].mean()
+        nl=mm&~Lu[y0:y1,x0:x1]
+        lum[y+20,x+12]=Nu[y0:y1,x0:x1][nl].mean() if nl.any() else 0
 for y,x in zip(*np.nonzero(line)):
     hit[int((y+.5)*H/Hn)+20,int((x+.5)*W/Wn)+12]+=1
-np.save('frac64.npy',frac); np.save('hit64.npy',hit)
+np.save('frac64.npy',frac); np.save('lum64.npy',lum); np.save('hit64.npy',hit)

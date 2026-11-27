@@ -19,8 +19,8 @@ for y in range(64):
 p=np.pad(gez,1); gezr=gez|p[:-2,1:-1]|p[2:,1:-1]|p[1:-1,:-2]|p[1:-1,2:]   # + binnenlijn eromheen
 np.save('gezzone.npy',gezr)
 near=nearest(a); gr=a[...,1]-a[...,0]; t=(gr<8)&np.isin(near,TURK); near[t]=nearest(a[t],[i for i in range(2,14)])
-g=(gr>=8)&np.isin(near,(3,4,13)); near[g]=nearest(a[g],(6,14,15))
-DONK={2:2,3:2,4:3,5:13,13:4,6:6,14:6,15:14,7:7,8:7,9:7,10:9,11:2,12:11}
+g=(gr>=8)&(Lm<170)&np.isin(near,(2,3,4,6,13)); near[g]=nearest(a[g],(14,15))
+DONK={2:2,3:2,4:3,5:13,13:4,6:13,14:14,15:14,7:7,8:7,9:7,10:6,11:2,12:11}
 m=o>0
 # 1. buitenrand dicht
 for y in range(64):
@@ -71,4 +71,50 @@ for y in range(1,63):
     if any(o[q] in (0,1) for q in nb(y,x,N8)): continue
     c=[o[q] for q in nb(y,x) if o[q]>1]; tt=min({DONK[v] for v in c},key=lambda i:lum(P[i])); o[y,x]=tt; tel('losse zwarte -> donkere eigen tint')
 np.save('romp.npy',o); np.save('lijn.npy',lijn); print(log,'gewijzigd',int((o!=raw).sum()))
+im=Image.fromarray(o.astype('uint8'),'P'); im.putpalette([v for c in PAL for v in c]+[0]*(768-48)); im.save('romp.png',transparency=0)
+# ---- r2: ruis eruit. Elk vlakje van 1-2 px (8-samenhang, per tint, buiten gezicht/rand) blijft alleen als het model op die plek
+# een eigen vorm van die tint heeft (samenhangend modelvlak van >= 14 natieve pixels dat het blok raakt); anders -> buurtint.
+from collections import deque
+def comps8(o,maxs=2):
+  seen=np.zeros(o.shape,bool); uit=[]
+  for y in range(64):
+    for x in range(64):
+      v=o[y,x]
+      if v<1 or seen[y,x]: continue
+      st=[(y,x)]; seen[y,x]=1; comp=[]
+      while st:
+        p=st.pop(); comp.append(p)
+        for dy in (-1,0,1):
+          for dx in (-1,0,1):
+            q=(p[0]+dy,p[1]+dx)
+            if 0<=q[0]<64 and 0<=q[1]<64 and not seen[q] and o[q]==v: seen[q]=1; st.append(q)
+      if len(comp)<=maxs: uit.append((v,comp))
+  return uit
+# modelvlakken per paletindex (natief), met grootte
+lab=np.zeros(near.shape,int); size={}; nid=0
+for yy in range(NH):
+  for xx in range(NW):
+    if lab[yy,xx] or Lm[yy,xx]<55: continue
+    nid+=1; v=near[yy,xx]; q=deque([(yy,xx)]); lab[yy,xx]=nid; n=0
+    while q:
+      p=q.popleft(); n+=1
+      for dy,dx in N4:
+        r=(p[0]+dy,p[1]+dx)
+        if 0<=r[0]<NH and 0<=r[1]<NW and not lab[r] and Lm[r]>=55 and near[r]==v: lab[r]=nid; q.append(r)
+    size[nid]=(v,n)
+def modelvorm(y,x,v):
+  b=blok(y,x); ids=set(lab[b].ravel())-{0}
+  return any(size[i][0]==v and size[i][1]>=14 for i in ids)
+for it in range(3):
+  for v,comp in comps8(o):
+    if any(gezr[p] or rand[p] for p in comp): continue
+    if v==1:
+      if any(o[q] in (0,1) for p in comp for q in nb(*p,N8) if q not in comp): continue
+    elif modelvorm(*comp[0],v): continue
+    for (y,x) in comp:
+      c=[o[q] for q in nb(y,x,N8) if o[q]>1 and o[q]!=v and q not in comp]
+      if not c: continue
+      bc=np.bincount(near[blok(y,x)].ravel(),minlength=16); cs=set(c)
+      k=max(cs,key=lambda k:(bc[k],c.count(k))); o[y,x]=k; tel('r2 ruis: vlakje zonder modelvorm -> buurtint')
+np.save('romp.npy',o); print('r2',log,'gewijzigd',int((o!=raw).sum()))
 im=Image.fromarray(o.astype('uint8'),'P'); im.putpalette([v for c in PAL for v in c]+[0]*(768-48)); im.save('romp.png',transparency=0)

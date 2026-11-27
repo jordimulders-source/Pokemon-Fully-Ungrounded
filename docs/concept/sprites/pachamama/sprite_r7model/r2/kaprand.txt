@@ -1,0 +1,6 @@
+# r2 punt 5: W-rand van de kap boven het voorhoofd als 1-px lijn op de modelrand (model natief_g1, rij 12-14).
+# linkerkwab top (12,26)(12,27)(13,25) zwart; sneeuwpunt (13,29) met V eromheen (13,28)(14,29)(13,30); rechterkwab top (12,31-33).
+# Wat eerst dubbel/blok zwart was: (13,26)(14,25)(14,26) -> gezicht; (12,34) -> sneeuw (model wit/blauw).
+{(12,26):1,(12,27):1,(13,25):1,(13,26):3,(14,25):2,(14,26):3,
+ (12,28):5,(12,29):5,(12,30):6,(13,28):1,(13,29):6,(13,30):1,(14,29):1,(14,28):4,(14,30):3,
+ (12,31):1,(12,32):1,(12,33):1,(12,34):5}

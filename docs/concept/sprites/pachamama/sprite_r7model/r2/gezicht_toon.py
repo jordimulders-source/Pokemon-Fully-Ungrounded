@@ -13,7 +13,7 @@ for y in range(64):
     if not zone[y,x]: continue
     b=(slice(MY+3*y,MY+3*y+3),slice(MX+3*x,MX+3*x+3))
     if gezn[b].sum()<3: continue
-    T[y,x]=nearest(np.nanmedian(A[b][gezn[b]],0)[None],(2,3,4,13))[0]
+    l=np.median(L[b][gezn[b]]); T[y,x]=2 if l<86 else 3 if l<124 else 4 if l<159 else 13
 np.save('gez_toon.npy',T)
 ys,xs=np.where(T>0); print(ys.min(),ys.max(),xs.min(),xs.max())
 ch={0:' ',2:'#',3:'=',4:'-',13:'.'}

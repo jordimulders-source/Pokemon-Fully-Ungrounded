@@ -77,3 +77,20 @@ No effects, no glow, no sparkles, no ground or shadow under it. AVOID: a turtle,
 ## Plan B: plakmodel (27 nov)
 `plak_r3_1_staart_stekel_r3_3.png` (`../gereedschap/plak_stekel_staart.py 525 10 260 60 110`): r3_1 als basis, stompe staart weg, staart van r3_3 erop (+25, −40 px), stekel als kegel in de schildbruinen van r3_1 die onderaan uitwaaiert in het schild (groter en "meer onderdeel van het schild"); de stekel is getekend, niet uit r3_3 geknipt (geknipt en omgekleurd las als losse grijze punt).
 - **Jordi over het plakmodel:** "ja al moet de stekel niet dezelfde kleur zijn als het schild". Twee kleuren gemaakt (kleur niet genoemd door Jordi): `plak_stekel_grijs.png` (grijs van de stekel in r3_3) en `plak_stekel_beige.png` (beige van de schildrand); `gereedschap/plak_stekel_staart.py 525 10 260 60 110 <uit> grijs|beige`.
+- **Jordi (27 nov):** "nee de stekel moet echt een losse stekel zijn zoals het mario vijandje" en, tijdens een nieuwe plakpoging, "nee nieuwe prompt" / "dit gaat fout". Plakken gestopt; "meer onderdeel van het schild" las Claude te ruim als uitgroeiend in het schild.
+
+## r5 (27 nov)
+r4-prompt, alleen de stekel anders: los, groot, eigen kleur (welke kleur zei Jordi niet; dus niet genoemd). Geen bijlage.
+```
+Design an original Pokémon as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64 pixels, max 16 colors, white background, facing 3/4 to the left.
+
+Concept: a fully evolved fossil Pokémon (Rock/Normal) based on Glyptodon, the extinct giant armadillo of South America: a four-legged animal under a huge, tall domed shell. It is a defensive wall Pokémon: massive, heavy and threatening, clearly armored.
+Body and legs: dark grey, rocky. Legs: thick, straight pillar legs like an elephant's, carrying the heavy shell; NOT short bent legs.
+Shell: smooth and brown, NOT divided into many small tiles or hexagons, with a beige rim and two beige bands that follow the curve of the shell. The front rim of the shell sticks out forward like a visor over its head.
+Spike: one single, very large, separate cone-shaped spike standing straight up on the very top of the shell, in a different color than the shell, with a clear outline where it sits on the shell.
+Pose: it is bracing itself behind its shell, ready to take a hit. The head is still out, but ducked down low under the visor rim; a threatening orange eye glares out from the shadow under the visor.
+Tail: a thick, curved tail made of stacked rings of rounded, knobby bony plates, like a blunt drill, ending in a pointed spike tip. NOT a smooth spiral drill, NOT mechanical.
+Compact silhouette that fits a square.
+
+No effects, no glow, no sparkles, no ground or shadow under it. AVOID: a turtle, Shieldon or Bastiodon, a modern armadillo, Dunsparce, a plush toy, Neopets style.
+```

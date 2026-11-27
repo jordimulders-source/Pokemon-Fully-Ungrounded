@@ -57,3 +57,6 @@ Keep it simple and readable at 64x64: big clear shapes, like a real Gen 3 sprite
 
 No effects, no glow, no sparkles, no shadow; draw no ground line or floor, only the creature. AVOID: separate floating pieces, an intact hourglass, a brain drawing on a cloud, a realistic hourglass with a brain on it, a plush toy, Neopets style.
 ```
+
+**Jordi over r3 (`r3.png`):** "nice, vertaalt die naar een sprite?"
+Test (Claude): natief raster pitch 10,24 (zelfde als fase 1) → 62×63, ±1900 px, past 1-op-1 in 64×64 zonder verkleinen (`../test/natief.png`, `natief_8x.png`). Fase 1 = 1949 px, fase 3 = 1326 px. Nog 1132 tinten (moet ≤ 16).

@@ -52,3 +52,6 @@ AVOID: orange plastic or clay look, opaque body, a human in a glass costume, a g
 - Jordi: "kijk ook of gemini dingen heeft gedaan die niet overeenkomen met hitmonlee" / "op het eerste gezicht lijkt het van niet".
 - Vergelijking met Gen 3-Hitmonlee (Claude, `test/vergelijk.png`): (1) handen dunne spinvingers i.p.v. dikke stompe wanthanden; (2) polsring op de nabije arm (Hitmonlee heeft alleen beenringen); (3) voeten zonder scherpe witte klauwen (trapvoet laars, andere voet ronde teentjes; kussentje wel als witte stip); (4) oog ovaal met oranje iris i.p.v. hoekig boos wit oog met zwarte pupil. Voorstel: die delen uit Gen 3-Hitmonlee overnemen en naar glas omkleuren; rest 1-op-1 model. Wacht op Jordi.
 - Jordi (27 nov): "nagels iets minder scherp zie ik maar vind ik geen ramp" / "ga maar bouwen" / op het voorstel Hitmonlee-delen: "nee hoeft niet, het is een regional form, dus mogen het iets anders doen". → Sprite 1-op-1 naar het model (r2), geen Hitmonlee-delen.
+
+## Sprite (27 nov)
+- Maker r13 → `sprite/kandidaat.png`; eindkeuring ek1 (PASS beide eisen, 23 px: belijning + doorschijnend kickbeen in de romp terug naar modeltint) → `eindkeuring/ek1.png`. Ter beoordeling bij Jordi.

@@ -3614,3 +3614,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.863] - Regionale Hitmonlee: model gekozen (Gemini r2) (27 nov)
 - Jordi: "dit is hem". Kale reductietest in `hitmonlee_regional/test/` (raster 68×74 → 64).
+
+### [v0.0.864] - Regionale Hitmonlee: frontsprite-kandidaat + eindkeuring (27 nov)
+- Maker nam Gemini r2 over (raster 5,12 px, rijen/kolommen geschrapt naar 59×64, 15 kleuren); eindkeuring ek1 PASS. Ter beoordeling bij Jordi: `hitmonlee_regional/eindkeuring/ek1.png`.
+- Les in `GEMINI.md`: pitch altijd op 8× controleren.

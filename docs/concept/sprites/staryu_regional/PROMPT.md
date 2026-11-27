@@ -210,3 +210,15 @@ No face, no eyes, no mouth, no limbs.
 
 DO NOT: a flat star seen straight from the front, fewer than 5 back arms, rounded lumpy back arms, back arms hidden behind the front star, a symmetric upright star, a realistic photo, a plate, starfield or galaxy patterns, sparkles, plush style.
 ```
+`gemini/r6_starmie.png` (prompt v6). Jordi: "dit slaagt dus ook niet". (Achterster ligt als losse ster ernaast, 4 punten zichtbaar, niet rondom.)
+
+## Voorstel Claude (27 nov): Starmie-model plakken
+Gemini kan de twee sterren in driekwart niet samen tekenen. Voorstel: (1) Gemini maakt alleen de geglazuurde voorste ster, in hetzelfde gesprek als Staryu r4 (zelfde driekwart-pose); (2) Claude plakt het model: achterste ster = het Staryu-koekje verticaal gespiegeld (een vijfpuntige ster 36° gedraaid = gespiegeld, dus de armen vallen in de tussenruimtes), voorste ster = de geglazuurde versie iets kleiner erop. Licht na spiegelen wordt in de spritefase rechtgezet.
+
+Bijstuurprompt in het Staryu-r4-gesprek:
+```
+Keep everything exactly the same: the shape, the pose, the tilt, the size and the cookie rim. Change ONLY these two things:
+1. Cover the top of the cookie with a thick layer of glossy purple icing, leaving a golden-brown cookie rim visible around the edge. On the icing: white icing drizzle in zigzag lines and a few colorful sprinkles (red, yellow, green, blue). No chocolate chips on the icing.
+2. The red gem in the center becomes a purple faceted gem.
+Max 16 colors, white background, no effects.
+```

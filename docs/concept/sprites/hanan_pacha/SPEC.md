@@ -45,3 +45,4 @@ Trio van de drie Inca-werelden (zie `docs/concept/POKEMON.md` → Legendaries). 
 - Jordi: "en overlappen is niet erg, zolang de voorste vorm maar goed gedefinieerd is".
 - **Sprite r3** (`sprite_r3/`, verse maker): natief → 2× met regels → schrappen (kop/kraag beschermd), r5-staart, studie Ho-Oh/Moltres. Scherp; kop ±11×12 px, poten en staart nog zwak.
 - Jordi over r3: "deze nieuwe methode is echt een top methode, puik werk hoor. Alleen de rechterklauw zie ik nog niet goed, verder op wat overbodige rechte lijnen en eindkeuring werk na helemaal tevreden".
+- **Sprite r4** (`sprite_r4/`): rechterklauw apart exact 2× uit het model als voorste vorm (A binnenlijn goud, B zwart); 18 px rechte lijnen aangepast; 28 rechte stukken genummerd in `overlay_8x.png` ter keuze voor Jordi.

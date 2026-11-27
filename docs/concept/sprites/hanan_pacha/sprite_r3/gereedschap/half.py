@@ -4,7 +4,8 @@
 #  (anders breekt hij); punt >=2 -> punt; anders de meest voorkomende groep, daarbinnen de meest voorkomende kleur (gelijk: donkerste).
 import numpy as np, sys
 import os
-N=np.load('natief2.npy' if os.path.exists('natief2.npy') and __name__=='__main__' else 'natief.npy'); PAL=np.load('natief_pal.npy')
+R=os.path.join(os.path.dirname(os.path.abspath(__file__)),'..')
+N=np.load(os.path.join(R,'natief2.npy' if os.path.exists(os.path.join(R,'natief2.npy')) and __name__=='__main__' else 'natief.npy')); PAL=np.load(os.path.join(R,'natief_pal.npy'))
 GR={}
 for k in (2,18): GR[k]='L'
 for k in (6,14,23): GR[k]='T'

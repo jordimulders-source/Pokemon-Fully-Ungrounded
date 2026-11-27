@@ -39,3 +39,4 @@ Alle citaten en lijnbesluiten: `docs/concept/IDEEEN.md` → "Impala-lijn"; samen
 - Manen (Jordi, 27 nov): "linkerstuk van r10 b6a en rechterstuk van r12 van de maan" → `sprite/r13/kudu_r13.png` (B6a + r12 vanaf x30 = schouderrand; 15 px). "en dan naar eindkeuring".
 - Jordi op r14 (27 nov), met rode streepjes op `sprite/r15/jordi_rechte_lijnen.png`: "check alleen nog of al deze rechte lijnen nodig zijn".
 - Jordi op r15 (27 nov): "ik vind hem nog erg effen qua kleur" → r16 (volume, varianten A subtiel / B duidelijk).
+- **Af (Jordi, 27 nov): "ik zie amper verschil, doe maar duidelijk"** → `af/kudu.png` (= `sprite/r16/kudu_r16B.png`). Werkwijze: Gemini r1–r5 (+r3b/r3c) → model r3b, manen verschoven (A3) → reductie r1–r6 (maker + 2 keurders) → oog K4 (Bidoof) → manen opnieuw r7–r13 (B6a + r12-schouder) → eindkeuring DC r14 → rechte lijnen r15 → volume r16 B.

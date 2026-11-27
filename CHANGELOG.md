@@ -3518,3 +3518,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.854] - Kudu (impala-lijn fase 3): keuzes en Gemini-prompt r1
 - Jordi (26 nov): uitstraling koninklijk en kalm, manen + keelfranje, hoorns heel groot, pre-evolutie niet noemen, "mag echt een grote sprite zijn ook", kudustrepen erop "indien mogelijk". `docs/concept/sprites/impala_lijn/kudu/SPEC.md`, prompt in `kudu/gemini/PROMPTS.md`.
+
+### [v0.0.855] - Kudu (impala-lijn fase 3): frontsprite af
+- Jordi (27 nov): "ik zie amper verschil, doe maar duidelijk". `docs/concept/sprites/impala_lijn/kudu/af/kudu.png` (= `sprite/r16/kudu_r16B.png`). Gemini r1–r5 → model r3b met manen verschoven over de schouder (A3); reductie r1–r6 met 2 keuringen; oog K4 (Bidoof, klein zwart oog); manen opnieuw als losse vorm met licht gerafelde rand (B6a + schouder r12); eindkeuring Dragonfly Cave (gekleurde selout, gedeelde warme lijnkleur), rechte lijnen nagelopen (r15) en volume (r16 B, extra tussentint). Op het overzichtsvel na de impala; impala-lijn af. Lessen in `SPRITE_WERKWIJZE.md` (referentie 1-op-1 nadoen, velscripts niet importeren) en `GRAPHICS.md` (gedeelde lijnkleur bij goud).

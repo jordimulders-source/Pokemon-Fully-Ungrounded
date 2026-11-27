@@ -267,3 +267,4 @@ AVOID: feathers on the wings; a crest; a smile; a branch or any object; a mask; 
   Jordi: "als je de veren van een normale vogel plukt dan krijg je hetzelfde".
 - **r14** (`gemini/fase1_r14.png`, bijsturen r13: "wings without feathers, like a plucked bird"). Jordi: "haha ja dat begreep gemini goed" (vleugels werden gladde vleermuisachtige platen).
 - Kipvleugel-voorstel (Claude) afgewezen. Jordi: "nee / dat is niet zo" / "dat is een hele andere vorm".
+- Referentie geplukte vleugel (Jordi): `referenties/kuiken_8_geplukte_vleugel_anatomie.webp` (anatomische schets).

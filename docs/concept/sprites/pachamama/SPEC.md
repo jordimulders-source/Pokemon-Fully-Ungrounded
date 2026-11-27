@@ -40,3 +40,4 @@
 
 ## Stand (27 nov, gepauzeerd: Jordi had geen tijd meer)
 - Bevroren model r4c; sprite r1–r7 op r4c-maat: gezicht (±11 px) niet na te maken, Jordi akkoord dat het hoofd groter moet, maar alleen het hoofd vergroten past niet ("je kan het gezicht niet veranderen en dan de rest niks") → nieuw ontwerp vanaf nul met groter gezicht; r8 = Dr. Doom.
+- Jordi (27 nov): "dit werkt ook niet" (r8); "probeer maar je voorstel van net" = Claudes optie 1: **Gemini r7 als model** (`referenties/gemini_gekozen_r7.png`; gezicht ±1,3×, kap past), met in het gezicht de lijnen die Jordi belangrijk vond (oogkassen, neus, ∩-mond, wanglijnen); overige gezichtslijnen mogen afvallen. Sprite in `sprite_r7model/`.

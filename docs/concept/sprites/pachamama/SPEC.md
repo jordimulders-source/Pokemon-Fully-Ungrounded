@@ -24,3 +24,4 @@
 
 ## Sprite
 - Legendary: volle maat (vult 64×64 zoals Gen 3-legendaries). Maker volgens SPRITE_WERKWIJZE "Gemini-model namaken"; rondes in `sprite/`.
+- **Sprite r1** (`sprite/r1/`, maker; exacte 3×3-reductie van het natieve raster 199×199, figuur 60×54, 15 kleuren; 315/1851 pixels technisch aangepast, verslag in de rondes). Claude: silhouet, banden en armen goed; gezicht gevlekt (modellijnen vallen uiteen), oog 3 px zonder lichte iris, sneeuwkap gespikkeld grijs/wit.

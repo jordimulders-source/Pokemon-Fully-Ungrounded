@@ -3911,3 +3911,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.960] - Frame 2 per script: batch D (27 nov)
 - 13 twijfelsoorten in `graphics_proef/frame2/batch_d/` (Jordi: "bij twijfel wel een frame 2 te bouwen, want ik kan altijd nog overrulen"). Goed: Vileplume, Grimer, fruitvampier, Lotad gaucho, Baltoy, Dundragoon, Oddish. Zwak (→ Gemini): Krassault, Gloom, Hitmonlee, Hitmongroove, Ledian-evo, wingsuit-colugo.
+
+### [v0.0.961] - Frame 2 per script: batch C (27 nov)
+- 14 twijfelsoorten in `graphics_proef/frame2/batch_c/`. Goed: Curiqui, Wagogogon, Buzzquito, Flytron, Clionice, Rowmate. Zwak (→ Gemini): Bootoo, Globsnail, Axolaunch, mate-kalebas, Capykart, glyptodon 1 en 2, zand-djinn (twijfel).

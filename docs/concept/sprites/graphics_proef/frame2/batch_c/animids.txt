@@ -1,0 +1,14 @@
+curiqui ANIM_H_SLIDE_WOBBLE
+bootoo ANIM_V_SLIDE
+globsnail ANIM_H_SLIDE
+clionice ANIM_V_SLIDE
+wagogogon ANIM_H_SLIDE
+axolaunch ANIM_V_SLIDE
+mate ANIM_V_SQUISH_AND_BOUNCE
+rowmate ANIM_H_SLIDE
+flytron ANIM_V_SLIDE
+buzzquito ANIM_V_SLIDE
+capykart ANIM_V_SHAKE
+zanddjinn ANIM_V_SLIDE
+glyptodon1 ANIM_V_SHAKE
+glyptodon2 ANIM_V_SHAKE

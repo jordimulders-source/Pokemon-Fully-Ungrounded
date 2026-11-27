@@ -132,6 +132,7 @@ SECTIES=[
 ]),
 ("Legendaries",[
 ("regiaqua/af/regiaqua.png",'"Regiaqua"',"water"),
+("uku_pacha/af/uku_pacha.png",'"Uku Pacha"',"water/ghost"),
 ]),
 ]
 F="/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"; FR=F.replace("-Bold","")

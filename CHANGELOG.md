@@ -3812,3 +3812,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.919] - Uku Pacha: r8 zichtbare pupillen (27 nov)
 - Jordi: "voor de rest perfect". 2 pixels: oogwit boven de linkerpupil, geel links van de rechterpupil.
+
+### [v0.0.920] - Uku Pacha: frontsprite af (27 nov)
+- `docs/concept/sprites/uku_pacha/af/uku_pacha.png` (= r8), op het overzichtsvel onder Legendaries.

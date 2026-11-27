@@ -45,3 +45,22 @@ Style: official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 
 
 AVOID: the Flurry from Mario, Abomasnow, Snorunt, Vanillite, a rock or golem creature, grey or black rock armor, a big dark belly, a plain bucket on the head, a grin or laughing face, stiff outstretched arms, a fat round body, a classic three-ball snowman, a carrot nose, a scarf, a towel, sharp fangs showing, plush toy / Neopets look, flames.
 ```
+
+## Ronde 2 (27 nov)
+- `r2/r2a.png`. Jordi: "niks beter".
+- Claude: Gemini volgt de pose-/uitdrukkingswoorden niet (weer stijve gespreide armen, emmer blijft emmer). Voorstel: asset voor asset (les vuurwerk fase 1): eerst alleen yeti in pose + uitdrukking, daarna met die als bijlage emmer en stenen (max 1–2 wijzigingen per ronde).
+
+## s1 (stap 1, nieuw gesprek, zonder bijlage): alleen de yeti in pose
+```
+Design an original Pokemon: a big snow yeti, official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 colors, dark outline, facing 3/4 to the left. White background, no ground, no shadow, no objects, no effects.
+
+POSE: it is sitting on a low bench that we do not see, slumped back against the wall behind it, exactly like a tired man relaxing in a sauna: back resting against the wall, belly forward, legs loose and apart in front of it, feet on the floor. Its elbows rest on the top edge of the backrest behind it, at shoulder height, with the forearms and hands hanging down limply behind/next to its shoulders. The arms are bent and close to the body, not stretched out sideways. Head leaning back against the wall, chin slightly up.
+
+FACE: eyes closed, eyebrows relaxed, a small satisfied smile with closed mouth. It looks like it just let out a long, satisfied sigh. Calm, not happy-cheerful.
+
+BODY: a big strong yeti with heavy shoulders and thick arms, covered in rough shaggy white snow fur with cool light blue shading. Broad but not fat. Its posture looks big and dangerous, its face is peaceful.
+
+Draw ONLY the yeti: no hat, no bucket, no stones, no towel, no scarf.
+
+AVOID: arms spread wide like a starfish, arms stretched out straight, a grin or laughing face, a fat round body, a cute plush look, Abomasnow, a snowman.
+```

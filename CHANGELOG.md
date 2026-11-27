@@ -3785,3 +3785,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.910] - Uku Pacha: r2 gekozen als vorm (27 nov)
 - r2 bewaard (Jordi: "deze is tof, prima legendary vorm"); vertaalcheck naar sprite in de SPEC.
+
+### [v0.0.911] - Uku Pacha: slangenvel + bijsturen lijnfrequentie (27 nov)
+- Vergelijkingsvel met alle slang-Pokémon; Jordi wil de lijnfrequentie van Arbok, bijstuurprompt voor het r2-gesprek.

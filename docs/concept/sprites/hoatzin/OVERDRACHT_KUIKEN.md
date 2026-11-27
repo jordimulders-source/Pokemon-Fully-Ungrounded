@@ -13,3 +13,5 @@ Lees eerst `SPEC.md` (alle citaten van Jordi) en `docs/lessen/SPRITE_KERN.md` + 
 **Open (eerst met Jordi overleggen, dan pas prompten; GEMINI.md):** pose, grootte (fase 1), of het stralingsteken al (klein) aanwezig is, kuifkleur (fase 2 kreeg K1 volledig geelgroen, maar "zuur nog niet" bij het kuiken), hoe de "soort snavel" eruitziet.
 
 **Wat werkte bij fase 2:** prompt zonder bijlage met POSE bovenaan; tekstuele bijsturing van de kopvorm werkte niet; uiteindelijk het beste hoofd (r4) op het beste lijf (r6) geplakt; daarna één maker (kale reductie, nooit hertekenen), keurder, DC-eindkeuring; kleurronde tegen Murkrow gba (tintverdeling ±31/39/26/4 %) loste "te 2d / te donker" op.
+
+**Stand 27 nov:** 15 Gemini-rondes (`gemini/fase1_r*.png`), besluiten en citaten in `SPEC.md` → "Fase 1 (kuiken)". Gemini tekent de veerloze vleugel niet (wel los: `fase1_vleugel_w1a/b.png`). Basis = r13 (lange poten, geen kuif, geen glimlach, oog met grijze ring); Jordi krabbelt de vleugels erover. Vleugelreferentie: `referenties/kuiken_8_bovenste_vleugel.png` ("vleugel zonder veren", "de bovenste").

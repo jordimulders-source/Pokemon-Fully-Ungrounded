@@ -66,10 +66,13 @@ SECTIES=[
 ("glitch_lijn/fase2_bug/af/glitch_fase2.png",'Bug (glitch-lijn fase 2)',"electric/bug"),
 ("glitch_lijn/fase3_virus/af/glitch_fase3.png",'Virus (glitch-lijn fase 3)',"electric/bug"),
 ("guarana/af/guarana.png",'Guaraná fase 1',"grass/ghost"),
+("guarana_fase2/af/guarana_fase2.png",'Guaraná fase 2',"grass/ghost"),
 ("sneeuwmonster/af/sneeuwmonster.png",'Sneeuwmonster (fase 1)',"ice"),
 ("sneeuwmonster_fase2/af/sneeuwmonster2.png",'Sneeuwmonster (fase 2)',"ice/fire"),
+("sneeuwmonster_fase3/af/sauna_yeti.png",'Sauna-yeti (fase 3)',"ice/fire"),
 ("hoatzin/af/hoatzin_fase1.png",'Hoatzin fase 1 (kuiken)',"poison/dark"),
 ("hoatzin/af/hoatzin_fase2.png",'Hoatzin fase 2 (pestmasker)',"poison/dark"),
+("zandloper/fase3/af/zandloper_fase3.png",'Zand-djinn (zandloper-lijn fase 3)',"ground/psychic"),
 ]),
 ("Evolutions of existing Pokémon",[
 ('hitmontop_evo/af/hitmongroove.png', '"Hitmongroove" (Hitmontop)', 'fight/ground'),

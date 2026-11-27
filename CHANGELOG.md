@@ -3569,12 +3569,46 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Kuiken (fase 1) nog te doen: `hoatzin/OVERDRACHT_KUIKEN.md`.
 - Les in GEMINI.md: veerlijnen in een donker vlak vinden via de fractie zeer donkere modelpixels.
 
-### [v0.0.856] - Hoatzin fase 1 (kuiken): frontsprite-kandidaat (27–28 nov)
+### [v0.0.856] - Originele Ground-lijn: kandidaten verzameld (26 nov)
+- `IDEEEN.md`: Jordi merkt op dat een originele Ground-lijn ontbreekt; bestaande kandidaten uit FAKEMON_PITCH op een rij. Keuze open.
+- Fossielen: Jordi denkt aan Glyptodon; lijst met andere uitgestorven dieren in IDEEEN; zandloper "tof idee".
+- Terreurvogel en glyptodon komen sowieso (regionale fossielen, in TODO); zandloper-lijn wordt gebouwd, voorstellen voor de ontwikkeling in IDEEEN.
+- Zandloper-lijn: Jordi wil grotere sprongen (zandloper zelf / zand eruit / systeem); volgordevoorstellen in IDEEEN.
+- Zandloper fase 3: twee Gemini-prompts (systeem / zand vrij) in `sprites/zandloper/fase3/gemini/PROMPTS.md`.
+- Zandloper fase 3: r1 binnen (Jordi kiest idee 1, te menselijk en te veel detail), prompt r2.
+- Zandloper: sparren over het wezen (Psychic); voorstellen in IDEEEN.
+- Zandloper: opbouw besloten (zandloper met ogen → brein breekt uit → djinn uit geopende zandloper); prompt r3 met varianten brein als hoofd/core.
+- Zandloper fase 3: r3 binnen (nog geen djinn), prompt r4 met djinn-kenmerken.
+- Zandloper fase 3: r4 "begint ergens op te lijken"; prompt r5 (glazen boeien, zand uit het midden).
+- Zandloper fase 3: r5 "best prima design", verkleiningstest, prompt r6 (versimpeld).
+- Zandloper fase 3: r6 minder; prompt r7 (r5 + glaswerk verbonden met het lijf, vlakke kleuren).
+- Zandloper fase 3: r7 ook niet beter; prompt r8 (r5 + alleen het glaswerk); les in GEMINI.md.
+- Zandloper fase 3: r8 bovenkant goed, onderkant fout; prompt r9 (r8 als bijlage, alleen de onderkant).
+- Zandloper fase 3: r9 fout (tweede staart); prompt r10: onderkant als los onderdeel, daarna samenvoegen met r8.
+- Zandloper fase 3: onderkant r10 los gemaakt en samengevoegd met r8 (r11).
+- Zandloper fase 3: r11 slordig; prompt r12 (collage als bijlage, Gemini tekent hem als één geheel).
+- Zandloper fase 3: besluiten model in `sprites/zandloper/fase3/SPEC.md` (r5 + barst midden + glaswerk uit r7/r8; brein open).
+
+### [v0.0.857] - Zandloper-lijn: zand-djinn (fase 3) frontsprite af (27 nov)
+- Nieuwe originele Ground/Psychic-lijn: zandloper met ogen → brein breekt uit → zand-djinn. Fase 3 frontsprite af in `docs/concept/sprites/zandloper/fase3/af/` (model Gemini r5 + glas en ogen uit r8, barst uit r10; 11 makerrondes + DC-eindkeuring PASS). Op het overzichtsvel. Besluiten in `zandloper/fase3/SPEC.md`.
+- Terreurvogel en glyptodon als regionale fossielen in TODO.
+- Lessen: versimpelwoorden in Gemini-prompts maken het lijf slap; geen ruwe plakversie tonen; "rustig" is geen pluspunt.
+### [v0.0.858] - Guaraná fase 2: frontsprite af (26–27 nov)
+- Ontwerp via Gemini r1–r10 (`docs/concept/sprites/guarana_fase2/gemini/`): vertakte liaan met drie trossen (Jordi), getwijnde liaan + echt guaraná-blad (keuze 1 en 3), minder/grotere ogen, gesloten vruchten erbij, hangende trossen met peervormige vruchten (r9/r10, "meeste guarana"). Gemini telde steeds te laag ("twice as many" deed niets); model = r10 met elke tros verschoven nog eens erachter geplakt (`plak/dubbel.py`).
+- Sprite: 16 makerrondes + DC-eindkeuring (PASS, 57 px). Belangrijkste stappen: volume en schaduw (r3), gladde randen (r4), pupillen gevarieerd (r5), afwerking naar fase 1-palet en -verhoudingen (r6–r8), ronde trosranden (r10), ronde oogvruchten i.p.v. vierkanten (r13, bewaard in `bewaard_r13/`), trossen ±1,6× groter mogen over blad/takken vallen (r14, Jordi), fase 1-oog en precies vier ogen naar linksonder (r15–r16). Palet = fase 1 (12 kleuren).
+- `docs/concept/sprites/guarana_fase2/af/guarana_fase2.png` (+ `normal.pal`, 8×); op het overzichtsvel (sectie New). Lijn af; namen open. Vaste regels en alle citaten in `guarana_fase2/SPEC.md`; lessen in `docs/lessen/GEMINI.md`.
+
+### [v0.0.x] - Sauna-yeti (sneeuwmonster fase 3) frontsprite af (27 nov)
+- Eindvorm van de sneeuwmonster-lijn (Ice/Fire): grote, zittende, onderuitgezakte yeti van sneeuw met de armen over een onzichtbare leuning, halfopen relaxte ogen, de houten emmer op de kop, gloeiende vulkanische stenen op schouders, buik en knieën (Jordi: "heel relaxte tevreden vriendelijke yeti", "groot en gevaarlijk qua postuur").
+- Model: Gemini s3b (pose via een posebijlage, daarna lengte en ogen bijgestuurd). Prompts en rondes in `docs/concept/sprites/sneeuwmonster_fase3/gemini/PROMPTS.md`.
+- Frontsprite `docs/concept/sprites/sneeuwmonster_fase3/af/sauna_yeti.png` (+ `_8x`, 62×49 px, 16 kleuren): kale reductie r2 + Jordi's punten (minder rechte lijnen, buiksteen, dikkere band), eindkeuring (houttinten per pixel, gezichtshuid in modeltint met licht en schaduw, binnenlijnen niet zwart, pupil naar binnen). Op het overzichtsvel. Lijn af; naam open.
+- Nieuwe vaste regel (Jordi): "als je iets 'rustig' vindt is dat een ander woord voor hertekend naar pixelblur en dus compleet verknald" (`CLAUDE.md`, `SPRITE_KERN.md`).
+### [v0.0.859] - Hoatzin fase 1 (kuiken): frontsprite-kandidaat (27–28 nov)
 - 17 Gemini-rondes voor het kuiken (`docs/concept/sprites/hoatzin/gemini/fase1_r*.png`); Jordi koos r4 als model, met rughaar weg, vleugelharen vervangen door sprite-haren, donkere wig = lijf en poot doorgetrokken.
 - Sprite r1–r4 in `hoatzin/sprite_fase1/` (maker → keurder → DC-eindkeuring PASS): 40×44, ±736 px, zwart-aandeel 41 → 20 %, 11 kleuren, haren A en B. Wacht op Jordi.
 - Les in GEMINI.md: referentiefoto eerst zelf beschrijven en laten bevestigen; geen eigen vormen in prompts; sarcasme niet als compliment lezen.
 
-### [v0.0.857] - Hoatzin fase 1 (kuiken): frontsprite af (28 nov)
+### [v0.0.860] - Hoatzin fase 1 (kuiken): frontsprite af (28 nov)
 - Frontsprite af: `docs/concept/sprites/hoatzin/af/hoatzin_fase1.png` (= `sprite_fase1/r9`). Na r4: Jordi op de rechterhelft ("niet goed te zien waar de ledematen los van elkaar zitten") → nabije vleugel als één gevouwen vorm (Jordi's omtrek), binnenlijnen niet zwart maar donkere eigen tint (r5–r8), DC-eindkeuring r9 (13 px, PASS). Haren B (Jordi).
 - Op het overzichtsvel (New, vóór fase 2). Hoatzin-lijn af; namen open.
 - Les in GRAPHICS.md: haarwortels apart houden in binnenlijnscripts; slagschaduw naast een lijn in dezelfde tint = dubbele lijn.

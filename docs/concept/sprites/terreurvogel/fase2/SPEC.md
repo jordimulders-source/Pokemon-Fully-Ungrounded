@@ -28,4 +28,4 @@ Regionaal fossiel, **Rock/Fighting**, 2 fases. Tegenhanger van de glyptodon (Roc
 - Fase 1 (Jordi, 27 nov): "een kuiken met een enorme kop en snavel lijkt me wel humor, die dan heel uncanny cute is en heel onhandig erbij zit". Prompt: `../fase1/gemini/PROMPTS.md`.
 - **Optie snavel (Jordi, 27 nov, over `gemini/r1.png`, grijze bijlvormige snavel):** "dit was stiekem ook wel een tof idee voor de snavel, houd dat als optie in gedachten".
 - Snavelmaat (Jordi, 27 nov, met `referenties/jordi_foto1_kelenken_zittend.png`): "al is de snavel weer wat klein vergeleken met deze" / "misschien kan je dat ook uitproberen" → varianten ×1,25 en ×1,5 in de sprite.
-- Kleuren lijf en snavel: via palette swaps op de sprite (Jordi, 27 nov).
+- **Kleur gekozen (Jordi, 27 nov): "v8 vind ik tof"** (`swaps_r1/v8.png`: snavel steen warm grijsbruin, lijf antraciet, roest en poten uit het model).

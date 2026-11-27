@@ -1,6 +1,8 @@
 import sys
 from PIL import Image
 import numpy as np
+import os
+os.chdir(os.path.join(os.path.dirname(os.path.abspath(__file__)),'..','gemini'))
 base=np.array(Image.open('r3_1_zonder_keuze.png').convert('RGB')).astype(int)
 src=np.array(Image.open('r3_3_Y_A.png').convert('RGB')).astype(int)
 W=np.array([255,255,255]); BL=(20,16,14)
@@ -14,7 +16,8 @@ for y,x in zip(*np.where(m)):
 # stekel in blokken van G px
 G=10; cx,top,bot=int(sys.argv[1]),int(sys.argv[2]),int(sys.argv[3])
 a,f=float(sys.argv[4]),float(sys.argv[5])
-pal=[(138,119,109),(101,82,72),(76,63,56),(53,45,39)]
+PALS={'schild':[(138,119,109),(101,82,72),(76,63,56),(53,45,39)],'grijs':[(150,145,133),(121,116,104),(76,74,70),(50,48,45)],'beige':[(226,210,184),(206,186,156),(148,122,97),(108,88,70)]}
+pal=PALS[sys.argv[7] if len(sys.argv)>7 else 'schild']
 rows=range(top//G,bot//G+1)
 cells={}
 for gy in rows:

@@ -49,3 +49,4 @@ Jordi: "A is uitstekend, eindkeuring daarvoor qua schaduw etc".
 ## Na af: nog niet netjes (27 nov)
 Jordi, met `referenties/jordi_starmie_omcirkeld.png`: "wacht dit zie ik nu pas, omcirkeld is nog niet netjes afgewerkt". Omcirkeld: (1) achterpunt rechtsboven (x±37–46, y±10–19); (2) tip van de rechter voorarm (x±47–56, y±20–25).
 Jordi over r10: "hij moet nog smoother, de overgang bovenin is nog niet helemaal goed en rechts is de punt puntiger dan de rest".
+Jordi over r11 (Claude raadde B aan): "akkoord, commit en push naar main". `starmie/af/starmie_regional.png` = sprite_r11_B (r9 + twee plekken afgewerkt in r10/r11).

@@ -11,3 +11,7 @@ Besluiten (letterlijk Jordi):
 
 Open: patroon van de stippen, kleuren.
 Prompt: `PROMPT.md`.
+
+## Rondes
+- r1 (`gemini/r1.png`, 27 nov): Jordi: "dit is al heel erg hoe ik hem in gedachten heb, check of de stippen kloppen met andere regi's en of die goed vertaalt naar een sprite".
+- Check Claude (`gemini/r1_vergelijking.png`, `regi_stippen_gen3.png`): Gen 3-Regi's hebben 7 stippen van 2×2 px met 1 px tussenruimte, in een kleur die in tint afwijkt van het lijf (oranje op beige, geel op blauw, roze op grijs). Regirock = twee kolommen, Regice = kruis met lange horizontale rij, Registeel = zeshoek met middenstip. r1: 7 stippen (1 boven, 4 in een rij, 2 onder); patroon lijkt op dat van Regice; kleur cyaan op teal = zelfde tintfamilie. Verkleind naar 64 blijven silhouet, handen en stippen leesbaar.

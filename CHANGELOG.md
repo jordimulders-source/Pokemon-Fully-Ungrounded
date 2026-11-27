@@ -3628,3 +3628,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.867] - Regionale Hitmonchan: Gemini-prompt r1 (27 nov)
 - `hitmonchan_regional/SPEC.md`: ijssculptuur met kubushandschoenen, prompt r1. Intussen Hitmonlee r16 (gladde beenomtrek) in de maak.
+
+### [v0.0.868] - Regionale Hitmonlee: gladde benen + Jordi's punten (r16 / ek4) (27 nov)
+- Benen met gladde "getapete" omtrek, ringen alleen binnenin (r16); ek4: losse pixels weg, verre oog ovaal, plooi in de trapvoet schuin, aansluiting kop↔trapbeen vloeiend (`hitmonlee_regional/eindkeuring/ek4.png`).
+- Hitmonchan regional: Gemini r2 + prompt r3 (uppercut, kubusvuisten één stuk met de arm).

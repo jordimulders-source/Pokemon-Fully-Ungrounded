@@ -65,6 +65,7 @@ SECTIES=[
 ("glitch_lijn/fase2_bug/af/glitch_fase2.png",'Bug (glitch-lijn fase 2)',"electric/bug"),
 ("glitch_lijn/fase3_virus/af/glitch_fase3.png",'Virus (glitch-lijn fase 3)',"electric/bug"),
 ("guarana/af/guarana.png",'Guaraná fase 1',"grass/ghost"),
+("guarana_fase2/af/guarana_fase2.png",'Guaraná fase 2',"grass/ghost"),
 ]),
 ("Evolutions of existing Pokémon",[
 ('hitmontop_evo/af/hitmongroove.png', '"Hitmongroove" (Hitmontop)', 'fight/ground'),

@@ -3476,3 +3476,8 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.840] - Guaraná fase 1: frontsprite af
 - Jordi koos variant B (Weepinbell-ogen): "ja rechts is veel beter". `docs/concept/sprites/guarana/af/guarana.png` (+ `normal.pal`, 8×), op het overzichtsvel (sectie New, Grass/Ghost). Naam open.
 - Opengebarsten schil om de ogen en gladde bolletjes komen in fase 2 (nieuw gesprek); overdracht in `guarana/SPEC.md`. TODO, Stand van zaken en lessen (GEMINI.md, SPRITE_WERKWIJZE.md) bijgewerkt.
+
+### [v0.0.841] - Guaraná fase 2: frontsprite af (26–27 nov)
+- Ontwerp via Gemini r1–r10 (`docs/concept/sprites/guarana_fase2/gemini/`): vertakte liaan met drie trossen (Jordi), getwijnde liaan + echt guaraná-blad (keuze 1 en 3), minder/grotere ogen, gesloten vruchten erbij, hangende trossen met peervormige vruchten (r9/r10, "meeste guarana"). Gemini telde steeds te laag ("twice as many" deed niets); model = r10 met elke tros verschoven nog eens erachter geplakt (`plak/dubbel.py`).
+- Sprite: 16 makerrondes + DC-eindkeuring (PASS, 57 px). Belangrijkste stappen: volume en schaduw (r3), gladde randen (r4), pupillen gevarieerd (r5), afwerking naar fase 1-palet en -verhoudingen (r6–r8), ronde trosranden (r10), ronde oogvruchten i.p.v. vierkanten (r13, bewaard in `bewaard_r13/`), trossen ±1,6× groter mogen over blad/takken vallen (r14, Jordi), fase 1-oog en precies vier ogen naar linksonder (r15–r16). Palet = fase 1 (12 kleuren).
+- `docs/concept/sprites/guarana_fase2/af/guarana_fase2.png` (+ `normal.pal`, 8×); op het overzichtsvel (sectie New). Lijn af; namen open. Vaste regels en alle citaten in `guarana_fase2/SPEC.md`; lessen in `docs/lessen/GEMINI.md`.

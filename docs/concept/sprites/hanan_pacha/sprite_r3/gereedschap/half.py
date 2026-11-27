@@ -34,9 +34,34 @@ def reduceer(oy,ox):
                 kk=[k for k in rest if GR[k]==best]
             o[j,i]=max(set(kk),key=lambda k:(kk.count(k),-lum[k]))
     return o
+
+# Vorm gaat voor vlakkleur (Jordi: "de vormen zijn belangrijker dan welke kleur dominant is"): kleine natieve vormen
+# (klauw, snavelhaak, oog, kamrand, lijnstukje, penpunt; <=16 px, groep niet goud) die na de reductie nergens meer
+# terugkomen, krijgen het blok waar het grootste deel van hun pixels ligt.
+def vorm_terug(o,oy,ox,MAX=16):
+    from scipy import ndimage
+    H,W=N.shape; h,w=o.shape; n=0
+    for G in 'LDTWR':
+        m=np.zeros(N.shape,bool)
+        for k,g in GR.items():
+            if g==G: m|=N==k
+        lab,nc=ndimage.label(m,structure=np.ones((3,3)))
+        for c in range(1,nc+1):
+            ys,xs=np.where(lab==c)
+            if len(ys)>MAX: continue
+            bj=(ys-oy)//2; bi=(xs-ox)//2; ok=(bj>=0)&(bi>=0)&(bj<h)&(bi<w)
+            if not ok.any(): continue
+            blokken=set(zip(bj[ok],bi[ok]))
+            if any(o[j,i]>=0 and GR[o[j,i]]==G for j,i in blokken): continue
+            cnt={}
+            for j,i in zip(bj[ok],bi[ok]): cnt[(j,i)]=cnt.get((j,i),0)+1
+            j,i=max(cnt,key=cnt.get); kk=[N[y,x] for y,x in zip(ys,xs)]
+            o[j,i]=max(set(kk),key=kk.count); n+=1
+    return n
+
 if __name__=='__main__':
     from PIL import Image
-    oy,ox=int(sys.argv[1]),int(sys.argv[2]); o=reduceer(oy,ox)
+    oy,ox=int(sys.argv[1]),int(sys.argv[2]); o=reduceer(oy,ox); print('vormen terug',vorm_terug(o,oy,ox))
     np.save('half_%d%d.npy'%(oy,ox),o)
     img=np.full(o.shape+(3,),255,'uint8'); img[o>=0]=PAL[o[o>=0]]
     Image.fromarray(img).resize((o.shape[1]*8,o.shape[0]*8),Image.NEAREST).save(sys.argv[3])

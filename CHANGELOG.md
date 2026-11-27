@@ -3623,43 +3623,88 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Op het overzichtsvel (New, vóór fase 2). Hoatzin-lijn af; namen open.
 - Les in GRAPHICS.md: haarwortels apart houden in binnenlijnscripts; slagschaduw naast een lijn in dezelfde tint = dubbele lijn.
 
-### [v0.0.864] - Regicosmo en Regiaqua: idee vastgelegd (27 nov)
+### [v0.0.864] - Zandloper fase 1: terug naar fase 1-maat (27 nov)
+- De 1-op-1-versie was groter dan fase 3 (Jordi: "hij is nu te groot geworden"); `af/zandloper_fase1.png` is nu de 0,70-reductie (44×45, ±980 px, Baltoy-maat) met dezelfde keuring van tinten en schaduw en linkeroog variant A (pupil 2 px hoog). Grote versie bewaard in `zandloper/fase1/sprite/r14_natief/af_oud/`. Overzichtsvel bijgewerkt.
+### [v0.0.865] - Idee: Ledian-evolutie (27 nov)
+- `docs/concept/IDEEEN.md`: Jordi's idee voor een Ledian-evolutie (Bug/Cosmic, superheld die door de ruimte vliegt) + repo-check (Ledian = Bug/Normal, Ledyba-lijn nog niet in de dex).
+### [v0.0.866] - Ledian-evolutie: besluiten + Gemini-prompt r1 (27 nov)
+- Jordi: fase 3, nog meer superheld, space superhero, Ledians designrichting verder doortrekken (`IDEEEN.md`).
+- Prompt r1: `docs/concept/sprites/ledian_evo/gemini/PROMPT_r1.md`.
+### [v0.0.867] - Ledian-evolutie: Gemini r1 + prompt r2 (27 nov)
+- r1 bewaard (`ledian_evo/gemini/r1.png`); prompt r2 noemt Ledian, superheld/tokusatsu, vliegpose met arm vooruit (Jordi).
+### [v0.0.868] - Ledian-evolutie: Gemini r2 + prompt r3 (27 nov)
+- r2 bewaard; prompt r3 met r2 als bijlage: rug kleiner/aerodynamisch als spacevliegtuigvleugels, hoofd aerodynamischer (Jordi).
+### [v0.0.869] - Ledian-evolutie: Gemini r3 + prompt r4 (27 nov)
+- r3 bewaard; Jordi: "het mag echt nog meer space robot". Prompt r4 = nieuwe startprompt zonder bijlage met alle besluiten.
+### [v0.0.870] - Ledian-evolutie: Gemini r4a/r4b + prompt r5 (27 nov)
+- r4b beter (Jordi); prompt r5 met r4b als bijlage: volledig stervormig rood hoofd, mondje weg, iets langer.
+### [v0.0.871] - Ledian-evolutie: Gemini r5 + prompt r6 (27 nov)
+- r5 afgekeurd (geen mond, armen te kort/gek); prompt r6 from scratch met alle besluiten.
+### [v0.0.872] - Ledian-evolutie: Gemini r6 (27 nov)
+- r6 bewaard ("deze vind ik tof"); spritecheck: natief ±66×66, ±9 kleuren.
+### [v0.0.873] - Ledian-evolutie: model r6 bevroren + sprite r1 (27 nov)
+- SPEC `docs/concept/sprites/ledian_evo/SPEC.md`; mond blijft zoals in het model (Jordi).
+- Sprite r1 (`ledian_evo/sprite_r1/`): verkleining van het model (natief 66×66, rijen 54/57 en kolommen 61/63 geschrapt), 13 kleuren, 52 px afwijking alleen op de buitenrand; spleten arm/hoofd en tussen de benen transparant. Nog geen kleur-/schaduwronde.
+### [v0.0.874] - Ledian-evolutie: kleurronde r2 (27 nov)
+- `ledian_evo/sprite_r2/`: tinten van de Gen 3-Ledian op de verdeling van r6 (Jordi: "2, maar mag net iets roder"), rood in drie varianten (a −5°, b −8° hoofd, c −11°); 69 donkergrijze binnenlijnen → rode selout; silhouetdiff 0, 13 kleuren.
+### [v0.0.875] - Ledian-evolutie: rood c + DC-eindkeuring (27 nov)
+- Jordi koos rood c ("ik vind c wel tof, verder helemaal goed").
+- Eindkeuring (`ledian_evo/eindkeuring/`, PASS): 33 px belijning (outline base aan de lichtkant, zwart aan de schaduwkant, outline highlights); zwarte binnenlijnen hoofd/arm/vleugel bewust gehouden (selout liet ze versmelten); silhouetdiff 0, 13 kleuren + transparant (nieuw: Ledians donkerste geel a47b00 als voetlijn).
+### [v0.0.876] - Ledian-evolutie: frontsprite af (27 nov)
+- Jordi: "zeker, nice". `docs/concept/sprites/ledian_evo/af/ledian_evo.png` (+ 8×) = eindkeuring; op het overzichtsvel (Evolutions of existing Pokémon). Naam open; Ledyba-lijn moet terug in de dex. TODO-brainstorm Ledian weg.
+### [v0.0.877] - Ledyba-lijn terug in de dex (27 nov)
+- Jordi: "ledyba lijn moet zeker terug". `P_FAMILY_LEDYBA` weer aan (`include/config/species_enabled.h`); `DEX_IN_ROM.md` en `IDEEEN.md` bijgewerkt. ROM niet gebouwd (Jordi: "je hoeft de rom nog niet te bouwen").
+### [v0.0.878] - Ledyba-lijn: alleen genoteerd (27 nov)
+- Jordi: "gewoon noteren dat ze terug erin komen en dat pushen". `P_FAMILY_LEDYBA` terug op `FALSE`; in `DEX_IN_ROM.md` staat dat de lijn terugkomt.
+### [v0.0.879] - Ledyba-lijn: schakelaar aan (27 nov)
+- Jordi: "maar je kan false toch true maken zonder de rom te hoeven bouwen?" `P_FAMILY_LEDYBA` weer op `P_GEN_2_POKEMON`; ROM nog niet gebouwd.
+### [v0.0.880] - Zandloper-lijn fase 2: frontsprite af (27 nov)
+- Jordi's idee voor fase 2 (gebroken zandloper, groot zandbrein, losse ogen eronder, vraag- en uitroepteken van zand erboven, alles verbonden) vastgelegd met prompt r1 in `docs/concept/sprites/zandloper/fase2/gemini/PROMPTS.md`.
+- r1 beoordeeld (alles los); prompt r2: één zandwolk, kleinere zandloper op de grond, ? en ! als handen.
+- r2 beoordeeld (rest prima); prompt r3: zandloper kapot en op de grond, brein is de vorm i.p.v. een tekening.
+- Gemini r3 = model; sprite op 0,80 (Jordi) via r1–r4 met keuringen: `docs/concept/sprites/zandloper/fase2/sprite/r4/`; besluiten in `fase2/SPEC.md`. Wacht op Jordi.
+- Na Jordi ("wat hard omlijnd", "het gaat niet om dunnere lijn maar kleur"): r4 behouden → DC-eindkeuring (zwarte binnenpixels in lijnkleur van het eigen onderdeel, 13 outline highlights). Af (Jordi: "ja commit en push naar main"): `docs/concept/sprites/zandloper/fase2/af/zandloper_fase2.png`; op het overzichtsvel. Zandloper-lijn af, namen open.
+
+### [v0.0.881] - Regicosmo en Regiaqua: idee vastgelegd (27 nov)
 - `docs/concept/IDEEEN.md` → "Regicosmo en Regiaqua": Jordi's beschrijving letterlijk, plus Claudes voorstellen voor de stippen (open).
 
-### [v0.0.865] - Regicosmo en Regiaqua: besluiten + Gemini-prompts r1 (27 nov)
+### [v0.0.882] - Regicosmo en Regiaqua: besluiten + Gemini-prompts r1 (27 nov)
 - Jordi: Regicosmo stippen = B (kaart van zijn eigen lichaam), losse hemellichamen vormen samen een golem. Regiaqua: zwevende waterarmen, echte stippen niet in de hoofdkleur, oplichtend in een diepzeekleur.
 - `docs/concept/sprites/regicosmo/` en `regiaqua/`: SPEC.md (citaten) en PROMPT.md (r1).
 
-### [v0.0.866] - Regicosmo r1 + prompt r2 (27 nov)
+### [v0.0.883] - Regicosmo r1 + prompt r2 (27 nov)
 - `regicosmo/gemini/r1.png` bewaard; Jordi: conceptueel goed, te veel planeten en stippen (max 8). Prompt r2 in `regicosmo/PROMPT.md`: 7 delen, 7 stippen.
 - Typing (Jordi): "ja ze zijn monotype": Regicosmo Cosmic, Regiaqua Water.
 
-### [v0.0.867] - Regiaqua r1 + stippencheck (27 nov)
+### [v0.0.884] - Regiaqua r1 + stippencheck (27 nov)
 - `regiaqua/gemini/r1.png` bewaard (Jordi: "al heel erg hoe ik hem in gedachten heb"); vergelijking met de Gen 3-Regi's en een 64 px-proef in `regiaqua/gemini/`.
 
-### [v0.0.868] - Regicosmo prompt r3 (27 nov)
+### [v0.0.885] - Regicosmo prompt r3 (27 nov)
 - Na r2 (Jordi: "te random", "niet goed genoeg golem", romp "meer een mars kleur"): prompt r3 met vaste golembouw en Mars-romp in `regicosmo/PROMPT.md`.
 
-### [v0.0.869] - Regiaqua: reactie op de stippencheck (27 nov)
+### [v0.0.886] - Regiaqua: reactie op de stippencheck (27 nov)
 - Jordi: r1 "lijkt wel goed"; stippen worden in de sprite vierkantjes (zoals Gen 3). In `regiaqua/SPEC.md`.
 
-### [v0.0.870] - Regiaqua: model vastgezet, sprite gestart (27 nov)
+### [v0.0.887] - Regiaqua: model vastgezet, sprite gestart (27 nov)
 - Jordi: 7 stippen "is prima" → model = `regiaqua/gemini/r1.png`; maker gestart in `regiaqua/sprite/`.
 
-### [v0.0.871] - Regicosmo r3 + prompt r4 (27 nov)
+### [v0.0.888] - Regicosmo r3 + prompt r4 (27 nov)
 - r3 bewaard (Jordi: te veel vast, hemellichamen te gelijk, r2 toffer); prompt r4 in `regicosmo/PROMPT.md`.
 
-### [v0.0.872] - Regicosmo r4 + prompt r5 (27 nov)
+### [v0.0.889] - Regicosmo r4 + prompt r5 (27 nov)
 - r4 bewaard (9 stippen, Mars leest als bloedmaan, schouders/handen te hoog); prompt r5 in `regicosmo/PROMPT.md`.
 
-### [v0.0.873] - Regicosmo r5 + prompt r6 (27 nov)
+### [v0.0.890] - Regicosmo r5 + prompt r6 (27 nov)
 - r5 bewaard (Jordi: "mars is nu een paasei"); prompt r6: Mars perfect rond met bolschaduw.
 
-### [v0.0.874] - Regicosmo r7 + positievarianten (27 nov)
+### [v0.0.891] - Regicosmo r7 + positievarianten (27 nov)
 - r7 bewaard (Jordi: "nog beter"); ijsplaneet en Saturnus per script omlaag geschoven in 3 hoogtes (`regicosmo/positie/`).
 
-### [v0.0.875] - Regiaqua frontsprite r1/r2 (27 nov)
+### [v0.0.892] - Regiaqua frontsprite r1/r2 (27 nov)
 - Maker r1 (`regiaqua/sprite/r1/`): kale reductie van Gemini r1 (silhouet-diff 0), 11 kleuren, 62×50, 7 stippen als 2×2. Keurder BIJNA; r2 (`sprite/r2/`) verwerkt de 4 punten (15 px). Naar Jordi.
 
-### [v0.0.876] - Regiaqua: frontsprite af (27 nov)
+### [v0.0.893] - Regiaqua: frontsprite af (27 nov)
 - `docs/concept/sprites/regiaqua/af/regiaqua.png` (= sprite r2). Op het overzichtsvel onder het nieuwe kopje "Legendaries" (Jordi), `showcase/maak_vel.py`.
+
+### [v0.0.894] - Regicosmo: eindkeuring r7 + merge met main (27 nov)
+- Regicosmo-sprite r7 na DC-eindkeuring (PASS), `regicosmo/sprite/r7/`; Saturnus/maan-posities en rondere bollen in r4–r6 (zie `regicosmo/SPEC.md`). Branch samengevoegd met main (Ledian-evolutie, zandloper); overzichtsvel opnieuw gebouwd; mijn changelogsecties hernummerd naar v0.0.881–893.

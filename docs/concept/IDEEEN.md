@@ -195,7 +195,7 @@ Bovenaan gehouden zodat de stand in één oogopslag te zien is. Details in de se
 - Evoluties voor soorten die ze echt nodig hebben (Smeargle, Chatot, Cryogonal: niet per se).
 - Regional forms die underrated Pokémon interessant maken (de rest van de top 10 in `DEX_NOMINATIES.md` §5: nog niet overtuigd).
 - **Nog een nieuwe Mr. Mime-vorm** (misschien).
-- **Ledian-evolutie** (nadenken).
+- **Ledian-evolutie** (nadenken). Idee 27 nov: zie "Ledian-evolutie: ruimtesuperheld" onderaan.
 - **Cosmic-lijnen (Jordi, 17 nov):** "Ik had twee tot drie cosmic ideeën in gedachten. een Steel/Cosmic lijn met o.a. een satelliet erin, plus een supernova/black hole lijn. Nu zat ik eraan te denken om Solrock daarin te betrekken, maar dat kan ik eigenlijk niet doen zonder Lunatone ook evoluties te gaan geven, dan wordt het meteen wel wat veel. Ik zat ook te denken om Lunatone en Solrock misschien een gezamenlijke eclipse evolutie te geven, of misschien een Accelgor/Escavalier achtige evolutie, maar laten we eerst naar lore kijken of dat allemaal wel past". Lore-overzicht van Claude: in het gesprek van 17 nov. **Solrock-corona-evolutie: frontsprite af (22 nov)**, `sprites/solrock_evo/af/` (Solrock evolueert met Lunatone in het team = voorstel; zonsverduistering van steen, naar Gemini v5; naam en type open). Lunatone-bloedmaan nog te doen.
 - **Lanturn-evolutie geschrapt** (Jordi, 17 nov): "lanturn wil ik die horror niet aan doen, dat heb ik met een maat besproken". Niet opnieuw voorstellen.
 - **Sunflora-evolutie:** "alleen als we echt met een vet idee kunnen bedenken".
@@ -884,6 +884,22 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - **Open vragen (Claude):** is de zandloper in fase 3 nog gebroken (scherven) of heel; wordt het brein van fase 2 het hoofd van de djinn; hoeveel stukken apparatuur.
 - **Jordi (26 nov) op de vragen:** (1) "fase 3 is die gebroken, scherven werk laten we zitten, puur dat die geopend is en daar dus het zand uitloopt wat de djinn vormt." (2) "2 twijfel ik nog over, detail gaat niet goed vertalen naar een sprite, dus misschien alleen met wat belijning tonen dat de djinn aan het brein vast zit" (4) "zolang het allemaal goed gedefinieerd is kan het wel, geen te kleine dingen".
 - **Jordi (26 nov):** "zandloper ligt op de grond en in het midden geopend zou ik zeggen oid. 2 ik dacht aan hoofd, maar kan natuurlijk ook in de core".
+
+## Ledian-evolutie: ruimtesuperheld (Jordi, 27 nov)
+- **Jordi (27 nov):** "Ik denk aan een Ledian evolutie. Bug/cosmic, zelfde inspiratie maar een superheld die door de ruimte kan vliegen".
+- **Repo-check (Claude):** Ledian is in de repo Bug/Normal (herzien, niet Bug/Flying). De Ledyba-lijn zit niet in de dex (`DEX_IN_ROM.md`); met deze evolutie moet de familie terug.
+- **Jordi (27 nov) op de vragen:** (1) zelfde inspiratie: "ja, maar dan nog meer superheld" (2) "derde fase" (3) "hij gaat nog meer richitn soort van space super hero. We trekken eigenlijk de designrichting die Ledian heeft nog meer door".
+- **Gemini-prompt r1:** `sprites/ledian_evo/gemini/PROMPT_r1.md`.
+- **Jordi (27 nov) op r1:** "het helpt misschien wel om ledian te benoemen, want deze wijkt veel af en is niet per se een superheld/tokusatsu vorm ervan". "Vliegen met zijn arm voorwaarts zou een prima pose zijn". Prompt r2: `sprites/ledian_evo/gemini/PROMPT_r2.md`.
+- **Jordi (27 nov) op r2:** "ok de rug moet minder groot, meer aerodynamisch met een soort spacevliegtuig vleugels, bijna mechanisch achtig en hij moet sowieso wat meer aerodynamischer qua hoofd ook". Prompt r3: `sprites/ledian_evo/gemini/PROMPT_r3.md`.
+- **Jordi (27 nov):** "kijk er zijn meer mensen met vergelijkbare ideeen". Stuurde drie fan-ontwerpen (niet in de repo gezet, werk van anderen): 67Chrome (Ledian-evolutie met rode, gestippelde pantserdelen op armen en benen, puntige benen, blauwe vleugels), @Plubcol/@_Trainer_Rex (fan-Mega Ledian Bug/Steel, "Legends Z-A"-stijl, sterren op de vuisten) en "Ledilustre" (Bug/Fairy, zwart met gele sterren, gouden puntige kop, sterrenhemelvleugels, vuisten als ability). Nog niets besloten over overnemen.
+- **Jordi (27 nov) op r3:** "nee nog niet goed genoeg, het mag echt nog meer space robot". Prompt r4 (nieuwe startprompt): `sprites/ledian_evo/gemini/PROMPT_r4.md`.
+- **Jordi (27 nov):** "het hoofd kan in een stervorm (wel nog rood" (in prompt r4 verwerkt).
+- **Jordi (27 nov) op r4a/r4b:** "hij oogt niet genoeg als een evolutie bij 1, 2 is beter, maar het is nog geen volledige stervorm en hij heeft een gek mondje nu, hij mag nog ietsje langer". Prompt r5 (bijlage r4b): `sprites/ledian_evo/gemini/PROMPT_r5.md`.
+- **Jordi (27 nov) op r5:** "ok dat is niet beter, hij heeft nu helemaal geen mond meer, terwijl ledian dat wel heeft, de armen zitten verder ook gek, zijn te kort, nieuwe prompt from scratch graag". Prompt r6: `sprites/ledian_evo/gemini/PROMPT_r6.md`.
+- **Jordi (27 nov) op r6:** "deze vind ik tof, vertaalt die goed naar een sprite?" Check (Claude): natief raster ±66×66 (pixel ±10,2 px), ±9 kleuren; 2 rijen/kolommen schrappen naar 64×64, geen hertekenwerk nodig.
+- **Jordi (27 nov) over de mond in r6:** "de mond is heel subtiel, zie mijn lijn, vind ik wel prima zo" (`sprites/ledian_evo/gemini/r6_mond_jordi.png`). r6 = model; SPEC: `sprites/ledian_evo/SPEC.md`.
+- **Jordi (27 nov):** "ledyba lijn moet zeker terug". `P_FAMILY_LEDYBA` aan en genoteerd in `DEX_IN_ROM.md`; ROM nog niet gebouwd.
 
 ## Regicosmo en Regiaqua (Jordi, 27 nov)
 - **Jordi:** "tijd voor de cosmic regi en de diepzee regi. De cosmic regi wordt een collectie van planeten en hemellichamen, die zitten los van elkaar, de middelste heeft de braille achtige stippen, ik heb opgezocht dat ze voor de bestaande regi's geen betekenis hebben, dus we kunnen gaan voor esthetisch, verzin maar een cool idee. Regicosmo is de working name"

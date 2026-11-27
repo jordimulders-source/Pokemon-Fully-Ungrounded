@@ -31,7 +31,7 @@ Per lijn de leden zoals in `out.json`; vormen (Unown-letters, Rotom-vormen, Vivi
 
 **Terug (Jordi, 25 nov):** Blipbug → Dottler → Orbeetle (Dottler en Orbeetle worden Bug/Cosmic).
 
-**Terug (Jordi, 27 nov: "ik heb al 3 keer gezegd dat die in de dex moet"):** Minior (wordt Cosmic; evolutie in ontwerp). Niet meer bij Categorie C.
+**Terug (Jordi, 27 nov: "ik heb al 3 keer gezegd dat die in de dex moet"):** Minior (wordt Cosmic/Flying, evolutie ook; in de code nog Rock/Flying tot het Cosmic-type erin zit). Niet meer bij Categorie C.
 
 **Extra:** Hitmontop (zonder Tyrogue, Hitmonlee, Hitmonchan); Mew, Mewtwo, Zarude.
 

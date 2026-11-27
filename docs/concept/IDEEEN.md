@@ -883,5 +883,5 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - **Jordi (26 nov):** "zandloper ligt op de grond en in het midden geopend zou ik zeggen oid. 2 ik dacht aan hoofd, maar kan natuurlijk ook in de core".
 
 ## Minior-evolutie (Jordi, 27 nov)
-- Jordi: "Pitch ideeën voor een minioren evolutie". Minior zit in de dex (Jordi, 27 nov) en wordt Cosmic.
+- Jordi: "Pitch ideeën voor een minioren evolutie". Minior zit in de dex (Jordi, 27 nov) en wordt **Cosmic/Flying**; de evolutie blijft Cosmic/Flying (Jordi, 27 nov: "cosmic/flying wordt die", "blijft cosmic/flying"). Soort evolutie: nog overleggen.
 - **Voorstellen Claude (27 nov, open):** (1) pallasiet: schil smelt tot ijzeren raamwerk met de kern als zichtbare kristallen, de 7 kleuren worden de kristalkleur (Esquel-pallasiet, Argentinië); (2) ingeslagen meteoriet: zwarte smeltkorst met regmaglypten + tektietglas, kern gloeit door barsten (Atacama, Campo del Cielo); (3) meteorenzwerm: Miniors klonteren samen, kern met zwerm fragmenten in een baan (à la Falinks/Wishiwashi); (4) planetesimaal: mini-planeetje met puinring, kern zichtbaar door een kloof. Gimmick los te combineren: Shields Down doortrekken (schilstand verdedigt, onder de HP-grens breekt hij open). Komeet en supernova/zwart gat vallen af (Cryomet; eigen geplande lijn).

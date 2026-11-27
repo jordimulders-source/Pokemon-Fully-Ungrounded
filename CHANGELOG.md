@@ -3600,3 +3600,5 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.859] - Minior terug in de dex + pitches evolutie (27 nov)
 - Jordi: "ik heb al 3 keer gezegd dat die in de dex moet". `P_FAMILY_MINIOR` weer aan (`species_enabled.h`); DEX_IN_ROM (Terug, uit Categorie C), CONCEPT, POKEMON en IDEEEN bijgewerkt zodat het niet meer als "niet besloten" staat. Bouwt; ±17,8 MB vrij.
 - Pitches Minior-evolutie (pallasiet, ingeslagen meteoriet, meteorenzwerm, planetesimaal; gimmick Shields Down) in `IDEEEN.md` → "Minior-evolutie".
+### [v0.0.860] - Minior wordt Cosmic/Flying (27 nov)
+- Jordi: "cosmic/flying wordt die", de evolutie "blijft cosmic/flying". Vastgelegd in CONCEPT, POKEMON, IDEEEN, DEX_IN_ROM en TODO (Cosmic uitwerken). In de code staat Minior nog op Rock/Flying omdat `TYPE_COSMIC` nog niet bestaat; een FU-commentaar bij `MINIOR_MISC_INFO` (`gen_7_families.h`) wijst de plek aan.

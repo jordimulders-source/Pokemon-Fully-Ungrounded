@@ -4693,6 +4693,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
 #endif //P_FAMILY_TYPE_NULL
 
 #if P_FAMILY_MINIOR
+// FU: Minior wordt Cosmic/Flying (Jordi, 27 nov); TYPE_FLYING hieronder vervangt TYPE_ROCK zodra TYPE_COSMIC in de code bestaat.
 #define MINIOR_MISC_INFO(color)                                             \
         .types = MON_TYPES(TYPE_ROCK, TYPE_FLYING),                         \
         .catchRate = 30,                                                    \

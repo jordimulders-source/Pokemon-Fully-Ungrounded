@@ -1,0 +1,8 @@
+(22,51) 1 -> 7: linkerklauw: model "c#/w#" = ivoren klauwpunt onderaan de teen (vormt met (23,51) een punt van 2 px)
+(28,49) 7 -> 1: model "w#/##" = lijn (onderrand van de dij), geen klauw
+(29,49) 1 -> 6: model "WW/WW" = witte beenveren van de dij (schaduwtint 6 zoals de dij erboven), geen lijn
+(29,50) 7 -> 6: model "WW/WW" = zelfde beenveren, hoort bij de dij en niet bij een klauw (was los ivoor)
+(33,50) 10 -> 7: rechterklauw: model "Ws/Ws" = ivoren klauwpunt
+(33,51) 1 -> 9: model "#s/ss" = teen (goud), doorlopende streng van de voet naar beneden
+(33,52) 7 -> 9: model "sw/ss" = teen loopt door tot de onderkant; breekt de witte balk van 3 px (32-34,52) in twee klauwpunten
+(33,53) 2 -> 1: omlijning onder de teen tegen de staart (gesloten voorste vorm)

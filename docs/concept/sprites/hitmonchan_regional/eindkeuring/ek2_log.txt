@@ -1,0 +1,10 @@
+(24,20) 4->1  lijn 2: trap; model kol 17 r26 navy, M_donker=1
+(24,21) 4->1  lijn 2: trap; model kol 17 r27 navy, M_donker=1
+(25,20) 1->2  lijn 2: rechts van de lijn; model kol 18 r26 = 2, M_gem=2
+(25,21) 1->2  lijn 2: rechts van de lijn; model kol 18 r27 = 2, M_gem=2
+(28,37) 1->3  riem bovenrand: inkeping model r46 kol 21-22 (3/4)
+(29,37) 1->3  riem bovenrand: inkeping model r46 kol 23 (3), M_gem=3
+(30,37) 1->2  riem bovenrand: inkeping model r46 kol 24 (2), M_licht=2
+(43,27) 5->6  wachtkubus bovenvlak onder de naad met de schouder (model 6, M_gem 6, kale reductie 6)
+(44,27) 5->6  idem (model r33 6/7, M_gem 6)
+(45,27) 5->6  idem (model r33 7/6, M_gem 6)

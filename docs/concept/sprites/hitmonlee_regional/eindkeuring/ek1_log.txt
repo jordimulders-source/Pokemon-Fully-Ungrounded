@@ -1,0 +1,23 @@
+(41,1) [64x64: (43,1)] 1->2 B buitenlijn trapvoet bovenkant: zwart tussen donkerrood (om-en-om) -> selout; M_gem 2
+(44,2) [64x64: (46,2)] 1->6 B dubbele zwarte hoek trapvoet rechtsboven -> vulling; M_zonderlijn/M_2e 6
+(45,10) [64x64: (47,10)] 1->5 B buitenlijn trapbeen 2 px dik (naast (46,10)) -> vulling; M_zonderlijn/M_2e 5
+(18,39) [64x64: (20,39)] 1->3 B binnenlijn romp/schouder zwart -> eigen donkere tint; M_gem 3
+(18,40) [64x64: (20,40)] 1->2 B binnenlijn romp/schouder zwart -> donkerrood; M_gem 2
+(17,41) [64x64: (19,41)] 1->2 B binnenlijn romp/schouder zwart -> donkerrood; M_gem 2 (loopt taps uit in de zwarte onderlijn)
+(8,53) [64x64: (10,53)] 1->2 B binnenlijn hand (duim) zwart -> donkerrood; M_gem 2
+(5,54) [64x64: (7,54)] 1->2 B binnenlijn hand (vinger) zwart -> donkerrood; M_gem 2
+(5,55) [64x64: (7,55)] 1->2 B binnenlijn hand (vinger) zwart -> donkerrood; M_gem 2
+(4,55) [64x64: (6,55)] 1->2 B binnenlijn hand (vinger) zwart -> donkerrood; M_gem D, 2 gekozen voor een doorlopende lijn
+(51,42) [64x64: (53,42)] 1->13 K losse zwarte spikkel in doorschijnende knie -> bruinmauve; M_gem D
+(53,42) [64x64: (55,42)] 1->13 B dubbele zwarte rand knie (naast (54,42)) -> bruinmauve; M_gem D
+(36,29) [64x64: (38,29)] 12->15 K doorschijnend kickbeen in de romp: modeltint terug (r11-toonkaart had het overschreven); M_gem/M_zonderlijn F
+(35,30) [64x64: (37,30)] 7->15 K idem; M F
+(39,31) [64x64: (41,31)] 11->14 K idem; M E
+(36,32) [64x64: (38,32)] 12->14 K idem; M E
+(39,32) [64x64: (41,32)] 12->14 K idem; M E
+(40,32) [64x64: (42,32)] 7->15 K idem; M F
+(35,33) [64x64: (37,33)] 7->14 K idem; M E
+(36,33) [64x64: (38,33)] 12->14 K idem; M E
+(37,33) [64x64: (39,33)] 12->14 K idem; M E
+(39,33) [64x64: (41,33)] 7->14 K idem; M E
+(37,34) [64x64: (39,34)] 7->14 K idem (ronde onderkant van het been); M E

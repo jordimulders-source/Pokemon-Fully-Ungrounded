@@ -900,3 +900,9 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - **Jordi (27 nov) op r6:** "deze vind ik tof, vertaalt die goed naar een sprite?" Check (Claude): natief raster ±66×66 (pixel ±10,2 px), ±9 kleuren; 2 rijen/kolommen schrappen naar 64×64, geen hertekenwerk nodig.
 - **Jordi (27 nov) over de mond in r6:** "de mond is heel subtiel, zie mijn lijn, vind ik wel prima zo" (`sprites/ledian_evo/gemini/r6_mond_jordi.png`). r6 = model; SPEC: `sprites/ledian_evo/SPEC.md`.
 - **Jordi (27 nov):** "ledyba lijn moet zeker terug". `P_FAMILY_LEDYBA` aan en genoteerd in `DEX_IN_ROM.md`; ROM nog niet gebouwd.
+## Regionale fossielen: terreurvogel en glyptodon (Jordi, 27 nov)
+- **Jordi (27 nov):** "het is tijd om met de twee fossiel lijnen aan de slag te gaan". Eerder (26 nov): "de terreurvogel is het beste naar een pokemon te vormen denk ik, noteer maar met de glyptodon dat die sowieso nog gaan komen".
+- **Wat er al lag:** FAKEMON_PITCH #28 glyptodon (Rock/Ground, "gordeldier zo groot als een auto, met een knotsstaart") en #30 terreurvogel (Fighting/Dark, *Phorusrhacos*, "vliegloze toproofvogel met een bijlsnavel"). Regel: alle Pokémon zijn te krijgen, dus geen keuze waarbij één fossiel voorgoed wegvalt.
+- **Feiten (Claude):** echte fossielen in Pokémon zijn 2 fases en hebben allemaal Rock; Gen 4/5/6 bracht ze in paren met tegengestelde rollen (Cranidos aanval ↔ Shieldon verdediging, Tirtouga ↔ Archen, Tyrunt ↔ Amaura). De knotsstaart met stekels hoort eigenlijk bij *Doedicurus*; *Glyptodon* zelf had een staart van gepantserde ringen. Bij terreurvogels is *Kelenken* die met de grootste schedel/snavel, *Phorusrhacos* de bekendste naam.
+- **Open vragen (eerst overleggen, nog niet prompten):** aantal fases, rolverdeling, types, vorm van fase 1.
+- **Jordi (27 nov):** 2 fases per lijn. Rollen: "was de terreurvogel zo snel? glyptodon idd een wall". Types: "typings wil ik even over sparren" (beide lijnen).

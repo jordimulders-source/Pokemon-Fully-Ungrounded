@@ -3612,3 +3612,5 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - r4b beter (Jordi); prompt r5 met r4b als bijlage: volledig stervormig rood hoofd, mondje weg, iets langer.
 ### [v0.0.865] - Ledian-evolutie: Gemini r5 + prompt r6 (27 nov)
 - r5 afgekeurd (geen mond, armen te kort/gek); prompt r6 from scratch met alle besluiten.
+### [v0.0.866] - Ledian-evolutie: Gemini r6 (27 nov)
+- r6 bewaard ("deze vind ik tof"); spritecheck: natief ±66×66, ±9 kleuren.

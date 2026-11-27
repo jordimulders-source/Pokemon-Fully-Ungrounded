@@ -44,3 +44,4 @@ Trio van de drie Inca-werelden (zie `docs/concept/POKEMON.md` → Legendaries). 
 - Jordi: "ja de vormen zijn belangrijker dan welke kleur dominant is" (reductie: vormgrenzen gaan voor de dominante kleur).
 - Jordi: "en overlappen is niet erg, zolang de voorste vorm maar goed gedefinieerd is".
 - **Sprite r3** (`sprite_r3/`, verse maker): natief → 2× met regels → schrappen (kop/kraag beschermd), r5-staart, studie Ho-Oh/Moltres. Scherp; kop ±11×12 px, poten en staart nog zwak.
+- Jordi over r3: "deze nieuwe methode is echt een top methode, puik werk hoor. Alleen de rechterklauw zie ik nog niet goed, verder op wat overbodige rechte lijnen en eindkeuring werk na helemaal tevreden".

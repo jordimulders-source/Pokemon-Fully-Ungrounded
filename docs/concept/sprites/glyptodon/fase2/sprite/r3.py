@@ -25,7 +25,21 @@ for y,x in zip(*np.where(binnen)):
         keten.append(cur); cur=nb2[0]
         if len(keten)>2: ok=True; break           # doorlopende lijn >=3
     if not ok and len(keten)<=2: los.update(keten)
-los=sorted(los)
+# bultjes: donkere binnenpixel waarvan alle donkere buren aan één kant liggen en samen al een lijn vormen
+#  (2-3 buren, onderling verbonden, geen enkele buur aan de buitenlijn) -> geen eigen lijn, maar een uitsteeksel
+bult=set()
+for y,x in zip(*np.where(binnen)):
+    nb=buren(y,x)
+    if not (2<=len(nb)<=3): continue
+    if any(buiten[q] for q in nb): continue
+    dys={q[0]-y for q in nb}; dxs={q[1]-x for q in nb}
+    eenkant= dys=={-1} or dys=={1} or dxs=={-1} or dxs=={1}
+    if not eenkant: continue
+    # buren moeten onderling verbonden zijn (lijn langs P), en P moet niet een hoek in een lijn zijn
+    if len(nb)==2 and max(abs(nb[0][0]-nb[1][0]),abs(nb[0][1]-nb[1][1]))>1: continue
+    bult.add((y,x))
+los=sorted(set(los)|bult)
+n=len(los)
 TONEN={'g':None}
 def kleur(y,x):
     w=modus(x,y,nat); w.pop('.',None); w.pop('#',None)

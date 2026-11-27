@@ -1,0 +1,274 @@
+manen (17,25) d->m  haartint: box-reductie modelhelderheid 122
+manen (16,26) l->m  haartint: box-reductie modelhelderheid 124
+manen (19,26) d->m  haartint: box-reductie modelhelderheid 117
+manen (25,26) d->m  haartint: box-reductie modelhelderheid 128
+manen (26,26) d->l  haartint: box-reductie modelhelderheid 135
+manen (16,27) l->m  haartint: box-reductie modelhelderheid 127
+manen (19,27) l->d  streng: modellijn in de cel (lijnfractie 0.29)
+manen (20,27) l->m  haartint: box-reductie modelhelderheid 123
+manen (21,27) l->m  haartint: box-reductie modelhelderheid 126
+manen (24,27) d->m  haartint: box-reductie modelhelderheid 126
+manen (26,27) l->m  haartint: box-reductie modelhelderheid 128
+manen (27,27) d->m  haartint: box-reductie modelhelderheid 127
+manen (16,28) l->m  haartint: box-reductie modelhelderheid 131
+manen (19,28) l->m  haartint: box-reductie modelhelderheid 127
+manen (20,28) l->m  haartint: box-reductie modelhelderheid 125
+manen (21,28) l->m  haartint: box-reductie modelhelderheid 123
+manen (25,28) l->m  haartint: box-reductie modelhelderheid 135
+manen (28,28) d->l  haartint: box-reductie modelhelderheid 135
+manen (13,29) D->l  haartint: box-reductie modelhelderheid 148
+manen (14,29) D->l  haartint: box-reductie modelhelderheid 148
+manen (19,29) l->d  streng: modellijn in de cel (lijnfractie 0.31)
+manen (20,29) l->m  haartint: box-reductie modelhelderheid 127
+manen (22,29) d->m  haartint: box-reductie modelhelderheid 122
+manen (24,29) l->m  haartint: box-reductie modelhelderheid 124
+manen (27,29) m->l  haartint: box-reductie modelhelderheid 141
+manen (28,29) l->d  streng: modellijn in de cel (lijnfractie 0.31)
+manen (11,30) m->d  haartint: box-reductie modelhelderheid 111
+manen (12,30) D->d  haartint: box-reductie modelhelderheid 110
+manen (13,30) D->l  haartint: box-reductie modelhelderheid 148
+manen (14,30) D->l  haartint: box-reductie modelhelderheid 148
+manen (17,30) l->m  haartint: box-reductie modelhelderheid 120
+manen (18,30) m->d  streng: modellijn in de cel (lijnfractie 0.50)
+manen (20,30) l->m  haartint: box-reductie modelhelderheid 130
+manen (24,30) m->l  haartint: box-reductie modelhelderheid 146
+manen (25,30) m->l  haartint: box-reductie modelhelderheid 143
+manen (26,30) m->l  haartint: box-reductie modelhelderheid 138
+manen (10,31) l->m  haartint: box-reductie modelhelderheid 112
+manen (12,31) d->m  haartint: box-reductie modelhelderheid 113
+manen (13,31) D->l  haartint: box-reductie modelhelderheid 148
+manen (14,31) D->l  haartint: box-reductie modelhelderheid 148
+manen (17,31) l->m  haartint: box-reductie modelhelderheid 116
+manen (18,31) m->l  haartint: box-reductie modelhelderheid 142
+manen (10,32) l->m  haartint: box-reductie modelhelderheid 134
+manen (13,32) D->l  haartint: box-reductie modelhelderheid 147
+manen (14,32) D->l  haartint: box-reductie modelhelderheid 147
+manen (17,32) l->m  haartint: box-reductie modelhelderheid 122
+manen (18,32) m->l  haartint: box-reductie modelhelderheid 152
+manen (22,32) d->m  haartint: box-reductie modelhelderheid 118
+manen (23,32) l->m  haartint: box-reductie modelhelderheid 124
+manen (24,32) l->m  haartint: box-reductie modelhelderheid 125
+manen (26,32) d->l  haartint: box-reductie modelhelderheid 141
+manen (12,33) d->m  haartint: box-reductie modelhelderheid 113
+manen (13,33) D->l  haartint: box-reductie modelhelderheid 149
+manen (14,33) D->l  haartint: box-reductie modelhelderheid 148
+manen (15,33) d->l  haartint: box-reductie modelhelderheid 136
+manen (17,33) l->m  haartint: box-reductie modelhelderheid 122
+manen (18,33) m->l  haartint: box-reductie modelhelderheid 148
+manen (22,33) d->m  haartint: box-reductie modelhelderheid 131
+manen (23,33) l->m  haartint: box-reductie modelhelderheid 116
+manen (24,33) l->m  haartint: box-reductie modelhelderheid 126
+manen (25,33) m->l  haartint: box-reductie modelhelderheid 164
+manen (26,33) m->l  haartint: box-reductie modelhelderheid 152
+manen (12,34) d->m  haartint: box-reductie modelhelderheid 116
+manen (13,34) D->l  haartint: box-reductie modelhelderheid 150
+manen (14,34) D->l  haartint: box-reductie modelhelderheid 148
+manen (15,34) d->m  haartint: box-reductie modelhelderheid 134
+manen (17,34) l->m  haartint: box-reductie modelhelderheid 133
+manen (18,34) m->l  haartint: box-reductie modelhelderheid 140
+manen (21,34) l->m  haartint: box-reductie modelhelderheid 134
+manen (25,34) m->l  haartint: box-reductie modelhelderheid 169
+manen (12,35) d->m  haartint: box-reductie modelhelderheid 116
+manen (13,35) D->d  haartint: box-reductie modelhelderheid 100
+manen (14,35) D->l  haartint: box-reductie modelhelderheid 147
+manen (15,35) D->l  haartint: box-reductie modelhelderheid 141
+manen (19,35) d->m  haartint: box-reductie modelhelderheid 126
+manen (21,35) l->m  haartint: box-reductie modelhelderheid 119
+manen (24,35) m->l  haartint: box-reductie modelhelderheid 146
+manen (25,35) m->l  haartint: box-reductie modelhelderheid 168
+manen (26,35) d->l  haartint: box-reductie modelhelderheid 152
+manen (9,36) d->l  haartint: box-reductie modelhelderheid 145
+manen (11,36) l->m  haartint: box-reductie modelhelderheid 120
+manen (14,36) D->l  haartint: box-reductie modelhelderheid 145
+manen (15,36) D->l  haartint: box-reductie modelhelderheid 143
+manen (17,36) l->d  streng: modellijn in de cel (lijnfractie 0.31)
+manen (18,36) m->l  haartint: box-reductie modelhelderheid 137
+manen (19,36) d->m  haartint: box-reductie modelhelderheid 124
+manen (21,36) l->m  haartint: box-reductie modelhelderheid 119
+manen (24,36) m->l  haartint: box-reductie modelhelderheid 150
+manen (25,36) m->l  haartint: box-reductie modelhelderheid 157
+manen (26,36) d->l  haartint: box-reductie modelhelderheid 157
+manen (13,37) d->m  haartint: box-reductie modelhelderheid 117
+manen (14,37) D->d  haartint: box-reductie modelhelderheid 107
+manen (15,37) D->l  haartint: box-reductie modelhelderheid 143
+manen (16,37) m->d  haartint: box-reductie modelhelderheid 110
+manen (19,37) l->m  haartint: box-reductie modelhelderheid 122
+manen (20,37) m->l  haartint: box-reductie modelhelderheid 149
+manen (24,37) m->l  haartint: box-reductie modelhelderheid 141
+manen (25,37) m->l  haartint: box-reductie modelhelderheid 152
+manen (14,38) d->m  haartint: box-reductie modelhelderheid 113
+manen (15,38) D->l  haartint: box-reductie modelhelderheid 140
+manen (16,38) D->d  haartint: box-reductie modelhelderheid 108
+manen (20,38) d->l  haartint: box-reductie modelhelderheid 143
+manen (21,38) l->d  streng: modellijn in de cel (lijnfractie 0.32)
+manen (23,38) m->l  haartint: box-reductie modelhelderheid 155
+manen (24,38) d->l  haartint: box-reductie modelhelderheid 140
+manen (12,39) l->m  haartint: box-reductie modelhelderheid 130
+manen (18,39) m->l  haartint: box-reductie modelhelderheid 135
+manen (19,39) d->m  haartint: box-reductie modelhelderheid 120
+manen (20,39) l->m  haartint: box-reductie modelhelderheid 118
+manen (21,39) l->d  streng: modellijn in de cel (lijnfractie 0.33)
+manen (22,39) m->l  haartint: box-reductie modelhelderheid 140
+manen (23,39) m->l  haartint: box-reductie modelhelderheid 153
+manen (24,39) m->l  haartint: box-reductie modelhelderheid 142
+manen (16,40) m->d  haartint: box-reductie modelhelderheid 111
+manen (18,40) d->m  haartint: box-reductie modelhelderheid 114
+manen (19,40) l->d  streng: modellijn in de cel (lijnfractie 0.31)
+manen (23,40) m->l  haartint: box-reductie modelhelderheid 151
+manen (24,40) d->l  haartint: box-reductie modelhelderheid 155
+manen (13,41) l->d  haartint: box-reductie modelhelderheid 111
+manen (14,41) l->m  haartint: box-reductie modelhelderheid 114
+manen (18,41) m->d  streng: modellijn in de cel (lijnfractie 0.37)
+manen (13,42) l->m  haartint: box-reductie modelhelderheid 113
+manen (18,42) d->m  haartint: box-reductie modelhelderheid 115
+manen (13,43) l->m  haartint: box-reductie modelhelderheid 125
+manen (14,43) l->m  haartint: box-reductie modelhelderheid 128
+manen (20,43) m->d  haartint: box-reductie modelhelderheid 111
+manen (15,44) l->m  haartint: box-reductie modelhelderheid 119
+manen (15,45) l->m  haartint: box-reductie modelhelderheid 122
+manen (17,45) l->m  haartint: box-reductie modelhelderheid 119
+manen (18,45) m->d  streng: modellijn in de cel (lijnfractie 0.39)
+manen (20,45) m->d  haartint: box-reductie modelhelderheid 111
+manen (18,46) l->d  streng: modellijn in de cel (lijnfractie 0.42)
+manen (19,46) l->d  streng: modellijn in de cel (lijnfractie 0.46)
+manen (20,46) m->d  haartint: box-reductie modelhelderheid 108
+manen (21,46) m->d  haartint: box-reductie modelhelderheid 110
+streep (24,27) m->l  1-px-wisseling: tint van beide buren
+streep (25,28) m->l  1-px-wisseling: tint van beide buren
+streep (17,31) m->l  1-px-wisseling: tint van beide buren
+streep (17,32) m->l  1-px-wisseling: tint van beide buren
+streep (17,33) m->l  1-px-wisseling: tint van beide buren
+streep (15,34) m->l  1-px-wisseling: tint van beide buren
+streep (17,34) m->l  1-px-wisseling: tint van beide buren
+streep (21,34) m->l  1-px-wisseling: tint van beide buren
+streep (20,35) l->m  1-px-wisseling: tint van beide buren
+streep (22,35) l->m  1-px-wisseling: tint van beide buren
+streep (19,36) m->l  1-px-wisseling: tint van beide buren
+streep (21,36) m->l  1-px-wisseling: tint van beide buren
+streep (23,36) m->l  1-px-wisseling: tint van beide buren
+streep (19,37) m->l  1-px-wisseling: tint van beide buren
+streep (19,38) m->l  1-px-wisseling: tint van beide buren
+ontkorrel (28,30) m->d  haar: tintvlakje < 3 px naar buurtint
+ontkorrel (13,35) d->l  haar: tintvlakje < 3 px naar buurtint
+ontkorrel (13,36) d->l  haar: tintvlakje < 3 px naar buurtint
+ontkorrel (13,44) l->m  haar: tintvlakje < 3 px naar buurtint
+ontkorrel (14,44) l->m  haar: tintvlakje < 3 px naar buurtint
+ontkorrel (16,40) d->m  haar: tintvlakje < 3 px naar buurtint
+ontkorrel (14,37) d->l  haar: tintvlakje < 3 px naar buurtint
+ontkorrel (25,26) m->l  haar: tintvlakje < 3 px naar buurtint
+ontkorrel (26,27) m->l  haar: tintvlakje < 3 px naar buurtint
+ontkorrel (27,27) m->l  haar: tintvlakje < 3 px naar buurtint
+ontkorrel (13,41) d->m  haar: tintvlakje < 3 px naar buurtint
+ontkorrel (19,26) m->d  haar: tintvlakje < 3 px naar buurtint
+ontkorrel (29,30) l->d  haar: tintvlakje < 3 px naar buurtint
+ontkorrel (18,40) m->d  haar: tintvlakje < 3 px naar buurtint
+ontkorrel (12,32) d->m  haar: tintvlakje < 3 px naar buurtint
+ontkorrel (23,41) d->l  haar: tintvlakje < 3 px naar buurtint
+hals (13,28) m->M  hals: vachtlijn uit het model (1 px, lum 147 -> M)
+hals (13,29) l->M  hals: vachtlijn uit het model (1 px, lum 147 -> M)
+hals (13,30) l->M  hals: vachtlijn uit het model (1 px, lum 147 -> M)
+hals (13,31) l->M  hals: vachtlijn uit het model (1 px, lum 147 -> M)
+hals (13,32) l->M  hals: vachtlijn uit het model (1 px, lum 147 -> M)
+hals (13,33) l->M  hals: vachtlijn uit het model (1 px, lum 147 -> M)
+hals (13,34) l->M  hals: vachtlijn uit het model (1 px, lum 147 -> M)
+hals (14,35) l->M  hals: vachtlijn uit het model (1 px, lum 147 -> M)
+hals (14,36) l->M  hals: vachtlijn uit het model (1 px, lum 147 -> M)
+hals (15,37) l->M  hals: vachtlijn uit het model (1 px, lum 147 -> M)
+hals (15,38) l->M  hals: vachtlijn uit het model (1 px, lum 147 -> M)
+hals2 (14,28) m->M  hals: vachtstrook 2 px zoals het model (vacht 100%)
+hals2 (12,29) m->M  hals: vachtstrook 2 px zoals het model (vacht 91%)
+hals2 (14,29) l->M  hals: vachtstrook 2 px zoals het model (vacht 100%)
+hals2 (14,30) l->M  hals: vachtstrook 2 px zoals het model (vacht 100%)
+hals2 (14,31) l->M  hals: vachtstrook 2 px zoals het model (vacht 100%)
+hals2 (14,32) l->M  hals: vachtstrook 2 px zoals het model (vacht 100%)
+hals2 (14,33) l->M  hals: vachtstrook 2 px zoals het model (vacht 100%)
+hals2 (14,34) l->M  hals: vachtstrook 2 px zoals het model (vacht 100%)
+hals2 (15,36) l->M  hals: vachtstrook 2 px zoals het model (vacht 79%)
+flank (35,34) L->M  flank: vachttint 3 (M) zoals het model; L alleen bovenrand
+flank (36,34) L->M  flank: vachttint 3 (M) zoals het model; L alleen bovenrand
+flank (37,34) L->M  flank: vachttint 3 (M) zoals het model; L alleen bovenrand
+flank (39,34) L->M  flank: vachttint 3 (M) zoals het model; L alleen bovenrand
+flank (40,34) L->M  flank: vachttint 3 (M) zoals het model; L alleen bovenrand
+flank (35,35) L->M  flank: vachttint 3 (M) zoals het model; L alleen bovenrand
+flank (36,35) L->M  flank: vachttint 3 (M) zoals het model; L alleen bovenrand
+flank (37,35) L->M  flank: vachttint 3 (M) zoals het model; L alleen bovenrand
+flank (39,35) L->M  flank: vachttint 3 (M) zoals het model; L alleen bovenrand
+flank (40,35) L->M  flank: vachttint 3 (M) zoals het model; L alleen bovenrand
+flank (39,36) L->M  flank: vachttint 3 (M) zoals het model; L alleen bovenrand
+flank (40,36) L->M  flank: vachttint 3 (M) zoals het model; L alleen bovenrand
+flank (41,36) L->M  flank: vachttint 3 (M) zoals het model; L alleen bovenrand
+flank (39,37) L->M  flank: vachttint 3 (M) zoals het model; L alleen bovenrand
+flank (40,37) L->M  flank: vachttint 3 (M) zoals het model; L alleen bovenrand
+kam (29,27) .->d  kampunt uit de modelomtrek (voorgrond 28%)
+kam (25,26) l->d  lijn onder een kampunt (modellijn 50%)
+kam (27,27) l->d  lijn onder een kampunt (modellijn 38%)
+buik (37,43) D->M  buiksikkel: vachttint uit model (D < 150)
+buik (32,44) D->M  buiksikkel: vachttint uit model (D < 150)
+buik (33,44) D->M  buiksikkel: vachttint uit model (D < 150)
+buik (34,44) D->M  buiksikkel: vachttint uit model (D < 150)
+buik (35,44) D->M  buiksikkel: vachttint uit model (D < 150)
+hoorn (9,7) 3->4  hoorn: lichte voorkant van de draai (modellichtfractie)
+hoorn (9,8) 3->4  hoorn: lichte voorkant van de draai (modellichtfractie)
+hoorn (9,9) 3->4  hoorn: lichte voorkant van de draai (modellichtfractie)
+hoorn (7,10) 3->4  hoorn: lichte voorkant van de draai (modellichtfractie)
+hoorn (6,11) 3->4  hoorn: lichte voorkant van de draai (modellichtfractie)
+oog (10,22) 0->D  oogvlak leeg
+oog (11,22) 0->L  oogvlak leeg
+oog (12,22) 0->L  oogvlak leeg
+oog (13,22) 0->M  oogvlak leeg
+oog (10,23) K->L  oogvlak leeg
+oog (11,23) W->L  oogvlak leeg
+oog (12,23) 0->M  oogvlak leeg
+oog (10,24) K->M  oogvlak leeg
+oog (11,24) K->L  oogvlak leeg
+oog (12,24) 0->M  oogvlak leeg
+oog (10,25) 0->M  oogvlak leeg
+oog (11,25) 0->M  oogvlak leeg
+oog (14,23) M->D  oogvlak leeg
+oog (13,25) M->W  oogvlak leeg
+oog (10,23) L->K  oog B: ponyta bronpixel (17,26) index 14
+oog (11,23) L->W  oog B: ponyta bronpixel (18,26) index 1
+oog (12,23) M->0  oog B: ponyta bronpixel (19,26) index 15
+oog (10,24) M->K  oog B: ponyta bronpixel (17,27) index 14
+oog (11,24) L->K  oog B: ponyta bronpixel (18,27) index 14
+oog (12,24) M->0  oog B: ponyta bronpixel (19,27) index 15
+oog (10,25) M->0  oog B: ponyta bronpixel (17,28) index 15
+oog (11,25) M->0  oog B: ponyta bronpixel (18,28) index 15
+oog (10,22) D->0  lid uit het model (dikke zwarte lijn rij 22, x 10-13)
+oog (11,22) L->0  lid uit het model (dikke zwarte lijn rij 22, x 10-13)
+oog (12,22) L->0  lid uit het model (dikke zwarte lijn rij 22, x 10-13)
+oog (13,22) M->0  lid uit het model (dikke zwarte lijn rij 22, x 10-13)
+lijn (1,16) r->D  buitenlijn opnieuw (lichtkant selout, oorrand goud)
+lijn (2,16) r->D  buitenlijn opnieuw (lichtkant selout, oorrand goud)
+lijn (0,17) r->D  buitenlijn opnieuw (lichtkant selout, oorrand goud)
+lijn (3,17) r->D  buitenlijn opnieuw (lichtkant selout, oorrand goud)
+lijn (0,18) r->D  buitenlijn opnieuw (lichtkant selout, oorrand goud)
+lijn (0,19) r->D  buitenlijn opnieuw (lichtkant selout, oorrand goud)
+lijn (29,27) d->0  buitenlijn opnieuw (lichtkant selout, oorrand goud)
+lijn (1,20) 0->D  linkerrand oor: selout in modelgoud (keurder)
+lijn (1,21) 0->D  linkerrand oor: selout in modelgoud (keurder)
+streng6 (19,35) m->d  streng x19 doorgetrokken (modellijn lum<100: 31%)
+streng6 (19,36) l->d  streng x19 doorgetrokken (modellijn lum<100: 29%)
+streng6 (19,37) l->d  streng x19 doorgetrokken (modellijn lum<100: 44%)
+streng6 (19,38) l->d  streng x19 doorgetrokken (modellijn lum<100: 32%)
+streng6 (19,39) m->d  streng x19 doorgetrokken (modellijn lum<100: 32%)
+streng6 (19,41) m->d  streng x19 doorgetrokken (modellijn lum<100: 58%)
+streng6 (22,30) m->d  streng x22->x21 (modellijn lum<100: 61%)
+streng6 (22,31) D->d  streng x22->x21 (modellijn lum<100: 68%)
+streng6 (22,32) m->d  streng x22->x21 (modellijn lum<100: 47%)
+streng6 (22,33) m->d  streng x22->x21 (modellijn lum<100: 61%)
+streng6 (21,34) l->d  streng x22->x21 (modellijn lum<100: 31%)
+streng6 (21,35) m->d  streng x22->x21 (modellijn lum<100: 31%)
+streng6 (21,36) l->d  streng x22->x21 (modellijn lum<100: 31%)
+hals6 (16,39) D->M  einde halsstrook: modelvacht 78% in strookkleur
+hals6 (17,39) D->M  einde halsstrook: modelvacht 71% in strookkleur
+hals6 (17,40) D->M  einde halsstrook: modelvacht 66% in strookkleur
+wit6 (9,25) W->M  geen wit in het model (0%), vachttint uit modelhelderheid
+buik6 (32,44) M->D  buiksikkel doorlopend (model 155 < 160)
+buik6 (33,44) M->D  buiksikkel doorlopend (model 158 < 160)
+buik6 (34,44) M->D  buiksikkel doorlopend (model 159 < 160)
+buik6 (35,44) M->D  buiksikkel doorlopend (model 152 < 160)
+hoorn6 (19,15) A->0  hoornvoet: modellijn (37%), schaduwkant
+hoorn6 (20,15) A->0  hoornvoet: modellijn (30%), schaduwkant
+hoorn6 (19,16) A->0  hoornvoet: modellijn (32%), schaduwkant
+hoorn6 (20,16) A->0  hoornvoet: modellijn (43%), schaduwkant

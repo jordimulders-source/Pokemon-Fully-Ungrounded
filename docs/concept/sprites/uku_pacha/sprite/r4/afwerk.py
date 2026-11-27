@@ -35,6 +35,28 @@ for it in range(3):
       if c in n4: continue
       vl=[v for v in n4 if v not in 'KnYPW.']
       if vl: R[y][x]=max(sorted(set(vl)),key=vl.count)
+# r4 scherper: tintclusters van 1-2 px (4-buren, zelfde tint) buiten koppen/geest/oog = losse
+# middentonen die als blur lezen -> meerderheid van de vlakburen rondom het cluster
+FILL=set('dsmblpw')
+for it in range(2):
+  gezien=set()
+  for y in range(64):
+    for x in range(64):
+      c=R[y][x]
+      if c not in FILL or (x,y) in gezien or KOP[y,x] or GH[y,x]: continue
+      cl=[(x,y)]; st=[(x,y)]; gezien.add((x,y))
+      while st:
+        a_,b_=st.pop()
+        for dx,dy in ((1,0),(-1,0),(0,1),(0,-1)):
+          u,v=a_+dx,b_+dy
+          if 0<=u<64 and 0<=v<64 and (u,v) not in gezien and R[v][u]==c:
+            gezien.add((u,v)); cl.append((u,v)); st.append((u,v))
+      if len(cl)>2: continue
+      rond=[R[v+dy][u+dx] for u,v in cl for dx,dy in ((1,0),(-1,0),(0,1),(0,-1)) if ins(u+dx,v+dy) and (u+dx,v+dy) not in cl]
+      vl=[t for t in rond if t in FILL]
+      if vl:
+        t=max(sorted(set(vl)),key=vl.count)
+        for u,v in cl: R[v][u]=t
 # losse lijnpunten (geen enkele lijnbuur, 8-buren) in een vlak = ruis van de verkleining -> vlaktoon
 for y in range(64):
   for x in range(64):

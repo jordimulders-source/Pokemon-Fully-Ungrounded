@@ -18,8 +18,8 @@ zet(0,9,[
 "....DhhhhshBBBBBBBBBBns",
 "...DhBhhBhBBBsBBBBBBBns",
 "..DBhhhsbBKKsBBBBBBsnns",
-"..DBhhBhBKWKshhBBmsndds",
-"..DBBBnBKpWshBBmmmnbbbn",
+"..DBhhBhBKKWKhhBBmsndds",
+"..DBBBnBKpKWsBBmmmnbbbn",
 "DDBBBhhnsbhhBBDmmmnbbnb",
 "KhhhhhmmmmmmKKmmmnbbnnb",
 "KKhBKmmmsKKKPKmmKKKKKbb",
@@ -31,8 +31,10 @@ zet(0,9,[
 "...PKP................K",
 "....KP...............Kb",
 ])
+# r4 pupillen (model gemeten): linkeroog licht (9,17) | spleet K (10,16-17, sluit aan op wenkbrauw zoals modelcel (19,26-27)) | wit (11,16-17) | zwart (12,16);
+# rechteroog geel (39,5) | spleet K (40,5) (modelcel (62,11-12)) | geel (41,5), (39-40,6), donkere hoek (41,6)
 # rechterkop: dichte bek; oog r3 = model 1-op-1 verkleind (geel (40-41,5),(39-40,6), donkere hoek (41,6), zwarte rand (38-39,5), wenkbrauw (40-41,4)) (rij 2-15), per rij vanaf de eerste silhouetpixel
-for x,y,row in [(36,2,"DDDDDDD"),(34,3,"DDhhhhmmBDDD"),(32,4,"DDmmshhbKKsBBBK"),(31,5,"DhhhbmsKKYYKssBKK"),
+for x,y,row in [(36,2,"DDDDDDD"),(34,3,"DDhhhhmmBDDD"),(32,4,"DDmmshhbKKsBBBK"),(31,5,"DhhhbmsKYKYKssBKK"),
  (30,6,"DhhhhnbbsYYnhhhsBBK"),(29,7,"DhhhnbbbbbbhbbbbbsBK"),(29,8,"Dhnn"+"b"*14+"sK"),
  (29,9,"Dmhhsnnnnnm"+"b"*7+"ddK"),(30,10,"KhhhhsbbbnnnnKbbsddK"),(31,11,"Kbbbss"+"b"*7+"sbnddK"),
  (32,12,"KKssssnnsbbbbndddK"),(34,13,"KKKssssnnnnndddK"),(37,14,"KssssssbndddK"),(38,15,"KsssbbbndddK")]:

@@ -31,4 +31,4 @@ pal=np.array(im.getpalette()[:48]).reshape(16,3); lum=pal.mean(1)
 meet(a, lambda v: v in (8,12), 'Arbok (lijnen = zwart 8 + donkerpaars 12)')
 import raster2png
 R=raster2png.lees('raster_af.txt'); b=np.array([[-1 if c=='.' else 'KnD'.find(c) if c in 'Kn' else 5 for c in r] for r in R])
-meet(b, lambda v: v in (0,1), 'Uku Pacha r3')
+meet(b, lambda v: v in (0,1), 'Uku Pacha r4')

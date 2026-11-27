@@ -31,14 +31,14 @@ V = {}
 # h1: geest omhoog (rekt uit de schoorsteen), wolken 1 rechts/1 omlaag
 v = schuif(a, GEEST, 0, -1, GEEST)
 v = schuif(v, WOLK, 1, 1, WOLK)
-V['h1'] = (v, 'ANIM_V_SHAKE')
+# h1 (alleen geest + wolken 1 px) las te zwak als beweging; vervallen, basis voor h2
 # h2: als h1 + wielen een halve slag
-v2 = wiel(wiel(v, 33.5, 54.5, 5, 7), 48.5, 48, 4, 5)
+v2 = wiel(wiel(v, 33.5, 54.5, 5, 7), 48, 49.5, 4, 5)
 V['h2'] = (v2, 'ANIM_H_SLIDE')
 # h3: geest waait naar achteren (2 rechts, 1 omhoog), wolken 2 naar achteren, wielen een halve slag
 v = schuif(a, GEEST, 2, -1, GEEST)
 v = schuif(v, WOLK, 2, 0, WOLK)
-v = wiel(wiel(v, 33.5, 54.5, 5, 7), 48.5, 48, 4, 5)
+v = wiel(wiel(v, 33.5, 54.5, 5, 7), 48, 49.5, 4, 5)
 V['h3'] = (v, 'ANIM_V_SHAKE_H_SLIDE')
 
 rijen = []
@@ -46,4 +46,4 @@ for k, (f2, anim) in V.items():
     save_anim_front(a, f2, pal, f'hexpress_{k}_anim_front.png')
     render_gif(a, f2, pal, anim, f'hexpress_{k}_{anim.lower()}.gif')
     rijen.append((f'hexpress_{k}', a, f2, anim))
-vel(rijen, pal, 'hexpress_vel_tmp.png')
+

@@ -159,7 +159,24 @@ def bouw(cfg, S_extra=1.0, log=None):
     for i, d in enumerate(delen):
         mi = vlak & (deel == i)
         if not mi.any(): continue
-        if 'ramp' in d:  # helderheid binnen het deel lineair over de opgegeven tinten
+        ramp = d.get('ramp')
+        if ramp == 'auto':  # tinten van het palet met dezelfde kleurtoon als het deel, op helderheid gesorteerd
+            import colorsys
+            hs = lambda c: colorsys.rgb_to_hsv(*(np.asarray(c) / 255))
+            hm, sm, _ = hs(kleur[mi].mean(0)); kand = []
+            for j in range(1, 14):
+                hj, sj, vj = hs(P[j])
+                if sm < .2: ok = sj < .2
+                else: ok = sj > .2 and min(abs(hj - hm), 1 - abs(hj - hm)) < d.get('toonvenster', .1)
+                if ok: kand.append(j)
+            kand = sorted(kand or [int(afstand(kleur[mi].mean(0)[None], P[1:14]).argmin() + 1)], key=lambda j: P[j].mean())
+            L = kleur[mi].mean(1); lo, hi = np.percentile(L, 5), np.percentile(L, 95); t = np.clip((L - lo) / max(1, hi - lo), 0, 1)
+            # kandidaten op dezelfde schaal: de dichtstbijzijnde tint van het deel is het midden
+            lp = np.array([P[j].mean() for j in kand]); basis = int(afstand(kleur[mi].mean(0)[None], P[kand]).argmin())
+            doel = lp[basis] + (t - np.median(t)) * (hi - lo)
+            idx[mi] = np.array(kand)[np.abs(doel[:, None] - lp[None, :]).argmin(1)]
+            info.append(f"  {d['naam']}: auto-ramp {kand} (basis {kand[basis]})")
+        elif ramp:  # helderheid binnen het deel lineair over de opgegeven tinten
             L = kleur[mi].mean(1); lo, hi = np.percentile(L, 5), np.percentile(L, 95)
             t = np.clip((L - lo) / max(1, hi - lo), 0, .999); idx[mi] = np.array(d['ramp'])[(t * len(d['ramp'])).astype(int)]
         else:

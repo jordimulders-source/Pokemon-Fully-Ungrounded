@@ -74,4 +74,4 @@ for k, (f2, anim) in varianten.items():
     save_anim_front(a, f2, pal, f'gumfish_{k}_anim_front.png')
     render_gif(a, f2, pal, anim, f'gumfish_{k}_{anim.lower()}.gif')
     rijen.append((f'gumfish_{k}', a, f2, anim))
-vel(rijen, pal, 'gumfish_vel_tmp.png')
+

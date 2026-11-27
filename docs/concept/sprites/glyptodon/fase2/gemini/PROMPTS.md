@@ -33,3 +33,22 @@ No effects, no glow, no sparkles, no ground or shadow under it. AVOID: a turtle,
 ```
 
 **Jordi over r2 (`r2_1.png` glad schild, bleke botkap, ringstaart met knobbelknots; `r2_2.png` schild met platenlijnen, stekelknots):** "ik vind ze qua design allebei wel werken, maar is die genoeg een fase 2?"
+- Claude stelde 1–5 voor (verhoudingen, zuilpoten, schildrand als vizier, combinatie, grootte). **Jordi:** "2, 3 en misschien meer stekels, of misschien 1 grote spike zoals dit mario vijandje" (`../referenties/jordi_ene_grote_stekel.png`; alleen de ene grote stekel als idee, de Mario-vijand niet namaken en niet in de prompt noemen).
+
+## r3 (27 nov)
+Nieuw: zuilpoten (2), schildrand als vizier over de gebukte kop (3), stekels X (meer) of Y (één grote). Staart weer A/B. Kies per gesprek één stekelregel en één staartregel.
+```
+Design an original Pokémon as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64 pixels, max 16 colors, white background, facing 3/4 to the left.
+
+Concept: a fully evolved fossil Pokémon (Rock/Normal) based on Glyptodon, the extinct giant armadillo of South America: a four-legged animal under a huge domed shell, with a bony armored cap on top of its head. It is a defensive wall Pokémon: massive, heavy and threatening, clearly armored.
+Legs: thick, straight pillar legs like an elephant's, carrying the heavy shell; NOT short bent legs.
+The shell is smooth: NOT divided into many small tiles or hexagons. The front rim of the shell sticks out forward like a visor over its head.
+[X] Many spikes stick out of the shell.
+[Y] One single large cone-shaped spike sticks up from the top of the shell.
+Pose: it is bracing itself behind its shell, ready to take a hit. The head is still out, but ducked down low under the visor rim of the shell.
+[A] Tail: a thick, tapering tail made of stacked rings of rounded, knobby bony plates, like a blunt drill. NOT a smooth spiral drill.
+[B] Tail: a thick tail ending in a heavy bony club.
+Compact silhouette that fits a square.
+
+No effects, no glow, no sparkles, no ground or shadow under it. AVOID: a turtle, Shieldon or Bastiodon, a modern armadillo, Dunsparce, a plush toy, Neopets style.
+```

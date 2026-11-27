@@ -3625,3 +3625,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.866] - Regionale Hitmonlee: rechte lijnen gefixt (r15 / ek3) (27 nov)
 - Jordi: benen, arm en bovenkant kop hadden slordige rechte lijnen. Benen nu per ring gebouwd zoals de Gen 3-Hitmonlee, koepel rond, arm taps; rest gelijk aan ek2. Eindkeuring ek3 PASS (`hitmonlee_regional/eindkeuring/ek3.png`).
 - Lessen in `GEMINI.md`: rijen schrappen maakt rondingen recht; geribbelde ledematen per ring van 3 rijen.
+
+### [v0.0.867] - Regionale Hitmonchan: Gemini-prompt r1 (27 nov)
+- `hitmonchan_regional/SPEC.md`: ijssculptuur met kubushandschoenen, prompt r1. Intussen Hitmonlee r16 (gladde beenomtrek) in de maak.

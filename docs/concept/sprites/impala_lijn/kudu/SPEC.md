@@ -36,3 +36,4 @@ Alle citaten en lijnbesluiten: `docs/concept/IDEEEN.md` → "Impala-lijn"; samen
 - Jordi op r8 (27 nov): "de vorm klopt niet, gezien het links veel meer eroverheen loopt dan rechts, daarom houd je ook bijna geen ruimte over. Links is het zelfs helemaal 1 geworden met de poot, wat een prutswerk weer".
 - Jordi op r9 (27 nov): "het is qua vorm nu iets te wollerig".
 - Manen (Jordi, 27 nov): "doe maar b6b, maar netter, minder rechte lijnen" → r11 (B6b opgeschoond). Jordi op r11: "HUH", "wat is dit"; daarna: **"o dat is mijn fout, b6a bedoelde ik"** → keuze = `sprite/r10/kudu_r10_B6a.png`, netter, minder rechte lijnen (r12). r11 vervalt.
+- Manen (Jordi, 27 nov): "linkerstuk van r10 b6a en rechterstuk van r12 van de maan" → `sprite/r13/kudu_r13.png` (B6a + r12 vanaf x30 = schouderrand; 15 px). "en dan naar eindkeuring".

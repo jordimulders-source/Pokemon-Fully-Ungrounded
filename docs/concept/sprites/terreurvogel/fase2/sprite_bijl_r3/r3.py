@@ -71,7 +71,9 @@ def stap_poten():
         if np.isnan(t): continue
         ver=x>=44                                   # verre (rechter) poot als geheel donkerder
         t2=t-6 if ver else t
-        if t2<98 or (P15[y,x]<62 and t2<118): v=13              # schaduwkant / schubring / gewricht (gemeten donker)
+        if x<=17 and y>=54:                          # nabije voet: tenen (roze-beige toppen, gemeten tussenruimtes donker)
+            v=15 if t>=165 else (14 if t>=135 else 13)
+        elif t2<98 or (P15[y,x]<62 and t2<118): v=13              # schaduwkant / schubring / gewricht (gemeten donker)
         elif t2>=128: v=15
         else: v=14
         zet(y,x,v,'poten')

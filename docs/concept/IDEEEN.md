@@ -881,3 +881,7 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - **Open vragen (Claude):** is de zandloper in fase 3 nog gebroken (scherven) of heel; wordt het brein van fase 2 het hoofd van de djinn; hoeveel stukken apparatuur.
 - **Jordi (26 nov) op de vragen:** (1) "fase 3 is die gebroken, scherven werk laten we zitten, puur dat die geopend is en daar dus het zand uitloopt wat de djinn vormt." (2) "2 twijfel ik nog over, detail gaat niet goed vertalen naar een sprite, dus misschien alleen met wat belijning tonen dat de djinn aan het brein vast zit" (4) "zolang het allemaal goed gedefinieerd is kan het wel, geen te kleine dingen".
 - **Jordi (26 nov):** "zandloper ligt op de grond en in het midden geopend zou ik zeggen oid. 2 ik dacht aan hoofd, maar kan natuurlijk ook in de core".
+## Regionale Tangela: Medusa (Jordi, 27 nov)
+- **Jordi (27 nov):** "Misschien kunnen we een regional Tangela maken medusa inspired".
+- **Repo-check (Claude):** Tangela en Tangrowth zijn nu puur Grass; Tangela staat in de dex (categorie A, Amazone/verdronken woud).
+- **Open vragen (Claude):** alleen Tangela, of ook Tangrowth als regional; typing; zijn de ranken slangen (met kopjes) of blijven het ranken; zichtbare ogen (Tangela heeft alleen ogen in het kluwen) en het verstenen in het ontwerp of alleen in de moves/ability.

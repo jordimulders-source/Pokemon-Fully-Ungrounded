@@ -20,7 +20,7 @@ def staart(AL=0.35):
                     w3+=w; L=lum[y,x]; r,g,b=nat[y,x]
                     if L<45: wk+=w
                     elif abs(r-b)<16: wg+=w; c+=w*nat[y,x]; cw+=w   # grijze punt
-                    elif L<95: wd+=w
+                    elif L<72: wd+=w
                     else:
                         c+=w*nat[y,x]; cw+=w
                         wt[6 if L<135 else 8 if L<185 else 9]+=w

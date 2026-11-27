@@ -46,3 +46,23 @@ No effects, no glow, no sparkles, no speed lines, no dust, no ground or shadow u
 ```
 
 **Jordi over r2 (`r2.png`, grijsbruin, rode adelaarshaaksnavel, veel veertjes):** "dit model vertaalt nog niet genoeg naar een sprite qua detail en ontwerp, en als je naar deze fotos kijkt is het nog niet genoeg een terreurvogel" (`../referenties/jordi_foto1_kelenken_zittend.png`, `../referenties/jordi_foto2_staand_met_mens.png`). Volgens les GEMINI.md (hoatzin): eerst de foto's in woorden beschrijven en laten bevestigen.
+- **Claude beschreef de foto's:** snavel blokvormig, over bijna de hele lengte even hoog, bovenkant vrijwel recht, alleen klein haakje aan de punt, langer dan de rest van de kop; grote hoekige kop, oog hoog en ver naar achteren; borstelveertjes achter op de kop (foto 2), kaal gezicht (foto 1); lange dikke S-nek rechtop, kop hoog boven het lijf; compact rond lijf, diepe borst, schuin rechtop; kleine gevouwen vleugels, korte staartwaaier; lange stevige poten, kaal en geschubd, grote voeten met haakklauwen; minder detail: grote eenvoudige vlakken. **Jordi:** "akkoord".
+
+## r3 (27 nov)
+Bevestigde beschrijving + sprint en verhouding uit r2. Kleuren niet gegeven (niet besproken).
+```
+Design an original Pokémon as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64 pixels, max 16 colors, white background, facing 3/4 to the left.
+
+Concept: a fully evolved fossil Pokémon (Rock/Fighting) based on the terror bird (Phorusrhacos / Kelenken), the extinct flightless predator bird of South America. It is a fast physical attacker.
+Beak: ENORMOUS and heavy, longer than the rest of the head. It is blocky: almost equally tall along its whole length, with a nearly straight top edge, and only a small hook pointing down at the very tip. NOT a curved eagle beak, NOT an axe, NOT metal.
+Head: large and slightly boxy, with bare skin on the face; the eye sits high and far back, just above the corner of the mouth. A few bristle feathers stick up at the back of the head.
+Neck: long and thick, raised in an S-curve, so the head is held high above the body.
+Body: compact and rounded with a deep chest, held at a slant, not horizontal. Small folded wings, a short fan of tail feathers.
+Legs: long and strong, bare and scaly below the body, with big feet and hooked claws.
+It reads as a revived prehistoric creature the way Archen and Archeops do, NOT made of stone.
+Pose: running in a full sprint.
+The whole figure must fit a square sprite frame: about as tall as it is wide, NOT a long horizontal shape.
+Style: simple, clean, large shapes like official Gen 3 sprites, with only a few feather lines; NOT every feather drawn separately.
+
+No effects, no glow, no sparkles, no speed lines, no dust, no ground or shadow under it. AVOID: copying Archeops, an ostrich, an emu, a chicken, a modern eagle, a dinosaur, a plush toy, Neopets style.
+```

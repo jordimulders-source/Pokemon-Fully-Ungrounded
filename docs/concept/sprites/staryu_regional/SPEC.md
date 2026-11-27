@@ -11,7 +11,7 @@
 - "ga maar bouwen"; "ja staryu r3"
 
 ## Modellen (bevroren)
-- **Staryu:** `gemini/r3_staryu.png` (Jordi: "ja staryu r3").
+- **Staryu:** `gemini/r4_staryu.png` (Jordi 27 nov: "staryu r4 is uitstekend ja"; driekwart). Eerder r3 ("ja staryu r3"), vervangen omdat die te recht stond (Jordi: "ben bang dat staryu ook te recht staat"); sprite r1–r3 van r3 blijft als naslag.
 - **Starmie:** voorste ster = `gemini/r3_starmie.webp` (voorstel Claude: r3 omdat r4 de voorste ster puntiger maakte; Jordi: "ga maar bouwen"). Achterste ster = vorm en hoek van de achterste ster van de Gen 3-Starmie (`graphics/pokemon/starmie/anim_front_gba.png` + `normal_gba.pal`), in de koekkleur met chips van de achterste ster uit het model.
 
 ## Open

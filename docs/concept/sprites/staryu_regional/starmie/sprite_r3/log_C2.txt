@@ -1,0 +1,17 @@
+starmie_r3_C2 schaal 0.55 DX -1 DY 1
+onder        px  61  lengte buiten voorste ster 7.6  chips [(26, 49, 26, 50)]
+rechtsonder  px  86  lengte buiten voorste ster 11.0  chips [(52, 42, 52, 43), (49, 41, 50, 41)]
+rechtsboven  px 101  lengte buiten voorste ster 10.8  chips [(50, 15, 50, 16), (47, 16, 48, 16)]
+linksboven   px 110  lengte buiten voorste ster 12.1  chips [(18, 9, 18, 10), (18, 12, 19, 12)]
+links        px  80  lengte buiten voorste ster 9.2  chips [(6, 32, 7, 32), (9, 32, 10, 32)]
+wit lijn 72 
+juweel lijn 16 [(np.int64(31), np.int64(25)), (np.int64(25), np.int64(26)), (np.int64(33), np.int64(28)), (np.int64(35), np.int64(30)), (np.int64(25), np.int64(31)), (np.int64(35), np.int64(31)), (np.int64(25), np.int64(32)), (np.int64(35), np.int64(32)), (np.int64(25), np.int64(33)), (np.int64(34), np.int64(33)), (np.int64(27), np.int64(34)), (np.int64(32), np.int64(34)), (np.int64(33), np.int64(34)), (np.int64(28), np.int64(35)), (np.int64(30), np.int64(35)), (np.int64(31), np.int64(35))]
+ontkorrelen 113 
+koek in glazuur 1 [(np.int64(20), np.int64(42))]
+achterster 434 
+gat gevuld 4 [(np.int64(43), np.int64(36)), (np.int64(43), np.int64(37)), (np.int64(44), np.int64(37)), (np.int64(44), np.int64(38))]
+buitenlijn 104 
+binnenlijn achter 22 [(np.int64(26), np.int64(14)), (np.int64(25), np.int64(15)), (np.int64(25), np.int64(16)), (np.int64(25), np.int64(17)), (np.int64(25), np.int64(18)), (np.int64(25), np.int64(19)), (np.int64(39), np.int64(21)), (np.int64(40), np.int64(21)), (np.int64(41), np.int64(21)), (np.int64(42), np.int64(21)), (np.int64(43), np.int64(21)), (np.int64(44), np.int64(21)), (np.int64(45), np.int64(21)), (np.int64(46), np.int64(22)), (np.int64(47), np.int64(22)), (np.int64(12), np.int64(30)), (np.int64(13), np.int64(31)), (np.int64(14), np.int64(31)), (np.int64(15), np.int64(32)), (np.int64(43), np.int64(37)), (np.int64(44), np.int64(38)), (np.int64(28), np.int64(45))]
+losse zwarte pixel 4 [(np.int64(16), np.int64(13)), (np.int64(47), np.int64(26)), (np.int64(10), np.int64(27)), (np.int64(24), np.int64(52))]
+chips 18 [(np.int64(26), np.int64(49)), (np.int64(26), np.int64(50)), (np.int64(52), np.int64(42)), (np.int64(52), np.int64(43)), (np.int64(49), np.int64(41)), (np.int64(50), np.int64(41)), (np.int64(50), np.int64(15)), (np.int64(50), np.int64(16)), (np.int64(47), np.int64(16)), (np.int64(48), np.int64(16)), (np.int64(18), np.int64(9)), (np.int64(18), np.int64(10)), (np.int64(18), np.int64(12)), (np.int64(19), np.int64(12)), (np.int64(6), np.int64(32)), (np.int64(7), np.int64(32)), (np.int64(9), np.int64(32)), (np.int64(10), np.int64(32))]
+voorste ster 900 px (x10-50, 41 breed); figuur x4-54 y6-54 51x49, 1338 px

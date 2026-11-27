@@ -1,0 +1,95 @@
+S1: Modelspleet: alleen het modellid (zwart >= 20% per cel), geen glans
+  anders dan B: 10 px, buiten oogvlak A-D + variant: 0
+  (12,21) 0  model: 26% zwart in de cel
+  (10,22) 0  model: 22% zwart in de cel
+  (11,22) 0  model: 43% zwart in de cel
+  (12,22) 0  model: 37% zwart in de cel
+  (11,23) 0  model: 21% zwart in de cel
+S2: Modellid + Ponyta-pupil half onder het lid (bovenrij met glans weg), geen glans
+  anders dan B: 9 px, buiten oogvlak A-D + variant: 0
+  (11,21) 0  oog Ponyta: ponyta bronpixel (18,25) index 15
+  (12,21) 0  oog Ponyta: ponyta bronpixel (19,25) index 15
+  (10,22) K  oog Ponyta: ponyta bronpixel (17,26) index 14
+  (11,22) W  oog Ponyta: ponyta bronpixel (18,26) index 1
+  (12,22) 0  oog Ponyta: ponyta bronpixel (19,26) index 15
+  (10,23) K  oog Ponyta: ponyta bronpixel (17,27) index 14
+  (11,23) K  oog Ponyta: ponyta bronpixel (18,27) index 14
+  (12,23) 0  oog Ponyta: ponyta bronpixel (19,27) index 15
+  (10,24) 0  oog Ponyta: ponyta bronpixel (17,28) index 15
+  (11,24) 0  oog Ponyta: ponyta bronpixel (18,28) index 15
+  (12,21) 0  model: 26% zwart in de cel
+  (10,22) 0  model: 22% zwart in de cel
+  (11,22) 0  model: 43% zwart in de cel
+  (12,22) 0  model: 37% zwart in de cel
+  (11,23) 0  model: 21% zwart in de cel
+S3: Als S2 + Ponyta-glans in de onderhoek (10,23)
+  anders dan B: 10 px, buiten oogvlak A-D + variant: 0
+  (11,21) 0  oog Ponyta: ponyta bronpixel (18,25) index 15
+  (12,21) 0  oog Ponyta: ponyta bronpixel (19,25) index 15
+  (10,22) K  oog Ponyta: ponyta bronpixel (17,26) index 14
+  (11,22) W  oog Ponyta: ponyta bronpixel (18,26) index 1
+  (12,22) 0  oog Ponyta: ponyta bronpixel (19,26) index 15
+  (10,23) K  oog Ponyta: ponyta bronpixel (17,27) index 14
+  (11,23) K  oog Ponyta: ponyta bronpixel (18,27) index 14
+  (12,23) 0  oog Ponyta: ponyta bronpixel (19,27) index 15
+  (10,24) 0  oog Ponyta: ponyta bronpixel (17,28) index 15
+  (11,24) 0  oog Ponyta: ponyta bronpixel (18,28) index 15
+  (12,21) 0  model: 26% zwart in de cel
+  (10,22) 0  model: 22% zwart in de cel
+  (11,22) 0  model: 43% zwart in de cel
+  (12,22) 0  model: 37% zwart in de cel
+  (11,23) 0  model: 21% zwart in de cel
+  (10,23) W  glans: Ponyta bronpixel (18,26), naar de onderhoek van de pupil
+S4: Zwaar lid: modellid rij 22 + 23 (1 rij lager erbij) over de B-pupil, geen glans
+  anders dan B: 4 px, buiten oogvlak A-D + variant: 0
+  (11,22) 0  oog Ponyta: ponyta bronpixel (18,25) index 15
+  (12,22) 0  oog Ponyta: ponyta bronpixel (19,25) index 15
+  (10,23) K  oog Ponyta: ponyta bronpixel (17,26) index 14
+  (11,23) W  oog Ponyta: ponyta bronpixel (18,26) index 1
+  (12,23) 0  oog Ponyta: ponyta bronpixel (19,26) index 15
+  (10,24) K  oog Ponyta: ponyta bronpixel (17,27) index 14
+  (11,24) K  oog Ponyta: ponyta bronpixel (18,27) index 14
+  (12,24) 0  oog Ponyta: ponyta bronpixel (19,27) index 15
+  (10,25) 0  oog Ponyta: ponyta bronpixel (17,28) index 15
+  (11,25) 0  oog Ponyta: ponyta bronpixel (18,28) index 15
+  (12,21) 0  modelplooi (12,21) 26% zwart
+  (10,22) 0  lid uit het model (rij 22, x 10-13)
+  (11,22) 0  lid uit het model (rij 22, x 10-13)
+  (12,22) 0  lid uit het model (rij 22, x 10-13)
+  (13,22) 0  lid uit het model (rij 22, x 10-13)
+  (10,23) 0  modellid 1 rij lager (rij 23, x 10-13)
+  (11,23) 0  modellid 1 rij lager (rij 23, x 10-13)
+  (12,23) 0  modellid 1 rij lager (rij 23, x 10-13)
+  (13,23) 0  modellid 1 rij lager (rij 23, x 10-13)
+S5: Tauros 1-op-1 (schuin lid; lavendel oogwit -> zwart), eigen glans
+  anders dan B: 18 px, buiten oogvlak A-D + variant: 0
+  (13,22) 0  oog Tauros: tauros bronpixel (26,30) index 10
+  (14,22) K  oog Tauros: tauros bronpixel (27,30) index 14
+  (12,23) 0  oog Tauros: tauros bronpixel (25,31) index 10
+  (13,23) 0  oog Tauros: tauros bronpixel (26,31) index 3
+  (14,23) K  oog Tauros: tauros bronpixel (27,31) index 14
+  (11,24) 0  oog Tauros: tauros bronpixel (24,32) index 10
+  (12,24) 0  oog Tauros: tauros bronpixel (25,32) index 15
+  (13,24) W  oog Tauros: tauros bronpixel (26,32) index 1
+  (14,24) K  oog Tauros: tauros bronpixel (27,32) index 14
+  (11,25) K  oog Tauros: tauros bronpixel (24,33) index 14
+  (12,25) 0  oog Tauros: tauros bronpixel (25,33) index 3
+  (13,25) K  oog Tauros: tauros bronpixel (26,33) index 14
+  (11,26) K  oog Tauros: tauros bronpixel (24,34) index 14
+  (12,26) K  oog Tauros: tauros bronpixel (25,34) index 14
+S6: Tauros 1-op-1 zonder glans (glans -> donkerbruin K)
+  anders dan B: 18 px, buiten oogvlak A-D + variant: 0
+  (13,22) 0  oog Tauros: tauros bronpixel (26,30) index 10
+  (14,22) K  oog Tauros: tauros bronpixel (27,30) index 14
+  (12,23) 0  oog Tauros: tauros bronpixel (25,31) index 10
+  (13,23) 0  oog Tauros: tauros bronpixel (26,31) index 3
+  (14,23) K  oog Tauros: tauros bronpixel (27,31) index 14
+  (11,24) 0  oog Tauros: tauros bronpixel (24,32) index 10
+  (12,24) 0  oog Tauros: tauros bronpixel (25,32) index 15
+  (13,24) K  oog Tauros: tauros bronpixel (26,32) index 1
+  (14,24) K  oog Tauros: tauros bronpixel (27,32) index 14
+  (11,25) K  oog Tauros: tauros bronpixel (24,33) index 14
+  (12,25) 0  oog Tauros: tauros bronpixel (25,33) index 3
+  (13,25) K  oog Tauros: tauros bronpixel (26,33) index 14
+  (11,26) K  oog Tauros: tauros bronpixel (24,34) index 14
+  (12,26) K  oog Tauros: tauros bronpixel (25,34) index 14

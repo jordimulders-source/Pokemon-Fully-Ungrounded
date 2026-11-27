@@ -1,0 +1,798 @@
+manen (16,23) 0->d  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (15,25) 0->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (17,25) 0->m  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (25,25) m->d  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (15,26) 0->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (18,26) d->m  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (21,26) d->m  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (23,26) m->l  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (26,26) m->l  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (27,26) m->l  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (28,26) m->d  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (14,27) 0->l  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (15,27) 0->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (18,27) 0->m  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (19,27) 0->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (24,27) m->d  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (27,27) 0->m  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (7,28) 0->l  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (12,28) 0->l  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (15,28) 0->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (18,28) 0->m  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (19,28) m->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (23,28) l->m  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (25,28) m->l  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (28,28) m->l  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (10,29) 0->d  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (11,29) 0->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (15,29) 0->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (18,29) 0->m  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (19,29) 0->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (26,29) m->l  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (27,29) l->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (28,29) 0->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (29,29) 0->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (30,29) 0->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (10,30) 0->d  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (12,30) 0->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (15,30) 0->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (18,30) 0->m  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (19,30) 0->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (22,30) 0->m  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (26,30) m->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (27,30) 0->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (28,30) 0->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (30,30) l->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (31,30) 0->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (32,30) 0->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (12,31) 0->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (15,31) 0->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (17,31) d->m  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (19,31) 0->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (26,31) m->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (27,31) 0->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (28,31) 0->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (29,31) 0->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (30,31) m->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (31,31) 0->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (10,32) m->l  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (11,32) m->d  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (12,32) 0->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (15,32) 0->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (19,32) 0->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (24,32) m->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (25,32) 0->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (26,32) l->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (11,33) m->d  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (12,33) m->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (15,33) 0->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (17,33) m->d  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (19,33) 0->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (23,33) m->d  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (24,33) m->d  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (26,33) l->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (11,34) 0->d  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (12,34) m->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (13,34) l->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (15,34) 0->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (17,34) m->d  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (19,34) 0->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (21,34) m->l  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (22,34) m->l  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (24,34) l->d  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (26,34) 0->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (8,35) m->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (11,35) m->d  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (12,35) m->d  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (13,35) 0->l  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (15,35) 0->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (17,35) 0->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (18,35) m->l  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (19,35) 0->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (21,35) m->d  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (26,35) 0->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (8,36) l->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (9,36) 0->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (11,36) m->d  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (13,36) 0->d  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (15,36) l->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (17,36) 0->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (18,36) l->m  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (19,36) m->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (23,36) m->d  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (26,36) 0->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (9,37) 0->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (14,37) m->l  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (15,37) l->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (17,37) 0->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (19,37) 0->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (20,37) l->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (21,37) 0->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (26,37) l->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (9,38) 0->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (13,38) m->d  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (14,38) 0->d  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (17,38) 0->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (19,38) 0->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (20,38) 0->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (21,38) 0->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (24,38) l->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (25,38) l->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (9,39) l->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (12,39) m->d  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (13,39) m->d  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (15,39) 0->m  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (18,39) l->m  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (19,39) 0->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (20,39) 0->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (21,39) 0->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (24,39) l->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (25,39) 0->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (9,40) 0->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (19,40) 0->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (20,40) m->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (21,40) 0->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (22,40) l->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (23,40) 0->l  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (24,40) l->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (13,41) 0->d  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (16,41) m->d  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (17,41) m->d  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (18,41) 0->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (19,41) 0->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (20,41) 0->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (22,41) l->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (24,41) l->d  hoofdstreng: zwarte modellijn tussen de lokken -> d
+manen (13,42) 0->d  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (14,42) m->d  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (16,42) m->d  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (17,42) m->d  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (18,42) 0->d  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (13,43) m->d  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (14,43) m->d  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (15,43) 0->d  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (17,43) m->d  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (18,43) m->d  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (19,43) 0->d  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (11,44) m->l  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (14,44) 0->l  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (15,44) m->d  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (16,44) 0->d  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (17,44) m->d  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (18,44) m->d  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (19,44) m->d  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (17,45) 0->m  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (18,45) 0->d  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (21,45) 0->d  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (19,46) 0->d  haartint: meest voorkomende haartoon van het model in de cel (harde toongrenzen zoals het model)
+manen (16,25) m->l  lok: lichte kant uit het model l, donkere kant m
+manen (16,26) m->l  lok: lichte kant uit het model l, donkere kant m
+manen (20,26) m->l  lok: lichte kant uit het model l, donkere kant m
+manen (16,27) m->l  lok: lichte kant uit het model l, donkere kant m
+manen (20,27) m->l  lok: lichte kant uit het model l, donkere kant m
+manen (21,27) m->l  lok: lichte kant uit het model l, donkere kant m
+manen (24,27) d->m  lok: lichte kant uit het model l, donkere kant m
+manen (25,27) l->m  lok: lichte kant uit het model l, donkere kant m
+manen (11,28) l->m  lok: lichte kant uit het model l, donkere kant m
+manen (12,28) l->m  lok: lichte kant uit het model l, donkere kant m
+manen (13,28) l->m  lok: lichte kant uit het model l, donkere kant m
+manen (14,28) l->m  lok: lichte kant uit het model l, donkere kant m
+manen (16,28) m->l  lok: lichte kant uit het model l, donkere kant m
+manen (24,28) l->m  lok: lichte kant uit het model l, donkere kant m
+manen (12,29) l->m  lok: lichte kant uit het model l, donkere kant m
+manen (13,29) l->m  lok: lichte kant uit het model l, donkere kant m
+manen (24,29) m->l  lok: lichte kant uit het model l, donkere kant m
+manen (25,29) m->l  lok: lichte kant uit het model l, donkere kant m
+manen (14,30) l->m  lok: lichte kant uit het model l, donkere kant m
+manen (23,30) m->l  lok: lichte kant uit het model l, donkere kant m
+manen (10,31) d->m  lok: lichte kant uit het model l, donkere kant m
+manen (11,31) d->l  lok: lichte kant uit het model l, donkere kant m
+manen (14,31) l->m  lok: lichte kant uit het model l, donkere kant m
+manen (18,31) l->m  lok: lichte kant uit het model l, donkere kant m
+manen (20,31) l->m  lok: lichte kant uit het model l, donkere kant m
+manen (22,31) d->m  lok: lichte kant uit het model l, donkere kant m
+manen (23,31) m->l  lok: lichte kant uit het model l, donkere kant m
+manen (24,31) m->l  lok: lichte kant uit het model l, donkere kant m
+manen (25,31) m->l  lok: lichte kant uit het model l, donkere kant m
+manen (11,32) d->m  lok: lichte kant uit het model l, donkere kant m
+manen (13,32) l->m  lok: lichte kant uit het model l, donkere kant m
+manen (17,32) d->m  lok: lichte kant uit het model l, donkere kant m
+manen (18,32) l->m  lok: lichte kant uit het model l, donkere kant m
+manen (21,32) m->l  lok: lichte kant uit het model l, donkere kant m
+manen (22,32) d->m  lok: lichte kant uit het model l, donkere kant m
+manen (10,33) l->m  lok: lichte kant uit het model l, donkere kant m
+manen (11,33) d->m  lok: lichte kant uit het model l, donkere kant m
+manen (14,33) l->m  lok: lichte kant uit het model l, donkere kant m
+manen (17,33) d->m  lok: lichte kant uit het model l, donkere kant m
+manen (18,33) l->m  lok: lichte kant uit het model l, donkere kant m
+manen (20,33) l->m  lok: lichte kant uit het model l, donkere kant m
+manen (22,33) d->m  lok: lichte kant uit het model l, donkere kant m
+manen (23,33) d->l  lok: lichte kant uit het model l, donkere kant m
+manen (24,33) d->l  lok: lichte kant uit het model l, donkere kant m
+manen (10,34) l->m  lok: lichte kant uit het model l, donkere kant m
+manen (11,34) d->m  lok: lichte kant uit het model l, donkere kant m
+manen (17,34) d->m  lok: lichte kant uit het model l, donkere kant m
+manen (18,34) l->m  lok: lichte kant uit het model l, donkere kant m
+manen (20,34) l->m  lok: lichte kant uit het model l, donkere kant m
+manen (21,34) l->m  lok: lichte kant uit het model l, donkere kant m
+manen (22,34) l->m  lok: lichte kant uit het model l, donkere kant m
+manen (23,34) d->l  lok: lichte kant uit het model l, donkere kant m
+manen (24,34) d->l  lok: lichte kant uit het model l, donkere kant m
+manen (11,35) d->l  lok: lichte kant uit het model l, donkere kant m
+manen (12,35) d->m  lok: lichte kant uit het model l, donkere kant m
+manen (13,35) l->m  lok: lichte kant uit het model l, donkere kant m
+manen (14,35) l->m  lok: lichte kant uit het model l, donkere kant m
+manen (20,35) l->m  lok: lichte kant uit het model l, donkere kant m
+manen (21,35) d->m  lok: lichte kant uit het model l, donkere kant m
+manen (22,35) l->m  lok: lichte kant uit het model l, donkere kant m
+manen (23,35) d->l  lok: lichte kant uit het model l, donkere kant m
+manen (11,36) d->l  lok: lichte kant uit het model l, donkere kant m
+manen (12,36) d->m  lok: lichte kant uit het model l, donkere kant m
+manen (13,36) d->m  lok: lichte kant uit het model l, donkere kant m
+manen (14,36) l->m  lok: lichte kant uit het model l, donkere kant m
+manen (20,36) l->m  lok: lichte kant uit het model l, donkere kant m
+manen (21,36) d->m  lok: lichte kant uit het model l, donkere kant m
+manen (22,36) l->m  lok: lichte kant uit het model l, donkere kant m
+manen (23,36) d->l  lok: lichte kant uit het model l, donkere kant m
+manen (12,37) d->m  lok: lichte kant uit het model l, donkere kant m
+manen (13,37) d->m  lok: lichte kant uit het model l, donkere kant m
+manen (14,37) l->m  lok: lichte kant uit het model l, donkere kant m
+manen (22,37) l->m  lok: lichte kant uit het model l, donkere kant m
+manen (23,37) l->m  lok: lichte kant uit het model l, donkere kant m
+manen (12,38) d->l  lok: lichte kant uit het model l, donkere kant m
+manen (13,38) d->m  lok: lichte kant uit het model l, donkere kant m
+manen (14,38) d->m  lok: lichte kant uit het model l, donkere kant m
+manen (15,38) l->m  lok: lichte kant uit het model l, donkere kant m
+manen (22,38) l->m  lok: lichte kant uit het model l, donkere kant m
+manen (12,39) d->l  lok: lichte kant uit het model l, donkere kant m
+manen (13,39) d->m  lok: lichte kant uit het model l, donkere kant m
+manen (14,39) d->m  lok: lichte kant uit het model l, donkere kant m
+manen (22,39) l->m  lok: lichte kant uit het model l, donkere kant m
+manen (13,40) d->m  lok: lichte kant uit het model l, donkere kant m
+manen (14,40) d->m  lok: lichte kant uit het model l, donkere kant m
+manen (15,40) d->m  lok: lichte kant uit het model l, donkere kant m
+manen (16,40) d->m  lok: lichte kant uit het model l, donkere kant m
+manen (13,41) d->l  lok: lichte kant uit het model l, donkere kant m
+manen (14,41) d->m  lok: lichte kant uit het model l, donkere kant m
+manen (15,41) d->m  lok: lichte kant uit het model l, donkere kant m
+manen (16,41) d->m  lok: lichte kant uit het model l, donkere kant m
+manen (17,41) d->m  lok: lichte kant uit het model l, donkere kant m
+wit (6,24) L->W  witte tekening gezicht (witfractie 0.35)
+wit (13,25) M->W  witte tekening gezicht (witfractie 0.44)
+wit (11,27) M->W  witte tekening gezicht (witfractie 0.40)
+wit (12,27) l->W  witte tekening gezicht (witfractie 0.34)
+wit (6,28) L->W  witte tekening gezicht (witfractie 0.44)
+wit (33,32) L->W  flankstreep: doorlopende lijn op het streepmidden van het model
+wit (34,33) L->W  flankstreep: doorlopende lijn op het streepmidden van het model
+wit (34,34) L->W  flankstreep: doorlopende lijn op het streepmidden van het model
+wit (34,35) M->W  flankstreep: doorlopende lijn op het streepmidden van het model
+wit (35,36) M->W  flankstreep: doorlopende lijn op het streepmidden van het model
+wit (35,37) L->W  flankstreep: doorlopende lijn op het streepmidden van het model
+wit (35,38) M->W  flankstreep: doorlopende lijn op het streepmidden van het model
+wit (35,39) L->W  flankstreep: doorlopende lijn op het streepmidden van het model
+wit (35,40) L->W  flankstreep: doorlopende lijn op het streepmidden van het model
+wit (34,41) L->W  flankstreep: doorlopende lijn op het streepmidden van het model
+wit (34,42) M->W  flankstreep: doorlopende lijn op het streepmidden van het model
+wit (34,43) M->W  flankstreep: doorlopende lijn op het streepmidden van het model
+wit (37,32) L->W  flankstreep: doorlopende lijn op het streepmidden van het model
+wit (37,33) L->W  flankstreep: doorlopende lijn op het streepmidden van het model
+wit (38,34) L->W  flankstreep: doorlopende lijn op het streepmidden van het model
+wit (38,35) L->W  flankstreep: doorlopende lijn op het streepmidden van het model
+wit (38,36) L->W  flankstreep: doorlopende lijn op het streepmidden van het model
+wit (38,37) M->W  flankstreep: doorlopende lijn op het streepmidden van het model
+wit (38,38) M->W  flankstreep: doorlopende lijn op het streepmidden van het model
+wit (38,39) M->W  flankstreep: doorlopende lijn op het streepmidden van het model
+wit (38,40) M->W  flankstreep: doorlopende lijn op het streepmidden van het model
+wit (38,41) M->W  flankstreep: doorlopende lijn op het streepmidden van het model
+wit (38,42) D->W  flankstreep: doorlopende lijn op het streepmidden van het model
+wit (40,32) L->W  flankstreep: doorlopende lijn op het streepmidden van het model
+wit (41,33) L->W  flankstreep: doorlopende lijn op het streepmidden van het model
+wit (41,34) L->W  flankstreep: doorlopende lijn op het streepmidden van het model
+wit (41,35) L->W  flankstreep: doorlopende lijn op het streepmidden van het model
+wit (42,36) M->W  flankstreep: doorlopende lijn op het streepmidden van het model
+wit (42,37) L->W  flankstreep: doorlopende lijn op het streepmidden van het model
+wit (42,38) M->W  flankstreep: doorlopende lijn op het streepmidden van het model
+wit (42,39) M->W  flankstreep: doorlopende lijn op het streepmidden van het model
+wit (42,40) L->W  flankstreep: doorlopende lijn op het streepmidden van het model
+wit (42,41) M->W  flankstreep: doorlopende lijn op het streepmidden van het model
+wit (30,32) M->W  flankstreep: doorlopende lijn op het streepmidden van het model
+wit (30,33) M->W  flankstreep: doorlopende lijn op het streepmidden van het model
+wit (31,34) M->W  flankstreep: doorlopende lijn op het streepmidden van het model
+wit (31,35) M->W  flankstreep: doorlopende lijn op het streepmidden van het model
+wit (31,36) M->W  flankstreep: doorlopende lijn op het streepmidden van het model
+wit (31,37) M->W  flankstreep: doorlopende lijn op het streepmidden van het model
+wit (31,38) M->W  flankstreep: doorlopende lijn op het streepmidden van het model
+wit (31,39) M->W  flankstreep: doorlopende lijn op het streepmidden van het model
+wit (31,40) M->W  flankstreep: doorlopende lijn op het streepmidden van het model
+wit (31,41) M->W  flankstreep: doorlopende lijn op het streepmidden van het model
+wit (31,42) M->W  flankstreep: doorlopende lijn op het streepmidden van het model
+wit (31,43) M->W  flankstreep: doorlopende lijn op het streepmidden van het model
+wit (44,34) M->W  flankstreep: doorlopende lijn op het streepmidden van het model
+wit (44,35) L->W  flankstreep: doorlopende lijn op het streepmidden van het model
+wit (44,36) M->W  flankstreep: doorlopende lijn op het streepmidden van het model
+wit (44,37) L->W  flankstreep: doorlopende lijn op het streepmidden van het model
+wit (45,38) M->W  flankstreep: doorlopende lijn op het streepmidden van het model
+wit (45,39) M->W  flankstreep: doorlopende lijn op het streepmidden van het model
+wit (44,40) M->W  flankstreep: doorlopende lijn op het streepmidden van het model
+hoorn (4,12) 4->.  oude hoornrest buiten de hoornband weg
+hoorn (3,13) 4->.  oude hoornrest buiten de hoornband weg
+hoorn (3,14) 4->.  oude hoornrest buiten de hoornband weg
+hoorn (4,14) W->.  oude hoornrest buiten de hoornband weg
+hoorn (4,15) 0->.  oude hoornrest buiten de hoornband weg
+hoorn (8,0) 4->0  hoornrand: lijn
+hoorn (10,6) 4->0  hoornrand: lijn
+hoorn (9,17) 4->0  hoornrand: lijn
+hoorn (5,3) 4->0  hoornrand: lijn
+hoorn (8,2) .->0  hoornrand: lijn
+hoorn (9,1) .->0  hoornrand: lijn
+hoorn (5,12) 4->0  hoornrand: lijn
+hoorn (9,3) .->0  hoornrand: lijn
+hoorn (5,14) W->0  hoornrand: lijn
+hoorn (7,7) .->0  hoornrand: lijn
+hoorn (6,1) .->0  hoornrand: lijn
+hoorn (7,0) .->0  hoornrand: lijn
+hoorn (7,9) .->0  hoornrand: lijn
+hoorn (5,2) .->0  hoornrand: lijn
+hoorn (5,11) 4->0  hoornrand: lijn
+hoorn (4,13) W->0  hoornrand: lijn
+hoorn (8,13) .->0  hoornrand: lijn
+hoorn (10,10) 3->0  hoornrand: lijn
+hoorn (5,4) .->0  hoornrand: lijn
+hoorn (8,15) 4->0  hoornrand: lijn
+hoorn (10,5) .->0  hoornrand: lijn
+hoorn (6,10) .->0  hoornrand: lijn
+hoorn (10,7) W->0  hoornrand: lijn
+hoorn (9,18) W->0  hoornrand: lijn
+hoorn (10,9) 4->0  hoornrand: lijn
+hoorn (11,8) .->0  hoornrand: lijn
+hoorn (6,5) .->0  hoornrand: lijn
+hoorn (9,4) .->0  hoornrand: lijn
+hoorn (5,15) W->0  hoornrand: lijn
+hoorn (8,14) .->0  hoornrand: lijn
+hoorn (10,11) 3->0  hoornrand: lijn
+hoorn (7,6) .->0  hoornrand: lijn
+hoorn (7,8) .->0  hoornrand: lijn
+hoorn (30,0) .->0  hoornrand: lijn
+hoorn (14,13) 4->0  hoornrand: lijn
+hoorn (17,12) 4->0  hoornrand: lijn
+hoorn (24,8) .->0  hoornrand: lijn
+hoorn (26,5) .->0  hoornrand: lijn
+hoorn (11,16) .->0  hoornrand: lijn
+hoorn (18,12) 4->0  hoornrand: lijn
+hoorn (20,15) .->0  hoornrand: lijn
+hoorn (24,12) 3->0  hoornrand: lijn
+hoorn (27,1) .->0  hoornrand: lijn
+hoorn (28,0) .->0  hoornrand: lijn
+hoorn (22,14) 4->0  hoornrand: lijn
+hoorn (26,2) .->0  hoornrand: lijn
+hoorn (13,14) 4->0  hoornrand: lijn
+hoorn (12,15) 4->0  hoornrand: lijn
+hoorn (24,7) .->0  hoornrand: lijn
+hoorn (25,6) .->0  hoornrand: lijn
+hoorn (10,17) .->0  hoornrand: lijn
+hoorn (15,13) W->0  hoornrand: lijn
+hoorn (16,12) .->0  hoornrand: lijn
+hoorn (28,4) .->0  hoornrand: lijn
+hoorn (24,2) .->0  hoornrand: lijn
+hoorn (19,15) .->0  hoornrand: lijn
+hoorn (24,11) 4->0  hoornrand: lijn
+hoorn (16,16) .->0  hoornrand: lijn
+hoorn (22,4) .->0  hoornrand: lijn
+hoorn (21,6) 4->0  hoornrand: lijn
+hoorn (23,3) .->0  hoornrand: lijn
+hoorn (21,15) .->0  hoornrand: lijn
+hoorn (21,8) 4->0  hoornrand: lijn
+hoorn (27,5) .->0  hoornrand: lijn
+hoorn (30,1) .->0  hoornrand: lijn
+hoorn (20,11) .->0  hoornrand: lijn
+hoorn (19,12) 4->0  hoornrand: lijn
+hoorn (15,17) .->0  hoornrand: lijn
+hoorn (29,0) 4->0  hoornrand: lijn
+hoorn (21,5) .->0  hoornrand: lijn
+hoorn (25,2) .->0  hoornrand: lijn
+hoorn (29,2) 4->0  hoornrand: lijn
+hoorn (21,7) 4->0  hoornrand: lijn
+hoorn (8,18) 3->W  hoorn: modelhelderheid 156, wit 25% (voorkant/slijprand W, licht 4, achterkant 3)
+hoorn (6,11) 4->W  hoorn: modelhelderheid 172, wit 36% (voorkant/slijprand W, licht 4, achterkant 3)
+hoorn (7,10) 4->W  hoorn: modelhelderheid 169, wit 22% (voorkant/slijprand W, licht 4, achterkant 3)
+hoorn (7,3) 4->3  hoorn: modelhelderheid 176, wit 38% (voorkant/slijprand W, licht 4, achterkant 3)
+hoorn (6,13) 0->3  hoorn: modelhelderheid 150, wit 25% (voorkant/slijprand W, licht 4, achterkant 3)
+hoorn (7,5) 4->W  hoorn: modelhelderheid 207, wit 53% (voorkant/slijprand W, licht 4, achterkant 3)
+hoorn (7,14) 0->4  hoorn: modelhelderheid 210, wit 79% (voorkant/slijprand W, licht 4, achterkant 3)
+hoorn (9,5) 4->W  hoorn: modelhelderheid 212, wit 79% (voorkant/slijprand W, licht 4, achterkant 3)
+hoorn (9,7) 3->W  hoorn: modelhelderheid 149, wit 21% (voorkant/slijprand W, licht 4, achterkant 3)
+hoorn (10,8) 4->W  hoorn: modelhelderheid 207, wit 75% (voorkant/slijprand W, licht 4, achterkant 3)
+hoorn (9,9) 3->4  hoorn: modelhelderheid 130, wit 0% (voorkant/slijprand W, licht 4, achterkant 3)
+hoorn (7,11) 3->4  hoorn: modelhelderheid 137, wit 10% (voorkant/slijprand W, licht 4, achterkant 3)
+hoorn (8,6) 0->3  hoorn: modelhelderheid 141, wit 18% (voorkant/slijprand W, licht 4, achterkant 3)
+hoorn (8,8) 0->4  hoorn: modelhelderheid 126, wit 0% (voorkant/slijprand W, licht 4, achterkant 3)
+hoorn (8,17) 4->W  hoorn: modelhelderheid 213, wit 71% (voorkant/slijprand W, licht 4, achterkant 3)
+hoorn (7,18) 0->3  hoorn: modelhelderheid 146, wit 3% (voorkant/slijprand W, licht 4, achterkant 3)
+hoorn (8,1) 0->4  hoorn: modelhelderheid 183, wit 26% (voorkant/slijprand W, licht 4, achterkant 3)
+hoorn (8,10) 3->4  hoorn: modelhelderheid 132, wit 2% (voorkant/slijprand W, licht 4, achterkant 3)
+hoorn (8,3) .->3  hoorn: modelhelderheid 175, wit 0% (voorkant/slijprand W, licht 4, achterkant 3)
+hoorn (8,12) 0->3  hoorn: modelhelderheid 130, wit 0% (voorkant/slijprand W, licht 4, achterkant 3)
+hoorn (9,11) 0->3  hoorn: modelhelderheid 129, wit 0% (voorkant/slijprand W, licht 4, achterkant 3)
+hoorn (7,13) 0->3  hoorn: modelhelderheid 138, wit 6% (voorkant/slijprand W, licht 4, achterkant 3)
+hoorn (6,16) 0->3  hoorn: modelhelderheid 177, wit 40% (voorkant/slijprand W, licht 4, achterkant 3)
+hoorn (7,15) W->4  hoorn: modelhelderheid 225, wit 100% (voorkant/slijprand W, licht 4, achterkant 3)
+hoorn (8,7) 0->3  hoorn: modelhelderheid 122, wit 0% (voorkant/slijprand W, licht 4, achterkant 3)
+hoorn (9,6) 4->W  hoorn: modelhelderheid 221, wit 87% (voorkant/slijprand W, licht 4, achterkant 3)
+hoorn (27,4) 0->3  hoorn: modelhelderheid 168, wit 40% (voorkant/slijprand W, licht 4, achterkant 3)
+hoorn (28,3) 4->W  hoorn: modelhelderheid 203, wit 65% (voorkant/slijprand W, licht 4, achterkant 3)
+hoorn (14,15) 4->W  hoorn: modelhelderheid 194, wit 49% (voorkant/slijprand W, licht 4, achterkant 3)
+hoorn (17,14) W->4  hoorn: modelhelderheid 227, wit 91% (voorkant/slijprand W, licht 4, achterkant 3)
+hoorn (22,12) 4->W  hoorn: modelhelderheid 207, wit 65% (voorkant/slijprand W, licht 4, achterkant 3)
+hoorn (23,13) 4->3  hoorn: modelhelderheid 167, wit 0% (voorkant/slijprand W, licht 4, achterkant 3)
+hoorn (24,5) 0->3  hoorn: modelhelderheid 128, wit 6% (voorkant/slijprand W, licht 4, achterkant 3)
+hoorn (28,2) 4->W  hoorn: modelhelderheid 219, wit 78% (voorkant/slijprand W, licht 4, achterkant 3)
+hoorn (26,4) 0->3  hoorn: modelhelderheid 194, wit 34% (voorkant/slijprand W, licht 4, achterkant 3)
+hoorn (13,16) 3->W  hoorn: modelhelderheid 147, wit 23% (voorkant/slijprand W, licht 4, achterkant 3)
+hoorn (21,11) .->3  hoorn: modelhelderheid 106, wit 0% (voorkant/slijprand W, licht 4, achterkant 3)
+hoorn (23,8) 3->4  hoorn: modelhelderheid 132, wit 0% (voorkant/slijprand W, licht 4, achterkant 3)
+hoorn (12,17) 3->W  hoorn: modelhelderheid 152, wit 23% (voorkant/slijprand W, licht 4, achterkant 3)
+hoorn (11,18) 4->3  hoorn: modelhelderheid 161, wit 19% (voorkant/slijprand W, licht 4, achterkant 3)
+hoorn (20,14) 4->3  hoorn: modelhelderheid 190, wit 24% (voorkant/slijprand W, licht 4, achterkant 3)
+hoorn (21,13) 4->3  hoorn: modelhelderheid 197, wit 44% (voorkant/slijprand W, licht 4, achterkant 3)
+hoorn (23,10) 3->4  hoorn: modelhelderheid 139, wit 13% (voorkant/slijprand W, licht 4, achterkant 3)
+hoorn (29,1) 4->W  hoorn: modelhelderheid 220, wit 67% (voorkant/slijprand W, licht 4, achterkant 3)
+hoorn (22,13) 4->3  hoorn: modelhelderheid 175, wit 10% (voorkant/slijprand W, licht 4, achterkant 3)
+hoorn (25,3) W->4  hoorn: modelhelderheid 223, wit 72% (voorkant/slijprand W, licht 4, achterkant 3)
+hoorn (22,6) 4->W  hoorn: modelhelderheid 175, wit 47% (voorkant/slijprand W, licht 4, achterkant 3)
+hoorn (23,5) 4->W  hoorn: modelhelderheid 195, wit 57% (voorkant/slijprand W, licht 4, achterkant 3)
+hoorn (24,6) 0->3  hoorn: modelhelderheid 139, wit 0% (voorkant/slijprand W, licht 4, achterkant 3)
+hoorn (25,5) 0->3  hoorn: modelhelderheid 135, wit 27% (voorkant/slijprand W, licht 4, achterkant 3)
+hoorn (23,7) 3->4  hoorn: modelhelderheid 130, wit 0% (voorkant/slijprand W, licht 4, achterkant 3)
+hoorn (12,16) 4->W  hoorn: modelhelderheid 216, wit 79% (voorkant/slijprand W, licht 4, achterkant 3)
+hoorn (11,17) 4->W  hoorn: modelhelderheid 165, wit 29% (voorkant/slijprand W, licht 4, achterkant 3)
+hoorn (20,13) 4->W  hoorn: modelhelderheid 221, wit 89% (voorkant/slijprand W, licht 4, achterkant 3)
+hoorn (21,12) 0->W  hoorn: modelhelderheid 204, wit 75% (voorkant/slijprand W, licht 4, achterkant 3)
+hoorn (23,9) 3->4  hoorn: modelhelderheid 144, wit 12% (voorkant/slijprand W, licht 4, achterkant 3)
+hoorn (21,14) 4->3  hoorn: modelhelderheid 183, wit 14% (voorkant/slijprand W, licht 4, achterkant 3)
+hoorn (23,11) 4->W  hoorn: modelhelderheid 161, wit 39% (voorkant/slijprand W, licht 4, achterkant 3)
+hoorn (27,2) 4->3  hoorn: modelhelderheid 190, wit 39% (voorkant/slijprand W, licht 4, achterkant 3)
+hoorn (28,1) .->4  hoorn: modelhelderheid 184, wit 33% (voorkant/slijprand W, licht 4, achterkant 3)
+ontkorrel (1,16) M->D  tintvlakje <3 px naar buurtint
+ontkorrel (4,17) M->D  tintvlakje <3 px naar buurtint
+ontkorrel (10,18) D->M  tintvlakje <3 px naar buurtint
+ontkorrel (6,19) M->D  tintvlakje <3 px naar buurtint
+ontkorrel (8,19) L->M  tintvlakje <3 px naar buurtint
+ontkorrel (6,20) D->M  tintvlakje <3 px naar buurtint
+ontkorrel (14,20) D->M  tintvlakje <3 px naar buurtint
+ontkorrel (10,23) L->M  tintvlakje <3 px naar buurtint
+ontkorrel (15,23) D->M  tintvlakje <3 px naar buurtint
+ontkorrel (16,23) d->m  tintvlakje <3 px naar buurtint
+ontkorrel (11,24) L->M  tintvlakje <3 px naar buurtint
+ontkorrel (16,24) m->l  tintvlakje <3 px naar buurtint
+ontkorrel (21,26) m->l  tintvlakje <3 px naar buurtint
+ontkorrel (26,26) l->m  tintvlakje <3 px naar buurtint
+ontkorrel (27,26) l->m  tintvlakje <3 px naar buurtint
+ontkorrel (28,26) d->m  tintvlakje <3 px naar buurtint
+ontkorrel (14,27) l->m  tintvlakje <3 px naar buurtint
+ontkorrel (14,29) l->m  tintvlakje <3 px naar buurtint
+ontkorrel (13,30) l->m  tintvlakje <3 px naar buurtint
+ontkorrel (13,31) l->m  tintvlakje <3 px naar buurtint
+ontkorrel (14,30) m->l  tintvlakje <3 px naar buurtint
+ontkorrel (14,31) m->l  tintvlakje <3 px naar buurtint
+ontkorrel (10,31) m->l  tintvlakje <3 px naar buurtint
+ontkorrel (11,31) l->m  tintvlakje <3 px naar buurtint
+ontkorrel (32,31) M->L  tintvlakje <3 px naar buurtint
+ontkorrel (33,31) L->M  tintvlakje <3 px naar buurtint
+ontkorrel (40,31) D->M  tintvlakje <3 px naar buurtint
+ontkorrel (10,32) l->m  tintvlakje <3 px naar buurtint
+ontkorrel (13,32) m->l  tintvlakje <3 px naar buurtint
+ontkorrel (14,32) l->m  tintvlakje <3 px naar buurtint
+ontkorrel (20,32) l->m  tintvlakje <3 px naar buurtint
+ontkorrel (21,32) l->m  tintvlakje <3 px naar buurtint
+ontkorrel (32,32) L->M  tintvlakje <3 px naar buurtint
+ontkorrel (41,32) M->D  tintvlakje <3 px naar buurtint
+ontkorrel (42,32) D->L  tintvlakje <3 px naar buurtint
+ontkorrel (13,33) l->m  tintvlakje <3 px naar buurtint
+ontkorrel (14,33) m->l  tintvlakje <3 px naar buurtint
+ontkorrel (33,33) L->M  tintvlakje <3 px naar buurtint
+ontkorrel (43,33) M->L  tintvlakje <3 px naar buurtint
+ontkorrel (44,33) D->L  tintvlakje <3 px naar buurtint
+ontkorrel (14,34) l->m  tintvlakje <3 px naar buurtint
+ontkorrel (18,35) l->m  tintvlakje <3 px naar buurtint
+ontkorrel (18,36) m->l  tintvlakje <3 px naar buurtint
+ontkorrel (46,36) D->M  tintvlakje <3 px naar buurtint
+ontkorrel (18,37) l->m  tintvlakje <3 px naar buurtint
+ontkorrel (18,38) l->m  tintvlakje <3 px naar buurtint
+ontkorrel (16,38) M->D  tintvlakje <3 px naar buurtint
+ontkorrel (28,41) D->M  tintvlakje <3 px naar buurtint
+ontkorrel (28,42) D->M  tintvlakje <3 px naar buurtint
+ontkorrel (48,41) D->M  tintvlakje <3 px naar buurtint
+ontkorrel (19,42) M->D  tintvlakje <3 px naar buurtint
+ontkorrel (22,42) L->M  tintvlakje <3 px naar buurtint
+ontkorrel (22,43) L->M  tintvlakje <3 px naar buurtint
+ontkorrel (38,43) D->M  tintvlakje <3 px naar buurtint
+ontkorrel (12,44) d->l  tintvlakje <3 px naar buurtint
+ontkorrel (15,45) m->d  tintvlakje <3 px naar buurtint
+ontkorrel (17,45) m->d  tintvlakje <3 px naar buurtint
+ontkorrel (27,50) D->M  tintvlakje <3 px naar buurtint
+ontkorrel (17,51) M->D  tintvlakje <3 px naar buurtint
+ontkorrel (17,52) M->D  tintvlakje <3 px naar buurtint
+ontkorrel (18,59) M->D  tintvlakje <3 px naar buurtint
+ontkorrel (6,19) D->M  tintvlakje <3 px naar buurtint
+ontkorrel (16,23) m->l  tintvlakje <3 px naar buurtint
+ontkorrel (14,30) l->m  tintvlakje <3 px naar buurtint
+ontkorrel (14,31) l->m  tintvlakje <3 px naar buurtint
+ontkorrel (10,31) l->m  tintvlakje <3 px naar buurtint
+ontkorrel (32,31) L->M  tintvlakje <3 px naar buurtint
+ontkorrel (13,32) l->m  tintvlakje <3 px naar buurtint
+ontkorrel (14,32) m->l  tintvlakje <3 px naar buurtint
+ontkorrel (41,32) D->L  tintvlakje <3 px naar buurtint
+ontkorrel (13,33) m->l  tintvlakje <3 px naar buurtint
+ontkorrel (14,33) l->m  tintvlakje <3 px naar buurtint
+ontkorrel (18,36) l->m  tintvlakje <3 px naar buurtint
+ontkorrel (14,32) l->m  tintvlakje <3 px naar buurtint
+ontkorrel (13,33) l->m  tintvlakje <3 px naar buurtint
+binnenlijn (19,15) 0->A  binnenlijn in donkerste eigen tint
+binnenlijn (20,15) 0->A  binnenlijn in donkerste eigen tint
+binnenlijn (19,16) 0->A  binnenlijn in donkerste eigen tint
+binnenlijn (20,16) 0->A  binnenlijn in donkerste eigen tint
+binnenlijn (6,17) 0->A  binnenlijn in donkerste eigen tint
+binnenlijn (19,17) 0->r  binnenlijn in donkerste eigen tint
+binnenlijn (5,18) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (6,18) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (9,18) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (5,19) 0->r  binnenlijn in donkerste eigen tint
+binnenlijn (7,19) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (17,19) 0->r  binnenlijn in donkerste eigen tint
+binnenlijn (6,21) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (16,21) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (6,22) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (17,23) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (5,26) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (14,26) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (4,27) 0->K  binnenlijn in donkerste eigen tint
+binnenlijn (5,27) 0->K  binnenlijn in donkerste eigen tint
+binnenlijn (31,32) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (47,38) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (17,39) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (47,39) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (25,40) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (47,40) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (47,41) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (21,42) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (23,42) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (20,44) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (16,45) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (37,45) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (38,45) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (39,45) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (17,46) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (18,46) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (34,46) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (35,46) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (36,46) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (39,46) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (39,47) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (40,47) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (17,60) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (24,62) 0->D  binnenlijn in donkerste eigen tint
+oog (10,21) M->L  oog af: bronpixel (19,22) index 7
+oog (11,21) M->L  oog af: bronpixel (20,22) index 7
+oog (12,21) 0->L  oog af: bronpixel (21,22) index 7
+oog (13,21) M->L  oog af: bronpixel (22,22) index 7
+oog (10,22) 0->L  oog af: bronpixel (19,23) index 7
+oog (11,22) 0->L  oog af: bronpixel (20,23) index 7
+oog (13,22) M->0  oog af: bronpixel (22,23) index 1
+oog (14,22) M->W  oog af: bronpixel (23,23) index 8
+oog (10,23) M->W  oog af: bronpixel (19,24) index 8
+oog (11,23) M->0  oog af: bronpixel (20,24) index 1
+oog (12,23) M->0  oog af: bronpixel (21,24) index 1
+oog (13,23) M->0  oog af: bronpixel (22,24) index 1
+oog (14,23) M->W  oog af: bronpixel (23,24) index 8
+oog (10,24) M->W  oog af: bronpixel (19,25) index 8
+oog (11,24) M->0  oog af: bronpixel (20,25) index 1
+oog (12,24) M->K  oog af: bronpixel (21,25) index 2
+oog (13,24) M->W  oog af: bronpixel (22,25) index 8
+oog (14,24) M->W  oog af: bronpixel (23,25) index 8
+oog (15,24) d->M  oog af: bronpixel (24,25) index 5
+oog (9,25) M->W  oog af: bronpixel (18,26) index 8
+oog (10,25) M->W  oog af: bronpixel (19,26) index 8
+oog (13,25) W->M  oog af: bronpixel (22,26) index 6
+oog (15,25) d->M  oog af: bronpixel (24,26) index 5
+poot (45,51) 0->D  Kirlia: linkerlijn donkere eigen tint
+poot (45,52) 0->D  Kirlia: linkerlijn donkere eigen tint
+poot (46,53) M->L  Kirlia: tint in de lengte
+poot (47,53) M->L  Kirlia: tint in de lengte
+poot (46,54) M->L  Kirlia: tint in de lengte
+poot (47,54) M->L  Kirlia: tint in de lengte
+poot (46,55) M->L  Kirlia: tint in de lengte
+poot (47,55) M->L  Kirlia: tint in de lengte
+poot (24,54) 0->D  Kirlia: linkerlijn donkere eigen tint
+poot (24,57) M->L  Kirlia: tint in de lengte
+poot (25,57) M->L  Kirlia: tint in de lengte
+poot (24,58) M->L  Kirlia: tint in de lengte
+poot (25,58) M->L  Kirlia: tint in de lengte
+poot (24,59) M->L  Kirlia: tint in de lengte
+poot (25,59) M->L  Kirlia: tint in de lengte
+poot (24,61) 0->D  Kirlia: linkerlijn donkere eigen tint
+hoef (16,61) 0->K  hoef zoals de impala: binnen donker, rechts/onder zwart
+hoef (17,61) 0->K  hoef zoals de impala: binnen donker, rechts/onder zwart
+hoef (19,61) .->0  hoef 1 px breder dan de poot (impala: hoef 4-5 px, poot 3)
+hoef (18,62) .->0  hoef 1 px breder dan de poot (impala: hoef 4-5 px, poot 3)
+hoef (23,62) 0->K  hoef zoals de impala: binnen donker, rechts/onder zwart
+hoef (24,62) D->K  hoef zoals de impala: binnen donker, rechts/onder zwart
+hoef (26,62) .->0  hoef 1 px breder dan de poot (impala: hoef 4-5 px, poot 3)
+hoef (26,63) .->0  hoef 1 px breder dan de poot (impala: hoef 4-5 px, poot 3)
+hoef (36,60) 0->K  hoef zoals de impala: binnen donker, rechts/onder zwart
+hoef (37,60) 0->K  hoef zoals de impala: binnen donker, rechts/onder zwart
+hoef (39,60) .->0  hoef 1 px breder dan de poot (impala: hoef 4-5 px, poot 3)
+hoef (37,61) .->0  hoef 1 px breder dan de poot (impala: hoef 4-5 px, poot 3)
+hoef (45,61) 0->K  hoef zoals de impala: binnen donker, rechts/onder zwart
+hoef (46,61) 0->K  hoef zoals de impala: binnen donker, rechts/onder zwart
+hoef (47,61) 0->K  hoef zoals de impala: binnen donker, rechts/onder zwart
+hoef (49,61) .->0  hoef 1 px breder dan de poot (impala: hoef 4-5 px, poot 3)
+hoef (48,62) .->0  hoef 1 px breder dan de poot (impala: hoef 4-5 px, poot 3)
+lijn (1,16) D->0  buitenlijn dicht
+lijn (2,16) D->0  buitenlijn dicht
+lijn (18,16) D->0  buitenlijn dicht
+lijn (3,17) R->0  buitenlijn dicht
+lijn (4,17) D->0  buitenlijn dicht
+lijn (17,17) M->0  buitenlijn dicht
+lijn (23,17) R->0  buitenlijn dicht
+lijn (16,18) M->0  buitenlijn dicht
+lijn (23,18) R->0  buitenlijn dicht
+lijn (23,19) R->0  buitenlijn dicht
+lijn (1,20) R->0  buitenlijn dicht
+lijn (22,21) R->0  buitenlijn dicht
+lijn (3,22) R->0  buitenlijn dicht
+lijn (5,24) M->0  buitenlijn dicht
+lijn (18,24) D->0  buitenlijn dicht
+lijn (4,25) M->0  buitenlijn dicht
+lijn (19,25) d->0  buitenlijn dicht
+lijn (25,25) d->0  buitenlijn dicht
+lijn (20,26) l->0  buitenlijn dicht
+lijn (21,26) l->0  buitenlijn dicht
+lijn (23,26) l->0  buitenlijn dicht
+lijn (24,26) M->0  buitenlijn dicht
+lijn (27,26) m->0  buitenlijn dicht
+lijn (28,26) m->0  buitenlijn dicht
+lijn (22,27) l->0  buitenlijn dicht
+lijn (30,29) d->0  buitenlijn dicht
+lijn (31,30) d->0  buitenlijn dicht
+lijn (32,30) d->0  buitenlijn dicht
+lijn (33,31) M->0  buitenlijn dicht
+lijn (34,31) M->0  buitenlijn dicht
+lijn (35,31) M->0  buitenlijn dicht
+lijn (36,31) M->0  buitenlijn dicht
+lijn (37,31) M->0  buitenlijn dicht
+lijn (38,31) M->0  buitenlijn dicht
+lijn (39,31) M->0  buitenlijn dicht
+lijn (40,31) M->0  buitenlijn dicht
+lijn (41,32) L->0  buitenlijn dicht
+lijn (42,32) L->0  buitenlijn dicht
+lijn (9,33) l->0  buitenlijn dicht
+lijn (43,33) L->0  buitenlijn dicht
+lijn (44,33) L->0  buitenlijn dicht
+lijn (9,34) l->0  buitenlijn dicht
+lijn (45,34) M->0  buitenlijn dicht
+lijn (46,34) M->0  buitenlijn dicht
+lijn (8,35) d->0  buitenlijn dicht
+lijn (47,35) M->0  buitenlijn dicht
+lijn (8,36) d->0  buitenlijn dicht
+lijn (9,37) d->0  buitenlijn dicht
+lijn (48,37) M->0  buitenlijn dicht
+lijn (9,38) d->0  buitenlijn dicht
+lijn (48,38) M->0  buitenlijn dicht
+lijn (9,39) d->0  buitenlijn dicht
+lijn (9,40) d->0  buitenlijn dicht
+lijn (49,41) M->0  buitenlijn dicht
+lijn (11,43) l->0  buitenlijn dicht
+lijn (46,43) M->0  buitenlijn dicht
+lijn (11,44) l->0  buitenlijn dicht
+lijn (12,44) l->0  buitenlijn dicht
+lijn (46,44) M->0  buitenlijn dicht
+lijn (13,45) l->0  buitenlijn dicht
+lijn (29,45) M->0  buitenlijn dicht
+lijn (46,45) M->0  buitenlijn dicht
+lijn (46,46) M->0  buitenlijn dicht
+lijn (16,47) D->0  buitenlijn dicht
+lijn (46,47) M->0  buitenlijn dicht
+lijn (20,48) D->0  buitenlijn dicht
+lijn (23,48) M->0  buitenlijn dicht
+lijn (27,48) M->0  buitenlijn dicht
+lijn (23,49) D->0  buitenlijn dicht
+lijn (47,49) M->0  buitenlijn dicht
+lijn (17,50) D->0  buitenlijn dicht
+lijn (23,50) D->0  buitenlijn dicht
+lijn (27,50) M->0  buitenlijn dicht
+lijn (36,50) D->0  buitenlijn dicht
+lijn (40,50) D->0  buitenlijn dicht
+lijn (44,50) M->0  buitenlijn dicht
+lijn (17,51) D->0  buitenlijn dicht
+lijn (23,51) D->0  buitenlijn dicht
+lijn (26,51) M->0  buitenlijn dicht
+lijn (37,51) D->0  buitenlijn dicht
+lijn (45,51) D->0  buitenlijn dicht
+lijn (17,52) D->0  buitenlijn dicht
+lijn (26,52) M->0  buitenlijn dicht
+lijn (38,52) D->0  buitenlijn dicht
+lijn (45,52) D->0  buitenlijn dicht
+lijn (17,53) D->0  buitenlijn dicht
+lijn (19,53) D->0  buitenlijn dicht
+lijn (24,53) M->0  buitenlijn dicht
+lijn (26,53) M->0  buitenlijn dicht
+lijn (38,53) D->0  buitenlijn dicht
+lijn (46,53) L->0  buitenlijn dicht
+lijn (17,54) D->0  buitenlijn dicht
+lijn (24,54) D->0  buitenlijn dicht
+lijn (38,54) D->0  buitenlijn dicht
+lijn (46,54) L->0  buitenlijn dicht
+lijn (17,55) D->0  buitenlijn dicht
+lijn (24,55) M->0  buitenlijn dicht
+lijn (38,55) D->0  buitenlijn dicht
+lijn (39,55) D->0  buitenlijn dicht
+lijn (46,55) L->0  buitenlijn dicht
+lijn (17,56) D->0  buitenlijn dicht
+lijn (24,56) M->0  buitenlijn dicht
+lijn (37,56) D->0  buitenlijn dicht
+lijn (39,56) D->0  buitenlijn dicht
+lijn (46,56) M->0  buitenlijn dicht
+lijn (17,57) D->0  buitenlijn dicht
+lijn (24,57) L->0  buitenlijn dicht
+lijn (37,57) D->0  buitenlijn dicht
+lijn (46,57) M->0  buitenlijn dicht
+lijn (48,57) M->0  buitenlijn dicht
+lijn (17,58) D->0  buitenlijn dicht
+lijn (24,58) L->0  buitenlijn dicht
+lijn (37,58) D->0  buitenlijn dicht
+lijn (46,58) M->0  buitenlijn dicht
+lijn (48,58) M->0  buitenlijn dicht
+lijn (16,59) D->0  buitenlijn dicht
+lijn (24,59) L->0  buitenlijn dicht
+lijn (46,59) M->0  buitenlijn dicht
+lijn (48,59) M->0  buitenlijn dicht
+lijn (24,60) M->0  buitenlijn dicht
+lijn (25,61) M->0  buitenlijn dicht
+lijn (7,0) 0->A  selout lichtkant (staal, donkerste staaltint)
+lijn (28,0) 0->A  selout lichtkant (staal, donkerste staaltint)
+lijn (6,1) 0->A  selout lichtkant (staal, donkerste staaltint)
+lijn (27,1) 0->A  selout lichtkant (staal, donkerste staaltint)
+lijn (24,2) 0->A  selout lichtkant (staal, donkerste staaltint)
+lijn (25,2) 0->A  selout lichtkant (staal, donkerste staaltint)
+lijn (26,2) 0->A  selout lichtkant (staal, donkerste staaltint)
+lijn (23,3) 0->A  selout lichtkant (staal, donkerste staaltint)
+lijn (22,4) 0->A  selout lichtkant (staal, donkerste staaltint)
+lijn (7,9) 0->A  selout lichtkant (staal, donkerste staaltint)
+lijn (6,10) 0->A  selout lichtkant (staal, donkerste staaltint)
+lijn (21,10) 0->A  selout lichtkant (staal, donkerste staaltint)
+lijn (5,11) 0->A  selout lichtkant (staal, donkerste staaltint)
+lijn (20,11) 0->A  selout lichtkant (staal, donkerste staaltint)
+lijn (16,12) 0->A  selout lichtkant (staal, donkerste staaltint)
+lijn (17,12) 0->A  selout lichtkant (staal, donkerste staaltint)
+lijn (18,12) 0->A  selout lichtkant (staal, donkerste staaltint)
+lijn (19,12) 0->A  selout lichtkant (staal, donkerste staaltint)
+lijn (14,13) 0->A  selout lichtkant (staal, donkerste staaltint)
+lijn (15,13) 0->A  selout lichtkant (staal, donkerste staaltint)
+lijn (13,14) 0->A  selout lichtkant (staal, donkerste staaltint)
+lijn (12,15) 0->A  selout lichtkant (staal, donkerste staaltint)
+lijn (1,16) 0->D  selout lichtkant
+lijn (2,16) 0->D  selout lichtkant
+lijn (5,16) 0->A  selout lichtkant (staal, donkerste staaltint)
+lijn (11,16) 0->A  selout lichtkant (staal, donkerste staaltint)
+lijn (0,17) 0->r  selout lichtkant
+lijn (3,17) 0->r  selout lichtkant
+lijn (4,17) 0->D  selout lichtkant
+lijn (10,17) 0->A  selout lichtkant (staal, donkerste staaltint)
+lijn (16,18) 0->D  selout lichtkant
+lijn (17,18) 0->D  selout lichtkant
+lijn (4,25) 0->D  selout lichtkant
+lijn (25,25) 0->d  selout lichtkant
+lijn (26,25) 0->d  selout lichtkant
+lijn (21,26) 0->d  selout lichtkant
+lijn (23,26) 0->d  selout lichtkant
+lijn (24,26) 0->D  selout lichtkant
+lijn (25,26) 0->d  selout lichtkant
+lijn (22,27) 0->d  selout lichtkant
+lijn (33,31) 0->D  selout lichtkant
+lijn (34,31) 0->D  selout lichtkant
+lijn (35,31) 0->D  selout lichtkant
+lijn (36,31) 0->D  selout lichtkant
+lijn (37,31) 0->D  selout lichtkant
+lijn (38,31) 0->D  selout lichtkant
+lijn (39,31) 0->D  selout lichtkant
+lijn (40,31) 0->D  selout lichtkant

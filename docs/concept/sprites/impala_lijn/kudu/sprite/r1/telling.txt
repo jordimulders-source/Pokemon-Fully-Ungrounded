@@ -1,0 +1,5 @@
+A: 120 px anders dan kaal, alle in rij 27-44, kolom 19-38 (manenzone); buiten de manenzone 0
+B: 146 px anders dan kaal, alle in rij 24-47, kolom 17-36 (manenzone); buiten de manenzone 0
+C: 90 px anders dan kaal, alle in rij 26-48, kolom 23-39 (manenzone); buiten de manenzone 0
+buitenlijn dicht (technisch, alle varianten): {'kaal': 174, 'A': 175, 'B': 176, 'C': 172, 'groot_kaal': 180, 'groot_A': 179} px
+groot: 8 van 72 rijen in het hoornstuk geschrapt ([2, 4, 7, 8, 9, 11, 13, 15]); verder kaal

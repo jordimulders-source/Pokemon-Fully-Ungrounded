@@ -1,0 +1,2 @@
+Pixels anders dan de kale reductie (kaal gemapt), per zone (eindstand): {'staal': 126, 'vacht': 225, 'roze': 11, 'manen': 89, 'donker': 8, 'wit': 1}, totaal 460 van 1327
+Per stap (incl. tussenstappen die later weer wijzigen): {'wit': 53, 'hoorn': 123, 'ontkorrel': 62, 'binnenlijn': 124, 'poot': 16, 'hoef': 6, 'lijn': 162}

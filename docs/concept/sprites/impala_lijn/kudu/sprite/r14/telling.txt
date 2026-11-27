@@ -1,0 +1,10 @@
+modus P kleuren in gebruik 14 (+ index 0 transparant), index 0 alleen op transparant: True
+silhouet (alpha) diff: 0
+oogvlak K4 x15-19 y21-24 diff (letters): 0 | K-tint 5C4434 -> 6E4614 (zelfde rol)
+W-pixels (strepen, slijprand, snuit) diff: 0
+vulpixels (niet-lijn) veranderd van letter: 2 -> alleen de 2 open randen (M->K) zijn vul->lijn
+hoornvulling (3/4/W in hoornbox) diff: 0
+veranderde px per zone: {'hoorns (y<15)': 7, 'kop/oren (y15-29, x<24)': 11, 'manen+franje+halsstrook (x14-37, y23-42, niet kop)': 56, 'lijf/staart': 9, 'poten (y>=43)': 41, 'overig': 10} totaal 134
+overgangen: Counter({'0->K': 120, '0->A': 12, 'M->K': 2})
+aandeel zeer donker (0+K): r13 0.231 -> r14 0.224 (E3 band 0,10-0,25)
+zwart 0 op de rand r13 301 -> r14 169

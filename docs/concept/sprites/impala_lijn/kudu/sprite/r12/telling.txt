@@ -1,0 +1,45 @@
+Rechte lijnstukken >3 px (0/d/K naast manen- of franjevulling): B6a [('v', 9, 30, 33), ('v', 12, 30, 34), ('v', 13, 35, 38), ('v', 15, 28, 35), ('v', 26, 32, 36)] | r12 geen
+Pixels anders dan B6a: 41; buiten manen+franje+halsstrook+1 px rand: 0 []; oogvlak K4: 0
+Tintvlakjes <3 px (l/m/L/M/D, 8-verbonden) rond de wijzigingen: B6a geen | r12 geen
+Kleuren incl. transparant: 15
+  (14,28) M -> d  nekmanen: linkerrand 1 px naar links (boog begint onder de kaak)
+  (15,28) d -> m  nekmanen: vulling (was rand), tint van de buur rechts (m)
+  (14,29) M -> d  nekmanen: linkerrand 1 px naar links (boog begint onder de kaak)
+  (15,29) d -> m  nekmanen: vulling (was rand), tint van de buur rechts (m)
+  (8,33) . -> d  franje: linkerrand buigt 1 px uit (bolling begint op rij 33); lichtkant d zoals rij 32/34
+  (9,33) d -> l  franje: vulling (was linkerrand), tint van de buren (l)
+  (12,33) 0 -> l  franje: vulling (was rechterrand), tint van de buren (l)
+  (13,33) M -> 0  franje: rechterrand 1 px mee met de halsstrook (schaduwkant 0)
+  (15,33) d -> M  halsstrook 1 px meegebogen (lijftint M)
+  (16,33) l -> d  nekmanen: linkerrand 1 px mee met de halsstrook (lichtkant d)
+  (12,34) 0 -> l  franje: vulling (was rechterrand), tint van kolom x12 eronder (l)
+  (13,34) M -> 0  franje: rechterrand 1 px mee met de halsstrook (schaduwkant 0)
+  (15,34) d -> M  halsstrook 1 px meegebogen (lijftint M)
+  (16,34) l -> d  nekmanen: linkerrand 1 px mee met de halsstrook (lichtkant d)
+  (26,34) 0 -> l  schouder: vulling (was rand), tint van de buur links
+  (27,34) D -> 0  schouder: rand 1 px naar buiten (boog; schaduwkant 0)
+  (28,34) M -> D  schouder: slagschaduw D schuift mee (1 px naast de rand, zoals in B6a)
+  (15,35) 0 -> M  halsstrook 1 px meegebogen (lijftint M)
+  (16,35) m -> d  nekmanen: linkerrand 1 px mee met de halsstrook (lichtkant d)
+  (17,35) m -> l  nekmanen: losse m-pixel (1 px vlakje na de randverschuiving) -> tint van de buren (l)
+  (26,35) 0 -> l  schouder: vulling (was rand), tint van de buur links
+  (27,35) D -> 0  schouder: rand 1 px naar buiten (boog; schaduwkant 0)
+  (28,35) M -> D  schouder: slagschaduw D schuift mee (1 px naast de rand, zoals in B6a)
+  (13,36) 0 -> l  franje: vulling (was rechterrand), tint van de buur links (l)
+  (14,36) M -> 0  franje: rechterrand 1 px mee met de halsstrook (schaduwkant 0)
+  (16,36) d -> M  halsstrook 1 px meegebogen (lijftint M)
+  (17,36) m -> d  nekmanen: linkerrand 1 px mee met de halsstrook (lichtkant d)
+  (26,36) 0 -> m  schouder: vulling (was rand), tint van de buur links
+  (27,36) D -> 0  schouder: rand 1 px naar buiten (boog; schaduwkant 0)
+  (28,36) M -> D  schouder: slagschaduw D schuift mee (1 px naast de rand, zoals in B6a)
+  (13,37) 0 -> l  franje: vulling (was rechterrand), tint van de buur links (l)
+  (14,37) D -> 0  franje: rechterrand 1 px mee met de halsstrook (was D-slagschaduw, nu rand)
+  (16,37) d -> M  halsstrook 1 px meegebogen (lijftint M)
+  (17,37) m -> d  nekmanen: linkerrand 1 px mee met de halsstrook (lichtkant d)
+  (25,37) 0 -> m  schouder: vulling (was rand), tint van de buur links (m)
+  (26,37) D -> 0  schouder: rand 1 px naar buiten (boog; schaduwkant 0)
+  (27,37) M -> D  schouder: slagschaduw D schuift mee (1 px naast de rand, zoals in B6a)
+  (16,38) 0 -> M  halsstrook 1 px meegebogen (lijftint M); de punt eindigt op (17,38) zoals in B6a
+  (25,38) 0 -> m  schouder: vulling (was rand), tint van de buur links (m)
+  (26,38) D -> 0  schouder: rand 1 px naar buiten (boog; schaduwkant 0)
+  (27,38) M -> D  schouder: slagschaduw D schuift mee (1 px naast de rand, zoals in B6a)

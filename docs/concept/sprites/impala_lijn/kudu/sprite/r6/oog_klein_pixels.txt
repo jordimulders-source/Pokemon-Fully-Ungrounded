@@ -1,0 +1,28 @@
+K1: Sawsbuck (hert, Gen 5): smal zwart oog, lichtgrijs ervoor
+  anders dan r6 (oog B): 11 px, buiten oogvlak A-D + variant: 0
+  (11,22) 4  sawsbuck bronpixel (20,23) index d
+  (12,22) 0  sawsbuck bronpixel (21,23) index 2
+  (13,22) 3  sawsbuck bronpixel (22,23) index e
+  (11,23) 0  sawsbuck bronpixel (20,24) index 2
+  (12,23) K  sawsbuck bronpixel (21,24) index 5
+K2: Wailord (Gen 3): 1x2 zwart, donkere rand erachter, geen glans
+  anders dan r6 (oog B): 11 px, buiten oogvlak A-D + variant: 0
+  (11,22) 0  wailord bronpixel (29,14) index d
+  (12,22) D  wailord bronpixel (30,14) index 9
+  (11,23) 0  wailord bronpixel (29,15) index d
+  (12,23) K  wailord bronpixel (30,15) index a
+K3: Kabuto (Gen 1): klein zwart oog, glans rechtsboven, donkere rand
+  anders dan r6 (oog B): 12 px, buiten oogvlak A-D + variant: 0
+  (11,22) D  kabuto bronpixel (32,20) index d
+  (12,22) 0  kabuto bronpixel (33,20) index f
+  (13,22) W  kabuto bronpixel (34,20) index 1
+  (14,22) D  kabuto bronpixel (35,20) index d
+  (12,23) 0  kabuto bronpixel (33,21) index f
+  (13,23) 0  kabuto bronpixel (34,21) index f
+K4: Bidoof (Gen 4): 3 zwarte pixels, donkere rand, geen glans
+  anders dan r6 (oog B): 10 px, buiten oogvlak A-D + variant: 0
+  (10,22) K  bidoof bronpixel (45,27) index 1
+  (11,22) 0  bidoof bronpixel (46,27) index 5
+  (12,22) 0  bidoof bronpixel (47,27) index 5
+  (11,23) 0  bidoof bronpixel (46,28) index 5
+  (12,23) D  bidoof bronpixel (47,28) index 2

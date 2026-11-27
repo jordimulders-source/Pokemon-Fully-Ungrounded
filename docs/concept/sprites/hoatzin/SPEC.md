@@ -126,3 +126,242 @@ Opdracht: `sprite/OPDRACHT.md`.
 - **r11** (`sprite/r11/`): kussens weg (lichte randen per veergroep), snavel één rugstrook, kop lichte sikkel. Naar keurder.
 - **r12** (`sprite/r12/`): B-lijn met keurderpunten (tintverdeling 31/39/26/4 %, blauwgrijs, achterhoofd rond, kuifnaad gebroken, één borstbolling, schouderhooglicht). Naar Jordi.
 - **r13** (`sprite/r13/`): DC-eindkeuring op r12, 14 px (4 zwarte binnenlijnen → eigen tint, veerlijnen en voorrand in de opgeheven vleugel uit het model, borsthooglicht als druppel), alpha-diff 0. Naar Jordi.
+
+## Fase 1 (kuiken), overleg 27 nov
+- Inspiratie (Jordi): `referenties/kuiken_1_ai_uncanny.webp`, `kuiken_2_klauwtjes.png`, `kuiken_3_klimmend.webp`, `kuiken_4_tak.png`. Jordi: "Dit is de inspiratie. fotos als inspiratie maar dan iets meer uncanny, iets meer cryptid. Die eerste foto is namelijk een beetje AI geedit en die kant moeten we op".
+- Antwoorden Jordi (27 nov): "geen plague doctor erin nee, hij is vooral zwart met wat gelige tinten"; "geen voorwerp" (geen tak).
+- Pose (Jordi, 27 nov): "hij moet een beetje onhandig erbij staan".
+- Pose (Jordi): "hij staat maar in een zodanige pose dat je de dunne gek uitziende poten en klauwtjes kan zien".
+- Gelige tinten: "alleen in het dons". Snavel: kromme grijze snavel van foto 1 ("2 ja"). Oog: niet rood/blauw, "grijze ring" (foto 1). "nee, geen teken".
+- Grootte: 700–900 px (voorstel Claude), Jordi: "grootte ok".
+- Kuif: geen (Jordi: "geen kuif zoals ik al zei").
+- **r1** (`gemini/fase1_r1.png`, prompt v1 met eigen toevoegingen van Claude: damp/scruffy down, pin feathers, half-spread wings). Jordi: "Dit ontwerp kunnen we niks mee, het is een slordige normale vogel, het uncanny zit niet in de vacht maar in de poot lengte, kijk goed naar deze. Hij hoort ook geen of bijna geen vleugel te hebben". Referentie: `referenties/kuiken_5_pootlengte.png`.
+- **r2** (`gemini/fase1_r2.png`, prompt v2, nieuw gesprek: lange poten, geen vleugels, geen kuif). Jordi: "ietsje beter maar nu heeft die helemaal geen armen meer, zo moeten de armen eruit zien, soort vleugels zonder veren" (`referenties/kuiken_6_arm.png`).
+  Jordi ook: "en hij is te blij".
+- **r3** (`gemini/fase1_r3.png`, bijsturen r2: armen als kale vleugels met stekelrij + minder blij). Jordi: "ok maar het is nog geen vleugels zonder veren, dit zijn klauwen".
+- **r4** (`gemini/fase1_r4.png`, bijsturen r3: armen als geplukte vleugel). Jordi: "vertaalt dit naar een sprite?". Kale verkleiningstest in `fase1_maat/` (`maten.py`, `maten_vel.png`): Gemini-raster 10,24 px (100×100), figuur natief 70×77 (2268 px); h56 1260 px, h50 1011 px, h44 787 px.
+  Jordi: "dan moeten we bijsturen he" → bijsturen r4: stekels minder/dikker + nabije vleugel leesbaar als vleugel (voorstel Claude).
+- **r5** (`gemini/fase1_r5.png`, bijsturen r4 met Claudes voorstel: 4–5 dikke stekels + nabije vleugel als driehoek). Jordi: "nee dit is niet langer wat ik bedoelde". Grote grijze vleugel bedekt nu het lijf, stekels als een stekelvarken.
+  Jordi ook: "nu zijn de armen bijna messen".
+  Jordi: "en de haren achterop zijn uberhaupt niet nodig" (stekels op de rug weg).
+
+## Prompt fase 1 (v3, Engels; nieuw gesprek, zonder bijlage; Jordi: "nieuwe prompt he, goed gedetailleerd")
+Eigen toevoegingen Claude (schrappen bij twijfel): "longer than the body and head together", "knees", "short black down", vleugel "folded at elbow and wrist, plucked chicken wing, soft and fleshy", klauwtjes aan de voorrand bij de pols, "small pupil", "beak closed".
+
+```
+Design an original Pokémon, drawn as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 colors, white background, no ground, no shadow, no effects, no objects. The whole creature fits inside the canvas with white margin on all sides; nothing is cut off.
+
+WHAT IT IS (most important): an uncanny, cryptid-like hoatzin chick (the chick of the Amazon "stinkbird"). It is NOT a normal bird. What makes it uncanny is its legs: they are far too long for its small body, longer than the body and head together. The legs are bare, thin and grey, with knobbly knees and big grasping clawed toes, like a real hoatzin chick's legs.
+
+POSE: it stands a bit awkwardly and clumsily on those too-long legs, body turned 3/4 to the left. The pose clearly shows its thin, strange-looking legs and its little claws.
+
+ARMS: it has two featherless wings that look like thin arms: bare grey skin over bone, folded at the elbow and wrist, like a plucked chicken wing, soft and fleshy. Each wing has two small claws on its front edge near the wrist bend. The wings hang down awkwardly from the shoulders. They are not hands, not blades, not sharp.
+
+BODY: a small, hunched body covered in short, smooth black down, with some yellowish tints only in the down. The back and wings are smooth: no spines, no spikes, no quills, no feather shafts, no hair sticking out.
+
+HEAD: a small round head with no crest. A hooked grey beak like a real hoatzin chick, closed. A dark round eye with a grey ring around it and a small pupil. The expression is not happy: a cold, blank stare, unsettling.
+
+COLORS: mostly black, some yellowish tints only in the down, grey beak, wings, legs and claws. Few colors, clean simple shading.
+
+MOOD: ugly in a Pokémon way, uncanny, a cryptid, something you don't trust. Simple, readable design, not complex.
+
+AVOID: feathered wings; hands or fingers; blade-like or knife-like wings; spines, spikes, quills or hair on the back or wings; a crest; messy or scruffy feathers; a normal bird; a happy or cute face; a smile; a branch or any object; a mask; a red eye; brown or chestnut; a fat or round belly; a symbol or marking; glow.
+```
+- **r6** (`gemini/fase1_r6.png`, prompt v3). Jordi: "te blij en de vleugels kloppen nog steeds niet met wat ik bedoel". NB: Claude had "haren achterop" (rug) in v3 ook doorgetrokken naar de vleugels ("no feather shafts" op de vleugels); dat zei Jordi niet.
+- Vleugel (Jordi, bij `referenties/kuiken_7_vleugel_kam.png`): "zonder dit erin is het design gefaald". = de waaier van lange donkere kale veerschachten (pennen in de schede, zonder vlag) aan de kale arm.
+- Te blij (Jordi): "misschien die enorme glimlach?" (de snavellijn die naar het oog omhoog krult).
+- **r7** (`gemini/fase1_r7.png`, bijsturen r6: kam-vleugels + glimlach weg). Jordi: "nee, niet wat ik bedoel". Pennen werden dunne lijntjes op de rug, glimlach bleef.
+- Plan (Claude, Jordi: "doe maar"): eerst alleen de vleugel in een nieuw gesprek (bijlage `kuiken_7_vleugel_kam.png`), daarna plakken op het beste lijf (r2/r4/r6, Jordi kiest) met een kop zonder glimlach (voorstel r4).
+
+## Prompt fase 1 vleugel (w1, Engels; nieuw gesprek, bijlage = foto kuiken_7)
+Eigen toevoegingen Claude: "8 to 10 pin feathers", "seen from the side", "slightly lighter tips" niet opgenomen (open).
+
+```
+Pixel art in the style of an official Gen 3 Pokémon front sprite (Ruby/Sapphire/Emerald): draw ONLY one wing of a newly hatched hoatzin chick, as in the attached photo. White background, no body, no head, no ground, no shadow, no effects, max 16 colors.
+
+The wing is a bare, thin arm with dark grey skin and no feathers on it, bent at the elbow and wrist, with one or two small claws on its front edge. From its back edge grows a fan of 8 to 10 long, thin pin feathers: dark bare shafts still in their sheaths, with no vanes at all. They stand clearly apart from each other with gaps between them and spread out like the teeth of a comb or a small hand fan, exactly like in the photo. Seen from the side, the fan fully spread so every pin feather is visible.
+
+Size: as large as it would be on a 64x64 sprite of a small chick (about 20 pixels long), with clear dark outlines so every pin feather reads at that size.
+
+AVOID: normal feathers with vanes, a hand or fingers, hair, fur, a body, any object or branch.
+```
+- **w1** (`gemini/fase1_vleugel_w1a.png`, `w1b.png`, vleugelprompt). Jordi: "ok heel leuk en aardig, maar wat ga je met 1 vleugel nu doen, verkeerd copy pasten?"
+
+## Prompt fase 1 (v4, Engels; nieuw gesprek, Jordi voegt een bronfoto toe; Jordi: "doe gewoon een gehele prompt voor de pokemon")
+Eigen toevoegingen Claude: zie v3, plus "far wing partly hidden behind the body".
+
+```
+Design an original Pokémon, drawn as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 colors, white background, no ground, no shadow, no effects, no objects. The whole creature fits inside the canvas with white margin on all sides; nothing is cut off.
+
+WHAT IT IS (most important): an uncanny, cryptid-like hoatzin chick (the chick of the Amazon "stinkbird"). It is NOT a normal bird. What makes it uncanny is its legs: they are far too long for its small body, longer than the body and head together. The legs are bare, thin and grey, with knobbly knees and big grasping clawed toes, like a real hoatzin chick's legs.
+
+POSE: it stands a bit awkwardly and clumsily on those too-long legs, body turned 3/4 to the left. The pose clearly shows its thin, strange-looking legs, its little claws and its wings.
+
+WINGS (very important, see the attached image): it has no normal wings. Each wing is a bare, thin grey arm, bent at the elbow and wrist, with one or two small claws on its front edge. From the back edge of each arm grows a fan of long, thin, dark pin feathers: bare shafts still in their sheaths, with no vanes at all. They stand clearly apart from each other and spread out like the teeth of a comb or a small hand fan. The near wing (right side of the image) is held out from the body with its fan fully spread and clearly visible; the far wing (left side) is partly hidden behind the body, with only part of its fan visible.
+
+BODY: a small, hunched body covered in short, smooth black down, with some yellowish tints only in the down. No spines, hair or quills on the back.
+
+HEAD: a small round head with no crest. A hooked grey beak like a real hoatzin chick, closed. The line between the upper and lower beak runs straight or slightly down and does NOT curve up toward the eye: no smile. A dark round eye with a grey ring around it. The expression is a cold, blank, unsettling stare, not happy.
+
+COLORS: mostly black, some yellowish tints only in the down, grey beak, arms, legs and claws, dark pin feathers. Few colors, clean simple shading.
+
+MOOD: ugly in a Pokémon way, uncanny, a cryptid, something you don't trust. Simple, readable design, not complex.
+
+AVOID: feathered wings with vanes; hands or fingers; blade-like wings; spines, hair or quills on the back; a crest; messy or scruffy feathers; a normal bird; a smile, a grin or a happy or cute face; a branch or any object; a mask; a red eye; brown or chestnut; a fat or round belly; a symbol or marking; glow.
+```
+- Jordi over de losse vleugel w1: "hij snapt dit dus wel". Daarom v4 met bronfoto.
+- **r8** (`gemini/fase1_r8.png`, prompt v4 + bronfoto). Jordi: "nee fout". Waaier los op de rug, armen als stokjes met handen: Gemini haalt arm en waaier uit elkaar.
+- **r9** (`gemini/fase1_r9.png`, nieuw gesprek, w1a als bijlage + lijf eromheen). Jordi: "arm kuiken met maar 1 vleugel". Vleugel zit nu wel vast aan de schouder, maar poten weer kort en achterste vleugel weg.
+- **r10** (`gemini/fase1_r10.png`, bijsturen r9: lange poten + achterste vleugel). Jordi: "de vorm klopt niet vgm".
+  Jordi: "linkervleugel klopt toch niet, dat zie je toch" (achterste vleugel steekt als klauw voor de borst uit).
+- **r11** (`gemini/fase1_r11.png`, bijsturen r10: linkervleugel achter het lijf). Jordi: "is ook niet wat ik bedoel".
+- Jordi bij `referenties/kuiken_5_pootlengte.png`: "kijk die foto dan / dat is toch anders" (over de vleugels).
+- Vleugels volgens foto 3 en 5 (Claude, na Jordi "kijk die foto dan"): lange kale arm, pennen als franje langs de achterrand die naar achteren/beneden wijst (geen waaier omhoog); voorste vleugel langs het lijf, achterste achter de rug omhoog.
+- **r12** (`gemini/fase1_r12.png`, bijsturen r11 met die beschrijving). Jordi: "nieuwe prompt from scratch, gaat weer fout". Voorste vleugel werd een losse derde "poot".
+
+## Prompt fase 1 (v5, Engels; nieuw gesprek from scratch, bijlage: foto 3 `kuiken_3_klimmend.webp`)
+Eigen toevoegingen Claude: zie v3; vleugelbeschrijving naar foto 3/5; "lies flat against the side of the body", "not a third leg".
+
+```
+Design an original Pokémon, drawn as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 colors, white background, no ground, no shadow, no effects, no objects. The whole creature fits inside the canvas with white margin on all sides; nothing is cut off.
+
+WHAT IT IS (most important): an uncanny, cryptid-like hoatzin chick (the chick of the Amazon "stinkbird"), based on the attached photo. It is NOT a normal bird. What makes it uncanny is its legs: they are far too long for its small body, longer than the body and head together, bare, thin and grey, with big grasping clawed toes.
+
+POSE: it stands a bit awkwardly and clumsily on those too-long legs, body turned 3/4 to the left, so the thin, strange-looking legs, the claws and the wings are clearly visible.
+
+WINGS (very important, exactly like the wings in the attached photo): no normal feathers. Each wing is a bare, dark grey arm, folded at the elbow. Along the whole back edge of the arm grows a fringe of thin, dark pin feathers (bare shafts without vanes), close together like the teeth of a comb, all pointing backward and downward and following the line of the arm. They do NOT stand up like a fan, a crest or a mohawk.
+- Near wing (right side of the image): folded and lying flat against the side of the body, its fringe hanging down over the lower body. It is part of the body's silhouette, not a separate limb, not a third leg.
+- Far wing (left side of the image): raised up behind the back, only the bent arm and part of its fringe visible above the body.
+
+BODY: a small, hunched body covered in short, smooth black down, with some yellowish tints only in the down. No spines or hair on the back.
+
+HEAD: a small round head with no crest. A hooked grey beak like a real hoatzin chick, closed, with no smile: the line between the upper and lower beak does not curve up. A dark round eye with a grey ring around it, a cold blank stare.
+
+COLORS: mostly black, some yellowish tints only in the down, grey beak, arms, legs and claws, dark pin feathers. Few colors, clean simple shading.
+
+MOOD: ugly in a Pokémon way, uncanny, a cryptid, something you don't trust. Simple, readable design, not complex.
+
+AVOID: feathered wings with vanes; pin feathers standing up like a fan or crest; a wing that looks like a third leg; hands or fingers; a crest; messy or scruffy feathers; a normal bird; a smile or a cute face; a branch or any object; a mask; a red eye; brown or chestnut; a fat or round belly; glow.
+```
+- **r13** (`gemini/fase1_r13.png`, prompt v5 + foto 3). Jordi: "deze is naast chernobyl geboren".
+  Jordi: "nee dat bedoel ik sarcastisch omdat die er niet uit ziet".
+- Jordi (beschrijving vleugels in eigen woorden): "vleugel zonder veren".
+
+## Prompt fase 1 (v6, Engels; nieuw gesprek; vleugels letterlijk "wings without feathers", geen eigen vleugelbeschrijving van Claude meer)
+```
+Design an original Pokémon, drawn as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 colors, white background, no ground, no shadow, no effects, no objects. The whole creature fits inside the canvas with white margin on all sides; nothing is cut off.
+
+WHAT IT IS: an uncanny, cryptid-like hoatzin chick. Its legs are far too long for its body: thin, bare and grey, with claws. Its wings are wings without feathers, with small claws.
+
+POSE: it stands a bit awkwardly, body turned 3/4 to the left, in a pose that shows its thin, strange-looking legs and its claws.
+
+HEAD: no crest. A hooked grey beak, no smile. A dark eye with a grey ring around it. Not happy.
+
+COLORS: mostly black, with some yellowish tints only in the down.
+
+MOOD: ugly in a Pokémon way, something you don't trust.
+
+AVOID: feathers on the wings; a crest; a smile; a branch or any object; a mask; a red eye; a normal bird.
+```
+  Jordi: "dat is het enige waar ik nog om vraag" / "al 4x gedaan" → alleen bijsturen op r13: vleugels zonder veren. (v6 hierboven vervalt.)
+  Jordi: "als je de veren van een normale vogel plukt dan krijg je hetzelfde".
+- **r14** (`gemini/fase1_r14.png`, bijsturen r13: "wings without feathers, like a plucked bird"). Jordi: "haha ja dat begreep gemini goed" (vleugels werden gladde vleermuisachtige platen).
+- Kipvleugel-voorstel (Claude) afgewezen. Jordi: "nee / dat is niet zo" / "dat is een hele andere vorm".
+- Referentie geplukte vleugel (Jordi): `referenties/kuiken_8_geplukte_vleugel_anatomie.webp` (anatomische schets).
+  Jordi: "nee dit is een vleugel zonder veren" (Claudes lezing met schachten afgewezen). Bijsturen r13 met schets als bijlage, tekst alleen Jordi's woorden.
+  Jordi: "de bovenste" / "dat bedoel ik" → bijlage `referenties/kuiken_8_bovenste_vleugel.png` (bijgesneden).
+
+## Prompt fase 1 (v7, Engels; nieuw gesprek, bijlage `referenties/kuiken_8_bovenste_vleugel.png`; Jordi: "nieuwe prompt graag, gemini kan toch niet telkens editen")
+Alleen Jordi's besluiten; geen eigen vleugelbeschrijving van Claude.
+
+```
+Design an original Pokémon, drawn as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 colors, white background, no ground, no shadow, no effects, no objects. The whole creature fits inside the canvas with white margin on all sides; nothing is cut off.
+
+WHAT IT IS (most important): an uncanny, cryptid-like hoatzin chick. It is not a normal bird. What makes it uncanny is its legs: they are far too long for its small body, thin, bare and grey, with claws.
+
+WINGS (very important): wings without feathers, exactly like the wing in the attached drawing. Each wing has small claws.
+
+POSE: it stands a bit awkwardly, body turned 3/4 to the left, in a pose that shows its thin, strange-looking legs and its claws.
+
+BODY: small, mostly black down with some yellowish tints only in the down.
+
+HEAD: no crest. A hooked grey beak like a hoatzin chick, with no smile. A dark eye with a grey ring around it. Not happy.
+
+MOOD: ugly in a Pokémon way, uncanny, a cryptid, something you don't trust. Simple, readable design, not complex.
+
+AVOID: feathers on the wings; a crest; a smile or a cute face; a branch or any object; a mask; a red eye; brown or chestnut; a normal bird; glow.
+```
+- **r15** (`gemini/fase1_r15.png`, prompt v7 + bovenste vleugel). Jordi: "goede prompt weer" (sarcastisch; vleugels werden beige vleermuisvliezen met klauwen aan de punten, poten korter).
+- Na r15: Jordi "ik ga wel krabbelen want dit is belachelijk". Volgende stap: Jordi's krabbel over r13 → Claude bouwt het model pixel voor pixel naar de krabbel (GEMINI.md: krabbel uitvoeren = kleuren meten).
+- Jordi: "haal hier de handen weg" / "en de haren" / "op de rug en okselhaar links" (op r7). Krabbelbasis: `krabbelbasis/krabbelbasis_r7.png` (10×, natief `basis_natief.png`, `weghalen.py`; alleen weggehaald, gat dicht met lijfkleur + omlijning).
+  Jordi op krabbelbasis_r7: "dat bedoelde ik niet" / "maar goed" / "wacht maar".
+- **Krabbel Jordi** (`krabbelbasis/krabbel_jordi.png`, over r7): "zoiets bedoel ik" / "heel lelijk getekend want ik kan niet tekenen" / "daarom gebruik ik ai". Hand aan het eind van elke arm zwart overgetekend (langwerpige donkere vorm), met losse lange dunne lijnen die eruit naar achteren/beneden steken; kale grijze arm blijft.
+
+## Prompt fase 1 (v8, Engels; nieuw gesprek, bijlage = Jordi's krabbel)
+Eigen toevoegingen Claude: de lezing van de krabbel ("dark, elongated", "a few long, thin, bare shafts", "pointing backward and down"), "ignore the spikes on the back".
+
+```
+Design an original Pokémon, drawn as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 colors, white background, no ground, no shadow, no effects, no objects. The whole creature fits inside the canvas with white margin on all sides; nothing is cut off.
+
+The attached image is a rough hand-drawn sketch over an earlier version. Use it for the body, head, legs and pose, and above all for the WINGS: the black shapes and thin black lines were drawn by hand to show what the wings must look like. Redraw everything cleanly as a real Gen 3 sprite.
+
+WINGS (most important, as in the sketch): wings without feathers. A thin bare grey arm; at the end, instead of a hand, a dark, elongated part of the wing, with a few long, thin, bare shafts sticking out of it, pointing backward and down. No hands, no fingers, no claws at the end.
+
+WHAT IT IS: an uncanny, cryptid-like hoatzin chick. Its legs are far too long for its small body: thin, bare and grey, with claws. It stands a bit awkwardly, body turned 3/4 to the left.
+
+BODY: small, mostly black down with some yellowish tints only in the down. Ignore the spikes on the back in the sketch: no spikes or hair on the back.
+
+HEAD: no crest. A hooked grey beak, no smile. A dark eye with a grey ring around it. Not happy.
+
+MOOD: ugly in a Pokémon way, uncanny, a cryptid, something you don't trust. Simple, readable design.
+
+AVOID: hands or fingers; feathers with vanes; spikes or hair on the back; a crest; a smile or a cute face; a branch or any object; a red eye; a normal bird.
+```
+- **r16** (`gemini/fase1_r16.png`, prompt v8 + krabbel). Jordi: "zucht". Gemini plakte de krabbel letterlijk over r7 (gladde zwarte vlekken + vectorlijnen), niets hertekend.
+  Jordi: "het moet niet letterlijk overgetekend worden".
+
+## Prompt fase 1 (v9 = v8 met "idee, niet overtrekken"; nieuw gesprek, bijlage = krabbel)
+```
+Design an original Pokémon, drawn as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 colors, white background, no ground, no shadow, no effects, no objects. The whole creature fits inside the canvas with white margin on all sides; nothing is cut off.
+
+The attached image is only a very rough idea sketch by someone who cannot draw. Do NOT copy, trace or paste anything from it. Only take the idea of the wings from it, and design the whole Pokémon yourself as a polished, real Gen 3 sprite with pixel outlines and Gen 3 shading everywhere.
+
+WINGS (most important, the idea from the sketch): wings without feathers. A thin bare grey arm; at its end, instead of a hand, a dark, elongated, bare-skinned part of the wing, with a few long, thin, bare shafts sticking out of it, pointing backward and down. Drawn in pixels like the rest of the sprite. No hands, no fingers.
+
+WHAT IT IS: an uncanny, cryptid-like hoatzin chick. Its legs are far too long for its small body: thin, bare and grey, with claws. It stands a bit awkwardly, body turned 3/4 to the left.
+
+BODY: small, mostly black down with some yellowish tints only in the down. No spikes or hair on the back.
+
+HEAD: no crest. A hooked grey beak, no smile. A dark eye with a grey ring around it. Not happy.
+
+MOOD: ugly in a Pokémon way, uncanny, a cryptid, something you don't trust. Simple, readable design.
+
+AVOID: copying or tracing the sketch; smooth vector shapes; hands or fingers; feathers with vanes; spikes or hair on the back; a crest; a smile or a cute face; a branch or any object; a red eye; a normal bird.
+```
+- **r17** (`gemini/fase1_r17.png`, prompt v9 + krabbel). Jordi: "weer niet".
+- Jordi koos **r4** als model: "ga maar deze bouwen" (`model/fase1_model.png`). Makeropdracht `sprite_fase1/OPDRACHT.md` (44 px hoog).
+  Jordi: "haren op de rug weg, en de haren rondom de vleugels haal je ook weg en vervang je door haren die beter passen bij een sprite" (aan de maker doorgegeven).
+  Jordi (omcirkeld op r4, `sprite_fase1/jordi_omcirkeld.png`): "ik weet niet wat dit is wat ik omcirkeld heb, dus dat mag weg" (donkere wig in de nabije vleugel; donker strookje tussen poot en vleugel onder het lijf).
+  Jordi: "gewoon de poot doortrekken en onder de vleugel is het lichaam" (wig = lijf, strookje = poot doorgetrokken).
+
+## Sprite fase 1
+- Jordi: "werk maar naar een hele goede eindfase toe want ik ga slapen".
+- **r1** (`sprite_fase1/r1/`, maker): kale reductie 40×44 (735 px) + Jordi's wijzigingen op het natieve raster; oog 4×4; haren A (6×2 px) en B (7×3 px). Claude: vleugels gespikkeld (losse zwarte resten), lijf vlak, tenen onderbroken, onderkant rechts (poot/vleugel/staart) één grijze massa. Naar r2.
+- **r2** (`sprite_fase1/r2/`): lijnronde (zwart 41→32 %), tenen, lijf 3 tinten + geelplukjes, haren B onregelmatig. Claude: veel schoner; rechtsonder (onderarm/dij/staart) nog vloeiend. Naar de keurder.
+- Keurder op r2: FAIL (trouw = in orde; Gen 3: zwart 32 %, haren lezen als vuil, buikrand schaakbord, binnenlijnen zwart, staart/dij ruis, snavel vlak, verre voet balk). 8 punten naar r3.
+- **r3** (`sprite_fase1/r3/`): 8 keurderpunten (zwart 32→28 %), haren vast aan de buitenlijn (A 3/vleugel, B 4/vleugel). Claude: duidelijk beter, staart/dij lezen. Naar DC-eindkeuring (r4).
+- **r4** (`sprite_fase1/r4/`, DC-eindkeuring op r3: PASS): 63 px (selout lichtkant 48, binnenlijnen → eigen tint 16, gaatje (32,45) dicht), zwart 28→20 %, lichte hue shift, 11 kleuren; alpha-diff 0 behalve dat gaatje. Haren A en B allebei. Vergelijkvel met fase 2: `sprite_fase1/r4/voor_jordi.png`. Naar Jordi (kiest A/B).
+- Jordi op r4 (`sprite_fase1/jordi_r4_omcirkeld.png`, rechterhelft omcirkeld): "niet goed te zien hier waar de ledematen los van elkaar zitten, verder prima versie". Naar r5.
+- Haren: Jordi koos **B**.
+- **r5** (`sprite_fase1/r5/`, haren B): 39 px in het omcirkelde gebied (scheidingslijnen onderarm/dij, dij/staart, verre poot/dij; staart een stap donkerder; schaduwrand dij); alpha-diff 0. Onderarm en dij nog dezelfde lichte tint. Naar Jordi.
+  Jordi op r5: "je hebt nu gewoon maar wat rechte lijnen neergezet die niet kloppen" (`sprite_fase1/jordi_r5_lijnen.png`). Claude: de echte grenzen in het model lopen schuin (onderarm van elleboog schuin omlaag, onderrand vleugel naar de punt, poot eronder); r6 = terug naar r4 en de modellijnen in dat gebied 1-op-1 overnemen.
+  Jordi (rode omtrek op r4/r5, screenshot niet op schijf): "vgm is dit de vorm en niet wat je van plan was": bovenarm + grijze band + lichte lob ("dij") + "staart" = één gevouwen vleugel die rechts uitpunt met een onderpunt; poot begint onder die onderpunt.
+- **r6** (`sprite_fase1/r6/`, vanaf r4 B): één gevouwen vleugel volgens Jordi's omtrek (bovenarm + band + lob + punt), buitenlijn 36 px, tinten uit modelhelderheid, 14 modellijnpixels (≥45 %); geen rechte hulplijnen; alpha-diff 0 met r4; zwart 22 %. Naar Jordi.
+  Jordi op r6: "moet ipv die zwarte omlijning niet gewoon de schaduwtinten van de ledematen anders?" → r7: binnen het silhouet scheiding vleugel/lijf/poot met schaduwtinten (slagschaduw, eigen randtint), geen zwarte binnenlijn.
+  Jordi over de lichte schoudervlek: "geen idee wat je met vlek bedoelt maar dat is gewoon de schouder vgm" (hoort bij de vleugel, zoals r6).
+- **r7** (`sprite_fase1/r7/`, vanaf r6): binnen het silhouet geen omlijning tussen vleugel/lijf/poot; vleugelrand eigen tint (licht/donker), veerlijnen vleugeltint, slagschaduw op lijf en verre poot, 1 extra tint (24,26,32); 71 px; alpha-diff 0; zwart 19,6 %. Naar Jordi.
+  Jordi op r7: "de lijn moet niet verdwijnen maar minder zwart" → r8: binnenlijnen terug op de r6-plekken in een donkere, niet-zwarte tint.
+- **r8** (`sprite_fase1/r8/`, vanaf r7): binnenlijnen terug op de r6-pixels, tegen lijf index 13 (24,26,32), tegen poten 12; veerlijnen 12; alpha-diff 0; zwart 19,6 %. Naar Jordi.
+  Jordi op r8: "nee naar de eindkeuring ermee" (lijn tegen lijf blijft tint 13). DC-eindkeuring → r9.
+- **r9** (`sprite_fase1/r9/`): DC-eindkeuring op r8, 13 px (dubbele lijn slagschaduw+lijn, zigzag x41/42, 2 haarwortels terug naar zwart, om-en-om rand punt, 2 ruispixels); alpha-diff 0; zwart 19,6 %; PASS. Naar Jordi.
+- **Af** (Jordi: "akkoord"): `af/hoatzin_fase1.png` = r9.

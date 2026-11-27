@@ -1,0 +1,5 @@
+Pixels anders dan de kale reductie van model A3 (kaal gemapt), per zone: {'staal': 142, 'vacht': 218, 'roze': 11, 'manen': 228, 'donker': 19, 'wit': 1}, totaal 619 van 1362
+Per stap: {'manen': 259, 'wit': 57, 'hoorn': 138, 'ontkorrel': 75, 'binnenlijn': 44, 'oog': 23, 'poot': 16, 'hoef': 17, 'lijn': 169}
+Hoofdstrengen (skeletlengte /4 modelpx, cellen): [(129, 33), (87, 24), (70, 21), (47, 15), (34, 7), (26, 8)]
+Flankstrepen: 5, rijen per streep [13, 12, 10, 12, 8]
+Haartinten: grenzen p20/p60 115 / 134

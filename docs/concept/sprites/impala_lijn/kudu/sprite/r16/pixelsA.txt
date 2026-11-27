@@ -1,0 +1,61 @@
+(14,19) M->H  kop voorhoofd
+(15,19) M->H  kop voorhoofd
+(13,20) M->H  kop voorhoofd
+(14,20) M->H  kop voorhoofd
+(14,25) M->H  kop wang
+(15,25) M->H  kop wang
+(16,25) M->H  kop wang
+(14,26) M->H  kop wang
+(15,26) M->H  kop wang
+(19,30) M->H  hals
+(19,31) M->H  hals
+(19,32) M->H  hals
+(20,41) M->H  borst
+(20,42) M->H  borst
+(21,42) M->H  borst
+(19,43) M->H  borst
+(20,43) M->H  borst
+(29,44) M->H  schouder
+(34,44) M->D  schouder
+(30,45) M->H  schouder
+(34,45) M->D  schouder
+(27,46) M->D  schouder
+(28,46) M->D  schouder
+(30,46) M->H  schouder
+(33,46) M->D  schouder
+(30,47) M->H  schouder
+(38,32) M->H  romp
+(38,33) M->H  romp
+(39,33) M->H  romp
+(38,34) M->H  romp
+(39,34) M->H  romp
+(41,34) M->H  romp
+(42,34) M->H  romp
+(44,34) M->H  romp
+(45,34) M->H  romp
+(38,35) M->H  romp
+(39,35) M->H  romp
+(41,35) M->H  romp
+(42,35) M->H  romp
+(43,35) M->H  romp
+(45,35) M->H  romp
+(39,36) M->H  romp
+(40,36) M->H  romp
+(42,36) M->H  romp
+(43,36) M->H  romp
+(42,37) M->H  romp
+(46,36) M->H  dij
+(47,36) M->H  dij
+(49,36) M->H  dij
+(46,37) M->H  dij
+(47,37) M->H  dij
+(49,37) M->H  dij
+(46,38) M->H  dij
+(47,38) M->H  dij
+(49,38) M->H  dij
+(52,44) M->D  dij
+(51,45) M->D  dij
+(51,46) M->D  dij
+(51,50) M->H  achterbeen
+(52,51) M->H  achterbeen
+(52,52) M->H  achterbeen

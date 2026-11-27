@@ -44,3 +44,5 @@ The whole figure must fit a square sprite frame: about as tall as it is wide, NO
 
 No effects, no glow, no sparkles, no speed lines, no dust, no ground or shadow under it. AVOID: copying Archeops, an ostrich, an emu, a chicken, a modern eagle, a dinosaur, a plush toy, Neopets style.
 ```
+
+**Jordi over r2 (`r2.png`, grijsbruin, rode adelaarshaaksnavel, veel veertjes):** "dit model vertaalt nog niet genoeg naar een sprite qua detail en ontwerp, en als je naar deze fotos kijkt is het nog niet genoeg een terreurvogel" (`../referenties/jordi_foto1_kelenken_zittend.png`, `../referenties/jordi_foto2_staand_met_mens.png`). Volgens les GEMINI.md (hoatzin): eerst de foto's in woorden beschrijven en laten bevestigen.

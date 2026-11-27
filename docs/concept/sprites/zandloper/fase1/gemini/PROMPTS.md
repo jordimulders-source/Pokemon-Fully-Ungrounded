@@ -45,3 +45,22 @@ Small first-stage Pokémon. Keep it simple and readable at 64x64: big clear shap
 
 No effects, no glow, no sparkles, no ground or shadow under it. AVOID: a plain realistic hourglass with eyes, a plush toy, Neopets style.
 ```
+
+**Jordi over r3:** "de handen zijn een goed idee, maar wijkt de buitenkant nu niet teveel af van de 3e fase qua kleur? Plus wat er in de zandloper zit vertaalt nog niet, het is ook maar slechts een spookje".
+Kleurcheck Claude (fase 3 `af/` gemeten): zand oker-goud #fce296/#e8be62/#cc9c46/#a47034, glas #def4fa/#a0cce0/#72a0ba met omlijning #405e7a, kapjes donkerbruin glad #8a522e/#5c321e/#603a18. r3: zand citroengeel, kapjes ruw kurkhout met nerf; glas ongeveer goed.
+
+## r4
+Handen = losse houten stukjes zoals r3 (Jordi: goed idee). Inhoud = voorstel Claude: geen klein figuurtje, maar één groot gezicht in het zand dat de bovenste bol vult, met de blik van de djinn (zware wenkbrauwen), tegen het glas gedrukt.
+```
+Design an original Pokémon as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64 pixels, max 16 colors, white background, facing 3/4 to the left.
+
+Concept: the first stage of an hourglass Pokémon (Ground/Psychic). Its final evolution is a sand djinn that escapes from the hourglass; here the djinn is still locked inside. The creature IS the living sand, and the hourglass is its shell.
+INSIDE (most important, must read clearly at 64x64): no small figure. The sand in the upper bulb fills the whole bulb and forms one big face pressed against the inside of the glass: two large clear eyes with heavy, thick eyebrows, a cunning, mischievous look, like a powerful genie who is trapped and waiting to get out. The rest of the sand trickles into the bottom bulb.
+HANDS: two separate floating wooden pieces on each side of the hourglass act as its hands (no arms connecting them).
+COLORS (exact): sand in warm ochre gold (#fce296, #e8be62, #cc9c46, #a47034), NOT lemon yellow. Glass pale icy blue (#def4fa, #a0cce0, #72a0ba) with a dark slate-blue outline (#405e7a). Wooden end caps and hands smooth dark brown (#8a522e, #5c321e, #603a18), no rough cork texture, no wood grain, no carved symbols.
+The hourglass is whole, slightly rounded and charming rather than realistic. Nothing comes out of the glass yet.
+POSE: it floats in the air at a tilt, it does not stand upright on the ground.
+Small first-stage Pokémon. Keep it simple and readable at 64x64: big clear shapes, like a real Gen 3 sprite.
+
+No effects, no glow, no sparkles, no ground or shadow under it. AVOID: a tiny ghost inside, a plain realistic hourglass with eyes, a plush toy, Neopets style.
+```

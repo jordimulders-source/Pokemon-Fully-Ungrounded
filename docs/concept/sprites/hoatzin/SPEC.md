@@ -245,3 +245,21 @@ AVOID: feathered wings with vanes; pin feathers standing up like a fan or crest;
 ```
 - **r13** (`gemini/fase1_r13.png`, prompt v5 + foto 3). Jordi: "deze is naast chernobyl geboren".
   Jordi: "nee dat bedoel ik sarcastisch omdat die er niet uit ziet".
+- Jordi (beschrijving vleugels in eigen woorden): "vleugel zonder veren".
+
+## Prompt fase 1 (v6, Engels; nieuw gesprek; vleugels letterlijk "wings without feathers", geen eigen vleugelbeschrijving van Claude meer)
+```
+Design an original Pokémon, drawn as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 colors, white background, no ground, no shadow, no effects, no objects. The whole creature fits inside the canvas with white margin on all sides; nothing is cut off.
+
+WHAT IT IS: an uncanny, cryptid-like hoatzin chick. Its legs are far too long for its body: thin, bare and grey, with claws. Its wings are wings without feathers, with small claws.
+
+POSE: it stands a bit awkwardly, body turned 3/4 to the left, in a pose that shows its thin, strange-looking legs and its claws.
+
+HEAD: no crest. A hooked grey beak, no smile. A dark eye with a grey ring around it. Not happy.
+
+COLORS: mostly black, with some yellowish tints only in the down.
+
+MOOD: ugly in a Pokémon way, something you don't trust.
+
+AVOID: feathers on the wings; a crest; a smile; a branch or any object; a mask; a red eye; a normal bird.
+```

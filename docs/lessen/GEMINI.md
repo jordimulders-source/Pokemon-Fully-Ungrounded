@@ -357,3 +357,10 @@ Wanneer Jordi een ontwerp in Gemini laat maken en kiest, gelden deze regels **in
 - **Methode die werkte (Hanan Pacha r3, 27 nov, Jordi: "deze nieuwe methode is echt een top methode"):** natief raster (dominante modelkleur per cel) → pen-kleurklassen op natieve resolutie → exacte 2× met regels (lijn wint, vorm boven vlakkleur, kleine punten/klauwen terug) → rijen/kolommen schrappen naar 64 met kop/kraag beschermd → palet per klasse en toon. Scripts: `docs/concept/sprites/hanan_pacha/sprite_r3/gereedschap/`.
 - **Leesbaarheid van een klein onderdeel = lijn en tint, niet opnieuw opbouwen** (Hanan Pacha r4, Jordi: "nee waarom teken je nu de klauw opnieuw, je was zo goed bezig"): de klauw apart exact 2× uit het model overnemen gaf een kammetje dat als hertekend las. Houd de vorm van de goedgekeurde ronde en los "zie ik niet goed" op met omlijning en tintcontrast.
 - **Zwart blokje (2×2/L) in een vlak na de 2×-reductie = verdikte modellijn** (Hanan Pacha eindkeuring): per pixel tegen het model leggen en terug naar 1 px lijn in de eigen donkerste tint.
+
+## Rugsprites via Gemini (proefserie 27 nov)
+- Eén vast rugsjabloon + per soort een "Body plan"-zin werkt voor eenvoudige bouw (vis, vogel); `graphics_proef/PROMPTS.md`.
+- Noem geen bestaand object ("locomotive") in de prompt: Gemini tekent dan dat object in jouw kleuren (Hexpress p2).
+- Van achteren verdwijnt het herkenningsteken (gezicht): vraag de kop in profiel over de schouder; bij objecten iets dat de achterkant bedekt (Hexpress: "the green smoke covers the back", Jordi).
+- Gaten die Gemini laat (wit onder een kroon) niet dichtvullen als daar de kop had moeten zitten: dat maakt een donkere massa; kop uit een andere poging op hetzelfde raster plakken werkte (Sunperor v2).
+- Gemini-bewerkprompts (frame 2) blijven exact op het 16-px raster van de 8×-bijlage: natief terughalen en +1/+1 uitlijnen.

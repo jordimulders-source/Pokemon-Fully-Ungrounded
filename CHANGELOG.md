@@ -3610,3 +3610,5 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - r3 bewaard; Jordi: "het mag echt nog meer space robot". Prompt r4 = nieuwe startprompt zonder bijlage met alle besluiten.
 ### [v0.0.864] - Ledian-evolutie: Gemini r4a/r4b + prompt r5 (27 nov)
 - r4b beter (Jordi); prompt r5 met r4b als bijlage: volledig stervormig rood hoofd, mondje weg, iets langer.
+### [v0.0.865] - Ledian-evolutie: Gemini r5 + prompt r6 (27 nov)
+- r5 afgekeurd (geen mond, armen te kort/gek); prompt r6 from scratch met alle besluiten.

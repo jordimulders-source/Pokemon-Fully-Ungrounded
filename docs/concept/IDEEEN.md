@@ -893,3 +893,4 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - **Jordi (27 nov) op r3:** "nee nog niet goed genoeg, het mag echt nog meer space robot". Prompt r4 (nieuwe startprompt): `sprites/ledian_evo/gemini/PROMPT_r4.md`.
 - **Jordi (27 nov):** "het hoofd kan in een stervorm (wel nog rood" (in prompt r4 verwerkt).
 - **Jordi (27 nov) op r4a/r4b:** "hij oogt niet genoeg als een evolutie bij 1, 2 is beter, maar het is nog geen volledige stervorm en hij heeft een gek mondje nu, hij mag nog ietsje langer". Prompt r5 (bijlage r4b): `sprites/ledian_evo/gemini/PROMPT_r5.md`.
+- **Jordi (27 nov) op r5:** "ok dat is niet beter, hij heeft nu helemaal geen mond meer, terwijl ledian dat wel heeft, de armen zitten verder ook gek, zijn te kort, nieuwe prompt from scratch graag". Prompt r6: `sprites/ledian_evo/gemini/PROMPT_r6.md`.

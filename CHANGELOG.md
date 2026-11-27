@@ -3668,3 +3668,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.881] - Pacha-kwartet: start sparren (27 nov)
 - `POKEMON.md` → Legendaries: Jordi's uitgangspunten voor het kwartet (Hanan Pacha, Kay Pacha, Uku Pacha, Pachamama): niet in gym-/E4-teams, geen Cosmic ("ze zijn juist aards"), moeten ogen als box legendaries; eerst sparren over ontwerp en types, daarna één voor één designen.
 - Correctie: Amaru als thema van de Dragon-gym in Cuzco was een voorstel van Claude, nooit van Jordi; weggehaald uit `CONCEPT.md`, `ROUTEPLAN.md` en `IDEEEN.md`.
+
+### [v0.0.882] - Pacha-kwartet: wezens, geen godenbeelden (27 nov)
+- `POKEMON.md`: Jordi: het kwartet wordt Pokémon als mythische wezens (zoals Groudon/behemoth en Kyogre/leviathan), geen godenbeelden; typenvoorstel Claude (driehoek Fire/Flying, Grass/Fighting, Water/Ghost) genoteerd als open.

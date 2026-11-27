@@ -78,3 +78,4 @@ AVOID: separate ice cubes glued or stuck onto the hands, oversized blocks, a dar
 ## r3 (prompt r3, uppercut)
 - Jordi (27 nov): "kijk dat werkt perfect". Uitgehakt ijs met facetten, kubusvuisten vloeien over in de onderarmen, uppercut met de verre arm omhoog, andere vuist voor de borst.
 - Beeld kwam alleen inline binnen; voor de sprite moet Jordi het bestand nog als bijlage sturen (komt dan in `gemini/r3.png`).
+- `gemini/r3.png` opgeslagen (Jordi: "vertaalt die naar een sprite?"). Test (Claude): raster 10,24 px duidelijk (score 2× hoger dan 5,12; natief schoon), figuur 50×81 cellen → ±79 % naar 64 hoog. Kale reductie in `test/` wordt vlekkerig in de facetten en het gezicht.

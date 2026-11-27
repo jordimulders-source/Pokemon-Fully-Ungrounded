@@ -3740,3 +3740,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.908] - Kay Pacha (poema-legendary): start (27 nov)
 - Type Grass/Psychic vastgelegd; Inca-decoratie zoals Entei/Raikou; kleuren open. `docs/concept/sprites/kay_pacha/SPEC.md`, POKEMON.md.
 - Kleurrichting A (poemavacht + Inca-goud + groene accenten); Gemini-prompt r1 in `kay_pacha/PROMPT.md`.
+- Kay Pacha: Gemini r8/r9; model bevroren (r9: groene poema met crème Inca-gezichtsplaat en trapkroon, goudgele ichu-mantel, paarse trapstrepen, twee bladlintstaarten); frontsprite gestart.

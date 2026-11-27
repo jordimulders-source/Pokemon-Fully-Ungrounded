@@ -34,3 +34,4 @@ Prompt r1: `PROMPT.md`.
 - Jordi: "akkoord" (gelezen als: akkoord met Claudes voorstel in de taal van de beesten: groene fantasiekat, masker als gezichtsplaat in de vorm van een Inca-poemakop, getrapte groene mantel als terrassen, trapvormig teken op het voorhoofd, paarse trapstrepen, twee rankstaarten). → r8 met dat voorstel; kale versie als `PROMPT_r8_kaal.md`.
 - r8 (`gemini/r8.png`, `PROMPT_r8.md`): Jordi: "wat vind je".
 - Jordi akkoord ("prima") met Claudes punten na r8 (mantel zachte overlappende bladeren in treden en andere kleur, kroon trapvormig in maskerkleur, brede bladlintstaarten, groter hoofd, krachtiger pose); mantelkleur: "goudgeel is wel geinig" (ichu-gras). → `PROMPT_r9.md`.
+- **Model bevroren (Jordi, 27 nov: "deze doen we"):** `gemini/r9.png` = `referenties/gemini_gekozen_r9.png`. Volgende stap: frontsprite (maker-agent, Gemini-model namaken).

@@ -142,3 +142,4 @@ Opdracht: `sprite/OPDRACHT.md`.
 - **r4** (`gemini/fase1_r4.png`, bijsturen r3: armen als geplukte vleugel). Jordi: "vertaalt dit naar een sprite?". Kale verkleiningstest in `fase1_maat/` (`maten.py`, `maten_vel.png`): Gemini-raster 10,24 px (100×100), figuur natief 70×77 (2268 px); h56 1260 px, h50 1011 px, h44 787 px.
   Jordi: "dan moeten we bijsturen he" → bijsturen r4: stekels minder/dikker + nabije vleugel leesbaar als vleugel (voorstel Claude).
 - **r5** (`gemini/fase1_r5.png`, bijsturen r4 met Claudes voorstel: 4–5 dikke stekels + nabije vleugel als driehoek). Jordi: "nee dit is niet langer wat ik bedoelde". Grote grijze vleugel bedekt nu het lijf, stekels als een stekelvarken.
+  Jordi ook: "nu zijn de armen bijna messen".

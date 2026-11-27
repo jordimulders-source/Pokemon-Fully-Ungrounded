@@ -167,3 +167,22 @@ DO NOT: a flat star seen straight from the front, a symmetric upright star, a se
 
 ## r4 Staryu (27 nov, prompt v4)
 `gemini/r4_staryu.png`. Observatie Claude: ster gekanteld en scheef (bovenarm naar rechts, armen ongelijk), maar geen zichtbare dikte/zijkant zoals de Gen 3 Staryu.
+
+## Starmie v5: driekwart (27 nov, nieuw gesprek, alleen bijlage `gemini/bijlage_starmie_gen3.png`)
+Jordi over sprite r4 (model 1-op-1): "nee niet gelukt"; "nu doe je het weer fout, voor de starmie". Ontwerp van r3 in woorden, r3 niet als bijlage.
+
+```
+The attached image is STARMIE, a Gen 3 Pokémon sprite. Design a REGIONAL FORM of Starmie that is a real, delicious, fancy decorated cookie in the shape of Starmie.
+
+POSE (most important): exactly the same pose, angle and silhouette as the attached Starmie: tilted and rotated, seen in 3/4 view, not flat and not facing straight forward. Two stars: a front star, and a back star rotated behind it whose five long, sharp, straight-edged points stick far out in the gaps between the front star's arms, exactly like the attached Starmie (all five back points visible). Every point has a light face and a darker side face, like the attached sprite.
+
+Output: a simple, clean official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64 pixels, max 16 colors, flat colors with 2-3 shades per color. White background, no ground, no shadow, no effects, no glow, no crumbs.
+
+THE COOKIE:
+- Front star: golden-brown baked cookie with a thick layer of glossy purple icing on top, leaving a cookie rim around the edge. White icing drizzle in zigzag lines over the purple. A few colorful sprinkles (red, yellow, green, blue).
+- In the center: a purple faceted gem.
+- Back star: plain golden-brown baked cookie dough, toasted darker on its side faces, with a few dark chocolate chips on each point.
+No face, no eyes, no mouth, no limbs.
+
+DO NOT: a flat star seen straight from the front, rounded lumpy back points, a symmetric upright star, a realistic photo, a plate, starfield or galaxy patterns, sparkles, plush style.
+```

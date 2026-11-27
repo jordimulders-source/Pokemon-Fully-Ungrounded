@@ -27,3 +27,6 @@ Type, naam (regional forms: blijven Staryu/Starmie?), serieus/grap.
 
 ## Staryu af (27 nov)
 Jordi: "ja staryu is goed, zet maar in af". `staryu/af/staryu_regional.png` (= sprite_r5: model r4, keuring + eindkeuring PASS), op het overzichtsvel (Regional forms).
+
+## Type
+- Jordi (27 nov): "staryu en starmie normaal worden water/cosmic" (gewone vorm). Voorstellen Claude voor de koekjes-vorm: Fairy → Fairy/Cosmic (aanbevolen), Fairy → Fairy/Psychic, Fire → Fire/Fairy, Normal → Normal/Fairy, Water → Water/Fairy. Open.

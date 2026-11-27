@@ -130,3 +130,10 @@ Style: simple, clean, large shapes like official Gen 3 sprites, with only a few 
 
 No effects, no glow, no sparkles, no speed lines, no dust, no ground or shadow under it. AVOID: copying Archeops, an ostrich, an emu, a chicken, a modern eagle, a pelican, a dinosaur, a plush toy, Neopets style.
 ```
+
+**Jordi over r6 (`r6.png`, kop voorover, snavel open, driekwart beter):** "alleen het oog is nog niet vogel genoeg". (r6 heeft een amandelvormig anime-oog met ooglid.)
+
+## r7 (27 nov, bewerking van r6 als bijlage)
+```
+Keep this Pokémon sprite exactly the same: same pose, same colors, same beak, same body. Change ONLY the eye: make it a real bird eye, a small round eye with a light round iris and a round black pupil, like a hawk's or a terror bird's eye. NOT an almond-shaped human or anime eye, no eyelid line, no eyebrow.
+```

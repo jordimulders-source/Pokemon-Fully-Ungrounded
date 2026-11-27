@@ -3617,3 +3617,5 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.867] - Ledian-evolutie: model r6 bevroren + sprite r1 (27 nov)
 - SPEC `docs/concept/sprites/ledian_evo/SPEC.md`; mond blijft zoals in het model (Jordi).
 - Sprite r1 (`ledian_evo/sprite_r1/`): verkleining van het model (natief 66×66, rijen 54/57 en kolommen 61/63 geschrapt), 13 kleuren, 52 px afwijking alleen op de buitenrand; spleten arm/hoofd en tussen de benen transparant. Nog geen kleur-/schaduwronde.
+### [v0.0.868] - Ledian-evolutie: kleurronde r2 (27 nov)
+- `ledian_evo/sprite_r2/`: tinten van de Gen 3-Ledian op de verdeling van r6 (Jordi: "2, maar mag net iets roder"), rood in drie varianten (a −5°, b −8° hoofd, c −11°); 69 donkergrijze binnenlijnen → rode selout; silhouetdiff 0, 13 kleuren.

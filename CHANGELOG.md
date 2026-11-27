@@ -3599,4 +3599,5 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - `docs/concept/sprites/guarana_fase2/af/guarana_fase2.png` (+ `normal.pal`, 8×); op het overzichtsvel (sectie New). Lijn af; namen open. Vaste regels en alle citaten in `guarana_fase2/SPEC.md`; lessen in `docs/lessen/GEMINI.md`.
 
 ### [v0.0.859] - Idee: regionale Tangela naar Medusa (27 nov)
+- Jordi: vines worden slangen, midden blijft zwart met ogen (ogen iets anders); bij succes een nieuwe evolutie voor Tangela.
 - Jordi's idee genoteerd in `docs/concept/IDEEEN.md` → "Regionale Tangela: Medusa", met de open vragen.

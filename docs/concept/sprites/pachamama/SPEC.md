@@ -12,3 +12,6 @@
 
 ## Eigen invulling Claude in prompt r1 (schrappen als Jordi het niet wil)
 - Sneeuw als kap ("eventueel" in het voorstel), aardetinten van een berg, "gentle/ancient" als uitstraling.
+
+## Rondes
+- **r1** (`gemini/r1.png`, prompt r1 met ogen A), Jordi (27 nov): "oke oke, conceptueel niet slecht, maar beetje bruinig in zijn geheel, plus teveel detail nog dnek ik?"

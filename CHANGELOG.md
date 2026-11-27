@@ -3914,3 +3914,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.961] - Frame 2 per script: batch C (27 nov)
 - 14 twijfelsoorten in `graphics_proef/frame2/batch_c/`. Goed: Curiqui, Wagogogon, Buzzquito, Flytron, Clionice, Rowmate. Zwak (→ Gemini): Bootoo, Globsnail, Axolaunch, mate-kalebas, Capykart, glyptodon 1 en 2, zand-djinn (twijfel).
+
+### [v0.0.962] - Proeficonen ronde 2 (27 nov)
+- Opnieuw volgens de Zapacha-lessen (gemeten transformatie viscacha front → icoon): `graphics_proef/icoon_r2/{gumfish,sunperor}/` (17/17 checks). Gumfish pal1 (kop 52 %, geen schaduwtint: geen palet heeft karmijn), Sunperor pal5 (kroon+kop 63 %, lijf lichter bruin; silhouet blokkig, compactheid 0,38 onder de norm). Nog niet door een verse keurder; wacht op Jordi.

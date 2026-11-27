@@ -41,3 +41,4 @@ Lees vóór werk aan sprites, trainerfoto's, overworld-sprites, vormen of kleurv
 - **Wijst Jordi iets aan in een eerdere versie: 1-op-1 kopiëren en plakken** (glitch-lijn, 25 nov, Jordi: "copy pasten zoals ze zijn, en gewoon erin zetten"): niet opnieuw genereren of "op dezelfde manier" namaken.
 - **Goud met apart manen-goud (kudu, 27 nov):** één gedeelde warme lijnkleur voor vacht en manen (zoals Stantler #7B4100) werkt; de donkerste manentint is als lijn te licht, dan vloeien manen weg in hals en lijf.
 - **Binnenlijnscript en haren** (hoatzin kuiken r9, 28 nov): een test "geen transparante buur = binnenlijn" ziet haarwortels op de buitenlijn als binnenlijn; neem eerst het haarmasker apart. Slagschaduw naast een teruggezette lijn in dezelfde tint leest als lijn van 2 px.
+- Keurder Regiaqua: zwart op een richelonderkant aan de lichte buitenrand = verboden zwart/selout om en om; scan op zwart met transparante buur links/boven.

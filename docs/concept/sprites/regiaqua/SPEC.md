@@ -18,3 +18,4 @@ Prompt: `PROMPT.md`.
 - Jordi (27 nov) na de check: "regiaqua lijkt wel goed! in de sprites van regi's zijn het dus vierkantjes ipv stippen vanwege de grootte" (= in de sprite worden de stippen 2×2-vierkantjes zoals bij de Gen 3-Regi's).
 - Jordi (27 nov): "ik tel dat alle regi's 7 stippen hebben en aqua ook dus dat is prima" → model = `gemini/r1.png`, stippen zoals r1 (als 2×2-vierkantjes). Sprite gestart (maker, `sprite/`).
 - Jordi (27 nov): "als deze klaar zijn komen ze op het sprite sheet onder een apart kopje 'Legendaries'" → nieuwe sectie "Legendaries" in `showcase/maak_vel.py` (SECTIES).
+- Sprite r1 (maker) → keurder BIJNA (4 zwarte pixels op de lichte linkerrand + 1 op de linkerhand: zwart/donkerblauw om en om; optioneel onderste stippen 1 rij lager, stipkleur naar modelkern (24,236,210)). r2 = r1 + die 4 punten (15 px diff, `sprite/r2/r2.py`); keurder: daarmee PASS.

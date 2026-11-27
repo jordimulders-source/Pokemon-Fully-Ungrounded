@@ -3660,3 +3660,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.875] - Regiaqua frontsprite r1/r2 (27 nov)
 - Maker r1 (`regiaqua/sprite/r1/`): kale reductie van Gemini r1 (silhouet-diff 0), 11 kleuren, 62×50, 7 stippen als 2×2. Keurder BIJNA; r2 (`sprite/r2/`) verwerkt de 4 punten (15 px). Naar Jordi.
+
+### [v0.0.876] - Regiaqua: frontsprite af (27 nov)
+- `docs/concept/sprites/regiaqua/af/regiaqua.png` (= sprite r2). Op het overzichtsvel onder het nieuwe kopje "Legendaries" (Jordi), `showcase/maak_vel.py`.

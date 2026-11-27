@@ -19,3 +19,4 @@ Prompt: `PROMPT.md`.
 - Jordi (27 nov): "ik tel dat alle regi's 7 stippen hebben en aqua ook dus dat is prima" → model = `gemini/r1.png`, stippen zoals r1 (als 2×2-vierkantjes). Sprite gestart (maker, `sprite/`).
 - Jordi (27 nov): "als deze klaar zijn komen ze op het sprite sheet onder een apart kopje 'Legendaries'" → nieuwe sectie "Legendaries" in `showcase/maak_vel.py` (SECTIES).
 - Sprite r1 (maker) → keurder BIJNA (4 zwarte pixels op de lichte linkerrand + 1 op de linkerhand: zwart/donkerblauw om en om; optioneel onderste stippen 1 rij lager, stipkleur naar modelkern (24,236,210)). r2 = r1 + die 4 punten (15 px diff, `sprite/r2/r2.py`); keurder: daarmee PASS.
+- **Af (Jordi, 27 nov: "laten zo, zet hem in af"):** `af/regiaqua.png` (= sprite r2), stippen als Regice (1 lichte pixel linksboven); donkerder dan de andere Regi's "is niet erg". Op het overzichtsvel onder "Legendaries".

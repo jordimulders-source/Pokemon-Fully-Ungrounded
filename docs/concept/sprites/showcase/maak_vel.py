@@ -126,6 +126,9 @@ SECTIES=[
 ("muk_hoenn/af/muk_hoenn.png",'Muk (regional)',"poison/ground"),
 ("dj_rotom/af/dj_rotom.png",'"DJ Rotom"',"electric/steel"),
 ]),
+("Legendaries",[
+("regiaqua/af/regiaqua.png",'"Regiaqua"',"water"),
+]),
 ]
 F="/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"; FR=F.replace("-Bold","")
 ft=ImageFont.truetype(F,36); fn=ImageFont.truetype(F,19); fy=ImageFont.truetype(FR,16)

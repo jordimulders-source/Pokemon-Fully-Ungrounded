@@ -39,3 +39,4 @@ Trio van de drie Inca-werelden (zie `docs/concept/POKEMON.md` → Legendaries). 
 - Jordi: "de vleugels vind ik wel goed gelukt, alleen moeten nog meer kleurtinten en schaduw krijgen" → pennen-voorstel van Claude vervalt; vleugels vorm/kleurvolgorde bevroren, meer tinten + Gen 3-schaduw.
 - Jordi: "ja het is niet erg dat de kop dan meer vleugel overlapt".
 - Jordi: "en schaal de halsband mee" (kop + kraag samen schalen).
+- **Sprite r2** (`sprite_r2/`): staart r5 (donkere punten), vleugels meer tinten (silhouet = r1), kop+kraag ×1,2/×1,35/×1,5 met oog Spearow/Pidgeot/Pidgeot. Snavel leest slecht (over de witte band), staart leest als massa.

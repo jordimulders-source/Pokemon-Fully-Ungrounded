@@ -3654,3 +3654,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.873] - Regicosmo r5 + prompt r6 (27 nov)
 - r5 bewaard (Jordi: "mars is nu een paasei"); prompt r6: Mars perfect rond met bolschaduw.
+
+### [v0.0.874] - Regicosmo r7 + positievarianten (27 nov)
+- r7 bewaard (Jordi: "nog beter"); ijsplaneet en Saturnus per script omlaag geschoven in 3 hoogtes (`regicosmo/positie/`).

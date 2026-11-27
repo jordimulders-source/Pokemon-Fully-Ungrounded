@@ -3680,3 +3680,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.885] - Uku Pacha: Water/Ghost (27 nov)
 - `POKEMON.md`/`TODO.md`: slang (Uku Pacha) wordt Water/Ghost (Jordi); typen van het trio rond. Pachamama-wezen nog open.
+
+### [v0.0.886] - Hanan Pacha: ontwerpbrief (27 nov)
+- `docs/concept/sprites/hanan_pacha/SPEC.md`: Jordi's eisen voor de condor-legendary (machtig, vleugels gespreid bijna als zon, niet te horizontaal, duidelijk condorhoofd, heroïsch, kraag, zwart/wit/goud/vuur, geen vlammen, geen Inca-patroon).

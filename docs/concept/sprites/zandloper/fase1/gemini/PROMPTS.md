@@ -102,3 +102,13 @@ Small first-stage Pokémon, compact silhouette.
 
 No effects, no glow, no sparkles, no ground or shadow under it. AVOID: a smiley face, a grin, cartoon illustration, a plush toy, Neopets style.
 ```
+
+**Jordi over r6:** "ja beter, de handen hoeven niet weg, alleen geen ovenwant vorm".
+
+## r7 – r6 als bijlage, alleen handen toevoegen
+Vorm = invulling Claude: houten bolletjes zoals de gedraaide knoppen van een zandloperframe (geen wantvorm). Het woord "hands" weggelaten (gaf 2× wanten).
+```
+The attached image is my Pokémon. Keep EVERYTHING exactly the same: the hourglass, its tilt, the eyes, the colors, the pixel style.
+Change ONLY this: add two small separate floating wooden balls beside the hourglass, one on each side, like the round turned knobs of an hourglass frame. Same smooth dark brown wood as the end caps (#8a522e, #5c321e, #603a18), dark 1-pixel outline, flat cel shading. Plain spheres: no fingers, no thumbs, not gloves, not mittens.
+Real Gen 3 pixel art, 64x64, white background, no effects.
+```

@@ -17,7 +17,7 @@ DECORATION (Inca-inspired gold, every part a bold, clear shape):
 - BODY: several large plain gold plates on the shoulders, chest and hips, shaped like fitted Inca stones and trapezoid Inca doorways, connected by gold bands; green vines wind along the gold.
 - LEAVES: BIG leaves at a few places (behind the headpiece, at the shoulders, along the tail), large clear leaf shapes, not tiny sprigs.
 - PURPLE: work some purple into the gold decoration.
-Rich decoration, but no engravings, no spirals, no tiny patterns, no faces or symbols on the gold.
+Rich decoration, but no engravings, no spirals, no tiny patterns, no speckles or noisy texture (no moss specks), no faces or symbols on the gold. Gold and coat are clean flat areas with simple shading.
 
 POSE: 3/4 view facing left, standing on four legs, head raised, proud and calm like a legendary beast.
 

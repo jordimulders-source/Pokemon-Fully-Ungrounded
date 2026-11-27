@@ -135,11 +135,15 @@ def bouw(cfg, S_extra=1.0, log=None):
                 sel = np.zeros(PX.shape, bool); sel[ok] = m[PY[ok], PX[ok]]
                 if sel.mean() < drem: continue
                 q = sel & ok; dk = donker[PY[q], PX[q]]; lic = ~dk
-                wit = lum[PY[q], PX[q]] > 215
                 if lic.sum() == 0 or dk.mean() > ddrem: isdonker[Y, X] = True; kleur[Y, X] = 40
-                else: isdonker[Y, X] = False; kleur[Y, X] = rgb[PY[q][lic], PX[q][lic]].mean(0)
-                isglans[Y, X] = wit.mean() >= .3 and not isdonker[Y, X]
-                if isglans[Y, X]: kleur[Y, X] = rgb[PY[q][wit], PX[q][wit]].mean(0)
+                else:
+                    # kleur = de meest voorkomende frontkleur (geen gemiddelde: dat geeft modder en blur)
+                    isdonker[Y, X] = False; fi = fr[PY[q][lic], PX[q][lic]]
+                    if cfg.get('kleurkeuze', 'modus') == 'gemiddeld': kleur[Y, X] = FP[fi].mean(0)
+                    else: kleur[Y, X] = FP[np.bincount(fi, minlength=16).argmax()]
+                    wit = FP.mean(1)[fi] > 215
+                    isglans[Y, X] = wit.mean() >= .3
+                    if isglans[Y, X]: kleur[Y, X] = FP[fi[wit]].mean(0)
                 deel[Y, X] = i
     mask = deel >= 0
     if os.environ.get("IB_DEBUG"): np.save(os.environ["IB_DEBUG"], deel)
@@ -196,7 +200,8 @@ def bouw(cfg, S_extra=1.0, log=None):
             L = kleur[mi].mean(1); lo, hi = np.percentile(L, 5), np.percentile(L, 95)
             t = np.clip((L - lo) / max(1, hi - lo), 0, .999); idx[mi] = np.array(d['ramp'])[(t * len(d['ramp'])).astype(int)]
         else:
-            idx[mi] = (afstand(kleur[mi][:, None, :], P[None, 1:14, :]).argmin(1) + 1)
+            hoog = 16 if cfg.get('donkere_vulling', True) else 14   # Gen 3 vult zwarte/donkere delen met 14/15 (Umbreon, Murkrow)
+            idx[mi] = (afstand(kleur[mi][:, None, :], P[None, 1:hoog, :]).argmin(1) + 1)
     gl = vlak & isglans          # glans/wit uit de front: dichtstbijzijnde van alle tinten (wit mag)
     if gl.any(): idx[gl] = afstand(kleur[gl][:, None, :], P[None, 1:14, :]).argmin(1) + 1
     # (wit telt niet mee voor de paletkeuze: die gebeurt op de vlakken hierboven)

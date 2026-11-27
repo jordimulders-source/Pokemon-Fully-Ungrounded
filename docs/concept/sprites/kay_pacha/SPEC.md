@@ -8,3 +8,6 @@ Besluiten (letterlijk Jordi):
 - 27 nov: "kleuren moeten we even kijken, wat zou bij de lore passen".
 
 Open: kleuren, welke Inca-decoratie, pose, naam.
+- 27 nov, kleuren: richting A ("A prima"): poemavacht + Inca-goud voor de decoratie + groene accenten (Grass). "maar het moet wel echt te vertalen zijn naar een sprite, niet teveel detail".
+
+Prompt r1: `PROMPT.md`.

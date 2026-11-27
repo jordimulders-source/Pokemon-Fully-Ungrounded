@@ -3789,6 +3789,9 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Glyptodon fase 1: model = Gemini r1 A; sprite r1–r5 op 0,6 (51×32, 940 px); oog uit de modelcellen, 6 pixels ([wit, zwart, crème]/[zwart, zwart, crème]), goedgekeurd door Jordi: `fase1/sprite/r5.png`.
 - Naast elkaar: `glyptodon/lijn_fase1_fase2.png`. Open: poten fase 2 nog recht (model ook), eindkeuring fase 1, kleurverschil grijs ↔ bruin tussen de fases, namen.
 - Lessen: plakken tussen Gemini-plaatjes op het natieve raster (GEMINI.md); tintenlimiet is geen regel van Jordi; kleine ogen (SPRITE_KERN.md, referentievel `glyptodon/referenties_ogen/`).
-### [v0.0.923] - Terreurvogel fase 1: frontsprite af, lijn af (27 nov)
+
+### [v0.0.923] - Glyptodon-lijn: fase 1 en 2 frontsprite af (27 nov)
+- Jordi: "akkoord, fase 1 en 2 af". Fase 1 = sprite r5 (`glyptodon/fase1/af/glyptodon_fase1.png`; eindkeuring niet nodig volgens Jordi), fase 2 = eindkeuring ek3 (`glyptodon/fase2/af/glyptodon_fase2.png`; poten als Rhydon/Camerupt met bolle dij en sikkelschaduw, met Jordi's toestemming afwijkend van het model). Beide op het overzichtsvel (bij de terreurvogel); 120 frontsprites af. Namen en eigen ability open.
+### [v0.0.924] - Terreurvogel fase 1: frontsprite af, lijn af (27 nov)
 - Kuiken met enorme kop en snavel, zittend en onhandig ("uncanny cute"), naar Gemini-model (`terreurvogel/fase1/gemini/model_kandidaat.png`), 45×45, silhouet bevroren ("het silhouet/de vorm is verder uitstekend").
 - Kleur: modelkleuren met rampen verder uit elkaar (Jordi: "te vergelijkbaar ... game boy color"), gezicht als eigen kleurgroep (warm lichtbruin), okerstenen snavel, oog D (Pidgeot). DC-eindkeuring ek1 PASS. Af: `docs/concept/sprites/terreurvogel/fase1/af/terreurvogel_fase1.png`; op het overzichtsvel. Terreurvogel-lijn af, namen open.

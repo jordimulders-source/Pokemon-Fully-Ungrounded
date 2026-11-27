@@ -51,3 +51,8 @@ Body plan: `a rusty scrap locomotive held together by a green ghost; we see the 
 
 Pose (voorstel Claude, patroon bij Game Freak: bek open + één lichaamsdeel beweegt mee; Jordi kiest of past aan):
 `it cries out with its beak open, the raised wing lifted a bit higher and the fan crest spread a little wider`
+
+## Hexpress rug: p2 en p3 (27 nov)
+- p2 (prompt met "locomotive", AVOID-regel) → `hexpress_rug_p2.png`: gewone trein met cabine en ramen; Jordi: "nog minder, is je prompt goed genoeg? het is een mooi ontwerp verder wel, maar niet wat we nodig hebben".
+- Les: het woord "locomotive/train" laat Gemini een gewone trein tekenen; van recht achteren verdwijnt het herkenningsteken (gezicht met mond); niet vragen om delen die niet in de front staan.
+- p3-prompt (in de chat gegeven): zonder het woord trein, het wezen omgedraaid dat over zijn schouder terugkijkt (deel van het gezicht met de mond zichtbaar), alleen onderdelen uit de front, "no new parts, windows, doors, cabins or rails".

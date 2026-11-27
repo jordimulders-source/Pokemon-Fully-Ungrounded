@@ -148,4 +148,4 @@ Keep it a clean Gen 3 sprite: max 16 colors, white background, no effects.
 
 ## r4 Starmie (27 nov, bijstuurprompt)
 `gemini/r4_starmie.webp`. Jordi: "hij is nu veel te puntig, maar dat valt in een sprite wel te fixen toch? Door naar de echte starmie te kijken?"
-Observatie Claude: in r4 steken zeven achterpunten uit (niet vijf). Voorstel spritefase: voorste ster uit het model, achterste ster = vorm en hoek van de achterste ster van de Gen 3-Starmie, in koekkleur met chips.
+Jordi (correctie op Claude, die zeven achterpunten telde): "nee geen 7, hij heeft de voorste ster alleen puntiger gemaakt". Voorstel spritefase: voorste ster uit het model, achterste ster = vorm en hoek van de achterste ster van de Gen 3-Starmie, in koekkleur met chips.

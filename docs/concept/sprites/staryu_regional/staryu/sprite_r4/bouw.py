@@ -19,7 +19,7 @@ for v,u in zip(*np.where(c==1)):
 for v in range(JVAK[0],JVAK[1]+1):
     for u in range(JVAK[2],JVAK[3]+1):
         if c2[v,u]==2 and (c2[max(0,v-2):v+3,max(0,u-2):u+3]==4).sum()>=4: c2[v,u]=4
-c=c2
+c=c2; C0J=c2
 # toonkaart deeg (r4): het model heeft één vlakke hoofdtint (L 193) met schaduwvlakken (148) en barsten (90-120). Deegtint per spritepixel
 # uit de gladgestreken modelhelderheid (5x5, alleen deegpixels), drempels uit de eigen verdeling: zo komt het volume uit het model.
 def glad(L,m,r=2):
@@ -78,6 +78,15 @@ for Y,X in zip(*np.where(np.isin(o,list(JUW)))):
     if nb(1,0) or nb(0,1): o[Y,X]=9
     elif nb(-1,0) or nb(0,-1): o[Y,X]=10 if v[Y,X]!=9 else 9
 stap('juweelrand',v,o)
+# --- 1c. binnenring juweel: het model heeft een 1-px donkere concentrische ring (L<60, niet aan de rand); bij 0,50x valt hij weg.
+#     Elke ringpixel naar zijn spritepixel geprojecteerd -> 10, alleen op rood/roze binnen het juweel (rand en glans niet). ---
+v=o.copy()
+for vv,uu in zip(*np.where((C0J==4)&(L<60))):
+    if not (JVAK[0]<=vv<=JVAK[1] and JVAK[2]<=uu<=JVAK[3]): continue
+    if (C0J[vv-2:vv+3,uu-2:uu+3]!=4).any(): continue   # buitenrand van het juweel telt niet
+    X=int((uu+.5-U0)*S+X0); Y=int((vv+.5-V0)*S+Y0)
+    if o[Y,X] in (11,12): o[Y,X]=10
+stap('juweel binnenring',v,o)
 # --- 2. buitenlijn: geen open of lichte rand. Achtergrond rechts/onder = zwart (schaduwkant); lichtkant = selout 2. Zwart uit het model blijft zwart. ---
 def rand(o):
     fg=o>0; uit=[]
@@ -130,6 +139,32 @@ v=o.copy()
 for Y,X in zip(*np.where(o==1)):
     if all(o[Y+dy,X+dx]!=0 for dy in (-1,0,1) for dx in (-1,0,1)) and not any(o[Y+dy,X+dx]==1 for dy in (-1,0,1) for dx in (-1,0,1) if dy or dx): o[Y,X]=3
 stap('losse zwarte pixel',v,o)
+# --- 5. geen om-en-om zwart/selout op de buitenlijn (les keuring r1 / eindkeuring r3): een lijnpixel waarvan beide lijnburen
+#     (8-buren op de rand) de andere lijnkleur hebben, krijgt die kleur. Herhaald tot stabiel. ---
+v=o.copy()
+def randpix(o):
+    fg=o>0; return {(Y,X) for Y,X in zip(*np.where(fg)) if o[Y,X] in (1,2) and (not fg[Y,X-1] or not fg[Y,X+1] or not fg[Y-1,X] or not fg[Y+1,X])}
+for _ in range(5):
+    R=randpix(o); w=[]
+    for Y,X in R:
+        nb=[o[Y+dy,X+dx] for dy in (-1,0,1) for dx in (-1,0,1) if (dy or dx) and (Y+dy,X+dx) in R]
+        if len(nb)==2 and nb[0]==nb[1]!=o[Y,X]: w.append((Y,X,nb[0]))
+    for Y,X,k in w: o[Y,X]=k
+    if not w: break
+stap('om-en-om lijn',v,o)
+# --- 6. outline highlights (gids r. 452-456, eindkeuring r3): op de lichtste selout-pixels volgens het model (gem. deeg-L >= 185),
+#     binnenbuur licht deeg (5), >= 2 px van zwart -> deegschaduw 3 als lichtere lijn. ---
+v=o.copy(); OH=[]; GEMS=[]; TOH=145
+for Y,X in zip(*np.where(o==2)):
+    ws=[(u,vv,w) for u,vv,w in overlap(X,Y,W,H) if c[vv,u]==3]
+    if not ws: continue
+    gem=sum(w*L[vv,u] for u,vv,w in ws)/sum(w for *_,w in ws)
+    binnen=[o[Y+dy,X+dx] for dy,dx in ((-1,0),(1,0),(0,-1),(0,1)) if o[Y+dy,X+dx] not in (0,1,2)]
+    GEMS.append(round(gem))
+    if gem>=TOH and 5 in binnen and not (o[max(0,Y-2):Y+3,max(0,X-2):X+3]==1).any(): OH.append((X,Y,round(gem)))
+for X,Y,_ in OH: o[Y,X]=3
+stap('outline highlights',v,o)
 if __name__=='__main__':
+    print('outline highlights:',OH); print('selout gem-L:',sorted(GEMS))
     toon(o,8,60,6,58); print(tel, 'totaal',sum(tel.values()))
     opslaan(o,UIT+'/staryu_r4.png')

@@ -16,7 +16,7 @@ def mcrop(x0,y0,x1,y1,z):
 panelen=[s.resize((512,512),Image.NEAREST)]
 if len(sys.argv)>3: panelen.append(rgb_from(Image.open(sys.argv[3])).resize((512,512),Image.NEAREST))
 panelen.append(m.resize((512,512),Image.NEAREST))
-zones=[('bovenarm',20,10,38,28),('juweel',22,26,36,38),('linkerarm',8,22,28,40),('rechterarm',32,22,52,40),('benen',14,36,46,56)]
+zones=[('bovenarm',22,10,40,28),('juweel',21,25,35,38),('linkerarm',8,20,28,38),('rechterarm',32,20,54,36),('benen',8,34,46,56)]
 z=12; rows=[]
 for n,x0,y0,x1,y1 in zones:
     a=s.crop((x0,y0,x1,y1)).resize(((x1-x0)*z,(y1-y0)*z),Image.NEAREST); b=mcrop(x0,y0,x1,y1,z)
@@ -25,7 +25,7 @@ for n,x0,y0,x1,y1 in zones:
     for x in range(0,a.width,z): d.line([(x,0),(x,a.height)],fill=(225,225,225))
     for y in range(0,a.height,z): d.line([(0,y),(a.width,y)],fill=(225,225,225))
     rows.append(r)
-W=max(sum(p.width+8 for p in panelen),rows[0].width+rows[1].width+16)
+W=max(sum(p.width+8 for p in panelen),rows[0].width+rows[1].width+16,11*72)
 # close-ups twee per rij
 paren=[rows[i:i+2] for i in range(0,len(rows),2)]
 H=520+sum(max(r.height for r in p)+8 for p in paren)+80
@@ -40,7 +40,11 @@ for i,bg in enumerate([(255,255,255),(248,248,232),(40,48,56),(24,24,24)]):
     v.paste(rgb_from(sp,bg),(i*72,y+8))
 v.paste(m,(4*72,y+8))
 # Gen 3 Staryu en Starmie 1x (anim_front_gba + normal_gba.pal), voor de maat
-for j,nm in enumerate(['staryu','starmie']):
+for j,nm in enumerate(['staryu','starmie']):  # Gen 3
     g=Image.open('../../../../../graphics/pokemon/%s/anim_front_gba.png'%nm); pl=[int(t) for t in open('../../../../../graphics/pokemon/%s/normal_gba.pal'%nm).read().split()[3:]]
     g.putpalette(pl+[0]*(768-len(pl))); g=g.convert('RGB').crop((0,0,64,64)); v.paste(g,(5*72+j*72,y+8))
+# maatstaf-sprites 1x (skinguin, dundragoon, viscacha, awki)
+for j,nm in enumerate(['skinguin','dundragoon','viscacha','awki']):
+    g=Image.open('../../%s/af/%s.png'%(nm,nm)).convert('RGBA'); bgc=Image.new('RGBA',g.size,(255,255,255,255)); bgc.alpha_composite(g)
+    v.paste(bgc.convert('RGB').crop((0,0,64,64)),(7*72+j*72,y+8))
 v.save(sys.argv[2]); print(sys.argv[2],v.size)

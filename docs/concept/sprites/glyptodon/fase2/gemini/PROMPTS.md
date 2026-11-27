@@ -16,3 +16,18 @@ No effects, no glow, no sparkles, no ground or shadow under it. AVOID: a turtle,
 ```
 
 **Jordi over r1 A (`r1_A.png`):** "best geinig, maar ik vind dit meer een fase 1 dan een fase 2 haha, voor fase 1 zou ik hem zelfs al goedkeuring, als die goed vertaalt naar een sprite (denk net iets teveel detail in de nek en staart)". Kopie als fase 1-kandidaat: `../../fase1/referenties/kandidaat_r1_A.png`.
+
+## r2 (27 nov)
+Jordi: "2 dan de knots, hij moet wat massiever, zwaarder, dreigender, misschien wat stekels op het schild, drill en knots kunnen we weer allebei kijken". Rest blijft uit r1 (smooth schild, bracen, kop eruit en gebukt). Kleuren weer niet gegeven. Gebruik A óf B.
+```
+Design an original Pokémon as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64 pixels, max 16 colors, white background, facing 3/4 to the left.
+
+Concept: a fully evolved fossil Pokémon (Rock/Normal) based on Glyptodon, the extinct giant armadillo of South America: a four-legged animal under a huge domed shell, with a bony armored cap on top of its head and thick legs with blunt feet. It is a defensive wall Pokémon: massive, heavy and threatening, clearly armored.
+The shell is smooth: NOT divided into many small tiles or hexagons. A few spikes stick out of the shell.
+Pose: it is bracing itself behind its shell, ready to take a hit. The head is still out of the shell, but ducked down low.
+[A] Tail: a thick, tapering tail made of stacked rings of rounded, knobby bony plates, like a blunt drill. NOT a smooth spiral drill.
+[B] Tail: a thick tail ending in a heavy bony club.
+Compact silhouette that fits a square.
+
+No effects, no glow, no sparkles, no ground or shadow under it. AVOID: a turtle, Shieldon or Bastiodon, a modern armadillo, Dunsparce, a plush toy, Neopets style.
+```

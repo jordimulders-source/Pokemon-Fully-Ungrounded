@@ -10,4 +10,4 @@ Regionaal fossiel, **Rock/Normal**, wall, eigen ability (later). 2 fases; fase 1
 
 ## Open
 - Kleuren (niet besproken; prompt r1 laat ze aan Gemini).
-- Staart: drill (A) of knots (B).
+- Staart fase 2: Jordi "2 dan de knots", maar "drill en knots kunnen we weer allebei kijken" (r2 A en B). Fase 2: "massiever, zwaarder, dreigender, misschien wat stekels op het schild". Fase 1-kandidaat: r1 A.

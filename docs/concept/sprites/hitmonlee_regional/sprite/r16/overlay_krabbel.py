@@ -4,7 +4,7 @@ D='docs/concept/sprites/hitmonlee_regional/'
 S,OX,OY=10.02,8.0,3.0
 k=np.array(Image.open(D+'jordi/krabbel_benen.png').convert('RGB')).astype(int)
 R,G,B=k[...,0],k[...,1],k[...,2]
-yel=(R>160)&(G>190)&(B<140)&(G>R)&(G-B>60)          # Jordi's geel (201,218,82)
+yel=(R>170)&(G>150)&(B<70)          # Jordi's geel (255,230,0 + randen)
 grn=(G>195)&(G-R>80)&(G-B>60)                 # Jordi's groen
 r16=Image.open(D+'sprite/r16/r16.png').convert('RGBA'); a=np.array(r16)
 H,W=k.shape[:2]; out=np.zeros((H,W,3),np.uint8); out[:]=(152,208,160)

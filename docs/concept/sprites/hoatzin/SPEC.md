@@ -354,3 +354,4 @@ AVOID: copying or tracing the sketch; smooth vector shapes; hands or fingers; fe
 - Jordi op r4 (`sprite_fase1/jordi_r4_omcirkeld.png`, rechterhelft omcirkeld): "niet goed te zien hier waar de ledematen los van elkaar zitten, verder prima versie". Naar r5.
 - Haren: Jordi koos **B**.
 - **r5** (`sprite_fase1/r5/`, haren B): 39 px in het omcirkelde gebied (scheidingslijnen onderarm/dij, dij/staart, verre poot/dij; staart een stap donkerder; schaduwrand dij); alpha-diff 0. Onderarm en dij nog dezelfde lichte tint. Naar Jordi.
+  Jordi op r5: "je hebt nu gewoon maar wat rechte lijnen neergezet die niet kloppen" (`sprite_fase1/jordi_r5_lijnen.png`). Claude: de echte grenzen in het model lopen schuin (onderarm van elleboog schuin omlaag, onderrand vleugel naar de punt, poot eronder); r6 = terug naar r4 en de modellijnen in dat gebied 1-op-1 overnemen.

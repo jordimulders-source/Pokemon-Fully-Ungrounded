@@ -209,3 +209,4 @@ MOOD: ugly in a Pokémon way, uncanny, a cryptid, something you don't trust. Sim
 
 AVOID: feathered wings with vanes; hands or fingers; blade-like wings; spines, hair or quills on the back; a crest; messy or scruffy feathers; a normal bird; a smile, a grin or a happy or cute face; a branch or any object; a mask; a red eye; brown or chestnut; a fat or round belly; a symbol or marking; glow.
 ```
+- Jordi over de losse vleugel w1: "hij snapt dit dus wel". Daarom v4 met bronfoto.

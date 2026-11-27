@@ -11,3 +11,6 @@ Open: kleuren, welke Inca-decoratie, pose, naam.
 - 27 nov, kleuren: richting A ("A prima"): poemavacht + Inca-goud voor de decoratie + groene accenten (Grass). "maar het moet wel echt te vertalen zijn naar een sprite, niet teveel detail".
 
 Prompt r1: `PROMPT.md`.
+
+## Rondes
+- r1 (`gemini/r1.png`): Jordi: "haha, dit is het nog niet he, is gewoon een poema met wat blaadjes en een halsband".

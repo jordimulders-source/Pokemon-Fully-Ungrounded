@@ -15,5 +15,5 @@ Regionaal fossiel, **Rock/Fighting**, 2 fases. Tegenhanger van de glyptodon (Roc
 - *Phorusrhacos* = bekendste naam; *Kelenken* = grootste schedel/snavel. Vliegloze loopvogels van 2–3 m: hoge haaksnavel als een bijl, kleine vleugels, lange sterke loopbenen, grote klauw.
 
 ## Open (vragen aan Jordi, nog niet prompten)
-- Fase 1: voorstellen gedaan (27 nov): A kuiken, B kleine voorouder (*Psilopterus*/seriema), C combinatie; keuze open.
+- Fase 1 (Jordi, 27 nov): "een kuiken met een enorme kop en snavel lijkt me wel humor, die dan heel uncanny cute is en heel onhandig erbij zit". Prompt: `../fase1/gemini/PROMPTS.md`.
 - Kleuren.

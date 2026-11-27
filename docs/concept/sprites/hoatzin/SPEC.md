@@ -126,3 +126,6 @@ Opdracht: `sprite/OPDRACHT.md`.
 - **r11** (`sprite/r11/`): kussens weg (lichte randen per veergroep), snavel één rugstrook, kop lichte sikkel. Naar keurder.
 - **r12** (`sprite/r12/`): B-lijn met keurderpunten (tintverdeling 31/39/26/4 %, blauwgrijs, achterhoofd rond, kuifnaad gebroken, één borstbolling, schouderhooglicht). Naar Jordi.
 - **r13** (`sprite/r13/`): DC-eindkeuring op r12, 14 px (4 zwarte binnenlijnen → eigen tint, veerlijnen en voorrand in de opgeheven vleugel uit het model, borsthooglicht als druppel), alpha-diff 0. Naar Jordi.
+
+## Fase 1 (kuiken), overleg 27 nov
+- Inspiratie (Jordi): `referenties/kuiken_1_ai_uncanny.webp`, `kuiken_2_klauwtjes.png`, `kuiken_3_klimmend.webp`, `kuiken_4_tak.png`. Jordi: "Dit is de inspiratie. fotos als inspiratie maar dan iets meer uncanny, iets meer cryptid. Die eerste foto is namelijk een beetje AI geedit en die kant moeten we op".

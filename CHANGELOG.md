@@ -3698,3 +3698,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.891] - Hanan Pacha: r4 + prompt v5 (27 nov)
 - Gemini r4 bewaard ("beter, nog net niet majestueus"); Jordi's staartreferentie in `hanan_pacha/referentie/`; prompt v5 = v4 met een lange, omlaag hangende waaier van losse lansvormige staartveren.
+
+### [v0.0.892] - Hanan Pacha: prompt v6 (27 nov)
+- v5 (staart naar referentie, alleen vorm en richting) + kroonkam (K-a): grote vlezige kam die als natuurlijke kroon omhoog rijst.

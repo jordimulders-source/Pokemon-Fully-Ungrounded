@@ -37,3 +37,4 @@ Trio van de drie Inca-werelden (zie `docs/concept/POKEMON.md` → Legendaries). 
 - **Sprite r1** (`sprite_r1/`, maker): r7 verkleind (natief 160 px, ×2,44 → 56×64), kleuren r5; pennen en staartveren 1–2 px breed → streperig. Nog niet gekeurd; naar Jordi voor de staartvraag ("eerst kijken of het laatste model werkt").
 - Jordi na r1: "eens met dat de staart niet werkt"; "de kop is aan de kleine kant ook" "waardoor het oog maar 2 pixels is". → r2: staart van r5 in r7-kleuren, kop uit het model geschaald (×1,2/×1,35/×1,5 ter keuze), oog 1-op-1 van een Gen 3-vogel; pennen: banden r5 langs de lengte (voorstel Claude).
 - Jordi: "de vleugels vind ik wel goed gelukt, alleen moeten nog meer kleurtinten en schaduw krijgen" → pennen-voorstel van Claude vervalt; vleugels vorm/kleurvolgorde bevroren, meer tinten + Gen 3-schaduw.
+- Jordi: "ja het is niet erg dat de kop dan meer vleugel overlapt".

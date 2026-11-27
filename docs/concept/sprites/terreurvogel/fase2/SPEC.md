@@ -20,6 +20,7 @@ Regionaal fossiel, **Rock/Fighting**, 2 fases. Tegenhanger van de glyptodon (Roc
 
 ## Model gekozen (Jordi, 27 nov): `gemini/r1_eenvoud.png`
 - r1 met bijlsnavel, minder detail; verhouding ±64×40 zoals Lapras (64×39). Jordi: "we gaan deze doen" (na Claudes advies om r7 te houden). r7-sprite gestopt ("stop de eerdere maker maar"); tussenbestanden in `sprite_r1/`.
+- **Jordi (27 nov):** "met wat kanttekeningen, de snavel is van staal, dat moet een soort stone axe worden" / "anders klopt het type niet meer". Uitvoering: snavelvorm uit het model, kleuren steen i.p.v. staal; facetten/barsten alleen als voorstel.
 
 ## Open
 - Fase 1 (Jordi, 27 nov): "een kuiken met een enorme kop en snavel lijkt me wel humor, die dan heel uncanny cute is en heel onhandig erbij zit". Prompt: `../fase1/gemini/PROMPTS.md`.

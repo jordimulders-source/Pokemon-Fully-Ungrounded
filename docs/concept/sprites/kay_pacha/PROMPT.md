@@ -18,3 +18,4 @@ SPRITE: keep it simple and readable at 64x64. Big clear shapes, little detail.
 POSE: 3/4 view facing left, standing on four legs, head raised, proud and calm like a legendary beast.
 
 DO NOT: spots, stripes, wings, armor, a human, a crown of feathers, glowing aura, magic effects, rocks, grass on the ground, background.
+```

@@ -47,3 +47,30 @@ Pose: Hitmonchan's own boxing stance, facing 3/4 to the left, both blocks raised
 No snowflakes, no frost particles, no mist, no glow, no effects, no pedestal, no ground, no shadow.
 AVOID: smooth glossy body, plain recolor of Hitmonchan, ice cubes glued onto the hands, a human in an ice costume, a snowman, a plush/Neopets look.
 ```
+
+## r2 (`gemini/r2.png`)
+- Jordi: "iets beter maar de ijsklonten zijn opgeplakt, misschien een uppercut pose doen".
+- Claude: blokken te groot en met een donkere scheidingslijn tussen onderarm en blok; facetten lopen niet door.
+
+## Gemini-prompt r3 (nieuw gesprek, zonder bijlage)
+```
+Design a regional form of the Pokémon HITMONCHAN, as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64 pixels, max 16 colors, clean dark outline, white background.
+
+What it is: an ice sculpture of Hitmonchan that came to life, carved with a chisel out of one big block of ice. It looks carved, not like a smooth blue recolor:
+- the whole body is made of flat angular facets and chisel cuts with sharp edges, like a hand-carved ice sculpture; no smooth rounded skin;
+- the head crest, the face, the tunic and the legs are cut into planes;
+- clear ice: deep blue in the thick parts, pale cyan and white on the facets facing the light, frosted white on the rough cut surfaces, a few small white highlights on the sharp edges.
+
+The fists are cube-shaped, and they are ONE piece with the arms:
+- each forearm gradually widens and turns into the cube, like the sculptor carved the arm but left the fist as a rough square chunk of the original block;
+- the facets and chisel cuts of the forearm run straight on into the cube; there is NO dark line, seam, cuff or gap between the arm and the cube;
+- the cubes are the size of Hitmonchan's boxing gloves, not bigger, and the same ice and color as the arm.
+Type: Ice.
+
+Anatomy: keep Hitmonchan's body plan (head with its crest, tunic, legs, arms). Two arms, two legs, one cube-fist on each arm.
+
+Pose: an UPPERCUT. The near arm drives straight upward, the cube-fist rising past the chin to above head height; the other arm stays bent close to the body, its cube-fist guarding in front of the chest. Knees bent, body twisting upward into the punch. Facing 3/4 to the left. Compact composition that fits a square sprite; limbs close to the body.
+
+No snowflakes, no frost particles, no mist, no glow, no effects, no pedestal, no ground, no shadow.
+AVOID: separate ice cubes glued or stuck onto the hands, oversized blocks, a dark outline between arm and cube, smooth glossy body, plain recolor of Hitmonchan, a snowman, a plush/Neopets look.
+```

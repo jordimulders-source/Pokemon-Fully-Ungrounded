@@ -74,3 +74,7 @@ Pose: an UPPERCUT. The near arm drives straight upward, the cube-fist rising pas
 No snowflakes, no frost particles, no mist, no glow, no effects, no pedestal, no ground, no shadow.
 AVOID: separate ice cubes glued or stuck onto the hands, oversized blocks, a dark outline between arm and cube, smooth glossy body, plain recolor of Hitmonchan, a snowman, a plush/Neopets look.
 ```
+
+## r3 (prompt r3, uppercut)
+- Jordi (27 nov): "kijk dat werkt perfect". Uitgehakt ijs met facetten, kubusvuisten vloeien over in de onderarmen, uppercut met de verre arm omhoog, andere vuist voor de borst.
+- Beeld kwam alleen inline binnen; voor de sprite moet Jordi het bestand nog als bijlage sturen (komt dan in `gemini/r3.png`).

@@ -1,0 +1,13 @@
+# Zandloper-lijn fase 2 (brein breekt uit) – besluiten
+
+Lijn: fase 1 zandloper met ogen (`../fase1/af/`) → fase 2 → fase 3 zand-djinn (`../fase3/af/`). Ground/Psychic.
+
+## Model (27 nov)
+- Jordi: "de zandloper nu gebroken is (zoals in fase 3) en er zand uit ontsnapt, daar komt een relatief groot brein uit, met de ogen niet eraan vast, maar iets eronder en boven het brein ook in zand een vraagteken en uitroepteken, dit is allemaal verbonden aan elkaar".
+- Over r1: "het moet 1 zandwolk zijn, zandloper kleiner en op de grond. Hij gebruikt de uitroepteken en vraagtekens als handen".
+- Over r2: "zandloper is niet kapot en niet op de grond, het brein is een tekening en niet de vorm, verder wel prima".
+- **Model = `model.png` = Gemini r3** (Jordi: "nice"). Prompts en rondes: `gemini/PROMPTS.md`.
+
+## Sprite
+- Maat: Jordi "maak de sprite van r3, maar wel kleiner" → koos **0,80** van het natieve raster (pitch 10,24) uit 4 maten (`sprite/maten/vel_maten.png`). Fase 1 wordt in een ander gesprek aangepast (Jordi).
+- r1–r3 door een maker (alles uit het natieve model, palet van fase 1/3), r2 en r3 gekeurd (BIJNA); r4 = r3 + de laatste 3 keurderpunten (8 pixels, alleen tint). `sprite/r4/zandloper_fase2_r4.png`, 14 kleuren + transparant.

@@ -1,0 +1,22 @@
+gaten tussen voor en achter 0
+puntig: weg per punt {'linksboven': 14, 'rechtsboven': 11, 'linksonder': 12, 'rechtsonder': 11}
+puntig: punten {'linksboven': {'tip': (np.float64(14.0), np.float64(8.0)), 'voet': ((np.float64(13.0), np.float64(19.0)), (np.float64(25.0), np.float64(10.0))), 'richting': 127.0, 'lengte': 27.3, 'px': 142}, 'rechtsboven': {'tip': (np.float64(46.0), np.float64(8.0)), 'voet': ((np.float64(35.0), np.float64(10.0)), (np.float64(46.0), np.float64(20.0))), 'richting': 53.7, 'lengte': 26.5, 'px': 140}, 'linksonder': {'tip': (np.float64(6.0), np.float64(41.0)), 'voet': ((np.float64(13.0), np.float64(44.0)), (np.float64(10.0), np.float64(31.0))), 'richting': -155.3, 'lengte': 27.5, 'px': 89}, 'rechtsonder': {'tip': (np.float64(54.0), np.float64(40.0)), 'voet': ((np.float64(50.0), np.float64(31.0)), (np.float64(46.0), np.float64(42.0))), 'richting': -24.1, 'lengte': 26.1, 'px': 82}}
+starmie_r4_B
+linksboven px 128 chips 10
+rechtsboven px 1 chips 0
+rechtsboven px 129 chips 7
+linksonder px 77 chips 0
+rechtsonder px 71 chips 0
+linksonder px 3 chips 0
+rechtsonder px 1 chips 0
+wit lijn 86 
+juweel lijn 24 [(np.int64(26), np.int64(23)), (np.int64(25), np.int64(24)), (np.int64(26), np.int64(24)), (np.int64(25), np.int64(25)), (np.int64(31), np.int64(25)), (np.int64(24), np.int64(26)), (np.int64(30), np.int64(26)), (np.int64(31), np.int64(28)), (np.int64(32), np.int64(29)), (np.int64(32), np.int64(30)), (np.int64(35), np.int64(30)), (np.int64(35), np.int64(31)), (np.int64(30), np.int64(32)), (np.int64(35), np.int64(32)), (np.int64(34), np.int64(33)), (np.int64(24), np.int64(34)), (np.int64(31), np.int64(34)), (np.int64(34), np.int64(34)), (np.int64(33), np.int64(35)), (np.int64(27), np.int64(36)), (np.int64(28), np.int64(36)), (np.int64(29), np.int64(36)), (np.int64(30), np.int64(36)), (np.int64(31), np.int64(36))]
+ontkorrelen 129 
+koek in glazuur 3 [(np.int64(26), np.int64(18)), (np.int64(41), np.int64(24)), (np.int64(18), np.int64(45))]
+ontkorrelen achter 72 
+puntig weg 48 
+puntig facet 216 
+buitenlijn 119 
+binnenlijn achter 54 
+losse zwarte pixel 5 [(np.int64(16), np.int64(8)), (np.int64(35), np.int64(16)), (np.int64(36), np.int64(19)), (np.int64(51), np.int64(26)), (np.int64(15), np.int64(36))]
+figuur x6-54 y6-53 49x48, 1705 px

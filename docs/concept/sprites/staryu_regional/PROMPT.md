@@ -164,3 +164,6 @@ THE COOKIE: thick, soft-baked cookie dough, warm golden-brown, darker and toaste
 
 DO NOT: a flat star seen straight from the front, a symmetric upright star, a sea star texture, a realistic photo, a plate, starfield or galaxy patterns, sparkles, plush style.
 ```
+
+## r4 Staryu (27 nov, prompt v4)
+`gemini/r4_staryu.png`. Observatie Claude: ster gekanteld en scheef (bovenarm naar rechts, armen ongelijk), maar geen zichtbare dikte/zijkant zoals de Gen 3 Staryu.

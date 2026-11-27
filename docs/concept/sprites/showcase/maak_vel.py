@@ -66,6 +66,7 @@ SECTIES=[
 ("glitch_lijn/fase2_bug/af/glitch_fase2.png",'Bug (glitch-lijn fase 2)',"electric/bug"),
 ("glitch_lijn/fase3_virus/af/glitch_fase3.png",'Virus (glitch-lijn fase 3)',"electric/bug"),
 ("guarana/af/guarana.png",'Guaraná fase 1',"grass/ghost"),
+("guarana_fase2/af/guarana_fase2.png",'Guaraná fase 2',"grass/ghost"),
 ("sneeuwmonster/af/sneeuwmonster.png",'Sneeuwmonster (fase 1)',"ice"),
 ("sneeuwmonster_fase2/af/sneeuwmonster2.png",'Sneeuwmonster (fase 2)',"ice/fire"),
 ("hoatzin/af/hoatzin_fase2.png",'Hoatzin fase 2 (pestmasker)',"poison/dark"),

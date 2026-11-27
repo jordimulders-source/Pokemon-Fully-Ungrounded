@@ -6,3 +6,4 @@ Lijn: zie `../fase2/SPEC.md`. Jordi (27 nov): "ja een kuiken met een enorme kop 
 - **Jordi (27 nov):** "ja fase 1 mag je wat meer kleuren zoals fase 2" (sprite gestart tegelijk met fase 2; kleuren richting fase 2 v8: stenen snavel warm grijsbruin, antraciet lijf, roest rood/oranje, beige poten; als palette swaps ter keuze).
 - **Jordi (27 nov) over r1 + swaps:** "De snavel zelf mag wat meer van steen, daarnaast zijn de tinten allemaal te vergelijkbaar waardoor het meer op een game boy color sprite lijkt". Kleur/oog nog niet gekozen; r2 = rampen verder uit elkaar + snavelvarianten (kleur / facetten) + oog B en E.
 - **Jordi (27 nov):** "het silhouet/de vorm is verder uitstekend" (r1-silhouet en vorm bevroren).
+- **Oog gekozen (Jordi, 27 nov): "oog d"** (`sprite_r1/oog_D.png`, Pidgeot-oog met glans).

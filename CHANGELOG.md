@@ -3850,3 +3850,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.941] - Vuurwerk-lijn: 2 fases (27 nov)
 - Jordi: "fase 2 is geschrapt en fase 3 is fase 2 geworden". Lijn = Axolaunch → Pyrowyrm (map `vuurwerk_fase3/` blijft zo heten). Bijgewerkt in `IDEEEN.md`, `POKEMON.md` en Stand van zaken.
+
+### [v0.0.942] - Typeverdeling per lijn (27 nov)
+- Op vraag van Jordi: types per lijn (origineel, regionaal, evo's, nieuw totaal, hele dex; zonder legendaries) in `docs/concept/DEX_IN_ROM.md`; script `tools/grounded/typen_per_lijn.py`.

@@ -90,3 +90,28 @@ Aantal soortconstanten met data in de ROM: 582 (incl. vormen); verschillende Nat
 Regel (Jordi, 25 nov): regionale vormen komen erbij; "als ze al erin zaten, gaan ze niet eruit" · "als ze niet erin zaten, komen de originele niet erin" (dus geen gewone Jynx, Mr. Mime of Pincurchin).
 Telling per soort (dubbeltype telt bij beide), 542 soorten: behouden lijnen hierboven (types uit de repo, Dudunsparce eruit) + Cosmic-besluiten (Lunatone/Solrock Rock/Cosmic, Clefairy-lijn Fairy/Cosmic, Elgyem-lijn Cosmic) + alle 92 afgemaakte frontsprites (types van het overzichtsvel) + Smoochum en Mime Jr. Tussen haakjes: met de regionale Lotad-lijn Ground/Fighting erbij (3 soorten, aanname).
 Water 96 · Flying 59 · Bug 57 · Grass 57 · Dark 54 · Ground 53 (56) · Poison 52 · Normal 51 · Ghost 50 · Psychic 48 · Electric 46 · Steel 41 · Fire 39 · Dragon 35 · Ice 33 · Rock 33 · Fairy 32 · Fighting 30 (33) · Cosmic 17. Normal/Steel- en Grass/Ghost-lijn nog niet meegeteld (aantal fases open).
+
+## Typeverdeling per lijn (27 nov, telling Claude; zonder legendaries)
+Een lijn telt bij een type als één lid dat type heeft. Origineel = 31 eigen lijnen (overzichtsvel, vuurwerk 2 fases); regionaal = 18 regionale/convergente lijnen; evo = 14 evoluties van bestaande soorten; hele dex = 269 lijnen (behouden lijnen met de evo's erbij + regionaal + origineel; Mew/Mewtwo/Zarude en de legendaries eruit). Script: `tools/grounded/typen_per_lijn.py`.
+
+| Type | Origineel | Regionaal | Evo | Nieuw totaal | Hele dex |
+|---|---|---|---|---|---|
+| Water | 2 | 2 | 3 | 7 | 48 |
+| Flying | 3 | 3 | 2 | 8 | 37 |
+| Normal | 7 | 0 | 1 | 8 | 35 |
+| Ground | 1 | 3 | 1 | 5 | 31 |
+| Dark | 3 | 3 | 2 | 8 | 31 |
+| Bug | 3 | 0 | 2 | 5 | 30 |
+| Ghost | 5 | 0 | 1 | 6 | 30 |
+| Grass | 4 | 2 | 1 | 7 | 30 |
+| Poison | 2 | 4 | 0 | 6 | 29 |
+| Psychic | 3 | 4 | 0 | 7 | 26 |
+| Electric | 4 | 3 | 2 | 9 | 26 |
+| Fire | 4 | 2 | 0 | 6 | 25 |
+| Steel | 3 | 2 | 1 | 6 | 24 |
+| Ice | 3 | 2 | 1 | 6 | 21 |
+| Rock | 5 | 2 | 2 | 9 | 21 |
+| Fighting | 2 | 2 | 3 | 7 | 20 |
+| Dragon | 1 | 1 | 1 | 3 | 18 |
+| Fairy | 3 | 2 | 1 | 6 | 17 |
+| Cosmic | 3 | 1 | 4 | 8 | 10 |

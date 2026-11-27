@@ -35,4 +35,4 @@ Alle citaten en lijnbesluiten: `docs/concept/IDEEEN.md` → "Impala-lijn"; samen
 - **Oog (Jordi, 27 nov): "k4 voor oog"** = Bidoof-oog 1-op-1 (`sprite/r6/kudu_r6_oogK4.png`, bron in `sprite/oog_klein.py`).
 - Jordi op r8 (27 nov): "de vorm klopt niet, gezien het links veel meer eroverheen loopt dan rechts, daarom houd je ook bijna geen ruimte over. Links is het zelfs helemaal 1 geworden met de poot, wat een prutswerk weer".
 - Jordi op r9 (27 nov): "het is qua vorm nu iets te wollerig".
-- **Manen (Jordi, 27 nov): "doe maar b6b, maar netter, minder rechte lijnen"** (`sprite/r10/kudu_r10_B6b.png`). r11 = opschonen.
+- Manen (Jordi, 27 nov): "doe maar b6b, maar netter, minder rechte lijnen" → r11 (B6b opgeschoond). Jordi op r11: "HUH", "wat is dit"; daarna: **"o dat is mijn fout, b6a bedoelde ik"** → keuze = `sprite/r10/kudu_r10_B6a.png`, netter, minder rechte lijnen (r12). r11 vervalt.

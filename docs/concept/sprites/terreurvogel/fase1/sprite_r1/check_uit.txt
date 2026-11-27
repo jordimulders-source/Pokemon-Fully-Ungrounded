@@ -1,0 +1,52 @@
+maat 45 x 45 bbox x 10 54 y 18 62 px 1024
+alpha-diff t.o.v. kale reductie 0
+gebruikte indices [np.uint8(1), np.uint8(2), np.uint8(3), np.uint8(4), np.uint8(5), np.uint8(6), np.uint8(7), np.uint8(9), np.uint8(10), np.uint8(11), np.uint8(12), np.uint8(13), np.uint8(14), np.uint8(15)] aantal kleuren 14
+randpixels die geen lijn/selout zijn []
+tintclusters <3 px: 41
+   5 bruin [(23, 21), (24, 21)]
+   7 bruin [(32, 26)]
+   2 snavel [(14, 27)]
+   2 snavel [(13, 28)]
+   14 oog [(29, 28)]
+   7 bruin [(32, 28)]
+   2 snavel [(12, 29)]
+   7 bruin [(31, 29)]
+   2 snavel [(11, 30), (11, 31)]
+   2 snavel [(10, 32), (10, 33)]
+   2 snavel [(11, 37)]
+   5 bruin [(38, 37)]
+   5 bruin [(26, 39)]
+   5 bruin [(26, 41)]
+   5 bruin [(24, 44)]
+   5 bruin [(47, 46)]
+   10 creme [(25, 48)]
+   9 creme [(33, 49)]
+   5 bruin [(52, 50)]
+   6 bruin [(35, 53)]
+   9 creme [(39, 53)]
+   5 bruin [(49, 53)]
+   6 bruin [(29, 55)]
+   13 poten [(34, 55)]
+   12 poten [(36, 55)]
+   12 poten [(38, 55)]
+   13 poten [(39, 55), (40, 55)]
+   13 poten [(23, 56)]
+   13 poten [(35, 56)]
+   13 poten [(37, 56)]
+   11 poten [(40, 56)]
+   13 poten [(22, 57)]
+   13 poten [(24, 57), (25, 57)]
+   7 bruin [(29, 57), (30, 57)]
+   12 poten [(35, 57)]
+   13 poten [(36, 57)]
+   11 poten [(41, 57)]
+   12 poten [(23, 58)]
+   11 poten [(38, 59)]
+   12 poten [(38, 60), (38, 61)]
+   11 poten [(39, 60)]
+afwijkend t.o.v. kaal in snavel: 23
+afwijkend t.o.v. kaal in kop: 60
+afwijkend t.o.v. kaal in oog: 16
+afwijkend t.o.v. kaal in borst/lijf: 49
+afwijkend t.o.v. kaal in poten: 17
+totaal afwijkend t.o.v. kaal 137

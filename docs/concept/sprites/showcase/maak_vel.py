@@ -75,7 +75,7 @@ SECTIES=[
 ("hoatzin/af/hoatzin_fase2.png",'Hoatzin fase 2 (pestmasker)',"poison/dark"),
 ("zandloper/fase1/af/zandloper_fase1.png",'Zandloper (zandloper-lijn fase 1)',"ground/psychic"),
 ("zandloper/fase2/af/zandloper_fase2.png",'Brein uit de zandloper (zandloper-lijn fase 2)',"ground/psychic"),
-("zandloper/fase3/af/zandloper_fase3.png",'Zand-djinn (zandloper-lijn fase 3)',"ground/psychic"),
+("zandloper/fase3/af/zandloper_fase3.png",'Zand-djinn (zandloper-lijn fase 3)',"ground/psychic"),("terreurvogel/fase2/af/terreurvogel_fase2.png",'Terreurvogel fase 2 (fossiel, bijlsnavel)',"rock/fight"),
 ]),
 ("Evolutions of existing Pokémon",[
 ('hitmontop_evo/af/hitmongroove.png', '"Hitmongroove" (Hitmontop)', 'fight/ground'),
@@ -115,6 +115,8 @@ SECTIES=[
 ("oricorio_dansen/tango/af/tango.png",'Oricorio (tango)',"dark/flying"),
 ("oricorio_dansen/samba/af/samba.png",'Oricorio (samba)',"grass/flying"),
 ("pincurchin_regional/af/pincurchin_regional.png",'Pincurchin (regional)',"poison/rock"),
+("staryu_regional/staryu/af/staryu_regional.png",'Staryu (regional)',"fairy"),
+("staryu_regional/starmie/af/starmie_regional.png",'Starmie (regional)',"fairy/psychic"),
 ("lotad_regional/af/lotad_gaucho.png",'Lotad (gaucho)',"ground"),
 ("lotad_regional/lombre/af/lombre_gaucho.png",'Lombre (gaucho)',"ground/fight"),
 ("lotad_regional/ludicolo/af/ludicolo_gaucho.png",'Ludicolo (gaucho)',"ground/fight"),
@@ -126,7 +128,12 @@ SECTIES=[
 ("poliwrath_regional/af/poliwrath_regional.png",'Poliwrath (regional)',"ice/poison"),
 ("grimer_hoenn/af/grimer_hoenn.png",'Grimer (regional)',"poison/ground"),
 ("muk_hoenn/af/muk_hoenn.png",'Muk (regional)',"poison/ground"),
+("hitmonlee_regional/af/hitmonlee_regional.png",'Hitmonlee (regional)',"fire"),
+("hitmonchan_regional/af/hitmonchan_regional.png",'Hitmonchan (regional)',"ice"),
 ("dj_rotom/af/dj_rotom.png",'"DJ Rotom"',"electric/steel"),
+]),
+("Legendaries",[
+("regiaqua/af/regiaqua.png",'"Regiaqua"',"water"),
 ]),
 ]
 F="/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"; FR=F.replace("-Bold","")

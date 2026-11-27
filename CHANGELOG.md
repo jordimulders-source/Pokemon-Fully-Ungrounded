@@ -3664,3 +3664,122 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - r2 beoordeeld (rest prima); prompt r3: zandloper kapot en op de grond, brein is de vorm i.p.v. een tekening.
 - Gemini r3 = model; sprite op 0,80 (Jordi) via r1–r4 met keuringen: `docs/concept/sprites/zandloper/fase2/sprite/r4/`; besluiten in `fase2/SPEC.md`. Wacht op Jordi.
 - Na Jordi ("wat hard omlijnd", "het gaat niet om dunnere lijn maar kleur"): r4 behouden → DC-eindkeuring (zwarte binnenpixels in lijnkleur van het eigen onderdeel, 13 outline highlights). Af (Jordi: "ja commit en push naar main"): `docs/concept/sprites/zandloper/fase2/af/zandloper_fase2.png`; op het overzichtsvel. Zandloper-lijn af, namen open.
+
+### [v0.0.881] - Regicosmo en Regiaqua: idee vastgelegd (27 nov)
+- `docs/concept/IDEEEN.md` → "Regicosmo en Regiaqua": Jordi's beschrijving letterlijk, plus Claudes voorstellen voor de stippen (open).
+
+### [v0.0.882] - Regicosmo en Regiaqua: besluiten + Gemini-prompts r1 (27 nov)
+- Jordi: Regicosmo stippen = B (kaart van zijn eigen lichaam), losse hemellichamen vormen samen een golem. Regiaqua: zwevende waterarmen, echte stippen niet in de hoofdkleur, oplichtend in een diepzeekleur.
+- `docs/concept/sprites/regicosmo/` en `regiaqua/`: SPEC.md (citaten) en PROMPT.md (r1).
+
+### [v0.0.883] - Regicosmo r1 + prompt r2 (27 nov)
+- `regicosmo/gemini/r1.png` bewaard; Jordi: conceptueel goed, te veel planeten en stippen (max 8). Prompt r2 in `regicosmo/PROMPT.md`: 7 delen, 7 stippen.
+- Typing (Jordi): "ja ze zijn monotype": Regicosmo Cosmic, Regiaqua Water.
+
+### [v0.0.884] - Regiaqua r1 + stippencheck (27 nov)
+- `regiaqua/gemini/r1.png` bewaard (Jordi: "al heel erg hoe ik hem in gedachten heb"); vergelijking met de Gen 3-Regi's en een 64 px-proef in `regiaqua/gemini/`.
+
+### [v0.0.885] - Regicosmo prompt r3 (27 nov)
+- Na r2 (Jordi: "te random", "niet goed genoeg golem", romp "meer een mars kleur"): prompt r3 met vaste golembouw en Mars-romp in `regicosmo/PROMPT.md`.
+
+### [v0.0.886] - Regiaqua: reactie op de stippencheck (27 nov)
+- Jordi: r1 "lijkt wel goed"; stippen worden in de sprite vierkantjes (zoals Gen 3). In `regiaqua/SPEC.md`.
+
+### [v0.0.887] - Regiaqua: model vastgezet, sprite gestart (27 nov)
+- Jordi: 7 stippen "is prima" → model = `regiaqua/gemini/r1.png`; maker gestart in `regiaqua/sprite/`.
+
+### [v0.0.888] - Regicosmo r3 + prompt r4 (27 nov)
+- r3 bewaard (Jordi: te veel vast, hemellichamen te gelijk, r2 toffer); prompt r4 in `regicosmo/PROMPT.md`.
+
+### [v0.0.889] - Regicosmo r4 + prompt r5 (27 nov)
+- r4 bewaard (9 stippen, Mars leest als bloedmaan, schouders/handen te hoog); prompt r5 in `regicosmo/PROMPT.md`.
+
+### [v0.0.890] - Regicosmo r5 + prompt r6 (27 nov)
+- r5 bewaard (Jordi: "mars is nu een paasei"); prompt r6: Mars perfect rond met bolschaduw.
+
+### [v0.0.891] - Regicosmo r7 + positievarianten (27 nov)
+- r7 bewaard (Jordi: "nog beter"); ijsplaneet en Saturnus per script omlaag geschoven in 3 hoogtes (`regicosmo/positie/`).
+
+### [v0.0.892] - Regiaqua frontsprite r1/r2 (27 nov)
+- Maker r1 (`regiaqua/sprite/r1/`): kale reductie van Gemini r1 (silhouet-diff 0), 11 kleuren, 62×50, 7 stippen als 2×2. Keurder BIJNA; r2 (`sprite/r2/`) verwerkt de 4 punten (15 px). Naar Jordi.
+
+### [v0.0.893] - Regiaqua: frontsprite af (27 nov)
+- `docs/concept/sprites/regiaqua/af/regiaqua.png` (= sprite r2). Op het overzichtsvel onder het nieuwe kopje "Legendaries" (Jordi), `showcase/maak_vel.py`.
+
+### [v0.0.894] - Regicosmo: eindkeuring r7 + merge met main (27 nov)
+- Regicosmo-sprite r7 na DC-eindkeuring (PASS), `regicosmo/sprite/r7/`; Saturnus/maan-posities en rondere bollen in r4–r6 (zie `regicosmo/SPEC.md`). Branch samengevoegd met main (Ledian-evolutie, zandloper); overzichtsvel opnieuw gebouwd; mijn changelogsecties hernummerd naar v0.0.881–893.
+### [v0.0.895] - Idee: carambola-Staryu/Starmie (27 nov)
+- `IDEEEN.md` → Fruit en planten → Carambola: Jordi's uitspraak toegevoegd ("Ik denk nog aan carambola staryu/starmie").
+### [v0.0.896] - Regionale Staryu/Starmie: Gemini-prompts carambola en chocolate chip (27 nov)
+- `docs/concept/sprites/staryu_regional/PROMPT.md`: vier prompts (carambola-Staryu/-Starmie, chocolate chip-Staryu/-Starmie), elk met de Gen 3-sprite als bijlage (`gemini/bijlage_*_gen3.png`). Jordi: bij twee goede uitkomsten gaat carambola voor. Type en serieus/grap open.
+### [v0.0.897] - Regionale Staryu/Starmie: chocolate chip gekozen (27 nov)
+- Gemini r1 van alle vier opgeslagen in `docs/concept/sprites/staryu_regional/gemini/`. Jordi kiest chocolate chip (carambola-Starmie vertaalt niet door de twee sterren); bijstuurprompt r2 voor een minder bleke, lekkerdere koekkleur in `PROMPT.md`.
+### [v0.0.898] - Regionale Starmie: prompt versierd koekje (27 nov)
+- Jordi: Staryu chocolate chip, Starmie "allerlei versieringen"; nieuwe Starmie-prompt (v2) in `docs/concept/sprites/staryu_regional/PROMPT.md`.
+### [v0.0.899] - Regionale Staryu/Starmie: r2 + prompts v3 (27 nov)
+- r2 opgeslagen; Jordi: "nog wat saai", "staryu is maar half gedecoreerd", "het mogen echt meer koekjes worden". Nieuwe prompts v3 (Staryu en Starmie) in `docs/concept/sprites/staryu_regional/PROMPT.md`.
+### [v0.0.900] - Regionale Staryu/Starmie: r3 (27 nov)
+- r3 (prompts v3) opgeslagen; Jordi: "wel lachen", twijfel over de achterste ster van Starmie.
+### [v0.0.901] - Regionale Starmie: achterste ster zoals de echte Starmie (27 nov)
+- Jordi: "zoals de echte starmie"; bijstuurprompt r4 in `docs/concept/sprites/staryu_regional/PROMPT.md`.
+### [v0.0.902] - Regionale Starmie: r4 (27 nov)
+- r4 opgeslagen; Jordi: achterkant "veel te puntig", fixen in de spritefase met de echte Starmie als voorbeeld.
+### [v0.0.903] - Regionale Staryu: frontsprite af (27 nov)
+- Chocolate chip-koekje met rood juweel, naar Gemini r4 (driekwart; r3 stond te recht). Sprite r5: exacte 2×-reductie van het model + keuring (BIJNA → reparaties) en DC-eindkeuring (PASS). `docs/concept/sprites/staryu_regional/staryu/af/` (+ `normal.pal`, 8×); op het overzichtsvel (Regional forms, type open).
+- Starmie: model = Gemini r4 (Jordi: "doe maar r4"); Gemini kon driekwart + achterster niet samen (v5–v8). Sprite in de maak: achterpunten minder puntig zoals de normale Starmie.
+### [v0.0.904] - Staryu/Starmie Water/Cosmic; regionale Starmie r5 (27 nov)
+- Jordi: gewone Staryu en Starmie worden Water/Cosmic (`CONCEPT.md` → Cosmic). Type regionale vorm open.
+- Regionale Starmie sprite r5 vanaf model r4: achterpunten zonder / licht / sterk afgestompt naar de Gen 3-maten (`staryu_regional/starmie/sprite_r5/`).
+### [v0.0.905] - Regionale Staryu/Starmie: types (27 nov)
+- Jordi: regionale Staryu Fairy, regionale Starmie Fairy/Psychic. Overzichtsvel bijgewerkt.
+### [v0.0.906] - Regionale Starmie: frontsprite af (27 nov)
+- Versierd koekje (paars glazuur, witte zigzag, hagelslag, paars juweel) op een koekster met chips, naar Gemini r4; alle tien punten afgestompt naar de Gen 3-Starmie (r6 licht), bovenpunt 1 rij terug (r8 A), keuring + DC-eindkeuring PASS (r7, r9). `docs/concept/sprites/staryu_regional/starmie/af/` (+ `normal.pal`, 8×); op het overzichtsvel (Fairy/Psychic). Regionale Staryu-lijn af.
+### [v0.0.907] - Regionale Starmie: afwerking (27 nov)
+- Jordi omcirkelde twee plekken ("nog niet netjes afgewerkt"): achterpunt rechtsboven opgeschoond (licht/donker vlak, chips, nette binnenlijn) en rechter voortip even stomp als links (r10, r11 B; "smoother", "rechts is de punt puntiger"). `starmie/af/` = r11 B; overzichtsvel bijgewerkt.
+### [v0.0.908] - Idee: regionale Hitmonlee en Hitmonchan (27 nov)
+- `IDEEEN.md`: nieuwe sectie met Jordi's idee (Hitmonchan Ice, ijssculptuur met kubushandschoenen; Hitmonlee misschien vuur), repo-check en open vragen.
+
+### [v0.0.909] - Pitch regionale Hitmonlee (27 nov)
+- `IDEEEN.md`: zes ideeën voor de regionale Hitmonlee onder "Regionale Hitmonlee en Hitmonchan".
+- Besloten: Tyrogue blijft hetzelfde (Jordi).
+- Besloten: regionale Hitmonlee = voetballer in omhaalpose, van gloeiend geblazen glas (Jordi).
+
+### [v0.0.910] - Regionale Hitmonlee: keuzes + Gemini-prompt r1 (27 nov)
+- Hitmonlee regional: puur Fire, gloeiend geblazen glas, omhaalpose, geen bal, knipoog naar "de man van glas" (Jordi). Prompt en besluiten in `docs/concept/sprites/hitmonlee_regional/SPEC.md`.
+
+### [v0.0.911] - Regionale Hitmonlee: Gemini r1 + prompt r2 (27 nov)
+- r1 opgeslagen (`hitmonlee_regional/gemini/r1.png`); Jordi: pose klopt niet, nog niet glasachtig. Prompt r2 in de SPEC (echte omhaal liggend in de lucht, glas doorschijnend met gloeiende kern).
+
+### [v0.0.912] - Regionale Hitmonlee: model gekozen (Gemini r2) (27 nov)
+- Jordi: "dit is hem". Kale reductietest in `hitmonlee_regional/test/` (raster 68×74 → 64).
+
+### [v0.0.913] - Regionale Hitmonlee: frontsprite-kandidaat + eindkeuring (27 nov)
+- Maker nam Gemini r2 over (raster 5,12 px, rijen/kolommen geschrapt naar 59×64, 15 kleuren); eindkeuring ek1 PASS. Ter beoordeling bij Jordi: `hitmonlee_regional/eindkeuring/ek1.png`.
+- Les in `GEMINI.md`: pitch altijd op 8× controleren.
+
+### [v0.0.914] - Regionale Hitmonlee: tweede eindkeuring ek2 (27 nov)
+- Verse DC-keurder: PASS, 1 px gewijzigd (`hitmonlee_regional/eindkeuring/ek2.png`). Open punt: linkerwand van de romp rechter dan de koepel in het model.
+
+### [v0.0.915] - Regionale Hitmonlee: rechte lijnen gefixt (r15 / ek3) (27 nov)
+- Jordi: benen, arm en bovenkant kop hadden slordige rechte lijnen. Benen nu per ring gebouwd zoals de Gen 3-Hitmonlee, koepel rond, arm taps; rest gelijk aan ek2. Eindkeuring ek3 PASS (`hitmonlee_regional/eindkeuring/ek3.png`).
+- Lessen in `GEMINI.md`: rijen schrappen maakt rondingen recht; geribbelde ledematen per ring van 3 rijen.
+
+### [v0.0.916] - Regionale Hitmonchan: Gemini-prompt r1 (27 nov)
+- `hitmonchan_regional/SPEC.md`: ijssculptuur met kubushandschoenen, prompt r1. Intussen Hitmonlee r16 (gladde beenomtrek) in de maak.
+
+### [v0.0.917] - Regionale Hitmonlee: gladde benen + Jordi's punten (r16 / ek4) (27 nov)
+- Benen met gladde "getapete" omtrek, ringen alleen binnenin (r16); ek4: losse pixels weg, verre oog ovaal, plooi in de trapvoet schuin, aansluiting kop↔trapbeen vloeiend (`hitmonlee_regional/eindkeuring/ek4.png`).
+- Hitmonchan regional: Gemini r2 + prompt r3 (uppercut, kubusvuisten één stuk met de arm).
+
+### [v0.0.918] - Regionale Hitmonlee: frontsprite af (27 nov)
+- Jordi: "ja hij is af". `hitmonlee_regional/af/hitmonlee_regional.png` (= ek4), op het overzichtsvel bij Regional forms (Fire). Stand van zaken in CLAUDE.md bijgewerkt.
+
+### [v0.0.919] - Regionale Hitmonchan: frontsprite-kandidaat + eindkeuring (27 nov)
+- Gemini r3 (uppercut, uitgehakt ijs) overgenomen: gezicht 1-op-1 op modelgrootte (Jordi: "de ogen zijn het belangrijkst"), rest ±76 %, 7 kleuren. Eindkeuring ek1 PASS (`hitmonchan_regional/eindkeuring/ek1.png`). Les in `GEMINI.md`.
+
+### [v0.0.920] - Regionale Hitmonchan: frontsprite af (27 nov)
+- Jordi: "nu is die af". `hitmonchan_regional/af/hitmonchan_regional.png` (= ek4: rechte lijnen nagemeten, linkeroog-puntje uit het model, ^-lijn schouder↔kubus terug), op het overzichtsvel bij Regional forms. Stand van zaken in CLAUDE.md bijgewerkt (110 frontsprites).
+### [v0.0.921] - Terreurvogel fase 2: frontsprite af (27 nov)
+- Regionaal fossiel (Rock/Fighting, snelle physical sweeper); tegenhanger van de glyptodon (Rock/Normal). Ontwerp via Gemini r1–r7 (`docs/concept/sprites/terreurvogel/fase2/gemini/PROMPTS.md`); Jordi koos uiteindelijk r1 met minder detail (`r1_eenvoud.png`): sprint naar links met bijlsnavel, verhouding ±64×40 zoals Lapras.
+- Snavel van staal naar steen ("anders klopt het type niet meer"), palette swap v8 gekozen (stenen snavel, antraciet lijf, roestaccenten, beige poten), Spearow-oog (driekwart). Sprite r4 (rond volume per onderdeel) + DC-eindkeuring ek1 (PASS). Af: `docs/concept/sprites/terreurvogel/fase2/af/terreurvogel_fase2.png`; op het overzichtsvel; naam open.
+- Fase 1 (kuiken met enorme kop en snavel) in de eindkeuring; glyptodon-lijn (fase 2 in ontwerp) meegemerged van een andere sessie.

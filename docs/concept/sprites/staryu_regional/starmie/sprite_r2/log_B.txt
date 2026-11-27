@@ -1,0 +1,13 @@
+starmie_r2_varB DX 0 DY 2
+voorste ster diff t.o.v. r1 (na geel->licht): 28 [(35, 14, 'M>#'), (35, 15, 'M>#'), (35, 17, 'p>#'), (35, 18, 'p>#'), (14, 20, 'O>D'), (15, 20, 'O>D'), (16, 20, 'O>D'), (17, 20, 'O>D'), (18, 20, 'L>D'), (36, 20, 'd>#'), (37, 21, 'd>D'), (38, 21, 'p>D'), (39, 21, 'p>D'), (50, 30, 'O>#'), (51, 30, 'O>#'), (49, 31, 'O>#'), (46, 32, 'M>#'), (47, 32, 'O>#'), (48, 32, 'O>#'), (45, 33, 'M>#'), (45, 34, 'O>#'), (45, 35, 'O>#'), (15, 38, 'S>D'), (15, 39, 'S>D'), (14, 40, 'O>D'), (14, 43, 'M>D'), (14, 44, 'M>D'), (37, 51, 'O>#')]
+top px 44 lengte buiten voorste ster 6.7 facetten {2: np.float64(1.0), 3: np.float64(-0.17647058823529413), 5: np.float64(1.0)} chips [(np.int64(27), np.int64(50), np.int64(27), np.int64(51))]
+r px 73 lengte buiten voorste ster 10.0 facetten {2: np.float64(-0.6666666666666666), 3: np.float64(0.29411764705882354), 5: np.float64(-0.7777777777777778)} chips [(np.int64(53), np.int64(43), np.int64(53), np.int64(44)), (np.int64(50), np.int64(42), np.int64(51), np.int64(42))]
+br px 75 lengte buiten voorste ster 7.6 facetten {2: np.float64(-1.0), 3: np.float64(1.0), 5: np.float64(-0.6)} chips [(np.int64(51), np.int64(16), np.int64(51), np.int64(17)), (np.int64(48), np.int64(17), np.int64(49), np.int64(17))]
+bl px 86 lengte buiten voorste ster 9.1 facetten {2: np.float64(1.0), 3: np.float64(-0.5172413793103449), 5: np.float64(0.5555555555555556)} chips [(np.int64(19), np.int64(10), np.int64(19), np.int64(11)), (np.int64(19), np.int64(13), np.int64(20), np.int64(13))]
+l px 51 lengte buiten voorste ster 6.4 facetten {2: np.float64(-1.0), 3: np.float64(0.7647058823529411), 5: np.float64(-1.0)} chips [(np.int64(7), np.int64(33), np.int64(8), np.int64(33)), (np.int64(10), np.int64(33), np.int64(11), np.int64(33))]
+achterster 329
+buitenlijn 63
+binnenlijn achter 20
+losse zwarte pixel 5
+chips 18
+figuur x5-55 y6-55 51x50, 1624 px

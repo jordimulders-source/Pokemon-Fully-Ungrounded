@@ -380,6 +380,10 @@ Types en dex-status gecontroleerd in de repo (`species_info/`, `DEX_IN_ROM.md`).
 - **Dragonfruit (Dragon):** = FAKEMON_PITCH #36 (pitahaya, Grass/Dragon). Let op: Tropius is in de repo al Grass/Dragon; Applin-lijn zit niet in de dex.
 - **Plátano-Tropius:** Tropius (Grass/Dragon, in de dex) heeft al bananen; DEX_NOMINATIES noemt hem al voor "bananen en tropisch fruit (Ecuador)". Een plátano-vorm (kookbanaan, patacones) is dus een kleine stap. Misschien met een ander type (Grass/Ground?), zodat er geen drie Grass/Dragon met fruit naast elkaar staan (Tropius, plátano, pitahaya).
 - **Carambola:** stervrucht, komt van oorsprong uit Zuidoost-Azië maar wordt veel in Brazilië geteeld (immersie: kan, als ingevoerd gewas). Haakje: de doorsnede is een ster; een Grass/Fairy met sterrenvormen. Of een **Staryu/Starmie-vorm** (Staryu zit in de dex) als grap.
+  - **Jordi (27 nov):** "Ik denk nog aan carambola staryu/starmie".
+  - **Jordi (27 nov):** "serieus/grap geen idee, laten we allebei anders even proberen, maak prompts voor een carambola staryu en starmie en een chocolate chip staryu en starmie. Mochten beide vet zijn, prefereer ik carambola". Prompts: `docs/concept/sprites/staryu_regional/PROMPT.md`.
+  - **Jordi (27 nov, na r1):** "Carambola Starmie vertaalt niet helemaal merk ik, omdat het twee sterren over elkaar heen is. Chocolate chip past beter, alleen de koekjes zien er een beetje bleek uit en zouden nog iets meer stijl kunnen gebruiken, zodat ze er echt lekker uit zien"; "dus daar gaan we voor" (chocolate chip).
+  - **Jordi (27 nov):** "en staryu kan dan bijv chocolate chip zijn en starmie allerlei versieringen (zolang het vertaalt naar een sprite".
 - **Creepy guaraná:** = FAKEMON_PITCH #35 (Grass/Electric). Jordi wil hem creepy: de Sateré-Mawé-legende (de vrucht kwam uit de ogen van een gedood kind) maakt Grass/Ghost logisch; open vruchten als oogballen die je aankijken; cafeïne: nooit slapen (Insomnia).
   - **Besloten (Jordi, 25 nov):** "creepy guarana beginnen we mee"; "ok laten we 2 fases proberen, grass/ghost". Voorstel Claude waarop dat antwoord kwam: fase 1 dichte rode tros met hier en daar een barstje waar een oog door kijkt, fase 2 opengebarsten struik vol witte ogen met zwarte pupillen (niet expliciet bevestigd).
 
@@ -900,6 +904,14 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - **Jordi (27 nov) op r6:** "deze vind ik tof, vertaalt die goed naar een sprite?" Check (Claude): natief raster ±66×66 (pixel ±10,2 px), ±9 kleuren; 2 rijen/kolommen schrappen naar 64×64, geen hertekenwerk nodig.
 - **Jordi (27 nov) over de mond in r6:** "de mond is heel subtiel, zie mijn lijn, vind ik wel prima zo" (`sprites/ledian_evo/gemini/r6_mond_jordi.png`). r6 = model; SPEC: `sprites/ledian_evo/SPEC.md`.
 - **Jordi (27 nov):** "ledyba lijn moet zeker terug". `P_FAMILY_LEDYBA` aan en genoteerd in `DEX_IN_ROM.md`; ROM nog niet gebouwd.
+
+## Regicosmo en Regiaqua (Jordi, 27 nov)
+- **Jordi:** "tijd voor de cosmic regi en de diepzee regi. De cosmic regi wordt een collectie van planeten en hemellichamen, die zitten los van elkaar, de middelste heeft de braille achtige stippen, ik heb opgezocht dat ze voor de bestaande regi's geen betekenis hebben, dus we kunnen gaan voor esthetisch, verzin maar een cool idee. Regicosmo is de working name"
+- **Jordi:** "Regiaqua is een draaikolk golem, diep onderzee in een trog. water armen die een soort van zweven, geen benen, want de onderkant van de draaikolk is goed genoeg [...] Ze moeten echt passen tussen de andere regi's ook"
+- Raakt aan "Ruimte en diepe zee als mysterieuze gebieden" (12 nov).
+- Repo: alle bestaande Regi's zijn monotype (Rock, Ice, Steel, Normal, Electric, Dragon).
+- **Besloten (Jordi, 27 nov):** Regicosmo-stippen = B (kaart van zijn eigen lichaam), hemellichamen vormen een golem; Regiaqua: armen zweven los ("yes precies"), "de stippen moeten echt stippen zijn, liefste ook niet in de hoofdkleur", "stippen van regi's lichten altijd op, maar je mag ze wel zo'n kleur geven". Verder in `sprites/regicosmo/SPEC.md` en `sprites/regiaqua/SPEC.md`.
+
 ## Regionale fossielen: terreurvogel en glyptodon (Jordi, 27 nov)
 - **Jordi (27 nov):** "het is tijd om met de twee fossiel lijnen aan de slag te gaan". Eerder (26 nov): "de terreurvogel is het beste naar een pokemon te vormen denk ik, noteer maar met de glyptodon dat die sowieso nog gaan komen".
 - **Wat er al lag:** FAKEMON_PITCH #28 glyptodon (Rock/Ground, "gordeldier zo groot als een auto, met een knotsstaart") en #30 terreurvogel (Fighting/Dark, *Phorusrhacos*, "vliegloze toproofvogel met een bijlsnavel"). Regel: alle Pokémon zijn te krijgen, dus geen keuze waarbij één fossiel voorgoed wegvalt.
@@ -910,3 +922,15 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - **Besloten (Jordi, 27 nov):** terreurvogel **Rock/Fighting** ("rock/fighting akkoord"). Glyptodon: "moeten we kijken wat qua lore goed past, rock/normal overweeg ik ook, maar hij moet vooral ook een goede wall zijn".
 - **Glyptodon, lore + wall (Claude, 27 nov, open; matchups uit `types_info.h`):** Rock/Normal = Darwins "reuzengordeldier" (hij vond de schilden en zag er een groot gordeldier in, een van de aanleidingen voor zijn evolutiedenken); 4 resistenties + Ghost-immuniteit, maar 5 zwaktes waarvan Fighting 4×; als wall alleen goed met een ability die dat opvangt. Rock/Ghost = het lege schild dat het dier overleeft (vroege mensen jaagden op glyptodonten, snijsporen ±21.000 jaar oud; schilden als hut wordt geopperd, niet bewezen); immuun voor Normal én Fighting, geen 4×-zwakte, 6 zwaktes. Rock/Grass = grazer, geen 4×-zwakte, maar Cradily en veel Grass.
 - **Besloten (Jordi, 27 nov):** glyptodon **Rock/Normal** ("Rock/Normal en hij krijgt een eigen ability, maar dat doen we niet nu"). Terreurvogel: "wordt dan een physical sweeper, snel, maar wel met die kenmerkende grote snavel". "Welke van de twee wordt het lastigst te maken? Dan doen we die eerst".
+
+## Regionale Hitmonlee en Hitmonchan (Jordi, 27 nov)
+- **Jordi (27 nov):** "Ik wil nog wel een regional hitmonlee en hitmonchan maken. Hitmonchan ice, soort ijssculptuur met handschoenen als kubussen. Hitmonlee misschien van vuur, maar mogelijk andere optie".
+- **Repo-check (Claude):** Tyrogue, Hitmonlee en Hitmonchan zijn nu Fighting en staan uit de ROM (`FU_TYROGUE_HITMONLEE_HITMONCHAN`, DEX_IN_ROM); alleen Hitmontop (→ Hitmongroove) zit erin. Hitmonlee kent Blaze Kick, Hitmonchan de elementaire punches.
+- **Opties Hitmonlee (Claude, ter keuze):** A. vuur (tegenhanger van de ijs-Hitmonchan, Blaze Kick); B. was/kaars (ook een "materiaal" naast de ijssculptuur, smelt juist door vuur); C. rubber/latex (rekbare benen; rubberboom uit de Amazone); D. anders, van Jordi.
+- **Open vragen (Claude):** type Hitmonchan puur Ice of Ice/Fighting; Tyrogue gewoon of ook regional; evolueert Tyrogue naar de regionale vormen en blijft Hitmontop daarnaast gewoon.
+- **Pitch Hitmonlee (Claude, 27 nov; Jordi: "Pitch een paar mogelijke leuke ideeën voor hitmonlee"):** 1. glassculptuur (Fire, gloeiend glas; tegenhanger van het ijsbeeld); 2. lucifer (Fire, dunne benen als lucifers met rode kop, schoppen = afstrijken); 3. chilena (omhaal, naar Chili vernoemd; voetballer, bal als hoofd/romp); 4. stalen veren (Steel, benen als spiraalveren, pogo); 5. nandoe (Flying, de Zuid-Amerikaanse loopvogel met harde trappen); 6. kaars/was (wassen beeld, smelt net als het ijsbeeld).
+- **Jordi (27 nov):** "Tyrogue blijft hetzelfde".
+- **Jordi (27 nov), keuze Hitmonlee:** "ja een voetballende hitmonlee lijkt me goed, doe maar een omhaal pose, maar we maken hem van glas gloeiend en geblazen". (= pitch 3 chilena + pitch 1 glassculptuur.)
+- **Jordi (27 nov):** "ook soort knipoog naar 'de man van glas' wat vaak met voetballers gezegd wordt" (= blessuregevoelige speler).
+- **Jordi (27 nov), keuzes Hitmonlee:** type puur Fire; geen bal; helemaal gloeiend; voetbal alleen in de pose (geen kleding/patronen). Sprite: `docs/concept/sprites/hitmonlee_regional/SPEC.md`.
+- **Hitmonchan (27 nov):** Gemini-prompt r1 in `docs/concept/sprites/hitmonchan_regional/SPEC.md` (Jordi: "doe ook alvast een hitmonchan prompt").

@@ -3652,3 +3652,5 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Eindkeuring (`ledian_evo/eindkeuring/`, PASS): 33 px belijning (outline base aan de lichtkant, zwart aan de schaduwkant, outline highlights); zwarte binnenlijnen hoofd/arm/vleugel bewust gehouden (selout liet ze versmelten); silhouetdiff 0, 13 kleuren + transparant (nieuw: Ledians donkerste geel a47b00 als voetlijn).
 ### [v0.0.876] - Ledian-evolutie: frontsprite af (27 nov)
 - Jordi: "zeker, nice". `docs/concept/sprites/ledian_evo/af/ledian_evo.png` (+ 8×) = eindkeuring; op het overzichtsvel (Evolutions of existing Pokémon). Naam open; Ledyba-lijn moet terug in de dex. TODO-brainstorm Ledian weg.
+### [v0.0.877] - Ledyba-lijn terug in de dex (27 nov)
+- Jordi: "ledyba lijn moet zeker terug". `P_FAMILY_LEDYBA` weer aan (`include/config/species_enabled.h`); `DEX_IN_ROM.md` en `IDEEEN.md` bijgewerkt. ROM niet gebouwd (Jordi: "je hoeft de rom nog niet te bouwen").

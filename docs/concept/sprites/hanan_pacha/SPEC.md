@@ -13,6 +13,7 @@ Trio van de drie Inca-werelden (zie `docs/concept/POKEMON.md` → Legendaries). 
 ## Geschrapt
 - Inca-geometrie op de vleugels, vlammen aan de slagpennen.
 
-## Open (gevraagd 27 nov)
-- Wat "echt shinen" inhoudt.
-- Driekwart naar links of frontaal.
+## Antwoorden (Jordi, 27 nov, letterlijk)
+- Shinen: "b qua felheid en kleurgebruik, a is denk ik niet goed te spriten" (b = straalt uit als geheel, felste/opvallendste van het kwartet; geen metallic glans).
+- Hoek: "driekwart naar links ja, maar wel dat je de hele vorm ziet".
+- Vuur: "Vuur hoeft niet zichtbaar te zijn, vuur is ook niet in ho oh zichtbaar, of in arcanine".

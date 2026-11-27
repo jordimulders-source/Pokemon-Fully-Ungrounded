@@ -3683,3 +3683,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.886] - Hanan Pacha: ontwerpbrief (27 nov)
 - `docs/concept/sprites/hanan_pacha/SPEC.md`: Jordi's eisen voor de condor-legendary (machtig, vleugels gespreid bijna als zon, niet te horizontaal, duidelijk condorhoofd, heroïsch, kraag, zwart/wit/goud/vuur, geen vlammen, geen Inca-patroon).
+
+### [v0.0.887] - Hanan Pacha: Gemini-prompt v1 (27 nov)
+- Jordi's antwoorden (shinen = felheid/kleur, driekwart links met de hele vorm zichtbaar, vuur niet zichtbaar) in `hanan_pacha/SPEC.md`; prompt v1 in `hanan_pacha/gemini/PROMPT.md`.

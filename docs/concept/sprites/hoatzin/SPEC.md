@@ -137,3 +137,4 @@ Opdracht: `sprite/OPDRACHT.md`.
 - Kuif: geen (Jordi: "geen kuif zoals ik al zei").
 - **r1** (`gemini/fase1_r1.png`, prompt v1 met eigen toevoegingen van Claude: damp/scruffy down, pin feathers, half-spread wings). Jordi: "Dit ontwerp kunnen we niks mee, het is een slordige normale vogel, het uncanny zit niet in de vacht maar in de poot lengte, kijk goed naar deze. Hij hoort ook geen of bijna geen vleugel te hebben". Referentie: `referenties/kuiken_5_pootlengte.png`.
 - **r2** (`gemini/fase1_r2.png`, prompt v2, nieuw gesprek: lange poten, geen vleugels, geen kuif). Jordi: "ietsje beter maar nu heeft die helemaal geen armen meer, zo moeten de armen eruit zien, soort vleugels zonder veren" (`referenties/kuiken_6_arm.png`).
+  Jordi ook: "en hij is te blij".

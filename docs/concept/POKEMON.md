@@ -78,6 +78,7 @@ Modeltekeningen in `docs/concept/ontwerp/<soort>/` (concept A/B/C + ONTWERP.md).
 ## Legendaries
 - **Trio: de drie Inca-werelden.** Hanan Pacha (bovenwereld, zon, goden) = **condor** (Jordi, 9 nov: "klinkt uitstekend"; dit is de condor-Pokémon); Kay Pacha (deze wereld) = **poema**; Uku Pacha (onderwereld, voorouders, oorsprong) = **slang**. Typen, namen en rol: open.
 - **Opper-legendary: Pachamama** (Moeder Aarde; "pacha" = wereld én tijd); de drie werelden zijn delen van haar. **Ground/Fairy maken: "ook een goede ja"** (Jordi, 8 nov; Ground/Fairy bestaat nog bij geen enkele soort). Type, naam en rol: open.
+  - **Ontwerp (Jordi, 27 nov)**, op Claudes voorstellen (A berg-moeder naar de *Virgen del Cerro*, B viervoeter met akkers op de rug, C moederfiguur; trio erin verwerken; offers; kleuren): "A en 2 zijn tof, maar is dat te doen in een 64x64 sprite?"; "B is ook mogelijk, maar je wil erg veel merk ik in een kleine sprite stoppen. Offers kan gewoon niet."; "Een abstracte vorm van moeder aarde vind ik wel tof, zolang het maar levend is, want elke pokemon is levend en heeft ogen".
 - **Bestaande legendaries: voorlopig alleen Mew, Mewtwo en Zarude** (Jordi, 22 okt: de meeste legendaries komen niet in deze game).
 - In het verhaal worden de legendaries woedend door de vernietiging van de natuur (zie `VERHAAL.md`).
 

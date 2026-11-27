@@ -1,0 +1,13 @@
+front docs/concept/sprites/koningstiran/af/sapa_inca.png
+fronthoogte 62 -> doelhoogte 24.3; S 0.360 (bijgestuurd x1.00)
+factoren {'kop': 1.25, 'lijf': 0.95, 'overig': 1.0}
+icoon 20x25 (onderkant y29, midden x15.5)
+minimummaten:
+  poten: voorpoot f=14 -> 5.0 px < minimum 5.1: schaal x1.02
+paletafstand (gemiddeld, redmean; lager = beter):
+  pal0: 83.0  (4 tinten)
+  pal1: 88.2  (5 tinten)
+  pal2: 89.2  (6 tinten)
+  pal3: 79.5  (4 tinten)
+  pal4: 84.2  (3 tinten)
+  pal5: 78.6  (6 tinten)   <- gekozen

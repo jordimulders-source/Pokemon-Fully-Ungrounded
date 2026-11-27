@@ -3884,3 +3884,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.951] - Overige graphics: inventaris en Gemini-pakketten (27 nov)
 - `graphics_proef/INVENTARIS.md`: 129 soorten met bouw, maat en frame 2-categorie (G 63, G? 28, S 38; al frame 2: Gengas, Cuyby, Cuychu).
 - `graphics_proef/pakketten/batch_01`–`batch_16` (125 soorten, zonder de proefsoorten en Zapacha): per soort 8×-bijlage + rugprompt volgens het sjabloon, bij G ook frame 2-prompt.
+
+### [v0.0.952] - Frame 2 per script: batch A (27 nov)
+- 18 soorten in `graphics_proef/frame2/batch_a/` (anim_front 64×128 + gif + `batch_a_vel.png`, `animids.txt`, script `batch_a.py`). Zwak: Cryomet, Spoetnik, satelliet, Purrpillar, guaraná 1; ruimtestation het zwakst (kandidaat voor Gemini of reparatie). Scrapstack en de glitch-lijn waren RGBA: omgezet naar P met hun eigen kleuren.

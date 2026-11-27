@@ -66,7 +66,9 @@ def icon_pal_index():
 def bouw(cfg, S_extra=1.0, log=None):
     fr_im = Image.open(cfg['front']); fr = np.array(fr_im)[:64]
     FP = np.array(fr_im.getpalette()[:48], float).reshape(16, 3)
-    rgb = FP[fr]; lum = FP.mean(1)[fr]; donker = lum < 75; vol = fr > 0
+    rgb = FP[fr]; lum = FP.mean(1)[fr]; vol = fr > 0
+    # lijnkleuren: front-indices die als lijn tellen (standaard: helderheid < 45, meestal alleen zwart)
+    donker = np.isin(fr, cfg['lijnkleuren']) if 'lijnkleuren' in cfg else (lum < 45) & vol
     # buitenste donkere rand van de front hoort niet bij de vlakken (anders wordt alles 1 px te dik)
     rand = vol & ~nd.binary_erosion(vol); buitenlijn = rand & donker
     fy, fx = np.nonzero(vol); fh = fy.max() - fy.min() + 1
@@ -114,7 +116,8 @@ def bouw(cfg, S_extra=1.0, log=None):
         base = T_groep(ouder, h) + np.array(d.get('verschuif', [0, 0]), float)
         trans.append((h, s, base))
     # renderen: 4x4 monsters per icoonpixel
-    N = 64; kleur = np.zeros((N, N, 3)); deel = np.full((N, N), -1); isdonker = np.zeros((N, N), bool)
+    N = 64; kleur = np.zeros((N, N, 3)); deel = np.full((N, N), -1); isdonker = np.zeros((N, N), bool); isglans = isdonker.copy()
+    ddrem = cfg.get('donker_drempel', .6)   # aandeel donkere frontpixels waarboven een icoonpixel lijn wordt
     sub = (np.arange(4) + .5) / 4
     for i, d in enumerate(delen):
         if trans[i] is None: continue
@@ -132,10 +135,14 @@ def bouw(cfg, S_extra=1.0, log=None):
                 sel = np.zeros(PX.shape, bool); sel[ok] = m[PY[ok], PX[ok]]
                 if sel.mean() < drem: continue
                 q = sel & ok; dk = donker[PY[q], PX[q]]; lic = ~dk
-                if lic.sum() == 0 or dk.mean() > .6: isdonker[Y, X] = True; kleur[Y, X] = 40
+                wit = lum[PY[q], PX[q]] > 215
+                if lic.sum() == 0 or dk.mean() > ddrem: isdonker[Y, X] = True; kleur[Y, X] = 40
                 else: isdonker[Y, X] = False; kleur[Y, X] = rgb[PY[q][lic], PX[q][lic]].mean(0)
+                isglans[Y, X] = wit.mean() >= .3 and not isdonker[Y, X]
+                if isglans[Y, X]: kleur[Y, X] = rgb[PY[q][wit], PX[q][wit]].mean(0)
                 deel[Y, X] = i
     mask = deel >= 0
+    if os.environ.get("IB_DEBUG"): np.save(os.environ["IB_DEBUG"], deel)
     if not cfg.get('gaten'):
         gat = nd.binary_fill_holes(mask) & ~mask
         if gat.any():
@@ -146,6 +153,15 @@ def bouw(cfg, S_extra=1.0, log=None):
         nb = nd.convolve(mask.astype(int), np.array([[0, 1, 0], [1, 0, 1], [0, 1, 0]]), mode='constant')
         weg = mask & (nb <= 1) & ~np.isin(deel, [i for i, d in enumerate(delen) if d.get('dun')])
         mask &= ~weg; deel[weg] = -1
+    # afronden: convexe hoekpixels (2 lege orthogonale buren in een L + lege diagonaal) weg, behalve dunne delen
+    dunid = [i for i, d in enumerate(delen) if d.get('dun')]
+    for _ in range(cfg.get('afronden', 0)):
+        Pm = np.pad(mask, 1); hoek = np.zeros_like(mask)
+        for a, b in (((0, 1), (1, 0)), ((0, 1), (-1, 0)), ((0, -1), (1, 0)), ((0, -1), (-1, 0))):
+            sh = lambda o: Pm[1 + o[0]:N + 1 + o[0], 1 + o[1]:N + 1 + o[1]]
+            hoek |= mask & ~sh(a) & ~sh(b) & ~sh((a[0] + b[0], a[1] + b[1])) & sh((-a[0], -a[1])) & sh((-b[0], -b[1]))
+        rond = [i for i, d in enumerate(delen) if d.get('afronden', not d.get('dun') and d.get('groep') != 'overig')]
+        hoek &= np.isin(deel, rond); mask &= ~hoek; deel[hoek] = -1
     # palet kiezen: gemiddelde afstand van de vlakpixels tot het dichtstbijzijnde icoonkleur 1-13
     vlak = mask & ~isdonker; C = kleur[vlak]
     afst, tint = [], []
@@ -181,6 +197,9 @@ def bouw(cfg, S_extra=1.0, log=None):
             t = np.clip((L - lo) / max(1, hi - lo), 0, .999); idx[mi] = np.array(d['ramp'])[(t * len(d['ramp'])).astype(int)]
         else:
             idx[mi] = (afstand(kleur[mi][:, None, :], P[None, 1:14, :]).argmin(1) + 1)
+    gl = vlak & isglans          # glans/wit uit de front: dichtstbijzijnde van alle tinten (wit mag)
+    if gl.any(): idx[gl] = afstand(kleur[gl][:, None, :], P[None, 1:14, :]).argmin(1) + 1
+    # (wit telt niet mee voor de paletkeuze: die gebeurt op de vlakken hierboven)
     idx[mask & isdonker] = 14
     # losse pixels in een vlak -> meest voorkomende buur van hetzelfde deel
     for _ in range(2):

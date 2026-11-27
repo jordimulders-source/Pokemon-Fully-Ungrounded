@@ -10,9 +10,9 @@ minimummaten:
   kop: auto-ramp [13, 7] (basis 13)
   oog: front 2 px, centrum icoon (24.4,29.2), patroon 2x2, minimum 1.5
 paletafstand (gemiddeld, redmean; lager = beter):
-  pal0: 108.2  (2 tinten)
-  pal1: 108.1  (2 tinten)   <- gekozen
-  pal2: 130.9  (3 tinten)
-  pal3: 108.3  (2 tinten)
-  pal4: 108.5  (2 tinten)
-  pal5: 108.4  (2 tinten)
+  pal0: 112.6  (1 tinten)
+  pal1: 111.6  (3 tinten)   <- gekozen
+  pal2: 135.6  (3 tinten)
+  pal3: 112.6  (1 tinten)
+  pal4: 112.6  (1 tinten)
+  pal5: 112.3  (2 tinten)

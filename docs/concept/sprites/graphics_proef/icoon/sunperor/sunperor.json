@@ -1,0 +1,159 @@
+{
+ "front": "docs/concept/sprites/koningstiran/af/sapa_inca.png",
+ "anker": [
+  27,
+  28
+ ],
+ "buren": [
+  "ho_oh",
+  "xatu",
+  "blaziken"
+ ],
+ "delen": [
+  {
+   "naam": "vleugel",
+   "groep": "overig",
+   "poly": [
+    [
+     33,
+     16
+    ],
+    [
+     57,
+     16
+    ],
+    [
+     57,
+     34
+    ],
+    [
+     33,
+     34
+    ]
+   ],
+   "schaal": 1.25
+  },
+  {
+   "naam": "poten",
+   "groep": "overig",
+   "box": [
+    20,
+    52,
+    36,
+    63
+   ],
+   "dun": true,
+   "min": "voorpoot"
+  },
+  {
+   "naam": "lijf",
+   "groep": "lijf",
+   "poly": [
+    [
+     14,
+     26
+    ],
+    [
+     41,
+     26
+    ],
+    [
+     41,
+     53
+    ],
+    [
+     14,
+     53
+    ]
+   ]
+  },
+  {
+   "naam": "kroon",
+   "groep": "kop",
+   "poly": [
+    [
+     8,
+     0
+    ],
+    [
+     51,
+     0
+    ],
+    [
+     51,
+     21
+    ],
+    [
+     36,
+     21
+    ],
+    [
+     32,
+     18
+    ],
+    [
+     21,
+     18
+    ],
+    [
+     18,
+     21
+    ],
+    [
+     13,
+     21
+    ],
+    [
+     13,
+     33
+    ],
+    [
+     8,
+     33
+    ]
+   ],
+   "schaal": 0.85
+  },
+  {
+   "naam": "gezicht",
+   "groep": "kop",
+   "poly": [
+    [
+     20,
+     18
+    ],
+    [
+     34,
+     18
+    ],
+    [
+     34,
+     29
+    ],
+    [
+     20,
+     29
+    ]
+   ],
+   "binnenlijn": true
+  },
+  {
+   "naam": "staf",
+   "groep": "overig",
+   "box": [
+    9,
+    18,
+    18,
+    52
+   ],
+   "kleuren": [
+    10,
+    11,
+    12,
+    15
+   ],
+   "dun": true,
+   "binnenlijn": true
+  }
+ ]
+}

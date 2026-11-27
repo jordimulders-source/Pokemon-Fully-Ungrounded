@@ -1,0 +1,17 @@
+zandloper2 ANIM_V_SLIDE
+shuppetto ANIM_V_SLIDE
+sunflora_evo ANIM_V_SLIDE
+solrock_evo ANIM_V_SLIDE
+bloedmaan ANIM_V_SLIDE
+dustly ANIM_V_SLIDE
+hauntflare ANIM_V_SLIDE
+claydol_regional ANIM_V_SLIDE
+swablu_regional ANIM_V_SLIDE
+altaria_regional ANIM_V_SLIDE
+pincurchin_regional ANIM_H_SHAKE
+staryu_regional ANIM_H_SLIDE_WOBBLE
+starmie_regional ANIM_H_SLIDE_WOBBLE
+muk_regional ANIM_V_SQUISH_AND_BOUNCE
+dj_rotom ANIM_V_SHAKE
+regiaqua ANIM_H_SLIDE
+regicosmo ANIM_V_SLIDE

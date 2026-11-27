@@ -17,3 +17,7 @@ Trio van de drie Inca-werelden (zie `docs/concept/POKEMON.md` → Legendaries). 
 - Shinen: "b qua felheid en kleurgebruik, a is denk ik niet goed te spriten" (b = straalt uit als geheel, felste/opvallendste van het kwartet; geen metallic glans).
 - Hoek: "driekwart naar links ja, maar wel dat je de hele vorm ziet".
 - Vuur: "Vuur hoeft niet zichtbaar te zijn, vuur is ook niet in ho oh zichtbaar, of in arcanine".
+
+## Rondes
+- **r1** (`gemini/r1.png`, prompt v1). Jordi: "hij is te zwart wit, die kring klopt niet, de vleugels moeten de kring vormen, lijkt geen legendary, ook niet genoeg condor, bijna kalkoen achtig". (Gemini tekende een losse zwarte ring achter het lijf; blauwgrijze kop met lel = kalkoen.)
+- Na r1 (meerkeuze, Jordi): kleur = "meer goud als hoofdkleur en warme vuurtinten erbij"; legendary = "alle drie" (sierlijke sierveren, massiever en groter, heroïsche houding).

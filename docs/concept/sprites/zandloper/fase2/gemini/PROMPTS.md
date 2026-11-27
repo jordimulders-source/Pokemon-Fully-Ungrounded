@@ -60,3 +60,5 @@ No effects, no glow, no sparkles, no shadow; draw no ground line or floor, only 
 
 **Jordi over r3 (`r3.png`):** "nice, vertaalt die naar een sprite?"
 Test (Claude): natief raster pitch 10,24 (zelfde als fase 1) → 62×63, ±1900 px, past 1-op-1 in 64×64 zonder verkleinen (`../test/natief.png`, `natief_8x.png`). Fase 1 = 1949 px, fase 3 = 1326 px. Nog 1132 tinten (moet ≤ 16).
+
+**Jordi (27 nov):** "prima zo, maak de sprite van r3, maar wel kleiner, ik fix fase 1 wel in het andere gesprek" → model = `../model.png` (= r3). Kale verkleiningen op 0,90/0,85/0,80/0,75 naast fase 3: `../sprite/maten/vel_maten.png`; Jordi kiest de maat.

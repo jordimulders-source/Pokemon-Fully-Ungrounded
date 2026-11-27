@@ -43,3 +43,4 @@ Trio van de drie Inca-werelden (zie `docs/concept/POKEMON.md` → Legendaries). 
 - Jordi over r1/r2: "het is pixelblur" ("allebei"); "het hoofd leest amper nog als een condor hoofdd en de staart is wel prima, maar de binnenkant is blurry en de poten zijn niet meer herkenbaar"; "kijk anders naar hoe de legendary birds en ho oh het doen". → r3 (verse maker): natief raster, exacte 2× met regels, schrappen naar 64 met kop/kraag beschermd (Gengas/Krassault), staart r5-vorm scherp, studie Articuno/Zapdos/Moltres/Ho-Oh.
 - Jordi: "ja de vormen zijn belangrijker dan welke kleur dominant is" (reductie: vormgrenzen gaan voor de dominante kleur).
 - Jordi: "en overlappen is niet erg, zolang de voorste vorm maar goed gedefinieerd is".
+- **Sprite r3** (`sprite_r3/`, verse maker): natief → 2× met regels → schrappen (kop/kraag beschermd), r5-staart, studie Ho-Oh/Moltres. Scherp; kop ±11×12 px, poten en staart nog zwak.

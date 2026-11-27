@@ -3,7 +3,8 @@
 #  >=3 achtergrond -> achtergrond; lijn >=2 -> lijn; 1 lijnpixel -> lijn als de lijn buiten het blok aan twee kanten doorloopt
 #  (anders breekt hij); punt >=2 -> punt; anders de meest voorkomende groep, daarbinnen de meest voorkomende kleur (gelijk: donkerste).
 import numpy as np, sys
-N=np.load('natief.npy'); PAL=np.load('natief_pal.npy')
+import os
+N=np.load('natief2.npy' if os.path.exists('natief2.npy') and __name__=='__main__' else 'natief.npy'); PAL=np.load('natief_pal.npy')
 GR={}
 for k in (2,18): GR[k]='L'
 for k in (6,14,23): GR[k]='T'
@@ -11,7 +12,9 @@ for k in (1,5,25): GR[k]='D'
 for k in (24,15,20,0,11,19,13,4,21,27): GR[k]='G'
 for k in (17,3,16,9,7,26): GR[k]='W'
 for k in (8,12,10,22): GR[k]='R'
-lum=PAL@np.array([.299,.587,.114])
+for k in range(28): GR[100+k]='O'; GR[200+k]='K'
+lum=PAL@np.array([.299,.587,.114]); lum=np.concatenate([lum,np.zeros(72),lum,np.zeros(72),lum])
+PALX=np.concatenate([PAL,np.zeros((72,3),int),PAL*0+[222,118,50],np.zeros((72,3),int),PAL*0+[166,48,63]])
 def reduceer(oy,ox):
     H,W=N.shape; h,w=(H-oy)//2,(W-ox)//2; o=np.full((h,w),-1)
     for j in range(h):
@@ -22,6 +25,13 @@ def reduceer(oy,ox):
             for G in ('L','D'):
                 nG=g.count(G)
                 if nG>=2: kk=[k for k in f if GR[k]==G]; break
+                staart=Y>=104 and not((53<=X<=74 and Y<=122) or (76<=X<=93 and Y<=121))
+                voet=104<=Y<=123 and (53<=X<=74 or 76<=X<=93)
+                if voet and G=='D': continue   # poten: geen schaduwstreepjes, tenen = goud + zwarte lijn + klauw
+                if staart and G=='D':   # staart: veerscheiding uit de bovenste natieve rij van het blok (periode 5 -> d s d s s, doorlopend)
+                    top=[k for k in b[:2] if k>=0 and GR[k] in 'DL']
+                    if top: kk=top; break
+                    continue
                 if nG==1:
                     yy,xx=[(Y+d//2,X+d%2) for d in range(4) if b[d]>=0 and GR[b[d]]==G][0]
                     buiten=[(yy+dy,xx+dx) for dy in (-1,0,1) for dx in (-1,0,1) if (dy or dx) and not(Y<=yy+dy<Y+2 and X<=xx+dx<X+2)
@@ -41,14 +51,15 @@ def reduceer(oy,ox):
 def vorm_terug(o,oy,ox,MAX=16):
     from scipy import ndimage
     H,W=N.shape; h,w=o.shape; n=0
-    for G in 'LDTWR':
+    for G in 'LTW':
         m=np.zeros(N.shape,bool)
         for k,g in GR.items():
             if g==G: m|=N==k
         lab,nc=ndimage.label(m,structure=np.ones((3,3)))
         for c in range(1,nc+1):
             ys,xs=np.where(lab==c)
-            if len(ys)>MAX: continue
+            voet=(104<=ys.mean()<=123) and (53<=xs.mean()<=93)
+            if len(ys)>MAX or (len(ys)<3 and not(voet and G=='W')): continue
             bj=(ys-oy)//2; bi=(xs-ox)//2; ok=(bj>=0)&(bi>=0)&(bj<h)&(bi<w)
             if not ok.any(): continue
             blokken=set(zip(bj[ok],bi[ok]))
@@ -63,6 +74,6 @@ if __name__=='__main__':
     from PIL import Image
     oy,ox=int(sys.argv[1]),int(sys.argv[2]); o=reduceer(oy,ox); print('vormen terug',vorm_terug(o,oy,ox))
     np.save('half_%d%d.npy'%(oy,ox),o)
-    img=np.full(o.shape+(3,),255,'uint8'); img[o>=0]=PAL[o[o>=0]]
+    img=np.full(o.shape+(3,),255,'uint8'); img[o>=0]=PALX[o[o>=0]]
     Image.fromarray(img).resize((o.shape[1]*8,o.shape[0]*8),Image.NEAREST).save(sys.argv[3])
     ys,xs=np.where(o>=0); print(o.shape,'fig',xs.max()-xs.min()+1,ys.max()-ys.min()+1)

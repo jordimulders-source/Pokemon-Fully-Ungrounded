@@ -34,3 +34,4 @@ Alle citaten en lijnbesluiten: `docs/concept/IDEEEN.md` → "Impala-lijn"; samen
 - Jordi (27 nov): "nee hij moet de pyroar niet nadoen" (Pyroar alleen als voorbeeld van een lang hangend kapsel).
 - **Oog (Jordi, 27 nov): "k4 voor oog"** = Bidoof-oog 1-op-1 (`sprite/r6/kudu_r6_oogK4.png`, bron in `sprite/oog_klein.py`).
 - Jordi op r8 (27 nov): "de vorm klopt niet, gezien het links veel meer eroverheen loopt dan rechts, daarom houd je ook bijna geen ruimte over. Links is het zelfs helemaal 1 geworden met de poot, wat een prutswerk weer".
+- Jordi op r9 (27 nov): "het is qua vorm nu iets te wollerig".

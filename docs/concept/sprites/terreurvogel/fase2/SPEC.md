@@ -6,10 +6,14 @@ Regionaal fossiel, **Rock/Fighting**, 2 fases. Tegenhanger van de glyptodon (Roc
 - "rock/fighting akkoord"
 - "wordt dan een physical sweeper, snel, maar wel met die kenmerkende grote snavel"
 
+- "hij hoeft niet per se van steen, je kan kijken hoe de archeops lijn dat bijv doet, die komt goed als een fossiel over"
+- "De 2e fase moet echt in sprint zijn, enorme snavel"
+
 ## Feiten (Claude)
+- Archen/Archeops in de repo: Rock/Flying; fossiel zit niet in steen maar in oertrekjes (klauwen aan de vleugels, lange benige staart, geschubde poten, felle "reconstructie"-kleuren); Archen kan nog niet vliegen, Archeops wel.
+- De seriema (*Cariama*, Zuid-Amerika) is de nauwste levende verwant van de terreurvogels; *Psilopterus* was een kleine terreurvogel van ±70–80 cm.
 - *Phorusrhacos* = bekendste naam; *Kelenken* = grootste schedel/snavel. Vliegloze loopvogels van 2–3 m: hoge haaksnavel als een bijl, kleine vleugels, lange sterke loopbenen, grote klauw.
 
 ## Open (vragen aan Jordi, nog niet prompten)
-- Welke fase eerst (bij de glyptodon was het "eindfase eerst").
-- Fase 1: wat voor vorm (kuiken? kleinere variant zoals bij de glyptodon "minder ontwikkeld"?).
-- Pose, kleuren, hoeveel "steen" (fossielachtig) in het ontwerp.
+- Fase 1: voorstellen gedaan (27 nov): A kuiken, B kleine voorouder (*Psilopterus*/seriema), C combinatie; keuze open.
+- Kleuren.

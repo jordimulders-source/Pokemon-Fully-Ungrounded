@@ -3604,3 +3604,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.860] - Pitch regionale Hitmonlee (27 nov)
 - `IDEEEN.md`: zes ideeën voor de regionale Hitmonlee onder "Regionale Hitmonlee en Hitmonchan".
 - Besloten: Tyrogue blijft hetzelfde (Jordi).
+- Besloten: regionale Hitmonlee = voetballer in omhaalpose, van gloeiend geblazen glas (Jordi).

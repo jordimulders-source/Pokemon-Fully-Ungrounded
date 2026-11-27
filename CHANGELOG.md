@@ -3602,3 +3602,5 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Pitches Minior-evolutie (pallasiet, ingeslagen meteoriet, meteorenzwerm, planetesimaal; gimmick Shields Down) in `IDEEEN.md` → "Minior-evolutie".
 ### [v0.0.860] - Minior wordt Cosmic/Flying (27 nov)
 - Jordi: "cosmic/flying wordt die", de evolutie "blijft cosmic/flying". Vastgelegd in CONCEPT, POKEMON, IDEEEN, DEX_IN_ROM en TODO (Cosmic uitwerken). In de code staat Minior nog op Rock/Flying omdat `TYPE_COSMIC` nog niet bestaat; een FU-commentaar bij `MINIOR_MISC_INFO` (`gen_7_families.h`) wijst de plek aan.
+### [v0.0.861] - Minior: geen evolutie, wordt gebufft (27 nov)
+- Pitches ronde 2 (kern komt uit, bolide-vogel, sterrenbeeld, ruimtekwal) in IDEEEN. Jordi: "nee prima, we gaan hem wel buffen, we skippen de evolutie". Vastgelegd in CONCEPT, POKEMON, IDEEEN, DEX_IN_ROM, TODO en het commentaar in `species_enabled.h`; hoe de buff eruitziet is nog open.

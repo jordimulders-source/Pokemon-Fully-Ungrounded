@@ -91,3 +91,14 @@ Style: official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 
 
 AVOID: a gorilla or ape face, blue skin, ape hands, the Flurry from Mario, Abomasnow, Snorunt, Vanillite, a rock or golem creature, grey or black rock armor, a plain bucket on the head, a grin or laughing face, a fat round body or big belly, small pebble stones, a classic three-ball snowman, a carrot nose, a scarf, a towel, sharp fangs showing, plush toy / Neopets look, flames.
 ```
+
+## s2 (27 nov)
+- `s2/s2a.png`. Jordi: "Ok de emmer klopt niet, hij is nog niet groot en gevaarlijk genoeg, qua postuur, maar voor de rest prima".
+
+## s2a-bijsturen (in hetzelfde gesprek)
+Eigen invulling Claude: hoe "meegevormd" eruitziet (bolle bovenkant naar de schedel, duigen buigen mee over voorhoofd en achterhoofd, randen overgroeid door sneeuw, band half in de vacht); hoe "groot en gevaarlijk" eruitziet (schouders/borst/armen/handen massiever, hoofd kleiner t.o.v. het lijf).
+```
+Keep everything exactly the same: the pose, the relaxed face and smile, the stones (size, places, look), the colors, the style. Change ONLY these two things:
+1. The bucket on its head: it must no longer look like a separate bucket placed on top. It has molded to its skull like headwear: its top is rounded to follow the shape of the head, the wooden staves curve down over the forehead and the back of the head, the lower edge is overgrown with shaggy snow fur, and the metal band is half sunk into the fur. Clearly still wood with a band, but part of the head, like a helmet that grew on.
+2. Its build: make it look bigger and more dangerous: much broader, heavier shoulders and chest, thicker and more muscular arms, bigger hands, the head smaller compared to the huge body. Still not fat; the belly stays slim. Still the same relaxed pose and peaceful face.
+```

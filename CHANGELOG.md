@@ -3689,3 +3689,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.888] - Hanan Pacha: r1 + prompt v2 (27 nov)
 - Gemini r1 bewaard met Jordi's feedback (te zwart-wit, losse ring, geen legendary, kalkoenkop); prompt v2: vleugels vormen de kring, goud als hoofdkleur + vuurtinten, sierveren/massief/heroïsch, gierenkop zonder lel.
+
+### [v0.0.889] - Hanan Pacha: r2 + prompt v3 (27 nov)
+- Gemini r2 bewaard met Jordi's feedback (te veel Ho-Oh en zwart, kop klein en hangend, kraag kalkoen, niet heroïsch, staart ook naar links en tussen de klauwen); prompt v3.

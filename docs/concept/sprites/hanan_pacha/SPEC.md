@@ -21,3 +21,5 @@ Trio van de drie Inca-werelden (zie `docs/concept/POKEMON.md` → Legendaries). 
 ## Rondes
 - **r1** (`gemini/r1.png`, prompt v1). Jordi: "hij is te zwart wit, die kring klopt niet, de vleugels moeten de kring vormen, lijkt geen legendary, ook niet genoeg condor, bijna kalkoen achtig". (Gemini tekende een losse zwarte ring achter het lijf; blauwgrijze kop met lel = kalkoen.)
 - Na r1 (meerkeuze, Jordi): kleur = "meer goud als hoofdkleur en warme vuurtinten erbij"; legendary = "alle drie" (sierlijke sierveren, massiever en groter, heroïsche houding).
+- **r2** (`gemini/r2.png`, prompt v2). Jordi: "ik vind hem nog niet heel mooi, ondanks dat die nu wel doet wat we vragen".
+  Daarna: "ja het is een combinatie van dingen, het is teveel ho oh, misschien toch teveel zwart nog (dat duidt in pokemon vaak op evil) de kop is klein en hangend, de kraag is teveel kalkoen denk ik en hij is niet trots en heroisch, misschien moet de staart wel niet alleen naar rechts maar ook naar links en tussen de klauwen"

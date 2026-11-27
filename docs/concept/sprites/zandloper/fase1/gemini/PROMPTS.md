@@ -64,3 +64,22 @@ Small first-stage Pokémon. Keep it simple and readable at 64x64: big clear shap
 
 No effects, no glow, no sparkles, no ground or shadow under it. AVOID: a tiny ghost inside, a plain realistic hourglass with eyes, a plush toy, Neopets style.
 ```
+
+**Jordi over r4:** "te cartoony met ovenwanten, geen sprite".
+
+## r5
+Zelfde als r4; alleen tekenstijl (pixel art, Gen 3-arcering) en handen (kleine ronde houten blokjes zoals r3, geen duim/vingers) aangescherpt.
+```
+Design an original Pokémon as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64 pixels, max 16 colors, white background, facing 3/4 to the left.
+STYLE (most important): real pixel art exactly like a Gen 3 in-game sprite: crisp hard pixels, a dark 1-pixel outline around every shape, flat cel shading with 2-3 tones per color, no gradients, no airbrush, no anti-aliasing, no cartoon illustration look.
+
+Concept: the first stage of an hourglass Pokémon (Ground/Psychic). Its final evolution is a sand djinn that escapes from the hourglass; here the djinn is still locked inside. The creature IS the living sand, and the hourglass is its shell.
+INSIDE: no small figure. The sand in the upper bulb fills the whole bulb and forms one big face pressed against the inside of the glass: two clear eyes with heavy eyebrows, a cunning, mischievous look, like a powerful genie who is trapped. The rest of the sand trickles into the bottom bulb.
+HANDS: two small separate floating pieces of wood beside the hourglass, simple rounded chunks of the same wood as the end caps. NOT gloves, NOT mittens, no thumbs, no fingers.
+COLORS (exact): sand in warm ochre gold (#fce296, #e8be62, #cc9c46, #a47034), NOT lemon yellow. Glass pale icy blue (#def4fa, #a0cce0, #72a0ba) with a dark slate-blue outline (#405e7a). Wooden end caps and hands smooth dark brown (#8a522e, #5c321e, #603a18), no wood grain, no carved symbols.
+The hourglass is whole. Nothing comes out of the glass yet.
+POSE: it floats in the air at a tilt, it does not stand upright on the ground.
+Small first-stage Pokémon, compact silhouette.
+
+No effects, no glow, no sparkles, no ground or shadow under it. AVOID: cartoon illustration, oven mitts or gloves, a tiny ghost inside, a plain realistic hourglass with eyes, a plush toy, Neopets style.
+```

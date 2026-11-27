@@ -3674,3 +3674,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.883] - Hanan Pacha: Fire/Flying (27 nov)
 - `POKEMON.md`: condor (Hanan Pacha) wordt Fire/Flying (Jordi); poema, slang en Pachamama-wezen nog open.
+
+### [v0.0.884] - Kay Pacha: Grass/Psychic (27 nov)
+- `POKEMON.md`: poema (Kay Pacha) wordt Grass/Psychic (Jordi); poema-lore in `IDEEEN.md`. Slang en Pachamama-wezen nog open.

@@ -3604,3 +3604,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Gemini-startprompt v1: `docs/concept/sprites/tangela_regional/gemini/PROMPT.md` (bijlage: Gen 3-Tangela 8×).
 - Gemini v1 bewaard in `tangela_regional/r1/`; Jordi neigt naar paars voor de slangen.
 - Jordi: regionale vorm liever níet in Tangela's kleurfamilie; blauwpaars vervalt.
+- Geschrapt (Jordi): "het gaat niet vertalen naar een sprite"; Tangela blijft gewoon.

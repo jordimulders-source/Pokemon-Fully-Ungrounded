@@ -327,3 +327,4 @@ Wanneer Jordi een ontwerp in Gemini laat maken en kiest, gelden deze regels **in
 - **Automatische verkleining is geen preview**: Jordi kan niets met wazige BOX-tests ("blurry, hier kan ik niks mee"); wit/zwart blijft in een echte sprite leesbaar op een paar px.
 - **Half dichte ogen als rechte witrij in een rechthoekig kader lezen als vierkant fruit**: eerst de ronde vrucht, dan het oog erin; check elke oogvrucht op vorm, niet alleen op leesbaarheid als oog.
 - **Jordi's plekaanduiding "midden links, rechtsboven midden"** = positie + tros (oog midden in de linkertros, oog rechtsboven in de middelste tros).
+- **Kluwen van veel kleine wezens vertaalt niet naar 64 px** (regionale Tangela, 27 nov): "elke rank een slang met kop" gaf ±20 kopjes van 3–4 px; Jordi schrapte het idee ("het gaat niet vertalen naar een sprite"). Bij zo'n concept vóór de prompt met Jordi tellen hoeveel losse onderdelen er op 64 px passen.

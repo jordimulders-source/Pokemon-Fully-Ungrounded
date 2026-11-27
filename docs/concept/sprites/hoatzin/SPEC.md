@@ -169,3 +169,4 @@ AVOID: feathered wings; hands or fingers; blade-like or knife-like wings; spines
 ```
 - **r6** (`gemini/fase1_r6.png`, prompt v3). Jordi: "te blij en de vleugels kloppen nog steeds niet met wat ik bedoel". NB: Claude had "haren achterop" (rug) in v3 ook doorgetrokken naar de vleugels ("no feather shafts" op de vleugels); dat zei Jordi niet.
 - Vleugel (Jordi, bij `referenties/kuiken_7_vleugel_kam.png`): "zonder dit erin is het design gefaald". = de waaier van lange donkere kale veerschachten (pennen in de schede, zonder vlag) aan de kale arm.
+- Te blij (Jordi): "misschien die enorme glimlach?" (de snavellijn die naar het oog omhoog krult).

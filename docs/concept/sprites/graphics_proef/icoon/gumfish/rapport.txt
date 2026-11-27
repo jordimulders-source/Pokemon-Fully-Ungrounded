@@ -1,0 +1,14 @@
+front docs/concept/sprites/blobfish/af/blobfish.png
+fronthoogte 29 -> doelhoogte 16.2; S 0.472 (bijgestuurd x0.96)
+factoren {'kop': 1.25, 'lijf': 0.95, 'overig': 1.0}
+icoon 27x16 (onderkant y29, midden x15.5)
+minimummaten:
+  staart: staart f=12 -> 5.7 px < minimum 6.8: schaal x1.21
+  oog: front 2 px, centrum icoon (24.4,29.2), patroon 2x2, minimum 1.5
+paletafstand (gemiddeld, redmean; lager = beter):
+  pal0: 108.2
+  pal1: 108.1   <- gekozen
+  pal2: 130.9
+  pal3: 108.3
+  pal4: 108.5
+  pal5: 108.4

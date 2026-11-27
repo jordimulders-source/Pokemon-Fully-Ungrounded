@@ -3880,3 +3880,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.950] - Proefserie: rug-kandidaten ronde 2 (27 nov)
 - Jordi: "lichte afwijkingen zijn geen ramp, dus ja dit is beide prima". Maker-agent: `graphics_proef/kandidaat/sunperor_rug_v2.png` (p1 met open gaten + kop uit p3, zelfde 16-px raster, oude snavel weg, staf heel; 15 kleuren) en `hexpress_rug.png` (p4 in het frontpalet, x 2–61 / y 21–63, streep linksonder en één ruispixel weg; 14 kleuren). Vergelijking `vergelijking_r2.png`, script `gereedschap/bouw_r2.py`.
+
+### [v0.0.951] - Overige graphics: inventaris en Gemini-pakketten (27 nov)
+- `graphics_proef/INVENTARIS.md`: 129 soorten met bouw, maat en frame 2-categorie (G 63, G? 28, S 38; al frame 2: Gengas, Cuyby, Cuychu).
+- `graphics_proef/pakketten/batch_01`–`batch_16` (125 soorten, zonder de proefsoorten en Zapacha): per soort 8×-bijlage + rugprompt volgens het sjabloon, bij G ook frame 2-prompt.

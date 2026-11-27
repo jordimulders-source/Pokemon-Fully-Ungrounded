@@ -1,0 +1,12 @@
+{
+ "front": "docs/concept/sprites/blobfish/af/blobfish.png",
+ "anker": [28, 42],
+ "buren": ["wailmer", "goldeen", "relicanth"],
+ "delen": [
+  {"naam": "staart", "groep": "overig", "box": [44, 25, 57, 38], "min": "staart"},
+  {"naam": "lijf", "groep": "lijf", "poly": [[26,27],[47,27],[47,56],[26,56]]},
+  {"naam": "borstvin", "groep": "overig", "poly": [[31,39],[38,38],[42,43],[41,51],[35,53],[30,51],[28,45]], "binnenlijn": true},
+  {"naam": "kop", "groep": "kop", "poly": [[4,29],[27,29],[30,40],[28,54],[4,56]]}
+ ],
+ "oog": {"deel": "kop", "front": [20, 45, 21, 46], "patroon": ["WD", "DD"], "kleur": {"D": 15, "W": 3}}
+}

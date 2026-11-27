@@ -1,0 +1,16 @@
+gaten tussen voor en achter 0
+starmie_r5
+linksboven px 111 chips 6
+rechtsboven px 74 chips 5
+linksonder px 53 chips 2
+rechtsonder px 67 chips 2
+onder px 52 chips 2
+wit lijn 85 
+juweel lijn 23 [(np.int64(26), np.int64(23)), (np.int64(25), np.int64(24)), (np.int64(26), np.int64(24)), (np.int64(24), np.int64(25)), (np.int64(25), np.int64(25)), (np.int64(31), np.int64(25)), (np.int64(23), np.int64(26)), (np.int64(24), np.int64(26)), (np.int64(30), np.int64(26)), (np.int64(22), np.int64(27)), (np.int64(23), np.int64(27)), (np.int64(31), np.int64(28)), (np.int64(32), np.int64(29)), (np.int64(35), np.int64(29)), (np.int64(32), np.int64(30)), (np.int64(35), np.int64(30)), (np.int64(35), np.int64(31)), (np.int64(30), np.int64(32)), (np.int64(35), np.int64(32)), (np.int64(34), np.int64(33)), (np.int64(31), np.int64(34)), (np.int64(33), np.int64(35)), (np.int64(31), np.int64(36))]
+ontkorrelen 137 
+koek in glazuur 1 [(np.int64(18), np.int64(45))]
+ontkorrelen achter 47 
+buitenlijn 83 
+binnenlijn achter 29 [(np.int64(38), np.int64(13)), (np.int64(24), np.int64(14)), (np.int64(39), np.int64(14)), (np.int64(23), np.int64(15)), (np.int64(40), np.int64(15)), (np.int64(23), np.int64(16)), (np.int64(41), np.int64(16)), (np.int64(22), np.int64(17)), (np.int64(40), np.int64(17)), (np.int64(22), np.int64(18)), (np.int64(41), np.int64(18)), (np.int64(19), np.int64(19)), (np.int64(20), np.int64(19)), (np.int64(21), np.int64(19)), (np.int64(42), np.int64(19)), (np.int64(43), np.int64(19)), (np.int64(44), np.int64(19)), (np.int64(15), np.int64(20)), (np.int64(17), np.int64(20)), (np.int64(18), np.int64(20)), (np.int64(11), np.int64(34)), (np.int64(12), np.int64(35)), (np.int64(13), np.int64(36)), (np.int64(13), np.int64(37)), (np.int64(13), np.int64(38)), (np.int64(13), np.int64(39)), (np.int64(45), np.int64(39)), (np.int64(13), np.int64(40)), (np.int64(12), np.int64(41))]
+losse zwarte pixel 6 [(np.int64(15), np.int64(8)), (np.int64(23), np.int64(13)), (np.int64(13), np.int64(14)), (np.int64(35), np.int64(16)), (np.int64(47), np.int64(30)), (np.int64(45), np.int64(31))]
+figuur x3-57 y2-56 55x55, 1778 px

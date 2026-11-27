@@ -1,0 +1,55 @@
+(19,34) 5->7  R1 streep: model (19,34)=middentint (126,109,91) -> 7; (20,34) blijft 5 (model donker)
+(18,38) 1->5  R2 vizierrand: hoort bij de lid-lijn (model donker), zelfde kleur als de lijn (B=5)
+(7,49) 1->0  R3 kin: losse zwarte uitstulping weg
+(7,48) 10->1  R3 kin: onderlijn sluit, 1 px
+(36,45) 1->5  G1 bovenrand schildzoom: model = onderbroken donkerbruine naad, geen zwart; nu eigen donkerste tint 5
+(37,45) 1->5  G1 bovenrand schildzoom: model = onderbroken donkerbruine naad, geen zwart; nu eigen donkerste tint 5
+(38,45) 1->5  G1 bovenrand schildzoom: model = onderbroken donkerbruine naad, geen zwart; nu eigen donkerste tint 5
+(39,45) 1->5  G1 bovenrand schildzoom: model = onderbroken donkerbruine naad, geen zwart; nu eigen donkerste tint 5
+(40,45) 1->5  G1 bovenrand schildzoom: model = onderbroken donkerbruine naad, geen zwart; nu eigen donkerste tint 5
+(41,45) 1->5  G1 bovenrand schildzoom: model = onderbroken donkerbruine naad, geen zwart; nu eigen donkerste tint 5
+(42,45) 1->5  G1 bovenrand schildzoom: model = onderbroken donkerbruine naad, geen zwart; nu eigen donkerste tint 5
+(43,45) 1->5  G1 bovenrand schildzoom: model = onderbroken donkerbruine naad, geen zwart; nu eigen donkerste tint 5
+(44,45) 1->5  G1 bovenrand schildzoom: model = onderbroken donkerbruine naad, geen zwart; nu eigen donkerste tint 5
+(45,45) 1->5  G1 bovenrand schildzoom: model = onderbroken donkerbruine naad, geen zwart; nu eigen donkerste tint 5
+(46,45) 1->5  G1 bovenrand schildzoom: model = onderbroken donkerbruine naad, geen zwart; nu eigen donkerste tint 5
+(9,50) 1->10  G2 voorpoot links = lichtkant -> outline base grijs 10
+(9,51) 1->10  G2 voorpoot links = lichtkant -> outline base grijs 10
+(9,52) 1->10  G2 voorpoot links = lichtkant -> outline base grijs 10
+(9,53) 1->10  G2 voorpoot links = lichtkant -> outline base grijs 10
+(8,54) 1->10  G2 voorpoot links = lichtkant -> outline base grijs 10
+(8,55) 1->10  G2 voorpoot links = lichtkant -> outline base grijs 10
+(8,56) 1->10  G2 voorpoot links = lichtkant -> outline base grijs 10
+(8,57) 1->10  G2 voorpoot links = lichtkant -> outline base grijs 10
+(8,58) 1->10  G2 voorpoot links = lichtkant -> outline base grijs 10
+(7,59) 1->10  G2 voorpoot links = lichtkant -> outline base grijs 10
+(26,53) 1->10  G2 middelste poot links (model ~47) -> outline base grijs 10
+(26,54) 1->10  G2 middelste poot links (model ~47) -> outline base grijs 10
+(26,55) 1->10  G2 middelste poot links (model ~47) -> outline base grijs 10
+(26,56) 1->10  G2 middelste poot links (model ~47) -> outline base grijs 10
+(26,57) 1->10  G2 middelste poot links (model ~47) -> outline base grijs 10
+(26,58) 1->10  G2 middelste poot links (model ~47) -> outline base grijs 10
+(26,59) 1->10  G2 middelste poot links (model ~47) -> outline base grijs 10
+(26,60) 1->10  G2 middelste poot links (model ~47) -> outline base grijs 10
+(26,61) 1->10  G2 middelste poot links (model ~47) -> outline base grijs 10
+(40,56) 1->10  G2 achterpoot links (model ~86) -> outline base grijs 10
+(40,57) 1->10  G2 achterpoot links (model ~86) -> outline base grijs 10
+(40,58) 1->10  G2 achterpoot links (model ~86) -> outline base grijs 10
+(40,59) 1->10  G2 achterpoot links (model ~86) -> outline base grijs 10
+(35,49) 1->10  G2 tussen de poten: zwarte clusters (2 rijen) -> 1 px lijn + diepste grijs
+(36,49) 1->10  G2 tussen de poten: zwarte clusters (2 rijen) -> 1 px lijn + diepste grijs
+(35,52) 1->10  G2 tussen de poten: zwarte clusters (2 rijen) -> 1 px lijn + diepste grijs
+(36,52) 1->10  G2 tussen de poten: zwarte clusters (2 rijen) -> 1 px lijn + diepste grijs
+(38,52) 1->10  G2 tussen de poten: zwarte clusters (2 rijen) -> 1 px lijn + diepste grijs
+(11,50) 1->10  cluster onder de kin/bovenkant voorpoot -> 1 px lijn + diepste grijs
+(12,50) 1->10  cluster onder de kin/bovenkant voorpoot -> 1 px lijn + diepste grijs
+(4,42) 1->10  kop links = lichtkant -> outline base grijs 10
+(4,43) 1->10  kop links = lichtkant -> outline base grijs 10
+(4,44) 1->10  kop links = lichtkant -> outline base grijs 10
+(5,45) 1->10  kop links = lichtkant -> outline base grijs 10
+(5,46) 1->10  kop links = lichtkant -> outline base grijs 10
+(5,47) 1->10  kop links = lichtkant -> outline base grijs 10
+(3,36) 1->5  vizierpunt linksboven = lichtkant -> outline base schild 5 (zoals schildrand erboven)
+(3,37) 1->5  vizierpunt linksboven = lichtkant -> outline base schild 5 (zoals schildrand erboven)
+(2,38) 1->5  vizierpunt linksboven = lichtkant -> outline base schild 5 (zoals schildrand erboven)
+(1,38) 1->5  vizierpunt linksboven = lichtkant -> outline base schild 5 (zoals schildrand erboven)

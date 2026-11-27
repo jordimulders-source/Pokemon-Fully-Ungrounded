@@ -1,0 +1,18 @@
+gaten tussen voor en achter 0
+starmie_r4_A
+linksboven px 142 chips 10
+rechtsboven px 1 chips 0
+rechtsboven px 140 chips 7
+linksonder px 89 chips 0
+rechtsonder px 82 chips 0
+linksonder px 3 chips 0
+rechtsonder px 1 chips 0
+wit lijn 86 
+juweel lijn 24 [(np.int64(26), np.int64(23)), (np.int64(25), np.int64(24)), (np.int64(26), np.int64(24)), (np.int64(25), np.int64(25)), (np.int64(31), np.int64(25)), (np.int64(24), np.int64(26)), (np.int64(30), np.int64(26)), (np.int64(31), np.int64(28)), (np.int64(32), np.int64(29)), (np.int64(32), np.int64(30)), (np.int64(35), np.int64(30)), (np.int64(35), np.int64(31)), (np.int64(30), np.int64(32)), (np.int64(35), np.int64(32)), (np.int64(34), np.int64(33)), (np.int64(24), np.int64(34)), (np.int64(31), np.int64(34)), (np.int64(34), np.int64(34)), (np.int64(33), np.int64(35)), (np.int64(27), np.int64(36)), (np.int64(28), np.int64(36)), (np.int64(29), np.int64(36)), (np.int64(30), np.int64(36)), (np.int64(31), np.int64(36))]
+ontkorrelen 129 
+koek in glazuur 3 [(np.int64(26), np.int64(18)), (np.int64(41), np.int64(24)), (np.int64(18), np.int64(45))]
+ontkorrelen achter 72 
+buitenlijn 87 
+binnenlijn achter 43 
+losse zwarte pixel 3 [(np.int64(19), np.int64(7)), (np.int64(35), np.int64(16)), (np.int64(51), np.int64(26))]
+figuur x6-54 y6-53 49x48, 1753 px

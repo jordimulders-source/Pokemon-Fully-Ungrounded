@@ -3604,8 +3604,12 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Frontsprite `docs/concept/sprites/sneeuwmonster_fase3/af/sauna_yeti.png` (+ `_8x`, 62×49 px, 16 kleuren): kale reductie r2 + Jordi's punten (minder rechte lijnen, buiksteen, dikkere band), eindkeuring (houttinten per pixel, gezichtshuid in modeltint met licht en schaduw, binnenlijnen niet zwart, pupil naar binnen). Op het overzichtsvel. Lijn af; naam open.
 - Nieuwe vaste regel (Jordi): "als je iets 'rustig' vindt is dat een ander woord voor hertekend naar pixelblur en dus compleet verknald" (`CLAUDE.md`, `SPRITE_KERN.md`).
 
-### [v0.0.859] - Kudu (impala-lijn fase 3): keuzes en Gemini-prompt r1
+### [v0.0.859] - Zandloper-lijn: fase 1 frontsprite af (27 nov)
+- Fase 1 (zandloper met ogen, Ground/Psychic) frontsprite af in `docs/concept/sprites/zandloper/fase1/af/`: zwevende, scheve zandloper met de sluwe ogen van de opgesloten djinn in het zand en twee losse houten handen. Model = Gemini r6 + handen uit r3 (gedraaid, variant C); sprite = model 1-op-1 op zijn eigen raster (63×64) + eindkeuring tinten/schaduw. Op het overzichtsvel. Prompts r1–r8 in `zandloper/fase1/gemini/PROMPTS.md`, besluiten in `zandloper/fase1/SPEC.md`.
+- Lessen (GEMINI.md): feitelijke opmerking van Jordi = kritiek; pixel aanwijzen via een krabbel op de sprite; ver oog in driekwart nooit groter.
+
+### [v0.0.860] - Kudu (impala-lijn fase 3): keuzes en Gemini-prompt r1
 - Jordi (26 nov): uitstraling koninklijk en kalm, manen + keelfranje, hoorns heel groot, pre-evolutie niet noemen, "mag echt een grote sprite zijn ook", kudustrepen erop "indien mogelijk". `docs/concept/sprites/impala_lijn/kudu/SPEC.md`, prompt in `kudu/gemini/PROMPTS.md`.
 
-### [v0.0.860] - Kudu (impala-lijn fase 3): frontsprite af
+### [v0.0.861] - Kudu (impala-lijn fase 3): frontsprite af
 - Jordi (27 nov): "ik zie amper verschil, doe maar duidelijk". `docs/concept/sprites/impala_lijn/kudu/af/kudu.png` (= `sprite/r16/kudu_r16B.png`). Gemini r1–r5 → model r3b met manen verschoven over de schouder (A3); reductie r1–r6 met 2 keuringen; oog K4 (Bidoof, klein zwart oog); manen opnieuw als losse vorm met licht gerafelde rand (B6a + schouder r12); eindkeuring Dragonfly Cave (gekleurde selout, gedeelde warme lijnkleur), rechte lijnen nagelopen (r15) en volume (r16 B, extra tussentint). Op het overzichtsvel na de impala; impala-lijn af. Lessen in `SPRITE_WERKWIJZE.md` (referentie 1-op-1 nadoen, velscripts niet importeren) en `GRAPHICS.md` (gedeelde lijnkleur bij goud).

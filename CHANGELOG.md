@@ -3695,3 +3695,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.890] - Hanan Pacha: prompt v4 (27 nov)
 - Keuzes na r3 (karmijnrode kop, losse vingerpennen, witte vleugelband + donkere punten, V-pose met pennen als zonnestralen) in SPEC; prompt v4.
+
+### [v0.0.891] - Hanan Pacha: r4 + prompt v5 (27 nov)
+- Gemini r4 bewaard ("beter, nog net niet majestueus"); Jordi's staartreferentie in `hanan_pacha/referentie/`; prompt v5 = v4 met een lange, omlaag hangende waaier van losse lansvormige staartveren.

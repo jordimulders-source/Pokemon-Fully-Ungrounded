@@ -133,3 +133,4 @@ Opdracht: `sprite/OPDRACHT.md`.
 - Pose (Jordi, 27 nov): "hij moet een beetje onhandig erbij staan".
 - Pose (Jordi): "hij staat maar in een zodanige pose dat je de dunne gek uitziende poten en klauwtjes kan zien".
 - Gelige tinten: "alleen in het dons". Snavel: kromme grijze snavel van foto 1 ("2 ja"). Oog: niet rood/blauw, "grijze ring" (foto 1). "nee, geen teken".
+- Grootte: 700–900 px (voorstel Claude), Jordi: "grootte ok".

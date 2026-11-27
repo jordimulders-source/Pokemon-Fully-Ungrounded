@@ -30,3 +30,6 @@ Jordi: "ja staryu is goed, zet maar in af". `staryu/af/staryu_regional.png` (= s
 
 ## Type
 - Jordi (27 nov): "staryu en starmie normaal worden water/cosmic" (gewone vorm). Voorstellen Claude voor de koekjes-vorm: Fairy → Fairy/Cosmic (aanbevolen), Fairy → Fairy/Psychic, Fire → Fire/Fairy, Normal → Normal/Fairy, Water → Water/Fairy. Open.
+
+## Starmie: ook de voorpunten (27 nov)
+Jordi na r5: "de punten van de voorkant moeten ook minder puntig van starmie".

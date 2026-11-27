@@ -842,6 +842,8 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - **Yeti (Jordi, 25 nov):** variant a ("ja"; advies Claude: 3–4 stenen, één in de borst, b en c te complex voor een sprite). Jordi: "wat we dan doen is waar de knopen in fase 1 zitten worden steeds grotere gloeiende stenen".
 - **Fase 1-knopen (Jordi, 25 nov):** "koude donkere steentjes"; ze gloeien pas vanaf fase 2.
 - **Fase 2 (Jordi, 26 nov, meerkeuze):** houten saunaemmer; twee grotere gloeiende stenen; groter, met armen; tevreden/ontspannen. Map `docs/concept/sprites/sneeuwmonster_fase2/`.
+- **Fase 3 (Jordi, 27 nov):** "ik wil dat die een zittende pose heeft, heel relaxte tevreden vriendelijke yeti. Emmer nog op zijn hoofd maar die is meegevormd en daarom niet puur een emmer meer, schouders, de knopen op de buik en indien mogelijk (als dat past) knieën zijn stenen. Hij ziet er groot en gevaarlijk uit qua postuur maar hij is heel vriendelijk zolang die maar lekker van zn sauna mag genieten. armen misschien in de leun pose alsof die ze op een leuning heeft hangen". Map `docs/concept/sprites/sneeuwmonster_fase3/`.
+
 ## Originele Poison-lijn (Jordi, 26 nov)
 - Jordi: "ik denk dat ik nog een originele poison lijn wil toevoegen". Oude ideeën (pijlstaartrog, pijlgifkikker, koraalslang, Amazone-insecten, açaí, ozongat) "niet overtuigend genoeg"; hoatzin geschrapt voor nu.
 - Ronde 1 (Claude): Chinchorro-mummie ("te luguber"), curare-blaaspijp (vraag: tool of plant? Claude: gif uit lianen, blaaspijp is mensenwerk), kwik-blob Poison/Steel ("een optie"), zombieschimmel ("tof maar wel precies parasect"), gifbeker van een alchemist.

@@ -3593,7 +3593,17 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Nieuwe originele Ground/Psychic-lijn: zandloper met ogen → brein breekt uit → zand-djinn. Fase 3 frontsprite af in `docs/concept/sprites/zandloper/fase3/af/` (model Gemini r5 + glas en ogen uit r8, barst uit r10; 11 makerrondes + DC-eindkeuring PASS). Op het overzichtsvel. Besluiten in `zandloper/fase3/SPEC.md`.
 - Terreurvogel en glyptodon als regionale fossielen in TODO.
 - Lessen: versimpelwoorden in Gemini-prompts maken het lijf slap; geen ruwe plakversie tonen; "rustig" is geen pluspunt.
+### [v0.0.858] - Guaraná fase 2: frontsprite af (26–27 nov)
+- Ontwerp via Gemini r1–r10 (`docs/concept/sprites/guarana_fase2/gemini/`): vertakte liaan met drie trossen (Jordi), getwijnde liaan + echt guaraná-blad (keuze 1 en 3), minder/grotere ogen, gesloten vruchten erbij, hangende trossen met peervormige vruchten (r9/r10, "meeste guarana"). Gemini telde steeds te laag ("twice as many" deed niets); model = r10 met elke tros verschoven nog eens erachter geplakt (`plak/dubbel.py`).
+- Sprite: 16 makerrondes + DC-eindkeuring (PASS, 57 px). Belangrijkste stappen: volume en schaduw (r3), gladde randen (r4), pupillen gevarieerd (r5), afwerking naar fase 1-palet en -verhoudingen (r6–r8), ronde trosranden (r10), ronde oogvruchten i.p.v. vierkanten (r13, bewaard in `bewaard_r13/`), trossen ±1,6× groter mogen over blad/takken vallen (r14, Jordi), fase 1-oog en precies vier ogen naar linksonder (r15–r16). Palet = fase 1 (12 kleuren).
+- `docs/concept/sprites/guarana_fase2/af/guarana_fase2.png` (+ `normal.pal`, 8×); op het overzichtsvel (sectie New). Lijn af; namen open. Vaste regels en alle citaten in `guarana_fase2/SPEC.md`; lessen in `docs/lessen/GEMINI.md`.
 
-### [v0.0.858] - Zandloper-lijn: fase 1 frontsprite af (27 nov)
+### [v0.0.x] - Sauna-yeti (sneeuwmonster fase 3) frontsprite af (27 nov)
+- Eindvorm van de sneeuwmonster-lijn (Ice/Fire): grote, zittende, onderuitgezakte yeti van sneeuw met de armen over een onzichtbare leuning, halfopen relaxte ogen, de houten emmer op de kop, gloeiende vulkanische stenen op schouders, buik en knieën (Jordi: "heel relaxte tevreden vriendelijke yeti", "groot en gevaarlijk qua postuur").
+- Model: Gemini s3b (pose via een posebijlage, daarna lengte en ogen bijgestuurd). Prompts en rondes in `docs/concept/sprites/sneeuwmonster_fase3/gemini/PROMPTS.md`.
+- Frontsprite `docs/concept/sprites/sneeuwmonster_fase3/af/sauna_yeti.png` (+ `_8x`, 62×49 px, 16 kleuren): kale reductie r2 + Jordi's punten (minder rechte lijnen, buiksteen, dikkere band), eindkeuring (houttinten per pixel, gezichtshuid in modeltint met licht en schaduw, binnenlijnen niet zwart, pupil naar binnen). Op het overzichtsvel. Lijn af; naam open.
+- Nieuwe vaste regel (Jordi): "als je iets 'rustig' vindt is dat een ander woord voor hertekend naar pixelblur en dus compleet verknald" (`CLAUDE.md`, `SPRITE_KERN.md`).
+
+### [v0.0.859] - Zandloper-lijn: fase 1 frontsprite af (27 nov)
 - Fase 1 (zandloper met ogen, Ground/Psychic) frontsprite af in `docs/concept/sprites/zandloper/fase1/af/`: zwevende, scheve zandloper met de sluwe ogen van de opgesloten djinn in het zand en twee losse houten handen. Model = Gemini r6 + handen uit r3 (gedraaid, variant C); sprite = model 1-op-1 op zijn eigen raster (63×64) + eindkeuring tinten/schaduw. Op het overzichtsvel. Prompts r1–r8 in `zandloper/fase1/gemini/PROMPTS.md`, besluiten in `zandloper/fase1/SPEC.md`.
 - Lessen (GEMINI.md): feitelijke opmerking van Jordi = kritiek; pixel aanwijzen via een krabbel op de sprite; ver oog in driekwart nooit groter.

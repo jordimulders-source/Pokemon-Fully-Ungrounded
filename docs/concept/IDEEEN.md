@@ -887,3 +887,4 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - **Open vragen (Claude):** alleen Tangela, of ook Tangrowth als regional; typing; zijn de ranken slangen (met kopjes) of blijven het ranken; zichtbare ogen (Tangela heeft alleen ogen in het kluwen) en het verstenen in het ontwerp of alleen in de moves/ability.
 - **Jordi (27 nov):** "als het lukt en er goed eruit ziet krijgt Tangela een nieuwe evolutie"; "de vines worden slangen en de het midden blijft zwart met ogen, maar de ogen iets anders".
 - **Nog open (Claude):** typing; hoe de ogen anders worden; nieuwe evolutie = naast of in plaats van Tangrowth.
+- **Gemini v1** (`sprites/tangela_regional/r1/gemini_v1.webp`), Jordi (27 nov): "heel tof, maar dit vertaalt nog niet naar een sprite denk ik, wat voor kleur zullen we voor gaan voor de slangen? ik neig toch naar paars".

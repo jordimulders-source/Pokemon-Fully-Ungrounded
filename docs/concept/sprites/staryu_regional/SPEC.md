@@ -16,3 +16,7 @@
 
 ## Open
 Type, naam (regional forms: blijven Staryu/Starmie?), serieus/grap.
+
+## Starmie-sprite: correctie Jordi (27 nov)
+- Na r3 C1/C2 (voorste ster verkleind, gespiegelde Gen 3-achterster): "waarom neem je het model niet over?"; "je maakt hem ook steeds rechter"; "steeds minder driekwart pose".
+- Dus: model r3 1-op-1 overnemen (pose, driekwart-perspectief, verhoudingen, achterpunten op hun modelplek en -richting). Alleen de vorm van de achterpunten puntiger zoals bij de echte Starmie, binnen het perspectief van het model.

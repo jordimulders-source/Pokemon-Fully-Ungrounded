@@ -38,3 +38,4 @@ Trio van de drie Inca-werelden (zie `docs/concept/POKEMON.md` → Legendaries). 
 - Jordi na r1: "eens met dat de staart niet werkt"; "de kop is aan de kleine kant ook" "waardoor het oog maar 2 pixels is". → r2: staart van r5 in r7-kleuren, kop uit het model geschaald (×1,2/×1,35/×1,5 ter keuze), oog 1-op-1 van een Gen 3-vogel; pennen: banden r5 langs de lengte (voorstel Claude).
 - Jordi: "de vleugels vind ik wel goed gelukt, alleen moeten nog meer kleurtinten en schaduw krijgen" → pennen-voorstel van Claude vervalt; vleugels vorm/kleurvolgorde bevroren, meer tinten + Gen 3-schaduw.
 - Jordi: "ja het is niet erg dat de kop dan meer vleugel overlapt".
+- Jordi: "en schaal de halsband mee" (kop + kraag samen schalen).

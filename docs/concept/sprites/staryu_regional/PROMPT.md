@@ -70,3 +70,17 @@ DO NOT: a realistic photo, real chocolate or a cookie, sand or rocks, starfield 
 
 ## Resultaten
 (nog niets)
+
+## r1 (27 nov)
+`gemini/r1_carambola_staryu.png`, `r1_carambola_starmie.png`, `r1_choco_staryu.png`, `r1_choco_starmie.png`.
+Jordi: "Carambola Starmie vertaalt niet helemaal merk ik, omdat het twee sterren over elkaar heen is. Chocolate chip past beter, alleen de koekjes zien er een beetje bleek uit en zouden nog iets meer stijl kunnen gebruiken, zodat ze er echt lekker uit zien"; "dus daar gaan we voor" (= chocolate chip).
+
+## Bijstuurprompt r2 (in hetzelfde gesprek als r1, voor Staryu en Starmie)
+Eigen invulling Claude (niet door Jordi gekozen): "lekker" = vers gebakken goudbruin met donkerdere gebakken randen, glanzende chips. Max. 2 wijzigingen (les: bijsturen werkt alleen bij kleine wijzigingen).
+
+```
+Keep everything exactly the same: the shape, the pose, the size, the number and position of the knobs, and the gem core. Change ONLY the colors, so it looks like a delicious, freshly baked chocolate chip cookie:
+1. The body is no longer pale beige but a warm golden-brown baked cookie color, slightly darker and more toasted along the edges and tips, lighter golden in the middle.
+2. The knobs are rich, glossy dark chocolate, with a small light highlight on each one.
+Keep it a clean Gen 3 sprite: max 16 colors, 2-3 shades per color, white background, no crumbs, no effects.
+```

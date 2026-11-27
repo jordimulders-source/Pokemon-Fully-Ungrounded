@@ -318,3 +318,23 @@ MOOD: ugly in a Pokémon way, uncanny, a cryptid, something you don't trust. Sim
 AVOID: hands or fingers; feathers with vanes; spikes or hair on the back; a crest; a smile or a cute face; a branch or any object; a red eye; a normal bird.
 ```
 - **r16** (`gemini/fase1_r16.png`, prompt v8 + krabbel). Jordi: "zucht". Gemini plakte de krabbel letterlijk over r7 (gladde zwarte vlekken + vectorlijnen), niets hertekend.
+  Jordi: "het moet niet letterlijk overgetekend worden".
+
+## Prompt fase 1 (v9 = v8 met "idee, niet overtrekken"; nieuw gesprek, bijlage = krabbel)
+```
+Design an original Pokémon, drawn as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 colors, white background, no ground, no shadow, no effects, no objects. The whole creature fits inside the canvas with white margin on all sides; nothing is cut off.
+
+The attached image is only a very rough idea sketch by someone who cannot draw. Do NOT copy, trace or paste anything from it. Only take the idea of the wings from it, and design the whole Pokémon yourself as a polished, real Gen 3 sprite with pixel outlines and Gen 3 shading everywhere.
+
+WINGS (most important, the idea from the sketch): wings without feathers. A thin bare grey arm; at its end, instead of a hand, a dark, elongated, bare-skinned part of the wing, with a few long, thin, bare shafts sticking out of it, pointing backward and down. Drawn in pixels like the rest of the sprite. No hands, no fingers.
+
+WHAT IT IS: an uncanny, cryptid-like hoatzin chick. Its legs are far too long for its small body: thin, bare and grey, with claws. It stands a bit awkwardly, body turned 3/4 to the left.
+
+BODY: small, mostly black down with some yellowish tints only in the down. No spikes or hair on the back.
+
+HEAD: no crest. A hooked grey beak, no smile. A dark eye with a grey ring around it. Not happy.
+
+MOOD: ugly in a Pokémon way, uncanny, a cryptid, something you don't trust. Simple, readable design.
+
+AVOID: copying or tracing the sketch; smooth vector shapes; hands or fingers; feathers with vanes; spikes or hair on the back; a crest; a smile or a cute face; a branch or any object; a red eye; a normal bird.
+```

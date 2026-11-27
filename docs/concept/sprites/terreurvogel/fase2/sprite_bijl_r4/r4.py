@@ -15,8 +15,8 @@ yy,xx=np.mgrid[0:64,0:64]
 # index 3 komt daardoor vrij als vierde antracietstap (hooglicht op vleugel/schouder).
 PAL[6]=(48,46,55)                                                 # gedeeld donker (koel)
 PAL[4]=(106,99,92);  PAL[5]=(172,162,146)                         # steen: midden, licht
-PAL[7]=(80,76,83);   PAL[8]=(114,106,104); PAL[3]=(150,139,128)   # antraciet: midden, licht, hooglicht (warm)
-PAL[9]=(104,52,46);  PAL[10]=(156,58,50); PAL[11]=(160,108,86); PAL[12]=(206,128,84)  # roest donker, rood, tan, oranje
+PAL[7]=(82,78,86);   PAL[8]=(120,111,108); PAL[3]=(158,146,132)   # antraciet: midden, licht, hooglicht (warm)
+PAL[9]=(107,61,51);  PAL[10]=(156,58,50); PAL[11]=(160,108,86); PAL[12]=(206,128,84)  # roest donker, rood, tan, oranje
 PAL[13]=(84,66,54);  PAL[14]=(146,124,98); PAL[15]=(204,178,138)  # poten: donker/lijn, midden, licht
 
 # ---------- materiaal (uit r3) ----------
@@ -219,13 +219,13 @@ def seg(*delen):
             if c!='-': out[x0+k]=c
     return out
 LIJF={
- 31:seg((34,'8338'),(58,'887')),
- 32:seg((30,'8833338887'),(55,'88877')),
+ 31:seg((34,'3338'),(58,'888')),
+ 32:seg((30,'8833338887'),(55,'88888')),
  33:seg((29,'88333888887776'),(53,'888776')),
- 34:seg((28,'ror8388888777776'),(50,'788777766')),
- 35:seg((27,'rrr9'),(31,'88888'),(36,'77777777'),(44,'777777'),(50,'oorr9'),(55,'66')),
- 36:seg((26,'rr96'),(30,'8888'),(34,'777777777'),(43,'61'),(45,'777'),(48,'rro9'),(52,'6666')),
- 37:seg((26,'6677'),(30,'11'),(32,'8888'),(36,'oo777'),(41,'667o'),(45,'11'),(47,'7766')),
+ 34:seg((28,'oor8388888777776'),(50,'888777766')),
+ 35:seg((27,'rorr'),(31,'88888'),(36,'77777777'),(44,'777777'),(50,'oorrr'),(55,'66')),
+ 36:seg((26,'rr99'),(30,'8888'),(34,'777777777'),(43,'71'),(45,'777'),(48,'rro6'),(52,'6666')),
+ 37:seg((26,'6697'),(30,'11'),(32,'8888'),(36,'oo777'),(41,'667o'),(45,'11'),(47,'7r66')),
  38:seg((26,'788766'),(32,'11'),(34,'77or66'),(40,'6'),(41,'11'),(43,'7oor'),(47,'11'),(49,'6')),
  39:seg((26,'78877766'),(34,'11'),(36,'rr666'),(41,'88'),(43,'11'),(45,'rrr'),(48,'66')),
  40:seg((26,'7787777766'),(36,'111'),(39,'677776'),(45,'111'),(48,'6')),
@@ -234,29 +234,67 @@ LIJF={
  43:seg((26,'777777777'),(35,'66'),(37,'78888'),(42,'66666')),
  44:seg((26,'777777777'),(35,'688338887776'),(47,'6')),
  45:seg((26,'777777'),(32,'6666'),(36,'8888'),(40,'777777'),(46,'666')),
- 46:seg((27,'7'),(29,'6666666'),(36,'78'),(38,'7777777'),(45,'66666')),
+ 46:seg((27,'7'),(29,'6666666'),(36,'68'),(38,'7777777'),(45,'66666')),
  47:seg((27,'66'),(31,'666666'),(37,'777777'),(43,'6666666')),
  48:seg((28,'666'),(33,'6'),(41,'77666666')),
  49:seg((29,'6666'),(44,'6666')),
 }
 KOPNEK={
- 24:{16:'o',17:'k',19:'o',20:'k',22:'k'},
- 25:seg((15,'okk9okk9k')),
- 26:seg((14,'ookk9kkk99')),
- 27:seg((13,'ookkkkkkkk99')),
- 28:seg((12,'9kkkkkkkkkk999')),
+ 24:{16:'o',17:'k',19:'o',20:'k',22:'9'},
+ 25:seg((15,'ook9okk99')),
+ 26:seg((14,'ookk9okk99')),
+ 27:seg((13,'ookkkkk9kk99')),
+ 28:seg((12,'9kkkkkkkk9k999')),
  29:seg((13,'9kkk'),(19,'kkkk9'),(25,'9')),
  30:seg((19,'kkk99')),
  31:seg((19,'kkk999')),
- 32:seg((18,'kkk9rr99')),
+ 32:seg((18,'kkkkrr99')),
  33:seg((17,'9kkkkrr9')),
  34:seg((16,'69kkkrrr9')),
  35:seg((18,'kkkrrrr9')),
  36:seg((17,'kkkrrror9')),
  37:seg((18,'kkrroor9')),
  38:seg((19,'9rrror9')),
- 39:seg((20,'9rrr9')),
- 40:seg((21,'r9')),
+ 39:seg((20,'9rrrr')),
+ 40:seg((21,'rr')),
 }
+SNAVEL={
+ 30:seg((3,'554'),(10,'444')),
+ 31:seg((2,'5554444444'),(13,'4')),
+ 32:seg((2,'554444444'),(12,'444')),
+ 33:seg((1,'5544444444444666')),
+ 34:seg((1,'5544444444444'),(16,'6')),
+ 35:seg((1,'55444444444'),(12,'6'),(14,'666')),
+ 36:seg((1,'5544444444'),(11,'6'),(13,'66')),
+ 37:seg((1,'5544444666'),(12,'66')),
+ 38:seg((2,'5544466'),(11,'66')),
+ 39:seg((2,'554466')),
+ 40:seg((2,'55466')),
+ 41:seg((3,'546')),
+ 42:seg((4,'46')),
+}
+BORST={40:seg((23,'887')),41:seg((22,'7887')),42:seg((22,'7787')),43:seg((23,'777')),44:seg((24,'77')),45:seg((25,'6'))}
 def hand():
-    pix(LIJF,'lijf/vleugel/staart'); pix(KOPNEK,'kop/nek')
+    pix(LIJF,'lijf/vleugel/staart'); pix(KOPNEK,'kop/nek'); pix(SNAVEL,'snavel'); pix(BORST,'borst')
+    # losse gekleurde randpixels tussen zwart (nek-voorkant) -> zwart: nooit zwart en kleur om en om op één rand
+    for y,x in [(37,17),(39,19)]: zet(y,x,1,'omlijning')
+
+def opslaan(pad,A=None):
+    A=S if A is None else A
+    im=Image.fromarray(A.astype('uint8'),'P'); p=[]
+    for c in PAL: p+=list(c)
+    im.putpalette(p+[0]*(768-len(p))); im.save(pad,transparency=0)
+def zone(y,x):
+    p=PART[y,x]
+    return {1:'snavel',2:'kop',3:'lijf',4:'vleugel',5:'dij',6:'poot nabij',7:'poot ver',8:'nek',9:'staart'}[p]
+if __name__=='__main__':
+    vul(); omlijning(); vleugellijnen(); poten(); hand()
+    np.save('r4.npy',S); opslaan('terreurvogel_bijl_r4.png')
+    from collections import Counter
+    R2=np.array(Image.open('../sprite_bijl_r2/oog_B.png')).astype(int)
+    print('gewijzigd t.o.v. r3 per zone:',dict(Counter(zone(y,x) for y,x in zip(*np.where(S!=B)))))
+    print('pixels per zone:',dict(Counter(zone(y,x) for y,x in zip(*np.where(FIG)))))
+    print('alpha-diff r3',int(((S>0)!=(B>0)).sum()),'alpha-diff r2/oog_B',int(((S>0)!=(R2>0)).sum()))
+    print('oog gewijzigd t.o.v. oog_B',sum(int(S[p]!=R2[p]) for p in OOG),'(waarden',[int(S[p]) for p in sorted(OOG)],')')
+    print('oog-RGB gelijk:',all(PAL[S[p]]==tuple(Image.open('../sprite_bijl_r2/oog_B.png').getpalette()[R2[p]*3:R2[p]*3+3]) for p in OOG))
+    print('kleuren gebruikt',len(set(S[FIG].tolist())),'+ transparant')

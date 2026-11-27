@@ -4,3 +4,4 @@ Lijn: zie `../fase2/SPEC.md`. Jordi (27 nov): "ja een kuiken met een enorme kop 
 ## Model
 - Kandidaat `gemini/model_kandidaat.png` (27 nov; Jordi: "dit is trouwens voor fase 1, laat me weten of die goed vertaalt"). Gemeten: ±615×605 (verhouding 1,02), natief raster ±10 px → ±62 natief; voor fase 1 (±45 px) ±1,4× verkleinen.
 - **Jordi (27 nov):** "ja fase 1 mag je wat meer kleuren zoals fase 2" (sprite gestart tegelijk met fase 2; kleuren richting fase 2 v8: stenen snavel warm grijsbruin, antraciet lijf, roest rood/oranje, beige poten; als palette swaps ter keuze).
+- **Jordi (27 nov) over r1 + swaps:** "De snavel zelf mag wat meer van steen, daarnaast zijn de tinten allemaal te vergelijkbaar waardoor het meer op een game boy color sprite lijkt". Kleur/oog nog niet gekozen; r2 = rampen verder uit elkaar + snavelvarianten (kleur / facetten) + oog B en E.

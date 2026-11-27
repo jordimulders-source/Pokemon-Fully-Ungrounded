@@ -115,3 +115,5 @@ Change ONLY these two things:
 2. Add two small separate floating wooden balls beside the hourglass, one on each side, like the round turned knobs of an hourglass frame. Same smooth dark brown wood as the end caps (#8a522e, #5c321e, #603a18), dark 1-pixel outline, flat cel shading. Plain spheres: no fingers, no thumbs, not gloves, not mittens.
 Real Gen 3 pixel art, 64x64, white background, no effects.
 ```
+
+**Jordi over r7:** "de mond is weg en het zijn nu 2 bollen".

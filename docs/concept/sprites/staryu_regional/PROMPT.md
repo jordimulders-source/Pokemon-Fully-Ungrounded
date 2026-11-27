@@ -136,3 +136,12 @@ DO NOT: a plain cookie with a few spots, a realistic photo, a plate, a gingerbre
 ## r3 (27 nov, prompts v3)
 `gemini/r3_staryu.png`, `gemini/r3_starmie.webp`. Jordi: "ik vind deze twee wel lachen alleen ik twijfel over de vorm van het stukje koek achter de hoofdvorm van starmie".
 Observatie Claude: in r3 zijn van de achterste ster maar vier punten zichtbaar (onderste ontbreekt), ze zijn rond/klonterig, ongelijk van grootte, en alleen de bovenste twee hebben chips. Bij de echte Starmie steken vijf scherpe punten gelijkmatig tussen de armen van de voorste ster uit.
+Jordi koos optie 1: "zoals de echte starmie" (vijf gelijke scherpe punten, gelijkmatig tussen de voorste armen, allemaal met chips).
+
+## Bijstuurprompt Starmie r4 (zelfde gesprek als r3, bijlage `gemini/bijlage_starmie_gen3.png` opnieuw meesturen)
+```
+Keep the front star exactly the same: the purple icing, the white drizzle, the sprinkles, the gem and its shape. Change ONLY the back star:
+The back star must be shaped exactly like the back star of the attached original Starmie: exactly five sharp, straight-edged points of equal size, evenly spaced, each one sticking out in the gap between two arms of the front star (one at the bottom, two at the sides, two at the top). Not rounded, not lumpy.
+All five back points are the same golden-brown cookie dough with a few chocolate chips on each.
+Keep it a clean Gen 3 sprite: max 16 colors, white background, no effects.
+```

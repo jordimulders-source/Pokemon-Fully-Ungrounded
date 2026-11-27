@@ -3609,3 +3609,5 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - r2 opgeslagen; Jordi: "nog wat saai", "staryu is maar half gedecoreerd", "het mogen echt meer koekjes worden". Nieuwe prompts v3 (Staryu en Starmie) in `docs/concept/sprites/staryu_regional/PROMPT.md`.
 ### [v0.0.864] - Regionale Staryu/Starmie: r3 (27 nov)
 - r3 (prompts v3) opgeslagen; Jordi: "wel lachen", twijfel over de achterste ster van Starmie.
+### [v0.0.865] - Regionale Starmie: achterste ster zoals de echte Starmie (27 nov)
+- Jordi: "zoals de echte starmie"; bijstuurprompt r4 in `docs/concept/sprites/staryu_regional/PROMPT.md`.

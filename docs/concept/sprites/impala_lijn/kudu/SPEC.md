@@ -37,3 +37,4 @@ Alle citaten en lijnbesluiten: `docs/concept/IDEEEN.md` → "Impala-lijn"; samen
 - Jordi op r9 (27 nov): "het is qua vorm nu iets te wollerig".
 - Manen (Jordi, 27 nov): "doe maar b6b, maar netter, minder rechte lijnen" → r11 (B6b opgeschoond). Jordi op r11: "HUH", "wat is dit"; daarna: **"o dat is mijn fout, b6a bedoelde ik"** → keuze = `sprite/r10/kudu_r10_B6a.png`, netter, minder rechte lijnen (r12). r11 vervalt.
 - Manen (Jordi, 27 nov): "linkerstuk van r10 b6a en rechterstuk van r12 van de maan" → `sprite/r13/kudu_r13.png` (B6a + r12 vanaf x30 = schouderrand; 15 px). "en dan naar eindkeuring".
+- Jordi op r14 (27 nov), met rode streepjes op `sprite/r15/jordi_rechte_lijnen.png`: "check alleen nog of al deze rechte lijnen nodig zijn".

@@ -132,3 +132,7 @@ MAKE IT A REAL DECORATED COOKIE: both stars are thick, soft-baked cookie dough, 
 
 DO NOT: a plain cookie with a few spots, a realistic photo, a plate, a gingerbread man, a face, starfield or galaxy patterns, sparkles, plush style.
 ```
+
+## r3 (27 nov, prompts v3)
+`gemini/r3_staryu.png`, `gemini/r3_starmie.webp`. Jordi: "ik vind deze twee wel lachen alleen ik twijfel over de vorm van het stukje koek achter de hoofdvorm van starmie".
+Observatie Claude: in r3 zijn van de achterste ster maar vier punten zichtbaar (onderste ontbreekt), ze zijn rond/klonterig, ongelijk van grootte, en alleen de bovenste twee hebben chips. Bij de echte Starmie steken vijf scherpe punten gelijkmatig tussen de armen van de voorste ster uit.

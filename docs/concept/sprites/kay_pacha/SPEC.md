@@ -40,3 +40,4 @@ Prompt r1: `PROMPT.md`.
 - Jordi: "eens, laten we om een nieuwe pose vragen en die golvende staart dingen wat minder naar achter laten gaan".
 - r10a/r10b (`gemini/r10a.png`, `r10b.png`, prompt r10): Jordi: "deze twee opties". Vertaalcheck `sprite/check_r10_5x.png`: a 57×62, b 60×62; beide vullen het vak.
 - **Oog (Jordi, 27 nov):** "maak de ogen dan maar net wat groter, het moet wit en paars zijn qua pixels ... Ik neig bijna naar 4 of 5 pixels. een rij van drie met wit-paars-wit en dan boven de rechtse witte een 2e witte pixel en misschien een 2e paarse boven de paarse. Linkeroog zie je in het model wel maar zal in de sprite wegvallen, niet erg". Bouwen mag vanaf 18:11 (Jordi).
+- **Model bevroren (Jordi, 27 nov: "staarten omhoog"):** `gemini/r10a.png` = `referenties/gemini_gekozen_r10a.png` (vervangt r9). Bouwen vanaf 18:11.

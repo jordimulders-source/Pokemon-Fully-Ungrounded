@@ -3608,5 +3608,20 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Fase 1 (zandloper met ogen, Ground/Psychic) frontsprite af in `docs/concept/sprites/zandloper/fase1/af/`: zwevende, scheve zandloper met de sluwe ogen van de opgesloten djinn in het zand en twee losse houten handen. Model = Gemini r6 + handen uit r3 (gedraaid, variant C); sprite = model 1-op-1 op zijn eigen raster (63×64) + eindkeuring tinten/schaduw. Op het overzichtsvel. Prompts r1–r8 in `zandloper/fase1/gemini/PROMPTS.md`, besluiten in `zandloper/fase1/SPEC.md`.
 - Lessen (GEMINI.md): feitelijke opmerking van Jordi = kritiek; pixel aanwijzen via een krabbel op de sprite; ver oog in driekwart nooit groter.
 
-### [v0.0.860] - Zandloper fase 1: terug naar fase 1-maat (27 nov)
+### [v0.0.860] - Kudu (impala-lijn fase 3): keuzes en Gemini-prompt r1
+- Jordi (26 nov): uitstraling koninklijk en kalm, manen + keelfranje, hoorns heel groot, pre-evolutie niet noemen, "mag echt een grote sprite zijn ook", kudustrepen erop "indien mogelijk". `docs/concept/sprites/impala_lijn/kudu/SPEC.md`, prompt in `kudu/gemini/PROMPTS.md`.
+
+### [v0.0.861] - Kudu (impala-lijn fase 3): frontsprite af
+- Jordi (27 nov): "ik zie amper verschil, doe maar duidelijk". `docs/concept/sprites/impala_lijn/kudu/af/kudu.png` (= `sprite/r16/kudu_r16B.png`). Gemini r1–r5 → model r3b met manen verschoven over de schouder (A3); reductie r1–r6 met 2 keuringen; oog K4 (Bidoof, klein zwart oog); manen opnieuw als losse vorm met licht gerafelde rand (B6a + schouder r12); eindkeuring Dragonfly Cave (gekleurde selout, gedeelde warme lijnkleur), rechte lijnen nagelopen (r15) en volume (r16 B, extra tussentint). Op het overzichtsvel na de impala; impala-lijn af. Lessen in `SPRITE_WERKWIJZE.md` (referentie 1-op-1 nadoen, velscripts niet importeren) en `GRAPHICS.md` (gedeelde lijnkleur bij goud).
+### [v0.0.862] - Hoatzin fase 1 (kuiken): frontsprite-kandidaat (27–28 nov)
+- 17 Gemini-rondes voor het kuiken (`docs/concept/sprites/hoatzin/gemini/fase1_r*.png`); Jordi koos r4 als model, met rughaar weg, vleugelharen vervangen door sprite-haren, donkere wig = lijf en poot doorgetrokken.
+- Sprite r1–r4 in `hoatzin/sprite_fase1/` (maker → keurder → DC-eindkeuring PASS): 40×44, ±736 px, zwart-aandeel 41 → 20 %, 11 kleuren, haren A en B. Wacht op Jordi.
+- Les in GEMINI.md: referentiefoto eerst zelf beschrijven en laten bevestigen; geen eigen vormen in prompts; sarcasme niet als compliment lezen.
+
+### [v0.0.863] - Hoatzin fase 1 (kuiken): frontsprite af (28 nov)
+- Frontsprite af: `docs/concept/sprites/hoatzin/af/hoatzin_fase1.png` (= `sprite_fase1/r9`). Na r4: Jordi op de rechterhelft ("niet goed te zien waar de ledematen los van elkaar zitten") → nabije vleugel als één gevouwen vorm (Jordi's omtrek), binnenlijnen niet zwart maar donkere eigen tint (r5–r8), DC-eindkeuring r9 (13 px, PASS). Haren B (Jordi).
+- Op het overzichtsvel (New, vóór fase 2). Hoatzin-lijn af; namen open.
+- Les in GRAPHICS.md: haarwortels apart houden in binnenlijnscripts; slagschaduw naast een lijn in dezelfde tint = dubbele lijn.
+
+### [v0.0.864] - Zandloper fase 1: terug naar fase 1-maat (27 nov)
 - De 1-op-1-versie was groter dan fase 3 (Jordi: "hij is nu te groot geworden"); `af/zandloper_fase1.png` is nu de 0,70-reductie (44×45, ±980 px, Baltoy-maat) met dezelfde keuring van tinten en schaduw en linkeroog variant A (pupil 2 px hoog). Grote versie bewaard in `zandloper/fase1/sprite/r14_natief/af_oud/`. Overzichtsvel bijgewerkt.

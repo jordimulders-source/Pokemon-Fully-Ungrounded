@@ -1,0 +1,727 @@
+== Variant A: pluizige kraag met puntjes (Arcanine)
+  (15,23) m -> d  veld-herhaald arcanine 41 4
+  (15,24) m -> d  veld-herhaald arcanine 41 4
+  (16,24) d -> m  veld-herhaald arcanine 41 4
+  (24,25) . -> d  kampunt 1 arcanine 16 4 m
+  (25,25) 0 -> d  kampunt 1 arcanine 17 4 d
+  (19,26) d -> l  veld-herhaald arcanine 45 6
+  (20,26) 0 -> d  veld-herhaald arcanine 46 6
+  (21,26) d -> 0  veld-herhaald arcanine 46 6
+  (24,26) d -> l  kampunt 1 arcanine 16 5 l
+  (25,26) d -> l  kampunt 1 arcanine 17 5 0
+  (14,27) m -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 40 6
+  (17,27) m -> D  lijf zichtbaar (rand gerafeld)
+  (18,27) d -> D  lijf zichtbaar (rand gerafeld)
+  (19,27) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 45 6
+  (21,27) m -> l  veld-herhaald arcanine 47 7
+  (27,27) d -> m  kampunt onder (over de rug) arcanine 21 47 m
+  (28,27) 0 -> m  kampunt onder (over de rug) arcanine 22 47 m
+  (15,28) d -> D  lijf zichtbaar (rand gerafeld)
+  (18,28) d -> l  nekrand-pluk 1 arcanine 7 38 d
+  (19,28) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 45 7
+  (20,28) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 46 7
+  (21,28) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 47 7
+  (22,28) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 48 7
+  (23,28) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 49 7
+  (27,28) l -> m  kampunt onder (over de rug) arcanine 21 48 m
+  (28,28) l -> m  kampunt onder (over de rug) arcanine 22 48 m
+  (9,29) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 35 8
+  (10,29) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 36 8
+  (11,29) d -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 37 8
+  (16,29) l -> m  nekrand-pluk 1 arcanine 5 39 d
+  (17,29) m -> l  nekrand-pluk 1 arcanine 6 39 l
+  (18,29) d -> l  nekrand-pluk 1 arcanine 7 39 l
+  (19,29) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 45 8
+  (20,29) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 46 8
+  (21,29) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 47 8
+  (22,29) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 48 8
+  (23,29) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 49 8
+  (24,29) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 50 8
+  (25,29) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 51 8
+  (26,29) m -> l  kampunt onder (over de rug) arcanine 20 49 d
+  (27,29) l -> m  kampunt onder (over de rug) arcanine 21 49 m
+  (28,29) d -> m  kampunt onder (over de rug) arcanine 22 49 m
+  (29,29) d -> 0  kampunt onder (over de rug) arcanine 23 49 0
+  (30,29) 0 -> d  kampunt 3 arcanine 15 5 m
+  (31,29) . -> 0  kampunt 3 arcanine 16 5 l
+  (10,30) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 36 9
+  (11,30) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 37 9
+  (12,30) d -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 38 9
+  (15,30) d -> 0  nekrand-pluk 1 arcanine 4 40 d
+  (16,30) l -> m  nekrand-pluk 1 arcanine 5 40 m
+  (17,30) m -> l  nekrand-pluk 1 arcanine 6 40 l
+  (18,30) d -> l  nekrand-pluk 1 arcanine 7 40 l
+  (19,30) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 45 9
+  (20,30) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 46 9
+  (21,30) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 47 9
+  (22,30) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 48 9
+  (23,30) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 49 9
+  (24,30) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 50 9
+  (26,30) l -> 0  veld-herhaald arcanine 51 8
+  (27,30) d -> 0  kampunt onder (over de rug) arcanine 21 50 d
+  (28,30) d -> 0  kampunt onder (over de rug) arcanine 22 50 0
+  (29,30) d -> D  slagschaduw op lijf (Arcanine e/d naast kraag)
+  (30,30) m -> d  kampunt 3 arcanine 15 6 l
+  (31,30) 0 -> l  kampunt 3 arcanine 16 6 l
+  (9,31) 0 -> d  franje rechts: inkeping arcanine 54 17 l
+  (10,31) m -> l  franje rechts: inkeping arcanine 55 17 l
+  (11,31) m -> 0  franje rechts: inkeping arcanine 56 17 0
+  (12,31) m -> D  slagschaduw op lijf (Arcanine e/d naast kraag)
+  (15,31) d -> M  lijf zichtbaar (rand gerafeld)
+  (16,31) l -> d  nekrand-pluk 1 arcanine 5 41 0
+  (19,31) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 45 10
+  (21,31) m -> l  schouderpunten 1 arcanine 54 16 l
+  (22,31) d -> l  schouderbult arcanine 54 17 l
+  (23,31) m -> l  schouderbult arcanine 55 17 l
+  (24,31) m -> l  schouderbult arcanine 56 17 0
+  (25,31) m -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 51 10
+  (26,31) m -> D  slagschaduw op lijf (Arcanine e/d naast kraag)
+  (27,31) d -> M  lijf zichtbaar (rand gerafeld)
+  (28,31) d -> 0  kampunt onder (over de rug) arcanine 22 51 0
+  (29,31) d -> D  slagschaduw op lijf (Arcanine e/d naast kraag)
+  (30,31) d -> 0  veld-herhaald arcanine 15 6 l
+  (31,31) d -> 0  veld-herhaald arcanine 16 6 l
+  (12,32) m -> 0  franje rechts: inkeping arcanine 57 18 d
+  (15,32) d -> M  lijf zichtbaar (rand gerafeld)
+  (16,32) l -> d  nekrand-pluk 2 arcanine 5 37 d
+  (19,32) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 45 11
+  (21,32) m -> l  schouderpunten 1 arcanine 54 17 l
+  (22,32) d -> m  schouderbult arcanine 54 18 m
+  (25,32) m -> l  schouderbult arcanine 57 18 d
+  (26,32) l -> 0  schouderbult arcanine 58 18 0
+  (27,32) M -> D  slagschaduw op lijf (Arcanine e/d naast kraag)
+  (8,33) . -> d  franjepluk 1 arcanine 5 37 d
+  (9,33) d -> m  franje rechts: inkeping arcanine 54 19 m
+  (10,33) l -> m  franje rechts: inkeping arcanine 55 19 m
+  (12,33) m -> 0  franje rechts: inkeping arcanine 57 19 m
+  (15,33) l -> M  lijf zichtbaar (rand gerafeld)
+  (16,33) l -> d  nekrand-pluk 2 arcanine 5 38 d
+  (19,33) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 45 12
+  (22,33) d -> m  schouderbult arcanine 54 19 m
+  (25,33) l -> m  schouderbult arcanine 57 19 m
+  (26,33) l -> 0  schouderbult arcanine 58 19 0
+  (27,33) M -> D  slagschaduw op lijf (Arcanine e/d naast kraag)
+  (8,34) . -> d  franjepluk 1 arcanine 5 38 d
+  (9,34) d -> m  franje rechts: inkeping arcanine 54 20 m
+  (12,34) m -> 0  franje rechts: inkeping arcanine 57 20 0
+  (15,34) l -> d  nekrand-pluk 2 arcanine 4 39 d
+  (19,34) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 45 13
+  (21,34) d -> m  schouderpunten 1 arcanine 54 19 m
+  (22,34) l -> m  schouderbult arcanine 54 20 m
+  (25,34) l -> 0  schouderbult arcanine 57 20 0
+  (26,34) d -> D  slagschaduw op lijf (Arcanine e/d naast kraag)
+  (7,35) . -> d  franjepluk 1 arcanine 4 39 d
+  (8,35) d -> l  franjepluk 1 arcanine 5 39 d
+  (11,35) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 37 14
+  (12,35) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 38 14
+  (13,35) l -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 39 14
+  (15,35) l -> 0  nekrand-pluk 2 arcanine 4 40 d
+  (16,35) l -> m  nekrand-pluk 2 arcanine 5 40 m
+  (18,35) m -> l  nekrand-pluk 2 arcanine 7 40 l
+  (19,35) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 45 14
+  (20,35) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 46 14
+  (21,35) d -> m  schouderpunten 1 arcanine 54 20 m
+  (24,35) l -> m  schouderpunten 1 arcanine 57 20 0
+  (25,35) l -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 51 14
+  (26,35) l -> D  slagschaduw op lijf (Arcanine e/d naast kraag)
+  (7,36) . -> 0  franjepluk 1 arcanine 4 40 d
+  (8,36) d -> m  franjepluk 1 arcanine 5 40 m
+  (11,36) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 37 15
+  (12,36) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 38 15
+  (13,36) l -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 39 15
+  (16,36) l -> 0  nekrand-pluk 2 arcanine 5 41 0
+  (17,36) d -> l  nekrand-pluk 2 arcanine 6 41 l
+  (19,36) d -> l  schouderpunten 2 arcanine 54 16 l
+  (21,36) d -> m  schouderpunten 1 arcanine 54 21 m
+  (22,36) l -> m  schouderpunten 1 arcanine 55 21 m
+  (23,36) l -> m  schouderpunten 1 arcanine 56 21 d
+  (24,36) l -> m  schouderpunten 1 arcanine 57 21 d
+  (25,36) l -> m  schouderpunten 1 arcanine 58 21 0
+  (26,36) l -> 0  schouderpunten 1 arcanine 59 21 0
+  (27,36) M -> D  slagschaduw op lijf (Arcanine e/d naast kraag)
+  (8,37) . -> 0  franjepluk 1 arcanine 5 41 0
+  (9,37) d -> l  franjepluk 1 arcanine 6 41 l
+  (12,37) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 38 16
+  (13,37) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 39 16
+  (14,37) l -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 40 16
+  (16,37) d -> M  lijf zichtbaar (rand gerafeld)
+  (19,37) d -> l  schouderpunten 2 arcanine 54 17 l
+  (21,37) d -> m  schouderpunten 2 arcanine 56 17 0
+  (22,37) l -> m  schouderpunten 1 arcanine 55 22 m
+  (23,37) l -> m  schouderpunten 1 arcanine 56 22 m
+  (24,37) l -> m  schouderpunten 1 arcanine 57 22 m
+  (25,37) l -> m  schouderpunten 1 arcanine 58 22 m
+  (26,37) M -> 0  schouderpunten 1 arcanine 59 22 0
+  (27,37) M -> D  slagschaduw op lijf (Arcanine e/d naast kraag)
+  (9,38) d -> 0  franjepluk 1 arcanine 6 42 0
+  (10,38) l -> 0  franjepluk 1 arcanine 7 42 l
+  (12,38) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 38 17
+  (13,38) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 39 17
+  (14,38) m -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 40 17
+  (16,38) d -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 42 17
+  (17,38) d -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 43 17
+  (19,38) d -> m  schouderpunten 2 arcanine 54 18 m
+  (20,38) l -> m  schouderpunten 2 arcanine 55 18 m
+  (21,38) d -> m  schouderpunten 2 arcanine 56 18 m
+  (22,38) l -> m  schouderpunten 2 arcanine 57 18 d
+  (23,38) l -> m  schouderpunten 2 arcanine 58 18 0
+  (24,38) l -> 0  schouderpunten 1 arcanine 57 23 d
+  (25,38) d -> 0  schouderpunten 1 arcanine 58 23 0
+  (26,38) M -> D  slagschaduw op lijf (Arcanine e/d naast kraag)
+  (8,39) . -> 0  franjepluk 2 arcanine 5 37 d
+  (9,39) d -> .  achtergrond (rand gerafeld)
+  (10,39) l -> .  achtergrond (rand gerafeld)
+  (11,39) l -> d  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 37 18
+  (12,39) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 38 18
+  (13,39) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 39 18
+  (14,39) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 40 18
+  (15,39) m -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 41 18
+  (18,39) l -> d  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 44 18
+  (19,39) d -> m  schouderpunten 2 arcanine 54 19 m
+  (21,39) d -> m  schouderpunten 2 arcanine 56 19 m
+  (22,39) l -> m  schouderpunten 2 arcanine 57 19 m
+  (23,39) l -> 0  schouderpunten 2 arcanine 58 19 0
+  (24,39) l -> D  slagschaduw op lijf (Arcanine e/d naast kraag)
+  (25,39) d -> 0  veld-herhaald arcanine 58 23 0
+  (26,39) M -> D  slagschaduw op lijf (Arcanine e/d naast kraag)
+  (8,40) . -> d  franjepluk 2 arcanine 5 38 d
+  (10,40) l -> d  franjepluk 2 arcanine 7 38 d
+  (11,40) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 37 19
+  (13,40) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 39 19
+  (14,40) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 40 19
+  (15,40) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 41 19
+  (16,40) m -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 42 19
+  (19,40) d -> m  schouderpunten 2 arcanine 54 20 m
+  (21,40) d -> m  schouderpunten 2 arcanine 56 20 m
+  (22,40) l -> 0  schouderpunten 2 arcanine 57 20 0
+  (23,40) l -> D  slagschaduw op lijf (Arcanine e/d naast kraag)
+  (24,40) l -> M  lijf zichtbaar (rand gerafeld)
+  (8,41) . -> 0  onderpunt 1 arcanine 19 47 d
+  (9,41) . -> 0  onderpunt 1 arcanine 20 47 l
+  (10,41) 0 -> m  onderpunt 1 arcanine 21 47 m
+  (11,41) l -> m  onderpunt 1 arcanine 22 47 m
+  (12,41) l -> m  onderpunt 1 arcanine 23 47 d
+  (13,41) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 39 20
+  (14,41) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 40 20
+  (15,41) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 41 20
+  (16,41) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 42 20
+  (17,41) m -> d  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 43 20
+  (18,41) d -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 44 20
+  (19,41) d -> m  schouderpunten 2 arcanine 54 21 m
+  (20,41) d -> m  schouderpunten 2 arcanine 55 21 m
+  (21,41) M -> m  schouderpunten 2 arcanine 56 21 d
+  (22,41) d -> m  schouderpunten 2 arcanine 57 21 d
+  (23,41) l -> d  schouderpunten 2 arcanine 58 21 0
+  (24,41) M -> 0  schouderpunten 2 arcanine 59 21 0
+  (25,41) M -> D  slagschaduw op lijf (Arcanine e/d naast kraag)
+  (10,42) 0 -> d  onderpunt 1 arcanine 21 48 m
+  (11,42) l -> m  onderpunt 1 arcanine 22 48 m
+  (12,42) l -> m  onderpunt 2 arcanine 19 47 d
+  (13,42) m -> l  onderpunt 2 arcanine 20 47 l
+  (17,42) m -> l  onderpunt 3 arcanine 20 47 l
+  (19,42) M -> m  schouderpunten 2 arcanine 54 22 m
+  (20,42) M -> m  schouderpunten 2 arcanine 55 22 m
+  (21,42) M -> m  schouderpunten 2 arcanine 56 22 m
+  (22,42) M -> m  schouderpunten 2 arcanine 57 22 m
+  (23,42) M -> 0  schouderpunten 2 arcanine 58 22 m
+  (24,42) M -> 0  schouderpunten 2 arcanine 59 22 0
+  (10,43) . -> 0  onderpunt 1 arcanine 21 49 m
+  (11,43) 0 -> m  onderpunt 1 arcanine 22 49 m
+  (12,43) l -> m  onderpunt 2 arcanine 19 48 d
+  (13,43) m -> l  onderpunt 2 arcanine 20 48 l
+  (17,43) m -> l  onderpunt 3 arcanine 20 48 l
+  (19,43) d -> m  schouderpunten 2 arcanine 54 23 m
+  (20,43) d -> m  schouderpunten 2 arcanine 55 23 m
+  (21,43) M -> 0  schouderpunten 2 arcanine 56 23 m
+  (22,43) M -> 0  schouderpunten 2 arcanine 57 23 d
+  (16,44) m -> D  lijf zichtbaar (rand gerafeld)
+  (20,44) d -> 0  onderpunt 3 arcanine 23 49 0
+  (21,44) M -> D  slagschaduw op lijf (Arcanine e/d naast kraag)
+  (16,45) l -> D  lijf zichtbaar (rand gerafeld)
+  (17,45) m -> D  lijf zichtbaar (rand gerafeld)
+  (18,45) d -> m  onderpunt 3 arcanine 21 50 d
+  (20,45) d -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 46 24
+  (21,45) d -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 47 24
+  (22,45) M -> D  slagschaduw op lijf (Arcanine e/d naast kraag)
+  (18,46) d -> D  lijf zichtbaar (rand gerafeld)
+  (19,46) d -> m  onderpunt 3 arcanine 22 51 0
+  (20,46) d -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 46 25
+  (21,46) d -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 47 25
+  (22,46) M -> D  slagschaduw op lijf (Arcanine e/d naast kraag)
+== Variant B: lang hangend kapsel, licht gerafelde onderrand
+  (15,23) m -> d  veld-herhaald arcanine 41 4
+  (15,24) m -> d  veld-herhaald arcanine 41 4
+  (16,24) d -> m  veld-herhaald arcanine 41 4
+  (19,26) d -> l  veld-herhaald arcanine 45 6
+  (20,26) 0 -> d  veld-herhaald arcanine 46 6
+  (21,26) d -> 0  veld-herhaald arcanine 46 6
+  (25,26) d -> l  veld-herhaald arcanine 20 47 l
+  (14,27) m -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 40 6
+  (18,27) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 44 6
+  (19,27) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 45 6
+  (21,27) m -> l  veld-herhaald arcanine 47 7
+  (23,27) l -> m  veld-herhaald arcanine 49 7
+  (24,27) l -> m  veld-herhaald arcanine 49 7
+  (27,27) d -> m  kampunt onder (over de rug) arcanine 21 47 m
+  (28,27) 0 -> m  kampunt onder (over de rug) arcanine 22 47 m
+  (15,28) d -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 41 7
+  (18,28) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 44 7
+  (19,28) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 45 7
+  (20,28) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 46 7
+  (21,28) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 47 7
+  (22,28) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 48 7
+  (23,28) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 49 7
+  (27,28) l -> m  kampunt onder (over de rug) arcanine 21 48 m
+  (28,28) l -> m  kampunt onder (over de rug) arcanine 22 48 m
+  (9,29) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 35 8
+  (10,29) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 36 8
+  (11,29) d -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 37 8
+  (15,29) d -> M  lijf zichtbaar (rand gerafeld)
+  (16,29) l -> d  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 42 8
+  (17,29) m -> l  nekrand: inkeping arcanine 56 17 0
+  (18,29) d -> l  nekrand: inkeping arcanine 55 17 l
+  (19,29) d -> l  nekrand: inkeping arcanine 54 17 l
+  (20,29) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 46 8
+  (21,29) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 47 8
+  (22,29) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 48 8
+  (23,29) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 49 8
+  (24,29) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 50 8
+  (25,29) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 51 8
+  (26,29) m -> l  kampunt onder (over de rug) arcanine 20 49 d
+  (27,29) l -> m  kampunt onder (over de rug) arcanine 21 49 m
+  (28,29) d -> m  kampunt onder (over de rug) arcanine 22 49 m
+  (29,29) d -> 0  kampunt onder (over de rug) arcanine 23 49 0
+  (9,30) 0 -> d  franje links: bult 1 arcanine 56 17 0
+  (10,30) d -> l  franje links: bult 1 arcanine 55 17 l
+  (11,30) d -> l  franje links: bult 1 arcanine 54 17 l
+  (12,30) d -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 38 9
+  (18,30) d -> m  nekrand: inkeping arcanine 55 18 m
+  (19,30) d -> m  nekrand: inkeping arcanine 54 18 m
+  (20,30) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 46 9
+  (21,30) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 47 9
+  (22,30) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 48 9
+  (23,30) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 49 9
+  (24,30) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 50 9
+  (26,30) l -> 0  veld-herhaald arcanine 51 8
+  (27,30) d -> 0  kampunt onder (over de rug) arcanine 21 50 d
+  (28,30) d -> 0  kampunt onder (over de rug) arcanine 22 50 0
+  (29,30) d -> D  slagschaduw op lijf (Arcanine e/d naast kraag)
+  (30,30) m -> d  veld-herhaald arcanine 22 49 m
+  (8,31) . -> d  franje links: bult 1 arcanine 57 18 d
+  (9,31) 0 -> m  franje links: bult 1 arcanine 56 18 m
+  (11,31) m -> 0  franje links: bult 1 arcanine 54 18 m
+  (12,31) m -> D  slagschaduw op lijf (Arcanine e/d naast kraag)
+  (15,31) d -> 0  nekrand: inkeping arcanine 58 19 0
+  (16,31) l -> m  nekrand: inkeping arcanine 57 19 m
+  (17,31) l -> m  nekrand: inkeping arcanine 56 19 m
+  (18,31) l -> m  nekrand: inkeping arcanine 55 19 m
+  (19,31) d -> m  nekrand: inkeping arcanine 54 19 m
+  (21,31) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 47 10
+  (22,31) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 48 10
+  (23,31) m -> l  schouderbult arcanine 54 17 l
+  (24,31) m -> l  schouderbult arcanine 55 17 l
+  (25,31) m -> 0  schouderbult arcanine 56 17 0
+  (26,31) m -> D  slagschaduw op lijf (Arcanine e/d naast kraag)
+  (27,31) d -> M  lijf zichtbaar (rand gerafeld)
+  (28,31) d -> 0  kampunt onder (over de rug) arcanine 22 51 0
+  (29,31) d -> D  slagschaduw op lijf (Arcanine e/d naast kraag)
+  (30,31) d -> 0  veld-herhaald arcanine 22 49 m
+  (31,31) d -> 0  veld-herhaald arcanine 22 49 m
+  (8,32) . -> d  franje links: bult 1 arcanine 57 19 m
+  (9,32) d -> m  franje links: bult 1 arcanine 56 19 m
+  (12,32) m -> 0  franje rechts: inkeping arcanine 57 18 d
+  (15,32) d -> M  lijf zichtbaar (rand gerafeld)
+  (16,32) l -> d  nekrand: inkeping arcanine 57 20 0
+  (17,32) l -> m  nekrand: inkeping arcanine 56 20 m
+  (19,32) d -> m  nekrand: inkeping arcanine 54 20 m
+  (21,32) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 47 11
+  (22,32) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 48 11
+  (26,32) l -> d  schouderbult arcanine 57 18 d
+  (27,32) M -> 0  schouderbult arcanine 58 18 0
+  (28,32) M -> D  slagschaduw op lijf (Arcanine e/d naast kraag)
+  (8,33) . -> 0  franje links: bult 1 arcanine 57 20 0
+  (9,33) d -> m  franje links: bult 1 arcanine 56 20 m
+  (10,33) l -> m  franje links: bult 1 arcanine 55 20 d
+  (12,33) m -> 0  franje rechts: inkeping arcanine 57 19 m
+  (15,33) l -> d  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 41 12
+  (19,33) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 45 12
+  (21,33) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 47 12
+  (22,33) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 48 12
+  (25,33) l -> m  schouderbult arcanine 56 19 m
+  (26,33) l -> m  schouderbult arcanine 57 19 m
+  (27,33) M -> 0  schouderbult arcanine 58 19 0
+  (12,34) m -> 0  franje rechts: inkeping arcanine 57 20 0
+  (15,34) l -> d  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 41 13
+  (19,34) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 45 13
+  (21,34) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 47 13
+  (22,34) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 48 13
+  (24,34) m -> l  schouderbult arcanine 55 20 d
+  (25,34) l -> m  schouderbult arcanine 56 20 m
+  (26,34) d -> 0  schouderbult arcanine 57 20 0
+  (27,34) M -> D  slagschaduw op lijf (Arcanine e/d naast kraag)
+  (11,35) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 37 14
+  (12,35) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 38 14
+  (13,35) l -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 39 14
+  (15,35) l -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 41 14
+  (18,35) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 44 14
+  (19,35) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 45 14
+  (20,35) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 46 14
+  (21,35) d -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 47 14
+  (24,35) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 50 14
+  (26,35) l -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 52 14
+  (27,35) M -> D  slagschaduw op lijf (Arcanine e/d naast kraag)
+  (8,36) d -> 0  veld-herhaald arcanine 35 15
+  (9,36) l -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 35 15
+  (11,36) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 37 15
+  (12,36) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 38 15
+  (13,36) l -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 39 15
+  (16,36) l -> d  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 42 15
+  (17,36) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 43 15
+  (19,36) d -> l  schouderpunt (onderste lok) arcanine 54 16 l
+  (21,36) d -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 47 15
+  (22,36) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 48 15
+  (23,36) l -> m  veld-herhaald arcanine 50 15
+  (24,36) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 50 15
+  (25,36) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 51 15
+  (26,36) l -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 52 15
+  (27,36) M -> D  slagschaduw op lijf (Arcanine e/d naast kraag)
+  (9,37) d -> .  achtergrond (rand gerafeld)
+  (10,37) l -> d  franje links: bult 2 arcanine 56 17 0
+  (12,37) m -> l  franje links: bult 2 arcanine 54 17 l
+  (13,37) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 39 16
+  (14,37) l -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 40 16
+  (17,37) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 43 16
+  (19,37) d -> l  schouderpunt (onderste lok) arcanine 54 17 l
+  (21,37) d -> m  schouderpunt (onderste lok) arcanine 56 17 0
+  (22,37) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 48 16
+  (23,37) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 49 16
+  (24,37) l -> m  veld-herhaald arcanine 50 15
+  (25,37) l -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 51 16
+  (26,37) M -> D  slagschaduw op lijf (Arcanine e/d naast kraag)
+  (8,38) . -> d  franje links: bult 2 arcanine 58 18 0
+  (10,38) l -> m  franje links: bult 2 arcanine 56 18 m
+  (11,38) l -> m  franje links: bult 2 arcanine 55 18 m
+  (13,38) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 39 17
+  (14,38) m -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 40 17
+  (16,38) d -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 42 17
+  (17,38) d -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 43 17
+  (19,38) d -> m  schouderpunt (onderste lok) arcanine 54 18 m
+  (20,38) l -> m  schouderpunt (onderste lok) arcanine 55 18 m
+  (21,38) d -> m  schouderpunt (onderste lok) arcanine 56 18 m
+  (22,38) l -> m  schouderpunt (onderste lok) arcanine 57 18 d
+  (23,38) l -> m  schouderpunt (onderste lok) arcanine 58 18 0
+  (24,38) l -> 0  veld-herhaald arcanine 51 17
+  (25,38) d -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 51 17
+  (26,38) M -> D  slagschaduw op lijf (Arcanine e/d naast kraag)
+  (8,39) . -> 0  franje links: bult 2 arcanine 58 19 0
+  (9,39) d -> m  franje links: bult 2 arcanine 57 19 m
+  (10,39) l -> m  franje links: bult 2 arcanine 56 19 m
+  (11,39) l -> m  franje links: bult 2 arcanine 55 19 m
+  (13,39) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 39 18
+  (14,39) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 40 18
+  (15,39) m -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 41 18
+  (18,39) l -> d  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 44 18
+  (19,39) d -> m  schouderpunt (onderste lok) arcanine 54 19 m
+  (21,39) d -> m  schouderpunt (onderste lok) arcanine 56 19 m
+  (22,39) l -> m  schouderpunt (onderste lok) arcanine 57 19 m
+  (23,39) l -> 0  schouderpunt (onderste lok) arcanine 58 19 0
+  (24,39) l -> D  slagschaduw op lijf (Arcanine e/d naast kraag)
+  (25,39) d -> 0  veld-herhaald arcanine 51 17
+  (26,39) M -> D  slagschaduw op lijf (Arcanine e/d naast kraag)
+  (10,40) l -> m  franje links: bult 2 arcanine 56 20 m
+  (11,40) l -> m  franje links: bult 2 arcanine 55 20 d
+  (12,40) l -> m  franje links: bult 2 arcanine 54 20 m
+  (13,40) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 39 19
+  (14,40) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 40 19
+  (15,40) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 41 19
+  (16,40) m -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 42 19
+  (19,40) d -> m  schouderpunt (onderste lok) arcanine 54 20 m
+  (21,40) d -> m  schouderpunt (onderste lok) arcanine 56 20 m
+  (22,40) l -> 0  schouderpunt (onderste lok) arcanine 57 20 0
+  (23,40) l -> D  slagschaduw op lijf (Arcanine e/d naast kraag)
+  (24,40) l -> M  lijf zichtbaar (rand gerafeld)
+  (8,41) . -> 0  onderpunt 1 arcanine 19 47 d
+  (9,41) . -> 0  onderpunt 1 arcanine 20 47 l
+  (10,41) 0 -> m  onderpunt 1 arcanine 21 47 m
+  (11,41) l -> m  onderpunt 1 arcanine 22 47 m
+  (12,41) l -> m  onderpunt 1 arcanine 23 47 d
+  (13,41) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 39 20
+  (14,41) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 40 20
+  (15,41) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 41 20
+  (16,41) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 42 20
+  (17,41) m -> d  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 43 20
+  (18,41) d -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 44 20
+  (19,41) d -> m  schouderpunt (onderste lok) arcanine 54 21 m
+  (20,41) d -> m  schouderpunt (onderste lok) arcanine 55 21 m
+  (21,41) M -> m  schouderpunt (onderste lok) arcanine 56 21 d
+  (22,41) d -> m  schouderpunt (onderste lok) arcanine 57 21 d
+  (23,41) l -> d  schouderpunt (onderste lok) arcanine 58 21 0
+  (24,41) M -> 0  schouderpunt (onderste lok) arcanine 59 21 0
+  (25,41) M -> D  slagschaduw op lijf (Arcanine e/d naast kraag)
+  (10,42) 0 -> d  onderpunt 1 arcanine 21 48 m
+  (11,42) l -> m  onderpunt 2 arcanine 19 47 d
+  (15,42) m -> l  onderpunt 3 arcanine 20 47 l
+  (18,42) m -> l  onderpunt 4 arcanine 20 47 l
+  (19,42) M -> m  schouderpunt (onderste lok) arcanine 54 22 m
+  (20,42) M -> m  schouderpunt (onderste lok) arcanine 55 22 m
+  (21,42) M -> m  schouderpunt (onderste lok) arcanine 56 22 m
+  (22,42) M -> m  schouderpunt (onderste lok) arcanine 57 22 m
+  (23,42) M -> 0  schouderpunt (onderste lok) arcanine 58 22 m
+  (24,42) M -> 0  schouderpunt (onderste lok) arcanine 59 22 0
+  (10,43) . -> 0  onderpunt 1 arcanine 21 49 m
+  (11,43) 0 -> m  onderpunt 2 arcanine 19 48 d
+  (15,43) m -> l  onderpunt 3 arcanine 20 48 l
+  (18,43) m -> l  onderpunt 4 arcanine 20 48 l
+  (19,43) d -> m  schouderpunt (onderste lok) arcanine 54 23 m
+  (20,43) d -> m  schouderpunt (onderste lok) arcanine 55 23 m
+  (21,43) M -> m  schouderpunt (onderste lok) arcanine 56 23 m
+  (22,43) M -> 0  schouderpunt (onderste lok) arcanine 57 23 d
+  (17,44) m -> D  lijf zichtbaar (rand gerafeld)
+  (20,44) d -> m  onderpunt 4 arcanine 22 49 m
+  (21,44) M -> 0  onderpunt 4 arcanine 23 49 0
+  (22,44) M -> D  slagschaduw op lijf (Arcanine e/d naast kraag)
+  (14,45) 0 -> m  onderpunt 2 arcanine 22 50 0
+  (16,45) l -> m  onderpunt 3 arcanine 21 50 d
+  (17,45) m -> D  lijf zichtbaar (rand gerafeld)
+  (18,45) d -> D  lijf zichtbaar (rand gerafeld)
+  (20,45) d -> 0  onderpunt 4 arcanine 22 50 0
+  (21,45) d -> D  slagschaduw op lijf (Arcanine e/d naast kraag)
+  (14,46) . -> 0  onderpunt 2 arcanine 22 51 0
+  (18,46) d -> D  lijf zichtbaar (rand gerafeld)
+  (19,46) d -> D  lijf zichtbaar (rand gerafeld)
+  (20,46) d -> 0  onderpunt 4 arcanine 22 51 0
+  (21,46) d -> D  slagschaduw op lijf (Arcanine e/d naast kraag)
+== Variant C: zachte plukken (Growlithe)
+  (15,23) m -> d  veld-herhaald arcanine 41 4
+  (15,24) m -> d  veld-herhaald arcanine 41 4
+  (16,24) d -> m  veld-herhaald arcanine 41 4
+  (24,25) . -> d  kampunt 1 growlithe 28 12 m
+  (25,25) 0 -> d  kampunt 1 growlithe 29 12 d
+  (19,26) d -> l  veld-herhaald arcanine 45 6
+  (21,26) d -> .  achtergrond (rand gerafeld)
+  (24,26) d -> l  kampunt 1 growlithe 28 13 l
+  (25,26) d -> l  kampunt 1 growlithe 29 13 d
+  (14,27) m -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 40 6
+  (18,27) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 44 6
+  (19,27) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 45 6
+  (21,27) m -> d  kampunt 1 growlithe 25 14 d
+  (27,27) d -> l  kam-einde bult (Arcanine) arcanine 54 17 l
+  (28,27) 0 -> l  kam-einde bult (Arcanine) arcanine 55 17 l
+  (15,28) d -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 41 7
+  (18,28) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 44 7
+  (19,28) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 45 7
+  (20,28) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 46 7
+  (21,28) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 47 7
+  (22,28) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 48 7
+  (23,28) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 49 7
+  (27,28) l -> m  kam-einde bult (Arcanine) arcanine 54 18 m
+  (28,28) l -> m  kam-einde bult (Arcanine) arcanine 55 18 m
+  (29,28) 0 -> m  kam-einde bult (Arcanine) arcanine 56 18 m
+  (30,28) . -> 0  kam-einde bult (Arcanine) arcanine 57 18 d
+  (9,29) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 35 8
+  (10,29) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 36 8
+  (11,29) d -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 37 8
+  (15,29) d -> M  lijf zichtbaar (rand gerafeld)
+  (16,29) l -> d  nekrand-pluk growlithe 19 36 d
+  (17,29) m -> l  nekrand-pluk growlithe 20 36 0
+  (18,29) d -> l  nekrand-pluk growlithe 21 36 d
+  (19,29) d -> l  nekrand-pluk growlithe 22 36 d
+  (20,29) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 46 8
+  (21,29) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 47 8
+  (22,29) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 48 8
+  (23,29) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 49 8
+  (24,29) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 50 8
+  (25,29) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 51 8
+  (26,29) m -> l  kampunt onder (Arcanine) arcanine 20 49 d
+  (27,29) l -> m  kam-einde bult (Arcanine) arcanine 54 19 m
+  (28,29) d -> m  kam-einde bult (Arcanine) arcanine 55 19 m
+  (29,29) d -> m  kam-einde bult (Arcanine) arcanine 56 19 m
+  (30,29) 0 -> m  kam-einde bult (Arcanine) arcanine 57 19 m
+  (31,29) . -> 0  kam-einde bult (Arcanine) arcanine 58 19 0
+  (10,30) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 36 9
+  (11,30) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 37 9
+  (12,30) d -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 38 9
+  (15,30) d -> M  lijf zichtbaar (rand gerafeld)
+  (16,30) l -> d  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 42 9
+  (17,30) m -> l  nekrand-pluk growlithe 20 37 d
+  (18,30) d -> m  nekrand-pluk growlithe 21 37 m
+  (19,30) d -> m  nekrand-pluk growlithe 22 37 m
+  (20,30) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 46 9
+  (21,30) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 47 9
+  (22,30) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 48 9
+  (23,30) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 49 9
+  (24,30) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 50 9
+  (26,30) l -> 0  veld-herhaald arcanine 54 20 m
+  (27,30) d -> 0  kam-einde bult (Arcanine) arcanine 54 20 m
+  (28,30) d -> m  kam-einde bult (Arcanine) arcanine 55 20 d
+  (29,30) d -> 0  kam-einde bult (Arcanine) arcanine 56 20 m
+  (9,31) 0 -> d  franje rechts: inkeping (Arcanine) arcanine 54 17 l
+  (10,31) m -> l  franje rechts: inkeping (Arcanine) arcanine 55 17 l
+  (11,31) m -> 0  franje rechts: inkeping (Arcanine) arcanine 56 17 0
+  (12,31) m -> D  slagschaduw op lijf (Arcanine e/d naast kraag)
+  (15,31) d -> M  lijf zichtbaar (rand gerafeld)
+  (16,31) l -> d  nekrand-pluk growlithe 19 38 d
+  (19,31) d -> l  nekrand-pluk growlithe 22 38 l
+  (21,31) m -> l  schouderpunten (Arcanine) arcanine 54 16 l
+  (22,31) d -> l  schouderbult (Arcanine) arcanine 54 17 l
+  (23,31) m -> l  schouderbult (Arcanine) arcanine 55 17 l
+  (24,31) m -> l  schouderbult (Arcanine) arcanine 56 17 0
+  (25,31) m -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 51 10
+  (26,31) m -> D  slagschaduw op lijf (Arcanine e/d naast kraag)
+  (27,31) d -> M  lijf zichtbaar (rand gerafeld)
+  (28,31) d -> 0  kampunt onder (Arcanine) arcanine 22 51 0
+  (29,31) d -> D  slagschaduw op lijf (Arcanine e/d naast kraag)
+  (30,31) d -> 0  veld-herhaald arcanine 56 20 m
+  (31,31) d -> 0  veld-herhaald arcanine 56 20 m
+  (8,32) . -> 0  franjepluk 1 growlithe 19 36 d
+  (9,32) d -> m  franje rechts: inkeping (Arcanine) arcanine 54 18 m
+  (12,32) m -> 0  franje rechts: inkeping (Arcanine) arcanine 57 18 d
+  (15,32) d -> 0  nekrand-pluk growlithe 18 39 d
+  (19,32) d -> l  nekrand-pluk growlithe 22 39 l
+  (21,32) m -> l  schouderpunten (Arcanine) arcanine 54 17 l
+  (22,32) d -> m  schouderbult (Arcanine) arcanine 54 18 m
+  (25,32) m -> l  schouderbult (Arcanine) arcanine 57 18 d
+  (26,32) l -> 0  schouderbult (Arcanine) arcanine 58 18 0
+  (27,32) M -> D  slagschaduw op lijf (Arcanine e/d naast kraag)
+  (10,33) l -> m  franje rechts: inkeping (Arcanine) arcanine 55 19 m
+  (12,33) m -> 0  franje rechts: inkeping (Arcanine) arcanine 57 19 m
+  (15,33) l -> M  lijf zichtbaar (rand gerafeld)
+  (16,33) l -> d  nekrand-pluk growlithe 19 40 0
+  (19,33) d -> l  nekrand-pluk growlithe 22 40 l
+  (22,33) d -> m  schouderbult (Arcanine) arcanine 54 19 m
+  (25,33) l -> m  schouderbult (Arcanine) arcanine 57 19 m
+  (26,33) l -> 0  schouderbult (Arcanine) arcanine 58 19 0
+  (27,33) M -> D  slagschaduw op lijf (Arcanine e/d naast kraag)
+  (8,34) . -> d  franjepluk 1 growlithe 19 38 d
+  (9,34) d -> m  franje rechts: inkeping (Arcanine) arcanine 54 20 m
+  (12,34) m -> 0  franje rechts: inkeping (Arcanine) arcanine 57 20 0
+  (15,34) l -> M  lijf zichtbaar (rand gerafeld)
+  (16,34) l -> d  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 42 13
+  (19,34) d -> l  nekrand-pluk growlithe 22 41 l
+  (21,34) d -> m  schouderpunten (Arcanine) arcanine 54 19 m
+  (22,34) l -> m  schouderbult (Arcanine) arcanine 54 20 m
+  (25,34) l -> 0  schouderbult (Arcanine) arcanine 57 20 0
+  (26,34) d -> D  slagschaduw op lijf (Arcanine e/d naast kraag)
+  (7,35) . -> 0  franjepluk 1 growlithe 18 39 d
+  (8,35) d -> l  franjepluk 1 growlithe 19 39 l
+  (11,35) m -> l  franjepluk 1 growlithe 22 39 l
+  (12,35) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 38 14
+  (13,35) l -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 39 14
+  (15,35) l -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 41 14
+  (18,35) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 44 14
+  (19,35) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 45 14
+  (20,35) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 46 14
+  (21,35) d -> m  schouderpunten (Arcanine) arcanine 54 20 m
+  (24,35) l -> m  schouderpunten (Arcanine) arcanine 57 20 0
+  (25,35) l -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 51 14
+  (26,35) l -> D  slagschaduw op lijf (Arcanine e/d naast kraag)
+  (11,36) m -> l  franjepluk 1 growlithe 22 40 l
+  (12,36) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 38 15
+  (13,36) l -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 39 15
+  (16,36) l -> d  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 42 15
+  (17,36) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 43 15
+  (19,36) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 45 15
+  (21,36) d -> m  schouderpunten (Arcanine) arcanine 54 21 m
+  (22,36) l -> m  schouderpunten (Arcanine) arcanine 55 21 m
+  (23,36) l -> m  schouderpunten (Arcanine) arcanine 56 21 d
+  (24,36) l -> m  schouderpunten (Arcanine) arcanine 57 21 d
+  (25,36) l -> m  schouderpunten (Arcanine) arcanine 58 21 0
+  (26,36) l -> 0  schouderpunten (Arcanine) arcanine 59 21 0
+  (27,36) M -> D  slagschaduw op lijf (Arcanine e/d naast kraag)
+  (8,37) . -> 0  franjepluk 2 growlithe 19 36 d
+  (9,37) d -> l  franjepluk 2 growlithe 20 36 0
+  (12,37) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 38 16
+  (13,37) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 39 16
+  (14,37) l -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 40 16
+  (17,37) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 43 16
+  (19,37) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 45 16
+  (20,37) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 46 16
+  (21,37) d -> m  schouderpunten (Arcanine) arcanine 54 22 m
+  (22,37) l -> m  schouderpunten (Arcanine) arcanine 55 22 m
+  (23,37) l -> m  schouderpunten (Arcanine) arcanine 56 22 m
+  (24,37) l -> m  schouderpunten (Arcanine) arcanine 57 22 m
+  (25,37) l -> m  schouderpunten (Arcanine) arcanine 58 22 m
+  (26,37) M -> 0  schouderpunten (Arcanine) arcanine 59 22 0
+  (27,37) M -> D  slagschaduw op lijf (Arcanine e/d naast kraag)
+  (10,38) l -> m  franjepluk 2 growlithe 21 37 m
+  (11,38) l -> m  franjepluk 2 growlithe 22 37 m
+  (12,38) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 38 17
+  (13,38) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 39 17
+  (14,38) m -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 40 17
+  (16,38) d -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 42 17
+  (17,38) d -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 43 17
+  (19,38) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 45 17
+  (20,38) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 46 17
+  (21,38) d -> m  schouderpunten (Arcanine) arcanine 54 23 m
+  (22,38) l -> m  schouderpunten (Arcanine) arcanine 55 23 m
+  (23,38) l -> m  schouderpunten (Arcanine) arcanine 56 23 m
+  (24,38) l -> m  schouderpunten (Arcanine) arcanine 57 23 d
+  (25,38) d -> 0  schouderpunten (Arcanine) arcanine 58 23 0
+  (26,38) M -> D  slagschaduw op lijf (Arcanine e/d naast kraag)
+  (8,39) . -> d  franjepluk 2 growlithe 19 38 d
+  (9,39) d -> l  franjepluk 2 growlithe 20 38 l
+  (12,39) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 38 18
+  (13,39) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 39 18
+  (14,39) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 40 18
+  (15,39) m -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 41 18
+  (18,39) l -> d  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 44 18
+  (19,39) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 45 18
+  (21,39) d -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 47 18
+  (22,39) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 48 18
+  (23,39) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 49 18
+  (24,39) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 50 18
+  (25,39) d -> 0  veld-herhaald arcanine 58 23 0
+  (26,39) M -> D  slagschaduw op lijf (Arcanine e/d naast kraag)
+  (8,40) . -> d  franjepluk 2 growlithe 19 39 l
+  (9,40) d -> l  franjepluk 2 growlithe 20 39 l
+  (13,40) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 39 19
+  (14,40) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 40 19
+  (15,40) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 41 19
+  (16,40) m -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 42 19
+  (19,40) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 45 19
+  (21,40) d -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 47 19
+  (22,40) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 48 19
+  (23,40) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 49 19
+  (24,40) l -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 50 19
+  (25,40) M -> D  slagschaduw op lijf (Arcanine e/d naast kraag)
+  (8,41) . -> 0  franjepluk 2 growlithe 19 40 0
+  (9,41) . -> 0  franjepluk 2 growlithe 20 40 d
+  (10,41) 0 -> l  franjepluk 2 growlithe 21 40 l
+  (12,41) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 38 20
+  (13,41) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 39 20
+  (14,41) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 40 20
+  (15,41) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 41 20
+  (16,41) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 42 20
+  (17,41) m -> d  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 43 20
+  (18,41) d -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 44 20
+  (19,41) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 45 20
+  (20,41) d -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 46 20
+  (21,41) M -> D  slagschaduw op lijf (Arcanine e/d naast kraag)
+  (22,41) d -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 48 20
+  (23,41) l -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 49 20
+  (24,41) M -> D  slagschaduw op lijf (Arcanine e/d naast kraag)
+  (10,42) 0 -> d  onderpunt 1 growlithe 24 43 m
+  (11,42) l -> m  onderpunt 1 growlithe 25 43 m
+  (12,42) l -> m  onderpunt 1 growlithe 26 43 m
+  (19,42) M -> 0  onderpunt 2 growlithe 28 43 m
+  (20,42) M -> D  slagschaduw op lijf (Arcanine e/d naast kraag)
+  (10,43) . -> 0  onderpunt 1 growlithe 24 44 m
+  (11,43) 0 -> m  onderpunt 1 growlithe 25 44 m
+  (12,43) l -> m  onderpunt 1 growlithe 26 44 m
+  (19,43) d -> m  onderpunt 2 growlithe 28 44 0
+  (20,43) d -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 46 22
+  (21,43) M -> D  slagschaduw op lijf (Arcanine e/d naast kraag)
+  (12,44) 0 -> m  onderpunt 1 growlithe 26 45 m
+  (20,44) d -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 46 23
+  (21,44) M -> D  slagschaduw op lijf (Arcanine e/d naast kraag)
+  (12,45) . -> 0  onderpunt 1 growlithe 26 46 0
+  (16,45) l -> D  lijf zichtbaar (rand gerafeld)
+  (18,45) d -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 44 24
+  (20,45) d -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 46 24
+  (21,45) d -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 47 24
+  (22,45) M -> D  slagschaduw op lijf (Arcanine e/d naast kraag)
+  (18,46) d -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 44 25
+  (19,46) d -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 45 25
+  (20,46) d -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 46 25
+  (21,46) d -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 47 25
+  (22,46) M -> D  slagschaduw op lijf (Arcanine e/d naast kraag)

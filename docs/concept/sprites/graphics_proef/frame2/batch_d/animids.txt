@@ -1,0 +1,13 @@
+hitmongroove ANIM_V_SHAKE
+krassault ANIM_V_SLIDE
+dundragoon ANIM_V_SLIDE
+colugo ANIM_H_SLIDE_WOBBLE
+fruitvampier ANIM_H_SLIDE
+ledian_evo ANIM_V_SLIDE
+oddish_regional ANIM_V_SQUISH_AND_BOUNCE
+gloom_regional ANIM_V_SLIDE
+vileplume_regional ANIM_V_SLIDE
+baltoy_regional ANIM_V_SLIDE
+lotad_gaucho ANIM_V_SLIDE
+grimer_regional ANIM_V_SQUISH_AND_BOUNCE
+hitmonlee_regional ANIM_V_SHAKE

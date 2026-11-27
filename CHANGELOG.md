@@ -3908,3 +3908,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.959] - Overworld: legendaries en tempel (27 nov)
 - Jordi: overworldsprites sowieso voor de legendaries en de levende tempel; legendaries mogen groter (zoals Rayquaza), de tempel heel groot, "alsof het een echte poort is naar een gebouw". In `OVERWORLD_WERKWIJZE.md` en `graphics_proef/PLAN.md`.
+
+### [v0.0.960] - Frame 2 per script: batch D (27 nov)
+- 13 twijfelsoorten in `graphics_proef/frame2/batch_d/` (Jordi: "bij twijfel wel een frame 2 te bouwen, want ik kan altijd nog overrulen"). Goed: Vileplume, Grimer, fruitvampier, Lotad gaucho, Baltoy, Dundragoon, Oddish. Zwak (→ Gemini): Krassault, Gloom, Hitmonlee, Hitmongroove, Ledian-evo, wingsuit-colugo.

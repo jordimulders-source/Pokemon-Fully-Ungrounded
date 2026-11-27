@@ -30,3 +30,4 @@ Alle citaten en lijnbesluiten: `docs/concept/IDEEEN.md` → "Impala-lijn"; samen
 - **Manen opnieuw (Jordi, 26 nov, op r6):** "nekharen zijn een grote pixel blur, daar is echt niks uit te halen"; "kijk bijv naar growlithe, arcanine of soortgelijke pokemon met manen of vacht"; "maar het moet dus los zijn, ponyta en rapidash hebben vlammen dus werken niet, de rest hebben geen manen of extra vacht"; "het moet los van het lichaam zitten"; "kijk alle gens door daarvoor"; "dus furfrou ook niet". Ronde 7 (`sprite/r7/`).
 - Op r7 (Jordi, 27 nov): "wel goed, je kijkt naar de andere pokemon en doet vervolgens compleet iets anders"; "met allemaal rechte pixellijnen, want ja dat hebben alle pokemon". r8: vacht van Arcanine/Growlithe 1-op-1 overnemen.
 - Jordi (27 nov): "wat andere pokemon doen is geen banen, meer gewoon de vorm een beetje gerafeld".
+- Jordi (27 nov): "pyroar heeft bijv ook manen maar dat is gewoon een lang hangend kapsel"; "de vrouwelijke variant".

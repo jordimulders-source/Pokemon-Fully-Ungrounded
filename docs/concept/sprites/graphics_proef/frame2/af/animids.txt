@@ -1,0 +1,2 @@
+gumfish ANIM_V_SQUISH_AND_BOUNCE
+hexpress ANIM_V_SHAKE_H_SLIDE

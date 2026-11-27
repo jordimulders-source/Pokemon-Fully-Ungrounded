@@ -3899,3 +3899,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.956] - Proeficonen afgekeurd (27 nov)
 - Jordi over de proeficonen Gumfish en Sunperor: "Nee de iconen zijn niet goed gelukt". Geen iconen in serie tot de oorzaak duidelijk is.
+
+### [v0.0.957] - Frame 2 Gumfish en Hexpress gekozen (27 nov)
+- Jordi: "De gifs werken prima. Gumfish squishy en Hexpress die rechtse" → Gumfish v1 (`ANIM_V_SQUISH_AND_BOUNCE`) en Hexpress h3 (`ANIM_V_SHAKE_H_SLIDE`) in `graphics_proef/frame2/af/`.

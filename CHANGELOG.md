@@ -3889,3 +3889,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Kleurrichting A (poemavacht + Inca-goud + groene accenten); Gemini-prompt r1 in `kay_pacha/PROMPT.md`.
 - Kay Pacha: Gemini r8/r9; model bevroren (r9: groene poema met crème Inca-gezichtsplaat en trapkroon, goudgele ichu-mantel, paarse trapstrepen, twee bladlintstaarten); frontsprite gestart.
 - Gemini r10a (compacte pose, staarten omhoog) bevroren; oog volgens Jordi (wit-paars-wit + wit erboven, variant B). Sprite r1 (maker) + DC-eindkeuring ek1 (`kay_pacha/sprite/ek1/`).
+
+### [v0.0.941] - Kay Pacha: frontsprite af (27 nov)
+- Jordi: "tuurlijk is die af". `docs/concept/sprites/kay_pacha/af/kay_pacha.png` (= ek1), op het overzichtsvel onder Legendaries; Stand van zaken bijgewerkt.

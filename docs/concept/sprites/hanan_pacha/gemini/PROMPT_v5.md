@@ -11,7 +11,7 @@ POSE (most important)
 - A colossal, proud, heroic ANDEAN CONDOR with its wings raised high in a broad V (each wing pointing diagonally up and outward). At the end of each wing the long separated finger-like primary feathers FAN OUT LIKE THE RAYS OF A SUN. The sun shape comes from these radiating feathers, NOT from a closed ring: the wing tips do NOT meet, there is open space above the head.
 - Three-quarter view facing left, the WHOLE shape visible: both wings fully visible, the far wing not hidden.
 - Heroic box-art pose: chest pushed forward, a LARGE head held HIGH on an upright neck, looking ahead with a fierce, noble eye. The head never hangs down or forward.
-- TAIL (important): a long, symmetrical fan of about 9 long, narrow, pointed feathers that hangs STRAIGHT DOWN below the body, between and behind the talons, spreading slightly outward toward the ends like a downward-pointing fringe of a feathered headdress. Each tail feather is clearly separate, lance-shaped, with a visible central shaft and a lighter inner panel. The tail is long: about as long as the body.
+- TAIL (important): a long, symmetrical fan of about 9 long, narrow, pointed feathers that hangs STRAIGHT DOWN below the body, between and behind the talons, spreading slightly outward toward the ends like a downward-pointing fringe of a feathered headdress. Each tail feather is clearly separate and lance-shaped. The tail is long: about as long as the body.
 - The whole figure fits in a square, not a wide horizontal wingspan.
 
 THE CONDOR (must clearly read as a condor, NOT a turkey and NOT a phoenix)

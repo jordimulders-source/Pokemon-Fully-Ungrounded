@@ -3639,3 +3639,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.868] - Regicosmo prompt r3 (27 nov)
 - Na r2 (Jordi: "te random", "niet goed genoeg golem", romp "meer een mars kleur"): prompt r3 met vaste golembouw en Mars-romp in `regicosmo/PROMPT.md`.
+
+### [v0.0.869] - Regiaqua: reactie op de stippencheck (27 nov)
+- Jordi: r1 "lijkt wel goed"; stippen worden in de sprite vierkantjes (zoals Gen 3). In `regiaqua/SPEC.md`.

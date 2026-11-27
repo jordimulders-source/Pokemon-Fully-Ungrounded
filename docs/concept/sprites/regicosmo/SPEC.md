@@ -31,3 +31,4 @@ Prompt: `PROMPT.md`.
 - Jordi (27 nov): "linksonder B, maar de voeten mogen iets meer naar het midden van het lichaam, vooral de rechtse". Voetvarianten op B (`positie/voeten.py`, `positie/vel_voeten.png`): links +1/+2/+3, rechts −3/−5/−7 modelpixels (V1/V2/V3).
 - Jordi (27 nov): "V2" → model = `model.png` (= `positie/B_voeten2.png`: r7, schouders 14 modelpixels omlaag + naar buiten, voeten links +2/rechts −5). Sprite gestart (`sprite/`).
 - Sprite r1/r2 (maker): 62×47, 16 kleuren, 7 losse delen, stipkleuren gedeeld met het ijs (Jordi), Mars-oranjes in Saturnus, voeten 2 kleuren. Saturnus leest op 15×10 px als scheve ruit (bol 8 px); vraag aan Jordi of Saturnus in het model groter mag.
+- Jordi (27 nov) over Saturnus r2: "kan je de band van links niet pakken met de bol in het midden (dat je die dan wel rond maakt?)" · "en hij moet ongeveer even groot zijn als de ijsplaneet" · "je kan ze ook allebei vergroten". r3: ring van r2 + ronde bol van 10 px (= ijsplaneet).

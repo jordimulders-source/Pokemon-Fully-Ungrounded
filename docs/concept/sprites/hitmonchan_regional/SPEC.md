@@ -88,3 +88,4 @@ AVOID: separate ice cubes glued or stuck onto the hands, oversized blocks, a dar
 - Jordi over ek2: "het enige wat nog niet helemaal vertaalt is het linkeroog, misschien door een puntje rechts toe te voegen zoals in het model?" → ek3.
 - ek3: linkeroog = model (puntje rechts (32,21) + pupil boven navy (31,20)); optie kuifrand-diagonaal (28,20) niet gezet. Ter beoordeling bij Jordi.
 - Jordi over ek3: "hierzo nog iets duidelijker onderscheid tussen schouder en arm" (`jordi/krabbel_ek3.png`, groene ^ boven op de wachtkubus).
+- ek4: ^-lijn schouder↔kubus uit het model teruggezet (4 px: (47,27),(44,28),(43,29),(42,30)). Ter beoordeling bij Jordi.

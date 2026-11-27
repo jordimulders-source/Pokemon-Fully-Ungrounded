@@ -1,0 +1,4 @@
+(47,27) 6->4  model r34 k43=4  top van de ^: band onder de schouder (model rij 34 kol 42-44 = 4)
+(44,28) 5->3  model r35 k40=3  linkerbeen ^ (model kol 40 r35 = 3)
+(43,29) 5->3  model r36 k39=3  linkerbeen ^ (model kol 39 r36 = 3)
+(42,30) 5->3  model r37 k38=3  linkerbeen ^ (model kol 38 r37 = 3), sluit aan op de 2-lijn (42,31)

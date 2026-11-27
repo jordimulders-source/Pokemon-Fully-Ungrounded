@@ -30,3 +30,4 @@ Prompt r1: `PROMPT.md`.
 - Jordi: "denk weer nieuwe prompt from scratch, maar wees specifiek". → `PROMPT_r7.md`.
 - r7 (`gemini/r7.png`, `PROMPT_r7.md`): Jordi: "nee dit is ook niet mooi".
 - Jordi na r7: "we moeten het over een andere boeg gooien", "ander ontwerp bedenken". Vast blijft (tenzij Jordi anders zegt): Grass/Psychic, poema, Kay Pacha.
+- Jordi: "dit is ook net teveel een dier met versiering, kijk wat meer naar entei, suicune en raikou"; daarna: "laten we een grass/psychic poema maken die daar tussen zou passen". → `PROMPT_r8.md`.

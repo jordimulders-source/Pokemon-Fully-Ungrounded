@@ -15,4 +15,5 @@ Pacha-kwartet (zie `docs/concept/POKEMON.md` → Legendaries; condor `../hanan_p
 - Anaconda-anatomie (ogen en neusgaten bovenop de kop, zware dikke romp, vlekken) = echte soort.
 
 ## Rondes
-- **v1** (`gemini/PROMPT.md`): nog geen resultaat.
+- **r1** (`gemini/r1.png`, prompt v1). Jordi: "ok het is nog iets teveel een normale slang denk ik, de hoofden moeten naar verhouding wat groter en beide een andere pose/blik. Plus de staart is normaal met een beeetje rook eromheen, was niet het idee vgm, vleugel zit ook te hoog en is er maar 1". (Gemini: twee kleine koppen met dezelfde blik, één vleermuisvleugel hoog op de rug, gewone staart met wat rookslierten.)
+- **v2** (`gemini/PROMPT_v2.md`): nieuwe startprompt met deze punten; nog geen resultaat.

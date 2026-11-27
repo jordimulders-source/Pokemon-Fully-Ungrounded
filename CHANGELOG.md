@@ -3779,3 +3779,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.908] - Uku Pacha: ontwerpkeuzes + Gemini-prompt v1 (27 nov)
 - Slang-legendary van het Pacha-kwartet (Water/Ghost): anaconda met twee koppen aan een gevorkte nek en kleine vleugels, achterlijf loopt uit in geest, diepblauw en grijs zonder grijze brei. Citaten in `docs/concept/sprites/uku_pacha/SPEC.md`, prompt in `gemini/PROMPT.md`.
 - Branch sleepy-hawking (Pacha-kwartet, Hanan Pacha) hierin gemerged.
+
+### [v0.0.909] - Uku Pacha: r1 + prompt v2 (27 nov)
+- r1 bewaard met Jordi's feedback (koppen groter en elk een andere pose/blik, geen gewone staart maar lijf dat geest wordt, twee vleugels lager); nieuwe startprompt v2.

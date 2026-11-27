@@ -16,3 +16,4 @@
 ## Rondes
 - **r1** (`gemini/r1.png`, prompt r1 met ogen A), Jordi (27 nov): "oke oke, conceptueel niet slecht, maar beetje bruinig in zijn geheel, plus teveel detail nog dnek ik?"
   - Daarna, op Claudes vragen (detail, gezicht menselijk?, kleur a groen / b Vinicunca / c blauwgrijs+roze): "mag ook denk iets abstracter, alsof het meer een beeld is of verafgoding dan echt een mens"; "ja vinicunca!" → prompt r2 (`gemini/PROMPT_r2.md`). Eigen invulling Claude in r2: "3–4 brede banden", sneeuwkap behouden, kleurnamen van de echte Vinicunca.
+- **r2** (`gemini/r2.png`), Jordi (27 nov): "lijkt nu een pop met een jas aan". Analyse Claude: berg-zijn verloren door "no rock texture/cracks" (ronde zachte vorm, flipperarmen, masker opgeplakt). Prompt r3 (`gemini/PROMPT_r3.md`): bergvorm van r1 terug (hoekig, rotsige kammen als armen, piek) met eenvoud en kleuren van r2; eigen invulling Claude: "facetten", "gezicht uit de rots gehouwen".

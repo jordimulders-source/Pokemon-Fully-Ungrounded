@@ -38,8 +38,22 @@ for y,x in zip(*np.where(binnen)):
     # buren moeten onderling verbonden zijn (lijn langs P), en P moet niet een hoek in een lijn zijn
     if len(nb)==2 and max(abs(nb[0][0]-nb[1][0]),abs(nb[0][1]-nb[1][1]))>1: continue
     bult.add((y,x))
-los=sorted(set(los)|bult)
+los=sorted(p for p in set(los)|bult if not (40<=p[0]<=43 and 11<=p[1]<=16))   # oogzone: stap 2
 n=len(los)
+# regel B (op 8x lezen diagonaal-alleen-verbonden stukjes als losse stippen): binnen-donkere 4-verbonden stukjes van <=2 px
+#  die niet (4-buren) aan de buitenlijn vastzitten
+lab4=np.zeros((64,64),int); m4=0; B=set()
+for y,x in zip(*np.where(binnen)):
+    if lab4[y,x]: continue
+    m4+=1; st=[(y,x)]; lab4[y,x]=m4; c=[]
+    while st:
+        a,b=st.pop(); c.append((a,b))
+        for p_,q_ in ((a+1,b),(a-1,b),(a,b+1),(a,b-1)):
+            if 0<=p_<64 and 0<=q_<64 and binnen[p_,q_] and not lab4[p_,q_]: lab4[p_,q_]=m4; st.append((p_,q_))
+    vast=any(buiten[p_,q_] for a,b in c for p_,q_ in ((a+1,b),(a-1,b),(a,b+1),(a,b-1)) if 0<=p_<64 and 0<=q_<64)
+    if len(c)<=2 and not vast: B.update(c)
+B={p for p in B if not (40<=p[0]<=43 and 11<=p[1]<=16)} - set(los)
+los_A=set(los); los=sorted(set(los)|B)
 TONEN={'g':None}
 def kleur(y,x):
     w=modus(x,y,nat); w.pop('.',None); w.pop('#',None)
@@ -57,5 +71,30 @@ for y,x in los:
     v=kleur(y,x)
     if v is None: gehouden.append((x,y)); continue
     I[y,x]=v; opg.append((x,y,v))
-print('los:',sorted((x,y,int(I0[y,x])) for y,x in los)); print('binnen-zwart',binnen.sum(),'componenten',n,'opgeruimd',len(opg),'geen modelkleur (blijft zwart)',gehouden)
+print('regel A',len(los_A),'regel B',len(B)); print('los:',sorted((x,y,int(I0[y,x])) for y,x in los)); print('binnen-zwart',binnen.sum(),'componenten',n,'opgeruimd',len(opg),'geen modelkleur (blijft zwart)',gehouden)
 np.save('r3_opg.npy',np.array([(x,y) for x,y,v in opg]))
+# 2. OOG: zwarte lijnpixels die (4-buren) aan het oranje grenzen, behalve de wenkbrauw erboven (rij 40, model daar puur zwart ~5)
+#    model links/onder/rechts van het oog: (12,4,3) (37,34,32) (25,17,11) (45,31,29) -> donkerste grijstint 10 (46,46,48)
+oranje=[(y,x) for y,x in zip(*np.where((I==14)|(I==15)))]
+oog=set()
+for y,x in oranje:
+    for dy,dx in ((0,1),(0,-1),(1,0),(-1,0)):
+        p=(y+dy,x+dx)
+        if I[p]==1 and p[0]!=40: oog.add(p)
+for p in oog: I[p]=10
+print('oog: zwart -> 10:',sorted((x,y) for y,x in oog))
+np.save('r3_I.npy',I); png(I,'r3.png'); png(I,'r3_8x.png',8)
+# overzicht: r3 op 8x, opgeruimde pixels rood omrand, oogpixels blauw omrand
+from PIL import Image,ImageDraw
+im=Image.open('r3.png').convert('RGBA'); bg=Image.new('RGBA',(64,64),(255,255,255,255)); bg.alpha_composite(im)
+r2=Image.open('r2.png').convert('RGBA'); bg2=Image.new('RGBA',(64,64),(255,255,255,255)); bg2.alpha_composite(r2)
+o=Image.new('RGB',(64*8*2+16,64*8+20),(235,235,235)); d=ImageDraw.Draw(o)
+d.text((4,2),'r2 (8x): rood = los (8-verbonden regel), oranje = los (regel B: diagonaal-stipjes), blauw = oog',fill=0); d.text((64*8+12,2),'r3 (8x)',fill=0)
+for i,b in enumerate((bg2,bg)):
+    o.paste(b.convert('RGB').resize((512,512),Image.NEAREST),(4+i*(512+8),16))
+for X,Y,v in opg:
+    col=(255,0,0) if (Y,X) in los_A else (255,150,0)
+    for i in (0,1): d.rectangle([4+i*520+X*8,16+Y*8,4+i*520+X*8+7,16+Y*8+7],outline=col,width=2)
+for Y,X in oog:
+    for i in (0,1): d.rectangle([4+i*520+X*8,16+Y*8,4+i*520+X*8+7,16+Y*8+7],outline=(0,90,255),width=2)
+o.save('opgeruimd_r3.png')

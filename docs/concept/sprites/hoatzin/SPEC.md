@@ -131,3 +131,5 @@ Opdracht: `sprite/OPDRACHT.md`.
 - Inspiratie (Jordi): `referenties/kuiken_1_ai_uncanny.webp`, `kuiken_2_klauwtjes.png`, `kuiken_3_klimmend.webp`, `kuiken_4_tak.png`. Jordi: "Dit is de inspiratie. fotos als inspiratie maar dan iets meer uncanny, iets meer cryptid. Die eerste foto is namelijk een beetje AI geedit en die kant moeten we op".
 - Antwoorden Jordi (27 nov): "geen plague doctor erin nee, hij is vooral zwart met wat gelige tinten"; "geen voorwerp" (geen tak).
 - Pose (Jordi, 27 nov): "hij moet een beetje onhandig erbij staan".
+- Pose (Jordi): "hij staat maar in een zodanige pose dat je de dunne gek uitziende poten en klauwtjes kan zien".
+- Gelige tinten: "alleen in het dons". Snavel: kromme grijze snavel van foto 1 ("2 ja"). Oog: niet rood/blauw, "grijze ring" (foto 1). "nee, geen teken".

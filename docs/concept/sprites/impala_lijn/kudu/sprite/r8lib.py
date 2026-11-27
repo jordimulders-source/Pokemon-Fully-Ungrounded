@@ -63,6 +63,7 @@ def rgba8(g,bg=(255,255,255)):
             if g[y][x]!='.': im.putpixel((OX+x,OY+y),PAL[g[y][x]])
     return im
 MANE='lmd0'
+HALS={(x,y) for x,y in ZONE if R6[y][x]=='M' and x<=18 and 23<=y<=41}
 def diep(x,y):
     k=0
     while all((x+a,y+b) in HAAR for a in range(-k,k+1) for b in range(-k,k+1)): k+=1
@@ -158,6 +159,8 @@ class Vorm:
     vlak = vultinten uit een Arcanine/Growlithe-vlak, omtrek per regel (licht/boven d, schaduw/onder 0)."""
     def __init__(s):
         s.mask=set(HAAR); s.kleur={}; s.bron={}; s.weg=set()
+        for x,y in ZONE-HAAR:   # losse r6-lijnpixels midden in het haar horen bij de manen
+            if R6[y][x] in '0d' and sum((x+a,y+b) in HAAR for a,b in((1,0),(-1,0),(0,1),(0,-1)))>=3: s.mask.add((x,y))
     def veld(s,naam,x0,y0,x1,y1,dx,dy,flip=False,label='veld'):
         S=ARC if naam=='arcanine' else GRO; M=MAP[naam]
         for sy in range(y0,y1+1):
@@ -167,7 +170,7 @@ class Vorm:
                 tx=dx+((x1-sx) if flip else (sx-x0)); ty=dy+sy-y0
                 if (tx,ty) in ZONE and (tx,ty) not in s.kleur:
                     s.kleur[(tx,ty)]=c; s.bron[(tx,ty)]=(label,naam,sx,sy)
-    def rand(s,naam,x0,y0,x1,y1,dx,dy,flip=False,label='rand',diepte=2):
+    def rand(s,naam,x0,y0,x1,y1,dx,dy,flip=False,label='rand',diepte=1):
         sn=snip(naam,x0,y0,x1,y1,flip); h,w=len(sn),len(sn[0]); ext=set()
         st=[(i,j) for j in range(h) for i in (0,w-1)]+[(i,j) for i in range(w) for j in (0,h-1)]
         while st:
@@ -181,6 +184,7 @@ class Vorm:
                 if c=='.':
                     if (i,j) in ext and t in HAAR and diep(*t)<=diepte: s.mask.discard(t); s.weg.add(t)
                     continue
+                if t not in HAAR and not (R6[t[1]][t[0]] in '.0' or (t in ZONE and R6[t[1]][t[0]]=='M' and t not in HALS)): continue
                 s.mask.add(t); s.weg.discard(t)
                 if c in 'lm': s.kleur[t]=c
                 s.bron[t]=(label,naam,sx,sy,c)
@@ -210,6 +214,9 @@ class Vorm:
                         else:
                             nb=[g[y+b][x+a] for a,b in((1,0),(-1,0),(0,1),(0,-1)) if g[y+b][x+a] in 'MDL']
                             if nb: g[y][x]=max(set(nb),key=nb.count); s.bron[(x,y)]=('lijf zichtbaar (rand gerafeld)',)
+        for y in range(H):
+            for x in range(W):
+                if g[y][x]=='~': s.mask.add((x,y))   # ingesloten: blijft manen
         # vlak
         vol=[p for p in s.mask if p in s.kleur]
         for p in s.mask:
@@ -220,12 +227,12 @@ class Vorm:
             g[y][x]=c
         # omtrek per regel
         for x,y in s.mask:
-            buren=[(a,b) for a,b in((-1,0),(0,-1),(1,0),(0,1)) if (x+a,y+b) not in s.mask]
+            buren=[(a,b) for a,b in((-1,0),(0,-1),(1,0),(0,1)) if (x+a,y+b) not in s.mask and g[y+b][x+a] not in '0DKd']
             if not buren: continue
             if any(a>0 or b>0 for a,b in buren): g[y][x]='0'
             else: g[y][x]='d'
             s.bron.setdefault((x,y),('omtrek',))
         if slagschaduw:
             for x,y in ZONE:
-                if g[y][x]=='M' and (x-1,y) in s.mask and g[y][x-1]=='0': g[y][x]='D'; s.bron[(x,y)]=('slagschaduw op lijf (Arcanine e/d naast kraag)',)
+                if g[y][x]=='M' and (x,y) not in HALS and (x-1,y) in s.mask and g[y][x-1]=='0': g[y][x]='D'; s.bron[(x,y)]=('slagschaduw op lijf (Arcanine e/d naast kraag)',)
         return [''.join(r) for r in g]

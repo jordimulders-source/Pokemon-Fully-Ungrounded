@@ -32,3 +32,4 @@ Alle citaten en lijnbesluiten: `docs/concept/IDEEEN.md` → "Impala-lijn"; samen
 - Jordi (27 nov): "wat andere pokemon doen is geen banen, meer gewoon de vorm een beetje gerafeld".
 - Jordi (27 nov): "pyroar heeft bijv ook manen maar dat is gewoon een lang hangend kapsel"; "de vrouwelijke variant".
 - Jordi (27 nov): "nee hij moet de pyroar niet nadoen" (Pyroar alleen als voorbeeld van een lang hangend kapsel).
+- **Oog (Jordi, 27 nov): "k4 voor oog"** = Bidoof-oog 1-op-1 (`sprite/r6/kudu_r6_oogK4.png`, bron in `sprite/oog_klein.py`).

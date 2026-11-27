@@ -3860,3 +3860,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.944] - Proefserie overige graphics: Gemini-pakket (27 nov)
 - Jordi: "ik wil onderzoeken hoe we dit met zo weinig mogelijk werk kunnen doen"; Gemini via de app (geen API). Proefsoorten Gumfish (bol), Sunperor (vogel), Hexpress (object; Jordi: "hexpress is ook een complex design, dus goede testcase"); Gengas niet ("daar hebben we al frame 2 voor").
 - `docs/concept/sprites/graphics_proef/`: fronts op 8× + `PROMPTS.md` (één sjabloon voor de rug, per soort alleen "Body plan"; frame 2 via Gemini alleen voor Sunperor, Gumfish en Hexpress per script).
+
+### [v0.0.945] - Proefserie: eerste Gemini-resultaten (27 nov)
+- Gemini p1 in `docs/concept/sprites/graphics_proef/`: Gumfish-rug, Sunperor-rug, Sunperor frame 2, Hexpress-rug. Jordi over frame 2: "frame 2 mag wel wat anders zijn zolang het maar goed als een beweging leest"; verder eens met de beoordeling (Gumfish: glans terug; Sunperor: gaten en oogjes weg; Hexpress: nieuwe poging).
+- `gereedschap/natief.py` (generiek: pitch zoeken, natief raster terug); `nat_*.png`: Gumfish-rug 48×28 (pitch 14,5), Sunperor-rug 45×55 en frame 2 46×62 (pitch 16, exact op het frontraster).

@@ -67,3 +67,26 @@ AVOID: stiff arms held out in the air, arms stretched out straight like a starfi
 
 ## Stap 1 (27 nov)
 - `s1/s1a.png`. Jordi: "houding is goed, maar hij is te dik, en voor de rest klopt er weinig van".
+- Jordi op de meerkeuzevraag (te veel gorilla/aap, niet van sneeuw, past niet bij de lijn, gezicht): "alles".
+
+## s2 (stap 1 opnieuw, nieuw gesprek, BIJLAGE `s1/s1a.png` alleen voor de pose)
+Eigen invulling Claude: het gezicht en de handen/voeten van fase 2 in woorden (steentjesogen met lidlijn, golvend mondje, geen neus/oren, baardfranje, sneeuwwanten/-voeten), slanker.
+```
+The attached image is ONLY a pose reference. Keep exactly this sitting pose (slumped back, legs loose in front, arms hung back over an invisible backrest, head leaning back). Do NOT copy anything else from it: not its face, not its hands, not its body shape, not its colors. It is not an ape.
+
+Design an original Pokemon in that pose: a big yeti made entirely of packed, shaggy snow. Official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 colors, dark outline, facing 3/4 to the left. White background, no ground, no shadow, no objects, no effects.
+
+Made of snow: the whole body is rough, lumpy, shaggy snow, like snow clumped into fur, with ragged snowy tufts on the edges. No skin anywhere: no bare face, no bare hands, no bare feet, no blue skin.
+
+Face: part of the snow body, no separate muzzle, no nose, no ears. Its eyes are two small dark grey pebbles pressed into the snow, closed, each with a dark eyelid line across. A small, wavy, calm smile drawn as a thin line. Below the face a jagged fringe of shaggy snow hangs down like a beard. Expression: relaxed and satisfied, a contented sigh.
+
+Hands and feet: big round mitts of shaggy snow with a few short stubby snow fingers/toes, the same white snow as the body. No ape hands, no detailed fingers, no palms.
+
+Build: big and strong with heavy shoulders and thick arms, so its posture looks big and dangerous, but NOT fat: a slimmer belly, a broad chest, more muscle than belly.
+
+Colors: white snow with cool light blue and grey-blue shading, dark navy outline. Eyes dark grey. No other colors.
+
+Draw ONLY the yeti: no hat, no bucket, no stones, no towel, no scarf.
+
+AVOID: a gorilla or ape face, a nose, ears, blue skin, ape hands with fingers and palms, a big round belly, a fat body, a grin, a cute plush look, Abomasnow, a snowman.
+```

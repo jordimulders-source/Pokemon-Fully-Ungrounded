@@ -1,0 +1,100 @@
+Pixels anders dan r6+K4: 288; buiten manen+nek+halsstrook-zone: 0 []; oogvlak: 0
+Pixels anders dan r10 B6b: 96
+Rechte lijnstukken (d/0/K) > 3 px in manen/nek/franje/halsstrook-zone: r11 geen; r10 B6b [('v', 9, 30, 33), ('v', 12, 30, 34), ('v', 13, 35, 38), ('v', 15, 28, 35)]
+Kleuren incl. transparant: 15
+  (21,26) D -> K  nekboog: K (donkerste eigen lijftint, sterker dan D; zoals de kinlijn)
+  (16,27) m -> d  manenomtrek: lichtkant d, schaduwkant 0
+  (18,27) l -> d  manenomtrek: lichtkant d, schaduwkant 0
+  (22,27) D -> K  nekboog: K (donkerste eigen lijftint, sterker dan D; zoals de kinlijn)
+  (23,27) D -> K  nekboog: K (donkerste eigen lijftint, sterker dan D; zoals de kinlijn)
+  (24,27) D -> .  lucht boven de nekboog
+  (23,28) M -> L  nek: L-band onder de bovenlijn, zoals de flank van r6 onder de ruglijn
+  (24,28) M -> K  nekboog: K (donkerste eigen lijftint, sterker dan D; zoals de kinlijn)
+  (25,28) D -> K  nekboog: K (donkerste eigen lijftint, sterker dan D; zoals de kinlijn)
+  (26,28) D -> K  nekboog: K (donkerste eigen lijftint, sterker dan D; zoals de kinlijn)
+  (22,29) M -> D  slagschaduw naast de manen (Arcanine: lijf naast de kraag donker)
+  (24,29) M -> L  nek: L-band onder de bovenlijn, zoals de flank van r6 onder de ruglijn
+  (25,29) M -> L  nek: L-band onder de bovenlijn, zoals de flank van r6 onder de ruglijn
+  (26,29) M -> L  nek: L-band onder de bovenlijn, zoals de flank van r6 onder de ruglijn
+  (27,29) D -> K  nekboog: K (donkerste eigen lijftint, sterker dan D; zoals de kinlijn)
+  (28,29) D -> K  nekboog: K (donkerste eigen lijftint, sterker dan D; zoals de kinlijn)
+  (29,29) . -> K  nekboog: K (donkerste eigen lijftint, sterker dan D; zoals de kinlijn)
+  (9,30) 0 -> d  manenomtrek: lichtkant d, schaduwkant 0
+  (25,30) M -> L  nek: L-band onder de bovenlijn, zoals de flank van r6 onder de ruglijn
+  (28,30) M -> L  nek: L-band onder de bovenlijn, zoals de flank van r6 onder de ruglijn
+  (29,30) D -> L  nek: L-band onder de bovenlijn, zoals de flank van r6 onder de ruglijn
+  (30,30) D -> K  nekboog: K (donkerste eigen lijftint, sterker dan D; zoals de kinlijn)
+  (31,30) . -> K  nekboog: K (donkerste eigen lijftint, sterker dan D; zoals de kinlijn)
+  (32,30) . -> K  nekboog: K (donkerste eigen lijftint, sterker dan D; zoals de kinlijn)
+  (9,31) 0 -> d  manenomtrek: lichtkant d, schaduwkant 0
+  (12,31) 0 -> l  franje: vultint van de dichtstbijzijnde B6b-franjepixel
+  (13,31) M -> 0  manenomtrek: lichtkant d, schaduwkant 0
+  (15,31) d -> M  halsstrook (gebogen)
+  (16,31) l -> d  manenomtrek: lichtkant d, schaduwkant 0
+  (23,31) M -> D  slagschaduw naast de manen (Arcanine: lijf naast de kraag donker)
+  (26,31) L -> M  nek: M (lijftint)
+  (30,31) M -> L  nek: L-band onder de bovenlijn, zoals de flank van r6 onder de ruglijn
+  (31,31) D -> L  nek: L-band onder de bovenlijn, zoals de flank van r6 onder de ruglijn
+  (32,31) D -> L  nek: L-band onder de bovenlijn, zoals de flank van r6 onder de ruglijn
+  (33,31) 0 -> K  nekboog: K (donkerste eigen lijftint, sterker dan D; zoals de kinlijn)
+  (12,32) 0 -> l  franje: vultint van de dichtstbijzijnde B6b-franjepixel
+  (13,32) M -> 0  manenomtrek: lichtkant d, schaduwkant 0
+  (15,32) d -> M  halsstrook (gebogen)
+  (16,32) l -> d  manenomtrek: lichtkant d, schaduwkant 0
+  (25,32) L -> M  nek: M (lijftint)
+  (26,32) L -> M  nek: M (lijftint)
+  (31,32) M -> L  nek: L-band onder de bovenlijn, zoals de flank van r6 onder de ruglijn
+  (32,32) M -> L  netheid: tintvlakje < 3 px
+  (8,33) . -> d  manenomtrek: lichtkant d, schaduwkant 0
+  (9,33) d -> l  franje: vultint van de dichtstbijzijnde B6b-franjepixel
+  (12,33) 0 -> l  franje: vultint van de dichtstbijzijnde B6b-franjepixel
+  (13,33) M -> 0  manenomtrek: lichtkant d, schaduwkant 0
+  (15,33) d -> M  halsstrook (gebogen)
+  (16,33) l -> d  manenomtrek: lichtkant d, schaduwkant 0
+  (24,33) M -> D  slagschaduw naast de manen (Arcanine: lijf naast de kraag donker)
+  (25,33) L -> M  nek: M (lijftint)
+  (26,33) L -> M  nek: M (lijftint)
+  (12,34) 0 -> m  franje: vultint van de dichtstbijzijnde B6b-franjepixel
+  (13,34) M -> l  franje: vultint van de dichtstbijzijnde B6b-franjepixel
+  (14,34) M -> 0  manenomtrek: lichtkant d, schaduwkant 0
+  (15,34) d -> M  halsstrook (gebogen)
+  (16,34) l -> M  halsstrook (gebogen)
+  (17,34) l -> d  manenomtrek: lichtkant d, schaduwkant 0
+  (25,34) L -> M  nek: M (lijftint)
+  (26,34) L -> M  nek: M (lijftint)
+  (13,35) 0 -> l  franje: vultint van de dichtstbijzijnde B6b-franjepixel
+  (14,35) M -> 0  manenomtrek: lichtkant d, schaduwkant 0
+  (15,35) 0 -> M  halsstrook (gebogen)
+  (16,35) m -> M  halsstrook (gebogen)
+  (17,35) m -> d  manenomtrek: lichtkant d, schaduwkant 0
+  (25,35) L -> D  slagschaduw naast de manen (Arcanine: lijf naast de kraag donker)
+  (26,35) L -> M  nek: M (lijftint)
+  (13,36) 0 -> l  franje: vultint van de dichtstbijzijnde B6b-franjepixel
+  (14,36) M -> 0  manenomtrek: lichtkant d, schaduwkant 0
+  (16,36) d -> M  halsstrook (gebogen)
+  (17,36) m -> d  manenomtrek: lichtkant d, schaduwkant 0
+  (26,36) L -> M  nek: M (lijftint)
+  (15,37) M -> D  borst: slagschaduw onder de manen
+  (16,37) d -> M  halsstrook (gebogen)
+  (17,37) m -> M  halsstrook (gebogen)
+  (18,37) l -> d  manenomtrek: lichtkant d, schaduwkant 0
+  (9,38) D -> 0  borst: buitenlijn
+  (13,38) 0 -> D  borst: slagschaduw onder de manen
+  (16,38) 0 -> M  halsstrook (gebogen)
+  (17,38) 0 -> M  halsstrook (gebogen)
+  (18,38) l -> d  manenomtrek: lichtkant d, schaduwkant 0
+  (14,39) 0 -> M  borst/hals: lijftint M (manen/halsstrook schoof op)
+  (18,39) 0 -> M  halsstrook (gebogen)
+  (19,39) m -> d  manenomtrek: lichtkant d, schaduwkant 0
+  (21,39) 0 -> m  nekmanen: vultint dichtstbijzijnde B6b-manenpixel
+  (19,40) 0 -> d  manenomtrek: lichtkant d, schaduwkant 0
+  (20,40) 0 -> m  nekmanen: vultint dichtstbijzijnde B6b-manenpixel
+  (21,40) D -> 0  manenomtrek: lichtkant d, schaduwkant 0
+  (22,40) d -> m  nekmanen: vultint dichtstbijzijnde B6b-manenpixel
+  (26,40) M -> D  netheid: tintvlakje < 3 px
+  (25,41) M -> D  netheid: tintvlakje < 3 px
+  (19,42) M -> D  borst: slagschaduw onder de manen
+  (20,42) M -> D  borst: slagschaduw onder de manen
+  (21,42) M -> D  borst: slagschaduw onder de manen
+  (22,42) M -> D  borst: slagschaduw onder de manen
+  (23,42) M -> D  borst: slagschaduw onder de manen

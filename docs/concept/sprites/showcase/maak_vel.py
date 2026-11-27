@@ -62,6 +62,7 @@ SECTIES=[
 ("tempel/af/tempel.png",'Levende tempel',"ghost/rock"),
 ("impala_lijn/dikdik/af/dikdik.png",'Dikdik (impala-lijn fase 1)',"normal"),
 ("impala_lijn/impala/af/impala.png",'"Impalar"',"normal/steel"),
+("impala_lijn/kudu/af/kudu.png",'Kudu (impala-lijn fase 3)',"normal/steel"),
 ("glitch_lijn/fase1_glitch/af/glitch_fase1.png",'"Missingraph."',"electric"),
 ("glitch_lijn/fase2_bug/af/glitch_fase2.png",'Bug (glitch-lijn fase 2)',"electric/bug"),
 ("glitch_lijn/fase3_virus/af/glitch_fase3.png",'Virus (glitch-lijn fase 3)',"electric/bug"),
@@ -69,7 +70,11 @@ SECTIES=[
 ("guarana_fase2/af/guarana_fase2.png",'Guaraná fase 2',"grass/ghost"),
 ("sneeuwmonster/af/sneeuwmonster.png",'Sneeuwmonster (fase 1)',"ice"),
 ("sneeuwmonster_fase2/af/sneeuwmonster2.png",'Sneeuwmonster (fase 2)',"ice/fire"),
+("sneeuwmonster_fase3/af/sauna_yeti.png",'Sauna-yeti (fase 3)',"ice/fire"),
+("hoatzin/af/hoatzin_fase1.png",'Hoatzin fase 1 (kuiken)',"poison/dark"),
 ("hoatzin/af/hoatzin_fase2.png",'Hoatzin fase 2 (pestmasker)',"poison/dark"),
+("zandloper/fase1/af/zandloper_fase1.png",'Zandloper (zandloper-lijn fase 1)',"ground/psychic"),
+("zandloper/fase2/af/zandloper_fase2.png",'Brein uit de zandloper (zandloper-lijn fase 2)',"ground/psychic"),
 ("zandloper/fase3/af/zandloper_fase3.png",'Zand-djinn (zandloper-lijn fase 3)',"ground/psychic"),
 ]),
 ("Evolutions of existing Pokémon",[
@@ -86,6 +91,7 @@ SECTIES=[
 ('lunatone_evo/af/bloedmaan.png', 'Bloedmaan (Lunatone)', 'rock/cosmic'),
 ('emolga_evo/af/model.png', 'Wingsuit-colugo (Emolga)', 'electric/flying'),
 ('emolga_evo_fase3/af/fruitvampier.png', 'Fruitvampier (Emolga)', 'electric/flying'),
+('ledian_evo/af/ledian_evo.png', 'Ledian-evolutie (Ledian)', 'bug/cosmic'),
 ]),
 ("Regional forms / convergent Pokémon",[
 ("silicobra_uyuni/af/silicobra_uyuni.png",'"Silicobra" (regional)',"ground/electric"),
@@ -123,6 +129,9 @@ SECTIES=[
 ("grimer_hoenn/af/grimer_hoenn.png",'Grimer (regional)',"poison/ground"),
 ("muk_hoenn/af/muk_hoenn.png",'Muk (regional)',"poison/ground"),
 ("dj_rotom/af/dj_rotom.png",'"DJ Rotom"',"electric/steel"),
+]),
+("Legendaries",[
+("regiaqua/af/regiaqua.png",'"Regiaqua"',"water"),
 ]),
 ]
 F="/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"; FR=F.replace("-Bold","")

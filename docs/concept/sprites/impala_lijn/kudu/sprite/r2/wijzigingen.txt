@@ -1,0 +1,546 @@
+wit (6,24) L->W  witte tekening uit het model (witfractie 0.35)
+wit (13,25) M->W  witte tekening uit het model (witfractie 0.44)
+wit (11,27) M->W  witte tekening uit het model (witfractie 0.40)
+wit (12,27) l->W  witte tekening uit het model (witfractie 0.34)
+wit (6,28) L->W  witte tekening uit het model (witfractie 0.44)
+wit (33,31) M->W  witte tekening uit het model (witfractie 0.30)
+wit (37,31) M->W  witte tekening uit het model (witfractie 0.18)
+wit (30,32) M->W  witte tekening uit het model (witfractie 0.28)
+wit (33,32) L->W  witte tekening uit het model (witfractie 0.29)
+wit (37,32) L->W  witte tekening uit het model (witfractie 0.45)
+wit (40,32) L->W  witte tekening uit het model (witfractie 0.44)
+wit (30,33) M->W  witte tekening uit het model (witfractie 0.19)
+wit (34,33) L->W  witte tekening uit het model (witfractie 0.41)
+wit (37,33) L->W  witte tekening uit het model (witfractie 0.43)
+wit (41,33) L->W  witte tekening uit het model (witfractie 0.26)
+wit (43,33) M->W  witte tekening uit het model (witfractie 0.19)
+wit (31,34) M->W  witte tekening uit het model (witfractie 0.26)
+wit (34,34) L->W  witte tekening uit het model (witfractie 0.31)
+wit (38,34) L->W  witte tekening uit het model (witfractie 0.22)
+wit (41,34) L->W  witte tekening uit het model (witfractie 0.35)
+wit (44,34) M->W  witte tekening uit het model (witfractie 0.22)
+wit (31,35) M->W  witte tekening uit het model (witfractie 0.30)
+wit (34,35) M->W  witte tekening uit het model (witfractie 0.31)
+wit (38,35) L->W  witte tekening uit het model (witfractie 0.36)
+wit (41,35) L->W  witte tekening uit het model (witfractie 0.27)
+wit (44,35) L->W  witte tekening uit het model (witfractie 0.32)
+wit (31,36) M->W  witte tekening uit het model (witfractie 0.36)
+wit (35,36) M->W  witte tekening uit het model (witfractie 0.20)
+wit (38,36) L->W  witte tekening uit het model (witfractie 0.31)
+wit (42,36) M->W  witte tekening uit het model (witfractie 0.31)
+wit (44,36) M->W  witte tekening uit het model (witfractie 0.28)
+wit (31,37) M->W  witte tekening uit het model (witfractie 0.29)
+wit (35,37) L->W  witte tekening uit het model (witfractie 0.37)
+wit (38,37) M->W  witte tekening uit het model (witfractie 0.31)
+wit (31,38) M->W  witte tekening uit het model (witfractie 0.25)
+wit (35,38) M->W  witte tekening uit het model (witfractie 0.25)
+wit (38,38) M->W  witte tekening uit het model (witfractie 0.31)
+wit (42,38) M->W  witte tekening uit het model (witfractie 0.31)
+wit (45,38) M->W  witte tekening uit het model (witfractie 0.19)
+wit (31,39) M->W  witte tekening uit het model (witfractie 0.25)
+wit (35,39) L->W  witte tekening uit het model (witfractie 0.40)
+wit (38,39) M->W  witte tekening uit het model (witfractie 0.30)
+wit (42,39) M->W  witte tekening uit het model (witfractie 0.27)
+wit (45,39) M->W  witte tekening uit het model (witfractie 0.19)
+wit (31,40) M->W  witte tekening uit het model (witfractie 0.36)
+wit (35,40) L->W  witte tekening uit het model (witfractie 0.27)
+wit (38,40) M->W  witte tekening uit het model (witfractie 0.24)
+wit (42,40) L->W  witte tekening uit het model (witfractie 0.21)
+wit (31,41) M->W  witte tekening uit het model (witfractie 0.39)
+wit (38,41) M->W  witte tekening uit het model (witfractie 0.29)
+wit (42,41) M->W  witte tekening uit het model (witfractie 0.18)
+wit (31,42) M->W  witte tekening uit het model (witfractie 0.31)
+wit (34,42) M->W  witte tekening uit het model (witfractie 0.31)
+hoorn (9,0) 0->.  oude hoornrest buiten de hoornband weg
+hoorn (5,3) 4->.  oude hoornrest buiten de hoornband weg
+hoorn (29,3) 0->.  oude hoornrest buiten de hoornband weg
+hoorn (4,12) 4->.  oude hoornrest buiten de hoornband weg
+hoorn (3,13) 4->.  oude hoornrest buiten de hoornband weg
+hoorn (4,13) W->.  oude hoornrest buiten de hoornband weg
+hoorn (24,13) 0->.  oude hoornrest buiten de hoornband weg
+hoorn (3,14) 4->.  oude hoornrest buiten de hoornband weg
+hoorn (4,14) W->.  oude hoornrest buiten de hoornband weg
+hoorn (4,15) 0->.  oude hoornrest buiten de hoornband weg
+hoorn (8,0) 4->0  hoornrand: lijn
+hoorn (10,6) 4->0  hoornrand: lijn
+hoorn (9,17) 4->0  hoornrand: lijn
+hoorn (6,2) W->0  hoornrand: lijn
+hoorn (7,1) W->0  hoornrand: lijn
+hoorn (8,2) .->0  hoornrand: lijn
+hoorn (5,12) 4->0  hoornrand: lijn
+hoorn (6,4) 4->0  hoornrand: lijn
+hoorn (5,14) W->0  hoornrand: lijn
+hoorn (9,5) 4->0  hoornrand: lijn
+hoorn (7,7) .->0  hoornrand: lijn
+hoorn (7,9) .->0  hoornrand: lijn
+hoorn (5,11) 4->0  hoornrand: lijn
+hoorn (8,13) .->0  hoornrand: lijn
+hoorn (10,10) 3->0  hoornrand: lijn
+hoorn (5,13) W->0  hoornrand: lijn
+hoorn (8,15) 4->0  hoornrand: lijn
+hoorn (6,10) .->0  hoornrand: lijn
+hoorn (10,7) W->0  hoornrand: lijn
+hoorn (9,18) W->0  hoornrand: lijn
+hoorn (6,3) W->0  hoornrand: lijn
+hoorn (8,3) .->0  hoornrand: lijn
+hoorn (10,9) 4->0  hoornrand: lijn
+hoorn (11,8) .->0  hoornrand: lijn
+hoorn (6,5) .->0  hoornrand: lijn
+hoorn (9,4) .->0  hoornrand: lijn
+hoorn (5,15) W->0  hoornrand: lijn
+hoorn (8,14) .->0  hoornrand: lijn
+hoorn (10,11) 3->0  hoornrand: lijn
+hoorn (7,6) .->0  hoornrand: lijn
+hoorn (7,8) .->0  hoornrand: lijn
+hoorn (23,4) W->0  hoornrand: lijn
+hoorn (28,3) 4->0  hoornrand: lijn
+hoorn (14,13) 4->0  hoornrand: lijn
+hoorn (17,12) 4->0  hoornrand: lijn
+hoorn (24,8) .->0  hoornrand: lijn
+hoorn (11,16) .->0  hoornrand: lijn
+hoorn (18,12) 4->0  hoornrand: lijn
+hoorn (20,15) .->0  hoornrand: lijn
+hoorn (24,3) 4->0  hoornrand: lijn
+hoorn (24,12) 3->0  hoornrand: lijn
+hoorn (22,5) W->0  hoornrand: lijn
+hoorn (22,14) 4->0  hoornrand: lijn
+hoorn (23,13) 4->0  hoornrand: lijn
+hoorn (26,2) .->0  hoornrand: lijn
+hoorn (13,14) 4->0  hoornrand: lijn
+hoorn (12,15) 4->0  hoornrand: lijn
+hoorn (24,7) .->0  hoornrand: lijn
+hoorn (15,13) W->0  hoornrand: lijn
+hoorn (16,12) .->0  hoornrand: lijn
+hoorn (20,12) 4->0  hoornrand: lijn
+hoorn (21,11) .->0  hoornrand: lijn
+hoorn (11,18) 4->0  hoornrand: lijn
+hoorn (19,15) .->0  hoornrand: lijn
+hoorn (24,11) 4->0  hoornrand: lijn
+hoorn (29,1) 4->0  hoornrand: lijn
+hoorn (16,16) .->0  hoornrand: lijn
+hoorn (22,4) .->0  hoornrand: lijn
+hoorn (21,6) 4->0  hoornrand: lijn
+hoorn (25,3) W->0  hoornrand: lijn
+hoorn (21,8) 4->0  hoornrand: lijn
+hoorn (19,12) 4->0  hoornrand: lijn
+hoorn (11,17) 4->0  hoornrand: lijn
+hoorn (15,17) .->0  hoornrand: lijn
+hoorn (29,0) 4->0  hoornrand: lijn
+hoorn (21,14) 4->0  hoornrand: lijn
+hoorn (27,2) 4->0  hoornrand: lijn
+hoorn (28,1) .->0  hoornrand: lijn
+hoorn (29,2) 4->0  hoornrand: lijn
+hoorn (21,7) 4->0  hoornrand: lijn
+hoorn (8,18) 3->4  hoornbinnenkant: licht/donker over de breedte gemeten in het model (staalhelderheid 156)
+hoorn (6,13) 0->4  hoornbinnenkant: licht/donker over de breedte gemeten in het model (staalhelderheid 150)
+hoorn (8,4) 4->3  hoornbinnenkant: licht/donker over de breedte gemeten in het model (staalhelderheid 204)
+hoorn (7,5) 4->W  hoornbinnenkant: licht/donker over de breedte gemeten in het model (staalhelderheid 207)
+hoorn (7,14) 0->3  hoornbinnenkant: licht/donker over de breedte gemeten in het model (staalhelderheid 210)
+hoorn (7,16) 4->3  hoornbinnenkant: licht/donker over de breedte gemeten in het model (staalhelderheid 221)
+hoorn (9,7) 3->4  hoornbinnenkant: licht/donker over de breedte gemeten in het model (staalhelderheid 149)
+hoorn (10,8) 4->W  hoornbinnenkant: licht/donker over de breedte gemeten in het model (staalhelderheid 207)
+hoorn (9,9) 3->4  hoornbinnenkant: licht/donker over de breedte gemeten in het model (staalhelderheid 130)
+hoorn (7,2) 3->4  hoornbinnenkant: licht/donker over de breedte gemeten in het model (staalhelderheid 160)
+hoorn (7,11) 3->4  hoornbinnenkant: licht/donker over de breedte gemeten in het model (staalhelderheid 137)
+hoorn (8,6) 0->3  hoornbinnenkant: licht/donker over de breedte gemeten in het model (staalhelderheid 141)
+hoorn (8,8) 0->4  hoornbinnenkant: licht/donker over de breedte gemeten in het model (staalhelderheid 126)
+hoorn (8,17) 4->W  hoornbinnenkant: licht/donker over de breedte gemeten in het model (staalhelderheid 213)
+hoorn (7,18) 0->3  hoornbinnenkant: licht/donker over de breedte gemeten in het model (staalhelderheid 146)
+hoorn (8,10) 3->4  hoornbinnenkant: licht/donker over de breedte gemeten in het model (staalhelderheid 132)
+hoorn (8,12) 0->3  hoornbinnenkant: licht/donker over de breedte gemeten in het model (staalhelderheid 130)
+hoorn (9,11) 0->3  hoornbinnenkant: licht/donker over de breedte gemeten in het model (staalhelderheid 129)
+hoorn (7,13) 0->3  hoornbinnenkant: licht/donker over de breedte gemeten in het model (staalhelderheid 138)
+hoorn (6,16) 0->3  hoornbinnenkant: licht/donker over de breedte gemeten in het model (staalhelderheid 177)
+hoorn (7,15) W->3  hoornbinnenkant: licht/donker over de breedte gemeten in het model (staalhelderheid 225)
+hoorn (8,7) 0->3  hoornbinnenkant: licht/donker over de breedte gemeten in het model (staalhelderheid 122)
+hoorn (9,6) 4->W  hoornbinnenkant: licht/donker over de breedte gemeten in het model (staalhelderheid 221)
+hoorn (12,18) 3->4  hoornbinnenkant: licht/donker over de breedte gemeten in het model (staalhelderheid 125)
+hoorn (17,14) W->3  hoornbinnenkant: licht/donker over de breedte gemeten in het model (staalhelderheid 227)
+hoorn (18,14) 4->3  hoornbinnenkant: licht/donker over de breedte gemeten in het model (staalhelderheid 221)
+hoorn (24,5) 0->4  hoornbinnenkant: licht/donker over de breedte gemeten in het model (staalhelderheid 128)
+hoorn (28,2) 4->W  hoornbinnenkant: licht/donker over de breedte gemeten in het model (staalhelderheid 219)
+hoorn (13,16) 3->4  hoornbinnenkant: licht/donker over de breedte gemeten in het model (staalhelderheid 147)
+hoorn (23,8) 3->4  hoornbinnenkant: licht/donker over de breedte gemeten in het model (staalhelderheid 132)
+hoorn (12,17) 3->4  hoornbinnenkant: licht/donker over de breedte gemeten in het model (staalhelderheid 152)
+hoorn (16,14) 4->3  hoornbinnenkant: licht/donker over de breedte gemeten in het model (staalhelderheid 218)
+hoorn (20,14) 4->3  hoornbinnenkant: licht/donker over de breedte gemeten in het model (staalhelderheid 190)
+hoorn (21,13) 4->3  hoornbinnenkant: licht/donker over de breedte gemeten in het model (staalhelderheid 197)
+hoorn (23,10) 3->4  hoornbinnenkant: licht/donker over de breedte gemeten in het model (staalhelderheid 139)
+hoorn (22,13) 4->3  hoornbinnenkant: licht/donker over de breedte gemeten in het model (staalhelderheid 175)
+hoorn (23,12) 4->3  hoornbinnenkant: licht/donker over de breedte gemeten in het model (staalhelderheid 203)
+hoorn (23,7) 3->4  hoornbinnenkant: licht/donker over de breedte gemeten in het model (staalhelderheid 130)
+hoorn (12,16) 4->W  hoornbinnenkant: licht/donker over de breedte gemeten in het model (staalhelderheid 216)
+hoorn (20,13) 4->W  hoornbinnenkant: licht/donker over de breedte gemeten in het model (staalhelderheid 221)
+hoorn (21,12) 0->W  hoornbinnenkant: licht/donker over de breedte gemeten in het model (staalhelderheid 204)
+hoorn (23,9) 3->4  hoornbinnenkant: licht/donker over de breedte gemeten in het model (staalhelderheid 144)
+hoorn (19,14) 4->3  hoornbinnenkant: licht/donker over de breedte gemeten in het model (staalhelderheid 203)
+ontkorrel (1,16) M->D  tintvlakje <3 px naar buurtint
+ontkorrel (4,17) M->D  tintvlakje <3 px naar buurtint
+ontkorrel (10,18) D->M  tintvlakje <3 px naar buurtint
+ontkorrel (6,19) M->D  tintvlakje <3 px naar buurtint
+ontkorrel (8,19) L->M  tintvlakje <3 px naar buurtint
+ontkorrel (6,20) D->M  tintvlakje <3 px naar buurtint
+ontkorrel (14,20) D->M  tintvlakje <3 px naar buurtint
+ontkorrel (10,23) L->M  tintvlakje <3 px naar buurtint
+ontkorrel (15,23) D->M  tintvlakje <3 px naar buurtint
+ontkorrel (15,24) D->M  tintvlakje <3 px naar buurtint
+ontkorrel (11,24) L->M  tintvlakje <3 px naar buurtint
+ontkorrel (30,30) m->d  tintvlakje <3 px naar buurtint
+ontkorrel (32,31) M->L  tintvlakje <3 px naar buurtint
+ontkorrel (38,31) M->L  tintvlakje <3 px naar buurtint
+ontkorrel (39,31) M->L  tintvlakje <3 px naar buurtint
+ontkorrel (40,31) D->L  tintvlakje <3 px naar buurtint
+ontkorrel (16,32) l->m  tintvlakje <3 px naar buurtint
+ontkorrel (16,33) l->m  tintvlakje <3 px naar buurtint
+ontkorrel (18,32) l->m  tintvlakje <3 px naar buurtint
+ontkorrel (18,33) l->m  tintvlakje <3 px naar buurtint
+ontkorrel (32,32) L->M  tintvlakje <3 px naar buurtint
+ontkorrel (41,32) M->D  tintvlakje <3 px naar buurtint
+ontkorrel (42,32) D->L  tintvlakje <3 px naar buurtint
+ontkorrel (26,33) L->M  tintvlakje <3 px naar buurtint
+ontkorrel (33,33) L->M  tintvlakje <3 px naar buurtint
+ontkorrel (8,35) m->l  tintvlakje <3 px naar buurtint
+ontkorrel (8,36) m->l  tintvlakje <3 px naar buurtint
+ontkorrel (24,36) l->m  tintvlakje <3 px naar buurtint
+ontkorrel (46,36) D->M  tintvlakje <3 px naar buurtint
+ontkorrel (42,37) L->M  tintvlakje <3 px naar buurtint
+ontkorrel (44,37) L->M  tintvlakje <3 px naar buurtint
+ontkorrel (12,39) m->d  tintvlakje <3 px naar buurtint
+ontkorrel (22,39) l->d  tintvlakje <3 px naar buurtint
+ontkorrel (22,40) l->d  tintvlakje <3 px naar buurtint
+ontkorrel (23,39) d->m  tintvlakje <3 px naar buurtint
+ontkorrel (11,40) m->l  tintvlakje <3 px naar buurtint
+ontkorrel (11,41) m->l  tintvlakje <3 px naar buurtint
+ontkorrel (28,41) D->M  tintvlakje <3 px naar buurtint
+ontkorrel (28,42) D->M  tintvlakje <3 px naar buurtint
+ontkorrel (34,41) L->M  tintvlakje <3 px naar buurtint
+ontkorrel (48,41) D->M  tintvlakje <3 px naar buurtint
+ontkorrel (19,42) M->D  tintvlakje <3 px naar buurtint
+ontkorrel (38,42) D->M  tintvlakje <3 px naar buurtint
+ontkorrel (38,43) D->M  tintvlakje <3 px naar buurtint
+ontkorrel (18,43) m->d  tintvlakje <3 px naar buurtint
+ontkorrel (24,43) d->m  tintvlakje <3 px naar buurtint
+ontkorrel (11,44) m->d  tintvlakje <3 px naar buurtint
+ontkorrel (12,44) d->l  tintvlakje <3 px naar buurtint
+ontkorrel (13,44) l->m  tintvlakje <3 px naar buurtint
+ontkorrel (23,45) D->M  tintvlakje <3 px naar buurtint
+ontkorrel (23,46) D->M  tintvlakje <3 px naar buurtint
+ontkorrel (27,50) D->M  tintvlakje <3 px naar buurtint
+ontkorrel (17,51) M->D  tintvlakje <3 px naar buurtint
+ontkorrel (17,52) M->D  tintvlakje <3 px naar buurtint
+ontkorrel (18,59) M->D  tintvlakje <3 px naar buurtint
+ontkorrel (6,19) D->M  tintvlakje <3 px naar buurtint
+ontkorrel (32,31) L->M  tintvlakje <3 px naar buurtint
+ontkorrel (41,32) D->L  tintvlakje <3 px naar buurtint
+ontkorrel (22,39) d->m  tintvlakje <3 px naar buurtint
+ontkorrel (22,40) d->m  tintvlakje <3 px naar buurtint
+ontkorrel (11,44) d->l  tintvlakje <3 px naar buurtint
+ontkorrel (12,44) l->m  tintvlakje <3 px naar buurtint
+binnenlijn (19,15) 0->A  binnenlijn in donkerste eigen tint
+binnenlijn (19,16) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (6,17) 0->A  binnenlijn in donkerste eigen tint
+binnenlijn (19,17) 0->r  binnenlijn in donkerste eigen tint
+binnenlijn (5,18) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (6,18) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (5,19) 0->r  binnenlijn in donkerste eigen tint
+binnenlijn (7,19) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (17,19) 0->r  binnenlijn in donkerste eigen tint
+binnenlijn (6,21) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (16,21) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (6,22) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (16,23) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (17,23) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (15,25) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (17,25) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (5,26) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (14,26) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (15,26) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (4,27) 0->K  binnenlijn in donkerste eigen tint
+binnenlijn (5,27) 0->K  binnenlijn in donkerste eigen tint
+binnenlijn (14,27) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (15,27) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (18,27) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (19,27) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (24,27) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (27,27) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (7,28) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (12,28) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (15,28) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (18,28) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (25,28) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (10,29) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (11,29) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (15,29) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (18,29) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (19,29) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (22,29) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (28,29) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (10,30) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (12,30) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (15,30) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (18,30) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (19,30) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (22,30) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (27,30) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (28,30) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (12,31) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (15,31) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (19,31) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (22,31) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (27,31) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (28,31) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (29,31) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (31,31) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (12,32) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (15,32) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (19,32) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (22,32) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (31,32) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (15,33) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (19,33) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (11,34) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (15,34) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (19,34) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (13,35) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (15,35) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (17,35) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (19,35) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (13,36) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (17,36) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (17,37) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (19,37) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (21,37) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (14,38) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (17,38) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (19,38) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (20,38) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (21,38) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (47,38) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (15,39) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (17,39) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (19,39) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (20,39) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (21,39) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (47,39) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (19,40) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (21,40) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (23,40) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (47,40) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (13,41) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (18,41) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (19,41) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (20,41) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (21,41) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (23,41) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (47,41) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (13,42) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (18,42) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (21,42) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (15,43) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (19,43) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (14,44) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (16,44) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (20,44) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (24,44) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (16,45) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (17,45) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (18,45) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (21,45) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (37,45) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (38,45) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (39,45) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (17,46) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (18,46) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (19,46) 0->d  binnenlijn in donkerste eigen tint
+binnenlijn (34,46) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (35,46) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (36,46) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (39,46) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (39,47) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (40,47) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (17,60) 0->D  binnenlijn in donkerste eigen tint
+binnenlijn (24,62) 0->D  binnenlijn in donkerste eigen tint
+poot (45,51) 0->D  Kirlia: linkerlijn donkere eigen tint
+poot (45,52) 0->D  Kirlia: linkerlijn donkere eigen tint
+poot (46,53) M->L  Kirlia: tint in de lengte (nabije poot)
+poot (47,53) M->L  Kirlia: tint in de lengte (nabije poot)
+poot (46,54) M->L  Kirlia: tint in de lengte (nabije poot)
+poot (47,54) M->L  Kirlia: tint in de lengte (nabije poot)
+poot (46,55) M->L  Kirlia: tint in de lengte (nabije poot)
+poot (47,55) M->L  Kirlia: tint in de lengte (nabije poot)
+poot (24,54) 0->D  Kirlia: linkerlijn donkere eigen tint
+poot (24,57) M->L  Kirlia: tint in de lengte (nabije poot)
+poot (25,57) M->L  Kirlia: tint in de lengte (nabije poot)
+poot (24,58) M->L  Kirlia: tint in de lengte (nabije poot)
+poot (25,58) M->L  Kirlia: tint in de lengte (nabije poot)
+poot (24,59) M->L  Kirlia: tint in de lengte (nabije poot)
+poot (25,59) M->L  Kirlia: tint in de lengte (nabije poot)
+poot (24,61) 0->D  Kirlia: linkerlijn donkere eigen tint
+hoef (16,61) 0->K  hoef: donkere modeltint (neus/hoef)
+hoef (17,61) 0->K  hoef: donkere modeltint (neus/hoef)
+hoef (46,61) 0->K  hoef: donkere modeltint (neus/hoef)
+hoef (23,62) 0->K  hoef: donkere modeltint (neus/hoef)
+hoef (24,62) D->K  hoef: donkere modeltint (neus/hoef)
+hoef (46,62) 0->K  hoef: donkere modeltint (neus/hoef)
+lijn (1,16) D->0  buitenlijn dicht
+lijn (2,16) D->0  buitenlijn dicht
+lijn (18,16) D->0  buitenlijn dicht
+lijn (3,17) R->0  buitenlijn dicht
+lijn (4,17) D->0  buitenlijn dicht
+lijn (17,17) M->0  buitenlijn dicht
+lijn (23,17) R->0  buitenlijn dicht
+lijn (10,18) M->0  buitenlijn dicht
+lijn (16,18) M->0  buitenlijn dicht
+lijn (23,18) R->0  buitenlijn dicht
+lijn (23,19) R->0  buitenlijn dicht
+lijn (1,20) R->0  buitenlijn dicht
+lijn (22,21) R->0  buitenlijn dicht
+lijn (3,22) R->0  buitenlijn dicht
+lijn (5,24) M->0  buitenlijn dicht
+lijn (18,24) D->0  buitenlijn dicht
+lijn (4,25) M->0  buitenlijn dicht
+lijn (19,25) D->0  buitenlijn dicht
+lijn (25,25) D->0  buitenlijn dicht
+lijn (20,26) m->0  buitenlijn dicht
+lijn (21,26) m->0  buitenlijn dicht
+lijn (24,26) M->0  buitenlijn dicht
+lijn (27,26) D->0  buitenlijn dicht
+lijn (28,26) D->0  buitenlijn dicht
+lijn (33,31) W->0  buitenlijn dicht
+lijn (34,31) M->0  buitenlijn dicht
+lijn (35,31) M->0  buitenlijn dicht
+lijn (36,31) M->0  buitenlijn dicht
+lijn (37,31) W->0  buitenlijn dicht
+lijn (38,31) L->0  buitenlijn dicht
+lijn (39,31) L->0  buitenlijn dicht
+lijn (40,31) L->0  buitenlijn dicht
+lijn (41,32) L->0  buitenlijn dicht
+lijn (42,32) L->0  buitenlijn dicht
+lijn (9,33) l->0  buitenlijn dicht
+lijn (43,33) W->0  buitenlijn dicht
+lijn (44,33) D->0  buitenlijn dicht
+lijn (9,34) l->0  buitenlijn dicht
+lijn (45,34) M->0  buitenlijn dicht
+lijn (46,34) M->0  buitenlijn dicht
+lijn (8,35) l->0  buitenlijn dicht
+lijn (47,35) M->0  buitenlijn dicht
+lijn (8,36) l->0  buitenlijn dicht
+lijn (48,37) M->0  buitenlijn dicht
+lijn (48,38) M->0  buitenlijn dicht
+lijn (9,39) l->0  buitenlijn dicht
+lijn (49,41) M->0  buitenlijn dicht
+lijn (11,43) l->0  buitenlijn dicht
+lijn (46,43) M->0  buitenlijn dicht
+lijn (11,44) l->0  buitenlijn dicht
+lijn (12,44) m->0  buitenlijn dicht
+lijn (46,44) M->0  buitenlijn dicht
+lijn (13,45) m->0  buitenlijn dicht
+lijn (29,45) M->0  buitenlijn dicht
+lijn (46,45) M->0  buitenlijn dicht
+lijn (46,46) M->0  buitenlijn dicht
+lijn (16,47) D->0  buitenlijn dicht
+lijn (46,47) M->0  buitenlijn dicht
+lijn (20,48) D->0  buitenlijn dicht
+lijn (23,48) M->0  buitenlijn dicht
+lijn (27,48) M->0  buitenlijn dicht
+lijn (23,49) D->0  buitenlijn dicht
+lijn (47,49) M->0  buitenlijn dicht
+lijn (17,50) D->0  buitenlijn dicht
+lijn (23,50) D->0  buitenlijn dicht
+lijn (27,50) M->0  buitenlijn dicht
+lijn (36,50) D->0  buitenlijn dicht
+lijn (40,50) D->0  buitenlijn dicht
+lijn (44,50) M->0  buitenlijn dicht
+lijn (17,51) D->0  buitenlijn dicht
+lijn (23,51) D->0  buitenlijn dicht
+lijn (26,51) M->0  buitenlijn dicht
+lijn (37,51) D->0  buitenlijn dicht
+lijn (45,51) D->0  buitenlijn dicht
+lijn (17,52) D->0  buitenlijn dicht
+lijn (26,52) M->0  buitenlijn dicht
+lijn (38,52) D->0  buitenlijn dicht
+lijn (45,52) D->0  buitenlijn dicht
+lijn (17,53) D->0  buitenlijn dicht
+lijn (19,53) D->0  buitenlijn dicht
+lijn (24,53) M->0  buitenlijn dicht
+lijn (26,53) M->0  buitenlijn dicht
+lijn (38,53) D->0  buitenlijn dicht
+lijn (46,53) L->0  buitenlijn dicht
+lijn (17,54) D->0  buitenlijn dicht
+lijn (24,54) D->0  buitenlijn dicht
+lijn (38,54) D->0  buitenlijn dicht
+lijn (46,54) L->0  buitenlijn dicht
+lijn (17,55) D->0  buitenlijn dicht
+lijn (24,55) M->0  buitenlijn dicht
+lijn (38,55) D->0  buitenlijn dicht
+lijn (39,55) D->0  buitenlijn dicht
+lijn (46,55) L->0  buitenlijn dicht
+lijn (17,56) D->0  buitenlijn dicht
+lijn (24,56) M->0  buitenlijn dicht
+lijn (37,56) D->0  buitenlijn dicht
+lijn (39,56) D->0  buitenlijn dicht
+lijn (46,56) M->0  buitenlijn dicht
+lijn (17,57) D->0  buitenlijn dicht
+lijn (24,57) L->0  buitenlijn dicht
+lijn (37,57) D->0  buitenlijn dicht
+lijn (46,57) M->0  buitenlijn dicht
+lijn (48,57) M->0  buitenlijn dicht
+lijn (17,58) D->0  buitenlijn dicht
+lijn (24,58) L->0  buitenlijn dicht
+lijn (37,58) D->0  buitenlijn dicht
+lijn (46,58) M->0  buitenlijn dicht
+lijn (48,58) M->0  buitenlijn dicht
+lijn (16,59) D->0  buitenlijn dicht
+lijn (24,59) L->0  buitenlijn dicht
+lijn (46,59) M->0  buitenlijn dicht
+lijn (48,59) M->0  buitenlijn dicht
+lijn (24,60) M->0  buitenlijn dicht
+lijn (25,61) M->0  buitenlijn dicht
+lijn (7,1) 0->3  selout lichtkant (staal)
+lijn (26,2) 0->3  selout lichtkant (staal)
+lijn (27,2) 0->3  selout lichtkant (staal)
+lijn (24,3) 0->3  selout lichtkant (staal)
+lijn (25,3) 0->3  selout lichtkant (staal)
+lijn (22,4) 0->3  selout lichtkant (staal)
+lijn (23,4) 0->3  selout lichtkant (staal)
+lijn (22,5) 0->3  selout lichtkant (staal)
+lijn (7,9) 0->3  selout lichtkant (staal)
+lijn (6,10) 0->3  selout lichtkant (staal)
+lijn (21,11) 0->3  selout lichtkant (staal)
+lijn (16,12) 0->3  selout lichtkant (staal)
+lijn (17,12) 0->3  selout lichtkant (staal)
+lijn (18,12) 0->3  selout lichtkant (staal)
+lijn (19,12) 0->3  selout lichtkant (staal)
+lijn (20,12) 0->3  selout lichtkant (staal)
+lijn (14,13) 0->3  selout lichtkant (staal)
+lijn (15,13) 0->3  selout lichtkant (staal)
+lijn (13,14) 0->3  selout lichtkant (staal)
+lijn (12,15) 0->3  selout lichtkant (staal)
+lijn (1,16) 0->D  selout lichtkant
+lijn (2,16) 0->D  selout lichtkant
+lijn (5,16) 0->3  selout lichtkant (staal)
+lijn (11,16) 0->3  selout lichtkant (staal)
+lijn (0,17) 0->r  selout lichtkant
+lijn (3,17) 0->r  selout lichtkant
+lijn (4,17) 0->D  selout lichtkant
+lijn (11,17) 0->3  selout lichtkant (staal)
+lijn (10,18) 0->D  selout lichtkant
+lijn (11,18) 0->3  selout lichtkant (staal)
+lijn (16,18) 0->D  selout lichtkant
+lijn (17,18) 0->D  selout lichtkant
+lijn (4,25) 0->D  selout lichtkant
+lijn (25,25) 0->D  selout lichtkant
+lijn (26,25) 0->D  selout lichtkant
+lijn (21,26) 0->d  selout lichtkant
+lijn (23,26) 0->D  selout lichtkant
+lijn (24,26) 0->D  selout lichtkant
+lijn (25,26) 0->D  selout lichtkant
+lijn (22,27) 0->D  selout lichtkant
+lijn (33,31) 0->D  selout lichtkant
+lijn (34,31) 0->D  selout lichtkant
+lijn (35,31) 0->D  selout lichtkant
+lijn (36,31) 0->D  selout lichtkant
+lijn (37,31) 0->D  selout lichtkant
+lijn (38,31) 0->D  selout lichtkant
+lijn (39,31) 0->D  selout lichtkant
+lijn (40,31) 0->D  selout lichtkant

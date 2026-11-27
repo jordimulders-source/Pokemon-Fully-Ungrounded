@@ -1,0 +1,4 @@
+Pixels anders dan de kale reductie van model A3 (kaal gemapt), per zone: {'staal': 136, 'roze': 9, 'vacht': 196, 'lijn': 83, 'oog': 9, 'manen': 199, 'donker': 11}, totaal 643 van 1361
+Pixels anders dan r3, per zone: {'staal': 57, 'vacht': 111, 'roze': 4, 'oog': 9, 'manen': 152, 'lijn': 3}, totaal 336
+Per stap (log): {'manen': 186, 'vacht': 85, 'lok': 87, 'kam': 41, 'grens': 6, 'kaak': 12, 'mond': 2, 'hoorn': 46, 'oog': 31, 'ontkorrel': 31, 'lijn': 46}
+Strengen: 64 cellen; grenscellen: 15

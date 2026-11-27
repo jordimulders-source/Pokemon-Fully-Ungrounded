@@ -1,0 +1,3 @@
+Pixels anders dan r6: 127, waarvan buiten de manenzone: 0 []
+Manenzone: 430 px (r6-haar 294 + ring)
+Kleuren in de sprite (incl. transparant): 15

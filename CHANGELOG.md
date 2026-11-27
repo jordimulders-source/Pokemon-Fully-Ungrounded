@@ -3597,31 +3597,142 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Ontwerp via Gemini r1–r10 (`docs/concept/sprites/guarana_fase2/gemini/`): vertakte liaan met drie trossen (Jordi), getwijnde liaan + echt guaraná-blad (keuze 1 en 3), minder/grotere ogen, gesloten vruchten erbij, hangende trossen met peervormige vruchten (r9/r10, "meeste guarana"). Gemini telde steeds te laag ("twice as many" deed niets); model = r10 met elke tros verschoven nog eens erachter geplakt (`plak/dubbel.py`).
 - Sprite: 16 makerrondes + DC-eindkeuring (PASS, 57 px). Belangrijkste stappen: volume en schaduw (r3), gladde randen (r4), pupillen gevarieerd (r5), afwerking naar fase 1-palet en -verhoudingen (r6–r8), ronde trosranden (r10), ronde oogvruchten i.p.v. vierkanten (r13, bewaard in `bewaard_r13/`), trossen ±1,6× groter mogen over blad/takken vallen (r14, Jordi), fase 1-oog en precies vier ogen naar linksonder (r15–r16). Palet = fase 1 (12 kleuren).
 - `docs/concept/sprites/guarana_fase2/af/guarana_fase2.png` (+ `normal.pal`, 8×); op het overzichtsvel (sectie New). Lijn af; namen open. Vaste regels en alle citaten in `guarana_fase2/SPEC.md`; lessen in `docs/lessen/GEMINI.md`.
-### [v0.0.859] - Idee: carambola-Staryu/Starmie (27 nov)
+
+### [v0.0.x] - Sauna-yeti (sneeuwmonster fase 3) frontsprite af (27 nov)
+- Eindvorm van de sneeuwmonster-lijn (Ice/Fire): grote, zittende, onderuitgezakte yeti van sneeuw met de armen over een onzichtbare leuning, halfopen relaxte ogen, de houten emmer op de kop, gloeiende vulkanische stenen op schouders, buik en knieën (Jordi: "heel relaxte tevreden vriendelijke yeti", "groot en gevaarlijk qua postuur").
+- Model: Gemini s3b (pose via een posebijlage, daarna lengte en ogen bijgestuurd). Prompts en rondes in `docs/concept/sprites/sneeuwmonster_fase3/gemini/PROMPTS.md`.
+- Frontsprite `docs/concept/sprites/sneeuwmonster_fase3/af/sauna_yeti.png` (+ `_8x`, 62×49 px, 16 kleuren): kale reductie r2 + Jordi's punten (minder rechte lijnen, buiksteen, dikkere band), eindkeuring (houttinten per pixel, gezichtshuid in modeltint met licht en schaduw, binnenlijnen niet zwart, pupil naar binnen). Op het overzichtsvel. Lijn af; naam open.
+- Nieuwe vaste regel (Jordi): "als je iets 'rustig' vindt is dat een ander woord voor hertekend naar pixelblur en dus compleet verknald" (`CLAUDE.md`, `SPRITE_KERN.md`).
+
+### [v0.0.859] - Zandloper-lijn: fase 1 frontsprite af (27 nov)
+- Fase 1 (zandloper met ogen, Ground/Psychic) frontsprite af in `docs/concept/sprites/zandloper/fase1/af/`: zwevende, scheve zandloper met de sluwe ogen van de opgesloten djinn in het zand en twee losse houten handen. Model = Gemini r6 + handen uit r3 (gedraaid, variant C); sprite = model 1-op-1 op zijn eigen raster (63×64) + eindkeuring tinten/schaduw. Op het overzichtsvel. Prompts r1–r8 in `zandloper/fase1/gemini/PROMPTS.md`, besluiten in `zandloper/fase1/SPEC.md`.
+- Lessen (GEMINI.md): feitelijke opmerking van Jordi = kritiek; pixel aanwijzen via een krabbel op de sprite; ver oog in driekwart nooit groter.
+
+### [v0.0.860] - Kudu (impala-lijn fase 3): keuzes en Gemini-prompt r1
+- Jordi (26 nov): uitstraling koninklijk en kalm, manen + keelfranje, hoorns heel groot, pre-evolutie niet noemen, "mag echt een grote sprite zijn ook", kudustrepen erop "indien mogelijk". `docs/concept/sprites/impala_lijn/kudu/SPEC.md`, prompt in `kudu/gemini/PROMPTS.md`.
+
+### [v0.0.861] - Kudu (impala-lijn fase 3): frontsprite af
+- Jordi (27 nov): "ik zie amper verschil, doe maar duidelijk". `docs/concept/sprites/impala_lijn/kudu/af/kudu.png` (= `sprite/r16/kudu_r16B.png`). Gemini r1–r5 → model r3b met manen verschoven over de schouder (A3); reductie r1–r6 met 2 keuringen; oog K4 (Bidoof, klein zwart oog); manen opnieuw als losse vorm met licht gerafelde rand (B6a + schouder r12); eindkeuring Dragonfly Cave (gekleurde selout, gedeelde warme lijnkleur), rechte lijnen nagelopen (r15) en volume (r16 B, extra tussentint). Op het overzichtsvel na de impala; impala-lijn af. Lessen in `SPRITE_WERKWIJZE.md` (referentie 1-op-1 nadoen, velscripts niet importeren) en `GRAPHICS.md` (gedeelde lijnkleur bij goud).
+### [v0.0.862] - Hoatzin fase 1 (kuiken): frontsprite-kandidaat (27–28 nov)
+- 17 Gemini-rondes voor het kuiken (`docs/concept/sprites/hoatzin/gemini/fase1_r*.png`); Jordi koos r4 als model, met rughaar weg, vleugelharen vervangen door sprite-haren, donkere wig = lijf en poot doorgetrokken.
+- Sprite r1–r4 in `hoatzin/sprite_fase1/` (maker → keurder → DC-eindkeuring PASS): 40×44, ±736 px, zwart-aandeel 41 → 20 %, 11 kleuren, haren A en B. Wacht op Jordi.
+- Les in GEMINI.md: referentiefoto eerst zelf beschrijven en laten bevestigen; geen eigen vormen in prompts; sarcasme niet als compliment lezen.
+
+### [v0.0.863] - Hoatzin fase 1 (kuiken): frontsprite af (28 nov)
+- Frontsprite af: `docs/concept/sprites/hoatzin/af/hoatzin_fase1.png` (= `sprite_fase1/r9`). Na r4: Jordi op de rechterhelft ("niet goed te zien waar de ledematen los van elkaar zitten") → nabije vleugel als één gevouwen vorm (Jordi's omtrek), binnenlijnen niet zwart maar donkere eigen tint (r5–r8), DC-eindkeuring r9 (13 px, PASS). Haren B (Jordi).
+- Op het overzichtsvel (New, vóór fase 2). Hoatzin-lijn af; namen open.
+- Les in GRAPHICS.md: haarwortels apart houden in binnenlijnscripts; slagschaduw naast een lijn in dezelfde tint = dubbele lijn.
+
+### [v0.0.864] - Zandloper fase 1: terug naar fase 1-maat (27 nov)
+- De 1-op-1-versie was groter dan fase 3 (Jordi: "hij is nu te groot geworden"); `af/zandloper_fase1.png` is nu de 0,70-reductie (44×45, ±980 px, Baltoy-maat) met dezelfde keuring van tinten en schaduw en linkeroog variant A (pupil 2 px hoog). Grote versie bewaard in `zandloper/fase1/sprite/r14_natief/af_oud/`. Overzichtsvel bijgewerkt.
+### [v0.0.865] - Idee: Ledian-evolutie (27 nov)
+- `docs/concept/IDEEEN.md`: Jordi's idee voor een Ledian-evolutie (Bug/Cosmic, superheld die door de ruimte vliegt) + repo-check (Ledian = Bug/Normal, Ledyba-lijn nog niet in de dex).
+### [v0.0.866] - Ledian-evolutie: besluiten + Gemini-prompt r1 (27 nov)
+- Jordi: fase 3, nog meer superheld, space superhero, Ledians designrichting verder doortrekken (`IDEEEN.md`).
+- Prompt r1: `docs/concept/sprites/ledian_evo/gemini/PROMPT_r1.md`.
+### [v0.0.867] - Ledian-evolutie: Gemini r1 + prompt r2 (27 nov)
+- r1 bewaard (`ledian_evo/gemini/r1.png`); prompt r2 noemt Ledian, superheld/tokusatsu, vliegpose met arm vooruit (Jordi).
+### [v0.0.868] - Ledian-evolutie: Gemini r2 + prompt r3 (27 nov)
+- r2 bewaard; prompt r3 met r2 als bijlage: rug kleiner/aerodynamisch als spacevliegtuigvleugels, hoofd aerodynamischer (Jordi).
+### [v0.0.869] - Ledian-evolutie: Gemini r3 + prompt r4 (27 nov)
+- r3 bewaard; Jordi: "het mag echt nog meer space robot". Prompt r4 = nieuwe startprompt zonder bijlage met alle besluiten.
+### [v0.0.870] - Ledian-evolutie: Gemini r4a/r4b + prompt r5 (27 nov)
+- r4b beter (Jordi); prompt r5 met r4b als bijlage: volledig stervormig rood hoofd, mondje weg, iets langer.
+### [v0.0.871] - Ledian-evolutie: Gemini r5 + prompt r6 (27 nov)
+- r5 afgekeurd (geen mond, armen te kort/gek); prompt r6 from scratch met alle besluiten.
+### [v0.0.872] - Ledian-evolutie: Gemini r6 (27 nov)
+- r6 bewaard ("deze vind ik tof"); spritecheck: natief ±66×66, ±9 kleuren.
+### [v0.0.873] - Ledian-evolutie: model r6 bevroren + sprite r1 (27 nov)
+- SPEC `docs/concept/sprites/ledian_evo/SPEC.md`; mond blijft zoals in het model (Jordi).
+- Sprite r1 (`ledian_evo/sprite_r1/`): verkleining van het model (natief 66×66, rijen 54/57 en kolommen 61/63 geschrapt), 13 kleuren, 52 px afwijking alleen op de buitenrand; spleten arm/hoofd en tussen de benen transparant. Nog geen kleur-/schaduwronde.
+### [v0.0.874] - Ledian-evolutie: kleurronde r2 (27 nov)
+- `ledian_evo/sprite_r2/`: tinten van de Gen 3-Ledian op de verdeling van r6 (Jordi: "2, maar mag net iets roder"), rood in drie varianten (a −5°, b −8° hoofd, c −11°); 69 donkergrijze binnenlijnen → rode selout; silhouetdiff 0, 13 kleuren.
+### [v0.0.875] - Ledian-evolutie: rood c + DC-eindkeuring (27 nov)
+- Jordi koos rood c ("ik vind c wel tof, verder helemaal goed").
+- Eindkeuring (`ledian_evo/eindkeuring/`, PASS): 33 px belijning (outline base aan de lichtkant, zwart aan de schaduwkant, outline highlights); zwarte binnenlijnen hoofd/arm/vleugel bewust gehouden (selout liet ze versmelten); silhouetdiff 0, 13 kleuren + transparant (nieuw: Ledians donkerste geel a47b00 als voetlijn).
+### [v0.0.876] - Ledian-evolutie: frontsprite af (27 nov)
+- Jordi: "zeker, nice". `docs/concept/sprites/ledian_evo/af/ledian_evo.png` (+ 8×) = eindkeuring; op het overzichtsvel (Evolutions of existing Pokémon). Naam open; Ledyba-lijn moet terug in de dex. TODO-brainstorm Ledian weg.
+### [v0.0.877] - Ledyba-lijn terug in de dex (27 nov)
+- Jordi: "ledyba lijn moet zeker terug". `P_FAMILY_LEDYBA` weer aan (`include/config/species_enabled.h`); `DEX_IN_ROM.md` en `IDEEEN.md` bijgewerkt. ROM niet gebouwd (Jordi: "je hoeft de rom nog niet te bouwen").
+### [v0.0.878] - Ledyba-lijn: alleen genoteerd (27 nov)
+- Jordi: "gewoon noteren dat ze terug erin komen en dat pushen". `P_FAMILY_LEDYBA` terug op `FALSE`; in `DEX_IN_ROM.md` staat dat de lijn terugkomt.
+### [v0.0.879] - Ledyba-lijn: schakelaar aan (27 nov)
+- Jordi: "maar je kan false toch true maken zonder de rom te hoeven bouwen?" `P_FAMILY_LEDYBA` weer op `P_GEN_2_POKEMON`; ROM nog niet gebouwd.
+### [v0.0.880] - Zandloper-lijn fase 2: frontsprite af (27 nov)
+- Jordi's idee voor fase 2 (gebroken zandloper, groot zandbrein, losse ogen eronder, vraag- en uitroepteken van zand erboven, alles verbonden) vastgelegd met prompt r1 in `docs/concept/sprites/zandloper/fase2/gemini/PROMPTS.md`.
+- r1 beoordeeld (alles los); prompt r2: één zandwolk, kleinere zandloper op de grond, ? en ! als handen.
+- r2 beoordeeld (rest prima); prompt r3: zandloper kapot en op de grond, brein is de vorm i.p.v. een tekening.
+- Gemini r3 = model; sprite op 0,80 (Jordi) via r1–r4 met keuringen: `docs/concept/sprites/zandloper/fase2/sprite/r4/`; besluiten in `fase2/SPEC.md`. Wacht op Jordi.
+- Na Jordi ("wat hard omlijnd", "het gaat niet om dunnere lijn maar kleur"): r4 behouden → DC-eindkeuring (zwarte binnenpixels in lijnkleur van het eigen onderdeel, 13 outline highlights). Af (Jordi: "ja commit en push naar main"): `docs/concept/sprites/zandloper/fase2/af/zandloper_fase2.png`; op het overzichtsvel. Zandloper-lijn af, namen open.
+
+### [v0.0.881] - Regicosmo en Regiaqua: idee vastgelegd (27 nov)
+- `docs/concept/IDEEEN.md` → "Regicosmo en Regiaqua": Jordi's beschrijving letterlijk, plus Claudes voorstellen voor de stippen (open).
+
+### [v0.0.882] - Regicosmo en Regiaqua: besluiten + Gemini-prompts r1 (27 nov)
+- Jordi: Regicosmo stippen = B (kaart van zijn eigen lichaam), losse hemellichamen vormen samen een golem. Regiaqua: zwevende waterarmen, echte stippen niet in de hoofdkleur, oplichtend in een diepzeekleur.
+- `docs/concept/sprites/regicosmo/` en `regiaqua/`: SPEC.md (citaten) en PROMPT.md (r1).
+
+### [v0.0.883] - Regicosmo r1 + prompt r2 (27 nov)
+- `regicosmo/gemini/r1.png` bewaard; Jordi: conceptueel goed, te veel planeten en stippen (max 8). Prompt r2 in `regicosmo/PROMPT.md`: 7 delen, 7 stippen.
+- Typing (Jordi): "ja ze zijn monotype": Regicosmo Cosmic, Regiaqua Water.
+
+### [v0.0.884] - Regiaqua r1 + stippencheck (27 nov)
+- `regiaqua/gemini/r1.png` bewaard (Jordi: "al heel erg hoe ik hem in gedachten heb"); vergelijking met de Gen 3-Regi's en een 64 px-proef in `regiaqua/gemini/`.
+
+### [v0.0.885] - Regicosmo prompt r3 (27 nov)
+- Na r2 (Jordi: "te random", "niet goed genoeg golem", romp "meer een mars kleur"): prompt r3 met vaste golembouw en Mars-romp in `regicosmo/PROMPT.md`.
+
+### [v0.0.886] - Regiaqua: reactie op de stippencheck (27 nov)
+- Jordi: r1 "lijkt wel goed"; stippen worden in de sprite vierkantjes (zoals Gen 3). In `regiaqua/SPEC.md`.
+
+### [v0.0.887] - Regiaqua: model vastgezet, sprite gestart (27 nov)
+- Jordi: 7 stippen "is prima" → model = `regiaqua/gemini/r1.png`; maker gestart in `regiaqua/sprite/`.
+
+### [v0.0.888] - Regicosmo r3 + prompt r4 (27 nov)
+- r3 bewaard (Jordi: te veel vast, hemellichamen te gelijk, r2 toffer); prompt r4 in `regicosmo/PROMPT.md`.
+
+### [v0.0.889] - Regicosmo r4 + prompt r5 (27 nov)
+- r4 bewaard (9 stippen, Mars leest als bloedmaan, schouders/handen te hoog); prompt r5 in `regicosmo/PROMPT.md`.
+
+### [v0.0.890] - Regicosmo r5 + prompt r6 (27 nov)
+- r5 bewaard (Jordi: "mars is nu een paasei"); prompt r6: Mars perfect rond met bolschaduw.
+
+### [v0.0.891] - Regicosmo r7 + positievarianten (27 nov)
+- r7 bewaard (Jordi: "nog beter"); ijsplaneet en Saturnus per script omlaag geschoven in 3 hoogtes (`regicosmo/positie/`).
+
+### [v0.0.892] - Regiaqua frontsprite r1/r2 (27 nov)
+- Maker r1 (`regiaqua/sprite/r1/`): kale reductie van Gemini r1 (silhouet-diff 0), 11 kleuren, 62×50, 7 stippen als 2×2. Keurder BIJNA; r2 (`sprite/r2/`) verwerkt de 4 punten (15 px). Naar Jordi.
+
+### [v0.0.893] - Regiaqua: frontsprite af (27 nov)
+- `docs/concept/sprites/regiaqua/af/regiaqua.png` (= sprite r2). Op het overzichtsvel onder het nieuwe kopje "Legendaries" (Jordi), `showcase/maak_vel.py`.
+
+### [v0.0.894] - Regicosmo: eindkeuring r7 + merge met main (27 nov)
+- Regicosmo-sprite r7 na DC-eindkeuring (PASS), `regicosmo/sprite/r7/`; Saturnus/maan-posities en rondere bollen in r4–r6 (zie `regicosmo/SPEC.md`). Branch samengevoegd met main (Ledian-evolutie, zandloper); overzichtsvel opnieuw gebouwd; mijn changelogsecties hernummerd naar v0.0.881–893.
+### [v0.0.895] - Idee: carambola-Staryu/Starmie (27 nov)
 - `IDEEEN.md` → Fruit en planten → Carambola: Jordi's uitspraak toegevoegd ("Ik denk nog aan carambola staryu/starmie").
-### [v0.0.860] - Regionale Staryu/Starmie: Gemini-prompts carambola en chocolate chip (27 nov)
+### [v0.0.896] - Regionale Staryu/Starmie: Gemini-prompts carambola en chocolate chip (27 nov)
 - `docs/concept/sprites/staryu_regional/PROMPT.md`: vier prompts (carambola-Staryu/-Starmie, chocolate chip-Staryu/-Starmie), elk met de Gen 3-sprite als bijlage (`gemini/bijlage_*_gen3.png`). Jordi: bij twee goede uitkomsten gaat carambola voor. Type en serieus/grap open.
-### [v0.0.861] - Regionale Staryu/Starmie: chocolate chip gekozen (27 nov)
+### [v0.0.897] - Regionale Staryu/Starmie: chocolate chip gekozen (27 nov)
 - Gemini r1 van alle vier opgeslagen in `docs/concept/sprites/staryu_regional/gemini/`. Jordi kiest chocolate chip (carambola-Starmie vertaalt niet door de twee sterren); bijstuurprompt r2 voor een minder bleke, lekkerdere koekkleur in `PROMPT.md`.
-### [v0.0.862] - Regionale Starmie: prompt versierd koekje (27 nov)
+### [v0.0.898] - Regionale Starmie: prompt versierd koekje (27 nov)
 - Jordi: Staryu chocolate chip, Starmie "allerlei versieringen"; nieuwe Starmie-prompt (v2) in `docs/concept/sprites/staryu_regional/PROMPT.md`.
-### [v0.0.863] - Regionale Staryu/Starmie: r2 + prompts v3 (27 nov)
+### [v0.0.899] - Regionale Staryu/Starmie: r2 + prompts v3 (27 nov)
 - r2 opgeslagen; Jordi: "nog wat saai", "staryu is maar half gedecoreerd", "het mogen echt meer koekjes worden". Nieuwe prompts v3 (Staryu en Starmie) in `docs/concept/sprites/staryu_regional/PROMPT.md`.
-### [v0.0.864] - Regionale Staryu/Starmie: r3 (27 nov)
+### [v0.0.900] - Regionale Staryu/Starmie: r3 (27 nov)
 - r3 (prompts v3) opgeslagen; Jordi: "wel lachen", twijfel over de achterste ster van Starmie.
-### [v0.0.865] - Regionale Starmie: achterste ster zoals de echte Starmie (27 nov)
+### [v0.0.901] - Regionale Starmie: achterste ster zoals de echte Starmie (27 nov)
 - Jordi: "zoals de echte starmie"; bijstuurprompt r4 in `docs/concept/sprites/staryu_regional/PROMPT.md`.
-### [v0.0.866] - Regionale Starmie: r4 (27 nov)
+### [v0.0.902] - Regionale Starmie: r4 (27 nov)
 - r4 opgeslagen; Jordi: achterkant "veel te puntig", fixen in de spritefase met de echte Starmie als voorbeeld.
-### [v0.0.867] - Regionale Staryu: frontsprite af (27 nov)
+### [v0.0.903] - Regionale Staryu: frontsprite af (27 nov)
 - Chocolate chip-koekje met rood juweel, naar Gemini r4 (driekwart; r3 stond te recht). Sprite r5: exacte 2×-reductie van het model + keuring (BIJNA → reparaties) en DC-eindkeuring (PASS). `docs/concept/sprites/staryu_regional/staryu/af/` (+ `normal.pal`, 8×); op het overzichtsvel (Regional forms, type open).
 - Starmie: model = Gemini r4 (Jordi: "doe maar r4"); Gemini kon driekwart + achterster niet samen (v5–v8). Sprite in de maak: achterpunten minder puntig zoals de normale Starmie.
-### [v0.0.868] - Staryu/Starmie Water/Cosmic; regionale Starmie r5 (27 nov)
+### [v0.0.904] - Staryu/Starmie Water/Cosmic; regionale Starmie r5 (27 nov)
 - Jordi: gewone Staryu en Starmie worden Water/Cosmic (`CONCEPT.md` → Cosmic). Type regionale vorm open.
 - Regionale Starmie sprite r5 vanaf model r4: achterpunten zonder / licht / sterk afgestompt naar de Gen 3-maten (`staryu_regional/starmie/sprite_r5/`).
-### [v0.0.869] - Regionale Staryu/Starmie: types (27 nov)
+### [v0.0.905] - Regionale Staryu/Starmie: types (27 nov)
 - Jordi: regionale Staryu Fairy, regionale Starmie Fairy/Psychic. Overzichtsvel bijgewerkt.
-### [v0.0.870] - Regionale Starmie: frontsprite af (27 nov)
+### [v0.0.906] - Regionale Starmie: frontsprite af (27 nov)
 - Versierd koekje (paars glazuur, witte zigzag, hagelslag, paars juweel) op een koekster met chips, naar Gemini r4; alle tien punten afgestompt naar de Gen 3-Starmie (r6 licht), bovenpunt 1 rij terug (r8 A), keuring + DC-eindkeuring PASS (r7, r9). `docs/concept/sprites/staryu_regional/starmie/af/` (+ `normal.pal`, 8×); op het overzichtsvel (Fairy/Psychic). Regionale Staryu-lijn af.
-### [v0.0.871] - Regionale Starmie: afwerking (27 nov)
+### [v0.0.907] - Regionale Starmie: afwerking (27 nov)
 - Jordi omcirkelde twee plekken ("nog niet netjes afgewerkt"): achterpunt rechtsboven opgeschoond (licht/donker vlak, chips, nette binnenlijn) en rechter voortip even stomp als links (r10, r11 B; "smoother", "rechts is de punt puntiger"). `starmie/af/` = r11 B; overzichtsvel bijgewerkt.

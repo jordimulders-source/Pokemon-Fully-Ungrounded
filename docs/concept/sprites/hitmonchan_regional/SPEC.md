@@ -89,3 +89,4 @@ AVOID: separate ice cubes glued or stuck onto the hands, oversized blocks, a dar
 - ek3: linkeroog = model (puntje rechts (32,21) + pupil boven navy (31,20)); optie kuifrand-diagonaal (28,20) niet gezet. Ter beoordeling bij Jordi.
 - Jordi over ek3: "hierzo nog iets duidelijker onderscheid tussen schouder en arm" (`jordi/krabbel_ek3.png`, groene ^ boven op de wachtkubus).
 - ek4: ^-lijn schouder↔kubus uit het model teruggezet (4 px: (47,27),(44,28),(43,29),(42,30)). Ter beoordeling bij Jordi.
+- **Af (Jordi, 27 nov): "nu is die af"** → `af/hitmonchan_regional.png` (= ek4), op het overzichtsvel. Type staat op Ice (puur Ice of Ice/Fighting nog niet besproken).

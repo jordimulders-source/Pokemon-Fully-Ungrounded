@@ -3638,3 +3638,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.870] - Regionale Hitmonchan: frontsprite-kandidaat + eindkeuring (27 nov)
 - Gemini r3 (uppercut, uitgehakt ijs) overgenomen: gezicht 1-op-1 op modelgrootte (Jordi: "de ogen zijn het belangrijkst"), rest ±76 %, 7 kleuren. Eindkeuring ek1 PASS (`hitmonchan_regional/eindkeuring/ek1.png`). Les in `GEMINI.md`.
+
+### [v0.0.871] - Regionale Hitmonchan: frontsprite af (27 nov)
+- Jordi: "nu is die af". `hitmonchan_regional/af/hitmonchan_regional.png` (= ek4: rechte lijnen nagemeten, linkeroog-puntje uit het model, ^-lijn schouder↔kubus terug), op het overzichtsvel bij Regional forms. Stand van zaken in CLAUDE.md bijgewerkt (110 frontsprites).

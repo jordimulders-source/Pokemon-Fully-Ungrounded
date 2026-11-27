@@ -7,3 +7,4 @@ Lijn: zie `../fase2/SPEC.md`. Jordi (27 nov): "ja een kuiken met een enorme kop 
 - **Jordi (27 nov) over r1 + swaps:** "De snavel zelf mag wat meer van steen, daarnaast zijn de tinten allemaal te vergelijkbaar waardoor het meer op een game boy color sprite lijkt". Kleur/oog nog niet gekozen; r2 = rampen verder uit elkaar + snavelvarianten (kleur / facetten) + oog B en E.
 - **Jordi (27 nov):** "het silhouet/de vorm is verder uitstekend" (r1-silhouet en vorm bevroren).
 - **Oog gekozen (Jordi, 27 nov): "oog d"** (`sprite_r1/oog_D.png`, Pidgeot-oog met glans).
+- **Jordi (27 nov) over r2:** "het probleem is dat het gezicht telkens dezelfde kleur krijgt als de rest van het lichaam" → r3: gezicht eigen kleurgroep (lichtbruin als model / roest-tan als fase 2-kop), snavel a en c.

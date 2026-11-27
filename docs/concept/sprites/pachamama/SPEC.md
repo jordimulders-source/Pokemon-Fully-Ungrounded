@@ -49,3 +49,4 @@
 - Jordi over r3 (27 nov): "Het klopt nog steeds niet met het model he". Claude (sprite naast model): grootste verschil in de romp: zwarte binnenlijnen van het model (omtrek armen, plooilijn, kaplijnen) ontbreken, vlakken vlekkerig; rechterarm onleesbaar → r4.
 - Jordi (27 nov): "Het hele gelaat lijkt verveeld" → r4: wenkbrauw los van het oog, oog hoger/groter met lichtpixel, onderste gezichtshelft op modelhelderheid.
 - Jordi (27 nov): "mogelijk is het gezicht nog niet in verhouding" → gezicht was 1,20× breed en 1,28× hoog vergroot; r4: gelijk in beide richtingen.
+- **r4 (model r7)** (`sprite_r7model/r4/`): gezicht gelijk 1,28×, overlay op model klopt; hoofd v1 (wenkbrauw modelplek) en v2 (wenkbrauw hoger, licht ertussen); zwarte binnenlijnen terug maar rafelig, romp nog vlekkerig, rechter schaduwband bruin i.p.v. donkerrood. Hoofd naar Jordi ter keuze; romp nog niet goed.

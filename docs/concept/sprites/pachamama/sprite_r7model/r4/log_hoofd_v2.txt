@@ -1,0 +1,12 @@
+ 121  gezicht: tint uit model
+  14  gezicht: vlakje <3 px -> buurtint
+  19  lijn gezicht-kap (zwart)
+  11  lijn mond (∩)
+   3  lijn neus R
+   2  lijn neusbasis
+   3  lijn wang L
+   4  lijn wang R
+   2  onderooglijn R (model, zacht in tint 3)
+  35  oog/wenkbrauw variant 2
+  71  zone: kale reductie (kaprand/omlijning)
+hoofd: gewijzigd t.o.v. r3 190

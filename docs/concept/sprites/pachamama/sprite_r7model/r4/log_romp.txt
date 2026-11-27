@@ -1,0 +1,7 @@
+   6  dunne modellijn -> donkerste eigen tint
+   6  rafel -> meerderheid
+ 179  vlak: modelkleur
+ 100  vlakje <3 px -> buurtint
+  17  zwart stompje <=2 cellen -> buurtint
+ 126  zwarte modellijn (dik, zwart in model)
+romp: gewijzigd 285

@@ -3544,3 +3544,62 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Fase 2 van de sneeuwmonster-lijn (Ice/Fire): groter, ruige sneeuwvacht met armen, houten saunaemmer op de kop, tevreden dichte ogen, twee grotere gloeiende stenen op de knoopplekken (Jordi: houten saunaemmer, twee grotere stenen, groter met armen, tevreden/ontspannen).
 - Model: Gemini r1a met de ruwe donkere gloeistenen van r3a erop geplakt (70 px, lager onder de baard). Prompts en rondes in `docs/concept/sprites/sneeuwmonster_fase2/gemini/PROMPTS.md`.
 - Frontsprite `docs/concept/sprites/sneeuwmonster_fase2/af/sneeuwmonster2.png` (+ `_8x`, 48×56 px, 16 kleuren): kale reductie, golvende mond, doorlopende duignaden, eindkeuring Dragonfly Cave (lijntint en sneeuwtinten gelijk aan fase 1), ooglid gebogen, stenen met grijze facetten en gloed in scheuren en rand (variant A), rechte randen vloeiender naar het model. Op het overzichtsvel. Naam open.
+
+### [v0.0.854] - Hoatzin geschrapt, nieuwe Poison-lijn gezocht (26 nov)
+- Hoatzin geschrapt voor nu (Jordi). Nieuw: een originele Poison-lijn; bestaande ideeën "niet overtuigend genoeg". Nieuwe voorstellen (Chinchorro-mummie, curare-liaan, kwik-blob, zombieschimmel, gifbeker) voorgelegd; nog open. TODO, IDEEEN en stand van zaken bijgewerkt.
+- Ronde 3 (niet-dieren/planten) voorgelegd; Jordi kiest kwik als beste idee, gasmasker kan (maar doet denken aan Pokémon Clover); hoatzin misschien toch, met plaagmasker; eerst overleggen.
+- Hoatzin-lijn: Jordi's eisen genoteerd in IDEEEN.md (2 fases, kuiken → snavelmasker, Poison/Dark, zuur op de vleugels, rood oog, blauw in het masker, niet stocky, simpel palet).
+- Hoatzin-lijn: antwoorden van Jordi + postuurreferentie (andermans Hoatzirit) toegevoegd.
+- Hoatzin-lijn: `sprites/hoatzin/SPEC.md` met alle besluiten en Gemini-prompt fase 2 v1.
+- Hoatzin fase 2: Gemini r1 opgeslagen met Jordi's feedback.
+- Hoatzin fase 2: keuzes 1a/3c, prompt v2.
+- Hoatzin fase 2: Gemini r2 + feedback.
+- Hoatzin fase 2: Gemini r3 + feedback, prompt v3 (kop = één doorlopend masker zonder aansluitingslijn).
+- Hoatzin fase 2: Gemini r4 + feedback; voorstel kop apart.
+- Hoatzin fase 2: r5 + prompt v4 (buikteken alleen bladen + stip).
+- Hoatzin fase 2: Gemini r6 + feedback.
+- Hoatzin fase 2: model = r6 + r4-hoofd (3 maten) en teken in perspectief (4 varianten).
+- Hoatzin fase 2: sprite r1 (maker).
+- Hoatzin fase 2: sprite r2–r5 (keurder BIJNA → reparaties, oog, DC-eindkeuring); r5 naar Jordi.
+- Hoatzin fase 2: sprite r6–r9 (snavel, kuif K1, teken halverwege, linkervoet, eindkeuring); Jordi over r7: "uitstekend".
+- Hoatzin fase 2: kleurrondes r10–r12 (volume, minder donker).
+
+### [v0.0.855] - Hoatzin fase 2: frontsprite af (26 nov)
+- Originele Poison-lijn = hoatzin-lijn (Poison/Dark, kuiken → pestmasker-hoatzin). Fase 2 frontsprite af: `docs/concept/sprites/hoatzin/af/hoatzin_fase2.png` (= r13; model Gemini r6 + hoofd r4, kuif K1, teken halverwege, kleurronde naar Murkrow, twee DC-eindkeuringen). Op het overzichtsvel (New). Naam open.
+- Kuiken (fase 1) nog te doen: `hoatzin/OVERDRACHT_KUIKEN.md`.
+- Les in GEMINI.md: veerlijnen in een donker vlak vinden via de fractie zeer donkere modelpixels.
+
+### [v0.0.856] - Originele Ground-lijn: kandidaten verzameld (26 nov)
+- `IDEEEN.md`: Jordi merkt op dat een originele Ground-lijn ontbreekt; bestaande kandidaten uit FAKEMON_PITCH op een rij. Keuze open.
+- Fossielen: Jordi denkt aan Glyptodon; lijst met andere uitgestorven dieren in IDEEEN; zandloper "tof idee".
+- Terreurvogel en glyptodon komen sowieso (regionale fossielen, in TODO); zandloper-lijn wordt gebouwd, voorstellen voor de ontwikkeling in IDEEEN.
+- Zandloper-lijn: Jordi wil grotere sprongen (zandloper zelf / zand eruit / systeem); volgordevoorstellen in IDEEEN.
+- Zandloper fase 3: twee Gemini-prompts (systeem / zand vrij) in `sprites/zandloper/fase3/gemini/PROMPTS.md`.
+- Zandloper fase 3: r1 binnen (Jordi kiest idee 1, te menselijk en te veel detail), prompt r2.
+- Zandloper: sparren over het wezen (Psychic); voorstellen in IDEEEN.
+- Zandloper: opbouw besloten (zandloper met ogen → brein breekt uit → djinn uit geopende zandloper); prompt r3 met varianten brein als hoofd/core.
+- Zandloper fase 3: r3 binnen (nog geen djinn), prompt r4 met djinn-kenmerken.
+- Zandloper fase 3: r4 "begint ergens op te lijken"; prompt r5 (glazen boeien, zand uit het midden).
+- Zandloper fase 3: r5 "best prima design", verkleiningstest, prompt r6 (versimpeld).
+- Zandloper fase 3: r6 minder; prompt r7 (r5 + glaswerk verbonden met het lijf, vlakke kleuren).
+- Zandloper fase 3: r7 ook niet beter; prompt r8 (r5 + alleen het glaswerk); les in GEMINI.md.
+- Zandloper fase 3: r8 bovenkant goed, onderkant fout; prompt r9 (r8 als bijlage, alleen de onderkant).
+- Zandloper fase 3: r9 fout (tweede staart); prompt r10: onderkant als los onderdeel, daarna samenvoegen met r8.
+- Zandloper fase 3: onderkant r10 los gemaakt en samengevoegd met r8 (r11).
+- Zandloper fase 3: r11 slordig; prompt r12 (collage als bijlage, Gemini tekent hem als één geheel).
+- Zandloper fase 3: besluiten model in `sprites/zandloper/fase3/SPEC.md` (r5 + barst midden + glaswerk uit r7/r8; brein open).
+
+### [v0.0.857] - Zandloper-lijn: zand-djinn (fase 3) frontsprite af (27 nov)
+- Nieuwe originele Ground/Psychic-lijn: zandloper met ogen → brein breekt uit → zand-djinn. Fase 3 frontsprite af in `docs/concept/sprites/zandloper/fase3/af/` (model Gemini r5 + glas en ogen uit r8, barst uit r10; 11 makerrondes + DC-eindkeuring PASS). Op het overzichtsvel. Besluiten in `zandloper/fase3/SPEC.md`.
+- Terreurvogel en glyptodon als regionale fossielen in TODO.
+- Lessen: versimpelwoorden in Gemini-prompts maken het lijf slap; geen ruwe plakversie tonen; "rustig" is geen pluspunt.
+### [v0.0.858] - Guaraná fase 2: frontsprite af (26–27 nov)
+- Ontwerp via Gemini r1–r10 (`docs/concept/sprites/guarana_fase2/gemini/`): vertakte liaan met drie trossen (Jordi), getwijnde liaan + echt guaraná-blad (keuze 1 en 3), minder/grotere ogen, gesloten vruchten erbij, hangende trossen met peervormige vruchten (r9/r10, "meeste guarana"). Gemini telde steeds te laag ("twice as many" deed niets); model = r10 met elke tros verschoven nog eens erachter geplakt (`plak/dubbel.py`).
+- Sprite: 16 makerrondes + DC-eindkeuring (PASS, 57 px). Belangrijkste stappen: volume en schaduw (r3), gladde randen (r4), pupillen gevarieerd (r5), afwerking naar fase 1-palet en -verhoudingen (r6–r8), ronde trosranden (r10), ronde oogvruchten i.p.v. vierkanten (r13, bewaard in `bewaard_r13/`), trossen ±1,6× groter mogen over blad/takken vallen (r14, Jordi), fase 1-oog en precies vier ogen naar linksonder (r15–r16). Palet = fase 1 (12 kleuren).
+- `docs/concept/sprites/guarana_fase2/af/guarana_fase2.png` (+ `normal.pal`, 8×); op het overzichtsvel (sectie New). Lijn af; namen open. Vaste regels en alle citaten in `guarana_fase2/SPEC.md`; lessen in `docs/lessen/GEMINI.md`.
+
+### [v0.0.x] - Sauna-yeti (sneeuwmonster fase 3) frontsprite af (27 nov)
+- Eindvorm van de sneeuwmonster-lijn (Ice/Fire): grote, zittende, onderuitgezakte yeti van sneeuw met de armen over een onzichtbare leuning, halfopen relaxte ogen, de houten emmer op de kop, gloeiende vulkanische stenen op schouders, buik en knieën (Jordi: "heel relaxte tevreden vriendelijke yeti", "groot en gevaarlijk qua postuur").
+- Model: Gemini s3b (pose via een posebijlage, daarna lengte en ogen bijgestuurd). Prompts en rondes in `docs/concept/sprites/sneeuwmonster_fase3/gemini/PROMPTS.md`.
+- Frontsprite `docs/concept/sprites/sneeuwmonster_fase3/af/sauna_yeti.png` (+ `_8x`, 62×49 px, 16 kleuren): kale reductie r2 + Jordi's punten (minder rechte lijnen, buiksteen, dikkere band), eindkeuring (houttinten per pixel, gezichtshuid in modeltint met licht en schaduw, binnenlijnen niet zwart, pupil naar binnen). Op het overzichtsvel. Lijn af; naam open.
+- Nieuwe vaste regel (Jordi): "als je iets 'rustig' vindt is dat een ander woord voor hertekend naar pixelblur en dus compleet verknald" (`CLAUDE.md`, `SPRITE_KERN.md`).

@@ -3608,3 +3608,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.861] - Regionale Hitmonlee: keuzes + Gemini-prompt r1 (27 nov)
 - Hitmonlee regional: puur Fire, gloeiend geblazen glas, omhaalpose, geen bal, knipoog naar "de man van glas" (Jordi). Prompt en besluiten in `docs/concept/sprites/hitmonlee_regional/SPEC.md`.
+
+### [v0.0.862] - Regionale Hitmonlee: Gemini r1 + prompt r2 (27 nov)
+- r1 opgeslagen (`hitmonlee_regional/gemini/r1.png`); Jordi: pose klopt niet, nog niet glasachtig. Prompt r2 in de SPEC (echte omhaal liggend in de lucht, glas doorschijnend met gloeiende kern).

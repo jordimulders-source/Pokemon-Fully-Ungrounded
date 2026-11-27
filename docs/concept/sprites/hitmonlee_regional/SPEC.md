@@ -20,3 +20,28 @@ No ball. No football clothes, no shirt, no shoes, no patterns: the football is o
 No flames, no sparks, no glow halo, no heat haze, no effects, no ground, no shadow.
 AVOID: a human in a glass costume, a glass statue on a pedestal, a plush/Neopets look.
 ```
+
+## r1 (`gemini/r1.png`)
+- Jordi: "pose klopt niet en hij is nog niet echt glas achtig".
+- Claude: staande hoge trap i.p.v. omhaal (lijf rechtop); materiaal leest als ondoorzichtig oranje plastic/klei; beenringen beige (lezen als verband, niet als glas).
+
+## Gemini-prompt r2 (nieuw gesprek, zonder bijlage)
+```
+Design a regional form of the Pokémon HITMONLEE, as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64 pixels, max 16 colors, clean dark outline, white background.
+
+What it is: Hitmonlee made entirely of hand-blown glass that is still glowing hot, fresh out of the glassblower's furnace. It must clearly read as GLASS, not plastic or clay:
+- translucent: the far arm and far leg are faintly visible through the torso;
+- the glow comes from inside: a bright yellow-white hot core, turning orange and then deep red toward the edges and the thin ends;
+- sharp, small white glossy highlights like on a glass bottle, and a thin bright rim of light along the edges;
+- smooth rounded swellings and pinched thin necks at the joints, like blown glass.
+The ribbed coils on the legs are ribbed glass in the same glowing colors (no beige, no bandages). Everything is the same glowing glass, no other materials.
+It looks fragile, a nod to the football saying "the man of glass" for a player who is always injured. Type: Fire.
+
+Anatomy: keep Hitmonlee's body plan exactly: an egg-shaped torso with the eyes directly on it (no separate head, no neck), thin arms with big hands, very long thin ribbed legs with big flat feet. Two arms, two legs.
+
+Pose: a football BICYCLE KICK (overhead scissor kick), NOT a standing high kick. The body is airborne and almost horizontal, lying back in the air with its back toward the ground, the top of the torso pointing down-left. Both legs are up in the air in a scissor motion: the kicking leg swings up and over above the torso with the foot at the top of the sprite, the other leg drops down behind it. Both arms are spread out toward the ground to break the fall. Nothing touches the ground. Facing 3/4 to the left. Compact composition that fits a square sprite.
+
+No ball. No football clothes, no shirt, no shoes, no patterns: the football is only in the pose.
+No flames, no sparks, no glow halo around the body, no heat haze, no effects, no ground, no shadow.
+AVOID: orange plastic or clay look, opaque body, a human in a glass costume, a glass statue on a pedestal, a plush/Neopets look.
+```

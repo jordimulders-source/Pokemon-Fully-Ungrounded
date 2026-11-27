@@ -112,3 +112,5 @@ Compact silhouette that fits a square.
 
 No effects, no glow, no sparkles, no ground or shadow under it. AVOID: a turtle, Shieldon or Bastiodon, a modern armadillo, Dunsparce, a plush toy, Neopets style.
 ```
+
+**Jordi over r6 (`r6.png`, gele stekel met beige band):** "prima, alleen is het nu wel voldoende een 2e fase?" Vergelijking: `vergelijk_fase1_r6.png`.

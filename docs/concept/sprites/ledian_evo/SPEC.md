@@ -14,3 +14,8 @@ Lijn: Ledyba → Ledian → deze. Naam open. Ideeën en alle citaten: `docs/conc
 ## Model (bevroren)
 - `gemini/r6.png` (1024×1024; natief raster ±66×66, pixel ±10,2 px, ±9 kleuren). Kijkt naar links (geen spiegeling).
 - Sprite = verkleining van het model zelf (66 → 64: 2 rijen + 2 kolommen schrappen, Gengas-methode `gengas/model/schrap.py`; nooit uiteinden/curves/voelsprieten/vuisten schrappen). Mond blijft zoals in het model.
+
+## Kleur (Jordi, 27 nov)
+- Op r1: "ja houd het kleurpatroon van ledian maar aan, mooi design verder"
+- Gevraagd: patroon overnemen (1) of alleen de tinten van Ledian met de verdeling van r6 (2)? Jordi: "2, maar mag net iets roder"
+- Dus: verdeling van r6 blijft; tinten van de Gen 3-Ledian (`graphics/pokemon/ledian/normal_gba.pal`), het rood net iets roder dan Ledians rood-oranje.

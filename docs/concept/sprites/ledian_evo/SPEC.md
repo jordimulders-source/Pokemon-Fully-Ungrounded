@@ -19,3 +19,4 @@ Lijn: Ledyba → Ledian → deze. Naam open. Ideeën en alle citaten: `docs/conc
 - Op r1: "ja houd het kleurpatroon van ledian maar aan, mooi design verder"
 - Gevraagd: patroon overnemen (1) of alleen de tinten van Ledian met de verdeling van r6 (2)? Jordi: "2, maar mag net iets roder"
 - Dus: verdeling van r6 blijft; tinten van de Gen 3-Ledian (`graphics/pokemon/ledian/normal_gba.pal`), het rood net iets roder dan Ledians rood-oranje.
+- Op r2 (roodvarianten a/b/c, perzik-lichttint): "ik vind c wel tof, verder helemaal goed" → rood c (−11°), perzik blijft.

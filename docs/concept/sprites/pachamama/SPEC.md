@@ -51,3 +51,4 @@
 - Jordi (27 nov): "mogelijk is het gezicht nog niet in verhouding" → gezicht was 1,20× breed en 1,28× hoog vergroot; r4: gelijk in beide richtingen.
 - **r4 (model r7)** (`sprite_r7model/r4/`): gezicht gelijk 1,28×, overlay op model klopt; hoofd v1 (wenkbrauw modelplek) en v2 (wenkbrauw hoger, licht ertussen); zwarte binnenlijnen terug maar rafelig, romp nog vlekkerig, rechter schaduwband bruin i.p.v. donkerrood. Hoofd naar Jordi ter keuze; romp nog niet goed.
 - Jordi over r4 (27 nov): "Nu lijkt ie verdrietig door de mond vorm en ogen" → r5: 4 hoofdvarianten (pupil recht vooruit; ∩ zonder uitlopende poten; ∩-bovenlijn zachter; wenkbrauw neutraal).
+- **r5** (`sprite_r7model/r5/`): hoofdvarianten A (pupil midden), B (A + poten recht omlaag), C (A + ∩-bovenlijn tint 3), D (A+B + neutrale wenkbrauw). Naar Jordi ter keuze.

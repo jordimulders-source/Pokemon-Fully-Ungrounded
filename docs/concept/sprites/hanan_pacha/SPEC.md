@@ -56,3 +56,4 @@ Trio van de drie Inca-werelden (zie `docs/concept/POKEMON.md` → Legendaries). 
 - **Sprite r8** (`sprite_r8/`): klauwen 1-op-1 van Fearow / Zapdos / Noctowl (_gba), omgekleurd naar C.
 - Jordi over r8: "fearow goed, maar nu is het 2 keer dezelfde klauw" → r9: verre klauw gespiegeld/hoger/schaduwtint (varianten).
 - **Sprite r9** (`sprite_r9/`): verre klauw 1 px hoger, schaduwtint, achter dij/nabije klauw; A gespiegeld, B niet, C Fearow frame 2-voet.
+- Jordi over r9: "doe maar de onderste, ze sluiten nog niet super aan, maar dat kan in het vervolg nog, eindkeuring, let erop dat er een blokje van 3 pixels zwart in het lichaam is ontstaan" → r9 C + eindkeuring.

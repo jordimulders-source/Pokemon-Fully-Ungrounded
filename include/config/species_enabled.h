@@ -133,7 +133,7 @@
 #define P_FAMILY_TOTODILE                FALSE // FU: niet in de dex (was P_GEN_2_POKEMON)
 #define P_FAMILY_SENTRET                 FALSE // FU: niet in de dex (was P_GEN_2_POKEMON)
 #define P_FAMILY_HOOTHOOT                P_GEN_2_POKEMON
-#define P_FAMILY_LEDYBA                  P_GEN_2_POKEMON // FU: terug (Jordi, 27 nov; Ledian krijgt een Bug/Cosmic-evolutie)
+#define P_FAMILY_LEDYBA                  FALSE // FU: niet in de dex (was P_GEN_2_POKEMON)
 #define P_FAMILY_SPINARAK                P_GEN_2_POKEMON
 #define P_FAMILY_CHINCHOU                P_GEN_2_POKEMON
 #define P_FAMILY_TOGEPI                  FALSE // FU: niet in de dex (was P_GEN_2_POKEMON)

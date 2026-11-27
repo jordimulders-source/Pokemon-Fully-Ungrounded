@@ -3654,3 +3654,5 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Jordi: "zeker, nice". `docs/concept/sprites/ledian_evo/af/ledian_evo.png` (+ 8×) = eindkeuring; op het overzichtsvel (Evolutions of existing Pokémon). Naam open; Ledyba-lijn moet terug in de dex. TODO-brainstorm Ledian weg.
 ### [v0.0.877] - Ledyba-lijn terug in de dex (27 nov)
 - Jordi: "ledyba lijn moet zeker terug". `P_FAMILY_LEDYBA` weer aan (`include/config/species_enabled.h`); `DEX_IN_ROM.md` en `IDEEEN.md` bijgewerkt. ROM niet gebouwd (Jordi: "je hoeft de rom nog niet te bouwen").
+### [v0.0.878] - Ledyba-lijn: alleen genoteerd (27 nov)
+- Jordi: "gewoon noteren dat ze terug erin komen en dat pushen". `P_FAMILY_LEDYBA` terug op `FALSE`; in `DEX_IN_ROM.md` staat dat de lijn terugkomt.

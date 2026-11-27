@@ -1,0 +1,134 @@
+(14,0) 0 -> A  buitenlijn lichtkant -> A
+(15,0) 0 -> A  buitenlijn lichtkant -> A
+(35,0) 0 -> A  buitenlijn lichtkant -> A
+(36,0) 0 -> A  buitenlijn lichtkant -> A
+(11,4) 0 -> A  buitenlijn lichtkant -> A
+(12,5) 0 -> A  buitenlijn lichtkant -> A
+(13,6) 0 -> A  buitenlijn lichtkant -> A
+(24,15) 0 -> A  handmatig: onderlijn rechterhoorn boven het oor
+(25,15) 0 -> A  handmatig: onderlijn rechterhoorn boven het oor
+(26,15) 0 -> A  handmatig: onderlijn rechterhoorn boven het oor
+(15,16) 0 -> A  buitenlijn lichtkant -> A
+(24,16) 0 -> K  buitenlijn lichtkant -> K
+(25,16) 0 -> K  binnenlijn: vacht over vacht (oor/kaak)
+(26,16) 0 -> K  binnenlijn: vacht over vacht (oor/kaak)
+(27,16) 0 -> K  binnenlijn: vacht over vacht (oor/kaak)
+(28,16) 0 -> K  buitenlijn lichtkant -> K
+(29,16) 0 -> K  buitenlijn lichtkant -> K
+(10,17) 0 -> K  buitenlijn lichtkant -> K
+(15,17) 0 -> A  handmatig: rechterlijn linkerhoorn waar hij over de kop valt
+(24,17) 0 -> K  binnenlijn: vacht over vacht (oor/kaak)
+(22,18) M -> K  open rand dicht: kop tussen hoorn en oor: M op de buitenrand
+(20,19) 0 -> K  binnenlijn: vacht over vacht (oor/kaak)
+(21,19) 0 -> K  buitenlijn lichtkant -> K
+(11,22) 0 -> K  binnenlijn: vacht over vacht (oor/kaak)
+(11,23) 0 -> K  buitenlijn lichtkant -> K
+(10,25) M -> K  open rand dicht: snuitrug: M op de buitenrand
+(25,25) 0 -> K  handmatig: bovenlijn manen achter de kop (was als vacht geteld)
+(31,25) 0 -> K  buitenlijn lichtkant -> K
+(32,25) 0 -> K  buitenlijn lichtkant -> K
+(27,26) 0 -> K  buitenlijn lichtkant -> K
+(33,26) 0 -> K  buitenlijn lichtkant -> K
+(34,26) 0 -> K  buitenlijn lichtkant -> K
+(20,27) 0 -> K  binnenlijn: vacht over vacht (oor/kaak)
+(17,29) 0 -> K  binnenlijn: manen/franje over hals, borst of lijf
+(35,29) 0 -> K  handmatig: manenpunt
+(36,29) 0 -> K  handmatig: schoftlijn
+(15,30) 0 -> K  buitenlijn lichtkant -> K
+(18,30) 0 -> K  binnenlijn: manen/franje over hals, borst of lijf
+(32,30) 0 -> K  binnenlijn: manen/franje over hals, borst of lijf
+(33,30) 0 -> K  binnenlijn: manen/franje over hals, borst of lijf
+(34,30) 0 -> K  binnenlijn: manen/franje over hals, borst of lijf
+(37,30) 0 -> K  handmatig: schoftlijn
+(38,30) 0 -> K  buitenlijn lichtkant -> K
+(15,31) 0 -> K  buitenlijn lichtkant -> K
+(18,31) 0 -> K  binnenlijn: manen/franje over hals, borst of lijf
+(31,31) 0 -> K  binnenlijn: manen/franje over hals, borst of lijf
+(34,31) 0 -> K  binnenlijn: vacht over vacht (oor/kaak)
+(36,31) 0 -> K  handmatig: schoftlijn
+(37,31) 0 -> K  binnenlijn: vacht over vacht (oor/kaak)
+(39,31) 0 -> K  buitenlijn lichtkant -> K
+(18,32) 0 -> K  binnenlijn: manen/franje over hals, borst of lijf
+(32,32) 0 -> K  binnenlijn: manen/franje over hals, borst of lijf
+(47,32) 0 -> K  buitenlijn lichtkant -> K
+(48,32) 0 -> K  buitenlijn lichtkant -> K
+(18,33) 0 -> K  binnenlijn: manen/franje over hals, borst of lijf
+(32,33) 0 -> K  binnenlijn: manen/franje over hals, borst of lijf
+(49,33) 0 -> K  buitenlijn lichtkant -> K
+(50,33) 0 -> K  buitenlijn lichtkant -> K
+(18,34) 0 -> K  binnenlijn: manen/franje over hals, borst of lijf
+(33,34) 0 -> K  binnenlijn: manen/franje over hals, borst of lijf
+(51,34) 0 -> K  buitenlijn lichtkant -> K
+(52,34) 0 -> K  buitenlijn lichtkant -> K
+(14,35) 0 -> K  buitenlijn lichtkant -> K
+(19,35) 0 -> K  binnenlijn: manen/franje over hals, borst of lijf
+(21,35) 0 -> K  binnenlijn: manen/franje over hals, borst of lijf
+(33,35) 0 -> K  binnenlijn: manen/franje over hals, borst of lijf
+(53,35) 0 -> K  buitenlijn lichtkant -> K
+(15,36) 0 -> K  buitenlijn lichtkant -> K
+(19,36) 0 -> K  binnenlijn: manen/franje over hals, borst of lijf
+(33,36) 0 -> K  binnenlijn: manen/franje over hals, borst of lijf
+(16,37) 0 -> K  buitenlijn lichtkant -> K
+(19,37) 0 -> K  binnenlijn: manen/franje over hals, borst of lijf
+(32,37) 0 -> K  binnenlijn: manen/franje over hals, borst of lijf
+(17,38) 0 -> K  binnenlijn: manen/franje over hals, borst of lijf
+(18,38) 0 -> K  binnenlijn: manen/franje over hals, borst of lijf
+(19,38) 0 -> K  binnenlijn: vacht over vacht (oor/kaak)
+(22,38) 0 -> K  binnenlijn: manen/franje over hals, borst of lijf
+(23,38) 0 -> K  binnenlijn: manen/franje over hals, borst of lijf
+(32,38) 0 -> K  binnenlijn: manen/franje over hals, borst of lijf
+(15,39) 0 -> K  buitenlijn lichtkant -> K
+(20,39) 0 -> K  binnenlijn: vacht over vacht (oor/kaak)
+(24,39) 0 -> K  binnenlijn: manen/franje over hals, borst of lijf
+(27,39) 0 -> K  binnenlijn: manen/franje over hals, borst of lijf
+(31,39) 0 -> K  binnenlijn: manen/franje over hals, borst of lijf
+(15,40) 0 -> K  buitenlijn lichtkant -> K
+(25,40) 0 -> K  binnenlijn: manen/franje over hals, borst of lijf
+(26,40) 0 -> K  binnenlijn: manen/franje over hals, borst of lijf
+(30,40) 0 -> K  binnenlijn: manen/franje over hals, borst of lijf
+(16,41) 0 -> K  buitenlijn lichtkant -> K
+(26,41) 0 -> K  binnenlijn: vacht over vacht (oor/kaak)
+(28,41) 0 -> K  binnenlijn: manen/franje over hals, borst of lijf
+(29,41) 0 -> K  binnenlijn: manen/franje over hals, borst of lijf
+(16,42) 0 -> K  buitenlijn lichtkant -> K
+(17,43) 0 -> K  buitenlijn lichtkant -> K
+(22,47) 0 -> K  buitenlijn lichtkant -> K
+(22,48) 0 -> K  buitenlijn lichtkant -> K
+(29,48) 0 -> K  buitenlijn lichtkant -> K
+(22,49) 0 -> K  buitenlijn lichtkant -> K
+(29,49) 0 -> K  buitenlijn lichtkant -> K
+(23,50) 0 -> K  buitenlijn lichtkant -> K
+(23,51) 0 -> K  buitenlijn lichtkant -> K
+(51,51) 0 -> K  buitenlijn lichtkant -> K
+(23,52) 0 -> K  buitenlijn lichtkant -> K
+(44,52) 0 -> K  buitenlijn lichtkant -> K
+(51,52) 0 -> K  buitenlijn lichtkant -> K
+(23,53) 0 -> K  buitenlijn lichtkant -> K
+(44,53) 0 -> K  buitenlijn lichtkant -> K
+(52,53) 0 -> K  buitenlijn lichtkant -> K
+(23,54) 0 -> K  buitenlijn lichtkant -> K
+(44,54) 0 -> K  buitenlijn lichtkant -> K
+(23,55) 0 -> K  buitenlijn lichtkant -> K
+(44,55) 0 -> K  buitenlijn lichtkant -> K
+(23,56) 0 -> K  buitenlijn lichtkant -> K
+(43,56) 0 -> K  buitenlijn lichtkant -> K
+(23,57) 0 -> K  buitenlijn lichtkant -> K
+(43,57) 0 -> K  buitenlijn lichtkant -> K
+(23,58) 0 -> K  buitenlijn lichtkant -> K
+(30,58) 0 -> K  buitenlijn lichtkant -> K
+(43,58) 0 -> K  buitenlijn lichtkant -> K
+(52,58) 0 -> K  buitenlijn lichtkant -> K
+(22,59) 0 -> K  buitenlijn lichtkant -> K
+(30,59) 0 -> K  buitenlijn lichtkant -> K
+(42,59) 0 -> K  buitenlijn lichtkant -> K
+(43,59) 0 -> K  binnenlijn: vacht over vacht (oor/kaak)
+(44,59) 0 -> K  binnenlijn: vacht over vacht (oor/kaak)
+(52,59) 0 -> K  buitenlijn lichtkant -> K
+(22,60) 0 -> K  buitenlijn lichtkant -> K
+(30,60) 0 -> K  buitenlijn lichtkant -> K
+(52,60) 0 -> K  buitenlijn lichtkant -> K
+(21,61) 0 -> K  buitenlijn lichtkant -> K
+(24,61) 0 -> K  binnenlijn: vacht over vacht (oor/kaak)
+(29,61) 0 -> K  buitenlijn lichtkant -> K
+(54,61) 0 -> K  binnenlijn: vacht over vacht (oor/kaak)
+(31,62) 0 -> K  binnenlijn: vacht over vacht (oor/kaak)

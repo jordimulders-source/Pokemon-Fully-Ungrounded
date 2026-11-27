@@ -3877,3 +3877,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.949] - Proefserie: Hexpress-rug p4 (27 nov)
 - Jordi: "heb je al benoemd dat de groene rook de achterkant moet bedekken?" (nee) → prompt p4 met de groene rook over de achterkant en het gezicht in profiel rechts. Resultaat `graphics_proef/hexpress_rug_p4.png`, natief 60×43 (`nat_hexpress_rug_p4.png`): richting en gezicht kloppen, schroot en wielen grotendeels onder de rook; oordeel bij Jordi.
+
+### [v0.0.950] - Proefserie: rug-kandidaten ronde 2 (27 nov)
+- Jordi: "lichte afwijkingen zijn geen ramp, dus ja dit is beide prima". Maker-agent: `graphics_proef/kandidaat/sunperor_rug_v2.png` (p1 met open gaten + kop uit p3, zelfde 16-px raster, oude snavel weg, staf heel; 15 kleuren) en `hexpress_rug.png` (p4 in het frontpalet, x 2–61 / y 21–63, streep linksonder en één ruispixel weg; 14 kleuren). Vergelijking `vergelijking_r2.png`, script `gereedschap/bouw_r2.py`.

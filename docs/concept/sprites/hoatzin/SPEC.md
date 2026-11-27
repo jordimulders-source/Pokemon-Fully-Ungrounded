@@ -216,3 +216,30 @@ AVOID: feathered wings with vanes; hands or fingers; blade-like wings; spines, h
   Jordi: "linkervleugel klopt toch niet, dat zie je toch" (achterste vleugel steekt als klauw voor de borst uit).
 - **r11** (`gemini/fase1_r11.png`, bijsturen r10: linkervleugel achter het lijf). Jordi: "is ook niet wat ik bedoel".
 - Jordi bij `referenties/kuiken_5_pootlengte.png`: "kijk die foto dan / dat is toch anders" (over de vleugels).
+- Vleugels volgens foto 3 en 5 (Claude, na Jordi "kijk die foto dan"): lange kale arm, pennen als franje langs de achterrand die naar achteren/beneden wijst (geen waaier omhoog); voorste vleugel langs het lijf, achterste achter de rug omhoog.
+- **r12** (`gemini/fase1_r12.png`, bijsturen r11 met die beschrijving). Jordi: "nieuwe prompt from scratch, gaat weer fout". Voorste vleugel werd een losse derde "poot".
+
+## Prompt fase 1 (v5, Engels; nieuw gesprek from scratch, bijlage: foto 3 `kuiken_3_klimmend.webp`)
+Eigen toevoegingen Claude: zie v3; vleugelbeschrijving naar foto 3/5; "lies flat against the side of the body", "not a third leg".
+
+```
+Design an original Pokémon, drawn as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 colors, white background, no ground, no shadow, no effects, no objects. The whole creature fits inside the canvas with white margin on all sides; nothing is cut off.
+
+WHAT IT IS (most important): an uncanny, cryptid-like hoatzin chick (the chick of the Amazon "stinkbird"), based on the attached photo. It is NOT a normal bird. What makes it uncanny is its legs: they are far too long for its small body, longer than the body and head together, bare, thin and grey, with big grasping clawed toes.
+
+POSE: it stands a bit awkwardly and clumsily on those too-long legs, body turned 3/4 to the left, so the thin, strange-looking legs, the claws and the wings are clearly visible.
+
+WINGS (very important, exactly like the wings in the attached photo): no normal feathers. Each wing is a bare, dark grey arm, folded at the elbow. Along the whole back edge of the arm grows a fringe of thin, dark pin feathers (bare shafts without vanes), close together like the teeth of a comb, all pointing backward and downward and following the line of the arm. They do NOT stand up like a fan, a crest or a mohawk.
+- Near wing (right side of the image): folded and lying flat against the side of the body, its fringe hanging down over the lower body. It is part of the body's silhouette, not a separate limb, not a third leg.
+- Far wing (left side of the image): raised up behind the back, only the bent arm and part of its fringe visible above the body.
+
+BODY: a small, hunched body covered in short, smooth black down, with some yellowish tints only in the down. No spines or hair on the back.
+
+HEAD: a small round head with no crest. A hooked grey beak like a real hoatzin chick, closed, with no smile: the line between the upper and lower beak does not curve up. A dark round eye with a grey ring around it, a cold blank stare.
+
+COLORS: mostly black, some yellowish tints only in the down, grey beak, arms, legs and claws, dark pin feathers. Few colors, clean simple shading.
+
+MOOD: ugly in a Pokémon way, uncanny, a cryptid, something you don't trust. Simple, readable design, not complex.
+
+AVOID: feathered wings with vanes; pin feathers standing up like a fan or crest; a wing that looks like a third leg; hands or fingers; a crest; messy or scruffy feathers; a normal bird; a smile or a cute face; a branch or any object; a mask; a red eye; brown or chestnut; a fat or round belly; glow.
+```

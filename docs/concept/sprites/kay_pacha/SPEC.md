@@ -25,3 +25,4 @@ Prompt r1: `PROMPT.md`.
 - Jordi over r3: "als deze een masker krijgt en de versieringen die hij heeft wat simplistischer zijn dan is dat een prima design". → r6 = r3 als bijlage in een nieuw gesprek (`PROMPT_r6.md`).
 - Jordi: "en ipv blaadjes mos op de versiering".
 - r6 (`gemini/r6.webp`, `PROMPT_r6.md` + bijlage r3): Jordi: "het masker bedekt nu iets teveel".
+- Jordi: "en nog steeds teveel kleine details". Bijsturing r7 in hetzelfde gesprek.

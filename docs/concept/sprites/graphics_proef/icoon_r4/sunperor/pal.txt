@@ -1,0 +1,5 @@
+Sunperor r4 – iconPalIndex = 5 (pal5 ongewijzigd).
+Paletkeuze gewogen naar oppervlak (Lab-afstand frontkleur -> dichtstbijzijnde icoonkleur, x aantal frontpixels, gemiddeld):
+  pal0 19,9 | pal1 22,1 | pal2 19,0 | pal3 20,1 | pal4 21,4 | pal5 18,3 (beste)   (kandidaten index 1-14; zonder 14: pal5 21,1 ook beste)
+Geen enkel palet heeft donkerbruin; dichtstbij voor het lijf (front 2/3) is 14 (98,98,90), niet grijs 1 -> lijfvulling 14, zoals Honchkrow/Noctowl/Murkrow.
+Overig als r3 (pal.txt daar): rood 10, oranje 13, paars 11 / lila 12, goud 8, geel 9, bruin 6, snavel grijs 1, oogwit 3; omlijning 15 boven, 14 onder.

@@ -3923,3 +3923,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.964] - Proeficonen ronde 3 (27 nov)
 - Volledige Zapacha-route + recept per bouw: `graphics_proef/icoon_r3/{gumfish,sunperor}/` (17/17, vorm binnen de normen). Eigen oordeel Claude: Gumfish bruikbaar (lippen, oog, glans, vinnen; palet maakt hem zalmroze); Sunperor niet: kroon domineert, gezicht te klein, lijf grijs door pal5.
+
+### [v0.0.965] - Sunperor-icoon r4; iconen met dominant attribuut geparkeerd (27 nov)
+- `graphics_proef/icoon_r4/sunperor/`: kroon en kop apart geschaald, lijf idx 14 (pal5 heeft geen donkerbruin), gezicht ±8×6. Oordeel Claude: leest nog als paddenstoel, gezicht te klein (Xatu ±11×10). Gestopt met rondes (afspraak Jordi): soorten waarbij een attribuut de kop overheerst, hebben net als in de Zapacha-studie Jordi's krabbel voor het gezicht nodig. Compacte bouw (Gumfish) gaat wel zelfstandig.
+- Stand van zaken in CLAUDE.md bijgewerkt.

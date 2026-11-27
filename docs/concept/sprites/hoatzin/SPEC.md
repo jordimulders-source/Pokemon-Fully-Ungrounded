@@ -291,3 +291,4 @@ MOOD: ugly in a Pokémon way, uncanny, a cryptid, something you don't trust. Sim
 
 AVOID: feathers on the wings; a crest; a smile or a cute face; a branch or any object; a mask; a red eye; brown or chestnut; a normal bird; glow.
 ```
+- **r15** (`gemini/fase1_r15.png`, prompt v7 + bovenste vleugel). Jordi: "goede prompt weer" (sarcastisch; vleugels werden beige vleermuisvliezen met klauwen aan de punten, poten korter).

@@ -26,8 +26,21 @@ def diep0(mask,x,y):
     while all((x+a,y+b) in mask for a in range(-k,k+1) for b in range(-k,k+1)): k+=1
     return k
 class Vorm9(L.Vorm):
-    def __init__(s,N):
-        super().__init__(); s.N=N; s.vrij=snede(N); s.mask-=s.vrij; s.mask0=set(s.mask)
+    def __init__(s,N,slank=False):
+        super().__init__(); s.N=N; s.vrij=snede(N); s.lucht=set()
+        if slank:
+            # manen smal achter de oren, breder over de schouder: rechterrand (20,25)->(27,40)
+            R=lambda y: 20+7*max(0.0,(y-25)/15.0)**1.3
+            # nek-/ruglijn van achter de oren (20,25) naar de schoft (32,31): erboven lucht, eronder lijf
+            T=lambda x: 25+(x-20)*6/12.0
+            for x,y in L.HAAR:
+                if x>R(y):
+                    s.vrij.add((x,y))
+                    if y<T(x): s.lucht.add((x,y))
+            # oude omtrek van de kam (ringpixels) boven de nek-/ruglijn: ook lucht
+            for x,y in L.ZONE-L.HAAR:
+                if L.R6[y][x] in '0d' and x>R(y) and y<T(x): s.lucht.add((x,y))
+        s.mask-=s.vrij; s.mask0=set(s.mask)
     def rand(s,naam,x0,y0,x1,y1,dx,dy,flip=False,label='rand',diepte=1):
         sn=L.snip(naam,x0,y0,x1,y1,flip); h,w=len(sn),len(sn[0]); ext=set()
         st=[(i,j) for j in range(h) for i in (0,w-1)]+[(i,j) for i in range(w) for j in (0,h-1)]
@@ -58,9 +71,11 @@ class Vorm9(L.Vorm):
                 x,y=p
                 if all((x+a,y+b) in s.mask for a,b in((1,0),(-1,0),(0,1),(0,-1))): s.mask.add(p); s.weg.discard(p); changed=True
         lijf=set()
+        for x,y in s.lucht-L.HAAR: g[y][x]='.'; s.bron[(x,y)]=('lucht boven de nek-/ruglijn (oude kamomtrek weg)',)
         for x,y in L.HAAR:
             if (x,y) in s.mask: continue
-            if (x,y) in s.vrij: g[y][x]='F'; lijf.add((x,y))
+            if (x,y) in s.lucht: g[y][x]='.'; s.bron[(x,y)]=('lucht boven de nek-/ruglijn',)
+            elif (x,y) in s.vrij: g[y][x]='F'; lijf.add((x,y))
             else: g[y][x]='~'
         seen=set(); st=[(0,y) for y in range(H)]+[(x,0) for x in range(W)]
         while st:
@@ -84,7 +99,8 @@ class Vorm9(L.Vorm):
         for x,y in lijf:
             l=GL[y,x]; g[y][x]='L' if l>=tL else 'M'; s.bron[(x,y)]=('borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)',)
         for x,y in lijf:
-            if any(g[y+b][x+a]=='.' for a,b in((1,0),(-1,0),(0,1),(0,-1))): g[y][x]='0'; s.bron[(x,y)]=('borst: buitenlijn',)
+            if g[y-1][x]=='.': g[y][x]='D'; s.bron[(x,y)]=('nek/rug: bovenlijn D (zoals de ruglijn van r6)',)
+            elif any(g[y+b][x+a]=='.' for a,b in((1,0),(-1,0),(0,1),(0,-1))): g[y][x]='0'; s.bron[(x,y)]=('borst: buitenlijn',)
         vol=[q for q in s.mask if q in s.kleur]
         for q in s.mask:
             x,y=q

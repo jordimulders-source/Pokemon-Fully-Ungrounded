@@ -10,24 +10,24 @@ VELD=('arcanine',33,2,60,26,7,23)
 VARIANTEN={
  'A':('pluizige kraag met puntjes (Arcanine)',[
    (A_UP2,22,25,'kampunt 1'),(A_UP2,26,26,'kampunt 2'),(A_UP2,29,28,'kampunt 3'),
-   (A_LEFT,7,33,'franjepluk 1',2),(A_LEFT,7,38,'franjepluk 2',2),
+   (A_LEFT,7,33,'franjepluk 1',2),(A_LEFT,7,39,'franjepluk 2',2),
    (A_LEFT,15,27,'nekrand-pluk 1'),(A_LEFT,15,32,'nekrand-pluk 2'),
    (A_DOWN,8,41,'onderpunt 1',2),(A_DOWN,12,42,'onderpunt 2',2),(A_DOWN,16,42,'onderpunt 3',2),
    (A_DOWN,25,27,'kampunt onder (over de rug)'),
    (A_RIGHT,21,31,'schouderpunten 1'),(A_RIGHT,19,36,'schouderpunten 2'),
-   (A_BUMP,22,31,'schouderbult'),(A_BUMP,9,31,'franje rechts: inkeping'),(A_BUMP,7,37,'franje links: bult',1,True)]),
+   (A_BUMP,22,31,'schouderbult'),(A_BUMP,9,31,'franje rechts: inkeping')]),
  'B':('lang hangend kapsel, licht gerafelde onderrand',[
    (A_UP2,26,26,'kampunt'),
    (A_DOWN,8,41,'onderpunt 1',2),(A_DOWN,11,42,'onderpunt 2',2),(A_DOWN,14,42,'onderpunt 3',2),(A_DOWN,17,42,'onderpunt 4',2),
    (A_RIGHT,19,36,'schouderpunt (onderste lok)'),(A_DOWN,25,27,'kampunt onder (over de rug)'),
-   (A_BUMP,23,31,'schouderbult'),(A_BUMP,9,31,'franje rechts: inkeping'),(A_BUMP,8,31,'franje links: bult 1',1,True),
+   (A_BUMP,23,31,'schouderbult'),(A_BUMP,9,31,'franje rechts: inkeping'),(A_BUMP,7,30,'franje links: bult 1',1,True),
    (A_BUMP,8,37,'franje links: bult 2',1,True),(A_BUMP,15,29,'nekrand: inkeping',1,True)]),
  'C':('zachte plukken (Growlithe)',[
    (G_UP,21,25,'kampunt 1'),(G_UP,26,26,'kampunt 2'),
    (G_LEFT,7,32,'franjepluk 1',2),(G_LEFT,7,37,'franjepluk 2',2),(G_LEFT,15,29,'nekrand-pluk'),
    (G_DOWN,9,42,'onderpunt 1',2),(G_DOWN,14,42,'onderpunt 2',2),
    (A_RIGHT,21,31,'schouderpunten (Arcanine)'),(A_DOWN,25,27,'kampunt onder (Arcanine)'),
-   (A_BUMP,22,31,'schouderbult (Arcanine)'),(A_BUMP,9,31,'franje rechts: inkeping (Arcanine)')]),
+   (A_BUMP,22,31,'schouderbult (Arcanine)'),(A_BUMP,27,27,'kam-einde bult (Arcanine)'),(A_BUMP,9,31,'franje rechts: inkeping (Arcanine)')]),
 }
 def bouw(k):
     naam,stamps=VARIANTEN[k]

@@ -42,3 +42,23 @@ class Bouw:
 def toon(g,y0=21,y1=49,x1=36):
     print('   '+''.join(str(x%10) for x in range(x1)))
     for y in range(y0,y1): print('%2d '%y+''.join(g[y][:x1]))
+hx=lambda h: tuple(int(h[i:i+2],16) for i in (1,3,5))
+PAL={'.':(0,0,0),'0':hx('#302418'),'L':hx('#F8D888'),'M':hx('#D8A850'),'D':hx('#A07030'),
+     'l':hx('#D8AC30'),'m':hx('#B08824'),'d':hx('#7C5A10'),'A':hx('#4A4A52'),'3':hx('#8A8A92'),'4':hx('#C8C8CC'),
+     'W':hx('#FFFFFF'),'R':hx('#E0A090'),'r':hx('#B06A58'),'K':hx('#5C4434')}
+ORDER=list(PAL)
+def png(g,pad,schaal=1):
+    H,W=len(g),len(g[0]); OX=(64-W)//2; OY=64-H
+    img=np.zeros((64,64),'uint8')
+    for y in range(H):
+        for x in range(W): img[OY+y,OX+x]=ORDER.index(g[y][x])
+    pal=[v for k in ORDER for v in PAL[k]]; pal+=[0]*(48-len(pal))
+    im=Image.fromarray(img,'P'); im.putpalette(pal); im.save(pad,transparency=0)
+    return im
+def rgba8(g,bg=(255,255,255)):
+    H,W=len(g),len(g[0]); OX=(64-W)//2; OY=64-H
+    im=Image.new('RGB',(64,64),bg)
+    for y in range(H):
+        for x in range(W):
+            if g[y][x]!='.': im.putpixel((OX+x,OY+y),PAL[g[y][x]])
+    return im

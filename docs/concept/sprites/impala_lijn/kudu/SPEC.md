@@ -31,3 +31,4 @@ Alle citaten en lijnbesluiten: `docs/concept/IDEEEN.md` → "Impala-lijn"; samen
 - Op r7 (Jordi, 27 nov): "wel goed, je kijkt naar de andere pokemon en doet vervolgens compleet iets anders"; "met allemaal rechte pixellijnen, want ja dat hebben alle pokemon". r8: vacht van Arcanine/Growlithe 1-op-1 overnemen.
 - Jordi (27 nov): "wat andere pokemon doen is geen banen, meer gewoon de vorm een beetje gerafeld".
 - Jordi (27 nov): "pyroar heeft bijv ook manen maar dat is gewoon een lang hangend kapsel"; "de vrouwelijke variant".
+- Jordi (27 nov): "nee hij moet de pyroar niet nadoen" (Pyroar alleen als voorbeeld van een lang hangend kapsel).

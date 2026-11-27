@@ -144,3 +144,26 @@ Opdracht: `sprite/OPDRACHT.md`.
 - **r5** (`gemini/fase1_r5.png`, bijsturen r4 met Claudes voorstel: 4–5 dikke stekels + nabije vleugel als driehoek). Jordi: "nee dit is niet langer wat ik bedoelde". Grote grijze vleugel bedekt nu het lijf, stekels als een stekelvarken.
   Jordi ook: "nu zijn de armen bijna messen".
   Jordi: "en de haren achterop zijn uberhaupt niet nodig" (stekels op de rug weg).
+
+## Prompt fase 1 (v3, Engels; nieuw gesprek, zonder bijlage; Jordi: "nieuwe prompt he, goed gedetailleerd")
+Eigen toevoegingen Claude (schrappen bij twijfel): "longer than the body and head together", "knees", "short black down", vleugel "folded at elbow and wrist, plucked chicken wing, soft and fleshy", klauwtjes aan de voorrand bij de pols, "small pupil", "beak closed".
+
+```
+Design an original Pokémon, drawn as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 colors, white background, no ground, no shadow, no effects, no objects. The whole creature fits inside the canvas with white margin on all sides; nothing is cut off.
+
+WHAT IT IS (most important): an uncanny, cryptid-like hoatzin chick (the chick of the Amazon "stinkbird"). It is NOT a normal bird. What makes it uncanny is its legs: they are far too long for its small body, longer than the body and head together. The legs are bare, thin and grey, with knobbly knees and big grasping clawed toes, like a real hoatzin chick's legs.
+
+POSE: it stands a bit awkwardly and clumsily on those too-long legs, body turned 3/4 to the left. The pose clearly shows its thin, strange-looking legs and its little claws.
+
+ARMS: it has two featherless wings that look like thin arms: bare grey skin over bone, folded at the elbow and wrist, like a plucked chicken wing, soft and fleshy. Each wing has two small claws on its front edge near the wrist bend. The wings hang down awkwardly from the shoulders. They are not hands, not blades, not sharp.
+
+BODY: a small, hunched body covered in short, smooth black down, with some yellowish tints only in the down. The back and wings are smooth: no spines, no spikes, no quills, no feather shafts, no hair sticking out.
+
+HEAD: a small round head with no crest. A hooked grey beak like a real hoatzin chick, closed. A dark round eye with a grey ring around it and a small pupil. The expression is not happy: a cold, blank stare, unsettling.
+
+COLORS: mostly black, some yellowish tints only in the down, grey beak, wings, legs and claws. Few colors, clean simple shading.
+
+MOOD: ugly in a Pokémon way, uncanny, a cryptid, something you don't trust. Simple, readable design, not complex.
+
+AVOID: feathered wings; hands or fingers; blade-like or knife-like wings; spines, spikes, quills or hair on the back or wings; a crest; messy or scruffy feathers; a normal bird; a happy or cute face; a smile; a branch or any object; a mask; a red eye; brown or chestnut; a fat or round belly; a symbol or marking; glow.
+```

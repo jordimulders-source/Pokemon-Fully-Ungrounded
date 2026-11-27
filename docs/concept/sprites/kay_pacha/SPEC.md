@@ -1,0 +1,46 @@
+# Kay Pacha (werknaam) – poema van het legendary-trio
+
+Trio: Hanan Pacha (condor), Kay Pacha (poema, deze wereld), Uku Pacha (slang); Pachamama erboven.
+
+Besluiten (letterlijk Jordi):
+- Type: Grass/Psychic ("allang besproken dat het grass/psychic wordt", 27 nov; het eerdere besluit stond nergens in de repo).
+- 27 nov: "puur een poema maken zou te basic zijn, dus wat decoratie zoals entei en raikou dat hebben maar dan inca geinspireerd lijkt me tof".
+- 27 nov: "kleuren moeten we even kijken, wat zou bij de lore passen".
+
+Open: kleuren, welke Inca-decoratie, pose, naam.
+- 27 nov, kleuren: richting A ("A prima"): poemavacht + Inca-goud voor de decoratie + groene accenten (Grass). "maar het moet wel echt te vertalen zijn naar een sprite, niet teveel detail".
+
+Prompt r1: `PROMPT.md`.
+
+## Rondes
+- r1 (`gemini/r1.png`): Jordi: "haha, dit is het nog niet he, is gewoon een poema met wat blaadjes en een halsband".
+- Jordi na r1: "lijkt ook veel te veel op een normale poema"; "maak maar groen"; "groter hoofd".
+- Jordi: "en meer versiering met inca verwijzingen, mogelijk wat bladeren ook". "maak maar groen" gelezen als: vacht groen (a); Jordi bevestigt of verbetert dat bij r2.
+- Jordi: "ogen paars prima"; "versiering is niet een paar juwelen".
+- r2 (`gemini/r2.png`, prompt `PROMPT_r2.md`): Jordi: "kijk dit is veel beter, dit mag nog iets meer zelfs".
+- Jordi: "de blaadjes zijn wel te klein".
+- r3 (`gemini/r3.png`, bijsturing in hetzelfde gesprek: meer versiering + grotere blaadjes): Jordi: "nu overdrijft die, hier is geen sprite van te maken." "nieuwe prompt from scratch, hij krijgt wat grotere bladeren op bepaalde plekken óf we maken de inca versiering mossiger, ik wil dat die een masker krijgt en dat de rugversiering blijft, we verwerken er iets van paars in". → r4 in twee varianten (A bladeren, B mossig), `PROMPT_r4.md`.
+- r4B (`gemini/r4B.png`, variant B mossig): Jordi: "stuk minder mooi, veel te kaal" en "en toch teveel detail, ook knap" (de mosspikkels). Les: "keep it to these elements" maakte hem kaal; r2 was de goede hoeveelheid ("mag nog iets meer"). → r5 = versiering van r2 in woorden + masker + paars + grotere bladeren (`PROMPT_r5.md`).
+- r5 (`gemini/r5.png`, `PROMPT_r5.md`): Jordi: "Toch ook minder".
+- Jordi over r3: "als deze een masker krijgt en de versieringen die hij heeft wat simplistischer zijn dan is dat een prima design". → r6 = r3 als bijlage in een nieuw gesprek (`PROMPT_r6.md`).
+- Jordi: "en ipv blaadjes mos op de versiering".
+- r6 (`gemini/r6.webp`, `PROMPT_r6.md` + bijlage r3): Jordi: "het masker bedekt nu iets teveel".
+- Jordi: "en nog steeds teveel kleine details". Bijsturing r7 in hetzelfde gesprek.
+- Jordi: "die kruizen wil ik weg".
+- Jordi: "denk weer nieuwe prompt from scratch, maar wees specifiek". → `PROMPT_r7.md`.
+- r7 (`gemini/r7.png`, `PROMPT_r7.md`): Jordi: "nee dit is ook niet mooi".
+- Jordi na r7: "we moeten het over een andere boeg gooien", "ander ontwerp bedenken". Vast blijft (tenzij Jordi anders zegt): Grass/Psychic, poema, Kay Pacha.
+- Jordi: "dit is ook net teveel een dier met versiering, kijk wat meer naar entei, suicune en raikou"; daarna: "laten we een grass/psychic poema maken die daar tussen zou passen". → `PROMPT_r8.md`.
+- Jordi: "akkoord" (gelezen als: akkoord met Claudes voorstel in de taal van de beesten: groene fantasiekat, masker als gezichtsplaat in de vorm van een Inca-poemakop, getrapte groene mantel als terrassen, trapvormig teken op het voorhoofd, paarse trapstrepen, twee rankstaarten). → r8 met dat voorstel; kale versie als `PROMPT_r8_kaal.md`.
+- r8 (`gemini/r8.png`, `PROMPT_r8.md`): Jordi: "wat vind je".
+- Jordi akkoord ("prima") met Claudes punten na r8 (mantel zachte overlappende bladeren in treden en andere kleur, kroon trapvormig in maskerkleur, brede bladlintstaarten, groter hoofd, krachtiger pose); mantelkleur: "goudgeel is wel geinig" (ichu-gras). → `PROMPT_r9.md`.
+- **Model bevroren (Jordi, 27 nov: "deze doen we"):** `gemini/r9.png` = `referenties/gemini_gekozen_r9.png`. Volgende stap: frontsprite (maker-agent, Gemini-model namaken).
+- Vertaalcheck r9 (`sprite/check_5x.png`, naast Raikou/Entei/Suicune): ontwerp vertaalt, pose niet (62×45, kop ±12 px, ogen en strepen verdwijnen). Voorstel: compactere pose zoals de beesten.
+- Jordi: "hij is iets te breed he?"; "zodra het ontwerp is goedgekeurd mag je om 18:11 beginnen met bouwen". → `PROMPT_r10.md` (bijlage r9, compactere pose).
+- Jordi: "eens, laten we om een nieuwe pose vragen en die golvende staart dingen wat minder naar achter laten gaan".
+- r10a/r10b (`gemini/r10a.png`, `r10b.png`, prompt r10): Jordi: "deze twee opties". Vertaalcheck `sprite/check_r10_5x.png`: a 57×62, b 60×62; beide vullen het vak.
+- **Oog (Jordi, 27 nov):** "maak de ogen dan maar net wat groter, het moet wit en paars zijn qua pixels ... Ik neig bijna naar 4 of 5 pixels. een rij van drie met wit-paars-wit en dan boven de rechtse witte een 2e witte pixel en misschien een 2e paarse boven de paarse. Linkeroog zie je in het model wel maar zal in de sprite wegvallen, niet erg". Bouwen mag vanaf 18:11 (Jordi).
+- **Model bevroren (Jordi, 27 nov: "staarten omhoog"):** `gemini/r10a.png` = `referenties/gemini_gekozen_r10a.png` (vervangt r9). Bouwen vanaf 18:11.
+- Sprite r1 (maker, `sprite/r1/`, A met 2e paars, B zonder; silhouet-diff 0, 16 kleuren; vel `sprite/r1/vel.png`). Naar Jordi.
+- Jordi: "rechts" (= B, oog zonder 2e paars). Volgende: eindkeuring schaduw + belijning + kleurtinten (Dragonfly Cave) op r1 B.
+- Eindkeuring ek1 (`sprite/ek1/`): omlijning volgens DC (zwart op de rand 57% → 41%, binnenlijnen eigen tint), volume groen, eigen groene lijntint; oog en strepen delen nu één paars (138,80,148); maskerranden bruin i.p.v. zwart. Naar Jordi.

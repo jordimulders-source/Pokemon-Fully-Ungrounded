@@ -76,7 +76,7 @@ Modeltekeningen in `docs/concept/ontwerp/<soort>/` (concept A/B/C + ONTWERP.md).
 - **Mr. Prime** (Jordi, 9 nov): oude gentleman met wandelstok (bartitsu). Sinds 22 nov eindvorm van de bokser-Mr. Mime (jiujitsu-idee geschrapt); zwart-wit; "volledige gentleman qua pose", verschil met Mr. Rime (jolly danser) is pose + kleur (Jordi). Lijn: Mime Jr. → regionale Mr. Mime → Mr. Prime.
 
 ## Legendaries
-- **Trio: de drie Inca-werelden.** Hanan Pacha (bovenwereld, zon, goden) = **condor** (Jordi, 9 nov: "klinkt uitstekend"; dit is de condor-Pokémon); Kay Pacha (deze wereld) = **poema**; Uku Pacha (onderwereld, voorouders, oorsprong) = **slang**. Typen, namen en rol: open.
+- **Trio: de drie Inca-werelden.** Hanan Pacha (bovenwereld, zon, goden) = **condor** (Jordi, 9 nov: "klinkt uitstekend"; dit is de condor-Pokémon); Kay Pacha (deze wereld) = **poema** (**Grass/Psychic**; Inca-decoratie zoals Entei/Raikou; `sprites/kay_pacha/SPEC.md`); Uku Pacha (onderwereld, voorouders, oorsprong) = **slang**. Typen, namen en rol: open.
 - **Opper-legendary: Pachamama** (Moeder Aarde; "pacha" = wereld én tijd); de drie werelden zijn delen van haar. **Ground/Fairy maken: "ook een goede ja"** (Jordi, 8 nov; Ground/Fairy bestaat nog bij geen enkele soort). Type, naam en rol: open.
 - **Bestaande legendaries: voorlopig alleen Mew, Mewtwo en Zarude** (Jordi, 22 okt: de meeste legendaries komen niet in deze game).
 - In het verhaal worden de legendaries woedend door de vernietiging van de natuur (zie `VERHAAL.md`).

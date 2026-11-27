@@ -3883,3 +3883,9 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Op het overzichtsvel (sectie Legendaries); lessen in `docs/lessen/GEMINI.md`. Gemerged met main (eigen changelogsecties hernummerd naar v0.0.925–938).
 ### [v0.0.939] - Regicosmo: frontsprite af (27 nov)
 - Jordi: "ja die is af". `docs/concept/sprites/regicosmo/af/regicosmo.png` (= r7 na DC-eindkeuring PASS; hemellichamen als golem, Cosmic). Op het overzichtsvel onder Legendaries naast Regiaqua.
+
+### [v0.0.940] - Kay Pacha (poema-legendary): ontwerp + frontsprite-kandidaat (27 nov)
+- Type Grass/Psychic vastgelegd; Inca-decoratie zoals Entei/Raikou; kleuren open. `docs/concept/sprites/kay_pacha/SPEC.md`, POKEMON.md.
+- Kleurrichting A (poemavacht + Inca-goud + groene accenten); Gemini-prompt r1 in `kay_pacha/PROMPT.md`.
+- Kay Pacha: Gemini r8/r9; model bevroren (r9: groene poema met crème Inca-gezichtsplaat en trapkroon, goudgele ichu-mantel, paarse trapstrepen, twee bladlintstaarten); frontsprite gestart.
+- Gemini r10a (compacte pose, staarten omhoog) bevroren; oog volgens Jordi (wit-paars-wit + wit erboven, variant B). Sprite r1 (maker) + DC-eindkeuring ek1 (`kay_pacha/sprite/ek1/`).

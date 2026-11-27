@@ -38,3 +38,6 @@ Jordi (27 nov), met uitsnede `referenties/jordi_starmie_punten.png` (Gen 3 Starm
 
 ## Starmie r6 gekozen (27 nov)
 Uit licht | sterk | naar Jordi's twee Gen 3-punten: "ik vind 1 het beste" = `starmie/sprite_r6/starmie_r6_licht.png` (alle tien punten afgesneden waar ze 4 px breed zijn).
+
+## Starmie r8 (27 nov)
+Jordi over r7: "de bovenkant is wat afgekapt", "is nu een rechte lijn". r8: bovenste voorpunt 1 (A) of 2 (B) rijen terug op de plek van het modelsilhouet (r5), 3 px breed; de platte toprij van r7 wordt binnenrij. `starmie/sprite_r8/`.

@@ -27,3 +27,4 @@ Prompt r1: `PROMPT.md`.
 - r6 (`gemini/r6.webp`, `PROMPT_r6.md` + bijlage r3): Jordi: "het masker bedekt nu iets teveel".
 - Jordi: "en nog steeds teveel kleine details". Bijsturing r7 in hetzelfde gesprek.
 - Jordi: "die kruizen wil ik weg".
+- Jordi: "denk weer nieuwe prompt from scratch, maar wees specifiek". → `PROMPT_r7.md`.

@@ -23,3 +23,27 @@ Pose: Hitmonchan's own boxing stance, facing 3/4 to the left, both cubes raised 
 No snowflakes, no frost particles, no mist, no glow, no effects, no pedestal, no ground, no shadow.
 AVOID: a human in an ice costume, a statue on a pedestal, a snowman, a plush/Neopets look.
 ```
+
+## r1 (beeld niet opgeslagen: kwam alleen inline)
+- Glad lichtblauw Hitmonchan met twee glazige ijsklontjes als handschoenen.
+- Jordi: "ok hij mag nog iets meer ijssculptuur lijken, nu is het een pallette swap met ijsklonten" / "gemini heeft ze ook letterlijk erop geplakt".
+
+## Gemini-prompt r2 (nieuw gesprek, zonder bijlage)
+Keuze Claude (ter controle): de kubussen zijn de onbewerkte stukken van het ijsblok waaruit hij is gehakt, zodat ze bij het lijf horen in plaats van erop geplakt.
+```
+Design a regional form of the Pokémon HITMONCHAN, as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64 pixels, max 16 colors, clean dark outline, white background.
+
+What it is: an ice sculpture of Hitmonchan that came to life, carved with a chisel out of one big block of ice. It must NOT look like a smooth blue palette swap of Hitmonchan. It must look carved:
+- the whole body is made of flat angular facets and chisel cuts with sharp edges, like a hand-carved ice sculpture at an ice festival; no smooth rounded skin anywhere;
+- the head crest, the face, the tunic and the legs are roughly cut into planes, with visible chisel marks;
+- clear ice: deep blue in the thick parts, pale cyan and white on the facets facing the light, frosted white on the rough cut surfaces, a few small white highlights on the sharp edges.
+The fists were never carved: they are still the raw, uncut corners of the original ice block, so the forearms grow directly out of two rough cubic blocks of ice. Same ice, same facets, same color as the rest of the body, fused into the arms, not separate ice cubes stuck on.
+Type: Ice.
+
+Anatomy: keep Hitmonchan's body plan (head with its crest, tunic, legs, arms). Two arms, two legs, one block on each arm.
+
+Pose: Hitmonchan's own boxing stance, facing 3/4 to the left, both blocks raised like boxing gloves. Compact composition that fits a square sprite; limbs close to the body.
+
+No snowflakes, no frost particles, no mist, no glow, no effects, no pedestal, no ground, no shadow.
+AVOID: smooth glossy body, plain recolor of Hitmonchan, ice cubes glued onto the hands, a human in an ice costume, a snowman, a plush/Neopets look.
+```

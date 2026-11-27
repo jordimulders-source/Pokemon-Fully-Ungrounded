@@ -29,6 +29,7 @@ No effects, no glow, no sparkles, no speed lines, no dust, no ground or shadow u
 ```
 
 **Jordi over r1 (`r1.png`, sprint, bruin/rood verenkleed, snavel = letterlijk een grijze bijl):** "goed begin, maar ik vind de snavel nog niet terreurvogel genoeg, en de pose is iets te breed tov lang". Oorzaak snavel (Claude): "shaped like an axe blade" gaf een echte bijl; nu de echte snavel in woorden. "Lang" gelezen als hoogte (gemeld).
+- **Jordi:** "nee puur het model om te vertalen naar sprite" (= verhouding voor het 64×64-vierkant, geen andere houding). Claudes invulling (nek omhoog, lijf rechter) geschrapt vóór gebruik.
 
 ## r2 (27 nov)
 ```
@@ -38,8 +39,8 @@ Concept: a fully evolved fossil Pokémon (Rock/Fighting) based on the terror bir
 Anatomy: a flightless bird on long, powerful running legs with large clawed feet and small wings.
 Beak: the head is almost all beak. An ENORMOUS bird beak made of horn and bone, part of the skull: very tall and deep but narrow seen from the side, with a strongly curved upper edge that ends in a sharp hook pointing down at the tip, like an eagle's beak but much taller and longer. NOT an axe, NOT metal, NOT a separate weapon.
 It reads as a revived prehistoric creature the way Archen and Archeops do: primitive, reptile-like touches such as scaly legs and claws, NOT made of stone.
-Pose: running in a full sprint, but the whole figure is taller than it is wide: neck raised, head held high, body more upright, legs in a running stride under the body.
-Compact silhouette that fits a square.
+Pose: running in a full sprint.
+The whole figure must fit a square sprite frame: about as tall as it is wide, NOT a long horizontal shape.
 
 No effects, no glow, no sparkles, no speed lines, no dust, no ground or shadow under it. AVOID: copying Archeops, an ostrich, an emu, a chicken, a modern eagle, a dinosaur, a plush toy, Neopets style.
 ```

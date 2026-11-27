@@ -1,0 +1,16 @@
+   5  gezicht: mond (∩)
+   3  gezicht: vlak licht
+   5  gezicht: vlak tint 3
+   9  gezicht: vlak tint 4
+   4  gezicht: vlakje <3 px -> buurtint
+   5  gezicht: wanglijn
+  32  oker/turq: donker op modellijn -> donkerste eigen tint
+  27  oker/turq: losse donkere vlek -> modeltint
+  11  oker/turq: vlakje <3 px -> buurtint
+   3  oker: donker blokje zonder modelvorm -> licht
+  11  oog variant A
+ 115  rood donker 7 -> gedeelde donkere tint 2
+  48  roze -> licht (model)
+  16  roze vlakje <3 px -> andere roze
+   5  turq: donker blokje zonder modelvorm -> licht
+totaal gewijzigd t.o.v. r2: 256  kleuren: 16

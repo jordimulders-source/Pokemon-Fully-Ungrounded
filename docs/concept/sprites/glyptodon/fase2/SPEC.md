@@ -22,3 +22,4 @@ Regionaal fossiel, **Rock/Normal**, wall, eigen ability (later). 2 fases; fase 1
 - Over r7 (27 nov): "a en b lijn werken allebei, stuur naar de eindkeuring en laat de eindkeuring bepalen welke van de twee het meest consistent is, kijk verder naar groen (mogelijk onnodige rechte lijnen) en rood (mogelijk verkeerd gekleurde pixels)" (`sprite/jordi_r7_groen_rood.png`).
 - Over ek1 (27 nov): "nee, de twee bruine pixels in de beige lijnen staan er nog steeds en de rechte lijnen zijn nog steeds te recht, vooral de poten, vooral de achterpoot wat gewoon een vierkant is". B + lijn (bruin) gekozen door de eindkeuring.
 - Jordi (27 nov): poten mogen van het model afwijken ("ja die mag dat fase 2"); kleurverschil met fase 1 "geen ramp".
+- **Af (27 nov):** Jordi "akkoord, fase 1 en 2 af" → `af/glyptodon_fase2.png` = eindkeuring ek3.

@@ -75,7 +75,7 @@ SECTIES=[
 ("hoatzin/af/hoatzin_fase2.png",'Hoatzin fase 2 (pestmasker)',"poison/dark"),
 ("zandloper/fase1/af/zandloper_fase1.png",'Zandloper (zandloper-lijn fase 1)',"ground/psychic"),
 ("zandloper/fase2/af/zandloper_fase2.png",'Brein uit de zandloper (zandloper-lijn fase 2)',"ground/psychic"),
-("zandloper/fase3/af/zandloper_fase3.png",'Zand-djinn (zandloper-lijn fase 3)',"ground/psychic"),("terreurvogel/fase2/af/terreurvogel_fase2.png",'Terreurvogel fase 2 (fossiel, bijlsnavel)',"rock/fight"),
+("zandloper/fase3/af/zandloper_fase3.png",'Zand-djinn (zandloper-lijn fase 3)',"ground/psychic"),("terreurvogel/fase2/af/terreurvogel_fase2.png",'Terreurvogel fase 2 (fossiel, bijlsnavel)',"rock/fight"),("glyptodon/fase1/af/glyptodon_fase1.png",'Glyptodon fase 1 (fossiel)',"rock/normal"),("glyptodon/fase2/af/glyptodon_fase2.png",'Glyptodon fase 2 (fossiel, wall)',"rock/normal"),
 ]),
 ("Evolutions of existing Pokémon",[
 ('hitmontop_evo/af/hitmongroove.png', '"Hitmongroove" (Hitmontop)', 'fight/ground'),

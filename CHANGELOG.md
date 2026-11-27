@@ -3604,3 +3604,5 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Prompt r1: `docs/concept/sprites/ledian_evo/gemini/PROMPT_r1.md`.
 ### [v0.0.861] - Ledian-evolutie: Gemini r1 + prompt r2 (27 nov)
 - r1 bewaard (`ledian_evo/gemini/r1.png`); prompt r2 noemt Ledian, superheld/tokusatsu, vliegpose met arm vooruit (Jordi).
+### [v0.0.862] - Ledian-evolutie: Gemini r2 + prompt r3 (27 nov)
+- r2 bewaard; prompt r3 met r2 als bijlage: rug kleiner/aerodynamisch als spacevliegtuigvleugels, hoofd aerodynamischer (Jordi).

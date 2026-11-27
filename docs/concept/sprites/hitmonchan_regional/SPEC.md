@@ -85,3 +85,4 @@ AVOID: separate ice cubes glued or stuck onto the hands, oversized blocks, a dar
 - Jordi over ek1 (27 nov): "super vet, dit leest allemaal als rechte lijnen, ik zeg niet dat het fout is gezien het een ijssculptuur is, maar kijk of het klopt" (`jordi/krabbel_ek1.png`, groene lijnen).
 - Jordi: "en de rechtervuist moet aan de bovenkant nog iets duidelijker los van de schouder, maar dat is denk ik vooral kleurtinten en een lijn".
 - ek2 (27 nov): rechte-lijnencheck: lijnen 1,3,4,5,7,8 ook recht in het model (gelaten); lijn 2 (binnenrand opgeheven onderarm) en 6 (riem bovenrand) gerepareerd; wachtvuist bovenvlak lichter tot tegen de naad (3 px). 10 px tint. Ter beoordeling bij Jordi.
+- Jordi over ek2: "het enige wat nog niet helemaal vertaalt is het linkeroog, misschien door een puntje rechts toe te voegen zoals in het model?" → ek3.

@@ -65,3 +65,4 @@ AVOID: orange plastic or clay look, opaque body, a human in a glass costume, a g
 - Jordi: "2 vergeten, nu klopt ie" (krabbel opnieuw met extra groene L-lijn bij de overgang geringd trapbeen → doorschijnend deel; bestand niet opgeslagen, beschreven aan de maker als plek f).
 - Jordi: "nee de gele lijnen zijn een indicatie" → gladde beenvorm als idee; ligging/breedte uit het model, niet de gele lijnen pixel voor pixel.
 - Jordi: "maak het netjes".
+- Jordi over r16 (27 nov): "hitmonlee is heel netjes, alleen even kijken naar wat ik groen heb gemaakt" (`jordi/krabbel_r16.png`).

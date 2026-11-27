@@ -47,3 +47,4 @@
 - Jordi over r2 (27 nov): "Ogen kijken nog wat verveeld" → r3: ogen opener, dun gebogen lid, 2–3 varianten.
 - **r3 (model r7)** (`sprite_r7model/r3/`, verse maker): ∩-mond als één boog, wanglijnen los van de ∩ (wanglijn L 1 px naar links t.o.v. model), vlakken binnen/buiten de ∩ uit de modelmediaan, roze band weer 2 tinten (gezichtslijn en rode schaduw delen één donkere tint), vlekken oker/turquoise weg, ogen open met dun gebogen lid in varianten A (pupil midden), B (pupil omhoog zoals model), C (B met bruine lidhoeken). Naar Jordi.
 - Jordi over r3 (27 nov): "Het klopt nog steeds niet met het model he". Claude (sprite naast model): grootste verschil in de romp: zwarte binnenlijnen van het model (omtrek armen, plooilijn, kaplijnen) ontbreken, vlakken vlekkerig; rechterarm onleesbaar → r4.
+- Jordi (27 nov): "Het hele gelaat lijkt verveeld" → r4: wenkbrauw los van het oog, oog hoger/groter met lichtpixel, onderste gezichtshelft op modelhelderheid.

@@ -16,8 +16,7 @@
   (21,27) m -> l  veld-herhaald arcanine 47 7
   (27,27) d -> m  kampunt onder (over de rug) arcanine 21 47 m
   (28,27) 0 -> m  kampunt onder (over de rug) arcanine 22 47 m
-  (15,28) d -> M  lijf zichtbaar (rand gerafeld)
-  (16,28) m -> d  nekrand-pluk 1 arcanine 5 38 d
+  (15,28) d -> D  lijf zichtbaar (rand gerafeld)
   (18,28) d -> l  nekrand-pluk 1 arcanine 7 38 d
   (19,28) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 45 7
   (20,28) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 46 7

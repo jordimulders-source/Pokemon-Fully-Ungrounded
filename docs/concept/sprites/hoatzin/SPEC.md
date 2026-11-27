@@ -171,3 +171,17 @@ AVOID: feathered wings; hands or fingers; blade-like or knife-like wings; spines
 - Vleugel (Jordi, bij `referenties/kuiken_7_vleugel_kam.png`): "zonder dit erin is het design gefaald". = de waaier van lange donkere kale veerschachten (pennen in de schede, zonder vlag) aan de kale arm.
 - Te blij (Jordi): "misschien die enorme glimlach?" (de snavellijn die naar het oog omhoog krult).
 - **r7** (`gemini/fase1_r7.png`, bijsturen r6: kam-vleugels + glimlach weg). Jordi: "nee, niet wat ik bedoel". Pennen werden dunne lijntjes op de rug, glimlach bleef.
+- Plan (Claude, Jordi: "doe maar"): eerst alleen de vleugel in een nieuw gesprek (bijlage `kuiken_7_vleugel_kam.png`), daarna plakken op het beste lijf (r2/r4/r6, Jordi kiest) met een kop zonder glimlach (voorstel r4).
+
+## Prompt fase 1 vleugel (w1, Engels; nieuw gesprek, bijlage = foto kuiken_7)
+Eigen toevoegingen Claude: "8 to 10 pin feathers", "seen from the side", "slightly lighter tips" niet opgenomen (open).
+
+```
+Pixel art in the style of an official Gen 3 Pokémon front sprite (Ruby/Sapphire/Emerald): draw ONLY one wing of a newly hatched hoatzin chick, as in the attached photo. White background, no body, no head, no ground, no shadow, no effects, max 16 colors.
+
+The wing is a bare, thin arm with dark grey skin and no feathers on it, bent at the elbow and wrist, with one or two small claws on its front edge. From its back edge grows a fan of 8 to 10 long, thin pin feathers: dark bare shafts still in their sheaths, with no vanes at all. They stand clearly apart from each other with gaps between them and spread out like the teeth of a comb or a small hand fan, exactly like in the photo. Seen from the side, the fan fully spread so every pin feather is visible.
+
+Size: as large as it would be on a 64x64 sprite of a small chick (about 20 pixels long), with clear dark outlines so every pin feather reads at that size.
+
+AVOID: normal feathers with vanes, a hand or fingers, hair, fur, a body, any object or branch.
+```

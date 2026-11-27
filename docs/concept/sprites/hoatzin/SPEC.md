@@ -215,3 +215,4 @@ AVOID: feathered wings with vanes; hands or fingers; blade-like wings; spines, h
 - **r10** (`gemini/fase1_r10.png`, bijsturen r9: lange poten + achterste vleugel). Jordi: "de vorm klopt niet vgm".
   Jordi: "linkervleugel klopt toch niet, dat zie je toch" (achterste vleugel steekt als klauw voor de borst uit).
 - **r11** (`gemini/fase1_r11.png`, bijsturen r10: linkervleugel achter het lijf). Jordi: "is ook niet wat ik bedoel".
+- Jordi bij `referenties/kuiken_5_pootlengte.png`: "kijk die foto dan / dat is toch anders" (over de vleugels).

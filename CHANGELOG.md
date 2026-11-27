@@ -3599,3 +3599,5 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - `docs/concept/sprites/guarana_fase2/af/guarana_fase2.png` (+ `normal.pal`, 8×); op het overzichtsvel (sectie New). Lijn af; namen open. Vaste regels en alle citaten in `guarana_fase2/SPEC.md`; lessen in `docs/lessen/GEMINI.md`.
 ### [v0.0.859] - Idee: carambola-Staryu/Starmie (27 nov)
 - `IDEEEN.md` → Fruit en planten → Carambola: Jordi's uitspraak toegevoegd ("Ik denk nog aan carambola staryu/starmie").
+### [v0.0.860] - Regionale Staryu/Starmie: Gemini-prompts carambola en chocolate chip (27 nov)
+- `docs/concept/sprites/staryu_regional/PROMPT.md`: vier prompts (carambola-Staryu/-Starmie, chocolate chip-Staryu/-Starmie), elk met de Gen 3-sprite als bijlage (`gemini/bijlage_*_gen3.png`). Jordi: bij twee goede uitkomsten gaat carambola voor. Type en serieus/grap open.

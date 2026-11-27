@@ -3600,3 +3600,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.859] - Idee: regionale Hitmonlee en Hitmonchan (27 nov)
 - `IDEEEN.md`: nieuwe sectie met Jordi's idee (Hitmonchan Ice, ijssculptuur met kubushandschoenen; Hitmonlee misschien vuur), repo-check en open vragen.
+
+### [v0.0.860] - Pitch regionale Hitmonlee (27 nov)
+- `IDEEEN.md`: zes ideeën voor de regionale Hitmonlee onder "Regionale Hitmonlee en Hitmonchan".

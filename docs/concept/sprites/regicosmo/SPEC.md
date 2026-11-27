@@ -25,3 +25,4 @@ Prompt: `PROMPT.md`.
 - Jordi (27 nov) stuurde een foto van Mars: "zo herken ik mars" (`referenties/mars_jordi.png`): verzadigd rood-oranje, lichtere gevlekte bovenhelft, brede donkere band over het midden, kleine kraters. Prompt r6 beschrijft de romp naar deze foto.
 - r6 (`gemini/r6.png`, 27 nov): Jordi: "ok beter, op de stippen en planeet posities na" (11 plusvormige stippen).
 - r7 (afbeelding niet als bestand ontvangen; 7 ronde cyaan stippen 2-1-2-2, Mars met donkere band): Jordi: "deze is nog beter" · "op de posities wederom na". Plan: Claude verschuift de hemellichamen zelf in het model (als assets, niets tekenen).
+- Jordi (27 nov) over r7: "als de witte (uranus/neptunus) en saturnus wat lager kunnen zodat het een soort rayman armen lijken met de steen en maan samen dan is die goed".

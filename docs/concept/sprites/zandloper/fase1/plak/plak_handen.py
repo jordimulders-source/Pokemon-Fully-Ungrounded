@@ -2,7 +2,7 @@
 from PIL import Image, ImageOps
 import numpy as np, sys
 G='../gemini/'
-r3=Image.open(G+'r3.png').convert('RGB'); r7=Image.open(G+'r7.png').convert('RGB')
+r3=Image.open(G+'r3.png').convert('RGB'); r7=Image.open(G+(sys.argv[1] if len(sys.argv)>1 else 'r7.png')).convert('RGB')
 
 def knip(im,box):
     c=im.crop(box); a=np.array(c).astype(int)

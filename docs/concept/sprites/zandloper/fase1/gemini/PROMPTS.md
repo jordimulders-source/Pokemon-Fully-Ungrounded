@@ -126,3 +126,5 @@ The attached image is my Pokémon. Keep EVERYTHING exactly the same: the hourgla
 Change ONLY this: replace the two wooden balls with two floating hands, like the disembodied floating hands of ghost Pokémon. Each hand has three short, slightly pointed fingers spread open, no separate thumb, no wrist, no arm. Same smooth dark brown wood as the end caps (#8a522e, #5c321e, #603a18), dark 1-pixel outline, flat cel shading. NOT gloves, NOT mittens, NOT balls.
 Real Gen 3 pixel art, 64x64, white background, no effects.
 ```
+
+Jordi: "waarom pak je nu de variant zonder die halve mond" → "ja, zet de handen op r6". Basis = r6 (met het halve mondje), handen uit r3 (`../plak/`).

@@ -25,12 +25,14 @@ for x,yt in rand.items():
         if klasse(out[y,x]) in '.KG': out[y,x]=r4[33,x] if klasse(r4[33,x])!='K' else r4[34,x]
 # 3. stekel+band van r6 (alles behalve schild en wit), verschoven
 DX,DY=int(sys.argv[1]),int(sys.argv[2])
+KS=float(sys.argv[6]) if len(sys.argv)>6 else 0
 for y in range(5,36):
     for x in range(24,44):
         k=klasse(r6[y,x])
         if k in 'EYK' or (k=='B' and x<=27 and y<=22) or (k=='g'):
             if k=='K' and x>42: continue
-            out[y+DY,x+DX]=r6[y,x]
+            sh=int(round(KS*(23-y))) if y<23 else 0  # schuintrekken: stekel rechtop
+            out[y+DY,x+DX+sh]=r6[y,x]
 # 4. staart r4 weg, staart r3_3 erachter
 for y in range(36,82):
     for x in range(74 if y>=63 else 77,100): out[y,x]=W

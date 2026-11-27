@@ -358,3 +358,4 @@ AVOID: copying or tracing the sketch; smooth vector shapes; hands or fingers; fe
   Jordi (rode omtrek op r4/r5, screenshot niet op schijf): "vgm is dit de vorm en niet wat je van plan was": bovenarm + grijze band + lichte lob ("dij") + "staart" = één gevouwen vleugel die rechts uitpunt met een onderpunt; poot begint onder die onderpunt.
 - **r6** (`sprite_fase1/r6/`, vanaf r4 B): één gevouwen vleugel volgens Jordi's omtrek (bovenarm + band + lob + punt), buitenlijn 36 px, tinten uit modelhelderheid, 14 modellijnpixels (≥45 %); geen rechte hulplijnen; alpha-diff 0 met r4; zwart 22 %. Naar Jordi.
   Jordi op r6: "moet ipv die zwarte omlijning niet gewoon de schaduwtinten van de ledematen anders?" → r7: binnen het silhouet scheiding vleugel/lijf/poot met schaduwtinten (slagschaduw, eigen randtint), geen zwarte binnenlijn.
+  Jordi over de lichte schoudervlek: "geen idee wat je met vlek bedoelt maar dat is gewoon de schouder vgm" (hoort bij de vleugel, zoals r6).

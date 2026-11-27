@@ -148,10 +148,13 @@ def bouw(cfg, S_extra=1.0, log=None):
         mask &= ~weg; deel[weg] = -1
     # palet kiezen: gemiddelde afstand van de vlakpixels tot het dichtstbijzijnde icoonkleur 1-13
     vlak = mask & ~isdonker; C = kleur[vlak]
-    afst = []
+    afst, tint = [], []
     for k, P in enumerate(IPAL):
-        dd = afstand(C[:, None, :], P[None, 1:14, :]).min(1); afst.append(dd.mean())
-    pk = cfg.get('palet', int(np.argmin(afst))); P = IPAL[pk]
+        D = afstand(C[:, None, :], P[None, 1:14, :]); afst.append(D.min(1).mean())
+        u, n = np.unique(D.argmin(1), return_counts=True); tint.append(int((n >= max(2, .03 * len(C))).sum()))
+    # binnen 3% van de beste afstand: het palet dat de meeste tinten oplevert (schaduw blijft), daarna de kleinste afstand
+    best = min(afst); kand = [k for k in range(6) if afst[k] <= best * 1.03]
+    pk = cfg.get('palet', max(kand, key=lambda k: (tint[k], -afst[k]))); P = IPAL[pk]
     idx = np.zeros((N, N), np.uint8)
     for i, d in enumerate(delen):
         mi = vlak & (deel == i)
@@ -192,6 +195,19 @@ def bouw(cfg, S_extra=1.0, log=None):
                 if ch in o['kleur']: idx[oy + a, ox + b] = o['kleur'][ch]
         f = max(x1 - x0 + 1, y1 - y0 + 1)
         info.append(f"  oog: front {f} px, centrum icoon ({c[0]:.1f},{c[1]:.1f}), patroon {pw}x{ph}, minimum {MIN['oog'](f):.1f}")
+    # lijnen uit de front (mond, strepen, staf): polylijn in frontcoordinaten, 1 px, met de transformatie van het deel
+    namen = [d['naam'] for d in delen]
+    for l in cfg.get('lijnen', []):
+        h, s, base = trans[namen.index(l['deel'])]
+        pts = [base + (np.array(p, float) + .5 - h) * s for p in l['punten']]
+        kl = l['kleur']
+        if isinstance(kl, list): kl = int(afstand(np.array(kl, float)[None, :], P[1:14]).argmin() + 1)
+        for a, b in zip(pts[:-1], pts[1:]):
+            n = int(max(abs(b - a)) * 2) + 1
+            for t in np.linspace(0, 1, n):
+                q = a + (b - a) * t; X, Y = int(np.floor(q[0])), int(np.floor(q[1]))
+                if l.get('alleen_binnen', True) and not mask[Y, X]: continue
+                idx[Y, X] = kl
     # bijsnijden en plaatsen: onderkant y 29, midden x 15.5
     ys, xs = np.nonzero(idx > 0); crop = idx[ys.min():ys.max() + 1, xs.min():xs.max() + 1]
     hgt, wdt = crop.shape; res = np.zeros((32, 32), np.uint8)
@@ -199,7 +215,7 @@ def bouw(cfg, S_extra=1.0, log=None):
     for a in range(hgt):
         for b in range(wdt):
             if crop[a, b] and 0 <= oy + a < 32 and 0 <= ox + b < 32: res[oy + a, ox + b] = crop[a, b]
-    meta = dict(S=S, fh=fh, th=th, hoogte=hgt, breedte=wdt, palet=pk, afst=afst, info=info, fac=fac)
+    meta = dict(S=S, fh=fh, th=th, hoogte=hgt, breedte=wdt, palet=pk, afst=afst, tint=tint, info=info, fac=fac)
     return res, meta
 
 
@@ -246,5 +262,5 @@ if __name__ == '__main__':
     r = [f"front {cfg['front']}", f"fronthoogte {meta['fh']} -> doelhoogte {meta['th']:.1f}; S {meta['S']:.3f} (bijgestuurd x{S_extra:.2f})",
          f"factoren {meta['fac']}", f"icoon {meta['breedte']}x{meta['hoogte']} (onderkant y29, midden x15.5)",
          'minimummaten:'] + meta['info'] + ['paletafstand (gemiddeld, redmean; lager = beter):'] + \
-        [f"  pal{k}: {a:.1f}{'   <- gekozen' if k == meta['palet'] else ''}" for k, a in enumerate(meta['afst'])]
+        [f"  pal{k}: {a:.1f}  ({meta['tint'][k]} tinten){'   <- gekozen' if k == meta['palet'] else ''}" for k, a in enumerate(meta['afst'])]
     open(os.path.join(uit, 'rapport.txt'), 'w').write('\n'.join(r) + '\n'); print('\n'.join(r))

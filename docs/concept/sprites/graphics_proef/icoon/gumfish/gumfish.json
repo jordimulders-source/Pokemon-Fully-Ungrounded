@@ -2,11 +2,17 @@
  "front": "docs/concept/sprites/blobfish/af/blobfish.png",
  "anker": [28, 42],
  "buren": ["wailmer", "goldeen", "relicanth"],
+ "palet": 0,
  "delen": [
-  {"naam": "staart", "groep": "overig", "box": [44, 25, 57, 38], "min": "staart"},
-  {"naam": "lijf", "groep": "lijf", "poly": [[26,27],[47,27],[47,56],[26,56]]},
-  {"naam": "borstvin", "groep": "overig", "poly": [[31,39],[38,38],[42,43],[41,51],[35,53],[30,51],[28,45]], "binnenlijn": true},
-  {"naam": "kop", "groep": "kop", "poly": [[4,29],[27,29],[30,40],[28,54],[4,56]]}
+  {"naam": "staart", "groep": "overig", "box": [44, 25, 57, 38], "min": "staart", "ramp": [6, 6, 10]},
+  {"naam": "lijf", "groep": "lijf", "poly": [[26,27],[47,27],[47,56],[26,56]], "ramp": [6, 6, 6, 10]},
+  {"naam": "borstvin", "groep": "overig", "poly": [[31,39],[38,38],[42,43],[41,51],[35,53],[30,51],[28,45]], "binnenlijn": true, "ramp": [6, 6, 10]},
+  {"naam": "kop", "groep": "kop", "poly": [[4,29],[27,29],[30,40],[28,54],[4,56]], "ramp": [6, 6, 6, 10, 11]}
+ ],
+ "lijnen": [
+  {"deel": "kop", "punten": [[11,48],[12,49],[18,49]], "kleur": 15},
+  {"deel": "borstvin", "punten": [[32,44],[36,43]], "kleur": [222,144,150]},
+  {"deel": "borstvin", "punten": [[32,48],[36,47]], "kleur": [222,144,150]}
  ],
  "oog": {"deel": "kop", "front": [20, 45, 21, 46], "patroon": ["WD", "DD"], "kleur": {"D": 15, "W": 3}}
 }

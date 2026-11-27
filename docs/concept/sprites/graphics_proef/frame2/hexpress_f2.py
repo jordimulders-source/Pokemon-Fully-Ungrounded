@@ -33,12 +33,12 @@ v = schuif(a, GEEST, 0, -1, GEEST)
 v = schuif(v, WOLK, 1, 1, WOLK)
 V['h1'] = (v, 'ANIM_V_SHAKE')
 # h2: als h1 + wielen een halve slag
-v2 = wiel(wiel(v, 32.5, 54, 5, 7), 48, 49, 4, 5)
+v2 = wiel(wiel(v, 33.5, 54.5, 5, 7), 48.5, 48, 4, 5)
 V['h2'] = (v2, 'ANIM_H_SLIDE')
 # h3: geest waait naar achteren (2 rechts, 1 omhoog), wolken 2 naar achteren, wielen een halve slag
 v = schuif(a, GEEST, 2, -1, GEEST)
 v = schuif(v, WOLK, 2, 0, WOLK)
-v = wiel(wiel(v, 32.5, 54, 5, 7), 48, 49, 4, 5)
+v = wiel(wiel(v, 33.5, 54.5, 5, 7), 48.5, 48, 4, 5)
 V['h3'] = (v, 'ANIM_V_SHAKE_H_SLIDE')
 
 rijen = []

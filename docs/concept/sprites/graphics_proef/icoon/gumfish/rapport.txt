@@ -6,9 +6,9 @@ minimummaten:
   staart: staart f=12 -> 5.7 px < minimum 6.8: schaal x1.21
   oog: front 2 px, centrum icoon (24.4,29.2), patroon 2x2, minimum 1.5
 paletafstand (gemiddeld, redmean; lager = beter):
-  pal0: 108.2
-  pal1: 108.1   <- gekozen
-  pal2: 130.9
-  pal3: 108.3
-  pal4: 108.5
-  pal5: 108.4
+  pal0: 108.2  (2 tinten)   <- gekozen
+  pal1: 108.1  (2 tinten)
+  pal2: 130.9  (3 tinten)
+  pal3: 108.3  (2 tinten)
+  pal4: 108.5  (2 tinten)
+  pal5: 108.4  (2 tinten)

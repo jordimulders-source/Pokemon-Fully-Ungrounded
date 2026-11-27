@@ -19,3 +19,4 @@ Prompt r1: `PROMPT.md`.
 - Jordi: "ogen paars prima"; "versiering is niet een paar juwelen".
 - r2 (`gemini/r2.png`, prompt `PROMPT_r2.md`): Jordi: "kijk dit is veel beter, dit mag nog iets meer zelfs".
 - Jordi: "de blaadjes zijn wel te klein".
+- r3 (`gemini/r3.png`, bijsturing in hetzelfde gesprek: meer versiering + grotere blaadjes): Jordi: "nu overdrijft die, hier is geen sprite van te maken." "nieuwe prompt from scratch, hij krijgt wat grotere bladeren op bepaalde plekken óf we maken de inca versiering mossiger, ik wil dat die een masker krijgt en dat de rugversiering blijft, we verwerken er iets van paars in". → r4 in twee varianten (A bladeren, B mossig), `PROMPT_r4.md`.

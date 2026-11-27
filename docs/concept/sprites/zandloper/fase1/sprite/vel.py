@@ -15,7 +15,7 @@ panels=[('sprite 8x',sp(*bx,Z)),('model zelfde schaal',modelcrop(*bx,Z))]
 if VORIG: panels.insert(1,('vorige',sp(*bx,Z,np.array(Image.open(VORIG)))))
 og=json.load(open('ogen_geo.json')) if os.path.exists('ogen_geo.json') else None
 ZB=(26,22,47,35)   # ogen
-HL=(8,28,21,39); HR=(44,37,55,46)
+HL=(8,28,21,39); HR=(44,36,56,47)
 close=[]
 for nm,b in [('ogen',ZB),('hand links',HL),('hand rechts',HR)]:
     close.append((nm+' sprite 12x',sp(*b,12))); close.append((nm+' model 12x',modelcrop(*b,12)))

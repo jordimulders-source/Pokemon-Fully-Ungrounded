@@ -7,7 +7,7 @@ sc,ox,oy=9.8,9,7                         # Jordi-plaatje -> spritecoord (gemeten
 ys,xs=np.where(r)
 sx=xs/sc+ox; sy=ys/sc+oy
 nx=3*sx+3; ny=3*sy-9                     # sprite -> natief (zelfde als zoom.py)
-N=np.array(Image.open('../sprite/natief.png').convert('RGB'))
+N=np.array(Image.open('../sprite/natief.png').convert('RGB')); P=30; N=np.vstack([np.full((P,N.shape[1],3),255,'uint8'),N]); ny=ny+P
 H,W=N.shape[:2]
 lijn=np.full(W,-1.0)
 for x in range(W):

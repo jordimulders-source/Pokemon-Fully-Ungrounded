@@ -19,3 +19,4 @@ Overworld: pas na rug (prompt heeft front + rug nodig); voor welke soorten is no
 
 ## Overworld
 - Jordi, 27 nov: "Voor overworld sprite moet je sowieso de legendaries en de ghost tempel. Rayquaza is vgm ook groter dan een normale sprite dus dat mag je met deze ook doen. De tempel mag zelfs zeer groot, dat men erin zou trappen alsof het een echte poort is naar een gebouw".
+- Jordi: "We gaan toch geen following pokemon doen" → overworldsprites alleen voor wat in de wereld staat (legendaries, tempel, eventuele andere statics); niet voor alle soorten. Rayquaza-OW is 64×64 (gewoon 32×32).

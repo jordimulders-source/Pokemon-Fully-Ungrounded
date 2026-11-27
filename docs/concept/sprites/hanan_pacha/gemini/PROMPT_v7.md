@@ -1,6 +1,6 @@
 # Gemini-prompt: Hanan Pacha, v7 (27 nov)
 
-Nieuw gesprek, geen bijlage. Basis = v6 (r5: "nu is die goed, maar nu is de pose te horizontaal"); alleen de vleugelpose + vierkant beeldformaat veranderd. Bijsturen (r6_bijstuur) veranderde bijna niets.
+Nieuw gesprek, geen bijlage. Basis = v6 (r5: "nu is die goed, maar nu is de pose te horizontaal"); alleen de vleugelpose + vierkant beeldformaat veranderd; daarna Jordi: "iets meer weer de zon vorm?" → vleugels iets naar binnen gebogen, pennen + staartwaaier stralen samen rond uit (zonnestraal-silhouet, bijna rond; staart als deel van de zon = ingevuld door Claude), nog steeds geen gesloten ring. Bijsturen (r6_bijstuur) veranderde bijna niets.
 Gemeten: r1, r2, r5 kwamen als 1408×768 (breed beeld → brede pose); r3 en r4 als 1024×1024 (vierkant → hogere vleugels). Daarom vierkant formaat expliciet.
 
 ## Prompt
@@ -12,7 +12,7 @@ IMAGE FORMAT: a SQUARE image (1:1, 1024x1024). The whole creature fits inside th
 
 POSE (most important)
 - A colossal, proud, heroic ANDEAN CONDOR with BOTH wings raised STEEPLY UPWARD in a narrow V: the wings point mostly UP (about 60 degrees above horizontal), NOT sideways. The figure is about as tall as it is wide.
-- At the top end of each wing the long separated finger-like primary feathers FAN OUT LIKE THE RAYS OF A SUN. The sun shape comes from these radiating feathers, NOT from a closed ring: the wing tips do NOT meet, there is open space above the head.
+- SUN SHAPE: the wings curve slightly inward at the top, and their long separated finger-like primary feathers FAN OUT LIKE THE RAYS OF A SUN, pointing outward in all directions from the body. Together with the tail fan below, all feathers radiate from the body like a ROUND SUNBURST: the overall silhouette is almost round. The sun shape comes from these radiating feathers, NOT from a closed ring: the wing tips do NOT meet, there is a gap above the head.
 - Exactly TWO wings: the far wing on the left, the near wing on the right.
 - Three-quarter view facing left, the WHOLE shape visible: both wings fully visible, the far wing not hidden.
 - Heroic box-art pose: chest pushed forward, a LARGE head held HIGH on an upright neck, looking ahead with a fierce, noble eye. The head never hangs down or forward.

@@ -3625,3 +3625,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.864] - Regicosmo en Regiaqua: idee vastgelegd (27 nov)
 - `docs/concept/IDEEEN.md` → "Regicosmo en Regiaqua": Jordi's beschrijving letterlijk, plus Claudes voorstellen voor de stippen (open).
+
+### [v0.0.865] - Regicosmo en Regiaqua: besluiten + Gemini-prompts r1 (27 nov)
+- Jordi: Regicosmo stippen = B (kaart van zijn eigen lichaam), losse hemellichamen vormen samen een golem. Regiaqua: zwevende waterarmen, echte stippen niet in de hoofdkleur, oplichtend in een diepzeekleur.
+- `docs/concept/sprites/regicosmo/` en `regiaqua/`: SPEC.md (citaten) en PROMPT.md (r1).

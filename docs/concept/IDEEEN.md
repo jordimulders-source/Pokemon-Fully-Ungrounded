@@ -890,4 +890,4 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - **Jordi:** "Regiaqua is een draaikolk golem, diep onderzee in een trog. water armen die een soort van zweven, geen benen, want de onderkant van de draaikolk is goed genoeg [...] Ze moeten echt passen tussen de andere regi's ook"
 - Raakt aan "Ruimte en diepe zee als mysterieuze gebieden" (12 nov).
 - Repo: alle bestaande Regi's zijn monotype (Rock, Ice, Steel, Normal, Electric, Dragon).
-- **Voorstellen Claude (27 nov, open):** stippen Regicosmo: (A) Zuiderkruis, (B) kaart van zijn eigen lichaam (elke stip staat waar een losse planeet om hem heen hangt), (C) maanfasen (rij stippen van vol naar leeg). Stippen Regiaqua: luchtbellen in een spiraal (de draaikolk zelf). Vragen aan Jordi: zie gesprek 27 nov.
+- **Besloten (Jordi, 27 nov):** Regicosmo-stippen = B (kaart van zijn eigen lichaam), hemellichamen vormen een golem; Regiaqua: armen zweven los ("yes precies"), "de stippen moeten echt stippen zijn, liefste ook niet in de hoofdkleur", "stippen van regi's lichten altijd op, maar je mag ze wel zo'n kleur geven". Verder in `sprites/regicosmo/SPEC.md` en `sprites/regiaqua/SPEC.md`.

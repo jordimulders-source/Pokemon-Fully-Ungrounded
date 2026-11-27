@@ -185,3 +185,4 @@ Size: as large as it would be on a 64x64 sprite of a small chick (about 20 pixel
 
 AVOID: normal feathers with vanes, a hand or fingers, hair, fur, a body, any object or branch.
 ```
+- **w1** (`gemini/fase1_vleugel_w1a.png`, `w1b.png`, vleugelprompt). Jordi: "ok heel leuk en aardig, maar wat ga je met 1 vleugel nu doen, verkeerd copy pasten?"

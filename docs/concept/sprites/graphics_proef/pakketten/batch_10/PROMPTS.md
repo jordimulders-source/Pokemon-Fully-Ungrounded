@@ -5,7 +5,7 @@ Werkwijze en sjablonen: `../../PROMPTS.md`. Elke prompt in een nieuw gesprek, al
 | soort | bijlage | frame 2 G/S |
 |---|---|---|
 | Krassault (Octillery) | `krassault_front_8x.png` | G? |
-| Shuppetto (Banette) | `shuppetto_front_8x.png` | S |
+| Shuppetto (Banette) | `shuppetto_front_8x.png` | G |
 | Skinguin (Delibird) | `skinguin_front_8x.png` | G |
 | Dundragoon (Dunsparce) | `dundragoon_front_8x.png` | G? |
 | Alphyena (Mightyena) | `alphyena_front_8x.png` | G |
@@ -58,7 +58,16 @@ Gen 3 pixel art, plain white background, no ground, no shadow, no effects, no te
 
 Resultaat: 
 
-Frame 2: categorie S, per script (geen Gemini).
+### Frame 2
+```
+Edit the attached image. Keep this exact same creature: identical art style, colors, line work, proportions, size, camera angle and position on the canvas. Do not add anything new and do not redesign it.
+
+Change only the pose, as a second animation frame of a Pokémon battle sprite: the mouth is stretched into a wider grin and the two small puppets on the strings swing a little to one side. The big head and the bottom stay exactly where they are.
+
+Plain white background, no ground, no shadow, no effects, no text.
+```
+
+Resultaat: 
 
 ## Skinguin (Delibird): bijlage `skinguin_front_8x.png`
 

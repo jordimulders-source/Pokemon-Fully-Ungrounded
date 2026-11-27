@@ -6,12 +6,12 @@ Werkwijze en sjablonen: `../../PROMPTS.md`. Elke prompt in een nieuw gesprek, al
 |---|---|---|
 | Picaraio | `picaraio_front_8x.png` | G |
 | Pupoodle | `pupoodle_front_8x.png` | S |
-| Purrpillar | `purrpillar_front_8x.png` | S |
+| Purrpillar | `purrpillar_front_8x.png` | G |
 | Lanymph | `lanymph_front_8x.png` | G |
 | Bootoo | `bootoo_front_8x.png` | G? |
 | Globsnail | `globsnail_front_8x.png` | G? |
 | Clionice | `clionice_front_8x.png` | G? |
-| Cryomet | `cryomet_front_8x.png` | S |
+| Cryomet | `cryomet_front_8x.png` | G |
 
 ## Picaraio: bijlage `picaraio_front_8x.png`
 
@@ -77,7 +77,16 @@ Gen 3 pixel art, plain white background, no ground, no shadow, no effects, no te
 
 Resultaat: 
 
-Frame 2: categorie S, per script (geen Gemini).
+### Frame 2
+```
+Edit the attached image. Keep this exact same creature: identical art style, colors, line work, proportions, size, camera angle and position on the canvas. Do not add anything new and do not redesign it.
+
+Change only the pose, as a second animation frame of a Pokémon battle sprite: the front of the body lifts up a little and the small segmented back ridges ripple slightly higher. The tiny feet and the tail tip stay exactly where they are.
+
+Plain white background, no ground, no shadow, no effects, no text.
+```
+
+Resultaat: 
 
 ## Lanymph: bijlage `lanymph_front_8x.png`
 
@@ -208,4 +217,13 @@ Gen 3 pixel art, plain white background, no ground, no shadow, no effects, no te
 
 Resultaat: 
 
-Frame 2: categorie S, per script (geen Gemini).
+### Frame 2
+```
+Edit the attached image. Keep this exact same creature: identical art style, colors, line work, proportions, size, camera angle and position on the canvas. Do not add anything new and do not redesign it.
+
+Change only the pose, as a second animation frame of a Pokémon battle sprite: the two glowing eyes are squeezed half shut and the long purple flame tail streams a little longer and wider behind the body. The rocky ice ball keeps exactly its place and shape.
+
+Plain white background, no ground, no shadow, no effects, no text.
+```
+
+Resultaat: 

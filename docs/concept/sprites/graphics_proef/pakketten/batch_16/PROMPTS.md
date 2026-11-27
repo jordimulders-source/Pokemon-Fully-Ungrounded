@@ -5,7 +5,7 @@ Werkwijze en sjablonen: `../../PROMPTS.md`. Elke prompt in een nieuw gesprek, al
 | soort | bijlage | frame 2 G/S |
 |---|---|---|
 | Hitmonchan (regional) | `hitmonchan_regional_front_8x.png` | G |
-| DJ Rotom | `dj_rotom_front_8x.png` | S |
+| DJ Rotom | `dj_rotom_front_8x.png` | G |
 | Regiaqua | `regiaqua_front_8x.png` | S |
 | Regicosmo | `regicosmo_front_8x.png` | S |
 | Hanan Pacha | `hanan_pacha_front_8x.png` | G |
@@ -55,7 +55,16 @@ Gen 3 pixel art, plain white background, no ground, no shadow, no effects, no te
 
 Resultaat: 
 
-Frame 2: categorie S, per script (geen Gemini).
+### Frame 2
+```
+Edit the attached image. Keep this exact same creature: identical art style, colors, line work, proportions, size, camera angle and position on the canvas. Do not add anything new and do not redesign it.
+
+Change only the pose, as a second animation frame of a Pokémon battle sprite: the mouth is wide open and the green equalizer bars are higher, and the green antenna on top bends slightly to the side. The speakers and the bottom edge stay exactly where they are.
+
+Plain white background, no ground, no shadow, no effects, no text.
+```
+
+Resultaat: 
 
 ## Regiaqua: bijlage `regiaqua_front_8x.png`
 

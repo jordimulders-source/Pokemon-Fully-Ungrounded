@@ -10,7 +10,7 @@ Werkwijze en sjablonen: `../../PROMPTS.md`. Elke prompt in een nieuw gesprek, al
 | Poliwhirl (regional) | `poliwhirl_regional_front_8x.png` | G |
 | Poliwrath (regional) | `poliwrath_regional_front_8x.png` | G |
 | Grimer (regional) | `grimer_regional_front_8x.png` | G? |
-| Muk (regional) | `muk_regional_front_8x.png` | S |
+| Muk (regional) | `muk_regional_front_8x.png` | G |
 | Hitmonlee (regional) | `hitmonlee_regional_front_8x.png` | G? |
 
 ## Mr. Prime: bijlage `mr_prime_front_8x.png`
@@ -198,7 +198,16 @@ Gen 3 pixel art, plain white background, no ground, no shadow, no effects, no te
 
 Resultaat: 
 
-Frame 2: categorie S, per script (geen Gemini).
+### Frame 2
+```
+Edit the attached image. Keep this exact same creature: identical art style, colors, line work, proportions, size, camera angle and position on the canvas. Do not add anything new and do not redesign it.
+
+Change only the pose, as a second animation frame of a Pokémon battle sprite: the large dark mouth is open wider and the big mud arm at the upper right is raised a little higher. The base of the body stays exactly where it is.
+
+Plain white background, no ground, no shadow, no effects, no text.
+```
+
+Resultaat: 
 
 ## Hitmonlee (regional): bijlage `hitmonlee_regional_front_8x.png`
 

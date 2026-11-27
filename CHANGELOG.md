@@ -3902,3 +3902,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.957] - Frame 2 Gumfish en Hexpress gekozen (27 nov)
 - Jordi: "De gifs werken prima. Gumfish squishy en Hexpress die rechtse" → Gumfish v1 (`ANIM_V_SQUISH_AND_BOUNCE`) en Hexpress h3 (`ANIM_V_SHAKE_H_SLIDE`) in `graphics_proef/frame2/af/`.
+
+### [v0.0.958] - Gemini frame 2-prompts voor zwakke script-soorten (27 nov)
+- 11 soorten (Cryomet, Purrpillar, Spoetnik, satelliet, ruimtestation, guaraná 1, Shuppetto, Swablu, Pincurchin, Muk, DJ Rotom) kregen een frame 2-prompt in hun pakket (batch 03, 06, 08, 10, 13–16); tabelkolom → G.

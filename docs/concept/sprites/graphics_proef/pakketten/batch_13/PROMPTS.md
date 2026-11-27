@@ -8,7 +8,7 @@ Werkwijze en sjablonen: `../../PROMPTS.md`. Elke prompt in een nieuw gesprek, al
 | Vileplume (regional) | `vileplume_regional_front_8x.png` | G? |
 | Baltoy (regional) | `baltoy_regional_front_8x.png` | G? |
 | Claydol (regional) | `claydol_regional_front_8x.png` | S |
-| Swablu (regional) | `swablu_regional_front_8x.png` | S |
+| Swablu (regional) | `swablu_regional_front_8x.png` | G |
 | Altaria (regional) | `altaria_regional_front_8x.png` | S |
 | Oricorio (cumbia) | `oricorio_cumbia_front_8x.png` | G |
 | Oricorio (tango) | `oricorio_tango_front_8x.png` | G |
@@ -133,7 +133,16 @@ Gen 3 pixel art, plain white background, no ground, no shadow, no effects, no te
 
 Resultaat: 
 
-Frame 2: categorie S, per script (geen Gemini).
+### Frame 2
+```
+Edit the attached image. Keep this exact same creature: identical art style, colors, line work, proportions, size, camera angle and position on the canvas. Do not add anything new and do not redesign it.
+
+Change only the pose, as a second animation frame of a Pokémon battle sprite: the two cloud wings are raised higher and the two small antennae with the yellow bolts tilt to the side. The round head and the dark cloud base stay exactly where they are.
+
+Plain white background, no ground, no shadow, no effects, no text.
+```
+
+Resultaat: 
 
 ## Altaria (regional): bijlage `altaria_regional_front_8x.png`
 

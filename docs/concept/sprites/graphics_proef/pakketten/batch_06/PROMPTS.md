@@ -9,9 +9,9 @@ Werkwijze en sjablonen: `../../PROMPTS.md`. Elke prompt in een nieuw gesprek, al
 | Gnometrotter (Rock) | `gnometrotter_rock_front_8x.png` | G |
 | Gnometrotter (Ice) | `gnometrotter_ice_front_8x.png` | G |
 | Gnometrotter (Grass) | `gnometrotter_grass_front_8x.png` | G |
-| Satelliet fase 1 (Spoetnik) | `satelliet_fase1_front_8x.png` | S |
-| Satelliet fase 2 | `satelliet_fase2_front_8x.png` | S |
-| Ruimtestation (satelliet fase 3) | `ruimtestation_front_8x.png` | S |
+| Satelliet fase 1 (Spoetnik) | `satelliet_fase1_front_8x.png` | G |
+| Satelliet fase 2 | `satelliet_fase2_front_8x.png` | G |
+| Ruimtestation (satelliet fase 3) | `ruimtestation_front_8x.png` | G |
 
 ## Gnomini: bijlage `gnomini_front_8x.png`
 
@@ -170,7 +170,16 @@ Gen 3 pixel art, plain white background, no ground, no shadow, no effects, no te
 
 Resultaat: 
 
-Frame 2: categorie S, per script (geen Gemini).
+### Frame 2
+```
+Edit the attached image. Keep this exact same creature: identical art style, colors, line work, proportions, size, camera angle and position on the canvas. Do not add anything new and do not redesign it.
+
+Change only the pose, as a second animation frame of a Pokémon battle sprite: the eye is wide open and the four long antennae tilt slightly upward. The round body stays exactly where it is.
+
+Plain white background, no ground, no shadow, no effects, no text.
+```
+
+Resultaat: 
 
 ## Satelliet fase 2: bijlage `satelliet_fase2_front_8x.png`
 
@@ -189,7 +198,16 @@ Gen 3 pixel art, plain white background, no ground, no shadow, no effects, no te
 
 Resultaat: 
 
-Frame 2: categorie S, per script (geen Gemini).
+### Frame 2
+```
+Edit the attached image. Keep this exact same creature: identical art style, colors, line work, proportions, size, camera angle and position on the canvas. Do not add anything new and do not redesign it.
+
+Change only the pose, as a second animation frame of a Pokémon battle sprite: the large solar panel tilts a little further back and the two antennae lean to the side. The eye and the body stay exactly where they are.
+
+Plain white background, no ground, no shadow, no effects, no text.
+```
+
+Resultaat: 
 
 ## Ruimtestation (satelliet fase 3): bijlage `ruimtestation_front_8x.png`
 
@@ -208,4 +226,13 @@ Gen 3 pixel art, plain white background, no ground, no shadow, no effects, no te
 
 Resultaat: 
 
-Frame 2: categorie S, per script (geen Gemini).
+### Frame 2
+```
+Edit the attached image. Keep this exact same creature: identical art style, colors, line work, proportions, size, camera angle and position on the canvas. Do not add anything new and do not redesign it.
+
+Change only the pose, as a second animation frame of a Pokémon battle sprite: the three eye pods turn slightly and the solar panels angle a few degrees. The central hub and the arms stay exactly where they are.
+
+Plain white background, no ground, no shadow, no effects, no text.
+```
+
+Resultaat: 

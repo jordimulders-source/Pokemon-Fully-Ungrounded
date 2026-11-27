@@ -5,7 +5,7 @@ Werkwijze en sjablonen: `../../PROMPTS.md`. Elke prompt in een nieuw gesprek, al
 | soort | bijlage | frame 2 G/S |
 |---|---|---|
 | Oricorio (samba) | `oricorio_samba_front_8x.png` | G |
-| Pincurchin (regional) | `pincurchin_regional_front_8x.png` | S |
+| Pincurchin (regional) | `pincurchin_regional_front_8x.png` | G |
 | Staryu (regional) | `staryu_regional_front_8x.png` | S |
 | Starmie (regional) | `starmie_regional_front_8x.png` | S |
 | Lotad (gaucho) | `lotad_gaucho_front_8x.png` | G? |
@@ -58,7 +58,16 @@ Gen 3 pixel art, plain white background, no ground, no shadow, no effects, no te
 
 Resultaat: 
 
-Frame 2: categorie S, per script (geen Gemini).
+### Frame 2
+```
+Edit the attached image. Keep this exact same creature: identical art style, colors, line work, proportions, size, camera angle and position on the canvas. Do not add anything new and do not redesign it.
+
+Change only the pose, as a second animation frame of a Pokémon battle sprite: the orange beak is open and the red spines are spread a little wider outward. The round body and the eyes stay exactly where they are.
+
+Plain white background, no ground, no shadow, no effects, no text.
+```
+
+Resultaat: 
 
 ## Staryu (regional): bijlage `staryu_regional_front_8x.png`
 

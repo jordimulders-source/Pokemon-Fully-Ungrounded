@@ -5,7 +5,7 @@ Werkwijze en sjablonen: `../../PROMPTS.md`. Elke prompt in een nieuw gesprek, al
 | soort | bijlage | frame 2 G/S |
 |---|---|---|
 | Virus (glitch-lijn fase 3) | `glitch_fase3_front_8x.png` | S |
-| Guaraná fase 1 | `guarana_fase1_front_8x.png` | S |
+| Guaraná fase 1 | `guarana_fase1_front_8x.png` | G |
 | Guaraná fase 2 | `guarana_fase2_front_8x.png` | S |
 | Sneeuwmonster (fase 1) | `sneeuwmonster_fase1_front_8x.png` | S |
 | Sneeuwmonster (fase 2) | `sneeuwmonster_fase2_front_8x.png` | S |
@@ -49,7 +49,16 @@ Gen 3 pixel art, plain white background, no ground, no shadow, no effects, no te
 
 Resultaat: 
 
-Frame 2: categorie S, per script (geen Gemini).
+### Frame 2
+```
+Edit the attached image. Keep this exact same creature: identical art style, colors, line work, proportions, size, camera angle and position on the canvas. Do not add anything new and do not redesign it.
+
+Change only the pose, as a second animation frame of a Pokémon battle sprite: the three eyes in the red fruit cluster look a little to the side and the curled tail tip at the right uncurls slightly. The vine body and the small tendrils at the bottom stay exactly where they are.
+
+Plain white background, no ground, no shadow, no effects, no text.
+```
+
+Resultaat: 
 
 ## Guaraná fase 2: bijlage `guarana_fase2_front_8x.png`
 

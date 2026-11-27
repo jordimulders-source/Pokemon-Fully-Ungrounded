@@ -64,3 +64,4 @@ AVOID: orange plastic or clay look, opaque body, a human in a glass costume, a g
 - Jordi (27 nov), krabbel `jordi/krabbel_benen.png`: "met geel heb ik getoond hoe je dan een beenvorm kan maken, dan hoef je deze alleen nog op te vullen qua kleur en de groene lijnen twijfel ik of die niet te recht zijn" → r16 volgt de gele lijnen als beenomtrek; groene plekken (lijn in trapvoet, voet→trapbeen, onderrand romp boven verre hand, romp→standbeen, pols nabije arm) tegen het model gemeten.
 - Jordi: "2 vergeten, nu klopt ie" (krabbel opnieuw met extra groene L-lijn bij de overgang geringd trapbeen → doorschijnend deel; bestand niet opgeslagen, beschreven aan de maker als plek f).
 - Jordi: "nee de gele lijnen zijn een indicatie" → gladde beenvorm als idee; ligging/breedte uit het model, niet de gele lijnen pixel voor pixel.
+- Jordi: "maak het netjes".

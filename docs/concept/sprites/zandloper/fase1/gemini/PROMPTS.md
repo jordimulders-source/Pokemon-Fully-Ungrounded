@@ -83,3 +83,22 @@ Small first-stage Pokémon, compact silhouette.
 
 No effects, no glow, no sparkles, no ground or shadow under it. AVOID: cartoon illustration, oven mitts or gloves, a tiny ghost inside, a plain realistic hourglass with eyes, a plush toy, Neopets style.
 ```
+
+**Jordi over r5:** "het is telkens een nieuw gesprek, en nu heb ik weer een stom gezichtje met ovenwanten".
+Analyse Claude: "face" in de prompt geeft een smiley-gezicht met grijns (Jordi zei op 26 nov "alleen ogen"; de mond kwam van Claude's "face"); het woord "hands" geeft telkens wanten. Plan: handen niet meer aan Gemini vragen maar in de spritefase plakken (r3-blokjes; les GEMINI.md: combineren in de spritefase), en alleen ogen, geen mond.
+
+## r6
+```
+Design an original Pokémon as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64 pixels, max 16 colors, white background, facing 3/4 to the left.
+STYLE (most important): real pixel art exactly like a Gen 3 in-game sprite: crisp hard pixels, a dark 1-pixel outline around every shape, flat cel shading with 2-3 tones per color, no gradients, no cartoon illustration look.
+
+Concept: the first stage of an hourglass Pokémon (Ground/Psychic). Its final evolution is a sand djinn that escapes from the hourglass; here the djinn is still locked inside. The creature IS the living sand, and the hourglass is its shell.
+EYES: the only features are two eyes in the sand of the upper bulb, looking out through the glass. NO mouth, NO nose, NO smile, NO face drawn on the sand. Pokémon-style eyes: white with a black pupil, narrowed under a thick heavy brow, a watchful, ancient look.
+No hands, no arms, no legs.
+COLORS (exact): sand in warm ochre gold (#fce296, #e8be62, #cc9c46, #a47034). Glass pale icy blue (#def4fa, #a0cce0, #72a0ba) with a dark slate-blue outline (#405e7a). Wooden end caps smooth dark brown (#8a522e, #5c321e, #603a18), no wood grain.
+The hourglass is whole. Nothing comes out of the glass yet.
+POSE: it floats in the air at a tilt, it does not stand upright on the ground.
+Small first-stage Pokémon, compact silhouette.
+
+No effects, no glow, no sparkles, no ground or shadow under it. AVOID: a smiley face, a grin, cartoon illustration, a plush toy, Neopets style.
+```

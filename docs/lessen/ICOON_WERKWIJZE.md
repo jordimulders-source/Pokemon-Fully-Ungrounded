@@ -3,6 +3,7 @@
 Bewezen op de viscacha (19 nov, af: `docs/concept/sprites/viscacha/icoon/af/icon.png`). Volg dit stap voor stap; naslag en bewijs staan in `docs/concept/sprites/rug_icoon_studie/EISEN_ICOON.md`, `STUDIE.md` en `verhoudingen/STUDIE_VERHOUDINGEN.md`.
 
 ## Kern (Jordi)
+- **De route is drie stappen, allemaal** (27 nov, twee afgekeurde proeven): onderdelen-methode met kop groter geschaald dan lijf → poetsen per zone (lessen 1–10) → meetregels. Na alleen stap 1 is het een verkleining; zonder de methode (alles hertekenen) is het "helemaal niet gebaseerd op de zapacha studie" (Jordi).
 - **Geen verkleining** (Jordi, 27 nov, over de proeficonen Gumfish en Sunperor: "Die zijn gewoon verkleind maar dat was de regel helemaal niet").
 - **Eis 0: hij lijkt op de front.** "dat is het belangrijkste van de hele eisenlijst, hij moet lijken op de echte pokemon". Het icoon is onze front in het klein: kopvorm, gezicht, oren, kenmerken en kleurverdeling overnemen, niets verzinnen.
 - **Rekenen, niet schatten.** "de wiskunde is ontzettend belangrijk voor het icoon". Elke maat en plek volgt uit de front × de regels uit de meetstudie, binnen de marge p25–p75.

@@ -20,11 +20,19 @@ for v in range(JVAK[0],JVAK[1]+1):
     for u in range(JVAK[2],JVAK[3]+1):
         if c2[v,u]==2 and (c2[max(0,v-2):v+3,max(0,u-2):u+3]==4).sum()>=4: c2[v,u]=4
 c=c2
+# toonkaart deeg (r4): het model heeft één vlakke hoofdtint (L 193) met schaduwvlakken (148) en barsten (90-120). Deegtint per spritepixel
+# uit de gladgestreken modelhelderheid (5x5, alleen deegpixels), drempels uit de eigen verdeling: zo komt het volume uit het model.
+def glad(L,m,r=2):
+    p=np.pad(np.where(m,L,0.),r); q=np.pad(m.astype(float),r); H_,W_=L.shape
+    s_=sum(p[r+dy:r+dy+H_,r+dx:r+dx+W_] for dy in range(-r,r+1) for dx in range(-r,r+1))
+    n_=sum(q[r+dy:r+dy+H_,r+dx:r+dx+W_] for dy in range(-r,r+1) for dx in range(-r,r+1))
+    return s_/np.maximum(n_,1)
+LG=glad(L,c==3)
 def tnD(l): return 3 if l<140 else 4 if l<188 else 5
 def tnC(l): return 6 if l<75 else 7
-def tnJ(l): return 9 if l<55 else 10 if l<88 else 11 if l<135 else 12 if l<195 else 13
+def tnJ(l): return 9 if l<20 else 10 if l<60 else 11 if l<120 else 12 if l<185 else 13   # r4-juweel gemeten: rand 0-3, donkerrood 33-45, rood 80-88, roze 146-155, glans 200
 TC=0.35; TJ=0.35; TCH=0.18; TJG=0.20; TK=0.30
-o=np.zeros((64,64),int)
+o=np.zeros((64,64),int); LGS=np.zeros((64,64))
 for Y in range(64):
     for X in range(64):
         f=np.zeros(5); lum=np.zeros(5); fch=0; fjg=0; frim=0; fj={}
@@ -40,7 +48,10 @@ for Y in range(64):
             o[Y,X]=max(fj,key=fj.get); continue   # juweel: meest voorkomende modeltint (geen gemiddelde, anders mengen de strepen)
         if f[2]>=TC:
             o[Y,X]=8 if fch>=TCH else 6 if frim/f[2]>=0.40 else 7; continue
-        o[Y,X]=tnD(lum[3]/f[3]) if f[3]>0 else 4
+        o[Y,X]=-1; LGS[Y,X]=sum(w*LG[v,u] for u,v,w in overlap(X,Y,W,H) if c[v,u]==3)/max(f[3],1e-9)
+dg=o==-1; T5,T3=np.percentile(LGS[dg],[70,22])
+o[dg]=np.where(LGS[dg]>=T5,5,np.where(LGS[dg]<T3,3,4))
+print('toonkaart drempels: licht >= %.0f, schaduw < %.0f'%(T5,T3))
 kaal=o.copy(); opslaan(kaal,UIT+'/kaal.png')
 if len(sys.argv)>1 and sys.argv[1]=='kaal':
     toon(o,8,60,6,58); sys.exit()

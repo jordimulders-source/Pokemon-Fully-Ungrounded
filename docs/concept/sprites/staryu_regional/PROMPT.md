@@ -237,3 +237,27 @@ Redraw image 1 with exactly the same design: the same purple icing star with whi
 
 Output: a simple, clean official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64 pixels, max 16 colors, white background, no ground, no shadow, no effects. Keep the purple icing and the cookie colors of image 1, not the colors of image 2.
 ```
+(v7 met bijlagen niet gebruikt; Jordi: "doe nog maar 1 prompt en wees heel accuraat in de prompt", "geen bijlagen".)
+
+### Prompt v8 (nieuw gesprek, geen bijlagen; r4 in woorden, kleuren gemeten op r4)
+```
+Design a regional form of the Pokémon STARMIE as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style): 64x64 pixels, max 16 colors, 2-3 shades per color, black and dark outlines, white background, no ground, no shadow, no effects, no glow, no crumbs. No face, no eyes, no mouth, no limbs.
+
+WHAT IT IS: Starmie made of two star-shaped cookies stacked on top of each other: a decorated iced cookie star in front, a plain chocolate chip cookie star behind it.
+
+POSE AND SHAPE (most important), like the original Starmie sprite:
+- Seen in 3/4 view: the whole figure is tilted back and rotated, so the top arm of the front star leans slightly to the right and the arms on the right side look a bit shorter. You can see the thickness of the front cookie as a darker side edge along its lower right rim. Not flat, not facing straight forward, not perfectly symmetric.
+- The front star has exactly 5 arms. The back star has exactly 5 arms, the same size, rotated so each of its arms sticks out in one of the 5 gaps between the front arms, evenly all around: 10 points in total, all clearly visible.
+- The points are shaped like Starmie's points: a broad base, straight sides, and a slightly blunt tip. Not long thin spikes and not needle-sharp. Each back point is split down the middle into a lighter half and a darker half.
+
+FRONT STAR (iced cookie):
+- A golden-brown cookie rim (#d6893f, darker toasted brown on the shadow side) around the whole edge.
+- On top a thick layer of glossy lavender-purple icing (#ae72bd), lighter purple highlights on the upper left, darker purple along its edge.
+- White icing drizzle in thick zigzag lines, one zigzag running along each arm.
+- About 15 small rectangular sprinkles in red, yellow, green and blue, scattered over the icing.
+- In the center a faceted octagonal purple gem (#9858ab, darker facets #7c3e97 at the bottom, lighter facets at the top left), about a quarter of the star's width.
+
+BACK STAR (plain cookie): golden-brown cookie dough (#d6893f), darker toasted brown (#7c421d) on the shadow halves, 2-3 small dark chocolate chips on each of its 5 points.
+
+DO NOT: a flat star seen straight from the front, long sharp spikes, fewer than 10 points, back points hidden or bunched on one side, a realistic photo, a plate, starfield or galaxy patterns, sparkles, plush style.
+```

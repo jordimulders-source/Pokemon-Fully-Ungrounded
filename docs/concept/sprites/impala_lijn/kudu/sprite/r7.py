@@ -14,19 +14,19 @@ EDIT={  # rij: (begin-x, tekens)  '?' = laten zoals r6
  28:(13,'MMdmmdmmmmmddlll0'),
  29:(12,'MMMdlmdmmmdllmmmdd0'),
  30:(13,'MMdlmdllmdmddlllmm00'),
- 31:( 9,'0mm0MMdllmdlldllm000000'),
- 32:( 9,'dlm0MMdllmdlmdddd0'),
- 33:( 9,'dlm0MMdllmdlmdlllm0'),
- 34:( 9,'dlm0MMdllmdlmdlllm0'),
+ 31:( 9,'0mm0MMdllmdlldllmmm0000'),
+ 32:( 9,'dlm0MMdllmdlmdmdd00'),
+ 33:( 9,'dlm0MMdllmdlmddmlm0'),
+ 34:( 9,'dlm0MMdllmdlmdmllm0'),
  35:( 8,'dlldm0Mdllmdlmdlllm0'),
  36:( 8,'dlldm0MMdlmdlmdllm0'),
  37:( 9,'dldmm0Mdlmdldlllm0'),
- 38:( 9,'dldmm0Mdlmdldllmm0'),
+ 38:( 9,'dldmm0Mdmmdldllmm0'),
  39:( 9,'dlldmm0MMdlmdllm0'),
  40:( 9,'dlldmmm0Mdlmdllm0'),
- 41:(10,'0lldmmmmdlm0lm0'),
- 42:(10,'0lldmmmmmdm0m0'),
- 43:(11,'0lmmmmmmmd?0'),
+ 41:(10,'0lmdmmmmdmm0lm0'),
+ 42:(10,'0mmdmmmmmdm0m0'),
+ 43:(11,'0mmmmmmmmd?0'),
  44:(11,'00mdmdmmm0'),
  45:(13,'00m0mmdm0'),
  46:(15,'0DD0mm0'),
@@ -38,6 +38,7 @@ H,W=len(g),len(g[0])
 # ---- bewijs: manenzone = haarpixels van r6 (l/m/d, rij 23-47, x<=32) plus 1 ring eromheen; alles daarbuiten diff 0
 HAAR={(x,y) for y in range(23,48) for x in range(0,33) if R6[y][x] in 'lmd'}
 ZONE={(x+a,y+b) for x,y in HAAR for a in(-1,0,1) for b in(-1,0,1)}
+ZONE|={(22,43)}   # omtrek onder de lokpunt (22,42): model rij 42-43 x22-23 lijn ('#+'), lokpunt ligt op de schouder
 diff={(x,y) for y in range(H) for x in range(W) if g[y][x]!=R6[y][x]}
 buiten=diff-ZONE
 # ---- uitvoer

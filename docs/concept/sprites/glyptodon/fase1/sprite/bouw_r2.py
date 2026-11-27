@@ -2,7 +2,7 @@
 #  1. kop/nek (x<=21, y 39..53): vulpixels opnieuw uit het model met MEERDERHEID van de modelcellen
 #     (i.p.v. het gemiddelde dat modder gaf) -> crème/tan snuit en kaak, lichtste plaattinten in de nek.
 #     Oog (x11-13, y47-48) niet aangeraakt: blijft r1 (Jordi: "hij heeft geen pupil", Claude vraagt het na).
-#  2. poten (y>=53): meerderheid + lichte tenen waar >=30% van de pixel lichte modelcellen (>=140) zijn.
+#  2. poten (y>=53): meerderheid; tenen (onderste 2 rijen van de voet) lichtst (4) waar >=30% van de pixel modelcellen >=150 zijn.
 #  3. staart: vervallen (Jordi: "staart is prima"), precies r1.
 # Randpixels (buitenlijn/selout) en lijnpixels van r1 worden niet aangeraakt.
 import sys, numpy as np
@@ -37,7 +37,9 @@ for y in range(H):
         elif y >= 53:
             m, _ = meet.meerderheid(x, y, PAL, GRIJS)
             if m: zet(y, x, m, '2 poten meerderheid')
-            if meet.licht(x, y, 140) >= 0.30: zet(y, x, 7, '2 tenen licht')
+            onder = [r1[yy, x] if yy < H else 0 for yy in (y + 1, y + 2)]
+            if 1 in onder or 0 in onder:   # alleen de onderste twee rijen van de voet = tenen
+                if meet.licht(x, y, 150) >= 0.30: zet(y, x, 4, '2 tenen licht')
 
 np.save(D + '/r2.npy', a)
 im = Image.fromarray(a.astype('uint8'), 'P'); flat = [0, 0, 0] * 16

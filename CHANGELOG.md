@@ -3788,3 +3788,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.911] - Uku Pacha: slangenvel + bijsturen lijnfrequentie (27 nov)
 - Vergelijkingsvel met alle slang-Pokémon; Jordi wil de lijnfrequentie van Arbok, bijstuurprompt voor het r2-gesprek.
+
+### [v0.0.912] - Uku Pacha: sprite r1, model trouw verkleind (27 nov)
+- Natief raster r2 (100×100) → 64 px (factor 0,70) met oppervlakgewogen stem, omlijning wint vanaf 34%, oog/tong/oogwit vast in het palet (`sprite/r1/reduceer.py`). Nog geen lijnen weggehaald.

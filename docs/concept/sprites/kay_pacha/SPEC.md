@@ -43,3 +43,4 @@ Prompt r1: `PROMPT.md`.
 - **Model bevroren (Jordi, 27 nov: "staarten omhoog"):** `gemini/r10a.png` = `referenties/gemini_gekozen_r10a.png` (vervangt r9). Bouwen vanaf 18:11.
 - Sprite r1 (maker, `sprite/r1/`, A met 2e paars, B zonder; silhouet-diff 0, 16 kleuren; vel `sprite/r1/vel.png`). Naar Jordi.
 - Jordi: "rechts" (= B, oog zonder 2e paars). Volgende: eindkeuring schaduw + belijning + kleurtinten (Dragonfly Cave) op r1 B.
+- Eindkeuring ek1 (`sprite/ek1/`): omlijning volgens DC (zwart op de rand 57% → 41%, binnenlijnen eigen tint), volume groen, eigen groene lijntint; oog en strepen delen nu één paars (138,80,148); maskerranden bruin i.p.v. zwart. Naar Jordi.

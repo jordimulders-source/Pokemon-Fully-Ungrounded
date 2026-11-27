@@ -48,10 +48,13 @@ def paar(box, z=12):
     b = raster(modeluitsnede(*box, z), z)
     return a, b
 k1, k2 = paar(kop); t1, t2 = paar(staart)
+voet = (OX + 3, OY + 23, OX + 42, OY + H + 1)
+v1, v2 = paar(voet)
 een = [op((248, 248, 240, 255), spr), op((40, 48, 64, 255), spr)]
 
 breed = max(s8.width + m8.width + 30, k1.width * 2 + 30 + t1.width * 2 + 30)
-hoog = s8.height + 20 + max(k1.height, t1.height) + 20 + 64 * 2 + 30
+hoog = s8.height + 20 + max(k1.height, t1.height) + 20 + v1.height * 2 + 30 + 64 * 2 + 30
+breed = max(breed, v1.width + 20)
 vel = Image.new('RGBA', (breed, hoog), (255, 255, 255, 255))
 vel.paste(s8, (0, 0)); vel.paste(m8, (s8.width + 30, 0))
 y = s8.height + 20
@@ -59,6 +62,8 @@ vel.paste(k1, (0, y)); vel.paste(k2, (k1.width + 10, y))
 x = k1.width * 2 + 40
 vel.paste(t1, (x, y)); vel.paste(t2, (x + t1.width + 10, y))
 y += max(k1.height, t1.height) + 20
+vel.paste(v1, (0, y)); y += v1.height + 10
+vel.paste(v2, (0, y)); y += v2.height + 20
 for k, e in enumerate(een):
     vel.paste(e.resize((128, 128), Image.NEAREST), (k * 140, y))
     vel.paste(e, (300 + k * 80, y))

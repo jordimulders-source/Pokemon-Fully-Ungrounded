@@ -3618,3 +3618,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.864] - Regionale Hitmonlee: frontsprite-kandidaat + eindkeuring (27 nov)
 - Maker nam Gemini r2 over (raster 5,12 px, rijen/kolommen geschrapt naar 59×64, 15 kleuren); eindkeuring ek1 PASS. Ter beoordeling bij Jordi: `hitmonlee_regional/eindkeuring/ek1.png`.
 - Les in `GEMINI.md`: pitch altijd op 8× controleren.
+
+### [v0.0.865] - Regionale Hitmonlee: tweede eindkeuring ek2 (27 nov)
+- Verse DC-keurder: PASS, 1 px gewijzigd (`hitmonlee_regional/eindkeuring/ek2.png`). Open punt: linkerwand van de romp rechter dan de koepel in het model.

@@ -55,3 +55,4 @@ AVOID: orange plastic or clay look, opaque body, a human in a glass costume, a g
 
 ## Sprite (27 nov)
 - Maker r13 → `sprite/kandidaat.png`; eindkeuring ek1 (PASS beide eisen, 23 px: belijning + doorschijnend kickbeen in de romp terug naar modeltint) → `eindkeuring/ek1.png`. Ter beoordeling bij Jordi.
+- Jordi: "top eindkeuring nog" → tweede (DC-)eindkeuring ek2: PASS beide eisen, 1 px (hiel trapvoet zwart → donkerrood). Open: linkerwand romp ±10 px recht (model rondere koepel; komt van rijen/kolommen schrappen).

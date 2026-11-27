@@ -196,14 +196,17 @@ def bouw(cfg, S_extra=1.0, log=None):
             for j in range(1, 14):
                 hj, sj, vj = hs(P[j])
                 if sm < .2: ok = sj < .2
-                else: ok = sj > .2 and min(abs(hj - hm), 1 - abs(hj - hm)) < d.get('toonvenster', .1)
+                else: ok = sj > .2 and min(abs(hj - hm), 1 - abs(hj - hm)) < d.get('toonvenster', .07)
                 if ok: kand.append(j)
             kand = sorted(kand or [int(afstand(kleur[mi].mean(0)[None], P[1:14]).argmin() + 1)], key=lambda j: P[j].mean())
-            L = kleur[mi].mean(1); lo, hi = np.percentile(L, 5), np.percentile(L, 95); t = np.clip((L - lo) / max(1, hi - lo), 0, 1)
-            # kandidaten op dezelfde schaal: de dichtstbijzijnde tint van het deel is het midden
-            lp = np.array([P[j].mean() for j in kand]); basis = int(afstand(kleur[mi].mean(0)[None], P[kand]).argmin())
-            doel = lp[basis] + (t - np.median(t)) * (hi - lo)
-            idx[mi] = np.array(kand)[np.abs(doel[:, None] - lp[None, :]).argmin(1)]
+            # Gen 3-verdeling: het grootste deel in de basistint, alleen de lichtste 20%/5% een of twee tinten lichter,
+            # de donkerste 15%/5% een of twee tinten donkerder (volgorde = helderheid in de front)
+            L = kleur[mi].mean(1); r = np.argsort(np.argsort(L)) / max(1, len(L) - 1)
+            basis = int(afstand(kleur[mi].mean(0)[None], P[kand]).argmin())
+            stap = np.zeros(len(L), int)
+            for drem, st in ((.80, 1), (.95, 2)): stap[(r >= drem) & (L > np.median(L) + 8)] = st
+            for drem, st in ((.15, -1), (.05, -2)): stap[(r <= drem) & (L < np.median(L) - 8)] = st
+            idx[mi] = np.array(kand)[np.clip(basis + stap, 0, len(kand) - 1)]
             info.append(f"  {d['naam']}: auto-ramp {kand} (basis {kand[basis]})")
         elif ramp:  # helderheid binnen het deel lineair over de opgegeven tinten
             L = kleur[mi].mean(1); lo, hi = np.percentile(L, 5), np.percentile(L, 95)

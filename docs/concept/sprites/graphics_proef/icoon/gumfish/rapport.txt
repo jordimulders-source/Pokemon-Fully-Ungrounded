@@ -4,10 +4,10 @@ factoren {'kop': 1.25, 'lijf': 0.95, 'overig': 1.0}
 icoon 27x16 (onderkant y29, midden x15.5)
 minimummaten:
   staart: staart f=12 -> 5.7 px < minimum 6.8: schaal x1.21
-  staart: auto-ramp [6, 7, 10, 11] (basis 6)
-  lijf: auto-ramp [6, 7, 10, 11] (basis 6)
-  borstvin: auto-ramp [6, 7, 10, 11] (basis 6)
-  kop: auto-ramp [6, 7, 10, 11] (basis 6)
+  staart: auto-ramp [6, 10, 11] (basis 6)
+  lijf: auto-ramp [6, 10, 11] (basis 6)
+  borstvin: auto-ramp [6, 10, 11] (basis 6)
+  kop: auto-ramp [6, 10, 11] (basis 6)
   oog: front 2 px, centrum icoon (24.4,29.2), patroon 2x2, minimum 1.5
 paletafstand (gemiddelde Delta E in Lab; lager = beter):
   pal0: 23.7  (2 tinten)   <- gekozen

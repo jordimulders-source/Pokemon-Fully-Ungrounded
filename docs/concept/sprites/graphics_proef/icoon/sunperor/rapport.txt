@@ -7,9 +7,9 @@ minimummaten:
   oog: front 2 px, centrum icoon (23.9,15.8), patroon 1x1, minimum 1.5
   oog: front 3 px, centrum icoon (26.8,15.8), patroon 1x1, minimum 1.8
 paletafstand (gemiddelde Delta E in Lab; lager = beter):
-  pal0: 22.9  (5 tinten)
-  pal1: 23.4  (4 tinten)
-  pal2: 21.3  (6 tinten)
+  pal0: 22.8  (5 tinten)
+  pal1: 23.5  (4 tinten)
+  pal2: 21.2  (6 tinten)
   pal3: 21.8  (4 tinten)
-  pal4: 23.4  (4 tinten)
-  pal5: 20.6  (6 tinten)   <- gekozen
+  pal4: 23.5  (4 tinten)
+  pal5: 20.5  (6 tinten)   <- gekozen

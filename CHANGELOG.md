@@ -3893,3 +3893,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.954] - Shiny-voorstellen (27 nov)
 - 67 lijnen, één idee per lijn, alle 129 soorten: `graphics_proef/shiny/` (vellen `vel_new_1/2`, `vel_evolutions`, `vel_regional`, `vel_legendaries`; per soort `<slug>_shiny.pal`; `recepten.py`, `maak_shiny.py`, `OVERZICHT.md`). A/B bij alpaca-lijn, terreurvogel-lijn en Oricorio-dansen. Twijfels: Capykart (kar deelt kleuren met de capibara), Llamauler A te weinig verschil (daarom B), Mosaguar mogelijk druk.
+
+### [v0.0.955] - Icoongereedschap algemeen + proeficonen (27 nov)
+- `graphics_proef/icoon/icoon_bouw.py` (front + JSON → onderlaag 32×32, paletkeuze op Delta E) en `icoon_af.py` (poetslijst + frame 2 uit dezelfde JSON). Proef: Gumfish (pal0, 15/17 checks; de twee NEE's liggen binnen echte Gen 3-vissen) en Sunperor (pal5, 17/17). Paletafwijkingen: Gumfish baksteenrood, Sunperors lijf grijs (geen icoonpalet heeft die tinten). Verwachting: ±30–45 min agentwerk per soort.

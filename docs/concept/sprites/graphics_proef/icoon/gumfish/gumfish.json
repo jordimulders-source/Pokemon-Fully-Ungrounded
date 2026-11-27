@@ -183,13 +183,13 @@
   }
  },
  "frame2": {
-  "split": 28,
+  "split": 23,
   "vast": [
    [
-    23,
+    22,
     13,
-    29,
-    19
+    28,
+    18
    ]
   ]
  },
@@ -199,20 +199,15 @@
    [
     4,
     22,
-    13
+    6
    ],
    [
     3,
     23,
-    13
+    6
    ]
   ],
-  "kop boven (losse lijnpixel in de lichtband, kopkoepel rond)": [
-   [
-    8,
-    17,
-    7
-   ],
+  "kop boven (kopkoepel rond, glans 3 px wit zoals de front)": [
    [
     7,
     16,
@@ -222,23 +217,38 @@
     7,
     17,
     15
+   ],
+   [
+    8,
+    17,
+    10
+   ],
+   [
+    5,
+    19,
+    10
+   ],
+   [
+    7,
+    19,
+    10
    ]
   ],
   "oog (lijnblokje eronder weg, oog leest als 2x2)": [
    [
     9,
     26,
-    13
+    6
    ],
    [
     10,
     26,
-    13
+    6
    ],
    [
     10,
     27,
-    13
+    6
    ]
   ],
   "rug (dal achter de kop en bult zoals in de front)": [
@@ -273,14 +283,9 @@
     15
    ],
    [
-    12,
-    19,
-    7
-   ],
-   [
     13,
     19,
-    7
+    10
    ],
    [
     16,
@@ -295,12 +300,12 @@
    [
     16,
     17,
-    7
+    10
    ],
    [
     17,
     17,
-    7
+    10
    ],
    [
     21,
@@ -365,18 +370,6 @@
     13,
     28,
     14
-   ]
-  ],
-  "glans (overgang wit -> roze, zoals de front: wit + lichtroze)": [
-   [
-    8,
-    18,
-    8
-   ],
-   [
-    8,
-    19,
-    8
    ]
   ]
  },

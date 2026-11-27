@@ -169,3 +169,4 @@ Jordi: "we hebben namelijk ook een aantal complexe designs en die moeten we ook 
 
 ## Stand viscacha-icoon
 `viscacha/icoon/maker/icon_v2.png`: 13/14; alleen detail te laag (binnenlijnen 9%, minimum 10%, mediaan 18%). Vorm: 13 kleurvlakken (norm 10–28, mediaan 18), 0,20 van de front (aan de lage kant), silhouet 0,60 (goed), 0 gaten.
+- **Kleur per pixel (27 nov, graphics_proef/icoon):** neem de meest voorkomende frontkleur per icoonpixel, niet het gemiddelde: voorkomt modder en blur. Algemeen script: `graphics_proef/icoon/icoon_bouw.py` + `icoon_af.py` (JSON per soort; vereist scipy).

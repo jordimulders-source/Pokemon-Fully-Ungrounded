@@ -900,3 +900,13 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - **Jordi (27 nov) op r6:** "deze vind ik tof, vertaalt die goed naar een sprite?" Check (Claude): natief raster ±66×66 (pixel ±10,2 px), ±9 kleuren; 2 rijen/kolommen schrappen naar 64×64, geen hertekenwerk nodig.
 - **Jordi (27 nov) over de mond in r6:** "de mond is heel subtiel, zie mijn lijn, vind ik wel prima zo" (`sprites/ledian_evo/gemini/r6_mond_jordi.png`). r6 = model; SPEC: `sprites/ledian_evo/SPEC.md`.
 - **Jordi (27 nov):** "ledyba lijn moet zeker terug". `P_FAMILY_LEDYBA` aan en genoteerd in `DEX_IN_ROM.md`; ROM nog niet gebouwd.
+
+## Kay Pacha-poema: lore (Claude, 27 nov, ter info)
+- Het schema condor–poema–slang voor de drie werelden is grotendeels een moderne/populaire lezing; de poema zelf is wel oud en overal (Chavín, Tiwanaku, Inca).
+- Cuzco als poema (Pachacútec): Sacsayhuamán = kop, zigzagmuren = tanden, rivieren Saphy en Tullumayo = flanken, Pumachupan ("staart van de poema") bij de samenvloeiing.
+- Puma Punku ("poort van de poema", Tiwanaku, bij La Paz): precies gehouwen stenen met H-blokken.
+- Titicaca: vaak gelezen als "rots van de (grijze) poema" (Titi Khar'ka op Isla del Sol); populair: het meer heeft de vorm van een jagende poema.
+- Tiwanaku: chachapuma's (poema-krijgers), poemakoppen op het steenwerk.
+- Inca: heersers en krijgers droegen poemahuiden; de poema = kracht, geduld, aardse macht van het hier en nu.
+- Ccoa/Qoa: mythische vliegende Andeskat (grijs, zwarte strepen), stormgeest bij Illapa: hagel uit de ogen, bliksem; gevreesd en met offers gesust.
+- Echte poema: grootste verspreiding van alle zoogdieren van Amerika (Canada–Patagonië), van zeeniveau tot boven 4000 m; kan niet brullen (blaast, gilt, spint).

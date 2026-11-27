@@ -137,3 +137,5 @@ No effects, no glow, no sparkles, no speed lines, no dust, no ground or shadow u
 ```
 Keep this Pokémon sprite exactly the same: same pose, same colors, same beak, same body. Change ONLY the eye: make it a real bird eye, a small round eye with a light round iris and a round black pupil, like a hawk's or a terror bird's eye. NOT an almond-shaped human or anime eye, no eyelid line, no eyebrow.
 ```
+
+**r7 (`r7.png`) = model.** Jordi (27 nov): "ok in de sprite zorgen dat het oog naar voren kijkt, we gaan het anders dan normaal doen, ik ben nog niet helemaal tevreden met de kleuren van het lichaam en de snavel, dus bouw maar de sprite en toon dan een paar pallette swaps. De snavel vind ik nog niet fossiel genoeg en het lichaam niet dreigend genoeg qua kleur, de pose prima nu".

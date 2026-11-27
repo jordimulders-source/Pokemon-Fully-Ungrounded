@@ -52,3 +52,5 @@ Compact silhouette that fits a square.
 
 No effects, no glow, no sparkles, no ground or shadow under it. AVOID: a turtle, Shieldon or Bastiodon, a modern armadillo, Dunsparce, a plush toy, Neopets style.
 ```
+
+**r3-resultaten:** `r3_1_zonder_keuze.png` (Jordi: "bij de eerste was ik vergeten a/b en x/y te vervangen"; geen stekels, stompe staart, oranje oog onder het vizier), `r3_2_X_B.png` (veel stekels + knots), `r3_3_Y_A.png` (één grote stekel + drill met stekelpunt, zandkleurig schild).

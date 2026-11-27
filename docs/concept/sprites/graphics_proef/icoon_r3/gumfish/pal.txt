@@ -1,0 +1,9 @@
+Gumfish – iconPalIndex = 0 (graphics/pokemon/icon_palettes/pal0.pal; palet niet aangepast)
+Factoren (REGELS_PER_BOUW 'Vis'): S 0,44; lijf 1,16xS lang / 1,0xS hoog; kop 1,4xS (anker grens kop/romp (24,42)); staartvin 1,2xS (minimum staart 3,0+0,32xf); borstvin 1,0xS; dekkingsdrempel 0,35. Onderlaag = B35.png.
+Frontkleur -> pal0-index (dichtstbijzijnde kleurtoon; pal0 heeft geen karmijn, zoals Octillery):
+  4 (141,39,45) donkerkarmijn, 6 (198,53,56) rood -> 6 baksteenrood (213,98,65)
+  9 (219,81,79) lichtrood, 10 (185,112,112)      -> 10 roze (238,115,156)
+  11 (222,144,150) lichtroze (strepen, glansrand) -> 11 lichtroze (255,180,164)
+  13 wit (glans)                                  -> 3 wit
+  1, 2 omlijning                                  -> 15 boven / 14 onder en binnenlijnen
+Gebruikt: 3, 6, 10, 11, 14, 15 (6 kleuren).

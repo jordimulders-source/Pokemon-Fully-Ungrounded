@@ -3920,3 +3920,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.963] - Icoonmethodiek per bouw (27 nov)
 - 55 Gen 3-paren front → icoon gemeten per bouw (vis, vogel, tweevoeter, bol, object, plant, viervoeter): `rug_icoon_studie/per_bouw/REGELS_PER_BOUW.md` + vellen + `meet/`. Kern: compacte bouw bijna verkleining, uitstekende bouw chibi (kop ×1,25/×1,45, kopaandeel 0,37→0,57); attributen schalen met de kop. In ICOON_WERKWIJZE als stap 0.
+
+### [v0.0.964] - Proeficonen ronde 3 (27 nov)
+- Volledige Zapacha-route + recept per bouw: `graphics_proef/icoon_r3/{gumfish,sunperor}/` (17/17, vorm binnen de normen). Eigen oordeel Claude: Gumfish bruikbaar (lippen, oog, glans, vinnen; palet maakt hem zalmroze); Sunperor niet: kroon domineert, gezicht te klein, lijf grijs door pal5.

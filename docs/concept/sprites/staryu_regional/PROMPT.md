@@ -84,3 +84,19 @@ Keep everything exactly the same: the shape, the pose, the size, the number and 
 2. The knobs are rich, glossy dark chocolate, with a small light highlight on each one.
 Keep it a clean Gen 3 sprite: max 16 colors, 2-3 shades per color, white background, no crumbs, no effects.
 ```
+
+## Starmie v2: versierd koekje (27 nov)
+Jordi: "en staryu kan dan bijv chocolate chip zijn en starmie allerlei versieringen (zolang het vertaalt naar een sprite".
+Nieuw gesprek, bijlage `gemini/bijlage_starmie_gen3.png`. Eigen invulling Claude (niet door Jordi gekozen): koekkleur zoals de Staryu-bijstuurprompt; voorbeelden van versieringen (glazuur, hagelslag, chocoladestrepen, snoepje) zijn voorbeelden, Gemini kiest; kern zoals in de bijlage.
+
+```
+The attached image is STARMIE, a Gen 3 Pokémon sprite. Design a REGIONAL FORM of Starmie: it must still be instantly recognizable as Starmie, but clearly different. Its theme: a fancy, decorated star-shaped cookie, the evolved form of a chocolate chip cookie star.
+
+Output: a simple, clean official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64 pixels, max 16 colors, flat colors with 2-3 shades per color, the same low level of detail as the attached Starmie. White background, no ground, no shadow, no effects, no glow, no crumbs.
+
+KEEP FROM STARMIE (most important): the silhouette of two overlapping five-pointed stars (the back star rotated behind the front star), the same proportions and angle as the attachment, and the gem core in the center exactly as in the attachment. No face, no eyes, no mouth, no limbs.
+
+CHANGE INTO A DECORATED COOKIE: both stars are a warm golden-brown, freshly baked cookie, slightly more toasted along the edges and tips; the back star a bit darker so the two stars stay readable. The cookie is covered with all kinds of decorations, for example icing, sprinkles, chocolate drizzle or small candies, so it looks festive and delicious. Every decoration must be big and simple enough to read at 64x64: a few clear shapes, not many tiny dots.
+
+DO NOT: a realistic photo, a plate, a gingerbread man, a face, starfield or galaxy patterns, sparkles, plush style, a messy pile of tiny details.
+```

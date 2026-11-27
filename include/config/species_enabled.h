@@ -396,7 +396,7 @@
 #define P_FAMILY_WIMPOD                  P_GEN_7_POKEMON
 #define P_FAMILY_SANDYGAST               P_GEN_7_POKEMON
 #define P_FAMILY_PYUKUMUKU               FALSE // FU: niet in de dex (was P_GEN_7_POKEMON)
-#define P_FAMILY_MINIOR                  FALSE // FU: niet in de dex (was P_GEN_7_POKEMON)
+#define P_FAMILY_MINIOR                  P_GEN_7_POKEMON // FU: terug (Jordi, 27 nov; wordt Cosmic, krijgt een evolutie)
 #define P_FAMILY_KOMALA                  FALSE // FU: niet in de dex (was P_GEN_7_POKEMON)
 #define P_FAMILY_TURTONATOR              P_GEN_7_POKEMON
 #define P_FAMILY_TOGEDEMARU              FALSE // FU: niet in de dex (was P_GEN_7_POKEMON)

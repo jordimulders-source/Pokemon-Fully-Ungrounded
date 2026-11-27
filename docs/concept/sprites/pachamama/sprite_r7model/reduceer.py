@@ -3,7 +3,7 @@
 import sys; sys.path.insert(0,'.'); from gemeen import *; from PIL import Image
 from collections import deque
 OY,OX=int(sys.argv[1]),int(sys.argv[2]); UIT=sys.argv[3]
-a=np.asarray(Image.open('natief.png').convert('RGB')).astype(float); NH,NW=a.shape[:2]
+a=np.asarray(Image.open(sys.argv[4] if len(sys.argv)>4 else 'natief.png').convert('RGB')).astype(float); NH,NW=a.shape[:2]
 L=lum(a)
 wit=a.min(2)>=240; bg=np.zeros(wit.shape,bool); q=deque()
 for y in range(NH):
@@ -14,11 +14,12 @@ while q:
   for dy,dx in ((1,0),(-1,0),(0,1),(0,-1)):
     yy,xx=y+dy,x+dx
     if 0<=yy<NH and 0<=xx<NW and wit[yy,xx] and not bg[yy,xx]: bg[yy,xx]=1; q.append((yy,xx))
-np.save('bg.npy',bg)
+np.save(UIT.replace('.png','_bg.npy'),bg)
 dk=(L<55)&~bg
 near=nearest(a)
 gr=a[...,1]-a[...,0]
-grijs=gr<8; near[grijs&(near>=13)]=nearest(a[grijs&(near>=13)],range(2,13))
+grijs=gr<8; t=grijs&np.isin(near,TURK); near[t]=nearest(a[t],[i for i in range(2,14)])
+groen=(gr>=8)&np.isin(near,(3,4,13)); near[groen]=nearest(a[groen],(6,14,15))
 H=(NH-OY)//3; W=(NW-OX)//3; o=np.zeros((H,W),int); deel=np.zeros((H,W))
 for j in range(H):
   for i in range(W):

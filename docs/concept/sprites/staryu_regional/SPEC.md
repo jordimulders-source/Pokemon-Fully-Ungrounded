@@ -42,3 +42,6 @@ Uit licht | sterk | naar Jordi's twee Gen 3-punten: "ik vind 1 het beste" = `sta
 ## Starmie r8 (27 nov)
 Jordi over r7: "de bovenkant is wat afgekapt", "is nu een rechte lijn". r8: bovenste voorpunt 1 (A) of 2 (B) rijen terug op de plek van het modelsilhouet (r5), 3 px breed; de platte toprij van r7 wordt binnenrij. `starmie/sprite_r8/`.
 Jordi: "A is uitstekend, eindkeuring daarvoor qua schaduw etc".
+
+## Starmie af (27 nov)
+`starmie/af/starmie_regional.png` = sprite_r9 (r8 A + eindkeuring: 2 px glans in de bovenpunt, PASS). Op het overzichtsvel (Regional forms, Fairy/Psychic). Lijn af.

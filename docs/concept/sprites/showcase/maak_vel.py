@@ -110,6 +110,7 @@ SECTIES=[
 ("oricorio_dansen/samba/af/samba.png",'Oricorio (samba)',"grass/flying"),
 ("pincurchin_regional/af/pincurchin_regional.png",'Pincurchin (regional)',"poison/rock"),
 ("staryu_regional/staryu/af/staryu_regional.png",'Staryu (regional)',"fairy"),
+("staryu_regional/starmie/af/starmie_regional.png",'Starmie (regional)',"fairy/psychic"),
 ("lotad_regional/af/lotad_gaucho.png",'Lotad (gaucho)',"ground"),
 ("lotad_regional/lombre/af/lombre_gaucho.png",'Lombre (gaucho)',"ground/fight"),
 ("lotad_regional/ludicolo/af/ludicolo_gaucho.png",'Ludicolo (gaucho)',"ground/fight"),

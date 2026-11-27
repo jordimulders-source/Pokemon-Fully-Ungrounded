@@ -3621,3 +3621,5 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Regionale Starmie sprite r5 vanaf model r4: achterpunten zonder / licht / sterk afgestompt naar de Gen 3-maten (`staryu_regional/starmie/sprite_r5/`).
 ### [v0.0.869] - Regionale Staryu/Starmie: types (27 nov)
 - Jordi: regionale Staryu Fairy, regionale Starmie Fairy/Psychic. Overzichtsvel bijgewerkt.
+### [v0.0.870] - Regionale Starmie: frontsprite af (27 nov)
+- Versierd koekje (paars glazuur, witte zigzag, hagelslag, paars juweel) op een koekster met chips, naar Gemini r4; alle tien punten afgestompt naar de Gen 3-Starmie (r6 licht), bovenpunt 1 rij terug (r8 A), keuring + DC-eindkeuring PASS (r7, r9). `docs/concept/sprites/staryu_regional/starmie/af/` (+ `normal.pal`, 8×); op het overzichtsvel (Fairy/Psychic). Regionale Staryu-lijn af.

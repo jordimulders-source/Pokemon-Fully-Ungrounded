@@ -3648,3 +3648,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.871] - Regicosmo r3 + prompt r4 (27 nov)
 - r3 bewaard (Jordi: te veel vast, hemellichamen te gelijk, r2 toffer); prompt r4 in `regicosmo/PROMPT.md`.
+
+### [v0.0.872] - Regicosmo r4 + prompt r5 (27 nov)
+- r4 bewaard (9 stippen, Mars leest als bloedmaan, schouders/handen te hoog); prompt r5 in `regicosmo/PROMPT.md`.

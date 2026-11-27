@@ -214,3 +214,4 @@ AVOID: feathered wings with vanes; hands or fingers; blade-like wings; spines, h
 - **r9** (`gemini/fase1_r9.png`, nieuw gesprek, w1a als bijlage + lijf eromheen). Jordi: "arm kuiken met maar 1 vleugel". Vleugel zit nu wel vast aan de schouder, maar poten weer kort en achterste vleugel weg.
 - **r10** (`gemini/fase1_r10.png`, bijsturen r9: lange poten + achterste vleugel). Jordi: "de vorm klopt niet vgm".
   Jordi: "linkervleugel klopt toch niet, dat zie je toch" (achterste vleugel steekt als klauw voor de borst uit).
+- **r11** (`gemini/fase1_r11.png`, bijsturen r10: linkervleugel achter het lijf). Jordi: "is ook niet wat ik bedoel".

@@ -222,3 +222,18 @@ Keep everything exactly the same: the shape, the pose, the tilt, the size and th
 2. The red gem in the center becomes a purple faceted gem.
 Max 16 colors, white background, no effects.
 ```
+
+## Starmie: terug naar r4 (27 nov)
+Jordi: "voor starmie loop je echt te kloten nu. Deze [r4] was bijna goed, alleen geen driekwartpose en de punten zijn te puntig, dat moest meer als de normale starmie, alleen de punten minder puntig maken".
+Model = `gemini/r4_starmie.webp`; wijzigingen: driekwart-pose, punten minder puntig zoals de normale Starmie. Voorstel plakken (hierboven) vervalt.
+
+### Prompt v7 (nieuw gesprek, bijlage 1 = `gemini/r4_starmie.webp`, bijlage 2 = `gemini/bijlage_starmie_gen3.png`)
+```
+Image 1 is my Pokémon design: a regional Starmie made of cookie. Image 2 is the original Gen 3 STARMIE sprite, attached ONLY for the angle and the shape of the points.
+
+Redraw image 1 with exactly the same design: the same purple icing star with white zigzag drizzle and sprinkles, the same purple gem, the same golden-brown cookie back star with chocolate chips, the same colors and the same level of detail. Change ONLY these two things:
+1. POSE: tilt and rotate it into the same 3/4 view as the Starmie in image 2, so it is not flat and not facing straight forward.
+2. The 10 points must be shaped like the points of the Starmie in image 2: less sharp and less spiky than in image 1.
+
+Output: a simple, clean official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64 pixels, max 16 colors, white background, no ground, no shadow, no effects. Keep the purple icing and the cookie colors of image 1, not the colors of image 2.
+```

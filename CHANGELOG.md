@@ -3701,3 +3701,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.892] - Hanan Pacha: prompt v6 (27 nov)
 - v5 (staart naar referentie, alleen vorm en richting) + kroonkam (K-a): grote vlezige kam die als natuurlijke kroon omhoog rijst.
+
+### [v0.0.893] - Hanan Pacha: r5, bijsturen, prompt v7 (27 nov)
+- r5 (ontwerp goed, pose te horizontaal) en het mislukte bijsturen bewaard; prompt v7 = v6 met steil opgeheven vleugels en expliciet vierkant beeldformaat (brede Gemini-beelden gaven brede poses).

@@ -53,3 +53,4 @@
 - Jordi over r4 (27 nov): "Nu lijkt ie verdrietig door de mond vorm en ogen" → r5: 4 hoofdvarianten (pupil recht vooruit; ∩ zonder uitlopende poten; ∩-bovenlijn zachter; wenkbrauw neutraal).
 - **r5** (`sprite_r7model/r5/`): hoofdvarianten A (pupil midden), B (A + poten recht omlaag), C (A + ∩-bovenlijn tint 3), D (A+B + neutrale wenkbrauw). Naar Jordi ter keuze.
 - Jordi over r5 (27 nov): "Kijk nou eens naar het model". Claude (modelgezicht groot bekeken): ogen in het model groot, wit en helder (sprite klein/donker/knijpend); bovenste helft licht en glad (sprite: wanglijnen onder de ogen lezen als tranen); neus lang, licht; de ∩ is een brede lage snor/baardrand van wang tot wang, geen smalle fronsmond → r6.
+- Jordi (27 nov): "Het lijkt nu een zielig mondje"; "Het moet vast zitten" → aan r6 doorgegeven: de ∩ is geen los mondje maar één doorlopende snor/baardrand die aan de wang- en baardlijnen vastzit (Claudes lezing, klopt met het model).

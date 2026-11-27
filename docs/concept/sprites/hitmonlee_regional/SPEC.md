@@ -66,3 +66,4 @@ AVOID: orange plastic or clay look, opaque body, a human in a glass costume, a g
 - Jordi: "nee de gele lijnen zijn een indicatie" → gladde beenvorm als idee; ligging/breedte uit het model, niet de gele lijnen pixel voor pixel.
 - Jordi: "maak het netjes".
 - Jordi over r16 (27 nov): "hitmonlee is heel netjes, alleen even kijken naar wat ik groen heb gemaakt" (`jordi/krabbel_r16.png`).
+- Jordi: "2 losse pixels, oog te rechthoekig, lijn in de voet en hoofd/been wat niet helemaal lekker aansluit".

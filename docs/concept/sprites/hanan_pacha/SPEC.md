@@ -54,3 +54,4 @@ Trio van de drie Inca-werelden (zie `docs/concept/POKEMON.md` → Legendaries). 
 - **Sprite r7** (`sprite_r7/`): klauwen C, 8 px naar het model (natieve 2×2-blokken); model heeft zelf een kluwen bij de voeten.
 - Jordi over r7: "ok de klauwen zijn dus te klein om volledig na te maken? Kijk naar klauwen van andere vogel pokemon" → r8: klauwen 1-op-1 van Gen 3-vogels (3 bronnen), omgekleurd naar C.
 - **Sprite r8** (`sprite_r8/`): klauwen 1-op-1 van Fearow / Zapdos / Noctowl (_gba), omgekleurd naar C.
+- Jordi over r8: "fearow goed, maar nu is het 2 keer dezelfde klauw" → r9: verre klauw gespiegeld/hoger/schaduwtint (varianten).

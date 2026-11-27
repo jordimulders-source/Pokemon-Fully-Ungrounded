@@ -15,3 +15,4 @@
 
 ## Rondes
 - **r1** (`gemini/r1.png`, prompt r1 met ogen A), Jordi (27 nov): "oke oke, conceptueel niet slecht, maar beetje bruinig in zijn geheel, plus teveel detail nog dnek ik?"
+  - Daarna, op Claudes vragen (detail, gezicht menselijk?, kleur a groen / b Vinicunca / c blauwgrijs+roze): "mag ook denk iets abstracter, alsof het meer een beeld is of verafgoding dan echt een mens"; "ja vinicunca!" → prompt r2 (`gemini/PROMPT_r2.md`). Eigen invulling Claude in r2: "3–4 brede banden", sneeuwkap behouden, kleurnamen van de echte Vinicunca.

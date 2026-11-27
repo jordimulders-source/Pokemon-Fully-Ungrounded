@@ -33,3 +33,4 @@ Prompt r1: `PROMPT.md`.
 - Jordi: "dit is ook net teveel een dier met versiering, kijk wat meer naar entei, suicune en raikou"; daarna: "laten we een grass/psychic poema maken die daar tussen zou passen". → `PROMPT_r8.md`.
 - Jordi: "akkoord" (gelezen als: akkoord met Claudes voorstel in de taal van de beesten: groene fantasiekat, masker als gezichtsplaat in de vorm van een Inca-poemakop, getrapte groene mantel als terrassen, trapvormig teken op het voorhoofd, paarse trapstrepen, twee rankstaarten). → r8 met dat voorstel; kale versie als `PROMPT_r8_kaal.md`.
 - r8 (`gemini/r8.png`, `PROMPT_r8.md`): Jordi: "wat vind je".
+- Jordi akkoord ("prima") met Claudes punten na r8 (mantel zachte overlappende bladeren in treden en andere kleur, kroon trapvormig in maskerkleur, brede bladlintstaarten, groter hoofd, krachtiger pose); mantelkleur: "goudgeel is wel geinig" (ichu-gras). → `PROMPT_r9.md`.

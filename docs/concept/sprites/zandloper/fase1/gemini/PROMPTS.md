@@ -117,3 +117,12 @@ Real Gen 3 pixel art, 64x64, white background, no effects.
 ```
 
 **Jordi over r7:** "de mond is weg en het zijn nu 2 bollen".
+Jordi (op de vraag of de bollen goed zijn): "dat is kritiek he" → handen moeten handen blijven, geen bollen en geen wanten.
+
+## r8 – r7 als bijlage, alleen de bollen vervangen
+Vorm = invulling Claude: zwevende geestachtige handen met drie korte puntige vingers (zoals geest-Pokémon zwevende handen hebben), van hetzelfde hout.
+```
+The attached image is my Pokémon. Keep EVERYTHING exactly the same: the hourglass, its tilt, the eyes, the colors, the pixel style.
+Change ONLY this: replace the two wooden balls with two floating hands, like the disembodied floating hands of ghost Pokémon. Each hand has three short, slightly pointed fingers spread open, no separate thumb, no wrist, no arm. Same smooth dark brown wood as the end caps (#8a522e, #5c321e, #603a18), dark 1-pixel outline, flat cel shading. NOT gloves, NOT mittens, NOT balls.
+Real Gen 3 pixel art, 64x64, white background, no effects.
+```

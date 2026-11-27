@@ -1,0 +1,128 @@
+(43,12) 15 -> 8  trapbeen: ringverloop licht->donker (rij 21 van de ring)
+(44,12) 8 -> 7  trapbeen: ringverloop licht->donker (rij 21 van de ring)
+(45,12) 15 -> 6  trapbeen: ringverloop licht->donker (rij 21 van de ring)
+(46,12) 8 -> 6  trapbeen: ringverloop licht->donker (rij 21 van de ring)
+(47,12) 3 -> 5  trapbeen: ringverloop licht->donker (rij 21 van de ring)
+(41,13) 2 -> 0  trapbeen: rand per ring
+(43,13) 2 -> 3  trapbeen: binnenlijn (boog)
+(44,13) 2 -> 7  trapbeen: ringverloop licht->donker (rij 22 van de ring)
+(45,13) 2 -> 6  trapbeen: ringverloop licht->donker (rij 22 van de ring)
+(46,13) 2 -> 6  trapbeen: ringverloop licht->donker (rij 22 van de ring)
+(43,14) 6 -> 15  trapbeen: ringverloop licht->donker (rij 1 van de ring)
+(44,14) 7 -> 2  trapbeen: binnenlijn (boog)
+(45,14) 4 -> 2  trapbeen: binnenlijn (boog)
+(46,14) 4 -> 2  trapbeen: binnenlijn (boog)
+(47,14) 8 -> 6  trapbeen: ringverloop licht->donker (rij 1 van de ring)
+(41,15) 2 -> 0  trapbeen: rand per ring
+(43,15) 2 -> 8  trapbeen: ringverloop licht->donker (rij 2 van de ring)
+(44,15) 2 -> 8  trapbeen: ringverloop licht->donker (rij 1 van de ring)
+(45,15) 2 -> 8  trapbeen: ringverloop licht->donker (rij 1 van de ring)
+(46,15) 2 -> 7  trapbeen: ringverloop licht->donker (rij 1 van de ring)
+(47,15) 2 -> 5  trapbeen: ringverloop licht->donker (rij 2 van de ring)
+(43,16) 8 -> 3  trapbeen: binnenlijn (boog)
+(44,16) 5 -> 7  trapbeen: ringverloop licht->donker (rij 2 van de ring)
+(45,16) 5 -> 6  trapbeen: ringverloop licht->donker (rij 2 van de ring)
+(46,16) 5 -> 6  trapbeen: ringverloop licht->donker (rij 2 van de ring)
+(47,16) 6 -> 2  trapbeen: binnenlijn (boog)
+(43,17) 2 -> 15  trapbeen: ringverloop licht->donker (rij 1 van de ring)
+(47,17) 2 -> 6  trapbeen: ringverloop licht->donker (rij 1 van de ring)
+(41,18) 2 -> 0  trapbeen
+(42,18) 3 -> 2  trapbeen: gladde omtrek, selout lichtkant
+(43,18) 15 -> 8  trapbeen: ringverloop licht->donker (rij 2 van de ring)
+(45,18) 5 -> 8  trapbeen: ringverloop licht->donker (rij 1 van de ring)
+(46,18) 5 -> 7  trapbeen: ringverloop licht->donker (rij 1 van de ring)
+(47,18) 6 -> 5  trapbeen: ringverloop licht->donker (rij 2 van de ring)
+(41,19) 2 -> 0  trapbeen: rand per ring
+(42,19) 15 -> 2  trapbeen: gladde omtrek, selout lichtkant
+(43,19) 6 -> 3  trapbeen: binnenlijn (boog)
+(44,19) 3 -> 7  trapbeen: ringverloop licht->donker (rij 2 van de ring)
+(45,19) 7 -> 6  trapbeen: ringverloop licht->donker (rij 2 van de ring)
+(46,19) 8 -> 6  trapbeen: ringverloop licht->donker (rij 2 van de ring)
+(47,19) 1 -> 2  trapbeen: binnenlijn (boog)
+(48,19) 0 -> 1  trapbeen: gladde omtrek, zwart schaduwkant
+(20,20) 0 -> 2  koepel: toprij 5 px (modeldekking rij 20 = 0,19; ronder dan 1 vlakke run)
+(21,20) 0 -> 2  koepel: toprij 5 px (modeldekking rij 20 = 0,19; ronder dan 1 vlakke run)
+(22,20) 0 -> 2  koepel: toprij 5 px (modeldekking rij 20 = 0,19; ronder dan 1 vlakke run)
+(23,20) 0 -> 2  koepel: toprij 5 px (modeldekking rij 20 = 0,19; ronder dan 1 vlakke run)
+(24,20) 0 -> 2  koepel: toprij 5 px (modeldekking rij 20 = 0,19; ronder dan 1 vlakke run)
+(42,20) 2 -> 15  trapbeen: ringverloop licht->donker (rij 1 van de ring)
+(46,20) 2 -> 6  trapbeen: ringverloop licht->donker (rij 1 van de ring)
+(17,21) 2 -> 0  koepel: topschouder links afronden (model rand 21,50)
+(20,21) 2 -> 12  koepel: binnenkant onder de nieuwe toprij (tinten van rij 22: glasrand c links, b)
+(21,21) 2 -> 12  koepel: binnenkant onder de nieuwe toprij (tinten van rij 22: glasrand c links, b)
+(22,21) 2 -> 11  koepel: binnenkant onder de nieuwe toprij (tinten van rij 22: glasrand c links, b)
+(23,21) 2 -> 11  koepel: binnenkant onder de nieuwe toprij (tinten van rij 22: glasrand c links, b)
+(24,21) 2 -> 11  koepel: binnenkant onder de nieuwe toprij (tinten van rij 22: glasrand c links, b)
+(40,21) 2 -> 0  trapbeen
+(41,21) 15 -> 2  trapbeen: gladde omtrek, selout lichtkant
+(42,21) 6 -> 8  trapbeen: ringverloop licht->donker (rij 2 van de ring)
+(43,21) 3 -> 8  trapbeen: ringverloop licht->donker (rij 1 van de ring)
+(44,21) 7 -> 8  trapbeen: ringverloop licht->donker (rij 1 van de ring)
+(45,21) 8 -> 7  trapbeen: ringverloop licht->donker (rij 1 van de ring)
+(46,21) 6 -> 5  trapbeen: ringverloop licht->donker (rij 2 van de ring)
+(17,22) 12 -> 2  koepel: nieuwe bovenrand -> selout
+(26,22) 11 -> 2  koepel: nieuwe bovenrand -> selout
+(41,22) 2 -> 3  trapbeen: binnenlijn (boog)
+(42,22) 2 -> 7  trapbeen: ringverloop licht->donker (rij 2 van de ring)
+(43,22) 2 -> 6  trapbeen: ringverloop licht->donker (rij 2 van de ring)
+(44,22) 2 -> 6  trapbeen: ringverloop licht->donker (rij 2 van de ring)
+(31,23) 1 -> 0  koepel: rechterflank, model rand 23,75 (dekking 0,25)
+(42,23) 7 -> 2  trapbeen: laatste boog loopt door in het doorschijnende deel
+(43,23) 14 -> 2  trapbeen: laatste boog loopt door in het doorschijnende deel
+(44,23) 14 -> 2  trapbeen: laatste boog loopt door in het doorschijnende deel
+(51,44) 1 -> 2  standbeen: gladde omtrek, selout lichtkant
+(52,44) 2 -> 8  standbeen: ringverloop licht->donker (rij 53 van de ring)
+(53,44) 2 -> 7  standbeen: ringverloop licht->donker (rij 53 van de ring)
+(54,44) 2 -> 6  standbeen: ringverloop licht->donker (rij 53 van de ring)
+(55,44) 2 -> 5  standbeen: ringverloop licht->donker (rij 53 van de ring)
+(51,45) 1 -> 2  standbeen: gladde omtrek, selout lichtkant
+(52,45) 5 -> 3  standbeen: binnenlijn (boog)
+(53,45) 4 -> 7  standbeen: ringverloop licht->donker (rij 54 van de ring)
+(54,45) 4 -> 6  standbeen: ringverloop licht->donker (rij 54 van de ring)
+(55,45) 7 -> 2  standbeen: binnenlijn (boog)
+(14,46) 6 -> 1  arm: nieuwe rechterrand zwart (schaduwkant)
+(15,46) 1 -> 0  arm: rechterrand naar model (dekking < 0,5)
+(51,46) 0 -> 2  standbeen: gladde omtrek, selout lichtkant
+(52,46) 2 -> 15  standbeen: ringverloop licht->donker (rij 1 van de ring)
+(55,46) 2 -> 6  standbeen: ringverloop licht->donker (rij 1 van de ring)
+(14,47) 6 -> 1  arm: nieuwe rechterrand zwart (schaduwkant)
+(15,47) 1 -> 0  arm: rechterrand naar model (dekking < 0,5)
+(51,47) 0 -> 2  standbeen: gladde omtrek, selout lichtkant
+(52,47) 2 -> 8  standbeen: ringverloop licht->donker (rij 2 van de ring)
+(53,47) 4 -> 8  standbeen: ringverloop licht->donker (rij 1 van de ring)
+(54,47) 4 -> 7  standbeen: ringverloop licht->donker (rij 1 van de ring)
+(55,47) 4 -> 5  standbeen: ringverloop licht->donker (rij 2 van de ring)
+(56,47) 4 -> 1  standbeen: gladde omtrek, zwart schaduwkant
+(57,47) 1 -> 0  standbeen: rand per ring
+(51,48) 0 -> 2  standbeen: gladde omtrek, selout lichtkant
+(52,48) 2 -> 3  standbeen: binnenlijn (boog)
+(53,48) 2 -> 7  standbeen: ringverloop licht->donker (rij 2 van de ring)
+(54,48) 2 -> 6  standbeen: ringverloop licht->donker (rij 2 van de ring)
+(13,49) 14 -> 1  arm: nieuwe rechterrand zwart (schaduwkant)
+(14,49) 1 -> 0  arm: rechterrand naar model (dekking < 0,5)
+(51,49) 0 -> 2  standbeen: gladde omtrek, selout lichtkant
+(52,49) 2 -> 15  standbeen: ringverloop licht->donker (rij 1 van de ring)
+(53,49) 5 -> 2  standbeen: binnenlijn (boog)
+(54,49) 5 -> 2  standbeen: binnenlijn (boog)
+(55,49) 4 -> 6  standbeen: ringverloop licht->donker (rij 1 van de ring)
+(56,49) 6 -> 1  standbeen: gladde omtrek, zwart schaduwkant
+(57,49) 1 -> 0  standbeen
+(13,50) 14 -> 1  arm: nieuwe rechterrand zwart (schaduwkant)
+(14,50) 1 -> 0  arm: rechterrand naar model (dekking < 0,5)
+(51,50) 0 -> 2  standbeen: gladde omtrek, selout lichtkant
+(52,50) 2 -> 8  standbeen: ringverloop licht->donker (rij 2 van de ring)
+(53,50) 7 -> 8  standbeen: ringverloop licht->donker (rij 1 van de ring)
+(55,50) 6 -> 5  standbeen: ringverloop licht->donker (rij 2 van de ring)
+(51,51) 0 -> 2  standbeen: gladde omtrek, selout lichtkant
+(52,51) 2 -> 3  standbeen: binnenlijn (boog)
+(53,51) 2 -> 7  standbeen: ringverloop licht->donker (rij 2 van de ring)
+(54,51) 2 -> 6  standbeen: ringverloop licht->donker (rij 2 van de ring)
+(56,51) 2 -> 1  standbeen: gladde omtrek, zwart schaduwkant
+(57,51) 1 -> 0  standbeen: rand per ring
+(52,52) 3 -> 15  standbeen: ringverloop licht->donker (rij 1 van de ring)
+(53,52) 15 -> 2  standbeen: binnenlijn (boog)
+(54,52) 7 -> 2  standbeen: binnenlijn (boog)
+(52,53) 2 -> 8  standbeen: ringverloop licht->donker (rij 2 van de ring)
+(53,53) 2 -> 8  standbeen: ringverloop licht->donker (rij 1 van de ring)
+(54,53) 2 -> 7  standbeen: ringverloop licht->donker (rij 1 van de ring)
+(55,53) 2 -> 5  standbeen: ringverloop licht->donker (rij 2 van de ring)

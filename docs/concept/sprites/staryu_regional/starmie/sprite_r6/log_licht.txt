@@ -1,0 +1,24 @@
+MODE licht basis sprite_r5/starmie_r5_licht.png
+hartlijn (jordi-tipvorm) {}
+v_boven {'richting': 92.0, 'lengte_voor': 28.0, 'lengte_na': 25.1, 'weg': 7, 'snede': 6, 'tipvorm': 0, 'uitsteeksel': 1, 'breedte_voor': [2.0, 3.0, 4.0, 5.0], 'breedte_na': [5.0, 6.0, 6.0, 7.0]}
+v_links {'richting': 162.2, 'lengte_voor': 29.4, 'lengte_na': 28.2, 'weg': 3, 'snede': 3, 'tipvorm': 0, 'uitsteeksel': 0, 'breedte_voor': [2.3, 4.2, 4.2, 5.4], 'breedte_na': [4.2, 5.1, 5.1, 7.3]}
+v_rechts {'richting': 19.1, 'lengte_voor': 27.5, 'lengte_na': 26.2, 'weg': 3, 'snede': 3, 'tipvorm': 0, 'uitsteeksel': 0, 'breedte_voor': [2.3, 4.2, 4.2, 5.4], 'breedte_na': [4.2, 5.1, 5.1, 8.3]}
+v_linksonder {'richting': -126.9, 'lengte_voor': 30.0, 'lengte_na': 28.0, 'weg': 6, 'snede': 6, 'tipvorm': 0, 'uitsteeksel': 0, 'breedte_voor': [2.4, 3.8, 4.6, 6.0], 'breedte_na': [4.6, 6.0, 7.4, 8.8]}
+v_rechtsonder {'richting': -58.0, 'lengte_voor': 28.3, 'lengte_na': 26.6, 'weg': 5, 'snede': 5, 'tipvorm': 0, 'uitsteeksel': 0, 'breedte_voor': [2.4, 3.8, 5.5, 6.8], 'breedte_na': [4.6, 6.8, 8.2, 9.1]}
+linksboven {'richting': 127.3, 'lengte_voor': 26.4, 'lengte_na': 26.4, 'weg': 0, 'snede': 0, 'tipvorm': 0, 'uitsteeksel': 0, 'breedte_voor': [4.6, 6.6, 7.4, 6.0], 'breedte_na': [4.6, 6.6, 7.4, 6.0]}
+rechtsboven {'richting': 55.0, 'lengte_voor': 24.4, 'lengte_na': 24.4, 'weg': 1, 'snede': 0, 'tipvorm': 0, 'uitsteeksel': 1, 'breedte_voor': [4.6, 6.0, 6.0, 8.2], 'breedte_na': [3.2, 6.0, 6.0, 8.2]}
+linksonder {'richting': -157.4, 'lengte_voor': 26.0, 'lengte_na': 26.0, 'weg': 0, 'snede': 0, 'tipvorm': 0, 'uitsteeksel': 0, 'breedte_voor': [4.2, 5.1, 6.8, 8.6], 'breedte_na': [4.2, 5.1, 6.8, 8.6]}
+rechtsonder {'richting': -29.7, 'lengte_voor': 24.2, 'lengte_na': 24.2, 'weg': 0, 'snede': 0, 'tipvorm': 0, 'uitsteeksel': 0, 'breedte_voor': [4.6, 5.5, 6.8, 7.7], 'breedte_na': [4.6, 5.5, 6.8, 7.7]}
+onder {'richting': -92.3, 'lengte_voor': 25.0, 'lengte_na': 25.0, 'weg': 0, 'snede': 0, 'tipvorm': 0, 'uitsteeksel': 0, 'breedte_voor': [4.0, 6.0, 7.0, 8.0], 'breedte_na': [4.0, 6.0, 7.0, 8.0]}
+snede v_boven 6 [(30, 2), (29, 3), (30, 3), (31, 3), (29, 4), (30, 4)]
+uitsteeksel v_boven 1 [(31, 4)]
+snede v_links 3 [(3, 21), (4, 21), (3, 22)]
+snede v_rechts 3 [(56, 21), (57, 21), (57, 22)]
+snede v_linksonder 6 [(13, 52), (13, 53), (14, 53), (13, 54), (14, 54), (15, 54)]
+snede v_rechtsonder 5 [(45, 53), (46, 53), (44, 54), (45, 54), (46, 54)]
+uitsteeksel rechtsboven 1 [(43, 9)]
+buitenlijn 11 [(29, 5), (30, 5), (31, 5), (43, 10), (13, 14), (4, 22), (56, 22), (7, 40), (13, 51), (14, 52), (45, 52)]
+losse zwarte pixel 2 [(13, 14), (7, 40)]
+figuur x4-56 y5-55 53x51, 1727 px
+kleuren 16 | lichte buitenrand [] | losse zwart []
+diff t.o.v. basis 34 px; buiten de punten 0 ; in de achterpunten 2

@@ -4,6 +4,8 @@ factoren {'kop': 1.25, 'lijf': 0.95, 'overig': 1.0}
 icoon 20x25 (onderkant y29, midden x15.5)
 minimummaten:
   poten: voorpoot f=14 -> 5.0 px < minimum 5.1: schaal x1.02
+  oog: front 2 px, centrum icoon (23.9,15.8), patroon 1x1, minimum 1.5
+  oog: front 3 px, centrum icoon (26.8,15.8), patroon 1x1, minimum 1.8
 paletafstand (gemiddelde Delta E in Lab; lager = beter):
   pal0: 22.9  (5 tinten)
   pal1: 23.4  (4 tinten)

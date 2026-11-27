@@ -3890,3 +3890,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.953] - Frame 2 per script: batch B (27 nov)
 - 17 soorten in `graphics_proef/frame2/batch_b/` (script `batch_b_f2.py`, hulpjes `f2b.py` met RotSprite). Goed: Dustly, Hauntflare, Solrock-evo, Bloedmaan, Regicosmo, Staryu, Starmie, zandloper 2, Claydol, Altaria, Regiaqua, Sunflora-evo. Zwak: Swablu, Pincurchin, DJ Rotom; Muk en Shuppetto eigenlijk Gemini (lokale pose).
+
+### [v0.0.954] - Shiny-voorstellen (27 nov)
+- 67 lijnen, één idee per lijn, alle 129 soorten: `graphics_proef/shiny/` (vellen `vel_new_1/2`, `vel_evolutions`, `vel_regional`, `vel_legendaries`; per soort `<slug>_shiny.pal`; `recepten.py`, `maak_shiny.py`, `OVERZICHT.md`). A/B bij alpaca-lijn, terreurvogel-lijn en Oricorio-dansen. Twijfels: Capykart (kar deelt kleuren met de capibara), Llamauler A te weinig verschil (daarom B), Mosaguar mogelijk druk.

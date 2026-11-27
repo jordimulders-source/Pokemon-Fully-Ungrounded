@@ -153,11 +153,132 @@
     15
    ],
    "dun": true,
-   "binnenlijn": true
+   "binnenlijn": "achter",
+   "lijn_op": [
+    "lijf"
+   ]
   }
  ],
  "donkere_vulling": false,
  "lijnkleuren": [
   1
+ ],
+ "lijnen": [
+  {
+   "deel": "kroon",
+   "punten": [
+    [
+     23,
+     7
+    ]
+   ],
+   "kleur": [
+    230,
+    172,
+    58
+   ]
+  },
+  {
+   "deel": "kroon",
+   "punten": [
+    [
+     33,
+     7
+    ]
+   ],
+   "kleur": [
+    230,
+    172,
+    58
+   ]
+  },
+  {
+   "deel": "kroon",
+   "punten": [
+    [
+     19,
+     10
+    ]
+   ],
+   "kleur": [
+    230,
+    172,
+    58
+   ]
+  },
+  {
+   "deel": "kroon",
+   "punten": [
+    [
+     37,
+     10
+    ]
+   ],
+   "kleur": [
+    230,
+    172,
+    58
+   ]
+  },
+  {
+   "deel": "kroon",
+   "punten": [
+    [
+     15,
+     14
+    ]
+   ],
+   "kleur": [
+    230,
+    172,
+    58
+   ]
+  },
+  {
+   "deel": "kroon",
+   "punten": [
+    [
+     41,
+     14
+    ]
+   ],
+   "kleur": [
+    230,
+    172,
+    58
+   ]
+  }
+ ],
+ "oog": [
+  {
+   "deel": "gezicht",
+   "front": [
+    23,
+    23,
+    24,
+    24
+   ],
+   "patroon": [
+    "D"
+   ],
+   "kleur": {
+    "D": 15
+   }
+  },
+  {
+   "deel": "gezicht",
+   "front": [
+    29,
+    23,
+    31,
+    24
+   ],
+   "patroon": [
+    "D"
+   ],
+   "kleur": {
+    "D": 15
+   }
+  }
  ]
 }

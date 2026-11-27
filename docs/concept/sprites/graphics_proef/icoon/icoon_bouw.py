@@ -21,7 +21,9 @@ JSON (alle coordinaten in de front, 64x64):
     "aanhecht":[x,y],           # draaipunt voor eigen schaal (min-maat of "schaal"), standaard het anker/oorsprong
     "schaal":1.1,               # optioneel: extra factor t.o.v. de groep
     "dun":true,                 # dunne delen: masker 1 px verdikt, zodat ze als stompje blijven
-    "binnenlijn":true,          # lijn (index 14) waar dit deel over een eerder getekend deel ligt
+    "binnenlijn":true,          # lijn (index 14) waar dit deel over een eerder getekend deel ligt;
+                                #   "achter" = de lijn komt op het achterste deel (dun deel zoals een staf)
+    "lijn_op":["lijf"],         # optioneel: alleen tegen deze delen een binnenlijn
     "verschuif":[dx,dy],        # in icoonpixels (posewissel/compact maken, zoals Linoone)
     "ramp":[i_donker,...,i_licht]  # optioneel: vaste icoontinten voor dit deel, op helderheid verdeeld
    }, ...],
@@ -225,6 +227,7 @@ def bouw(cfg, S_extra=1.0, log=None):
     for i, d in enumerate(delen):
         if not d.get('binnenlijn', False): continue
         mi = mask & (deel == i); achter = mask & (deel >= 0) & (deel < i)
+        if d.get('lijn_op'): achter &= np.isin(deel, [j for j, e in enumerate(delen) if e['naam'] in d['lijn_op']])
         if d['binnenlijn'] == 'achter':   # dun deel voor een groter deel (staf voor het lijf): lijn op het achterste deel
             grens = achter & nd.binary_dilation(mi, np.array([[0, 1, 0], [1, 1, 1], [0, 1, 0]]))
             idx[grens & ~isdonker] = 14; continue
@@ -253,7 +256,7 @@ def bouw(cfg, S_extra=1.0, log=None):
         pts = [base + (np.array(p, float) + .5 - h) * s for p in l['punten']]
         kl = l['kleur']
         if isinstance(kl, list): kl = int(afstand(np.array(kl, float)[None, :], P[1:14]).argmin() + 1)
-        for a, b in zip(pts[:-1], pts[1:]):
+        for a, b in (zip(pts[:-1], pts[1:]) if len(pts) > 1 else [(pts[0], pts[0])]):
             n = int(max(abs(b - a)) * 2) + 1
             for t in np.linspace(0, 1, n):
                 q = a + (b - a) * t; X, Y = int(np.floor(q[0])), int(np.floor(q[1]))

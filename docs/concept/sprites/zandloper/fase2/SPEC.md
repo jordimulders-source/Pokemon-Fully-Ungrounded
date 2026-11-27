@@ -14,3 +14,4 @@ Lijn: fase 1 zandloper met ogen (`../fase1/af/`) → fase 2 → fase 3 zand-djin
 - Fase 1 is inmiddels op 0,70 (andere sessie, op main).
 - Jordi over r4: "fase 2 is wat hard omlijnd". Gemeten: 47 zwarte binnenhoekjes van trapjes (lijn plaatselijk 2 px dik; fase 1: 4, fase 3: 1). r5 = r4 met die hoekjes in de vulling van hun buur (8-verbonden lijn, ogen ongemoeid, silhouet gelijk): `sprite/r5/`.
 - Jordi: "het gaat niet om dunnere lijn maar kleur" → r5 vervalt; r6-varianten op r4 (ogen ongemoeid): A zwart → donker zandbruin, B zwarte buitenlijn → selout 2, C zwart alleen aan de onderkanten (`sprite/r6/vel_kleur.png`).
+- Jordi: "prima, behoud r4 maar en stuur naar de eindkeuring" → r4 naar de DC-eindkeuring (`eindkeuring/`).

@@ -3809,3 +3809,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.918] - Uku Pacha: eindkeuring (27 nov)
 - DC-eindkeuring op r7A: rechte stukken in geestvlam, rechtervleugel, linkerkop en kronkellijn naar de modelkromming (14 alpha-pixels), gekleurde buitenlijn aan de lichtkant, binnenlijnen in eigen donkerste tint behalve tegen de diepste schaduw, lijfladder meer contrast (28/29/37). Pupillen en borstplaten ongewijzigd.
+
+### [v0.0.919] - Uku Pacha: r8 zichtbare pupillen (27 nov)
+- Jordi: "voor de rest perfect". 2 pixels: oogwit boven de linkerpupil, geel links van de rechterpupil.

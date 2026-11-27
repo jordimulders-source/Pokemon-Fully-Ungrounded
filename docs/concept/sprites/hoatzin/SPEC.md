@@ -134,3 +134,5 @@ Opdracht: `sprite/OPDRACHT.md`.
 - Pose (Jordi): "hij staat maar in een zodanige pose dat je de dunne gek uitziende poten en klauwtjes kan zien".
 - Gelige tinten: "alleen in het dons". Snavel: kromme grijze snavel van foto 1 ("2 ja"). Oog: niet rood/blauw, "grijze ring" (foto 1). "nee, geen teken".
 - Grootte: 700–900 px (voorstel Claude), Jordi: "grootte ok".
+- Kuif: geen (Jordi: "geen kuif zoals ik al zei").
+- **r1** (`gemini/fase1_r1.png`, prompt v1 met eigen toevoegingen van Claude: damp/scruffy down, pin feathers, half-spread wings). Jordi: "Dit ontwerp kunnen we niks mee, het is een slordige normale vogel, het uncanny zit niet in de vacht maar in de poot lengte, kijk goed naar deze. Hij hoort ook geen of bijna geen vleugel te hebben". Referentie: `referenties/kuiken_5_pootlengte.png`.

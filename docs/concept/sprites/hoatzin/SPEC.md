@@ -243,3 +243,4 @@ MOOD: ugly in a Pokémon way, uncanny, a cryptid, something you don't trust. Sim
 
 AVOID: feathered wings with vanes; pin feathers standing up like a fan or crest; a wing that looks like a third leg; hands or fingers; a crest; messy or scruffy feathers; a normal bird; a smile or a cute face; a branch or any object; a mask; a red eye; brown or chestnut; a fat or round belly; glow.
 ```
+- **r13** (`gemini/fase1_r13.png`, prompt v5 + foto 3). Jordi: "deze is naast chernobyl geboren".

@@ -3874,3 +3874,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.948] - Proefserie: Sunperor-rug p3 (27 nov)
 - Gemini p3 (kop expliciet in profiel) → `graphics_proef/sunperor_rug_p3.png`, natief 41×41 (`nat_sunperor_rug_p3.png`): kop goed zichtbaar, maar kleiner dan p1, vlekkerig lijf, staf een stompje, gaten weer terug. Voorstel: p1 + kop uit p3 (zelfde 16-px raster), wacht op Jordi.
+
+### [v0.0.949] - Proefserie: Hexpress-rug p4 (27 nov)
+- Jordi: "heb je al benoemd dat de groene rook de achterkant moet bedekken?" (nee) → prompt p4 met de groene rook over de achterkant en het gezicht in profiel rechts. Resultaat `graphics_proef/hexpress_rug_p4.png`, natief 60×43 (`nat_hexpress_rug_p4.png`): richting en gezicht kloppen, schroot en wielen grotendeels onder de rook; oordeel bij Jordi.

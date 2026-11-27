@@ -3614,3 +3614,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - r5 afgekeurd (geen mond, armen te kort/gek); prompt r6 from scratch met alle besluiten.
 ### [v0.0.866] - Ledian-evolutie: Gemini r6 (27 nov)
 - r6 bewaard ("deze vind ik tof"); spritecheck: natief ±66×66, ±9 kleuren.
+### [v0.0.867] - Ledian-evolutie: model r6 bevroren + sprite r1 (27 nov)
+- SPEC `docs/concept/sprites/ledian_evo/SPEC.md`; mond blijft zoals in het model (Jordi).
+- Sprite r1 (`ledian_evo/sprite_r1/`): verkleining van het model (natief 66×66, rijen 54/57 en kolommen 61/63 geschrapt), 13 kleuren, 52 px afwijking alleen op de buitenrand; spleten arm/hoofd en tussen de benen transparant. Nog geen kleur-/schaduwronde.

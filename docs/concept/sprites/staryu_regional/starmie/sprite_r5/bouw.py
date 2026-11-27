@@ -138,6 +138,7 @@ for Y,X in zip(*np.where(BM&~fm)):
     for u,v,w in overlap(X,Y):
         if PN[v,u]: c[PN[v,u]]=c.get(PN[v,u],0)+w
     PNAAM[Y,X]=max(c,key=c.get) if c else ''
+np.save('sprite_r5/gereedschap/pnaam.npy',PNAAM.astype(str))
 kaal=o.copy(); opslaan(kaal,'sprite_r5/kaal_%s.png'%NAAM)
 # --- ontkorrelen achterpunten: koekvlekjes < 3 px nemen de buurtint (geen chips, geen lijn D)
 for rnd in range(3):

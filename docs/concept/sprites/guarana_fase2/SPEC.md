@@ -71,3 +71,14 @@ Fase 1 (af): `../guarana/` (SPEC daar = alle eerdere besluiten).
 - Sprite r13: Jordi "een stuk beter, maar nu zijn een hoop van de vruchten te rechthoekig. En ik realiseer me nu dat het helemaal niet ten koste van de sprite gaat als de vruchttrossen gewoon wat groter maken, had ons een hoop moeite gescheeld, overlappen is toch niet erg, zolang ze elkaar maar niet overlappen" → r14: trossen groter (mogen over blad/takken/stam vallen, niet over elkaar), vruchten rond.
 - Jordi: "dus bewaar deze fase als oke, maar ga nu kijken hoe ze groter kunnen" → r13 bewaard als oké-versie in `bewaard_r13/`; r14 = trossen groter.
 - Jordi: "ja en er moet iets ruimte tussen zitten, desnoods schuif je de linker maar iets naar links".
+- Sprite r14: Jordi "nu weer geen enkel oog dat de goede kant op kijkt, blijven in rondjes gaan. de tros rechts is ook geen geheel meer".
+
+## VASTE REGELS SPRITE (samengevat uit alle feedback; elke maker leest dit, elke ronde wordt hierop gecontroleerd)
+1. Model 1-op-1 (r10 + verdubbelde trossen); liaan/blad/ranken van r13 zijn goed.
+2. Vruchten rond/peervormig, nooit rechthoekig; elke vrucht leest als stuk fruit aan de tros (verhouding zoals fase 1).
+3. Elke tros is één geheel: vruchten sluiten aan elkaar, hangen samen aan hun steel, geen losse vruchten of gaten.
+4. Trossen groot (vrucht ±8–9 px), mogen over blad/takken vallen, niet over elkaar; ruimte ertussen; linker mag naar links.
+5. Ogen = fase 1-oog. Kijkrichting: de meeste ogen "iets naar linksonder vanaf het midden" (pupil 1 stap links en 1 stap onder het midden, met wit links én onder de pupil zichtbaar), in verschillende gradaties; een paar anders zoals fase 1; buren nooit identiek. L2 (bovenste oog linkertros) en R2 (rechtsboven rechtertros): pupil in het midden. Pupil mag kleiner dan 2×2 als dat beter past; half dichte ogen mogen.
+6. Oogrand rechts/onder lijnrood (variant A).
+7. Kleur zoals fase 1, palet fase 1; rood ±40/15/35/10 (lijn/schaduw/midden/licht); geen blur, geen nieuwe tinten, geen dithering.
+8. Geen horizontale strepen over meerdere vruchten; trosrand geschulpt per vrucht.

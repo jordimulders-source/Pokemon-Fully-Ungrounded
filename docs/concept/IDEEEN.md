@@ -907,3 +907,4 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - **Open vragen (eerst overleggen, nog niet prompten):** aantal fases, rolverdeling, types, vorm van fase 1.
 - **Jordi (27 nov):** 2 fases per lijn. Rollen: "was de terreurvogel zo snel? glyptodon idd een wall". Types: "typings wil ik even over sparren" (beide lijnen).
 - **Jordi (27 nov):** "Tot aan Sword/Shield waren alle fossielen rock/nog iets, maar in sword en shield niet. Rock is wel een typing die voor veel typische zwakten zorgt, maar past wel goed bij fossielen, plus de dex kan het wel gebruiken". (Telling 25 nov in `DEX_IN_ROM.md`: Rock 33, alleen Fairy 32, Fighting 30 en Cosmic 17 lager.)
+- **Besloten (Jordi, 27 nov):** terreurvogel **Rock/Fighting** ("rock/fighting akkoord"). Glyptodon: "moeten we kijken wat qua lore goed past, rock/normal overweeg ik ook, maar hij moet vooral ook een goede wall zijn".

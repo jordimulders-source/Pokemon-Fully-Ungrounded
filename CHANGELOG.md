@@ -3864,3 +3864,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.945] - Proefserie: eerste Gemini-resultaten (27 nov)
 - Gemini p1 in `docs/concept/sprites/graphics_proef/`: Gumfish-rug, Sunperor-rug, Sunperor frame 2, Hexpress-rug. Jordi over frame 2: "frame 2 mag wel wat anders zijn zolang het maar goed als een beweging leest"; verder eens met de beoordeling (Gumfish: glans terug; Sunperor: gaten en oogjes weg; Hexpress: nieuwe poging).
 - `gereedschap/natief.py` (generiek: pitch zoeken, natief raster terug); `nat_*.png`: Gumfish-rug 48×28 (pitch 14,5), Sunperor-rug 45×55 en frame 2 46×62 (pitch 16, exact op het frontraster).
+
+### [v0.0.946] - Proefserie: kandidaten rug en frame 2 (27 nov)
+- Maker-agent (Jordi akkoord met de reparaties): `graphics_proef/kandidaat/` met Gumfish-rug (48×28, frontpalet, winegum-glans van de front 1-op-1 linksboven op de koepel), Sunperor-rug (gaten onder de kroon dicht met lijfbruin, twee losse oogjes weg, vloerbalk weg) en Sunperor frame 2 (verschuiving +1,+1 op de front, 57 px verschil, vooral de open snavel; `sunperor_anim_front.png` + gif). Script `gereedschap/bouw_kandidaat.py`.

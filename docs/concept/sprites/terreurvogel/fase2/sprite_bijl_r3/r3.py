@@ -19,6 +19,7 @@ def zet(y,x,v,stap):
     if (y,x) in OOG or not FIG[y,x]: raise SystemExit('bevroren pixel %s'%((y,x),))
     if S[y,x]!=v: LOG.append((stap,y,x,int(S[y,x]),int(v))); S[y,x]=v
 def zone(y,x):
+    if g(B[y,x])==5 and True: return 'poot rechts' if x>=44 else 'poot links'
     if x<=13 or (x<=15 and y>=31): return 'snavel'
     if x<=26 and y<=36: return 'kop'
     if g(B[y,x])==5 or (g(B[y,x])==1 and any(0<=y+a<64 and 0<=x+b<64 and g(B[y+a,x+b])==5 for a in(-1,0,1) for b in(-1,0,1))):

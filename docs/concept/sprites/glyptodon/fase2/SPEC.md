@@ -18,3 +18,4 @@ Regionaal fossiel, **Rock/Normal**, wall, eigen ability (later). 2 fases; fase 1
 - Over sprite r2 (27 nov): "best netjes al, vooral heel veel losse zwarte pixels die nog opgeruimd moeten worden, maar dit begint zeker ergens op te lijken, als je de lijnen om het oog nog iets minder donker kan maken is het oog ook al goed".
 - Oog r4 (27 nov), Jordi met aangestreepte lid-lijn boven de oranje iris: "deze lijn moet een andere kleur dan zwart" / "zodat het pupil te zien is" / "en als de rest van de lijn moet mee kleuren dan moet je dat doen" (kleur niet genoemd; varianten A grijs, B roestbruin).
 - Over r5 (27 nov): "maar nu verander je het pupil telkens mee" → oog (alle oranje pixels) blijft exact r4, alleen de lijn verandert van kleur.
+- Over r6 (27 nov), met groen kruis op (13,41): "groenkruis is het pupil niet je blauwe vakje" → pupil = (13,41), zwart; (15,41) blijft r4.

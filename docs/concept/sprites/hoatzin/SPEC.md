@@ -264,3 +264,4 @@ MOOD: ugly in a Pokémon way, something you don't trust.
 AVOID: feathers on the wings; a crest; a smile; a branch or any object; a mask; a red eye; a normal bird.
 ```
   Jordi: "dat is het enige waar ik nog om vraag" / "al 4x gedaan" → alleen bijsturen op r13: vleugels zonder veren. (v6 hierboven vervalt.)
+  Jordi: "als je de veren van een normale vogel plukt dan krijg je hetzelfde".

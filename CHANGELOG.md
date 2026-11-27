@@ -3794,3 +3794,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.913] - Uku Pacha: sprite r2 (maker, 27 nov)
 - Doorlopende lijnen, omlijning, koppen en vleugels per pixel naar het model; geen lijnen weggehaald (Jordi: "ik wil eerst een eindproduct zien", "misschien werken de lijnen gewoon"). Gemeten: Arbok-banden 5–8 px, Uku-buik 4–6 px. Kronkels nog een mozaïek en rechteroog afwijkend: ronde r3 loopt.
+
+### [v0.0.914] - Uku Pacha: sprite r3 (27 nov)
+- Kronkels per band geschaduwd (geen mozaïek per blokje), spiraallijnen doorlopend zwart, rechteroog 1-op-1 uit het model, zwarte buitenrand rond de kronkels; alle lijnen nog aanwezig.

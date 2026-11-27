@@ -11,3 +11,6 @@ Regionaal fossiel, **Rock/Normal**, wall, eigen ability (later). 2 fases; fase 1
 ## Open
 - Kleuren (niet besproken; prompt r1 laat ze aan Gemini).
 - Staart fase 2: Jordi "2 dan de knots", maar "drill en knots kunnen we weer allebei kijken" (r2 A en B). Fase 2: "massiever, zwaarder, dreigender, misschien wat stekels op het schild". Fase 1-kandidaat: r1 A.
+
+## Model (27 nov)
+`model.png` = r4 + stekel met band van r6 (plek en hoek als r6) + staart van r3_3 + schildstrepen van r6, geplakt op het natieve Gemini-raster (100×100, zie `gemini/PROMPTS.md`). Jordi: "let erop dat door het copy pasten er wat pixel blur is ontstaan".

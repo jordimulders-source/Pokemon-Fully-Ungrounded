@@ -29,6 +29,10 @@ I[tm&rand]=1
 # tip van de staart is grijze steen tot natief rij 49 (sprite rij 35)
 for y,x in zip(*np.where(tm)):
     if y<=35 and I[y,x]>1 and R[(y,x)]['c'] is not None: I[y,x]=near(R[(y,x)]['c'],[10,11,12,13])
+# losse zwarte pixels binnen de staart (niet aan de buitenlijn vast) -> donkerste staarttint
+for y,x in zip(*np.where(tm)):
+    if I[y,x]!=1 or rand[y,x]: continue
+    if sum(I[y+dy,x+dx]==1 for dy,dx in ((0,1),(0,-1),(1,0),(-1,0)))<=1 and not any(rand[y+dy,x+dx] and I[y+dy,x+dx]==1 for dy,dx in ((0,1),(0,-1),(1,0),(-1,0))): I[y,x]=5
 n_staart=(I!=I0).sum()
 # 2+3. STEKEL en BAND: modus per pixel uit de r6-cellen (scherp, geen gemiddelde), rijen 7-25, kolommen 11-23
 from modus import modus

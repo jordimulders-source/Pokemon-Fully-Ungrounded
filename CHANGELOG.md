@@ -3642,3 +3642,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.869] - Regiaqua: reactie op de stippencheck (27 nov)
 - Jordi: r1 "lijkt wel goed"; stippen worden in de sprite vierkantjes (zoals Gen 3). In `regiaqua/SPEC.md`.
+
+### [v0.0.870] - Regiaqua: model vastgezet, sprite gestart (27 nov)
+- Jordi: 7 stippen "is prima" → model = `regiaqua/gemini/r1.png`; maker gestart in `regiaqua/sprite/`.

@@ -1,0 +1,86 @@
+(17,21) 2 -> 0  koepel: topschouder links afronden (model rand 21,50)
+(26,21) 2 -> 0  koepel: topschouder rechts afronden (model rand 21,33)
+(17,22) 12 -> 2  koepel: nieuwe bovenrand -> selout
+(26,22) 11 -> 2  koepel: nieuwe bovenrand -> selout
+(31,23) 1 -> 0  koepel: rechterflank, model rand 23,75 (dekking 0,25)
+(15,46) 1 -> 0  arm: rechterrand naar model (dekking < 0,5)
+(14,46) 6 -> 1  arm: nieuwe rechterrand zwart (schaduwkant)
+(15,47) 1 -> 0  arm: rechterrand naar model (dekking < 0,5)
+(14,47) 6 -> 1  arm: nieuwe rechterrand zwart (schaduwkant)
+(14,49) 1 -> 0  arm: rechterrand naar model (dekking < 0,5)
+(13,49) 14 -> 1  arm: nieuwe rechterrand zwart (schaduwkant)
+(14,50) 1 -> 0  arm: rechterrand naar model (dekking < 0,5)
+(13,50) 14 -> 1  arm: nieuwe rechterrand zwart (schaduwkant)
+(48,13) 1 -> 0  trapbeen: inkeping rechterrand bij ringlijn (modeldekking < 0,8)
+(47,13) 2 -> 1  trapbeen: rechterrand zwart
+(48,15) 1 -> 0  trapbeen: inkeping rechterrand bij ringlijn (modeldekking < 0,8)
+(47,15) 2 -> 1  trapbeen: rechterrand zwart
+(48,18) 1 -> 0  trapbeen: inkeping rechterrand bij ringlijn (modeldekking < 0,8)
+(47,18) 6 -> 1  trapbeen: rechterrand zwart
+(43,12) 15 -> 7  trapbeen: bandtint rij 3 van de ring
+(44,12) 8 -> 7  trapbeen: bandtint rij 1 van de ring
+(45,12) 15 -> 6  trapbeen: bandtint rij 1 van de ring
+(46,12) 8 -> 5  trapbeen: bandtint rij 1 van de ring
+(47,12) 3 -> 4  trapbeen: bandtint rij 3 van de ring
+(42,13) 2 -> 3  trapbeen: ringlijn als boog (uiteinden 1 rij hoger, lichtkant 3)
+(43,13) 2 -> 6  trapbeen: bandtint rij 2 van de ring
+(44,13) 2 -> 5  trapbeen: bandtint rij 2 van de ring
+(45,13) 2 -> 5  trapbeen: bandtint rij 2 van de ring
+(43,14) 6 -> 15  trapbeen: bandtint rij 1 van de ring
+(44,14) 7 -> 2  trapbeen: ringlijn als boog (uiteinden 1 rij hoger, lichtkant 3)
+(45,14) 4 -> 2  trapbeen: ringlijn als boog (uiteinden 1 rij hoger, lichtkant 3)
+(46,14) 4 -> 2  trapbeen: ringlijn als boog (uiteinden 1 rij hoger, lichtkant 3)
+(47,14) 8 -> 5  trapbeen: bandtint rij 1 van de ring
+(42,15) 2 -> 3  trapbeen: ringlijn als boog (uiteinden 1 rij hoger, lichtkant 3)
+(43,15) 2 -> 7  trapbeen: bandtint rij 1 van de ring
+(44,15) 2 -> 6  trapbeen: bandtint rij 1 van de ring
+(45,15) 2 -> 5  trapbeen: bandtint rij 1 van de ring
+(43,16) 8 -> 15  trapbeen: bandtint rij 1 van de ring
+(44,16) 5 -> 2  trapbeen: ringlijn als boog (uiteinden 1 rij hoger, lichtkant 3)
+(45,16) 5 -> 2  trapbeen: ringlijn als boog (uiteinden 1 rij hoger, lichtkant 3)
+(46,16) 5 -> 2  trapbeen: ringlijn als boog (uiteinden 1 rij hoger, lichtkant 3)
+(47,16) 6 -> 5  trapbeen: bandtint rij 1 van de ring
+(43,17) 2 -> 7  trapbeen: bandtint rij 2 van de ring
+(44,17) 2 -> 7  trapbeen: bandtint rij 1 van de ring
+(45,17) 2 -> 6  trapbeen: bandtint rij 1 van de ring
+(46,17) 2 -> 5  trapbeen: bandtint rij 1 van de ring
+(47,17) 2 -> 4  trapbeen: bandtint rij 2 van de ring
+(43,18) 15 -> 6  trapbeen: bandtint rij 2 van de ring
+(44,18) 8 -> 5  trapbeen: bandtint rij 2 van de ring
+(46,18) 5 -> 2  trapbeen: ringlijn als boog (uiteinden 1 rij hoger, lichtkant 3)
+(43,19) 6 -> 2  trapbeen: ringlijn als boog (uiteinden 1 rij hoger, lichtkant 3)
+(44,19) 3 -> 2  trapbeen: ringlijn als boog (uiteinden 1 rij hoger, lichtkant 3)
+(45,19) 7 -> 2  trapbeen: ringlijn als boog (uiteinden 1 rij hoger, lichtkant 3)
+(46,19) 8 -> 5  trapbeen: bandtint rij 1 van de ring
+(42,20) 2 -> 3  trapbeen: ringlijn als boog (uiteinden 1 rij hoger, lichtkant 3)
+(43,20) 2 -> 7  trapbeen: bandtint rij 1 van de ring
+(44,20) 2 -> 6  trapbeen: bandtint rij 1 van de ring
+(45,20) 2 -> 5  trapbeen: bandtint rij 1 van de ring
+(42,21) 6 -> 2  trapbeen: ringlijn als boog (uiteinden 1 rij hoger, lichtkant 3)
+(43,21) 3 -> 2  trapbeen: ringlijn als boog (uiteinden 1 rij hoger, lichtkant 3)
+(44,21) 7 -> 2  trapbeen: ringlijn als boog (uiteinden 1 rij hoger, lichtkant 3)
+(45,21) 8 -> 2  trapbeen: ringlijn als boog (uiteinden 1 rij hoger, lichtkant 3)
+(46,21) 6 -> 5  trapbeen: bandtint rij 1 van de ring
+(51,47) 0 -> 2  standbeen: linkerrand naar model (selout, lichtkant)
+(51,49) 0 -> 2  standbeen: linkerrand naar model (selout, lichtkant)
+(51,50) 0 -> 2  standbeen: linkerrand naar model (selout, lichtkant)
+(52,45) 5 -> 7  standbeen: bandtint rij 1 van de ring
+(53,45) 4 -> 6  standbeen: bandtint rij 1 van de ring
+(54,45) 4 -> 5  standbeen: bandtint rij 1 van de ring
+(55,45) 7 -> 4  standbeen: bandtint rij 1 van de ring
+(52,47) 2 -> 7  standbeen: bandtint rij 1 van de ring
+(53,47) 4 -> 6  standbeen: bandtint rij 1 van de ring
+(54,47) 4 -> 5  standbeen: bandtint rij 1 van de ring
+(55,47) 4 -> 5  standbeen: bandtint rij 1 van de ring
+(52,49) 2 -> 7  standbeen: bandtint rij 1 van de ring
+(53,49) 5 -> 6  standbeen: bandtint rij 1 van de ring
+(55,49) 4 -> 5  standbeen: bandtint rij 1 van de ring
+(56,49) 6 -> 4  standbeen: bandtint rij 1 van de ring
+(52,50) 2 -> 6  standbeen: bandtint rij 2 van de ring
+(53,50) 7 -> 5  standbeen: bandtint rij 2 van de ring
+(54,50) 7 -> 5  standbeen: bandtint rij 2 van de ring
+(55,50) 6 -> 4  standbeen: bandtint rij 2 van de ring
+(52,52) 3 -> 7  standbeen: bandtint rij 1 van de ring
+(53,52) 15 -> 6  standbeen: bandtint rij 1 van de ring
+(54,52) 7 -> 5  standbeen: bandtint rij 1 van de ring
+(55,52) 6 -> 4  standbeen: bandtint rij 1 van de ring

@@ -3736,3 +3736,46 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Versierd koekje (paars glazuur, witte zigzag, hagelslag, paars juweel) op een koekster met chips, naar Gemini r4; alle tien punten afgestompt naar de Gen 3-Starmie (r6 licht), bovenpunt 1 rij terug (r8 A), keuring + DC-eindkeuring PASS (r7, r9). `docs/concept/sprites/staryu_regional/starmie/af/` (+ `normal.pal`, 8×); op het overzichtsvel (Fairy/Psychic). Regionale Staryu-lijn af.
 ### [v0.0.907] - Regionale Starmie: afwerking (27 nov)
 - Jordi omcirkelde twee plekken ("nog niet netjes afgewerkt"): achterpunt rechtsboven opgeschoond (licht/donker vlak, chips, nette binnenlijn) en rechter voortip even stomp als links (r10, r11 B; "smoother", "rechts is de punt puntiger"). `starmie/af/` = r11 B; overzichtsvel bijgewerkt.
+### [v0.0.908] - Idee: regionale Hitmonlee en Hitmonchan (27 nov)
+- `IDEEEN.md`: nieuwe sectie met Jordi's idee (Hitmonchan Ice, ijssculptuur met kubushandschoenen; Hitmonlee misschien vuur), repo-check en open vragen.
+
+### [v0.0.909] - Pitch regionale Hitmonlee (27 nov)
+- `IDEEEN.md`: zes ideeën voor de regionale Hitmonlee onder "Regionale Hitmonlee en Hitmonchan".
+- Besloten: Tyrogue blijft hetzelfde (Jordi).
+- Besloten: regionale Hitmonlee = voetballer in omhaalpose, van gloeiend geblazen glas (Jordi).
+
+### [v0.0.910] - Regionale Hitmonlee: keuzes + Gemini-prompt r1 (27 nov)
+- Hitmonlee regional: puur Fire, gloeiend geblazen glas, omhaalpose, geen bal, knipoog naar "de man van glas" (Jordi). Prompt en besluiten in `docs/concept/sprites/hitmonlee_regional/SPEC.md`.
+
+### [v0.0.911] - Regionale Hitmonlee: Gemini r1 + prompt r2 (27 nov)
+- r1 opgeslagen (`hitmonlee_regional/gemini/r1.png`); Jordi: pose klopt niet, nog niet glasachtig. Prompt r2 in de SPEC (echte omhaal liggend in de lucht, glas doorschijnend met gloeiende kern).
+
+### [v0.0.912] - Regionale Hitmonlee: model gekozen (Gemini r2) (27 nov)
+- Jordi: "dit is hem". Kale reductietest in `hitmonlee_regional/test/` (raster 68×74 → 64).
+
+### [v0.0.913] - Regionale Hitmonlee: frontsprite-kandidaat + eindkeuring (27 nov)
+- Maker nam Gemini r2 over (raster 5,12 px, rijen/kolommen geschrapt naar 59×64, 15 kleuren); eindkeuring ek1 PASS. Ter beoordeling bij Jordi: `hitmonlee_regional/eindkeuring/ek1.png`.
+- Les in `GEMINI.md`: pitch altijd op 8× controleren.
+
+### [v0.0.914] - Regionale Hitmonlee: tweede eindkeuring ek2 (27 nov)
+- Verse DC-keurder: PASS, 1 px gewijzigd (`hitmonlee_regional/eindkeuring/ek2.png`). Open punt: linkerwand van de romp rechter dan de koepel in het model.
+
+### [v0.0.915] - Regionale Hitmonlee: rechte lijnen gefixt (r15 / ek3) (27 nov)
+- Jordi: benen, arm en bovenkant kop hadden slordige rechte lijnen. Benen nu per ring gebouwd zoals de Gen 3-Hitmonlee, koepel rond, arm taps; rest gelijk aan ek2. Eindkeuring ek3 PASS (`hitmonlee_regional/eindkeuring/ek3.png`).
+- Lessen in `GEMINI.md`: rijen schrappen maakt rondingen recht; geribbelde ledematen per ring van 3 rijen.
+
+### [v0.0.916] - Regionale Hitmonchan: Gemini-prompt r1 (27 nov)
+- `hitmonchan_regional/SPEC.md`: ijssculptuur met kubushandschoenen, prompt r1. Intussen Hitmonlee r16 (gladde beenomtrek) in de maak.
+
+### [v0.0.917] - Regionale Hitmonlee: gladde benen + Jordi's punten (r16 / ek4) (27 nov)
+- Benen met gladde "getapete" omtrek, ringen alleen binnenin (r16); ek4: losse pixels weg, verre oog ovaal, plooi in de trapvoet schuin, aansluiting kop↔trapbeen vloeiend (`hitmonlee_regional/eindkeuring/ek4.png`).
+- Hitmonchan regional: Gemini r2 + prompt r3 (uppercut, kubusvuisten één stuk met de arm).
+
+### [v0.0.918] - Regionale Hitmonlee: frontsprite af (27 nov)
+- Jordi: "ja hij is af". `hitmonlee_regional/af/hitmonlee_regional.png` (= ek4), op het overzichtsvel bij Regional forms (Fire). Stand van zaken in CLAUDE.md bijgewerkt.
+
+### [v0.0.919] - Regionale Hitmonchan: frontsprite-kandidaat + eindkeuring (27 nov)
+- Gemini r3 (uppercut, uitgehakt ijs) overgenomen: gezicht 1-op-1 op modelgrootte (Jordi: "de ogen zijn het belangrijkst"), rest ±76 %, 7 kleuren. Eindkeuring ek1 PASS (`hitmonchan_regional/eindkeuring/ek1.png`). Les in `GEMINI.md`.
+
+### [v0.0.920] - Regionale Hitmonchan: frontsprite af (27 nov)
+- Jordi: "nu is die af". `hitmonchan_regional/af/hitmonchan_regional.png` (= ek4: rechte lijnen nagemeten, linkeroog-puntje uit het model, ^-lijn schouder↔kubus terug), op het overzichtsvel bij Regional forms. Stand van zaken in CLAUDE.md bijgewerkt (110 frontsprites).

@@ -14,3 +14,4 @@ Prompt r1: `PROMPT.md`.
 
 ## Rondes
 - r1 (`gemini/r1.png`): Jordi: "haha, dit is het nog niet he, is gewoon een poema met wat blaadjes en een halsband".
+- Jordi na r1: "lijkt ook veel te veel op een normale poema"; "maak maar groen"; "groter hoofd".

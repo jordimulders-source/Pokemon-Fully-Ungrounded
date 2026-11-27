@@ -28,3 +28,5 @@ Prompt r1: `PROMPT.md`.
 - Jordi: "en nog steeds teveel kleine details". Bijsturing r7 in hetzelfde gesprek.
 - Jordi: "die kruizen wil ik weg".
 - Jordi: "denk weer nieuwe prompt from scratch, maar wees specifiek". → `PROMPT_r7.md`.
+- r7 (`gemini/r7.png`, `PROMPT_r7.md`): Jordi: "nee dit is ook niet mooi".
+- Jordi na r7: "we moeten het over een andere boeg gooien", "ander ontwerp bedenken". Vast blijft (tenzij Jordi anders zegt): Grass/Psychic, poema, Kay Pacha.

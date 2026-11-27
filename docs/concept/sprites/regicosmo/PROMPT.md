@@ -57,3 +57,24 @@ POSE: 3/4 view facing left, standing upright and imposing like Regirock or Regis
 
 DO NOT: random placement, extra planets or debris, rings, a bigger number of dots, lines between dots, starfield or galaxy texture, nebula, sparkles, eyes, mouth, head, orbit lines, effects.
 ```
+
+# r4 (nieuw gesprek, geen bijlage)
+Na Jordi op r3: "teveel aan elkaar vast", "hemellichamen te vergelijkbaar", "de vorige was toffer". Gelijke paren (Claude) eruit.
+```
+Design a new legendary Pokémon as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style): pixel art, 64x64, max 16 colors, dark outline, light from top-left, plain white background, no ground, no shadow, no effects. Few, big shapes so it reads at 64x64.
+
+WHAT IT IS: a new member of the Regi family of golem legendaries. A big faceless golem with no eyes, no mouth and no separate head; its only "face" is a pattern of glowing dots on its chest. The overall silhouette reads as a Regi golem: big torso, high broad shoulders, heavy hands hanging beside the body, short legs.
+
+BODY: 7 separate celestial bodies that FLOAT apart from each other: clear empty white space between every part (at least 2-3 pixels at 64x64), nothing touches or overlaps. Like a small solar system that happens to form a golem.
+- TORSO: the biggest body in the center, a Mars-colored planet (rusty red-orange with darker red craters).
+- LEFT SHOULDER: a pale icy blue planet. RIGHT SHOULDER: an orange-banded gas giant with a tilted ring.
+- LEFT HAND: a craggy brown asteroid. RIGHT HAND: a grey cratered moon.
+- FEET: two small different bodies under the torso, one dark blue-grey, one tan rocky.
+Every body looks clearly different (color, texture, kind). The left and right side mirror each other only in size and position.
+
+THE DOTS: exactly 7 glowing dots (2x2 or 3x3 pixels at 64x64) on the torso, no lines between them, in a color that stands out against the red (not red, not orange). They are a tiny map of the golem: 1 dot in the center, 2 up-left and up-right (shoulders), 2 further out lower-left and lower-right (hands), 2 close together at the bottom (feet).
+
+POSE: 3/4 view facing left, upright and imposing.
+
+DO NOT: parts touching, matching or identical parts, extra planets or debris, more than 7 dots, lines between dots, starfield or galaxy texture, nebula, sparkles, eyes, mouth, head, orbit lines, effects.
+```

@@ -3645,3 +3645,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.870] - Regiaqua: model vastgezet, sprite gestart (27 nov)
 - Jordi: 7 stippen "is prima" → model = `regiaqua/gemini/r1.png`; maker gestart in `regiaqua/sprite/`.
+
+### [v0.0.871] - Regicosmo r3 + prompt r4 (27 nov)
+- r3 bewaard (Jordi: te veel vast, hemellichamen te gelijk, r2 toffer); prompt r4 in `regicosmo/PROMPT.md`.

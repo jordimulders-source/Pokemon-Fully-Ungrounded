@@ -17,3 +17,5 @@ Prompt: `PROMPT.md`.
 - r2-prompt: torso + 6 losse hemellichamen (schouders, handen, voeten) = 6 stippen + 1 middenstip = 7 (Claude; zoals Regirock/Regice/Registeel met 7 stippen). Eigen invulling, schrappen als Jordi het anders wil.
 - r2 (27 nov; afbeelding niet als bestand ontvangen): Jordi: "het is nu net iets te random en nog net niet goed genoeg golem"; "en misschien dat we de binnenste wat meer een mars kleur kunnen gevn".
 - r3-prompt: vaste golembouw (schouders hoog en breed, arm = bovenarm + hand recht eronder, korte voeten onder de romp), paren gelijk (Claude, tegen "random"), romp Mars-rood, stippen in een kleur die tegen rood afsteekt (Claude: niet oranje/rood).
+- r3 (`gemini/r3.png`, 27 nov): Jordi: "deze lukt nog niet goed, nu zit die juist weer teveel aan elkaar vast en de hemellichamen zijn te vergelijkbaar, de vorige was toffer". (De gelijke paren waren Claudes invulling: geschrapt.)
+- r4-prompt: elk hemellichaam anders (zoals r2), duidelijke tussenruimtes, golemplaatsing zoals r3, Mars-romp.

@@ -15,3 +15,4 @@ Regionaal fossiel, **Rock/Normal**, wall, eigen ability (later). 2 fases; fase 1
 ## Model (27 nov)
 `model.png` = r4 + stekel met band van r6 (plek en hoek als r6) + staart van r3_3 + schildstrepen van r6, geplakt op het natieve Gemini-raster (100×100, zie `gemini/PROMPTS.md`). Jordi: "let erop dat door het copy pasten er wat pixel blur is ontstaan".
 - **Jordi (27 nov):** "het fase 2 model is echt super slordig geknipt en geplakt dus zorg dat de agent daar rekening mee houdt" / "anders gaat het helemaal fout". Afspraak met de maker: per onderdeel vanaf het scherpe bronplaatje werken (r4: lijf, kop, poten, schildvorm, vizier; r6: stekel+band en schildstrepen; r3_3: staart); `model.png` bepaalt alleen plek, hoek en overlap.
+- Over sprite r2 (27 nov): "best netjes al, vooral heel veel losse zwarte pixels die nog opgeruimd moeten worden, maar dit begint zeker ergens op te lijken, als je de lijnen om het oog nog iets minder donker kan maken is het oog ook al goed".

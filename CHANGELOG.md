@@ -3856,3 +3856,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.943] - Dragon als open punt (27 nov)
 - Jordi: "eigenlijk blijft alleen dragon echt achter, dus dat is nog huiswerk voor mij, maar dat ga ik pas doen als ik een goed idee heb". In `TODO.md` → Ontwerpen.
+
+### [v0.0.944] - Proefserie overige graphics: Gemini-pakket (27 nov)
+- Jordi: "ik wil onderzoeken hoe we dit met zo weinig mogelijk werk kunnen doen"; Gemini via de app (geen API). Proefsoorten Gumfish (bol), Sunperor (vogel), Hexpress (object; Jordi: "hexpress is ook een complex design, dus goede testcase"); Gengas niet ("daar hebben we al frame 2 voor").
+- `docs/concept/sprites/graphics_proef/`: fronts op 8× + `PROMPTS.md` (één sjabloon voor de rug, per soort alleen "Body plan"; frame 2 via Gemini alleen voor Sunperor, Gumfish en Hexpress per script).

@@ -355,3 +355,4 @@ AVOID: copying or tracing the sketch; smooth vector shapes; hands or fingers; fe
 - Haren: Jordi koos **B**.
 - **r5** (`sprite_fase1/r5/`, haren B): 39 px in het omcirkelde gebied (scheidingslijnen onderarm/dij, dij/staart, verre poot/dij; staart een stap donkerder; schaduwrand dij); alpha-diff 0. Onderarm en dij nog dezelfde lichte tint. Naar Jordi.
   Jordi op r5: "je hebt nu gewoon maar wat rechte lijnen neergezet die niet kloppen" (`sprite_fase1/jordi_r5_lijnen.png`). Claude: de echte grenzen in het model lopen schuin (onderarm van elleboog schuin omlaag, onderrand vleugel naar de punt, poot eronder); r6 = terug naar r4 en de modellijnen in dat gebied 1-op-1 overnemen.
+  Jordi (rode omtrek op r4/r5, screenshot niet op schijf): "vgm is dit de vorm en niet wat je van plan was": bovenarm + grijze band + lichte lob ("dij") + "staart" = één gevouwen vleugel die rechts uitpunt met een onderpunt; poot begint onder die onderpunt.

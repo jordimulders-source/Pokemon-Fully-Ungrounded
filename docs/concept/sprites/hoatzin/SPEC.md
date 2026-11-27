@@ -341,3 +341,4 @@ AVOID: copying or tracing the sketch; smooth vector shapes; hands or fingers; fe
 - **r17** (`gemini/fase1_r17.png`, prompt v9 + krabbel). Jordi: "weer niet".
 - Jordi koos **r4** als model: "ga maar deze bouwen" (`model/fase1_model.png`). Makeropdracht `sprite_fase1/OPDRACHT.md` (44 px hoog).
   Jordi: "haren op de rug weg, en de haren rondom de vleugels haal je ook weg en vervang je door haren die beter passen bij een sprite" (aan de maker doorgegeven).
+  Jordi (omcirkeld op r4, `sprite_fase1/jordi_omcirkeld.png`): "ik weet niet wat dit is wat ik omcirkeld heb, dus dat mag weg" (donkere wig in de nabije vleugel; donker strookje tussen poot en vleugel onder het lijf).

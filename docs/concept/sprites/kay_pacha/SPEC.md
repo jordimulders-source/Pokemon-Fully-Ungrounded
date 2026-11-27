@@ -36,3 +36,4 @@ Prompt r1: `PROMPT.md`.
 - Jordi akkoord ("prima") met Claudes punten na r8 (mantel zachte overlappende bladeren in treden en andere kleur, kroon trapvormig in maskerkleur, brede bladlintstaarten, groter hoofd, krachtiger pose); mantelkleur: "goudgeel is wel geinig" (ichu-gras). → `PROMPT_r9.md`.
 - **Model bevroren (Jordi, 27 nov: "deze doen we"):** `gemini/r9.png` = `referenties/gemini_gekozen_r9.png`. Volgende stap: frontsprite (maker-agent, Gemini-model namaken).
 - Vertaalcheck r9 (`sprite/check_5x.png`, naast Raikou/Entei/Suicune): ontwerp vertaalt, pose niet (62×45, kop ±12 px, ogen en strepen verdwijnen). Voorstel: compactere pose zoals de beesten.
+- Jordi: "hij is iets te breed he?"; "zodra het ontwerp is goedgekeurd mag je om 18:11 beginnen met bouwen". → `PROMPT_r10.md` (bijlage r9, compactere pose).

@@ -3573,3 +3573,8 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - 17 Gemini-rondes voor het kuiken (`docs/concept/sprites/hoatzin/gemini/fase1_r*.png`); Jordi koos r4 als model, met rughaar weg, vleugelharen vervangen door sprite-haren, donkere wig = lijf en poot doorgetrokken.
 - Sprite r1–r4 in `hoatzin/sprite_fase1/` (maker → keurder → DC-eindkeuring PASS): 40×44, ±736 px, zwart-aandeel 41 → 20 %, 11 kleuren, haren A en B. Wacht op Jordi.
 - Les in GEMINI.md: referentiefoto eerst zelf beschrijven en laten bevestigen; geen eigen vormen in prompts; sarcasme niet als compliment lezen.
+
+### [v0.0.857] - Hoatzin fase 1 (kuiken): frontsprite af (28 nov)
+- Frontsprite af: `docs/concept/sprites/hoatzin/af/hoatzin_fase1.png` (= `sprite_fase1/r9`). Na r4: Jordi op de rechterhelft ("niet goed te zien waar de ledematen los van elkaar zitten") → nabije vleugel als één gevouwen vorm (Jordi's omtrek), binnenlijnen niet zwart maar donkere eigen tint (r5–r8), DC-eindkeuring r9 (13 px, PASS). Haren B (Jordi).
+- Op het overzichtsvel (New, vóór fase 2). Hoatzin-lijn af; namen open.
+- Les in GRAPHICS.md: haarwortels apart houden in binnenlijnscripts; slagschaduw naast een lijn in dezelfde tint = dubbele lijn.

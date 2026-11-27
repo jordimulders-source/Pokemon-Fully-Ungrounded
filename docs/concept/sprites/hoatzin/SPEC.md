@@ -364,3 +364,4 @@ AVOID: copying or tracing the sketch; smooth vector shapes; hands or fingers; fe
 - **r8** (`sprite_fase1/r8/`, vanaf r7): binnenlijnen terug op de r6-pixels, tegen lijf index 13 (24,26,32), tegen poten 12; veerlijnen 12; alpha-diff 0; zwart 19,6 %. Naar Jordi.
   Jordi op r8: "nee naar de eindkeuring ermee" (lijn tegen lijf blijft tint 13). DC-eindkeuring → r9.
 - **r9** (`sprite_fase1/r9/`): DC-eindkeuring op r8, 13 px (dubbele lijn slagschaduw+lijn, zigzag x41/42, 2 haarwortels terug naar zwart, om-en-om rand punt, 2 ruispixels); alpha-diff 0; zwart 19,6 %; PASS. Naar Jordi.
+- **Af** (Jordi: "akkoord"): `af/hoatzin_fase1.png` = r9.

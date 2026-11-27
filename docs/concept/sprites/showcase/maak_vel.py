@@ -68,6 +68,7 @@ SECTIES=[
 ("guarana/af/guarana.png",'Guaraná fase 1',"grass/ghost"),
 ("sneeuwmonster/af/sneeuwmonster.png",'Sneeuwmonster (fase 1)',"ice"),
 ("sneeuwmonster_fase2/af/sneeuwmonster2.png",'Sneeuwmonster (fase 2)',"ice/fire"),
+("hoatzin/af/hoatzin_fase1.png",'Hoatzin fase 1 (kuiken)',"poison/dark"),
 ("hoatzin/af/hoatzin_fase2.png",'Hoatzin fase 2 (pestmasker)',"poison/dark"),
 ]),
 ("Evolutions of existing Pokémon",[

@@ -47,7 +47,7 @@ AVOID: the Flurry from Mario, Abomasnow, Snorunt, Vanillite, a rock or golem cre
 ```
 
 ## Ronde 2 (27 nov)
-- `r2/r2a.png`. Jordi: "niks beter"; "zelfde issues als net"; "alleen de stenen op de buik zijn beter".
+- `r2/r2a.png`. Jordi: "niks beter"; "zelfde issues als net"; "alleen de stenen op de buik zijn beter"; "de vulkanische stenen mogen misschien wel nog wat groter"; "zijn nu echt steentjes" (→ in de stenenstap groter vragen).
 - Claude: Gemini volgt de pose-/uitdrukkingswoorden niet (weer stijve gespreide armen, emmer blijft emmer). Voorstel: asset voor asset (les vuurwerk fase 1): eerst alleen yeti in pose + uitdrukking, daarna met die als bijlage emmer en stenen (max 1–2 wijzigingen per ronde).
 
 ## s1 (stap 1, nieuw gesprek, zonder bijlage): alleen de yeti in pose

@@ -16,4 +16,5 @@ Pacha-kwartet (zie `docs/concept/POKEMON.md` → Legendaries; condor `../hanan_p
 
 ## Rondes
 - **r1** (`gemini/r1.png`, prompt v1). Jordi: "ok het is nog iets teveel een normale slang denk ik, de hoofden moeten naar verhouding wat groter en beide een andere pose/blik. Plus de staart is normaal met een beeetje rook eromheen, was niet het idee vgm, vleugel zit ook te hoog en is er maar 1". (Gemini: twee kleine koppen met dezelfde blik, één vleermuisvleugel hoog op de rug, gewone staart met wat rookslierten.)
-- **v2** (`gemini/PROMPT_v2.md`): nieuwe startprompt met deze punten; nog geen resultaat.
+- **r2** (`gemini/r2.png`, prompt v2). Jordi: "deze is tof, prima legendary vorm, de staart loopt logisch, koppen wijken af. Vertaalt die goed naar een sprite?"
+- Check r2 (Claude): natief raster 100×100 (pixel 10,24 px), figuur ±92×89; voor een legendary die het vak vult reductie ±0,70 (zoals zandloper fase 1), geen exacte 2× (dat wordt 46 px). Silhouet, koppen, tong, vleugels en geest blijven leesbaar in een kale testreductie; risico = de vele schubbenlijnen worden bij 0,70 druk. ±20 tinten in het model, terug te brengen naar ≤16.

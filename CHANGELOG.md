@@ -3782,3 +3782,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.909] - Uku Pacha: r1 + prompt v2 (27 nov)
 - r1 bewaard met Jordi's feedback (koppen groter en elk een andere pose/blik, geen gewone staart maar lijf dat geest wordt, twee vleugels lager); nieuwe startprompt v2.
+
+### [v0.0.910] - Uku Pacha: r2 gekozen als vorm (27 nov)
+- r2 bewaard (Jordi: "deze is tof, prima legendary vorm"); vertaalcheck naar sprite in de SPEC.

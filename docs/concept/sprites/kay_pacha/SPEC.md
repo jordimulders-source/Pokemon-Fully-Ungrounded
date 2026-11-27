@@ -21,3 +21,4 @@ Prompt r1: `PROMPT.md`.
 - Jordi: "de blaadjes zijn wel te klein".
 - r3 (`gemini/r3.png`, bijsturing in hetzelfde gesprek: meer versiering + grotere blaadjes): Jordi: "nu overdrijft die, hier is geen sprite van te maken." "nieuwe prompt from scratch, hij krijgt wat grotere bladeren op bepaalde plekken óf we maken de inca versiering mossiger, ik wil dat die een masker krijgt en dat de rugversiering blijft, we verwerken er iets van paars in". → r4 in twee varianten (A bladeren, B mossig), `PROMPT_r4.md`.
 - r4B (`gemini/r4B.png`, variant B mossig): Jordi: "stuk minder mooi, veel te kaal" en "en toch teveel detail, ook knap" (de mosspikkels). Les: "keep it to these elements" maakte hem kaal; r2 was de goede hoeveelheid ("mag nog iets meer"). → r5 = versiering van r2 in woorden + masker + paars + grotere bladeren (`PROMPT_r5.md`).
+- r5 (`gemini/r5.png`, `PROMPT_r5.md`): Jordi: "Toch ook minder".

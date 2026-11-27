@@ -343,3 +343,7 @@ AVOID: copying or tracing the sketch; smooth vector shapes; hands or fingers; fe
   Jordi: "haren op de rug weg, en de haren rondom de vleugels haal je ook weg en vervang je door haren die beter passen bij een sprite" (aan de maker doorgegeven).
   Jordi (omcirkeld op r4, `sprite_fase1/jordi_omcirkeld.png`): "ik weet niet wat dit is wat ik omcirkeld heb, dus dat mag weg" (donkere wig in de nabije vleugel; donker strookje tussen poot en vleugel onder het lijf).
   Jordi: "gewoon de poot doortrekken en onder de vleugel is het lichaam" (wig = lijf, strookje = poot doorgetrokken).
+
+## Sprite fase 1
+- Jordi: "werk maar naar een hele goede eindfase toe want ik ga slapen".
+- **r1** (`sprite_fase1/r1/`, maker): kale reductie 40×44 (735 px) + Jordi's wijzigingen op het natieve raster; oog 4×4; haren A (6×2 px) en B (7×3 px). Claude: vleugels gespikkeld (losse zwarte resten), lijf vlak, tenen onderbroken, onderkant rechts (poot/vleugel/staart) één grijze massa. Naar r2.

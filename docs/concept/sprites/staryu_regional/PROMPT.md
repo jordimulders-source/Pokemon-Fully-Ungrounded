@@ -186,3 +186,27 @@ No face, no eyes, no mouth, no limbs.
 
 DO NOT: a flat star seen straight from the front, rounded lumpy back points, a symmetric upright star, a realistic photo, a plate, starfield or galaxy patterns, sparkles, plush style.
 ```
+
+## Starmie v6 (27 nov) = v5 met het aantal en de plek van de achterpunten uitgeschreven
+Jordi: "doe maar nieuwe prompt, de achterste ster heeft ook 5 poten".
+
+```
+The attached image is STARMIE, a Gen 3 Pokémon sprite. Design a REGIONAL FORM of Starmie that is a real, delicious, fancy decorated cookie in the shape of Starmie.
+
+POSE (most important): exactly the same pose, angle and silhouette as the attached Starmie: tilted and rotated, seen in 3/4 view, not flat and not facing straight forward.
+
+TWO STARS, TEN POINTS IN TOTAL (most important):
+- The FRONT star has exactly 5 arms.
+- The BACK star also has exactly 5 arms. It is the same size as the front star, rotated so that each of its 5 arms sticks out in one of the 5 gaps between the front star's arms: one between each pair of front arms, all the way around. All 5 back arms are clearly visible, long and sharp with straight edges, exactly like the attached Starmie.
+- Every arm has a light face and a darker side face, like the attached sprite.
+
+Output: a simple, clean official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64 pixels, max 16 colors, flat colors with 2-3 shades per color. White background, no ground, no shadow, no effects, no glow, no crumbs.
+
+THE COOKIE:
+- Front star: golden-brown baked cookie with a thick layer of glossy purple icing on top, leaving a cookie rim around the edge. White icing drizzle in zigzag lines over the purple. A few colorful sprinkles (red, yellow, green, blue).
+- In the center: a purple faceted gem.
+- Back star: plain golden-brown baked cookie dough, toasted darker on its side faces, with a few dark chocolate chips on each of its 5 arms.
+No face, no eyes, no mouth, no limbs.
+
+DO NOT: a flat star seen straight from the front, fewer than 5 back arms, rounded lumpy back arms, back arms hidden behind the front star, a symmetric upright star, a realistic photo, a plate, starfield or galaxy patterns, sparkles, plush style.
+```

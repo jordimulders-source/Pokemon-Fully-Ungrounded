@@ -3847,3 +3847,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.940] - Pseudo-legendary = satelliet-lijn (27 nov)
 - Jordi: "Pseudo wordt trouwens niet de pitahaya draak" en "de satelliet lijn wordt de pseudo". Bijgewerkt in `POKEMON.md`, `IDEEEN.md` (pitahaya-pseudo achterhaald) en Stand van zaken.
 - Early route insect: "komt misschien nog later maar heb geen inspiratie meer voor nu. Er kan idd altijd nog een bestaande soort in de tussentijd." (in `POKEMON.md` → Rollen).
+
+### [v0.0.941] - Vuurwerk-lijn: 2 fases (27 nov)
+- Jordi: "fase 2 is geschrapt en fase 3 is fase 2 geworden". Lijn = Axolaunch → Pyrowyrm (map `vuurwerk_fase3/` blijft zo heten). Bijgewerkt in `IDEEEN.md`, `POKEMON.md` en Stand van zaken.

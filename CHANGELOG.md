@@ -3602,3 +3602,5 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.860] - Ledian-evolutie: besluiten + Gemini-prompt r1 (27 nov)
 - Jordi: fase 3, nog meer superheld, space superhero, Ledians designrichting verder doortrekken (`IDEEEN.md`).
 - Prompt r1: `docs/concept/sprites/ledian_evo/gemini/PROMPT_r1.md`.
+### [v0.0.861] - Ledian-evolutie: Gemini r1 + prompt r2 (27 nov)
+- r1 bewaard (`ledian_evo/gemini/r1.png`); prompt r2 noemt Ledian, superheld/tokusatsu, vliegpose met arm vooruit (Jordi).

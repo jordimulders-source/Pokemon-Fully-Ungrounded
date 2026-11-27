@@ -887,3 +887,4 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - **Repo-check (Claude):** Ledian is in de repo Bug/Normal (herzien, niet Bug/Flying). De Ledyba-lijn zit niet in de dex (`DEX_IN_ROM.md`); met deze evolutie moet de familie terug.
 - **Jordi (27 nov) op de vragen:** (1) zelfde inspiratie: "ja, maar dan nog meer superheld" (2) "derde fase" (3) "hij gaat nog meer richitn soort van space super hero. We trekken eigenlijk de designrichting die Ledian heeft nog meer door".
 - **Gemini-prompt r1:** `sprites/ledian_evo/gemini/PROMPT_r1.md`.
+- **Jordi (27 nov) op r1:** "het helpt misschien wel om ledian te benoemen, want deze wijkt veel af en is niet per se een superheld/tokusatsu vorm ervan". "Vliegen met zijn arm voorwaarts zou een prima pose zijn". Prompt r2: `sprites/ledian_evo/gemini/PROMPT_r2.md`.

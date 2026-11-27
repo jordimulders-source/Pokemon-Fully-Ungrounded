@@ -225,6 +225,9 @@ def bouw(cfg, S_extra=1.0, log=None):
     for i, d in enumerate(delen):
         if not d.get('binnenlijn', False): continue
         mi = mask & (deel == i); achter = mask & (deel >= 0) & (deel < i)
+        if d['binnenlijn'] == 'achter':   # dun deel voor een groter deel (staf voor het lijf): lijn op het achterste deel
+            grens = achter & nd.binary_dilation(mi, np.array([[0, 1, 0], [1, 1, 1], [0, 1, 0]]))
+            idx[grens & ~isdonker] = 14; continue
         grens = mi & nd.binary_dilation(achter, np.array([[0, 1, 0], [1, 1, 1], [0, 1, 0]]))
         # niet als het deel daardoor bijna verdwijnt
         if grens.sum() < .5 * mi.sum(): idx[grens] = 14
@@ -233,8 +236,8 @@ def bouw(cfg, S_extra=1.0, log=None):
     allm = mask | buiten; ys, xs = np.nonzero(allm); mid = (ys.min() + ys.max()) / 2
     for Y, X in zip(*np.nonzero(buiten)): idx[Y, X] = 15 if Y < mid else 14
     # oog op de omgerekende plek
-    if 'oog' in cfg:
-        o = cfg['oog']; i = [d['naam'] for d in delen].index(o.get('deel', 'kop')); h, s, base = trans[i]
+    for o in ([cfg['oog']] if isinstance(cfg.get('oog'), dict) else cfg.get('oog', [])):
+        i = [d['naam'] for d in delen].index(o.get('deel', 'kop')); h, s, base = trans[i]
         x0, y0, x1, y1 = o['front']; c = base + (np.array([(x0 + x1 + 1) / 2, (y0 + y1 + 1) / 2]) - h) * s
         pat = o['patroon']; ph, pw = len(pat), len(pat[0])
         oy, ox = int(round(c[1] - ph / 2)), int(round(c[0] - pw / 2))

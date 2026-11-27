@@ -9,3 +9,8 @@ Doel (Jordi): "zo efficient mogelijk zo goed mogelijk alle andere graphics van d
 5. Shiny's per lijn op vellen (skins-regel), Jordi keurt per vel.
 6. Gemini-pakketten per batch van 8 (`pakketten/batch_NN/`): 8×-bijlagen + rug- en frame 2-prompts; Jordi plakt, Claude neemt over (`gereedschap/natief.py` → paletomzetting → benoemde reparaties).
 Overworld: pas na rug (prompt heeft front + rug nodig); voor welke soorten is nog open.
+
+## Stand frame 2 per script (27 nov)
+- Af als kandidaat: 35 soorten in `frame2/batch_a/` en `frame2/batch_b/` + Gumfish/Hexpress (`frame2/`).
+- Zwak per script: Cryomet, Spoetnik, satelliet, ruimtestation (zwakst), Purrpillar, guaraná 1, Swablu, Pincurchin, DJ Rotom.
+- Eigenlijk Gemini (lokale pose): Muk regional, Shuppetto; eventueel ruimtestation. Prompts toevoegen aan de pakketten als Jordi dat wil.

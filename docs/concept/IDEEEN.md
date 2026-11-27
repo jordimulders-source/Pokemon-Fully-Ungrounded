@@ -884,3 +884,10 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - **Open vragen (Claude):** is de zandloper in fase 3 nog gebroken (scherven) of heel; wordt het brein van fase 2 het hoofd van de djinn; hoeveel stukken apparatuur.
 - **Jordi (26 nov) op de vragen:** (1) "fase 3 is die gebroken, scherven werk laten we zitten, puur dat die geopend is en daar dus het zand uitloopt wat de djinn vormt." (2) "2 twijfel ik nog over, detail gaat niet goed vertalen naar een sprite, dus misschien alleen met wat belijning tonen dat de djinn aan het brein vast zit" (4) "zolang het allemaal goed gedefinieerd is kan het wel, geen te kleine dingen".
 - **Jordi (26 nov):** "zandloper ligt op de grond en in het midden geopend zou ik zeggen oid. 2 ik dacht aan hoofd, maar kan natuurlijk ook in de core".
+
+## Regicosmo en Regiaqua (Jordi, 27 nov)
+- **Jordi:** "tijd voor de cosmic regi en de diepzee regi. De cosmic regi wordt een collectie van planeten en hemellichamen, die zitten los van elkaar, de middelste heeft de braille achtige stippen, ik heb opgezocht dat ze voor de bestaande regi's geen betekenis hebben, dus we kunnen gaan voor esthetisch, verzin maar een cool idee. Regicosmo is de working name"
+- **Jordi:** "Regiaqua is een draaikolk golem, diep onderzee in een trog. water armen die een soort van zweven, geen benen, want de onderkant van de draaikolk is goed genoeg [...] Ze moeten echt passen tussen de andere regi's ook"
+- Raakt aan "Ruimte en diepe zee als mysterieuze gebieden" (12 nov).
+- Repo: alle bestaande Regi's zijn monotype (Rock, Ice, Steel, Normal, Electric, Dragon).
+- **Voorstellen Claude (27 nov, open):** stippen Regicosmo: (A) Zuiderkruis, (B) kaart van zijn eigen lichaam (elke stip staat waar een losse planeet om hem heen hangt), (C) maanfasen (rij stippen van vol naar leeg). Stippen Regiaqua: luchtbellen in een spiraal (de draaikolk zelf). Vragen aan Jordi: zie gesprek 27 nov.

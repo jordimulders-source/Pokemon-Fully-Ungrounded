@@ -15,7 +15,7 @@
 - **Starmie:** voorste ster = `gemini/r3_starmie.webp` (voorstel Claude: r3 omdat r4 de voorste ster puntiger maakte; Jordi: "ga maar bouwen"). Achterste ster = vorm en hoek van de achterste ster van de Gen 3-Starmie (`graphics/pokemon/starmie/anim_front_gba.png` + `normal_gba.pal`), in de koekkleur met chips van de achterste ster uit het model.
 
 ## Open
-Type, naam (regional forms: blijven Staryu/Starmie?), serieus/grap.
+Naam (regional forms: blijven Staryu/Starmie?), serieus/grap.
 
 ## Starmie-sprite: correctie Jordi (27 nov)
 - Na r3 C1/C2 (voorste ster verkleind, gespiegelde Gen 3-achterster): "waarom neem je het model niet over?"; "je maakt hem ook steeds rechter"; "steeds minder driekwart pose".
@@ -29,7 +29,8 @@ Type, naam (regional forms: blijven Staryu/Starmie?), serieus/grap.
 Jordi: "ja staryu is goed, zet maar in af". `staryu/af/staryu_regional.png` (= sprite_r5: model r4, keuring + eindkeuring PASS), op het overzichtsvel (Regional forms).
 
 ## Type
-- Jordi (27 nov): "staryu en starmie normaal worden water/cosmic" (gewone vorm). Voorstellen Claude voor de koekjes-vorm: Fairy → Fairy/Cosmic (aanbevolen), Fairy → Fairy/Psychic, Fire → Fire/Fairy, Normal → Normal/Fairy, Water → Water/Fairy. Open.
+- Jordi (27 nov): "staryu en starmie normaal worden water/cosmic" (gewone vorm). Voorstellen Claude voor de koekjes-vorm: Fairy → Fairy/Cosmic (aanbevolen), Fairy → Fairy/Psychic, Fire → Fire/Fairy, Normal → Normal/Fairy, Water → Water/Fairy.
+- **Besloten (Jordi, 27 nov): "fairy staryu en fairy/psychic starmie doen we".** Regionale Staryu Fairy, regionale Starmie Fairy/Psychic.
 
 ## Starmie: ook de voorpunten (27 nov)
 Jordi na r5: "de punten van de voorkant moeten ook minder puntig van starmie".

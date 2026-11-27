@@ -3619,3 +3619,5 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.868] - Staryu/Starmie Water/Cosmic; regionale Starmie r5 (27 nov)
 - Jordi: gewone Staryu en Starmie worden Water/Cosmic (`CONCEPT.md` → Cosmic). Type regionale vorm open.
 - Regionale Starmie sprite r5 vanaf model r4: achterpunten zonder / licht / sterk afgestompt naar de Gen 3-maten (`staryu_regional/starmie/sprite_r5/`).
+### [v0.0.869] - Regionale Staryu/Starmie: types (27 nov)
+- Jordi: regionale Staryu Fairy, regionale Starmie Fairy/Psychic. Overzichtsvel bijgewerkt.

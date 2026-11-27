@@ -327,3 +327,4 @@ Wanneer Jordi een ontwerp in Gemini laat maken en kiest, gelden deze regels **in
 - **Automatische verkleining is geen preview**: Jordi kan niets met wazige BOX-tests ("blurry, hier kan ik niks mee"); wit/zwart blijft in een echte sprite leesbaar op een paar px.
 - **Half dichte ogen als rechte witrij in een rechthoekig kader lezen als vierkant fruit**: eerst de ronde vrucht, dan het oog erin; check elke oogvrucht op vorm, niet alleen op leesbaarheid als oog.
 - **Jordi's plekaanduiding "midden links, rechtsboven midden"** = positie + tros (oog midden in de linkertros, oog rechtsboven in de middelste tros).
+- **Pitch altijd op 8× zoom controleren** (regionale Hitmonlee, 27 nov): de pitchzoeker scoorde 10,24 en 5,12 bijna gelijk; Claude koos 10,24, de maker zag op een ringlijn/lijntrapje dat één cel 5,12 is. Bij schrappen van rijen (Gengas-methode) valt een geschrapte rij vaak precies op een ringlijn: die lijn op de buurrij terugzetten.

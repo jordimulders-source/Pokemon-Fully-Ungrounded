@@ -1,0 +1,16 @@
+# Glyptodon fase 2 – Gemini-prompts
+
+## r1 (27 nov)
+Anatomie in woorden = echte *Glyptodon* (koepelschild, botkap op de kop, korte dikke poten). Kleuren niet gegeven (niet besproken). Staart A = Jordi's foto, B = knots (zijn alternatief); gebruik A óf B.
+```
+Design an original Pokémon as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64 pixels, max 16 colors, white background, facing 3/4 to the left.
+
+Concept: a fossil Pokémon (Rock/Normal) based on Glyptodon, the extinct giant armadillo of South America: a heavy, low four-legged animal under a huge domed shell, with a bony armored cap on top of its head and short, thick legs with blunt feet. It is a defensive wall Pokémon and must look clearly armored.
+The shell is smooth: NOT divided into many small tiles or hexagons.
+Pose: it is bracing itself behind its shell, ready to take a hit. The head is still out of the shell, but ducked down low.
+[A] Tail: a thick, tapering tail made of stacked rings of rounded, knobby bony plates, like a blunt drill. NOT a smooth spiral drill.
+[B] Tail: a thick tail ending in a heavy bony club.
+Compact silhouette that fits a square.
+
+No effects, no glow, no sparkles, no ground or shadow under it. AVOID: a turtle, Shieldon or Bastiodon, a modern armadillo, Dunsparce, a plush toy, Neopets style.
+```

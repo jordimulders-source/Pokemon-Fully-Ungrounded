@@ -21,7 +21,7 @@ for y,x in zip(*np.where(tm)):
     rug=D[y,x]>=D[y-1,x] and D[y,x]>=D[y+1,x]
     if D[y,x]>=0.4 and rug: I[y,x]=5; continue
     if r['c'] is None: I[y,x]=5; continue
-    I[y,x]=near(r['c'],[5,6,8,9])
+    I[y,x]=r['t']
 # buitenrand staart -> lijn
 op=I>0; P=np.pad(op,1)
 rand=op&~(P[:-2,1:-1]&P[2:,1:-1]&P[1:-1,:-2]&P[1:-1,2:])

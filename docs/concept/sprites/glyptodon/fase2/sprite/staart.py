@@ -9,7 +9,7 @@ def staart(AL=0.35):
     R={}
     for sy in range(26,60):
         for sx in range(44,64):
-            ya=Y0+(sy-TOP)*s; xa=X0+(sx-LEFT)*s; tot=0; w3=0; wk=0; wd=0; c=np.zeros(3); cw=0; wg=0; wo=0
+            ya=Y0+(sy-TOP)*s; xa=X0+(sx-LEFT)*s; tot=0; w3=0; wk=0; wd=0; c=np.zeros(3); cw=0; wg=0; wo=0; wt={6:0,8:0,9:0}
             for y in range(int(np.floor(ya)),int(np.ceil(ya+s))):
                 for x in range(int(np.floor(xa)),int(np.ceil(xa+s))):
                     w=max(0,min(y+1,ya+s)-max(y,ya))*max(0,min(x+1,xa+s)-max(x,xa))
@@ -21,7 +21,9 @@ def staart(AL=0.35):
                     if L<45: wk+=w
                     elif abs(r-b)<16: wg+=w; c+=w*nat[y,x]; cw+=w   # grijze punt
                     elif L<95: wd+=w
-                    else: c+=w*nat[y,x]; cw+=w
+                    else:
+                        c+=w*nat[y,x]; cw+=w
+                        wt[6 if L<135 else 8 if L<185 else 9]+=w
             if tot and w3/tot>=AL*0.5:
-                R[(sy,sx)]=dict(a3=w3/tot,ao=wo/tot,k=wk/max(w3,1e-9),d=wd/max(w3,1e-9),g=wg/max(w3,1e-9),c=c/cw if cw else None)
+                R[(sy,sx)]=dict(a3=w3/tot,ao=wo/tot,k=wk/max(w3,1e-9),d=wd/max(w3,1e-9),g=wg/max(w3,1e-9),c=c/cw if cw else None,t=max(wt,key=wt.get) if cw else None,wt=wt)
     return R

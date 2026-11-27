@@ -42,3 +42,19 @@ Gen 3-vergelijking: Ursaring/Slaking `_gba` hebben 24/61 zwarte pixels binnen de
 - **Steenfacetten:** de facetten zijn koel grijs g (88,92,104) L92, het model is warmer en donkerder (77,61,61) L66. Niet veranderd (stenen bevroren, zelfde tint als fase 2).
 
 Bestanden: `sauna_yeti_ek.png`, `sauna_yeti_8x.png`, `vel.png` (r6 | ek | model op 8×; emmer en gezicht op 16× als r6 | ek | model; 1× op licht en donker naast fase 2, Skinguin, Dundragoon), `bouw.py`.
+
+## Ronde ek2 (27 nov): pupil "midden" + huid met licht en schaduw
+Jordi: "midden, waarom is het hoofd nog een volledig effen kleur trouwens?" Bron `sauna_yeti_ek.png`, script `ek2/bouw.py`, uitvoer `ek2/sauna_yeti_ek2.png`, `ek2/sauna_yeti_ek2_8x.png`, `ek2/vel.png` (ek | ek2 | model 8×; gezicht 16× ek | ek2 | model; 1× op licht en donker naast fase 2, Skinguin, Zapacha). Palet ongewijzigd. Assert: silhouet gelijk; alleen h-pixels en de pupilwissel veranderen (lijnen, leden, pupillen, neus, glimlach niet aangeraakt). 23 px.
+
+**1. Pupil (2 px):** variant A uit `ogen/`: (33,24) w → K, (34,24) K → w (rechterpupil 1 px naar links, kijkt naar binnen zoals het model).
+
+**2. Huid in drie tinten (21 px).** Gemeten: per h-pixel het gemiddelde van alleen de huidcellen (cyaan, L ≥ 150) van het natieve raster. De modelhuid is zelf vlak (kwantielen p15 197 / p50 221 / p90 236), met lichtere snuit en lippen (222–225) en donkerder onder de ogen (198–213), op de brauwbogen en rechts (205–213) en onder de kin (207–212).
+- Tinten zonder paletwijziging: **licht = w** (244,250,255) (lichtste huidcellen in het model (229,244,252)), **basis = h** (200,226,236), **schaduw = m** (162,191,222) (huidschaduwcellen in het model (168,195,211), verschil ≤ 11 per kanaal). Hergebruik i.p.v. samenvoegen: geen andere kleur verandert.
+- Regel: ≥ 222 → licht (niet naast witte vacht, anders loopt het gezicht in de vacht over); < 214 → schaduw; anders basis; een losse pixel zonder buur van dezelfde klasse → basis.
+- **Licht (7):** bovenlip (29–31,26), onderlip/kin (28,28) (29,28) (32,28) (33,28) (model 222–224).
+- **Schaduw (14):** brauwbogen (26,21) (27,22) (35,22) (37,22), tussen/naast de ogen (29,23) (36,23), onder de ogen (27,25) (28,25) (29,25) (33,25), wang links (26,28), kin (28,29) (29,29) (32,32) (model 198–213).
+- Basis h blijft 40 px.
+
+**Emmer nagekeken:** de effen donkere rechterkant (x36–40, r12–17) is in het model echt donker (per pixel 0 lichte, 0–1 middencellen tegen 4–9 donkere); de lichte en middenvlakken links volgen al de meerderheid per pixel (ronde 1). Geen wijziging.
+
+**Ter info:** de lichtpunten op de lippen zijn w (dezelfde tint als de vacht); op 1× lezen ze als glans op snuit en kin. Wil Jordi een zachtere huidglans, dan is een aparte lichte huidtint nodig en moet er een paletkleur weg.

@@ -5,7 +5,7 @@ Werkwijze en sjablonen: `../../PROMPTS.md`. Elke prompt in een nieuw gesprek, al
 | soort | bijlage | frame 2 G/S |
 |---|---|---|
 | Capybarrel | `capybarrel_front_8x.png` | G |
-| Capykart | `capykart_front_8x.png` | G? |
+| Capykart | `capykart_front_8x.png` | G |
 | Levende tempel | `tempel_front_8x.png` | S |
 | Dikdik (impala-lijn fase 1) | `dikdik_front_8x.png` | G |
 | Impalar | `impalar_front_8x.png` | G |

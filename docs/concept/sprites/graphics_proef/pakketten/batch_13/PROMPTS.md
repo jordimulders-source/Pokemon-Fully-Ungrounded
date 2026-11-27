@@ -4,7 +4,7 @@ Werkwijze en sjablonen: `../../PROMPTS.md`. Elke prompt in een nieuw gesprek, al
 
 | soort | bijlage | frame 2 G/S |
 |---|---|---|
-| Gloom (regional) | `gloom_regional_front_8x.png` | G? |
+| Gloom (regional) | `gloom_regional_front_8x.png` | G |
 | Vileplume (regional) | `vileplume_regional_front_8x.png` | G? |
 | Baltoy (regional) | `baltoy_regional_front_8x.png` | G? |
 | Claydol (regional) | `claydol_regional_front_8x.png` | S |

@@ -4,9 +4,9 @@ Werkwijze en sjablonen: `../../PROMPTS.md`. Elke prompt in een nieuw gesprek, al
 
 | soort | bijlage | frame 2 G/S |
 |---|---|---|
-| Axolaunch | `axolaunch_front_8x.png` | G? |
+| Axolaunch | `axolaunch_front_8x.png` | G |
 | Pyrowyrm | `pyrowyrm_front_8x.png` | S |
-| Mate-kalebas | `mate_kalebas_front_8x.png` | G? |
+| Mate-kalebas | `mate_kalebas_front_8x.png` | G |
 | Rowmate | `rowmate_front_8x.png` | G? |
 | Flytron | `flytron_front_8x.png` | G? |
 | Buzzquito | `buzzquito_front_8x.png` | G? |

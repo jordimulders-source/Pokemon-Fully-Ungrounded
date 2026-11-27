@@ -6,12 +6,12 @@ Werkwijze en sjablonen: `../../PROMPTS.md`. Elke prompt in een nieuw gesprek, al
 |---|---|---|
 | Zandloper (zandloper-lijn fase 1) | `zandloper_fase1_front_8x.png` | S |
 | Brein uit de zandloper (zandloper-lijn fase 2) | `zandloper_fase2_front_8x.png` | S |
-| Zand-djinn (zandloper-lijn fase 3) | `zand_djinn_front_8x.png` | G? |
+| Zand-djinn (zandloper-lijn fase 3) | `zand_djinn_front_8x.png` | G |
 | Terreurvogel fase 1 (kuiken) | `terreurvogel_fase1_front_8x.png` | G |
 | Terreurvogel fase 2 (fossiel, bijlsnavel) | `terreurvogel_fase2_front_8x.png` | G |
-| Glyptodon fase 1 (fossiel) | `glyptodon_fase1_front_8x.png` | G? |
-| Glyptodon fase 2 (fossiel, wall) | `glyptodon_fase2_front_8x.png` | G? |
-| Hitmongroove (Hitmontop) | `hitmongroove_front_8x.png` | G? |
+| Glyptodon fase 1 (fossiel) | `glyptodon_fase1_front_8x.png` | G |
+| Glyptodon fase 2 (fossiel, wall) | `glyptodon_fase2_front_8x.png` | G |
+| Hitmongroove (Hitmontop) | `hitmongroove_front_8x.png` | G |
 
 ## Zandloper (zandloper-lijn fase 1): bijlage `zandloper_fase1_front_8x.png`
 
@@ -212,7 +212,7 @@ Resultaat:
 ```
 Edit the attached image. Keep this exact same creature: identical art style, colors, line work, proportions, size, camera angle and position on the canvas. Do not add anything new and do not redesign it.
 
-Change only the pose, as a second animation frame of a Pokémon battle sprite:. 
+Change only the pose, as a second animation frame of a Pokémon battle sprite: the legs swing wider apart, the upper leg kicks out further and the free hand swings out, with the mouth open. The supporting hand on the ground stays planted exactly where it is.
 
 Plain white background, no ground, no shadow, no effects, no text.
 ```

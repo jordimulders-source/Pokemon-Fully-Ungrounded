@@ -4,7 +4,7 @@ Werkwijze en sjablonen: `../../PROMPTS.md`. Elke prompt in een nieuw gesprek, al
 
 | soort | bijlage | frame 2 G/S |
 |---|---|---|
-| Krassault (Octillery) | `krassault_front_8x.png` | G? |
+| Krassault (Octillery) | `krassault_front_8x.png` | G |
 | Shuppetto (Banette) | `shuppetto_front_8x.png` | G |
 | Skinguin (Delibird) | `skinguin_front_8x.png` | G |
 | Dundragoon (Dunsparce) | `dundragoon_front_8x.png` | G? |

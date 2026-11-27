@@ -8,8 +8,8 @@ Werkwijze en sjablonen: `../../PROMPTS.md`. Elke prompt in een nieuw gesprek, al
 | Pupoodle | `pupoodle_front_8x.png` | S |
 | Purrpillar | `purrpillar_front_8x.png` | G |
 | Lanymph | `lanymph_front_8x.png` | G |
-| Bootoo | `bootoo_front_8x.png` | G? |
-| Globsnail | `globsnail_front_8x.png` | G? |
+| Bootoo | `bootoo_front_8x.png` | G |
+| Globsnail | `globsnail_front_8x.png` | G |
 | Clionice | `clionice_front_8x.png` | G? |
 | Cryomet | `cryomet_front_8x.png` | G |
 

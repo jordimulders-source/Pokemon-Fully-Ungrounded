@@ -11,7 +11,7 @@ Werkwijze en sjablonen: `../../PROMPTS.md`. Elke prompt in een nieuw gesprek, al
 | Poliwrath (regional) | `poliwrath_regional_front_8x.png` | G |
 | Grimer (regional) | `grimer_regional_front_8x.png` | G? |
 | Muk (regional) | `muk_regional_front_8x.png` | G |
-| Hitmonlee (regional) | `hitmonlee_regional_front_8x.png` | G? |
+| Hitmonlee (regional) | `hitmonlee_regional_front_8x.png` | G |
 
 ## Mr. Prime: bijlage `mr_prime_front_8x.png`
 

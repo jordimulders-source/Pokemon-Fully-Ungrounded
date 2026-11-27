@@ -6,9 +6,9 @@ Werkwijze en sjablonen: `../../PROMPTS.md`. Elke prompt in een nieuw gesprek, al
 |---|---|---|
 | Solrock-evolutie (Solrock) | `solrock_evo_front_8x.png` | S |
 | Bloedmaan (Lunatone) | `bloedmaan_front_8x.png` | S |
-| Wingsuit-colugo (Emolga) | `wingsuit_colugo_front_8x.png` | G? |
+| Wingsuit-colugo (Emolga) | `wingsuit_colugo_front_8x.png` | G |
 | Fruitvampier (Emolga) | `fruitvampier_front_8x.png` | G? |
-| Ledian-evolutie (Ledian) | `ledian_evo_front_8x.png` | G? |
+| Ledian-evolutie (Ledian) | `ledian_evo_front_8x.png` | G |
 | Silicobra (regional) | `silicobra_uyuni_front_8x.png` | G |
 | Salticonda | `salticonda_front_8x.png` | G |
 | Abra (regional) | `abra_regional_front_8x.png` | G |

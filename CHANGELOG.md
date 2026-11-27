@@ -3841,3 +3841,5 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Nieuwe spritemethode (Jordi: "deze nieuwe methode is echt een top methode"): natief raster → exacte 2× met regels (vorm boven vlakkleur) → rijen/kolommen schrappen met kop/kraag beschermd. r1–r2 (oppervlaktegewogen 2,44×) waren pixelblur.
 - Klauwen 1-op-1 van Fearow (`_gba`, verre voet uit frame 2), karmijn (variant C); eindkeuring (42 px tint). Jordi: "ik ben tevreden, mogelijk kan die in de toekomst nog beter, maar voor nu prima".
 - Op het overzichtsvel (sectie Legendaries); lessen in `docs/lessen/GEMINI.md`. Gemerged met main (eigen changelogsecties hernummerd naar v0.0.925–938).
+### [v0.0.939] - Regicosmo: frontsprite af (27 nov)
+- Jordi: "ja die is af". `docs/concept/sprites/regicosmo/af/regicosmo.png` (= r7 na DC-eindkeuring PASS; hemellichamen als golem, Cosmic). Op het overzichtsvel onder Legendaries naast Regiaqua.

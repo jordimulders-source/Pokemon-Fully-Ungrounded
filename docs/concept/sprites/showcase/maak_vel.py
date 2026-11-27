@@ -138,6 +138,7 @@ SECTIES=[
 ]),
 ("Legendaries",[
 ("regiaqua/af/regiaqua.png",'"Regiaqua"',"water"),
+("regicosmo/af/regicosmo.png",'"Regicosmo"',"cosmic"),
 ("hanan_pacha/af/hanan_pacha.png","Hanan Pacha","fire/flying"),
 ]),
 ]

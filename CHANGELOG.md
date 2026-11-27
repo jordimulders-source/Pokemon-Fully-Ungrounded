@@ -3779,3 +3779,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.920] - Regionale Hitmonchan: frontsprite af (27 nov)
 - Jordi: "nu is die af". `hitmonchan_regional/af/hitmonchan_regional.png` (= ek4: rechte lijnen nagemeten, linkeroog-puntje uit het model, ^-lijn schouder↔kubus terug), op het overzichtsvel bij Regional forms. Stand van zaken in CLAUDE.md bijgewerkt (110 frontsprites).
+### [v0.0.921] - Terreurvogel fase 2: frontsprite af (27 nov)
+- Regionaal fossiel (Rock/Fighting, snelle physical sweeper); tegenhanger van de glyptodon (Rock/Normal). Ontwerp via Gemini r1–r7 (`docs/concept/sprites/terreurvogel/fase2/gemini/PROMPTS.md`); Jordi koos uiteindelijk r1 met minder detail (`r1_eenvoud.png`): sprint naar links met bijlsnavel, verhouding ±64×40 zoals Lapras.
+- Snavel van staal naar steen ("anders klopt het type niet meer"), palette swap v8 gekozen (stenen snavel, antraciet lijf, roestaccenten, beige poten), Spearow-oog (driekwart). Sprite r4 (rond volume per onderdeel) + DC-eindkeuring ek1 (PASS). Af: `docs/concept/sprites/terreurvogel/fase2/af/terreurvogel_fase2.png`; op het overzichtsvel; naam open.
+- Fase 1 (kuiken met enorme kop en snavel) in de eindkeuring; glyptodon-lijn (fase 2 in ontwerp) meegemerged van een andere sessie.

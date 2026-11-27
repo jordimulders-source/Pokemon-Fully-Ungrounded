@@ -3623,7 +3623,36 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Op het overzichtsvel (New, vóór fase 2). Hoatzin-lijn af; namen open.
 - Les in GRAPHICS.md: haarwortels apart houden in binnenlijnscripts; slagschaduw naast een lijn in dezelfde tint = dubbele lijn.
 
-### [v0.0.864] - Zandloper-lijn fase 2: Gemini-prompt r1 (27 nov)
+### [v0.0.864] - Zandloper fase 1: terug naar fase 1-maat (27 nov)
+- De 1-op-1-versie was groter dan fase 3 (Jordi: "hij is nu te groot geworden"); `af/zandloper_fase1.png` is nu de 0,70-reductie (44×45, ±980 px, Baltoy-maat) met dezelfde keuring van tinten en schaduw en linkeroog variant A (pupil 2 px hoog). Grote versie bewaard in `zandloper/fase1/sprite/r14_natief/af_oud/`. Overzichtsvel bijgewerkt.
+### [v0.0.865] - Idee: Ledian-evolutie (27 nov)
+- `docs/concept/IDEEEN.md`: Jordi's idee voor een Ledian-evolutie (Bug/Cosmic, superheld die door de ruimte vliegt) + repo-check (Ledian = Bug/Normal, Ledyba-lijn nog niet in de dex).
+### [v0.0.866] - Ledian-evolutie: besluiten + Gemini-prompt r1 (27 nov)
+- Jordi: fase 3, nog meer superheld, space superhero, Ledians designrichting verder doortrekken (`IDEEEN.md`).
+- Prompt r1: `docs/concept/sprites/ledian_evo/gemini/PROMPT_r1.md`.
+### [v0.0.867] - Ledian-evolutie: Gemini r1 + prompt r2 (27 nov)
+- r1 bewaard (`ledian_evo/gemini/r1.png`); prompt r2 noemt Ledian, superheld/tokusatsu, vliegpose met arm vooruit (Jordi).
+### [v0.0.868] - Ledian-evolutie: Gemini r2 + prompt r3 (27 nov)
+- r2 bewaard; prompt r3 met r2 als bijlage: rug kleiner/aerodynamisch als spacevliegtuigvleugels, hoofd aerodynamischer (Jordi).
+### [v0.0.869] - Ledian-evolutie: Gemini r3 + prompt r4 (27 nov)
+- r3 bewaard; Jordi: "het mag echt nog meer space robot". Prompt r4 = nieuwe startprompt zonder bijlage met alle besluiten.
+### [v0.0.870] - Ledian-evolutie: Gemini r4a/r4b + prompt r5 (27 nov)
+- r4b beter (Jordi); prompt r5 met r4b als bijlage: volledig stervormig rood hoofd, mondje weg, iets langer.
+### [v0.0.871] - Ledian-evolutie: Gemini r5 + prompt r6 (27 nov)
+- r5 afgekeurd (geen mond, armen te kort/gek); prompt r6 from scratch met alle besluiten.
+### [v0.0.872] - Ledian-evolutie: Gemini r6 (27 nov)
+- r6 bewaard ("deze vind ik tof"); spritecheck: natief ±66×66, ±9 kleuren.
+### [v0.0.873] - Ledian-evolutie: model r6 bevroren + sprite r1 (27 nov)
+- SPEC `docs/concept/sprites/ledian_evo/SPEC.md`; mond blijft zoals in het model (Jordi).
+- Sprite r1 (`ledian_evo/sprite_r1/`): verkleining van het model (natief 66×66, rijen 54/57 en kolommen 61/63 geschrapt), 13 kleuren, 52 px afwijking alleen op de buitenrand; spleten arm/hoofd en tussen de benen transparant. Nog geen kleur-/schaduwronde.
+### [v0.0.874] - Ledian-evolutie: kleurronde r2 (27 nov)
+- `ledian_evo/sprite_r2/`: tinten van de Gen 3-Ledian op de verdeling van r6 (Jordi: "2, maar mag net iets roder"), rood in drie varianten (a −5°, b −8° hoofd, c −11°); 69 donkergrijze binnenlijnen → rode selout; silhouetdiff 0, 13 kleuren.
+### [v0.0.875] - Ledian-evolutie: rood c + DC-eindkeuring (27 nov)
+- Jordi koos rood c ("ik vind c wel tof, verder helemaal goed").
+- Eindkeuring (`ledian_evo/eindkeuring/`, PASS): 33 px belijning (outline base aan de lichtkant, zwart aan de schaduwkant, outline highlights); zwarte binnenlijnen hoofd/arm/vleugel bewust gehouden (selout liet ze versmelten); silhouetdiff 0, 13 kleuren + transparant (nieuw: Ledians donkerste geel a47b00 als voetlijn).
+### [v0.0.876] - Ledian-evolutie: frontsprite af (27 nov)
+- Jordi: "zeker, nice". `docs/concept/sprites/ledian_evo/af/ledian_evo.png` (+ 8×) = eindkeuring; op het overzichtsvel (Evolutions of existing Pokémon). Naam open; Ledyba-lijn moet terug in de dex. TODO-brainstorm Ledian weg.
+### [v0.0.877] - Zandloper-lijn fase 2: model r3 + sprite r4 (27 nov)
 - Jordi's idee voor fase 2 (gebroken zandloper, groot zandbrein, losse ogen eronder, vraag- en uitroepteken van zand erboven, alles verbonden) vastgelegd met prompt r1 in `docs/concept/sprites/zandloper/fase2/gemini/PROMPTS.md`.
 - r1 beoordeeld (alles los); prompt r2: één zandwolk, kleinere zandloper op de grond, ? en ! als handen.
 - r2 beoordeeld (rest prima); prompt r3: zandloper kapot en op de grond, brein is de vorm i.p.v. een tekening.

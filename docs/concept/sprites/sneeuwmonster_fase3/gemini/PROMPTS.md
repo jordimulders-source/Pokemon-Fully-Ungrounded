@@ -102,3 +102,10 @@ Keep everything exactly the same: the pose, the relaxed face and smile, the ston
 1. The bucket on its head: it must no longer look like a separate bucket placed on top. It has molded to its skull like headwear: its top is rounded to follow the shape of the head, the wooden staves curve down over the forehead and the back of the head, the lower edge is overgrown with shaggy snow fur, and the metal band is half sunk into the fur. Clearly still wood with a band, but part of the head, like a helmet that grew on.
 2. Its build: make it look bigger and more dangerous: much broader, heavier shoulders and chest, thicker and more muscular arms, bigger hands, the head smaller compared to the huge body. Still not fat; the belly stays slim. Still the same relaxed pose and peaceful face.
 ```
+- `s2/s2b.png` (na bijsturen). Jordi: "ik wilde eerder groter qua lengte dan echt gespierd". (Claude las "groot en gevaarlijk" als massa; les zoals Krickestro.) Emmer is nog steeds een losse emmer.
+
+## s3 (nieuw gesprek, BIJLAGE `s2/s2a.png`), één wijziging: lengte
+```
+The attached image is the design. Keep everything exactly the same: the relaxed sitting pose, the calm closed-eye smile, the snow fur, the slim belly, the stones (size, places, look), the bucket on its head, the colors and the Gen 3 sprite style (64x64, max 16 colors, dark outline, facing 3/4 to the left, white background).
+Change ONLY its size in height: make it a much taller, longer creature, so it looks big and imposing even while sitting: a longer torso, longer neck area, longer arms and longer legs. NOT more muscular, NOT wider, NOT fatter: just taller and longer, like a towering yeti that is sitting down.
+```

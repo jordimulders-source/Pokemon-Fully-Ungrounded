@@ -86,3 +86,4 @@ AVOID: separate ice cubes glued or stuck onto the hands, oversized blocks, a dar
 - Jordi: "en de rechtervuist moet aan de bovenkant nog iets duidelijker los van de schouder, maar dat is denk ik vooral kleurtinten en een lijn".
 - ek2 (27 nov): rechte-lijnencheck: lijnen 1,3,4,5,7,8 ook recht in het model (gelaten); lijn 2 (binnenrand opgeheven onderarm) en 6 (riem bovenrand) gerepareerd; wachtvuist bovenvlak lichter tot tegen de naad (3 px). 10 px tint. Ter beoordeling bij Jordi.
 - Jordi over ek2: "het enige wat nog niet helemaal vertaalt is het linkeroog, misschien door een puntje rechts toe te voegen zoals in het model?" → ek3.
+- ek3: linkeroog = model (puntje rechts (32,21) + pupil boven navy (31,20)); optie kuifrand-diagonaal (28,20) niet gezet. Ter beoordeling bij Jordi.

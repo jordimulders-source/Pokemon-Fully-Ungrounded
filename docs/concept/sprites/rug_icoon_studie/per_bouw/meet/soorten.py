@@ -1,0 +1,9 @@
+BOUW={
+'vis':['goldeen','seaking','wailmer','barboach','whiscash','luvdisc','corsola','relicanth'],
+'vogel':['xatu','pidgeot','fearow','farfetchd','swellow','altaria','noctowl','natu','ho_oh'],
+'tweevoeter':['hariyama','machamp','gardevoir','hitmonlee','kecleon','mr_mime','jynx','ludicolo','blaziken'],
+'bol':['haunter','koffing','weezing','solrock','lunatone','claydol','shuppet','duskull'],
+'object':['magneton','electrode','baltoy','beldum','metang','registeel','porygon','shuckle'],
+'plant':['vileplume','bellossom','tropius','cacturne','cradily','roselia','sunflora','victreebel'],
+'viervoeter':['mightyena','zigzagoon','ninetales','absol','manectric'],
+}

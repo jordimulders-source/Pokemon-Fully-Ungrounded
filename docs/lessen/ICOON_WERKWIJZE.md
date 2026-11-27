@@ -17,6 +17,7 @@ Bewezen op de viscacha (19 nov, af: `docs/concept/sprites/viscacha/icoon/af/icon
   - Krabbels letterlijk rasteren.
 
 ## Stappen
+0. **Recept per bouw** (27 nov, 55 Gen 3-paren gemeten): `docs/concept/sprites/rug_icoon_studie/per_bouw/REGELS_PER_BOUW.md` (vis/bol/object bijna verkleining; vogel/tweevoeter/plant/viervoeter chibi: kop ×1,25 breed ×1,45 hoog, kopaandeel 0,37→0,57; attributen schalen met de kop; lange dunne delen ×0,3–0,65, ≥2 px). Echte GBA-icoonpalet = eerste waarde van `iconPalIndex = P_GBA_STYLE_SPECIES_ICONS ? x : y` (niet het palet in icon_gba.png).
 1. **Onmisbare kenmerken opschrijven.** Noteer 2–4 per soort, met vorm én maat, bijvoorbeeld "lange rechtopstaande oren dicht bij elkaar". Ter vergelijking: Kadabra zonder lepel is geen Kadabra, Poliwag zonder roze neus is geen Poliwag. Leg ook de opbouw van het oog vast: wit met pupil, of donker met een glanspixel, plus ooglid en kleur.
 2. **Onderlaag met de onderdelen-methode.**
    - Deel de front op in onderdelen (polygonen, zoals in `viscacha/icoon/onderdelen/delen.py`). De kopgroep is kop, oren en wangmotief.

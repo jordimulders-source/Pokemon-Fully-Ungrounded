@@ -100,3 +100,35 @@ CHANGE INTO A DECORATED COOKIE: both stars are a warm golden-brown, freshly bake
 
 DO NOT: a realistic photo, a plate, a gingerbread man, a face, starfield or galaxy patterns, sparkles, plush style, a messy pile of tiny details.
 ```
+
+## r2 (27 nov)
+`gemini/r2_choco_staryu.png`, `gemini/r2_choco_starmie.png` (bijstuurprompt). Jordi: "ze zijn beide nog wat saai en staryu is maar half gedecoreerd. Het mogen echt meer koekjes worden nog, nieuwe prompts".
+
+## Prompts v3 (27 nov, nieuw gesprek, bijlage = Gen 3-sprite)
+Eigen invulling Claude (niet door Jordi gekozen): "meer koekje" = gebakken deegtextuur met barstjes en bolle, oneven randen; Staryu: chips over alle vijf armen en rond de kern, half in het deeg gedrukt; Starmie: voorbeelden van versieringen, Gemini kiest.
+
+### Staryu v3 (bijlage `gemini/bijlage_staryu_gen3.png`)
+```
+The attached image is STARYU, a Gen 3 Pokémon sprite. Design a REGIONAL FORM of Staryu: it must still be instantly recognizable as Staryu, but it is clearly a real, delicious chocolate chip cookie in the shape of Staryu.
+
+Output: a simple, clean official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64 pixels, max 16 colors, flat colors with 2-3 shades per color. White background, no ground, no shadow, no effects, no glow, no crumbs.
+
+KEEP FROM STARYU (most important): the five-pointed star silhouette, the same proportions and angle as the attachment, and the red gem core in the center. No face, no eyes, no mouth, no limbs.
+
+MAKE IT A REAL COOKIE: thick, soft-baked cookie dough, warm golden-brown, darker and toasted along the edges and tips. The surface has a baked texture: a few cracks, slightly uneven, puffy rounded edges, like a cookie fresh out of the oven. Big, glossy dark chocolate chips and chunks are spread over the WHOLE star: on all five arms and around the gem, half pressed into the dough, each with a small highlight. The chocolate must be clearly readable at 64x64: about 12-16 chips, not tiny dots.
+
+DO NOT: a flat beige star with a few spots, a sea star texture, a realistic photo, a plate, a face, starfield or galaxy patterns, sparkles, plush style.
+```
+
+### Starmie v3 (bijlage `gemini/bijlage_starmie_gen3.png`)
+```
+The attached image is STARMIE, a Gen 3 Pokémon sprite. Design a REGIONAL FORM of Starmie: it must still be instantly recognizable as Starmie, but it is clearly a real, delicious, fancy decorated cookie in the shape of Starmie.
+
+Output: a simple, clean official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64 pixels, max 16 colors, flat colors with 2-3 shades per color. White background, no ground, no shadow, no effects, no glow, no crumbs.
+
+KEEP FROM STARMIE (most important): the silhouette of two overlapping five-pointed stars (the back star rotated behind the front star), the same proportions and angle as the attachment, and the gem core in the center exactly as in the attachment. No face, no eyes, no mouth, no limbs.
+
+MAKE IT A REAL DECORATED COOKIE: both stars are thick, soft-baked cookie dough, warm golden-brown, toasted along the edges, with a baked texture and puffy rounded edges. The cookie is generously decorated over the whole surface, like a bakery showpiece, for example: a thick layer of glossy colored icing on the front star, a chocolate drizzle in zigzag lines, colorful sprinkles, and a few small candies or chocolate chips. The back star has a different decoration from the front star so the two stars stay readable. Every decoration must be bold and simple enough to read at 64x64.
+
+DO NOT: a plain cookie with a few spots, a realistic photo, a plate, a gingerbread man, a face, starfield or galaxy patterns, sparkles, plush style.
+```

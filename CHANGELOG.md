@@ -3605,3 +3605,5 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Gemini r1 van alle vier opgeslagen in `docs/concept/sprites/staryu_regional/gemini/`. Jordi kiest chocolate chip (carambola-Starmie vertaalt niet door de twee sterren); bijstuurprompt r2 voor een minder bleke, lekkerdere koekkleur in `PROMPT.md`.
 ### [v0.0.862] - Regionale Starmie: prompt versierd koekje (27 nov)
 - Jordi: Staryu chocolate chip, Starmie "allerlei versieringen"; nieuwe Starmie-prompt (v2) in `docs/concept/sprites/staryu_regional/PROMPT.md`.
+### [v0.0.863] - Regionale Staryu/Starmie: r2 + prompts v3 (27 nov)
+- r2 opgeslagen; Jordi: "nog wat saai", "staryu is maar half gedecoreerd", "het mogen echt meer koekjes worden". Nieuwe prompts v3 (Staryu en Starmie) in `docs/concept/sprites/staryu_regional/PROMPT.md`.

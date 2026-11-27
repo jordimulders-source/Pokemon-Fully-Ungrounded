@@ -71,3 +71,8 @@ Compact silhouette that fits a square.
 
 No effects, no glow, no sparkles, no ground or shadow under it. AVOID: a turtle, Shieldon or Bastiodon, a modern armadillo, Dunsparce, a plush toy, Neopets style.
 ```
+
+**Jordi over r4 (`r4.png`):** "vind hem toch iets minder denk ik".
+
+## Plan B: plakmodel (27 nov)
+`plak_r3_1_staart_stekel_r3_3.png` (`../gereedschap/plak_stekel_staart.py 525 10 260 60 110`): r3_1 als basis, stompe staart weg, staart van r3_3 erop (+25, −40 px), stekel als kegel in de schildbruinen van r3_1 die onderaan uitwaaiert in het schild (groter en "meer onderdeel van het schild"); de stekel is getekend, niet uit r3_3 geknipt (geknipt en omgekleurd las als losse grijze punt).

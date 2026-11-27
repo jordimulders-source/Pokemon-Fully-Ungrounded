@@ -18,6 +18,9 @@ Regionaal fossiel, **Rock/Fighting**, 2 fases. Tegenhanger van de glyptodon (Roc
 `gemini/r7.png` (Gemini r6 + oog-bewerking r7). Jordi: "ok in de sprite zorgen dat het oog naar voren kijkt, we gaan het anders dan normaal doen, ik ben nog niet helemaal tevreden met de kleuren van het lichaam en de snavel, dus bouw maar de sprite en toon dan een paar pallette swaps. De snavel vind ik nog niet fossiel genoeg en het lichaam niet dreigend genoeg qua kleur, de pose prima nu".
 - Eerder over het model: snavel geel, gezicht roze, lijf "roodbruin achtig" (r3); kop voorovergebogen, mond licht open, dreigend (r5).
 
+## Model gekozen (Jordi, 27 nov): `gemini/r1_eenvoud.png`
+- r1 met bijlsnavel, minder detail; verhouding ±64×40 zoals Lapras (64×39). Jordi: "we gaan deze doen" (na Claudes advies om r7 te houden). r7-sprite gestopt ("stop de eerdere maker maar"); tussenbestanden in `sprite_r1/`.
+
 ## Open
 - Fase 1 (Jordi, 27 nov): "een kuiken met een enorme kop en snavel lijkt me wel humor, die dan heel uncanny cute is en heel onhandig erbij zit". Prompt: `../fase1/gemini/PROMPTS.md`.
 - **Optie snavel (Jordi, 27 nov, over `gemini/r1.png`, grijze bijlvormige snavel):** "dit was stiekem ook wel een tof idee voor de snavel, houd dat als optie in gedachten".

@@ -293,3 +293,4 @@ AVOID: feathers on the wings; a crest; a smile or a cute face; a branch or any o
 ```
 - **r15** (`gemini/fase1_r15.png`, prompt v7 + bovenste vleugel). Jordi: "goede prompt weer" (sarcastisch; vleugels werden beige vleermuisvliezen met klauwen aan de punten, poten korter).
 - Na r15: Jordi "ik ga wel krabbelen want dit is belachelijk". Volgende stap: Jordi's krabbel over r13 → Claude bouwt het model pixel voor pixel naar de krabbel (GEMINI.md: krabbel uitvoeren = kleuren meten).
+- Jordi: "haal hier de handen weg" / "en de haren" / "op de rug en okselhaar links" (op r7). Krabbelbasis: `krabbelbasis/krabbelbasis_r7.png` (10×, natief `basis_natief.png`, `weghalen.py`; alleen weggehaald, gat dicht met lijfkleur + omlijning).

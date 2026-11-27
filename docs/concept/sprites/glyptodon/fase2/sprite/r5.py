@@ -6,5 +6,15 @@ LID=[(13,40),(14,40),(15,40),(12,41),(13,41)]   # (x,y): r4 zwart; vizieronderra
 for v,naam in ((10,'A'),(5,'B')):
     J=I.copy()
     for x,y in LID: assert J[y,x]==1; J[y,x]=v
+    J[41,15]=1   # pupil: modelcel (26,57)=(25,17,11), de donkerste cel in het oog, rechts in de iris; was oranje 14 in r4
     np.save(f'r5_{naam}_I.npy',J); png(J,f'r5_{naam}.png'); png(J,f'r5_{naam}_8x.png',8)
     print(naam,'index',v,PAL[v],'verschil met r4',(J!=I).sum())
+# Jordi: "en als de rest van de lijn moet mee kleuren dan moet je dat doen": de hele vizieronderrand over de kop
+# (grens beige vizier / grijze kop) meekleuren; buitenlijn (x3,rij41) blijft zwart, ook de schildonderrand verderop.
+LIJN=[(x,41) for x in range(4,12)]+[(15,39),(16,39),(17,39),(18,39),(19,39),(20,40),(21,41),(21,42)]
+for v,naam in ((10,'A'),(5,'B')):
+    J=np.load(f'r5_{naam}_I.npy').copy()
+    for x,y in LIJN: assert J[y,x]==1,(x,y); J[y,x]=v
+    np.save(f'r5_{naam}_lijn_I.npy',J); png(J,f'r5_{naam}_lijn.png'); png(J,f'r5_{naam}_lijn_8x.png',8)
+    print(naam+'_lijn','extra',len(LIJN))
+np.save('r5_lijnpix.npy',np.array(LIJN+LID))

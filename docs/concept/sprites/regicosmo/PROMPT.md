@@ -104,3 +104,30 @@ POSE: 3/4 view facing left, upright and imposing.
 
 DO NOT: blood moon, red moon, moon craters on the torso, parts touching, extra planets or debris, more or fewer than 7 dots, lines between dots, starfield or galaxy texture, nebula, sparkles, eyes, mouth, head, orbit lines, effects.
 ```
+
+
+# r6 (nieuw gesprek, geen bijlage)
+Na Jordi op r5: "mars is nu een paasei". Alleen het romp-blok en DO NOT aangepast.
+```
+Design a new legendary Pokémon as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style): pixel art, 64x64, max 16 colors, dark outline, light from top-left, plain white background, no ground, no shadow, no effects. Few, big shapes so it reads at 64x64.
+
+WHAT IT IS: a new member of the Regi family of golem legendaries. A big faceless golem with no eyes, no mouth and no separate head; its only "face" is a pattern of glowing dots on its chest. The overall silhouette reads as a Regi golem: big torso, broad shoulders, heavy hands hanging beside the body, short legs.
+
+BODY: 7 separate celestial bodies that FLOAT apart from each other: clear empty white space between every part (at least 2-3 pixels at 64x64), nothing touches or overlaps.
+- TORSO: the biggest body in the center: the planet MARS as a PERFECTLY ROUND SPHERE (a circle, exactly as wide as tall, NOT oval, NOT egg-shaped), shaded like a planet in space: lit from the top-left, a clear dark shadow side on the right (the night side), so it reads as a 3D ball. Instantly recognizable as Mars and NOT as a red moon: rust-orange color (not blood red, not pale pastel), a small white polar ice cap at the top, a few large darker brown surface regions, and one long dark canyon (Valles Marineris) across the middle. No round moon craters, no small speckles.
+- SHOULDERS: LEFT a pale icy blue planet, RIGHT an orange-banded gas giant with a tilted ring. They sit LOW: their centers at the height of the upper third of the torso, beside it, not above it.
+- HANDS: LEFT a craggy brown asteroid, RIGHT a grey cratered moon. They hang LOW: their centers at or just below the bottom edge of the torso, under the shoulders.
+- FEET: two small different bodies under the torso, one dark blue-grey, one tan rocky.
+Every body looks clearly different (color, texture, kind).
+
+THE DOTS: EXACTLY SEVEN glowing pale cyan dots on the torso (count them: 7, not 8, not 9), each 2x2 or 3x3 pixels at 64x64, no lines between them. They are a tiny map of the golem, placed like this:
+  row 1: two dots, left and right (the shoulders)
+  row 2: one dot in the center (the torso)
+  row 3: two dots, further apart than row 1 (the hands)
+  row 4: two dots close together (the feet)
+That is 2 + 1 + 2 + 2 = 7 dots, nothing else glowing.
+
+POSE: 3/4 view facing left, upright and imposing.
+
+DO NOT: oval or egg shape for the torso, Easter egg look, pastel colors, speckles, blood moon, red moon, moon craters on the torso, parts touching, extra planets or debris, more or fewer than 7 dots, lines between dots, starfield or galaxy texture, nebula, sparkles, eyes, mouth, head, orbit lines, effects.
+```

@@ -270,3 +270,24 @@ AVOID: feathers on the wings; a crest; a smile; a branch or any object; a mask; 
 - Referentie geplukte vleugel (Jordi): `referenties/kuiken_8_geplukte_vleugel_anatomie.webp` (anatomische schets).
   Jordi: "nee dit is een vleugel zonder veren" (Claudes lezing met schachten afgewezen). Bijsturen r13 met schets als bijlage, tekst alleen Jordi's woorden.
   Jordi: "de bovenste" / "dat bedoel ik" → bijlage `referenties/kuiken_8_bovenste_vleugel.png` (bijgesneden).
+
+## Prompt fase 1 (v7, Engels; nieuw gesprek, bijlage `referenties/kuiken_8_bovenste_vleugel.png`; Jordi: "nieuwe prompt graag, gemini kan toch niet telkens editen")
+Alleen Jordi's besluiten; geen eigen vleugelbeschrijving van Claude.
+
+```
+Design an original Pokémon, drawn as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 colors, white background, no ground, no shadow, no effects, no objects. The whole creature fits inside the canvas with white margin on all sides; nothing is cut off.
+
+WHAT IT IS (most important): an uncanny, cryptid-like hoatzin chick. It is not a normal bird. What makes it uncanny is its legs: they are far too long for its small body, thin, bare and grey, with claws.
+
+WINGS (very important): wings without feathers, exactly like the wing in the attached drawing. Each wing has small claws.
+
+POSE: it stands a bit awkwardly, body turned 3/4 to the left, in a pose that shows its thin, strange-looking legs and its claws.
+
+BODY: small, mostly black down with some yellowish tints only in the down.
+
+HEAD: no crest. A hooked grey beak like a hoatzin chick, with no smile. A dark eye with a grey ring around it. Not happy.
+
+MOOD: ugly in a Pokémon way, uncanny, a cryptid, something you don't trust. Simple, readable design, not complex.
+
+AVOID: feathers on the wings; a crest; a smile or a cute face; a branch or any object; a mask; a red eye; brown or chestnut; a normal bird; glow.
+```

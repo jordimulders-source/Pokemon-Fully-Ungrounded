@@ -1,0 +1,67 @@
+r9: afwijkingen t.o.v. de kale reductie (kaal gemapt = modelreductie met alleen de Gen 3-tintkeuze per zone)
+Basis r2: per cel lijn (>=50% zwarte modellijn) of meerderheids-toonklasse van het model (celklas.py); flank: relatieve helderheid flankpixels.
+
+hoorns       131 van  191 px  (hoorn 67, lijn 44, binnenlijn 14, glans 4, oor 1, kuif 1)
+kop+hals      86 van  269 px  (lijn 24, oor 17, manen 13, binnenlijn 12, r8 8, ontkorrel 8, kuif 4)
+lijf+staart  126 van  415 px  (lijn 33, ontkorrel 27, flank 16, staart 9, strepen_weg 8, r7 6, r9 6, dijschaduw 6, manen 5, streep_dij 4, binnenlijn 4, streep_staart 2)
+poten         85 van  222 px  (lijn 57, ontkorrel 7, r8 6, poot 5, binnenlijn 5, plukjes 4, r7 1)
+totaal       428 van 1097 px
+
+Uitleg stappen: lijn = 1-px buitenlijn dicht + gekleurde selout op randen die naar boven/linksboven wijzen;
+binnenlijn = modellijn binnen het silhouet -> donkerste eigen tint (D of 1), geen zwart;
+hoorngrens = modellijn tussen hoorn en kuif/kop (valt bij de reductie weg) uit de zonegrens van de modelsegmentatie;
+ontkorrel = tintvlakje <3 px -> meest voorkomende buurtint (niet in hoorns/oog/neus);
+strepen_weg = de vier bilstrepen (Jordi) -> vachttint van het model naast de streep (helderheid van de lijfpixels in die cel).
+
+ZELF GEZETTE PIXELS (niet uit het model; Jordi's toegestane afwijking), 64x64-coordinaten:
+  streep_dij: (44,37) -> zwart
+  streep_dij: (44,38) -> zwart
+  streep_dij: (45,39) -> zwart
+  streep_dij: (45,40) -> zwart
+  streep_dij: (45,41) -> zwart
+  streep_dij: (45,42) -> zwart
+  streep_dij: (44,43) -> zwart
+  streep_staart: (46,32) -> zwart
+  streep_staart: (46,33) -> zwart
+
+OOGZONE (wordt later vervangen door een Gen 3-oog): 64x64 x 18-25, y 21-27 (beschermd: niet ontkorreld/omgelijnd).
+Huidige oogpixels (64x64-coordinaten, rij voor rij x 18-25):
+  y21 DLHLLLNN
+  y22 LHHWWLNN
+  y23 LHW00WNN
+  y24 LW000WLM
+  y25 NW0DWWNM
+  y26 WWWWWLNM
+  y27 LLLLNNMM
+
+Kleuren: 12 + transparant = 13 (0 3 4 5 A D H L M N S W)
+
+r9 (Jordi 26 nov: binnenkant; r9.py = r8.py + blok 'r9'). Diff r8->r9 = 10 px. Oogzone 0, strepen en hoorns ongemoeid, geen nieuwe kleuren.
+Punt 1: bolling borst links teruggedraaid ((18,35),(18,36) weg, (19,35),(19,36) weer D): borstzone x<=27, y30-46 diff 0 met r7.
+Punt 2: tintgrenzen binnen het silhouet, modeltoongrens per pixel (r9-blok; toongrenzen in rood: r9/toongrens.py). Per run:
+  S|links x=29 30-36 (7 px): model 0.53 0.20 -0.00 -0.00 0.27, afwijking +-0.27/-0.40 -> grens 1 px terug (buurtint groeit) op (29,33), (29,34), (29,35)
+  S|onder y=35 34-38 (5 px): model 0.13 0.20 0.13 -0.07 -0.40, afwijking +0.27/0.20 -> grens 1 px naar de buurtint (vlak S groeit) op (35,35), (36,35)
+  H|onder y=36 40-43 (4 px): geen doorlopende modeltoongrens, recht laten
+  W|onder y=43 34-39 (6 px): model -0.47 0.27 0.20 -0.00 -0.27 -0.13, afwijking +0.67/-0.07 -> grens 1 px naar de buurtint (vlak W groeit) op (35,43), (36,43)
+  N|onder y=44 37-40 (4 px): model 0.33 0.13 -0.20 0.27, afwijking +-0.18/-0.49 -> grens 1 px terug (buurtint groeit) op (38,44), (39,44)
+  L|onder y=45 42-45 (4 px): model -0.00 0.40 0.60 0.27, afwijking +0.42/0.31 -> grens 1 px naar de buurtint (vlak L groeit) op (43,45), (44,45)
+  L|boven y=36 34-39 (6 px): model -0.13 -0.20 -0.13 0.07 0.40, afwijking +-0.20/-0.27 -> grens 1 px terug (buurtint groeit) op (35,36), (36,36)
+  L|boven y=37 40-43 (4 px): geen doorlopende modeltoongrens, recht laten
+  N|boven y=44 37-41 (5 px): model -0.00 0.27 0.13 0.40, afwijking +0.13/-0.13 -> recht laten
+  M|boven y=45 36-39 (4 px): model 0.53 -0.33 -0.13 0.20, afwijking +-0.44/-0.76 -> grens 1 px terug (buurtint groeit) op (37,45), (38,45)
+  M|boven y=46 42-45 (4 px): model -0.00 -0.40 -0.60 -0.27, afwijking +-0.31/-0.42 -> grens 1 px terug (buurtint groeit) op (43,46), (44,46)
+  (29,35) S->L: zou een vlakje <3 px geven, niet gedaan
+  (35,44) H->W: zou een vlakje <3 px geven, niet gedaan
+  (36,44) H->W: zou een vlakje <3 px geven, niet gedaan
+  (38,44) N->M: zou een vlakje <3 px geven, niet gedaan
+  (39,44) N->M: zou een vlakje <3 px geven, niet gedaan
+  (43,46) M->L: zou een vlakje <3 px geven, niet gedaan
+  (37,45) M->N: zou een vlakje <3 px geven, niet gedaan
+Niet meegenomen: runs in de oogzone (o.a. halsschaduw/manenlijn x25-26 y24-28 valt in x18-25), witte borst links, runs langs de buitenrand (selout D aan de pootranden = silhouet, r8).
+Langste rechte tintgrens per zone (r8 -> r9):
+  onder de hoorns  langste rechte tintgrens  4 ->  4
+  oor links        langste rechte tintgrens  4 ->  4
+  oor rechts       langste rechte tintgrens  3 ->  3
+  rug              langste rechte tintgrens  8 ->  8
+  manen hals       langste rechte tintgrens  7 ->  4
+  poten            langste rechte tintgrens  5 ->  5

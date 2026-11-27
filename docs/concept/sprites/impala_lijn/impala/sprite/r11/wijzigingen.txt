@@ -1,0 +1,10 @@
+kin/hals (19,30) 0->N  model 141, lijn 81%  1px: (18,30)-(19,31) sluiten diagonaal; model 140 -> N zoals buren (20,30),(19,29)
+manen/rug (33,33) 0->S  model 93, lijn 63%  1px: (33,32)-(34,33) sluiten diagonaal; model 93 -> S zoals buren
+kuif (21,14) D->S  model 111, lijn 63%  1px: (21,13)-(22,14) sluiten diagonaal; model 110 -> S (kuifvulling)
+oor rechts (28,18) 0->D  model 135, lijn 95%  lichtkant (boven): zwart -> outline base D, sluit aan op D-bovenrand (29-31,17)
+buik/verre achterpoot (37,45) M->D  model 189, lijn 40%  modellijn (lf 39%, kolom 37 hoogste) verbindt (36,46)D met (40,45)D
+buik/verre achterpoot (38,45) N->D  model 145, lijn 50%  modellijn (lf 49%)
+buik/verre achterpoot (39,45) M->D  model 136, lijn 24%  modellijn (lf 23%, rij 46 = 0%)
+buiksikkel (36,45) M->N  model 197, lijn 2%  boven de nieuwe buiklijn: M-vlakje was donkerder dan beide kanten (model 196); N sluit de bestaande buiksikkel (37-40,44) aan op (33-34,45-46)
+bil (43,39) H->L  model 194, lijn 61%  los H-vlakje van 2 px (restant strepen-weg); model 193 = flank L
+bil (44,39) H->L  model 197, lijn 41%  idem; model 197 = flank L

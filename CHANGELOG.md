@@ -3607,3 +3607,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.859] - Zandloper-lijn: fase 1 frontsprite af (27 nov)
 - Fase 1 (zandloper met ogen, Ground/Psychic) frontsprite af in `docs/concept/sprites/zandloper/fase1/af/`: zwevende, scheve zandloper met de sluwe ogen van de opgesloten djinn in het zand en twee losse houten handen. Model = Gemini r6 + handen uit r3 (gedraaid, variant C); sprite = model 1-op-1 op zijn eigen raster (63×64) + eindkeuring tinten/schaduw. Op het overzichtsvel. Prompts r1–r8 in `zandloper/fase1/gemini/PROMPTS.md`, besluiten in `zandloper/fase1/SPEC.md`.
 - Lessen (GEMINI.md): feitelijke opmerking van Jordi = kritiek; pixel aanwijzen via een krabbel op de sprite; ver oog in driekwart nooit groter.
+
+### [v0.0.860] - Zandloper fase 1: terug naar fase 1-maat (27 nov)
+- De 1-op-1-versie was groter dan fase 3 (Jordi: "hij is nu te groot geworden"); `af/zandloper_fase1.png` is nu de 0,70-reductie (44×45, ±980 px, Baltoy-maat) met dezelfde keuring van tinten en schaduw en linkeroog variant A (pupil 2 px hoog). Grote versie bewaard in `zandloper/fase1/sprite/r14_natief/af_oud/`. Overzichtsvel bijgewerkt.

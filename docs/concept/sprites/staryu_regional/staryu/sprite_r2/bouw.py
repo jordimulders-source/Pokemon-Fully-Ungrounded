@@ -119,6 +119,17 @@ v=o.copy()
 for Y,X in zip(*np.where(o==1)):
     if all(o[Y+dy,X+dx]!=0 for dy in (-1,0,1) for dx in (-1,0,1)) and not any(o[Y+dy,X+dx]==1 for dy in (-1,0,1) for dx in (-1,0,1) if dy or dx): o[Y,X]=3
 stap('losse zwarte pixel',v,o)
+# --- 5. keurderreparaties r1 (keuring_r1/KEURING.md), elk op gemeten modelhelderheid; assert op de oude waarde ---
+REP=[((11,29),1,2),   # 1: zwart/selout om en om bij de linkerarmtip -> selout; zwart begint op (12,31)
+     ((24,32),6,3),((24,33),6,3),   # 2: chiprand tegen de juweelring -> deegschaduw (model gem. 142/119, deeg ertussen)
+     ((20,36),3,2),   # 3: naad uit de inkeping, model gem. 94 -> selout (na de klassenreparatie stond hier al 3 i.p.v. chipbruin)
+     ((30,13),4,3),((31,13),4,3),((31,14),4,3),((29,15),4,5),((29,16),4,5)]   # 4: bovenarm naar de modelhelderheid (150/135/141 -> 3; 186/197 -> 5)
+v=o.copy()
+for (X,Y),oud,nieuw in REP:
+    assert o[Y,X]==oud,((X,Y),o[Y,X],oud); o[Y,X]=nieuw
+# 5 (optioneel): (26,35) staat al op 9 (donkerst); geen wijziging nodig
+assert o[35,26]==9
+stap('keurderreparaties r1',v,o)
 if __name__=='__main__':
     toon(o,8,60,6,58); print(tel, 'totaal',sum(tel.values()))
     opslaan(o,UIT+'/staryu_r2.png')

@@ -1,0 +1,3 @@
+Pixels anders dan de kale reductie van model A3, per zone: {'staal': 135, 'vacht': 215, 'roze': 3, 'lijn': 83, 'oog': 11, 'manen': 149, 'donker': 11}, totaal 607 van 1362
+Pixels anders dan r4, per zone: {'staal': 9, 'vacht': 48, 'oog': 2, 'manen': 116, 'lijn': 1}, totaal 176
+Per stap (log): {'manen': 135, 'streep': 15, 'ontkorrel': 16, 'hals': 11, 'hals2': 9, 'flank': 15, 'kam': 3, 'buik': 5, 'hoorn': 5, 'oog': 26, 'lijn': 9, 'streng6': 13, 'hals6': 3, 'wit6': 1, 'buik6': 4, 'hoorn6': 4}

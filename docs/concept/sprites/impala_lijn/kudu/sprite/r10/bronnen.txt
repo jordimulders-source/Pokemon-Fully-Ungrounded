@@ -1,0 +1,1044 @@
+== B6a
+  stukken: onderpunt x8 <- arcanine (19,47)-(23,51) op (8,34); onderpunt x11 <- arcanine (19,47)-(23,51) op (11,35); onderpunt x14 <- arcanine (19,47)-(23,51) op (14,35); onderpunt x17 <- arcanine (19,47)-(23,51) op (17,37); punt onder de kam (over de rug) <- arcanine (19,47)-(23,51) op (25,27)
+  (15,23) m -> d  veld-herhaald arcanine 41 4
+  (15,24) m -> d  veld-herhaald arcanine 41 4
+  (16,24) d -> m  veld-herhaald arcanine 41 4
+  (19,26) d -> l  veld-herhaald arcanine 45 6
+  (20,26) 0 -> d  veld-herhaald arcanine 46 6
+  (21,26) d -> 0  veld-herhaald arcanine 46 6
+  (25,26) d -> l  veld-herhaald arcanine 20 47 l
+  (14,27) m -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 40 6
+  (18,27) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 44 6
+  (19,27) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 45 6
+  (21,27) m -> l  veld-herhaald arcanine 47 7
+  (23,27) l -> m  veld-herhaald arcanine 49 7
+  (24,27) l -> m  veld-herhaald arcanine 49 7
+  (27,27) d -> m  punt onder de kam (over de rug) arcanine 21 47 m
+  (28,27) 0 -> m  punt onder de kam (over de rug) arcanine 22 47 m
+  (18,28) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 44 7
+  (19,28) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 45 7
+  (20,28) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 46 7
+  (21,28) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 47 7
+  (22,28) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 48 7
+  (23,28) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 49 7
+  (27,28) l -> m  punt onder de kam (over de rug) arcanine 21 48 m
+  (28,28) l -> m  punt onder de kam (over de rug) arcanine 22 48 m
+  (9,29) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 35 8
+  (10,29) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 36 8
+  (11,29) d -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 37 8
+  (16,29) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 42 8
+  (17,29) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 43 8
+  (18,29) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 44 8
+  (19,29) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 45 8
+  (20,29) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 46 8
+  (21,29) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 47 8
+  (22,29) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 48 8
+  (23,29) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 49 8
+  (24,29) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 50 8
+  (25,29) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 51 8
+  (26,29) m -> l  punt onder de kam (over de rug) arcanine 20 49 d
+  (27,29) l -> m  punt onder de kam (over de rug) arcanine 21 49 m
+  (28,29) d -> m  punt onder de kam (over de rug) arcanine 22 49 m
+  (29,29) d -> 0  punt onder de kam (over de rug) arcanine 23 49 0
+  (10,30) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 36 9
+  (11,30) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 37 9
+  (12,30) d -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 38 9
+  (17,30) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 43 9
+  (18,30) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 44 9
+  (19,30) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 45 9
+  (20,30) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 46 9
+  (21,30) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 47 9
+  (22,30) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 48 9
+  (23,30) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 49 9
+  (24,30) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 50 9
+  (26,30) l -> 0  veld-herhaald arcanine 51 8
+  (27,30) d -> 0  punt onder de kam (over de rug) arcanine 21 50 d
+  (28,30) d -> 0  punt onder de kam (over de rug) arcanine 22 50 0
+  (29,30) d -> D  slagschaduw op lijf
+  (30,30) m -> d  veld-herhaald arcanine 22 49 m
+  (10,31) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 36 10
+  (11,31) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 37 10
+  (12,31) m -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 38 10
+  (19,31) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 45 10
+  (21,31) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 47 10
+  (22,31) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 48 10
+  (23,31) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 49 10
+  (24,31) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 50 10
+  (25,31) m -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 51 10
+  (26,31) m -> D  slagschaduw op lijf
+  (27,31) d -> M  lijf zichtbaar (rand gerafeld)
+  (28,31) d -> 0  punt onder de kam (over de rug) arcanine 22 51 0
+  (29,31) d -> D  slagschaduw op lijf
+  (30,31) d -> 0  veld-herhaald arcanine 22 49 m
+  (31,31) d -> 0  veld-herhaald arcanine 22 49 m
+  (10,32) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 36 11
+  (11,32) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 37 11
+  (12,32) m -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 38 11
+  (19,32) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 45 11
+  (21,32) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 47 11
+  (22,32) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 48 11
+  (23,32) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 49 11
+  (24,32) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 50 11
+  (25,32) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 51 11
+  (26,32) l -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 52 11
+  (27,32) M -> D  slagschaduw op lijf
+  (11,33) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 37 12
+  (12,33) m -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 38 12
+  (15,33) l -> d  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 41 12
+  (19,33) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 45 12
+  (21,33) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 47 12
+  (22,33) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 48 12
+  (23,33) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 49 12
+  (24,33) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 50 12
+  (26,33) l -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 52 12
+  (27,33) M -> D  slagschaduw op lijf
+  (8,34) . -> d  onderpunt x8 arcanine 19 47 d
+  (9,34) d -> l  onderpunt x8 arcanine 20 47 l
+  (10,34) l -> m  onderpunt x8 arcanine 21 47 m
+  (12,34) m -> 0  onderpunt x8 arcanine 23 47 d
+  (15,34) l -> d  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 41 13
+  (19,34) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 45 13
+  (21,34) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 47 13
+  (22,34) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 48 13
+  (24,34) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 50 13
+  (26,34) d -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 52 13
+  (27,34) M -> D  slagschaduw op lijf
+  (8,35) d -> 0  onderpunt x8 arcanine 19 48 d
+  (10,35) l -> m  onderpunt x8 arcanine 21 48 m
+  (12,35) m -> l  onderpunt x11 arcanine 20 47 l
+  (13,35) l -> 0  onderpunt x11 arcanine 21 47 m
+  (15,35) l -> 0  onderpunt x14 arcanine 20 47 l
+  (16,35) l -> m  onderpunt x14 arcanine 21 47 m
+  (17,35) l -> m  onderpunt x14 arcanine 22 47 m
+  (18,35) m -> l  onderpunt x14 arcanine 23 47 d
+  (19,35) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 45 14
+  (20,35) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 46 14
+  (21,35) d -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 47 14
+  (24,35) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 50 14
+  (26,35) l -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 52 14
+  (27,35) M -> D  slagschaduw op lijf
+  (8,36) d -> .  achtergrond (rand gerafeld)
+  (9,36) l -> 0  onderpunt x8 arcanine 20 49 d
+  (10,36) l -> m  onderpunt x8 arcanine 21 49 m
+  (12,36) m -> l  onderpunt x11 arcanine 20 48 l
+  (13,36) l -> 0  onderpunt x11 arcanine 21 48 m
+  (16,36) l -> d  onderpunt x14 arcanine 21 48 m
+  (17,36) d -> m  onderpunt x14 arcanine 22 48 m
+  (19,36) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 45 15
+  (21,36) d -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 47 15
+  (22,36) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 48 15
+  (23,36) l -> m  veld-herhaald arcanine 50 15
+  (24,36) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 50 15
+  (25,36) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 51 15
+  (26,36) l -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 52 15
+  (27,36) M -> D  slagschaduw op lijf
+  (9,37) d -> .  achtergrond (rand gerafeld)
+  (10,37) l -> 0  onderpunt x8 arcanine 21 50 d
+  (12,37) m -> l  onderpunt x11 arcanine 20 49 d
+  (13,37) m -> 0  onderpunt x11 arcanine 21 49 m
+  (14,37) l -> D  slagschaduw op lijf
+  (17,37) d -> m  onderpunt x17 arcanine 19 47 d
+  (19,37) d -> m  onderpunt x17 arcanine 21 47 m
+  (20,37) l -> m  onderpunt x17 arcanine 22 47 m
+  (21,37) d -> m  onderpunt x17 arcanine 23 47 d
+  (22,37) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 48 16
+  (23,37) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 49 16
+  (24,37) l -> m  veld-herhaald arcanine 50 15
+  (25,37) l -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 51 16
+  (26,37) M -> D  slagschaduw op lijf
+  (9,38) d -> D  nek/rug: bovenlijn D (zoals de ruglijn van r6)
+  (10,38) l -> D  borst: slagschaduw onder de manen
+  (11,38) l -> 0  onderpunt x8 arcanine 22 51 0
+  (12,38) m -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 38 17
+  (13,38) m -> 0  onderpunt x11 arcanine 21 50 d
+  (14,38) m -> D  slagschaduw op lijf
+  (16,38) d -> 0  onderpunt x14 arcanine 21 50 d
+  (17,38) d -> 0  onderpunt x17 arcanine 19 48 d
+  (19,38) d -> m  onderpunt x17 arcanine 21 48 m
+  (20,38) l -> m  onderpunt x17 arcanine 22 48 m
+  (21,38) d -> m  onderpunt x17 arcanine 23 48 0
+  (22,38) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 48 17
+  (23,38) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 49 17
+  (24,38) l -> m  veld-herhaald arcanine 51 17
+  (25,38) d -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 51 17
+  (26,38) M -> D  slagschaduw op lijf
+  (9,39) d -> 0  borst: buitenlijn
+  (10,39) l -> D  borst: slagschaduw onder de manen
+  (11,39) l -> D  borst: slagschaduw onder de manen
+  (12,39) m -> D  borst: slagschaduw onder de manen
+  (13,39) m -> D  borst: slagschaduw onder de manen
+  (14,39) m -> 0  onderpunt x11 arcanine 22 51 0
+  (15,39) m -> D  slagschaduw op lijf
+  (18,39) l -> 0  onderpunt x17 arcanine 20 49 d
+  (19,39) d -> m  onderpunt x17 arcanine 21 49 m
+  (21,39) d -> 0  onderpunt x17 arcanine 23 49 0
+  (22,39) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 48 18
+  (23,39) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 49 18
+  (24,39) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 50 18
+  (25,39) d -> 0  veld-herhaald arcanine 51 17
+  (26,39) M -> D  slagschaduw op lijf
+  (9,40) d -> 0  borst: buitenlijn
+  (10,40) l -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (11,40) l -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (12,40) l -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (13,40) m -> D  borst: slagschaduw onder de manen
+  (14,40) m -> D  borst: slagschaduw onder de manen
+  (15,40) m -> D  borst: slagschaduw onder de manen
+  (16,40) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (18,40) d -> M  lijf zichtbaar (rand gerafeld)
+  (19,40) d -> 0  onderpunt x17 arcanine 21 50 d
+  (20,40) m -> 0  onderpunt x17 arcanine 22 50 0
+  (21,40) d -> D  slagschaduw op lijf
+  (22,40) l -> d  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 48 19
+  (23,40) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 49 19
+  (24,40) l -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 50 19
+  (25,40) M -> D  slagschaduw op lijf
+  (11,41) l -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (12,41) l -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (13,41) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (14,41) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (15,41) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (16,41) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (17,41) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (18,41) d -> D  borst: slagschaduw onder de manen
+  (19,41) d -> D  borst: slagschaduw onder de manen
+  (20,41) d -> 0  onderpunt x17 arcanine 22 51 0
+  (21,41) M -> D  slagschaduw op lijf
+  (22,41) d -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 48 20
+  (23,41) l -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 49 20
+  (24,41) M -> D  slagschaduw op lijf
+  (11,42) l -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (12,42) l -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (13,42) m -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (14,42) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (15,42) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (16,42) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (17,42) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (18,42) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (12,43) l -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (13,43) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (14,43) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (15,43) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (16,43) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (17,43) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (18,43) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (19,43) d -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (20,43) d -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (13,44) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (14,44) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (15,44) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (16,44) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (17,44) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (18,44) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (19,44) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (20,44) d -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (15,45) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (16,45) l -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (17,45) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (18,45) d -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (19,45) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (20,45) d -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (21,45) d -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (18,46) d -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (19,46) d -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (20,46) d -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (21,46) d -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (20,47) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+== B9a
+  stukken: onderpunt x8 <- arcanine (19,47)-(23,51) op (8,30); onderpunt x11 <- arcanine (19,47)-(23,51) op (11,32); onderpunt x14 <- arcanine (19,47)-(23,51) op (14,34); onderpunt x17 <- arcanine (19,47)-(23,51) op (17,36); punt onder de kam (over de rug) <- arcanine (19,47)-(23,51) op (25,27)
+  (15,23) m -> d  veld-herhaald arcanine 41 4
+  (15,24) m -> d  veld-herhaald arcanine 41 4
+  (16,24) d -> m  veld-herhaald arcanine 41 4
+  (19,26) d -> l  veld-herhaald arcanine 45 6
+  (20,26) 0 -> d  veld-herhaald arcanine 46 6
+  (21,26) d -> 0  veld-herhaald arcanine 46 6
+  (25,26) d -> l  veld-herhaald arcanine 20 47 l
+  (14,27) m -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 40 6
+  (18,27) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 44 6
+  (19,27) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 45 6
+  (21,27) m -> l  veld-herhaald arcanine 47 7
+  (23,27) l -> m  veld-herhaald arcanine 49 7
+  (24,27) l -> m  veld-herhaald arcanine 49 7
+  (27,27) d -> m  punt onder de kam (over de rug) arcanine 21 47 m
+  (28,27) 0 -> m  punt onder de kam (over de rug) arcanine 22 47 m
+  (18,28) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 44 7
+  (19,28) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 45 7
+  (20,28) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 46 7
+  (21,28) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 47 7
+  (22,28) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 48 7
+  (23,28) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 49 7
+  (27,28) l -> m  punt onder de kam (over de rug) arcanine 21 48 m
+  (28,28) l -> m  punt onder de kam (over de rug) arcanine 22 48 m
+  (9,29) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 35 8
+  (10,29) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 36 8
+  (11,29) d -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 37 8
+  (16,29) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 42 8
+  (17,29) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 43 8
+  (18,29) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 44 8
+  (19,29) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 45 8
+  (20,29) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 46 8
+  (21,29) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 47 8
+  (22,29) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 48 8
+  (23,29) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 49 8
+  (24,29) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 50 8
+  (25,29) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 51 8
+  (26,29) m -> l  punt onder de kam (over de rug) arcanine 20 49 d
+  (27,29) l -> m  punt onder de kam (over de rug) arcanine 21 49 m
+  (28,29) d -> m  punt onder de kam (over de rug) arcanine 22 49 m
+  (29,29) d -> 0  punt onder de kam (over de rug) arcanine 23 49 0
+  (8,30) . -> d  onderpunt x8 arcanine 19 47 d
+  (9,30) 0 -> l  onderpunt x8 arcanine 20 47 l
+  (10,30) d -> m  onderpunt x8 arcanine 21 47 m
+  (11,30) d -> m  onderpunt x8 arcanine 22 47 m
+  (12,30) d -> 0  onderpunt x8 arcanine 23 47 d
+  (17,30) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 43 9
+  (18,30) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 44 9
+  (19,30) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 45 9
+  (20,30) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 46 9
+  (21,30) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 47 9
+  (22,30) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 48 9
+  (23,30) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 49 9
+  (24,30) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 50 9
+  (26,30) l -> 0  veld-herhaald arcanine 51 8
+  (27,30) d -> 0  punt onder de kam (over de rug) arcanine 21 50 d
+  (28,30) d -> 0  punt onder de kam (over de rug) arcanine 22 50 0
+  (29,30) d -> D  slagschaduw op lijf
+  (30,30) m -> d  veld-herhaald arcanine 22 49 m
+  (8,31) . -> 0  onderpunt x8 arcanine 19 48 d
+  (9,31) 0 -> l  onderpunt x8 arcanine 20 48 l
+  (12,31) m -> 0  onderpunt x8 arcanine 23 48 0
+  (19,31) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 45 10
+  (21,31) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 47 10
+  (22,31) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 48 10
+  (23,31) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 49 10
+  (24,31) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 50 10
+  (25,31) m -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 51 10
+  (26,31) m -> D  slagschaduw op lijf
+  (27,31) d -> M  lijf zichtbaar (rand gerafeld)
+  (28,31) d -> 0  punt onder de kam (over de rug) arcanine 22 51 0
+  (29,31) d -> D  slagschaduw op lijf
+  (30,31) d -> 0  veld-herhaald arcanine 22 49 m
+  (31,31) d -> 0  veld-herhaald arcanine 22 49 m
+  (9,32) d -> 0  onderpunt x8 arcanine 20 49 d
+  (12,32) m -> 0  onderpunt x11 arcanine 20 47 l
+  (19,32) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 45 11
+  (21,32) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 47 11
+  (22,32) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 48 11
+  (23,32) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 49 11
+  (24,32) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 50 11
+  (25,32) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 51 11
+  (26,32) l -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 52 11
+  (27,32) M -> D  slagschaduw op lijf
+  (9,33) d -> .  achtergrond (rand gerafeld)
+  (10,33) l -> 0  onderpunt x8 arcanine 21 50 d
+  (11,33) m -> l  onderpunt x11 arcanine 19 48 d
+  (12,33) m -> 0  onderpunt x11 arcanine 20 48 l
+  (15,33) l -> d  onderpunt x11 arcanine 23 48 0
+  (19,33) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 45 12
+  (21,33) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 47 12
+  (22,33) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 48 12
+  (23,33) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 49 12
+  (24,33) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 50 12
+  (26,33) l -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 52 12
+  (27,33) M -> D  slagschaduw op lijf
+  (9,34) d -> D  nek/rug: bovenlijn D (zoals de ruglijn van r6)
+  (10,34) l -> D  borst: slagschaduw onder de manen
+  (11,34) m -> 0  onderpunt x8 arcanine 22 51 0
+  (12,34) m -> 0  onderpunt x11 arcanine 20 49 d
+  (15,34) l -> d  onderpunt x14 arcanine 20 47 l
+  (16,34) l -> m  onderpunt x14 arcanine 21 47 m
+  (17,34) l -> m  onderpunt x14 arcanine 22 47 m
+  (19,34) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 45 13
+  (21,34) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 47 13
+  (22,34) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 48 13
+  (24,34) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 50 13
+  (26,34) d -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 52 13
+  (27,34) M -> D  slagschaduw op lijf
+  (8,35) d -> D  nek/rug: bovenlijn D (zoals de ruglijn van r6)
+  (9,35) l -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (10,35) l -> D  borst: slagschaduw onder de manen
+  (11,35) m -> D  borst: slagschaduw onder de manen
+  (12,35) m -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 38 14
+  (13,35) l -> 0  onderpunt x11 arcanine 21 50 d
+  (15,35) l -> 0  onderpunt x14 arcanine 20 48 l
+  (16,35) l -> m  onderpunt x14 arcanine 21 48 m
+  (17,35) l -> m  onderpunt x14 arcanine 22 48 m
+  (18,35) m -> l  onderpunt x14 arcanine 23 48 0
+  (19,35) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 45 14
+  (20,35) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 46 14
+  (21,35) d -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 47 14
+  (24,35) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 50 14
+  (26,35) l -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 52 14
+  (27,35) M -> D  slagschaduw op lijf
+  (8,36) d -> 0  borst: buitenlijn
+  (9,36) l -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (10,36) l -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (11,36) m -> D  borst: slagschaduw onder de manen
+  (12,36) m -> D  borst: slagschaduw onder de manen
+  (13,36) l -> D  borst: slagschaduw onder de manen
+  (16,36) l -> d  onderpunt x14 arcanine 21 49 m
+  (17,36) d -> m  onderpunt x17 arcanine 19 47 d
+  (19,36) d -> m  onderpunt x17 arcanine 21 47 m
+  (20,36) l -> m  onderpunt x17 arcanine 22 47 m
+  (21,36) d -> m  onderpunt x17 arcanine 23 47 d
+  (22,36) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 48 15
+  (23,36) l -> m  veld-herhaald arcanine 50 15
+  (24,36) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 50 15
+  (25,36) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 51 15
+  (26,36) l -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 52 15
+  (27,36) M -> D  slagschaduw op lijf
+  (9,37) d -> 0  borst: buitenlijn
+  (10,37) l -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (11,37) l -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (12,37) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (13,37) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (14,37) l -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (16,37) d -> 0  onderpunt x14 arcanine 21 50 d
+  (17,37) d -> l  onderpunt x17 arcanine 19 48 d
+  (19,37) d -> m  onderpunt x17 arcanine 21 48 m
+  (20,37) l -> m  onderpunt x17 arcanine 22 48 m
+  (21,37) d -> m  onderpunt x17 arcanine 23 48 0
+  (22,37) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 48 16
+  (23,37) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 49 16
+  (24,37) l -> m  veld-herhaald arcanine 50 15
+  (25,37) l -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 51 16
+  (26,37) M -> D  slagschaduw op lijf
+  (9,38) d -> 0  borst: buitenlijn
+  (10,38) l -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (11,38) l -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (12,38) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (13,38) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (14,38) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (16,38) d -> D  borst: slagschaduw onder de manen
+  (17,38) d -> 0  onderpunt x14 arcanine 22 51 0
+  (18,38) l -> 0  onderpunt x17 arcanine 20 49 d
+  (19,38) d -> m  onderpunt x17 arcanine 21 49 m
+  (20,38) l -> m  onderpunt x17 arcanine 22 49 m
+  (21,38) d -> 0  onderpunt x17 arcanine 23 49 0
+  (22,38) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 48 17
+  (23,38) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 49 17
+  (24,38) l -> m  veld-herhaald arcanine 51 17
+  (25,38) d -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 51 17
+  (26,38) M -> D  slagschaduw op lijf
+  (9,39) d -> 0  borst: buitenlijn
+  (10,39) l -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (11,39) l -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (12,39) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (13,39) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (14,39) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (15,39) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (18,39) l -> D  borst: slagschaduw onder de manen
+  (19,39) d -> 0  onderpunt x17 arcanine 21 50 d
+  (20,39) m -> 0  onderpunt x17 arcanine 22 50 0
+  (21,39) d -> D  slagschaduw op lijf
+  (22,39) l -> d  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 48 18
+  (23,39) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 49 18
+  (24,39) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 50 18
+  (25,39) d -> 0  veld-herhaald arcanine 51 17
+  (26,39) M -> D  slagschaduw op lijf
+  (9,40) d -> 0  borst: buitenlijn
+  (10,40) l -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (11,40) l -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (12,40) l -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (13,40) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (14,40) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (15,40) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (16,40) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (18,40) d -> D  borst: slagschaduw onder de manen
+  (19,40) d -> D  borst: slagschaduw onder de manen
+  (20,40) m -> 0  onderpunt x17 arcanine 22 51 0
+  (21,40) d -> D  slagschaduw op lijf
+  (22,40) l -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 48 19
+  (23,40) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 49 19
+  (24,40) l -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 50 19
+  (25,40) M -> D  slagschaduw op lijf
+  (11,41) l -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (12,41) l -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (13,41) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (14,41) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (15,41) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (16,41) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (17,41) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (18,41) d -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (19,41) d -> D  borst: slagschaduw onder de manen
+  (20,41) d -> D  borst: slagschaduw onder de manen
+  (22,41) d -> D  borst: slagschaduw onder de manen
+  (23,41) l -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 49 20
+  (24,41) M -> D  slagschaduw op lijf
+  (11,42) l -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (12,42) l -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (13,42) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (14,42) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (15,42) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (16,42) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (17,42) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (18,42) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (12,43) l -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (13,43) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (14,43) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (15,43) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (16,43) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (17,43) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (18,43) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (19,43) d -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (20,43) d -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (13,44) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (14,44) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (15,44) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (16,44) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (17,44) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (18,44) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (19,44) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (20,44) d -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (15,45) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (16,45) l -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (17,45) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (18,45) d -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (19,45) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (20,45) d -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (21,45) d -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (18,46) d -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (19,46) d -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (20,46) d -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (21,46) d -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (20,47) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+== B6b
+  stukken: onderpunt x8 <- arcanine (19,47)-(23,51) op (8,34); onderpunt x11 <- arcanine (19,47)-(23,51) op (11,35); onderpunt x14 <- arcanine (19,47)-(23,51) op (14,35); onderpunt x17 <- arcanine (19,47)-(23,51) op (17,37)
+  (15,23) m -> d  veld-herhaald arcanine 41 4
+  (15,24) m -> d  veld-herhaald arcanine 41 4
+  (16,24) d -> m  veld-herhaald arcanine 41 4
+  (25,25) 0 -> .  lucht boven de nek-/ruglijn (oude kamomtrek weg)
+  (26,25) 0 -> .  lucht boven de nek-/ruglijn (oude kamomtrek weg)
+  (19,26) d -> l  veld-herhaald arcanine 45 6
+  (21,26) d -> D  nek/rug: bovenlijn D (zoals de ruglijn van r6)
+  (23,26) d -> .  lucht boven de nek-/ruglijn
+  (24,26) d -> .  lucht boven de nek-/ruglijn
+  (25,26) d -> .  lucht boven de nek-/ruglijn
+  (26,26) l -> .  lucht boven de nek-/ruglijn
+  (27,26) 0 -> .  lucht boven de nek-/ruglijn (oude kamomtrek weg)
+  (28,26) 0 -> .  lucht boven de nek-/ruglijn (oude kamomtrek weg)
+  (14,27) m -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 40 6
+  (18,27) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 44 6
+  (19,27) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 45 6
+  (20,27) m -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 46 6
+  (21,27) m -> D  borst: slagschaduw onder de manen
+  (22,27) d -> D  nek/rug: bovenlijn D (zoals de ruglijn van r6)
+  (23,27) l -> D  nek/rug: bovenlijn D (zoals de ruglijn van r6)
+  (24,27) l -> D  nek/rug: bovenlijn D (zoals de ruglijn van r6)
+  (25,27) l -> .  lucht boven de nek-/ruglijn
+  (26,27) l -> .  lucht boven de nek-/ruglijn
+  (27,27) d -> .  lucht boven de nek-/ruglijn
+  (28,27) 0 -> .  lucht boven de nek-/ruglijn (oude kamomtrek weg)
+  (29,27) 0 -> .  lucht boven de nek-/ruglijn (oude kamomtrek weg)
+  (18,28) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 44 7
+  (19,28) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 45 7
+  (20,28) m -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 46 7
+  (21,28) m -> D  borst: slagschaduw onder de manen
+  (22,28) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (23,28) l -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (24,28) l -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (25,28) l -> D  nek/rug: bovenlijn D (zoals de ruglijn van r6)
+  (26,28) l -> D  nek/rug: bovenlijn D (zoals de ruglijn van r6)
+  (27,28) l -> .  lucht boven de nek-/ruglijn
+  (28,28) l -> .  lucht boven de nek-/ruglijn
+  (29,28) 0 -> .  lucht boven de nek-/ruglijn (oude kamomtrek weg)
+  (9,29) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 35 8
+  (10,29) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 36 8
+  (11,29) d -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 37 8
+  (16,29) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 42 8
+  (17,29) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 43 8
+  (18,29) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 44 8
+  (19,29) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 45 8
+  (20,29) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 46 8
+  (21,29) m -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 47 8
+  (22,29) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (23,29) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (24,29) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (25,29) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (26,29) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (27,29) l -> D  nek/rug: bovenlijn D (zoals de ruglijn van r6)
+  (28,29) d -> D  nek/rug: bovenlijn D (zoals de ruglijn van r6)
+  (29,29) d -> .  lucht boven de nek-/ruglijn
+  (30,29) 0 -> .  lucht boven de nek-/ruglijn (oude kamomtrek weg)
+  (10,30) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 36 9
+  (11,30) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 37 9
+  (12,30) d -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 38 9
+  (17,30) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 43 9
+  (18,30) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 44 9
+  (19,30) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 45 9
+  (20,30) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 46 9
+  (21,30) m -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 47 9
+  (22,30) d -> D  borst: slagschaduw onder de manen
+  (23,30) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (24,30) l -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (25,30) l -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (26,30) l -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (27,30) d -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (28,30) d -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (29,30) d -> D  nek/rug: bovenlijn D (zoals de ruglijn van r6)
+  (30,30) m -> D  nek/rug: bovenlijn D (zoals de ruglijn van r6)
+  (31,30) 0 -> .  lucht boven de nek-/ruglijn (oude kamomtrek weg)
+  (32,30) 0 -> .  lucht boven de nek-/ruglijn (oude kamomtrek weg)
+  (10,31) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 36 10
+  (11,31) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 37 10
+  (12,31) m -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 38 10
+  (19,31) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 45 10
+  (21,31) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 47 10
+  (22,31) d -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 48 10
+  (23,31) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (24,31) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (25,31) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (26,31) m -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (27,31) d -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (28,31) d -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (29,31) d -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (30,31) d -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (31,31) d -> D  nek/rug: bovenlijn D (zoals de ruglijn van r6)
+  (10,32) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 36 11
+  (11,32) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 37 11
+  (12,32) m -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 38 11
+  (19,32) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 45 11
+  (21,32) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 47 11
+  (22,32) d -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 48 11
+  (23,32) m -> D  borst: slagschaduw onder de manen
+  (24,32) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (25,32) m -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (26,32) l -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (11,33) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 37 12
+  (12,33) m -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 38 12
+  (15,33) l -> d  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 41 12
+  (19,33) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 45 12
+  (21,33) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 47 12
+  (22,33) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 48 12
+  (23,33) m -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 49 12
+  (24,33) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (25,33) l -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (26,33) l -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (8,34) . -> d  onderpunt x8 arcanine 19 47 d
+  (9,34) d -> l  onderpunt x8 arcanine 20 47 l
+  (10,34) l -> m  onderpunt x8 arcanine 21 47 m
+  (12,34) m -> 0  onderpunt x8 arcanine 23 47 d
+  (15,34) l -> d  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 41 13
+  (19,34) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 45 13
+  (21,34) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 47 13
+  (22,34) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 48 13
+  (23,34) m -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 49 13
+  (24,34) m -> D  borst: slagschaduw onder de manen
+  (25,34) l -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (26,34) d -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (8,35) d -> 0  onderpunt x8 arcanine 19 48 d
+  (10,35) l -> m  onderpunt x8 arcanine 21 48 m
+  (12,35) m -> l  onderpunt x11 arcanine 20 47 l
+  (13,35) l -> 0  onderpunt x11 arcanine 21 47 m
+  (15,35) l -> 0  onderpunt x14 arcanine 20 47 l
+  (16,35) l -> m  onderpunt x14 arcanine 21 47 m
+  (17,35) l -> m  onderpunt x14 arcanine 22 47 m
+  (18,35) m -> l  onderpunt x14 arcanine 23 47 d
+  (19,35) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 45 14
+  (20,35) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 46 14
+  (21,35) d -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 47 14
+  (24,35) l -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 50 14
+  (25,35) l -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (26,35) l -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (8,36) d -> .  achtergrond (rand gerafeld)
+  (9,36) l -> 0  onderpunt x8 arcanine 20 49 d
+  (10,36) l -> m  onderpunt x8 arcanine 21 49 m
+  (12,36) m -> l  onderpunt x11 arcanine 20 48 l
+  (13,36) l -> 0  onderpunt x11 arcanine 21 48 m
+  (16,36) l -> d  onderpunt x14 arcanine 21 48 m
+  (17,36) d -> m  onderpunt x14 arcanine 22 48 m
+  (19,36) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 45 15
+  (21,36) d -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 47 15
+  (22,36) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 48 15
+  (23,36) l -> m  veld-herhaald arcanine 50 15
+  (24,36) l -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 50 15
+  (25,36) l -> D  borst: slagschaduw onder de manen
+  (26,36) l -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (9,37) d -> .  achtergrond (rand gerafeld)
+  (10,37) l -> 0  onderpunt x8 arcanine 21 50 d
+  (12,37) m -> l  onderpunt x11 arcanine 20 49 d
+  (13,37) m -> 0  onderpunt x11 arcanine 21 49 m
+  (14,37) l -> D  slagschaduw op lijf
+  (17,37) d -> m  onderpunt x17 arcanine 19 47 d
+  (19,37) d -> m  onderpunt x17 arcanine 21 47 m
+  (20,37) l -> m  onderpunt x17 arcanine 22 47 m
+  (21,37) d -> m  onderpunt x17 arcanine 23 47 d
+  (22,37) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 48 16
+  (23,37) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 49 16
+  (24,37) l -> m  veld-herhaald arcanine 50 15
+  (25,37) l -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 51 16
+  (26,37) M -> D  slagschaduw op lijf
+  (9,38) d -> D  nek/rug: bovenlijn D (zoals de ruglijn van r6)
+  (10,38) l -> D  borst: slagschaduw onder de manen
+  (11,38) l -> 0  onderpunt x8 arcanine 22 51 0
+  (12,38) m -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 38 17
+  (13,38) m -> 0  onderpunt x11 arcanine 21 50 d
+  (14,38) m -> D  slagschaduw op lijf
+  (16,38) d -> 0  onderpunt x14 arcanine 21 50 d
+  (17,38) d -> 0  onderpunt x17 arcanine 19 48 d
+  (19,38) d -> m  onderpunt x17 arcanine 21 48 m
+  (20,38) l -> m  onderpunt x17 arcanine 22 48 m
+  (21,38) d -> m  onderpunt x17 arcanine 23 48 0
+  (22,38) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 48 17
+  (23,38) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 49 17
+  (24,38) l -> m  veld-herhaald arcanine 51 17
+  (25,38) d -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 51 17
+  (26,38) M -> D  slagschaduw op lijf
+  (9,39) d -> 0  borst: buitenlijn
+  (10,39) l -> D  borst: slagschaduw onder de manen
+  (11,39) l -> D  borst: slagschaduw onder de manen
+  (12,39) m -> D  borst: slagschaduw onder de manen
+  (13,39) m -> D  borst: slagschaduw onder de manen
+  (14,39) m -> 0  onderpunt x11 arcanine 22 51 0
+  (15,39) m -> D  slagschaduw op lijf
+  (18,39) l -> 0  onderpunt x17 arcanine 20 49 d
+  (19,39) d -> m  onderpunt x17 arcanine 21 49 m
+  (21,39) d -> 0  onderpunt x17 arcanine 23 49 0
+  (22,39) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 48 18
+  (23,39) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 49 18
+  (24,39) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 50 18
+  (25,39) d -> 0  veld-herhaald arcanine 51 17
+  (26,39) M -> D  slagschaduw op lijf
+  (9,40) d -> 0  borst: buitenlijn
+  (10,40) l -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (11,40) l -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (12,40) l -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (13,40) m -> D  borst: slagschaduw onder de manen
+  (14,40) m -> D  borst: slagschaduw onder de manen
+  (15,40) m -> D  borst: slagschaduw onder de manen
+  (16,40) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (18,40) d -> M  lijf zichtbaar (rand gerafeld)
+  (19,40) d -> 0  onderpunt x17 arcanine 21 50 d
+  (20,40) m -> 0  onderpunt x17 arcanine 22 50 0
+  (21,40) d -> D  slagschaduw op lijf
+  (22,40) l -> d  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 48 19
+  (23,40) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 49 19
+  (24,40) l -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 50 19
+  (25,40) M -> D  slagschaduw op lijf
+  (11,41) l -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (12,41) l -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (13,41) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (14,41) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (15,41) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (16,41) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (17,41) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (18,41) d -> D  borst: slagschaduw onder de manen
+  (19,41) d -> D  borst: slagschaduw onder de manen
+  (20,41) d -> 0  onderpunt x17 arcanine 22 51 0
+  (21,41) M -> D  slagschaduw op lijf
+  (22,41) d -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 48 20
+  (23,41) l -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 49 20
+  (24,41) M -> D  slagschaduw op lijf
+  (11,42) l -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (12,42) l -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (13,42) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (14,42) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (15,42) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (16,42) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (17,42) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (18,42) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (12,43) l -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (13,43) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (14,43) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (15,43) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (16,43) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (17,43) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (18,43) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (19,43) d -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (20,43) d -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (13,44) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (14,44) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (15,44) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (16,44) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (17,44) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (18,44) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (19,44) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (20,44) d -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (15,45) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (16,45) l -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (17,45) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (18,45) d -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (19,45) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (20,45) d -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (21,45) d -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (18,46) d -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (19,46) d -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (20,46) d -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (21,46) d -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (20,47) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+== B9b
+  stukken: onderpunt x8 <- arcanine (19,47)-(23,51) op (8,30); onderpunt x11 <- arcanine (19,47)-(23,51) op (11,32); onderpunt x14 <- arcanine (19,47)-(23,51) op (14,34); onderpunt x17 <- arcanine (19,47)-(23,51) op (17,36)
+  (15,23) m -> d  veld-herhaald arcanine 41 4
+  (15,24) m -> d  veld-herhaald arcanine 41 4
+  (16,24) d -> m  veld-herhaald arcanine 41 4
+  (25,25) 0 -> .  lucht boven de nek-/ruglijn (oude kamomtrek weg)
+  (26,25) 0 -> .  lucht boven de nek-/ruglijn (oude kamomtrek weg)
+  (19,26) d -> l  veld-herhaald arcanine 45 6
+  (21,26) d -> D  nek/rug: bovenlijn D (zoals de ruglijn van r6)
+  (23,26) d -> .  lucht boven de nek-/ruglijn
+  (24,26) d -> .  lucht boven de nek-/ruglijn
+  (25,26) d -> .  lucht boven de nek-/ruglijn
+  (26,26) l -> .  lucht boven de nek-/ruglijn
+  (27,26) 0 -> .  lucht boven de nek-/ruglijn (oude kamomtrek weg)
+  (28,26) 0 -> .  lucht boven de nek-/ruglijn (oude kamomtrek weg)
+  (14,27) m -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 40 6
+  (18,27) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 44 6
+  (19,27) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 45 6
+  (20,27) m -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 46 6
+  (21,27) m -> D  borst: slagschaduw onder de manen
+  (22,27) d -> D  nek/rug: bovenlijn D (zoals de ruglijn van r6)
+  (23,27) l -> D  nek/rug: bovenlijn D (zoals de ruglijn van r6)
+  (24,27) l -> D  nek/rug: bovenlijn D (zoals de ruglijn van r6)
+  (25,27) l -> .  lucht boven de nek-/ruglijn
+  (26,27) l -> .  lucht boven de nek-/ruglijn
+  (27,27) d -> .  lucht boven de nek-/ruglijn
+  (28,27) 0 -> .  lucht boven de nek-/ruglijn (oude kamomtrek weg)
+  (29,27) 0 -> .  lucht boven de nek-/ruglijn (oude kamomtrek weg)
+  (18,28) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 44 7
+  (19,28) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 45 7
+  (20,28) m -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 46 7
+  (21,28) m -> D  borst: slagschaduw onder de manen
+  (22,28) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (23,28) l -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (24,28) l -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (25,28) l -> D  nek/rug: bovenlijn D (zoals de ruglijn van r6)
+  (26,28) l -> D  nek/rug: bovenlijn D (zoals de ruglijn van r6)
+  (27,28) l -> .  lucht boven de nek-/ruglijn
+  (28,28) l -> .  lucht boven de nek-/ruglijn
+  (29,28) 0 -> .  lucht boven de nek-/ruglijn (oude kamomtrek weg)
+  (9,29) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 35 8
+  (10,29) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 36 8
+  (11,29) d -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 37 8
+  (16,29) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 42 8
+  (17,29) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 43 8
+  (18,29) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 44 8
+  (19,29) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 45 8
+  (20,29) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 46 8
+  (21,29) m -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 47 8
+  (22,29) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (23,29) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (24,29) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (25,29) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (26,29) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (27,29) l -> D  nek/rug: bovenlijn D (zoals de ruglijn van r6)
+  (28,29) d -> D  nek/rug: bovenlijn D (zoals de ruglijn van r6)
+  (29,29) d -> .  lucht boven de nek-/ruglijn
+  (30,29) 0 -> .  lucht boven de nek-/ruglijn (oude kamomtrek weg)
+  (8,30) . -> d  onderpunt x8 arcanine 19 47 d
+  (9,30) 0 -> l  onderpunt x8 arcanine 20 47 l
+  (10,30) d -> m  onderpunt x8 arcanine 21 47 m
+  (11,30) d -> m  onderpunt x8 arcanine 22 47 m
+  (12,30) d -> 0  onderpunt x8 arcanine 23 47 d
+  (17,30) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 43 9
+  (18,30) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 44 9
+  (19,30) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 45 9
+  (20,30) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 46 9
+  (21,30) m -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 47 9
+  (22,30) d -> D  borst: slagschaduw onder de manen
+  (23,30) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (24,30) l -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (25,30) l -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (26,30) l -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (27,30) d -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (28,30) d -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (29,30) d -> D  nek/rug: bovenlijn D (zoals de ruglijn van r6)
+  (30,30) m -> D  nek/rug: bovenlijn D (zoals de ruglijn van r6)
+  (31,30) 0 -> .  lucht boven de nek-/ruglijn (oude kamomtrek weg)
+  (32,30) 0 -> .  lucht boven de nek-/ruglijn (oude kamomtrek weg)
+  (8,31) . -> 0  onderpunt x8 arcanine 19 48 d
+  (9,31) 0 -> l  onderpunt x8 arcanine 20 48 l
+  (12,31) m -> 0  onderpunt x8 arcanine 23 48 0
+  (19,31) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 45 10
+  (21,31) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 47 10
+  (22,31) d -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 48 10
+  (23,31) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (24,31) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (25,31) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (26,31) m -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (27,31) d -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (28,31) d -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (29,31) d -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (30,31) d -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (31,31) d -> D  nek/rug: bovenlijn D (zoals de ruglijn van r6)
+  (9,32) d -> 0  onderpunt x8 arcanine 20 49 d
+  (12,32) m -> 0  onderpunt x11 arcanine 20 47 l
+  (19,32) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 45 11
+  (21,32) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 47 11
+  (22,32) d -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 48 11
+  (23,32) m -> D  borst: slagschaduw onder de manen
+  (24,32) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (25,32) m -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (26,32) l -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (9,33) d -> .  achtergrond (rand gerafeld)
+  (10,33) l -> 0  onderpunt x8 arcanine 21 50 d
+  (11,33) m -> l  onderpunt x11 arcanine 19 48 d
+  (12,33) m -> 0  onderpunt x11 arcanine 20 48 l
+  (15,33) l -> d  onderpunt x11 arcanine 23 48 0
+  (19,33) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 45 12
+  (21,33) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 47 12
+  (22,33) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 48 12
+  (23,33) m -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 49 12
+  (24,33) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (25,33) l -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (26,33) l -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (9,34) d -> D  nek/rug: bovenlijn D (zoals de ruglijn van r6)
+  (10,34) l -> D  borst: slagschaduw onder de manen
+  (11,34) m -> 0  onderpunt x8 arcanine 22 51 0
+  (12,34) m -> 0  onderpunt x11 arcanine 20 49 d
+  (15,34) l -> d  onderpunt x14 arcanine 20 47 l
+  (16,34) l -> m  onderpunt x14 arcanine 21 47 m
+  (17,34) l -> m  onderpunt x14 arcanine 22 47 m
+  (19,34) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 45 13
+  (21,34) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 47 13
+  (22,34) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 48 13
+  (23,34) m -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 49 13
+  (24,34) m -> D  borst: slagschaduw onder de manen
+  (25,34) l -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (26,34) d -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (8,35) d -> D  nek/rug: bovenlijn D (zoals de ruglijn van r6)
+  (9,35) l -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (10,35) l -> D  borst: slagschaduw onder de manen
+  (11,35) m -> D  borst: slagschaduw onder de manen
+  (12,35) m -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 38 14
+  (13,35) l -> 0  onderpunt x11 arcanine 21 50 d
+  (15,35) l -> 0  onderpunt x14 arcanine 20 48 l
+  (16,35) l -> m  onderpunt x14 arcanine 21 48 m
+  (17,35) l -> m  onderpunt x14 arcanine 22 48 m
+  (18,35) m -> l  onderpunt x14 arcanine 23 48 0
+  (19,35) d -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 45 14
+  (20,35) m -> l  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 46 14
+  (21,35) d -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 47 14
+  (24,35) l -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 50 14
+  (25,35) l -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (26,35) l -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (8,36) d -> 0  borst: buitenlijn
+  (9,36) l -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (10,36) l -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (11,36) m -> D  borst: slagschaduw onder de manen
+  (12,36) m -> D  borst: slagschaduw onder de manen
+  (13,36) l -> D  borst: slagschaduw onder de manen
+  (16,36) l -> d  onderpunt x14 arcanine 21 49 m
+  (17,36) d -> m  onderpunt x17 arcanine 19 47 d
+  (19,36) d -> m  onderpunt x17 arcanine 21 47 m
+  (20,36) l -> m  onderpunt x17 arcanine 22 47 m
+  (21,36) d -> m  onderpunt x17 arcanine 23 47 d
+  (22,36) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 48 15
+  (23,36) l -> m  veld-herhaald arcanine 50 15
+  (24,36) l -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 50 15
+  (25,36) l -> D  borst: slagschaduw onder de manen
+  (26,36) l -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (9,37) d -> 0  borst: buitenlijn
+  (10,37) l -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (11,37) l -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (12,37) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (13,37) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (14,37) l -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (16,37) d -> 0  onderpunt x14 arcanine 21 50 d
+  (17,37) d -> l  onderpunt x17 arcanine 19 48 d
+  (19,37) d -> m  onderpunt x17 arcanine 21 48 m
+  (20,37) l -> m  onderpunt x17 arcanine 22 48 m
+  (21,37) d -> m  onderpunt x17 arcanine 23 48 0
+  (22,37) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 48 16
+  (23,37) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 49 16
+  (24,37) l -> m  veld-herhaald arcanine 50 15
+  (25,37) l -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 51 16
+  (26,37) M -> D  slagschaduw op lijf
+  (9,38) d -> 0  borst: buitenlijn
+  (10,38) l -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (11,38) l -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (12,38) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (13,38) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (14,38) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (16,38) d -> D  borst: slagschaduw onder de manen
+  (17,38) d -> 0  onderpunt x14 arcanine 22 51 0
+  (18,38) l -> 0  onderpunt x17 arcanine 20 49 d
+  (19,38) d -> m  onderpunt x17 arcanine 21 49 m
+  (20,38) l -> m  onderpunt x17 arcanine 22 49 m
+  (21,38) d -> 0  onderpunt x17 arcanine 23 49 0
+  (22,38) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 48 17
+  (23,38) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 49 17
+  (24,38) l -> m  veld-herhaald arcanine 51 17
+  (25,38) d -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 51 17
+  (26,38) M -> D  slagschaduw op lijf
+  (9,39) d -> 0  borst: buitenlijn
+  (10,39) l -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (11,39) l -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (12,39) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (13,39) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (14,39) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (15,39) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (18,39) l -> D  borst: slagschaduw onder de manen
+  (19,39) d -> 0  onderpunt x17 arcanine 21 50 d
+  (20,39) m -> 0  onderpunt x17 arcanine 22 50 0
+  (21,39) d -> D  slagschaduw op lijf
+  (22,39) l -> d  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 48 18
+  (23,39) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 49 18
+  (24,39) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 50 18
+  (25,39) d -> 0  veld-herhaald arcanine 51 17
+  (26,39) M -> D  slagschaduw op lijf
+  (9,40) d -> 0  borst: buitenlijn
+  (10,40) l -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (11,40) l -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (12,40) l -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (13,40) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (14,40) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (15,40) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (16,40) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (18,40) d -> D  borst: slagschaduw onder de manen
+  (19,40) d -> D  borst: slagschaduw onder de manen
+  (20,40) m -> 0  onderpunt x17 arcanine 22 51 0
+  (21,40) d -> D  slagschaduw op lijf
+  (22,40) l -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 48 19
+  (23,40) l -> m  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 49 19
+  (24,40) l -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 50 19
+  (25,40) M -> D  slagschaduw op lijf
+  (11,41) l -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (12,41) l -> L  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (13,41) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (14,41) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (15,41) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (16,41) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (17,41) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (18,41) d -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (19,41) d -> D  borst: slagschaduw onder de manen
+  (20,41) d -> D  borst: slagschaduw onder de manen
+  (22,41) d -> D  borst: slagschaduw onder de manen
+  (23,41) l -> 0  vlak: Arcanine-rugpluk (x33-60,y2-26) op (7,23) arcanine 49 20
+  (24,41) M -> D  slagschaduw op lijf
+  (11,42) l -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (12,42) l -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (13,42) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (14,42) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (15,42) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (16,42) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (17,42) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (18,42) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (12,43) l -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (13,43) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (14,43) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (15,43) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (16,43) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (17,43) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (18,43) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (19,43) d -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (20,43) d -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (13,44) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (14,44) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (15,44) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (16,44) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (17,44) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (18,44) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (19,44) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (20,44) d -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (15,45) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (16,45) l -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (17,45) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (18,45) d -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (19,45) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (20,45) d -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (21,45) d -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (18,46) d -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (19,46) d -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (20,46) d -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (21,46) d -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)
+  (20,47) m -> M  borst: lijftint uit modelhelderheid (lichtste 25% L, rest M)

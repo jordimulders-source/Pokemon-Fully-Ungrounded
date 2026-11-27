@@ -779,6 +779,7 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - **Jordi (25 nov):** "is het in kleur uit te drukken dat het staal sterker wordt? Damascus steel is tof maar ik vraag me af of dat in een sprite te zien is, helemaal met de vormen die we gaan maken". Claude: test `sprites/impala_lijn/staal_test.png` (hoornstrook 5 px): damascus wordt ruis; dof → gepolijst → spiegelglans met slijprand leest wel.
 - **Besloten (Jordi, 25 nov: "akkoord"):** hoorns worden per fase sterker staal via glans en contrast, geen damascus: dikdik-speerpunt dof ijzer → impala gepolijst staal → kudu spiegelglans met witte slijprand.
 - **Besloten (Jordi, 25 nov: "akkoord, echte tekening houden, kom maar met de dikdik"):** lichaamspatroon = echte tekening, overdreven, groeit per fase: dikdik bijna effen (traan voor het oog, kuif), impala scherpe tweedeling rug/flank/buik + zwarte M + plukjes, kudu witte verticale strepen + witte V tussen de ogen (wit = slijprand-wit).
+- **Kudu (Jordi, 26 nov, meerkeuze):** uitstraling koninklijk, kalm; manen + keelfranje; hoorns heel groot (±2–2,5 draai, ongeveer even hoog als het lijf); pre-evolutie niet noemen in de prompt. Prompt r1: `sprites/impala_lijn/kudu/gemini/PROMPTS.md`.
 
 ## Glitch → bug → virus (Jordi, 25 nov)
 - **Jordi:** "ik dacht eerst aan glitch -> bug -> virus maar dat was dus niet logisch". Claude: als computerlijn klopt het wel (glitch = wat je ziet, bug = de fout in de code, virus = programma dat zich verspreidt); Bug houden in alle fases is dan logisch, "bug" is de woordgrap die de lijn draagt.
@@ -842,6 +843,8 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - **Yeti (Jordi, 25 nov):** variant a ("ja"; advies Claude: 3–4 stenen, één in de borst, b en c te complex voor een sprite). Jordi: "wat we dan doen is waar de knopen in fase 1 zitten worden steeds grotere gloeiende stenen".
 - **Fase 1-knopen (Jordi, 25 nov):** "koude donkere steentjes"; ze gloeien pas vanaf fase 2.
 - **Fase 2 (Jordi, 26 nov, meerkeuze):** houten saunaemmer; twee grotere gloeiende stenen; groter, met armen; tevreden/ontspannen. Map `docs/concept/sprites/sneeuwmonster_fase2/`.
+- **Fase 3 (Jordi, 27 nov):** "ik wil dat die een zittende pose heeft, heel relaxte tevreden vriendelijke yeti. Emmer nog op zijn hoofd maar die is meegevormd en daarom niet puur een emmer meer, schouders, de knopen op de buik en indien mogelijk (als dat past) knieën zijn stenen. Hij ziet er groot en gevaarlijk uit qua postuur maar hij is heel vriendelijk zolang die maar lekker van zn sauna mag genieten. armen misschien in de leun pose alsof die ze op een leuning heeft hangen". Map `docs/concept/sprites/sneeuwmonster_fase3/`.
+
 ## Originele Poison-lijn (Jordi, 26 nov)
 - Jordi: "ik denk dat ik nog een originele poison lijn wil toevoegen". Oude ideeën (pijlstaartrog, pijlgifkikker, koraalslang, Amazone-insecten, açaí, ozongat) "niet overtuigend genoeg"; hoatzin geschrapt voor nu.
 - Ronde 1 (Claude): Chinchorro-mummie ("te luguber"), curare-blaaspijp (vraag: tool of plant? Claude: gif uit lianen, blaaspijp is mensenwerk), kwik-blob Poison/Steel ("een optie"), zombieschimmel ("tof maar wel precies parasect"), gifbeker van een alchemist.

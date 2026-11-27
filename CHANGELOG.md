@@ -3597,30 +3597,58 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Ontwerp via Gemini r1–r10 (`docs/concept/sprites/guarana_fase2/gemini/`): vertakte liaan met drie trossen (Jordi), getwijnde liaan + echt guaraná-blad (keuze 1 en 3), minder/grotere ogen, gesloten vruchten erbij, hangende trossen met peervormige vruchten (r9/r10, "meeste guarana"). Gemini telde steeds te laag ("twice as many" deed niets); model = r10 met elke tros verschoven nog eens erachter geplakt (`plak/dubbel.py`).
 - Sprite: 16 makerrondes + DC-eindkeuring (PASS, 57 px). Belangrijkste stappen: volume en schaduw (r3), gladde randen (r4), pupillen gevarieerd (r5), afwerking naar fase 1-palet en -verhoudingen (r6–r8), ronde trosranden (r10), ronde oogvruchten i.p.v. vierkanten (r13, bewaard in `bewaard_r13/`), trossen ±1,6× groter mogen over blad/takken vallen (r14, Jordi), fase 1-oog en precies vier ogen naar linksonder (r15–r16). Palet = fase 1 (12 kleuren).
 - `docs/concept/sprites/guarana_fase2/af/guarana_fase2.png` (+ `normal.pal`, 8×); op het overzichtsvel (sectie New). Lijn af; namen open. Vaste regels en alle citaten in `guarana_fase2/SPEC.md`; lessen in `docs/lessen/GEMINI.md`.
-### [v0.0.859] - Idee: Ledian-evolutie (27 nov)
+
+### [v0.0.x] - Sauna-yeti (sneeuwmonster fase 3) frontsprite af (27 nov)
+- Eindvorm van de sneeuwmonster-lijn (Ice/Fire): grote, zittende, onderuitgezakte yeti van sneeuw met de armen over een onzichtbare leuning, halfopen relaxte ogen, de houten emmer op de kop, gloeiende vulkanische stenen op schouders, buik en knieën (Jordi: "heel relaxte tevreden vriendelijke yeti", "groot en gevaarlijk qua postuur").
+- Model: Gemini s3b (pose via een posebijlage, daarna lengte en ogen bijgestuurd). Prompts en rondes in `docs/concept/sprites/sneeuwmonster_fase3/gemini/PROMPTS.md`.
+- Frontsprite `docs/concept/sprites/sneeuwmonster_fase3/af/sauna_yeti.png` (+ `_8x`, 62×49 px, 16 kleuren): kale reductie r2 + Jordi's punten (minder rechte lijnen, buiksteen, dikkere band), eindkeuring (houttinten per pixel, gezichtshuid in modeltint met licht en schaduw, binnenlijnen niet zwart, pupil naar binnen). Op het overzichtsvel. Lijn af; naam open.
+- Nieuwe vaste regel (Jordi): "als je iets 'rustig' vindt is dat een ander woord voor hertekend naar pixelblur en dus compleet verknald" (`CLAUDE.md`, `SPRITE_KERN.md`).
+
+### [v0.0.859] - Zandloper-lijn: fase 1 frontsprite af (27 nov)
+- Fase 1 (zandloper met ogen, Ground/Psychic) frontsprite af in `docs/concept/sprites/zandloper/fase1/af/`: zwevende, scheve zandloper met de sluwe ogen van de opgesloten djinn in het zand en twee losse houten handen. Model = Gemini r6 + handen uit r3 (gedraaid, variant C); sprite = model 1-op-1 op zijn eigen raster (63×64) + eindkeuring tinten/schaduw. Op het overzichtsvel. Prompts r1–r8 in `zandloper/fase1/gemini/PROMPTS.md`, besluiten in `zandloper/fase1/SPEC.md`.
+- Lessen (GEMINI.md): feitelijke opmerking van Jordi = kritiek; pixel aanwijzen via een krabbel op de sprite; ver oog in driekwart nooit groter.
+
+### [v0.0.860] - Kudu (impala-lijn fase 3): keuzes en Gemini-prompt r1
+- Jordi (26 nov): uitstraling koninklijk en kalm, manen + keelfranje, hoorns heel groot, pre-evolutie niet noemen, "mag echt een grote sprite zijn ook", kudustrepen erop "indien mogelijk". `docs/concept/sprites/impala_lijn/kudu/SPEC.md`, prompt in `kudu/gemini/PROMPTS.md`.
+
+### [v0.0.861] - Kudu (impala-lijn fase 3): frontsprite af
+- Jordi (27 nov): "ik zie amper verschil, doe maar duidelijk". `docs/concept/sprites/impala_lijn/kudu/af/kudu.png` (= `sprite/r16/kudu_r16B.png`). Gemini r1–r5 → model r3b met manen verschoven over de schouder (A3); reductie r1–r6 met 2 keuringen; oog K4 (Bidoof, klein zwart oog); manen opnieuw als losse vorm met licht gerafelde rand (B6a + schouder r12); eindkeuring Dragonfly Cave (gekleurde selout, gedeelde warme lijnkleur), rechte lijnen nagelopen (r15) en volume (r16 B, extra tussentint). Op het overzichtsvel na de impala; impala-lijn af. Lessen in `SPRITE_WERKWIJZE.md` (referentie 1-op-1 nadoen, velscripts niet importeren) en `GRAPHICS.md` (gedeelde lijnkleur bij goud).
+### [v0.0.862] - Hoatzin fase 1 (kuiken): frontsprite-kandidaat (27–28 nov)
+- 17 Gemini-rondes voor het kuiken (`docs/concept/sprites/hoatzin/gemini/fase1_r*.png`); Jordi koos r4 als model, met rughaar weg, vleugelharen vervangen door sprite-haren, donkere wig = lijf en poot doorgetrokken.
+- Sprite r1–r4 in `hoatzin/sprite_fase1/` (maker → keurder → DC-eindkeuring PASS): 40×44, ±736 px, zwart-aandeel 41 → 20 %, 11 kleuren, haren A en B. Wacht op Jordi.
+- Les in GEMINI.md: referentiefoto eerst zelf beschrijven en laten bevestigen; geen eigen vormen in prompts; sarcasme niet als compliment lezen.
+
+### [v0.0.863] - Hoatzin fase 1 (kuiken): frontsprite af (28 nov)
+- Frontsprite af: `docs/concept/sprites/hoatzin/af/hoatzin_fase1.png` (= `sprite_fase1/r9`). Na r4: Jordi op de rechterhelft ("niet goed te zien waar de ledematen los van elkaar zitten") → nabije vleugel als één gevouwen vorm (Jordi's omtrek), binnenlijnen niet zwart maar donkere eigen tint (r5–r8), DC-eindkeuring r9 (13 px, PASS). Haren B (Jordi).
+- Op het overzichtsvel (New, vóór fase 2). Hoatzin-lijn af; namen open.
+- Les in GRAPHICS.md: haarwortels apart houden in binnenlijnscripts; slagschaduw naast een lijn in dezelfde tint = dubbele lijn.
+
+### [v0.0.864] - Zandloper fase 1: terug naar fase 1-maat (27 nov)
+- De 1-op-1-versie was groter dan fase 3 (Jordi: "hij is nu te groot geworden"); `af/zandloper_fase1.png` is nu de 0,70-reductie (44×45, ±980 px, Baltoy-maat) met dezelfde keuring van tinten en schaduw en linkeroog variant A (pupil 2 px hoog). Grote versie bewaard in `zandloper/fase1/sprite/r14_natief/af_oud/`. Overzichtsvel bijgewerkt.
+### [v0.0.865] - Idee: Ledian-evolutie (27 nov)
 - `docs/concept/IDEEEN.md`: Jordi's idee voor een Ledian-evolutie (Bug/Cosmic, superheld die door de ruimte vliegt) + repo-check (Ledian = Bug/Normal, Ledyba-lijn nog niet in de dex).
-### [v0.0.860] - Ledian-evolutie: besluiten + Gemini-prompt r1 (27 nov)
+### [v0.0.866] - Ledian-evolutie: besluiten + Gemini-prompt r1 (27 nov)
 - Jordi: fase 3, nog meer superheld, space superhero, Ledians designrichting verder doortrekken (`IDEEEN.md`).
 - Prompt r1: `docs/concept/sprites/ledian_evo/gemini/PROMPT_r1.md`.
-### [v0.0.861] - Ledian-evolutie: Gemini r1 + prompt r2 (27 nov)
+### [v0.0.867] - Ledian-evolutie: Gemini r1 + prompt r2 (27 nov)
 - r1 bewaard (`ledian_evo/gemini/r1.png`); prompt r2 noemt Ledian, superheld/tokusatsu, vliegpose met arm vooruit (Jordi).
-### [v0.0.862] - Ledian-evolutie: Gemini r2 + prompt r3 (27 nov)
+### [v0.0.868] - Ledian-evolutie: Gemini r2 + prompt r3 (27 nov)
 - r2 bewaard; prompt r3 met r2 als bijlage: rug kleiner/aerodynamisch als spacevliegtuigvleugels, hoofd aerodynamischer (Jordi).
-### [v0.0.863] - Ledian-evolutie: Gemini r3 + prompt r4 (27 nov)
+### [v0.0.869] - Ledian-evolutie: Gemini r3 + prompt r4 (27 nov)
 - r3 bewaard; Jordi: "het mag echt nog meer space robot". Prompt r4 = nieuwe startprompt zonder bijlage met alle besluiten.
-### [v0.0.864] - Ledian-evolutie: Gemini r4a/r4b + prompt r5 (27 nov)
+### [v0.0.870] - Ledian-evolutie: Gemini r4a/r4b + prompt r5 (27 nov)
 - r4b beter (Jordi); prompt r5 met r4b als bijlage: volledig stervormig rood hoofd, mondje weg, iets langer.
-### [v0.0.865] - Ledian-evolutie: Gemini r5 + prompt r6 (27 nov)
+### [v0.0.871] - Ledian-evolutie: Gemini r5 + prompt r6 (27 nov)
 - r5 afgekeurd (geen mond, armen te kort/gek); prompt r6 from scratch met alle besluiten.
-### [v0.0.866] - Ledian-evolutie: Gemini r6 (27 nov)
+### [v0.0.872] - Ledian-evolutie: Gemini r6 (27 nov)
 - r6 bewaard ("deze vind ik tof"); spritecheck: natief ±66×66, ±9 kleuren.
-### [v0.0.867] - Ledian-evolutie: model r6 bevroren + sprite r1 (27 nov)
+### [v0.0.873] - Ledian-evolutie: model r6 bevroren + sprite r1 (27 nov)
 - SPEC `docs/concept/sprites/ledian_evo/SPEC.md`; mond blijft zoals in het model (Jordi).
 - Sprite r1 (`ledian_evo/sprite_r1/`): verkleining van het model (natief 66×66, rijen 54/57 en kolommen 61/63 geschrapt), 13 kleuren, 52 px afwijking alleen op de buitenrand; spleten arm/hoofd en tussen de benen transparant. Nog geen kleur-/schaduwronde.
-### [v0.0.868] - Ledian-evolutie: kleurronde r2 (27 nov)
+### [v0.0.874] - Ledian-evolutie: kleurronde r2 (27 nov)
 - `ledian_evo/sprite_r2/`: tinten van de Gen 3-Ledian op de verdeling van r6 (Jordi: "2, maar mag net iets roder"), rood in drie varianten (a −5°, b −8° hoofd, c −11°); 69 donkergrijze binnenlijnen → rode selout; silhouetdiff 0, 13 kleuren.
-### [v0.0.869] - Ledian-evolutie: rood c + DC-eindkeuring (27 nov)
+### [v0.0.875] - Ledian-evolutie: rood c + DC-eindkeuring (27 nov)
 - Jordi koos rood c ("ik vind c wel tof, verder helemaal goed").
 - Eindkeuring (`ledian_evo/eindkeuring/`, PASS): 33 px belijning (outline base aan de lichtkant, zwart aan de schaduwkant, outline highlights); zwarte binnenlijnen hoofd/arm/vleugel bewust gehouden (selout liet ze versmelten); silhouetdiff 0, 13 kleuren + transparant (nieuw: Ledians donkerste geel a47b00 als voetlijn).
-### [v0.0.870] - Ledian-evolutie: frontsprite af (27 nov)
+### [v0.0.876] - Ledian-evolutie: frontsprite af (27 nov)
 - Jordi: "zeker, nice". `docs/concept/sprites/ledian_evo/af/ledian_evo.png` (+ 8×) = eindkeuring; op het overzichtsvel (Evolutions of existing Pokémon). Naam open; Ledyba-lijn moet terug in de dex. TODO-brainstorm Ledian weg.

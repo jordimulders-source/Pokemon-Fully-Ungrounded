@@ -1,0 +1,2 @@
+(32,21) 5->2  model r27 k26=2  puntje rechts van het linkeroog (model kol 26 r27 = 2)
+(31,20) 2->1  model r26 k25=1  pupil linkeroog bovenaan navy (model kol 25 r26 = 1)

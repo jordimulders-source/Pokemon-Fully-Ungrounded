@@ -76,6 +76,10 @@ SECTIES=[
 ("zandloper/fase1/af/zandloper_fase1.png",'Zandloper (zandloper-lijn fase 1)',"ground/psychic"),
 ("zandloper/fase2/af/zandloper_fase2.png",'Brein uit de zandloper (zandloper-lijn fase 2)',"ground/psychic"),
 ("zandloper/fase3/af/zandloper_fase3.png",'Zand-djinn (zandloper-lijn fase 3)',"ground/psychic"),
+("terreurvogel/fase1/af/terreurvogel_fase1.png",'Terreurvogel fase 1 (kuiken)',"rock/fight"),
+("terreurvogel/fase2/af/terreurvogel_fase2.png",'Terreurvogel fase 2 (fossiel, bijlsnavel)',"rock/fight"),
+("glyptodon/fase1/af/glyptodon_fase1.png",'Glyptodon fase 1 (fossiel)',"rock/normal"),
+("glyptodon/fase2/af/glyptodon_fase2.png",'Glyptodon fase 2 (fossiel, wall)',"rock/normal"),
 ]),
 ("Evolutions of existing Pokémon",[
 ('hitmontop_evo/af/hitmongroove.png', '"Hitmongroove" (Hitmontop)', 'fight/ground'),
@@ -128,10 +132,14 @@ SECTIES=[
 ("poliwrath_regional/af/poliwrath_regional.png",'Poliwrath (regional)',"ice/poison"),
 ("grimer_hoenn/af/grimer_hoenn.png",'Grimer (regional)',"poison/ground"),
 ("muk_hoenn/af/muk_hoenn.png",'Muk (regional)',"poison/ground"),
+("hitmonlee_regional/af/hitmonlee_regional.png",'Hitmonlee (regional)',"fire"),
+("hitmonchan_regional/af/hitmonchan_regional.png",'Hitmonchan (regional)',"ice"),
 ("dj_rotom/af/dj_rotom.png",'"DJ Rotom"',"electric/steel"),
 ]),
 ("Legendaries",[
 ("regiaqua/af/regiaqua.png",'"Regiaqua"',"water"),
+("regicosmo/af/regicosmo.png",'"Regicosmo"',"cosmic"),
+("hanan_pacha/af/hanan_pacha.png","Hanan Pacha","fire/flying"),
 ]),
 ]
 F="/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"; FR=F.replace("-Bold","")

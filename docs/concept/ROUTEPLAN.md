@@ -8,7 +8,7 @@ Opzet van Claude (22 okt) om alle plekken, dungeons en legendes uit `REGIO.md`, 
 | 1 | **Gym 1 Ground: Uyuni** | zoutvlakte, Isla Incahuasi, treinkerkhof | — | spiegel van Uyuni (post-game, regenseizoen) |
 | 2 | **Terug noord: gym 2 Ice, Cordillera Real** | trein Uyuni → Oruro (Diablada) → La Paz → Cordillera Real (Chacaltaya, Huayna Potosí, Mururata-legende) | mijn van Potosí (El Tío, carbunclo) | Wanaku; Dodenweg (Yungas) |
 | 3 | **Zuid: gym 3 Fire, Atacama** | Lípez (Laguna Colorada, geisers, Licancabur) → San Pedro de Atacama | — | Valle de la Luna/de la Muerte (na gym 4) |
-| 4 | **Gym 4 Dragon: Cuzco** | route naar het noorden (Peru) → Cuzco (Amaru, Sacsayhuamán) | Rainbow Mountain (kleurpuzzel), Moray (ringen), Nazca-lijnen | Inca Trail (= Victory Road, na gym 8) |
+| 4 | **Gym 4 Dragon: Cuzco** | route naar het noorden (Peru) → Cuzco (Sacsayhuamán) | Rainbow Mountain (kleurpuzzel), Moray (ringen), Nazca-lijnen | Inca Trail (= Victory Road, na gym 8) |
 | — | **Fly** | na gym 4 | | |
 | 5 | **Groot middenstuk → gym 5 Poison: Buenos Aires** | lange tocht zuid → Atacama (maanlandschap) → Noord-Argentinië (Salta, Humahuaca, Cafayate) → Mendoza → Patagonië (Perito Moreno, grotten) → Buenos Aires | Cerro Uritorco (Psychic, ufo), Cuevas de Mármol, Cueva del Milodón, Cueva de las Manos | Chiloé (Caleuche, spookschip) |
 | 6 | **Gym 6 Dark: Rio** | Iguazú (enorme waterval oversteken, M'boí) → Zuid-Brazilië → Rio | Guaraní-'zeven monsters'-quest rond Iguazú | boot Rio → Amazone (post-game) |

@@ -3736,8 +3736,116 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Versierd koekje (paars glazuur, witte zigzag, hagelslag, paars juweel) op een koekster met chips, naar Gemini r4; alle tien punten afgestompt naar de Gen 3-Starmie (r6 licht), bovenpunt 1 rij terug (r8 A), keuring + DC-eindkeuring PASS (r7, r9). `docs/concept/sprites/staryu_regional/starmie/af/` (+ `normal.pal`, 8×); op het overzichtsvel (Fairy/Psychic). Regionale Staryu-lijn af.
 ### [v0.0.907] - Regionale Starmie: afwerking (27 nov)
 - Jordi omcirkelde twee plekken ("nog niet netjes afgewerkt"): achterpunt rechtsboven opgeschoond (licht/donker vlak, chips, nette binnenlijn) en rechter voortip even stomp als links (r10, r11 B; "smoother", "rechts is de punt puntiger"). `starmie/af/` = r11 B; overzichtsvel bijgewerkt.
+### [v0.0.908] - Idee: regionale Hitmonlee en Hitmonchan (27 nov)
+- `IDEEEN.md`: nieuwe sectie met Jordi's idee (Hitmonchan Ice, ijssculptuur met kubushandschoenen; Hitmonlee misschien vuur), repo-check en open vragen.
 
-### [v0.0.908] - Kay Pacha (poema-legendary): start (27 nov)
+### [v0.0.909] - Pitch regionale Hitmonlee (27 nov)
+- `IDEEEN.md`: zes ideeën voor de regionale Hitmonlee onder "Regionale Hitmonlee en Hitmonchan".
+- Besloten: Tyrogue blijft hetzelfde (Jordi).
+- Besloten: regionale Hitmonlee = voetballer in omhaalpose, van gloeiend geblazen glas (Jordi).
+
+### [v0.0.910] - Regionale Hitmonlee: keuzes + Gemini-prompt r1 (27 nov)
+- Hitmonlee regional: puur Fire, gloeiend geblazen glas, omhaalpose, geen bal, knipoog naar "de man van glas" (Jordi). Prompt en besluiten in `docs/concept/sprites/hitmonlee_regional/SPEC.md`.
+
+### [v0.0.911] - Regionale Hitmonlee: Gemini r1 + prompt r2 (27 nov)
+- r1 opgeslagen (`hitmonlee_regional/gemini/r1.png`); Jordi: pose klopt niet, nog niet glasachtig. Prompt r2 in de SPEC (echte omhaal liggend in de lucht, glas doorschijnend met gloeiende kern).
+
+### [v0.0.912] - Regionale Hitmonlee: model gekozen (Gemini r2) (27 nov)
+- Jordi: "dit is hem". Kale reductietest in `hitmonlee_regional/test/` (raster 68×74 → 64).
+
+### [v0.0.913] - Regionale Hitmonlee: frontsprite-kandidaat + eindkeuring (27 nov)
+- Maker nam Gemini r2 over (raster 5,12 px, rijen/kolommen geschrapt naar 59×64, 15 kleuren); eindkeuring ek1 PASS. Ter beoordeling bij Jordi: `hitmonlee_regional/eindkeuring/ek1.png`.
+- Les in `GEMINI.md`: pitch altijd op 8× controleren.
+
+### [v0.0.914] - Regionale Hitmonlee: tweede eindkeuring ek2 (27 nov)
+- Verse DC-keurder: PASS, 1 px gewijzigd (`hitmonlee_regional/eindkeuring/ek2.png`). Open punt: linkerwand van de romp rechter dan de koepel in het model.
+
+### [v0.0.915] - Regionale Hitmonlee: rechte lijnen gefixt (r15 / ek3) (27 nov)
+- Jordi: benen, arm en bovenkant kop hadden slordige rechte lijnen. Benen nu per ring gebouwd zoals de Gen 3-Hitmonlee, koepel rond, arm taps; rest gelijk aan ek2. Eindkeuring ek3 PASS (`hitmonlee_regional/eindkeuring/ek3.png`).
+- Lessen in `GEMINI.md`: rijen schrappen maakt rondingen recht; geribbelde ledematen per ring van 3 rijen.
+
+### [v0.0.916] - Regionale Hitmonchan: Gemini-prompt r1 (27 nov)
+- `hitmonchan_regional/SPEC.md`: ijssculptuur met kubushandschoenen, prompt r1. Intussen Hitmonlee r16 (gladde beenomtrek) in de maak.
+
+### [v0.0.917] - Regionale Hitmonlee: gladde benen + Jordi's punten (r16 / ek4) (27 nov)
+- Benen met gladde "getapete" omtrek, ringen alleen binnenin (r16); ek4: losse pixels weg, verre oog ovaal, plooi in de trapvoet schuin, aansluiting kop↔trapbeen vloeiend (`hitmonlee_regional/eindkeuring/ek4.png`).
+- Hitmonchan regional: Gemini r2 + prompt r3 (uppercut, kubusvuisten één stuk met de arm).
+
+### [v0.0.918] - Regionale Hitmonlee: frontsprite af (27 nov)
+- Jordi: "ja hij is af". `hitmonlee_regional/af/hitmonlee_regional.png` (= ek4), op het overzichtsvel bij Regional forms (Fire). Stand van zaken in CLAUDE.md bijgewerkt.
+
+### [v0.0.919] - Regionale Hitmonchan: frontsprite-kandidaat + eindkeuring (27 nov)
+- Gemini r3 (uppercut, uitgehakt ijs) overgenomen: gezicht 1-op-1 op modelgrootte (Jordi: "de ogen zijn het belangrijkst"), rest ±76 %, 7 kleuren. Eindkeuring ek1 PASS (`hitmonchan_regional/eindkeuring/ek1.png`). Les in `GEMINI.md`.
+
+### [v0.0.920] - Regionale Hitmonchan: frontsprite af (27 nov)
+- Jordi: "nu is die af". `hitmonchan_regional/af/hitmonchan_regional.png` (= ek4: rechte lijnen nagemeten, linkeroog-puntje uit het model, ^-lijn schouder↔kubus terug), op het overzichtsvel bij Regional forms. Stand van zaken in CLAUDE.md bijgewerkt (110 frontsprites).
+### [v0.0.921] - Terreurvogel fase 2: frontsprite af (27 nov)
+- Regionaal fossiel (Rock/Fighting, snelle physical sweeper); tegenhanger van de glyptodon (Rock/Normal). Ontwerp via Gemini r1–r7 (`docs/concept/sprites/terreurvogel/fase2/gemini/PROMPTS.md`); Jordi koos uiteindelijk r1 met minder detail (`r1_eenvoud.png`): sprint naar links met bijlsnavel, verhouding ±64×40 zoals Lapras.
+- Snavel van staal naar steen ("anders klopt het type niet meer"), palette swap v8 gekozen (stenen snavel, antraciet lijf, roestaccenten, beige poten), Spearow-oog (driekwart). Sprite r4 (rond volume per onderdeel) + DC-eindkeuring ek1 (PASS). Af: `docs/concept/sprites/terreurvogel/fase2/af/terreurvogel_fase2.png`; op het overzichtsvel; naam open.
+- Fase 1 (kuiken met enorme kop en snavel) in de eindkeuring; glyptodon-lijn (fase 2 in ontwerp) meegemerged van een andere sessie.
+### [v0.0.922] - Glyptodon-lijn (regionaal fossiel): frontsprite-kandidaten fase 1 en 2 (27 nov)
+- Regionale fossielen besloten (IDEEEN.md → "Regionale fossielen"): terreurvogel Rock/Fighting (snelle physical sweeper), glyptodon Rock/Normal (wall, eigen ability later), 2 fases elk.
+- Glyptodon fase 2: Gemini r1–r6, model = r4 + stekel met band van r6 (plek en hoek als r6) + staart van r3_3 + schildstrepen van r6, geplakt op het natieve Gemini-raster (`glyptodon/fase2/model.png`, `gereedschap/model_natief.py`). Sprite r1–r7 (per onderdeel uit de scherpe bron), oog = 5 oranje pixels uit het model met zwarte pupil op (13,41), lid en vizierlijn bruin (B + lijn); eindkeuring ek1–ek2 (randen in eigen tint, strepen, voeten met tenen): `fase2/eindkeuring/ek2.png`.
+- Glyptodon fase 1: model = Gemini r1 A; sprite r1–r5 op 0,6 (51×32, 940 px); oog uit de modelcellen, 6 pixels ([wit, zwart, crème]/[zwart, zwart, crème]), goedgekeurd door Jordi: `fase1/sprite/r5.png`.
+- Naast elkaar: `glyptodon/lijn_fase1_fase2.png`. Open: poten fase 2 nog recht (model ook), eindkeuring fase 1, kleurverschil grijs ↔ bruin tussen de fases, namen.
+- Lessen: plakken tussen Gemini-plaatjes op het natieve raster (GEMINI.md); tintenlimiet is geen regel van Jordi; kleine ogen (SPRITE_KERN.md, referentievel `glyptodon/referenties_ogen/`).
+
+### [v0.0.923] - Glyptodon-lijn: fase 1 en 2 frontsprite af (27 nov)
+- Jordi: "akkoord, fase 1 en 2 af". Fase 1 = sprite r5 (`glyptodon/fase1/af/glyptodon_fase1.png`; eindkeuring niet nodig volgens Jordi), fase 2 = eindkeuring ek3 (`glyptodon/fase2/af/glyptodon_fase2.png`; poten als Rhydon/Camerupt met bolle dij en sikkelschaduw, met Jordi's toestemming afwijkend van het model). Beide op het overzichtsvel (bij de terreurvogel); 120 frontsprites af. Namen en eigen ability open.
+### [v0.0.924] - Terreurvogel fase 1: frontsprite af, lijn af (27 nov)
+- Kuiken met enorme kop en snavel, zittend en onhandig ("uncanny cute"), naar Gemini-model (`terreurvogel/fase1/gemini/model_kandidaat.png`), 45×45, silhouet bevroren ("het silhouet/de vorm is verder uitstekend").
+- Kleur: modelkleuren met rampen verder uit elkaar (Jordi: "te vergelijkbaar ... game boy color"), gezicht als eigen kleurgroep (warm lichtbruin), okerstenen snavel, oog D (Pidgeot). DC-eindkeuring ek1 PASS. Af: `docs/concept/sprites/terreurvogel/fase1/af/terreurvogel_fase1.png`; op het overzichtsvel. Terreurvogel-lijn af, namen open.
+
+### [v0.0.925] - Pacha-kwartet: start sparren (27 nov)
+- `POKEMON.md` → Legendaries: Jordi's uitgangspunten voor het kwartet (Hanan Pacha, Kay Pacha, Uku Pacha, Pachamama): niet in gym-/E4-teams, geen Cosmic ("ze zijn juist aards"), moeten ogen als box legendaries; eerst sparren over ontwerp en types, daarna één voor één designen.
+- Correctie: Amaru als thema van de Dragon-gym in Cuzco was een voorstel van Claude, nooit van Jordi; weggehaald uit `CONCEPT.md`, `ROUTEPLAN.md` en `IDEEEN.md`.
+
+### [v0.0.926] - Pacha-kwartet: wezens, geen godenbeelden (27 nov)
+- `POKEMON.md`: Jordi: het kwartet wordt Pokémon als mythische wezens (zoals Groudon/behemoth en Kyogre/leviathan), geen godenbeelden; typenvoorstel Claude (driehoek Fire/Flying, Grass/Fighting, Water/Ghost) genoteerd als open.
+
+### [v0.0.927] - Hanan Pacha: Fire/Flying (27 nov)
+- `POKEMON.md`: condor (Hanan Pacha) wordt Fire/Flying (Jordi); poema, slang en Pachamama-wezen nog open.
+
+### [v0.0.928] - Kay Pacha: Grass/Psychic (27 nov)
+- `POKEMON.md`: poema (Kay Pacha) wordt Grass/Psychic (Jordi); poema-lore in `IDEEEN.md`. Slang en Pachamama-wezen nog open.
+
+### [v0.0.929] - Uku Pacha: Water/Ghost (27 nov)
+- `POKEMON.md`/`TODO.md`: slang (Uku Pacha) wordt Water/Ghost (Jordi); typen van het trio rond. Pachamama-wezen nog open.
+
+### [v0.0.930] - Hanan Pacha: ontwerpbrief (27 nov)
+- `docs/concept/sprites/hanan_pacha/SPEC.md`: Jordi's eisen voor de condor-legendary (machtig, vleugels gespreid bijna als zon, niet te horizontaal, duidelijk condorhoofd, heroïsch, kraag, zwart/wit/goud/vuur, geen vlammen, geen Inca-patroon).
+
+### [v0.0.931] - Hanan Pacha: Gemini-prompt v1 (27 nov)
+- Jordi's antwoorden (shinen = felheid/kleur, driekwart links met de hele vorm zichtbaar, vuur niet zichtbaar) in `hanan_pacha/SPEC.md`; prompt v1 in `hanan_pacha/gemini/PROMPT.md`.
+
+### [v0.0.932] - Hanan Pacha: r1 + prompt v2 (27 nov)
+- Gemini r1 bewaard met Jordi's feedback (te zwart-wit, losse ring, geen legendary, kalkoenkop); prompt v2: vleugels vormen de kring, goud als hoofdkleur + vuurtinten, sierveren/massief/heroïsch, gierenkop zonder lel.
+
+### [v0.0.933] - Hanan Pacha: r2 + prompt v3 (27 nov)
+- Gemini r2 bewaard met Jordi's feedback (te veel Ho-Oh en zwart, kop klein en hangend, kraag kalkoen, niet heroïsch, staart ook naar links en tussen de klauwen); prompt v3.
+
+### [v0.0.934] - Hanan Pacha: prompt v4 (27 nov)
+- Keuzes na r3 (karmijnrode kop, losse vingerpennen, witte vleugelband + donkere punten, V-pose met pennen als zonnestralen) in SPEC; prompt v4.
+
+### [v0.0.935] - Hanan Pacha: r4 + prompt v5 (27 nov)
+- Gemini r4 bewaard ("beter, nog net niet majestueus"); Jordi's staartreferentie in `hanan_pacha/referentie/`; prompt v5 = v4 met een lange, omlaag hangende waaier van losse lansvormige staartveren.
+
+### [v0.0.936] - Hanan Pacha: prompt v6 (27 nov)
+- v5 (staart naar referentie, alleen vorm en richting) + kroonkam (K-a): grote vlezige kam die als natuurlijke kroon omhoog rijst.
+
+### [v0.0.937] - Hanan Pacha: r5, bijsturen, prompt v7 (27 nov)
+- r5 (ontwerp goed, pose te horizontaal) en het mislukte bijsturen bewaard; prompt v7 = v6 met steil opgeheven vleugels en expliciet vierkant beeldformaat (brede Gemini-beelden gaven brede poses).
+
+### [v0.0.938] - Hanan Pacha: frontsprite af (27 nov)
+- Condor-legendary Hanan Pacha (Fire/Flying) frontsprite af: `docs/concept/sprites/hanan_pacha/af/hanan_pacha.png` (+ 8×). Model Gemini r7 (pose) met de kleuren van r5 (goud, pennen wit → oranje → karmijn → donker, kop), staart van r5.
+- Nieuwe spritemethode (Jordi: "deze nieuwe methode is echt een top methode"): natief raster → exacte 2× met regels (vorm boven vlakkleur) → rijen/kolommen schrappen met kop/kraag beschermd. r1–r2 (oppervlaktegewogen 2,44×) waren pixelblur.
+- Klauwen 1-op-1 van Fearow (`_gba`, verre voet uit frame 2), karmijn (variant C); eindkeuring (42 px tint). Jordi: "ik ben tevreden, mogelijk kan die in de toekomst nog beter, maar voor nu prima".
+- Op het overzichtsvel (sectie Legendaries); lessen in `docs/lessen/GEMINI.md`. Gemerged met main (eigen changelogsecties hernummerd naar v0.0.925–938).
+### [v0.0.939] - Regicosmo: frontsprite af (27 nov)
+- Jordi: "ja die is af". `docs/concept/sprites/regicosmo/af/regicosmo.png` (= r7 na DC-eindkeuring PASS; hemellichamen als golem, Cosmic). Op het overzichtsvel onder Legendaries naast Regiaqua.
+
+### [v0.0.940] - Kay Pacha (poema-legendary): ontwerp + frontsprite-kandidaat (27 nov)
 - Type Grass/Psychic vastgelegd; Inca-decoratie zoals Entei/Raikou; kleuren open. `docs/concept/sprites/kay_pacha/SPEC.md`, POKEMON.md.
 - Kleurrichting A (poemavacht + Inca-goud + groene accenten); Gemini-prompt r1 in `kay_pacha/PROMPT.md`.
 - Kay Pacha: Gemini r8/r9; model bevroren (r9: groene poema met crème Inca-gezichtsplaat en trapkroon, goudgele ichu-mantel, paarse trapstrepen, twee bladlintstaarten); frontsprite gestart.
+- Gemini r10a (compacte pose, staarten omhoog) bevroren; oog volgens Jordi (wit-paars-wit + wit erboven, variant B). Sprite r1 (maker) + DC-eindkeuring ek1 (`kay_pacha/sprite/ek1/`).

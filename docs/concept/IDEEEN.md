@@ -891,3 +891,4 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - **Jordi (27 nov):** "Tyrogue blijft hetzelfde".
 - **Jordi (27 nov), keuze Hitmonlee:** "ja een voetballende hitmonlee lijkt me goed, doe maar een omhaal pose, maar we maken hem van glas gloeiend en geblazen". (= pitch 3 chilena + pitch 1 glassculptuur.)
 - **Jordi (27 nov):** "ook soort knipoog naar 'de man van glas' wat vaak met voetballers gezegd wordt" (= blessuregevoelige speler).
+- **Jordi (27 nov), keuzes Hitmonlee:** type puur Fire; geen bal; helemaal gloeiend; voetbal alleen in de pose (geen kleding/patronen). Sprite: `docs/concept/sprites/hitmonlee_regional/SPEC.md`.

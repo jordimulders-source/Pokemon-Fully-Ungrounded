@@ -3605,3 +3605,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - `IDEEEN.md`: zes ideeën voor de regionale Hitmonlee onder "Regionale Hitmonlee en Hitmonchan".
 - Besloten: Tyrogue blijft hetzelfde (Jordi).
 - Besloten: regionale Hitmonlee = voetballer in omhaalpose, van gloeiend geblazen glas (Jordi).
+
+### [v0.0.861] - Regionale Hitmonlee: keuzes + Gemini-prompt r1 (27 nov)
+- Hitmonlee regional: puur Fire, gloeiend geblazen glas, omhaalpose, geen bal, knipoog naar "de man van glas" (Jordi). Prompt en besluiten in `docs/concept/sprites/hitmonlee_regional/SPEC.md`.

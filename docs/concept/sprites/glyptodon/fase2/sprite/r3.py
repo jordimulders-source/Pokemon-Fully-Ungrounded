@@ -52,7 +52,7 @@ for y,x in zip(*np.where(binnen)):
             if 0<=p_<64 and 0<=q_<64 and binnen[p_,q_] and not lab4[p_,q_]: lab4[p_,q_]=m4; st.append((p_,q_))
     vast=any(buiten[p_,q_] for a,b in c for p_,q_ in ((a+1,b),(a-1,b),(a,b+1),(a,b-1)) if 0<=p_<64 and 0<=q_<64)
     if len(c)<=2 and not vast: B.update(c)
-B={p for p in B if not (40<=p[0]<=43 and 11<=p[1]<=16)} - set(los)
+B={p for p in B if not (40<=p[0]<=43 and 11<=p[1]<=16) and I0[p]==10} - set(los)   # alleen de grijze barststipjes; zwarte diagonale lijnen zijn structuur
 los_A=set(los); los=sorted(set(los)|B)
 TONEN={'g':None}
 def kleur(y,x):

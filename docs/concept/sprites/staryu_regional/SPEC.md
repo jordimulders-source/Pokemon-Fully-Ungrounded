@@ -24,3 +24,6 @@ Type, naam (regional forms: blijven Staryu/Starmie?), serieus/grap.
 ## Starmie-model gekozen (27 nov)
 - Jordi over r4: "Deze was bijna goed, alleen geen driekwartpose en de punten zijn te puntig, dat moest meer als de normale starmie, alleen de punten minder puntig maken". Gemini kon driekwart + achterster niet samen (v5–v8). Keuze uit (1) r4 + punten in de sprite minder puntig, pose blijft zoals r4, of (2) plakken: "doe maar r4".
 - **Model Starmie = `gemini/r4_starmie.webp`.** In de sprite: de achterpunten minder puntig, zoals de normale Starmie. Pose zoals r4.
+
+## Staryu af (27 nov)
+Jordi: "ja staryu is goed, zet maar in af". `staryu/af/staryu_regional.png` (= sprite_r5: model r4, keuring + eindkeuring PASS), op het overzichtsvel (Regional forms).

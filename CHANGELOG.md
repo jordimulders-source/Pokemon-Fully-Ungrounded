@@ -3613,3 +3613,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Jordi: "zoals de echte starmie"; bijstuurprompt r4 in `docs/concept/sprites/staryu_regional/PROMPT.md`.
 ### [v0.0.866] - Regionale Starmie: r4 (27 nov)
 - r4 opgeslagen; Jordi: achterkant "veel te puntig", fixen in de spritefase met de echte Starmie als voorbeeld.
+### [v0.0.867] - Regionale Staryu: frontsprite af (27 nov)
+- Chocolate chip-koekje met rood juweel, naar Gemini r4 (driekwart; r3 stond te recht). Sprite r5: exacte 2×-reductie van het model + keuring (BIJNA → reparaties) en DC-eindkeuring (PASS). `docs/concept/sprites/staryu_regional/staryu/af/` (+ `normal.pal`, 8×); op het overzichtsvel (Regional forms, type open).
+- Starmie: model = Gemini r4 (Jordi: "doe maar r4"); Gemini kon driekwart + achterster niet samen (v5–v8). Sprite in de maak: achterpunten minder puntig zoals de normale Starmie.

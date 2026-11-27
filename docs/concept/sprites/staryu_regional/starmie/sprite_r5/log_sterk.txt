@@ -1,0 +1,19 @@
+gaten tussen voor en achter 0
+stomp sterk W 5.0 weg per punt {'linksboven': 9, 'rechtsboven': 8, 'linksonder': 10, 'rechtsonder': 10, 'onder': 8}
+stomp info {'linksboven': {'richting': 129.3, 'lengte_voor': 28.4, 'lengte_na': 25.9}, 'rechtsboven': {'richting': 55.7, 'lengte_voor': 26.6, 'lengte_na': 24.1}, 'linksonder': {'richting': -155.2, 'lengte_voor': 28.6, 'lengte_na': 25.1}, 'rechtsonder': {'richting': -27.6, 'lengte_voor': 25.9, 'lengte_na': 22.9}, 'onder': {'richting': -94.4, 'lengte_voor': 26.1, 'lengte_na': 24.1}}
+starmie_r5_sterk
+linksboven px 102 chips 6
+rechtsboven px 66 chips 5
+linksonder px 43 chips 2
+rechtsonder px 57 chips 2
+onder px 44 chips 2
+wit lijn 85 
+juweel lijn 23 [(np.int64(26), np.int64(23)), (np.int64(25), np.int64(24)), (np.int64(26), np.int64(24)), (np.int64(24), np.int64(25)), (np.int64(25), np.int64(25)), (np.int64(31), np.int64(25)), (np.int64(23), np.int64(26)), (np.int64(24), np.int64(26)), (np.int64(30), np.int64(26)), (np.int64(22), np.int64(27)), (np.int64(23), np.int64(27)), (np.int64(31), np.int64(28)), (np.int64(32), np.int64(29)), (np.int64(35), np.int64(29)), (np.int64(32), np.int64(30)), (np.int64(35), np.int64(30)), (np.int64(35), np.int64(31)), (np.int64(30), np.int64(32)), (np.int64(35), np.int64(32)), (np.int64(34), np.int64(33)), (np.int64(31), np.int64(34)), (np.int64(33), np.int64(35)), (np.int64(31), np.int64(36))]
+ontkorrelen 137 
+koek in glazuur 1 [(np.int64(18), np.int64(45))]
+ontkorrelen achter 47 
+stomp weg 45 
+buitenlijn 81 
+binnenlijn achter 29 [(np.int64(38), np.int64(13)), (np.int64(24), np.int64(14)), (np.int64(39), np.int64(14)), (np.int64(23), np.int64(15)), (np.int64(40), np.int64(15)), (np.int64(23), np.int64(16)), (np.int64(41), np.int64(16)), (np.int64(22), np.int64(17)), (np.int64(40), np.int64(17)), (np.int64(22), np.int64(18)), (np.int64(41), np.int64(18)), (np.int64(19), np.int64(19)), (np.int64(20), np.int64(19)), (np.int64(21), np.int64(19)), (np.int64(42), np.int64(19)), (np.int64(43), np.int64(19)), (np.int64(44), np.int64(19)), (np.int64(15), np.int64(20)), (np.int64(17), np.int64(20)), (np.int64(18), np.int64(20)), (np.int64(11), np.int64(34)), (np.int64(12), np.int64(35)), (np.int64(13), np.int64(36)), (np.int64(13), np.int64(37)), (np.int64(13), np.int64(38)), (np.int64(13), np.int64(39)), (np.int64(45), np.int64(39)), (np.int64(13), np.int64(40)), (np.int64(12), np.int64(41))]
+losse zwarte pixel 6 [(np.int64(23), np.int64(13)), (np.int64(13), np.int64(14)), (np.int64(35), np.int64(16)), (np.int64(47), np.int64(30)), (np.int64(45), np.int64(31)), (np.int64(8), np.int64(40))]
+figuur x3-57 y2-54 55x53, 1733 px

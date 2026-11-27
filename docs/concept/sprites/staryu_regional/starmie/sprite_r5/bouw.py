@@ -13,7 +13,7 @@ _k.natief=voor_r4.natief; _k.voor_mask=voor_r4.voor_mask; gemeen.MODEL='referent
 from kaal import voorste, PT, KT, tint
 CHOC=15
 a=natief(); vm=voor_mask(a)
-F0,fm=voorste()
+F0,fm=voorste(); F0RAW=F0.copy()
 o=F0.copy(); log={}
 def zet(x,y,k,stap):
     if o[y,x]!=k: o[y,x]=k; log.setdefault(stap,[]).append((x,y))
@@ -139,7 +139,7 @@ for Y,X in zip(*np.where(BM&~fm)):
         if PN[v,u]: c[PN[v,u]]=c.get(PN[v,u],0)+w
     PNAAM[Y,X]=max(c,key=c.get) if c else ''
 np.save('sprite_r5/gereedschap/pnaam.npy',PNAAM.astype(str))
-kaal=o.copy(); opslaan(kaal,'sprite_r5/kaal_%s.png'%NAAM)
+kaal=o.copy(); KAAL=np.where(fm,np.where(F0RAW==15,6,F0RAW),kaal); opslaan(KAAL,'sprite_r5/kaal.png')   # echte kale samenstelling: voorste ster zonder reparaties + achterpunten zonder reparaties
 # --- ontkorrelen achterpunten: koekvlekjes < 3 px nemen de buurtint (geen chips, geen lijn D)
 for rnd in range(3):
     for k in (3,4,5,6):

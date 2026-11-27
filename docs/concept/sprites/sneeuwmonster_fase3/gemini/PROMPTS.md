@@ -69,24 +69,25 @@ AVOID: stiff arms held out in the air, arms stretched out straight like a starfi
 - `s1/s1a.png`. Jordi: "houding is goed, maar hij is te dik, en voor de rest klopt er weinig van".
 - Jordi op de meerkeuzevraag (te veel gorilla/aap, niet van sneeuw, past niet bij de lijn, gezicht): "alles".
 
-## s2 (stap 1 opnieuw, nieuw gesprek, BIJLAGE `s1/s1a.png` alleen voor de pose)
-Eigen invulling Claude: het gezicht en de handen/voeten van fase 2 in woorden (steentjesogen met lidlijn, golvend mondje, geen neus/oren, baardfranje, sneeuwwanten/-voeten), slanker.
+- Jordi: "hoef ik toch niet te herhalen", "het hele design niet", "allang besproken" (Claude had in stap 1 het hele besproken design weggelaten en vroeg daarna wat er mis was).
+
+## s2 (nieuw gesprek, BIJLAGE `s1/s1a.png` alleen voor de pose) = het volledige design van r2 + de pose van s1 + slanker + grotere stenen
 ```
-The attached image is ONLY a pose reference. Keep exactly this sitting pose (slumped back, legs loose in front, arms hung back over an invisible backrest, head leaning back). Do NOT copy anything else from it: not its face, not its hands, not its body shape, not its colors. It is not an ape.
+The attached image is ONLY a pose reference: keep exactly this sitting pose (slumped back against a wall, legs loose and apart in front, arms hung back over the top of an invisible backrest with the hands dangling, head leaning back). Do NOT copy anything else from it: not its face, hands, body shape or colors. It is not an ape.
 
-Design an original Pokemon in that pose: a big yeti made entirely of packed, shaggy snow. Official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 colors, dark outline, facing 3/4 to the left. White background, no ground, no shadow, no objects, no effects.
+Design an original Pokemon in that pose. Type: Ice/Fire. Final stage of a three-stage line.
 
-Made of snow: the whole body is rough, lumpy, shaggy snow, like snow clumped into fur, with ragged snowy tufts on the edges. No skin anywhere: no bare face, no bare hands, no bare feet, no blue skin.
+Expression (very important): relaxed and satisfied, not cheerful. Eyes calmly closed, a small calm content smile, like a contented sigh. Not grinning, no big smile, no laughing.
 
-Face: part of the snow body, no separate muzzle, no nose, no ears. Its eyes are two small dark grey pebbles pressed into the snow, closed, each with a dark eyelid line across. A small, wavy, calm smile drawn as a thin line. Below the face a jagged fringe of shaggy snow hangs down like a beard. Expression: relaxed and satisfied, a contented sigh.
+Concept: a big yeti made of snow with red-hot sauna stones. Its whole body is rough, shaggy snow fur; no skin anywhere. Its build looks big and dangerous (massive shoulders, thick arms), but it is very friendly as long as it can enjoy its sauna. NOT fat: a strong, broad chest, a slim belly.
 
-Hands and feet: big round mitts of shaggy snow with a few short stubby snow fingers/toes, the same white snow as the body. No ape hands, no detailed fingers, no palms.
+Head: the old wooden sauna bucket has become its headwear: it has been shaped to the head, lower and wider, fitting over the top of the head like a hat or helmet that grew on, with the wood and the dark metal band blending into the snow fur at the edges. It should read as part of the creature, not as a separate bucket.
 
-Build: big and strong with heavy shoulders and thick arms, so its posture looks big and dangerous, but NOT fat: a slimmer belly, a broad chest, more muscle than belly.
+Stones (it must read as Ice/Fire, not Ice/Rock): ONLY these glowing stones, nothing else rocky on the body: one on each shoulder, two on the belly one above the other in a vertical line like the buttons of a snowman, and if it fits one on each knee. The stones are BIG (each about as wide as a hand of the yeti), not small pebbles. Each is a rough, irregular, lumpy piece of dark charcoal-black volcanic rock, heated until it glows, with bright orange and yellow glowing cracks running through it and glowing orange edges, like lava rock or red-hot sauna stones. Not smooth, not oval, not gems. No other rocks, pebbles or grey stone patches anywhere; the belly is snow.
 
-Colors: white snow with cool light blue and grey-blue shading, dark navy outline. Eyes dark grey. No other colors.
+Colors: snow in white with cool light blue and grey-blue shading. Bucket in warm brown wood with a dark grey band. Stones in dark charcoal with orange and yellow glowing cracks.
 
-Draw ONLY the yeti: no hat, no bucket, no stones, no towel, no scarf.
+Style: official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 colors, dark outline, facing 3/4 to the left, compact composition that fills a square. White background, no ground, no shadow, no bench, no effects, no steam, no fire, no falling snowflakes.
 
-AVOID: a gorilla or ape face, a nose, ears, blue skin, ape hands with fingers and palms, a big round belly, a fat body, a grin, a cute plush look, Abomasnow, a snowman.
+AVOID: a gorilla or ape face, blue skin, ape hands, the Flurry from Mario, Abomasnow, Snorunt, Vanillite, a rock or golem creature, grey or black rock armor, a plain bucket on the head, a grin or laughing face, a fat round body or big belly, small pebble stones, a classic three-ball snowman, a carrot nose, a scarf, a towel, sharp fangs showing, plush toy / Neopets look, flames.
 ```

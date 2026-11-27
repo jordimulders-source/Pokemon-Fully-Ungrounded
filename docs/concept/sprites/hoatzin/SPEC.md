@@ -361,3 +361,4 @@ AVOID: copying or tracing the sketch; smooth vector shapes; hands or fingers; fe
   Jordi over de lichte schoudervlek: "geen idee wat je met vlek bedoelt maar dat is gewoon de schouder vgm" (hoort bij de vleugel, zoals r6).
 - **r7** (`sprite_fase1/r7/`, vanaf r6): binnen het silhouet geen omlijning tussen vleugel/lijf/poot; vleugelrand eigen tint (licht/donker), veerlijnen vleugeltint, slagschaduw op lijf en verre poot, 1 extra tint (24,26,32); 71 px; alpha-diff 0; zwart 19,6 %. Naar Jordi.
   Jordi op r7: "de lijn moet niet verdwijnen maar minder zwart" → r8: binnenlijnen terug op de r6-plekken in een donkere, niet-zwarte tint.
+- **r8** (`sprite_fase1/r8/`, vanaf r7): binnenlijnen terug op de r6-pixels, tegen lijf index 13 (24,26,32), tegen poten 12; veerlijnen 12; alpha-diff 0; zwart 19,6 %. Naar Jordi.

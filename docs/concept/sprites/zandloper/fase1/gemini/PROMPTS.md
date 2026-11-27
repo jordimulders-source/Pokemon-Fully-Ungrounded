@@ -13,3 +13,18 @@ Small first-stage Pokémon. Keep it simple and readable at 64x64: big clear shap
 
 No effects, no glow, no sparkles, no ground or shadow under it. AVOID: a plush toy, Neopets style.
 ```
+
+**Jordi over r1:** "nee dit is te saai en te basic, we moeten er een pokemon van maken, niet een zandloper mete ogen"; "we moeten er alvast naar hinten dat er een soort djinn in opgesloten zit".
+
+## r2
+Hoe het een Pokémon wordt en hoe de djinn-hint eruitziet laat de prompt aan Gemini (geen eigen invulling; "no mouth/arms/legs" uit r1 geschrapt, dat was Claude).
+```
+Design an original Pokémon as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64 pixels, max 16 colors, white background, facing 3/4 to the left.
+
+Concept: the first stage of an hourglass Pokémon (Ground/Psychic). Its final evolution is a sand djinn that escapes from the hourglass. This first stage is still a closed hourglass with living sand inside, but the design must already hint that a kind of djinn is locked up inside it.
+It must be a real Pokémon with character, not a plain hourglass with eyes stuck on it: the hourglass itself is the creature's body, designed with personality like official object Pokémon.
+The hourglass is still whole: pale blue glass with wooden end caps. Nothing comes out of the glass yet.
+Small first-stage Pokémon. Keep it simple and readable at 64x64: big clear shapes, like a real Gen 3 sprite.
+
+No effects, no glow, no sparkles, no ground or shadow under it. AVOID: a plain realistic hourglass with eyes, a plush toy, Neopets style.
+```

@@ -21,6 +21,7 @@ for y in range(100):
     for x in range(100):
         if H[y,x]!='?': continue
         if klasse(m[y,x])=='K' and y<=33: continue   # getekende schildrand bovenop: model
+        if m[y,x].mean()>140: bron[y,x]='v'; continue  # r6-streep, per rij verplaatst in model_natief.py: scherpe r6-kleur, houden
         kand=[]
         e4=rand(m,y); e6=rand(r6,y+1) if y+1<100 else None
         if e4 and e6:
@@ -32,4 +33,4 @@ for y in range(100):
             if klasse(c)=='B': out[y,x]=np.clip(c+DL,0,255); bron[y,x]=k; break
         else: bron[y,x]='m'
 np.save('comp_nat.npy',out); np.save('comp_bron.npy',bron)
-print('naadcellen:',(H=='?').sum(),' r6 relatief:',(bron=='r').sum(),' r6 verschoven:',(bron=='s').sum(),' model gehouden:',(bron=='m').sum())
+print('r6-streepcellen (verplaatst, gehouden):',(bron=='v').sum()); print('naadcellen:',(H=='?').sum(),' r6 relatief:',(bron=='r').sum(),' r6 verschoven:',(bron=='s').sum(),' model gehouden:',(bron=='m').sum())

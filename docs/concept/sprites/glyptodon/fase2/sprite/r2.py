@@ -2,7 +2,7 @@
 import numpy as np
 from basis import png,PAL
 from staart import staart
-I=np.load('r1_I.npy').copy(); I0=I.copy()
+I=np.load('r2basis_I.npy').copy(); I0=I.copy()
 def near(c,idx): return idx[int(np.argmin([((np.array(PAL[i])-c)**2).sum() for i in idx]))]
 # 1. STAART uit r3_3 per pixel
 R=staart(); TH=0.30
@@ -52,6 +52,30 @@ for y in range(8,21):
     if 10<=y<=19 and I[y,a+1] in (3,4): I[y,a+1]=4
 I[22,15]=9          # stekelvoet-boog: natief x26-28 = sprite kolom 16-17, kolom 15 is ring
 n_band=(I!=I1).sum()
+# 4. OVERLAPLIJNEN poot over lijf/kop weer zwart (model: natief x38-40 en x55-56 doorlopend zwart, kin-/poot-lijn natief rij 68-70)
+I2=I.copy()
+zones=[(24,26,46,62),   # linkerrand middelste poot
+       (34,35,48,54),   # rechterrand middelste poot
+       (9,18,48,51),    # kin / bovenkant voorste poot
+       (36,41,49,54)]   # achterpoot tegen de buik
+for x0,x1,y0,y1 in zones:
+    for y in range(y0,y1):
+        for x in range(x0,x1+1):
+            if I[y,x]==10: I[y,x]=1
+n_overlap=(I!=I2).sum()
+print('overlap zwart',n_overlap)
+# 5. RECHTER SCHILDSTREEP (r6): beige-fractie per pixel, rug in x-richting -> streep (tint 8/9 naar modus)
+I3=I.copy(); Bf=np.zeros((64,64)); Wt={}
+for y in range(16,47):
+    for x in range(32,48):
+        if I[y,x]<2: continue
+        w=modus(x,y,nat); Bf[y,x]=w.get(8,0)+w.get(9,0); Wt[(y,x)]=w
+for y in range(16,47):
+    for x in range(33,47):
+        if I[y,x]<2 or I[y,x] in (8,9): continue
+        if Bf[y,x]>=0.3 and Bf[y,x]>=Bf[y,x-1] and Bf[y,x]>=Bf[y,x+1]:
+            w=Wt[(y,x)]; I[y,x]=9 if w.get(9,0)>w.get(8,0) else 8
+n_streep=(I!=I3).sum(); print('streep',n_streep, sorted(zip(*np.where(I!=I3))))
 print('staart',n_staart,'stekel+band',n_band)
 np.save('r2_I.npy',I); png(I,'r2.png'); png(I,'r2_8x.png',8)
 print('staart: pixels anders dan r1:',(I!=I0).sum())

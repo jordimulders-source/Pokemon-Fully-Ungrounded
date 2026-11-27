@@ -353,3 +353,4 @@ AVOID: copying or tracing the sketch; smooth vector shapes; hands or fingers; fe
 - **r4** (`sprite_fase1/r4/`, DC-eindkeuring op r3: PASS): 63 px (selout lichtkant 48, binnenlijnen → eigen tint 16, gaatje (32,45) dicht), zwart 28→20 %, lichte hue shift, 11 kleuren; alpha-diff 0 behalve dat gaatje. Haren A en B allebei. Vergelijkvel met fase 2: `sprite_fase1/r4/voor_jordi.png`. Naar Jordi (kiest A/B).
 - Jordi op r4 (`sprite_fase1/jordi_r4_omcirkeld.png`, rechterhelft omcirkeld): "niet goed te zien hier waar de ledematen los van elkaar zitten, verder prima versie". Naar r5.
 - Haren: Jordi koos **B**.
+- **r5** (`sprite_fase1/r5/`, haren B): 39 px in het omcirkelde gebied (scheidingslijnen onderarm/dij, dij/staart, verre poot/dij; staart een stap donkerder; schaduwrand dij); alpha-diff 0. Onderarm en dij nog dezelfde lichte tint. Naar Jordi.

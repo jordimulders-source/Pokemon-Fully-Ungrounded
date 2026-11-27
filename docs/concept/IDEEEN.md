@@ -911,6 +911,7 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - Raakt aan "Ruimte en diepe zee als mysterieuze gebieden" (12 nov).
 - Repo: alle bestaande Regi's zijn monotype (Rock, Ice, Steel, Normal, Electric, Dragon).
 - **Besloten (Jordi, 27 nov):** Regicosmo-stippen = B (kaart van zijn eigen lichaam), hemellichamen vormen een golem; Regiaqua: armen zweven los ("yes precies"), "de stippen moeten echt stippen zijn, liefste ook niet in de hoofdkleur", "stippen van regi's lichten altijd op, maar je mag ze wel zo'n kleur geven". Verder in `sprites/regicosmo/SPEC.md` en `sprites/regiaqua/SPEC.md`.
+
 ## Kay Pacha-poema: lore (Claude, 27 nov, ter info)
 - Het schema condor–poema–slang voor de drie werelden is grotendeels een moderne/populaire lezing; de poema zelf is wel oud en overal (Chavín, Tiwanaku, Inca).
 - Cuzco als poema (Pachacútec): Sacsayhuamán = kop, zigzagmuren = tanden, rivieren Saphy en Tullumayo = flanken, Pumachupan ("staart van de poema") bij de samenvloeiing.

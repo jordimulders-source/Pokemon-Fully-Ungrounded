@@ -1,26 +1,27 @@
-# Guarana fase 2, r14 (start r13). Jordi: "nu zijn een hoop van de vruchten te rechthoekig. En ik realiseer me nu dat het helemaal niet ten koste
-# van de sprite gaat als de vruchttrossen gewoon wat groter maken ... overlappen is toch niet erg, zolang ze elkaar maar niet overlappen"
-# + "ja en er moet iets ruimte tussen zitten, desnoods schuif je de linker maar iets naar links".
-# Liaan/blad/takken/lussen/ranken = r13. De drie trossen worden opnieuw opgebouwd uit de vruchten van het model (positie, maat, open/dicht,
-# volgorde voor/achter), vergroot om de takpunt, als ronde vruchten in fase 1-stijl (buitenlijn lijnrood linksboven / zwart rechtsonder,
-# naden lijnrood, hooglicht linksboven, schaduwsikkel rechtsonder) met het fase 1-oog. Vanuit guarana_fase2/: python3 sprite_r14/bouw14.py
+# Guarana fase 2, r15 (start r14). Jordi: "nu weer geen enkel oog dat de goede kant op kijkt, blijven in rondjes gaan. de tros rechts is ook geen geheel meer"
+# + "er moeten tenminste een paar ogen naar linksonder kijken zoals in fase 1" / "heb ik toch al gezegd"
+# + "de vormen van links en midden zijn verder oke, al heeft links onderin een heel verlept stukje fruit ipv recht en is midden op plekken iets te hard belijnd".
+# Wijzigingen t.o.v. r14: (1) ogen: 4 ogen = fase 1-oog pixel voor pixel (OOG_F1A/OOG_F1B), de rest volgens SPEC-regel 5/6; (2) rechtertros
+# compacter (sp 1,3 -> 1,1), zelfde vruchtmaat; (3) linkertros: vrucht G (linksonder) volledig rond voor E; (4) binnenlijnen: dubbele/zwarte
+# lijnen tussen vruchten binnen een tros -> 1 px lijnrood. Vanuit guarana_fase2/: python3 sprite_r15/bouw15.py
 import sys; sys.path.insert(0,'sprite_r9'); import numpy as np; from PIL import Image; from gemeen2 import opslaan; from hulp import *
 K,L,S,M,H=1,2,3,4,5; W,G=10,11; GROEN=(6,7,8,9); ROOD=(2,3,4,5)
 def m2s(u,v): return u*0.06881-2.875, v*0.06881-8.24       # modelpixel (1024) -> r13-spritecoordinaat (zelfde ijking als r9-r13)
+# r15: H (onderste vrucht linkertros, was een spitse peer die verlept oogde) is een volle ronde vrucht; G staat nu voor E (was een sikkel achter E)
 # open oogvruchten minstens 36 breed (9 px), zodat het fase 1-oog (7 breed) erin past: F, u, q iets breder dan in het model
 # vrucht: (naam, cx, cy, rx, ry, soort, pupil) in modelpixels; volgorde = achter -> voor. soort: d=dicht, p=dicht peer, o=open oog,
 # h=half dicht oog, k=klein/gedeeltelijk oog. pupil: c midden, l links, ll linksonder, d onder, lb linksboven
 TROSSEN={
  'L':dict(anker=(240,440),vr=[
-   ('G',217,635,33,35,'d',None),('E',170,598,36,34,'d',None),('C',318,522,30,37,'k','l'),('H',268,682,28,40,'p',None),
-   ('A',178,505,38,45,'h','l'),('B (L2)',263,490,38,45,'o','c'),('D',258,575,38,42,'o','ll'),('F',302,612,36,38,'o','d')]),
+   ('E',170,598,36,34,'d',None),('G',217,635,33,35,'d',None),('C',318,522,30,37,'k','KL_L'),('H',268,676,37,37,'d',None),
+   ('A',178,505,38,45,'h','HALF7'),('B (L2)',263,490,38,45,'o','MIDDEN'),('D',258,575,38,42,'o','F1A'),('F',302,612,36,38,'o','O45')]),
  'M':dict(anker=(460,295),vr=[
-   ('g',422,528,24,33,'p',None),('h',480,495,30,37,'p',None),('f',382,478,33,28,'d',None),('M2',378,415,27,22,'h','l'),
-   ('c',380,372,30,30,'d',None),('d',432,437,38,35,'d',None),('a (H1)',432,342,38,44,'h','ll'),('b (M1)',520,337,40,37,'o','ll'),
-   ('e',507,423,37,40,'o','l')]),
+   ('g',422,528,24,33,'p',None),('h',480,495,30,37,'p',None),('f',382,478,33,28,'d',None),('M2',378,415,27,22,'h','HALF6'),
+   ('c',380,372,30,30,'d',None),('d',432,437,38,35,'d',None),('a (H1)',432,342,38,44,'h','HALF7'),('b (M1)',520,337,40,37,'o','F1B'),
+   ('e',507,423,37,40,'o','O54')]),
  'R':dict(anker=(790,435),vr=[
-   ('r (R1)',692,510,28,35,'k','l'),('t',842,570,38,38,'d',None),('w',757,667,33,43,'p',None),('v',792,632,28,38,'p',None),
-   ('p (RT)',748,472,38,38,'o','ll'),('q (R2)',836,482,38,40,'o','c'),('s',757,565,38,40,'o','l'),('u (R5)',707,605,36,37,'o','ll')]),
+   ('r (R1)',692,510,28,35,'k','KL_R'),('t',842,570,38,38,'d',None),('w',757,667,33,43,'p',None),('v',792,632,28,38,'p',None),
+   ('p (RT)',748,472,38,38,'o','F1A'),('q (R2)',836,482,38,40,'o','MIDDEN'),('s',757,565,38,40,'o','ORO'),('u (R5)',707,605,36,37,'o','F1B')]),
 }
 def vorm(cx,cy,rx,ry,peer):
     cx=np.floor(cx)+0.5; cy=np.floor(cy)+0.5     # midden op een pixelmidden: oneven breedte, symmetrisch rond (3-5-7-9-9-9-7-5-3)
@@ -39,30 +40,31 @@ def tros(naam,sp,sr,dx=0,dy=0):
         x=np.floor(x)+0.5; y=np.floor(y)+0.5
         out.append(dict(n=n,cx=x,cy=y,rx=a,ry=b,soort=soort,pup=pup,F=vorm(x,y,a,b,soort=='p')))
     return out
-# ogen: witmasker (rij -> kolommen), schil = N4-ring (rond), lijnrood linksboven, zwart rechtsonder (fase 1)
-WIT={'groot':[(1,3),(0,4),(0,4),(1,3)],'norm':[(1,2),(0,3),(0,3),(1,2)],'klein':[(0,1),(0,2),(1,2)]}
-PUP={('groot','c'):[(2,1),(3,1),(2,2),(3,2)],('groot','l'):[(0,1),(1,1),(0,2),(1,2)],('groot','ll'):[(1,2),(2,2),(1,3),(2,3)],('groot','lm'):[(1,1),(2,1),(1,2),(2,2)],
-     ('groot','d'):[(2,2),(3,2),(2,3),(3,3)],
-     ('norm','c'):[(1,1),(2,1),(1,2),(2,2)],('norm','l'):[(0,1),(1,1),(0,2),(1,2)],('norm','ll'):[(0,2),(1,2),(1,3)],
-     ('norm','d'):[(1,2),(2,2)],('klein','l'):[(0,1),(1,2)]}
-def oog(maat,pup,half=False):
-    w={(x,y) for y,(a,b) in enumerate(WIT[maat]) for x in range(a,b+1)}
-    if half: w={(x,y) for (x,y) in w if y>=2}     # bovenste 2 rijen wit worden ooglid (vruchthuid)
-    cx=sum(x for x,y in w)/len(w); cy=sum(y for x,y in w)/len(w)
-    if half: cy-=1
-    d={}
-    for (x,y) in w:
-        for ddy,ddx in N4:
-            p=(x+ddx,y+ddy)
-            if p in w or p in d: continue
-            ex,ey=p[0]-cx,p[1]-cy
-            d[p]=L if ((ex<=0 and ey<=0.5) or (ey<0 and ex<=1)) else K
-    for p in w: d[p]=W
-    pp=PUP[(maat,pup)]
-    if half: pp=[(x,y) for (x,y) in [(a,b+1) for a,b in pp] if (x,y) in w][:3] or [min(w)]
-    for p in pp:
-        if p in w: d[p]=K
-    return d,cx,cy
+# ogen als sjablonen (rij voor rij). F1A/F1B = fase 1-oog pixel voor pixel gekopieerd uit guarana/af/guarana.png:
+# F1A = bovenste oog (x16-22, y17-23), F1B = onderste oog (x14-20, y27-33); wit, pupil en schil exact (schil daar lijnrood links/boven, zwart rechts/onder).
+# De andere ogen volgens SPEC-regel 5/6 (schil lijnrood rondom). W wit, K zwart (pupil of fase 1-schil), L lijnrood, '.' = vrucht blijft.
+OOG={
+ 'F1A':[".LLLL..",".LWWWK.","LWWWWWK","LWPPWWK","LWPPWWK",".KWWWK.","..KKK.."],
+ 'F1B':["..LLL..",".LWWWK.","LWWWWWK","LWPPWWK","LWPPWWK","KKWWWK.",".LKKK.."],
+ 'MIDDEN':["..LL..",".LWWL.","LWPPWL","LWPPWL",".LWWL.","..LL.."],                 # L2/R2: pupil 2x2 precies in het midden van wit 2-4-4-2
+ 'O45':["..LL..",".LWWL.","LWWWWL","LWPPWL","LWPPWL",".LWWL.","..LL.."],                 # 0 links, 1/2 onder
+ 'O54':["..LLL..",".LWWWL.","LWPPWWL","LWPPWWL",".LWWWL.","..LLL.."],                    # 1/2 links, 0 onder
+ 'ORO':["..LL..",".LWWL.","LWWWWL","LWWPPL",".LWPL.","..LL.."],                       # andere kant: rechtsonder (klein oog, past tussen RT en R5)
+ 'KL_L':["..LL..",".LWWL.","LPWWWL",".LWWL.","..LL.."],                                   # klein, andere kant: links
+ 'KL_R':["..LL..",".LWWL.","LWWWPL",".LWWL.","..LL.."],                                   # klein, andere kant: rechts
+ 'HALF7':["..LLL..",".LMMML.","LPPWWWL",".LWWWL.","..LLL.."],                       # half dicht: gebogen lid van vruchthuid (M), pupil links tegen het lid
+ 'HALF6':["..LL..",".LMML.","LPPWWL",".LWWL.","..LL.."],
+}
+# P = pupil (zwart)
+CH={'L':2,'K':1,'W':10,'M':4,'P':1}
+def stempel(naam,cx,cy,half=False):
+    T=OOG[naam]; h,w=len(T),len(T[0])
+    ox=int(np.floor(cx))-(w-1)//2; oy=int(np.floor(cy))-((h-1)//2 if not half else 1)
+    return {(ox+i,oy+j):CH[c] for j,r in enumerate(T) for i,c in enumerate(r) if c!='.'},(ox,oy)
+def pupilplek(naam,d):
+    T=OOG[naam]; h,w=len(T),len(T[0]); xs=[x for x,y in d]; ys=[y for x,y in d]
+    ox,oy=min(xs)-min(i for r in T for i,c in enumerate(r) if c!='.'),min(ys)
+    return {(ox+i,oy+j) for j,r in enumerate(T) for i,c in enumerate(r) if c=='P'},{(ox+i,oy+j) for j,r in enumerate(T) for i,c in enumerate(r) if c in 'WP'}
 def randvan(f,q): return q in f['F'] and any((q[0]+b,q[1]+a) not in f['F'] for a,b in N4)
 def bouw_tros(vr):
     lab={}
@@ -77,26 +79,55 @@ def bouw_tros(vr):
         if buiten:
             pix[p]=K if (u+v>0.15 or any(q in ((1,0),(0,1)) for q in buiten) and u+v>-0.5) else L
         elif achter:
-            pix[p]=S if u+v>0.9 else L     # naad: lijnrood; aan de schaduwkant (rechtsonder) schaduwtint
+            pix[p]=S if u+v>0.6 else L     # naad: lijnrood; aan de schaduwkant (rechtsonder) schaduwtint
 
         else:
             # sikkel: de pixel rechts/onder/rechtsonder is de rand van de eigen (volledige) vrucht
             binnenrand=any(randvan(f,(x+ddx,y+ddy)) for ddy,ddx in ((1,0),(0,1),(1,1)))
-            if binnenrand and u+v>0.55: pix[p]=S
+            if binnenrand and u+v>0.35: pix[p]=S
             elif (u+0.36)**2+(v+0.40)**2<0.14: pix[p]=H
             else: pix[p]=M
-    # ogen
-    for i,f in enumerate(vr):
-        if f['soort'] not in 'ohk': continue
-        maat={'o':'groot' if f['pup']!='c' else 'norm','h':'groot' if f['rx']*2>=8.6 else 'norm','k':'klein'}[f['soort']]
-        d,ex,ey=oog(maat,f['pup'],half=f['soort']=='h')
-        ox=round(f['cx']-ex-0.5); oy=round(f['cy']-ey-0.5-(0.4 if f['soort']=='o' else 0))
-        if f['soort']=='k': ox=round(f['cx']-ex-0.5)
-        for (x,y),c in d.items():
-            q=(x+ox,y+oy)
-            if q in f["F"] and q in lab: pix[q]=c     # oog ligt bovenop (de opengebarsten vrucht steekt naar voren), binnen de eigen vruchtvorm
+    # binnenlijnen: zwart binnen de tros -> lijnrood; twee lijnpixels van verschillende vruchten naast elkaar (dubbele naad) -> de achterste wordt vrucht
+    binnen=lambda q: all((q[0]+b,q[1]+a) in lab for a,b in N4)
+    for q,c in list(pix.items()):
+        if c==K and binnen(q): pix[q]=L
+    for q,c in list(pix.items()):
+        if c!=L or not binnen(q): continue
+        i=lab[q]
+        for a,b in N4:
+            r=(q[0]+b,q[1]+a); j=lab.get(r)
+            if j is not None and j!=i and pix.get(r)==L and binnen(r):
+                k,z=(q,i) if i<j else (r,j)      # achterste (lagere index) wordt vrucht
+                f=vr[z]; u=(k[0]+.5-f['cx'])/f['rx']; v=(k[1]+.5-f['cy'])/f['ry']
+                pix[k]=S if u+v>0.55 else M
+    # ogen bovenop (de opengebarsten vrucht steekt naar voren), binnen de eigen vruchtvorm. Plek: midden van de vrucht; overlapt of raakt
+    # het oog een ander oog (dikke dubbele lijn), dan max. 1 px opschuiven binnen de vrucht. Een paar rondes, zodat elk oog met alle andere rekening houdt.
+    ogen=[i for i,f in enumerate(vr) if f['soort'] in 'ohk']
+    plek={i:(0,0) for i in ogen}
+    def st(i,dd): f=vr[i]; return stempel(f['pup'],f['cx']+dd[0],f['cy']+dd[1],half=f['soort']=='h')[0]
+    for ronde in range(4):
+        for i in ogen:
+            f=vr[i]; ander=set().union(*[set(st(j,plek[j])) for j in ogen if j!=i])
+            keus=None
+            for dd in ((0,0),(0,1),(1,0),(-1,0),(0,-1),(1,1),(-1,1),(1,-1),(-1,-1)):
+                d=st(i,dd); uit=len(d)-sum(q in f['F'] for q in d)
+                over=sum(q in ander for q in d); raakt=sum(any((q[0]+b,q[1]+a) in ander for a,b in N4) for q in d)
+                sc=(uit>(1 if f['soort']=='h' else 0), over, raakt, abs(dd[0])+abs(dd[1]))
+                if keus is None or sc<keus[0]: keus=(sc,dd)
+            plek[i]=keus[1]
+    oogpix=set()
+    for i in ogen:
+        f=vr[i]; d=st(i,plek[i]); f['oog']=d; f['oogverschuiving']=plek[i]
+        for q,c in d.items():
+            if q in f['F']: pix[q]=c; oogpix.add(q)
+    # geen dubbele lijn langs een oog: lijnrood van een andere vrucht dat direct tegen de oogschil ligt wordt vrucht
+    for q,c in list(pix.items()):
+        if c!=L or q in oogpix or not binnen(q): continue
+        if any((q[0]+b,q[1]+a) in oogpix and pix[(q[0]+b,q[1]+a)] in (L,K) for a,b in N4):
+            f=vr[lab[q]]; u=(q[0]+.5-f['cx'])/f['rx']; v=(q[1]+.5-f['cy'])/f['ry']
+            pix[q]=S if u+v>0.55 else M
     return pix,lab
-INSTEL={'L':(1.05,1.6,-5,0),'M':(1.05,1.6,0,0),'R':(1.3,1.6,0,0)}   # sp, sr, dx, dy per tros
+INSTEL={'L':(1.05,1.6,-5,0),'M':(1.05,1.6,0,0),'R':(1.1,1.6,0,0)}   # sp, sr, dx, dy per tros
 def oude_tros(o):
     # rood/wit/grijs van r13 + zwart dat alleen aan tros grenst (geen groen in de 8-buurt)
     m=np.isin(o,ROOD+(W,G))
@@ -131,4 +162,4 @@ if __name__=='__main__':
             if ok(y,x): nieuw[y,x]=True
     blijft=oud&~nieuw
     print('oud trospixel niet afgedekt:',int(blijft.sum()),list(zip(*np.where(blijft)))[:40])
-    opslaan(o,'sprite_r14/guarana2_r14.png'); open('sprite_r14/normal.pal','w').write(open('sprite_r13/normal.pal').read())
+    opslaan(o,'sprite_r15/guarana2_r15.png'); open('sprite_r15/normal.pal','w').write(open('sprite_r14/normal.pal').read())

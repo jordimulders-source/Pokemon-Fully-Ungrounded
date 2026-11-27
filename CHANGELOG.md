@@ -3671,3 +3671,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.882] - Pacha-kwartet: wezens, geen godenbeelden (27 nov)
 - `POKEMON.md`: Jordi: het kwartet wordt Pokémon als mythische wezens (zoals Groudon/behemoth en Kyogre/leviathan), geen godenbeelden; typenvoorstel Claude (driehoek Fire/Flying, Grass/Fighting, Water/Ghost) genoteerd als open.
+
+### [v0.0.883] - Hanan Pacha: Fire/Flying (27 nov)
+- `POKEMON.md`: condor (Hanan Pacha) wordt Fire/Flying (Jordi); poema, slang en Pachamama-wezen nog open.

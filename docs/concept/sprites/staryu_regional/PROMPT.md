@@ -149,3 +149,18 @@ Keep it a clean Gen 3 sprite: max 16 colors, white background, no effects.
 ## r4 Starmie (27 nov, bijstuurprompt)
 `gemini/r4_starmie.webp`. Jordi: "hij is nu veel te puntig, maar dat valt in een sprite wel te fixen toch? Door naar de echte starmie te kijken?"
 Jordi (correctie op Claude, die zeven achterpunten telde): "nee geen 7, hij heeft de voorste ster alleen puntiger gemaakt". Voorstel spritefase: voorste ster uit het model, achterste ster = vorm en hoek van de achterste ster van de Gen 3-Starmie, in koekkleur met chips.
+
+## Staryu v4: driekwart (27 nov, nieuw gesprek, alleen bijlage `gemini/bijlage_staryu_gen3.png`)
+Jordi: "ben bang dat staryu ook te recht staat, wat is wijsheid, sprites gewoon bouwen en daarna fixen? of nieuwe modellen?". Claude: de Staryu-sprite is 1-op-1 het model (r3 staat frontaal en plat; de Gen 3 Staryu staat gekanteld met dikte in de armen); een hele pose draaien in de sprite = hertekenen, dus een nieuw model. Ontwerp van r3 in woorden, r3 niet als bijlage (Gemini kopieert een bijlage).
+
+```
+The attached image is STARYU, a Gen 3 Pokémon sprite. Design a REGIONAL FORM of Staryu that is a real, delicious chocolate chip cookie in the shape of Staryu.
+
+POSE (most important): exactly the same pose and angle as the attached Staryu: the star is tilted and rotated, seen in 3/4 view, not flat and not facing straight forward. The arms have visible thickness: you see the side of the cookie (its baked edge) along the lower and right arms, like the attached sprite shows the side faces of its arms. Same proportions and silhouette as the attached Staryu.
+
+Output: a simple, clean official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64 pixels, max 16 colors, flat colors with 2-3 shades per color. White background, no ground, no shadow, no effects, no glow, no crumbs.
+
+THE COOKIE: thick, soft-baked cookie dough, warm golden-brown, darker and toasted along the edges and tips, a few baked cracks, puffy rounded edges. Big glossy dark chocolate chips spread over all five arms, about 11, each with a small highlight. In the center a round, glossy red gem like a hard candy, with a darker red ring. No face, no eyes, no mouth, no limbs.
+
+DO NOT: a flat star seen straight from the front, a symmetric upright star, a sea star texture, a realistic photo, a plate, starfield or galaxy patterns, sparkles, plush style.
+```

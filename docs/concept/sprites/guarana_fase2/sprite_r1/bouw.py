@@ -1,0 +1,131 @@
+# Guarana fase 2, r1. Basis = kale reductie (kaal.py, TK 0,40) van het natieve model (natief.py). Daarna alleen regels, niets getekend:
+#  1 lijnkleur: zwart binnenin -> donkerste eigen tint (rood 2 / groen 6); buitenlijn zwart alleen waar de achtergrond rechts/onder ligt,
+#    aan de lichtkant (achtergrond links/boven) de eigen lijntint (selout). Vlakpixels op de buitenrand met een binnenbuur worden lijn
+#    (zwart/selout volgens dezelfde regel); dunne delen (geen binnenbuur) blijven zoals de reductie.
+#  2 ogen: het fase 1-oog (guarana/af/guarana.png y16-23 x16-22, Weepinbell-patroon) op de oogplekken van het model, pupil op de kijkkant.
+import sys, numpy as np; sys.path.insert(0,'sprite_r1')
+from gemeen2 import *; import kaal
+o,F=kaal.reductie(); K0=o.copy()
+N4=((-1,0),(1,0),(0,-1),(0,1)); N8=[(dy,dx) for dy in (-1,0,1) for dx in (-1,0,1) if dy or dx]
+def ok(Y,X): return 0<=Y<64 and 0<=X<64
+# --- 0. gaatjes van 1-2 px in de reductie (witte modelspleetjes tussen vruchten) dicht: zwart, wordt bij stap 1 binnenlijn ---
+from collections import deque
+bgm=np.zeros((64,64),bool); q=deque([(y,x) for y in range(64) for x in (0,63) if o[y,x]==0]+[(y,x) for x in range(64) for y in (0,63) if o[y,x]==0])
+for y,x in q: bgm[y,x]=True
+while q:
+    y,x=q.popleft()
+    for dy,dx in N4:
+        yy,xx=y+dy,x+dx
+        if ok(yy,xx) and o[yy,xx]==0 and not bgm[yy,xx]: bgm[yy,xx]=True; q.append((yy,xx))
+gat=(o==0)&~bgm
+from gemeen2 import *
+GATEN=[]
+seen=np.zeros((64,64),bool)
+for y,x in zip(*np.where(gat)):
+    if seen[y,x]: continue
+    comp=[(y,x)]; seen[y,x]=True; i=0
+    while i<len(comp):
+        cy,cx=comp[i]; i+=1
+        for dy,dx in N4:
+            yy,xx=cy+dy,cx+dx
+            if ok(yy,xx) and gat[yy,xx] and not seen[yy,xx]: seen[yy,xx]=True; comp.append((yy,xx))
+    if len(comp)<=2:
+        for cy,cx in comp: o[cy,cx]=1; GATEN.append((cx,cy))
+fg=o>0
+def bgnb(Y,X): return [(dy,dx) for dy,dx in N4 if not ok(Y+dy,X+dx) or not fg[Y+dy,X+dx]]
+def groep(Y,X):
+    f,_=F[(X,Y)]
+    if f[2]+f[4]>f[3]*1.0 and f[2]+f[4]>0.05: return 'R'
+    if f[3]>0.05: return 'G'
+    r=g=0
+    for dy,dx in N8:
+        if ok(Y+dy,X+dx): ff,_=F[(X+dx,Y+dy)]; r+=ff[2]+ff[4]; g+=ff[3]
+    return 'R' if r>g else 'G'
+LIJN={'R':2,'G':6}
+tel={'gaatjes_dicht':len(GATEN)}
+def stap(n,v,o): tel[n]=tel.get(n,0)+int((v!=o).sum())
+# --- 1. lijnen ---
+v=o.copy()
+for Y in range(64):
+    for X in range(64):
+        if not fg[Y,X]: continue
+        nb=bgnb(Y,X)
+        rand=bool(nb)
+        schaduw=any(d in ((1,0),(0,1)) for d in nb)
+        if v[Y,X]==1:
+            if not rand: o[Y,X]=LIJN[groep(Y,X)]
+            elif not schaduw: o[Y,X]=LIJN[groep(Y,X)]
+        elif rand:
+            binnen=any(ok(Y+dy,X+dx) and fg[Y+dy,X+dx] and not bgnb(Y+dy,X+dx) for dy,dx in N4)
+            if binnen: o[Y,X]=1 if schaduw else LIJN[groep(Y,X)]
+stap('lijnen',v,o)
+opslaan(o,'sprite_r1/guarana2_r1.png'); pal_schrijven('sprite_r1/normal.pal')
+print(tel)
+# --- 2. ogen: fase 1-oog (guarana/af/guarana.png, x16-22 y17-23) 1-op-1; O = lijnrood 2 (lichtkant), K = zwart, W = oogwit 10 ---
+FASE1=['..OOO..','.OWWWK.','OWWWWWK','OWKKWWK','OWKKWWK','.KWWWK.','..KKK..']   # pupil links-onder (zoals fase 1)
+# Oogplekken afgelezen op het natieve model met het spriteraster erover (rooster.py; positie = linkerbovenhoek van de oogrand in het model).
+# Maat per oog = de maat in het model. Grote ogen (model 7x6 incl. rand) = het fase 1-oog min één pupilrij (pupil 2x2 blijft);
+# kleinere ogen = hetzelfde oog ingekort tot hun modelmaat (Jordi: "pupillen ietsje kleiner en andere hoek is niet erg").
+# Tekens als fase 1: O lijnrood (2) boven/links, K zwart rechts/onder + pupil, W oogwit (10).
+STEMPEL={
+ 'groot':['..OOO..','.OWWWK.','OWWWWWK','OWWWWWK','.KWWWK.','..KKK..'],
+ 'middel':['.OOOO.','OWWWWK','OWWWWK','OWWWWK','.KKKK.'],   # binnen 4x3 (5x5 gaf een wit L-vormpje: pupil smolt met de rand)
+ 'lid':['.KKKK.','OWWWWK','.KKKK.'],      # bovenrand = zwarte lidrand van het model, eronder één rij oog
+ 'lidk':['.KKK.','OWWWK','.KKK.'],
+ 'klein':['.OO.','OWWK','OWWK','.KK.'],
+}
+PUP={  # pupilpixels per soort+kijkrichting (kolom,rij in het stempel), op de gemeten kijkkant van het model
+ ('groot','l'):[(2,2),(3,2),(2,3),(3,3)], ('groot','r'):[(3,2),(4,2),(3,3),(4,3)], ('groot','m'):[(3,2),(3,3),(2,3),(4,3)],
+ ('middel','l'):[(1,1),(2,1),(1,2),(2,2)], ('middel','r'):[(2,1),(3,1),(2,2),(3,2)], ('middel','lo'):[(1,2),(2,2),(1,3),(2,3)], ('middel','ro'):[(2,2),(3,2),(2,3),(3,3)],
+ ('groot','rb'):[(3,1),(4,1),(3,2),(4,2)],
+ ('lid','l'):[(1,1),(2,1)], ('lid','r'):[(3,1),(4,1)], ('lidk','l'):[(1,1)], ('lidk','r'):[(3,1)],
+ ('klein','l'):[(1,1)], ('klein','r'):[(2,1)], ('klein','m'):[(1,2)],
+}
+# naam: (soort, kijk, x, y)
+OGEN={'L3':('klein','l',16,25),'R3':('klein','m',42,25),'M3':('lidk','l',20,19),'R4':('lidk','r',49,26),
+      'L1':('lid','l',6,26),'M2':('lidk','l',24,16),
+      'L2':('middel','r',12,22),'L4':('groot','r',12,28),'L5':('groot','rb',15,32),
+      'M1':('middel','r',30,12),'M4':('groot','r',29,19),
+      'R1':('middel','l',46,22),'R2':('middel','l',52,22),'R5':('groot','l',46,29),'R6':('groot','l',41,32)}
+VOLG=['L3','R3','M3','R4','L1','M2','L2','L5','L4','M1','M4','R1','R2','R5','R6']   # achter -> voor (wat in het model ervoor ligt het laatst)
+SKIP=set(sys.argv[1].split(',')) if len(sys.argv)>1 and sys.argv[1] else set()
+v=o.copy(); OOG=np.zeros((64,64),bool)
+for n in VOLG:
+    if n in SKIP: continue
+    soort,kijk,X,Y=OGEN[n]
+    st=[list(r) for r in STEMPEL[soort]]
+    for (cx,cy) in PUP[(soort,kijk) if (soort,kijk) in PUP else (soort,kijk[0])]: st[cy][cx]='K'
+    for dy,rij in enumerate(st):
+        for dx,ch in enumerate(rij):
+            if ch=='.' or not ok(Y+dy,X+dx) or not fg[Y+dy,X+dx]: continue   # silhouet bevroren (zoals fase 1): niets buiten de reductie
+            o[Y+dy,X+dx]={'O':2,'W':10,'K':1}[ch]; OOG[Y+dy,X+dx]=True
+# oogwit dat zo op de buitenrand komt -> zwart (de oogrand schuift 1 px naar binnen, zoals fase 1 r4)
+for Y,X in zip(*np.where(OOG&(o==10))):
+    nb=bgnb(Y,X)
+    if nb: o[Y,X]=1 if any(d in ((1,0),(0,1)) for d in nb) else 2
+stap('ogen',v,o)
+# --- 3. oogwit/grijs buiten de ogen (gaatjes tussen vruchten en oogresten in de reductie) -> lijntint van de buren ---
+v=o.copy()
+for Y,X in zip(*np.where(np.isin(o,WIT)&~OOG)):
+    nb=[o[Y+dy,X+dx] for dy,dx in N8 if ok(Y+dy,X+dx)]
+    r=sum(k in ROOD for k in nb); g=sum(k in GROEN for k in nb)
+    o[Y,X]=2 if r>=g else 6
+stap('wit_buiten_ogen',v,o)
+# --- 4. ruis: losse vultintpixel (geen 4-buur met dezelfde tint) -> meest voorkomende vultint van de 4-buren (alleen vultinten, lijnen/ogen niet) ---
+VUL={3,4,5,7,8,9}
+v=o.copy()
+for Y in range(64):
+    for X in range(64):
+        k=v[Y,X]
+        if k not in VUL or OOG[Y,X]: continue
+        nb=[v[Y+dy,X+dx] for dy,dx in N4 if ok(Y+dy,X+dx)]
+        if k in nb: continue
+        zelfde=[n for n in nb if n in VUL and ((n in ROOD)==(k in ROOD))]
+        if zelfde: o[Y,X]=max(set(zelfde),key=zelfde.count)
+stap('ruis',v,o)
+# --- 5. geen lichte tint op de buitenrand: dunne delen (rand zonder binnenbuur) houden hun vulkleur, maar midden/licht -> schaduwtint (selout) ---
+v=o.copy()
+for Y,X in zip(*np.where(fg)):
+    if bgnb(Y,X) and o[Y,X] in (4,5,8,9): o[Y,X]=3 if o[Y,X] in (4,5) else 7
+stap('selout_dun',v,o)
+np.save('sprite_r1/oog.npy',OOG); opslaan(o,'sprite_r1/guarana2_r1.png'); print(tel)

@@ -3704,3 +3704,9 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.893] - Hanan Pacha: r5, bijsturen, prompt v7 (27 nov)
 - r5 (ontwerp goed, pose te horizontaal) en het mislukte bijsturen bewaard; prompt v7 = v6 met steil opgeheven vleugels en expliciet vierkant beeldformaat (brede Gemini-beelden gaven brede poses).
+
+### [v0.0.894] - Hanan Pacha: frontsprite af (27 nov)
+- Condor-legendary Hanan Pacha (Fire/Flying) frontsprite af: `docs/concept/sprites/hanan_pacha/af/hanan_pacha.png` (+ 8×). Model Gemini r7 (pose) met de kleuren van r5 (goud, pennen wit → oranje → karmijn → donker, kop), staart van r5.
+- Nieuwe spritemethode (Jordi: "deze nieuwe methode is echt een top methode"): natief raster → exacte 2× met regels (vorm boven vlakkleur) → rijen/kolommen schrappen met kop/kraag beschermd. r1–r2 (oppervlaktegewogen 2,44×) waren pixelblur.
+- Klauwen 1-op-1 van Fearow (`_gba`, verre voet uit frame 2), karmijn (variant C); eindkeuring (42 px tint). Jordi: "ik ben tevreden, mogelijk kan die in de toekomst nog beter, maar voor nu prima".
+- Op het overzichtsvel (sectie New); lessen in `docs/lessen/GEMINI.md`.

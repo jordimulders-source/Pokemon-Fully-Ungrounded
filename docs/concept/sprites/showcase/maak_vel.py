@@ -76,6 +76,7 @@ SECTIES=[
 ("zandloper/fase1/af/zandloper_fase1.png",'Zandloper (zandloper-lijn fase 1)',"ground/psychic"),
 ("zandloper/fase2/af/zandloper_fase2.png",'Brein uit de zandloper (zandloper-lijn fase 2)',"ground/psychic"),
 ("zandloper/fase3/af/zandloper_fase3.png",'Zand-djinn (zandloper-lijn fase 3)',"ground/psychic"),
+("hanan_pacha/af/hanan_pacha.png","Hanan Pacha (legendary)","fire/flying"),
 ]),
 ("Evolutions of existing Pokémon",[
 ('hitmontop_evo/af/hitmongroove.png', '"Hitmongroove" (Hitmontop)', 'fight/ground'),

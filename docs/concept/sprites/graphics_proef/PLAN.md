@@ -14,3 +14,5 @@ Overworld: pas na rug (prompt heeft front + rug nodig); voor welke soorten is no
 - Af als kandidaat: 35 soorten in `frame2/batch_a/` en `frame2/batch_b/` + Gumfish/Hexpress (`frame2/`).
 - Zwak per script: Cryomet, Spoetnik, satelliet, ruimtestation (zwakst), Purrpillar, guaraná 1, Swablu, Pincurchin, DJ Rotom.
 - Eigenlijk Gemini (lokale pose): Muk regional, Shuppetto; eventueel ruimtestation. Prompts toevoegen aan de pakketten als Jordi dat wil.
+
+- Jordi (27 nov): "Je kan gifs gaan maken voor designs waarbij dat goed past. Maar weet dat Gemini heel goed is in frame 2 maken dus dat wordt het issue niet" → zwakke script-soorten (+ Muk, Shuppetto) krijgen een Gemini frame 2-prompt in de pakketten.

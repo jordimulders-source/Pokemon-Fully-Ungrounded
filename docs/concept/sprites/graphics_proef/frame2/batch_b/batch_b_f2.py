@@ -71,9 +71,9 @@ def sunflora_evo(a, pal):
 def solrock_evo(a):
     cx, cy = 31, 34
     r = np.hypot(XX-cx, YY-cy)
-    buiten = comps(a, (a > 0) & (r > 21))
-    o = baan(a, buiten, -11, cx, cy, knip=True)   # stralen en brokjes draaien als geheel om de bol
-    o[(a > 0) & (r <= 21)] = a[(a > 0) & (r <= 21)]
+    buiten = (a > 0) & (r > 17.5)
+    o = rotsprite(a, buiten, -10, cx, cy, knip=True)   # stralen en brokjes draaien om de bol (RotSprite)
+    o[(a > 0) & (r <= 17.5)] = a[(a > 0) & (r <= 17.5)]   # bol met gezicht blijft staan
     return o, 'ANIM_V_SLIDE'
 
 def bloedmaan(a):
@@ -139,7 +139,7 @@ def starmie_regional(a):
 
 def muk_regional(a):
     arm = (a > 0) & (XX >= 38) & (YY <= 31)
-    o = rijschuif(a, arm, lambda y: -int(round((31-y)*0.1)))   # arm zwiept naar voren
+    o = rijschuif(a, arm, lambda y: -int(round((31-y)*0.16)))  # arm buigt naar voren, voet blijft vast
     o = knijp(o, 46, 1, XX < 38)                               # lijf zakt 1 in
     return o, 'ANIM_V_SQUISH_AND_BOUNCE'
 
@@ -150,6 +150,7 @@ def dj_rotom(a):
         for y in range(45, 50): o[y, c] = 14 if y > 49-nieuw[c] else 8
     bliksem = (a > 0) & (YY <= 22)
     o = rijschuif(o, bliksem, lambda y: int(round((22-y)/9)))  # bliksemspriet buigt naar rechts
+    o = rek(o, 51, 1, (XX >= 16) & (XX <= 35))                 # Rotom-kastje veert 1 op de beat, boxen staan
     return o, 'ANIM_V_SHAKE'
 
 def regiaqua(a):
@@ -163,7 +164,7 @@ def regiaqua(a):
 def regicosmo(a):
     lijf, los = groot_klein(a)
     ys, xs = np.where(lijf)
-    o = baan(a, los, 18, xs.mean(), ys.mean())      # manen draaien om de planeet
+    o = baan(a, los, 14, xs.mean(), ys.mean())      # manen draaien om de planeet
     return o, 'ANIM_V_SLIDE'
 
 FUN = dict(zandloper2=zandloper2, shuppetto=shuppetto, solrock_evo=solrock_evo, bloedmaan=bloedmaan,

@@ -81,14 +81,16 @@ def shiny_palet(slug, px, pal, optie='A'):
     tel = [px.count(i) for i in range(16)]
     nieuw = list(pal)
     for groep, idxs in groepen.items():
-        idxs = [i for i in idxs if tel[i]] or idxs
         if groep.startswith('_'):
             continue
+        idxs = [i for i in idxs if tel[i]] or idxs
         spec = kleuren[groep]
         opts = {}
         if isinstance(spec, tuple):
             spec, opts = spec
-        base = opts.get('base') if isinstance(opts.get('base'), int) else max(idxs, key=lambda i: tel[i])
+        base = groepen.get('_base_' + groep, opts.get('base'))
+        if not isinstance(base, int):
+            base = max(idxs, key=lambda i: tel[i])
         t = doel(pal, idxs, base, spec)
         uit = recolor(pal, idxs, base, t, lscale=opts.get('l', 1.0), hshift=opts.get('hs', 1.0))
         for i, c in uit.items():

@@ -3887,3 +3887,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.952] - Frame 2 per script: batch A (27 nov)
 - 18 soorten in `graphics_proef/frame2/batch_a/` (anim_front 64×128 + gif + `batch_a_vel.png`, `animids.txt`, script `batch_a.py`). Zwak: Cryomet, Spoetnik, satelliet, Purrpillar, guaraná 1; ruimtestation het zwakst (kandidaat voor Gemini of reparatie). Scrapstack en de glitch-lijn waren RGBA: omgezet naar P met hun eigen kleuren.
+
+### [v0.0.953] - Frame 2 per script: batch B (27 nov)
+- 17 soorten in `graphics_proef/frame2/batch_b/` (script `batch_b_f2.py`, hulpjes `f2b.py` met RotSprite). Goed: Dustly, Hauntflare, Solrock-evo, Bloedmaan, Regicosmo, Staryu, Starmie, zandloper 2, Claydol, Altaria, Regiaqua, Sunflora-evo. Zwak: Swablu, Pincurchin, DJ Rotom; Muk en Shuppetto eigenlijk Gemini (lokale pose).

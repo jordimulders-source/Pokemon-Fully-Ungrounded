@@ -25,7 +25,10 @@ def rek(x, r, d, mask=None):
     """Alles boven rij r (binnen mask) d px omhoog; rijen r-d..r-1 blijven ook staan (rij dubbel)."""
     m = (YY < r) & (x > 0)
     if mask is not None: m &= mask
-    return schuif(x, m, 0, -d, wis=False)
+    o = x.copy(); o[m & (YY < r-d)] = 0
+    ys, xs = np.where(m); assert (ys-d >= 0).all(), 'deel valt uit het vak'
+    o[ys-d, xs] = x[ys, xs]
+    return o
 
 def knijp(x, r, d, mask=None):
     """Alles boven rij r (binnen mask) d px omlaag; rijen r..r+d-1 verdwijnen (rij weg)."""
@@ -111,7 +114,7 @@ def epx(x):
     o[1::2, 1::2] = np.where((B == D) & (B != A) & (D != C), D, P)
     return o
 
-def rotsprite(x, mask, graden, cx, cy, dx=0, dy=0):
+def rotsprite(x, mask, graden, cx, cy, dx=0, dy=0, knip=False):
     """Deel draaien zoals RotSprite: 8x met Scale2x, nearest draaien, terug met de middelste pixel per 8x8-vak.
     Geen nieuwe kleuren; randen blijven doorlopende lijnen. + = tegen de klok in."""
     from PIL import Image
@@ -122,8 +125,9 @@ def rotsprite(x, mask, graden, cx, cy, dx=0, dy=0):
     o = x.copy(); o[mask] = 0
     ys, xs = np.where(r > 0)
     ny, nx = ys+dy, xs+dx
-    assert ((ny >= 0) & (ny < 64) & (nx >= 0) & (nx < 64)).all()
-    o[ny, nx] = r[ys, xs]
+    ok = (ny >= 0) & (ny < 64) & (nx >= 0) & (nx < 64)
+    assert knip or ok.all(), 'draaien valt uit het vak'
+    o[ny[ok], nx[ok]] = r[ys[ok], xs[ok]]
     return o
 
 def rotsprite_gezicht(x, mask, gezicht, graden, cx, cy, dx=0, dy=0):

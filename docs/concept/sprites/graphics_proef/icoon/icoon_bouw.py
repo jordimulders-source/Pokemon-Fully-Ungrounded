@@ -49,9 +49,16 @@ def lees_pal(p):
 IPAL = [lees_pal(f'graphics/pokemon/icon_palettes/pal{k}.pal') for k in range(6)]
 
 
-def afstand(a, b):  # 'redmean'-afstand (dichter bij het oog dan kale RGB)
-    r = (a[..., 0] + b[..., 0]) / 2; d = a - b
-    return np.sqrt((2 + r / 256) * d[..., 0] ** 2 + 4 * d[..., 1] ** 2 + (2 + (255 - r) / 256) * d[..., 2] ** 2)
+def lab(c):  # sRGB (0-255) -> CIELAB
+    c = np.asarray(c, float) / 255; c = np.where(c > .04045, ((c + .055) / 1.055) ** 2.4, c / 12.92)
+    M = np.array([[.4124, .3576, .1805], [.2126, .7152, .0722], [.0193, .1192, .9505]])
+    xyz = c @ M.T / np.array([.9505, 1.0, 1.089])
+    f = np.where(xyz > .008856, np.cbrt(xyz), 7.787 * xyz + 16 / 116)
+    return np.stack([116 * f[..., 1] - 16, 500 * (f[..., 0] - f[..., 1]), 200 * (f[..., 1] - f[..., 2])], -1)
+
+
+def afstand(a, b):  # kleurafstand in CIELAB (Delta E 1976): tint telt mee, paars wordt geen blauw
+    return np.sqrt(((lab(a) - lab(b)) ** 2).sum(-1))
 
 
 def icon_pal_index():
@@ -134,7 +141,7 @@ def bouw(cfg, S_extra=1.0, log=None):
                 if not ok.any(): continue
                 sel = np.zeros(PX.shape, bool); sel[ok] = m[PY[ok], PX[ok]]
                 if sel.mean() < drem: continue
-                q = sel & ok; dk = donker[PY[q], PX[q]]; lic = ~dk
+                q = sel & ok; dk = donker[PY[q], PX[q]]; lic = ~dk & vol[PY[q], PX[q]]   # transparante pixels (verdikte dunne delen) tellen niet voor de kleur
                 if lic.sum() == 0 or dk.mean() > ddrem: isdonker[Y, X] = True; kleur[Y, X] = 40
                 else:
                     # kleur = de meest voorkomende frontkleur (geen gemiddelde: dat geeft modder en blur)
@@ -249,6 +256,7 @@ def bouw(cfg, S_extra=1.0, log=None):
                 q = a + (b - a) * t; X, Y = int(np.floor(q[0])), int(np.floor(q[1]))
                 if l.get('alleen_binnen', True) and not mask[Y, X]: continue
                 idx[Y, X] = kl
+    if os.environ.get('IB_DEBUG'): np.save(os.environ['IB_DEBUG'] + '_idx.npy', idx); np.save(os.environ['IB_DEBUG'] + '_kleur.npy', kleur)
     # bijsnijden en plaatsen: onderkant y 29, midden x 15.5
     ys, xs = np.nonzero(idx > 0); crop = idx[ys.min():ys.max() + 1, xs.min():xs.max() + 1]
     hgt, wdt = crop.shape; res = np.zeros((32, 32), np.uint8)
@@ -302,6 +310,6 @@ if __name__ == '__main__':
     vel(cfg, [res], (['onderlaag'], [meta['palet']]), os.path.join(uit, 'onderlaag_8x.png'))
     r = [f"front {cfg['front']}", f"fronthoogte {meta['fh']} -> doelhoogte {meta['th']:.1f}; S {meta['S']:.3f} (bijgestuurd x{S_extra:.2f})",
          f"factoren {meta['fac']}", f"icoon {meta['breedte']}x{meta['hoogte']} (onderkant y29, midden x15.5)",
-         'minimummaten:'] + meta['info'] + ['paletafstand (gemiddeld, redmean; lager = beter):'] + \
+         'minimummaten:'] + meta['info'] + ['paletafstand (gemiddelde Delta E in Lab; lager = beter):'] + \
         [f"  pal{k}: {a:.1f}  ({meta['tint'][k]} tinten){'   <- gekozen' if k == meta['palet'] else ''}" for k, a in enumerate(meta['afst'])]
     open(os.path.join(uit, 'rapport.txt'), 'w').write('\n'.join(r) + '\n'); print('\n'.join(r))

@@ -82,3 +82,4 @@ AVOID: separate ice cubes glued or stuck onto the hands, oversized blocks, a dar
 - Jordi (27 nov): "ok de ogen zijn het belangrijkst, die mogen niet kleiner, ga maar los" → ogen op modelgrootte (natief raster, niet verkleind), rest naar 64.
 - Maker r7 → `sprite/kandidaat.png` (40×64, 7 kleuren, gezichtszone 1-op-1 op modelgrootte, rest ±76 %); eindkeuring loopt.
 - Eindkeuring ek1 (27 nov): PASS, 25 px alleen tint (selout/binnenlijnen; naad kubus↔onderarm donkerblauw i.p.v. navy, 5 px terug te zetten als Jordi dat wil). Ter beoordeling bij Jordi: `eindkeuring/ek1.png`.
+- Jordi over ek1 (27 nov): "super vet, dit leest allemaal als rechte lijnen, ik zeg niet dat het fout is gezien het een ijssculptuur is, maar kijk of het klopt" (`jordi/krabbel_ek1.png`, groene lijnen).

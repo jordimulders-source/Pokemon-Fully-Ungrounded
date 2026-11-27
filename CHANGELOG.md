@@ -3896,3 +3896,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.955] - Icoongereedschap algemeen + proeficonen (27 nov)
 - `graphics_proef/icoon/icoon_bouw.py` (front + JSON → onderlaag 32×32, paletkeuze op Delta E) en `icoon_af.py` (poetslijst + frame 2 uit dezelfde JSON). Proef: Gumfish (pal0, 15/17 checks; de twee NEE's liggen binnen echte Gen 3-vissen) en Sunperor (pal5, 17/17). Paletafwijkingen: Gumfish baksteenrood, Sunperors lijf grijs (geen icoonpalet heeft die tinten). Verwachting: ±30–45 min agentwerk per soort.
+
+### [v0.0.956] - Proeficonen afgekeurd (27 nov)
+- Jordi over de proeficonen Gumfish en Sunperor: "Nee de iconen zijn niet goed gelukt". Geen iconen in serie tot de oorzaak duidelijk is.

@@ -881,3 +881,9 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - **Open vragen (Claude):** is de zandloper in fase 3 nog gebroken (scherven) of heel; wordt het brein van fase 2 het hoofd van de djinn; hoeveel stukken apparatuur.
 - **Jordi (26 nov) op de vragen:** (1) "fase 3 is die gebroken, scherven werk laten we zitten, puur dat die geopend is en daar dus het zand uitloopt wat de djinn vormt." (2) "2 twijfel ik nog over, detail gaat niet goed vertalen naar een sprite, dus misschien alleen met wat belijning tonen dat de djinn aan het brein vast zit" (4) "zolang het allemaal goed gedefinieerd is kan het wel, geen te kleine dingen".
 - **Jordi (26 nov):** "zandloper ligt op de grond en in het midden geopend zou ik zeggen oid. 2 ik dacht aan hoofd, maar kan natuurlijk ook in de core".
+
+## Regionale Hitmonlee en Hitmonchan (Jordi, 27 nov)
+- **Jordi (27 nov):** "Ik wil nog wel een regional hitmonlee en hitmonchan maken. Hitmonchan ice, soort ijssculptuur met handschoenen als kubussen. Hitmonlee misschien van vuur, maar mogelijk andere optie".
+- **Repo-check (Claude):** Tyrogue, Hitmonlee en Hitmonchan zijn nu Fighting en staan uit de ROM (`FU_TYROGUE_HITMONLEE_HITMONCHAN`, DEX_IN_ROM); alleen Hitmontop (→ Hitmongroove) zit erin. Hitmonlee kent Blaze Kick, Hitmonchan de elementaire punches.
+- **Opties Hitmonlee (Claude, ter keuze):** A. vuur (tegenhanger van de ijs-Hitmonchan, Blaze Kick); B. was/kaars (ook een "materiaal" naast de ijssculptuur, smelt juist door vuur); C. rubber/latex (rekbare benen; rubberboom uit de Amazone); D. anders, van Jordi.
+- **Open vragen (Claude):** type Hitmonchan puur Ice of Ice/Fighting; Tyrogue gewoon of ook regional; evolueert Tyrogue naar de regionale vormen en blijft Hitmontop daarnaast gewoon.

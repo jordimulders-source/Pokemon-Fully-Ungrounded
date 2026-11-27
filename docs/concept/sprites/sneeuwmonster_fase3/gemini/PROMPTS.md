@@ -64,3 +64,6 @@ Draw ONLY the yeti: no hat, no bucket, no stones, no towel, no scarf.
 
 AVOID: stiff arms held out in the air, arms stretched out straight like a starfish, an upright straight back, a grin or laughing face, a fat round body, a cute plush look, Abomasnow, a snowman.
 ```
+
+## Stap 1 (27 nov)
+- `s1/s1a.png`. Jordi: "houding is goed, maar hij is te dik, en voor de rest klopt er weinig van".

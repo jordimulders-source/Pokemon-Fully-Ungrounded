@@ -120,6 +120,7 @@ SECTIES=[
 ("poliwrath_regional/af/poliwrath_regional.png",'Poliwrath (regional)',"ice/poison"),
 ("grimer_hoenn/af/grimer_hoenn.png",'Grimer (regional)',"poison/ground"),
 ("muk_hoenn/af/muk_hoenn.png",'Muk (regional)',"poison/ground"),
+("hitmonlee_regional/af/hitmonlee_regional.png",'Hitmonlee (regional)',"fire"),
 ("dj_rotom/af/dj_rotom.png",'"DJ Rotom"',"electric/steel"),
 ]),
 ]

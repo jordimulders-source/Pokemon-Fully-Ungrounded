@@ -68,3 +68,4 @@ AVOID: orange plastic or clay look, opaque body, a human in a glass costume, a g
 - Jordi over r16 (27 nov): "hitmonlee is heel netjes, alleen even kijken naar wat ik groen heb gemaakt" (`jordi/krabbel_r16.png`).
 - Jordi: "2 losse pixels, oog te rechthoekig, lijn in de voet en hoofd/been wat niet helemaal lekker aansluit".
 - ek4 (27 nov): Jordi's groene punten verwerkt (2 losse pixels weg, verre oog ovaal, plooi in trapvoet schuin, aansluiting kop↔trapbeen diagonaal) + 1 inkeping romp→standbeen; 19 px t.o.v. r16. Ter beoordeling bij Jordi.
+- **Af (Jordi, 27 nov): "ja hij is af, zet hem op het overzichtsvel"** → `af/hitmonlee_regional.png` (= ek4), op het overzichtsvel.

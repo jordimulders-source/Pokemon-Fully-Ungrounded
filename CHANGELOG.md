@@ -3632,3 +3632,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.868] - Regionale Hitmonlee: gladde benen + Jordi's punten (r16 / ek4) (27 nov)
 - Benen met gladde "getapete" omtrek, ringen alleen binnenin (r16); ek4: losse pixels weg, verre oog ovaal, plooi in de trapvoet schuin, aansluiting kop↔trapbeen vloeiend (`hitmonlee_regional/eindkeuring/ek4.png`).
 - Hitmonchan regional: Gemini r2 + prompt r3 (uppercut, kubusvuisten één stuk met de arm).
+
+### [v0.0.869] - Regionale Hitmonlee: frontsprite af (27 nov)
+- Jordi: "ja hij is af". `hitmonlee_regional/af/hitmonlee_regional.png` (= ek4), op het overzichtsvel bij Regional forms (Fire). Stand van zaken in CLAUDE.md bijgewerkt.

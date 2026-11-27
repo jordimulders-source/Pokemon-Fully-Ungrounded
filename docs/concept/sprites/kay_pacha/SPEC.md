@@ -38,3 +38,4 @@ Prompt r1: `PROMPT.md`.
 - Vertaalcheck r9 (`sprite/check_5x.png`, naast Raikou/Entei/Suicune): ontwerp vertaalt, pose niet (62×45, kop ±12 px, ogen en strepen verdwijnen). Voorstel: compactere pose zoals de beesten.
 - Jordi: "hij is iets te breed he?"; "zodra het ontwerp is goedgekeurd mag je om 18:11 beginnen met bouwen". → `PROMPT_r10.md` (bijlage r9, compactere pose).
 - Jordi: "eens, laten we om een nieuwe pose vragen en die golvende staart dingen wat minder naar achter laten gaan".
+- r10a/r10b (`gemini/r10a.png`, `r10b.png`, prompt r10): Jordi: "deze twee opties". Vertaalcheck `sprite/check_r10_5x.png`: a 57×62, b 60×62; beide vullen het vak.

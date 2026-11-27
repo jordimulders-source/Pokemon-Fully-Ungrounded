@@ -48,3 +48,4 @@ Trio van de drie Inca-werelden (zie `docs/concept/POKEMON.md` → Legendaries). 
 - **Sprite r4** (`sprite_r4/`): rechterklauw apart exact 2× uit het model als voorste vorm (A binnenlijn goud, B zwart); 18 px rechte lijnen aangepast; 28 rechte stukken genummerd in `overlay_8x.png` ter keuze voor Jordi.
 - Jordi over r4: "nee waarom teken je nu de klauw opnieuw, je was zo goed bezig" → r5: klauw terug naar r3, alleen omlijning/tint (≤10 px), lijnfixes r4 blijven.
 - **Sprite r5** (`sprite_r5/`): klauw = r3 + 10 px lijn/tint (gesloten omlijning tegen de staart, tenen lichter); rest = r4 A.
+- Jordi over r5: "de klauw moest duidelijker omlijnd worden, omdat de kleuren overlappen met de staart, misschien de klauwen een andere kleur geven?" → r6: beide klauwen gesloten omlijnd, tenen A grijs / B donker / C karmijn (voorstel Claude), vorm r3.

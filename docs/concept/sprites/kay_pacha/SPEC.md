@@ -18,3 +18,4 @@ Prompt r1: `PROMPT.md`.
 - Jordi: "en meer versiering met inca verwijzingen, mogelijk wat bladeren ook". "maak maar groen" gelezen als: vacht groen (a); Jordi bevestigt of verbetert dat bij r2.
 - Jordi: "ogen paars prima"; "versiering is niet een paar juwelen".
 - r2 (`gemini/r2.png`, prompt `PROMPT_r2.md`): Jordi: "kijk dit is veel beter, dit mag nog iets meer zelfs".
+- Jordi: "de blaadjes zijn wel te klein".

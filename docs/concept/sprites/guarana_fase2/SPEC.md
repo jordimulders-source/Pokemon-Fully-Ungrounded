@@ -82,3 +82,4 @@ Fase 1 (af): `../guarana/` (SPEC daar = alle eerdere besluiten).
 6. Oogrand rechts/onder lijnrood (variant A).
 7. Kleur zoals fase 1, palet fase 1; rood ±40/15/35/10 (lijn/schaduw/midden/licht); geen blur, geen nieuwe tinten, geen dithering.
 8. Geen horizontale strepen over meerdere vruchten; trosrand geschulpt per vrucht.
+- Jordi over r14: "de vormen van links en midden zijn verder oke, al heeft links onderin een heel verlept stukje fruit ipv recht en is midden op plekken iets te hard belijnd". En: "er moeten tenminste een paar ogen naar linksonder kijken zoals in fase 1", "heb ik toch al gezegd" → r15: 3–4 ogen pixel voor pixel het fase 1-oog.

@@ -143,3 +143,4 @@ Opdracht: `sprite/OPDRACHT.md`.
   Jordi: "dan moeten we bijsturen he" → bijsturen r4: stekels minder/dikker + nabije vleugel leesbaar als vleugel (voorstel Claude).
 - **r5** (`gemini/fase1_r5.png`, bijsturen r4 met Claudes voorstel: 4–5 dikke stekels + nabije vleugel als driehoek). Jordi: "nee dit is niet langer wat ik bedoelde". Grote grijze vleugel bedekt nu het lijf, stekels als een stekelvarken.
   Jordi ook: "nu zijn de armen bijna messen".
+  Jordi: "en de haren achterop zijn uberhaupt niet nodig" (stekels op de rug weg).

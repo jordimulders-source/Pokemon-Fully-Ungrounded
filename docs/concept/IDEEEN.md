@@ -195,7 +195,7 @@ Bovenaan gehouden zodat de stand in één oogopslag te zien is. Details in de se
 - Evoluties voor soorten die ze echt nodig hebben (Smeargle, Chatot, Cryogonal: niet per se).
 - Regional forms die underrated Pokémon interessant maken (de rest van de top 10 in `DEX_NOMINATIES.md` §5: nog niet overtuigd).
 - **Nog een nieuwe Mr. Mime-vorm** (misschien).
-- **Ledian-evolutie** (nadenken).
+- **Ledian-evolutie** (nadenken). Idee 27 nov: zie "Ledian-evolutie: ruimtesuperheld" onderaan.
 - **Cosmic-lijnen (Jordi, 17 nov):** "Ik had twee tot drie cosmic ideeën in gedachten. een Steel/Cosmic lijn met o.a. een satelliet erin, plus een supernova/black hole lijn. Nu zat ik eraan te denken om Solrock daarin te betrekken, maar dat kan ik eigenlijk niet doen zonder Lunatone ook evoluties te gaan geven, dan wordt het meteen wel wat veel. Ik zat ook te denken om Lunatone en Solrock misschien een gezamenlijke eclipse evolutie te geven, of misschien een Accelgor/Escavalier achtige evolutie, maar laten we eerst naar lore kijken of dat allemaal wel past". Lore-overzicht van Claude: in het gesprek van 17 nov. **Solrock-corona-evolutie: frontsprite af (22 nov)**, `sprites/solrock_evo/af/` (Solrock evolueert met Lunatone in het team = voorstel; zonsverduistering van steen, naar Gemini v5; naam en type open). Lunatone-bloedmaan nog te doen.
 - **Lanturn-evolutie geschrapt** (Jordi, 17 nov): "lanturn wil ik die horror niet aan doen, dat heb ik met een maat besproken". Niet opnieuw voorstellen.
 - **Sunflora-evolutie:** "alleen als we echt met een vet idee kunnen bedenken".
@@ -881,3 +881,7 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - **Open vragen (Claude):** is de zandloper in fase 3 nog gebroken (scherven) of heel; wordt het brein van fase 2 het hoofd van de djinn; hoeveel stukken apparatuur.
 - **Jordi (26 nov) op de vragen:** (1) "fase 3 is die gebroken, scherven werk laten we zitten, puur dat die geopend is en daar dus het zand uitloopt wat de djinn vormt." (2) "2 twijfel ik nog over, detail gaat niet goed vertalen naar een sprite, dus misschien alleen met wat belijning tonen dat de djinn aan het brein vast zit" (4) "zolang het allemaal goed gedefinieerd is kan het wel, geen te kleine dingen".
 - **Jordi (26 nov):** "zandloper ligt op de grond en in het midden geopend zou ik zeggen oid. 2 ik dacht aan hoofd, maar kan natuurlijk ook in de core".
+
+## Ledian-evolutie: ruimtesuperheld (Jordi, 27 nov)
+- **Jordi (27 nov):** "Ik denk aan een Ledian evolutie. Bug/cosmic, zelfde inspiratie maar een superheld die door de ruimte kan vliegen".
+- **Repo-check (Claude):** Ledian is in de repo Bug/Normal (herzien, niet Bug/Flying). De Ledyba-lijn zit niet in de dex (`DEX_IN_ROM.md`); met deze evolutie moet de familie terug.

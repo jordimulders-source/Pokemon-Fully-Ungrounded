@@ -9,3 +9,7 @@ Besluiten (letterlijk Jordi):
 
 Open: typing (Regi's zijn monotype in de repo; puur Cosmic niet besproken), kleuren, aantal hemellichamen.
 Prompt: `PROMPT.md`.
+
+## Rondes
+- r1 (`gemini/r1.png`, 27 nov): Jordi: "conceptueel goed, maar het zijn teveel planeten en veeeeel te veel stippen, dit vertaalt niet naar een sprite denk ik. Sowieso zijn er maar max 8 braille punten vgm".
+- r2-prompt: torso + 6 losse hemellichamen (schouders, handen, voeten) = 6 stippen + 1 middenstip = 7 (Claude; zoals Regirock/Regice/Registeel met 7 stippen). Eigen invulling, schrappen als Jordi het anders wil.

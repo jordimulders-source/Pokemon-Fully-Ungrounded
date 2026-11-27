@@ -7,7 +7,9 @@ Besluiten (letterlijk Jordi):
 - 27 nov: "stippen van regi's lichten altijd op".
 - 27 nov: "Ze moeten echt passen tussen de andere regi's ook". Werkwijze: Gemini-modellen.
 
-Open: typing (Regi's zijn monotype in de repo; puur Cosmic niet besproken), kleuren, aantal hemellichamen.
+- 27 nov, typing: "ja ze zijn monotype" (= puur Cosmic).
+
+Open: kleuren, aantal hemellichamen.
 Prompt: `PROMPT.md`.
 
 ## Rondes

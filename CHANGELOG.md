@@ -3632,3 +3632,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.866] - Regicosmo r1 + prompt r2 (27 nov)
 - `regicosmo/gemini/r1.png` bewaard; Jordi: conceptueel goed, te veel planeten en stippen (max 8). Prompt r2 in `regicosmo/PROMPT.md`: 7 delen, 7 stippen.
+- Typing (Jordi): "ja ze zijn monotype": Regicosmo Cosmic, Regiaqua Water.

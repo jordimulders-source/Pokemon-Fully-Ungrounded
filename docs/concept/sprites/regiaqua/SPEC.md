@@ -7,5 +7,7 @@ Besluiten (letterlijk Jordi):
 - 27 nov: "stippen van regi's lichten altijd op, maar je mag ze wel zo'n kleur geven" (= diepzee-lichtkleur).
 - 27 nov: "Ze moeten echt passen tussen de andere regi's ook". Werkwijze: Gemini-modellen.
 
-Open: typing, patroon van de stippen, kleuren.
+- 27 nov, typing: "ja ze zijn monotype" (= puur Water).
+
+Open: patroon van de stippen, kleuren.
 Prompt: `PROMPT.md`.

@@ -49,3 +49,5 @@ AVOID: orange plastic or clay look, opaque body, a human in a glass costume, a g
 ## r2 (`gemini/r2.png`) = MODEL
 - Jordi (27 nov): "dit is hem, vertaalt die naar een sprite?"
 - Test (Claude): eigen raster 10,24 px (100×100), figuur 68×74 cellen → licht verkleinen naar 64 (rijen schrappen); kale reductie in `test/`. Aandacht: gloed in de romp wordt vlekkerig, omlijning ontbreekt grotendeels, doorschijnend been in de romp en het oog klein.
+- Jordi: "kijk ook of gemini dingen heeft gedaan die niet overeenkomen met hitmonlee" / "op het eerste gezicht lijkt het van niet".
+- Vergelijking met Gen 3-Hitmonlee (Claude, `test/vergelijk.png`): (1) handen dunne spinvingers i.p.v. dikke stompe wanthanden; (2) polsring op de nabije arm (Hitmonlee heeft alleen beenringen); (3) voeten zonder scherpe witte klauwen (trapvoet laars, andere voet ronde teentjes; kussentje wel als witte stip); (4) oog ovaal met oranje iris i.p.v. hoekig boos wit oog met zwarte pupil. Voorstel: die delen uit Gen 3-Hitmonlee overnemen en naar glas omkleuren; rest 1-op-1 model. Wacht op Jordi.

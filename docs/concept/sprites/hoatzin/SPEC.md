@@ -317,3 +317,4 @@ MOOD: ugly in a Pokémon way, uncanny, a cryptid, something you don't trust. Sim
 
 AVOID: hands or fingers; feathers with vanes; spikes or hair on the back; a crest; a smile or a cute face; a branch or any object; a red eye; a normal bird.
 ```
+- **r16** (`gemini/fase1_r16.png`, prompt v8 + krabbel). Jordi: "zucht". Gemini plakte de krabbel letterlijk over r7 (gladde zwarte vlekken + vectorlijnen), niets hertekend.

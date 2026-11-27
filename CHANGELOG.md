@@ -3611,3 +3611,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.862] - Regionale Hitmonlee: Gemini r1 + prompt r2 (27 nov)
 - r1 opgeslagen (`hitmonlee_regional/gemini/r1.png`); Jordi: pose klopt niet, nog niet glasachtig. Prompt r2 in de SPEC (echte omhaal liggend in de lucht, glas doorschijnend met gloeiende kern).
+
+### [v0.0.863] - Regionale Hitmonlee: model gekozen (Gemini r2) (27 nov)
+- Jordi: "dit is hem". Kale reductietest in `hitmonlee_regional/test/` (raster 68×74 → 64).

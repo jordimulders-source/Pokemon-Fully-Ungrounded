@@ -45,3 +45,7 @@ No ball. No football clothes, no shirt, no shoes, no patterns: the football is o
 No flames, no sparks, no glow halo around the body, no heat haze, no effects, no ground, no shadow.
 AVOID: orange plastic or clay look, opaque body, a human in a glass costume, a glass statue on a pedestal, a plush/Neopets look.
 ```
+
+## r2 (`gemini/r2.png`) = MODEL
+- Jordi (27 nov): "dit is hem, vertaalt die naar een sprite?"
+- Test (Claude): eigen raster 10,24 px (100×100), figuur 68×74 cellen → licht verkleinen naar 64 (rijen schrappen); kale reductie in `test/`. Aandacht: gloed in de romp wordt vlekkerig, omlijning ontbreekt grotendeels, doorschijnend been in de romp en het oog klein.

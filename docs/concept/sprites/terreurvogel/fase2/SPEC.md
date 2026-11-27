@@ -23,6 +23,7 @@ Regionaal fossiel, **Rock/Fighting**, 2 fases. Tegenhanger van de glyptodon (Roc
 - **Jordi (27 nov):** "met wat kanttekeningen, de snavel is van staal, dat moet een soort stone axe worden" / "anders klopt het type niet meer". Uitvoering: snavelvorm uit het model, kleuren steen i.p.v. staal; facetten/barsten alleen als voorstel.
 - **Jordi (27 nov):** "de vlekken en details in het lichaam zijn geen vereiste, daar mag je mee spelen zolang het maar netjes eruit ziet, ik wil wel de kleuren terug zien komen want het zijn mooie roestkleuren".
 - **Jordi (27 nov):** "het silhouet is wel heel belangrijk" (silhouet = modelomtrek, bevroren).
+- **Jordi (27 nov):** "en probeer het oog wat meer driekwart te laten richten ipv volledig naar links, als het oog dan groter moet worden dan moet dat maar" → 2–3 ogen 1-op-1 uit Gen 3-vogels als varianten.
 
 ## Open
 - Fase 1 (Jordi, 27 nov): "een kuiken met een enorme kop en snavel lijkt me wel humor, die dan heel uncanny cute is en heel onhandig erbij zit". Prompt: `../fase1/gemini/PROMPTS.md`.

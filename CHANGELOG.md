@@ -3593,3 +3593,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Nieuwe originele Ground/Psychic-lijn: zandloper met ogen → brein breekt uit → zand-djinn. Fase 3 frontsprite af in `docs/concept/sprites/zandloper/fase3/af/` (model Gemini r5 + glas en ogen uit r8, barst uit r10; 11 makerrondes + DC-eindkeuring PASS). Op het overzichtsvel. Besluiten in `zandloper/fase3/SPEC.md`.
 - Terreurvogel en glyptodon als regionale fossielen in TODO.
 - Lessen: versimpelwoorden in Gemini-prompts maken het lijf slap; geen ruwe plakversie tonen; "rustig" is geen pluspunt.
+
+### [v0.0.858] - Zandloper-lijn: fase 1 frontsprite af (27 nov)
+- Fase 1 (zandloper met ogen, Ground/Psychic) frontsprite af in `docs/concept/sprites/zandloper/fase1/af/`: zwevende, scheve zandloper met de sluwe ogen van de opgesloten djinn in het zand en twee losse houten handen. Model = Gemini r6 + handen uit r3 (gedraaid, variant C); sprite = model 1-op-1 op zijn eigen raster (63×64) + eindkeuring tinten/schaduw. Op het overzichtsvel. Prompts r1–r8 in `zandloper/fase1/gemini/PROMPTS.md`, besluiten in `zandloper/fase1/SPEC.md`.
+- Lessen (GEMINI.md): feitelijke opmerking van Jordi = kritiek; pixel aanwijzen via een krabbel op de sprite; ver oog in driekwart nooit groter.

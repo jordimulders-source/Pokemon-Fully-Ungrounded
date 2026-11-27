@@ -168,3 +168,4 @@ MOOD: ugly in a Pokémon way, uncanny, a cryptid, something you don't trust. Sim
 AVOID: feathered wings; hands or fingers; blade-like or knife-like wings; spines, spikes, quills or hair on the back or wings; a crest; messy or scruffy feathers; a normal bird; a happy or cute face; a smile; a branch or any object; a mask; a red eye; brown or chestnut; a fat or round belly; a symbol or marking; glow.
 ```
 - **r6** (`gemini/fase1_r6.png`, prompt v3). Jordi: "te blij en de vleugels kloppen nog steeds niet met wat ik bedoel". NB: Claude had "haren achterop" (rug) in v3 ook doorgetrokken naar de vleugels ("no feather shafts" op de vleugels); dat zei Jordi niet.
+- Vleugel (Jordi, bij `referenties/kuiken_7_vleugel_kam.png`): "zonder dit erin is het design gefaald". = de waaier van lange donkere kale veerschachten (pennen in de schede, zonder vlag) aan de kale arm.

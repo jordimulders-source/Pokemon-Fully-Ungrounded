@@ -3626,3 +3626,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.864] - Zandloper-lijn fase 2: Gemini-prompt r1 (27 nov)
 - Jordi's idee voor fase 2 (gebroken zandloper, groot zandbrein, losse ogen eronder, vraag- en uitroepteken van zand erboven, alles verbonden) vastgelegd met prompt r1 in `docs/concept/sprites/zandloper/fase2/gemini/PROMPTS.md`.
 - r1 beoordeeld (alles los); prompt r2: één zandwolk, kleinere zandloper op de grond, ? en ! als handen.
+- r2 beoordeeld (rest prima); prompt r3: zandloper kapot en op de grond, brein is de vorm i.p.v. een tekening.

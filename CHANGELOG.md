@@ -3568,3 +3568,8 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Originele Poison-lijn = hoatzin-lijn (Poison/Dark, kuiken → pestmasker-hoatzin). Fase 2 frontsprite af: `docs/concept/sprites/hoatzin/af/hoatzin_fase2.png` (= r13; model Gemini r6 + hoofd r4, kuif K1, teken halverwege, kleurronde naar Murkrow, twee DC-eindkeuringen). Op het overzichtsvel (New). Naam open.
 - Kuiken (fase 1) nog te doen: `hoatzin/OVERDRACHT_KUIKEN.md`.
 - Les in GEMINI.md: veerlijnen in een donker vlak vinden via de fractie zeer donkere modelpixels.
+
+### [v0.0.856] - Hoatzin fase 1 (kuiken): frontsprite-kandidaat (27–28 nov)
+- 17 Gemini-rondes voor het kuiken (`docs/concept/sprites/hoatzin/gemini/fase1_r*.png`); Jordi koos r4 als model, met rughaar weg, vleugelharen vervangen door sprite-haren, donkere wig = lijf en poot doorgetrokken.
+- Sprite r1–r4 in `hoatzin/sprite_fase1/` (maker → keurder → DC-eindkeuring PASS): 40×44, ±736 px, zwart-aandeel 41 → 20 %, 11 kleuren, haren A en B. Wacht op Jordi.
+- Les in GEMINI.md: referentiefoto eerst zelf beschrijven en laten bevestigen; geen eigen vormen in prompts; sarcasme niet als compliment lezen.

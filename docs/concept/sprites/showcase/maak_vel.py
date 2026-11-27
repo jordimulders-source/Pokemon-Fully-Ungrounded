@@ -74,6 +74,7 @@ SECTIES=[
 ("hoatzin/af/hoatzin_fase1.png",'Hoatzin fase 1 (kuiken)',"poison/dark"),
 ("hoatzin/af/hoatzin_fase2.png",'Hoatzin fase 2 (pestmasker)',"poison/dark"),
 ("zandloper/fase1/af/zandloper_fase1.png",'Zandloper (zandloper-lijn fase 1)',"ground/psychic"),
+("zandloper/fase2/af/zandloper_fase2.png",'Brein uit de zandloper (zandloper-lijn fase 2)',"ground/psychic"),
 ("zandloper/fase3/af/zandloper_fase3.png",'Zand-djinn (zandloper-lijn fase 3)',"ground/psychic"),
 ]),
 ("Evolutions of existing Pokémon",[

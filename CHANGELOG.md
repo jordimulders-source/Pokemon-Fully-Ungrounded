@@ -3652,8 +3652,15 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Eindkeuring (`ledian_evo/eindkeuring/`, PASS): 33 px belijning (outline base aan de lichtkant, zwart aan de schaduwkant, outline highlights); zwarte binnenlijnen hoofd/arm/vleugel bewust gehouden (selout liet ze versmelten); silhouetdiff 0, 13 kleuren + transparant (nieuw: Ledians donkerste geel a47b00 als voetlijn).
 ### [v0.0.876] - Ledian-evolutie: frontsprite af (27 nov)
 - Jordi: "zeker, nice". `docs/concept/sprites/ledian_evo/af/ledian_evo.png` (+ 8×) = eindkeuring; op het overzichtsvel (Evolutions of existing Pokémon). Naam open; Ledyba-lijn moet terug in de dex. TODO-brainstorm Ledian weg.
-### [v0.0.877] - Zandloper-lijn fase 2: model r3 + sprite r4 (27 nov)
+### [v0.0.877] - Ledyba-lijn terug in de dex (27 nov)
+- Jordi: "ledyba lijn moet zeker terug". `P_FAMILY_LEDYBA` weer aan (`include/config/species_enabled.h`); `DEX_IN_ROM.md` en `IDEEEN.md` bijgewerkt. ROM niet gebouwd (Jordi: "je hoeft de rom nog niet te bouwen").
+### [v0.0.878] - Ledyba-lijn: alleen genoteerd (27 nov)
+- Jordi: "gewoon noteren dat ze terug erin komen en dat pushen". `P_FAMILY_LEDYBA` terug op `FALSE`; in `DEX_IN_ROM.md` staat dat de lijn terugkomt.
+### [v0.0.879] - Ledyba-lijn: schakelaar aan (27 nov)
+- Jordi: "maar je kan false toch true maken zonder de rom te hoeven bouwen?" `P_FAMILY_LEDYBA` weer op `P_GEN_2_POKEMON`; ROM nog niet gebouwd.
+### [v0.0.880] - Zandloper-lijn fase 2: frontsprite af (27 nov)
 - Jordi's idee voor fase 2 (gebroken zandloper, groot zandbrein, losse ogen eronder, vraag- en uitroepteken van zand erboven, alles verbonden) vastgelegd met prompt r1 in `docs/concept/sprites/zandloper/fase2/gemini/PROMPTS.md`.
 - r1 beoordeeld (alles los); prompt r2: één zandwolk, kleinere zandloper op de grond, ? en ! als handen.
 - r2 beoordeeld (rest prima); prompt r3: zandloper kapot en op de grond, brein is de vorm i.p.v. een tekening.
 - Gemini r3 = model; sprite op 0,80 (Jordi) via r1–r4 met keuringen: `docs/concept/sprites/zandloper/fase2/sprite/r4/`; besluiten in `fase2/SPEC.md`. Wacht op Jordi.
+- Na Jordi ("wat hard omlijnd", "het gaat niet om dunnere lijn maar kleur"): r4 behouden → DC-eindkeuring (zwarte binnenpixels in lijnkleur van het eigen onderdeel, 13 outline highlights). Af (Jordi: "ja commit en push naar main"): `docs/concept/sprites/zandloper/fase2/af/zandloper_fase2.png`; op het overzichtsvel. Zandloper-lijn af, namen open.

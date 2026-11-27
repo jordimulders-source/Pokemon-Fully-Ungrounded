@@ -899,3 +899,4 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - **Jordi (27 nov) op r5:** "ok dat is niet beter, hij heeft nu helemaal geen mond meer, terwijl ledian dat wel heeft, de armen zitten verder ook gek, zijn te kort, nieuwe prompt from scratch graag". Prompt r6: `sprites/ledian_evo/gemini/PROMPT_r6.md`.
 - **Jordi (27 nov) op r6:** "deze vind ik tof, vertaalt die goed naar een sprite?" Check (Claude): natief raster ±66×66 (pixel ±10,2 px), ±9 kleuren; 2 rijen/kolommen schrappen naar 64×64, geen hertekenwerk nodig.
 - **Jordi (27 nov) over de mond in r6:** "de mond is heel subtiel, zie mijn lijn, vind ik wel prima zo" (`sprites/ledian_evo/gemini/r6_mond_jordi.png`). r6 = model; SPEC: `sprites/ledian_evo/SPEC.md`.
+- **Jordi (27 nov):** "ledyba lijn moet zeker terug". `P_FAMILY_LEDYBA` aan en genoteerd in `DEX_IN_ROM.md`; ROM nog niet gebouwd.

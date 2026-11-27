@@ -16,3 +16,4 @@ Lijn: fase 1 zandloper met ogen (`../fase1/af/`) → fase 2 → fase 3 zand-djin
 - Jordi: "het gaat niet om dunnere lijn maar kleur" → r5 vervalt; r6-varianten op r4 (ogen ongemoeid): A zwart → donker zandbruin, B zwarte buitenlijn → selout 2, C zwart alleen aan de onderkanten (`sprite/r6/vel_kleur.png`).
 - Jordi: "prima, behoud r4 maar en stuur naar de eindkeuring" → r4 naar de DC-eindkeuring (`eindkeuring/`).
 - Eindkeuring (DC, 66 px t.o.v. r4): 53 zwarte binnenpixels → lijnkleur van het eigen onderdeel, buitenrand zwart aan de schaduwkant, 13 outline highlights; silhouet en ogen diff 0. `eindkeuring/zandloper_fase2_ek.png`. Wacht op Jordi.
+- **Af (Jordi, 27 nov):** "ja commit en push naar main" → `af/zandloper_fase2.png` (= eindkeuring). Op het overzichtsvel. Naam open.

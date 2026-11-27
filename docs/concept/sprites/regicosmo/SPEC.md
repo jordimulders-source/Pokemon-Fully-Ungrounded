@@ -27,3 +27,4 @@ Prompt: `PROMPT.md`.
 - r7 (afbeelding niet als bestand ontvangen; 7 ronde cyaan stippen 2-1-2-2, Mars met donkere band): Jordi: "deze is nog beter" · "op de posities wederom na". Plan: Claude verschuift de hemellichamen zelf in het model (als assets, niets tekenen).
 - Jordi (27 nov) over r7: "als de witte (uranus/neptunus) en saturnus wat lager kunnen zodat het een soort rayman armen lijken met de steen en maan samen dan is die goed".
 - r7 bewaard (`gemini/r7.png`). Positievarianten (`positie/schuif.py`, alleen verplaatsen): ijsplaneet en Saturnus 10/14/18 modelpixels omlaag (A/B/C) en 5–6 naar buiten (anders raken ze Mars); `positie/vel.png` = r7 | A / B | C.
+- Jordi (27 nov): "als deze klaar zijn komen ze op het sprite sheet onder een apart kopje 'Legendaries'" → nieuwe sectie "Legendaries" in `showcase/maak_vel.py` (SECTIES).

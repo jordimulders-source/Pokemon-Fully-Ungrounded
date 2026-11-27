@@ -109,3 +109,12 @@ Keep everything exactly the same: the pose, the relaxed face and smile, the ston
 The attached image is the design. Keep everything exactly the same: the relaxed sitting pose, the calm closed-eye smile, the snow fur, the slim belly, the stones (size, places, look), the bucket on its head, the colors and the Gen 3 sprite style (64x64, max 16 colors, dark outline, facing 3/4 to the left, white background).
 Change ONLY its size in height: make it a much taller, longer creature, so it looks big and imposing even while sitting: a longer torso, longer neck area, longer arms and longer legs. NOT more muscular, NOT wider, NOT fatter: just taller and longer, like a towering yeti that is sitting down.
 ```
+
+## s3 (27 nov)
+- `s3/s3a.png`. Jordi: "ok nu moet die nog wakker zijn, maar wel relaxed". (Lengte/postuur geaccepteerd.)
+
+## s3a-bijsturen (in hetzelfde gesprek), één wijziging: ogen open
+Eigen invulling Claude: halfopen, zware oogleden.
+```
+Keep everything exactly the same (pose, body, size, stones, bucket, colors, style, the calm smile). Change ONLY the eyes: it is awake now, eyes open, but still relaxed: half-open eyes with heavy, lazy eyelids, a calm and content look, like someone enjoying the warmth of the sauna. Not wide open, not surprised, not sleepy-closed.
+```

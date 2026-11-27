@@ -20,3 +20,7 @@ Type, naam (regional forms: blijven Staryu/Starmie?), serieus/grap.
 ## Starmie-sprite: correctie Jordi (27 nov)
 - Na r3 C1/C2 (voorste ster verkleind, gespiegelde Gen 3-achterster): "waarom neem je het model niet over?"; "je maakt hem ook steeds rechter"; "steeds minder driekwart pose".
 - Dus: model r3 1-op-1 overnemen (pose, driekwart-perspectief, verhoudingen, achterpunten op hun modelplek en -richting). Alleen de vorm van de achterpunten puntiger zoals bij de echte Starmie, binnen het perspectief van het model.
+
+## Starmie-model gekozen (27 nov)
+- Jordi over r4: "Deze was bijna goed, alleen geen driekwartpose en de punten zijn te puntig, dat moest meer als de normale starmie, alleen de punten minder puntig maken". Gemini kon driekwart + achterster niet samen (v5–v8). Keuze uit (1) r4 + punten in de sprite minder puntig, pose blijft zoals r4, of (2) plakken: "doe maar r4".
+- **Model Starmie = `gemini/r4_starmie.webp`.** In de sprite: de achterpunten minder puntig, zoals de normale Starmie. Pose zoals r4.

@@ -888,3 +888,4 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - **Jordi (27 nov):** "als het lukt en er goed eruit ziet krijgt Tangela een nieuwe evolutie"; "de vines worden slangen en de het midden blijft zwart met ogen, maar de ogen iets anders".
 - **Nog open (Claude):** typing; hoe de ogen anders worden; nieuwe evolutie = naast of in plaats van Tangrowth.
 - **Gemini v1** (`sprites/tangela_regional/r1/gemini_v1.webp`), Jordi (27 nov): "heel tof, maar dit vertaalt nog niet naar een sprite denk ik, wat voor kleur zullen we voor gaan voor de slangen? ik neig toch naar paars".
+- **Jordi (27 nov) op kleur A (blauwpaars, dicht bij Tangela):** "maar hij hoeft dus helemaal niet in dezelfde kleurfamilie te zitten, zelfs een voorkeur voor dat niet doen, gezien andere regionale vormen". A vervalt; open: B (roodpaars/magenta/pruim) of C (donker pruimpaars met lichte buikschubben), en minder/grotere slangenkoppen.

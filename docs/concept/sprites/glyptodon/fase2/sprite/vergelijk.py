@@ -4,8 +4,8 @@ from PIL import Image,ImageDraw
 from reduceer import X0,Y0,s,LEFT,TOP
 k=10.24
 def model1x():
-    src=Image.open('../model.png').convert('RGB')
-    bx=(X0-LEFT*s)*k; by=(Y0-TOP*s)*k; S=64*s*k
+    s0=Image.open('../model.png').convert('RGB'); src=Image.new('RGB',(2048,2048),'white'); src.paste(s0,(512,512))
+    bx=(X0-LEFT*s)*k+512; by=(Y0-TOP*s)*k+512; S=64*s*k
     return src.crop((int(bx),int(by),int(bx+S),int(by+S))).resize((64,64),Image.BOX)
 def sprite_rgb(f):
     p=Image.open(f); p=p.convert('RGBA'); bg=Image.new('RGBA',(64,64),(255,255,255,255)); bg.alpha_composite(p); return bg.convert('RGB')

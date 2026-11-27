@@ -139,3 +139,4 @@ Opdracht: `sprite/OPDRACHT.md`.
 - **r2** (`gemini/fase1_r2.png`, prompt v2, nieuw gesprek: lange poten, geen vleugels, geen kuif). Jordi: "ietsje beter maar nu heeft die helemaal geen armen meer, zo moeten de armen eruit zien, soort vleugels zonder veren" (`referenties/kuiken_6_arm.png`).
   Jordi ook: "en hij is te blij".
 - **r3** (`gemini/fase1_r3.png`, bijsturen r2: armen als kale vleugels met stekelrij + minder blij). Jordi: "ok maar het is nog geen vleugels zonder veren, dit zijn klauwen".
+- **r4** (`gemini/fase1_r4.png`, bijsturen r3: armen als geplukte vleugel). Jordi: "vertaalt dit naar een sprite?". Kale verkleiningstest in `fase1_maat/` (`maten.py`, `maten_vel.png`): Gemini-raster 10,24 px (100×100), figuur natief 70×77 (2268 px); h56 1260 px, h50 1011 px, h44 787 px.

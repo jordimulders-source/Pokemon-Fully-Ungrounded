@@ -295,3 +295,25 @@ AVOID: feathers on the wings; a crest; a smile or a cute face; a branch or any o
 - Na r15: Jordi "ik ga wel krabbelen want dit is belachelijk". Volgende stap: Jordi's krabbel over r13 → Claude bouwt het model pixel voor pixel naar de krabbel (GEMINI.md: krabbel uitvoeren = kleuren meten).
 - Jordi: "haal hier de handen weg" / "en de haren" / "op de rug en okselhaar links" (op r7). Krabbelbasis: `krabbelbasis/krabbelbasis_r7.png` (10×, natief `basis_natief.png`, `weghalen.py`; alleen weggehaald, gat dicht met lijfkleur + omlijning).
   Jordi op krabbelbasis_r7: "dat bedoelde ik niet" / "maar goed" / "wacht maar".
+- **Krabbel Jordi** (`krabbelbasis/krabbel_jordi.png`, over r7): "zoiets bedoel ik" / "heel lelijk getekend want ik kan niet tekenen" / "daarom gebruik ik ai". Hand aan het eind van elke arm zwart overgetekend (langwerpige donkere vorm), met losse lange dunne lijnen die eruit naar achteren/beneden steken; kale grijze arm blijft.
+
+## Prompt fase 1 (v8, Engels; nieuw gesprek, bijlage = Jordi's krabbel)
+Eigen toevoegingen Claude: de lezing van de krabbel ("dark, elongated", "a few long, thin, bare shafts", "pointing backward and down"), "ignore the spikes on the back".
+
+```
+Design an original Pokémon, drawn as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64, max 16 colors, white background, no ground, no shadow, no effects, no objects. The whole creature fits inside the canvas with white margin on all sides; nothing is cut off.
+
+The attached image is a rough hand-drawn sketch over an earlier version. Use it for the body, head, legs and pose, and above all for the WINGS: the black shapes and thin black lines were drawn by hand to show what the wings must look like. Redraw everything cleanly as a real Gen 3 sprite.
+
+WINGS (most important, as in the sketch): wings without feathers. A thin bare grey arm; at the end, instead of a hand, a dark, elongated part of the wing, with a few long, thin, bare shafts sticking out of it, pointing backward and down. No hands, no fingers, no claws at the end.
+
+WHAT IT IS: an uncanny, cryptid-like hoatzin chick. Its legs are far too long for its small body: thin, bare and grey, with claws. It stands a bit awkwardly, body turned 3/4 to the left.
+
+BODY: small, mostly black down with some yellowish tints only in the down. Ignore the spikes on the back in the sketch: no spikes or hair on the back.
+
+HEAD: no crest. A hooked grey beak, no smile. A dark eye with a grey ring around it. Not happy.
+
+MOOD: ugly in a Pokémon way, uncanny, a cryptid, something you don't trust. Simple, readable design.
+
+AVOID: hands or fingers; feathers with vanes; spikes or hair on the back; a crest; a smile or a cute face; a branch or any object; a red eye; a normal bird.
+```

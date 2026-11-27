@@ -36,3 +36,7 @@
 - **Gemini r6 gezicht** (`gemini/r6_gezicht.webp`), Jordi: "en nu?". Gemeten (`gemini/r4c_vs_r6_gezicht.png`): gezicht ±6 % breder, nog steeds ±12–13 spritepx. Gemini vergroot het gezicht niet op verzoek. Volgende proef: Claude vergroot het hoofd zelf 1,5× (`gemini/bijlage_hoofd_1.5.png`, naad/kapflap nog lelijk) en Gemini tekent alleen de aansluiting netjes (`gemini/PROMPT_r7_aansluiting.md`).
 - **Gemini r7 aansluiting** (`gemini/r7_aansluiting.webp`), Jordi: "nu weer niet he". Gemeten (`gemini/r4c_bijlage_r7.png`): gezicht ±1,25–1,3× r4c (Gemini kromp de 1,5× deels terug), ±13–14 spritepx i.p.v. ±10–11; kap past nu op de schouders, buitenlijn glad/vectorachtig.
 - Jordi over r7 en de opties (27 nov): "nee je kan het gezicht niet veranderen en dan de rest niks".
+- **Gemini r8 from scratch** (`gemini/r8_scratch.png`), Jordi (27 nov): "nu is het dr doom". Claude: "bold dark lines" + "upside-down U mouth" gaven een boos metalen masker met fronsende mond; armen werden stenen vuisten, mantel te laag. Volgende poging (`gemini/PROMPT_r9.md`, nog niet gebruikt): grote verhoudingen houden, gezicht zacht en sereen zoals r4c, mond/wanglijnen niet als "U"/"bold" beschrijven.
+
+## Stand (27 nov, gepauzeerd: Jordi had geen tijd meer)
+- Bevroren model r4c; sprite r1–r7 op r4c-maat: gezicht (±11 px) niet na te maken, Jordi akkoord dat het hoofd groter moet, maar alleen het hoofd vergroten past niet ("je kan het gezicht niet veranderen en dan de rest niks") → nieuw ontwerp vanaf nul met groter gezicht; r8 = Dr. Doom.

@@ -3,6 +3,7 @@
 Bewezen op de viscacha (19 nov, af: `docs/concept/sprites/viscacha/icoon/af/icon.png`). Volg dit stap voor stap; naslag en bewijs staan in `docs/concept/sprites/rug_icoon_studie/EISEN_ICOON.md`, `STUDIE.md` en `verhoudingen/STUDIE_VERHOUDINGEN.md`.
 
 ## Kern (Jordi)
+- **Geen verkleining** (Jordi, 27 nov, over de proeficonen Gumfish en Sunperor: "Die zijn gewoon verkleind maar dat was de regel helemaal niet").
 - **Eis 0: hij lijkt op de front.** "dat is het belangrijkste van de hele eisenlijst, hij moet lijken op de echte pokemon". Het icoon is onze front in het klein: kopvorm, gezicht, oren, kenmerken en kleurverdeling overnemen, niets verzinnen.
 - **Rekenen, niet schatten.** "de wiskunde is ontzettend belangrijk voor het icoon". Elke maat en plek volgt uit de front × de regels uit de meetstudie, binnen de marge p25–p75.
 - **Niet koppig zijn en niet opnieuw tekenen.** Wat goed is blijft pixel voor pixel staan; repareer alleen de benoemde punten.

@@ -52,3 +52,4 @@ Trio van de drie Inca-werelden (zie `docs/concept/POKEMON.md` → Legendaries). 
 - **Sprite r6** (`sprite_r6/`): klauwen A grijs / B donker / C karmijn, gesloten omlijning, vorm r3.
 - Jordi over r6: "C past het beste, kijk nu nog eens goed naar het model voor de klauwen want dat is nog een beetje willekeurige pixels" → r7: klauwen C, klauwpixels per pixel naar het model.
 - **Sprite r7** (`sprite_r7/`): klauwen C, 8 px naar het model (natieve 2×2-blokken); model heeft zelf een kluwen bij de voeten.
+- Jordi over r7: "ok de klauwen zijn dus te klein om volledig na te maken? Kijk naar klauwen van andere vogel pokemon" → r8: klauwen 1-op-1 van Gen 3-vogels (3 bronnen), omgekleurd naar C.

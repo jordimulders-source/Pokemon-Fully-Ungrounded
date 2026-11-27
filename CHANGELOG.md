@@ -3622,3 +3622,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Frontsprite af: `docs/concept/sprites/hoatzin/af/hoatzin_fase1.png` (= `sprite_fase1/r9`). Na r4: Jordi op de rechterhelft ("niet goed te zien waar de ledematen los van elkaar zitten") → nabije vleugel als één gevouwen vorm (Jordi's omtrek), binnenlijnen niet zwart maar donkere eigen tint (r5–r8), DC-eindkeuring r9 (13 px, PASS). Haren B (Jordi).
 - Op het overzichtsvel (New, vóór fase 2). Hoatzin-lijn af; namen open.
 - Les in GRAPHICS.md: haarwortels apart houden in binnenlijnscripts; slagschaduw naast een lijn in dezelfde tint = dubbele lijn.
+
+### [v0.0.864] - Zandloper-lijn fase 2: Gemini-prompt r1 (27 nov)
+- Jordi's idee voor fase 2 (gebroken zandloper, groot zandbrein, losse ogen eronder, vraag- en uitroepteken van zand erboven, alles verbonden) vastgelegd met prompt r1 in `docs/concept/sprites/zandloper/fase2/gemini/PROMPTS.md`.

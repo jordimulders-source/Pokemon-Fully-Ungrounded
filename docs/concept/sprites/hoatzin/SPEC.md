@@ -338,3 +338,4 @@ MOOD: ugly in a Pokémon way, uncanny, a cryptid, something you don't trust. Sim
 
 AVOID: copying or tracing the sketch; smooth vector shapes; hands or fingers; feathers with vanes; spikes or hair on the back; a crest; a smile or a cute face; a branch or any object; a red eye; a normal bird.
 ```
+- **r17** (`gemini/fase1_r17.png`, prompt v9 + krabbel). Nog geen oordeel Jordi.

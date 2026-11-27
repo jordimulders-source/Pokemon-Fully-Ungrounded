@@ -3806,3 +3806,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.917] - Uku Pacha: r6 en r7 (27 nov)
 - r6: tong als doorlopende vork, rechterpupil 1 px links, mondlijn en lichtere streep op de rechterkop. Jordi: "de pupil is nu weer verdwenen" → r7A: oograndpixel links van de pupil in koptint, zodat de pupil los staat (r7B als alternatief: pupil een rij lager).
+
+### [v0.0.918] - Uku Pacha: eindkeuring (27 nov)
+- DC-eindkeuring op r7A: rechte stukken in geestvlam, rechtervleugel, linkerkop en kronkellijn naar de modelkromming (14 alpha-pixels), gekleurde buitenlijn aan de lichtkant, binnenlijnen in eigen donkerste tint behalve tegen de diepste schaduw, lijfladder meer contrast (28/29/37). Pupillen en borstplaten ongewijzigd.

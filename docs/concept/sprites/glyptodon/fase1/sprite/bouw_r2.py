@@ -1,9 +1,9 @@
 # r2 = r1 + benoemde reparaties van Claude (ronde 2). Alleen gemeten op het model (meet.py), lijnen en silhouet van r1 blijven.
 #  1. kop/nek (x<=21, y 39..53): vulpixels opnieuw uit het model met MEERDERHEID van de modelcellen
 #     (i.p.v. het gemiddelde dat modder gaf) -> crème/tan snuit en kaak, lichtste plaattinten in de nek.
-#     Oog = Sandshrew-oog (Gen 3, anim_front_gba) 1-op-1 overgenomen, kern 4x3 (kolom 19-22, rij 28-30), op de modelplek.
+#     Oog (x11-13, y47-48) niet aangeraakt: blijft r1 (Jordi: "hij heeft geen pupil", Claude vraagt het na).
 #  2. poten (y>=53): meerderheid + lichte tenen waar >=30% van de pixel lichte modelcellen (>=140) zijn.
-#  3. staart (x>=42): meerderheid + lichte segmentbovenkanten waar >=30% lichte modelcellen (>=135) zijn.
+#  3. staart: vervallen (Jordi: "staart is prima"), precies r1.
 # Randpixels (buitenlijn/selout) en lijnpixels van r1 worden niet aangeraakt.
 import sys, numpy as np
 from PIL import Image
@@ -21,30 +21,23 @@ def zet(y, x, v, waarom):
     if a[y, x] != v:
         log.setdefault(waarom, []).append((x, y, int(a[y, x]), v)); a[y, x] = v
 
+OOG = {(x, y) for x in range(11, 14) for y in (47, 48)}
 VUL = [2, 3, 4, 5, 6, 7, 8, 9, 10]
 GRIJS = [2, 3, 4, 5, 6, 7]
 for y in range(H):
     for x in range(W):
         v = r1[y, x]
         if v in (0, 1, 12) or rand(y, x): continue
+        if (x, y) in OOG: continue   # oog: deze ronde niet aanraken (Jordi/Claude), precies r1
         if x <= 21 and 39 <= y <= 53:
             m, _ = meet.meerderheid(x, y, PAL, VUL)
             if m: zet(y, x, m, '1 kop/nek meerderheid')
         elif x >= 42 and y <= 52:
-            m, _ = meet.meerderheid(x, y, PAL, GRIJS)
-            if m: zet(y, x, m, '3 staart meerderheid')
-            if meet.licht(x, y, 135) >= 0.30: zet(y, x, 7, '3 staart licht segment')
+            continue   # staart: Jordi "staart is prima" -> precies r1
         elif y >= 53:
             m, _ = meet.meerderheid(x, y, PAL, GRIJS)
             if m: zet(y, x, m, '2 poten meerderheid')
             if meet.licht(x, y, 140) >= 0.30: zet(y, x, 7, '2 tenen licht')
-
-# Oog: Sandshrew anim_front_gba, kolom 19-22 x rij 28-30 (f=zwart, c=wit, e=donkergrijs), 1-op-1, wit op de modelglans (12,48)
-SAND = ['fecf', 'ffcc', 'fffe']
-MAP = {'f': 1, 'c': 11, 'e': 5}
-for j, rij in enumerate(SAND):
-    for i, ch in enumerate(rij):
-        zet(47 + j, 10 + i, MAP[ch], '1 oog Sandshrew')
 
 np.save(D + '/r2.npy', a)
 im = Image.fromarray(a.astype('uint8'), 'P'); flat = [0, 0, 0] * 16

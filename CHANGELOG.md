@@ -3635,3 +3635,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.869] - Regionale Hitmonlee: frontsprite af (27 nov)
 - Jordi: "ja hij is af". `hitmonlee_regional/af/hitmonlee_regional.png` (= ek4), op het overzichtsvel bij Regional forms (Fire). Stand van zaken in CLAUDE.md bijgewerkt.
+
+### [v0.0.870] - Regionale Hitmonchan: frontsprite-kandidaat + eindkeuring (27 nov)
+- Gemini r3 (uppercut, uitgehakt ijs) overgenomen: gezicht 1-op-1 op modelgrootte (Jordi: "de ogen zijn het belangrijkst"), rest ±76 %, 7 kleuren. Eindkeuring ek1 PASS (`hitmonchan_regional/eindkeuring/ek1.png`). Les in `GEMINI.md`.

@@ -81,3 +81,4 @@ AVOID: separate ice cubes glued or stuck onto the hands, oversized blocks, a dar
 - `gemini/r3.png` opgeslagen (Jordi: "vertaalt die naar een sprite?"). Test (Claude): raster 10,24 px duidelijk (score 2× hoger dan 5,12; natief schoon), figuur 50×81 cellen → ±79 % naar 64 hoog. Kale reductie in `test/` wordt vlekkerig in de facetten en het gezicht.
 - Jordi (27 nov): "ok de ogen zijn het belangrijkst, die mogen niet kleiner, ga maar los" → ogen op modelgrootte (natief raster, niet verkleind), rest naar 64.
 - Maker r7 → `sprite/kandidaat.png` (40×64, 7 kleuren, gezichtszone 1-op-1 op modelgrootte, rest ±76 %); eindkeuring loopt.
+- Eindkeuring ek1 (27 nov): PASS, 25 px alleen tint (selout/binnenlijnen; naad kubus↔onderarm donkerblauw i.p.v. navy, 5 px terug te zetten als Jordi dat wil). Ter beoordeling bij Jordi: `eindkeuring/ek1.png`.

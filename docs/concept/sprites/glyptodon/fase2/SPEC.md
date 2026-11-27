@@ -20,3 +20,4 @@ Regionaal fossiel, **Rock/Normal**, wall, eigen ability (later). 2 fases; fase 1
 - Over r5 (27 nov): "maar nu verander je het pupil telkens mee" → oog (alle oranje pixels) blijft exact r4, alleen de lijn verandert van kleur.
 - Over r6 (27 nov), met groen kruis op (13,41): "groenkruis is het pupil niet je blauwe vakje" → pupil = (13,41), zwart; (15,41) blijft r4.
 - Over r7 (27 nov): "a en b lijn werken allebei, stuur naar de eindkeuring en laat de eindkeuring bepalen welke van de twee het meest consistent is, kijk verder naar groen (mogelijk onnodige rechte lijnen) en rood (mogelijk verkeerd gekleurde pixels)" (`sprite/jordi_r7_groen_rood.png`).
+- Over ek1 (27 nov): "nee, de twee bruine pixels in de beige lijnen staan er nog steeds en de rechte lijnen zijn nog steeds te recht, vooral de poten, vooral de achterpoot wat gewoon een vierkant is". B + lijn (bruin) gekozen door de eindkeuring.

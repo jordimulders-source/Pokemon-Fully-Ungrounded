@@ -1,0 +1,20 @@
+== A: 61 pixels veranderd
+  wissels die niet M->H/L/D zijn: 0 []
+  silhouet (transparant) anders: 0 px
+  pixels buiten vacht (lijn/strepen/oog/manen/hoorn/oor) aangeraakt: 0
+  oog K4 (x15-19 y21-24): 0 px, neus/mond (x8-12 y23-29): 0 px
+  index ongewijzigde pixels gelijk: True
+  nieuwe rechte tintgrenzen >= 4 px: 0 []
+  losse nieuwe pixels (geen gelijke buur, ook diagonaal): []
+  per tint nieuw: {'H': 53, 'D': 8}
+  vachttellingen r15 -> r16: {'L': (31, 31), 'H': (0, 53), 'M': (390, 329), 'D': (183, 191)}
+== B: 121 pixels veranderd
+  wissels die niet M->H/L/D zijn: 0 []
+  silhouet (transparant) anders: 0 px
+  pixels buiten vacht (lijn/strepen/oog/manen/hoorn/oor) aangeraakt: 0
+  oog K4 (x15-19 y21-24): 0 px, neus/mond (x8-12 y23-29): 0 px
+  index ongewijzigde pixels gelijk: True
+  nieuwe rechte tintgrenzen >= 4 px: 1 [('ver', 30, 46, 49, 'H', 'M')]
+  losse nieuwe pixels (geen gelijke buur, ook diagonaal): [(14, 19, 'L'), (15, 25, 'L')]
+  per tint nieuw: {'H': 84, 'L': 13, 'D': 24}
+  vachttellingen r15 -> r16: {'L': (31, 44), 'H': (0, 84), 'M': (390, 269), 'D': (183, 207)}

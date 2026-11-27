@@ -3843,3 +3843,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Op het overzichtsvel (sectie Legendaries); lessen in `docs/lessen/GEMINI.md`. Gemerged met main (eigen changelogsecties hernummerd naar v0.0.925–938).
 ### [v0.0.939] - Regicosmo: frontsprite af (27 nov)
 - Jordi: "ja die is af". `docs/concept/sprites/regicosmo/af/regicosmo.png` (= r7 na DC-eindkeuring PASS; hemellichamen als golem, Cosmic). Op het overzichtsvel onder Legendaries naast Regiaqua.
+
+### [v0.0.940] - Pseudo-legendary = satelliet-lijn (27 nov)
+- Jordi: "Pseudo wordt trouwens niet de pitahaya draak" en "de satelliet lijn wordt de pseudo". Bijgewerkt in `POKEMON.md`, `IDEEEN.md` (pitahaya-pseudo achterhaald) en Stand van zaken.
+- Early route insect: "komt misschien nog later maar heb geen inspiratie meer voor nu. Er kan idd altijd nog een bestaande soort in de tussentijd." (in `POKEMON.md` → Rollen).

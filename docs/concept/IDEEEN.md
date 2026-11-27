@@ -890,3 +890,4 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - **Pitch Hitmonlee (Claude, 27 nov; Jordi: "Pitch een paar mogelijke leuke ideeën voor hitmonlee"):** 1. glassculptuur (Fire, gloeiend glas; tegenhanger van het ijsbeeld); 2. lucifer (Fire, dunne benen als lucifers met rode kop, schoppen = afstrijken); 3. chilena (omhaal, naar Chili vernoemd; voetballer, bal als hoofd/romp); 4. stalen veren (Steel, benen als spiraalveren, pogo); 5. nandoe (Flying, de Zuid-Amerikaanse loopvogel met harde trappen); 6. kaars/was (wassen beeld, smelt net als het ijsbeeld).
 - **Jordi (27 nov):** "Tyrogue blijft hetzelfde".
 - **Jordi (27 nov), keuze Hitmonlee:** "ja een voetballende hitmonlee lijkt me goed, doe maar een omhaal pose, maar we maken hem van glas gloeiend en geblazen". (= pitch 3 chilena + pitch 1 glassculptuur.)
+- **Jordi (27 nov):** "ook soort knipoog naar 'de man van glas' wat vaak met voetballers gezegd wordt" (= blessuregevoelige speler).

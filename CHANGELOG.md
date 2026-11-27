@@ -3867,3 +3867,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.946] - Proefserie: kandidaten rug en frame 2 (27 nov)
 - Maker-agent (Jordi akkoord met de reparaties): `graphics_proef/kandidaat/` met Gumfish-rug (48×28, frontpalet, winegum-glans van de front 1-op-1 linksboven op de koepel), Sunperor-rug (gaten onder de kroon dicht met lijfbruin, twee losse oogjes weg, vloerbalk weg) en Sunperor frame 2 (verschuiving +1,+1 op de front, 57 px verschil, vooral de open snavel; `sunperor_anim_front.png` + gif). Script `gereedschap/bouw_kandidaat.py`.
+
+### [v0.0.947] - Proefserie: Sunperor-rug gaten weer open (27 nov)
+- Jordi over de dichte versie: "dit gaat niet helemaal goed" (kop verdwijnt in één donkere massa). Variant `kandidaat/sunperor_rug_A_gaten_open.png` (alleen oogjes en vloerbalk weg; vergelijking `sunperor_rug_vergelijk_dicht_open.png`). Les: gaten dichtvullen kan geen kop maken die Gemini niet tekende; dan een nieuwe Gemini-poging.
+- Ruggen hebben 1 frame (64×64); de beweging doet de engine (`backAnimId`).

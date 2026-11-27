@@ -36,3 +36,24 @@ POSE: 3/4 view facing left, standing upright and imposing like a Regi.
 
 DO NOT: more than 7 parts, more than 7 dots, lines between dots, starfield or galaxy texture, nebula, sparkles, eyes, mouth, separate head, orbit lines, effects.
 ```
+
+# r3 (nieuw gesprek, geen bijlage)
+Na Jordi op r2: "net iets te random en nog net niet goed genoeg golem"; binnenste "wat meer een mars kleur".
+```
+Design a new legendary Pokémon as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style): pixel art, 64x64, max 16 colors, dark outline, light from top-left, plain white background, no ground, no shadow, no effects. It must read clearly at 64x64: few, big shapes.
+
+WHAT IT IS: a new member of the Regi family of golem legendaries (Regirock, Regice, Registeel). It is a big, heavy, faceless golem with no eyes, no mouth and no separate head; its only "face" is a pattern of glowing dots on its chest. The silhouette must instantly read as a Regi golem: a massive torso, high broad shoulders, long heavy arms hanging down beside the body, short stubby legs. Symmetrical and orderly, NOT a random cluster of planets.
+
+BODY: the golem is made of 7 separate celestial bodies with small gaps between them, arranged in this exact golem skeleton:
+- TORSO: one big planet colored like Mars (rusty red-orange, darker red craters), the biggest part, in the center.
+- SHOULDERS: 2 matching medium moons, high up on the left and right of the torso, at the top corners, like big shoulder blocks.
+- HANDS: 2 matching rocky asteroids, each hanging directly below its shoulder, reaching down to about the bottom of the torso, like heavy fists.
+- FEET: 2 matching small dark asteroids, directly under the torso, close together, like short legs.
+Each pair (shoulders, hands, feet) is the same type and size. Nothing else floats around: no extra moons, no debris, no rings.
+
+THE DOTS: exactly 7 glowing dots on the torso, no lines between them. They form a tiny map of the golem itself: 1 center dot (the torso) with 2 dots up-left and up-right (shoulders), 2 dots lower-left and lower-right further out (hands) and 2 dots close together below (feet). Dots are 2x2 or 3x3 pixels at 64x64, glowing in a color that stands out clearly against the red (not red, not orange).
+
+POSE: 3/4 view facing left, standing upright and imposing like Regirock or Registeel.
+
+DO NOT: random placement, extra planets or debris, rings, a bigger number of dots, lines between dots, starfield or galaxy texture, nebula, sparkles, eyes, mouth, head, orbit lines, effects.
+```

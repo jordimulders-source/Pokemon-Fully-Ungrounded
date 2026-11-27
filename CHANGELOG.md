@@ -3599,3 +3599,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - `docs/concept/sprites/guarana_fase2/af/guarana_fase2.png` (+ `normal.pal`, 8×); op het overzichtsvel (sectie New). Lijn af; namen open. Vaste regels en alle citaten in `guarana_fase2/SPEC.md`; lessen in `docs/lessen/GEMINI.md`.
 ### [v0.0.859] - Idee: Ledian-evolutie (27 nov)
 - `docs/concept/IDEEEN.md`: Jordi's idee voor een Ledian-evolutie (Bug/Cosmic, superheld die door de ruimte vliegt) + repo-check (Ledian = Bug/Normal, Ledyba-lijn nog niet in de dex).
+### [v0.0.860] - Ledian-evolutie: besluiten + Gemini-prompt r1 (27 nov)
+- Jordi: fase 3, nog meer superheld, space superhero, Ledians designrichting verder doortrekken (`IDEEEN.md`).
+- Prompt r1: `docs/concept/sprites/ledian_evo/gemini/PROMPT_r1.md`.

@@ -86,6 +86,7 @@ SECTIES=[
 ('lunatone_evo/af/bloedmaan.png', 'Bloedmaan (Lunatone)', 'rock/cosmic'),
 ('emolga_evo/af/model.png', 'Wingsuit-colugo (Emolga)', 'electric/flying'),
 ('emolga_evo_fase3/af/fruitvampier.png', 'Fruitvampier (Emolga)', 'electric/flying'),
+('ledian_evo/af/ledian_evo.png', 'Ledian-evolutie (Ledian)', 'bug/cosmic'),
 ]),
 ("Regional forms / convergent Pokémon",[
 ("silicobra_uyuni/af/silicobra_uyuni.png",'"Silicobra" (regional)',"ground/electric"),

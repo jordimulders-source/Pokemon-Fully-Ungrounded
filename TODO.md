@@ -23,7 +23,7 @@ Originele Poison-lijn = hoatzin-lijn (Poison/Dark, 2 fases): fase 2 af (26 nov),
 - **Nieuwe Pokémon:** Rock/Water-lijn fontein ↔ gargoyle (Jordi, 16 nov; richting open, uitwerking niet forceren), Steel/Cosmic satelliet-lijn (alle drie de fases af: Spoetnik 23 nov, satelliet 25 nov, ruimtestation 26 nov; namen open), Nazca-astronaut, Golofa-kever, aardappel/maïs-lijn, guácharo, rode oeakari + witgezichtsaki, capibara, Norowara en Kyonpan, zandloper-lijn (Ground/Psychic, origineel; fase 3 zand-djinn af 27 nov).
 - **Regionale fossielen (Jordi, 26 nov: "sowieso nog gaan komen"):** terreurvogel en glyptodon.
 - **Legendaries:** trio Hanan Pacha (condor, de enige condor), Kay Pacha (poema), Uku Pacha (slang); Pachamama (Ground/Fairy).
-- **Brainstorm:** evoluties voor Ledian, Sunflora, Shuckle, Ninjask, Sableye, Mawile, Manectric, Absol, Glalie; regionale Tropius; nog een Mr. Mime-vorm.
+- **Brainstorm:** evoluties voor Sunflora, Shuckle, Ninjask, Sableye, Mawile, Manectric, Absol, Glalie; regionale Tropius; nog een Mr. Mime-vorm.
 - Geschrapt (Jordi, 23 nov): vicuña → guanaco, carnavalspauw; Fire/Water-Pokémon is gedaan (onderwater-Oddish-lijn). Geschrapt (Jordi, 20 nov): regionale vogel die eindigt als condor, Lanturn-evolutie, brandweerhond-Growlithe, opossum (verwerkt in Abra).
 
 ## Sprites opknappen (Jordi, 24 nov)

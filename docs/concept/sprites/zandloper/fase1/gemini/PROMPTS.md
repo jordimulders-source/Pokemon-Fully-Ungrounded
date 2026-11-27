@@ -29,3 +29,19 @@ Small first-stage Pokémon. Keep it simple and readable at 64x64: big clear shap
 
 No effects, no glow, no sparkles, no ground or shadow under it. AVOID: a plain realistic hourglass with eyes, a plush toy, Neopets style.
 ```
+
+**Jordi (voor r2 gebruikt was):** "kijk naar hoe bijv sinistea ook een theekopje interessanter maakt, zulke dingen".
+
+## r3 – Sinistea-principes vertaald (Sinistea niet genoemd: les GEMINI.md, naam = kopie)
+Wat Sinistea doet (analyse Claude): het wezen is de inhoud, het voorwerp is zijn huis; de inhoud vormt een klein hoofd met grote ogen dat over de rand gluurt; een klein mankement (het schilfertje) geeft karakter; scheve, zwevende houding. Vertaling = invulling Claude, ter keuze: zand vormt in de bovenste bol een rond hoofdje met grote ogen dat tegen het glas drukt alsof het opgesloten zit (botst mogelijk met "nog niks eruit of vorm", 26 nov); een kleine sliert zand die als geestrook omhoog krult in de glazen bol (djinn-hint); één klein barstje in het glas (vooruitwijzing naar fase 2, "net gebroken").
+```
+Design an original Pokémon as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style), 64x64 pixels, max 16 colors, white background, facing 3/4 to the left.
+
+Concept: the first stage of an hourglass Pokémon (Ground/Psychic). Its final evolution is a sand djinn that escapes from the hourglass. Here the djinn is still locked inside: the creature IS the living sand, and the hourglass is its home and shell, the way some official Pokémon are a ghost living inside an everyday object.
+The sand in the upper bulb gathers into a small rounded head with two big expressive eyes, pressed against the inside of the glass and peeking out, as if it is trapped and curious about the world outside. A thin wisp of sand curls upward inside the glass like genie smoke, hinting at the djinn. The rest of the sand lies in the bottom bulb.
+The hourglass: pale blue glass with wooden end caps, slightly rounded and charming rather than realistic. There is one small crack in the glass, a hint that it will break one day. Nothing comes out of the glass yet.
+POSE: it floats in the air at a tilt, it does not stand upright on the ground.
+Small first-stage Pokémon. Keep it simple and readable at 64x64: big clear shapes, like a real Gen 3 sprite.
+
+No effects, no glow, no sparkles, no ground or shadow under it. AVOID: a plain realistic hourglass with eyes, a plush toy, Neopets style.
+```

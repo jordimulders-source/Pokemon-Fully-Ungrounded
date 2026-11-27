@@ -139,3 +139,10 @@ Keep this Pokémon sprite exactly the same: same pose, same colors, same beak, s
 ```
 
 **r7 (`r7.png`) = model.** Jordi (27 nov): "ok in de sprite zorgen dat het oog naar voren kijkt, we gaan het anders dan normaal doen, ik ben nog niet helemaal tevreden met de kleuren van het lichaam en de snavel, dus bouw maar de sprite en toon dan een paar pallette swaps. De snavel vind ik nog niet fossiel genoeg en het lichaam niet dreigend genoeg qua kleur, de pose prima nu".
+
+**Jordi (27 nov) over `r1.png`:** "dit was stiekem ook wel een tof idee voor de snavel, houd dat als optie in gedachten" / "of zullen we nog een prompt doen om deze wat minder detail te geven?" (Claude las "deze" = r1; gemeld.)
+
+## r1-eenvoud (27 nov, bewerking met `r1.png` als bijlage)
+```
+Keep this Pokémon sprite the same design: same pose, same axe-shaped beak, same colors, same proportions. Make it simpler, with less detail, so it reads as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style, 64x64, max 16 colors): large clean shapes with smooth shading, a clear 1-pixel outline, only a few feather lines, NO speckled or noisy texture, NOT every feather drawn separately. White background, no effects.
+```

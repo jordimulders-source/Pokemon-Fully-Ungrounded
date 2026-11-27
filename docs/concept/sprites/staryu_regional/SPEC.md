@@ -45,3 +45,6 @@ Jordi: "A is uitstekend, eindkeuring daarvoor qua schaduw etc".
 
 ## Starmie af (27 nov)
 `starmie/af/starmie_regional.png` = sprite_r9 (r8 A + eindkeuring: 2 px glans in de bovenpunt, PASS). Op het overzichtsvel (Regional forms, Fairy/Psychic). Lijn af.
+
+## Na af: nog niet netjes (27 nov)
+Jordi, met `referenties/jordi_starmie_omcirkeld.png`: "wacht dit zie ik nu pas, omcirkeld is nog niet netjes afgewerkt". Omcirkeld: (1) achterpunt rechtsboven (x±37–46, y±10–19); (2) tip van de rechter voorarm (x±47–56, y±20–25).

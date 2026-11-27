@@ -30,3 +30,4 @@ Prompt: `PROMPT.md`.
 - Jordi (27 nov): "als deze klaar zijn komen ze op het sprite sheet onder een apart kopje 'Legendaries'" → nieuwe sectie "Legendaries" in `showcase/maak_vel.py` (SECTIES).
 - Jordi (27 nov): "linksonder B, maar de voeten mogen iets meer naar het midden van het lichaam, vooral de rechtse". Voetvarianten op B (`positie/voeten.py`, `positie/vel_voeten.png`): links +1/+2/+3, rechts −3/−5/−7 modelpixels (V1/V2/V3).
 - Jordi (27 nov): "V2" → model = `model.png` (= `positie/B_voeten2.png`: r7, schouders 14 modelpixels omlaag + naar buiten, voeten links +2/rechts −5). Sprite gestart (`sprite/`).
+- Sprite r1/r2 (maker): 62×47, 16 kleuren, 7 losse delen, stipkleuren gedeeld met het ijs (Jordi), Mars-oranjes in Saturnus, voeten 2 kleuren. Saturnus leest op 15×10 px als scheve ruit (bol 8 px); vraag aan Jordi of Saturnus in het model groter mag.

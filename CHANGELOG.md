@@ -3853,3 +3853,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.942] - Typeverdeling per lijn (27 nov)
 - Op vraag van Jordi: types per lijn (origineel, regionaal, evo's, nieuw totaal, hele dex; zonder legendaries) in `docs/concept/DEX_IN_ROM.md`; script `tools/grounded/typen_per_lijn.py`.
+
+### [v0.0.943] - Dragon als open punt (27 nov)
+- Jordi: "eigenlijk blijft alleen dragon echt achter, dus dat is nog huiswerk voor mij, maar dat ga ik pas doen als ik een goed idee heb". In `TODO.md` → Ontwerpen.

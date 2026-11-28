@@ -73,3 +73,4 @@ Na vergelijking met 12 Gen 3-ruggen (`pakketten/batch_01/af/ruggen_vs_gen3.png`)
 > AVOID: a side view of the whole animal, visible legs or feet, a walking pose.
 >
 > Gen 3 pixel art, plain white background, no ground, no shadow, no effects, no text.
+- **v2 afgekeurd** (Jordi, 28 nov: "want bij deze klopt het perspectief niet meer" · "de staart zit bijna onder de schouder"). Jordi's vraag: "als gemini gewoon het hele achterlichaam stuurt op een specifieke grootte dan kan jij het toch netjes afknippen?" → ja, als het beeld genoeg pixels heeft (Llamauler op 10,7 px wel, de 16-px-beelden niet). Test v1-sjabloon met de front op 4× op een wit vlak van 1024 (`batch_01/bandolingo_front_4x_canvas.png`), zodat Gemini op een fijner raster tekent.

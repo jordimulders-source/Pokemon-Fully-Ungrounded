@@ -65,3 +65,4 @@
 - Jordi (28 nov): "ja alleen het gezicht neem je over" → sprite = r4 v1 (model r7) met het gezicht van Gemini r10 (neutraal androgyn masker) in het gezichtsvlak; kap, romp en silhouet blijven r4 v1. Ronde in `sprite_r7model/r9/`.
 - Jordi (28 nov): "en die kinstukken met rots mogen dus ook weg" → baard/kin-rotsvlakken, ∩ en wanglijnen van r4 verdwijnen; heel het gezicht = masker van r10.
 - **r9** (`sprite_r7model/r9/`): r4 v1 met het r10-masker (gemeten 3×3 op het r10-raster, r4-palet, neus crème); diff buiten het gezicht 0. Zwakke punten (maker): schaduwband rechts breder dan in r10 (gezichtsvlak r4 breder, opgevuld), ogen 2 rijen hoog zonder lichtpixel.
+- Jordi over r9 (28 nov): "ziet er gek uit nog steeds, de kap moet misschien weer groter" → r10: varianten K1 (gezicht modelmaat r7, dikke kap), K2 (1,10×), K3 (1,18×), alle met het r10-masker.

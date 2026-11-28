@@ -61,3 +61,4 @@
 - Jordi (28 nov): "laten we gemini from scratch nog een keer vragen te ontwerpen, misschien dat die een hoofd maakt wat beter vertaalt"; "want dit gaat in een sprite niet beter worden" → `gemini/PROMPT_r9.md` (eigen invulling Claude: "geen zichtbare mond", baard als één lichte vorm om de kin, maten in pixels).
 - **Gemini r9** (`gemini/r9a.png`, `gemini/r9b.png`), Jordi (28 nov): "nu maakt die er een soort jezus van, ik wil echt een neutraal masker gezicht" → `gemini/PROMPT_r10.md`: gezicht = neutraal stenen masker, alleen ogen en neus, geen baard/snor/mond.
 - Jordi (28 nov): "of juist vrouwelijker of het liefste androgeen" → in prompt r10: "androgynous (if anything slightly feminine)".
+- **Gemini r10** (`gemini/r10.png`), Jordi (28 nov): "kan je hier iets mee". Gemeten: raster 5,12 px (veelvouden 10,24/15,36), figuur 844 px breed → gezicht ±16 spritepx bij 60 px figuurbreedte; gezicht uit grote vlakken, ogen ±4–5 px.

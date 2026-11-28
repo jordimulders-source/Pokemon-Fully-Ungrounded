@@ -62,3 +62,4 @@
 - **Gemini r9** (`gemini/r9a.png`, `gemini/r9b.png`), Jordi (28 nov): "nu maakt die er een soort jezus van, ik wil echt een neutraal masker gezicht" → `gemini/PROMPT_r10.md`: gezicht = neutraal stenen masker, alleen ogen en neus, geen baard/snor/mond.
 - Jordi (28 nov): "of juist vrouwelijker of het liefste androgeen" → in prompt r10: "androgynous (if anything slightly feminine)".
 - **Gemini r10** (`gemini/r10.png`), Jordi (28 nov): "kan je hier iets mee". Gemeten: raster 5,12 px (veelvouden 10,24/15,36), figuur 844 px breed → gezicht ±16 spritepx bij 60 px figuurbreedte; gezicht uit grote vlakken, ogen ±4–5 px.
+- Jordi (28 nov): "ja alleen het gezicht neem je over" → sprite = r4 v1 (model r7) met het gezicht van Gemini r10 (neutraal androgyn masker) in het gezichtsvlak; kap, romp en silhouet blijven r4 v1. Ronde in `sprite_r7model/r9/`.

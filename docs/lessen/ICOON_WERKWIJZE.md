@@ -17,6 +17,13 @@ Bewezen op de viscacha (19 nov, af: `docs/concept/sprites/viscacha/icoon/af/icon
   - Een maker die de kop "vrij" tekent: dat geeft een verzonnen kop (v5).
   - Krabbels letterlijk rasteren.
 
+## Stap 0: waar komt de driekwartpose vandaan? (Jordi, 28 nov: "ipv allerlei dingen te gaan proberen, eerst methodiek" · "hoe ging het goed bij zapacha" · "wat ging daar fout" · "trek daar lering uit"; route-indeling goedgekeurd: "ja laten we dat proberen")
+Les uit de viscacha en de proefrit: de viscacha lukte omdat zijn front al in driekwart stond; de pose kwam mee met de onderdelen-reductie. Uit een recht kijkende front komt nooit een driekwart-icoon (Cuyby r1), en tekenen is verboden (Shuppetto r1). Bepaal dus vóór de eerste pixel de route:
+1. **Bestaand icoon met dezelfde vorm** (regional form die qua vorm gelijk blijft, zoals Poliwag; niet Poliwhirl/Poliwrath): dat icoon overnemen en omkleuren; ook elk kenmerk (spiraal) komt uit dat icoon.
+2. **Front staat al in driekwart:** de stappen hieronder (onderdelen-reductie met kop-factor > lijf-factor, oog uit de front, alleen benoemde reparaties, frame 2 door schuiven).
+3. **Front kijkt recht:** eerst een driekwart-model op frontgrootte via Gemini (zoals de rugsprite: een pose op volle grootte, geen icoon vragen), Jordi kiest, dan route 2 op dat model.
+Indeling per soort: `docs/concept/sprites/icoon_proefrit/ROUTES.md`.
+
 ## Stappen
 1. **Onmisbare kenmerken opschrijven.** Noteer 2–4 per soort, met vorm én maat, bijvoorbeeld "lange rechtopstaande oren dicht bij elkaar". Ter vergelijking: Kadabra zonder lepel is geen Kadabra, Poliwag zonder roze neus is geen Poliwag. Leg ook de opbouw van het oog vast: wit met pupil, of donker met een glanspixel, plus ooglid en kleur.
 2. **Onderlaag met de onderdelen-methode.**

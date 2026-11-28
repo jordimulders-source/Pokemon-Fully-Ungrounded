@@ -12,3 +12,14 @@ Nieuw gesprek, alleen bijlage `cuyby_8x.png` (onze front, 8×, op wit). Geen voo
 
 ## Daarna
 Jordi kiest; kale 1-op-1-reductie naar het front-raster; dan route 2 (onderdelen-reductie, oog uit de front, alleen benoemde reparaties, frame 2 door schuiven). Uitkomsten hieronder bijhouden.
+
+## Ronde 1 (28 nov)
+`gemini_r1.png` → `natief.png` (16 px-cellen, 30×33). Jordi: "hij is ietsje anders geworden, maar dat is niet erg voor een icoon" · "de proporties kloppen niet meer alleen" · "jigglypuff en marill blijven namelijk netjes rond en cuyby is wat uitgebold". Les: bij een ronde soort draait alleen het gezicht; het silhouet blijft rond (zoals Jigglypuff/Marill). Gemini maakte de zijkanten recht en liet de oranje kant uitbollen.
+Schrappen (`bouw.py`, pal3): r5 bewaarde extra kolommen voor de oren → breder en lager dan het model. Regel: dezelfde factor horizontaal en verticaal; bij details alleen kiezen wélke rij/kolom blijft (r6).
+
+## Prompt r2 (nieuw gesprek, alleen bijlage `cuyby_8x.png`)
+> This is a Pokémon battle sprite of my creature, seen straight from the front. Draw the same creature slightly turned toward the left, the way round Pokémon like Jigglypuff are shown in three-quarter view: the outline of the body stays exactly as round and the same size as in my image; only the face turns. The eyes, nose and mouth move a bit to the left on the round head, the far eye is a little narrower, the black patch and the orange side follow the turn, and the right ear moves slightly behind the head.
+>
+> Keep my creature exactly as it is: same colors, same art style and dark outline, same cream fur, same black patch, same orange side, same big shiny eyes, same small pink nose, same round ears with pink insides, same ragged fringe at the bottom. Do not make it taller, wider or more square, and nothing sticks out at the sides. Do not add anything new and do not redesign it.
+>
+> Gen 3 pixel art, plain white background, no ground, no shadow, no effects, no text.

@@ -22,6 +22,8 @@ Les uit de viscacha en de proefrit: de viscacha lukte omdat zijn front al in dri
 1. **Bestaand icoon met dezelfde vorm** (regional form die qua vorm gelijk blijft, zoals Poliwag; niet Poliwhirl/Poliwrath): dat icoon overnemen en omkleuren; ook elk kenmerk (spiraal) komt uit dat icoon.
 2. **Front staat al in driekwart:** de stappen hieronder (onderdelen-reductie met kop-factor > lijf-factor, oog uit de front, alleen benoemde reparaties, frame 2 door schuiven).
 3. **Front kijkt recht:** eerst een driekwart-model op frontgrootte via Gemini (zoals de rugsprite: een pose op volle grootte, geen icoon vragen), Jordi kiest, dan route 2 op dat model.
+- Route 3 bij een **ronde soort** (Jordi over Cuyby: "jigglypuff en marill blijven namelijk netjes rond en cuyby is wat uitgebold"): alleen het gezicht draait, het silhouet blijft rond en even groot; dat expliciet in de prompt.
+- **Schrappen: dezelfde factor horizontaal en verticaal** (Jordi: "de proporties kloppen niet meer"); bij details alleen kiezen wélke rij/kolom blijft, nooit extra rijen/kolommen bewaren.
 Indeling per soort: `docs/concept/sprites/icoon_proefrit/ROUTES.md`.
 
 ## Stappen

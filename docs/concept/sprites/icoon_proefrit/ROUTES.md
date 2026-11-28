@@ -6,6 +6,7 @@ Regel uit echte iconen (`graphics/pokemon/*/icon.png`): levende wezens staan in 
 ## Route 1: bestaand icoon overnemen en omkleuren (Jordi beslist of de vorm gelijk genoeg is)
 - 118 Poliwag (regional): **af** (`poliwag_regional/icoon/`)
 - Bevestigd (Jordi, 28 nov: "grimer, muk, staryu, starmie, oddish hebben dezelfde vorm als het origineel"): 99 Oddish, 110 Staryu, 111 Starmie, 121 Grimer, 122 Muk (regional; Jordi: "grimer en muk hebben alleen een drolletje op het hoofd gekregen")
+- Paletswap van het originele icoon (Jordi, 28 nov: "verder vind ik het prima als je abra en mr mime gewoon een pallette swap doet"): 91 Abra (regional), 115 Mr. Mime (regional bokser)
 - Open: 89 Silicobra ("bijna helemaal maar wijkt in de nek/hoofd af"), 109 Pincurchin ("zijn de stekels minder scherp geworden"), 112 Lotad (niet genoemd)
 - Niet: 119 Poliwhirl, 120 Poliwrath (Jordi: "echt andere designs")
 

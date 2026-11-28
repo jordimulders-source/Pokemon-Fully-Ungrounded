@@ -56,3 +56,6 @@ Pose (voorstel Claude, patroon bij Game Freak: bek open + één lichaamsdeel bew
 - p2 (prompt met "locomotive", AVOID-regel) → `hexpress_rug_p2.png`: gewone trein met cabine en ramen; Jordi: "nog minder, is je prompt goed genoeg? het is een mooi ontwerp verder wel, maar niet wat we nodig hebben".
 - Les: het woord "locomotive/train" laat Gemini een gewone trein tekenen; van recht achteren verdwijnt het herkenningsteken (gezicht met mond); niet vragen om delen die niet in de front staan.
 - p3-prompt (in de chat gegeven): zonder het woord trein, het wezen omgedraaid dat over zijn schouder terugkijkt (deel van het gezicht met de mond zichtbaar), alleen onderdelen uit de front, "no new parts, windows, doors, cabins or rails".
+
+## Sunperor icoon via Gemini (27 nov)
+Jordi: "misschien kunnen we met complexere ontwerpen wel nog gemini vragen, laten we het met sunperor proberen, want daar zie ik jou geen fatsoenlijk icoon van maken"; "Sunperor gaat al fout omdat die niet driekwart staat maar frontaal". Prompt in de chat gegeven (alleen front-bijlage, bouw in woorden, driekwart, AVOID-regel; lessen viscacha-icoon r1 en overworld r2).

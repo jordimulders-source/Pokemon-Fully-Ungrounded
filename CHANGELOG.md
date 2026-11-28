@@ -3927,3 +3927,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.965] - Sunperor-icoon r4; iconen met dominant attribuut geparkeerd (27 nov)
 - `graphics_proef/icoon_r4/sunperor/`: kroon en kop apart geschaald, lijf idx 14 (pal5 heeft geen donkerbruin), gezicht ±8×6. Oordeel Claude: leest nog als paddenstoel, gezicht te klein (Xatu ±11×10). Gestopt met rondes (afspraak Jordi): soorten waarbij een attribuut de kop overheerst, hebben net als in de Zapacha-studie Jordi's krabbel voor het gezicht nodig. Compacte bouw (Gumfish) gaat wel zelfstandig.
 - Stand van zaken in CLAUDE.md bijgewerkt.
+
+### [v0.0.966] - Gumfish-icoon r3b; Sunperor-icoon via Gemini (27 nov)
+- Jordi: Gumfish f1 en f2 "bijna goed alleen hij lijkt een witte bult te hebben wat in de sprite gewoon puur de glans van het hoofd is, als dat hoofd gewoon rond is, is die prima" → `graphics_proef/icoon_r3/gumfish/icon_r3b.png`: kopbovenrand doorgetrokken (6 px per frame), glans binnen de koepel; 16/17 (hoekigheid 0,29 tegen grens 0,27).
+- Sunperor-icoon: Gemini-prompt (driekwart in plaats van frontaal).

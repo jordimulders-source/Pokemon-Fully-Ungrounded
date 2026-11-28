@@ -20,3 +20,6 @@ Overworld: pas na rug (prompt heeft front + rug nodig); voor welke soorten is no
 ## Overworld
 - Jordi, 27 nov: "Voor overworld sprite moet je sowieso de legendaries en de ghost tempel. Rayquaza is vgm ook groter dan een normale sprite dus dat mag je met deze ook doen. De tempel mag zelfs zeer groot, dat men erin zou trappen alsof het een echte poort is naar een gebouw".
 - Jordi: "We gaan toch geen following pokemon doen" → overworldsprites alleen voor wat in de wereld staat (legendaries, tempel, eventuele andere statics); niet voor alle soorten. Rayquaza-OW is 64×64 (gewoon 32×32).
+
+## Iconen (27 nov)
+- Jordi: "ik heb ondertussen een ander gesprek gestart voor de iconen, dit is het punt waar ik me het meest zorgen om maak". Iconen lopen in die sessie; deze sessie maakt geen iconen meer. Stand bij overdracht: Gumfish af (`icoon_af/`), Sunperor geparkeerd (r3/r4 en Gemini-pogingen mislukt), recept per bouw in `rug_icoon_studie/per_bouw/`.

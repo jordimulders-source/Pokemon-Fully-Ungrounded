@@ -3934,3 +3934,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.967] - Gumfish-icoon af (27 nov)
 - Jordi: "ja ik vind gumfish prima zo, ze hoeven echt niet perfect te zijn, check wel ff of kleurtinten en schaduw kloppen". Gemeten aan Gen 3-iconen (Octillery, Corsola, Slugma, Krabby): per kleurgroep basis + lichte tint, donker = omlijning. Gumfish had een vlak rood lijf → lichtband (roze) langs de bovenrand van het lijf, zoals de kop. Af: `graphics_proef/icoon_af/gumfish_icon.png` (pal0).
+
+### [v0.0.968] - Sunperor-icoon Gemini p1 (27 nov)
+- `graphics_proef/sunperor_icoon_gemini_p1.png` (natief 43×62 op 16-px raster): Gemini tekende de front opnieuw op frontmaat, geen icoon (maat, chibi en driekwart genegeerd). Prompt p2 met nadruk op 32×32 in de chat gegeven.

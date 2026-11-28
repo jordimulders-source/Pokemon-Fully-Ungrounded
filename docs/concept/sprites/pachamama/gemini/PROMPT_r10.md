@@ -7,7 +7,7 @@ Design a new legendary Pokémon as an official Gen 3 front sprite (Ruby/Sapphire
 
 WHAT IT IS: Mother Earth, Ground/Fairy type: a living mountain shaped like a gentle mother wrapped in a wide mantle, with a hood of snow. Serene, calm and kind, like an ancient sacred stone idol that is alive.
 
-DESIGN THE HEAD FOR A 64x64 SPRITE: the face is a NEUTRAL STONE MASK: a big smooth oval of grey-brown stone, about 16 pixels wide, made of a few large areas. It is not a human face and not a man: no beard, no mustache, no mouth, no wrinkles, no eyebrows. Only two large calm eyes, each about 4-5 pixels wide (mostly white, a brown iris looking straight ahead, a dark upper eyelid), and a long straight nose, lighter than the rest of the mask. Completely neutral and still, like the calm face of an ancient carved idol mask. Not metal, not a helmet.
+DESIGN THE HEAD FOR A 64x64 SPRITE: the face is a NEUTRAL STONE MASK: a big smooth oval of grey-brown stone, about 16 pixels wide, made of a few large areas. It is androgynous (if anything slightly feminine), not a man and not a realistic human face: no beard, no mustache, no mouth, no wrinkles, no eyebrows. Only two large calm eyes, each about 4-5 pixels wide (mostly white, a brown iris looking straight ahead, a dark upper eyelid), and a long straight nose, lighter than the rest of the mask. Completely neutral and still, like the calm face of an ancient carved idol mask. Not metal, not a helmet.
 
 HOOD: white snow on top of the head, then a strip of grey-brown rock below the snow, with cream-colored sides that drape onto the shoulders, so the head still reads as a snowy mountain peak.
 

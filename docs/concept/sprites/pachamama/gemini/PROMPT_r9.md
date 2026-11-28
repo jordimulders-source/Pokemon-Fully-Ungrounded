@@ -1,17 +1,19 @@
-# Gemini-prompt Pachamama r9 (nieuw gesprek, GEEN bijlage) — klaar voor de volgende sessie, nog niet gebruikt
+# Gemini-prompt Pachamama r9 (nieuw gesprek, GEEN bijlage, from scratch) — 28 nov
+Jordi: "laten we gemini from scratch nog een keer vragen te ontwerpen, misschien dat die een hoofd maakt wat beter vertaalt"; "want dit gaat in een sprite niet beter worden".
+Lessen: r8 ("bold dark lines", "upside-down U mouth") werd Dr. Doom; een ∩ onder de neus leest op spriteschaal als zielige/fronsende mond; Gemini vergroot het gezicht niet op verzoek → maat in pixels geven.
 
 ```
-Design a new legendary Pokémon as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style): pixel art, 64x64, max 16 colors, dark pixel outline, light from top-left, plain white background, no ground, no shadow, no effects.
+Design a new legendary Pokémon as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style): pixel art, 64x64, max 16 colors, dark pixel outline (no smooth vector lines), light from top-left, plain white background, no ground, no shadow, no effects.
 
-WHAT IT IS: Mother Earth, Ground/Fairy type: a living mountain shaped like a gentle mother wrapped in a wide mantle, with a snow hood. Serene and kind, like an ancient sacred stone idol that is alive. Not angry, not a metal mask, not a villain.
+WHAT IT IS: Mother Earth, Ground/Fairy type: a living mountain shaped like a gentle mother wrapped in a wide mantle, with a hood of snow. Serene, calm and kind, like an ancient sacred stone idol that is alive.
 
-PROPORTIONS: a big head: the face is about one third of the total width and the head with the hood about 40% of the total height, so the face is easy to read at 64x64. The mantle below is a wide, tall mountain that reaches the bottom of the sprite.
+DESIGN THE HEAD FOR A 64x64 SPRITE: the face is a big, simple stone shape about 16 pixels wide, built from a few large areas, not from many thin lines. Two large calm eyes, each about 4-5 pixels wide: mostly white, a brown iris looking straight ahead, a dark upper eyelid. A long straight nose, lighter than the rest of the face. Below the nose a carved stone beard: one big rounded shape that covers the chin, slightly lighter than the cheeks, framed by a single soft line. There is NO visible mouth, so the face never looks sad or angry. Peaceful, neutral expression.
 
-HEAD: a hood of snow (white snow on top, cream-colored sides) draping onto the shoulders. Inside it a soft grey-brown stone face: two large calm eyes looking slightly up, white with a light brown iris; a long nose; a small closed mouth; a few soft carved lines around the cheeks and chin like an old stone statue. Peaceful expression.
+HOOD: white snow on top of the head, then a strip of grey-brown rock below the snow, with cream-colored sides that drape onto the shoulders, so the head still reads as a snowy mountain peak.
 
-BODY: the mantle is a mountain of rock in broad horizontal bands, from top to bottom: red, pink, ochre yellow, turquoise (Rainbow Mountain, Vinicunca, Peru), with a few big rock planes. Two long rocky mountain ridges come forward from the sides of the mantle as arms, held out gently like a mother, ending in rounded rock with a little snow on top (no hands, no fists). A few small tufts of plants on the lower slopes.
+BODY: the mantle is a wide rocky mountain in broad horizontal bands, from top to bottom: red, pink, ochre yellow, turquoise (the colors of Rainbow Mountain, Vinicunca, Peru), with a few big rock planes and a long fold line down the front. Two rocky mountain ridges come forward from the mantle as arms, held out gently like a mother, ending in rounded rock with a little snow on top (no hands, no fists). A few small tufts of plants on the lower slopes.
 
 POSE: 3/4 view facing left.
 
-DO NOT: angry face, frown, metal mask, helmet, robot, small face, big scarf, hands, fists, fingers, realistic human, many cracks, thin stripes, villages, animals, offerings, gems, glowing, background.
+DO NOT: mouth, frown, sad or angry face, metal mask, helmet, small face, big scarf, hands, fists, many cracks, thin stripes, realistic human, villages, animals, offerings, gems, glowing, background.
 ```

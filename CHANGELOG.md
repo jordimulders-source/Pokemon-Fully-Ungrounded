@@ -3960,3 +3960,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.975] - Rugsjabloon v2 (28 nov)
 - Jordi: "kijk nog eens goed naar de al bestaande back sprites en vergelijk wat we nu hebben ermee" → 12 Gen 3-ruggen naast batch 01: Game Freak toont het bovenlijf van dichtbij, zonder poten; onze ruggen waren zijaanzichten van het hele dier. Sjabloon v2 (close-up bovenlijf, "legs NOT visible", AVOID zijaanzicht) getest op Bandolingo: leest als Raticate. In PROMPTS.md.
+
+### [v0.0.976] - Rugsjabloon v3 in alle pakketten (28 nov)
+- Jordi akkoord met "vul het beeld" + knippen op de buiklijn (Bandolingo naast Rattata/Raticate/Sentret). Alle 125 rugprompts omgezet; batch 01-prompts aangevuld (Palpaca, Cholucha, Coathief).

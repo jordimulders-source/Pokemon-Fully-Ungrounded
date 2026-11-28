@@ -19,11 +19,13 @@ Werkwijze en sjablonen: `../../PROMPTS.md`. Elke prompt in een nieuw gesprek, al
 ```
 This is a Pokémon battle sprite of my creature, seen from the front. Draw its back sprite, the way Pokémon Ruby/Sapphire/Emerald draw the player's own Pokémon in battle.
 
-Viewpoint: seen from behind and slightly above on the left. The creature faces away from the viewer, toward the upper right. Zoomed in: the creature is a bit larger than in my image and the bottom is cut off by a straight horizontal line, with nothing below it.
+Viewpoint: seen from behind and slightly above on the left. The creature faces away from the viewer, toward the upper right. The camera is CLOSE: the creature is so big that it fills the whole image from the left edge to the right edge, from its highest point down to the bottom edge. The lower legs (if any) are cut off by the bottom edge of the image.
 
 Body plan (keep it): a floating hourglass tilted on its side with brown wooden caps, glass with golden sand and a face, with two small brown wooden hands hovering loose beside it; we see the back of the hourglass: plain glass with sand and the wooden caps, no face visible, and the two wooden hands floating beside it.
 
 Keep my creature exactly as it is: same colors, same art style and dark outline, same proportions. Do not add anything new and do not redesign it.
+
+AVOID: a small creature with empty space around it.
 
 Gen 3 pixel art, plain white background, no ground, no shadow, no effects, no text.
 ```
@@ -38,11 +40,13 @@ Frame 2: categorie S, per script (geen Gemini).
 ```
 This is a Pokémon battle sprite of my creature, seen from the front. Draw its back sprite, the way Pokémon Ruby/Sapphire/Emerald draw the player's own Pokémon in battle.
 
-Viewpoint: seen from behind and slightly above on the left. The creature faces away from the viewer, toward the upper right. Zoomed in: the creature is a bit larger than in my image and the bottom is cut off by a straight horizontal line, with nothing below it.
+Viewpoint: seen from behind and slightly above on the left. The creature faces away from the viewer, toward the upper right. The camera is CLOSE: the creature is so big that it fills the whole image from the left edge to the right edge, from its highest point down to the bottom edge. The lower legs (if any) are cut off by the bottom edge of the image.
 
 Body plan (keep it): a golden-yellow sand body that swirls down into a small broken hourglass at the bottom, with a brain-shaped top and a floating question mark and exclamation mark as hands; we see the back of the golden sand body, the back of the brain-shaped top, the broken hourglass at the bottom and the two floating symbols beside it.
 
 Keep my creature exactly as it is: same colors, same art style and dark outline, same proportions. Do not add anything new and do not redesign it.
+
+AVOID: a small creature with empty space around it.
 
 Gen 3 pixel art, plain white background, no ground, no shadow, no effects, no text.
 ```
@@ -57,11 +61,13 @@ Frame 2: categorie S, per script (geen Gemini).
 ```
 This is a Pokémon battle sprite of my creature, seen from the front. Draw its back sprite, the way Pokémon Ruby/Sapphire/Emerald draw the player's own Pokémon in battle.
 
-Viewpoint: seen from behind and slightly above on the left. The creature faces away from the viewer, toward the upper right. Zoomed in: the creature is a bit larger than in my image and the bottom is cut off by a straight horizontal line, with nothing below it.
+Viewpoint: seen from behind and slightly above on the left. The creature faces away from the viewer, toward the upper right. The camera is CLOSE: the creature is so big that it fills the whole image from the left edge to the right edge, from its highest point down to the bottom edge. The lower legs (if any) are cut off by the bottom edge of the image.
 
 Body plan (keep it): a muscular golden sand djinn with a brain-shaped head, strong arms holding a small blue glass shard at its chest, small hourglass tips floating at both sides and its body tapering into a broken hourglass at the bottom; we see the golden back, the broad shoulders and the tapering broken hourglass; the head is turned in profile over its shoulder at the right side so one eye and the angry brow are visible.
 
 Keep my creature exactly as it is: same colors, same art style and dark outline, same proportions. Do not add anything new and do not redesign it.
+
+AVOID: a small creature with empty space around it.
 
 Gen 3 pixel art, plain white background, no ground, no shadow, no effects, no text.
 ```
@@ -85,11 +91,13 @@ Resultaat:
 ```
 This is a Pokémon battle sprite of my creature, seen from the front. Draw its back sprite, the way Pokémon Ruby/Sapphire/Emerald draw the player's own Pokémon in battle.
 
-Viewpoint: seen from behind and slightly above on the left. The creature faces away from the viewer, toward the upper right. Zoomed in: the creature is a bit larger than in my image and the bottom is cut off by a straight horizontal line, with nothing below it.
+Viewpoint: seen from behind and slightly above on the left. The creature faces away from the viewer, toward the upper right. The camera is CLOSE: the creature is so big that it fills the whole image from the left edge to the right edge, from its highest point down to the bottom edge. The lower legs (if any) are cut off by the bottom edge of the image.
 
 Body plan (keep it): a brown chick with a speckled cream chest, a large grey hooked beak and strong orange legs with sharp claws; we see its brown back, the folded wings and the short tail; the head is turned in profile over its shoulder at the right side so one yellow eye and the large hooked beak are visible.
 
 Keep my creature exactly as it is: same colors, same art style and dark outline, same proportions. Do not add anything new and do not redesign it.
+
+AVOID: a small creature with empty space around it.
 
 Gen 3 pixel art, plain white background, no ground, no shadow, no effects, no text.
 ```
@@ -113,11 +121,13 @@ Resultaat:
 ```
 This is a Pokémon battle sprite of my creature, seen from the front. Draw its back sprite, the way Pokémon Ruby/Sapphire/Emerald draw the player's own Pokémon in battle.
 
-Viewpoint: seen from behind and slightly above on the left. The creature faces away from the viewer, toward the upper right. Zoomed in: the creature is a bit larger than in my image and the bottom is cut off by a straight horizontal line, with nothing below it.
+Viewpoint: seen from behind and slightly above on the left. The creature faces away from the viewer, toward the upper right. The camera is CLOSE: the creature is so big that it fills the whole image from the left edge to the right edge, from its highest point down to the bottom edge. The lower legs (if any) are cut off by the bottom edge of the image.
 
 Body plan (keep it): a big flightless dark grey bird with a huge axe-shaped stone beak, a red and orange patch on the neck, small wings and long thin brown legs with claws, running low in a forward lean; we see its dark back with the orange streaks, the small wings and the tail; the head is turned in profile over its shoulder at the right side so one eye and the heavy axe-shaped beak are visible.
 
 Keep my creature exactly as it is: same colors, same art style and dark outline, same proportions. Do not add anything new and do not redesign it.
+
+AVOID: a small creature with empty space around it.
 
 Gen 3 pixel art, plain white background, no ground, no shadow, no effects, no text.
 ```
@@ -141,11 +151,13 @@ Resultaat:
 ```
 This is a Pokémon battle sprite of my creature, seen from the front. Draw its back sprite, the way Pokémon Ruby/Sapphire/Emerald draw the player's own Pokémon in battle.
 
-Viewpoint: seen from behind and slightly above on the left. The creature faces away from the viewer, toward the upper right. Zoomed in: the creature is a bit larger than in my image and the bottom is cut off by a straight horizontal line, with nothing below it.
+Viewpoint: seen from behind and slightly above on the left. The creature faces away from the viewer, toward the upper right. The camera is CLOSE: the creature is so big that it fills the whole image from the left edge to the right edge, from its highest point down to the bottom edge. The lower legs (if any) are cut off by the bottom edge of the image.
 
 Body plan (keep it): a low, heavy grey stone turtle-like animal with a domed, tiled shell, short thick legs and a spiked club tail; we see the domed tiled shell and the spiked tail at the rear; the head is turned in profile over its shoulder at the right side so one eye and the blunt snout are visible.
 
 Keep my creature exactly as it is: same colors, same art style and dark outline, same proportions. Do not add anything new and do not redesign it.
+
+AVOID: a small creature with empty space around it.
 
 Gen 3 pixel art, plain white background, no ground, no shadow, no effects, no text.
 ```
@@ -169,11 +181,13 @@ Resultaat:
 ```
 This is a Pokémon battle sprite of my creature, seen from the front. Draw its back sprite, the way Pokémon Ruby/Sapphire/Emerald draw the player's own Pokémon in battle.
 
-Viewpoint: seen from behind and slightly above on the left. The creature faces away from the viewer, toward the upper right. Zoomed in: the creature is a bit larger than in my image and the bottom is cut off by a straight horizontal line, with nothing below it.
+Viewpoint: seen from behind and slightly above on the left. The creature faces away from the viewer, toward the upper right. The camera is CLOSE: the creature is so big that it fills the whole image from the left edge to the right edge, from its highest point down to the bottom edge. The lower legs (if any) are cut off by the bottom edge of the image.
 
 Body plan (keep it): a big dark grey stone beast on four thick legs, with a heavy brown tiled domed shell with a large pale horn on top and a thick spiked club tail with ridges; we see the domed tiled shell with the pale horn, the thick legs and the club tail; the head is turned in profile over its shoulder at the right side so one eye and the heavy snout are visible.
 
 Keep my creature exactly as it is: same colors, same art style and dark outline, same proportions. Do not add anything new and do not redesign it.
+
+AVOID: a small creature with empty space around it.
 
 Gen 3 pixel art, plain white background, no ground, no shadow, no effects, no text.
 ```
@@ -197,11 +211,13 @@ Resultaat:
 ```
 This is a Pokémon battle sprite of my creature, seen from the front. Draw its back sprite, the way Pokémon Ruby/Sapphire/Emerald draw the player's own Pokémon in battle.
 
-Viewpoint: seen from behind and slightly above on the left. The creature faces away from the viewer, toward the upper right. Zoomed in: the creature is a bit larger than in my image and the bottom is cut off by a straight horizontal line, with nothing below it.
+Viewpoint: seen from behind and slightly above on the left. The creature faces away from the viewer, toward the upper right. The camera is CLOSE: the creature is so big that it fills the whole image from the left edge to the right edge, from its highest point down to the bottom edge. The lower legs (if any) are cut off by the bottom edge of the image.
 
 Body plan (keep it): a brown creature doing a handstand upside down on one hand, with its legs spread in the air wearing green and yellow striped trousers with a yellow sash and blue shoes; we see its back, with the rounded brown back, the striped trousers and the yellow sash; the head is turned in profile at the right side so one eye and the snout are visible.
 
 Keep my creature exactly as it is: same colors, same art style and dark outline, same proportions. Do not add anything new and do not redesign it.
+
+AVOID: a small creature with empty space around it.
 
 Gen 3 pixel art, plain white background, no ground, no shadow, no effects, no text.
 ```

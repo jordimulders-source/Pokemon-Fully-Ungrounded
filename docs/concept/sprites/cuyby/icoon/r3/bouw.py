@@ -29,6 +29,28 @@ def sluit(f):
         if lum[f[y,x]]>=110 and f[y,x]!=7:   # roze oortjes blijven
             f[y,x]=15 if y<mid else 14; LOG.append((x,y,'omlijning dicht'))
     return f
+def omtrek(f1):
+    # rand volgt de omtrek van het model: per vakje (grenzen midden tussen bewaarde rijen/kolommen) binnen als > half gevuld
+    m=q>0
+    def grenzen(keep): b=[keep[0]-(keep[1]-keep[0])//2]+[(keep[i]+keep[i+1]+1)//2 for i in range(len(keep)-1)]+[keep[-1]+(keep[-1]-keep[-2]+1)//2]; return b
+    by,bx=grenzen(RIJ),grenzen(KOL)
+    ref=np.array([[m[by[i]:by[i+1],bx[j]:bx[j+1]].mean()>0.5 for j in range(len(KOL))] for i in range(len(RIJ))])
+    big=np.zeros((32,32),bool); h,w=ref.shape; oy=29-h+1; ox=15-w//2; big[oy:oy+h,ox:ox+w]=ref
+    f=f1.copy(); ys,_=np.nonzero(f1); mid=(ys.min()+ys.max())/2
+    for y in range(32):
+        for x in range(32):
+            if f[y,x] and not big[y,x] and f[y,x]!=7:      # steekt buiten de modelomtrek: weg (roze oortjes blijven)
+                f[y,x]=0; LOG.append((x,y,'rand volgt model (weg)'))
+    for y in range(32):
+        for x in range(32):
+            if big[y,x] and not f[y,x]:                     # binnen de modelomtrek maar leeg: omlijning
+                f[y,x]=15 if y<mid else 14; LOG.append((x,y,'rand volgt model (erbij)'))
+    # nieuwe binnenrand: een binnenpixel dat nu aan de buitenkant ligt wordt omlijning
+    m2=f>0; p=np.pad(m2,1); edge=m2&~(p[:-2,1:-1]&p[2:,1:-1]&p[1:-1,:-2]&p[1:-1,2:])
+    lum=IP.mean(1)
+    for y,x in zip(*np.nonzero(edge)):
+        if lum[f[y,x]]>=110 and f[y,x]!=7: f[y,x]=15 if y<mid else 14; LOG.append((x,y,'omlijning dicht'))
+    return f
 def plaats(c):
     h,w=c.shape; out=np.zeros((32,32),np.uint8); oy=29-h+1; ox=15-w//2; out[oy:oy+h,ox:ox+w]=c; return out
 def frame2(f1):
@@ -40,6 +62,7 @@ if __name__=='__main__':
     naam=sys.argv[1] if len(sys.argv)>1 else 'icon'
     r=np.vectorize(NEAR.get)(q[np.ix_(RIJ,KOL)]).astype(np.uint8)
     f1=sluit(plaats(opschonen(r)))
+    # pixelfixes (Jordi: "er is een verschil tussen een paar pixels fixen en tekenen he"): omtrek rond, uitbolling terug
     out=np.zeros((64,32),np.uint8); out[:32]=f1; out[32:]=frame2(f1)
     im=Image.fromarray(out,'P'); im.putpalette(IP.flatten().tolist()+[0]*(768-48)); im.save(naam+'.png',transparency=0)
     print('map',NEAR); print('ingrepen',LOG)

@@ -3954,3 +3954,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Jordi: "coathief mag je zelf herkleuren dan". Zwart achterlijf (Gemini) omgekleurd naar de bruine rugtinten (licht boven, schaduw onder) met een ronde overgang naar de zwarte poten, zoals in de front. Oud bewaard als `coathief_rug_zwartekont.png`.
 - Jordi: "nu is nog steeds de halve kont van coathief zwart" → hele achterlijf bruin tot rij 58–59, alleen de poten onderaan zwart.
 - Llamauler-rug naast Gen 3-ruggen (`batch_01/af/llamauler_vs_gen3.png`): grote soorten vullen bij Game Freak het hele vak en worden afgesneden; onze ruggen zijn kleiner.
+
+### [v0.0.974] - Llamauler-rug: afsnijden op het eigen raster (28 nov)
+- Jordi: "Je kan bij Llamauler ook een stuk wegknippen, dan hoeft niet heel het plaatje erop te staan en hoef je het wss niet kapot te compressen, maar is dat plaatje dan bruikbaar?" → natief op 10,66 px (55×89), bovenste 64 rijen genomen, frontpalet: `batch_01/af/llamauler_rug_crop.png` (vergelijking `llamauler_crop_vergelijk.png`: oud | crop | Tyranitar). Vult het vak zoals een Gen 3-rug van een grote soort, geen samenpersing.

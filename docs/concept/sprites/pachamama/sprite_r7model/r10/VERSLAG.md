@@ -1,0 +1,7 @@
+# r10 K1: kap van vóór de vergroting + r10-gezicht (Jordi 28 nov: "herstel de kap van eerder")
+
+- Kap = kale reductie van model r7 zonder gezichtsvergroting (`python3 r2/reduceer.py 0 1 r10/basis_k1.png natief.png`, zelfde koppeling −21/−2 als r4). In de hoofdzone (`zone_k1.npy` = r4/hoofdzone + 7 kaprandpixels linksonder) staat die reductie pixel-gelijk (gecontroleerd: 0 verschillen buiten het gezicht); buiten de zone is alles r4 v1 (0 verschillen).
+- Omdat het gezicht kleiner is, wordt een deel van het oude r4-gezichtsvlak weer romp/hals uit dezelfde reductie: 44 rode/roze pixels in de zone wijken af van r4.
+- Gezichtsmasker = r7-gezicht op het natieve raster, gereduceerd zoals in r4 (`masker_k1.npy`, 148 px). Het r10-gezicht is gemeten op gelijke schaal 3,3 natieve r10-px per spritepx (`meet.py ... 3.3 83.7 101.5`): het r10-gezicht past daarmee in de kapopening, zonder opgevulde schaduwband rechts (rechts valt ±1 px schaduw van r10 achter de kap).
+- Niet uit de meting (39 px, `afwerking_k1.py`): ogen, bovenleden, wenkbrauwen en neus (lijn | licht | lijn) zoals r9; mondstreepje (valt op deze schaal onder 1/3 van een cel); linksonder is de kapopening breder dan r10, dus de gezichtslijn (2) op de maskerrand en huid erbinnen (15 px).
+- Zwak: het linkeroog zit tegen de gezichtslijn aan (r10 heeft daar ±1 px huid); de mond is 3 px en niet gemeten; geen lichtpixel in de iris. K2/K3 (1,10× en 1,18×) zijn niet gemaakt.

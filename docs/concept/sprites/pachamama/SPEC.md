@@ -67,3 +67,4 @@
 - **r9** (`sprite_r7model/r9/`): r4 v1 met het r10-masker (gemeten 3×3 op het r10-raster, r4-palet, neus crème); diff buiten het gezicht 0. Zwakke punten (maker): schaduwband rechts breder dan in r10 (gezichtsvlak r4 breder, opgevuld), ogen 2 rijen hoog zonder lichtpixel.
 - Jordi over r9 (28 nov): "ziet er gek uit nog steeds, de kap moet misschien weer groter" → r10: varianten K1 (gezicht modelmaat r7, dikke kap), K2 (1,10×), K3 (1,18×), alle met het r10-masker.
 - Jordi (28 nov): "herstel de kap van eerder" → K1 met voorrang: kap = kale reductie van r7 (vóór de vergroting), masker op de oorspronkelijke gezichtsmaat.
+- **r10 = K1** (`sprite_r7model/r10/`): kap = kale reductie r7 (0 px afwijking in de hoofdzone), r10-masker op de oorspronkelijke gezichtsmaat (3,3 modelpx per spritepx); 44 rompdpixels bij de hals uit dezelfde reductie; mondstreepje en ogen/neus opgebouwd. K2/K3 niet gemaakt.

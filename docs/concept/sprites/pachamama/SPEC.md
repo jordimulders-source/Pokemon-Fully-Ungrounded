@@ -64,3 +64,4 @@
 - **Gemini r10** (`gemini/r10.png`), Jordi (28 nov): "kan je hier iets mee". Gemeten: raster 5,12 px (veelvouden 10,24/15,36), figuur 844 px breed → gezicht ±16 spritepx bij 60 px figuurbreedte; gezicht uit grote vlakken, ogen ±4–5 px.
 - Jordi (28 nov): "ja alleen het gezicht neem je over" → sprite = r4 v1 (model r7) met het gezicht van Gemini r10 (neutraal androgyn masker) in het gezichtsvlak; kap, romp en silhouet blijven r4 v1. Ronde in `sprite_r7model/r9/`.
 - Jordi (28 nov): "en die kinstukken met rots mogen dus ook weg" → baard/kin-rotsvlakken, ∩ en wanglijnen van r4 verdwijnen; heel het gezicht = masker van r10.
+- **r9** (`sprite_r7model/r9/`): r4 v1 met het r10-masker (gemeten 3×3 op het r10-raster, r4-palet, neus crème); diff buiten het gezicht 0. Zwakke punten (maker): schaduwband rechts breder dan in r10 (gezichtsvlak r4 breder, opgevuld), ogen 2 rijen hoog zonder lichtpixel.

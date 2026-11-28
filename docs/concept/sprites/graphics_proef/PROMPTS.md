@@ -59,3 +59,17 @@ Pose (voorstel Claude, patroon bij Game Freak: bek open + één lichaamsdeel bew
 
 ## Sunperor icoon via Gemini (27 nov)
 Jordi: "misschien kunnen we met complexere ontwerpen wel nog gemini vragen, laten we het met sunperor proberen, want daar zie ik jou geen fatsoenlijk icoon van maken"; "Sunperor gaat al fout omdat die niet driekwart staat maar frontaal". Prompt in de chat gegeven (alleen front-bijlage, bouw in woorden, driekwart, AVOID-regel; lessen viscacha-icoon r1 en overworld r2).
+
+## Rugsjabloon v2 (28 nov, getest op Bandolingo: geslaagd)
+Na vergelijking met 12 Gen 3-ruggen (`pakketten/batch_01/af/ruggen_vs_gen3.png`): close-up van het bovenlijf van achteren/boven, geen poten. Resultaat `pakketten/batch_01/af/bandolingo_v2_vergelijk.png` (oud | v2 | Raticate).
+> This is a Pokémon battle sprite of my creature, seen from the front. Draw its back sprite, the way Pokémon Ruby/Sapphire/Emerald draw the player's own Pokémon in battle.
+>
+> Viewpoint: a CLOSE-UP seen from behind and slightly above, like looking over the creature's back. We see only the UPPER BODY: the back of the head, the shoulders, the back and the tail. The legs are NOT visible: the body is cut off by a straight horizontal line just below the back. The head is at the upper right, turned in profile so one eye and <kenmerk gezicht> are visible. The creature fills most of the square.
+>
+> Body plan (keep it): <kort, alleen wat in de front staat>
+>
+> Keep my creature exactly as it is: same colors, same art style and dark outline, same proportions. Do not add anything new and do not redesign it.
+>
+> AVOID: a side view of the whole animal, visible legs or feet, a walking pose.
+>
+> Gen 3 pixel art, plain white background, no ground, no shadow, no effects, no text.

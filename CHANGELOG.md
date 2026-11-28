@@ -3957,3 +3957,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.974] - Llamauler-rug: afsnijden op het eigen raster (28 nov)
 - Jordi: "Je kan bij Llamauler ook een stuk wegknippen, dan hoeft niet heel het plaatje erop te staan en hoef je het wss niet kapot te compressen, maar is dat plaatje dan bruikbaar?" → natief op 10,66 px (55×89), bovenste 64 rijen genomen, frontpalet: `batch_01/af/llamauler_rug_crop.png` (vergelijking `llamauler_crop_vergelijk.png`: oud | crop | Tyranitar). Vult het vak zoals een Gen 3-rug van een grote soort, geen samenpersing.
+
+### [v0.0.975] - Rugsjabloon v2 (28 nov)
+- Jordi: "kijk nog eens goed naar de al bestaande back sprites en vergelijk wat we nu hebben ermee" → 12 Gen 3-ruggen naast batch 01: Game Freak toont het bovenlijf van dichtbij, zonder poten; onze ruggen waren zijaanzichten van het hele dier. Sjabloon v2 (close-up bovenlijf, "legs NOT visible", AVOID zijaanzicht) getest op Bandolingo: leest als Raticate. In PROMPTS.md.

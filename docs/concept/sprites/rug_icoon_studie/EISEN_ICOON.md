@@ -174,3 +174,4 @@ Jordi: "we hebben namelijk ook een aantal complexe designs en die moeten we ook 
 
 - **Proef 27 nov afgekeurd (Jordi, 27 nov, over de proeficonen Gumfish en Sunperor: "Die zijn gewoon verkleind maar dat was de regel helemaal niet"):** het algemene script (onderdelen schalen) gaf verkleinde fronts zonder de chibi-stap (kop 40–50 %, alles boller/ronder, grote vlakke vlakken, kleine details weg). Een icoon is geen verkleining.
 - **Dunne delen (staf, vleugel, poten, vinranden) slijten weg bij dekkingsdrempel 45 %** (27 nov, icoon_r3): per frontpixel naar het icoon overzetten of drempel 0,35.
+- **Schaduw in iconen (27 nov, gemeten):** Gen 3-iconen hebben per kleurgroep 2 tinten (basis + licht bovenaan, bv. Octillery rood + oranje, Corsola roze + lichtroze); donker = de omlijning (14 onder, 15 boven). Een lichtband langs de bovenrand van het lijf geeft het volume (Gumfish r3c).

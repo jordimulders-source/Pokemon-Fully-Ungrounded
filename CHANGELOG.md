@@ -3931,3 +3931,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.966] - Gumfish-icoon r3b; Sunperor-icoon via Gemini (27 nov)
 - Jordi: Gumfish f1 en f2 "bijna goed alleen hij lijkt een witte bult te hebben wat in de sprite gewoon puur de glans van het hoofd is, als dat hoofd gewoon rond is, is die prima" → `graphics_proef/icoon_r3/gumfish/icon_r3b.png`: kopbovenrand doorgetrokken (6 px per frame), glans binnen de koepel; 16/17 (hoekigheid 0,29 tegen grens 0,27).
 - Sunperor-icoon: Gemini-prompt (driekwart in plaats van frontaal).
+
+### [v0.0.967] - Gumfish-icoon af (27 nov)
+- Jordi: "ja ik vind gumfish prima zo, ze hoeven echt niet perfect te zijn, check wel ff of kleurtinten en schaduw kloppen". Gemeten aan Gen 3-iconen (Octillery, Corsola, Slugma, Krabby): per kleurgroep basis + lichte tint, donker = omlijning. Gumfish had een vlak rood lijf → lichtband (roze) langs de bovenrand van het lijf, zoals de kop. Af: `graphics_proef/icoon_af/gumfish_icon.png` (pal0).

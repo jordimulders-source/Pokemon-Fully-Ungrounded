@@ -10,8 +10,8 @@ PAL=3; IP=np.array([[int(v) for v in l.split()[:3]] for l in open(R+f'graphics/p
 NEAR={0:0}|{k:int(((IP[1:]-FP[k])**2).sum(1).argmin()+1) for k in range(1,16)}
 # bijna-gelijke afstanden: kies de tint met dezelfde kleurtoon (crèmeschaduw 2434 grijs vs 2645 geelcrème; oogbruin 3330 rood vs 3620 donker)
 NEAR[4]=12; NEAR[15]=14
-RIJ=[14,16,18,19,21,23,24,26,28,29,31,33,34,36,38,39,41,43,44,46]   # gelijkmatig, factor 0,6 (zelfde factor als KOL: verhoudingen blijven)
-KOL=[17,19,21,22,24,26,27,29,31,32,34,36,37,39,41,42,44,46]
+RIJ=[15,17,18,20,22,24,26,28,29,31,33,35,37,38,40,42,44,46]   # gelijkmatig, factor 0,55, fase 0,7 (oogglans en neus blijven)
+KOL=[17,19,21,23,25,27,29,31,32,34,36,38,40,41,43,45]   # 17/19 i.p.v. 18/20: glans van het verre oog blijft
 LOG=[]
 def opschonen(c):
     c=c.copy(); h,w=c.shape

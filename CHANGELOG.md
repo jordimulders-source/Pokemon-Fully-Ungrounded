@@ -3892,3 +3892,10 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.941] - Kay Pacha: frontsprite af (27 nov)
 - Jordi: "tuurlijk is die af". `docs/concept/sprites/kay_pacha/af/kay_pacha.png` (= ek1), op het overzichtsvel onder Legendaries; Stand van zaken bijgewerkt.
+
+### [v0.0.942] - Party-iconen: proefrit en methodiek (28 nov)
+- Proefrit met drie bakken (`docs/concept/sprites/icoon_proefrit/OPDRACHT.md`). Jordi: "Ze hoeven niet perfect te zijn, zolang ze maar niet negatief opvallen ... maar ze moeten wel gewoon kloppen"; paletregel blijft streng ("Wailmer en Wailord worden ook roze").
+- Regionale Poliwag: bestaand Poliwag-icoon omgekleurd (pal3, `poliwag_regional/icoon/af/`); spiraal daarna pixel voor pixel uit het origineel (`spiraal_E.png`, wacht op Jordi). Poliwhirl/Poliwrath niet via deze route ("echt andere designs").
+- Shuppetto: r1 afgekeurd ("niet driekwart en lijkt op een soort verlepte versie van zichzelf" · "maar dat komt omdat je weer zelf aan het tekenen bent" · "dat moet echt verboden worden"). Route 2 zonder tekenen: s1 gekozen ("de vorm van het hoofd klopt namelijk volledig bij s1, alleen de afwerking moet beter"), s5 = ogen met pupil uit de front, kruizen via 2×-reductie, spikkels weg. Jordi: "shuppetto prima, zou het een 6 of 7 scoren, maar dat is niet erg". Af: `banette_evo/icoon/af/` (pal0); r1 naar `afgekeurd_r1/`.
+- Cuyby: reductie van de rechte front afgekeurd ("want dat is een precieze verkleining en hij staat niet goed in driekwart"); route 3 via Gemini-driekwartmodel, kandidaat `cuyby/icoon/r3/af/` (r8, pal3). Prompt r2 voor een ronder model klaar ("jigglypuff en marill blijven namelijk netjes rond en cuyby is wat uitgebold").
+- Nieuwe regels in `docs/lessen/ICOON_WERKWIJZE.md`: zelf tekenen verboden; driekwart verplicht; Stap 0 met drie routes (bestaand icoon / front al driekwart / eerst Gemini-driekwartmodel); bij ronde soorten draait alleen het gezicht; dezelfde schrapfactor horizontaal en verticaal; het oog is altijd een uitzondering (pupil blijft); dunne diagonale delen via 2×-reductie. Indeling van alle 131 fronts per route: `icoon_proefrit/ROUTES.md` (voorstel).

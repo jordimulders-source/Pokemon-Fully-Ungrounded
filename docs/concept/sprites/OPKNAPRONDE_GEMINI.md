@@ -36,3 +36,4 @@ Bestaande, goedgekeurde designs die nog "een beetje 2D" staan opnieuw via Gemini
 
 ## Sunperor (27 nov)
 - Jordi (na twee mislukte icoon-prompts): "maar dit is wel een lelijke snavel en het gezciht klopt niet meer, we kunnen wel nog proberen te doen wat bij soulibri lukte, vgm is deze sprite grotendeels zonder gemini gemaakt, we kunnen vragen of gemini deze pose kan fixen". Prompt in Coathief-opbouw (echte driekwart, design bevroren) in de chat gegeven; bijlage `graphics_proef/sunperor_front_8x.png`.
+- p1 (`graphics_proef/sunperor_opknap_p1.png`): Jordi "nee nu maakt die een non sprite model" (gladde illustratie; vertakte staf, gespreide vleugel, kroon zonder eigen patroon). Oorzaak: de vaste stijlregel uit de Coathief/Picapau-prompts ("64x64 pixel sprite, max 16 colors, 1 px dark outline …") ontbrak. p2 in de chat met stijlregel en AVOID.

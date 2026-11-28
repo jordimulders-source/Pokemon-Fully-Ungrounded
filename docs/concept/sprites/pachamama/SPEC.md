@@ -69,3 +69,4 @@
 - Jordi (28 nov): "herstel de kap van eerder" → K1 met voorrang: kap = kale reductie van r7 (vóór de vergroting), masker op de oorspronkelijke gezichtsmaat.
 - **r10 = K1** (`sprite_r7model/r10/`): kap = kale reductie r7 (0 px afwijking in de hoofdzone), r10-masker op de oorspronkelijke gezichtsmaat (3,3 modelpx per spritepx); 44 rompdpixels bij de hals uit dezelfde reductie; mondstreepje en ogen/neus opgebouwd. K2/K3 niet gemaakt.
 - Jordi over r10 (28 nov): "ja met deze gaan we er komen. Blik moet iets meer driekwart, ik twijfel nog over de neus vorm en de kleuren van het gezicht zijn iets teveel horizontaal rechte vlakken" → r11: gezicht meer driekwart naar links, 3 neusvarianten, tintgrenzen gebogen volgens de ovaal.
+- Jordi (28 nov): "de belijning is overal super hard trouwens, maar dat fixen we pas zodra het gezicht staat" → na het gezicht: belijningsronde (Dragonfly Cave: selout, omlijning in eigen donkerste tint, zwart alleen aan de schaduwkant).

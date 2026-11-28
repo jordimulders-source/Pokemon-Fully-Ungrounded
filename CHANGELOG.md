@@ -3952,3 +3952,5 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.973] - Coathief-rug: achterlijf bruin (28 nov)
 - Jordi: "coathief mag je zelf herkleuren dan". Zwart achterlijf (Gemini) omgekleurd naar de bruine rugtinten (licht boven, schaduw onder) met een ronde overgang naar de zwarte poten, zoals in de front. Oud bewaard als `coathief_rug_zwartekont.png`.
+- Jordi: "nu is nog steeds de halve kont van coathief zwart" → hele achterlijf bruin tot rij 58–59, alleen de poten onderaan zwart.
+- Llamauler-rug naast Gen 3-ruggen (`batch_01/af/llamauler_vs_gen3.png`): grote soorten vullen bij Game Freak het hele vak en worden afgesneden; onze ruggen zijn kleiner.

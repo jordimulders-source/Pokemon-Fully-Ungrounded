@@ -16,7 +16,7 @@ for s,f in SOORT.items():
     # lichtgrijze vloer/strepen (vrijwel kleurloos en licht) = transparant
     bg|=(a.max(2)-a.min(2)<12)&(a.mean(2)>170)
     P=np.array(pal).reshape(-1,3)[used]
-    idx=np.array(used)[((a[:,:,None,:]-P[None,None])**2).sum(3).argmin(2)]; idx[bg]=0
+    full=np.array(used)[((a[:,:,None,:]-P[None,None])**2).sum(3).argmin(2)]; idx=full.copy(); idx[bg]=0
     log=[]
     if s=='llamauler':  # poten zweven onder een witte strook: alles onder de strook weg
         rows=(idx>0).sum(1); ys=np.where(rows>0)[0]
@@ -47,6 +47,15 @@ for s,f in SOORT.items():
     if xs.min()+dx<0 or xs.max()+dx>63: dx=(64-(xs.max()-xs.min()+1))//2-xs.min()
     out=np.zeros((64,64),int)
     for y,x in zip(ys,xs): out[y+dy,x+dx]=idx[y,x]
+    # ingesloten wit in het gezicht (oogwit/gezichtsmasker) is geen achtergrond: terug naar de frontkleur
+    GEZICHT={'vigiloot':40,'nocticue':30,'moonkey':40}  # holtes rechts van deze x = gezicht; links = staart/spiraal blijft open
+    if s in GEZICHT:
+        h=ndimage.binary_fill_holes(out>0)&(out==0); lab,n=ndimage.label(h); gv=0
+        for k in range(1,n+1):
+            pts=np.argwhere(lab==k)
+            if pts[:,1].mean()>=GEZICHT[s]:
+                for y,x in pts: out[y,x]=full[y-dy,x-dx]; gv+=1
+        log.append('gezichtswit gevuld %d px'%gv)
     nk=len(set(np.unique(out))-{0})
     log.append('x %d-%d y %d-%d, %d kleuren'%(xs.min()+dx,xs.max()+dx,ys.min()+dy,63,nk))
     im=Image.fromarray(out.astype('uint8'),'P'); im.putpalette(pal); im.save('%s_rug.png'%s,transparency=0)

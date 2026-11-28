@@ -3946,3 +3946,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.971] - Sunperor opknap/icoon geparkeerd (27 nov)
 - Opknap p2 bijna gelijk aan de front met een slecht gezicht (Jordi: "nee het lukt hem niet"). Sunperor-icoon en -opknap geparkeerd; de front blijft.
+
+### [v0.0.972] - Batch 01: 6 ruggen omgezet (28 nov)
+- `graphics_proef/pakketten/batch_01/af/`: Llamauler (zwevende poten weggesneden), Bandolingo, Coathief, Vigiloot, Nocticue, Moonkey (64×64, frontpalet, onderkant y 63, niet geschaald; `vel.png`, `bouw.py`). Open: Palpaca (p2, oorpompons + schoentjes), Cholucha (Jordi: "heeft geen vlechten", p2), Coathief zwart achterlijf (Jordi: "heeft coathief een zwarte kont?"; front: bruin tot de staartwortel).

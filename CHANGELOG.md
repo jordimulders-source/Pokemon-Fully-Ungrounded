@@ -3943,3 +3943,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.970] - Sunperor naar de opknapronde (27 nov)
 - Icoon r5 uit Gemini p2 gestopt (Jordi: "lelijke snavel en het gezicht klopt niet meer"). Sunperor gaat via de opknapronde (zoals Soulibri/Coathief): Gemini tekent de front in echte driekwart; frame 2, rug en icoon volgen daarna uit dat model. Zie OPKNAPRONDE_GEMINI.md.
+
+### [v0.0.971] - Sunperor opknap/icoon geparkeerd (27 nov)
+- Opknap p2 bijna gelijk aan de front met een slecht gezicht (Jordi: "nee het lukt hem niet"). Sunperor-icoon en -opknap geparkeerd; de front blijft.

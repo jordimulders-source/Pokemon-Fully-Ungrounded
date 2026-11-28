@@ -3940,3 +3940,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.969] - Sunperor-icoon: Gemini p2 als driekwartmodel (27 nov)
 - Gemini p2 (`graphics_proef/sunperor_icoon_gemini_p2.png`, natief 46×62) weer op frontmaat (Jordi: "hij begrijpt er niks van helaas"), maar wel met de kop driekwart naar links. Gebruikt als model voor icoon r5 via de eigen icoonroute. Les in GEMINI.md.
+
+### [v0.0.970] - Sunperor naar de opknapronde (27 nov)
+- Icoon r5 uit Gemini p2 gestopt (Jordi: "lelijke snavel en het gezicht klopt niet meer"). Sunperor gaat via de opknapronde (zoals Soulibri/Coathief): Gemini tekent de front in echte driekwart; frame 2, rug en icoon volgen daarna uit dat model. Zie OPKNAPRONDE_GEMINI.md.

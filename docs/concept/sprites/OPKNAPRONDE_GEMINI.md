@@ -33,3 +33,6 @@ Bestaande, goedgekeurde designs die nog "een beetje 2D" staan opnieuw via Gemini
 | Spooktrein fase 3 | – | geparkeerd (20 nov): opknap-r1 (hele sprite) kopieerde de lelijke koeienvanger; r2 (alleen koeienvanger) gaf de hele trein zonder geest. Jordi: "laat maar zitten voor nu, hier moeten we iets anders voor bedenken". `spooktrein_fase3/gemini/opknap/` |
 | Coathief | `coathief/gemini/`, `coathief/sprite/` | **af** (19 nov, `coathief/af/`; Gemini r1 als model, oog rood, oren zwart, lijf met volume; sprite r7) |
 | Llamauler | `lama/fase2/gemini/`, `lama/fase2/sprite/` | **af** (21 nov, Jordi: "r7 akkoord"; `lama/fase2/af/`, oud in `af/oud_voor_gemini/`) |
+
+## Sunperor (27 nov)
+- Jordi (na twee mislukte icoon-prompts): "maar dit is wel een lelijke snavel en het gezciht klopt niet meer, we kunnen wel nog proberen te doen wat bij soulibri lukte, vgm is deze sprite grotendeels zonder gemini gemaakt, we kunnen vragen of gemini deze pose kan fixen". Prompt in Coathief-opbouw (echte driekwart, design bevroren) in de chat gegeven; bijlage `graphics_proef/sunperor_front_8x.png`.

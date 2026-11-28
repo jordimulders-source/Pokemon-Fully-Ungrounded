@@ -364,3 +364,4 @@ Wanneer Jordi een ontwerp in Gemini laat maken en kiest, gelden deze regels **in
 - Van achteren verdwijnt het herkenningsteken (gezicht): vraag de kop in profiel over de schouder; bij objecten iets dat de achterkant bedekt (Hexpress: "the green smoke covers the back", Jordi).
 - Gaten die Gemini laat (wit onder een kroon) niet dichtvullen als daar de kop had moeten zitten: dat maakt een donkere massa; kop uit een andere poging op hetzelfde raster plakken werkte (Sunperor v2).
 - Gemini-bewerkprompts (frame 2) blijven exact op het 16-px raster van de 8×-bijlage: natief terughalen en +1/+1 uitlijnen.
+- **Iconen via Gemini (27 nov, Sunperor p1/p2):** met onze 8×-front als bijlage tekent Gemini altijd weer op het 16-px raster van de bijlage (frontmaat), ook als 32×32 en "much smaller" er nadrukkelijk in staan. Bruikbaar als MODEL in een nieuwe stand (driekwart); het verkleinen doen wij (icoonroute).
